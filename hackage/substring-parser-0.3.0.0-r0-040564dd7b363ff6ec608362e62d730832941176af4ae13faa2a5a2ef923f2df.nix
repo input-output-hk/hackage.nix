@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "substring-parser-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

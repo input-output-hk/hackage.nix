@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gl" or (buildDepError "gl"))
           ];
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."OpenGL" or (sysDepError "OpenGL"));
+        buildable = true;
         };
       exes = {
         "smoke-test" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.build-toys then true else false;
           };
         "memory-info" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."caramia" or (buildDepError "caramia"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.build-toys then true else false;
           };
         "gl-info" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
@@ -95,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
             ];
+          buildable = if flags.build-toys then true else false;
           };
         "query-objects" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
@@ -105,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.build-toys then true else false;
           };
         "textures" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
@@ -112,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."caramia" or (buildDepError "caramia"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.build-toys then true else false;
           };
         };
       tests = {
@@ -126,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         "shader" = {
           depends = [
@@ -137,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         "texture" = {
           depends = [
@@ -150,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "color" = {
           depends = [
@@ -159,6 +168,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
+          buildable = true;
           };
         };
       };

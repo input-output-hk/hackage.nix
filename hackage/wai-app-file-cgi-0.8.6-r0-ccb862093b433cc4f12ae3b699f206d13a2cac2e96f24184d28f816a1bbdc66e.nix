@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
           (hsPkgs."word8" or (buildDepError "word8"))
           ] ++ (pkgs.lib).optional (flags.rev-proxy) (hsPkgs."http-conduit" or (buildDepError "http-conduit"));
+        buildable = true;
         };
       tests = {
         "doctest" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = [
@@ -107,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp" or (buildDepError "warp"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         };
       };

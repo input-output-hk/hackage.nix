@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.sqlplus or (pkgs.buildPackages.sqlplus or (buildToolDepError "sqlplus")))
           ];
+        buildable = true;
         };
       exes = {
         "takusen_tests" = {
@@ -78,12 +79,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."random" or (buildDepError "random"))
             ] ++ (pkgs.lib).optional (!(!flags.buildtests)) (hsPkgs."takusen-oracle" or (buildDepError "takusen-oracle"));
+          buildable = if !flags.buildtests then false else true;
           };
         "miniunit_tests" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if !flags.buildtests then false else true;
           };
         };
       };

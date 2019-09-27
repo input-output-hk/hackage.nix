@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           ];
+        buildable = true;
         };
       exes = {
         "pg-harness" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

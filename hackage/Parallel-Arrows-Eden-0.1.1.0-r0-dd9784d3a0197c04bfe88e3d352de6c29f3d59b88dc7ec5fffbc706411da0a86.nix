@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."edenmodules" or (buildDepError "edenmodules"))
           (hsPkgs."Parallel-Arrows-Definition" or (buildDepError "Parallel-Arrows-Definition"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Parallel-Arrows-BaseSpec" or (buildDepError "Parallel-Arrows-BaseSpec"))
             (hsPkgs."Parallel-Arrows-Eden" or (buildDepError "Parallel-Arrows-Eden"))
             ];
+          buildable = true;
           };
         };
       };

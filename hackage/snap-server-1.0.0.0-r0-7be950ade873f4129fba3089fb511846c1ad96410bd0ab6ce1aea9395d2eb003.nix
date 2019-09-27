@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
           (hsPkgs."openssl-streams" or (buildDepError "openssl-streams"))
           ];
+        buildable = true;
         };
       exes = {
         "snap-test-pong-server" = {
@@ -113,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
             (hsPkgs."openssl-streams" or (buildDepError "openssl-streams"))
             ];
+          buildable = if !flags.build-pong then false else true;
           };
         "snap-test-server" = {
           depends = ([
@@ -141,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
             (hsPkgs."openssl-streams" or (buildDepError "openssl-streams"))
             ]) ++ (pkgs.lib).optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = if !flags.build-testserver then false else true;
           };
         };
       tests = {
@@ -185,6 +188,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
             (hsPkgs."openssl-streams" or (buildDepError "openssl-streams"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -201,6 +205,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."snap-core" or (buildDepError "snap-core"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           ];
+        buildable = true;
         };
       };
     }

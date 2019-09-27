@@ -60,18 +60,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         "yesod-ld-wrapper" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         "yesod-ar-wrapper" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         "yesod" = {
           depends = [
@@ -121,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
             (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
             ];
+          buildable = true;
           };
         };
       };

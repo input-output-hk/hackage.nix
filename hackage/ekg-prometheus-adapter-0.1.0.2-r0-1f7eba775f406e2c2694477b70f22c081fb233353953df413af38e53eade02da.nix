@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ekg-prometheus-adapter" or (buildDepError "ekg-prometheus-adapter"))
             ];
+          buildable = true;
           };
         };
       };

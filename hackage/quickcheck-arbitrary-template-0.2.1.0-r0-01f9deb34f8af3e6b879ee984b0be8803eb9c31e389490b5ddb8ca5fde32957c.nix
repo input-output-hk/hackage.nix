@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe" or (buildDepError "safe"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = true;
           };
         };
       };

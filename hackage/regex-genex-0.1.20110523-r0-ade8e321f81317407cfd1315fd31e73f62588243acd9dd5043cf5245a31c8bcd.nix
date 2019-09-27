@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sbv" or (buildDepError "sbv"))
             (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
             ];
+          buildable = true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."foldl" or (buildDepError "foldl"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."void" or (buildDepError "void"))
             (hsPkgs."foldl" or (buildDepError "foldl"))
             ];
+          buildable = true;
           };
         };
       };

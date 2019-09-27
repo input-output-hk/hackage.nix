@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
         "marihana" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."marihana" or (buildDepError "marihana"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."marihana" or (buildDepError "marihana"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

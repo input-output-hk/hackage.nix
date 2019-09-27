@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "examples" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "test" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
             ];
+          buildable = true;
           };
         "doctest" = {
           depends = [
@@ -88,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."fused-effects" or (buildDepError "fused-effects"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -97,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fused-effects" or (buildDepError "fused-effects"))
             (hsPkgs."gauge" or (buildDepError "gauge"))
             ];
+          buildable = true;
           };
         };
       };

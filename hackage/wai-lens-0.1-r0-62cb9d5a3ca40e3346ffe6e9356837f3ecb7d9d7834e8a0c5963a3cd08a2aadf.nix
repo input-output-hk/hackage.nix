@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vault" or (buildDepError "vault"))
           (hsPkgs."wai" or (buildDepError "wai"))
           ];
+        buildable = true;
         };
       };
     }

@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iproute" or (buildDepError "iproute"))
           (hsPkgs."http2" or (buildDepError "http2"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-types" or (buildDepError "http-types"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.build-example then true else false;
           };
         };
       tests = {
@@ -120,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
             (hsPkgs."http2" or (buildDepError "http2"))
             ];
+          buildable = true;
           };
         };
       };

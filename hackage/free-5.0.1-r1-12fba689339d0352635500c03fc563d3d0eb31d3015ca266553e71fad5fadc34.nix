@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."fail" or (buildDepError "fail"));
+        buildable = true;
         };
       };
     }

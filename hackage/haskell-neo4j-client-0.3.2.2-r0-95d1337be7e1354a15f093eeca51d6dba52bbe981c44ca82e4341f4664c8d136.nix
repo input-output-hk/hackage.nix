@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."network-uri" or (buildDepError "network-uri"))
           ];
+        buildable = true;
         };
       tests = {
         "test-haskell-neo4j-rest-client" = {
@@ -112,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             ];
+          buildable = true;
           };
         };
       };

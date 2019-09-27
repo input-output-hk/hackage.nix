@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
           ] ++ [ (hsPkgs."deepseq" or (buildDepError "deepseq")) ];
         build-tools = (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")));
+        buildable = true;
         };
       exes = {
         "example-spiros" = {
@@ -99,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
           build-tools = (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")));
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -109,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
           build-tools = (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")));
+          buildable = if compiler.isGhcjs && true then false else true;
           };
         };
       };

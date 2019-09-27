@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."time" or (buildDepError "time"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = true;
           };
         };
       };

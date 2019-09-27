@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       };
     }

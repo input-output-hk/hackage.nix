@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           ];
+        buildable = true;
         };
       };
     }

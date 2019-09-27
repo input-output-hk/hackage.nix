@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
           (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
           ];
+        buildable = true;
         };
       exes = {
         "hw-rankselect" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mmap" or (buildDepError "mmap"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -119,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mmap" or (buildDepError "mmap"))
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
+          buildable = true;
           };
         };
       };

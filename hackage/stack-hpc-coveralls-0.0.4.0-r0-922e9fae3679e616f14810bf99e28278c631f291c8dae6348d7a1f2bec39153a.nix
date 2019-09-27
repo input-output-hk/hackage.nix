@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
           (hsPkgs."yaml" or (buildDepError "yaml"))
           ];
+        buildable = true;
         };
       exes = {
         "shc" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."docopt" or (buildDepError "docopt"))
             (hsPkgs."stack-hpc-coveralls" or (buildDepError "stack-hpc-coveralls"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -100,12 +102,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         "style" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         };
       };

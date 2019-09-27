@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."minisat" or (buildDepError "minisat"))
           (hsPkgs."async" or (buildDepError "async"))
           ];
+        buildable = true;
         };
       tests = {
         "PP" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."satchmo" or (buildDepError "satchmo"))
             ];
+          buildable = true;
           };
         "Ramsey" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."satchmo" or (buildDepError "satchmo"))
             ];
+          buildable = true;
           };
         "Spaceship" = {
           depends = [
@@ -88,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."satchmo" or (buildDepError "satchmo"))
             ];
+          buildable = true;
           };
         "Oscillator" = {
           depends = [
@@ -95,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."satchmo" or (buildDepError "satchmo"))
             ];
+          buildable = true;
           };
         };
       };

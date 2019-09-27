@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
           (hsPkgs."data-accessor-transformers" or (buildDepError "data-accessor-transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "pandoc-crossref" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."pandoc-crossref" or (buildDepError "pandoc-crossref"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-accessor-transformers" or (buildDepError "data-accessor-transformers"))
             (hsPkgs."pandoc-crossref" or (buildDepError "pandoc-crossref"))
             ];
+          buildable = true;
           };
         };
       };

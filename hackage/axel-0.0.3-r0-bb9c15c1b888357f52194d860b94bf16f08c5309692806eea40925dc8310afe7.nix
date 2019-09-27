@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."yaml" or (buildDepError "yaml"))
           ];
+        buildable = true;
         };
       exes = {
         "axel-exe" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

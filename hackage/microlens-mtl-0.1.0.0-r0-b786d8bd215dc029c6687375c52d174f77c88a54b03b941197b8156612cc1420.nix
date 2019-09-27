@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."microlens" or (buildDepError "microlens"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       };
     }

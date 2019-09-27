@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
           (hsPkgs."http-types" or (buildDepError "http-types"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-types" or (buildDepError "http-types"))
             (hsPkgs."tasty-wai" or (buildDepError "tasty-wai"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
         "stackage-update" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."stackage-update" or (buildDepError "stackage-update"))
             ];
+          buildable = true;
           };
         };
       };

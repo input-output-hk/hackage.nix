@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."scientific" or (buildDepError "scientific"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             ];
+          buildable = true;
           };
         };
       };

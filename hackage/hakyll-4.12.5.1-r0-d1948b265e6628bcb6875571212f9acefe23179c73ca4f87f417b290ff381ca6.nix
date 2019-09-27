@@ -104,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pandoc" or (buildDepError "pandoc"))
           (hsPkgs."pandoc-citeproc" or (buildDepError "pandoc-citeproc"))
           ];
+        buildable = true;
         };
       exes = {
         "hakyll-init" = {
@@ -113,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "hakyll-website" = {
           depends = [
@@ -122,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."pandoc" or (buildDepError "pandoc"))
             ];
+          buildable = if flags.buildwebsite then true else false;
           };
         };
       tests = {
@@ -140,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         };
       };

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."stringtable-atom" or (buildDepError "stringtable-atom"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       };
     }

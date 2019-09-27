@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yaml" or (buildDepError "yaml"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "wallpaper" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         "rosette" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -88,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."wallpaper" or (buildDepError "wallpaper"))
             ];
+          buildable = true;
           };
         };
       };

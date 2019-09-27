@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."netpbm" or (buildDepError "netpbm"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       };
     }

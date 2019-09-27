@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default" or (buildDepError "data-default"))
           (hsPkgs."functor-infix" or (buildDepError "functor-infix"))
           ];
+        buildable = true;
         };
       exes = {
         "clippings2tsv" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safecopy" or (buildDepError "safecopy"))
             (hsPkgs."functor-infix" or (buildDepError "functor-infix"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."assertions" or (buildDepError "assertions"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         };
       };

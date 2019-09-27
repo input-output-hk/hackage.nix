@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       };
     }

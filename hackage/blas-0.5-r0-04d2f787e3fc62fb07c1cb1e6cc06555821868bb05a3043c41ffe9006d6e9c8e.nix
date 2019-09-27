@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."cblas" or (sysDepError "cblas"))
           (pkgs."atlas" or (sysDepError "atlas"))
           ];
+        buildable = true;
         };
       };
     }

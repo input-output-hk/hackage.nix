@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
         "report_par" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "implement" = {
           depends = [
@@ -77,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

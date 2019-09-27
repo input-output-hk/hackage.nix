@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."zippers" or (buildDepError "zippers"))
             ];
+          buildable = true;
           };
         };
       };

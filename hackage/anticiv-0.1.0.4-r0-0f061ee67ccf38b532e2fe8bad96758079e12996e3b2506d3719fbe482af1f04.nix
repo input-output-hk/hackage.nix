@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."plugins" or (buildDepError "plugins"))
           (hsPkgs."ctpl" or (buildDepError "ctpl"))
           ];
+        buildable = true;
         };
       exes = {
         "anticiv" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."ctpl" or (buildDepError "ctpl"))
             ];
+          buildable = true;
           };
         };
       };

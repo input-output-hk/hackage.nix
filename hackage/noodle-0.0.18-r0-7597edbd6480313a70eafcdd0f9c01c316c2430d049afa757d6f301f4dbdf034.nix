@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = true;
         };
       exes = {
         "noodle" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."noodle" or (buildDepError "noodle"))
             ];
+          buildable = true;
           };
         "noodle-repl" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."noodle" or (buildDepError "noodle"))
             ];
+          buildable = true;
           };
         "noodle-eval" = {
           depends = [
@@ -89,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."noodle" or (buildDepError "noodle"))
             ];
+          buildable = true;
           };
         };
       };

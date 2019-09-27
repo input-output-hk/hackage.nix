@@ -54,7 +54,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "interprocess-concurrent-malloc" = {
           depends = [
@@ -62,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."typed-process" or (buildDepError "typed-process"))
             (hsPkgs."interprocess" or (buildDepError "interprocess"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "interprocess-wait-qsem" = {
           depends = [
@@ -69,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."typed-process" or (buildDepError "typed-process"))
             (hsPkgs."interprocess" or (buildDepError "interprocess"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

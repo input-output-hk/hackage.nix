@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
             (hsPkgs."memory" or (buildDepError "memory"))
             ]);
+        buildable = true;
         };
       tests = {
         "zm-test" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zm" or (buildDepError "zm"))
             (hsPkgs."timeit" or (buildDepError "timeit"))
             ];
+          buildable = true;
           };
         };
       };

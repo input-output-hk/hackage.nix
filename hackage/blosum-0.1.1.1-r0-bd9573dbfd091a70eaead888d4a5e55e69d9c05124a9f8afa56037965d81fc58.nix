@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fasta" or (buildDepError "fasta"))
           (hsPkgs."lens" or (buildDepError "lens"))
           ];
+        buildable = true;
         };
       exes = {
         "blosum" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-text" or (buildDepError "pipes-text"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       };

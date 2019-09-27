@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."transformers" or (buildDepError "transformers"))
               ])) ++ (pkgs.lib).optional (!(!flags.mtl)) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+        buildable = true;
         };
       };
     }

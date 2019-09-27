@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -125,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
+          buildable = true;
           };
         };
       };

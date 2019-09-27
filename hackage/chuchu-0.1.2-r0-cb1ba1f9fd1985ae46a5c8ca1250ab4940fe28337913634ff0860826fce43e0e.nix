@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
           (hsPkgs."abacate" or (buildDepError "abacate"))
           ];
+        buildable = true;
         };
       tests = {
         "environment" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."chuchu" or (buildDepError "chuchu"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         "calculator" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."chuchu" or (buildDepError "chuchu"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         "prefix" = {
           depends = [
@@ -89,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."chuchu" or (buildDepError "chuchu"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         };
       };

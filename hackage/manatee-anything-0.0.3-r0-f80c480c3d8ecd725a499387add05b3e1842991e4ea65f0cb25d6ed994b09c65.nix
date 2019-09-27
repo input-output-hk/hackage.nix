@@ -77,7 +77,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dbus-core" or (buildDepError "dbus-core"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
-      exes = { "manatee-anything" = {}; };
+      exes = { "manatee-anything" = { buildable = true; }; };
       };
     }

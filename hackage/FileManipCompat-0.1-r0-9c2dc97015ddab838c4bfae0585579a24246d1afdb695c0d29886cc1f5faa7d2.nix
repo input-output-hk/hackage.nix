@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
           (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       };
     }

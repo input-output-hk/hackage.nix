@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "test-strict-bitstream" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "test-lazy-bitstream" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

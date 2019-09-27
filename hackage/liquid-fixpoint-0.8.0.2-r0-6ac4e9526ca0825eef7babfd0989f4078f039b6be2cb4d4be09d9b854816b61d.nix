@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."ascii-progress" or (buildDepError "ascii-progress"));
+        buildable = true;
         };
       exes = {
         "fixpoint" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."liquid-fixpoint" or (buildDepError "liquid-fixpoint"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -111,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-rerun" or (buildDepError "tasty-rerun"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "testparser" = {
           depends = [
@@ -120,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         };
       };

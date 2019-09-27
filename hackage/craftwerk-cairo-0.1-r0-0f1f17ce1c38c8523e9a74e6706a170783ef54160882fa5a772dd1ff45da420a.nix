@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cairo" or (buildDepError "cairo"))
           (hsPkgs."craftwerk" or (buildDepError "craftwerk"))
           ];
+        buildable = true;
         };
       };
     }

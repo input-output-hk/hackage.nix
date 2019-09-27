@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel" or (buildDepError "parallel"))
           (hsPkgs."data-memocombinators" or (buildDepError "data-memocombinators"))
           ];
+        buildable = true;
         };
       exes = {
         "concraft-analyse-model" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."logfloat" or (buildDepError "logfloat"))
             ];
+          buildable = if flags.buildanatool then true else false;
           };
         };
       };

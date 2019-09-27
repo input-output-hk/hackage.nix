@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blake2" or (buildDepError "blake2"))
           (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
           ];
+        buildable = true;
         };
       tests = {
         "test-all" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
             (hsPkgs."bytestring-typenats" or (buildDepError "bytestring-typenats"))
             ] ++ (pkgs.lib).optional (flags.usearbitrary) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+          buildable = true;
           };
         };
       benchmarks = {
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring-typenats" or (buildDepError "bytestring-typenats"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ] ++ (pkgs.lib).optional (flags.usearbitrary) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+          buildable = true;
           };
         };
       };

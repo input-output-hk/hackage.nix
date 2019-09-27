@@ -98,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             (hsPkgs."yesod-platform" or (buildDepError "yesod-platform"))
             ];
+          buildable = if flags.no-server then false else true;
           };
         "vigilance" = {
           depends = (pkgs.lib).optionals (!flags.no-client) [
@@ -139,6 +140,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             (hsPkgs."yesod-platform" or (buildDepError "yesod-platform"))
             ];
+          buildable = if flags.no-client then false else true;
           };
         };
       tests = {
@@ -186,6 +188,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             (hsPkgs."yesod-platform" or (buildDepError "yesod-platform"))
             ];
+          buildable = true;
           };
         };
       };

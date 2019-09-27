@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."xml-types" or (buildDepError "xml-types"))
           ];
+        buildable = true;
         };
       tests = {
         "dbus_tests" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."xml-types" or (buildDepError "xml-types"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -104,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         };
       };

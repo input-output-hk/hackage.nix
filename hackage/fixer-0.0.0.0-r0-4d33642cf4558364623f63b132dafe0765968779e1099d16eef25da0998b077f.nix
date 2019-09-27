@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."validity-time" or (buildDepError "validity-time"))
           (hsPkgs."yaml" or (buildDepError "yaml"))
           ];
+        buildable = true;
         };
       tests = {
         "fixer-test" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."validity-time" or (buildDepError "validity-time"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."temporary-rc" or (buildDepError "temporary-rc"))
             ];
+          buildable = true;
           };
         };
       };

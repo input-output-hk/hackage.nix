@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pool" or (buildDepError "pool"))
           ];
         libs = (pkgs.lib).optional (flags.systemlib) (pkgs."sqlite3" or (sysDepError "sqlite3"));
+        buildable = true;
         };
       };
     }

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           ];
+        buildable = true;
         };
       tests = {
         "attoparsec-varword-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

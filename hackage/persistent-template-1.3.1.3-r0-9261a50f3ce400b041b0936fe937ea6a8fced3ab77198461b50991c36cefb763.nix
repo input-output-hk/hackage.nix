@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

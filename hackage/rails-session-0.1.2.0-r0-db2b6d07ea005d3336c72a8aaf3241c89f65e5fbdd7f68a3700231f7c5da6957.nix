@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (buildDepError "semigroups"));
+        buildable = true;
         };
       tests = {
         "specs" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."text" or (buildDepError "text"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.4") (hsPkgs."bytestring" or (buildDepError "bytestring"));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -104,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

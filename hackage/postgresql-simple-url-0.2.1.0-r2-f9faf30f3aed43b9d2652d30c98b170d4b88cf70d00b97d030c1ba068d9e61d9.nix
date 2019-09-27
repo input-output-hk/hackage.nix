@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network-uri" or (buildDepError "network-uri"))
           (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."postgresql-simple-url" or (buildDepError "postgresql-simple-url"))
             ];
+          buildable = true;
           };
         };
       };

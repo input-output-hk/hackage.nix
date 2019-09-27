@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."unbounded-delays" or (buildDepError "unbounded-delays"))
           ];
+        buildable = true;
         };
       };
     }

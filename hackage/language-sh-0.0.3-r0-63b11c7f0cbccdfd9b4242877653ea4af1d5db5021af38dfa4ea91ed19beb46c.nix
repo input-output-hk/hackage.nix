@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
           ];
+        buildable = true;
         };
       };
     }

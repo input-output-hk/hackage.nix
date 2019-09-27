@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."validity-vector" or (buildDepError "validity-vector"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "genvalidity-vector-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

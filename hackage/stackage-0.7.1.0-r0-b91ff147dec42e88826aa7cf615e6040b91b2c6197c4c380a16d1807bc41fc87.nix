@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stackage-upload" or (buildDepError "stackage-upload"))
           (hsPkgs."stackage-install" or (buildDepError "stackage-install"))
           ];
+        buildable = true;
         };
       };
     }

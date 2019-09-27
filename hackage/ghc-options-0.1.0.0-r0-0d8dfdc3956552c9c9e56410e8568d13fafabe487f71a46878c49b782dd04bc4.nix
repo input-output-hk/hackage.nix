@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bin-package-db" or (buildDepError "bin-package-db"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       exes = {
         "ghcopts" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bin-package-db" or (buildDepError "bin-package-db"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         };
       };

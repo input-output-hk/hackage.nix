@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           ];
+        buildable = true;
         };
       tests = {
         "splines-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."vector-space" or (buildDepError "vector-space"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."splines" or (buildDepError "splines"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

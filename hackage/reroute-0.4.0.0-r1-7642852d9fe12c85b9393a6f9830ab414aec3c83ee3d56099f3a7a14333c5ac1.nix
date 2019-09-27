@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."hvect" or (buildDepError "hvect"))
           ];
+        buildable = true;
         };
       tests = {
         "reroute-test" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."hvect" or (buildDepError "hvect"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."graph-core" or (buildDepError "graph-core"))
             (hsPkgs."hvect" or (buildDepError "hvect"))
             ];
+          buildable = true;
           };
         };
       };

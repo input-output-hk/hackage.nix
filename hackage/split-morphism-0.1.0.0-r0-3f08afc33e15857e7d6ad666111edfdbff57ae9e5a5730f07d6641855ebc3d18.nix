@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."invariant" or (buildDepError "invariant"))
           (hsPkgs."lens" or (buildDepError "lens"))
           ];
+        buildable = true;
         };
       tests = {
         "split-morphism-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."split-morphism" or (buildDepError "split-morphism"))
             ];
+          buildable = true;
           };
         };
       };

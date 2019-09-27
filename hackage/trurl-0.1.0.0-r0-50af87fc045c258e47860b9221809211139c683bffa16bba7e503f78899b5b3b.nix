@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."MissingH" or (buildDepError "MissingH"))
           ];
+        buildable = true;
         };
       exes = {
         "trurl" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."trurl" or (buildDepError "trurl"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."trurl" or (buildDepError "trurl"))
             ];
+          buildable = true;
           };
         };
       };

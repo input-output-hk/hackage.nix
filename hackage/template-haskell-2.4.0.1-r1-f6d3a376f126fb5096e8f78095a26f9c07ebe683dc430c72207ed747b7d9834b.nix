@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pretty" or (buildDepError "pretty"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       };
     }

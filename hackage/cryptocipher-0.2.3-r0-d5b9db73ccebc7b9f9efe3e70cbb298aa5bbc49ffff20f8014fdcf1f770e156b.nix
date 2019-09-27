@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       exes = {
         "Tests" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

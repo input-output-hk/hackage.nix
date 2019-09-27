@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           (hsPkgs."linear" or (buildDepError "linear"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-space" or (buildDepError "vector-space"))
             (hsPkgs."spatial-rotations" or (buildDepError "spatial-rotations"))
             ];
+          buildable = true;
           };
         };
       };

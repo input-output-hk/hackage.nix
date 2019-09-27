@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       exes = {
         "benchmark" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "test" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

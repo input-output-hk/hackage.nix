@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           (hsPkgs."hint" or (buildDepError "hint"))
           ];
+        buildable = true;
         };
       exes = {
         "hackmail" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hdaemonize" or (buildDepError "hdaemonize"))
             (hsPkgs."hint" or (buildDepError "hint"))
             ];
+          buildable = true;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."heap" or (buildDepError "heap"))
           ];
+        buildable = true;
         };
       tests = {
         "median-stream-test" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."median-stream" or (buildDepError "median-stream"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

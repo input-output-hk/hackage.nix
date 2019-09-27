@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."x11-xim" or (buildDepError "x11-xim"))
           (hsPkgs."setlocale" or (buildDepError "setlocale"))
           ];
+        buildable = true;
         };
       };
     }

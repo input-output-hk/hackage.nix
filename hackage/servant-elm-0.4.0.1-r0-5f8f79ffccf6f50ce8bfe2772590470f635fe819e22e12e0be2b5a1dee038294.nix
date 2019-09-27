@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
           ];
+        buildable = true;
         };
       exes = {
         "books-example" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant" or (buildDepError "servant"))
             (hsPkgs."servant-elm" or (buildDepError "servant-elm"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "e2e-tests-example" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant" or (buildDepError "servant"))
             (hsPkgs."servant-elm" or (buildDepError "servant-elm"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "giphy-example" = {
           depends = [
@@ -90,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-elm" or (buildDepError "servant-elm"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "readme-example" = {
           depends = [
@@ -98,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant" or (buildDepError "servant"))
             (hsPkgs."servant-elm" or (buildDepError "servant-elm"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -113,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-elm" or (buildDepError "servant-elm"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "servant-elm-test-integration" = {
           depends = [
@@ -128,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-elm" or (buildDepError "servant-elm"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.integration then false else true;
           };
         };
       };

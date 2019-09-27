@@ -54,7 +54,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "teleport-exe" = {
           depends = [
@@ -69,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -77,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."teleport" or (buildDepError "teleport"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickcheck-text" or (buildDepError "quickcheck-text"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

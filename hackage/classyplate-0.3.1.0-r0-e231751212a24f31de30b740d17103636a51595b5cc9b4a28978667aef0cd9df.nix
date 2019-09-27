@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "measure" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."uniplate" or (buildDepError "uniplate"))
             ];
+          buildable = true;
           };
         };
       };

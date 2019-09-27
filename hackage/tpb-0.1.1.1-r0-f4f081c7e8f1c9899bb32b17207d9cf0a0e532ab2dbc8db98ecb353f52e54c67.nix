@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-client" or (buildDepError "servant-client"))
             (hsPkgs."servant-pushbullet-client" or (buildDepError "servant-pushbullet-client"))
             ];
+          buildable = true;
           };
         "pb-notify" = {
           depends = [
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."websockets" or (buildDepError "websockets"))
             (hsPkgs."wuss" or (buildDepError "wuss"))
             ];
+          buildable = true;
           };
         };
       };

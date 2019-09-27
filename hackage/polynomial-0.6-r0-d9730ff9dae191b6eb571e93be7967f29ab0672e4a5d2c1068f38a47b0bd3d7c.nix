@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           ];
+        buildable = true;
         };
       };
     }

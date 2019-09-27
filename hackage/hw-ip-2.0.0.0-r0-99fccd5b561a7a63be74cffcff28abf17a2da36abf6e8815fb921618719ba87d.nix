@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iproute" or (buildDepError "iproute"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "hw-ip-test" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hw-ip" or (buildDepError "hw-ip"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

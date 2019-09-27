@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       };
     }

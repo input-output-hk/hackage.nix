@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."argparser" or (buildDepError "argparser"))
             (hsPkgs."threefish" or (buildDepError "threefish"))
             ];
+          buildable = true;
           };
         };
       };

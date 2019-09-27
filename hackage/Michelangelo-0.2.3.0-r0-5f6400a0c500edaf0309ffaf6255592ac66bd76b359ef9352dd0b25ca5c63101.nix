@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."WaveFront" or (buildDepError "WaveFront"))
           ];
+        buildable = true;
         };
       };
     }

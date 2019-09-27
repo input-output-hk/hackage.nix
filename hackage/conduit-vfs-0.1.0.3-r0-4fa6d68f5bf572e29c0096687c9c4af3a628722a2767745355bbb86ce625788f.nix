@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unliftio" or (buildDepError "unliftio"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       tests = {
         "conduit-vfs-test" = {
@@ -99,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unliftio" or (buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         };
       };

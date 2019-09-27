@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
           ];
+        buildable = true;
         };
       tests = {
         "data-test" = {
@@ -99,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."raw-strings-qq" or (buildDepError "raw-strings-qq"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         };
       };

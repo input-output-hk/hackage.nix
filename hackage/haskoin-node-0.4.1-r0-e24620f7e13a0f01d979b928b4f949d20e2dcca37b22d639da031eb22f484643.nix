@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       tests = {
         "test-haskoin-node" = {
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         };
       };

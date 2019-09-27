@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."exception-transformers" or (buildDepError "exception-transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "test-cereal-conduit" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

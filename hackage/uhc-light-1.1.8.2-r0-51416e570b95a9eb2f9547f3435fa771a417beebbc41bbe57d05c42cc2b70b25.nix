@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uulib" or (buildDepError "uulib"))
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           ];
+        buildable = true;
         };
       exes = {
         "uhcl" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uulib" or (buildDepError "uulib"))
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ];
+          buildable = true;
           };
         "uhcr" = {
           depends = [
@@ -128,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uulib" or (buildDepError "uulib"))
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ];
+          buildable = true;
           };
         };
       };

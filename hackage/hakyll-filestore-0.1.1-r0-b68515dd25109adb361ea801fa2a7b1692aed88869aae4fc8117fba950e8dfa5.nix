@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
           (hsPkgs."hakyll" or (buildDepError "hakyll"))
           ];
+        buildable = true;
         };
       };
     }

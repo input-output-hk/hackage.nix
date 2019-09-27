@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."newtype-generics" or (buildDepError "newtype-generics"))
           (hsPkgs."void" or (buildDepError "void"))
           ];
+        buildable = true;
         };
       };
     }

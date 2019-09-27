@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."async" or (buildDepError "async"))
           ];
+        buildable = true;
         };
       tests = {
         "UnitTests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         };
       };

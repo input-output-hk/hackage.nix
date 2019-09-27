@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       exes = {
         "systemtest-hydra-print" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "hydra-view" = {
           depends = [
@@ -112,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "hydra-head" = {
           depends = [
@@ -132,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -159,6 +163,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
             ];
+          buildable = true;
           };
         };
       };

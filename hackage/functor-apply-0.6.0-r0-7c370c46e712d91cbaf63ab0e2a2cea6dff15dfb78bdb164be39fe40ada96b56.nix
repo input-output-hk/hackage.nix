@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."comonad" or (buildDepError "comonad"))
           ];
+        buildable = true;
         };
       };
     }

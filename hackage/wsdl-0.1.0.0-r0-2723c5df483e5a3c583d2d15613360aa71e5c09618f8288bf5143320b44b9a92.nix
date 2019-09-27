@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (buildDepError "xml-types"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             (hsPkgs."wsdl" or (buildDepError "wsdl"))
             ];
+          buildable = true;
           };
         };
       };

@@ -104,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
           ];
+        buildable = true;
         };
       exes = {
         "too-many-cells" = {
@@ -141,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

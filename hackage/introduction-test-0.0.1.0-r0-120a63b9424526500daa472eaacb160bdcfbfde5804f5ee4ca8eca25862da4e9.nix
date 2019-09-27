@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."genvalidity-text" or (buildDepError "genvalidity-text"))
           (hsPkgs."genvalidity-hspec" or (buildDepError "genvalidity-hspec"))
           ];
+        buildable = true;
         };
       };
     }

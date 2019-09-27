@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring-trie" or (buildDepError "bytestring-trie"))
           (hsPkgs."failure" or (buildDepError "failure"))
           ];
+        buildable = true;
         };
       };
     }

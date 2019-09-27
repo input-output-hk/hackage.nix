@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."composition-extra" or (buildDepError "composition-extra"))
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."composition-extra" or (buildDepError "composition-extra"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         };
       };

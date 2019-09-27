@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashmap" or (buildDepError "hashmap"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       };
     }

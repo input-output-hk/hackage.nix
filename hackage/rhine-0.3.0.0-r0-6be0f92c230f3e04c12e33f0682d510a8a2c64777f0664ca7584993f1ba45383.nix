@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."free" or (buildDepError "free"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       exes = {
         "HelloWorld" = {
@@ -70,12 +71,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."rhine" or (buildDepError "rhine"))
             ];
+          buildable = true;
           };
         "Demonstration" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."rhine" or (buildDepError "rhine"))
             ];
+          buildable = true;
           };
         };
       };

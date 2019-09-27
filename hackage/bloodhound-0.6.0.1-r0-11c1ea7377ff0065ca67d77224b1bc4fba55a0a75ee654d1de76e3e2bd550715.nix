@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."quickcheck-properties" or (buildDepError "quickcheck-properties"))
             ];
+          buildable = true;
           };
         "doctests" = {
           depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.8") [
@@ -101,6 +103,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest-prop" or (buildDepError "doctest-prop"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).ge "7.8"
+            then true
+            else false;
           };
         };
       };

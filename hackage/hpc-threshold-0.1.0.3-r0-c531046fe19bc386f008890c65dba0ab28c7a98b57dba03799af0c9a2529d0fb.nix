@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."interpolate" or (buildDepError "interpolate"))
           (hsPkgs."pcre-heavy" or (buildDepError "pcre-heavy"))
           ];
+        buildable = true;
         };
       exes = {
         "hpc-threshold" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hpc-threshold" or (buildDepError "hpc-threshold"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hpc-threshold" or (buildDepError "hpc-threshold"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

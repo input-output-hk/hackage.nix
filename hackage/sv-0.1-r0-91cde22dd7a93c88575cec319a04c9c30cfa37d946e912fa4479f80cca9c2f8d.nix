@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."void" or (buildDepError "void"))
           ];
+        buildable = true;
         };
       tests = {
         "tasty" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."validation" or (buildDepError "validation"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

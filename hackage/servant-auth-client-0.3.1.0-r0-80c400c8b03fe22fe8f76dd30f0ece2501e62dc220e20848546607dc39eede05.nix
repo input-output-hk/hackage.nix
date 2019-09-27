@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."servant-client" or (buildDepError "servant-client"))
             ]);
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
             ];
+          buildable = true;
           };
         };
       };

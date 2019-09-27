@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unagi-chan" or (buildDepError "unagi-chan"))
           (hsPkgs."next-ref" or (buildDepError "next-ref"))
           ];
+        buildable = true;
         };
       tests = {
         "wrecker-test" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."hspec-discovery" or (buildDepError "hspec-discovery"))
             ];
+          buildable = true;
           };
         };
       };

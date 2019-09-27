@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."either" or (buildDepError "either"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."primitive" or (buildDepError "primitive"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             ];
+          buildable = true;
           };
         };
       };

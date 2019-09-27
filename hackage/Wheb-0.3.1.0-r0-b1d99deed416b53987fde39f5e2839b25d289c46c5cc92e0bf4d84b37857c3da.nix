@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets" or (buildDepError "websockets"))
           (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
           ];
+        buildable = true;
         };
       tests = {
         "Main" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

@@ -54,7 +54,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = true; };
       exes = {
         "cgen" = {
           depends = [
@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = true;
           };
         "cgen-hs" = {
           depends = [
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = true;
           };
         "grgen" = {
           depends = [
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."tasty" or (buildDepError "tasty"))
           ];
+        buildable = true;
         };
       };
     }

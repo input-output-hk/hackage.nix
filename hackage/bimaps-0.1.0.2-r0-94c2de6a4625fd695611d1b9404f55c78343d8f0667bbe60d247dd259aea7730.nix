@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
           (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
           ];
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

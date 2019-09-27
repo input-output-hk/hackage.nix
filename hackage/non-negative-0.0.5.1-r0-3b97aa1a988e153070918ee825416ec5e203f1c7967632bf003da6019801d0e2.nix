@@ -58,7 +58,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ] ++ [
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
-      exes = { "test" = {}; };
+      exes = {
+        "test" = { buildable = if !flags.buildtests then false else true; };
+        };
       };
     }

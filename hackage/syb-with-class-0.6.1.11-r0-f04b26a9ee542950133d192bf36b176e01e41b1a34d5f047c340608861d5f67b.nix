@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       tests = {
         "syb-with-class-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."syb-with-class" or (buildDepError "syb-with-class"))
             ];
+          buildable = true;
           };
         };
       };

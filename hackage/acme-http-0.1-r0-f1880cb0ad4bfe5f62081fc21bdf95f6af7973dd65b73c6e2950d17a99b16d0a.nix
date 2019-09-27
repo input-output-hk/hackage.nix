@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."pretty" or (buildDepError "pretty"))
           ];
+        buildable = true;
         };
-      exes = { "pong" = {}; };
+      exes = { "pong" = { buildable = true; }; };
       };
     }

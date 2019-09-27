@@ -64,7 +64,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         ];
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       tests = {
         "fast-arithmetic-test" = {
           depends = [
@@ -72,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fast-arithmetic" or (buildDepError "fast-arithmetic"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -81,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fast-arithmetic" or (buildDepError "fast-arithmetic"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

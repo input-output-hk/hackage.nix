@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-tools-refactor" or (buildDepError "haskell-tools-refactor"))
           (hsPkgs."haskell-tools-prettyprint" or (buildDepError "haskell-tools-prettyprint"))
           ];
+        buildable = true;
         };
       exes = {
         "ht-debug" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haskell-tools-debug" or (buildDepError "haskell-tools-debug"))
             ];
+          buildable = true;
           };
         };
       };

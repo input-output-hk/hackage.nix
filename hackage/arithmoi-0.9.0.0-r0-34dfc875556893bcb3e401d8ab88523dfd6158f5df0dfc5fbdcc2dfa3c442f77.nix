@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semirings" or (buildDepError "semirings"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "sequence-model" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."hmatrix-gsl" or (buildDepError "hmatrix-gsl"))
             ];
+          buildable = false;
           };
         };
       tests = {
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -113,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

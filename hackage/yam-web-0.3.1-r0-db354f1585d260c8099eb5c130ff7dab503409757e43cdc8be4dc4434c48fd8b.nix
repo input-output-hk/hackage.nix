@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."yam-logger" or (buildDepError "yam-logger"))
           ];
+        buildable = true;
         };
       };
     }

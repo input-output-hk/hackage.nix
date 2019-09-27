@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
           (hsPkgs."winery" or (buildDepError "winery"))
           ];
+        buildable = true;
         };
       exes = {
         "liszt" = {
@@ -109,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
             (hsPkgs."winery" or (buildDepError "winery"))
             ];
+          buildable = true;
           };
         "lisztd" = {
           depends = [
@@ -137,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
             (hsPkgs."winery" or (buildDepError "winery"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -168,6 +171,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
             (hsPkgs."winery" or (buildDepError "winery"))
             ];
+          buildable = true;
           };
         };
       };

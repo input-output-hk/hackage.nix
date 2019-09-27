@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."reflection" or (buildDepError "reflection"))
           (hsPkgs."binary" or (buildDepError "binary"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."tagged" or (buildDepError "tagged"));
+        buildable = true;
         };
       };
     }

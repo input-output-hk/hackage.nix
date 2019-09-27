@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ddc-core" or (buildDepError "ddc-core"))
           (hsPkgs."ddc-core-tetra" or (buildDepError "ddc-core-tetra"))
           ];
+        buildable = true;
         };
       };
     }

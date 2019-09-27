@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           (hsPkgs."yesod-persistent" or (buildDepError "yesod-persistent"))
           ];
+        buildable = true;
         };
       exes = {
         "yesod-paginator-example" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod" or (buildDepError "yesod"))
             (hsPkgs."yesod-paginator" or (buildDepError "yesod-paginator"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "test" = {
           depends = [
@@ -93,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-paginator" or (buildDepError "yesod-paginator"))
             (hsPkgs."yesod-test" or (buildDepError "yesod-test"))
             ];
+          buildable = true;
           };
         };
       };

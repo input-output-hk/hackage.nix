@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."lens" or (buildDepError "lens"))
           ];
+        buildable = true;
         };
       tests = {
         "testsuite" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

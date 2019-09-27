@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagstream-conduit" or (buildDepError "tagstream-conduit"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "myanimelist-export" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         };
       };

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."network-info" or (buildDepError "network-info"))
           ];
+        buildable = true;
         };
       exes = {
         "transient" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."transient" or (buildDepError "transient"))
             ];
+          buildable = true;
           };
         "move" = {
           depends = [
@@ -101,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."transient" or (buildDepError "transient"))
             ];
+          buildable = true;
           };
         };
       };

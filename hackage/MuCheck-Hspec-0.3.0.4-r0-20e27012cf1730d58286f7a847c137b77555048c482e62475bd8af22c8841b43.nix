@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
           (hsPkgs."MuCheck" or (buildDepError "MuCheck"))
           ];
+        buildable = true;
         };
       exes = {
         "mucheck-hspec" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
             (hsPkgs."MuCheck" or (buildDepError "MuCheck"))
             ];
+          buildable = true;
           };
         };
       };

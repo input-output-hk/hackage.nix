@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text-show" or (buildDepError "text-show"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "differential" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-show" or (buildDepError "text-show"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

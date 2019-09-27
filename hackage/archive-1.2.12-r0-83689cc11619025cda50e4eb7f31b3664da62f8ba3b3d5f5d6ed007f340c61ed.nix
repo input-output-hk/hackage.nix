@@ -78,7 +78,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."progress" or (buildDepError "progress"))
           (hsPkgs."Extra" or (buildDepError "Extra"))
           ];
+        buildable = true;
         };
-      exes = { "archive" = {}; };
+      exes = { "archive" = { buildable = true; }; };
       };
     }

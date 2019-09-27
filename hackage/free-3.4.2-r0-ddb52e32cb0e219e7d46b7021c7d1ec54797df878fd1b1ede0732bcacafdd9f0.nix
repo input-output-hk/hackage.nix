@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           ];
+        buildable = true;
         };
       };
     }

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."witherable" or (buildDepError "witherable"))
           ];
+        buildable = true;
         };
       };
     }

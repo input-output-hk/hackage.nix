@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."STMonadTrans" or (buildDepError "STMonadTrans"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       };
     }

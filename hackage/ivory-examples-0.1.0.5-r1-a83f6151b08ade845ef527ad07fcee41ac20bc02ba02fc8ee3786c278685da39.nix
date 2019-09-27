@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ivory-stdlib" or (buildDepError "ivory-stdlib"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

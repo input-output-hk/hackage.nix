@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."sqlcipher" or (sysDepError "sqlcipher"))
             (pkgs."crypto" or (sysDepError "crypto"))
             ];
+        buildable = true;
         };
       tests = {
         "sqlite-tests" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

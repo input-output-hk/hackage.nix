@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
           ];
+        buildable = true;
         };
       tests = {
         "language-webidl-test" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."language-webidl" or (buildDepError "language-webidl"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         };
       };

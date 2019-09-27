@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
           (hsPkgs."classy-prelude-conduit" or (buildDepError "classy-prelude-conduit"))
           ];
+        buildable = true;
         };
       };
     }

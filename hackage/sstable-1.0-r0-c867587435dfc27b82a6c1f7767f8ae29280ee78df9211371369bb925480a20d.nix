@@ -65,10 +65,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iteratee" or (buildDepError "iteratee"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = true;
         };
       exes = {
         "sstable" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         "testSSTable" = {
           depends = (pkgs.lib).optionals (flags.tests) [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
+          buildable = if flags.tests then true else false;
           };
         };
       };

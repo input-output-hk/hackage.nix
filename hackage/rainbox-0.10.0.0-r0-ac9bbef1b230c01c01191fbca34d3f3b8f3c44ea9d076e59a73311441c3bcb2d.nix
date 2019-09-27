@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       exes = {
         "rainbox-mosaic" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."barecheck" or (buildDepError "barecheck"))
             (hsPkgs."ChasingBottoms" or (buildDepError "ChasingBottoms"))
             ];
+          buildable = if flags.mosaic then true else false;
           };
         "rainbox-grid" = {
           depends = (pkgs.lib).optionals (flags.grid) [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."barecheck" or (buildDepError "barecheck"))
             (hsPkgs."ChasingBottoms" or (buildDepError "ChasingBottoms"))
             ];
+          buildable = if flags.grid then true else false;
           };
         };
       tests = {
@@ -107,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."barecheck" or (buildDepError "barecheck"))
             (hsPkgs."ChasingBottoms" or (buildDepError "ChasingBottoms"))
             ];
+          buildable = true;
           };
         "rainbox-test" = {
           depends = [
@@ -121,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."barecheck" or (buildDepError "barecheck"))
             (hsPkgs."ChasingBottoms" or (buildDepError "ChasingBottoms"))
             ];
+          buildable = true;
           };
         };
       };

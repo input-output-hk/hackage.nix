@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."persistent" or (buildDepError "persistent"))
           (hsPkgs."ip" or (buildDepError "ip"))
           ];
+        buildable = true;
         };
       };
     }

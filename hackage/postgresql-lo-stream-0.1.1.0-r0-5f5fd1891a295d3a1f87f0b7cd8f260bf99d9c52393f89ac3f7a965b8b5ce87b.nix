@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
           ];
+        buildable = true;
         };
       };
     }

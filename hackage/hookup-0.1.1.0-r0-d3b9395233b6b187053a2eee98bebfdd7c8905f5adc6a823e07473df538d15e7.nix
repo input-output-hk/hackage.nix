@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HsOpenSSL-x509-system" or (buildDepError "HsOpenSSL-x509-system"))
           ];
         libs = [ (pkgs."ssl" or (sysDepError "ssl")) ];
+        buildable = true;
         };
       };
     }

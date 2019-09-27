@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
           (hsPkgs."hmatrix-gsl-stats" or (buildDepError "hmatrix-gsl-stats"))
           ];
+        buildable = true;
         };
       exes = {
         "harmtrace" = {
@@ -99,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
             (hsPkgs."hmatrix-gsl-stats" or (buildDepError "hmatrix-gsl-stats"))
             ];
+          buildable = true;
           };
         };
       };

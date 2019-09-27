@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "brok" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
             (hsPkgs."file-embed" or (buildDepError "file-embed"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-expected-failure" or (buildDepError "tasty-expected-failure"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       tests = {
         "test-threads" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         "test-sequence" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         "invalidate-test" = {
           depends = [
@@ -91,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         "invalidate-cache-test" = {
           depends = [
@@ -101,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         };
       };

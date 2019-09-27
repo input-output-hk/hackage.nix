@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "access-token-provider-test" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             ];
+          buildable = true;
           };
         };
       };

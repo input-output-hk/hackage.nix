@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unicode-transforms" or (buildDepError "unicode-transforms"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unicode-transforms" or (buildDepError "unicode-transforms"))
             ] ++ (pkgs.lib).optional (flags.bench-icu) (hsPkgs."text-icu" or (buildDepError "text-icu"));
+          buildable = true;
           };
         };
       };

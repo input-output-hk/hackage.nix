@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."Semigroup" or (buildDepError "Semigroup"))
           ];
+        buildable = true;
         };
       };
     }

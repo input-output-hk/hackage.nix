@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-Data" or (buildDepError "HGamer3D-Data"))
           (hsPkgs."HGamer3D-Ogre-Binding" or (buildDepError "HGamer3D-Ogre-Binding"))
           ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."keera-hails-reactivevalues" or (buildDepError "keera-hails-reactivevalues"))
           (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
           ];
+        buildable = true;
         };
       };
     }

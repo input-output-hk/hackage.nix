@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."stringsearch" or (buildDepError "stringsearch"))
           ];
+        buildable = true;
         };
       tests = {
         "test-parser" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             ];
+          buildable = true;
           };
         "test-encoder" = {
           depends = [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             ];
+          buildable = true;
           };
         };
       };

@@ -98,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             ];
+          buildable = true;
           };
         };
       };

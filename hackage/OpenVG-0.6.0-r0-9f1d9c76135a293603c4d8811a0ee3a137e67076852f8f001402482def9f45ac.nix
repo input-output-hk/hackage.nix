@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Tensor" or (buildDepError "Tensor"))
           (hsPkgs."OpenVGRaw" or (buildDepError "OpenVGRaw"))
           ];
+        buildable = true;
         };
       };
     }

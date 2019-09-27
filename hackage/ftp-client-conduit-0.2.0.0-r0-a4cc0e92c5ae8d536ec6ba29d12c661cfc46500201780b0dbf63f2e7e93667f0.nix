@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           (hsPkgs."connection" or (buildDepError "connection"))
           ];
+        buildable = true;
         };
       tests = {
         "ftp-conduit-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ftp-clientconduit" or (buildDepError "ftp-clientconduit"))
             ];
+          buildable = true;
           };
         };
       };

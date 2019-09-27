@@ -57,6 +57,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = [ (pkgs."pafe" or (sysDepError "pafe")) ];
+        buildable = true;
         };
       tests = {
         "test-read" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."iconv" or (buildDepError "iconv"))
             ];
+          buildable = true;
           };
         "test-read-fcf" = {
           depends = [
@@ -74,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."iconv" or (buildDepError "iconv"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."contiguous" or (buildDepError "contiguous"))
           (hsPkgs."semirings" or (buildDepError "semirings"))
           ];
+        buildable = true;
         };
       };
     }

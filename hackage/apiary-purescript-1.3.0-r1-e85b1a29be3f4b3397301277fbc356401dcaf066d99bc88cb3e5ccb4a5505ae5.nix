@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Glob" or (buildDepError "Glob"))
           (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
           ];
+        buildable = true;
         };
       };
     }

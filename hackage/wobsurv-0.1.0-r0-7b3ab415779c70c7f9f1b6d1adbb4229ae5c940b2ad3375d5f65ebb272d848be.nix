@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
           ];
+        buildable = true;
         };
       exes = {
         "wobsurv" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe" or (buildDepError "safe"))
             (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -119,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             ];
+          buildable = true;
           };
         };
       };

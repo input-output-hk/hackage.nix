@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
           (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         };
       };

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HAppS-IxSet" or (buildDepError "HAppS-IxSet"))
             (hsPkgs."HAppS-Util" or (buildDepError "HAppS-Util"))
             ];
+          buildable = true;
           };
         };
       };

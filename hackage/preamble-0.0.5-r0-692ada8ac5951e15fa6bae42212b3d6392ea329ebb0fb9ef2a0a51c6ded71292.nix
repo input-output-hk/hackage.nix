@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       exes = {
         "shake-preamble" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."basic-prelude" or (buildDepError "basic-prelude"))
             (hsPkgs."shake" or (buildDepError "shake"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
           (hsPkgs."modular-prelude" or (buildDepError "modular-prelude"))
           ];
+        buildable = true;
         };
       };
     }

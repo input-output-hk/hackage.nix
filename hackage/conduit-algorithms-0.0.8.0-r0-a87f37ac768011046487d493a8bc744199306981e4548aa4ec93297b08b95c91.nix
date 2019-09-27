@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."lzma-conduit" or (buildDepError "lzma-conduit"));
+        buildable = true;
         };
       tests = {
         "conduit-algorithms-test" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."lzma-conduit" or (buildDepError "lzma-conduit"));
+          buildable = true;
           };
         };
       };

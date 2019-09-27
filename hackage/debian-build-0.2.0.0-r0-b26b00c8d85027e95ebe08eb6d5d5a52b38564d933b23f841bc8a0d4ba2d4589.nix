@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ];
+        buildable = true;
         };
       exes = {
         "odebuild" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."debian-build" or (buildDepError "debian-build"))
             ];
+          buildable = true;
           };
         };
       };

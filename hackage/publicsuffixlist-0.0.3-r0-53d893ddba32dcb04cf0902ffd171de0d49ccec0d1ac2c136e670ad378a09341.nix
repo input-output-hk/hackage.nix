@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."cereal" or (buildDepError "cereal"))
           ];
+        buildable = true;
         };
       tests = {
         "test-public-suffix-list" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

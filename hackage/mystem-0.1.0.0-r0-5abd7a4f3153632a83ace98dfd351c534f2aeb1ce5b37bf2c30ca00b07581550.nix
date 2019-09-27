@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
         "mystem-test-exe" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mystem" or (buildDepError "mystem"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

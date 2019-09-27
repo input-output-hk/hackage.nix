@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hack-handler-evhttp" or (buildDepError "hack-handler-evhttp"))
             (hsPkgs."hack" or (buildDepError "hack"))
             ];
+          buildable = true;
           };
         };
       };

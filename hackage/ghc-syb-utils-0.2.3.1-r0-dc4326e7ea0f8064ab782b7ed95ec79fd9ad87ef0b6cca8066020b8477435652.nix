@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."ghc-syb" or (buildDepError "ghc-syb"))
             ]);
+        buildable = true;
         };
       tests = {
         "regression-tests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
             (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
             ];
+          buildable = true;
           };
         };
       };

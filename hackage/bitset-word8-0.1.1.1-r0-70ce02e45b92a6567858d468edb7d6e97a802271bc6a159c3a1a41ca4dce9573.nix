@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
           ];
+        buildable = true;
         };
       tests = {
         "bitset-word8-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."typed-process" or (buildDepError "typed-process"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         };
       };

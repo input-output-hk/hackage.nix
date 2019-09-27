@@ -63,9 +63,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       exes = {
-        "hmark" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "hmark" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         };
       };
     }

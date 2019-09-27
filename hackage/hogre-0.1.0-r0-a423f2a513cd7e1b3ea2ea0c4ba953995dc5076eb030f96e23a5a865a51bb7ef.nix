@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = [ (pkgs."OgreMain" or (sysDepError "OgreMain")) ];
         pkgconfig = [ (pkgconfPkgs."OGRE" or (pkgConfDepError "OGRE")) ];
+        buildable = true;
         };
       };
     }

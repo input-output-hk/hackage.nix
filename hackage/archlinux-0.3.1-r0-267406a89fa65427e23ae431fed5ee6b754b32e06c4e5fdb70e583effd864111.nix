@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           (hsPkgs."csv" or (buildDepError "csv"))
           ];
+        buildable = true;
         };
       };
     }

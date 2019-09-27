@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           ]) ++ (pkgs.lib).optional (compiler.isGhc && true && flags.integer-gmp) (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"));
         libs = (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "6.8")) ((pkgs.lib).optional (system.isWindows) (pkgs."advapi32" or (sysDepError "advapi32")));
+        buildable = true;
         };
       exes = {
         "hashable-examples" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hashable" or (buildDepError "hashable"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."text" or (buildDepError "text"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = true;
           };
         };
       benchmarks = {
@@ -108,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             ]) ++ (pkgs.lib).optional (compiler.isGhc && true && flags.integer-gmp) (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"));
           libs = (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "6.8")) ((pkgs.lib).optional (system.isWindows) (pkgs."advapi32" or (sysDepError "advapi32")));
+          buildable = true;
           };
         };
       };

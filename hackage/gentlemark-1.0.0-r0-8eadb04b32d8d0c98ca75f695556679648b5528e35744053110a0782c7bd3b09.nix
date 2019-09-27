@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ];
+        buildable = true;
         };
       tests = {
         "hunit" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         };
       };

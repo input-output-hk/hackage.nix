@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tar" or (buildDepError "tar"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "cabal-nirvana-generate" = {
           depends = [
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."packdeps" or (buildDepError "packdeps"))
             ];
+          buildable = if flags.generate then true else false;
           };
         };
       };

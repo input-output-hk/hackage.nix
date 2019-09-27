@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       tests = {
         "specs" = {
@@ -69,12 +70,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         "examples" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         };
       };

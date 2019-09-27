@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             ];
+          buildable = true;
           };
         };
       };

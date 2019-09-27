@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "hash-perfectly-ints-demo" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "hash-perfectly-strings-demo" = {
           depends = [
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."hashable" or (buildDepError "hashable"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -104,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

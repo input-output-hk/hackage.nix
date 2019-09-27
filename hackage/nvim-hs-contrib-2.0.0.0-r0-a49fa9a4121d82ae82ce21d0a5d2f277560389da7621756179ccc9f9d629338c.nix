@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."yaml" or (buildDepError "yaml"))
           ];
+        buildable = true;
         };
       tests = {
         "hspec" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-discover" or (buildDepError "hspec-discover"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

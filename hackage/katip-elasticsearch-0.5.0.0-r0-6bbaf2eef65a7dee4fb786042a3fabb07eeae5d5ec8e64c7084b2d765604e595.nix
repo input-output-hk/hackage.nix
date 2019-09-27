@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."tagged" or (buildDepError "tagged"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -121,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
+          buildable = true;
           };
         };
       };

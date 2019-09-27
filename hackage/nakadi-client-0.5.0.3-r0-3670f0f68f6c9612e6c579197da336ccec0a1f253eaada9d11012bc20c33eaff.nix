@@ -90,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uuid" or (buildDepError "uuid"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "nakadi-client-test-suite" = {
@@ -144,6 +145,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = true;
           };
         };
       };

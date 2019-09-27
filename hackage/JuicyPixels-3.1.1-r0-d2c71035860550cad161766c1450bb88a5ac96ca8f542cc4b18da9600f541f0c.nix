@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ] ++ (pkgs.lib).optional (flags.mmap) (hsPkgs."mmap" or (buildDepError "mmap"));
+        buildable = true;
         };
       };
     }

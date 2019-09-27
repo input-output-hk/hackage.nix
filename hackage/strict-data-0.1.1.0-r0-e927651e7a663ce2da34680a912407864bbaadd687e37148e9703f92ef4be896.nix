@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
       };
     }

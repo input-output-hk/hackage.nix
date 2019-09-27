@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
           (hsPkgs."SHA" or (buildDepError "SHA"))
           ];
+        buildable = true;
         };
       tests = {
         "test-RSA" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
             (hsPkgs."SHA" or (buildDepError "SHA"))
             ];
+          buildable = true;
           };
         };
       };

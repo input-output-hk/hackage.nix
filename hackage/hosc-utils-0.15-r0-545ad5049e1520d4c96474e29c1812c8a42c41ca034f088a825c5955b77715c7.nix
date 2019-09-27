@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = true;
           };
         "hosc-json-cgi" = {
           depends = [
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."www-minus" or (buildDepError "www-minus"))
             ];
+          buildable = true;
           };
         "hosc-json-console" = {
           depends = [
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = true;
           };
         "hosc-json-nrt" = {
           depends = [
@@ -106,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = true;
           };
         "hosc-json-ws" = {
           depends = [
@@ -120,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."websockets" or (buildDepError "websockets"))
             ];
+          buildable = true;
           };
         };
       };

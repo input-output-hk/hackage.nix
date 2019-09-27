@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ibus-hs" or (buildDepError "ibus-hs"))
           (hsPkgs."dbus" or (buildDepError "dbus"))
           ];
+        buildable = true;
         };
       exes = {
         "monky" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monky" or (buildDepError "monky"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       };

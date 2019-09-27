@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.network-uri
           then [ (hsPkgs."network-uri" or (buildDepError "network-uri")) ]
           else [ (hsPkgs."network" or (buildDepError "network")) ]);
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

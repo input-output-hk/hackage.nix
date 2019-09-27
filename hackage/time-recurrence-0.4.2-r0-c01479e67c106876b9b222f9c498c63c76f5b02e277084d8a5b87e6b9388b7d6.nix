@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-ordlist" or (buildDepError "data-ordlist"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       tests = {
         "test-time-recurrence" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ];
+          buildable = true;
           };
         };
       };

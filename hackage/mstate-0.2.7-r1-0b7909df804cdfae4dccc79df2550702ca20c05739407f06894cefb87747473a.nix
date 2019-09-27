@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."monad-peel" or (buildDepError "monad-peel"))
           ];
+        buildable = true;
         };
       };
     }

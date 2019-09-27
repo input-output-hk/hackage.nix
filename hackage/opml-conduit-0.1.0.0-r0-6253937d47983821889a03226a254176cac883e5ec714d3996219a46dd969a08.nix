@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (buildDepError "xml-types"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
             ];
+          buildable = true;
           };
         };
       };

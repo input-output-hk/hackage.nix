@@ -64,10 +64,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."json" or (buildDepError "json"))
           ];
+        buildable = true;
         };
       exes = {
         "applepushtest" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

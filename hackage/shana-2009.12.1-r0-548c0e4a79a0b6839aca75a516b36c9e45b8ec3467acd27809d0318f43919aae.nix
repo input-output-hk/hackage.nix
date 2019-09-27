@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
           ];
+        buildable = true;
         };
       exes = {
         "coordinates" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."goal-core" or (buildDepError "goal-core"))
             (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
             ];
+          buildable = true;
           };
         "gradient-descent" = {
           depends = [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."goal-core" or (buildDepError "goal-core"))
             (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             (hsPkgs."hs-ffmpeg" or (buildDepError "hs-ffmpeg"))
             ];
+          buildable = true;
           };
         "tutorial02" = {
           depends = [
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL" or (buildDepError "SDL"))
             (hsPkgs."hs-ffmpeg" or (buildDepError "hs-ffmpeg"))
             ];
+          buildable = true;
           };
         "tutorial03" = {
           depends = [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

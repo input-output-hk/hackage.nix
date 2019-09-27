@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."ivory" or (buildDepError "ivory"))
           ];
+        buildable = true;
         };
       };
     }

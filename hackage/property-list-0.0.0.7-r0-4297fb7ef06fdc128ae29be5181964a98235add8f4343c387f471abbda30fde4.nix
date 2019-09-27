@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ]
           else [ (hsPkgs."HaXml" or (buildDepError "HaXml")) ]);
+        buildable = true;
         };
       };
     }

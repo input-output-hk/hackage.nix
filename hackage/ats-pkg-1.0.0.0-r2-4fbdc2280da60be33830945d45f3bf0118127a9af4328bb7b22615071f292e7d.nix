@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shake-ext" or (buildDepError "shake-ext"))
           (hsPkgs."composition-prelude" or (buildDepError "composition-prelude"))
           ];
+        buildable = true;
         };
       exes = {
         "atspkg" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ats-pkg" or (buildDepError "ats-pkg"))
             ];
+          buildable = true;
           };
         };
       };

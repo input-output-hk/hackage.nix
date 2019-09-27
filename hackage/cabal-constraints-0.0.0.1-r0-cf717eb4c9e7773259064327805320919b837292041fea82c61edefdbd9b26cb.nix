@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       };

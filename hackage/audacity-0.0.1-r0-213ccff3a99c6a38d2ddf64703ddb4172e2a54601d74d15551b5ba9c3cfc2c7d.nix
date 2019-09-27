@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "sox-concat" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "audacity-concat" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "audacity-combine" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -110,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

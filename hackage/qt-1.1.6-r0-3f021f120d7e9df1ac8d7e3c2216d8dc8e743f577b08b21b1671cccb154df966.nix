@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."qtc_tools" or (sysDepError "qtc_tools"))
           (pkgs."qtc_script" or (sysDepError "qtc_script"))
           ];
+        buildable = true;
         };
       };
     }

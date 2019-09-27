@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
           ];
+        buildable = true;
         };
       exes = {
         "example-production" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
             (hsPkgs."yesod-static-angular" or (buildDepError "yesod-static-angular"))
             ];
+          buildable = if !flags.example then false else true;
           };
         "example-dev" = {
           depends = [
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
             (hsPkgs."yesod-static-angular" or (buildDepError "yesod-static-angular"))
             ];
+          buildable = if !flags.example then false else true;
           };
         };
       tests = {
@@ -112,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
             (hsPkgs."yesod-static-angular" or (buildDepError "yesod-static-angular"))
             ];
+          buildable = true;
           };
         };
       };

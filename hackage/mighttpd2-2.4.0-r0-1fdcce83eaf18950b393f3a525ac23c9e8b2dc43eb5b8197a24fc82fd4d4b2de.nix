@@ -78,9 +78,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
             (hsPkgs."http-enumerator" or (buildDepError "http-enumerator"))
             ];
+          buildable = true;
           };
         "mkindex" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

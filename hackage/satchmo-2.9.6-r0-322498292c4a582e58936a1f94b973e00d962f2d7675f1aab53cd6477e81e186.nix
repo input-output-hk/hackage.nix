@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."minisat" or (buildDepError "minisat"))
           ];
+        buildable = true;
         };
       tests = {
         "Ramsey" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."satchmo" or (buildDepError "satchmo"))
             ];
+          buildable = true;
           };
         };
       };

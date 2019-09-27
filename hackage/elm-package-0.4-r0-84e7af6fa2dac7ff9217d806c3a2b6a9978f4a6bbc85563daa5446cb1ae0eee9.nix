@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
           ];
+        buildable = true;
         };
       exes = {
         "elm-package" = {
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             ];
+          buildable = true;
           };
         };
       };

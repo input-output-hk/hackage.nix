@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
             ];
+          buildable = true;
           };
         };
       };

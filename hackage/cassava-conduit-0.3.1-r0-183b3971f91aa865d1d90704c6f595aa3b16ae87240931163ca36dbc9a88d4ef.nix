@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "quickcheck" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."cassava-conduit" or (buildDepError "cassava-conduit"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cassava-conduit" or (buildDepError "cassava-conduit"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

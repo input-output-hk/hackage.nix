@@ -88,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."composition" or (buildDepError "composition"))
               (hsPkgs."HTTP" or (buildDepError "HTTP"))
               ];
+          buildable = true;
           };
         };
       };

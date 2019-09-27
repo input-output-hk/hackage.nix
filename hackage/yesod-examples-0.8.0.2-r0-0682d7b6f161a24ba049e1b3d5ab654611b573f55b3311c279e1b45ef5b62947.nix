@@ -60,14 +60,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."yesod" or (buildDepError "yesod"))
             ];
+          buildable = true;
           };
         "ajax" = {
           depends = [
             (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
             ];
+          buildable = true;
           };
         "file-echo" = {
           depends = [ (hsPkgs."text" or (buildDepError "text")) ];
+          buildable = true;
           };
         "pretty-yaml" = {
           depends = [
@@ -75,25 +78,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-object" or (buildDepError "data-object"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
-        "i18n" = {};
-        "session" = {};
+        "i18n" = { buildable = true; };
+        "session" = { buildable = true; };
         "widgets" = {
           depends = [ (hsPkgs."yesod-form" or (buildDepError "yesod-form")) ];
+          buildable = true;
           };
-        "generalized-hamlet" = {};
-        "form" = {};
+        "generalized-hamlet" = { buildable = true; };
+        "form" = { buildable = true; };
         "persistent-synopsis" = {
           depends = [
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
             (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
             ];
+          buildable = true;
           };
         "hamlet-synopsis" = {
           depends = [ (hsPkgs."hamlet" or (buildDepError "hamlet")) ];
+          buildable = true;
           };
-        "chat" = { depends = [ (hsPkgs."stm" or (buildDepError "stm")) ]; };
+        "chat" = {
+          depends = [ (hsPkgs."stm" or (buildDepError "stm")) ];
+          buildable = true;
+          };
         };
       };
     }

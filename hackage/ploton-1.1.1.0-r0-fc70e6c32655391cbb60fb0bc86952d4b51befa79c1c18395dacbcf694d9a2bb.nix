@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "ploton" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ploton" or (buildDepError "ploton"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."ploton" or (buildDepError "ploton"))
             ];
+          buildable = true;
           };
         };
       };

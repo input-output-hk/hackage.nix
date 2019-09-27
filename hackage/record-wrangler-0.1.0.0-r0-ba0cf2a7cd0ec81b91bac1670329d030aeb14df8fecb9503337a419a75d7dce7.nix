@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       tests = {
         "record-wrangler-test" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."record-wrangler" or (buildDepError "record-wrangler"))
             ];
+          buildable = true;
           };
         };
       };

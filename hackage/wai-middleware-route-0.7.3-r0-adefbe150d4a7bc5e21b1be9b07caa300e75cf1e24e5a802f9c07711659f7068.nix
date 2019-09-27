@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."yesod-routes" or (buildDepError "yesod-routes"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-test" or (buildDepError "wai-test"))
             (hsPkgs."wai-middleware-route" or (buildDepError "wai-middleware-route"))
             ];
+          buildable = true;
           };
         };
       };

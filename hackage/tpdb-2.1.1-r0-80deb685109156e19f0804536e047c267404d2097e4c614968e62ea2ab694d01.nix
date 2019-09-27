@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           ];
+        buildable = true;
         };
       exes = {
         "plain2xtc" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -87,12 +89,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             ];
+          buildable = true;
           };
         "XML_relative" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             ];
+          buildable = true;
           };
         "TRS" = {
           depends = [
@@ -100,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "TRS_02" = {
           depends = [
@@ -107,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "SRS" = {
           depends = [
@@ -114,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "Speed" = {
           depends = [
@@ -122,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = false;
           };
         "Attributes" = {
           depends = [
@@ -130,42 +138,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = true;
           };
         "XML-Theory" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             ];
+          buildable = true;
           };
         "CPF-AC" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             ];
+          buildable = true;
           };
         "Parse-AC" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             ];
+          buildable = true;
           };
         "read-cpf" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             ];
+          buildable = true;
           };
         "read-complex" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             ];
+          buildable = true;
           };
         "read-large" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             ];
+          buildable = true;
           };
         };
       };

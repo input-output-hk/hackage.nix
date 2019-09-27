@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ad" or (buildDepError "ad"))
           (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
           ];
+        buildable = true;
         };
       tests = {
         "test-sparse-tensor" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."sparse-tensor" or (buildDepError "sparse-tensor"))
             ];
+          buildable = true;
           };
         };
       };

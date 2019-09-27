@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."linear" or (buildDepError "linear"))
           (hsPkgs."newtype" or (buildDepError "newtype"))
           ];
+        buildable = true;
         };
       tests = {
         "the-tests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
+          buildable = true;
           };
         };
       };

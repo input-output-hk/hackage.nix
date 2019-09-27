@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           ];
         libs = [ (pkgs."git2" or (sysDepError "git2")) ];
+        buildable = true;
         };
       tests = {
         "smoke" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = true;
           };
         };
       };

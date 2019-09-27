@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
           (hsPkgs."stm" or (buildDepError "stm"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.4.2") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+        buildable = true;
         };
       tests = {
         "TestCHInMemory" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-inmemory" or (buildDepError "network-transport-inmemory"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         "TestCHInTCP" = {
           depends = (pkgs.lib).optionals (flags.tcp) [
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = if flags.tcp then true else false;
           };
         "TestClosure" = {
           depends = [
@@ -103,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-inmemory" or (buildDepError "network-transport-inmemory"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         "TestStats" = {
           depends = [
@@ -113,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-inmemory" or (buildDepError "network-transport-inmemory"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         "TestMx" = {
           depends = [
@@ -123,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-inmemory" or (buildDepError "network-transport-inmemory"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         "TestTracing" = {
           depends = [
@@ -133,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-inmemory" or (buildDepError "network-transport-inmemory"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         };
       };

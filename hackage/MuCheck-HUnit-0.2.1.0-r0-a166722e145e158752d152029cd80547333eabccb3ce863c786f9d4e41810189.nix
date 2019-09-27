@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MissingH" or (buildDepError "MissingH"))
           (hsPkgs."MuCheck" or (buildDepError "MuCheck"))
           ];
+        buildable = true;
         };
       exes = {
         "mucheck-hunit" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MissingH" or (buildDepError "MissingH"))
             (hsPkgs."MuCheck" or (buildDepError "MuCheck"))
             ];
+          buildable = true;
           };
         };
       };

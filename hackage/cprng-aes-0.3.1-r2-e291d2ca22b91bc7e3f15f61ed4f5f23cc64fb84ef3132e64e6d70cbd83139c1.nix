@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."cryptocipher" or (buildDepError "cryptocipher"))
             ])) ++ (pkgs.lib).optional (flags.cereal) (hsPkgs."cereal" or (buildDepError "cereal"))) ++ (pkgs.lib).optional (flags.cryptoapi) (hsPkgs."crypto-api" or (buildDepError "crypto-api"));
+        buildable = true;
         };
       benchmarks = {
         "bench-cprng-aes" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

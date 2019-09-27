@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."scientific" or (buildDepError "scientific"))
             ];
+        buildable = true;
         };
       tests = {
         "unit" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

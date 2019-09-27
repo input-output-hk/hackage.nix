@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
         libs = [ (pkgs."mosquitto" or (sysDepError "mosquitto")) ];
+        buildable = true;
         };
       exes = {
         "c-mosquitto" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."c-mosquitto" or (buildDepError "c-mosquitto"))
             (hsPkgs."options" or (buildDepError "options"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."c-mosquitto" or (buildDepError "c-mosquitto"))
             ];
+          buildable = true;
           };
         };
       };

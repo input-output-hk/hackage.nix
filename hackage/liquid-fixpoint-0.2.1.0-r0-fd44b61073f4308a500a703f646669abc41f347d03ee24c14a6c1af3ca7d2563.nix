@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."text-format" or (buildDepError "text-format"))
           ];
+        buildable = true;
         };
       exes = {
         "fixpoint.native" = {
@@ -108,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-format" or (buildDepError "text-format"))
             (hsPkgs."liquid-fixpoint" or (buildDepError "liquid-fixpoint"))
             ];
+          buildable = true;
           };
         "fixpoint" = {
           depends = [
@@ -133,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-format" or (buildDepError "text-format"))
             (hsPkgs."liquid-fixpoint" or (buildDepError "liquid-fixpoint"))
             ];
+          buildable = true;
           };
         };
       };

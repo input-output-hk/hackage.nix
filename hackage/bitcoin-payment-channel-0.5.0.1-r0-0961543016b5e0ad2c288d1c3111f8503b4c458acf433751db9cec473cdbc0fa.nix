@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
           (hsPkgs."tagged" or (buildDepError "tagged"))
           ];
+        buildable = true;
         };
       tests = {
         "test-bitcoin-payment-channel" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."bitcoin-payment-channel" or (buildDepError "bitcoin-payment-channel"))
             ];
+          buildable = true;
           };
         };
       };

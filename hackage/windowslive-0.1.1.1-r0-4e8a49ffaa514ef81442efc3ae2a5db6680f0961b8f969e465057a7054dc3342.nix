@@ -68,7 +68,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           (hsPkgs."urlencoded" or (buildDepError "urlencoded"))
           ];
+        buildable = true;
         };
-      exes = { "windowslive-library-test" = {}; };
+      exes = { "windowslive-library-test" = { buildable = true; }; };
       };
     }

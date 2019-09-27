@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."strict" or (buildDepError "strict"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = if flags.no-lib || flags.test then false else true;
         };
       exes = {
         "nsort" = {
@@ -72,6 +73,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."strict" or (buildDepError "strict"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.test || !flags.driver && !flags.no-lib
+            then false
+            else true;
           };
         "test" = {
           depends = [
@@ -79,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."strict" or (buildDepError "strict"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if !flags.test then false else true;
           };
         };
       };

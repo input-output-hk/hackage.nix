@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "semi-direct-product" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."monoid-extras" or (buildDepError "monoid-extras"))
             ];
+          buildable = true;
           };
         };
       };

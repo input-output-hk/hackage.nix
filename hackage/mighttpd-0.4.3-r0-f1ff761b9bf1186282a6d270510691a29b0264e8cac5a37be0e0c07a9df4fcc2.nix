@@ -71,9 +71,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = true;
           };
         "mkindex" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

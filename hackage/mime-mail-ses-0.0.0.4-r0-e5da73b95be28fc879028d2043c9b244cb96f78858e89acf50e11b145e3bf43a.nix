@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-enumerator" or (buildDepError "http-enumerator"))
           (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
           ];
+        buildable = true;
         };
       };
     }

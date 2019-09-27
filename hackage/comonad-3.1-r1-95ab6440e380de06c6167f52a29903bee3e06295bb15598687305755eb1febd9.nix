@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."tagged" or (buildDepError "tagged"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if !flags.test-doctests then false else true;
           };
         };
       };

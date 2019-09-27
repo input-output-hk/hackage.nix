@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           ];
+        buildable = true;
         };
       tests = {
         "specs" = {
@@ -85,12 +86,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = if flags.develop then true else false;
           };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -110,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = if flags.develop then true else false;
           };
         };
       };

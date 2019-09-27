@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
           (hsPkgs."sdl2" or (buildDepError "sdl2"))
           ];
+        buildable = true;
         };
       exes = {
         "reflex-sdl2-exe" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."reflex-sdl2" or (buildDepError "reflex-sdl2"))
             ];
+          buildable = true;
           };
         };
       };

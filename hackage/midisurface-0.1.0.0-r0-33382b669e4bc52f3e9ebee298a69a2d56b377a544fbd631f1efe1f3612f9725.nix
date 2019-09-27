@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gtk" or (buildDepError "gtk"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

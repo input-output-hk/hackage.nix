@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rocksdb-haskell" or (buildDepError "rocksdb-haskell"))
           (hsPkgs."unliftio" or (buildDepError "unliftio"))
           ];
+        buildable = true;
         };
       tests = {
         "rocksdb-query-test" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rocksdb-query" or (buildDepError "rocksdb-query"))
             (hsPkgs."unliftio" or (buildDepError "unliftio"))
             ];
+          buildable = true;
           };
         };
       };

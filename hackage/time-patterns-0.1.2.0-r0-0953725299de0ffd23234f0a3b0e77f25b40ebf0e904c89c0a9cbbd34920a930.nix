@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."thyme" or (buildDepError "thyme"))
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           ];
+        buildable = true;
         };
       };
     }

@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."vaultaire-common" or (buildDepError "vaultaire-common"))
           ];
+        buildable = true;
         };
       exes = {
         "marquised" = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vaultaire-common" or (buildDepError "vaultaire-common"))
             (hsPkgs."marquise" or (buildDepError "marquise"))
             ];
+          buildable = true;
           };
         "data" = {
           depends = [
@@ -124,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vaultaire-common" or (buildDepError "vaultaire-common"))
             (hsPkgs."marquise" or (buildDepError "marquise"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -134,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."marquise" or (buildDepError "marquise"))
             ];
+          buildable = true;
           };
         };
       };

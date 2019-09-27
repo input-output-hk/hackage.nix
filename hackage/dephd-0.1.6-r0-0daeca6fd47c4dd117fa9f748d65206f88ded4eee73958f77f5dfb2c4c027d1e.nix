@@ -64,12 +64,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "fakequal" = {
           depends = [
             (hsPkgs."bio" or (buildDepError "bio"))
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             ];
+          buildable = true;
           };
         };
       };

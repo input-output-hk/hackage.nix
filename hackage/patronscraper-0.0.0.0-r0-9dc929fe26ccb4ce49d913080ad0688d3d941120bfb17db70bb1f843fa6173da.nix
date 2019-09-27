@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hxt" or (buildDepError "hxt"))
             (hsPkgs."HandsomeSoup" or (buildDepError "HandsomeSoup"))
             ];
+          buildable = true;
           };
         };
       };

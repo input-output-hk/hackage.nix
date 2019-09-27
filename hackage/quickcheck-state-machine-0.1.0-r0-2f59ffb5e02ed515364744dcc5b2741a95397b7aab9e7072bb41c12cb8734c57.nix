@@ -65,10 +65,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."stm" or (buildDepError "stm"))
           ];
+        buildable = true;
         };
       tests = {
         "quickcheck-state-machine-test" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           then [ (pkgs."glut32" or (sysDepError "glut32")) ]
           else (pkgs.lib).optional (!system.isOsx) (pkgs."glut" or (sysDepError "glut"));
         frameworks = (pkgs.lib).optionals (!(system.isWindows && flags.usenativewindowslibraries)) ((pkgs.lib).optional (system.isOsx) (pkgs."GLUT" or (sysDepError "GLUT")));
+        buildable = true;
         };
       };
     }

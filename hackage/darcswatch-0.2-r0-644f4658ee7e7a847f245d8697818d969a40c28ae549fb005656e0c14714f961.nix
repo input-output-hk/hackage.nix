@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."concurrentoutput" or (buildDepError "concurrentoutput"))
             ];
+          buildable = true;
           };
         };
       };

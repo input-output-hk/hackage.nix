@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
           (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
           ];
+        buildable = true;
         };
       exes = {
         "vhd" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
             (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
             ];
+          buildable = if flags.executable then true else false;
           };
         };
       tests = {
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vhd" or (buildDepError "vhd"))
             (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
             ];
+          buildable = true;
           };
         };
       };

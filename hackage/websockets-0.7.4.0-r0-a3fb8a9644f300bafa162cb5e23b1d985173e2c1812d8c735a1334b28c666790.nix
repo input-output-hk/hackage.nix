@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
           (hsPkgs."entropy" or (buildDepError "entropy"))
           ];
+        buildable = true;
         };
       tests = {
         "websockets-tests" = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
             (hsPkgs."entropy" or (buildDepError "entropy"))
             ];
+          buildable = true;
           };
         };
       };

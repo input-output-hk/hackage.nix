@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       tests = {
         "lookup-tables-test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         };
       };

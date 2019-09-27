@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       tests = {
         "site-gen" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lucid-extras" or (buildDepError "lucid-extras"))
             (hsPkgs."lucid" or (buildDepError "lucid"))
             ];
+          buildable = true;
           };
         };
       };

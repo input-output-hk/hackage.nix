@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           ];
+        buildable = true;
         };
       };
     }

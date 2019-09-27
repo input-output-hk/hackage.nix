@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."curl" or (buildDepError "curl"))
           (hsPkgs."json" or (buildDepError "json"))
           ];
+        buildable = true;
         };
       exes = {
         "hlongurl" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-base" or (buildDepError "regex-base"))
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             ];
+          buildable = true;
           };
         };
       };

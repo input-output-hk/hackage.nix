@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [
           (hsPkgs."base" or (buildDepError "base"))
           ] ++ (pkgs.lib).optional (!(compiler.isNhc98 && true)) (hsPkgs."syb" or (buildDepError "syb"));
+        buildable = true;
         };
       };
     }

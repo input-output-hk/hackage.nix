@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."webkit" or (buildDepError "webkit"))
             (hsPkgs."webkit-javascriptcore" or (buildDepError "webkit-javascriptcore"))
             ]);
+        buildable = true;
         };
       tests = {
         "test-tool" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."webkit" or (buildDepError "webkit"))
               (hsPkgs."webkit-javascriptcore" or (buildDepError "webkit-javascriptcore"))
               ]));
+          buildable = if flags.jsffi then false else true;
           };
         };
       };

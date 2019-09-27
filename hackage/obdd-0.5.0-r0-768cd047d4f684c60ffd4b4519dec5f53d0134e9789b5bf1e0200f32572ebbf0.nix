@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       tests = {
         "obdd-placement" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."obdd" or (buildDepError "obdd"))
             ];
+          buildable = true;
           };
         "obdd-queens" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."obdd" or (buildDepError "obdd"))
             ];
+          buildable = true;
           };
         "obdd-queens2" = {
           depends = [
@@ -85,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."obdd" or (buildDepError "obdd"))
             ];
+          buildable = true;
           };
         "obdd-weight" = {
           depends = [
@@ -92,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."obdd" or (buildDepError "obdd"))
             ];
+          buildable = true;
           };
         "obdd-sort" = {
           depends = [
@@ -99,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."obdd" or (buildDepError "obdd"))
             ];
+          buildable = true;
           };
         };
       };

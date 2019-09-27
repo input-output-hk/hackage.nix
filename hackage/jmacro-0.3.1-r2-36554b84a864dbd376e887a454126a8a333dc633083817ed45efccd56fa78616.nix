@@ -69,10 +69,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
           (hsPkgs."json" or (buildDepError "json"))
           ];
+        buildable = true;
         };
       exes = {
         "jmacro" = {
           depends = [ (hsPkgs."parseargs" or (buildDepError "parseargs")) ];
+          buildable = true;
           };
         };
       };

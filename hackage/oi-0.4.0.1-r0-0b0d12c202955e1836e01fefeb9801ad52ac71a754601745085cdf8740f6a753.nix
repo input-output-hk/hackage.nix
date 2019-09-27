@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = true;
         };
       exes = {
         "oi-cats" = {
@@ -69,30 +70,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."oi" or (buildDepError "oi"))
             ];
+          buildable = true;
           };
         "oi-cats2" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."oi" or (buildDepError "oi"))
             ];
+          buildable = true;
           };
         "oi-echoc" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."oi" or (buildDepError "oi"))
             ];
+          buildable = true;
           };
         "oi-echo" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."oi" or (buildDepError "oi"))
             ];
+          buildable = true;
           };
         "oi-morec" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."oi" or (buildDepError "oi"))
             ];
+          buildable = true;
           };
         "oi-recdircs" = {
           depends = [
@@ -101,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."oi" or (buildDepError "oi"))
             ];
+          buildable = true;
           };
         "oi-talk" = {
           depends = [
@@ -108,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."oi" or (buildDepError "oi"))
             ];
+          buildable = true;
           };
         };
       };

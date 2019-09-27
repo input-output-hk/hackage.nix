@@ -69,6 +69,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mcl" or (buildDepError "mcl"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "8.0"
+          then false
+          else true;
         };
       exes = {
         "pvss-exe" = {
@@ -81,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pvss" or (buildDepError "pvss"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -92,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             ];
+          buildable = true;
           };
         };
       };

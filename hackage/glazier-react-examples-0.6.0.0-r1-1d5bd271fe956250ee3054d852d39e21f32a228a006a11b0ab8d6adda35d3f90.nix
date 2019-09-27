@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
             (hsPkgs."ghcjs-prim" or (buildDepError "ghcjs-prim"))
             ]) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."ghcjs-base-stub" or (buildDepError "ghcjs-base-stub"));
+          buildable = true;
           };
         };
       };

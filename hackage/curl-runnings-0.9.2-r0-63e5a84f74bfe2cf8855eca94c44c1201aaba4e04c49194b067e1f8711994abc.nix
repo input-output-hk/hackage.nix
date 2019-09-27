@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."yaml" or (buildDepError "yaml"))
           ];
+        buildable = true;
         };
       exes = {
         "curl-runnings" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
             ];
+          buildable = true;
           };
         };
       };

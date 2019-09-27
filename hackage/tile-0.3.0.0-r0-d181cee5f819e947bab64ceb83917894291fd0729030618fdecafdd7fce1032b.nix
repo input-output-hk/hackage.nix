@@ -54,7 +54,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       tests = {
         "tile-test" = {
           depends = [
@@ -62,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tile" or (buildDepError "tile"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         };
       };

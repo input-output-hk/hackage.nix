@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."motor" or (buildDepError "motor"))
           (hsPkgs."motor-reflection" or (buildDepError "motor-reflection"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."motor-reflection" or (buildDepError "motor-reflection"))
             (hsPkgs."motor-diagrams" or (buildDepError "motor-diagrams"))
             ];
+          buildable = true;
           };
         };
       };

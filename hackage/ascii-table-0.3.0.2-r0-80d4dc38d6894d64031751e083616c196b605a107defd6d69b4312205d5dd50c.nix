@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."wl-pprint-extras" or (buildDepError "wl-pprint-extras"))
           ];
+        buildable = true;
         };
       };
     }

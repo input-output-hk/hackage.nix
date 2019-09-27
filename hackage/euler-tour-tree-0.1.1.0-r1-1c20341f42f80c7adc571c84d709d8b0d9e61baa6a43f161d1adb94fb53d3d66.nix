@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."Unique" or (buildDepError "Unique"))
           ];
+        buildable = true;
         };
       tests = {
         "unit-tests" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         "property-tests" = {
           depends = [
@@ -86,12 +88,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             ];
+          buildable = true;
           };
         "hlint-tests" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = if flags.enable-hlint-test then true else false;
           };
         };
       };

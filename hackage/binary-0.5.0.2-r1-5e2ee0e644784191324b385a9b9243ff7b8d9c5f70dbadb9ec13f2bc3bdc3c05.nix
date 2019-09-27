@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [ (hsPkgs."base" or (buildDepError "base")) ])) ++ [
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       };
     }

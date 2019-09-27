@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-abort" or (buildDepError "transformers-abort"))
           (hsPkgs."monad-finally" or (buildDepError "monad-finally"))
           ];
+        buildable = true;
         };
       };
     }

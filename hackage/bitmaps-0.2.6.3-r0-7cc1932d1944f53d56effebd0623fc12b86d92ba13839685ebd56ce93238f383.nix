@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagged" or (buildDepError "tagged"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       };
     }

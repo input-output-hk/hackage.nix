@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
           (hsPkgs."async" or (buildDepError "async"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
             ];
+          buildable = true;
           };
         };
       };

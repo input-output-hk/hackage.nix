@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."imm32" or (sysDepError "imm32"))
           (pkgs."ntdll" or (sysDepError "ntdll"))
           ];
+        buildable = true;
         };
       };
     }

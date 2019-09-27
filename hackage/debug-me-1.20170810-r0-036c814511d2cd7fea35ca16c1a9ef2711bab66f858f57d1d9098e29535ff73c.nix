@@ -95,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

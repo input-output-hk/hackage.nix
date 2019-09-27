@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa" or (buildDepError "repa"))
             (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             ];
+          buildable = true;
           };
         "repa-mmult" = {
           depends = [
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa-io" or (buildDepError "repa-io"))
             (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             ];
+          buildable = true;
           };
         "repa-laplace" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa-io" or (buildDepError "repa-io"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = true;
           };
         "repa-fft2d" = {
           depends = [
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             (hsPkgs."repa-io" or (buildDepError "repa-io"))
             ];
+          buildable = true;
           };
         "repa-fft2d-highpass" = {
           depends = [
@@ -94,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             (hsPkgs."repa-io" or (buildDepError "repa-io"))
             ];
+          buildable = true;
           };
         "repa-fft3d-highpass" = {
           depends = [
@@ -101,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa" or (buildDepError "repa"))
             (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             ];
+          buildable = true;
           };
         "repa-blur" = {
           depends = [
@@ -109,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa" or (buildDepError "repa"))
             (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             ];
+          buildable = true;
           };
         "repa-sobel" = {
           depends = [
@@ -116,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa" or (buildDepError "repa"))
             (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             ];
+          buildable = true;
           };
         "repa-volume" = {
           depends = [
@@ -123,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa" or (buildDepError "repa"))
             (hsPkgs."repa-io" or (buildDepError "repa-io"))
             ];
+          buildable = true;
           };
         };
       };

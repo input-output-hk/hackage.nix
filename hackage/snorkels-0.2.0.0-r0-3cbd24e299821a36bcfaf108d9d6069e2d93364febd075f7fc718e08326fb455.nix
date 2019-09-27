@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
           ];
+        buildable = true;
         };
       exes = {
         "snorkels" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       };

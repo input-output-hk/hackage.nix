@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."chr-pretty" or (buildDepError "chr-pretty"))
           (hsPkgs."logict-state" or (buildDepError "logict-state"))
           ];
+        buildable = true;
         };
       };
     }

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."base" or (buildDepError "base"))
             ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "6.3") (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       };
     }

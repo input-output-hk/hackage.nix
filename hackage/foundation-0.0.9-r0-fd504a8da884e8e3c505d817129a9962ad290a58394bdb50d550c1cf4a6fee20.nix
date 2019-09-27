@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
+        buildable = true;
         };
       tests = {
         "test-foundation" = {
@@ -77,18 +78,23 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."foundation" or (buildDepError "foundation"))
             ];
+          buildable = if flags.minimal-deps then false else true;
           };
         "check-foundation" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."foundation" or (buildDepError "foundation"))
             ];
+          buildable = true;
           };
         "doctest" = {
           depends = (pkgs.lib).optionals (!flags.minimal-deps) ((pkgs.lib).optionals (flags.doctest) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ]);
+          buildable = if flags.minimal-deps
+            then false
+            else if flags.doctest then true else false;
           };
         };
       benchmarks = {
@@ -103,6 +109,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ]);
+          buildable = if flags.minimal-deps || compiler.isGhc && (compiler.version).lt "7.10"
+            then false
+            else true;
           };
         };
       };

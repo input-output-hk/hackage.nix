@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           ];
+        buildable = true;
         };
       tests = {
         "test-haskoin-util" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         };
       };

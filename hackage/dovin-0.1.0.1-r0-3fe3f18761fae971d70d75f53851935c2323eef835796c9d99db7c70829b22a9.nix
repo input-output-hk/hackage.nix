@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       exes = {
         "dovin" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -101,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         };
       };

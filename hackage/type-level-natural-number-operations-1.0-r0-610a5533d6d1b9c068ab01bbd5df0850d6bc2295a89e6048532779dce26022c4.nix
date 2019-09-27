@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."type-level-natural-number" or (buildDepError "type-level-natural-number"))
           ];
+        buildable = true;
         };
       };
     }

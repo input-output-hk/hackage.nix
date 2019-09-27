@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shakespeare-js" or (buildDepError "shakespeare-js"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       };
     }

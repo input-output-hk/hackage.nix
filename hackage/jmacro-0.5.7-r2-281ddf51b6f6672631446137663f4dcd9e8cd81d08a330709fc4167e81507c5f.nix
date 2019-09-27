@@ -70,10 +70,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."json" or (buildDepError "json"))
           (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
           ];
+        buildable = true;
         };
       exes = {
         "jmacro" = {
           depends = [ (hsPkgs."parseargs" or (buildDepError "parseargs")) ];
+          buildable = true;
           };
         };
       };

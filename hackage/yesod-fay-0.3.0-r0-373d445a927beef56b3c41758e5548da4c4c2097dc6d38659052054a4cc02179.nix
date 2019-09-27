@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-json" or (buildDepError "yesod-json"))
           (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
           ];
+        buildable = true;
         };
       };
     }

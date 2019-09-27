@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."casadi" or (sysDepError "casadi"))
           (pkgs."dl" or (sysDepError "dl"))
           ];
+        buildable = true;
         };
       };
     }

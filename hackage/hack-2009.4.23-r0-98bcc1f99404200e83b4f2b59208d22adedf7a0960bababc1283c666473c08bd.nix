@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template" or (buildDepError "template"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       };
     }

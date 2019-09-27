@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."language-c" or (buildDepError "language-c"))
           ];
+        buildable = true;
         };
       exes = {
         "check-c" = {
@@ -69,12 +70,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tokstyle" or (buildDepError "tokstyle"))
             ];
+          buildable = true;
           };
         "check-cimple" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tokstyle" or (buildDepError "tokstyle"))
             ];
+          buildable = true;
           };
         };
       };

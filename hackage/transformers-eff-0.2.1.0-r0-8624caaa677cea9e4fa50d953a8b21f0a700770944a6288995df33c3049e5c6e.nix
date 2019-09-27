@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."free" or (buildDepError "free"))
           (hsPkgs."mmorph" or (buildDepError "mmorph"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "oleg" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes" or (buildDepError "pipes"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

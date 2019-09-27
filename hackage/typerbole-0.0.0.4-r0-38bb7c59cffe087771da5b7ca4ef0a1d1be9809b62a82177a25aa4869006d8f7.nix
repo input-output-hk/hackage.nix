@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
           (hsPkgs."safe" or (buildDepError "safe"))
           ];
+        buildable = true;
         };
       tests = {
         "typerbole-testing" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."syb" or (buildDepError "syb"))
             ];
+          buildable = true;
           };
         };
       };

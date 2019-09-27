@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cond" or (buildDepError "cond"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."boolean-normal-forms" or (buildDepError "boolean-normal-forms"))
             ];
+          buildable = true;
           };
         };
       };

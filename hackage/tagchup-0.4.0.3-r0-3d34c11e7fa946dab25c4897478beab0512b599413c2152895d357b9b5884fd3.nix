@@ -65,17 +65,26 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
-        "tagchuptest" = {};
+        "tagchuptest" = {
+          buildable = if !flags.buildtests then false else true;
+          };
         "tagchupspeed" = {
           depends = (pkgs.lib).optional (flags.buildtests) (hsPkgs."old-time" or (buildDepError "old-time"));
+          buildable = if flags.buildtests then true else false;
           };
-        "validate-tagchup" = {};
+        "validate-tagchup" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
         "escape-html" = {
           depends = (pkgs.lib).optional (flags.buildexamples) (hsPkgs."hxt" or (buildDepError "hxt"));
+          buildable = if flags.buildexamples then true else false;
           };
-        "strip-html" = {};
+        "strip-html" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
         };
       };
     }

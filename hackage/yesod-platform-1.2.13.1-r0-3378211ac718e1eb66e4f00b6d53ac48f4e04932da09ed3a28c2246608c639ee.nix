@@ -189,6 +189,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
           (hsPkgs."yesod-test" or (buildDepError "yesod-test"))
           ];
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."octohat" or (buildDepError "octohat"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "openssh-github-keys" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."keyword-args" or (buildDepError "keyword-args"))
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."keyword-args" or (buildDepError "keyword-args"))
             ];
+          buildable = true;
           };
         };
       };

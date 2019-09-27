@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."mmorph" or (buildDepError "mmorph"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             (hsPkgs."safe" or (buildDepError "safe"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."kan-extensions" or (buildDepError "kan-extensions"))
             ];
+          buildable = true;
           };
         "unfused" = {
           depends = [
@@ -108,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

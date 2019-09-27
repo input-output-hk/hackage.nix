@@ -82,7 +82,15 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."special-functors" or (buildDepError "special-functors"))
             ]);
+        buildable = true;
         };
-      exes = { "demonstration" = {}; "traumzauberbaum" = {}; };
+      exes = {
+        "demonstration" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        "traumzauberbaum" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        };
       };
     }

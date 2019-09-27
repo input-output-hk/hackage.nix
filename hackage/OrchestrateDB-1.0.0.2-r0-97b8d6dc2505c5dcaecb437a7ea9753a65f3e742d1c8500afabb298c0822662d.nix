@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           (hsPkgs."aeson" or (buildDepError "aeson"))
           ];
+        buildable = true;
         };
       tests = {
         "tests-example1" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "test-sherlock" = {
           depends = [
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

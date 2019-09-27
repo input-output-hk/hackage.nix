@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wreq" or (buildDepError "wreq"))
           (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
           ];
+        buildable = true;
         };
       };
     }

@@ -97,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yaml" or (buildDepError "yaml"))
           (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "hw" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haskoin-wallet" or (buildDepError "haskoin-wallet"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         "example-inproc-wallet-server" = {
           depends = [
@@ -119,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
             (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         };
       tests = {
@@ -148,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         };
       };

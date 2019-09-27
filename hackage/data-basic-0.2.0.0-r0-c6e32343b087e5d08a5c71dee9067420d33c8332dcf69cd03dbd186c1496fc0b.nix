@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."string-conv" or (buildDepError "string-conv"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       tests = {
         "basic-test" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = true;
           };
         };
       };

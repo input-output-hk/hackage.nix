@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = true;
         };
       tests = {
         "scotty-fay-tests" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-types" or (buildDepError "http-types"))
             (hsPkgs."scotty" or (buildDepError "scotty"))
             ];
+          buildable = true;
           };
         };
       };

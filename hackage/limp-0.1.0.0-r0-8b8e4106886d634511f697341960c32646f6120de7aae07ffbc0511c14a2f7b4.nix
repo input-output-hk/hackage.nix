@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       };
     }

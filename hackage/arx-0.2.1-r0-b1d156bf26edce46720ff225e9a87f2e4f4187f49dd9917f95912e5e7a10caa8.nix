@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shell-escape" or (buildDepError "shell-escape"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "arx" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shell-escape" or (buildDepError "shell-escape"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = if flags.no-cli then false else true;
           };
         };
       };

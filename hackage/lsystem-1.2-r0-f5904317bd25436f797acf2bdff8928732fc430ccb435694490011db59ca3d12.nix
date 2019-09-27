@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wx" or (buildDepError "wx"))
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             ];
+          buildable = true;
           };
         };
       };

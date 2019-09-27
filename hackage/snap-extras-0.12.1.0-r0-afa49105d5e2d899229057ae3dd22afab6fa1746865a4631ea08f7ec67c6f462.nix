@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
           (hsPkgs."map-syntax" or (buildDepError "map-syntax"))
           ];
+        buildable = true;
         };
       exes = {
         "PollExample" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."map-syntax" or (buildDepError "map-syntax"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -121,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

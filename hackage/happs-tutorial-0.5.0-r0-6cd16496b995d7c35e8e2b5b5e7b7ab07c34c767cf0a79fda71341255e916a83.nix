@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."HAppSHelpers" or (buildDepError "HAppSHelpers"))
             ];
+          buildable = true;
           };
         };
       };

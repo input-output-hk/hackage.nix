@@ -97,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
           (hsPkgs."versions" or (buildDepError "versions"))
           ];
+        buildable = true;
         };
       exes = {
         "cachix" = {
@@ -143,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
             (hsPkgs."versions" or (buildDepError "versions"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -191,6 +193,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
             (hsPkgs."versions" or (buildDepError "versions"))
             ];
+          buildable = true;
           };
         };
       };

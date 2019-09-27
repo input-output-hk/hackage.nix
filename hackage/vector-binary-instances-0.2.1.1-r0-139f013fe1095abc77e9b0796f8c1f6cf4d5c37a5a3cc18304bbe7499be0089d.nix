@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."binary" or (buildDepError "binary"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "benchmarks" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."binary" or (buildDepError "binary"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

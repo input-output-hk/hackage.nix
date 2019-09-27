@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."moto" or (buildDepError "moto"))
           (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
           ];
+        buildable = true;
         };
       };
     }

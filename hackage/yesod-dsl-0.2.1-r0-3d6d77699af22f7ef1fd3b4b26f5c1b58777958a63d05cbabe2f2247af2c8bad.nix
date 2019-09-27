@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
           (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
           ];
+        buildable = true;
         };
       exes = {
         "yesod-dsl" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."yesod-dsl" or (buildDepError "yesod-dsl"))
             ];
+          buildable = true;
           };
         };
       };

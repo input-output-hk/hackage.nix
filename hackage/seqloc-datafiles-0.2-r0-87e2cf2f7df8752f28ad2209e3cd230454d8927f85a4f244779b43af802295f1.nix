@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."seqloc" or (buildDepError "seqloc"))
           (hsPkgs."biocore" or (buildDepError "biocore"))
           ];
+        buildable = true;
         };
       exes = {
         "gtf-to-bed" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
             ];
+          buildable = true;
           };
         "test-gtf" = {
           depends = [
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         "test-bed" = {
           depends = [
@@ -112,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         "gtf-introns" = {
           depends = [
@@ -127,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         };
       };

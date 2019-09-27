@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if system.isWindows
           then [ (pkgs."gmp-10" or (sysDepError "gmp-10")) ]
           else [ (pkgs."gmp" or (sysDepError "gmp")) ];
+        buildable = true;
         };
       tests = {
         "bitset-tests" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."bitset" or (buildDepError "bitset"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
             ];
           libs = [ (pkgs."gmp" or (sysDepError "gmp")) ];
+          buildable = true;
           };
         };
       };

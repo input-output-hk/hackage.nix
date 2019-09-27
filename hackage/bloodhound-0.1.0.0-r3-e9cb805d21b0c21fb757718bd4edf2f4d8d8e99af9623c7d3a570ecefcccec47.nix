@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."scientific" or (buildDepError "scientific"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
             ];
+          buildable = true;
           };
         };
       };

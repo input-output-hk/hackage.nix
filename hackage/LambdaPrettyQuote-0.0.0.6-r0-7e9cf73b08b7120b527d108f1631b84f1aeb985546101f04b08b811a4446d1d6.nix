@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."th-instances" or (buildDepError "th-instances"))
             (hsPkgs."syb" or (buildDepError "syb"))
             ];
+          buildable = true;
           };
         };
       };

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."failure" or (buildDepError "failure"))
           (hsPkgs."data-default" or (buildDepError "data-default"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."xml-types" or (buildDepError "xml-types"))
             ];
+          buildable = true;
           };
         };
       };

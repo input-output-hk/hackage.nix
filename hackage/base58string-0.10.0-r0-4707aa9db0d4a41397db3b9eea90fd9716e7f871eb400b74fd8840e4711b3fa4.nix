@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."aeson" or (buildDepError "aeson"))
           ];
+        buildable = true;
         };
       tests = {
         "test-suite" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."binary" or (buildDepError "binary"))
             (hsPkgs."base58string" or (buildDepError "base58string"))
             ];
+          buildable = true;
           };
         };
       };

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "arbor-monad-counter-test" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
             (hsPkgs."hw-hspec-hedgehog" or (buildDepError "hw-hspec-hedgehog"))
             ];
+          buildable = true;
           };
         };
       };

@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."x509" or (buildDepError "x509"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         };
       };

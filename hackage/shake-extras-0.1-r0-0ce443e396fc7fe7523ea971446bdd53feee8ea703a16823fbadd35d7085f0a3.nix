@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shake" or (buildDepError "shake"))
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           ];
+        buildable = true;
         };
       };
     }

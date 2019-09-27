@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ShowF" or (buildDepError "ShowF"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
       };
     }

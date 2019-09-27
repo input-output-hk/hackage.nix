@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "gmetric-haskell" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             ];
+          buildable = true;
           };
         };
       };

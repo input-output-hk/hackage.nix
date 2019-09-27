@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           ] ++ (pkgs.lib).optional (system.isWindows && !flags.portable) (hsPkgs."Win32" or (buildDepError "Win32"));
         libs = (pkgs.lib).optional (system.isWindows && !flags.portable) (pkgs."mswsock" or (sysDepError "mswsock"));
+        buildable = true;
         };
       };
     }

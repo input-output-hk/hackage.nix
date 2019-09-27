@@ -100,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."fail" or (buildDepError "fail"))
           ]) ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-xhr" or (buildDepError "ghcjs-xhr"));
+        buildable = true;
         };
       exes = {
         "dhall" = {
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."dhall" or (buildDepError "dhall"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -133,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."turtle" or (buildDepError "turtle"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "doctest" = {
           depends = [
@@ -142,6 +145,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mockery" or (buildDepError "mockery"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "8.0"
+            then false
+            else true;
           };
         };
       benchmarks = {
@@ -156,6 +162,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."serialise" or (buildDepError "serialise"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "deep-nested-large-record" = {
           depends = [
@@ -164,12 +171,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."dhall" or (buildDepError "dhall"))
             ];
+          buildable = true;
           };
         "dhall-command" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."dhall" or (buildDepError "dhall"))
             ];
+          buildable = true;
           };
         "map-operations" = {
           depends = [
@@ -177,6 +186,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."dhall" or (buildDepError "dhall"))
             ];
+          buildable = true;
           };
         };
       };

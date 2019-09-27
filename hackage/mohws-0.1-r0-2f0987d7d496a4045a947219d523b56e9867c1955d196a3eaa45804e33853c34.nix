@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = true;
           };
         };
       };

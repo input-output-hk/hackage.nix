@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."word-wrap" or (buildDepError "word-wrap"))
           ];
+        buildable = true;
         };
       exes = {
         "brick-readme-demo" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."brick" or (buildDepError "brick"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-text-wrap-demo" = {
           depends = [
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."brick" or (buildDepError "brick"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-cache-demo" = {
           depends = [
@@ -99,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-visibility-demo" = {
           depends = [
@@ -109,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-viewport-scroll-demo" = {
           depends = [
@@ -118,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."microlens" or (buildDepError "microlens"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-dialog-demo" = {
           depends = [
@@ -127,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."microlens" or (buildDepError "microlens"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-mouse-demo" = {
           depends = [
@@ -138,6 +145,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             (hsPkgs."text-zipper" or (buildDepError "text-zipper"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-layer-demo" = {
           depends = [
@@ -148,6 +156,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-suspend-resume-demo" = {
           depends = [
@@ -158,6 +167,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-padding-demo" = {
           depends = [
@@ -167,6 +177,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."microlens" or (buildDepError "microlens"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-attr-demo" = {
           depends = [
@@ -176,6 +187,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."microlens" or (buildDepError "microlens"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-markup-demo" = {
           depends = [
@@ -185,6 +197,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."microlens" or (buildDepError "microlens"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-list-demo" = {
           depends = [
@@ -195,6 +208,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-custom-event-demo" = {
           depends = [
@@ -205,6 +219,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-fill-demo" = {
           depends = [
@@ -214,6 +229,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."microlens" or (buildDepError "microlens"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-hello-world-demo" = {
           depends = [
@@ -223,6 +239,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."microlens" or (buildDepError "microlens"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-edit-demo" = {
           depends = [
@@ -234,6 +251,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-border-demo" = {
           depends = [
@@ -243,6 +261,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."microlens" or (buildDepError "microlens"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "brick-progressbar-demo" = {
           depends = [
@@ -252,6 +271,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."microlens" or (buildDepError "microlens"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         };
       };

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."servant-db" or (buildDepError "servant-db"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "servant-db-postgresql-example01" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             ];
+          buildable = true;
           };
         };
       };

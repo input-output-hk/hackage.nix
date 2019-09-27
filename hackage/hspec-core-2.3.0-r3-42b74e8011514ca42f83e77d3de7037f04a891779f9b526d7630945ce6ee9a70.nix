@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."async" or (buildDepError "async"))
           (hsPkgs."call-stack" or (buildDepError "call-stack"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."silently" or (buildDepError "silently"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

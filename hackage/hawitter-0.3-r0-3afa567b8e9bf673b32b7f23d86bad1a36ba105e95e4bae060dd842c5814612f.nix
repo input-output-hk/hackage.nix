@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."json" or (buildDepError "json"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = true;
           };
         };
       };

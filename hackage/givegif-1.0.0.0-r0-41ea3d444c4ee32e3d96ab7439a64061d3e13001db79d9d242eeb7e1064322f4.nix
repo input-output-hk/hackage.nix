@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
           ];
+        buildable = true;
         };
       exes = {
         "givegif" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."errors" or (buildDepError "errors"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."constraints" or (buildDepError "constraints"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "readme" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."constraints" or (buildDepError "constraints"))
             (hsPkgs."constraints-extras" or (buildDepError "constraints-extras"))
             ];
+          buildable = true;
           };
         };
       };

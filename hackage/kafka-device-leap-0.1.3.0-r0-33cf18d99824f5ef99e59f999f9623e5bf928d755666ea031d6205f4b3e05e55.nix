@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."milena" or (buildDepError "milena"))
           (hsPkgs."websockets" or (buildDepError "websockets"))
           ];
+        buildable = true;
         };
       exes = {
         "kafka-device-leap" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."milena" or (buildDepError "milena"))
             (hsPkgs."websockets" or (buildDepError "websockets"))
             ];
+          buildable = true;
           };
         };
       };

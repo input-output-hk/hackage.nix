@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
           (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
           ];
+        buildable = true;
         };
       exes = {
         "SubOptDistance" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
             ];
+          buildable = true;
           };
         };
       };

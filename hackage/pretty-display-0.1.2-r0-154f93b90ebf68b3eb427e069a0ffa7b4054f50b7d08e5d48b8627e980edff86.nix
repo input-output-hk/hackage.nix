@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
           ];
+        buildable = true;
         };
       exes = {
         "pretty-display-example" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
             (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -77,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pretty-display" or (buildDepError "pretty-display"))
             ];
+          buildable = true;
           };
         };
       };

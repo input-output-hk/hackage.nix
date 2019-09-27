@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel" or (buildDepError "parallel"))
           (hsPkgs."benchpress" or (buildDepError "benchpress"))
           ];
+        buildable = true;
         };
       };
     }

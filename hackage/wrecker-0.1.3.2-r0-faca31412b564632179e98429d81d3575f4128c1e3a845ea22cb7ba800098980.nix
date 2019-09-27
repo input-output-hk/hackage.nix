@@ -104,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vty" or (buildDepError "vty"))
           (hsPkgs."wreq" or (buildDepError "wreq"))
           ];
+        buildable = true;
         };
       exes = {
         "wreck" = {
@@ -116,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wreq" or (buildDepError "wreq"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = true;
           };
         "example-server" = {
           depends = [
@@ -133,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "example-client" = {
           depends = [
@@ -146,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-client" or (buildDepError "http-client"))
             (hsPkgs."connection" or (buildDepError "connection"))
             ];
+          buildable = true;
           };
         "example" = {
           depends = [
@@ -168,6 +172,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."connection" or (buildDepError "connection"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -194,6 +199,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."connection" or (buildDepError "connection"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

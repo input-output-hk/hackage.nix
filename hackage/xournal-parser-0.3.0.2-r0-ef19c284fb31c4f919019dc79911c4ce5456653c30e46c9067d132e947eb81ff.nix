@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iteratee-compress" or (buildDepError "iteratee-compress"))
           (hsPkgs."xournal-types" or (buildDepError "xournal-types"))
           ];
+        buildable = true;
         };
       };
     }

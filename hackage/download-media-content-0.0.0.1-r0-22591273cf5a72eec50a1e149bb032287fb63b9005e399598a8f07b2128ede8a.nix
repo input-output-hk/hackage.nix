@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-enumerator" or (buildDepError "http-enumerator"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         };
       };

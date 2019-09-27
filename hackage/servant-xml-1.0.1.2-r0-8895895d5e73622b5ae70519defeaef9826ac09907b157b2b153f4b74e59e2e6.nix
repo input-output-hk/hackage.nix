@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xmlbf" or (buildDepError "xmlbf"))
           (hsPkgs."xmlbf-xeno" or (buildDepError "xmlbf-xeno"))
           ];
+        buildable = true;
         };
       };
     }

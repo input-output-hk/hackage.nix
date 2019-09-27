@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
           (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
           ];
+        buildable = true;
         };
       exes = {
         "wai-crowd" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-middleware-crowd" or (buildDepError "wai-middleware-crowd"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = true;
           };
         };
       };

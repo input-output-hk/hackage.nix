@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -128,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = true;
           };
         "hunittests" = {
           depends = [
@@ -167,6 +169,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = true;
           };
         };
       };

@@ -54,7 +54,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       tests = {
         "glob-posix-test" = {
           depends = [
@@ -67,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -78,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Glob" or (buildDepError "Glob"))
             (hsPkgs."glob-posix" or (buildDepError "glob-posix"))
             ];
+          buildable = true;
           };
         };
       };

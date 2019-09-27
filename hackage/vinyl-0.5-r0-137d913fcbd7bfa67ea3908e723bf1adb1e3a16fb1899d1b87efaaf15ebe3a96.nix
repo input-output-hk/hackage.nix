@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."singletons" or (buildDepError "singletons"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."linear" or (buildDepError "linear"))
             ];
+          buildable = true;
           };
         };
       };

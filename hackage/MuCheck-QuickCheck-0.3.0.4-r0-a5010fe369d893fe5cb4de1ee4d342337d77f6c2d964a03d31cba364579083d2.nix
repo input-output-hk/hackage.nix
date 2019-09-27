@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."MuCheck" or (buildDepError "MuCheck"))
           ];
+        buildable = true;
         };
       exes = {
         "mucheck-quickcheck" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."MuCheck" or (buildDepError "MuCheck"))
             ];
+          buildable = true;
           };
         };
       };

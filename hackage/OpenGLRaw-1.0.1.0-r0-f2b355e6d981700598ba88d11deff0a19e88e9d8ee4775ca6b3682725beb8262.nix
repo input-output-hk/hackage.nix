@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if system.isWindows && flags.usenativewindowslibraries
           then [ (pkgs."opengl32" or (sysDepError "opengl32")) ]
           else [ (pkgs."GL" or (sysDepError "GL")) ];
+        buildable = true;
         };
       };
     }

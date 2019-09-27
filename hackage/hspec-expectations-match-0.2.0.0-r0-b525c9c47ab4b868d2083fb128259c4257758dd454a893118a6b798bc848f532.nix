@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           ];
+        buildable = true;
         };
       tests = {
         "hspec-expectations-th-test-suite" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."hspec-expectations-match" or (buildDepError "hspec-expectations-match"))
             ];
+          buildable = true;
           };
         };
       };

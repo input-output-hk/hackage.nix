@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."curl" or (buildDepError "curl"))
             ] ++ (pkgs.lib).optional (flags.withbitly) (hsPkgs."Bitly" or (buildDepError "Bitly"));
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."hashable" or (buildDepError "hashable"))
           ];
+        buildable = true;
         };
       tests = {
         "TestExtendedReal" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."extended-reals" or (buildDepError "extended-reals"))
             ];
+          buildable = true;
           };
         };
       };

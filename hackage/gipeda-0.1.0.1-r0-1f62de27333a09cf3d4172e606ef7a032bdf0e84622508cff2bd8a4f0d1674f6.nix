@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yaml" or (buildDepError "yaml"))
             (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
+          buildable = true;
           };
         };
       };

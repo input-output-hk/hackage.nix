@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ivory-backend-c" or (buildDepError "ivory-backend-c"))
           (hsPkgs."ivory-eval" or (buildDepError "ivory-eval"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ivory-quickcheck" or (buildDepError "ivory-quickcheck"))
             (hsPkgs."ivory-stdlib" or (buildDepError "ivory-stdlib"))
             ];
+          buildable = true;
           };
         };
       };

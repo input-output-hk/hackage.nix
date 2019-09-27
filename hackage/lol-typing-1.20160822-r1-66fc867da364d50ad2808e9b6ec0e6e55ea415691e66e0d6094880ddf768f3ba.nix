@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uuagc" or (buildDepError "uuagc"))
           (hsPkgs."uuagc-cabal" or (buildDepError "uuagc-cabal"))
           ];
+        buildable = true;
         };
       tests = {
         "lol-typing-test" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-format" or (buildDepError "text-format"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

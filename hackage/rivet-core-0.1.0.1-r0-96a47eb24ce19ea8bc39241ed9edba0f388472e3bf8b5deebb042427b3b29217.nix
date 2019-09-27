@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
           ];
+        buildable = true;
         };
       };
     }

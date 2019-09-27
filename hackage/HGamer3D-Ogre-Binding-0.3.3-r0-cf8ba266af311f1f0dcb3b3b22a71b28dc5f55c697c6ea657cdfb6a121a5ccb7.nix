@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."OgreRTShaderSystem" or (sysDepError "OgreRTShaderSystem"))
             (pkgs."OgreTerrain" or (sysDepError "OgreTerrain"))
             ];
+        buildable = true;
         };
       };
     }

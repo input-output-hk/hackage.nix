@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           ];
+        buildable = true;
         };
       exes = {
         "actionkid" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."ActionKid" or (buildDepError "ActionKid"))
             ];
+          buildable = true;
           };
         };
       };

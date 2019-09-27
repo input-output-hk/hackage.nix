@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework" or (buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
           ] ++ (pkgs.lib).optional (flags.usecas && (compiler.isGhc && (compiler.version).ge "7.4") && !system.isWindows) (hsPkgs."IORefCAS" or (buildDepError "IORefCAS"));
+        buildable = true;
         };
       tests = {
         "test-abstract-deque" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         };
       };

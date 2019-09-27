@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."ghcjs-base-stub" or (buildDepError "ghcjs-base-stub"))
             ]);
+        buildable = true;
         };
       tests = {
         "ghcjs-fetch-test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         };
       };

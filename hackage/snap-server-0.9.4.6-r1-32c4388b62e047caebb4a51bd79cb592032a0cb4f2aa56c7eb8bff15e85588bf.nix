@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
           ] ++ (pkgs.lib).optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (flags.openssl) (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"));
+        buildable = true;
         };
       };
     }

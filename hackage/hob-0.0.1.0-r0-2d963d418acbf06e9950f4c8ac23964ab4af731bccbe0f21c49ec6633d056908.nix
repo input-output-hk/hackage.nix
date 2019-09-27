@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gtk-largeTreeStore" or (buildDepError "gtk-largeTreeStore"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "hob" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."gtksourceview3" or (buildDepError "gtksourceview3"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."gtksourceview3" or (buildDepError "gtksourceview3"))
             ];
+          buildable = true;
           };
         };
       };

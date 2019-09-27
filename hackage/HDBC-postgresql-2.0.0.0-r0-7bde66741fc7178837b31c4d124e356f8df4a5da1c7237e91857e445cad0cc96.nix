@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
         libs = [ (pkgs."pq" or (sysDepError "pq")) ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ];
           libs = [ (pkgs."pq" or (sysDepError "pq")) ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

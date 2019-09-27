@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."memory" or (buildDepError "memory"))
           (hsPkgs."hourglass" or (buildDepError "hourglass"))
           ];
+        buildable = true;
         };
       };
     }

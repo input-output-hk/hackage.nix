@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hist-pl-types" or (buildDepError "hist-pl-types"))
           (hsPkgs."hist-pl-dawg" or (buildDepError "hist-pl-dawg"))
           ];
+        buildable = true;
         };
       };
     }

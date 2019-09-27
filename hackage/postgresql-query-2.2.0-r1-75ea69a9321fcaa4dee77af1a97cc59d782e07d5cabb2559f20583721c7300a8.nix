@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

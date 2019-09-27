@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wreq" or (buildDepError "wreq"))
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           ];
+        buildable = true;
         };
       exes = {
         "nicovideo-translator" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."nicovideo-translator" or (buildDepError "nicovideo-translator"))
             ];
+          buildable = true;
           };
         };
       };

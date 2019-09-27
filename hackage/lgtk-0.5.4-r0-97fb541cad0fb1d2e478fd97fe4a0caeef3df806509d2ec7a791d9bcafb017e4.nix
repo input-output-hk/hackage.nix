@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."groups" or (buildDepError "groups"))
           (hsPkgs."lens" or (buildDepError "lens"))
           ];
+        buildable = true;
         };
       exes = {
         "lgtkdemo" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."lgtk" or (buildDepError "lgtk"))
             ];
+          buildable = true;
           };
         };
       };

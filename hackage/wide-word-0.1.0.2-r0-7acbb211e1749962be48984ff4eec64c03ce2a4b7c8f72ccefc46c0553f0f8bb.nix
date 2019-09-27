@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."wide-word" or (buildDepError "wide-word"))
             ];
+          buildable = true;
           };
         };
       };

@@ -57,6 +57,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "line-size" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

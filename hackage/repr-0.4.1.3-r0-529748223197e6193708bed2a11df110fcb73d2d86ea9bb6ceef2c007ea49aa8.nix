@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."string-combinators" or (buildDepError "string-combinators"))
           (hsPkgs."dstring" or (buildDepError "dstring"))
           ];
+        buildable = true;
         };
       };
     }

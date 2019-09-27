@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."linear" or (buildDepError "linear"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Plot-ho-matic" or (buildDepError "Plot-ho-matic"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

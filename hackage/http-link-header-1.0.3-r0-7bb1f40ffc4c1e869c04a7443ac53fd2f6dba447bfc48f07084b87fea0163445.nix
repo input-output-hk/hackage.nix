@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."bytestring-conversion" or (buildDepError "bytestring-conversion"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."hspec-attoparsec" or (buildDepError "hspec-attoparsec"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

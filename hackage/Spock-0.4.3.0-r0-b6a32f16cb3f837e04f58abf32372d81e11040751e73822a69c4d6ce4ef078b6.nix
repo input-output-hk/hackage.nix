@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pool-conduit" or (buildDepError "pool-conduit"))
           (hsPkgs."vault" or (buildDepError "vault"))
           ];
+        buildable = true;
         };
       };
     }

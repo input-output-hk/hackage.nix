@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hoppy-generator" or (buildDepError "hoppy-generator"))
           (hsPkgs."hoppy-runtime" or (buildDepError "hoppy-runtime"))
           ];
+        buildable = true;
         };
       };
     }

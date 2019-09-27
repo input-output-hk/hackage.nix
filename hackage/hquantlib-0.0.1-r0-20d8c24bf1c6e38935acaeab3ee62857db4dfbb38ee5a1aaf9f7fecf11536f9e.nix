@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hmatrix-special" or (buildDepError "hmatrix-special"))
           (hsPkgs."gsl-random" or (buildDepError "gsl-random"))
           ];
+        buildable = true;
         };
       };
     }

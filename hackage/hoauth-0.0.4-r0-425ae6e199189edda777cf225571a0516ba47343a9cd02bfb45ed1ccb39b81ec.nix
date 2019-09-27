@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base64-string" or (buildDepError "base64-string"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
       exes = {
         "test_hoauth" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base64-string" or (buildDepError "base64-string"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = if !flags.test then false else true;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."process" or (buildDepError "process"))
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Clipboard" or (buildDepError "Clipboard"));
+        buildable = true;
         };
       };
     }

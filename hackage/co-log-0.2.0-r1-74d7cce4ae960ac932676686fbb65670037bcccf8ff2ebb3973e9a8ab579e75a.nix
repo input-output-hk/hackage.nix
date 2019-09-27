@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."typerep-map" or (buildDepError "typerep-map"))
           ];
+        buildable = true;
         };
       exes = {
         "play-colog" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."co-log" or (buildDepError "co-log"))
             (hsPkgs."typerep-map" or (buildDepError "typerep-map"))
             ];
+          buildable = true;
           };
         "readme" = {
           depends = [
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (buildToolDepError "markdown-unlit")))
             ];
+          buildable = true;
           };
         };
       };

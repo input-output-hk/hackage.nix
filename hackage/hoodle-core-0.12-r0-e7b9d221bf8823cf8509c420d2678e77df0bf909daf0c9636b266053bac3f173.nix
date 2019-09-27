@@ -103,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."dl" or (sysDepError "dl"))
           (pkgs."pthread" or (sysDepError "pthread"))
           ];
+        buildable = true;
         };
       };
     }

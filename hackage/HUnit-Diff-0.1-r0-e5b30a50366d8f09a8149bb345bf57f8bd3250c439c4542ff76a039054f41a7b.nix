@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."groom" or (buildDepError "groom"))
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           ];
+        buildable = true;
         };
       };
     }

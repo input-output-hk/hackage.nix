@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."relational-schemas" or (buildDepError "relational-schemas"))
           ] ++ (pkgs.lib).optional (flags.ghc74-generic) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+        buildable = true;
         };
       exes = {
         "examples" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."time" or (buildDepError "time"))
             ] ++ (pkgs.lib).optional (flags.ghc74-generic) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = if flags.binary then true else false;
           };
         };
       };

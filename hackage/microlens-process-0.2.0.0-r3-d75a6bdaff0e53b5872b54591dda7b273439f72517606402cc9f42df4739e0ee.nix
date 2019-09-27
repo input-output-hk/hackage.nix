@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."microlens" or (buildDepError "microlens"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens-process" or (buildDepError "microlens-process"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

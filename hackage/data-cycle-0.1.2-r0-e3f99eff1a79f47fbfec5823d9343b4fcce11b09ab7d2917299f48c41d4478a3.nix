@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."collections-api" or (buildDepError "collections-api"))
           (hsPkgs."collections-base-instances" or (buildDepError "collections-base-instances"))
           ];
+        buildable = true;
         };
       };
     }

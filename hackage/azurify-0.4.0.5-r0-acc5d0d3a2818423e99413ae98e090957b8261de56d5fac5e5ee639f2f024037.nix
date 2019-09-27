@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hxt" or (buildDepError "hxt"))
           (hsPkgs."hxt-unicode" or (buildDepError "hxt-unicode"))
           ];
+        buildable = true;
         };
       exes = {
         "azurify" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hxt" or (buildDepError "hxt"))
             (hsPkgs."hxt-unicode" or (buildDepError "hxt-unicode"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         };
       };

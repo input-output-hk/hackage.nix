@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
           ];
+        buildable = true;
         };
       };
     }

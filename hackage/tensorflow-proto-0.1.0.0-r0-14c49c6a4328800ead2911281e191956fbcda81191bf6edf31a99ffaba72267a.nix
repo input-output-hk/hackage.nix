@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."proto-lens-protoc" or (buildDepError "proto-lens-protoc"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       };
     }

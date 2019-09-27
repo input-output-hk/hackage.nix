@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."normaldistribution" or (buildDepError "normaldistribution"))
           ];
+        buildable = true;
         };
       tests = {
         "yampa-quicheck" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yampa-test" or (buildDepError "yampa-test"))
             (hsPkgs."cabal-test-quickcheck" or (buildDepError "cabal-test-quickcheck"))
             ];
+          buildable = true;
           };
         };
       };

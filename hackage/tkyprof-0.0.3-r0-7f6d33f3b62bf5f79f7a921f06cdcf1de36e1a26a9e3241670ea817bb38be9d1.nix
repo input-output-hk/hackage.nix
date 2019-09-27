@@ -54,7 +54,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = if flags.devel then true else false; };
       exes = {
         "tkyprof" = {
           depends = [
@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
             ] ++ (pkgs.lib).optionals (flags.production) ((pkgs.lib).optional (!flags.web) (hsPkgs."wai-handler-webkit" or (buildDepError "wai-handler-webkit")));
           pkgconfig = (pkgs.lib).optionals (flags.production) ((pkgs.lib).optional (!flags.web) (pkgconfPkgs."QtWebKit" or (pkgConfDepError "QtWebKit")));
+          buildable = if flags.devel then false else true;
           };
         "prof2json" = {
           depends = [
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = false;
           };
         };
       };

@@ -57,6 +57,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = (pkgs.lib).optional (flags.use-shared-lib) (pkgs."zxcvbn" or (sysDepError "zxcvbn"));
+        buildable = true;
         };
       };
     }

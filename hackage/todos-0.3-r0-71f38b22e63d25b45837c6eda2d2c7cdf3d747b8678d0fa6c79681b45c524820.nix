@@ -73,7 +73,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dyre" or (buildDepError "dyre"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
-      exes = { "todos" = {}; };
+      exes = { "todos" = { buildable = true; }; };
       };
     }

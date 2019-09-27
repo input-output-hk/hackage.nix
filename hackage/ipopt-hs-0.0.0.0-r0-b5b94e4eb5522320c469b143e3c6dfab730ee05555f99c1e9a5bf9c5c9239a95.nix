@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ad" or (buildDepError "ad"))
           ];
         pkgconfig = [ (pkgconfPkgs."ipopt" or (pkgConfDepError "ipopt")) ];
+        buildable = true;
         };
       exes = {
         "ipopt-hs_Test1" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."ipopt-hs" or (buildDepError "ipopt-hs"))
             ];
+          buildable = true;
           };
         "ipopt-hs_Test2" = {
           depends = [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."ipopt-hs" or (buildDepError "ipopt-hs"))
             ];
+          buildable = true;
           };
         };
       };

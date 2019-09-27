@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GPipe" or (buildDepError "GPipe"))
           (hsPkgs."bitmap" or (buildDepError "bitmap"))
           ];
+        buildable = true;
         };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
           ];
+        buildable = true;
         };
       tests = {
         "mltool-test" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

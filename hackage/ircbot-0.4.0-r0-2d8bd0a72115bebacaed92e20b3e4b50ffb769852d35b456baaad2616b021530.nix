@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."stm" or (buildDepError "stm"))
           ];
+        buildable = true;
         };
       };
     }

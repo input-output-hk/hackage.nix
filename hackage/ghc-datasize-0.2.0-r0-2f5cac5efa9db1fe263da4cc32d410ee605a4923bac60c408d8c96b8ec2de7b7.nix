@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."ghc-heap-view" or (buildDepError "ghc-heap-view"))
           ];
+        buildable = true;
         };
       };
     }

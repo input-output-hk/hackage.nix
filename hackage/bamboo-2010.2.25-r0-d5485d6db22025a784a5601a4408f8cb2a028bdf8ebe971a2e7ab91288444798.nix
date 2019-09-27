@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hack" or (buildDepError "hack"))
           (hsPkgs."hack-contrib" or (buildDepError "hack-contrib"))
           ];
+        buildable = true;
         };
       };
     }

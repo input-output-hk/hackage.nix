@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."microlens" or (buildDepError "microlens"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "timeutils" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."timeutils" or (buildDepError "timeutils"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."timeutils" or (buildDepError "timeutils"))
             ];
+          buildable = true;
           };
         };
       };

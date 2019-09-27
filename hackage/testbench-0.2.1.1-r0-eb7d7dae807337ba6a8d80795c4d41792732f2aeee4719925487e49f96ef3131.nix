@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."weigh" or (buildDepError "weigh"))
           ];
+        buildable = true;
         };
       exes = {
         "examples" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

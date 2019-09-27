@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."json" or (buildDepError "json"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."clock" or (buildDepError "clock"))
           ];
+        buildable = true;
         };
       exes = {
         "locked-poll" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."locked-poll" or (buildDepError "locked-poll"))
             (hsPkgs."clock" or (buildDepError "clock"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
             ];
+          buildable = true;
           };
         };
       };

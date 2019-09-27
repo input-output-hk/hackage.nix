@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
           (hsPkgs."BiobaseTypes" or (buildDepError "BiobaseTypes"))
           ];
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."BiobaseFasta" or (buildDepError "BiobaseFasta"))
             ];
+          buildable = true;
           };
         };
       };

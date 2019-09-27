@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."base" or (buildDepError "base"))
             ] ++ (pkgs.lib).optional (compiler.isJhc && true) (hsPkgs."containers" or (buildDepError "containers")));
+        buildable = true;
         };
       };
     }

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."functors" or (buildDepError "functors"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

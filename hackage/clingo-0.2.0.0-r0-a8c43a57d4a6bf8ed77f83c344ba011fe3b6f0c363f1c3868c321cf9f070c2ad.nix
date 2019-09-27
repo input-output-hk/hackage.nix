@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           ];
         libs = [ (pkgs."clingo" or (sysDepError "clingo")) ];
+        buildable = true;
         };
       exes = {
         "version" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."clingo" or (buildDepError "clingo"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "dot-propagator" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."clingo" or (buildDepError "clingo"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "control" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -89,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."clingo" or (buildDepError "clingo"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "configuration" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -97,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."StateVar" or (buildDepError "StateVar"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "theory-atoms" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -104,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."clingo" or (buildDepError "clingo"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "symbolic-atoms" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -111,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."clingo" or (buildDepError "clingo"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "ast" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -118,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."clingo" or (buildDepError "clingo"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "backend" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -125,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."clingo" or (buildDepError "clingo"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "model" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -132,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."clingo" or (buildDepError "clingo"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "solve-async" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -141,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "statistics" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -150,6 +161,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             (hsPkgs."StateVar" or (buildDepError "StateVar"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "propagator" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -159,6 +171,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

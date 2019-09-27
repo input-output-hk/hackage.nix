@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."pipes-transduce" or (buildDepError "pipes-transduce"))
           ] ++ [ (hsPkgs."Cabal" or (buildDepError "Cabal")) ];
+        buildable = true;
         };
       exes = {
         "fake-ghc-for-ghc-imported-from" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."process-streaming" or (buildDepError "process-streaming"))
             ];
+          buildable = true;
           };
         "ghc-imported-from" = {
           depends = [
@@ -115,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-discover" or (buildDepError "hspec-discover"))
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             ] ++ [ (hsPkgs."Cabal" or (buildDepError "Cabal")) ];
+          buildable = true;
           };
         };
       tests = {
@@ -143,6 +146,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             (hsPkgs."haddock-api" or (buildDepError "haddock-api"))
             ] ++ [ (hsPkgs."Cabal" or (buildDepError "Cabal")) ];
+          buildable = true;
           };
         };
       };

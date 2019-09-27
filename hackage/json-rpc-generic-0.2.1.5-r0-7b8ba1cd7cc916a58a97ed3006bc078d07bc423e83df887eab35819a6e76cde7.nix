@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."aeson-generic-compat" or (buildDepError "aeson-generic-compat"))
           ];
+        buildable = true;
         };
       tests = {
         "test-main" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickcheck-simple" or (buildDepError "quickcheck-simple"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

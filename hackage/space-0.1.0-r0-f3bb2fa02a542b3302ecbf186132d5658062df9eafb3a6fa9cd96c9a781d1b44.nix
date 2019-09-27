@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       tests = {
         "space-test" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."space" or (buildDepError "space"))
             ];
+          buildable = true;
           };
         };
       };

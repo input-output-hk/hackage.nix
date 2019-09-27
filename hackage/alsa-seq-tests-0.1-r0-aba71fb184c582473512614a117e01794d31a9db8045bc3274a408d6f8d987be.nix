@@ -60,30 +60,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."alsa" or (buildDepError "alsa"))
             ];
+          buildable = true;
           };
         "test2" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."alsa" or (buildDepError "alsa"))
             ];
+          buildable = true;
           };
         "test3" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."alsa" or (buildDepError "alsa"))
             ];
+          buildable = true;
           };
         "test4" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."alsa" or (buildDepError "alsa"))
             ];
+          buildable = true;
           };
         "test5" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."alsa" or (buildDepError "alsa"))
             ];
+          buildable = true;
           };
         };
       };

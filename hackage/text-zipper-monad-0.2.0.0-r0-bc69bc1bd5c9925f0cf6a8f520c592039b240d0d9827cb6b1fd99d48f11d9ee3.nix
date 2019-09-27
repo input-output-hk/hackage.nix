@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."text-zipper" or (buildDepError "text-zipper"))
           ];
+        buildable = true;
         };
       tests = {
         "text-zipper-monad-test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-zipper" or (buildDepError "text-zipper"))
             (hsPkgs."text-zipper-monad" or (buildDepError "text-zipper-monad"))
             ];
+          buildable = true;
           };
         };
       };

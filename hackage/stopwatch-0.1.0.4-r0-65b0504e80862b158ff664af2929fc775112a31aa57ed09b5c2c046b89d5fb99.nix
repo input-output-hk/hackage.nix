@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."clock" or (buildDepError "clock"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."clock" or (buildDepError "clock"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."repa" or (buildDepError "repa"))
           ];
+        buildable = true;
         };
       exes = {
         "phash" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."par-traverse" or (buildDepError "par-traverse"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
             ];
+          buildable = true;
           };
         };
       };

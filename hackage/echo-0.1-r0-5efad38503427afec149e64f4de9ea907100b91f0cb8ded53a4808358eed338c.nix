@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."ntdll" or (sysDepError "ntdll"));
         build-tools = (pkgs.lib).optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")));
+        buildable = true;
         };
       exes = {
         "password" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."echo" or (buildDepError "echo"))
             ];
+          buildable = if !flags.example then false else true;
           };
         };
       };

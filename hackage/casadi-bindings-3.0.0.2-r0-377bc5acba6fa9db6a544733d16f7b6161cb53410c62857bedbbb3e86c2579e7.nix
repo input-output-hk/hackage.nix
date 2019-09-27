@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
         pkgconfig = [ (pkgconfPkgs."casadi" or (pkgConfDepError "casadi")) ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
           libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+          buildable = true;
           };
         "unit-tests" = {
           depends = [
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."casadi-bindings" or (buildDepError "casadi-bindings"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

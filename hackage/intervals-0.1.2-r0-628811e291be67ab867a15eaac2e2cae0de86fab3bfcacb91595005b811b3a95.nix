@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."numeric-extras" or (buildDepError "numeric-extras"))
           (hsPkgs."rounding" or (buildDepError "rounding"))
           ];
+        buildable = true;
         };
       };
     }

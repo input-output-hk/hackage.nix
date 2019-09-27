@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           (hsPkgs."singletons" or (buildDepError "singletons"))
           ] ++ (pkgs.lib).optional (flags.aeson) (hsPkgs."aeson" or (buildDepError "aeson"))) ++ (pkgs.lib).optional (flags.binary || flags.bytes) (hsPkgs."binary" or (buildDepError "binary"))) ++ (pkgs.lib).optional (flags.bytes) (hsPkgs."bytes" or (buildDepError "bytes"))) ++ (pkgs.lib).optional (flags.cereal || flags.bytes) (hsPkgs."cereal" or (buildDepError "cereal"))) ++ (pkgs.lib).optional (flags.deepseq) (hsPkgs."deepseq" or (buildDepError "deepseq"))) ++ (pkgs.lib).optional (flags.hashable) (hsPkgs."hashable" or (buildDepError "hashable"))) ++ (pkgs.lib).optional (flags.quickcheck) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             ];
+          buildable = true;
           };
         };
       };

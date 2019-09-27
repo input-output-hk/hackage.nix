@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."hxt" or (buildDepError "hxt"))
           ];
+        buildable = true;
         };
       exes = {
         "hastily" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hastily" or (buildDepError "hastily"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hastily" or (buildDepError "hastily"))
             ];
+          buildable = true;
           };
         };
       };

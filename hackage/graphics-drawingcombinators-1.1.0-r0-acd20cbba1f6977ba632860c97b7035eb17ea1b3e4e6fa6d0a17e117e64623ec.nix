@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bitmap-opengl" or (buildDepError "bitmap-opengl"))
           (hsPkgs."FTGL" or (buildDepError "FTGL"))
           ];
+        buildable = true;
         };
       };
     }

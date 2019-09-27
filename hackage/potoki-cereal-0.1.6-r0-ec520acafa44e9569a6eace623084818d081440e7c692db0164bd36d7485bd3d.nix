@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."potoki-core" or (buildDepError "potoki-core"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       };
     }

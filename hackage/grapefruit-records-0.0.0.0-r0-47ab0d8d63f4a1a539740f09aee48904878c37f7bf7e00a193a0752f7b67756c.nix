@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-level" or (buildDepError "type-level"))
           (hsPkgs."type-equality-check" or (buildDepError "type-equality-check"))
           ];
+        buildable = true;
         };
       };
     }

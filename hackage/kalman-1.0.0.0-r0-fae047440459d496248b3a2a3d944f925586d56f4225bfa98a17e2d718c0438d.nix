@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random-fu-multivariate" or (buildDepError "random-fu-multivariate"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "kalman-test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"))
             (hsPkgs."Chart-diagrams" or (buildDepError "Chart-diagrams"))
             ];
+          buildable = true;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."tree-monad" or (buildDepError "tree-monad"))
           ];
+        buildable = true;
         };
       };
     }

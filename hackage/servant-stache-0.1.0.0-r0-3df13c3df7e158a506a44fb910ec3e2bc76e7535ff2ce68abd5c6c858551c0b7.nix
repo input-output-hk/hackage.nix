@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."xss-sanitize" or (buildDepError "xss-sanitize"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-stache" or (buildDepError "servant-stache"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = true;
           };
         };
       };

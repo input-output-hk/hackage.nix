@@ -88,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."glib-2.0" or (pkgConfDepError "glib-2.0"))
             (pkgconfPkgs."gio-unix-2.0" or (pkgConfDepError "gio-unix-2.0"))
             ];
+          buildable = true;
           };
         "dump-messages" = {
           depends = [
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hgettext" or (buildDepError "hgettext"))
             (hsPkgs."setlocale" or (buildDepError "setlocale"))
             ];
+          buildable = if flags.interactivetests then true else false;
           };
         };
       tests = {
@@ -118,12 +120,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hgettext" or (buildDepError "hgettext"))
             (hsPkgs."setlocale" or (buildDepError "setlocale"))
             ];
+          buildable = true;
           };
         "test-regions" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         "test-renderer" = {
           depends = [
@@ -144,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hgettext" or (buildDepError "hgettext"))
             (hsPkgs."setlocale" or (buildDepError "setlocale"))
             ];
+          buildable = true;
           };
         };
       };

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
           (hsPkgs."deque" or (buildDepError "deque"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deque" or (buildDepError "deque"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

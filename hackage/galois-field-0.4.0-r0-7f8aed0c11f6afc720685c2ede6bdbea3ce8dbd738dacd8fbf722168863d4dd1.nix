@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
           ];
+        buildable = true;
         };
       tests = {
         "galois-field-tests" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             ];
+          buildable = true;
           };
         };
       };

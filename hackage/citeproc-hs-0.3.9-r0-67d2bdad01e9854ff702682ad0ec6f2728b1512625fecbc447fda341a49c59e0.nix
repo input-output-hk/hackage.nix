@@ -93,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       };
     }

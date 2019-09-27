@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "netwire-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."netwire" or (buildDepError "netwire"))
             ];
+          buildable = if flags.testprogram then true else false;
           };
         };
       };

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."hashable" or (buildDepError "hashable"))
             ];
+          buildable = true;
           };
         };
       };

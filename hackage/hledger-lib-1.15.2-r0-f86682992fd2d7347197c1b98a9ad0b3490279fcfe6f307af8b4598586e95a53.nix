@@ -97,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -143,6 +144,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = if compiler.isGhc && (compiler.version).lt "8.2"
+            then false
+            else true;
           };
         "easytests" = {
           depends = [
@@ -188,6 +192,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         };
       };

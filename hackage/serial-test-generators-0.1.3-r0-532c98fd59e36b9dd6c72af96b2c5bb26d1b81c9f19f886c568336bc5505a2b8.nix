@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."here" or (buildDepError "here"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
             (hsPkgs."here" or (buildDepError "here"))
             ];
+          buildable = true;
           };
         };
       };

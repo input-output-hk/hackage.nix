@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."entropy" or (buildDepError "entropy"))
           (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."clientsession" or (buildDepError "clientsession"))
             ];
+          buildable = true;
           };
         };
       };

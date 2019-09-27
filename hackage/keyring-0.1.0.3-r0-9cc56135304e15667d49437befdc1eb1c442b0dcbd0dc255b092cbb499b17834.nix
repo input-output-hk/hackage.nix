@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."CoreFoundation" or (sysDepError "CoreFoundation"))
           ];
         build-tools = (pkgs.lib).optional (system.isOsx) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")));
+        buildable = true;
         };
       exes = {
         "keyring-example" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."keyring" or (buildDepError "keyring"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

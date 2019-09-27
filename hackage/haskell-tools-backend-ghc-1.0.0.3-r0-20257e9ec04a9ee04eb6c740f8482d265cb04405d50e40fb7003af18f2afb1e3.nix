@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-tools-ast" or (buildDepError "haskell-tools-ast"))
           (hsPkgs."ghc-boot-th" or (buildDepError "ghc-boot-th"))
           ];
+        buildable = true;
         };
       };
     }

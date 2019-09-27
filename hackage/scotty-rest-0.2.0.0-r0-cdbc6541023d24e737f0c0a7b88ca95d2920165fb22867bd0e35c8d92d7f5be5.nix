@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
           ];
+        buildable = true;
         };
       exes = {
         "database-example" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             ];
+          buildable = if flags.build-examples then true else false;
           };
         "hello-world-example" = {
           depends = [
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."scotty" or (buildDepError "scotty"))
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             ];
+          buildable = if flags.build-examples then true else false;
           };
         "parameters-example" = {
           depends = [
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             ];
+          buildable = if flags.build-examples then true else false;
           };
         "mutable-state-example" = {
           depends = [
@@ -111,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             ];
+          buildable = if flags.build-examples then true else false;
           };
         };
       tests = {
@@ -128,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."wai" or (buildDepError "wai"))
             ];
+          buildable = true;
           };
         };
       };

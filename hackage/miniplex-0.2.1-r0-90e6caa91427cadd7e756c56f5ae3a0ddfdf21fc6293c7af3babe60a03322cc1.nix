@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       exes = {
         "plox-read" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         "plox-write" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

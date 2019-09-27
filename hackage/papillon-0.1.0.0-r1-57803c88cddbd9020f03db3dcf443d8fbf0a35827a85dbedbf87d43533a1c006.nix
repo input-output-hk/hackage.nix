@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "papillon" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."papillon" or (buildDepError "papillon"))
             ];
+          buildable = true;
           };
         };
       };

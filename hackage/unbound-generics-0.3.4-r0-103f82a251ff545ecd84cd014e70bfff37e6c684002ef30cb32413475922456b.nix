@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+        buildable = true;
         };
       tests = {
         "test-unbound-generics" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."unbound-generics" or (buildDepError "unbound-generics"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
               ]
             else [ (hsPkgs."deepseq" or (buildDepError "deepseq")) ]);
+          buildable = true;
           };
         };
       };

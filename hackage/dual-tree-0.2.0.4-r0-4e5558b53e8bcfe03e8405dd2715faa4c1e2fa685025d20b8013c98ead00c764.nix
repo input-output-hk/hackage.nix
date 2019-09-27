@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."newtype" or (buildDepError "newtype"))
           (hsPkgs."monoid-extras" or (buildDepError "monoid-extras"))
           ];
+        buildable = true;
         };
       };
     }

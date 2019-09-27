@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."encoding" or (buildDepError "encoding"))
           (hsPkgs."pdf-toolbox-core" or (buildDepError "pdf-toolbox-core"))
           ];
+        buildable = true;
         };
       };
     }

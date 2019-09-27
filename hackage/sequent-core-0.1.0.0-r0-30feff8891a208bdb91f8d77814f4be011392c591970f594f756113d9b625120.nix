@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."ghc" or (buildDepError "ghc"))
           ];
+        buildable = true;
         };
       exes = {
         "Example" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sequent-core" or (buildDepError "sequent-core"))
             ];
+          buildable = true;
           };
         };
       };

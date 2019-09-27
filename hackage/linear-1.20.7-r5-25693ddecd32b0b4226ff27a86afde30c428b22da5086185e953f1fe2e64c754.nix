@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."void" or (buildDepError "void"))
           ] ++ (pkgs.lib).optional (flags.template-haskell && (compiler.isGhc && true)) (hsPkgs."template-haskell" or (buildDepError "template-haskell"))) ++ (pkgs.lib).optional (flags.herbie) (hsPkgs."HerbiePlugin" or (buildDepError "HerbiePlugin"));
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."linear" or (buildDepError "linear"))
             (hsPkgs."simple-reflect" or (buildDepError "simple-reflect"))
             ];
+          buildable = true;
           };
         "UnitTests" = {
           depends = [
@@ -107,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reflection" or (buildDepError "reflection"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

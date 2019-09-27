@@ -55,7 +55,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       };
     components = {
       exes = {
-        "titan" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "titan" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         };
       };
     }

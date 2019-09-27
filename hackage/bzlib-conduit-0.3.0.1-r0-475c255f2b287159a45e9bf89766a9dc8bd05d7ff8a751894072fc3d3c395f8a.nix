@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           ];
         libs = (pkgs.lib).optional (!system.isWindows) (pkgs."bz2" or (sysDepError "bz2"));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
+          buildable = true;
           };
         };
       };

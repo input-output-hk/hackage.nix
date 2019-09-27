@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
           (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))
           ];
+        buildable = true;
         };
       };
     }

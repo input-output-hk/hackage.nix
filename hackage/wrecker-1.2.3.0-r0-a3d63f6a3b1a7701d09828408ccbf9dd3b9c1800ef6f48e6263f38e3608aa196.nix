@@ -108,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."threads-extras" or (buildDepError "threads-extras"))
           (hsPkgs."tdigest" or (buildDepError "tdigest"))
           ];
+        buildable = true;
         };
       exes = {
         "wreck" = {
@@ -121,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wreq" or (buildDepError "wreq"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -147,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."connection" or (buildDepError "connection"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

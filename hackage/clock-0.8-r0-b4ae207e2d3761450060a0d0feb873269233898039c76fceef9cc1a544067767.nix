@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."clock" or (buildDepError "clock"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."clock" or (buildDepError "clock"))
             ];
+          buildable = true;
           };
         };
       };

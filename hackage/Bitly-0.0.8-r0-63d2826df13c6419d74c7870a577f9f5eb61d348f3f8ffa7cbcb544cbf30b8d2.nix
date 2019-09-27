@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           (hsPkgs."HaXml" or (buildDepError "HaXml"))
           ];
+        buildable = true;
         };
       };
     }

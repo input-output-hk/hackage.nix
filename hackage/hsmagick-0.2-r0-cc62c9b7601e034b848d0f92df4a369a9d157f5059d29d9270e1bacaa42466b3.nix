@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."x11" or (pkgConfDepError "x11"))
           (pkgconfPkgs."libxml-2.0" or (pkgConfDepError "libxml-2.0"))
           ];
+        buildable = true;
         };
       };
     }

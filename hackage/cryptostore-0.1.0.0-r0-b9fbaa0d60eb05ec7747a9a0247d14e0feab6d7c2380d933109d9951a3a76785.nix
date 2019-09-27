@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hourglass" or (buildDepError "hourglass"))
           (hsPkgs."x509" or (buildDepError "x509"))
           ];
+        buildable = true;
         };
       tests = {
         "test-cryptostore" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."x509" or (buildDepError "x509"))
             (hsPkgs."cryptostore" or (buildDepError "cryptostore"))
             ];
+          buildable = true;
           };
         };
       };

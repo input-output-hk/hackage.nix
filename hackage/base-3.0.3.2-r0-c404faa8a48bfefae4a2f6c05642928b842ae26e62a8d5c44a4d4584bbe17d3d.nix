@@ -59,6 +59,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "6.9"
+          then false
+          else true;
         };
       };
     }

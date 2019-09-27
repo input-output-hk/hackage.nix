@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ];
+        buildable = true;
         };
       exes = {
         "SBVUnitTests" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."sbv" or (buildDepError "sbv"))
             ];
+          buildable = true;
           };
         };
       };

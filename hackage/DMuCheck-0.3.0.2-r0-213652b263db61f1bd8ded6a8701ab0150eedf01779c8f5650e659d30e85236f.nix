@@ -72,6 +72,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."binary" or (buildDepError "binary"))
             (hsPkgs."MuCheck" or (buildDepError "MuCheck"))
             ] ++ (pkgs.lib).optional (flags.quickcheck) (hsPkgs."MuCheck-QuickCheck" or (buildDepError "MuCheck-QuickCheck"))) ++ (pkgs.lib).optional (flags.smallcheck) (hsPkgs."MuCheck-SmallCheck" or (buildDepError "MuCheck-SmallCheck"))) ++ (pkgs.lib).optional (flags.hunit) (hsPkgs."MuCheck-HUnit" or (buildDepError "MuCheck-HUnit"))) ++ (pkgs.lib).optional (flags.hspec) (hsPkgs."MuCheck-Hspec" or (buildDepError "MuCheck-Hspec"));
+          buildable = if flags.quickcheck || flags.smallcheck || flags.hunit || flags.hspec
+            then true
+            else false;
           };
         "d-master" = {
           depends = ((([
@@ -85,6 +88,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."binary" or (buildDepError "binary"))
             (hsPkgs."MuCheck" or (buildDepError "MuCheck"))
             ] ++ (pkgs.lib).optional (flags.quickcheck) (hsPkgs."MuCheck-QuickCheck" or (buildDepError "MuCheck-QuickCheck"))) ++ (pkgs.lib).optional (flags.smallcheck) (hsPkgs."MuCheck-SmallCheck" or (buildDepError "MuCheck-SmallCheck"))) ++ (pkgs.lib).optional (flags.hunit) (hsPkgs."MuCheck-HUnit" or (buildDepError "MuCheck-HUnit"))) ++ (pkgs.lib).optional (flags.hspec) (hsPkgs."MuCheck-Hspec" or (buildDepError "MuCheck-Hspec"));
+          buildable = if flags.quickcheck || flags.smallcheck || flags.hunit || flags.hspec
+            then true
+            else false;
           };
         "d-slave" = {
           depends = ((([
@@ -98,12 +104,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."binary" or (buildDepError "binary"))
             (hsPkgs."MuCheck" or (buildDepError "MuCheck"))
             ] ++ (pkgs.lib).optional (flags.quickcheck) (hsPkgs."MuCheck-QuickCheck" or (buildDepError "MuCheck-QuickCheck"))) ++ (pkgs.lib).optional (flags.smallcheck) (hsPkgs."MuCheck-SmallCheck" or (buildDepError "MuCheck-SmallCheck"))) ++ (pkgs.lib).optional (flags.hunit) (hsPkgs."MuCheck-HUnit" or (buildDepError "MuCheck-HUnit"))) ++ (pkgs.lib).optional (flags.hspec) (hsPkgs."MuCheck-Hspec" or (buildDepError "MuCheck-Hspec"));
+          buildable = if flags.quickcheck || flags.smallcheck || flags.hunit || flags.hspec
+            then true
+            else false;
           };
         "dummy" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."MuCheck" or (buildDepError "MuCheck"))
             ];
+          buildable = true;
           };
         };
       };

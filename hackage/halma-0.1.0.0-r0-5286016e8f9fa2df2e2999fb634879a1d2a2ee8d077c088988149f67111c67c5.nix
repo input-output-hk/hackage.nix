@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
           (hsPkgs."data-default" or (buildDepError "data-default"))
           ];
+        buildable = true;
         };
       exes = {
         "halma" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."timeit" or (buildDepError "timeit"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
+          buildable = true;
           };
         };
       };

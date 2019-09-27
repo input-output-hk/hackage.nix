@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
           ];
+        buildable = true;
         };
       };
     }

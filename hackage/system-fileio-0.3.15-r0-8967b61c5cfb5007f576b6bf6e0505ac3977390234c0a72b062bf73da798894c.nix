@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             ]
           else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+        buildable = true;
         };
       tests = {
         "filesystem_tests" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = true;
           };
         };
       };

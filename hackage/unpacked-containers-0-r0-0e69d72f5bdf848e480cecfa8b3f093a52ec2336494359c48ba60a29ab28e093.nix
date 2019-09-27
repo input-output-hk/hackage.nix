@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."utils" or (buildDepError "utils"))
           ];
+        buildable = true;
         };
       sublibs = {
         "utils" = {
@@ -69,9 +70,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             ];
+          buildable = true;
           };
         "example" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       exes = {
@@ -81,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unpacked-containers" or (buildDepError "unpacked-containers"))
             (hsPkgs."example" or (buildDepError "example"))
             ];
+          buildable = true;
           };
         };
       };

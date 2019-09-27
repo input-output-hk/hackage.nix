@@ -100,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."hpc" or (buildDepError "hpc"))
           ];
+        buildable = true;
         };
       exes = {
         "liquid" = {
@@ -117,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."liquidhaskell" or (buildDepError "liquidhaskell"))
             (hsPkgs."hpc" or (buildDepError "hpc"))
             ];
+          buildable = true;
           };
         "target" = {
           depends = [
@@ -124,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hint" or (buildDepError "hint"))
             (hsPkgs."liquidhaskell" or (buildDepError "liquidhaskell"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -148,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hpc" or (buildDepError "hpc"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "liquidhaskell-parser" = {
           depends = [
@@ -200,6 +204,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
               (hsPkgs."bytestring" or (buildDepError "bytestring"))
               ]);
+          buildable = true;
           };
         };
       };

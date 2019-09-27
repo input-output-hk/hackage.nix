@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."normaldistribution" or (buildDepError "normaldistribution"))
           ];
+        buildable = true;
         };
       exes = {
         "HNumeric-exe" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."normaldistribution" or (buildDepError "normaldistribution"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."normaldistribution" or (buildDepError "normaldistribution"))
             ];
+          buildable = true;
           };
         };
       };

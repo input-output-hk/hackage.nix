@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
           (hsPkgs."tagged" or (buildDepError "tagged"))
           ];
+        buildable = true;
         };
       };
     }

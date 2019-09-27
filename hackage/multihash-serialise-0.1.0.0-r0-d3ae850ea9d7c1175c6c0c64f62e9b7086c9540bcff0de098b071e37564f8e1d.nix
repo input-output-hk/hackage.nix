@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."multihash-cryptonite" or (buildDepError "multihash-cryptonite"))
           (hsPkgs."serialise" or (buildDepError "serialise"))
           ];
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multihash-serialise" or (buildDepError "multihash-serialise"))
             (hsPkgs."serialise" or (buildDepError "serialise"))
             ];
+          buildable = true;
           };
         };
       };

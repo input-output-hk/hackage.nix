@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."gegl-0.3" or (pkgConfDepError "gegl-0.3"))
           ];
+        buildable = true;
         };
       exes = {
         "example00" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gegl" or (buildDepError "gegl"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "example01" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."linear" or (buildDepError "linear"))
             (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "example02" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -96,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."babl" or (buildDepError "babl"))
             (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

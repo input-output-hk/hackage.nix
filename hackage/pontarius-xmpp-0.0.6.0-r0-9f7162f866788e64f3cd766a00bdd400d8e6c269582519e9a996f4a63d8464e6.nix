@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stringprep" or (buildDepError "stringprep"))
           (hsPkgs."idna2008" or (buildDepError "idna2008"))
           ];
+        buildable = true;
         };
       };
     }

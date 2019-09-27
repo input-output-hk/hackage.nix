@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."scientific" or (buildDepError "scientific"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."simple-reflect" or (buildDepError "simple-reflect"))
             ];
+          buildable = if !flags.test-doctests then false else true;
           };
         };
       };

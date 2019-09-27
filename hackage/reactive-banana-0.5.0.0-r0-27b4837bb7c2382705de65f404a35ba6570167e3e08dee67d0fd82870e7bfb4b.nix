@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."fclabels" or (buildDepError "fclabels"))
           ];
+        buildable = true;
         };
       };
     }

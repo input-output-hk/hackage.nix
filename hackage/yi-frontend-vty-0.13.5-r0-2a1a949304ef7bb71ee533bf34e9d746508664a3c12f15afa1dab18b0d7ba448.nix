@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yi-core" or (buildDepError "yi-core"))
           (hsPkgs."yi-language" or (buildDepError "yi-language"))
           ];
+        buildable = true;
         };
       };
     }

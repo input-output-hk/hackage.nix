@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."optics-core" or (buildDepError "optics-core"))
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           ];
+        buildable = true;
         };
       };
     }

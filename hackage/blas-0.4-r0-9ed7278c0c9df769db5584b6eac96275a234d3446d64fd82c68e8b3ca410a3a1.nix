@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           ];
         libs = [ (pkgs."blas" or (sysDepError "blas")) ];
+        buildable = true;
         };
       };
     }

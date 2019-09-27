@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-Data" or (buildDepError "HGamer3D-Data"))
           (hsPkgs."HGamer3D-Enet-Binding" or (buildDepError "HGamer3D-Enet-Binding"))
           ];
+        buildable = true;
         };
       };
     }

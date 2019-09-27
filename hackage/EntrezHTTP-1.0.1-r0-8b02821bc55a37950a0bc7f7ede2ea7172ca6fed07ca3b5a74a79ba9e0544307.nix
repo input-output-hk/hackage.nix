@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."biocore" or (buildDepError "biocore"))
           (hsPkgs."Taxonomy" or (buildDepError "Taxonomy"))
           ];
+        buildable = true;
         };
       };
     }

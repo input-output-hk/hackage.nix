@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."failure" or (buildDepError "failure"))
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           ];
+        buildable = true;
         };
       exes = {
         "send" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."mailgun" or (buildDepError "mailgun"))
             ];
+          buildable = true;
           };
         "sendmany" = {
           depends = [
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."mailgun" or (buildDepError "mailgun"))
             ];
+          buildable = true;
           };
         };
       };

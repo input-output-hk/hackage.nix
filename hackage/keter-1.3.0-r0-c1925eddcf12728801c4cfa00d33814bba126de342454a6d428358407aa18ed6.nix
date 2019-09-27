@@ -100,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."async" or (buildDepError "async"))
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           ];
+        buildable = true;
         };
       exes = {
         "keter" = {
@@ -109,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
             (hsPkgs."data-default" or (buildDepError "data-default"))
             ];
+          buildable = true;
           };
         "hello" = {
           depends = [
@@ -123,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = false;
           };
         };
       tests = {
@@ -136,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."keter" or (buildDepError "keter"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."geodetic-types" or (buildDepError "geodetic-types"))
           (hsPkgs."dimensional" or (buildDepError "dimensional"))
           ];
+        buildable = true;
         };
       exes = {
         "vfr-waypoints" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."vfr-waypoints" or (buildDepError "vfr-waypoints"))
             ];
+          buildable = true;
           };
         };
       };

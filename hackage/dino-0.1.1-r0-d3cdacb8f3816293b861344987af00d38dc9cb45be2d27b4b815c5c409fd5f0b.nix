@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tree-view" or (buildDepError "tree-view"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -81,12 +82,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         "examples" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."dino" or (buildDepError "dino"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."colour" or (buildDepError "colour"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
       tests = {
         "Units" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         };
       };

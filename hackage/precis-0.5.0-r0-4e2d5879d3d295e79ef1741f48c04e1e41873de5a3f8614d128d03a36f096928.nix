@@ -65,7 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cpphs" or (buildDepError "cpphs"))
           (hsPkgs."xhtml" or (buildDepError "xhtml"))
           ];
+        buildable = true;
         };
-      exes = { "precis" = {}; };
+      exes = { "precis" = { buildable = true; }; };
       };
     }

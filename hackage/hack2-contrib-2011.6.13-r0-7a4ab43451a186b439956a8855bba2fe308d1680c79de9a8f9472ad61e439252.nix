@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."regexpr" or (buildDepError "regexpr"))
           ];
+        buildable = true;
         };
       };
     }

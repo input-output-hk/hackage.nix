@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."X11" or (buildDepError "X11"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "xmonad" = {
@@ -72,12 +73,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."xmonad-vanessa" or (buildDepError "xmonad-vanessa"))
             ];
+          buildable = if flags.library then false else true;
           };
         "getkb" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."xmonad-vanessa" or (buildDepError "xmonad-vanessa"))
             ];
+          buildable = if flags.library then false else true;
           };
         };
       tests = {
@@ -88,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."xmonad" or (buildDepError "xmonad"))
             ];
+          buildable = true;
           };
         };
       };

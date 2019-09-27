@@ -109,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.7") (hsPkgs."MemoTrie" or (buildDepError "MemoTrie"))) ++ [
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ]) ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+        buildable = true;
         };
       exes = {
         "toysolver" = {
@@ -123,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = true;
           };
         "toysat" = {
           depends = ([
@@ -147,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."time" or (buildDepError "time"))
               (hsPkgs."old-locale" or (buildDepError "old-locale"))
               ])) ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs."base" or (buildDepError "base"));
+          buildable = true;
           };
         "toysmt" = {
           depends = ([
@@ -159,6 +162,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ] ++ (pkgs.lib).optional (flags.usehaskeline) (hsPkgs."haskeline" or (buildDepError "haskeline"))) ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs."base" or (buildDepError "base"));
+          buildable = true;
           };
         "toyfmf" = {
           depends = (pkgs.lib).optionals (flags.buildtoyfmf) ([
@@ -167,6 +171,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             (hsPkgs."logic-TPTP" or (buildDepError "logic-TPTP"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.9" && flags.transformers051) (hsPkgs."logic-TPTP" or (buildDepError "logic-TPTP")));
+          buildable = if !flags.buildtoyfmf then false else true;
           };
         "lpconvert" = {
           depends = [
@@ -177,6 +182,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = true;
           };
         "pbconvert" = {
           depends = [
@@ -187,6 +193,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = true;
           };
         "sudoku" = {
           depends = [
@@ -194,6 +201,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = if !flags.buildsampleprograms then false else true;
           };
         "nonogram" = {
           depends = [
@@ -202,6 +210,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = if !flags.buildsampleprograms then false else true;
           };
         "nqueens" = {
           depends = [
@@ -209,12 +218,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = if !flags.buildsampleprograms then false else true;
           };
         "knapsack" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = if !flags.buildsampleprograms then false else true;
           };
         "htc" = {
           depends = [
@@ -222,6 +233,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = if !flags.buildsampleprograms then false else true;
           };
         "svm2lp" = {
           depends = [
@@ -231,6 +243,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = if !flags.buildsampleprograms then false else true;
           };
         "pigeonhole" = {
           depends = [
@@ -239,6 +252,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = if !flags.buildmiscprograms then false else true;
           };
         "maxsatverify" = {
           depends = [
@@ -246,6 +260,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = if !flags.buildmiscprograms then false else true;
           };
         "pbverify" = {
           depends = [
@@ -254,6 +269,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = if !flags.buildmiscprograms then false else true;
           };
         };
       tests = {
@@ -270,6 +286,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."finite-field" or (buildDepError "finite-field"))
             (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
             ];
+          buildable = true;
           };
         "TestSuite" = {
           depends = [
@@ -294,6 +311,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -306,6 +324,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         "BenchmarkKnapsack" = {
           depends = [
@@ -313,6 +332,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         "BenchmarkSubsetSum" = {
           depends = [
@@ -321,6 +341,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

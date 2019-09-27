@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MemoTrie" or (buildDepError "MemoTrie"))
             (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
             ];
+          buildable = true;
           };
         };
       };

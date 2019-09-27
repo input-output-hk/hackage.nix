@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."apr-util-1" or (pkgConfDepError "apr-util-1"))
           ];
+        buildable = true;
         };
       };
     }

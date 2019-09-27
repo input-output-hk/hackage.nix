@@ -96,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network-uri" or (buildDepError "network-uri"))
           (hsPkgs."network" or (buildDepError "network"))
           ];
+        buildable = true;
         };
       exes = {
         "hoogle" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hoogle" or (buildDepError "hoogle"))
             ];
+          buildable = true;
           };
         };
       };

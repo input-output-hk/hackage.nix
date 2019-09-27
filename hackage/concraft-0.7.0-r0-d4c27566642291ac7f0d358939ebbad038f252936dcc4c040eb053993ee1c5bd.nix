@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
+        buildable = true;
         };
       exes = {
         "concraft-analyse-model" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
             (hsPkgs."colour" or (buildDepError "colour"))
             ];
+          buildable = if flags.buildanatool then true else false;
           };
         };
       };

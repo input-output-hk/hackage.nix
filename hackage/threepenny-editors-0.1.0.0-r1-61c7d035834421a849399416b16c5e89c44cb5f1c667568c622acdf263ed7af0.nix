@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
           ];
+        buildable = true;
         };
       exes = {
         "person" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."c10k" or (buildDepError "c10k"))
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
+        buildable = true;
         };
       };
     }

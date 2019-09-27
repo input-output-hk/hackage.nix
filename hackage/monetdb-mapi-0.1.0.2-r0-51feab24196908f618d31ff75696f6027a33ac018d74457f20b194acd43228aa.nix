@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."bindings-monetdb-mapi" or (buildDepError "bindings-monetdb-mapi"))
           ];
+        buildable = true;
         };
       };
     }

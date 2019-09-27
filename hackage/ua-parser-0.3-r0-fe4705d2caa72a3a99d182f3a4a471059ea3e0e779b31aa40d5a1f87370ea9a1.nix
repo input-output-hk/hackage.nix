@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default" or (buildDepError "data-default"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         };
       };

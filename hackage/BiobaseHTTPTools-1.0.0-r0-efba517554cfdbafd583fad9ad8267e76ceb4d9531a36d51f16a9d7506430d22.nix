@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "AccessionToTaxId" = {
           depends = [
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."hxt" or (buildDepError "hxt"))
             ];
+          buildable = true;
           };
         "GeneIdToUniProtId" = {
           depends = [
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."BiobaseHTTP" or (buildDepError "BiobaseHTTP"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "GeneIdToGOTerms" = {
           depends = [
@@ -92,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."BiobaseHTTP" or (buildDepError "BiobaseHTTP"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

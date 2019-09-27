@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
           (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
           ];
+        buildable = true;
         };
       exes = {
         "diagrams-haddock" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."cpphs" or (buildDepError "cpphs"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -106,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             (hsPkgs."diagrams-haddock" or (buildDepError "diagrams-haddock"))
             ];
+          buildable = true;
           };
         };
       };

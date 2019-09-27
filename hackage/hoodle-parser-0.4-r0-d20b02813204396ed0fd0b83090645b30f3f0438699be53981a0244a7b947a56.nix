@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."xournal-types" or (buildDepError "xournal-types"))
           ];
+        buildable = true;
         };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
           (hsPkgs."websockets" or (buildDepError "websockets"))
           ];
+        buildable = true;
         };
       tests = {
         "websockets-simple-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."websockets-simple" or (buildDepError "websockets-simple"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck-safe" or (buildDepError "QuickCheck-safe"))
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           ];
+        buildable = true;
         };
       };
     }

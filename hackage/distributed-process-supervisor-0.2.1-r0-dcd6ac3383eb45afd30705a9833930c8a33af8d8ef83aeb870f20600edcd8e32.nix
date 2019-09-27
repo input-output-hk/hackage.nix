@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           ];
+        buildable = true;
         };
       tests = {
         "SupervisorTests" = {
@@ -113,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             ];
+          buildable = true;
           };
         "NonThreadedSupervisorTests" = {
           depends = [
@@ -147,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             ];
+          buildable = true;
           };
         };
       };

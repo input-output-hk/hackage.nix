@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags._old-network
           then [ (hsPkgs."network" or (buildDepError "network")) ]
           else [ (hsPkgs."network-bsd" or (buildDepError "network-bsd")) ]);
+        buildable = true;
         };
       tests = {
         "bson-tests" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

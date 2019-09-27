@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."charsetdetect-ae" or (buildDepError "charsetdetect-ae"))
           ];
+        buildable = true;
         };
       exes = {
         "html-charset" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."html-charset" or (buildDepError "html-charset"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest-discover" or (buildDepError "doctest-discover"))
             (hsPkgs."html-charset" or (buildDepError "html-charset"))
             ];
+          buildable = true;
           };
         "hlint" = {
           depends = [
@@ -89,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         };
       };

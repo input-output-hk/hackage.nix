@@ -71,14 +71,15 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."salvia-sessions" or (buildDepError "salvia-sessions"))
           (hsPkgs."salvia-websocket" or (buildDepError "salvia-websocket"))
           ];
+        buildable = true;
         };
       exes = {
-        "salvia-demo" = {};
-        "salvia-serve" = {};
-        "salvia.cgi" = {};
-        "salvia-helloworld" = {};
-        "salvia-query" = {};
-        "salvia-directories" = {};
+        "salvia-demo" = { buildable = true; };
+        "salvia-serve" = { buildable = true; };
+        "salvia.cgi" = { buildable = true; };
+        "salvia-helloworld" = { buildable = true; };
+        "salvia-query" = { buildable = true; };
+        "salvia-directories" = { buildable = true; };
         };
       };
     }

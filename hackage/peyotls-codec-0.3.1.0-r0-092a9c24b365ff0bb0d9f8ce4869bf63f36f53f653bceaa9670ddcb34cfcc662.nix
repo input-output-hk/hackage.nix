@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-pubkey-types" or (buildDepError "crypto-pubkey-types"))
           (hsPkgs."bytable" or (buildDepError "bytable"))
           ];
+        buildable = true;
         };
       };
     }

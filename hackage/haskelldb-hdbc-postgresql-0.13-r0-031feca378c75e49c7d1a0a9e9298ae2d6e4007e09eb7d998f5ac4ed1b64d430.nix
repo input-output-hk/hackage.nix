@@ -62,7 +62,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HDBC" or (buildDepError "HDBC"))
           (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
-      exes = { "DBDirect-hdbc-postgresql" = {}; };
+      exes = { "DBDirect-hdbc-postgresql" = { buildable = true; }; };
       };
     }

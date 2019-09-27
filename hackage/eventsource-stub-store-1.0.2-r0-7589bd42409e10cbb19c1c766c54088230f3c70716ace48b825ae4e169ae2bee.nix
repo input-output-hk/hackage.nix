@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."stm" or (buildDepError "stm"))
           ];
+        buildable = true;
         };
       tests = {
         "eventsource-stub-store-test-suite" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."eventsource-api" or (buildDepError "eventsource-api"))
             ];
+          buildable = true;
           };
         };
       };

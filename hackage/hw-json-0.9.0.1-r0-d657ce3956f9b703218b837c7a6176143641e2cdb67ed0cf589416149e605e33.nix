@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."word8" or (buildDepError "word8"))
           ];
+        buildable = true;
         };
       exes = {
         "hw-json" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         };
       tests = {
@@ -114,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."hw-json" or (buildDepError "hw-json"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -132,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."hw-json" or (buildDepError "hw-json"))
             ];
+          buildable = true;
           };
         };
       };

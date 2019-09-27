@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."portaudio" or (buildDepError "portaudio"))
             (hsPkgs."hemkay-core" or (buildDepError "hemkay-core"))
             ];
+          buildable = true;
           };
         };
       };

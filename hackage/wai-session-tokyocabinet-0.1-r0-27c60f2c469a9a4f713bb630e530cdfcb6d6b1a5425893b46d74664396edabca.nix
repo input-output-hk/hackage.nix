@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."errors" or (buildDepError "errors"))
           (hsPkgs."wai-session" or (buildDepError "wai-session"))
           ];
+        buildable = true;
         };
       };
     }

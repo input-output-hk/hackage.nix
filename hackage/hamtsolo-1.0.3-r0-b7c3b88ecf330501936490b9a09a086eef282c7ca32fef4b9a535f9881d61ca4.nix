@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm-conduit" or (buildDepError "stm-conduit"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         };
       };

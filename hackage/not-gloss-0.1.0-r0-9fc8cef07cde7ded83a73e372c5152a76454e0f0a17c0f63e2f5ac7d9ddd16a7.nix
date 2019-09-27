@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
           (hsPkgs."spatial-math" or (buildDepError "spatial-math"))
           ];
+        buildable = true;
         };
       exes = {
         "not-gloss-example" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."not-gloss" or (buildDepError "not-gloss"))
             ];
+          buildable = true;
           };
         };
       };

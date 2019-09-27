@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hinotify" or (buildDepError "hinotify"))
           (hsPkgs."stm" or (buildDepError "stm"))
           ];
+        buildable = true;
         };
       };
     }

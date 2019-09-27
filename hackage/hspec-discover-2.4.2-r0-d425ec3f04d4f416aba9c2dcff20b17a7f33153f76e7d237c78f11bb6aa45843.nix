@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = true;
         };
       exes = {
         "hspec-discover" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."hspec-discover" or (buildDepError "hspec-discover"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-discover" or (buildDepError "hspec-discover"))
             (hsPkgs."hspec-meta" or (buildDepError "hspec-meta"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-construction" or (buildDepError "data-construction"))
           (hsPkgs."lens" or (buildDepError "lens"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
           (hsPkgs."constraints-extras" or (buildDepError "constraints-extras"))
           ];
+        buildable = true;
         };
       };
     }

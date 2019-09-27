@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."snap-core" or (buildDepError "snap-core"))
           (hsPkgs."snap-server" or (buildDepError "snap-server"))
           ];
+        buildable = true;
         };
       tests = {
         "hakyll-tests" = {
@@ -113,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         };
       };

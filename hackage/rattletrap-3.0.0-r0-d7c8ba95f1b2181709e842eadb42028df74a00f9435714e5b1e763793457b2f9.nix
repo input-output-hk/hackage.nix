@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "rattletrap" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."rattletrap" or (buildDepError "rattletrap"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -106,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rattletrap" or (buildDepError "rattletrap"))
             (hsPkgs."temporary" or (buildDepError "temporary"))
             ];
+          buildable = true;
           };
         };
       };

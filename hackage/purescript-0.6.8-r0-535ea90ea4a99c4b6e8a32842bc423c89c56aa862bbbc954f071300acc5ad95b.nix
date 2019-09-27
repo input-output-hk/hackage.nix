@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."file-embed" or (buildDepError "file-embed"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "psc" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."purescript" or (buildDepError "purescript"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "psc-make" = {
           depends = [
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."purescript" or (buildDepError "purescript"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "psci" = {
           depends = [
@@ -111,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "psc-docs" = {
           depends = [
@@ -120,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         "psc-hierarchy" = {
           depends = [
@@ -132,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -147,6 +153,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

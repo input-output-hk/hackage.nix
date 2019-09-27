@@ -102,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if system.isLinux
           then [ (hsPkgs."hinotify" or (buildDepError "hinotify")) ]
           else (pkgs.lib).optional (system.isOsx || system.isFreebsd) (hsPkgs."kqueue" or (buildDepError "kqueue")));
+        buildable = true;
         };
       exes = {
         "ffexecutord" = {
@@ -117,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -132,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         "unit-tests" = {
           depends = [
@@ -152,6 +155,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."temporary" or (buildDepError "temporary"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         };
       };

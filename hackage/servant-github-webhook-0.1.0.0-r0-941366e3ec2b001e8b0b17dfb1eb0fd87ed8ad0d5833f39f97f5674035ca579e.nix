@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
           (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
           ];
+        buildable = true;
         };
       };
     }

@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."poppler-glib" or (pkgConfDepError "poppler-glib"))
           ];
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       exes = {
         "sized-types-test1" = {
@@ -69,9 +70,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.devel then true else false;
           };
         "sized-types-example1" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.devel then true else false;
           };
         };
       };

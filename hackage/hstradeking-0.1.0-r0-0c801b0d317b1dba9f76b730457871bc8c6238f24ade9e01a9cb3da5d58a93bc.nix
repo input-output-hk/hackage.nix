@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."numbers" or (buildDepError "numbers"))
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           ];
+        buildable = true;
         };
       exes = {
         "tradeking" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

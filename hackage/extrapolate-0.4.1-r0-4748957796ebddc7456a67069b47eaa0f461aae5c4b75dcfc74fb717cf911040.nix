@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."speculate" or (buildDepError "speculate"))
           (hsPkgs."express" or (buildDepError "express"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."speculate" or (buildDepError "speculate"))
             (hsPkgs."extrapolate" or (buildDepError "extrapolate"))
             ];
+          buildable = true;
           };
         "derive" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."speculate" or (buildDepError "speculate"))
             (hsPkgs."extrapolate" or (buildDepError "extrapolate"))
             ];
+          buildable = true;
           };
         "utils" = {
           depends = [
@@ -90,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."speculate" or (buildDepError "speculate"))
             (hsPkgs."extrapolate" or (buildDepError "extrapolate"))
             ];
+          buildable = true;
           };
         "step-by-step" = {
           depends = [
@@ -99,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."speculate" or (buildDepError "speculate"))
             (hsPkgs."extrapolate" or (buildDepError "extrapolate"))
             ];
+          buildable = true;
           };
         };
       };

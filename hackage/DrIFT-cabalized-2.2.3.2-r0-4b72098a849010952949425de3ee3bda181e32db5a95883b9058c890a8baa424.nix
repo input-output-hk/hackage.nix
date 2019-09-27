@@ -61,12 +61,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "DrIFT-cabalized-ghc" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           (hsPkgs."data-reify" or (buildDepError "data-reify"))
           ];
+        buildable = true;
         };
       exes = {
         "hylide" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-types" or (buildDepError "http-types"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = true;
           };
         };
       };

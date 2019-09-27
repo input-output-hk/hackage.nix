@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       tests = {
         "test-hsmisc" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."hspec" or (buildDepError "hspec"))
           ];
+        buildable = true;
         };
       exes = {
         "hspec-discover" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."hspec-shouldbe" or (buildDepError "hspec-shouldbe"))
             ];
+          buildable = true;
           };
         "example" = {
           depends = [
@@ -85,12 +88,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-shouldbe" or (buildDepError "hspec-shouldbe"))
             (hsPkgs."hspec-discover" or (buildDepError "hspec-discover"))
             ];
+          buildable = true;
           };
         "integration-test-empty" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hspec-discover" or (buildDepError "hspec-discover"))
             ];
+          buildable = true;
           };
         };
       };

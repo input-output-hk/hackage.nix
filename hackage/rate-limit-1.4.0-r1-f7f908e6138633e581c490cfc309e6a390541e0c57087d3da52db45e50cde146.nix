@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time-units" or (buildDepError "time-units"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       };
     }

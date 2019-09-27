@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."split" or (buildDepError "split"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+        buildable = true;
         };
       sublibs = {
         "test-utils" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = true;
           };
         };
       exes = {
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."stylish-cabal" or (buildDepError "stylish-cabal"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -113,6 +116,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-expectations-pretty-diff" or (buildDepError "hspec-expectations-pretty-diff"))
             (hsPkgs."stylish-cabal" or (buildDepError "stylish-cabal"))
             ];
+          buildable = if !(flags.test-strictness && (compiler.isGhc && (compiler.version).ge "8.2"))
+            then false
+            else true;
           };
         "roundtrip" = {
           depends = [
@@ -122,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."test-utils" or (buildDepError "test-utils"))
             ];
+          buildable = true;
           };
         "roundtrip-hackage" = {
           depends = [
@@ -138,6 +145,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."wreq" or (buildDepError "wreq"))
             ];
+          buildable = if !flags.test-hackage then false else true;
           };
         };
       };

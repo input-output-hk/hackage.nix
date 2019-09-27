@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."servant-docs" or (buildDepError "servant-docs"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       };
     }

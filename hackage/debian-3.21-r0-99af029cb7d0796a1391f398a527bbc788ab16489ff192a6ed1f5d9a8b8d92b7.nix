@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HaXml" or (buildDepError "HaXml"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
       exes = {
         "fakechanges" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "debian-report" = {
           depends = [
@@ -129,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "debian-versions" = {
           depends = [
@@ -154,6 +157,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "cabal-debian" = {
           depends = [
@@ -180,6 +184,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         };
       };

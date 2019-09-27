@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
           (hsPkgs."chatty-utils" or (buildDepError "chatty-utils"))
           ];
+        buildable = true;
         };
       };
     }

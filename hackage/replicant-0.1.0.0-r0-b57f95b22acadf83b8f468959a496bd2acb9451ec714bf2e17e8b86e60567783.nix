@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wreq" or (buildDepError "wreq"))
           (hsPkgs."wuss" or (buildDepError "wuss"))
           ];
+        buildable = true;
         };
       exes = {
         "replicant" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hedis-namespace" or (buildDepError "hedis-namespace"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."replicant" or (buildDepError "replicant"))
             ];
+          buildable = true;
           };
         };
       };

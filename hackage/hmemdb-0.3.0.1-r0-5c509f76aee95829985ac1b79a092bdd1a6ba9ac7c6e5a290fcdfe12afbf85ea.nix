@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."monad-stm" or (buildDepError "monad-stm"))
           ];
+        buildable = true;
         };
       };
     }

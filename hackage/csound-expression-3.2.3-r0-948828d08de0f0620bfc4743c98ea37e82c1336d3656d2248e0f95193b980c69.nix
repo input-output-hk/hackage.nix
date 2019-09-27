@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."csound-expression-typed" or (buildDepError "csound-expression-typed"))
           (hsPkgs."csound-expression-opcodes" or (buildDepError "csound-expression-opcodes"))
           ];
+        buildable = true;
         };
       };
     }

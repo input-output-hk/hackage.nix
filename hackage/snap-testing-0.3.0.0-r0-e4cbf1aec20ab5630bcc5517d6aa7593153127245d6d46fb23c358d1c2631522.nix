@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."io-streams" or (buildDepError "io-streams"))
           (hsPkgs."async" or (buildDepError "async"))
           ];
+        buildable = true;
         };
       };
     }

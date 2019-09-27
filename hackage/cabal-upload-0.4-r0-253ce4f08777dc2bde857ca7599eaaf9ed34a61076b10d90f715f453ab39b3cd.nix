@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         };
       };

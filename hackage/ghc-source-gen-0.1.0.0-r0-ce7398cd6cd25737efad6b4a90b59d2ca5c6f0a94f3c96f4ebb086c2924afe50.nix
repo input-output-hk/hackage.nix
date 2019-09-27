@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."ghc" or (buildDepError "ghc"))
           ];
+        buildable = true;
         };
       tests = {
         "pprint_examples" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
             (hsPkgs."ghc-source-gen" or (buildDepError "ghc-source-gen"))
             ];
+          buildable = true;
           };
         "pprint_test" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         };
       };

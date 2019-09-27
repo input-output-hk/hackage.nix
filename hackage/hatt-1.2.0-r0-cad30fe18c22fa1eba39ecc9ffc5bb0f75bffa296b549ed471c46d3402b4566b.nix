@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
           ];
+        buildable = true;
         };
       exes = {
         "hatt" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
             ];
+          buildable = true;
           };
         };
       };

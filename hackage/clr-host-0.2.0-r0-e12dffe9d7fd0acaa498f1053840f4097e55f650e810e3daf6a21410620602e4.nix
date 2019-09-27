@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."glib-2.0" or (sysDepError "glib-2.0"))
             (pkgs."mono-2.0" or (sysDepError "mono-2.0"))
             ]);
+        buildable = true;
         };
       tests = {
         "clr-host-test" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."clr-host" or (buildDepError "clr-host"))
             ];
+          buildable = true;
           };
         };
       };

@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cond" or (buildDepError "cond"))
           (hsPkgs."scientific" or (buildDepError "scientific"))
           ];
+        buildable = true;
         };
       tests = {
         "test-search-baidu" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."parallel" or (buildDepError "parallel"))
             ];
+          buildable = true;
           };
         };
       };

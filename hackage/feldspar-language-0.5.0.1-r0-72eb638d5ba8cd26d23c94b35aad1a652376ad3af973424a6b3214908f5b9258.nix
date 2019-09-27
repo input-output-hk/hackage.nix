@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-par" or (buildDepError "monad-par"))
           (hsPkgs."QuickAnnotate" or (buildDepError "QuickAnnotate"))
           ];
+        buildable = true;
         };
       };
     }

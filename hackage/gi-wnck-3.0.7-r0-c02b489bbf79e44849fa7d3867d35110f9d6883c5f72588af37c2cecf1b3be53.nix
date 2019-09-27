@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libwnck-3.0" or (pkgConfDepError "libwnck-3.0"))
           ];
+        buildable = true;
         };
       };
     }

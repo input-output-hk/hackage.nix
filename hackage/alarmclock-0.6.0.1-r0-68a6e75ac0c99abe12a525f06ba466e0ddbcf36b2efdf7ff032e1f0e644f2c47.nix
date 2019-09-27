@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."unbounded-delays" or (buildDepError "unbounded-delays"))
           ];
+        buildable = true;
         };
       tests = {
         "alarmclock-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."unbounded-delays" or (buildDepError "unbounded-delays"))
             ];
+          buildable = true;
           };
         };
       };

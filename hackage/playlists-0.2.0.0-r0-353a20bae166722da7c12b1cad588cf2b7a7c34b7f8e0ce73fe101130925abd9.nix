@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."word8" or (buildDepError "word8"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
       exes = {
         "playlist" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."playlists" or (buildDepError "playlists"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -83,18 +85,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."playlists" or (buildDepError "playlists"))
             ];
+          buildable = true;
           };
         "hlint" = {
           depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = if !flags.test-hlint then false else true;
           };
         "doctests" = {
           depends = (pkgs.lib).optionals (!(!flags.test-doctest)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = if !flags.test-doctest then false else true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-wget" or (buildDepError "http-wget"))
           (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
           ];
+        buildable = true;
         };
       };
     }

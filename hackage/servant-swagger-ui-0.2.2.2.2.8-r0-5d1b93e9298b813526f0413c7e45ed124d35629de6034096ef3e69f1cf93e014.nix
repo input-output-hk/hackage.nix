@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant" or (buildDepError "servant"))
             (hsPkgs."either" or (buildDepError "either"))
             ]);
+        buildable = true;
         };
       tests = {
         "example" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
               ]
             else [ (hsPkgs."either" or (buildDepError "either")) ]);
+          buildable = true;
           };
         };
       };

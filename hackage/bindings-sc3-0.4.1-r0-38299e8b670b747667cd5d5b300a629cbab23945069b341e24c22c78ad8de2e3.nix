@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-DSL" or (buildDepError "bindings-DSL"))
           ];
         libs = [ (pkgs."scsynth" or (sysDepError "scsynth")) ];
+        buildable = true;
         };
       };
     }

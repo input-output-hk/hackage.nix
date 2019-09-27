@@ -92,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."gtk+-2.0" or (pkgConfDepError "gtk+-2.0"))
           (pkgconfPkgs."x11" or (pkgConfDepError "x11"))
           ]);
+        buildable = true;
         };
       exes = {
         "LambdaHack" = {
@@ -126,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -161,6 +163,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
+          buildable = true;
           };
         };
       };

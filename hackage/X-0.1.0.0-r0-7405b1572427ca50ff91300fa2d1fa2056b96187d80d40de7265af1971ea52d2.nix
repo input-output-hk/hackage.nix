@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."text-short" or (buildDepError "text-short"))
           ];
+        buildable = true;
         };
       };
     }

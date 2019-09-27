@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."unliftio" or (buildDepError "unliftio"))
           ];
+        buildable = true;
         };
       tests = {
         "tracing-test" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tracing" or (buildDepError "tracing"))
             (hsPkgs."unliftio" or (buildDepError "unliftio"))
             ];
+          buildable = true;
           };
         };
       };

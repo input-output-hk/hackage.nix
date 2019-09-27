@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."numhask-space" or (buildDepError "numhask-space"))
           (hsPkgs."numhask-prelude" or (buildDepError "numhask-prelude"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."numhask-prelude" or (buildDepError "numhask-prelude"))
             (hsPkgs."numhask-hedgehog" or (buildDepError "numhask-hedgehog"))
             ];
+          buildable = true;
           };
         };
       };

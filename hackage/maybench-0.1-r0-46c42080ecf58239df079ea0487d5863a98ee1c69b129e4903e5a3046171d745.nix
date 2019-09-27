@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+        buildable = true;
         };
       exes = {
         "maybench" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."time" or (buildDepError "time"))
               (hsPkgs."mtl" or (buildDepError "mtl"))
               ];
+          buildable = true;
           };
         "darcs-benchmark" = {
           depends = if flags.splitbase
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."time" or (buildDepError "time"))
               (hsPkgs."mtl" or (buildDepError "mtl"))
               ];
+          buildable = true;
           };
         };
       };

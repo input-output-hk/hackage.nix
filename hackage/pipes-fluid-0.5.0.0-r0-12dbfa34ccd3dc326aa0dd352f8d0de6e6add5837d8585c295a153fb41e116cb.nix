@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           (hsPkgs."these" or (buildDepError "these"))
           ];
+        buildable = true;
         };
       tests = {
         "pipes-fluid-test" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

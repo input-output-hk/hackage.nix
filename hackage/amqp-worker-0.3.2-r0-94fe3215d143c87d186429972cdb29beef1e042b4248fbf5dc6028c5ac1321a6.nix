@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -109,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             ];
+          buildable = true;
           };
         };
       };

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
       exes = {
         "newt" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             ] ++ [ (hsPkgs."containers" or (buildDepError "containers")) ];
+          buildable = true;
           };
         "test-newt" = {
           depends = [
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         };
       };

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           ];
+        buildable = true;
         };
       tests = {
         "olympic" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."monadiccp" or (buildDepError "monadiccp"))
             ];
+          buildable = true;
           };
         };
       };

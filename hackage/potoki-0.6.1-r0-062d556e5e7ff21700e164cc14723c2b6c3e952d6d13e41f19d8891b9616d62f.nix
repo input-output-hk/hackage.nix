@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bug" or (buildDepError "bug"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."rerebase" or (buildDepError "rerebase"))
             ];
+          buildable = true;
           };
         };
       };

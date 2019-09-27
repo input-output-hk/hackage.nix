@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MissingH" or (buildDepError "MissingH"))
           (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
           ];
+        buildable = true;
         };
       exes = {
         "language-elm-exe" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."language-elm" or (buildDepError "language-elm"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."MissingH" or (buildDepError "MissingH"))
             ];
+          buildable = true;
           };
         };
       };

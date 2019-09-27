@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gtk" or (buildDepError "gtk"))
           ];
         pkgconfig = [ (pkgconfPkgs."gdk-2.0" or (pkgConfDepError "gdk-2.0")) ];
+        buildable = true;
         };
       };
     }

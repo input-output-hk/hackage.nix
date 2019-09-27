@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."setupapi" or (sysDepError "setupapi"))
             ]
           else [ (pkgs."udev" or (sysDepError "udev")) ];
+        buildable = true;
         };
       };
     }

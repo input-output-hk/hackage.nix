@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optional (!flags.usepkgconfig) (pkgs."sixense" or (sysDepError "sixense"));
         pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."libsixense" or (pkgConfDepError "libsixense"));
+        buildable = true;
         };
       tests = {
         "hydra-test" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hydra-hs" or (buildDepError "hydra-hs"))
             ];
+          buildable = true;
           };
         };
       };

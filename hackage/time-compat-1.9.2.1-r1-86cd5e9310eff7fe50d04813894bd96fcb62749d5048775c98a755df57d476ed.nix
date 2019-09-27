@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fail" or (buildDepError "fail"))
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           ];
+        buildable = true;
         };
       tests = {
         "instances" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."time-compat" or (buildDepError "time-compat"))
             ];
+          buildable = true;
           };
         "main" = {
           depends = [
@@ -95,6 +97,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time-compat" or (buildDepError "time-compat"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if !(compiler.isGhc && (compiler.version).ge "7.4")
+            then false
+            else true;
           };
         };
       };

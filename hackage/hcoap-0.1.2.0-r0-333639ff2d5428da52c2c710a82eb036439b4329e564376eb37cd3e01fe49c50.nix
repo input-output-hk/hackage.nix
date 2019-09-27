@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iproute" or (buildDepError "iproute"))
           (hsPkgs."dns" or (buildDepError "dns"))
           ];
+        buildable = true;
         };
       exes = {
         "hcoap-example-server" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             (hsPkgs."hcoap" or (buildDepError "hcoap"))
             ];
+          buildable = true;
           };
         "hcoap-example-client" = {
           depends = [
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             (hsPkgs."hcoap" or (buildDepError "hcoap"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

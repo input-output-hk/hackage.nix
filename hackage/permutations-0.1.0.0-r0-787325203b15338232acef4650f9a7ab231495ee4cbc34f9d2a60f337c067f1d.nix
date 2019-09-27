@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."universe-base" or (buildDepError "universe-base"))
           (hsPkgs."util" or (buildDepError "util"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."universe-base" or (buildDepError "universe-base"))
             (hsPkgs."permutations" or (buildDepError "permutations"))
             ];
+          buildable = true;
           };
         };
       };

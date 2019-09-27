@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       tests = {
         "generate" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
             (hsPkgs."regex-generator" or (buildDepError "regex-generator"))
             ];
+          buildable = true;
           };
         };
       };

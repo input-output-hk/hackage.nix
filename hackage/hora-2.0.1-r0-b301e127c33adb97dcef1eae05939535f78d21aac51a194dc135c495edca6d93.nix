@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."timezone-series" or (buildDepError "timezone-series"))
           (hsPkgs."binary" or (buildDepError "binary"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."timezone-olson" or (buildDepError "timezone-olson"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ];
+          buildable = true;
           };
         };
       };

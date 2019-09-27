@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cassava" or (buildDepError "cassava"))
           (hsPkgs."pipes" or (buildDepError "pipes"))
           ];
+        buildable = true;
         };
       };
     }

@@ -70,7 +70,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Holumbus-Distribution" or (buildDepError "Holumbus-Distribution"))
           (hsPkgs."Holumbus-Storage" or (buildDepError "Holumbus-Storage"))
           ];
+        buildable = true;
         };
-      exes = { "Master" = {}; };
+      exes = { "Master" = { buildable = true; }; };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]
           else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+        buildable = true;
         };
       };
     }

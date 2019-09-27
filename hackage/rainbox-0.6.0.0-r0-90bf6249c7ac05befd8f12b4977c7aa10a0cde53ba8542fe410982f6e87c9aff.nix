@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       exes = {
         "rainbox-mosaic" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."rainbow-tests" or (buildDepError "rainbow-tests"))
             ];
+          buildable = if flags.mosaic then true else false;
           };
         };
       tests = {
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."rainbow-tests" or (buildDepError "rainbow-tests"))
             ];
+          buildable = true;
           };
         "rainbox-visual" = {
           depends = [
@@ -106,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."rainbow-tests" or (buildDepError "rainbow-tests"))
             ];
+          buildable = true;
           };
         };
       };

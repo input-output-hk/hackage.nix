@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HAppS-State" or (buildDepError "HAppS-State"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         };
       };

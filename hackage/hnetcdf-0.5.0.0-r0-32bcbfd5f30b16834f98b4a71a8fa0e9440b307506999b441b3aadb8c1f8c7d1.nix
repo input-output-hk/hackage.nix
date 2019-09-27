@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "example1" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "example2" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."repa" or (buildDepError "repa"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           libs = [ (pkgs."netcdf" or (sysDepError "netcdf")) ];
+          buildable = true;
           };
         "test-raw-get-put" = {
           depends = [
@@ -118,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           libs = [ (pkgs."netcdf" or (sysDepError "netcdf")) ];
+          buildable = true;
           };
         "test-raw-attributes" = {
           depends = [
@@ -134,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           libs = [ (pkgs."netcdf" or (sysDepError "netcdf")) ];
+          buildable = true;
           };
         "test-get" = {
           depends = [
@@ -151,6 +157,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           libs = [ (pkgs."netcdf" or (sysDepError "netcdf")) ];
+          buildable = true;
           };
         "test-put" = {
           depends = [
@@ -162,6 +169,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
           libs = [ (pkgs."netcdf" or (sysDepError "netcdf")) ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."murmur-hash" or (buildDepError "murmur-hash"))
           ];
+        buildable = true;
         };
       tests = {
         "hyperloglogplus-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         };
       };

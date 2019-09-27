@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."wai" or (buildDepError "wai"))
           ];
+        buildable = true;
         };
       exes = {
         "client" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "server" = {
           depends = [
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-mock" or (buildDepError "servant-mock"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = true;
           };
         };
       };

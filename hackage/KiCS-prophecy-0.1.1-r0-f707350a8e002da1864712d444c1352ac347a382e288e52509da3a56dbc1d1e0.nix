@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."KiCS" or (buildDepError "KiCS"))
           ];
+        buildable = true;
         };
       exes = {
         "prophecy" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."KiCS" or (buildDepError "KiCS"))
             ];
+          buildable = true;
           };
         };
       };

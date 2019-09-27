@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rosezipper" or (buildDepError "rosezipper"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       exes = {
         "at_model_rescore_data" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."alpino-tools" or (buildDepError "alpino-tools"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ];
+          buildable = true;
           };
         "at_model_filter_data" = {
           depends = [
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = true;
           };
         "at_model_oracle" = {
           depends = [
@@ -93,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."alpino-tools" or (buildDepError "alpino-tools"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ];
+          buildable = true;
           };
         "at_model_random_sample" = {
           depends = [
@@ -103,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
+          buildable = true;
           };
         "at_model_statistics_data" = {
           depends = [
@@ -110,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."alpino-tools" or (buildDepError "alpino-tools"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ];
+          buildable = true;
           };
         };
       };

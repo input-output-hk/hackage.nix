@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MissingH" or (buildDepError "MissingH"))
           (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
           ];
+        buildable = true;
         };
       exes = {
         "qrpipe" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."qr-imager" or (buildDepError "qr-imager"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."qr-imager" or (buildDepError "qr-imager"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

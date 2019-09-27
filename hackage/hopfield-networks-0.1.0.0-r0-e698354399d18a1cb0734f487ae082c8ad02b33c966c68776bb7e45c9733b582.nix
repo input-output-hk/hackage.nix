@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
       exes = {
         "hopfield_demonstration" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."split" or (buildDepError "split"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         };
       };

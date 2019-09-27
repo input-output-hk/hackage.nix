@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."cv" or (sysDepError "cv"))
           (pkgs."highgui" or (sysDepError "highgui"))
           ];
+        buildable = true;
         };
       exes = {
         "test-hopencv" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."cv" or (sysDepError "cv"))
             (pkgs."highgui" or (sysDepError "highgui"))
             ];
+          buildable = true;
           };
         };
       };

@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           (hsPkgs."aeson" or (buildDepError "aeson"))
           ];
+        buildable = true;
         };
       };
     }

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lub" or (buildDepError "lub"))
           (hsPkgs."type-unary" or (buildDepError "type-unary"))
           ];
+        buildable = true;
         };
       };
     }

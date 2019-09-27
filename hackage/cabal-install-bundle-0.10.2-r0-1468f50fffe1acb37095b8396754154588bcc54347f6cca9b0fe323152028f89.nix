@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
           libs = [ (pkgs."z" or (sysDepError "z")) ];
+          buildable = true;
           };
         };
       };

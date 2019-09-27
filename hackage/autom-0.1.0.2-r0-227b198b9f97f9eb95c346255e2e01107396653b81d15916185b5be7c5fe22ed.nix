@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
           ];
+        buildable = true;
         };
       };
     }

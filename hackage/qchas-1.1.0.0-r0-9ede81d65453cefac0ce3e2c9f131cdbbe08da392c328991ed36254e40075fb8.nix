@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."linear" or (buildDepError "linear"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       exes = {
         "qchas-exe" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
             (hsPkgs."qchas" or (buildDepError "qchas"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."linear" or (buildDepError "linear"))
             (hsPkgs."qchas" or (buildDepError "qchas"))
             ];
+          buildable = true;
           };
         };
       };

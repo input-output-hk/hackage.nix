@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-eq" or (buildDepError "type-eq"))
           (hsPkgs."tagged" or (buildDepError "tagged"))
           ];
+        buildable = true;
         };
       };
     }

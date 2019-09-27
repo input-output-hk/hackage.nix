@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."mmorph" or (buildDepError "mmorph"))
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.9")) (hsPkgs."void" or (buildDepError "void"));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             (hsPkgs."safe" or (buildDepError "safe"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."kan-extensions" or (buildDepError "kan-extensions"))
             ];
+          buildable = true;
           };
         "unfused" = {
           depends = [
@@ -105,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

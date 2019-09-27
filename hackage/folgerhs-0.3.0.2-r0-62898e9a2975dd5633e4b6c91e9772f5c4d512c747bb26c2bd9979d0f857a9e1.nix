@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."gloss" or (buildDepError "gloss"))
           ];
+        buildable = true;
         };
       exes = {
         "folgerhs" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       };

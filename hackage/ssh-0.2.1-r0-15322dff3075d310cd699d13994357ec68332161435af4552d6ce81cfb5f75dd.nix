@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."SHA" or (buildDepError "SHA"))
           (hsPkgs."SimpleAES" or (buildDepError "SimpleAES"))
           ];
+        buildable = true;
         };
       };
     }

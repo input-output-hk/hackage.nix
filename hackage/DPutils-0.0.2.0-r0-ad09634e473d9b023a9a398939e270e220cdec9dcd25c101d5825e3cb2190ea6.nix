@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."DPutils" or (buildDepError "DPutils"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -103,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."DPutils" or (buildDepError "DPutils"))
             ];
+          buildable = true;
           };
         "streaming" = {
           depends = [
@@ -113,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."timeit" or (buildDepError "timeit"))
             (hsPkgs."DPutils" or (buildDepError "DPutils"))
             ];
+          buildable = true;
           };
         };
       };

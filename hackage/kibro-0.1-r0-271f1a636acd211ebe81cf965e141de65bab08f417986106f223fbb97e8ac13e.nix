@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
           (hsPkgs."data-default" or (buildDepError "data-default"))
           ];
+        buildable = true;
         };
       exes = {
         "kibro" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."validate" or (buildDepError "validate"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

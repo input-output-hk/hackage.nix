@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."validity-vector" or (buildDepError "validity-vector"))
           (hsPkgs."validity-scientific" or (buildDepError "validity-scientific"))
           ];
+        buildable = true;
         };
       };
     }

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           ];
         build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.trhsx or (pkgs.buildPackages.trhsx or (buildToolDepError "trhsx")));
+        buildable = true;
         };
       };
     }

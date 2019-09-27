@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
           ];
+        buildable = true;
         };
       exes = {
         "export-to-js" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
             (hsPkgs."waddle" or (buildDepError "waddle"))
             ];
+          buildable = true;
           };
         };
       };

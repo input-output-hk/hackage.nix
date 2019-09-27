@@ -79,6 +79,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."winspool" or (sysDepError "winspool"))
           (pkgs."comctl32" or (sysDepError "comctl32"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "6.9"
+          then false
+          else true;
         };
       };
     }

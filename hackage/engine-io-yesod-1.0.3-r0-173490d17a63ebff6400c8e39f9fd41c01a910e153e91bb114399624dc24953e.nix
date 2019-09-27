@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets" or (buildDepError "websockets"))
           (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
           ];
+        buildable = true;
         };
       };
     }

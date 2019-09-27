@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boxes" or (buildDepError "boxes"))
             (hsPkgs."fgl" or (buildDepError "fgl"))
             ];
+          buildable = true;
           };
         };
       };

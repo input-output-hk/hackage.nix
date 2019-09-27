@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."network-uri" or (buildDepError "network-uri"))
           ];
+        buildable = true;
         };
       tests = {
         "test-coalpit" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-travis" or (buildDepError "tasty-travis"))
             ];
+          buildable = true;
           };
         };
       };

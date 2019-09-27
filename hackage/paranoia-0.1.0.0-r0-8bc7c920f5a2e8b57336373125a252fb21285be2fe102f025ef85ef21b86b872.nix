@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."warp" or (buildDepError "warp"))
           ];
+        buildable = true;
         };
       exes = {
         "paranoia" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hdaemonize" or (buildDepError "hdaemonize"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."paranoia" or (buildDepError "paranoia"))
             ];
+          buildable = true;
           };
         };
       };

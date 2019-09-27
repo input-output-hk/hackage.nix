@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."sdl2" or (pkgConfDepError "sdl2"))
           (pkgconfPkgs."SDL2_gfx" or (pkgConfDepError "SDL2_gfx"))
           ];
+        buildable = true;
         };
       exes = {
         "sdl2-gfx-example" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2-gfx" or (buildDepError "sdl2-gfx"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

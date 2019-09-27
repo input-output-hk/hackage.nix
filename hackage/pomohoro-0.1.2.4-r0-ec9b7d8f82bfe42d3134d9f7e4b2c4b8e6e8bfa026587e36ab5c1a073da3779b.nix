@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."configurator" or (buildDepError "configurator"))
           ];
+        buildable = true;
         };
       exes = {
         "pomohoro-exe" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hdaemonize" or (buildDepError "hdaemonize"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."protolude" or (buildDepError "protolude"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

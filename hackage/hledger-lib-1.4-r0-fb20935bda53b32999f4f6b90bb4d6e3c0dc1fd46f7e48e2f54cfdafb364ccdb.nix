@@ -88,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -126,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."Glob" or (buildDepError "Glob"))
             ];
+          buildable = true;
           };
         "hunittests" = {
           depends = [
@@ -164,6 +166,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         };
       };

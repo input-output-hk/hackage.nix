@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."Thrift" or (buildDepError "Thrift"))
           ];
+        buildable = true;
         };
       };
     }

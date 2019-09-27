@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."servant-auth" or (buildDepError "servant-auth"))
           (hsPkgs."servant" or (buildDepError "servant"))
           ];
+        buildable = true;
         };
       tests = {
         "doctest" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Glob" or (buildDepError "Glob"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = [
@@ -101,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp" or (buildDepError "warp"))
             (hsPkgs."jose" or (buildDepError "jose"))
             ];
+          buildable = true;
           };
         };
       };

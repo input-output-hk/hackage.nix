@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."stm" or (buildDepError "stm"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."io-region" or (buildDepError "io-region"))
             ];
+          buildable = true;
           };
         };
       };

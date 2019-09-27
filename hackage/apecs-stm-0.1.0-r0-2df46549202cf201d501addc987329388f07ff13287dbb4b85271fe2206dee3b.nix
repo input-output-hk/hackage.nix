@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
           (hsPkgs."apecs" or (buildDepError "apecs"))
           ];
+        buildable = true;
         };
       };
     }

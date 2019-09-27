@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
             ]
           else [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ]);
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = false;
           };
         };
       };

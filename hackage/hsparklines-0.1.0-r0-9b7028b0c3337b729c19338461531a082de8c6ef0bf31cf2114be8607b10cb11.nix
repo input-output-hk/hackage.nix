@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gd" or (buildDepError "gd"))
           (hsPkgs."dataenc" or (buildDepError "dataenc"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-Enet-Binding" or (buildDepError "HGamer3D-Enet-Binding"))
           (hsPkgs."HGamer3D-Common" or (buildDepError "HGamer3D-Common"))
           ];
+        buildable = true;
         };
       };
     }

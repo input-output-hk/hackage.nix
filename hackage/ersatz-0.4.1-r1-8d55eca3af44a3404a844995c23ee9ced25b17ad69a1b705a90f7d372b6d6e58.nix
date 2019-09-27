@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+        buildable = true;
         };
       exes = {
         "ersatz-regexp-grid" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim")));
+          buildable = if flags.examples then true else false;
           };
         "ersatz-sudoku" = {
           depends = (pkgs.lib).optionals (flags.examples) ([
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ersatz" or (buildDepError "ersatz"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim")));
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -104,18 +107,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ersatz" or (buildDepError "ersatz"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "hlint" = {
           depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = if !flags.test-hlint then false else true;
           };
         "speed" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ersatz" or (buildDepError "ersatz"))
             ];
+          buildable = true;
           };
         "moore" = {
           depends = [
@@ -124,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."ersatz" or (buildDepError "ersatz"))
             ];
+          buildable = true;
           };
         "z001" = {
           depends = [
@@ -131,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."ersatz" or (buildDepError "ersatz"))
             ];
+          buildable = true;
           };
         };
       };

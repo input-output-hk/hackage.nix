@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MissingH" or (buildDepError "MissingH"))
           (hsPkgs."network-uri" or (buildDepError "network-uri"))
           ];
+        buildable = true;
         };
       exes = {
         "Blogdown" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MissingH" or (buildDepError "MissingH"))
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MissingH" or (buildDepError "MissingH"))
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -100,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             ];
+          buildable = true;
           };
         };
       };

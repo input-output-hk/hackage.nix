@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
           (hsPkgs."PBKDF2" or (buildDepError "PBKDF2"))
           ];
+        buildable = true;
         };
       };
     }

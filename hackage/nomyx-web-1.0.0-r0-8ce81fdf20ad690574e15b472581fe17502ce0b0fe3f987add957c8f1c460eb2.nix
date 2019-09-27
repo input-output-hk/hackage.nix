@@ -88,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."web-routes-happstack" or (buildDepError "web-routes-happstack"))
           (hsPkgs."web-routes-th" or (buildDepError "web-routes-th"))
           ];
+        buildable = true;
         };
       };
     }

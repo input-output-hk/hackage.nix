@@ -53,5 +53,5 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "None";
       buildType = "Simple";
       };
-    components = { "library" = {}; };
+    components = { "library" = { buildable = true; }; };
     }

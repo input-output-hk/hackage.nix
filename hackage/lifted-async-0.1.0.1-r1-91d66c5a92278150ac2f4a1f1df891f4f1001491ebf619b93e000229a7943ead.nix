@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           ];
+        buildable = true;
         };
       tests = {
         "test-lifted-async" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
             ];
+          buildable = true;
           };
         "benchmark-lifted-async-threaded" = {
           depends = [
@@ -96,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
             ];
+          buildable = true;
           };
         };
       };

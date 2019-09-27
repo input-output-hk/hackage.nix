@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
           (hsPkgs."old-time" or (buildDepError "old-time"))
           ];
+        buildable = true;
         };
       };
     }

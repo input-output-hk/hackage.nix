@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."casadi_snopt_interface" or (pkgConfDepError "casadi_snopt_interface"))
           ];
+        buildable = true;
         };
       };
     }

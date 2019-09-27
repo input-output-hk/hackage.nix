@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."relational-query" or (buildDepError "relational-query"))
           ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."polyparse" or (buildDepError "polyparse"))
           ];
+        buildable = true;
         };
       exes = {
         "cpphs" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         };
       };

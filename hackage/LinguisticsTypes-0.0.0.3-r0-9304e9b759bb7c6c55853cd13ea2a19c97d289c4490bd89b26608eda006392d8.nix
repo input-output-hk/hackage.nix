@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
           (hsPkgs."bimaps" or (buildDepError "bimaps"))
           ];
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             (hsPkgs."LinguisticsTypes" or (buildDepError "LinguisticsTypes"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."LinguisticsTypes" or (buildDepError "LinguisticsTypes"))
             ];
+          buildable = true;
           };
         };
       };

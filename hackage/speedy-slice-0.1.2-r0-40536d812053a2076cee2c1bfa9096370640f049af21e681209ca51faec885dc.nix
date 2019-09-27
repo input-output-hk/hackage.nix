@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes" or (buildDepError "pipes"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "rosenbrock" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mwc-probability" or (buildDepError "mwc-probability"))
             (hsPkgs."speedy-slice" or (buildDepError "speedy-slice"))
             ];
+          buildable = true;
           };
         "bnn" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mwc-probability" or (buildDepError "mwc-probability"))
             (hsPkgs."speedy-slice" or (buildDepError "speedy-slice"))
             ];
+          buildable = true;
           };
         };
       };

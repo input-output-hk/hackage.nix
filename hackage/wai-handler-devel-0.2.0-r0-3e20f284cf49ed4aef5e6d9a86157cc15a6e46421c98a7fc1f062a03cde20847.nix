@@ -68,13 +68,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."enumerator" or (buildDepError "enumerator"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "wai-handler-devel" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         "wai-handler-devel-unwatched" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

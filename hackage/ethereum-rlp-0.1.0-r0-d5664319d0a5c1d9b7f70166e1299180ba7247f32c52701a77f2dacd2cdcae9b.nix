@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

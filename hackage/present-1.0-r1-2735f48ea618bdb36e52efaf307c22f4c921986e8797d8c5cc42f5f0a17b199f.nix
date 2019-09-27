@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."atto-lisp" or (buildDepError "atto-lisp"))
           ];
+        buildable = true;
         };
       };
     }

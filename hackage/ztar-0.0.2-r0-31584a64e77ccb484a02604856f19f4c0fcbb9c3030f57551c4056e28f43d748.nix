@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tar" or (buildDepError "tar"))
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
+        buildable = true;
         };
       tests = {
         "example" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."path-io" or (buildDepError "path-io"))
             (hsPkgs."ztar" or (buildDepError "ztar"))
             ];
+          buildable = true;
           };
         };
       };

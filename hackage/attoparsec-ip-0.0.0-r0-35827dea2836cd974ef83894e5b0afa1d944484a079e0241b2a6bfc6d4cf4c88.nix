@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."ip" or (buildDepError "ip"))
           ];
+        buildable = true;
         };
       tests = {
         "attoparsec-ip-test" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."attoparsec-ip" or (buildDepError "attoparsec-ip"))
             ];
+          buildable = true;
           };
         };
       };

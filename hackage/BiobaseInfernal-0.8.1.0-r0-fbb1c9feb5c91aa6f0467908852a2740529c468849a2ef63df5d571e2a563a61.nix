@@ -94,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."DPutils" or (buildDepError "DPutils"))
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           ];
+        buildable = true;
         };
       exes = {
         "cmsearchFilter" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."BiobaseInfernal" or (buildDepError "BiobaseInfernal"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -117,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             (hsPkgs."BiobaseInfernal" or (buildDepError "BiobaseInfernal"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -129,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."BiobaseInfernal" or (buildDepError "BiobaseInfernal"))
             ];
+          buildable = true;
           };
         };
       };

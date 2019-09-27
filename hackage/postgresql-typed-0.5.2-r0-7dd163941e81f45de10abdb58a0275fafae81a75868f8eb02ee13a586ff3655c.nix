@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."scientific" or (buildDepError "scientific"))
             ]
           else ((pkgs.lib).optional (flags.text) (hsPkgs."text" or (buildDepError "text")) ++ (pkgs.lib).optional (flags.uuid) (hsPkgs."uuid" or (buildDepError "uuid"))) ++ (pkgs.lib).optional (flags.scientific) (hsPkgs."scientific" or (buildDepError "scientific")))) ++ (pkgs.lib).optional (flags.aeson) (hsPkgs."aeson" or (buildDepError "aeson"))) ++ (pkgs.lib).optional (flags.hdbc) (hsPkgs."HDBC" or (buildDepError "HDBC"));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."postgresql-typed" or (buildDepError "postgresql-typed"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         "hdbc" = {
           depends = (pkgs.lib).optionals (flags.hdbc) [
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HDBC" or (buildDepError "HDBC"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = if flags.hdbc then true else false;
           };
         };
       };

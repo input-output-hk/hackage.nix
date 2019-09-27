@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
           ];
+        buildable = true;
         };
       exes = {
         "hedis-benchmark" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hedis" or (buildDepError "hedis"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if flags.benchmark then true else false;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."milena" or (buildDepError "milena"))
           (hsPkgs."vrpn" or (buildDepError "vrpn"))
           ];
+        buildable = true;
         };
       exes = {
         "kafka-device-vrpn" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."milena" or (buildDepError "milena"))
             (hsPkgs."vrpn" or (buildDepError "vrpn"))
             ];
+          buildable = true;
           };
         };
       };

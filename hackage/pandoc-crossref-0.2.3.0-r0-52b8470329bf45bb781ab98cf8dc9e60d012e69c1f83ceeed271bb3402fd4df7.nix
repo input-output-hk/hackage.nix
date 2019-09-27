@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."roman-numerals" or (buildDepError "roman-numerals"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ];
+        buildable = true;
         };
       exes = {
         "pandoc-crossref" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."pandoc-crossref" or (buildDepError "pandoc-crossref"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -108,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             (hsPkgs."pandoc-crossref" or (buildDepError "pandoc-crossref"))
             ];
+          buildable = true;
           };
         "test-integrative" = {
           depends = [
@@ -118,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."pandoc-crossref" or (buildDepError "pandoc-crossref"))
             ];
+          buildable = true;
           };
         };
       };

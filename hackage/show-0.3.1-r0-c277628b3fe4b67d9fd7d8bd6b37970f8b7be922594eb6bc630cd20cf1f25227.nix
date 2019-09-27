@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
           ];
+        buildable = true;
         };
       };
     }

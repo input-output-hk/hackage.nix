@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             ]
           else [ (hsPkgs."network" or (buildDepError "network")) ]);
+        buildable = true;
         };
       exes = {
         "shuffle" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."shuffle" or (buildDepError "shuffle"))
             ];
+          buildable = true;
           };
         };
       };

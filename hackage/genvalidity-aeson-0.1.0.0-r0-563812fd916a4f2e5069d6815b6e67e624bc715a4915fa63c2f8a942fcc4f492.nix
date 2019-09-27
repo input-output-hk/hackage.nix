@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."genvalidity-scientific" or (buildDepError "genvalidity-scientific"))
           (hsPkgs."aeson" or (buildDepError "aeson"))
           ];
+        buildable = true;
         };
       tests = {
         "genvalidity-aeson-test" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
+          buildable = true;
           };
         };
       };

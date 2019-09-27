@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dlist" or (buildDepError "dlist"))
           (hsPkgs."names-th" or (buildDepError "names-th"))
           ];
+        buildable = true;
         };
       tests = {
         "nested" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickcheck-simple" or (buildDepError "quickcheck-simple"))
             (hsPkgs."persistable-record" or (buildDepError "persistable-record"))
             ];
+          buildable = true;
           };
         };
       };

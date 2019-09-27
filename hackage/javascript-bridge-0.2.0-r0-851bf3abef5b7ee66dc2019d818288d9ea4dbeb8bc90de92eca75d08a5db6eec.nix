@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
           (hsPkgs."websockets" or (buildDepError "websockets"))
           ];
+        buildable = true;
         };
       exes = {
         "javascript-bridge-simple" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."javascript-bridge" or (buildDepError "javascript-bridge"))
             (hsPkgs."scotty" or (buildDepError "scotty"))
             ];
+          buildable = true;
           };
         "javascript-bridge-examples" = {
           depends = [
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."scotty" or (buildDepError "scotty"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -98,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

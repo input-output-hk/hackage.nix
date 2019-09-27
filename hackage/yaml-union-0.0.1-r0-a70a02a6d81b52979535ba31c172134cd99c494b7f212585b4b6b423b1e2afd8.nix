@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."yaml" or (buildDepError "yaml"))
           ];
+        buildable = true;
         };
       exes = {
         "yaml-union" = {
@@ -70,10 +71,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yaml" or (buildDepError "yaml"))
             (hsPkgs."yaml-union" or (buildDepError "yaml-union"))
             ];
+          buildable = true;
           };
         };
       tests = {
-        "test" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "test" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         };
       };
     }

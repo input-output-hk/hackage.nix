@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ];
+        buildable = true;
         };
       exes = {
         "c0check" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."c0check" or (buildDepError "c0check"))
             ];
+          buildable = true;
           };
         };
       };

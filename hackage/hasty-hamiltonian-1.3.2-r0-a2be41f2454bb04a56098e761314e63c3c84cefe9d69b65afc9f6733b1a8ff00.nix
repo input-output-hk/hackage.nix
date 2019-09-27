@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "booth" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mwc-probability" or (buildDepError "mwc-probability"))
             (hsPkgs."hasty-hamiltonian" or (buildDepError "hasty-hamiltonian"))
             ];
+          buildable = true;
           };
         };
       };

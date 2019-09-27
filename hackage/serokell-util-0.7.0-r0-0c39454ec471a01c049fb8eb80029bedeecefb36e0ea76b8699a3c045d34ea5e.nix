@@ -92,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."yaml" or (buildDepError "yaml"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.2.2") (hsPkgs."o-clock" or (buildDepError "o-clock"));
+        buildable = true;
         };
       tests = {
         "serokell-test" = {
@@ -114,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
             ];
+          buildable = true;
           };
         };
       };

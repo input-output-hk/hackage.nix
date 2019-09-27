@@ -64,14 +64,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
-        "testTeXMathML" = {};
+        "testTeXMathML" = { buildable = if flags.test then true else false; };
         "texmath-cgi" = {
           depends = [
             (hsPkgs."cgi" or (buildDepError "cgi"))
             (hsPkgs."json" or (buildDepError "json"))
             ];
+          buildable = if flags.cgi then true else false;
           };
         };
       };

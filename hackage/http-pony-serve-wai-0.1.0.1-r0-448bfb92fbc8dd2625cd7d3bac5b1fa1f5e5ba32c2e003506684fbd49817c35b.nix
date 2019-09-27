@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
           (hsPkgs."wai" or (buildDepError "wai"))
           ];
+        buildable = true;
         };
       };
     }

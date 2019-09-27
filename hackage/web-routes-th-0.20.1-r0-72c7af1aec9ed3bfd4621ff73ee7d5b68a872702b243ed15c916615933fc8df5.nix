@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."web-routes" or (buildDepError "web-routes"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       exes = {
         "cabal-test-bin" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."cabal-test-bin" or (buildDepError "cabal-test-bin"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

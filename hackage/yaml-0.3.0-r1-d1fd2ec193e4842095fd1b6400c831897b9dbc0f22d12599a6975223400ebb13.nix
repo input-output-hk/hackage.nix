@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
           (hsPkgs."ListLike" or (buildDepError "ListLike"))
           ];
+        buildable = if flags.nolib then false else true;
         };
       exes = {
         "runtests" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
             (hsPkgs."ListLike" or (buildDepError "ListLike"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

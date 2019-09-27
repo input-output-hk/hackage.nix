@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets" or (buildDepError "websockets"))
           (hsPkgs."wss-client" or (buildDepError "wss-client"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."wss-client" or (buildDepError "wss-client"))
             ];
+          buildable = true;
           };
         };
       };

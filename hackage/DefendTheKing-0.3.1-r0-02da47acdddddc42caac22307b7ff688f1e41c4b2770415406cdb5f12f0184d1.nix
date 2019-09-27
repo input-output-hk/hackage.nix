@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MaybeT" or (buildDepError "MaybeT"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
+          buildable = true;
           };
         "defendFontEdit" = {
           depends = [
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         };
       };

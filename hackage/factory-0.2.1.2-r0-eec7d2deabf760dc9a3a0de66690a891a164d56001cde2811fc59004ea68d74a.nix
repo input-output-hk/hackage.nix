@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."toolshed" or (buildDepError "toolshed"))
           ];
+        buildable = true;
         };
       exes = {
         "factory" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."toolshed" or (buildDepError "toolshed"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."toolshed" or (buildDepError "toolshed"))
             ];
+          buildable = true;
           };
         };
       };

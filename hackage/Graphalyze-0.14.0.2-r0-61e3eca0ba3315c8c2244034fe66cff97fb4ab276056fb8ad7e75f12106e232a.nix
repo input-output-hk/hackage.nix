@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pandoc" or (buildDepError "pandoc"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       };
     }

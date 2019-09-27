@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."iso3166-country-codes" or (buildDepError "iso3166-country-codes"))
           ];
+        buildable = true;
         };
       };
     }

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."regex-applicative" or (buildDepError "regex-applicative"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-applicative" or (buildDepError "regex-applicative"))
             (hsPkgs."text-position" or (buildDepError "text-position"))
             ];
+          buildable = true;
           };
         };
       };

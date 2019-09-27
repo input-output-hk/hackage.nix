@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
           (hsPkgs."fail" or (buildDepError "fail"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."persistent-database-url" or (buildDepError "persistent-database-url"))
             (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
             ];
+          buildable = true;
           };
         };
       };

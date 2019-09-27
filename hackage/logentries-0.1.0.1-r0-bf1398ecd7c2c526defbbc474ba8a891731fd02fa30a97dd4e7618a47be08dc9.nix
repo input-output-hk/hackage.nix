@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
           ];
+        buildable = true;
         };
       tests = {
         "logentries-test" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."logentries" or (buildDepError "logentries"))
             (hsPkgs."uuid-types" or (buildDepError "uuid-types"))
             ];
+          buildable = true;
           };
         };
       };

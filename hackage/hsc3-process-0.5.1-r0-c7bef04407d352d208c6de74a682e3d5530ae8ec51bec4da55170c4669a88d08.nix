@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
           ];
+        buildable = true;
         };
       };
     }

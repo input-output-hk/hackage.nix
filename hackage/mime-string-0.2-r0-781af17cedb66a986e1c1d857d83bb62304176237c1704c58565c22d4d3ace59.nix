@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iconv" or (buildDepError "iconv"))
           (hsPkgs."base64-string" or (buildDepError "base64-string"))
           ];
+        buildable = true;
         };
       };
     }

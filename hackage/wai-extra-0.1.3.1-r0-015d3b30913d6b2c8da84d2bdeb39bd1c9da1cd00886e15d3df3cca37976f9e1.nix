@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
         libs = (pkgs.lib).optional (!system.isWindows) (pkgs."z" or (sysDepError "z"));
+        buildable = true;
         };
       };
     }

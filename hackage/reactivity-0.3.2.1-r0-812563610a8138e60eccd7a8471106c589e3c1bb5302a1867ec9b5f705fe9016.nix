@@ -71,6 +71,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."list-extras" or (buildDepError "list-extras"))
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "6.9"
+          then false
+          else true;
         };
       };
     }

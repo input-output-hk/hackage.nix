@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hmidi" or (buildDepError "hmidi"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       };
     }

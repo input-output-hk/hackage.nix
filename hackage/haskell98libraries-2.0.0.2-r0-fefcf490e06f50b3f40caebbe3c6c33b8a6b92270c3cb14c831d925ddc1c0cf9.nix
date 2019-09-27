@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."time" or (buildDepError "time"))
           ] ++ [ (hsPkgs."directory" or (buildDepError "directory")) ];
+        buildable = true;
         };
       };
     }

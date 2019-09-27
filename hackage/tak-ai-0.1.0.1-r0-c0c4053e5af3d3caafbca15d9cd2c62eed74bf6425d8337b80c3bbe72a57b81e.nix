@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tak" or (buildDepError "tak"))
             (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."matrix" or (buildDepError "matrix"))
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ];
+          buildable = true;
           };
         };
       };

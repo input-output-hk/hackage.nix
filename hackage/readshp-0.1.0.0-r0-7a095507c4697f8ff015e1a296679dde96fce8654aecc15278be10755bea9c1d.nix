@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
           ];
+        buildable = true;
         };
       };
     }

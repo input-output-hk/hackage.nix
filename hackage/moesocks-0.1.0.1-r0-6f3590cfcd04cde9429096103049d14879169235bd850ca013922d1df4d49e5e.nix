@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
             ];
+          buildable = true;
           };
         };
       };

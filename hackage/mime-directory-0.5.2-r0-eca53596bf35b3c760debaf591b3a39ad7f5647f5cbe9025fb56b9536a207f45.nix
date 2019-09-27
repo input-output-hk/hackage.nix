@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       };
     }

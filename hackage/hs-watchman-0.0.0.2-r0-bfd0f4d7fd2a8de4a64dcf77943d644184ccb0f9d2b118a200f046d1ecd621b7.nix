@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."temporary" or (buildDepError "temporary"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."temporary" or (buildDepError "temporary"))
             ];
+          buildable = true;
           };
         };
       };

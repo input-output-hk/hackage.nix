@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))
           (hsPkgs."interpolatedstring-perl6" or (buildDepError "interpolatedstring-perl6"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

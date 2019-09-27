@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
           (hsPkgs."http-types" or (buildDepError "http-types"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."microlens" or (buildDepError "microlens"))
             ];
+          buildable = true;
           };
         };
       };

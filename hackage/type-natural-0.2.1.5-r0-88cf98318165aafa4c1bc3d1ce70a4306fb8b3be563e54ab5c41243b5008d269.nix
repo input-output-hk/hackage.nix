@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."constraints" or (buildDepError "constraints"))
           ] ++ [ (hsPkgs."singletons" or (buildDepError "singletons")) ];
+        buildable = true;
         };
       };
     }

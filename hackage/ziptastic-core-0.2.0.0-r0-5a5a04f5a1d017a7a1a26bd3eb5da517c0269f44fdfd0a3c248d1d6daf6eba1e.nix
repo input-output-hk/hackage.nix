@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."tz" or (buildDepError "tz"))
           ];
+        buildable = true;
         };
       tests = {
         "test-core" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tz" or (buildDepError "tz"))
             (hsPkgs."ziptastic-core" or (buildDepError "ziptastic-core"))
             ];
+          buildable = true;
           };
         };
       };

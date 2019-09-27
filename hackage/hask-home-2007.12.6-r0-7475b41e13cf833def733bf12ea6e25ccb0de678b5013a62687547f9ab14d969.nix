@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."directory" or (buildDepError "directory"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = true;
           };
         "hask-home-upload" = {
           depends = if flags.split-base
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."process" or (buildDepError "process"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

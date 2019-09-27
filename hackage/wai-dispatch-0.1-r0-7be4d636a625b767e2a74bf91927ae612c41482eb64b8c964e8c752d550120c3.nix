@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-routes" or (buildDepError "yesod-routes"))
           (hsPkgs."wai" or (buildDepError "wai"))
           ];
+        buildable = true;
         };
       };
     }

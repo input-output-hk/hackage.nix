@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."gravatar" or (buildDepError "gravatar"))
           ];
+        buildable = true;
         };
       };
     }

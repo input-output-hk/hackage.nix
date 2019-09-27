@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."distributive" or (buildDepError "distributive"))
           ] ++ (pkgs.lib).optional (flags.use-template-haskell) (hsPkgs."template-haskell" or (buildDepError "template-haskell"));
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rank2classes" or (buildDepError "rank2classes"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "TH" = {
           depends = [
@@ -77,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = if !flags.use-template-haskell then false else true;
           };
         };
       };

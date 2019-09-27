@@ -71,7 +71,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."gd" or (buildDepError "gd"))
           ];
+        buildable = true;
         };
-      exes = { "gps2htmlReport" = {}; };
+      exes = { "gps2htmlReport" = { buildable = true; }; };
       };
     }

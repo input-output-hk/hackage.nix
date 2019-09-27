@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."SHA" or (buildDepError "SHA"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       };
     }

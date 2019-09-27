@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."snap" or (buildDepError "snap"))
           (hsPkgs."snaplet-fay" or (buildDepError "snaplet-fay"))
           ];
+        buildable = true;
         };
       exes = {
         "olwrapper" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."snaplet-fay" or (buildDepError "snaplet-fay"))
             (hsPkgs."snap-loader-static" or (buildDepError "snap-loader-static"))
             ] ++ (pkgs.lib).optional (flags.development) (hsPkgs."snap-loader-dynamic" or (buildDepError "snap-loader-dynamic"));
+          buildable = true;
           };
         };
       };

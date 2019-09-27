@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."wai-middleware-cache" or (buildDepError "wai-middleware-cache"))
           ];
+        buildable = true;
         };
       };
     }

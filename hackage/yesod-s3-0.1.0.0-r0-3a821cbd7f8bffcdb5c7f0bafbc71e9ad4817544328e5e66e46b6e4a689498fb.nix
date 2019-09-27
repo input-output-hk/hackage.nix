@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."network" or (buildDepError "network"))
           ];
+        buildable = true;
         };
       };
     }

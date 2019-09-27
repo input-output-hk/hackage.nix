@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."sodium" or (sysDepError "sodium"));
         pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libsodium" or (pkgConfDepError "libsodium"));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         };
       };

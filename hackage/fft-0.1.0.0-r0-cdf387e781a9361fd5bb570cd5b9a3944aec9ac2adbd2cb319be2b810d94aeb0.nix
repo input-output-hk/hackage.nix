@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."carray" or (buildDepError "carray"))
           ];
         libs = [ (pkgs."fftw3" or (sysDepError "fftw3")) ];
+        buildable = true;
         };
       };
     }

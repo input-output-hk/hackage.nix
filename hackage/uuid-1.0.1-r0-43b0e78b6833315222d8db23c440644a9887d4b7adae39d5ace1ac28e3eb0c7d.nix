@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."maccatcher" or (buildDepError "maccatcher"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       };
     }

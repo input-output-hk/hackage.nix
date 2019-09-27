@@ -115,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
           ];
+        buildable = true;
         };
       exes = {
         "stack" = {
@@ -144,6 +145,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."http-client" or (buildDepError "http-client"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -167,6 +169,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."binary" or (buildDepError "binary"))
           ];
+        buildable = true;
         };
       exes = {
         "Gen" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."random-variates" or (buildDepError "random-variates"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."random-variates" or (buildDepError "random-variates"))
             ];
+          buildable = true;
           };
         "units" = {
           depends = [
@@ -90,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random-variates" or (buildDepError "random-variates"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

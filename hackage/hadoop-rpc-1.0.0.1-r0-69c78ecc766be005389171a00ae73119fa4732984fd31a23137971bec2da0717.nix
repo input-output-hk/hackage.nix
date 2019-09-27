@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
           ];
+        buildable = true;
         };
       tests = {
         "hdfs-tests" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.travis then false else true;
           };
         };
       };

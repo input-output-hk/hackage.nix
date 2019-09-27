@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hostname" or (buildDepError "hostname"))
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             ];
+          buildable = true;
           };
         };
       };

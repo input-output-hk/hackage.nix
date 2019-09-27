@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-tools-ast" or (buildDepError "haskell-tools-ast"))
           (hsPkgs."haskell-tools-prettyprint" or (buildDepError "haskell-tools-prettyprint"))
           ];
+        buildable = true;
         };
       tests = {
         "haskell-tools-rewrite-tests" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-tools-prettyprint" or (buildDepError "haskell-tools-prettyprint"))
             (hsPkgs."haskell-tools-rewrite" or (buildDepError "haskell-tools-rewrite"))
             ];
+          buildable = true;
           };
         };
       };

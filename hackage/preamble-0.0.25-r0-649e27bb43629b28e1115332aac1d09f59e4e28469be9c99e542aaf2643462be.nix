@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."uuid" or (buildDepError "uuid"))
           ];
+        buildable = true;
         };
       exes = {
         "shake-preamble" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."shakers" or (buildDepError "shakers"))
             ];
+          buildable = true;
           };
         };
       };

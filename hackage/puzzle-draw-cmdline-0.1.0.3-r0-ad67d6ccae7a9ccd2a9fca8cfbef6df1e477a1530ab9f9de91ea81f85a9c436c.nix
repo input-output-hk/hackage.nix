@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."diagrams-cairo" or (buildDepError "diagrams-cairo"))
               ]
             else [ (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg")) ]);
+          buildable = true;
           };
         };
       };

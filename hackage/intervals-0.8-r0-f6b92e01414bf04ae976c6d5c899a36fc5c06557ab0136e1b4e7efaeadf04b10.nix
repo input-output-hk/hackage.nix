@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."distributive" or (buildDepError "distributive"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (flags.herbie) (hsPkgs."HerbiePlugin" or (buildDepError "HerbiePlugin"));
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = if !flags.test-doctests then false else true;
           };
         };
       };

@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (flags.base4) (hsPkgs."base" or (buildDepError "base"));
+        buildable = true;
         };
       };
     }

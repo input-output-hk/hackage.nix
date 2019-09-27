@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."potoki" or (buildDepError "potoki"))
           (hsPkgs."potoki-cereal" or (buildDepError "potoki-cereal"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."rerebase" or (buildDepError "rerebase"))
             ];
+          buildable = true;
           };
         };
       };

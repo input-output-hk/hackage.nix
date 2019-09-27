@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."priority-queue" or (buildDepError "priority-queue"))
             (hsPkgs."qd" or (buildDepError "qd"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."hinotify" or (buildDepError "hinotify"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."hinotify" or (buildDepError "hinotify"))
             ];
+          buildable = true;
           };
         };
       };

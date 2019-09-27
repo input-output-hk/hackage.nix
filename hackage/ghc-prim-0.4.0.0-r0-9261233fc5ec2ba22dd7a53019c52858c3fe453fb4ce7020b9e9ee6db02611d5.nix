@@ -54,6 +54,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Custom";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."rts" or (buildDepError "rts")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."rts" or (buildDepError "rts")) ];
+        buildable = true;
+        };
       };
     }

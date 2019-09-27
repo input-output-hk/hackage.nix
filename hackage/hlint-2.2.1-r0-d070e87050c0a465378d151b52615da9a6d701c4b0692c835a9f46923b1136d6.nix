@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."ghc-lib-parser" or (buildDepError "ghc-lib-parser"))
           ] ++ (pkgs.lib).optional (flags.gpl) (hsPkgs."hscolour" or (buildDepError "hscolour"));
+        buildable = true;
         };
       exes = {
         "hlint" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         };
       };

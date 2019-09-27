@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-sub-th" or (buildDepError "type-sub-th"))
           (hsPkgs."universe-th" or (buildDepError "universe-th"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-sub-th" or (buildDepError "type-sub-th"))
             (hsPkgs."universe-th" or (buildDepError "universe-th"))
             ];
+          buildable = true;
           };
         };
       };

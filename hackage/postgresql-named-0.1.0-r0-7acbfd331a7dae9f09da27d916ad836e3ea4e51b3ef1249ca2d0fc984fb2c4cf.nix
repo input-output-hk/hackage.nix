@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
       tests = {
         "postgresql-named-test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."postgresql-named" or (buildDepError "postgresql-named"))
             (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
             ];
+          buildable = true;
           };
         };
       };

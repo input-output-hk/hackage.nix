@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "dispatch-handler" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             (hsPkgs."logging-effect-extra-handler" or (buildDepError "logging-effect-extra-handler"))
             ];
+          buildable = true;
           };
         "dispatch-handler-with-iso8601" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             (hsPkgs."logging-effect-extra-handler" or (buildDepError "logging-effect-extra-handler"))
             ];
+          buildable = true;
           };
         "iso8601-handler" = {
           depends = [
@@ -90,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             (hsPkgs."logging-effect-extra-handler" or (buildDepError "logging-effect-extra-handler"))
             ];
+          buildable = true;
           };
         "iso8601plus-handler" = {
           depends = [
@@ -98,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             (hsPkgs."logging-effect-extra-handler" or (buildDepError "logging-effect-extra-handler"))
             ];
+          buildable = true;
           };
         "rfc822-handler" = {
           depends = [
@@ -106,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             (hsPkgs."logging-effect-extra-handler" or (buildDepError "logging-effect-extra-handler"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-boot-th" or (buildDepError "ghc-boot-th"))
           (hsPkgs."pretty" or (buildDepError "pretty"))
           ];
+        buildable = true;
         };
       };
     }

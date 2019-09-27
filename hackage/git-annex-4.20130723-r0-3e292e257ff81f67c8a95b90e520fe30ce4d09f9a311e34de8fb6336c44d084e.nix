@@ -139,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gnutls" or (buildDepError "gnutls"))
             (hsPkgs."xml-types" or (buildDepError "xml-types"))
             ]) ++ (pkgs.lib).optional (flags.dns) (hsPkgs."dns" or (buildDepError "dns"));
+          buildable = true;
           };
         };
       };

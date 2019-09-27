@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
           (hsPkgs."network-uri" or (buildDepError "network-uri"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."url" or (buildDepError "url"))
             ];
+          buildable = true;
           };
         "doctests" = {
           depends = [
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."filemanip" or (buildDepError "filemanip"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."parallel-io" or (buildDepError "parallel-io"))
           ];
+        buildable = true;
         };
       exes = {
         "ply2bin" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."ply-loader" or (buildDepError "ply-loader"))
             ];
+          buildable = true;
           };
         };
       };

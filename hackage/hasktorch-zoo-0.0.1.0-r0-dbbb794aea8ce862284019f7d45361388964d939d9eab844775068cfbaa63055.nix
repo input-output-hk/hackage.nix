@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.gd
           then [ (hsPkgs."gd" or (buildDepError "gd")) ]
           else [ (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels")) ]);
+        buildable = true;
         };
       };
     }

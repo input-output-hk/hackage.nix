@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
           (hsPkgs."loc" or (buildDepError "loc"))
           ];
+        buildable = true;
         };
       };
     }

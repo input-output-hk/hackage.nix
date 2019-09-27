@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [
           (hsPkgs."relational-query-HDBC" or (buildDepError "relational-query-HDBC"))
           ];
+        buildable = true;
         };
       };
     }

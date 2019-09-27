@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mps" or (buildDepError "mps"))
           (hsPkgs."hack" or (buildDepError "hack"))
           ];
+        buildable = true;
         };
       };
     }

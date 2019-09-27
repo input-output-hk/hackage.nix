@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
           (hsPkgs."conversion" or (buildDepError "conversion"))
           ];
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
           ];
         libs = [ (pkgs."glpk" or (sysDepError "glpk")) ];
+        buildable = true;
         };
       };
     }

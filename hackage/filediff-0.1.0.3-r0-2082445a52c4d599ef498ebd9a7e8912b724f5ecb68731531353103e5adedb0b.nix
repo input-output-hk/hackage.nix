@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tasty" or (buildDepError "tasty"))
           (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
           ];
+        buildable = true;
         };
       tests = {
         "test-filediff" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filediff" or (buildDepError "filediff"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

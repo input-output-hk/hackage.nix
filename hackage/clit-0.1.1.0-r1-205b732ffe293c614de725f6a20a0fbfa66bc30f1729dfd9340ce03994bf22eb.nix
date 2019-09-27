@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
           ];
+        buildable = true;
         };
       exes = {
         "tweet" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."clit" or (buildDepError "clit"))
             ];
+          buildable = true;
           };
         };
       };

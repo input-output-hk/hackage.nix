@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-tools-builtin-refactorings" or (buildDepError "haskell-tools-builtin-refactorings"))
           (hsPkgs."haskell-tools-daemon" or (buildDepError "haskell-tools-daemon"))
           ];
+        buildable = true;
         };
       exes = {
         "ht-refact" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-tools-daemon" or (buildDepError "haskell-tools-daemon"))
             (hsPkgs."haskell-tools-builtin-refactorings" or (buildDepError "haskell-tools-builtin-refactorings"))
             ];
+          buildable = true;
           };
         "ht-test-stackage" = {
           depends = [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."Glob" or (buildDepError "Glob"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -110,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-tools-cli" or (buildDepError "haskell-tools-cli"))
             (hsPkgs."haskell-tools-builtin-refactorings" or (buildDepError "haskell-tools-builtin-refactorings"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -128,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-tools-builtin-refactorings" or (buildDepError "haskell-tools-builtin-refactorings"))
             (hsPkgs."haskell-tools-daemon" or (buildDepError "haskell-tools-daemon"))
             ];
+          buildable = true;
           };
         };
       };

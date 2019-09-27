@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb" or (buildDepError "syb"))
           (hsPkgs."WebBits" or (buildDepError "WebBits"))
           ];
+        buildable = true;
         };
       };
     }

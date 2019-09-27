@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           (hsPkgs."js-jquery" or (buildDepError "js-jquery"))
           ];
+        buildable = true;
         };
       tests = {
         "debug-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."debug" or (buildDepError "debug"))
             ];
+          buildable = true;
           };
         };
       };

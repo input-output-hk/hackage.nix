@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           ];
+        buildable = true;
         };
       };
     }

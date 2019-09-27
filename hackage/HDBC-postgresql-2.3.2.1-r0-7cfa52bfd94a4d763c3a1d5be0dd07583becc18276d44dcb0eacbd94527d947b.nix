@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."convertible" or (buildDepError "convertible"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9") (hsPkgs."base" or (buildDepError "base"));
         libs = [ (pkgs."pq" or (sysDepError "pq")) ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HDBC" or (buildDepError "HDBC"))
             ];
           libs = [ (pkgs."pq" or (sysDepError "pq")) ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

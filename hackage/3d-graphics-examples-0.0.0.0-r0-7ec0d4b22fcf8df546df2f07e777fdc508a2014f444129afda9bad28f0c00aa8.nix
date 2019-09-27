@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             ];
+          buildable = true;
           };
         "mountains" = {
           depends = [
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unliftio" or (buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
           ];
+        buildable = true;
         };
       tests = {
         "async-refresh-tokens-test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."unliftio" or (buildDepError "unliftio"))
             ];
+          buildable = true;
           };
         };
       };

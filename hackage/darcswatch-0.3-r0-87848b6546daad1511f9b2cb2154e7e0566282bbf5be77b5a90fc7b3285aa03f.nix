@@ -78,12 +78,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mime-string" or (buildDepError "mime-string"))
             (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
             ];
+          buildable = true;
           };
-        "darcswatch-import-mail" = {};
-        "darcswatch-import-bundle" = {};
-        "darcswatch-convert-data" = {};
-        "darcswatch-pull-repos" = {};
-        "darcswatch-update-data" = {};
+        "darcswatch-import-mail" = { buildable = true; };
+        "darcswatch-import-bundle" = { buildable = true; };
+        "darcswatch-convert-data" = { buildable = true; };
+        "darcswatch-pull-repos" = { buildable = true; };
+        "darcswatch-update-data" = { buildable = true; };
         };
       };
     }

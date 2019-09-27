@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vault" or (buildDepError "vault"))
           (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
           ];
+        buildable = true;
         };
       };
     }

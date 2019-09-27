@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."th-desugar" or (buildDepError "th-desugar"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ];
+        buildable = true;
         };
       tests = {
         "singletons-test-suite" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

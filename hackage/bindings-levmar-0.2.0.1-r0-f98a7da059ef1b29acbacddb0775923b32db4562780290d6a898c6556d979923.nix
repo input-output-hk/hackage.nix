@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [ (pkgs."mkl_intel" or (sysDepError "mkl_intel")) ])
           else [ (pkgs."lapack" or (sysDepError "lapack")) ];
         frameworks = (pkgs.lib).optional (flags.accelerate) (pkgs."Accelerate" or (sysDepError "Accelerate"));
+        buildable = true;
         };
       };
     }

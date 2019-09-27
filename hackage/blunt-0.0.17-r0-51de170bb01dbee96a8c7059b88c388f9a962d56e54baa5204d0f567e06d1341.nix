@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets" or (buildDepError "websockets"))
           (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
           ];
+        buildable = true;
         };
       exes = {
         "blunt" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."blunt" or (buildDepError "blunt"))
             ];
+          buildable = true;
           };
         };
       };

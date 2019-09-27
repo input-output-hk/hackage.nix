@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-pubkey-types" or (buildDepError "crypto-pubkey-types"))
           (hsPkgs."SHA" or (buildDepError "SHA"))
           ];
+        buildable = true;
         };
       tests = {
         "test-rsa" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."SHA" or (buildDepError "SHA"))
             ];
+          buildable = true;
           };
         };
       };

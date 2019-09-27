@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else if compiler.isGhc && (compiler.version).ge "7.10"
             then [ (hsPkgs."network-uri" or (buildDepError "network-uri")) ]
             else [ (hsPkgs."network" or (buildDepError "network")) ]);
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."type-natural" or (buildDepError "type-natural"))
           ] ++ [ (hsPkgs."singletons" or (buildDepError "singletons")) ];
+        buildable = true;
         };
       };
     }

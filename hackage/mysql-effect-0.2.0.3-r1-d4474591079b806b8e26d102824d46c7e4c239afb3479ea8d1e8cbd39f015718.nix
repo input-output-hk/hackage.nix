@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mysql-simple" or (buildDepError "mysql-simple"))
           (hsPkgs."mysql" or (buildDepError "mysql"))
           ];
+        buildable = true;
         };
       };
     }

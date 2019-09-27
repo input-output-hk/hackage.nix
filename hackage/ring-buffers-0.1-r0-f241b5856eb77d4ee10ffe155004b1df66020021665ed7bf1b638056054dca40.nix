@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."contiguous" or (buildDepError "contiguous"))
             (hsPkgs."primitive" or (buildDepError "primitive"))
             ]);
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
           (hsPkgs."haddock" or (buildDepError "haddock"))
           ];
+        buildable = true;
         };
       tests = {
         "doctest" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."haddock" or (buildDepError "haddock"))
             ];
+          buildable = true;
           };
         };
       };

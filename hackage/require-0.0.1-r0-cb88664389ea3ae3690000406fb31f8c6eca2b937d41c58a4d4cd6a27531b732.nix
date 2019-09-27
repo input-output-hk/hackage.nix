@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."universum" or (buildDepError "universum"))
           ];
+        buildable = true;
         };
       exes = {
         "requirepp" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."universum" or (buildDepError "universum"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."universum" or (buildDepError "universum"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -96,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."universum" or (buildDepError "universum"))
             ];
+          buildable = true;
           };
         };
       };

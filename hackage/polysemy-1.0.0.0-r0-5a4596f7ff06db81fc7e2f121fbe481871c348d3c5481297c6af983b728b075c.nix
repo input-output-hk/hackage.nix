@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-errors-pretty" or (buildDepError "type-errors-pretty"))
           (hsPkgs."unagi-chan" or (buildDepError "unagi-chan"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.7") (hsPkgs."loopbreaker" or (buildDepError "loopbreaker"))) ++ (pkgs.lib).optional (flags.dump-core) (hsPkgs."dump-core" or (buildDepError "dump-core"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2.2") (hsPkgs."unsupported-ghc-version" or (buildDepError "unsupported-ghc-version"));
+        buildable = true;
         };
       tests = {
         "polysemy-test" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -115,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-errors-pretty" or (buildDepError "type-errors-pretty"))
             (hsPkgs."unagi-chan" or (buildDepError "unagi-chan"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.7") (hsPkgs."loopbreaker" or (buildDepError "loopbreaker"));
+          buildable = true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."primitive" or (buildDepError "primitive"))
           ] ++ (pkgs.lib).optional (!(compiler.isEta && true)) (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"));
+        buildable = true;
         };
       tests = {
         "test-transient" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
             ];
+          buildable = true;
           };
         };
       };

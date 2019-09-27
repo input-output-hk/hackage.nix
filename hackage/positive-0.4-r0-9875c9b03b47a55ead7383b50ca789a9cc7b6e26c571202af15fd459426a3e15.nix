@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."nats" or (buildDepError "nats"))
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           ];
+        buildable = true;
         };
       };
     }

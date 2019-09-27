@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."binary-search" or (buildDepError "binary-search"))
           ];
+        buildable = true;
         };
       exes = {
         "test" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."binary-search" or (buildDepError "binary-search"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -117,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         };
       };

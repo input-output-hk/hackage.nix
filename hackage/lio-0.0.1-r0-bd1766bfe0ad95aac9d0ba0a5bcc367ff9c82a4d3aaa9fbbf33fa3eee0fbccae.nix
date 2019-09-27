@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."dclabel" or (buildDepError "dclabel"))
           ];
+        buildable = true;
         };
       };
     }

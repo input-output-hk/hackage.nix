@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."strptime" or (buildDepError "strptime"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

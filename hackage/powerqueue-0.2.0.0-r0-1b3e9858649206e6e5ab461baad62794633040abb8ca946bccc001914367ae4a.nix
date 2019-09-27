@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."async" or (buildDepError "async"))
           (hsPkgs."timespan" or (buildDepError "timespan"))
           ];
+        buildable = true;
         };
       tests = {
         "powerqueue-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         };
       };

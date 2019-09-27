@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pandoc" or (buildDepError "pandoc"))
             (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
             ];
+          buildable = true;
           };
         };
       };

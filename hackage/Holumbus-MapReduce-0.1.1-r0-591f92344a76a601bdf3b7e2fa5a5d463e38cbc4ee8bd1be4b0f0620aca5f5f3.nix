@@ -73,7 +73,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
           (hsPkgs."readline" or (buildDepError "readline"))
           ];
+        buildable = true;
         };
-      exes = { "Master" = {}; "MasterDaemon" = {}; };
+      exes = {
+        "Master" = { buildable = true; };
+        "MasterDaemon" = { buildable = true; };
+        };
       };
     }

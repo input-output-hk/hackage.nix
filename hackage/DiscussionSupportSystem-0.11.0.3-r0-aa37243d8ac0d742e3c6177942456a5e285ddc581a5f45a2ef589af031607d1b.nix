@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           ];
+        buildable = true;
         };
       tests = {
         "doctest" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."DiscussionSupportSystem" or (buildDepError "DiscussionSupportSystem"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         };
       };

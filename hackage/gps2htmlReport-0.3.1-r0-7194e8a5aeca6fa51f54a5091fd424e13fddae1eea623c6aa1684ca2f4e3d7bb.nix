@@ -77,7 +77,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tar" or (buildDepError "tar"))
           (hsPkgs."GPX" or (buildDepError "GPX"))
           ];
+        buildable = true;
         };
-      exes = { "gps2htmlReport" = {}; };
+      exes = { "gps2htmlReport" = { buildable = true; }; };
       };
     }

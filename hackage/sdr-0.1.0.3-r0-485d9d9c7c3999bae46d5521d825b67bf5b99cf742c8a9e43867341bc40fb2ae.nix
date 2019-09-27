@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Chart" or (buildDepError "Chart"))
           (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -109,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."primitive" or (buildDepError "primitive"))
             (hsPkgs."storable-complex" or (buildDepError "storable-complex"))
             ];
+          buildable = true;
           };
         };
       };

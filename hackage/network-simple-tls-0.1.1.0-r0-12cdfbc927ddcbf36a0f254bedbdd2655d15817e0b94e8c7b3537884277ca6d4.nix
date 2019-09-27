@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tls" or (buildDepError "tls"))
           (hsPkgs."tls-extra" or (buildDepError "tls-extra"))
           ];
+        buildable = true;
         };
       };
     }

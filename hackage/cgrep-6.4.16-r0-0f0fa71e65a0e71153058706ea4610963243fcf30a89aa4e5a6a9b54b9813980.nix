@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
             ];
+          buildable = true;
           };
         };
       };

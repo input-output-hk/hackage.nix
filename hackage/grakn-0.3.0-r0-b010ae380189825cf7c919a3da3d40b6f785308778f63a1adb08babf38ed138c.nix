@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."http-media" or (buildDepError "http-media"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."markdown-unlit" or (buildDepError "markdown-unlit"))
             (hsPkgs."MissingH" or (buildDepError "MissingH"))
             ];
+          buildable = true;
           };
         "accept" = {
           depends = [
@@ -111,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."markdown-unlit" or (buildDepError "markdown-unlit"))
             (hsPkgs."MissingH" or (buildDepError "MissingH"))
             ];
+          buildable = true;
           };
         };
       };

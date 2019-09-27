@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = true;
           };
         };
       };

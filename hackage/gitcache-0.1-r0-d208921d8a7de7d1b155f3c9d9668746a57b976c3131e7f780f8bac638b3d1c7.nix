@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
             ];
+          buildable = true;
           };
         };
       };

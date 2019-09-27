@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [
           (hsPkgs."base" or (buildDepError "base"))
           ] ++ (pkgs.lib).optional (!flags.use-cbits) (hsPkgs."time" or (buildDepError "time"));
+        buildable = true;
         };
       tests = {
         "test-tb" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."token-bucket" or (buildDepError "token-bucket"))
             ];
+          buildable = true;
           };
         };
       };

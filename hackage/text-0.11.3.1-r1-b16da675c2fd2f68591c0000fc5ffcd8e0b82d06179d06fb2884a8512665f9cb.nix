@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
             ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9" && (compiler.isGhc && (compiler.version).lt "6.11")) (hsPkgs."integer" or (buildDepError "integer"));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
               ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9" && (compiler.isGhc && (compiler.version).lt "6.11")) (hsPkgs."integer" or (buildDepError "integer"));
+          buildable = true;
           };
         };
       };

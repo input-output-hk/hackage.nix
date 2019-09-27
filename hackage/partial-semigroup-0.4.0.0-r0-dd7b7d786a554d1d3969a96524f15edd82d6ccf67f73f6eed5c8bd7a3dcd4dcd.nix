@@ -66,12 +66,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (pkgs.lib).optional (flags.generics-in-base) (hsPkgs."base" or (buildDepError "base"))) ++ (pkgs.lib).optional (flags.identity-in-base) (hsPkgs."base" or (buildDepError "base"))) ++ (if flags.semigroup-in-base
           then [ (hsPkgs."base" or (buildDepError "base")) ]
           else [ (hsPkgs."semigroups" or (buildDepError "semigroups")) ]);
+        buildable = true;
         };
       tests = {
         "docs" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             ] ++ (pkgs.lib).optional (flags.enable-doctest) (hsPkgs."doctest" or (buildDepError "doctest"));
+          buildable = true;
           };
         "examples" = {
           depends = ([
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (pkgs.lib).optional (flags.enable-hedgehog) (hsPkgs."hedgehog" or (buildDepError "hedgehog"))) ++ (if flags.semigroup-in-base
             then [ (hsPkgs."base" or (buildDepError "base")) ]
             else [ (hsPkgs."semigroups" or (buildDepError "semigroups")) ]);
+          buildable = true;
           };
         "properties" = {
           depends = ([
@@ -88,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (pkgs.lib).optional (flags.enable-hedgehog) (hsPkgs."hedgehog" or (buildDepError "hedgehog"))) ++ (if flags.semigroup-in-base
             then [ (hsPkgs."base" or (buildDepError "base")) ]
             else [ (hsPkgs."semigroups" or (buildDepError "semigroups")) ]);
+          buildable = true;
           };
         "generics" = {
           depends = [
@@ -99,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if flags.semigroup-in-base
             then [ (hsPkgs."base" or (buildDepError "base")) ]
             else [ (hsPkgs."semigroups" or (buildDepError "semigroups")) ]));
+          buildable = true;
           };
         };
       };

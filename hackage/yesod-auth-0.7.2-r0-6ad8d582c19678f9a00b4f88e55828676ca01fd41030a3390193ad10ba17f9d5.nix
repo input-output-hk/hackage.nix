@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson-native" or (buildDepError "aeson-native"))
           (hsPkgs."pwstore-fast" or (buildDepError "pwstore-fast"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       };
     }

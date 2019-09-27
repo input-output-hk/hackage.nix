@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yeshql-core" or (buildDepError "yeshql-core"))
           (hsPkgs."yeshql-hdbc" or (buildDepError "yeshql-hdbc"))
           ];
+        buildable = true;
         };
       };
     }

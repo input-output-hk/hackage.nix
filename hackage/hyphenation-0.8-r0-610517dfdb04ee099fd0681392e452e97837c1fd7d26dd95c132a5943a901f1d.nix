@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           (hsPkgs."text" or (buildDepError "text"))
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.11")) (hsPkgs."semigroups" or (buildDepError "semigroups"))) ++ (pkgs.lib).optional (flags.embed) (hsPkgs."file-embed" or (buildDepError "file-embed"));
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hyphenation" or (buildDepError "hyphenation"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         };
       };

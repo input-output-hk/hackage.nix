@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."gsl" or (sysDepError "gsl"))
             (pkgs."lapack" or (sysDepError "lapack"))
             ];
+        buildable = true;
         };
       };
     }

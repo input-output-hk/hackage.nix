@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
           (hsPkgs."warp" or (buildDepError "warp"))
           ];
+        buildable = true;
         };
       tests = {
         "spocktests" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."wai" or (buildDepError "wai"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Spock" or (buildDepError "Spock"))
             ];
+          buildable = true;
           };
         };
       };

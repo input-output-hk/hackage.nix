@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsql" or (buildDepError "hsql"))
           (hsPkgs."hsql-odbc" or (buildDepError "hsql-odbc"))
           ];
+        buildable = true;
         };
       };
     }

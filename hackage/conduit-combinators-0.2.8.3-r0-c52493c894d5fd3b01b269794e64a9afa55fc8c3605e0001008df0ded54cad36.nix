@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
             (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
             ];
+          buildable = true;
           };
         };
       };

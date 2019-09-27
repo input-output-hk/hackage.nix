@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shell-conduit" or (buildDepError "shell-conduit"))
           (hsPkgs."network" or (buildDepError "network"))
           ];
+        buildable = true;
         };
       tests = {
         "postgres-embedded-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
             (hsPkgs."shell-conduit" or (buildDepError "shell-conduit"))
             ];
+          buildable = true;
           };
         };
       };

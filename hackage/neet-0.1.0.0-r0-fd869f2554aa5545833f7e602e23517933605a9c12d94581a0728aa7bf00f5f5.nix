@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."graphviz" or (buildDepError "graphviz"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,10 +69,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tuple" or (buildDepError "tuple"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "SubOptDistance" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

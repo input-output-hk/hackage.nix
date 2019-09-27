@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."asn1-data" or (buildDepError "asn1-data"))
           (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "certificate" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.executable then true else false;
           };
         "Tests" = {
           depends = (pkgs.lib).optionals (flags.test) [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

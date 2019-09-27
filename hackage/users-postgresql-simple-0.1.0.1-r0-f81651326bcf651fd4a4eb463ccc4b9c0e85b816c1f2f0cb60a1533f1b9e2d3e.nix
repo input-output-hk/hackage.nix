@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       tests = {
         "users-postgresql-tests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."users-postgresql-simple" or (buildDepError "users-postgresql-simple"))
             (hsPkgs."users-test" or (buildDepError "users-test"))
             ];
+          buildable = true;
           };
         };
       };

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ] ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.fingertree) (hsPkgs."fingertree" or (buildDepError "fingertree"))) ++ (pkgs.lib).optional (flags.parallel) (hsPkgs."parallel" or (buildDepError "parallel"))) ++ (pkgs.lib).optional (flags.text) (hsPkgs."text" or (buildDepError "text"))) ++ (pkgs.lib).optional (flags.stm) (hsPkgs."stm" or (buildDepError "stm"))) ++ (pkgs.lib).optional (flags.quickcheck) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))) ++ (pkgs.lib).optional (flags.reflection) (hsPkgs."reflection" or (buildDepError "reflection"))) ++ (pkgs.lib).optional (flags.parsec) (hsPkgs."parsec" or (buildDepError "parsec"))) ++ (pkgs.lib).optional (flags.mtl) (hsPkgs."mtl" or (buildDepError "mtl"));
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
         libs = [ (pkgs."cci" or (sysDepError "cci")) ];
+        buildable = true;
         };
       exes = {
         "cci-example-client" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."cci" or (buildDepError "cci"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "cci-example-pingpong" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cci" or (buildDepError "cci"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "cci-example-server" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -83,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."cci" or (buildDepError "cci"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "cci-example-registration-benchmark" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -91,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cci" or (buildDepError "cci"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -108,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = true;
           };
         "test-worker" = {
           depends = [
@@ -118,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ];
+          buildable = true;
           };
         };
       };

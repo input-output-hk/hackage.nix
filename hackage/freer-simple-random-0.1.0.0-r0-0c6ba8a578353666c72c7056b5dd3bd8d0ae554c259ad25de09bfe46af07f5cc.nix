@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."freer-simple" or (buildDepError "freer-simple"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       tests = {
         "freer-simple-random-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

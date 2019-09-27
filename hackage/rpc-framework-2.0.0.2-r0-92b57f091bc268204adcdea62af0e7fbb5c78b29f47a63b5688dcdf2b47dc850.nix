@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."network" or (buildDepError "network"))
           ];
+        buildable = true;
         };
       exes = {
         "rpc-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rpc-framework" or (buildDepError "rpc-framework"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

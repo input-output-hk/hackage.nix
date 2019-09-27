@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           (hsPkgs."call-stack" or (buildDepError "call-stack"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."call-stack" or (buildDepError "call-stack"))
             (hsPkgs."nanospec" or (buildDepError "nanospec"))
             ];
+          buildable = true;
           };
         };
       };

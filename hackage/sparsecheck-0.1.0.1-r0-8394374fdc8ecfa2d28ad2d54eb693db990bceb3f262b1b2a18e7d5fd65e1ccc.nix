@@ -53,5 +53,5 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "SparseCheck is a library for logic programming in Haskell that\nallows convenient description of test-data generators.";
       buildType = "Simple";
       };
-    components = { "library" = {}; };
+    components = { "library" = { buildable = true; }; };
     }

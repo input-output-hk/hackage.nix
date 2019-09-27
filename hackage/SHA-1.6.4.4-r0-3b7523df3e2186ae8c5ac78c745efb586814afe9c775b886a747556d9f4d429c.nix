@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "sha1" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."SHA" or (buildDepError "SHA"))
             ];
+          buildable = if flags.exe then true else false;
           };
         "sha224" = {
           depends = (pkgs.lib).optionals (flags.exe) [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."SHA" or (buildDepError "SHA"))
             ];
+          buildable = if flags.exe then true else false;
           };
         "sha256" = {
           depends = (pkgs.lib).optionals (flags.exe) [
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."SHA" or (buildDepError "SHA"))
             ];
+          buildable = if flags.exe then true else false;
           };
         "sha384" = {
           depends = (pkgs.lib).optionals (flags.exe) [
@@ -94,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."SHA" or (buildDepError "SHA"))
             ];
+          buildable = if flags.exe then true else false;
           };
         "sha512" = {
           depends = (pkgs.lib).optionals (flags.exe) [
@@ -102,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."SHA" or (buildDepError "SHA"))
             ];
+          buildable = if flags.exe then true else false;
           };
         };
       tests = {
@@ -115,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
+          buildable = true;
           };
         };
       };

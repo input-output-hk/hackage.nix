@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mysnapsession" or (buildDepError "mysnapsession"))
             (hsPkgs."clientsession" or (buildDepError "clientsession"))
             ];
+          buildable = true;
           };
         "clientcount" = {
           depends = [
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."mysnapsession" or (buildDepError "mysnapsession"))
             ];
+          buildable = true;
           };
         };
       };

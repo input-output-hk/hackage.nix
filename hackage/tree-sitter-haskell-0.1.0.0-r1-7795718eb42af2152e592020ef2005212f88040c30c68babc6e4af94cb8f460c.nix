@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."tree-sitter-haskell-internal" or (buildDepError "tree-sitter-haskell-internal"))
           ];
+        buildable = true;
         };
       sublibs = {
         "tree-sitter-haskell-internal" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tree-sitter" or (buildDepError "tree-sitter"))
             ];
           libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+          buildable = true;
           };
         };
       exes = {
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tree-sitter" or (buildDepError "tree-sitter"))
             (hsPkgs."tree-sitter-haskell" or (buildDepError "tree-sitter-haskell"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         };
       };

@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           ];
+        buildable = true;
         };
       exes = {
         "BlogLiterately" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."BlogLiterately" or (buildDepError "BlogLiterately"))
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             ];
+          buildable = true;
           };
         };
       };

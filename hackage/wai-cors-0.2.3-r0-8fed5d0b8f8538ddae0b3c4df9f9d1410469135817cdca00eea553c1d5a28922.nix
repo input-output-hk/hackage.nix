@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."wai" or (buildDepError "wai"))
             ]);
+        buildable = true;
         };
       tests = {
         "phantomjs" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."websockets" or (buildDepError "websockets"))
             ];
+          buildable = if flags.wai-1 || flags.wai-2 then false else true;
           };
         };
       };

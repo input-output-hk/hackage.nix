@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."base" or (buildDepError "base"))
               (hsPkgs."bytestring" or (buildDepError "bytestring"))
               ])) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
+          buildable = true;
           };
         };
       };

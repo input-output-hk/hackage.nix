@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."timespan" or (buildDepError "timespan"))
           ];
+        buildable = true;
         };
       tests = {
         "powerqueue-distributed-test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."timespan" or (buildDepError "timespan"))
             ];
+          buildable = true;
           };
         };
       };

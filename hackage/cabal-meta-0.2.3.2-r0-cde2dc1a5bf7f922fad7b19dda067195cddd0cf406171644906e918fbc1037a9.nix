@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
         "cabal-meta" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
             (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       tests = {
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
             ];
+          buildable = true;
           };
         };
       };

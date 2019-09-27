@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."aeson" or (buildDepError "aeson"))
           ];
+        buildable = true;
         };
       exes = {
         "conffmt" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."language-conf" or (buildDepError "language-conf"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = if !flags.conffmt then false else true;
           };
         "fromconf" = {
           depends = [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = if !flags.fromconf then false else true;
           };
         "toconf" = {
           depends = [
@@ -103,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = if !flags.toconf then false else true;
           };
         };
       tests = {
@@ -122,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

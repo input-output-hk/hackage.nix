@@ -6724,6 +6724,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ztail" or (buildDepError "ztail"))
           (hsPkgs."Zwaluw" or (buildDepError "Zwaluw"))
           ];
+        buildable = true;
         };
       };
     }

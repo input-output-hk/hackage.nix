@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "antlrcmkenums" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             ];
+          buildable = true;
           };
         };
       };

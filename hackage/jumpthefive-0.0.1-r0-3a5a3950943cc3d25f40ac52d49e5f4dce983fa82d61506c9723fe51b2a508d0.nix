@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."parallel" or (buildDepError "parallel"))
           ];
+        buildable = true;
         };
       exes = {
         "jumpthefive" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."parallel" or (buildDepError "parallel"))
             ];
+          buildable = true;
           };
         };
       };

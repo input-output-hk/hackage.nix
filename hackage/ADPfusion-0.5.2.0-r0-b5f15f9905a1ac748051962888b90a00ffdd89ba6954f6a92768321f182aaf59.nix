@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OrderedBits" or (buildDepError "OrderedBits"))
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           ];
+        buildable = true;
         };
       exes = {
         "NeedlemanWunsch" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "spectest" = {
           depends = (pkgs.lib).optionals (flags.spectest) [
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.spectest then true else false;
           };
         };
       tests = {
@@ -115,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -126,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = if flags.btstruc then true else false;
           };
         };
       };

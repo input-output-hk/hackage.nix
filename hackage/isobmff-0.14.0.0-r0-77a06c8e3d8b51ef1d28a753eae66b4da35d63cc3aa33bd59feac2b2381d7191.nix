@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tagged" or (buildDepError "tagged"))
             (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tagged" or (buildDepError "tagged"))
             (hsPkgs."type-spec" or (buildDepError "type-spec"))
             ];
+          buildable = true;
           };
         };
       };

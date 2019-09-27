@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."safe" or (buildDepError "safe"))
           ];
+        buildable = true;
         };
       exes = {
         "demo" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gridland" or (buildDepError "gridland"))
             ];
+          buildable = if flags.demo then true else false;
           };
         };
       };

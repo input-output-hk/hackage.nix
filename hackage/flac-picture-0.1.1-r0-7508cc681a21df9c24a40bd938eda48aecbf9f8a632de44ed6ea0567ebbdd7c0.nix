@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."flac" or (buildDepError "flac"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."temporary" or (buildDepError "temporary"))
             ];
+          buildable = true;
           };
         };
       };

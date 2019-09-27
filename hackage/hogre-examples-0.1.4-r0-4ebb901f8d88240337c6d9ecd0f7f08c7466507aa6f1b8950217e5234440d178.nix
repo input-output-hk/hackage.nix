@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."OgreMain" or (sysDepError "OgreMain"))
             (pkgs."stdc++" or (sysDepError "stdc++"))
             ];
+          buildable = true;
           };
         "example_02" = {
           depends = [
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."OgreMain" or (sysDepError "OgreMain"))
             (pkgs."stdc++" or (sysDepError "stdc++"))
             ];
+          buildable = true;
           };
         };
       };

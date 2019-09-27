@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       sublibs = {
         "hw-balancedparens-gen" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -111,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
             (hsPkgs."hw-balancedparens-gen" or (buildDepError "hw-balancedparens-gen"))
             ];
+          buildable = true;
           };
         };
       };

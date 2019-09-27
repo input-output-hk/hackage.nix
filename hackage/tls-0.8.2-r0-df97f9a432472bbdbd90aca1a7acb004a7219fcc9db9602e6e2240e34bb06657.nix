@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptocipher" or (buildDepError "cryptocipher"))
           (hsPkgs."certificate" or (buildDepError "certificate"))
           ];
+        buildable = true;
         };
       exes = {
         "Tests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

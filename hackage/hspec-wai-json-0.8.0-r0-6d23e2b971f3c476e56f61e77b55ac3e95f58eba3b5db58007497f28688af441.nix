@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson-qq" or (buildDepError "aeson-qq"))
           (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-wai" or (buildDepError "hspec-wai"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
           (hsPkgs."safe" or (buildDepError "safe"))
           ];
+        buildable = true;
         };
       exes = {
         "gpio" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe" or (buildDepError "safe"))
             (hsPkgs."gpio" or (buildDepError "gpio"))
             ];
+          buildable = true;
           };
         };
       };

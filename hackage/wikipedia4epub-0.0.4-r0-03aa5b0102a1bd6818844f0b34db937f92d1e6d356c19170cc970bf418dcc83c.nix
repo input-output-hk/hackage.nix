@@ -75,7 +75,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml" or (buildDepError "xml"))
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ];
+        buildable = true;
         };
-      exes = { "wiki4e-mkepub-firefox" = {}; };
+      exes = { "wiki4e-mkepub-firefox" = { buildable = true; }; };
       };
     }

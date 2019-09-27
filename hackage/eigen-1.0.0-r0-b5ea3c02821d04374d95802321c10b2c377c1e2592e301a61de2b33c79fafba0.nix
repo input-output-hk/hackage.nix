@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
         libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+        buildable = true;
         };
       };
     }

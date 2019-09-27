@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           ];
         libs = [ (pkgs."z" or (sysDepError "z")) ];
+        buildable = true;
         };
       };
     }

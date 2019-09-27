@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."pthread" or (sysDepError "pthread"))
           (pkgs."z" or (sysDepError "z"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit" or (buildDepError "conduit"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

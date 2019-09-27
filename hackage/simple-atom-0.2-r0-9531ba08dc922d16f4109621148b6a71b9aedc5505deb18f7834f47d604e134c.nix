@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ] ++ (pkgs.lib).optional (flags.debug) (hsPkgs."murmur-hash" or (buildDepError "murmur-hash"));
+        buildable = true;
         };
       };
     }

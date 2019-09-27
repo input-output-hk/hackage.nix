@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regexpr" or (buildDepError "regexpr"))
           (hsPkgs."enumerator" or (buildDepError "enumerator"))
           ];
+        buildable = true;
         };
       };
     }

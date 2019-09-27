@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."newtype" or (buildDepError "newtype"))
           (hsPkgs."void" or (buildDepError "void"))
           ];
+        buildable = true;
         };
       };
     }

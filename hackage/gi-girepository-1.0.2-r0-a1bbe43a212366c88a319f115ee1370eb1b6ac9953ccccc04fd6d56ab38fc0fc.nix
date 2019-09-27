@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."gobject-introspection-1.0" or (pkgConfDepError "gobject-introspection-1.0"))
           ];
+        buildable = true;
         };
       };
     }

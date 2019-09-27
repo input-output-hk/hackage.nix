@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
           (hsPkgs."uuid" or (buildDepError "uuid"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."product-profunctors" or (buildDepError "product-profunctors"))
             (hsPkgs."opaleye" or (buildDepError "opaleye"))
             ];
+          buildable = true;
           };
         "tutorial" = {
           depends = [
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."opaleye" or (buildDepError "opaleye"))
             ];
+          buildable = true;
           };
         };
       };

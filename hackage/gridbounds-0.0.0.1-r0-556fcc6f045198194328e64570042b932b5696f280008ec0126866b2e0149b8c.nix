@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."earclipper" or (buildDepError "earclipper"))
           (hsPkgs."gjk" or (buildDepError "gjk"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gridbounds" or (buildDepError "gridbounds"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

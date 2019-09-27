@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Win32" or (buildDepError "Win32"))
           ];
         libs = [ (pkgs."Advapi32" or (sysDepError "Advapi32")) ];
+        buildable = true;
         };
       };
     }

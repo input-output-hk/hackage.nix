@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
           (hsPkgs."streaming-bytestring" or (buildDepError "streaming-bytestring"))
           ];
+        buildable = true;
         };
       };
     }

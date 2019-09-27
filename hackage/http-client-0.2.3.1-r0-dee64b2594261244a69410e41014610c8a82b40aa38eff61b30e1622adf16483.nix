@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."publicsuffixlist" or (buildDepError "publicsuffixlist"))
           (hsPkgs."cookie" or (buildDepError "cookie"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         };
       };

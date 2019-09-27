@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cabal-lenses" or (buildDepError "cabal-lenses"))
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ];
+        buildable = true;
         };
       exes = {
         "cabal-bounds" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."cabal-bounds" or (buildDepError "cabal-bounds"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."cabal-bounds" or (buildDepError "cabal-bounds"))
             ];
+          buildable = true;
           };
         };
       };

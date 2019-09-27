@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process-conduit" or (buildDepError "process-conduit"))
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           ];
+        buildable = true;
         };
       exes = {
         "cab" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."process-conduit" or (buildDepError "process-conduit"))
             ];
+          buildable = true;
           };
         };
       };

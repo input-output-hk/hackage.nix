@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
         libs = [ (pkgs."xkbcommon" or (sysDepError "xkbcommon")) ];
+        buildable = true;
         };
       tests = {
         "context" = {
@@ -85,24 +86,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             ];
+          buildable = true;
           };
         "filecomp" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             ];
+          buildable = true;
           };
         "keyseq" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             ];
+          buildable = true;
           };
         "keysym" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             ];
+          buildable = true;
           };
         "rulescomp" = {
           depends = [
@@ -110,18 +115,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         "state" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             ];
+          buildable = true;
           };
         "stringcomp" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -133,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

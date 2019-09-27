@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hamlet" or (buildDepError "hamlet"))
           (hsPkgs."web-routes-quasi" or (buildDepError "web-routes-quasi"))
           ];
+        buildable = true;
         };
       };
     }

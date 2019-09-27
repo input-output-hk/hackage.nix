@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."insert-ordered-containers" or (buildDepError "insert-ordered-containers"))
           (hsPkgs."hvect" or (buildDepError "hvect"))
           ];
+        buildable = true;
         };
       tests = {
         "highjson-swagger-tests" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."swagger2" or (buildDepError "swagger2"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

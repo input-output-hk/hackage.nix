@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-flags" or (buildDepError "data-flags"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
       tests = {
         "context" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             ];
           libs = [ (pkgs."xkbcommon" or (sysDepError "xkbcommon")) ];
+          buildable = true;
           };
         "filecomp" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             ];
           libs = [ (pkgs."xkbcommon" or (sysDepError "xkbcommon")) ];
+          buildable = true;
           };
         "keyseq" = {
           depends = [
@@ -89,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             ];
           libs = [ (pkgs."xkbcommon" or (sysDepError "xkbcommon")) ];
+          buildable = true;
           };
         "keysym" = {
           depends = [
@@ -96,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             ];
           libs = [ (pkgs."xkbcommon" or (sysDepError "xkbcommon")) ];
+          buildable = true;
           };
         "rulescomp" = {
           depends = [
@@ -104,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
           libs = [ (pkgs."xkbcommon" or (sysDepError "xkbcommon")) ];
+          buildable = true;
           };
         "state" = {
           depends = [
@@ -111,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             ];
           libs = [ (pkgs."xkbcommon" or (sysDepError "xkbcommon")) ];
+          buildable = true;
           };
         "stringcomp" = {
           depends = [
@@ -118,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
             ];
           libs = [ (pkgs."xkbcommon" or (sysDepError "xkbcommon")) ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -130,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             ];
           libs = [ (pkgs."xkbcommon" or (sysDepError "xkbcommon")) ];
+          buildable = true;
           };
         };
       };

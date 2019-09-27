@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."storable-record" or (buildDepError "storable-record"))
           ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unamb" or (buildDepError "unamb"))
           (hsPkgs."checkers" or (buildDepError "checkers"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "6.9"
+          then false
+          else true;
         };
       };
     }

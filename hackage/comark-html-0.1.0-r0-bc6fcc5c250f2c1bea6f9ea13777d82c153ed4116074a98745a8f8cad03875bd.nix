@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."comark-syntax" or (buildDepError "comark-syntax"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "comark-html-profile" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."cmark" or (buildDepError "cmark"))
             ];
+          buildable = if flags.profile then true else false;
           };
         };
       tests = {
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."comark-testutils" or (buildDepError "comark-testutils"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -97,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmark" or (buildDepError "cmark"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         };
       };

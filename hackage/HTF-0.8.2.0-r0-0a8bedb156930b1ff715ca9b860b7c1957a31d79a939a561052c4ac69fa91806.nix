@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
           (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
           ];
+        buildable = true;
         };
       exes = {
         "htfpp" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

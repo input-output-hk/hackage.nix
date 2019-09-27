@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
           (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
           ];
+        buildable = true;
         };
       exes = {
         "tasty-discover" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
             ];
+          buildable = true;
           };
         };
       };

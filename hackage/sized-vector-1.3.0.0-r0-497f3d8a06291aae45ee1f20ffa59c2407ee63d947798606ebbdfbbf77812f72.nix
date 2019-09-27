@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "coercion-bench" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         };
       };

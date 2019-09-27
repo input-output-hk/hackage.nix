@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."ldap" or (sysDepError "ldap"))
           (pkgs."lber" or (sysDepError "lber"))
           ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."ldap" or (sysDepError "ldap"))
             (pkgs."lber" or (sysDepError "lber"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

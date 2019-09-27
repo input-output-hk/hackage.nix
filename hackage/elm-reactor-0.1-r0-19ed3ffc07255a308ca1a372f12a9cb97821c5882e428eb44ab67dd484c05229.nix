@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."websockets" or (buildDepError "websockets"))
             (hsPkgs."websockets-snap" or (buildDepError "websockets-snap"))
             ];
+          buildable = true;
           };
         };
       };

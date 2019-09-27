@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
           (hsPkgs."ghcjs-prim" or (buildDepError "ghcjs-prim"))
           ];
+        buildable = true;
         };
       };
     }

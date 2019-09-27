@@ -67,7 +67,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ];
+        buildable = true;
         };
-      exes = { "bert" = {}; };
+      exes = { "bert" = { buildable = true; }; };
       };
     }

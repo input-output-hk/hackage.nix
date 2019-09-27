@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell98" or (buildDepError "haskell98"))
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           ];
+        buildable = true;
         };
       exes = {
         "test-seqloc" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         };
       };

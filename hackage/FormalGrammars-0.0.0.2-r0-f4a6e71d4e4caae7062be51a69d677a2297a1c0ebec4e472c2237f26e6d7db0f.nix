@@ -74,10 +74,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "GrammarPP" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

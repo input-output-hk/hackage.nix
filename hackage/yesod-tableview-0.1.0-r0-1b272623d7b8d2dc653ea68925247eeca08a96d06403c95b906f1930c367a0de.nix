@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."persistent" or (buildDepError "persistent"))
           (hsPkgs."yesod" or (buildDepError "yesod"))
           ];
+        buildable = true;
         };
       };
     }

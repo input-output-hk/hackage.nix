@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Imlib" or (buildDepError "Imlib"))
           (hsPkgs."wx" or (buildDepError "wx"))
           ];
+        buildable = true;
         };
-      exes = { "testTurtle" = {}; };
+      exes = { "testTurtle" = { buildable = true; }; };
       };
     }

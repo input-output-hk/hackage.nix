@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if flags.readline
             then [ (hsPkgs."readline" or (buildDepError "readline")) ]
             else (pkgs.lib).optional (flags.editline) (hsPkgs."editline" or (buildDepError "editline")));
+          buildable = true;
           };
         };
       };

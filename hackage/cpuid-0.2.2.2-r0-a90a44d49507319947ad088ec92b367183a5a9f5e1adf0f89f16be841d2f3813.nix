@@ -60,7 +60,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."enumset" or (buildDepError "enumset"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = if system.isI386 || system.isX86_64 then true else false;
         };
-      exes = { "cpuid-test" = {}; };
+      exes = {
+        "cpuid-test" = {
+          buildable = if !(flags.buildexamples && (system.isI386 || system.isX86_64))
+            then false
+            else true;
+          };
+        };
       };
     }

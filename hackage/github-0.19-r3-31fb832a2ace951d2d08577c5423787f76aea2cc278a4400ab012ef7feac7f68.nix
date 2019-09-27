@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.aeson-compat
           then [ (hsPkgs."aeson-compat" or (buildDepError "aeson-compat")) ]
           else [ (hsPkgs."aeson-extra" or (buildDepError "aeson-extra")) ]);
+        buildable = true;
         };
       tests = {
         "github-test" = {
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
             ];
+          buildable = true;
           };
         };
       };

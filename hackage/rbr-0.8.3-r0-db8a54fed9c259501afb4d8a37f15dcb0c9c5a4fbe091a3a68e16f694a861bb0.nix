@@ -60,13 +60,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."bio" or (buildDepError "bio"))
           ];
+        buildable = true;
         };
       exes = {
         "rbr" = {
           depends = [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ];
+          buildable = true;
           };
         "mct" = {
           depends = [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ];
+          buildable = true;
           };
         };
       };

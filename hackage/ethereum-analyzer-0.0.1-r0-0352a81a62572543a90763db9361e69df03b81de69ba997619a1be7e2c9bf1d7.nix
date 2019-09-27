@@ -96,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
           ];
+        buildable = true;
         };
       exes = {
         "ethereum-analyzer" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hflags" or (buildDepError "hflags"))
             (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
             ];
+          buildable = true;
           };
         "ea-dump-contract" = {
           depends = [
@@ -118,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -132,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

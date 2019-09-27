@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."th-lift" or (buildDepError "th-lift"))
           ];
+        buildable = true;
         };
       tests = {
         "Element-isotopes-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
             ];
+          buildable = true;
           };
         };
       };

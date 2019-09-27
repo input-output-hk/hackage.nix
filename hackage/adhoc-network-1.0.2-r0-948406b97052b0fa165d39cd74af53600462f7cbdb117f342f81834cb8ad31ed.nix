@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pkcs1" or (buildDepError "pkcs1"))
           (hsPkgs."xml-parsec" or (buildDepError "xml-parsec"))
           ];
+        buildable = true;
         };
       };
     }

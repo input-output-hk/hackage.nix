@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           ];
         libs = [ (pkgs."sqlite3" or (sysDepError "sqlite3")) ];
+        buildable = true;
         };
       };
     }

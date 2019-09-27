@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+        buildable = true;
         };
       tests = {
         "main" = {
@@ -66,66 +67,77 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "types" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "tiers" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "operators" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "derive" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "error" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "generic" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         "io" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "fun" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "funshow" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "stats" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         };
       };

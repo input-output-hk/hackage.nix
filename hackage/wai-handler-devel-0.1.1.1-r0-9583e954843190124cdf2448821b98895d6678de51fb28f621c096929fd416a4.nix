@@ -65,10 +65,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hint" or (buildDepError "hint"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
       exes = {
         "wai-handler-devel" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

@@ -94,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+        buildable = true;
         };
       exes = {
         "GetObjectV4" = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "GetObject" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -115,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "GetObjectGoogle" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -125,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "MultipartUpload" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -137,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "MultipartTransfer" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -148,6 +153,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "NukeBucket" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -160,6 +166,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "PutBucketNearLine" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -172,6 +179,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "SimpleDb" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -179,6 +187,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aws" or (buildDepError "aws"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "DynamoDb" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -191,6 +200,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "Sqs" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -200,6 +210,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -225,6 +236,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             ];
+          buildable = true;
           };
         "dynamodb-tests" = {
           depends = [
@@ -248,6 +260,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             ];
+          buildable = true;
           };
         "s3-tests" = {
           depends = [
@@ -274,6 +287,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             ];
+          buildable = true;
           };
         };
       };

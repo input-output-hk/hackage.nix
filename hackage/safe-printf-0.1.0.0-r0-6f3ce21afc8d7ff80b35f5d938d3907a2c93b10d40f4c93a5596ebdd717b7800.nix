@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."th-lift" or (buildDepError "th-lift"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -72,12 +73,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."th-lift" or (buildDepError "th-lift"))
             ];
+          buildable = true;
           };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         };
       };

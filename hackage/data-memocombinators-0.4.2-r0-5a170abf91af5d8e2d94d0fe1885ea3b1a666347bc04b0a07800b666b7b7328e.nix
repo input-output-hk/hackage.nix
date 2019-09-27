@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."data-inttrie" or (buildDepError "data-inttrie"))
           ];
+        buildable = true;
         };
       };
     }

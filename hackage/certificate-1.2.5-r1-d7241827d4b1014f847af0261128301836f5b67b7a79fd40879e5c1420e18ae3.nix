@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."time" or (buildDepError "time"))
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
+        buildable = true;
         };
       exes = {
         "certificate" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cryptocipher" or (buildDepError "cryptocipher"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = if flags.executable then true else false;
           };
         "Tests" = {
           depends = (pkgs.lib).optionals (flags.test) [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."MissingH" or (buildDepError "MissingH"))
           ];
+        buildable = true;
         };
       exes = {
         "Villefort" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
             (hsPkgs."webdriver" or (buildDepError "webdriver"))
             ];
+          buildable = true;
           };
         };
       };

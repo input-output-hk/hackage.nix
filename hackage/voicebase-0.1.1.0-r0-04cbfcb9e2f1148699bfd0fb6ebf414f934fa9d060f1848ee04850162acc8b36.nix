@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."wreq" or (buildDepError "wreq"))
           ];
+        buildable = true;
         };
       exes = {
         "voicebase" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."options" or (buildDepError "options"))
             (hsPkgs."voicebase" or (buildDepError "voicebase"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."voicebase" or (buildDepError "voicebase"))
             ];
+          buildable = true;
           };
         };
       };

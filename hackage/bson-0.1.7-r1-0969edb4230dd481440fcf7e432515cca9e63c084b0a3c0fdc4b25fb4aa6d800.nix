@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."compact-string-fix" or (buildDepError "compact-string-fix"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."compact-string-fix" or (buildDepError "compact-string-fix"))
             (hsPkgs."file-location" or (buildDepError "file-location"))
             ];
+          buildable = true;
           };
         };
       };

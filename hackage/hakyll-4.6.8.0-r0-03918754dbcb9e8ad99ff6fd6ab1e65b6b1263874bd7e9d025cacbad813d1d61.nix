@@ -97,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
           (hsPkgs."http-types" or (buildDepError "http-types"))
           ];
+        buildable = true;
         };
       exes = {
         "hakyll-init" = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -155,6 +157,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             (hsPkgs."http-types" or (buildDepError "http-types"))
             ];
+          buildable = true;
           };
         };
       };

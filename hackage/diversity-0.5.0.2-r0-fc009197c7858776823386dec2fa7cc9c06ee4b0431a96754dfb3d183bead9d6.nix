@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
           (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
           ];
+        buildable = true;
         };
       exes = {
         "diversity" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."fasta" or (buildDepError "fasta"))
             ];
+          buildable = true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."http-client" or (buildDepError "http-client"))
           ];
+        buildable = true;
         };
       exes = {
         "test-http-test-on-bayeshive" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."http-test" or (buildDepError "http-test"))
             ];
+          buildable = true;
           };
         "http-test" = {
           depends = [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = false;
           };
         };
       };

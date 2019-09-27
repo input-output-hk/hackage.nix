@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
+        buildable = true;
         };
       tests = {
         "test-foundation" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."foundation" or (buildDepError "foundation"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -80,9 +82,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."foundation" or (buildDepError "foundation"))
             ];
+          buildable = true;
           };
         "bench-profile-break" = {
           depends = [ (hsPkgs."foundation" or (buildDepError "foundation")) ];
+          buildable = true;
           };
         };
       };

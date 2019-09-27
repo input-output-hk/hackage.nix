@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
           ];
+        buildable = true;
         };
       };
     }

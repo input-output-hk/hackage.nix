@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."gobject-2.0" or (pkgConfDepError "gobject-2.0"))
           ];
+        buildable = true;
         };
       };
     }

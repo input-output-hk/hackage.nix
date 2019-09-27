@@ -68,10 +68,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb" or (buildDepError "syb"))
           (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
           ];
+        buildable = true;
         };
       exes = {
         "jmacro" = {
           depends = [ (hsPkgs."parseargs" or (buildDepError "parseargs")) ];
+          buildable = true;
           };
         };
       };

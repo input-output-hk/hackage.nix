@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
           (hsPkgs."hslua" or (buildDepError "hslua"))
           ];
+        buildable = true;
         };
       exes = {
         "cspm" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
             (hsPkgs."hslua" or (buildDepError "hslua"))
             ];
+          buildable = true;
           };
         };
       };

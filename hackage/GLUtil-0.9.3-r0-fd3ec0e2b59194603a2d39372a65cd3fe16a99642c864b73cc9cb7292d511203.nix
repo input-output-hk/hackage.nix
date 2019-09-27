@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10.1" && !system.isWindows) (hsPkgs."hpp" or (buildDepError "hpp"));
         build-tools = (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10.1" && !system.isWindows)) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")));
+        buildable = true;
         };
       };
     }

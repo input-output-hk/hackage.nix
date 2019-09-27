@@ -72,10 +72,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."trifecta" or (buildDepError "trifecta"))
           ];
+        buildable = true;
         };
       exes = {
         "GrammarProductPP" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

@@ -92,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ]
           else [ (hsPkgs."time" or (buildDepError "time")) ]);
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -134,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."old-locale" or (buildDepError "old-locale"))
               ]
             else [ (hsPkgs."time" or (buildDepError "time")) ]);
+          buildable = true;
           };
         "hunittests" = {
           depends = ([
@@ -176,6 +178,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."old-locale" or (buildDepError "old-locale"))
               ]
             else [ (hsPkgs."time" or (buildDepError "time")) ]);
+          buildable = true;
           };
         };
       };

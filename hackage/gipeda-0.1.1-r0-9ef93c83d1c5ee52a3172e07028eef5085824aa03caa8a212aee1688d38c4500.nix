@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."extra" or (buildDepError "extra"))
             (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
             ];
+          buildable = true;
           };
         };
       };

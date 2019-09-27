@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-lexer" or (buildDepError "haskell-lexer"))
           (hsPkgs."pretty" or (buildDepError "pretty"))
           ];
+        buildable = true;
         };
       exes = {
         "ppsh" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-lexer" or (buildDepError "haskell-lexer"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = true;
           };
         };
       };

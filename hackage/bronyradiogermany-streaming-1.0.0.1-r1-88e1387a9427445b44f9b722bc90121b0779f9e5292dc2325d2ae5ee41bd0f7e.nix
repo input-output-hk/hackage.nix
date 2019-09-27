@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
           (hsPkgs."http-types" or (buildDepError "http-types"))
           ];
+        buildable = true;
         };
       };
     }

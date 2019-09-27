@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets" or (buildDepError "websockets"))
           (hsPkgs."wuss" or (buildDepError "wuss"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."websockets" or (buildDepError "websockets"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."pragmatic-show" or (buildDepError "pragmatic-show"))
           ];
+        buildable = true;
         };
       };
     }

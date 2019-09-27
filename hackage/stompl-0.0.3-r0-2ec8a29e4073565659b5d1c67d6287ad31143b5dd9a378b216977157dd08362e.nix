@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."mime" or (buildDepError "mime"))
           ];
+        buildable = true;
         };
       };
     }

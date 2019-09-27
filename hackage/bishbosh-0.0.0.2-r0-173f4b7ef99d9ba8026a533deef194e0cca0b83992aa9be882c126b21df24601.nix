@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.polyparse
           then [ (hsPkgs."polyparse" or (buildDepError "polyparse")) ]
           else [ (hsPkgs."parsec" or (buildDepError "parsec")) ]);
+        buildable = true;
         };
       exes = {
         "bishbosh" = {
@@ -111,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."parsec" or (buildDepError "parsec"))
               ])) ++ (pkgs.lib).optional (flags.unix) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = true;
           };
         };
       tests = {
@@ -133,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if flags.polyparse
             then [ (hsPkgs."polyparse" or (buildDepError "polyparse")) ]
             else [ (hsPkgs."parsec" or (buildDepError "parsec")) ]);
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."data-default" or (buildDepError "data-default"))
             ];
+          buildable = true;
           };
         "sunroof-canvas" = {
           depends = [
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Boolean" or (buildDepError "Boolean"))
             (hsPkgs."data-default" or (buildDepError "data-default"))
             ];
+          buildable = true;
           };
         "sunroof-clock" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "sunroof-fib" = {
           depends = [
@@ -92,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."data-default" or (buildDepError "data-default"))
             ];
+          buildable = true;
           };
         "sunroof-unit" = {
           depends = [
@@ -107,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "sunroof-inplace-shaker" = {
           depends = [
@@ -115,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."shake" or (buildDepError "shake"))
             ];
+          buildable = true;
           };
         };
       };

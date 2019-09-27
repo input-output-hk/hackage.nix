@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."explicit-iomodes" or (buildDepError "explicit-iomodes"))
           (hsPkgs."pathtype" or (buildDepError "pathtype"))
           ];
+        buildable = true;
         };
       };
     }

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."amazonka-core" or (buildDepError "amazonka-core"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       };
     }

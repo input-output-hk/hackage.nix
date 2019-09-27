@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."pthread" or (sysDepError "pthread"))
             ]
           else [ (pkgs."zmq" or (sysDepError "zmq")) ];
+        buildable = true;
         };
       tests = {
         "zeromq-haskell-tests" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."checkers" or (buildDepError "checkers"))
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             ];
+          buildable = true;
           };
         };
       };

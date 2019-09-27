@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."zfs" or (sysDepError "zfs"))
           (pkgs."nvpair" or (sysDepError "nvpair"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."zfs" or (sysDepError "zfs"))
             (pkgs."nvpair" or (sysDepError "nvpair"))
             ];
+          buildable = true;
           };
         };
       };

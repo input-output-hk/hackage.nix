@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ];
         libs = [ (pkgs."pq" or (sysDepError "pq")) ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."network-api-support" or (buildDepError "network-api-support"))
           ];
+        buildable = true;
         };
       };
     }

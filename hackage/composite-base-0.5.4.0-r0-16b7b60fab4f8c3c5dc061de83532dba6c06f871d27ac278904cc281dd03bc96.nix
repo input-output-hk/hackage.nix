@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           (hsPkgs."vinyl" or (buildDepError "vinyl"))
           ];
+        buildable = true;
         };
       tests = {
         "composite-base-test" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             (hsPkgs."vinyl" or (buildDepError "vinyl"))
             ];
+          buildable = true;
           };
         };
       };

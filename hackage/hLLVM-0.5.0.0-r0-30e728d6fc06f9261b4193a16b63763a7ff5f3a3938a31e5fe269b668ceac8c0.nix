@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-dword" or (buildDepError "data-dword"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "llvm-test" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."data-dword" or (buildDepError "data-dword"))
             ];
+          buildable = true;
           };
         };
       };

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-WinEvent" or (buildDepError "HGamer3D-WinEvent"))
           (hsPkgs."HGamer3D-GUI" or (buildDepError "HGamer3D-GUI"))
           ] ++ (pkgs.lib).optional (flags.audio) (hsPkgs."HGamer3D-Audio" or (buildDepError "HGamer3D-Audio"))) ++ (pkgs.lib).optional (flags.network) (hsPkgs."HGamer3D-Network" or (buildDepError "HGamer3D-Network"))) ++ (pkgs.lib).optional (flags.inputsystem) (hsPkgs."HGamer3D-InputSystem" or (buildDepError "HGamer3D-InputSystem"));
+        buildable = true;
         };
       };
     }

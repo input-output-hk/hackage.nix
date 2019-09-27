@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."word8" or (buildDepError "word8"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -76,12 +77,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         };
       };

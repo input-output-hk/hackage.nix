@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsql" or (buildDepError "hsql"))
           (hsPkgs."hsql-oracle" or (buildDepError "hsql-oracle"))
           ];
+        buildable = true;
         };
-      exes = { "DBDirect-hsql-oracle" = {}; };
+      exes = { "DBDirect-hsql-oracle" = { buildable = true; }; };
       };
     }

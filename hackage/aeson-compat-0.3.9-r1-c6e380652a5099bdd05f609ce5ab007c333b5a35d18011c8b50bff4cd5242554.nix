@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."nats" or (buildDepError "nats"))
           (hsPkgs."void" or (buildDepError "void"))
           ];
+        buildable = true;
         };
       tests = {
         "aeson-compat-test" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."nats" or (buildDepError "nats"))
             (hsPkgs."void" or (buildDepError "void"))
             ];
+          buildable = true;
           };
         };
       };

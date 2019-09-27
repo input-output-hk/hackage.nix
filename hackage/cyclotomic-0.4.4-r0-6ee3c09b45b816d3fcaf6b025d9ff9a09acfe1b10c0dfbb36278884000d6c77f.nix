@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
           ];
+        buildable = true;
         };
       };
     }

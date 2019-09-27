@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."comonad" or (buildDepError "comonad"))
           (hsPkgs."vector-builder" or (buildDepError "vector-builder"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "benchmarks" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."foldl" or (buildDepError "foldl"))
             ];
+          buildable = true;
           };
         };
       };

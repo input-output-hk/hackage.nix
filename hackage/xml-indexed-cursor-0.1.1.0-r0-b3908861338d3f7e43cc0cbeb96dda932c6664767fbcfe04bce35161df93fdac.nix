@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           ];
+        buildable = true;
         };
       tests = {
         "xml-indexed-cursor-doctest" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."Glob" or (buildDepError "Glob"))
             ];
+          buildable = true;
           };
         "xml-indexed-cursor-test" = {
           depends = [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
             (hsPkgs."xml-indexed-cursor" or (buildDepError "xml-indexed-cursor"))
             ];
+          buildable = true;
           };
         };
       };

@@ -93,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ])) ++ (if system.isWindows
           then [ (hsPkgs."time" or (buildDepError "time")) ]
           else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+        buildable = true;
         };
       tests = {
         "doctest" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = false;
           };
         "spec" = {
           depends = (([
@@ -139,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ]) ++ (pkgs.lib).optional ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."time" or (buildDepError "time"));
+          buildable = true;
           };
         };
       benchmarks = {
@@ -157,6 +160,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time-manager" or (buildDepError "time-manager"))
             (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (buildDepError "semigroups"))) ++ (pkgs.lib).optional ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."time" or (buildDepError "time"));
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."serialport" or (buildDepError "serialport"))
           (hsPkgs."stm" or (buildDepError "stm"))
           ];
+        buildable = true;
         };
       exes = {
         "bgapitest" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."serialport" or (buildDepError "serialport"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         };
       };

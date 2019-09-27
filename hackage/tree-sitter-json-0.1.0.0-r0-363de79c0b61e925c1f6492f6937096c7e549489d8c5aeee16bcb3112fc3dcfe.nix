@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."tree-sitter-json-internal" or (buildDepError "tree-sitter-json-internal"))
           ];
+        buildable = true;
         };
       sublibs = {
         "tree-sitter-json-internal" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tree-sitter" or (buildDepError "tree-sitter"))
             ];
+          buildable = true;
           };
         };
       };

@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
           ];
+        buildable = true;
         };
       };
     }

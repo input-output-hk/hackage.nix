@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."network-uri" or (buildDepError "network-uri"))
           ];
+        buildable = true;
         };
       tests = {
         "yesod-content-pdf-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."yesod-content-pdf" or (buildDepError "yesod-content-pdf"))
             ];
+          buildable = true;
           };
         };
       };

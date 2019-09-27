@@ -94,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = if flags.library then true else false;
         };
       exes = {
         "pandoc" = {
@@ -136,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."syb" or (buildDepError "syb"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = if flags.executable then true else false;
           };
         "make-pandoc-man-pages" = {
           depends = [
@@ -146,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

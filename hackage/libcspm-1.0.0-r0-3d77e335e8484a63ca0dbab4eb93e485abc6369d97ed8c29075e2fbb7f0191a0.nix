@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."value-supply" or (buildDepError "value-supply"))
           ];
+        buildable = true;
         };
       tests = {
         "libcspm_tests" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         };
       };

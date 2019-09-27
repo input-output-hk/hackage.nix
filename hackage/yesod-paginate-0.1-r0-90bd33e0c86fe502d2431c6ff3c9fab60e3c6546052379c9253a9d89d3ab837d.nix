@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod" or (buildDepError "yesod"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       };
     }

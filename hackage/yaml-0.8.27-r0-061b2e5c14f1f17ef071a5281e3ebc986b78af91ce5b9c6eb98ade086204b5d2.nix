@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.8.1") (hsPkgs."template-haskell" or (buildDepError "template-haskell"));
         pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs."yaml-0.1" or (pkgConfDepError "yaml-0.1"));
+        buildable = true;
         };
       exes = {
         "yaml2json" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
+          buildable = if flags.no-exe then false else true;
           };
         "json2yaml" = {
           depends = [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
+          buildable = if flags.no-exe then false else true;
           };
         "examples" = {
           depends = (pkgs.lib).optionals (!flags.no-examples) [
@@ -104,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = if flags.no-examples then false else true;
           };
         };
       tests = {
@@ -126,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base-compat" or (buildDepError "base-compat"))
             (hsPkgs."temporary" or (buildDepError "temporary"))
             ];
+          buildable = true;
           };
         };
       };

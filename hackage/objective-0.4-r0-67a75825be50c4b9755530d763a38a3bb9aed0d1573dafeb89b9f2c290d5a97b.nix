@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."free" or (buildDepError "free"))
           (hsPkgs."clean-unions" or (buildDepError "clean-unions"))
           ];
+        buildable = true;
         };
       };
     }

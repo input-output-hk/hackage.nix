@@ -102,16 +102,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ [
             (hsPkgs."darcs" or (buildDepError "darcs"))
             ]) ++ (pkgs.lib).optional (flags.highlightingkate) (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))) ++ (pkgs.lib).optional (flags.highlighter) (hsPkgs."highlighter" or (buildDepError "highlighter"))) ++ (pkgs.lib).optional (flags.ssh) (hsPkgs."ssh" or (buildDepError "ssh"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32-services-wrapper" or (buildDepError "Win32-services-wrapper"));
+          buildable = true;
           };
         "darcsden-ssh" = {
           depends = [
             (hsPkgs."darcs" or (buildDepError "darcs"))
             ] ++ (pkgs.lib).optional (flags.ssh) (hsPkgs."ssh" or (buildDepError "ssh"));
+          buildable = true;
           };
         "darcsden-post-hook" = {
           depends = [
             (hsPkgs."darcs" or (buildDepError "darcs"))
             ] ++ (pkgs.lib).optional (flags.closing) (hsPkgs."pcre-light" or (buildDepError "pcre-light"));
+          buildable = true;
           };
         "darcsden-test" = {
           depends = [
@@ -122,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."webdriver" or (buildDepError "webdriver"))
             ];
+          buildable = true;
           };
         };
       };

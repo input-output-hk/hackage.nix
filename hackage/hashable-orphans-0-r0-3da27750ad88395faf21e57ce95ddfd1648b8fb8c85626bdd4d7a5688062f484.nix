@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."sorted-list" or (buildDepError "sorted-list"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       };
     }

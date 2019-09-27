@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = [ (pkgs."gnutls" or (sysDepError "gnutls")) ];
         pkgconfig = [ (pkgconfPkgs."gnutls" or (pkgConfDepError "gnutls")) ];
+        buildable = true;
         };
       };
     }

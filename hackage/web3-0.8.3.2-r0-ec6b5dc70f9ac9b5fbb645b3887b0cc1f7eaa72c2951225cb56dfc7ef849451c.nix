@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vinyl" or (buildDepError "vinyl"))
           ] ++ (pkgs.lib).optional (flags.compiler) (hsPkgs."containers" or (buildDepError "containers"));
         libs = (pkgs.lib).optional (flags.compiler) (pkgs."solidity" or (sysDepError "solidity"));
+        buildable = true;
         };
       tests = {
         "live" = {
@@ -128,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vinyl" or (buildDepError "vinyl"))
             ] ++ (pkgs.lib).optional (flags.compiler) (hsPkgs."containers" or (buildDepError "containers"));
           libs = (pkgs.lib).optional (flags.compiler) (pkgs."solidity" or (sysDepError "solidity"));
+          buildable = true;
           };
         "unit" = {
           depends = [
@@ -165,6 +167,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vinyl" or (buildDepError "vinyl"))
             ] ++ (pkgs.lib).optional (flags.compiler) (hsPkgs."containers" or (buildDepError "containers"));
           libs = (pkgs.lib).optional (flags.compiler) (pkgs."solidity" or (sysDepError "solidity"));
+          buildable = true;
           };
         };
       };

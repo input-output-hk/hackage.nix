@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."foundation" or (buildDepError "foundation"))
           ];
+        buildable = true;
         };
       exes = {
         "xgboost-app" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xgboost-haskell" or (buildDepError "xgboost-haskell"))
             ];
           libs = [ (pkgs."xgboost" or (sysDepError "xgboost")) ];
+          buildable = false;
           };
         "xgb-agaricus" = {
           depends = [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xgboost-haskell" or (buildDepError "xgboost-haskell"))
             ];
           libs = [ (pkgs."xgboost" or (sysDepError "xgboost")) ];
+          buildable = true;
           };
         };
       };

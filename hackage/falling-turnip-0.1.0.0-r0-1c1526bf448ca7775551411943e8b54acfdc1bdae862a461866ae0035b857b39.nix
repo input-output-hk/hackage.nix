@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             ];
+          buildable = true;
           };
         };
       };

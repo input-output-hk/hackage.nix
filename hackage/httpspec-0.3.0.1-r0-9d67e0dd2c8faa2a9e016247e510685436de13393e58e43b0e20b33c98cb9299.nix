@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."encoding" or (buildDepError "encoding"))
           (hsPkgs."hxthelper" or (buildDepError "hxthelper"))
           ];
+        buildable = true;
         };
       };
     }

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."generic-accessors" or (buildDepError "generic-accessors"))
           ];
+        buildable = true;
         };
       exes = {
         "plot-example" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Plot-ho-matic" or (buildDepError "Plot-ho-matic"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "set-example" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Plot-ho-matic" or (buildDepError "Plot-ho-matic"))
             (hsPkgs."generic-accessors" or (buildDepError "generic-accessors"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

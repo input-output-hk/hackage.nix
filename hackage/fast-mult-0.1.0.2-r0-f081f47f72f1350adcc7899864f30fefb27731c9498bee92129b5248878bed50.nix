@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."strict-base" or (buildDepError "strict-base"))
           ];
+        buildable = true;
         };
       };
     }

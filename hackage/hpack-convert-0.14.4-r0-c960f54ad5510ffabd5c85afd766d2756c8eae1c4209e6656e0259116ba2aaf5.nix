@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."aeson" or (buildDepError "aeson"))
           ];
+        buildable = true;
         };
       exes = {
         "hpack-convert" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."hpack-convert" or (buildDepError "hpack-convert"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -120,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."interpolate" or (buildDepError "interpolate"))
             (hsPkgs."aeson-qq" or (buildDepError "aeson-qq"))
             ];
+          buildable = true;
           };
         };
       };

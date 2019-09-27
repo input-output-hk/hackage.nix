@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs.buildPackages.matlab or (pkgs.buildPackages.matlab or (buildToolDepError "matlab")))
             ];
+        buildable = true;
         };
       };
     }

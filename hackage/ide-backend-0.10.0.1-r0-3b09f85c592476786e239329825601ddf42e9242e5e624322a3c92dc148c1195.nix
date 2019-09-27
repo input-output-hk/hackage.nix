@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if system.isWindows
           then [ (hsPkgs."unix-compat" or (buildDepError "unix-compat")) ]
           else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+        buildable = true;
         };
       exes = {
         "ide-backend-exe-cabal" = {
@@ -123,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = true;
           };
         };
       tests = {
@@ -152,6 +154,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if system.isWindows
             then [ (hsPkgs."unix-compat" or (buildDepError "unix-compat")) ]
             else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+          buildable = true;
           };
         "rpc-server" = {
           depends = [
@@ -178,6 +181,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if system.isWindows
             then [ (hsPkgs."unix-compat" or (buildDepError "unix-compat")) ]
             else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+          buildable = true;
           };
         };
       };

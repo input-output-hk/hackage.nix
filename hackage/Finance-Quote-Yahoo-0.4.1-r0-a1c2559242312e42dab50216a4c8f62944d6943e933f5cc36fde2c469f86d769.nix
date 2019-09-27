@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTTP-Simple" or (buildDepError "HTTP-Simple"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+        buildable = true;
         };
       };
     }

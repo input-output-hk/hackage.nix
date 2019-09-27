@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."packed-dawg" or (buildDepError "packed-dawg"))
             ];
+          buildable = true;
           };
         };
       };

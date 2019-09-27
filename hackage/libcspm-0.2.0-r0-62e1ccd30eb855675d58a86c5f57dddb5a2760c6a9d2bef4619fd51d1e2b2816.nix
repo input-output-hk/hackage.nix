@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."graph-wrapper" or (buildDepError "graph-wrapper"))
           (hsPkgs."value-supply" or (buildDepError "value-supply"))
           ];
+        buildable = true;
         };
       tests = {
         "unit-tests" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."hg3denet030" or (sysDepError "hg3denet030"))
             (pkgs.":libenet.so.2" or (sysDepError ":libenet.so.2"))
             ];
+        buildable = true;
         };
       };
     }

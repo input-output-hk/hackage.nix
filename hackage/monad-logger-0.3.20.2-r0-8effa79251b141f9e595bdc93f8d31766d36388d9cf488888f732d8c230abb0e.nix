@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           ] ++ (pkgs.lib).optional (flags.template_haskell) (hsPkgs."template-haskell" or (buildDepError "template-haskell"));
+        buildable = true;
         };
       };
     }

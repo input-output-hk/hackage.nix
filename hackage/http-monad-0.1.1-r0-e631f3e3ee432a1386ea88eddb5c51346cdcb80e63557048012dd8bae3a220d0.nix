@@ -70,10 +70,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."base" or (buildDepError "base"))
             ]);
+        buildable = true;
         };
       exes = {
         "infinite-httpd" = {
           depends = (pkgs.lib).optional (flags.buildtestserver) (hsPkgs."httpd-shed" or (buildDepError "httpd-shed"));
+          buildable = if flags.buildtestserver then true else false;
           };
         };
       };

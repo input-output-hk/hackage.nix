@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ]) ++ [
           (hsPkgs."brick" or (buildDepError "brick"))
           ];
+        buildable = true;
         };
       exes = {
         "bookcase" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ]) ++ [
             (hsPkgs."brick" or (buildDepError "brick"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "workreport" = {
           depends = ([
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."base" or (buildDepError "base"))
               (hsPkgs."transformers" or (buildDepError "transformers"))
               ])) ++ [ (hsPkgs."brick" or (buildDepError "brick")) ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -109,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ]) ++ [
             (hsPkgs."brick" or (buildDepError "brick"))
             ];
+          buildable = true;
           };
         "test_layout" = {
           depends = ([
@@ -126,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ]) ++ [
             (hsPkgs."brick" or (buildDepError "brick"))
             ];
+          buildable = true;
           };
         };
       };

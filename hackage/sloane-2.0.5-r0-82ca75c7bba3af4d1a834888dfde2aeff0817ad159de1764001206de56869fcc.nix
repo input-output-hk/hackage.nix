@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             (hsPkgs."stringsearch" or (buildDepError "stringsearch"))
             ];
+          buildable = true;
           };
         };
       };

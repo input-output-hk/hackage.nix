@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
             (hsPkgs."csv" or (buildDepError "csv"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."csv" or (buildDepError "csv"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       exes = {
         "elocrypt" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."elocrypt" or (buildDepError "elocrypt"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             ];
+          buildable = true;
           };
         "ui-test" = {
           depends = [
@@ -96,12 +99,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             ];
+          buildable = true;
           };
         "elocrypt-lint" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         };
       };

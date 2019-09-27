@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."shfolder" or (sysDepError "shfolder"))
           (pkgs."shlwapi" or (sysDepError "shlwapi"))
           ];
+        buildable = true;
         };
       };
     }

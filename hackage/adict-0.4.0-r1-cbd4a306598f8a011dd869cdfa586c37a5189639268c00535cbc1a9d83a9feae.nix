@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."dawg" or (buildDepError "dawg"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dawg" or (buildDepError "dawg"))
             (hsPkgs."adict" or (buildDepError "adict"))
             ];
+          buildable = true;
           };
         };
       };

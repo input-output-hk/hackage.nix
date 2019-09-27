@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."terminfo" or (buildDepError "terminfo"))
           ];
+        buildable = true;
         };
       tests = {
         "test-cli" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."cli" or (buildDepError "cli"))
             ];
+          buildable = true;
           };
         };
       };

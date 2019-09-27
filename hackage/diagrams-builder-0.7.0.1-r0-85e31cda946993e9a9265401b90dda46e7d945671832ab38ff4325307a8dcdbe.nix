@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           ];
+        buildable = true;
         };
       exes = {
         "diagrams-builder-cairo" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = if !flags.cairo then false else true;
           };
         "diagrams-builder-svg" = {
           depends = (pkgs.lib).optionals (flags.svg) [
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             ];
+          buildable = if !flags.svg then false else true;
           };
         "diagrams-builder-ps" = {
           depends = (pkgs.lib).optionals (flags.ps || flags.postscript) [
@@ -114,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = if !flags.ps && !flags.postscript then false else true;
           };
         "diagrams-builder-rasterific" = {
           depends = (pkgs.lib).optionals (flags.rasterific) [
@@ -127,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
             ];
+          buildable = if !flags.rasterific then false else true;
           };
         };
       };

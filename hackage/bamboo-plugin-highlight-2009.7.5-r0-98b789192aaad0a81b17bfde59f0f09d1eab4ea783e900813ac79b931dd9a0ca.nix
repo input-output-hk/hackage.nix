@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hxt" or (buildDepError "hxt"))
           (hsPkgs."mps" or (buildDepError "mps"))
           ];
+        buildable = true;
         };
       };
     }

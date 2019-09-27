@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."logging-effect-extra-file" or (buildDepError "logging-effect-extra-file"))
           (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
           ];
+        buildable = true;
         };
       exes = {
         "log-extra" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."logging-effect-extra" or (buildDepError "logging-effect-extra"))
             ];
+          buildable = true;
           };
         };
       };

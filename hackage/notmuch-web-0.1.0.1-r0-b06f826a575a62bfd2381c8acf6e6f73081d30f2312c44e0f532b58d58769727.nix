@@ -104,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
           (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
           ];
+        buildable = true;
         };
       exes = {
         "notmuch-web" = {
@@ -114,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."yesod-default" or (buildDepError "yesod-default"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         };
       tests = {
@@ -125,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-default" or (buildDepError "yesod-default"))
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             ];
+          buildable = true;
           };
         };
       };

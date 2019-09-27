@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."websockets" or (buildDepError "websockets"))
           ];
+        buildable = true;
         };
       exes = {
         "subscriber-psGenerator" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-subscriber" or (buildDepError "servant-subscriber"))
             (hsPkgs."purescript-bridge" or (buildDepError "purescript-bridge"))
             ];
+          buildable = true;
           };
         };
       };

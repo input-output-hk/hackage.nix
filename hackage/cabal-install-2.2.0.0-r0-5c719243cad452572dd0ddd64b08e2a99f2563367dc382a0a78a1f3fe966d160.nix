@@ -105,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."unix" or (buildDepError "unix"))
             ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs."base" or (buildDepError "base"))) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs."tracetree" or (buildDepError "tracetree"));
+        buildable = if !flags.lib then false else true;
         };
       exes = {
         "cabal" = {
@@ -178,6 +179,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
           libs = (pkgs.lib).optional (system.isAix) (pkgs."bsd" or (sysDepError "bsd"));
+          buildable = true;
           };
         };
       tests = {
@@ -206,6 +208,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tagged" or (buildDepError "tagged"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = if !flags.lib then false else true;
           };
         "memory-usage-tests" = {
           depends = [
@@ -219,6 +222,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = if !flags.lib then false else true;
           };
         "solver-quickcheck" = {
           depends = [
@@ -236,6 +240,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
             ];
+          buildable = if !flags.lib then false else true;
           };
         "integration-tests2" = {
           depends = [
@@ -251,6 +256,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."tagged" or (buildDepError "tagged"))
             ];
+          buildable = if !flags.lib then false else true;
           };
         };
       };

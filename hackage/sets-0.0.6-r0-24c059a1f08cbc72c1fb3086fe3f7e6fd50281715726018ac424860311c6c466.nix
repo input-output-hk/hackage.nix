@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."witherable" or (buildDepError "witherable"))
           ];
+        buildable = true;
         };
       tests = {
         "sets-test" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."witherable" or (buildDepError "witherable"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -126,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."witherable" or (buildDepError "witherable"))
             ];
+          buildable = true;
           };
         };
       };

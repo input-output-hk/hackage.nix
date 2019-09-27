@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hogre" or (buildDepError "hogre"))
           ];
         libs = [ (pkgs."OIS" or (sysDepError "OIS")) ];
+        buildable = true;
         };
       };
     }

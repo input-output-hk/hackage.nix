@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."MemoTrie" or (buildDepError "MemoTrie"))
           ];
+        buildable = true;
         };
       tests = {
         "maintest" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."MemoTrie" or (buildDepError "MemoTrie"))
             ];
+          buildable = true;
           };
         };
       };

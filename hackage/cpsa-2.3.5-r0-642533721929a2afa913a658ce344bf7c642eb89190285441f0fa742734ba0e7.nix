@@ -62,54 +62,63 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = true;
           };
         "cpsagraph" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "cpsashapes" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "cpsaannotations" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "cpsaparameters" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "cpsapp" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "cpsajson" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "cpsadiff" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "cpsalogic" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         };
       };

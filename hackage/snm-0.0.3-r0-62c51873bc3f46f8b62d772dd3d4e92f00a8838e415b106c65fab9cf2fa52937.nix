@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe" or (buildDepError "safe"))
           (hsPkgs."xhtml" or (buildDepError "xhtml"))
           ];
+        buildable = true;
         };
       exes = {
         "snm" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."spoonutil" or (buildDepError "spoonutil"))
             (hsPkgs."safe" or (buildDepError "safe"))
             ];
+          buildable = true;
           };
         };
       };

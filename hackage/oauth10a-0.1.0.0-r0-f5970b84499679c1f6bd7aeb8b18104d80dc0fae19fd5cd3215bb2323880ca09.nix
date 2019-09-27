@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
           (hsPkgs."http-types" or (buildDepError "http-types"))
           ];
+        buildable = true;
         };
       tests = {
         "oauth10a-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."oauth10a" or (buildDepError "oauth10a"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

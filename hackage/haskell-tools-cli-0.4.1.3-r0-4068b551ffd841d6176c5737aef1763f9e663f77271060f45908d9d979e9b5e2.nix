@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-tools-prettyprint" or (buildDepError "haskell-tools-prettyprint"))
           (hsPkgs."haskell-tools-refactor" or (buildDepError "haskell-tools-refactor"))
           ];
+        buildable = true;
         };
       exes = {
         "ht-refact" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haskell-tools-cli" or (buildDepError "haskell-tools-cli"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."knob" or (buildDepError "knob"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -106,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."split" or (buildDepError "split"))
             ];
+          buildable = true;
           };
         };
       };

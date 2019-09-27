@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."music-parts" or (buildDepError "music-parts"))
           (hsPkgs."music-preludes" or (buildDepError "music-preludes"))
           ];
+        buildable = true;
         };
       };
     }

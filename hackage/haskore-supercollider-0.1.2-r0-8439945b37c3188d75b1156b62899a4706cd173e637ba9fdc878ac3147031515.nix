@@ -78,14 +78,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
-        "song-air" = {};
+        "song-air" = { buildable = true; };
         "test" = {
           depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = false;
           };
         };
       };

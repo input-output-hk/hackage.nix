@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."mmap" or (buildDepError "mmap"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "btree-benchmark" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."errors" or (buildDepError "errors"))
             (hsPkgs."mmap" or (buildDepError "mmap"))
             ];
+          buildable = true;
           };
         };
       };

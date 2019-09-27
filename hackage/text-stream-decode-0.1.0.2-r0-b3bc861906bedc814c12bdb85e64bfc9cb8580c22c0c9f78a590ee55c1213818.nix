@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ] ++ [ (hsPkgs."text" or (buildDepError "text")) ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-stream-decode" or (buildDepError "text-stream-decode"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

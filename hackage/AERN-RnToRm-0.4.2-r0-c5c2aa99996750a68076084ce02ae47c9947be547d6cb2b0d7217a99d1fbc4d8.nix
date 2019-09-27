@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."html" or (buildDepError "html"))
             (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
             ];
+        buildable = true;
         };
       };
     }

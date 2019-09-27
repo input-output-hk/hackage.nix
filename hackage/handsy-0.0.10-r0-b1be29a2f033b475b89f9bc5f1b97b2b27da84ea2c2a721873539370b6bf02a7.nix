@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."retry" or (buildDepError "retry"))
           (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             ];
+          buildable = true;
           };
         };
       };

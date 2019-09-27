@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."placeholders" or (buildDepError "placeholders"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "benchmarks" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."placeholders" or (buildDepError "placeholders"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

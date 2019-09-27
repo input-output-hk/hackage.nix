@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."accelerate" or (buildDepError "accelerate"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "accelerate-cufft-demo" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."accelerate" or (buildDepError "accelerate"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "accelerate-cufft-demo-merged" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cuda" or (buildDepError "cuda"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "accelerate-cufft-demo-separate" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -91,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cuda" or (buildDepError "cuda"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "cufft-demo" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -98,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cuda" or (buildDepError "cuda"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

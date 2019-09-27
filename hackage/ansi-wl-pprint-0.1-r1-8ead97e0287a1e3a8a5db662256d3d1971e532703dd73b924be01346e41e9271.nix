@@ -58,12 +58,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [
           (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
         "ansi-wl-pprint-example" = {
           depends = [
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

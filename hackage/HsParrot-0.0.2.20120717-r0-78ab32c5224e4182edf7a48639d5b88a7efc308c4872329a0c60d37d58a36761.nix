@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HsSyck" or (buildDepError "HsSyck"))
           (hsPkgs."pugs-DrIFT" or (buildDepError "pugs-DrIFT"))
           ];
+        buildable = true;
         };
       };
     }

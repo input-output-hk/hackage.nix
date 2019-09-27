@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-types" or (buildDepError "xml-types"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ];
+          buildable = true;
           };
         };
       };

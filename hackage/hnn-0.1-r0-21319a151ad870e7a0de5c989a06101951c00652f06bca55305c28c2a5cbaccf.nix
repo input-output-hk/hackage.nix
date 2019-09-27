@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uvector" or (buildDepError "uvector"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       };
     }

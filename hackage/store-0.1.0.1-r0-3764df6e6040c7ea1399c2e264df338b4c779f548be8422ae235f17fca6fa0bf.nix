@@ -92,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."th-orphans" or (buildDepError "th-orphans"))
           ];
+        buildable = true;
         };
       tests = {
         "store-test" = {
@@ -136,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-smallcheck" or (buildDepError "hspec-smallcheck"))
             (hsPkgs."store" or (buildDepError "store"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -184,6 +186,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
             (hsPkgs."cereal-vector" or (buildDepError "cereal-vector"))
             ];
+          buildable = true;
           };
         };
       };

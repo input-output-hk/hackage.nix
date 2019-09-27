@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."liquidhaskell-cabal" or (buildDepError "liquidhaskell-cabal"))
           ];
+        buildable = true;
         };
       exes = {
         "ffi" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."liquidhaskell-cabal" or (buildDepError "liquidhaskell-cabal"))
             ];
+          buildable = true;
           };
         };
       };

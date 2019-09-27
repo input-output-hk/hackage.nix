@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
           (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "bench-cprng-aes" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

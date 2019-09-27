@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pretty-terminal" or (buildDepError "pretty-terminal"))
           (hsPkgs."edit-distance" or (buildDepError "edit-distance"))
           ];
+        buildable = true;
         };
       exes = {
         "bb" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."boltzmann-brain" or (buildDepError "boltzmann-brain"))
             ];
+          buildable = true;
           };
         };
       };

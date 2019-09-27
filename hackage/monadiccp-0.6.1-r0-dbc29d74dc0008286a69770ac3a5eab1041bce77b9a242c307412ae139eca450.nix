@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."gecodekernel" or (sysDepError "gecodekernel"))
           (pkgs."gecodesearch" or (sysDepError "gecodesearch"))
           ];
+        buildable = true;
         };
       };
     }

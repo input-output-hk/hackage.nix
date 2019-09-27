@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "tasty" = {
@@ -89,12 +90,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             ];
+          buildable = true;
           };
         "threads-test" = {
           depends = [
             (hsPkgs."hasql" or (buildDepError "hasql"))
             (hsPkgs."rebase" or (buildDepError "rebase"))
             ];
+          buildable = true;
           };
         "profiling" = {
           depends = [
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasql" or (buildDepError "hasql"))
             (hsPkgs."rerebase" or (buildDepError "rerebase"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -112,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasql" or (buildDepError "hasql"))
             (hsPkgs."rerebase" or (buildDepError "rerebase"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hspec" or (buildDepError "hspec"))
           (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
           ];
+        buildable = true;
         };
       };
     }

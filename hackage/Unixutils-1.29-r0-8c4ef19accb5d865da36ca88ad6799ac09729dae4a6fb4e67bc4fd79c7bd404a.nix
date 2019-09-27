@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
         libs = [ (pkgs."crypt" or (sysDepError "crypt")) ];
+        buildable = true;
         };
       };
     }

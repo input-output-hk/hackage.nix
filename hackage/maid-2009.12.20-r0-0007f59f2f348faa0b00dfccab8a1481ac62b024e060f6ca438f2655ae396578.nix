@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hack-handler-happstack" or (buildDepError "hack-handler-happstack"))
             (hsPkgs."hack" or (buildDepError "hack"))
             ];
+          buildable = true;
           };
         };
       };

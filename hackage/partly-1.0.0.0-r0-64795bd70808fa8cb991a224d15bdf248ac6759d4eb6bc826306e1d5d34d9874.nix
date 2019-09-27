@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."binary" or (buildDepError "binary"))
           ];
+        buildable = true;
         };
       exes = {
         "partly" = {
@@ -70,17 +71,20 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       tests = {
         "test-partly-lib" = {
           depends = [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+          buildable = true;
           };
         "test-partly-json" = {
           depends = [
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

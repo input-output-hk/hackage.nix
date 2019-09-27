@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."free" or (buildDepError "free"))
           (hsPkgs."haskeline" or (buildDepError "haskeline"))
           ];
+        buildable = true;
         };
       };
     }

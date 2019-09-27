@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regexdot" or (buildDepError "regexdot"))
           (hsPkgs."toolshed" or (buildDepError "toolshed"))
           ];
+        buildable = true;
         };
       exes = {
         "grecce" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regexdot" or (buildDepError "regexdot"))
             (hsPkgs."toolshed" or (buildDepError "toolshed"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regexdot" or (buildDepError "regexdot"))
             (hsPkgs."toolshed" or (buildDepError "toolshed"))
             ];
+          buildable = true;
           };
         };
       };

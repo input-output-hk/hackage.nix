@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           ];
+        buildable = true;
         };
       exes = {
         "xing-api-cli-demo" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."xing-api" or (buildDepError "xing-api"))
             ];
+          buildable = if flags.demos then true else false;
           };
         "xing-api-yesod-demo" = {
           depends = (pkgs.lib).optionals (flags.demos) [
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xing-api" or (buildDepError "xing-api"))
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             ];
+          buildable = if flags.demos then true else false;
           };
         "xing-api-minimal-demo" = {
           depends = (pkgs.lib).optionals (flags.minimal-demo) [
@@ -104,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."xing-api" or (buildDepError "xing-api"))
             ];
+          buildable = if flags.minimal-demo then true else false;
           };
         };
       tests = {
@@ -118,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."xing-api" or (buildDepError "xing-api"))
             ];
+          buildable = true;
           };
         };
       };

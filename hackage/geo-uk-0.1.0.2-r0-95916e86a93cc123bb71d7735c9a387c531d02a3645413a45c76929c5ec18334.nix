@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."bzlib" or (buildDepError "bzlib"))
           ] ++ (pkgs.lib).optional (flags.embeded) (hsPkgs."file-embed" or (buildDepError "file-embed"));
+        buildable = true;
         };
       };
     }

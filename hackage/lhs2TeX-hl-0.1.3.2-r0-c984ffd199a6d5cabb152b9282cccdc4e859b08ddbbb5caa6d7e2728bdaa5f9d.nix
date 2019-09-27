@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             ];
+          buildable = true;
           };
         };
       };

@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
           (hsPkgs."circle-packing" or (buildDepError "circle-packing"))
           ];
+        buildable = true;
         };
       tests = {
         "turtle-tests" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
             ];
+          buildable = true;
           };
         };
       };

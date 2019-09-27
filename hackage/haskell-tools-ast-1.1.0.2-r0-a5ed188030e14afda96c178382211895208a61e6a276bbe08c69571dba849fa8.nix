@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."classyplate" or (buildDepError "classyplate"))
           (hsPkgs."pretty" or (buildDepError "pretty"))
           ];
+        buildable = true;
         };
       };
     }

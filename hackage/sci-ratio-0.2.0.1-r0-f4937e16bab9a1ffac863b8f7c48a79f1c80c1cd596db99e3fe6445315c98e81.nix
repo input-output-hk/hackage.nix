@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."hashable" or (buildDepError "hashable"))
           ];
+        buildable = true;
         };
       tests = {
         "main" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sci-ratio" or (buildDepError "sci-ratio"))
             ];
+          buildable = true;
           };
         };
       };

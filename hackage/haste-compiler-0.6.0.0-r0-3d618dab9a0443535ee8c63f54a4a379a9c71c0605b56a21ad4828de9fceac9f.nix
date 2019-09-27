@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "hastec" = {
           depends = [
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
             (hsPkgs."ghc-simple" or (buildDepError "ghc-simple"))
             ];
+          buildable = true;
           };
         "haste-pkg" = {
           depends = [
@@ -113,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."terminfo" or (buildDepError "terminfo"))
             ];
+          buildable = true;
           };
         "haste-cat" = {
           depends = [
@@ -130,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = true;
           };
         };
       };

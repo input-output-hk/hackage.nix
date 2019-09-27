@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "canonicalpath_tests" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."system-canonicalpath" or (buildDepError "system-canonicalpath"))
             (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."serialport" or (buildDepError "serialport"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       };
     }

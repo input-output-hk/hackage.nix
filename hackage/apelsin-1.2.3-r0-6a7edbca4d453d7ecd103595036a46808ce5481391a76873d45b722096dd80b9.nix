@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."xdg-basedir" or (buildDepError "xdg-basedir"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."stm" or (buildDepError "stm"))
           ];
+        buildable = true;
         };
       tests = {
         "arbor-lru-cache-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hw-hspec-hedgehog" or (buildDepError "hw-hspec-hedgehog"))
             (hsPkgs."arbor-lru-cache" or (buildDepError "arbor-lru-cache"))
             ];
+          buildable = true;
           };
         };
       };

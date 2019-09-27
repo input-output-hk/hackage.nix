@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safecopy" or (buildDepError "safecopy"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."simple-reflect" or (buildDepError "simple-reflect"))
             ];
+          buildable = if !flags.test-doctests then false else true;
           };
         };
       };

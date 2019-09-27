@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Kleislify" or (buildDepError "Kleislify"))
           (hsPkgs."newtype" or (buildDepError "newtype"))
           ];
+        buildable = true;
         };
       };
     }

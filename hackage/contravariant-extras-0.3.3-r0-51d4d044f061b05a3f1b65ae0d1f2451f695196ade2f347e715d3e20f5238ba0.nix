@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."contravariant" or (buildDepError "contravariant"))
           (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
           ];
+        buildable = true;
         };
       };
     }

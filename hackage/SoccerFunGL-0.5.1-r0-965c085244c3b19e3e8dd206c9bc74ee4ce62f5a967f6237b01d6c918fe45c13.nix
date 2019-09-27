@@ -65,7 +65,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."SoccerFun" or (buildDepError "SoccerFun"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
-      exes = { "sfPlayTape" = {}; "sfRunMatch" = {}; };
+      exes = {
+        "sfPlayTape" = { buildable = true; };
+        "sfRunMatch" = { buildable = true; };
+        };
       };
     }

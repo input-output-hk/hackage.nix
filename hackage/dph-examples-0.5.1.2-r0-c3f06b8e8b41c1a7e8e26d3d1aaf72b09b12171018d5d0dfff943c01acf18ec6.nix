@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-sumsq-seq" = {
           depends = [
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-dotp" = {
           depends = [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-dotp-seq" = {
           depends = [
@@ -98,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-evens" = {
           depends = [
@@ -109,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-evens-seq" = {
           depends = [
@@ -120,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-reverse" = {
           depends = [
@@ -131,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-reverse-seq" = {
           depends = [
@@ -142,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-smvm" = {
           depends = [
@@ -153,6 +161,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-smvm-seq" = {
           depends = [
@@ -164,6 +173,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-quickhull" = {
           depends = [
@@ -175,6 +185,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-quickhull-seq" = {
           depends = [
@@ -186,6 +197,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-quickhull-vector" = {
           depends = [
@@ -194,6 +206,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "dph-quicksort" = {
           depends = [
@@ -205,6 +218,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         "dph-nbody-gloss" = {
           depends = [
@@ -218,6 +232,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parseargs" or (buildDepError "parseargs"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "dph-nbody-batch" = {
           depends = [
@@ -230,6 +245,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."parseargs" or (buildDepError "parseargs"))
             ];
+          buildable = true;
           };
         };
       };

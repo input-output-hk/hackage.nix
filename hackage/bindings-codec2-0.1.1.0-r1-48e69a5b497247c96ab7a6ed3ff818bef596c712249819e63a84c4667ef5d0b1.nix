@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-DSL" or (buildDepError "bindings-DSL"))
           ];
         libs = [ (pkgs."codec2" or (sysDepError "codec2")) ];
+        buildable = true;
         };
       exes = {
         "bindings-codec2-demo" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."split" or (buildDepError "split"))
             ];
+          buildable = true;
           };
         };
       };

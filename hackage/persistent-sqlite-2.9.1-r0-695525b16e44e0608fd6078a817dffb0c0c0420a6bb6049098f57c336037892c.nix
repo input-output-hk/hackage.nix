@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optionals (flags.systemlib) ((pkgs.lib).optional (!flags.use-pkgconfig) (pkgs."sqlite3" or (sysDepError "sqlite3"))) ++ (pkgs.lib).optional (!system.isWindows) (pkgs."pthread" or (sysDepError "pthread"));
         pkgconfig = (pkgs.lib).optionals (flags.systemlib) ((pkgs.lib).optional (flags.use-pkgconfig) (pkgconfPkgs."sqlite3" or (pkgConfDepError "sqlite3")));
+        buildable = true;
         };
       exes = {
         "sanity" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
             (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
             ];
+          buildable = if flags.build-sanity-exe then true else false;
           };
         };
       tests = {
@@ -106,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."wai" or (buildDepError "wai"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-middleware-content-type" or (buildDepError "wai-middleware-content-type"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

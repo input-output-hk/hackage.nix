@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."vaultaire-common" or (buildDepError "vaultaire-common"))
           ];
+        buildable = true;
         };
       tests = {
         "unit" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vaultaire-common" or (buildDepError "vaultaire-common"))
             (hsPkgs."data-ordlist" or (buildDepError "data-ordlist"))
             ];
+          buildable = true;
           };
         };
       };

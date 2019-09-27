@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."yaml" or (buildDepError "yaml"))
           ];
+        buildable = true;
         };
       exes = {
         "cabal2nix" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."cabal2nix" or (buildDepError "cabal2nix"))
             ];
+          buildable = true;
           };
         "hackage2nix" = {
           depends = [
@@ -108,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -129,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.cabal2nix or (pkgs.buildPackages.cabal2nix or (buildToolDepError "cabal2nix")))
             ];
+          buildable = true;
           };
         };
       };

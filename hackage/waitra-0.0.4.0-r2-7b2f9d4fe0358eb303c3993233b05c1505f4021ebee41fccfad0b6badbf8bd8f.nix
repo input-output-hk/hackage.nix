@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."wai" or (buildDepError "wai"))
           ];
+        buildable = true;
         };
       exes = {
         "waitra-example" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."waitra" or (buildDepError "waitra"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             (hsPkgs."waitra" or (buildDepError "waitra"))
             ];
+          buildable = true;
           };
         };
       };

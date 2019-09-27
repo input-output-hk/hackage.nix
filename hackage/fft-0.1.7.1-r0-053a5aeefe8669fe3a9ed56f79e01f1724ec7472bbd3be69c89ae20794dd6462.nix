@@ -75,11 +75,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
         pkgconfig = [ (pkgconfPkgs."fftw3" or (pkgConfDepError "fftw3")) ];
+        buildable = true;
         };
       exes = {
         "test-fft" = {
           depends = (pkgs.lib).optional (flags.buildtests) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
           pkgconfig = [ (pkgconfPkgs."fftw3" or (pkgConfDepError "fftw3")) ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

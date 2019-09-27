@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."singletons" or (buildDepError "singletons"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."should-not-typecheck" or (buildDepError "should-not-typecheck"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -93,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."linear" or (buildDepError "linear"))
             (hsPkgs."primitive" or (buildDepError "primitive"))
             ];
+          buildable = true;
           };
         "equality" = {
           depends = [
@@ -100,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."vinyl" or (buildDepError "vinyl"))
             ];
+          buildable = true;
           };
         "accessors" = {
           depends = [
@@ -108,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tagged" or (buildDepError "tagged"))
             (hsPkgs."vinyl" or (buildDepError "vinyl"))
             ];
+          buildable = true;
           };
         };
       };

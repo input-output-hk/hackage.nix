@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."logict" or (buildDepError "logict"))
           ];
+        buildable = true;
         };
       exes = {
         "stream-monad-benchmarks" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."logict" or (buildDepError "logict"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = if flags.benchmarks then true else false;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."safe" or (buildDepError "safe"))
           ];
+        buildable = true;
         };
       tests = {
         "testing-example" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."byteunits" or (buildDepError "byteunits"))
             ];
+          buildable = true;
           };
         };
       };

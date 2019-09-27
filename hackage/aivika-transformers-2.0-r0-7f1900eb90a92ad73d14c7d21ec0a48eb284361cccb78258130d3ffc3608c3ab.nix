@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."aivika" or (buildDepError "aivika"))
           ] ++ (pkgs.lib).optional (!flags.haste-inst) (hsPkgs."vector" or (buildDepError "vector"));
+        buildable = true;
         };
       };
     }

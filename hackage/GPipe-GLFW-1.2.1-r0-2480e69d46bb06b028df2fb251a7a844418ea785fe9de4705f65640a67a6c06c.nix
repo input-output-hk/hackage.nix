@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
           (hsPkgs."GPipe" or (buildDepError "GPipe"))
           ];
+        buildable = true;
         };
       };
     }

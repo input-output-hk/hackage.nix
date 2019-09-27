@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stats-web" or (buildDepError "stats-web"))
           (hsPkgs."safe" or (buildDepError "safe"))
           ];
+        buildable = true;
         };
       };
     }

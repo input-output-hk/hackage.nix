@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fclabels" or (buildDepError "fclabels"))
           (hsPkgs."TypeCompose" or (buildDepError "TypeCompose"))
           ];
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conversion" or (buildDepError "conversion"))
           (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
           ];
+        buildable = true;
         };
       };
     }

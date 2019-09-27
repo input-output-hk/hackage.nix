@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."patch-combinators" or (buildDepError "patch-combinators"))
           ];
+        buildable = true;
         };
       tests = {
         "examples" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ho-rewriting" or (buildDepError "ho-rewriting"))
             (hsPkgs."patch-combinators" or (buildDepError "patch-combinators"))
             ];
+          buildable = true;
           };
         };
       };

@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
           (hsPkgs."wai-util" or (buildDepError "wai-util"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -115,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-util" or (buildDepError "wai-util"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       tests = {
@@ -153,6 +155,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-util" or (buildDepError "wai-util"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagged" or (buildDepError "tagged"))
           (hsPkgs."reflection" or (buildDepError "reflection"))
           ];
+        buildable = true;
         };
       tests = {
         "regression" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."ether" or (buildDepError "ether"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."ether" or (buildDepError "ether"))
             ];
+          buildable = true;
           };
         };
       };

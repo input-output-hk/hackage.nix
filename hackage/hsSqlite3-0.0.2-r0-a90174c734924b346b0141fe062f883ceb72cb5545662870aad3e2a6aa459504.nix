@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."stateLocal" or (buildDepError "stateLocal"))
           ];
+        buildable = true;
         };
       exes = {
         "hs_sqlite3_test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stateLocal" or (buildDepError "stateLocal"))
             ];
           libs = [ (pkgs."sqlite3" or (sysDepError "sqlite3")) ];
+          buildable = true;
           };
         };
       };

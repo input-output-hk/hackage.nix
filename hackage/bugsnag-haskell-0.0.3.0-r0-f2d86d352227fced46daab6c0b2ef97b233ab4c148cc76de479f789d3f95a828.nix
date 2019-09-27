@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ua-parser" or (buildDepError "ua-parser"))
           (hsPkgs."wai" or (buildDepError "wai"))
           ];
+        buildable = true;
         };
       exes = {
         "example-cli" = {
@@ -83,12 +84,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bugsnag-haskell" or (buildDepError "bugsnag-haskell"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "example-simple" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bugsnag-haskell" or (buildDepError "bugsnag-haskell"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "example-warp" = {
           depends = [
@@ -97,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "example-yesod" = {
           depends = [
@@ -108,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp" or (buildDepError "warp"))
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -116,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = [
@@ -128,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."unliftio" or (buildDepError "unliftio"))
             ];
+          buildable = true;
           };
         };
       };

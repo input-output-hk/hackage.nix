@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."m" or (sysDepError "m"))
           ];
         pkgconfig = [ (pkgconfPkgs."fann" or (pkgConfDepError "fann")) ];
+        buildable = true;
         };
       exes = {
         "HFANNTest" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."doublefann" or (sysDepError "doublefann"))
             (pkgs."m" or (sysDepError "m"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

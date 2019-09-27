@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-Data" or (buildDepError "HGamer3D-Data"))
           (hsPkgs."haskell98" or (buildDepError "haskell98"))
           ];
+        buildable = true;
         };
       };
     }

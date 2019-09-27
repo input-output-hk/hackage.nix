@@ -57,30 +57,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "locator" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "vocab1" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "vocab2" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "vocab3" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "showexpr" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hint" or (buildDepError "hint"))
             ];
+          buildable = true;
           };
         "stockquotes" = {
           depends = [
@@ -96,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Chart-diagrams" or (buildDepError "Chart-diagrams"))
             (hsPkgs."cassava" or (buildDepError "cassava"))
             ];
+          buildable = true;
           };
         };
       };

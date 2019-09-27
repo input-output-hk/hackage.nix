@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."iso3166-country-codes" or (buildDepError "iso3166-country-codes"))
           ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))
           (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
           ];
+        buildable = true;
         };
       tests = {
         "pyf-test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.python3 or (pkgs.buildPackages.python3 or (buildToolDepError "python3")))
             ];
+          buildable = true;
           };
         "pyf-overloaded" = {
           depends = [
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "pyf-failure" = {
           depends = [
@@ -107,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.python3 or (pkgs.buildPackages.python3 or (buildToolDepError "python3")))
             ];
+          buildable = true;
           };
         };
       };

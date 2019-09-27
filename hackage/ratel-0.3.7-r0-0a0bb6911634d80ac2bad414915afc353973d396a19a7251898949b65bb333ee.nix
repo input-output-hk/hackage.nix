@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."uuid" or (buildDepError "uuid"))
           ];
+        buildable = true;
         };
       tests = {
         "ratel-test-suite" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
             ];
+          buildable = true;
           };
         };
       };

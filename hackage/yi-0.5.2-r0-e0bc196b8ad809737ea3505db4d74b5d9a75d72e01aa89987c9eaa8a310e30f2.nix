@@ -61,7 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = true; };
       exes = {
         "yi" = {
           depends = (((((([
@@ -99,6 +99,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
             ];
+          buildable = if !(flags.vty || flags.gtk || flags.cocoa)
+            then false
+            else true;
           };
         };
       };

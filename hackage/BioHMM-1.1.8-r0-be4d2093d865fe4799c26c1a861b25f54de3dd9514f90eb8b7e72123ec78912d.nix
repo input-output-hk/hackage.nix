@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."SVGFonts" or (buildDepError "SVGFonts"))
           (hsPkgs."StockholmAlignment" or (buildDepError "StockholmAlignment"))
           ];
+        buildable = true;
         };
       };
     }

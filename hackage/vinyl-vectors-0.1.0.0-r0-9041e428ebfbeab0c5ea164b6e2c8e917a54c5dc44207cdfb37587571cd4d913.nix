@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."constraints" or (buildDepError "constraints"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "sorting" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vinyl" or (buildDepError "vinyl"))
             (hsPkgs."microlens" or (buildDepError "microlens"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

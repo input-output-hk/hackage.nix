@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dimensional" or (buildDepError "dimensional"))
           (hsPkgs."array" or (buildDepError "array"))
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+        buildable = true;
         };
       tests = {
         "GeodeticTest" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."checkers" or (buildDepError "checkers"))
             ];
+          buildable = true;
           };
         };
       };

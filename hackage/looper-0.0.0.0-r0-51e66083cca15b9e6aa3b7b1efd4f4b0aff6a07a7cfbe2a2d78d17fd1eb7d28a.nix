@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."unliftio" or (buildDepError "unliftio"))
           ];
+        buildable = true;
         };
       tests = {
         "looper-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."unliftio" or (buildDepError "unliftio"))
             ];
+          buildable = true;
           };
         };
       };

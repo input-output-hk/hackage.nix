@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "word2vec-model-similarity" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."word2vec-model" or (buildDepError "word2vec-model"))
             ];
+          buildable = true;
           };
         "word2vec-model-word-analogy" = {
           depends = [
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."word2vec-model" or (buildDepError "word2vec-model"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -115,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."word2vec-model" or (buildDepError "word2vec-model"))
             ];
+          buildable = true;
           };
         };
       };

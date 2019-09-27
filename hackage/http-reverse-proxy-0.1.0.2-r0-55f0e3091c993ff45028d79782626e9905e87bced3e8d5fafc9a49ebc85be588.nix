@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."warp" or (buildDepError "warp"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp" or (buildDepError "warp"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

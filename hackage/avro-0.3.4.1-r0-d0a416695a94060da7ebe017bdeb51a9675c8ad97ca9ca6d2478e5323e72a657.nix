@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (pkgs.lib).optional (flags.templatehaskell) (hsPkgs."template-haskell" or (buildDepError "template-haskell"));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ] ++ (pkgs.lib).optional (flags.templatehaskell) (hsPkgs."template-haskell" or (buildDepError "template-haskell"));
+          buildable = true;
           };
         };
       };

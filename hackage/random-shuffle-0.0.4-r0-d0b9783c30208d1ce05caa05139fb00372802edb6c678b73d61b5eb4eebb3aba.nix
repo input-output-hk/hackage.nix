@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
           ];
+        buildable = true;
         };
       };
     }

@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if !flags.embed
           then [ (hsPkgs."directory" or (buildDepError "directory")) ]
           else [ (hsPkgs."file-embed" or (buildDepError "file-embed")) ]);
+        buildable = true;
         };
       };
     }

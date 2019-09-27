@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."asn1-types" or (buildDepError "asn1-types"))
           ];
+        buildable = true;
         };
       };
     }

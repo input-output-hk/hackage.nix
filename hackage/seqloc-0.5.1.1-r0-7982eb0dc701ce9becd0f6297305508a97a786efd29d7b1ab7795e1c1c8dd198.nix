@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."biocore" or (buildDepError "biocore"))
           ];
+        buildable = true;
         };
       tests = {
         "test-seqloc" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."biocore" or (buildDepError "biocore"))
             ];
+          buildable = true;
           };
         };
       };

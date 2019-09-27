@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."type-spec" or (buildDepError "type-spec"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."type-spec" or (buildDepError "type-spec"))
             ];
+          buildable = true;
           };
         };
       };

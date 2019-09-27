@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ]) ++ (pkgs.lib).optional (flags.benchmarks) (hsPkgs."criterion" or (buildDepError "criterion"));
+        buildable = true;
         };
       };
     }

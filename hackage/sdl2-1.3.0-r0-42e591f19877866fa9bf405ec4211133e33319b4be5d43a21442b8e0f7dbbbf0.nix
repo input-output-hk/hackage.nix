@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = [ (pkgs."SDL2" or (sysDepError "SDL2")) ];
         pkgconfig = [ (pkgconfPkgs."sdl2" or (pkgConfDepError "sdl2")) ];
+        buildable = true;
         };
       };
     }

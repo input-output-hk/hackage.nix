@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
           ];
+        buildable = true;
         };
       exes = {
         "coreasm" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."operational" or (buildDepError "operational"))
           (hsPkgs."operational-extra" or (buildDepError "operational-extra"))
           ];
+        buildable = true;
         };
       };
     }

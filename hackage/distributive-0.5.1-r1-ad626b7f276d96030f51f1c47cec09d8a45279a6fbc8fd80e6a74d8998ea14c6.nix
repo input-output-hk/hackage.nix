@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
           ] ++ (pkgs.lib).optional (flags.tagged) (hsPkgs."tagged" or (buildDepError "tagged"))) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.2" && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8.0") ((pkgs.lib).optional (flags.semigroups) (hsPkgs."semigroups" or (buildDepError "semigroups")));
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         };
       };

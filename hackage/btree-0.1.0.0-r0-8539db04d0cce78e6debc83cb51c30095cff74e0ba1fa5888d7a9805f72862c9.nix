@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."prim-array" or (buildDepError "prim-array"))
           (hsPkgs."compact-mutable" or (buildDepError "compact-mutable"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."compact-mutable" or (buildDepError "compact-mutable"))
             (hsPkgs."hashable" or (buildDepError "hashable"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             (hsPkgs."compact-mutable" or (buildDepError "compact-mutable"))
             ];
+          buildable = true;
           };
         };
       };

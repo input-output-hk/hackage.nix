@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."throttle-io-stream" or (buildDepError "throttle-io-stream"))
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           ];
+        buildable = true;
         };
       tests = {
         "conduit-test" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."throttle-io-stream" or (buildDepError "throttle-io-stream"))
             (hsPkgs."stm-conduit" or (buildDepError "stm-conduit"))
             ];
+          buildable = true;
           };
         };
       };

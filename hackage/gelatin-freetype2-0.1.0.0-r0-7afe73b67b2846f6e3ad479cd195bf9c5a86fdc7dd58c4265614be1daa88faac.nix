@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."either" or (buildDepError "either"))
           ];
+        buildable = true;
         };
       tests = {
         "gelatin-freetype2-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gelatin-freetype2" or (buildDepError "gelatin-freetype2"))
             ];
+          buildable = true;
           };
         };
       };

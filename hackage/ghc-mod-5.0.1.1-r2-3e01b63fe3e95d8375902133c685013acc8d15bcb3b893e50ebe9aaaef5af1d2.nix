@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."convertible" or (buildDepError "convertible"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.4.2") (hsPkgs."random" or (buildDepError "random"));
+        buildable = true;
         };
       exes = {
         "ghc-mod" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
             ];
+          buildable = true;
           };
         "ghc-modi" = {
           depends = [
@@ -107,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -115,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = ([
@@ -148,6 +152,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."convertible" or (buildDepError "convertible"))
               (hsPkgs."Cabal" or (buildDepError "Cabal"))
               ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."executable-path" or (buildDepError "executable-path"));
+          buildable = true;
           };
         };
       };

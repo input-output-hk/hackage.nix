@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."poly-control" or (buildDepError "poly-control"))
           (hsPkgs."prologue" or (buildDepError "prologue"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
           ];
+        buildable = true;
         };
       exes = {
         "h2048-simple" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
+          buildable = if !flags.exe then false else true;
           };
         "h2048-vty" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
+          buildable = if !flags.exe || !flags.vty then false else true;
           };
         };
       tests = {
@@ -92,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         };
       };

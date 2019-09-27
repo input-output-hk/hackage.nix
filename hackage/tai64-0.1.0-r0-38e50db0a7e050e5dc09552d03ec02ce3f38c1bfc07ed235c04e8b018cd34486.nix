@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."tai64" or (buildDepError "tai64"))
             ];
+          buildable = true;
           };
         };
       };

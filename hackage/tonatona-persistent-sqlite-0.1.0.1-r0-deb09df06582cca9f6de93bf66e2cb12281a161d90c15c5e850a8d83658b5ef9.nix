@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tonaparser" or (buildDepError "tonaparser"))
           (hsPkgs."tonatona" or (buildDepError "tonatona"))
           ];
+        buildable = true;
         };
       tests = {
         "doctest" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tonaparser" or (buildDepError "tonaparser"))
             (hsPkgs."tonatona" or (buildDepError "tonatona"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tonaparser" or (buildDepError "tonaparser"))
             (hsPkgs."tonatona" or (buildDepError "tonatona"))
             ];
+          buildable = true;
           };
         };
       };

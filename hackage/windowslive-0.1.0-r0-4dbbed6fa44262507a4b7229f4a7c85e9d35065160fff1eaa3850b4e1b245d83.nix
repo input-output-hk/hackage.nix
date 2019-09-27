@@ -67,7 +67,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           ];
+        buildable = true;
         };
-      exes = { "test" = {}; };
+      exes = { "test" = { buildable = true; }; };
       };
     }

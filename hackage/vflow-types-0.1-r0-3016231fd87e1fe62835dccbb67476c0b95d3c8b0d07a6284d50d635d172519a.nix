@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."scientific" or (buildDepError "scientific"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "unit-tests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."neat-interpolation" or (buildDepError "neat-interpolation"))
             ];
+          buildable = true;
           };
         "laws" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."json-alt" or (buildDepError "json-alt"))
             (hsPkgs."ip" or (buildDepError "ip"))
             ];
+          buildable = true;
           };
         };
       };

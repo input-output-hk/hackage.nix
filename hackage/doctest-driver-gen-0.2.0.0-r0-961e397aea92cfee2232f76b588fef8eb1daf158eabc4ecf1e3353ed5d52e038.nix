@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."doctest" or (buildDepError "doctest"))
           ];
+        buildable = true;
         };
       exes = {
         "doctest-driver-gen" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest-driver-gen" or (buildDepError "doctest-driver-gen"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -75,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."doctest-driver-gen" or (buildDepError "doctest-driver-gen"))
             ];
+          buildable = true;
           };
         };
       };

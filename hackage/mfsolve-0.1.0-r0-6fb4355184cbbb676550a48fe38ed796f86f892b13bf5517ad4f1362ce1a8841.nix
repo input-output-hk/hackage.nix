@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."hashable" or (buildDepError "hashable"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."mfsolve" or (buildDepError "mfsolve"))
             ];
+          buildable = true;
           };
         };
       };

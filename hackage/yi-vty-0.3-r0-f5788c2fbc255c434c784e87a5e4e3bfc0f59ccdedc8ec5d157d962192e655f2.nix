@@ -53,5 +53,5 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "This is a dummy package: do not install it! \"cabal install yi -fvty\" is what you want.";
       buildType = "Simple";
       };
-    components = { "library" = {}; };
+    components = { "library" = { buildable = true; }; };
     }

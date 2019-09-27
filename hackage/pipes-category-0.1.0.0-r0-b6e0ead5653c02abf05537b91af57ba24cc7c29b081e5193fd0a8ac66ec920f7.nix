@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes" or (buildDepError "pipes"))
           (hsPkgs."pipes-extras" or (buildDepError "pipes-extras"))
           ];
+        buildable = true;
         };
       exes = {
         "pipes-category-exe" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-category" or (buildDepError "pipes-category"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pipes-category" or (buildDepError "pipes-category"))
             ];
+          buildable = true;
           };
         };
       };

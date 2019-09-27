@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "sync" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = if flags.sync then true else false;
           };
         "channels" = {
           depends = [
@@ -80,12 +82,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."bifunctors" or (buildDepError "bifunctors"));
+          buildable = true;
           };
         "utilities" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."broadcast-chan" or (buildDepError "broadcast-chan"))
             ];
+          buildable = true;
           };
         };
       };

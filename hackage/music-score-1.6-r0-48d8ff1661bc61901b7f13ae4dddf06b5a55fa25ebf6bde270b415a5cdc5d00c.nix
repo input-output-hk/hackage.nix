@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."prettify" or (buildDepError "prettify"))
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ];
+        buildable = true;
         };
       };
     }

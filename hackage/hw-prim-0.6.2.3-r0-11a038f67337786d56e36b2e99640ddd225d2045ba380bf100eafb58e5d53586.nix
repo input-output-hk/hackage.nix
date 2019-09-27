@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "hw-prim-test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hw-hspec-hedgehog" or (buildDepError "hw-hspec-hedgehog"))
             (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
             (hsPkgs."mmap" or (buildDepError "mmap"))
             ];
+          buildable = true;
           };
         };
       };

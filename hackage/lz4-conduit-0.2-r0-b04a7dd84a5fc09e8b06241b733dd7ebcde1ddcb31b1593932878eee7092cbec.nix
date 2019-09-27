@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."binary" or (buildDepError "binary"))
           ];
+        buildable = true;
         };
       exes = {
         "LZ4" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."bytestring-arbitrary" or (buildDepError "bytestring-arbitrary"))
             ];
+          buildable = true;
           };
         };
       };

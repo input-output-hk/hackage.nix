@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
           (hsPkgs."simple-get-opt" or (buildDepError "simple-get-opt"))
           ];
+        buildable = true;
         };
       };
     }

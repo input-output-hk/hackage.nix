@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."spoon" or (buildDepError "spoon"))
           (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
           ];
+        buildable = true;
         };
       };
     }

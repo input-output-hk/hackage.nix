@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yi-core" or (buildDepError "yi-core"))
           (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."yi-snippet" or (buildDepError "yi-snippet"))
             ];
+          buildable = true;
           };
         };
       };

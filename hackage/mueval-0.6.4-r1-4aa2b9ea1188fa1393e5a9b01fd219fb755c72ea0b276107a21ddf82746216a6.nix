@@ -67,9 +67,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
           ];
+        buildable = true;
         };
       exes = {
-        "mueval" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "mueval" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         };
       };
     }

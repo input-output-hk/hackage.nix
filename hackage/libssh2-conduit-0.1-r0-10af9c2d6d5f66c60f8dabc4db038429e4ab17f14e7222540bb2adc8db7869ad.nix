@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."libssh2" or (buildDepError "libssh2"))
           ];
+        buildable = true;
         };
       };
     }

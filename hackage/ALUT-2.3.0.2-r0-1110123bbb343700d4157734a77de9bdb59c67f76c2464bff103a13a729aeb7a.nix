@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           then [ (pkgs."alut" or (sysDepError "alut")) ]
           else (pkgs.lib).optional (!system.isIos) (pkgs."alut" or (sysDepError "alut"));
         frameworks = (pkgs.lib).optionals (!(system.isWindows && flags.usenativewindowslibraries)) ((pkgs.lib).optional (system.isIos) (pkgs."ALUT" or (sysDepError "ALUT")));
+        buildable = true;
         };
       };
     }

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
             ];
+          buildable = true;
           };
         };
       };

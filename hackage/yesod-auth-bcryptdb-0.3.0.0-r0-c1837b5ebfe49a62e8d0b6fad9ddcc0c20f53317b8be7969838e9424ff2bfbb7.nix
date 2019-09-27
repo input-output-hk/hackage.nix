@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
           (hsPkgs."yesod-persistent" or (buildDepError "yesod-persistent"))
           ];
+        buildable = true;
         };
       };
     }

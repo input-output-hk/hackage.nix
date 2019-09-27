@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."array" or (buildDepError "array"))
           ] ++ (pkgs.lib).optional (flags.bytestring-builder) (hsPkgs."bytestring" or (buildDepError "bytestring"));
+        buildable = true;
         };
       tests = {
         "test-scientific" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = true;
           };
         };
       };

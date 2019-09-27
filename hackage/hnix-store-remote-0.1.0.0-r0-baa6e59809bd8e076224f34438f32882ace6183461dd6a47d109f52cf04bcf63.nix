@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."hnix-store-core" or (buildDepError "hnix-store-core"))
           ];
+        buildable = true;
         };
       exes = {
         "hnix-store-temporary-live-test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."pretty-simple" or (buildDepError "pretty-simple"))
             ];
+          buildable = true;
           };
         };
       };

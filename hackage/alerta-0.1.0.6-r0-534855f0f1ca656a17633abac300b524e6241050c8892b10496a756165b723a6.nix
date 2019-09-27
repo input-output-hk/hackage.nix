@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."servant-client" or (buildDepError "servant-client"))
             ]);
+        buildable = true;
         };
       };
     }

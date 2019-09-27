@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
           ];
+        buildable = true;
         };
       tests = {
         "test-dsa" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
             ];
+          buildable = true;
           };
         };
       };

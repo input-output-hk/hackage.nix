@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
           (hsPkgs."blaze-builder-conduit" or (buildDepError "blaze-builder-conduit"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."tagstream-conduit" or (buildDepError "tagstream-conduit"))
             ];
+          buildable = true;
           };
         };
       };

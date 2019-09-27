@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       exes = {
         "numsToLess" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = if flags.tests then true else false;
           };
         "alphaNumbers" = {
           depends = (pkgs.lib).optionals (flags.tests) [
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = if flags.tests then true else false;
           };
         "limitedAlphaNumbers" = {
           depends = (pkgs.lib).optionals (flags.tests) [
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = if flags.tests then true else false;
           };
         "alphaNumbersByteString" = {
           depends = (pkgs.lib).optionals (flags.tests) [
@@ -114,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = if flags.tests then true else false;
           };
         "standardOutputAndError" = {
           depends = (pkgs.lib).optionals (flags.tests) [
@@ -126,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = if flags.tests then true else false;
           };
         };
       };

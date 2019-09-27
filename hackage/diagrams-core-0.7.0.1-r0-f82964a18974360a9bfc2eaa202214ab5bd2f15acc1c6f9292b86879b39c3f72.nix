@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monoid-extras" or (buildDepError "monoid-extras"))
           (hsPkgs."dual-tree" or (buildDepError "dual-tree"))
           ];
+        buildable = true;
         };
       };
     }

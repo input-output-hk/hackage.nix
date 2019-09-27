@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             ];
+          buildable = true;
           };
         "lambdacube-cameratrack" = {
           depends = [
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             ];
+          buildable = true;
           };
         };
       };

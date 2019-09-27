@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."io-streams" or (buildDepError "io-streams"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
         "scp-streams" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sha-streams" or (buildDepError "sha-streams"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         "scp-broken-upload" = {
           depends = [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."io-streams" or (buildDepError "io-streams"))
             (hsPkgs."scp-streams" or (buildDepError "scp-streams"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -93,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."io-streams" or (buildDepError "io-streams"))
             (hsPkgs."scp-streams" or (buildDepError "scp-streams"))
             ];
+          buildable = true;
           };
         };
       };

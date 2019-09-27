@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml" or (buildDepError "xml"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ] ++ (pkgs.lib).optional (flags.logging) (hsPkgs."template-haskell" or (buildDepError "template-haskell"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       exes = {
         "roshask" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default-generics" or (buildDepError "data-default-generics"))
             (hsPkgs."roshask" or (buildDepError "roshask"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -121,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
             ];
+          buildable = true;
           };
         "servicetest" = {
           depends = [
@@ -138,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default-generics" or (buildDepError "data-default-generics"))
             (hsPkgs."testpack" or (buildDepError "testpack"))
             ];
+          buildable = true;
           };
         };
       };

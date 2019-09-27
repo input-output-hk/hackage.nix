@@ -67,9 +67,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           ] ++ (pkgs.lib).optional (flags.gpl) (hsPkgs."hscolour" or (buildDepError "hscolour"));
+        buildable = true;
         };
       exes = {
-        "hlint" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "hlint" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         };
       };
     }

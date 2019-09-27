@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               then [ (hsPkgs."vty" or (buildDepError "vty")) ]
               else [ (hsPkgs."gtk" or (buildDepError "gtk")) ]);
           libs = (pkgs.lib).optional (flags.curses) (pkgs."curses" or (sysDepError "curses"));
+          buildable = true;
           };
         };
       };

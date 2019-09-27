@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
         libs = [ (pkgs."notmuch" or (sysDepError "notmuch")) ];
+        buildable = true;
         };
       exes = {
         "notmuch-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parseargs" or (buildDepError "parseargs"))
             ];
           libs = [ (pkgs."notmuch" or (sysDepError "notmuch")) ];
+          buildable = true;
           };
         };
       };

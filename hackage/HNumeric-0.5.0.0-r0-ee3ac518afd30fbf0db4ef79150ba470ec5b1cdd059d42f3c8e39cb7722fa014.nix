@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel" or (buildDepError "parallel"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       tests = {
         "HNumeric-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

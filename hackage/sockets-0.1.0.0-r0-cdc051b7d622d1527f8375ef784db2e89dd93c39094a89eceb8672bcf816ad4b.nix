@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."ip" or (buildDepError "ip"))
           ];
+        buildable = true;
         };
       exes = {
         "sockets-example" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       tests = {
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."primitive" or (buildDepError "primitive"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -95,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ip" or (buildDepError "ip"))
             (hsPkgs."primitive" or (buildDepError "primitive"))
             ];
+          buildable = true;
           };
         };
       };

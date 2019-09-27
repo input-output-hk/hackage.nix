@@ -93,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
         "pandoc-citeproc" = {
@@ -109,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "test-citeproc" = {
           depends = [
@@ -127,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.test_citeproc then true else false;
           };
         };
       tests = {
@@ -145,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."temporary" or (buildDepError "temporary"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."zoom-cache" or (buildDepError "zoom-cache"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
         "scope" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
             (hsPkgs."zoom-cache" or (buildDepError "zoom-cache"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

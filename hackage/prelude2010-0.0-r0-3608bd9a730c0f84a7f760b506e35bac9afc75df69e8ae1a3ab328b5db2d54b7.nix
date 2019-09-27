@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [
           (hsPkgs."prelude-compat" or (buildDepError "prelude-compat"))
           ];
+        buildable = true;
         };
       };
     }

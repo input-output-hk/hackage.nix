@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yi-mode-javascript" or (buildDepError "yi-mode-javascript"))
             (hsPkgs."yi-misc-modes" or (buildDepError "yi-misc-modes"))
             ];
+          buildable = true;
           };
         };
       };

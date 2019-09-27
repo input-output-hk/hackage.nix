@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."invariant" or (buildDepError "invariant"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
             ];
+          buildable = true;
           };
         };
       };

@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
           ];
+        buildable = true;
         };
       exes = {
         "hakaru" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "compile" = {
           depends = [
@@ -105,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "summary" = {
           depends = [
@@ -116,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "hk-maple" = {
           depends = [
@@ -127,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "density" = {
           depends = [
@@ -136,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "disintegrate" = {
           depends = [
@@ -146,6 +152,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "pretty" = {
           depends = [
@@ -154,6 +161,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "momiji" = {
           depends = [
@@ -161,6 +169,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "normalize" = {
           depends = [
@@ -171,6 +180,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "hkc" = {
           depends = [
@@ -184,6 +194,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "mh" = {
           depends = [
@@ -194,6 +205,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -224,6 +236,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       };

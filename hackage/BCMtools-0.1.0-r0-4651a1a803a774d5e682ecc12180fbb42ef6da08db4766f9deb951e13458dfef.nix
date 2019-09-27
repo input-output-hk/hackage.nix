@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           (hsPkgs."matrices" or (buildDepError "matrices"))
           ];
+        buildable = true;
         };
       exes = {
         "bcmtools" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
             ];
+          buildable = true;
           };
         };
       };

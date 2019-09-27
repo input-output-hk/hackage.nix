@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."these" or (buildDepError "these"))
           (hsPkgs."optics-core" or (buildDepError "optics-core"))
           ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."word8" or (buildDepError "word8"))
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (buildDepError "unbuildable"));
+        buildable = if system.isWindows then false else true;
         };
       tests = {
         "doctests-hpath" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."hpath" or (buildDepError "hpath"))
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (buildDepError "unbuildable"));
+          buildable = if system.isWindows then false else true;
           };
         "doctests-posix" = {
           depends = [
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (buildDepError "unbuildable"));
+          buildable = if system.isWindows then false else true;
           };
         "spec" = {
           depends = [
@@ -103,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix-bytestring" or (buildDepError "unix-bytestring"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (buildDepError "unbuildable"));
+          buildable = if system.isWindows then false else true;
           };
         };
       };

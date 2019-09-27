@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."X11" or (sysDepError "X11"))
           (pkgs."Xext" or (sysDepError "Xext"))
           ];
+        buildable = true;
         };
       };
     }

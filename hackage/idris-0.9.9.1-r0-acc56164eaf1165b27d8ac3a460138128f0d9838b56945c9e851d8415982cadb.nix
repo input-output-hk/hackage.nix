@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             ] ++ (pkgs.lib).optional (system.isLinux) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (system.isOsx) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"))) ++ (pkgs.lib).optional (flags.llvm) (hsPkgs."llvm-general" or (buildDepError "llvm-general"));
+          buildable = true;
           };
         };
       };

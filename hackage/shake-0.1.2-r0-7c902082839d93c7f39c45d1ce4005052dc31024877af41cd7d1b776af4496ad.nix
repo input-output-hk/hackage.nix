@@ -69,7 +69,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel-io" or (buildDepError "parallel-io"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
-      exes = { "shake" = {}; };
+      exes = {
+        "shake" = { buildable = if flags.testprog then true else false; };
+        };
       };
     }

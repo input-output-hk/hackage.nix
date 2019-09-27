@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
           (hsPkgs."spatial-math" or (buildDepError "spatial-math"))
           ];
+        buildable = true;
         };
       };
     }

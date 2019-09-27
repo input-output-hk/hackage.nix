@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."temporary" or (buildDepError "temporary"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "jammittools" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boxes" or (buildDepError "boxes"))
             (hsPkgs."jammittools" or (buildDepError "jammittools"))
             ];
+          buildable = true;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
           ];
+        buildable = true;
         };
       };
     }

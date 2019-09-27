@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagged" or (buildDepError "tagged"))
           (hsPkgs."cereal" or (buildDepError "cereal"))
           ];
+        buildable = true;
         };
       exes = {
         "Tests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tagged" or (buildDepError "tagged"))
             (hsPkgs."cereal" or (buildDepError "cereal"))
             ];
+          buildable = if flags.test then true else false;
           };
         "Bench" = {
           depends = (pkgs.lib).optionals (flags.benchmark) [
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tagged" or (buildDepError "tagged"))
             (hsPkgs."cereal" or (buildDepError "cereal"))
             ];
+          buildable = if flags.benchmark then true else false;
           };
         };
       };

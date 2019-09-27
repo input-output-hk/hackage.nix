@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libbladeRF" or (pkgConfDepError "libbladeRF"))
           ];
+        buildable = true;
         };
       tests = {
         "haddock" = {
@@ -71,12 +72,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
             ];
+          buildable = true;
           };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         };
       };

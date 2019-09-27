@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hw-kafka-client" or (buildDepError "hw-kafka-client"))
           (hsPkgs."katip" or (buildDepError "katip"))
           ];
+        buildable = true;
         };
       };
     }

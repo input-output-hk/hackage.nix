@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default" or (buildDepError "data-default"))
           (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
             ];
+          buildable = true;
           };
         };
       };

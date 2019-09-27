@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-builder-conduit" or (buildDepError "blaze-builder-conduit"))
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           ];
+        buildable = true;
         };
       };
     }

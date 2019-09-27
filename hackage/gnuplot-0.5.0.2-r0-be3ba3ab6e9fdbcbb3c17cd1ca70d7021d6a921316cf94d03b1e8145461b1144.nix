@@ -74,10 +74,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
         "gnuplot-demo" = {
           depends = (pkgs.lib).optional (flags.buildexamples) (hsPkgs."filepath" or (buildDepError "filepath"));
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

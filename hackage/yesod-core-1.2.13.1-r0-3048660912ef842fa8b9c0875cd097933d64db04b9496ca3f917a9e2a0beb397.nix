@@ -104,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -135,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
             (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -149,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."Graph500" or (buildDepError "Graph500"))
           ];
+        buildable = true;
         };
       };
     }

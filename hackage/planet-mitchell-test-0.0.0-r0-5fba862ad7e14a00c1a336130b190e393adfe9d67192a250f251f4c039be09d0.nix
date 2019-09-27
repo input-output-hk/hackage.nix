@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tasty-rerun" or (buildDepError "tasty-rerun"))
           (hsPkgs."weigh" or (buildDepError "weigh"))
           ];
+        buildable = true;
         };
       };
     }

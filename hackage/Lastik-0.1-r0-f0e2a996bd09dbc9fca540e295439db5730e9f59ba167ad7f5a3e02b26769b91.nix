@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."FileManip" or (buildDepError "FileManip"))
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             ];
+        buildable = true;
         };
       };
     }

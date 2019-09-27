@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "pooled-io-demo" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pooled-io" or (buildDepError "pooled-io"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

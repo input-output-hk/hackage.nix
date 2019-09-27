@@ -95,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             then [ (hsPkgs."vty" or (buildDepError "vty")) ]
             else [ (hsPkgs."gtk" or (buildDepError "gtk")) ]);
         pkgconfig = (pkgs.lib).optionals (!flags.curses) ((pkgs.lib).optional (!flags.vty) (pkgconfPkgs."gtk+-2.0" or (pkgConfDepError "gtk+-2.0")));
+        buildable = true;
         };
       exes = {
         "LambdaHack" = {
@@ -130,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -166,6 +168,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
+          buildable = true;
           };
         };
       };

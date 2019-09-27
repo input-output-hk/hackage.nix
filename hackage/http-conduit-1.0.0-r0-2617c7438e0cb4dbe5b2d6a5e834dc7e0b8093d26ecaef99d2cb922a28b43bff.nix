@@ -88,7 +88,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-bytestring" or (buildDepError "network-bytestring"))
             ]
           else [ (hsPkgs."network" or (buildDepError "network")) ]);
+        buildable = true;
         };
-      exes = { "http-conduit" = {}; };
+      exes = {
+        "http-conduit" = { buildable = if flags.test then true else false; };
+        };
       };
     }

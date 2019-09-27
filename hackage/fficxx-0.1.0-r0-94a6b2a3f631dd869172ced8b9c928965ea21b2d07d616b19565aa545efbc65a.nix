@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ];
+        buildable = true;
         };
       };
     }

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text-printer" or (buildDepError "text-printer"))
           (hsPkgs."parsers" or (buildDepError "parsers"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsers" or (buildDepError "parsers"))
             (hsPkgs."data-textual" or (buildDepError "data-textual"))
             ];
+          buildable = true;
           };
         };
       };

@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
             (hsPkgs."xml-types" or (buildDepError "xml-types"))
             ];
+          buildable = true;
           };
         };
       };

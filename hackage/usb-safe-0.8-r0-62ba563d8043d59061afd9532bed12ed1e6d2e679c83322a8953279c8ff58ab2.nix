@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
           ];
+        buildable = true;
         };
       };
     }

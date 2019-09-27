@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."process" or (buildDepError "process"))
           ] ++ (pkgs.lib).optional (flags.quotation) (hsPkgs."template-haskell" or (buildDepError "template-haskell"));
+        buildable = true;
         };
       exes = {
         "cmdargs" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = if flags.testprog && flags.quotation then true else false;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb" or (buildDepError "syb"))
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           ];
+        buildable = true;
         };
       };
     }

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tokenize" or (buildDepError "tokenize"))
             (hsPkgs."PSQueue" or (buildDepError "PSQueue"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."tuple" or (buildDepError "tuple"))
             ];
+          buildable = true;
           };
         };
       };

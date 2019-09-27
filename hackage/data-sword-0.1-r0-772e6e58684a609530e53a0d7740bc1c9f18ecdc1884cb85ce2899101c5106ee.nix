@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."data-bword" or (buildDepError "data-bword"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."data-sword" or (buildDepError "data-sword"))
             ];
+          buildable = true;
           };
         };
       };

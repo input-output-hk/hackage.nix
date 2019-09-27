@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."MissingH" or (buildDepError "MissingH"))
           ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."testpack" or (buildDepError "testpack"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

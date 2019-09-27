@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."warp" or (buildDepError "warp"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-io" or (buildDepError "quickcheck-io"))
             ];
+          buildable = true;
           };
         };
       };

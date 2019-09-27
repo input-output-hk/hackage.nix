@@ -114,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-multicast" or (buildDepError "network-multicast"))
             (hsPkgs."network-info" or (buildDepError "network-info"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -151,6 +152,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."edit-distance" or (buildDepError "edit-distance"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

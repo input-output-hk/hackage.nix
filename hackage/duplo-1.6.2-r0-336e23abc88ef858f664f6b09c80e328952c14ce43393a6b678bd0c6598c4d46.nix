@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-format" or (buildDepError "text-format"))
             (hsPkgs."alex" or (buildDepError "alex"))
             ];
+          buildable = true;
           };
         };
       };

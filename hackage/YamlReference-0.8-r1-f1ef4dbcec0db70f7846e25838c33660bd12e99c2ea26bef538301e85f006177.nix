@@ -66,11 +66,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
-        "yaml2yeast" = {};
+        "yaml2yeast" = { buildable = true; };
         "yaml2yeast-test" = {
           depends = (pkgs.lib).optional (flags.small_base) (hsPkgs."directory" or (buildDepError "directory"));
+          buildable = true;
           };
         };
       };

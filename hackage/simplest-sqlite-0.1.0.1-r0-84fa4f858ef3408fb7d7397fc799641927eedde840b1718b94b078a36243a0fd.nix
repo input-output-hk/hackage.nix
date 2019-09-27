@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
         libs = [ (pkgs."sqlite3" or (sysDepError "sqlite3")) ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-abort-fd" or (buildDepError "monad-abort-fd"))
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           ];
+        buildable = true;
         };
       };
     }

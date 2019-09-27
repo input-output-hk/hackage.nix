@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."atmos" or (buildDepError "atmos"))
           (hsPkgs."dimensional-tf" or (buildDepError "dimensional-tf"))
           ];
+        buildable = true;
         };
       };
     }

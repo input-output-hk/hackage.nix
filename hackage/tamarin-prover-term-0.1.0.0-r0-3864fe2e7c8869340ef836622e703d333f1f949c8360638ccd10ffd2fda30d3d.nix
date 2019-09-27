@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."derive" or (buildDepError "derive"))
           (hsPkgs."tamarin-prover-utils" or (buildDepError "tamarin-prover-utils"))
           ];
+        buildable = true;
         };
       };
     }

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary-conduit" or (buildDepError "binary-conduit"))
           (hsPkgs."void" or (buildDepError "void"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ];
+          buildable = true;
           };
         };
       };

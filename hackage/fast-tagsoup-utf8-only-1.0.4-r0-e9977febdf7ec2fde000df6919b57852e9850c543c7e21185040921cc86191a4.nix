@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
           ];
+        buildable = true;
         };
       };
     }

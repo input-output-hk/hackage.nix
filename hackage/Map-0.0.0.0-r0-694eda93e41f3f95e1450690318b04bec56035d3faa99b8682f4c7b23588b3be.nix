@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filtrable" or (buildDepError "filtrable"))
           (hsPkgs."util" or (buildDepError "util"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
             (hsPkgs."map" or (buildDepError "map"))
             ];
+          buildable = true;
           };
         };
       };

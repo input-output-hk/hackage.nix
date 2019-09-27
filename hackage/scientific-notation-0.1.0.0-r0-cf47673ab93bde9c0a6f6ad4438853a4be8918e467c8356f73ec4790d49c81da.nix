@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."bytesmith" or (buildDepError "bytesmith"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."primitive" or (buildDepError "primitive"))
             (hsPkgs."bytesmith" or (buildDepError "bytesmith"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."scientific" or (buildDepError "scientific"))
             (hsPkgs."run-st" or (buildDepError "run-st"))
             ];
+          buildable = true;
           };
         };
       };

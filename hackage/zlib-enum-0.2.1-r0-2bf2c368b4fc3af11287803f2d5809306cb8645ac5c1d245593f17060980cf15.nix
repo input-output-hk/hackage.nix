@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."enumerator" or (buildDepError "enumerator"))
           (hsPkgs."zlib-bindings" or (buildDepError "zlib-bindings"))
           ];
+        buildable = if flags.test then false else true;
         };
       exes = {
         "zlib-enum-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

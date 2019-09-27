@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yi" or (buildDepError "yi"))
           (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
           ];
+        buildable = true;
         };
       };
     }

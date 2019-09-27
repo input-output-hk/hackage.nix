@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if system.isWindows && flags.usenativewindowslibraries
           then [ (pkgs."glut32" or (sysDepError "glut32")) ]
           else [ (pkgs."glut" or (sysDepError "glut")) ];
+        buildable = true;
         };
       };
     }

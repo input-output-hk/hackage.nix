@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-tdfa-text" or (buildDepError "regex-tdfa-text"))
             (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
             ];
+          buildable = true;
           };
         };
       };

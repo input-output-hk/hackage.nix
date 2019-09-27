@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ddc-core" or (buildDepError "ddc-core"))
             ];
+          buildable = true;
           };
         "ddc" = {
           depends = [
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ddc-build" or (buildDepError "ddc-build"))
             (hsPkgs."ddc-driver" or (buildDepError "ddc-driver"))
             ];
+          buildable = true;
           };
         "ddci-core" = {
           depends = [
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ddc-build" or (buildDepError "ddc-build"))
             (hsPkgs."ddc-driver" or (buildDepError "ddc-driver"))
             ];
+          buildable = true;
           };
         "ddci-tetra" = {
           depends = [
@@ -124,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ddc-build" or (buildDepError "ddc-build"))
             (hsPkgs."ddc-driver" or (buildDepError "ddc-driver"))
             ];
+          buildable = true;
           };
         };
       };

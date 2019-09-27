@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       tests = {
         "tasty" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."placeholders" or (buildDepError "placeholders"))
             (hsPkgs."rerebase" or (buildDepError "rerebase"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -105,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."rerebase" or (buildDepError "rerebase"))
             ];
+          buildable = true;
           };
         "decoding" = {
           depends = [
@@ -112,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."rerebase" or (buildDepError "rerebase"))
             ];
+          buildable = true;
           };
         };
       };

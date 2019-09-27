@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       exes = {
         "httpbin" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
             (hsPkgs."uuid" or (buildDepError "uuid"))
             ];
+          buildable = if !flags.httpbin then false else true;
           };
         };
       tests = {
@@ -140,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."wreq" or (buildDepError "wreq"))
             ] ++ (pkgs.lib).optional (flags.aws) (hsPkgs."base" or (buildDepError "base"));
+          buildable = true;
           };
         "doctest" = {
           depends = (pkgs.lib).optionals (!(!flags.doctest)) [
@@ -148,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if !flags.doctest then false else true;
           };
         };
       };

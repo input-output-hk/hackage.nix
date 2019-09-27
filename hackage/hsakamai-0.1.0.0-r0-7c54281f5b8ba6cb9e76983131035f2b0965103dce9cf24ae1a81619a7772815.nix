@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uuid" or (buildDepError "uuid"))
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           ];
+        buildable = true;
         };
       exes = {
         "purge" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -120,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuid" or (buildDepError "uuid"))
             (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
             ];
+          buildable = true;
           };
         };
       };

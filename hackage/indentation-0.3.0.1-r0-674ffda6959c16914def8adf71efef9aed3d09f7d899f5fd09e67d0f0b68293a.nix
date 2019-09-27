@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsers" or (buildDepError "parsers"))
           (hsPkgs."indentation-trifecta" or (buildDepError "indentation-trifecta"))
           ];
+        buildable = true;
         };
       };
     }

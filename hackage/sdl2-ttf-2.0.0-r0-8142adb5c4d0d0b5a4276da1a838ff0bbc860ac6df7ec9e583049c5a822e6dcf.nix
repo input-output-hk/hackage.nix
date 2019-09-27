@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."sdl2" or (pkgConfDepError "sdl2"))
           (pkgconfPkgs."SDL2_ttf" or (pkgConfDepError "SDL2_ttf"))
           ];
+        buildable = true;
         };
       exes = {
         "sdl2-ttf-example" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2-ttf" or (buildDepError "sdl2-ttf"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

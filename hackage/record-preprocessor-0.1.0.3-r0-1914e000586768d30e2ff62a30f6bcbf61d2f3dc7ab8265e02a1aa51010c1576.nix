@@ -54,7 +54,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = true; };
       exes = {
         "record-preprocessor" = {
           depends = [
@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."record" or (buildDepError "record"))
             (hsPkgs."basic-lens" or (buildDepError "basic-lens"))
             ];
+          buildable = true;
           };
         };
       };

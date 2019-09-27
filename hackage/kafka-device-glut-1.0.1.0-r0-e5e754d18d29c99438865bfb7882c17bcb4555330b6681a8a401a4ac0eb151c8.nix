@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."kafka-device" or (buildDepError "kafka-device"))
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           ];
+        buildable = true;
         };
       exes = {
         "kafka-device-glut" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."kafka-device" or (buildDepError "kafka-device"))
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             ];
+          buildable = true;
           };
         };
       };

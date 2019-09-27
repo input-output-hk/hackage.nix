@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."monad-skeleton" or (buildDepError "monad-skeleton"))
           ];
+        buildable = true;
         };
       tests = {
         "effects" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."extensible" or (buildDepError "extensible"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."extensible" or (buildDepError "extensible"))
             ];
+          buildable = true;
           };
         "eff-comparison" = {
           depends = [
@@ -98,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."freer" or (buildDepError "freer"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

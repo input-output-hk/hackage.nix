@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       tests = {
         "library-tests" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "tests" = {
           depends = [
@@ -127,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -148,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "profiling" = {
           depends = [
@@ -166,6 +170,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

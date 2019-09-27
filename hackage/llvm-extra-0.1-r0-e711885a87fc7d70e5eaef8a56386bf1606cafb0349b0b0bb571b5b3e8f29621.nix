@@ -63,7 +63,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           (hsPkgs."base" or (buildDepError "base"))
           ] ++ (pkgs.lib).optional (system.isI386) (hsPkgs."cpuid" or (buildDepError "cpuid"));
+        buildable = true;
         };
-      exes = { "tone-llvm" = {}; };
+      exes = {
+        "tone-llvm" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        };
       };
     }

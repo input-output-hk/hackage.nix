@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
           (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-th-prime" or (buildDepError "test-framework-th-prime"))
             ];
+          buildable = true;
           };
         };
       };

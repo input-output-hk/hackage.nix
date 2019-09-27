@@ -67,6 +67,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb" or (buildDepError "syb"))
           (hsPkgs."free" or (buildDepError "free"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"));
+        buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+          then false
+          else true;
         };
       exes = {
         "roundtrip" = {
@@ -84,6 +87,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."temporary" or (buildDepError "temporary"))
             (hsPkgs."time" or (buildDepError "time"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot")));
+          buildable = if compiler.isGhc && (compiler.version).ge "7.10.2" && flags.roundtrip
+            then true
+            else false;
           };
         "static" = {
           depends = (pkgs.lib).optionals (flags.roundtrip) ([
@@ -94,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."Diff" or (buildDepError "Diff"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot")));
+          buildable = if flags.roundtrip then true else false;
           };
         "prepare-hackage" = {
           depends = (pkgs.lib).optionals (flags.roundtrip) ([
@@ -108,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."turtle" or (buildDepError "turtle"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot")));
+          buildable = if flags.roundtrip then true else false;
           };
         };
       tests = {
@@ -131,6 +139,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."ghc-exactprint" or (buildDepError "ghc-exactprint"))
               ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"));
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+            then false
+            else true;
           };
         };
       };

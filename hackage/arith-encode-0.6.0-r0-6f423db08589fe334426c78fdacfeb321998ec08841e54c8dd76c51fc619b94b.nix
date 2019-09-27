@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fgl" or (buildDepError "fgl"))
           (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
           ];
+        buildable = true;
         };
       tests = {
         "UnitTest" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fgl" or (buildDepError "fgl"))
             (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
             ];
+          buildable = true;
           };
         };
       };

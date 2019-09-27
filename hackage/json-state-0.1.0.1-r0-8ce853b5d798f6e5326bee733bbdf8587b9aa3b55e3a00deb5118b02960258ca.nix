@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."libgit" or (buildDepError "libgit"))
           (hsPkgs."time-units" or (buildDepError "time-units"))
           ];
+        buildable = true;
         };
       };
     }

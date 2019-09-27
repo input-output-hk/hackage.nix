@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."byteable" or (buildDepError "byteable"))
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           ];
+        buildable = true;
         };
       exes = {
         "sandbox" = {
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."scientific" or (buildDepError "scientific"))
             (hsPkgs."coinbase-exchange" or (buildDepError "coinbase-exchange"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -126,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."coinbase-exchange" or (buildDepError "coinbase-exchange"))
             ];
+          buildable = true;
           };
         };
       };

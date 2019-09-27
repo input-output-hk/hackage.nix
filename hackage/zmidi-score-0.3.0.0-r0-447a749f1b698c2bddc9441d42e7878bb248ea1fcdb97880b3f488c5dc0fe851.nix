@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
           (hsPkgs."parallel-io" or (buildDepError "parallel-io"))
           ];
+        buildable = true;
         };
       };
     }

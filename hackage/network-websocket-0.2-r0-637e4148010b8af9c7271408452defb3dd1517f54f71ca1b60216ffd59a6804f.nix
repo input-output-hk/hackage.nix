@@ -61,7 +61,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."webserver" or (buildDepError "webserver"))
           ];
+        buildable = true;
         };
-      exes = { "websocket-echo" = {}; };
+      exes = {
+        "websocket-echo" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        };
       };
     }

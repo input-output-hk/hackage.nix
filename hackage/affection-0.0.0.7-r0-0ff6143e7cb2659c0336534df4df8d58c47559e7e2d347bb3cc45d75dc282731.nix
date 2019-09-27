@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."uuid" or (buildDepError "uuid"))
           ];
+        buildable = true;
         };
       exes = {
         "example00" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

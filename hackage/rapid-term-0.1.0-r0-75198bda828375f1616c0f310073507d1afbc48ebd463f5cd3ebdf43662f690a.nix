@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ] ++ (pkgs.lib).optional (flags.devel) (hsPkgs."rapid" or (buildDepError "rapid"));
+        buildable = true;
         };
       };
     }

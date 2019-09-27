@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."json-stream" or (buildDepError "json-stream"))
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           ];
+        buildable = true;
         };
       };
     }

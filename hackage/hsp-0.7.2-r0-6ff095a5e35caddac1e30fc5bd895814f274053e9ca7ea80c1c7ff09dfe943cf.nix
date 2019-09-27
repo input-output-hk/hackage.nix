@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-exception" or (buildDepError "old-exception"))
             ]
           else [ (hsPkgs."ghc" or (buildDepError "ghc")) ]);
+        buildable = true;
         };
       };
     }

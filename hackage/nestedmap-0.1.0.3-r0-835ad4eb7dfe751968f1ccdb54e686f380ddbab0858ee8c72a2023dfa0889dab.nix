@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
             (hsPkgs."data-ordlist" or (buildDepError "data-ordlist"))
             ];
+          buildable = true;
           };
         };
       };

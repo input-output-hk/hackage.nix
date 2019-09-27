@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."svfactor" or (buildDepError "svfactor"))
           (hsPkgs."validation" or (buildDepError "validation"))
           ];
+        buildable = true;
         };
       };
     }

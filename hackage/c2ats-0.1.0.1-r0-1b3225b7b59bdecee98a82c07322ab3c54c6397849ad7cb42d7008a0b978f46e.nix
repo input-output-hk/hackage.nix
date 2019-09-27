@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pretty" or (buildDepError "pretty"))
           (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
           ];
+        buildable = true;
         };
       exes = {
         "c2ats" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."c2ats" or (buildDepError "c2ats"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
             (hsPkgs."c2ats" or (buildDepError "c2ats"))
             ];
+          buildable = true;
           };
         };
       };

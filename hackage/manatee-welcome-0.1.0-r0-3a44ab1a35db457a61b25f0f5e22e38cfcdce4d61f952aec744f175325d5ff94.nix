@@ -70,7 +70,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
-      exes = { "manatee-welcome" = {}; };
+      exes = { "manatee-welcome" = { buildable = true; }; };
       };
     }

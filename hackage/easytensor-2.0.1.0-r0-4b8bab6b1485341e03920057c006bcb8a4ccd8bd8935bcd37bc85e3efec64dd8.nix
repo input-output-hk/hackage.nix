@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."constraints-deriving" or (buildDepError "constraints-deriving"))
           (hsPkgs."dimensions" or (buildDepError "dimensions"))
           ];
+        buildable = true;
         };
       tests = {
         "et-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."easytensor" or (buildDepError "easytensor"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dimensions" or (buildDepError "dimensions"))
             (hsPkgs."easytensor" or (buildDepError "easytensor"))
             ];
+          buildable = true;
           };
         "et-bench-spfolds" = {
           depends = [
@@ -91,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."easytensor" or (buildDepError "easytensor"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

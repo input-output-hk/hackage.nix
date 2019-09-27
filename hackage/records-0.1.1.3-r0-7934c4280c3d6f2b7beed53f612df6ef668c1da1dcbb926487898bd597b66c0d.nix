@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."kinds" or (buildDepError "kinds"))
           (hsPkgs."type-functions" or (buildDepError "type-functions"))
           ];
+        buildable = true;
         };
       };
     }

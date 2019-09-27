@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."curry-base" or (buildDepError "curry-base"))
             ];
+          buildable = true;
           };
         "kicsi" = {
           depends = [
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."readline" or (buildDepError "readline"))
             (hsPkgs."curry-base" or (buildDepError "curry-base"))
             ];
+          buildable = true;
           };
         };
       };

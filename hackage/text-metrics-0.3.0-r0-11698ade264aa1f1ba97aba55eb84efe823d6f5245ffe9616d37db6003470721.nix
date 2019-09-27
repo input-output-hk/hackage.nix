@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."text-metrics" or (buildDepError "text-metrics"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."text-metrics" or (buildDepError "text-metrics"))
             ];
+          buildable = true;
           };
         "bench-memory" = {
           depends = [
@@ -91,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-metrics" or (buildDepError "text-metrics"))
             (hsPkgs."weigh" or (buildDepError "weigh"))
             ];
+          buildable = true;
           };
         };
       };

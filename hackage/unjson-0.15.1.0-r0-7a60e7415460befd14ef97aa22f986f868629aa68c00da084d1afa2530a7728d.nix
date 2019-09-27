@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."invariant" or (buildDepError "invariant"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."invariant" or (buildDepError "invariant"))
             ];
+          buildable = true;
           };
         };
       };

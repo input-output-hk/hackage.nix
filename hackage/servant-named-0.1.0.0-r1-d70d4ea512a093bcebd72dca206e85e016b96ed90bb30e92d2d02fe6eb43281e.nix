@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."servant" or (buildDepError "servant"))
           ];
+        buildable = true;
         };
       tests = {
         "servant-named-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-types" or (buildDepError "http-types"))
             (hsPkgs."servant-server" or (buildDepError "servant-server"))
             ];
+          buildable = true;
           };
         };
       };

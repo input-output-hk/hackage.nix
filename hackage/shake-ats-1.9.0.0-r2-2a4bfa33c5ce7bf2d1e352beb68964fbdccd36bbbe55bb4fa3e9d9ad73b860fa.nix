@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shake-cabal" or (buildDepError "shake-cabal"))
           (hsPkgs."shake-c" or (buildDepError "shake-c"))
           ];
+        buildable = true;
         };
       };
     }

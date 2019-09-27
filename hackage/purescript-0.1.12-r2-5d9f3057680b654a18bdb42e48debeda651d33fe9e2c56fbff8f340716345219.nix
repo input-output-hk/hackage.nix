@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
       exes = {
         "psc" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."syb" or (buildDepError "syb"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."purescript" or (buildDepError "purescript"))
             ];
+          buildable = true;
           };
         };
       };

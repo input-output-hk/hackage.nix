@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."libusb-1.0" or (sysDepError "libusb-1.0"));
         pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libusb-1.0" or (pkgConfDepError "libusb-1.0"));
+        buildable = true;
         };
       };
     }

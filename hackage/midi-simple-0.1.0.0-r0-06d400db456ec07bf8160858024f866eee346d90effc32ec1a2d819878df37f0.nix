@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "midi-dump" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
             (hsPkgs."pipes-attoparsec" or (buildDepError "pipes-attoparsec"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "re-encode" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
             (hsPkgs."pipes-attoparsec" or (buildDepError "pipes-attoparsec"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -96,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -106,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

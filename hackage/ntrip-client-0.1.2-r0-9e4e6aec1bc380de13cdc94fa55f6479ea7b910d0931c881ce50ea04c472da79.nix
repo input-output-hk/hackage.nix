@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "ntrip-client" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ntrip-client" or (buildDepError "ntrip-client"))
             (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
             ];
+          buildable = true;
           };
         };
       };

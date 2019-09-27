@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           ];
         libs = (pkgs.lib).optional (flags.useffi) (pkgs."m" or (sysDepError "m"));
+        buildable = true;
         };
       };
     }

@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."xml" or (buildDepError "xml"))
           ];
+        buildable = true;
         };
       exes = {
         "hgdata" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."xml" or (buildDepError "xml"))
             ];
+          buildable = true;
           };
         };
       };

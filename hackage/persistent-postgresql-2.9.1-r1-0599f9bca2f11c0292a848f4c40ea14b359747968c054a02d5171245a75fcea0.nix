@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
           (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
           ];
+        buildable = true;
         };
       };
     }

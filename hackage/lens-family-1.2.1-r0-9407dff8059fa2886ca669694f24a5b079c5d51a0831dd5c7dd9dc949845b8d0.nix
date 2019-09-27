@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
           ];
+        buildable = true;
         };
       };
     }

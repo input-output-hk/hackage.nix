@@ -61,7 +61,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec3" or (buildDepError "parsec3"))
           (hsPkgs."pretty" or (buildDepError "pretty"))
           ];
+        buildable = true;
         };
-      exes = { "ppdot" = {}; };
+      exes = {
+        "ppdot" = { buildable = if flags.executable then true else false; };
+        };
       };
     }

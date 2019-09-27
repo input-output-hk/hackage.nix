@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ipprint" or (buildDepError "ipprint"))
           (hsPkgs."posix-escape" or (buildDepError "posix-escape"))
           ];
+        buildable = true;
         };
       tests = {
         "funnyprint-test-suite" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."funnyprint" or (buildDepError "funnyprint"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
           (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (buildDepError "base"));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
             (hsPkgs."erf" or (buildDepError "erf"))
             ];
+          buildable = true;
           };
         };
       };

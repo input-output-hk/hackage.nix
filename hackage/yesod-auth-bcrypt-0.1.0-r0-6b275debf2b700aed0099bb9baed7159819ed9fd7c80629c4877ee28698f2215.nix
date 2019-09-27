@@ -93,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
           (hsPkgs."bcrypt" or (buildDepError "bcrypt"))
           ];
+        buildable = true;
         };
       };
     }

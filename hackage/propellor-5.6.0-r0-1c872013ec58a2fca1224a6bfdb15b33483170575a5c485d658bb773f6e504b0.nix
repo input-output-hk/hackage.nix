@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."hashable" or (buildDepError "hashable"))
           ];
+        buildable = true;
         };
       exes = {
         "propellor-config" = {
@@ -86,12 +87,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."propellor" or (buildDepError "propellor"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "propellor" = {
           depends = [
             (hsPkgs."propellor" or (buildDepError "propellor"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

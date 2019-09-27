@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."snappy" or (sysDepError "snappy"))
           (pkgs."stdc++" or (sysDepError "stdc++"))
           ];
+        buildable = true;
         };
       };
     }

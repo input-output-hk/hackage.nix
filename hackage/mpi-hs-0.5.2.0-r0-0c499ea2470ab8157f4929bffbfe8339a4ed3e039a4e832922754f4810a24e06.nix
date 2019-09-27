@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
           libs = ((((pkgs.lib).optional (flags.openmpi-debian) (pkgs."mpi" or (sysDepError "mpi")) ++ (pkgs.lib).optional (flags.openmpi-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.openmpi-ubuntu) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-ubuntu) (pkgs."mpich" or (sysDepError "mpich"));
+          buildable = true;
           };
         };
       tests = {
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
           libs = ((((pkgs.lib).optional (flags.openmpi-debian) (pkgs."mpi" or (sysDepError "mpi")) ++ (pkgs.lib).optional (flags.openmpi-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.openmpi-ubuntu) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-ubuntu) (pkgs."mpich" or (sysDepError "mpich"));
+          buildable = true;
           };
         "mpi-test-binary" = {
           depends = [
@@ -99,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
           libs = ((((pkgs.lib).optional (flags.openmpi-debian) (pkgs."mpi" or (sysDepError "mpi")) ++ (pkgs.lib).optional (flags.openmpi-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.openmpi-ubuntu) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-ubuntu) (pkgs."mpich" or (sysDepError "mpich"));
+          buildable = true;
           };
         "mpi-test-serialize" = {
           depends = [
@@ -106,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
           libs = ((((pkgs.lib).optional (flags.openmpi-debian) (pkgs."mpi" or (sysDepError "mpi")) ++ (pkgs.lib).optional (flags.openmpi-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.openmpi-ubuntu) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-ubuntu) (pkgs."mpich" or (sysDepError "mpich"));
+          buildable = true;
           };
         "mpi-test-storable" = {
           depends = [
@@ -113,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
           libs = ((((pkgs.lib).optional (flags.openmpi-debian) (pkgs."mpi" or (sysDepError "mpi")) ++ (pkgs.lib).optional (flags.openmpi-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.openmpi-ubuntu) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-ubuntu) (pkgs."mpich" or (sysDepError "mpich"));
+          buildable = true;
           };
         "mpi-test-store" = {
           depends = [
@@ -120,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
           libs = ((((pkgs.lib).optional (flags.openmpi-debian) (pkgs."mpi" or (sysDepError "mpi")) ++ (pkgs.lib).optional (flags.openmpi-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.openmpi-ubuntu) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-ubuntu) (pkgs."mpich" or (sysDepError "mpich"));
+          buildable = true;
           };
         };
       benchmarks = {
@@ -130,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
           libs = ((((pkgs.lib).optional (flags.openmpi-debian) (pkgs."mpi" or (sysDepError "mpi")) ++ (pkgs.lib).optional (flags.openmpi-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.openmpi-ubuntu) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-macports) (pkgs."mpi" or (sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-ubuntu) (pkgs."mpich" or (sysDepError "mpich"));
+          buildable = true;
           };
         };
       };

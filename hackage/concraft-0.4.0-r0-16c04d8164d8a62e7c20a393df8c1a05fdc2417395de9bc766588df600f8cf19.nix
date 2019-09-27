@@ -74,10 +74,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."comonad-transformers" or (buildDepError "comonad-transformers"))
           (hsPkgs."temporary" or (buildDepError "temporary"))
           ];
+        buildable = true;
         };
       exes = {
         "concraft" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

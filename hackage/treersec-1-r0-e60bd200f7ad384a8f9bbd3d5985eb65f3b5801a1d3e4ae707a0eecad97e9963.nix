@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haste-compiler" or (buildDepError "haste-compiler"))
             (hsPkgs."sneathlane-haste" or (buildDepError "sneathlane-haste"))
             ];
+        buildable = true;
         };
       };
     }

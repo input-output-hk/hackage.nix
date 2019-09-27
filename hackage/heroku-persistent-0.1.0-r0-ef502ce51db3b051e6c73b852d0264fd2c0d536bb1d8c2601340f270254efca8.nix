@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."heroku-persistent" or (buildDepError "heroku-persistent"))
             (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
             ];
+          buildable = true;
           };
         };
       };

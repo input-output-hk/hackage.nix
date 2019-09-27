@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes" or (buildDepError "pipes"))
           (hsPkgs."pipes-concurrency" or (buildDepError "pipes-concurrency"))
           ];
+        buildable = true;
         };
       };
     }

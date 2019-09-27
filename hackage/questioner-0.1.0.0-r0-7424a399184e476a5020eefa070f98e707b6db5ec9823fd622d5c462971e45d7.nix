@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."terminal-size" or (buildDepError "terminal-size"))
           (hsPkgs."readline" or (buildDepError "readline"))
           ];
+        buildable = true;
         };
       exes = {
         "questioner-list-prompt" = {
@@ -68,24 +69,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."questioner" or (buildDepError "questioner"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "questioner-checkbox-prompt" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."questioner" or (buildDepError "questioner"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "questioner-spinner" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."questioner" or (buildDepError "questioner"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "questioner-progressbar" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."questioner" or (buildDepError "questioner"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

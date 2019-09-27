@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary-search" or (buildDepError "binary-search"))
           (hsPkgs."complex-generic" or (buildDepError "complex-generic"))
           ];
+        buildable = true;
         };
       };
     }

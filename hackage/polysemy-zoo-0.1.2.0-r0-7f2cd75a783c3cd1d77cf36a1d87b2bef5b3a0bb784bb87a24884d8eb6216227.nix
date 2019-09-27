@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random-source" or (buildDepError "random-source"))
           (hsPkgs."reflection" or (buildDepError "reflection"))
           ];
+        buildable = true;
         };
       tests = {
         "polysemy-zoo-test" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reflection" or (buildDepError "reflection"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

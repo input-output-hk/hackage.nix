@@ -151,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32"));
         pkgconfig = (pkgs.lib).optional (flags.gtk-318) (pkgconfPkgs."gtk+-3.0" or (pkgConfDepError "gtk+-3.0")) ++ (pkgs.lib).optional (flags.gtk-320) (pkgconfPkgs."gtk+-3.0" or (pkgConfDepError "gtk+-3.0"));
+        buildable = true;
         };
       exes = {
         "leksah" = {
@@ -164,6 +165,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."setlocale" or (buildDepError "setlocale"))
             ]) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."leksah-server" or (buildDepError "leksah-server"));
           libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32"));
+          buildable = true;
           };
         };
       };

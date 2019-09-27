@@ -54,7 +54,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Custom";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."time" or (buildDepError "time")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."time" or (buildDepError "time")) ];
+        buildable = true;
+        };
       exes = {
         "dedukti" = {
           depends = [
@@ -73,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hmk" or (buildDepError "hmk"))
             (hsPkgs."stringtable-atom" or (buildDepError "stringtable-atom"))
             ];
+          buildable = true;
           };
         "dedukti-tests" = {
           depends = (pkgs.lib).optionals (!(!flags.test)) [
@@ -81,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = if !flags.test then false else true;
           };
         };
       };

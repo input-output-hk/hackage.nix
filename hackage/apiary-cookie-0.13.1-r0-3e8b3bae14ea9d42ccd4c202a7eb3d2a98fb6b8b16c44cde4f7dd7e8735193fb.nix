@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           ];
+        buildable = true;
         };
       };
     }

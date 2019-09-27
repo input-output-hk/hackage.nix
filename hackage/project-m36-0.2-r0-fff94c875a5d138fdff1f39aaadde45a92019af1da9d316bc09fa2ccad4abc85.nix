@@ -114,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."unix" or (buildDepError "unix"))
             ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"));
+        buildable = true;
         };
       exes = {
         "tutd" = {
@@ -158,6 +159,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
             (hsPkgs."list-t" or (buildDepError "list-t"))
             ];
+          buildable = true;
           };
         "project-m36-server" = {
           depends = [
@@ -192,6 +194,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."list-t" or (buildDepError "list-t"))
             (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
             ];
+          buildable = true;
           };
         "bigrel" = {
           depends = [
@@ -235,6 +238,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         "Example-SimpleClient" = {
           depends = [
@@ -276,6 +280,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
+          buildable = true;
           };
         "Example-OutOfTheTarpit" = {
           depends = [
@@ -321,6 +326,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
             (hsPkgs."project-m36" or (buildDepError "project-m36"))
             ];
+          buildable = true;
           };
         "Example-Blog" = {
           depends = [
@@ -366,6 +372,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
             (hsPkgs."project-m36" or (buildDepError "project-m36"))
             ];
+          buildable = true;
           };
         "Example-Hair" = {
           depends = [
@@ -411,6 +418,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
             (hsPkgs."project-m36" or (buildDepError "project-m36"))
             ];
+          buildable = true;
           };
         "project-m36-websocket-server" = {
           depends = [
@@ -441,6 +449,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -482,6 +491,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         "test-tutoriald-atomfunctionscript" = {
           depends = [
@@ -502,6 +512,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         "test-tutoriald-databasecontextfunctionscript" = {
           depends = [
@@ -522,6 +533,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         "test-relation" = {
           depends = [
@@ -558,6 +570,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."project-m36" or (buildDepError "project-m36"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "test-static-optimizer" = {
           depends = [
@@ -594,6 +607,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."project-m36" or (buildDepError "project-m36"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "test-transactiongraph-persist" = {
           depends = [
@@ -632,6 +646,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         "test-relation-import-csv" = {
           depends = [
@@ -667,6 +682,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
             (hsPkgs."project-m36" or (buildDepError "project-m36"))
             ];
+          buildable = true;
           };
         "test-tutoriald-import-tutoriald" = {
           depends = [
@@ -705,6 +721,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         "test-relation-export-csv" = {
           depends = [
@@ -740,6 +757,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
             (hsPkgs."project-m36" or (buildDepError "project-m36"))
             ];
+          buildable = true;
           };
         "test-transactiongraph-merge" = {
           depends = [
@@ -783,6 +801,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."list-t" or (buildDepError "list-t"))
             (hsPkgs."project-m36" or (buildDepError "project-m36"))
             ];
+          buildable = true;
           };
         "test-server" = {
           depends = [
@@ -823,6 +842,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport" or (buildDepError "network-transport"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         "test-scripts" = {
           depends = [
@@ -864,6 +884,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         "test-websocket-server" = {
           depends = [
@@ -909,6 +930,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         "test-isomorphic-schemas" = {
           depends = [
@@ -950,6 +972,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."project-m36" or (buildDepError "project-m36"))
             ];
+          buildable = true;
           };
         "test-atomable" = {
           depends = [
@@ -994,6 +1017,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         "test-multiprocess-access" = {
           depends = [
@@ -1037,6 +1061,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
+          buildable = true;
           };
         "test-transactiongraph-automerge" = {
           depends = [
@@ -1081,6 +1106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         "test-tupleable" = {
           depends = [
@@ -1125,6 +1151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         "test-client-simple" = {
           depends = [
@@ -1169,6 +1196,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -1207,6 +1235,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
             (hsPkgs."project-m36" or (buildDepError "project-m36"))
             ];
+          buildable = true;
           };
         };
       };

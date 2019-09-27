@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."appindicator3-0.1" or (pkgConfDepError "appindicator3-0.1"))
           ];
+        buildable = true;
         };
       exes = {
         "demo" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gtk3" or (buildDepError "gtk3"))
             (hsPkgs."happindicator3" or (buildDepError "happindicator3"))
             ];
+          buildable = if flags.demo then true else false;
           };
         };
       };

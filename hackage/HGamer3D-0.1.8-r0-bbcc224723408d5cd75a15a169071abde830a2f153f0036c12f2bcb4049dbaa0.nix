@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-SFML-Binding" or (buildDepError "HGamer3D-SFML-Binding"))
           ];
         libs = [ (pkgs."stdc++.dll" or (sysDepError "stdc++.dll")) ];
+        buildable = true;
         };
       };
     }

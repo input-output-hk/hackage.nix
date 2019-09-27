@@ -107,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
             ])) ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"));
+        buildable = true;
         };
       tests = {
         "semantics" = {
@@ -123,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "CrossImpl" = {
           depends = [
@@ -136,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
             (hsPkgs."reflex" or (buildDepError "reflex"))
             ];
+          buildable = true;
           };
         "hlint" = {
           depends = [
@@ -145,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filemanip" or (buildDepError "filemanip"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = if compiler.isGhcjs && true then false else true;
           };
         "EventWriterT" = {
           depends = [
@@ -160,6 +164,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reflex" or (buildDepError "reflex"))
             (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
             ] ++ (pkgs.lib).optional (flags.split-these) (hsPkgs."these-lens" or (buildDepError "these-lens"));
+          buildable = true;
           };
         "RequesterT" = {
           depends = [
@@ -175,6 +180,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reflex" or (buildDepError "reflex"))
             (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
             ] ++ (pkgs.lib).optional (flags.split-these) (hsPkgs."these-lens" or (buildDepError "these-lens"));
+          buildable = true;
           };
         "QueryT" = {
           depends = [
@@ -194,6 +200,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semialign" or (buildDepError "semialign"))
             (hsPkgs."these-lens" or (buildDepError "these-lens"))
             ];
+          buildable = true;
           };
         "GC-Semantics" = {
           depends = [
@@ -208,6 +215,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reflex" or (buildDepError "reflex"))
             (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
             ] ++ (pkgs.lib).optional (flags.split-these) (hsPkgs."semialign" or (buildDepError "semialign"));
+          buildable = true;
           };
         "rootCleanup" = {
           depends = [
@@ -220,6 +228,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
             (hsPkgs."these" or (buildDepError "these"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -239,6 +248,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "saulzar-bench" = {
           depends = [
@@ -259,6 +269,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

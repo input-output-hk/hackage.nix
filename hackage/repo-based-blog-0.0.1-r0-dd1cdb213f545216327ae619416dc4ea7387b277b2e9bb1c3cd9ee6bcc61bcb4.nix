@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
           ];
+        buildable = true;
         };
       exes = {
         "rbb" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."repo-based-blog" or (buildDepError "repo-based-blog"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -111,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             ];
+          buildable = true;
           };
         };
       };

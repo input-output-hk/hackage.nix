@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes-parse" or (buildDepError "pipes-parse"))
           (hsPkgs."pipes-text" or (buildDepError "pipes-text"))
           ];
+        buildable = true;
         };
       exes = {
         "pipes-protolude-exe" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pipes-protolude" or (buildDepError "pipes-protolude"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pipes-protolude" or (buildDepError "pipes-protolude"))
             ];
+          buildable = true;
           };
         };
       };

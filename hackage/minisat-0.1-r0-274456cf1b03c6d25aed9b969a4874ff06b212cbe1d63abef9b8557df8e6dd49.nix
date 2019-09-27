@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = [
           (pkgs."stdc++" or (sysDepError "stdc++"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (pkgs."z" or (sysDepError "z"));
+        buildable = true;
         };
       };
     }

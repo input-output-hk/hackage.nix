@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."either" or (buildDepError "either"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "riff-structure" = {
@@ -69,12 +70,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."riff" or (buildDepError "riff"))
             ];
+          buildable = true;
           };
         "riff-identity" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."riff" or (buildDepError "riff"))
             ];
+          buildable = true;
           };
         "riff-convert" = {
           depends = [
@@ -82,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."riff" or (buildDepError "riff"))
             ];
+          buildable = true;
           };
         };
       };

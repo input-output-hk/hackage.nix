@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
           ];
+        buildable = true;
         };
       };
     }

@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."convertible" or (buildDepError "convertible"))
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           ];
+        buildable = true;
         };
       exes = {
         "haggis" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."haggis" or (buildDepError "haggis"))
             ];
+          buildable = true;
           };
         };
       };

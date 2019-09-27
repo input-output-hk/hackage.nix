@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
       tests = {
         "Test" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
             (hsPkgs."web-routes" or (buildDepError "web-routes"))
             ];
+          buildable = true;
           };
         };
       };

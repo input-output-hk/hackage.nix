@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           then [ (pkgs."alut" or (sysDepError "alut")) ]
           else (pkgs.lib).optional (!system.isIos) (pkgs."alut" or (sysDepError "alut"));
         frameworks = (pkgs.lib).optionals (!(system.isWindows && flags.usenativewindowslibraries)) ((pkgs.lib).optional (system.isIos) (pkgs."ALUT" or (sysDepError "ALUT")));
+        buildable = true;
         };
       exes = {
         "Basic-HelloWorld" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ALUT" or (buildDepError "ALUT"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         "Basic-OpenALInfo" = {
           depends = [
@@ -79,42 +81,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."ALUT" or (buildDepError "ALUT"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         "Basic-PlayFile" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ALUT" or (buildDepError "ALUT"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         "TestSuite-TestErrorStuff" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ALUT" or (buildDepError "ALUT"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         "TestSuite-TestFileLoader" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ALUT" or (buildDepError "ALUT"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         "TestSuite-TestMemoryLoader" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ALUT" or (buildDepError "ALUT"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         "TestSuite-TestVersion" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ALUT" or (buildDepError "ALUT"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         "TestSuite-TestWaveforms" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ALUT" or (buildDepError "ALUT"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         };
       };

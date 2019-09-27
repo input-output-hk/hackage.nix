@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network-uri" or (buildDepError "network-uri"))
           (hsPkgs."network" or (buildDepError "network"))
           ];
+        buildable = true;
         };
       exes = {
         "rdf4h" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -125,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = true;
           };
         };
       };

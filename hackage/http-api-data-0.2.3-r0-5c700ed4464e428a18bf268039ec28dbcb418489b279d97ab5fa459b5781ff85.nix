@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
           ] ++ (pkgs.lib).optional (flags.use-text-show) (hsPkgs."text-show" or (buildDepError "text-show"));
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         "doctest" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."Glob" or (buildDepError "Glob"))
             ];
+          buildable = true;
           };
         };
       };

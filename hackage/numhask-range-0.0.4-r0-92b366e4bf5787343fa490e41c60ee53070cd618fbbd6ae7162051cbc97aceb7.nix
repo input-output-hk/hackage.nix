@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."linear" or (buildDepError "linear"))
           (hsPkgs."formatting" or (buildDepError "formatting"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."numhask" or (buildDepError "numhask"))
             ];
+          buildable = true;
           };
         };
       };

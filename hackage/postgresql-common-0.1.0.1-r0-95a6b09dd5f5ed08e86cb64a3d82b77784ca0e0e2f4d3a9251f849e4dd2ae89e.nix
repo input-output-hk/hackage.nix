@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
           ];
+        buildable = true;
         };
       tests = {
         "postgresql-common-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."postgresql-common" or (buildDepError "postgresql-common"))
             (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
             ];
+          buildable = true;
           };
         };
       };

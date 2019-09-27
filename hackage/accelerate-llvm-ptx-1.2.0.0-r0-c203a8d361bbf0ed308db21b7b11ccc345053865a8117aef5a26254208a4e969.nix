@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       tests = {
         "nofib-llvm-ptx" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."accelerate" or (buildDepError "accelerate"))
             (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))
             ];
+          buildable = true;
           };
         };
       };

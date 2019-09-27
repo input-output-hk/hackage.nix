@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
           (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
           ];
+        buildable = true;
         };
       exes = {
         "keter" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."keter" or (buildDepError "keter"))
             ];
+          buildable = true;
           };
         };
       };

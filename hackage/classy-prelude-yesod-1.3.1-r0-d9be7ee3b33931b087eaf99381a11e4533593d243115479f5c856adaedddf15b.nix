@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-newsfeed" or (buildDepError "yesod-newsfeed"))
           (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
           ];
+        buildable = true;
         };
       };
     }

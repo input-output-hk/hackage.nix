@@ -61,7 +61,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           ];
+        buildable = true;
         };
-      exes = { "halex" = {}; };
+      exes = { "halex" = { buildable = true; }; };
       };
     }

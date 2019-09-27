@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."comonads-fd" or (buildDepError "comonads-fd"))
           (hsPkgs."free" or (buildDepError "free"))
           ];
+        buildable = true;
         };
       };
     }

@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes" or (buildDepError "pipes"))
           (hsPkgs."pipes-concurrency" or (buildDepError "pipes-concurrency"))
           ];
+        buildable = true;
         };
       exes = {
         "agentx_example" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes" or (buildDepError "pipes"))
             (hsPkgs."pipes-concurrency" or (buildDepError "pipes-concurrency"))
             ];
+          buildable = if !flags.example then false else true;
           };
         };
       };

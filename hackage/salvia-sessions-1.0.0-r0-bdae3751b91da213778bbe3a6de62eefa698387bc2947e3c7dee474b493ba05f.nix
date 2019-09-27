@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."salvia-protocol" or (buildDepError "salvia-protocol"))
           (hsPkgs."monads-fd" or (buildDepError "monads-fd"))
           ];
+        buildable = true;
         };
       };
     }

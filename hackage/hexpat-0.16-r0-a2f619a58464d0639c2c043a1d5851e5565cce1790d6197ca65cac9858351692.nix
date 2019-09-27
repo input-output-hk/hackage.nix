@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."List" or (buildDepError "List"))
           ];
         libs = [ (pkgs."expat" or (sysDepError "expat")) ];
+        buildable = true;
         };
       };
     }

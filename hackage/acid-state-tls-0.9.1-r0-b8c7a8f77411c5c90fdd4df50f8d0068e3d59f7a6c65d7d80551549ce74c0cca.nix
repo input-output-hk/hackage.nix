@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."safecopy" or (buildDepError "safecopy"))
           ];
+        buildable = true;
         };
       };
     }

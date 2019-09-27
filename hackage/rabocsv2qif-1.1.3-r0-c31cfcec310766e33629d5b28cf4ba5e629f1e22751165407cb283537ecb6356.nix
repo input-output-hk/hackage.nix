@@ -61,10 +61,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           ];
+        buildable = true;
         };
       exes = {
         "rabocsv2qif" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

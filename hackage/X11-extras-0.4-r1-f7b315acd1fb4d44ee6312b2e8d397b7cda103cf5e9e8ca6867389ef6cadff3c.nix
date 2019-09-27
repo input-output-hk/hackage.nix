@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."X11" or (buildDepError "X11"))
           ];
         libs = [ (pkgs."X11" or (sysDepError "X11")) ];
+        buildable = true;
         };
       };
     }

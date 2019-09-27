@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."writer-cps-transformers" or (buildDepError "writer-cps-transformers"))
           ];
+        buildable = true;
         };
       };
     }

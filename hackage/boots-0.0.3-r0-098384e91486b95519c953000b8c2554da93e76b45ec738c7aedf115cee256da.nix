@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
             ];
+          buildable = true;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           ];
+        buildable = true;
         };
       tests = {
         "hunit" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."radian" or (buildDepError "radian"))
             ];
+          buildable = true;
           };
         };
       };

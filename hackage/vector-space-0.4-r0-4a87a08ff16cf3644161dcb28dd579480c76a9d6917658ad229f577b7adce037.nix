@@ -59,6 +59,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."MemoTrie" or (buildDepError "MemoTrie"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "6.9"
+          then false
+          else true;
         };
       };
     }

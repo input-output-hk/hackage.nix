@@ -56,6 +56,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (pkgs.lib).optional (!system.isWindows) (hsPkgs."only-buildable-on-windows" or (buildDepError "only-buildable-on-windows"));
+        buildable = if system.isWindows then true else false;
         };
       };
     }

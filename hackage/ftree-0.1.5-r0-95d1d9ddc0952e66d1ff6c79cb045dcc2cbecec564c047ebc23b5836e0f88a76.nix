@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ShowF" or (buildDepError "ShowF"))
           (hsPkgs."type-unary" or (buildDepError "type-unary"))
           ];
+        buildable = true;
         };
       };
     }

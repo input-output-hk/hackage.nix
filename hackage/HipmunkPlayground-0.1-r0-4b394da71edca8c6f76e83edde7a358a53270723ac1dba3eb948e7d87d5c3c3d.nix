@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (buildDepError "GLFW"))
             ] ++ (pkgs.lib).optional (flags.small_base) (hsPkgs."containers" or (buildDepError "containers"));
+          buildable = true;
           };
         };
       };

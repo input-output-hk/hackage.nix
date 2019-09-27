@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wreq" or (buildDepError "wreq"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       };
     }

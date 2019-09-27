@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
           ];
+        buildable = true;
         };
       };
     }

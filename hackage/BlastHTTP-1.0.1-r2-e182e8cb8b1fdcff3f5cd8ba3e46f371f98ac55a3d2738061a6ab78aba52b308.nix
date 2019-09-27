@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blastxml" or (buildDepError "blastxml"))
           (hsPkgs."biocore" or (buildDepError "biocore"))
           ];
+        buildable = true;
         };
       };
     }

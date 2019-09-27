@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
           ];
+        buildable = true;
         };
       exes = {
         "crud" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "crud2" = {
           depends = [
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "parser" = {
           depends = [
@@ -115,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "person" = {
           depends = [
@@ -128,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             ] ++ (pkgs.lib).optional (flags.buildexamples) (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"));
+          buildable = if flags.buildexamples then true else false;
           };
         "person2" = {
           depends = [
@@ -141,6 +146,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             ] ++ (pkgs.lib).optional (flags.buildexamples) (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"));
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

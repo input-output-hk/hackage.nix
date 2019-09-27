@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bio" or (buildDepError "bio"))
             (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
             ];
+          buildable = true;
           };
         };
       };

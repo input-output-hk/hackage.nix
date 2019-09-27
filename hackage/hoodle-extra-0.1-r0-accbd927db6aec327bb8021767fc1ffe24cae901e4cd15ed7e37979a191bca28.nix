@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "idfilepathdb" = {
           depends = [
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hoodle-parser" or (buildDepError "hoodle-parser"))
             (hsPkgs."xournal-parser" or (buildDepError "xournal-parser"))
             ];
+          buildable = true;
           };
         };
       };

@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tar" or (buildDepError "tar"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
+          buildable = true;
           };
         "hayooSearch" = {
           depends = [
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ [
             (hsPkgs."hack-handler-simpleserver" or (buildDepError "hack-handler-simpleserver"))
             ];
+          buildable = true;
           };
         "hayooSnap" = {
           depends = [
@@ -113,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."xhtml-combinators" or (buildDepError "xhtml-combinators"))
             ];
+          buildable = true;
           };
         };
       };

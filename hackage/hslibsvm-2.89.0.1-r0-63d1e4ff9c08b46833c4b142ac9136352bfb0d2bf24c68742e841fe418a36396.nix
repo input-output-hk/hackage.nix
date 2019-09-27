@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."stdc++" or (sysDepError "stdc++"))
           (pkgs."svm" or (sysDepError "svm"))
           ];
+        buildable = true;
         };
       };
     }

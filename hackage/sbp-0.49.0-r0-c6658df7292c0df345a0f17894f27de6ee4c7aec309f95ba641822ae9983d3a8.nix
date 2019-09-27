@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
           (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
           ];
+        buildable = true;
         };
       };
     }

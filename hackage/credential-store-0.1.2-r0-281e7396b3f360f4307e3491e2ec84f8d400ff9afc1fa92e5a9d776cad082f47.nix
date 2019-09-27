@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
           else [ (hsPkgs."dbus" or (buildDepError "dbus")) ]);
+        buildable = true;
         };
       exes = {
         "credential-store-exe" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."credential-store" or (buildDepError "credential-store"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         };
       };

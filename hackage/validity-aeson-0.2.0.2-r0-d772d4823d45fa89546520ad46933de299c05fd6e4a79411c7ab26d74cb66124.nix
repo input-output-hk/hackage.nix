@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."validity-unordered-containers" or (buildDepError "validity-unordered-containers"))
           (hsPkgs."validity-vector" or (buildDepError "validity-vector"))
           ];
+        buildable = true;
         };
       };
     }

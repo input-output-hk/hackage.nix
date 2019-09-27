@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
           ];
+        buildable = true;
         };
       exes = {
         "on-demand-ssh-tunnel" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
             (hsPkgs."on-demand-ssh-tunnel" or (buildDepError "on-demand-ssh-tunnel"))
             ];
+          buildable = true;
           };
         };
       };

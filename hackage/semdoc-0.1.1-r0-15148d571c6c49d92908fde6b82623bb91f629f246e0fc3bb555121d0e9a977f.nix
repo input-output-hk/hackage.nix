@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
           (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
           ];
+        buildable = true;
         };
       exes = {
         "semdoc" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."semdoc" or (buildDepError "semdoc"))
             ];
+          buildable = true;
           };
         };
       };

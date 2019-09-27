@@ -76,10 +76,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [ (hsPkgs."base" or (buildDepError "base")) ])) ++ [
           (hsPkgs."syb-with-class" or (buildDepError "syb-with-class"))
           ]) ++ (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+        buildable = true;
         };
       exes = {
         "happstack-data-tests" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if flags.tests then true else false;
           };
         };
       };

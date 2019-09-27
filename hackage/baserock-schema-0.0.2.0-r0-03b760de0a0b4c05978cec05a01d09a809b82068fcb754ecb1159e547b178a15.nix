@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yaml" or (buildDepError "yaml"))
           (hsPkgs."yaml-pretty-extras" or (buildDepError "yaml-pretty-extras"))
           ];
+        buildable = true;
         };
       exes = {
         "baserock" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yaml" or (buildDepError "yaml"))
             (hsPkgs."yaml-pretty-extras" or (buildDepError "yaml-pretty-extras"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yaml" or (buildDepError "yaml"))
             (hsPkgs."yaml-pretty-extras" or (buildDepError "yaml-pretty-extras"))
             ];
+          buildable = true;
           };
         };
       };

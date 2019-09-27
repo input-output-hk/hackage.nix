@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."explicit-iomodes" or (buildDepError "explicit-iomodes"))
           ];
+        buildable = true;
         };
       };
     }

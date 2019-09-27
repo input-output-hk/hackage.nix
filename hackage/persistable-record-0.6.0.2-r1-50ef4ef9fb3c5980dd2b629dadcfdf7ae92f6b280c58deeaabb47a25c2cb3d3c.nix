@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dlist" or (buildDepError "dlist"))
           (hsPkgs."names-th" or (buildDepError "names-th"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+        buildable = true;
         };
       tests = {
         "nested" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickcheck-simple" or (buildDepError "quickcheck-simple"))
             (hsPkgs."persistable-record" or (buildDepError "persistable-record"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         };
       };

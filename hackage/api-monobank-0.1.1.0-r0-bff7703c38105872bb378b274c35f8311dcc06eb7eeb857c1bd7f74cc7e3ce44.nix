@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-client" or (buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
           ];
+        buildable = true;
         };
       exes = {
         "mnb-app" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."api-monobank" or (buildDepError "api-monobank"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."hs-coindesk-api" or (buildDepError "hs-coindesk-api"))
             ];
+          buildable = true;
           };
         };
       };

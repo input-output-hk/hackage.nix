@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."murmur-hash" or (buildDepError "murmur-hash"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = (pkgs.lib).optional (system.isLinux) (pkgs."uuid" or (sysDepError "uuid")) ++ (pkgs.lib).optional (system.isWindows) (pkgs."rpcrt4" or (sysDepError "rpcrt4"));
+        buildable = true;
         };
       exes = {
         "hooty" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."murmur-hash" or (buildDepError "murmur-hash"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
           libs = (pkgs.lib).optional (system.isLinux) (pkgs."uuid" or (sysDepError "uuid")) ++ (pkgs.lib).optional (system.isWindows) (pkgs."rpcrt4" or (sysDepError "rpcrt4"));
+          buildable = if flags.cli then true else false;
           };
         };
       };

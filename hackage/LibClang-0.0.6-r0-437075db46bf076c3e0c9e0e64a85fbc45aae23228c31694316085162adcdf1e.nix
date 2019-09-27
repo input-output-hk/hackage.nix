@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.greencard or (pkgs.buildPackages.greencard or (buildToolDepError "greencard")))
           ];
+        buildable = true;
         };
       };
     }

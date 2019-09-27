@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           then [ (pkgs."OpenAL32" or (sysDepError "OpenAL32")) ]
           else (pkgs.lib).optional (!(system.isOsx || system.isIos)) (pkgs."openal" or (sysDepError "openal"));
         frameworks = (pkgs.lib).optionals (!(system.isWindows && flags.usenativewindowslibraries)) ((pkgs.lib).optional (system.isOsx || system.isIos) (pkgs."OpenAL" or (sysDepError "OpenAL")));
+        buildable = true;
         };
       exes = {
         "TestDevice" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."OpenAL" or (buildDepError "OpenAL"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         };
       };

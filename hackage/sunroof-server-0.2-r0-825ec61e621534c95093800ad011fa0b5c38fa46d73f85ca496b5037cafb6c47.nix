@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."sunroof-compiler" or (buildDepError "sunroof-compiler"))
           ];
+        buildable = true;
         };
       };
     }

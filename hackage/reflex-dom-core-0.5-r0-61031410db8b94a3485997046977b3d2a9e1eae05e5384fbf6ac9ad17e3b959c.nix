@@ -105,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ]
           else [ (hsPkgs."dependent-sum" or (buildDepError "dependent-sum")) ]);
+        buildable = true;
         };
       tests = {
         "hlint" = {
@@ -112,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         "hydration" = {
           depends = [
@@ -152,6 +154,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."webdriver" or (buildDepError "webdriver"))
             (hsPkgs."websockets" or (buildDepError "websockets"))
             ];
+          buildable = if !system.isLinux || !system.isX86_64 || flags.profile-reflex
+            then false
+            else true;
           };
         "gc" = {
           depends = [
@@ -164,6 +169,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reflex-dom-core" or (buildDepError "reflex-dom-core"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !system.isLinux || !system.isX86_64
+            then false
+            else true;
           };
         };
       };

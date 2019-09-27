@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Chart" or (buildDepError "Chart"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

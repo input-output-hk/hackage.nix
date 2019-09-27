@@ -93,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             ]
           else [ (hsPkgs."transformers" or (buildDepError "transformers")) ]);
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -134,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -174,6 +176,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."transformers" or (buildDepError "transformers"))
               ])) ++ (pkgs.lib).optional (!flags.developer) (hsPkgs."text-show" or (buildDepError "text-show"));
+          buildable = if compiler.isGhc && (compiler.version).lt "7.4"
+            then false
+            else true;
           };
         };
       };

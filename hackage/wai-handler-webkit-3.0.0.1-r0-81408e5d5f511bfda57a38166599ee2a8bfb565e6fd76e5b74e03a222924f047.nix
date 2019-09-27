@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."QtWebKit4" or (sysDepError "QtWebKit4"))
           ];
         pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."QtWebKit" or (pkgConfDepError "QtWebKit"));
+        buildable = true;
         };
       };
     }

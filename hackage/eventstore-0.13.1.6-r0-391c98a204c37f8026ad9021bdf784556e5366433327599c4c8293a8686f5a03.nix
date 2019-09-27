@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."connection" or (buildDepError "connection"))
           (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
           ];
+        buildable = true;
         };
       tests = {
         "integration-tests" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."connection" or (buildDepError "connection"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         };
       };

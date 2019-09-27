@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
           (hsPkgs."word8" or (buildDepError "word8"))
           ];
+        buildable = true;
         };
       tests = {
         "seq-test" = {
@@ -109,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
             (hsPkgs."word8" or (buildDepError "word8"))
             ];
+          buildable = true;
           };
         };
       };

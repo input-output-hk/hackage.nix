@@ -99,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."ipython-kernel" or (buildDepError "ipython-kernel"))
           ];
+        buildable = true;
         };
       exes = {
         "IHaskell" = {
@@ -119,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ipython-kernel" or (buildDepError "ipython-kernel"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -168,6 +170,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."setenv" or (buildDepError "setenv"))
             (hsPkgs."ipython-kernel" or (buildDepError "ipython-kernel"))
             ];
+          buildable = true;
           };
         };
       };

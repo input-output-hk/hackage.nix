@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
             ]);
+        buildable = true;
         };
       };
     }

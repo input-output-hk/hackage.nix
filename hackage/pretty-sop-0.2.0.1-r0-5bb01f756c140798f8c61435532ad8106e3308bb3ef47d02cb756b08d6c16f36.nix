@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
           (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
           ];
+        buildable = true;
         };
       };
     }

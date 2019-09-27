@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."svgcairo" or (buildDepError "svgcairo"))
           (hsPkgs."value-supply" or (buildDepError "value-supply"))
           ];
+        buildable = true;
         };
       exes = {
         "visual-graphrewrite" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."svgcairo" or (buildDepError "svgcairo"))
             (hsPkgs."value-supply" or (buildDepError "value-supply"))
             ];
+          buildable = true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
             ]
           else [ (hsPkgs."pretty" or (buildDepError "pretty")) ]);
+        buildable = true;
         };
       tests = {
         "polynomial-test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."vector-space" or (buildDepError "vector-space"))
             ];
+          buildable = true;
           };
         };
       };

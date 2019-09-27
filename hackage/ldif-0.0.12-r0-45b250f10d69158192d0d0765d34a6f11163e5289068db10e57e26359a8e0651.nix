@@ -65,13 +65,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rosezipper" or (buildDepError "rosezipper"))
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ];
+        buildable = true;
         };
       exes = {
-        "ldifdiff" = {};
-        "ldif2html" = {};
-        "ldifmodify" = {};
-        "ldifundo" = {};
-        "ldifparse" = {};
+        "ldifdiff" = {
+          buildable = (if flags.cmd then true else false) && (if flags.test
+            then false
+            else true);
+          };
+        "ldif2html" = {
+          buildable = (if flags.cmd then true else false) && (if flags.test
+            then false
+            else true);
+          };
+        "ldifmodify" = {
+          buildable = (if flags.cmd then true else false) && (if flags.test
+            then false
+            else true);
+          };
+        "ldifundo" = {
+          buildable = (if flags.cmd then true else false) && (if flags.test
+            then false
+            else true);
+          };
+        "ldifparse" = { buildable = if !flags.test then false else true; };
         };
       tests = {
         "ldif-test" = {
@@ -79,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."adp-multi" or (buildDepError "adp-multi"))
           (hsPkgs."monadiccp" or (buildDepError "monadiccp"))
           ];
+        buildable = true;
         };
       exes = {
         "adp-multi-monadiccp-benchmarks" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = if !flags.buildbenchmark then false else true;
           };
         };
       tests = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

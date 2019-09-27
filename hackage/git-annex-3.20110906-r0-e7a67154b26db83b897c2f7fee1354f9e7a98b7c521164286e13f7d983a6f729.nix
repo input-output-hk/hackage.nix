@@ -81,9 +81,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-control" or (buildDepError "monad-control"))
             (hsPkgs."json" or (buildDepError "json"))
             ];
+          buildable = true;
           };
-        "git-annex-shell" = {};
-        "git-union-merge" = {};
+        "git-annex-shell" = { buildable = true; };
+        "git-union-merge" = { buildable = true; };
         };
       };
     }

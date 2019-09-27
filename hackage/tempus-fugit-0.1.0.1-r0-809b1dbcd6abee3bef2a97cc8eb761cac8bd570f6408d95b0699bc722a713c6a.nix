@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "tempus" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tempus-fugit" or (buildDepError "tempus-fugit"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -69,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tempus-fugit" or (buildDepError "tempus-fugit"))
             ];
+          buildable = true;
           };
         };
       };

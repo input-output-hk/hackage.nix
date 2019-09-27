@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."wordpress-auth" or (buildDepError "wordpress-auth"))
           ];
+        buildable = true;
         };
       };
     }

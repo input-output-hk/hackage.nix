@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."web-routes" or (buildDepError "web-routes"))
           ];
+        buildable = true;
         };
       };
     }

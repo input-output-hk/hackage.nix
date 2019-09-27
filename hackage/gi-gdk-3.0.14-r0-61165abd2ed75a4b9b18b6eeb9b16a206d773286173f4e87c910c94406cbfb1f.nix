@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-gi-overloading" or (buildDepError "haskell-gi-overloading"))
           ];
         pkgconfig = [ (pkgconfPkgs."gdk-3.0" or (pkgConfDepError "gdk-3.0")) ];
+        buildable = true;
         };
       };
     }

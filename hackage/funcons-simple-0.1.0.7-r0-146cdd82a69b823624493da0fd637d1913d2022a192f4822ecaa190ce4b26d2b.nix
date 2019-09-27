@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."funcons-tools" or (buildDepError "funcons-tools"))
             (hsPkgs."funcons-values" or (buildDepError "funcons-values"))
             ];
+          buildable = true;
           };
         };
       };

@@ -166,6 +166,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-builder" or (buildDepError "vector-builder"))
           (hsPkgs."writer-cps-mtl" or (buildDepError "writer-cps-mtl"))
           ];
+        buildable = true;
         };
       };
     }

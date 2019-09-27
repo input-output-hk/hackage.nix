@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
           (hsPkgs."async" or (buildDepError "async"))
           ];
+        buildable = true;
         };
       tests = {
         "test-tls" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
             (hsPkgs."crypto-pubkey" or (buildDepError "crypto-pubkey"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -120,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hourglass" or (buildDepError "hourglass"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

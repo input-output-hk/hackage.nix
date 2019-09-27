@@ -61,7 +61,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."vty" or (buildDepError "vty"))
           ];
+        buildable = true;
         };
-      exes = { "hspresent" = {}; };
+      exes = { "hspresent" = { buildable = true; }; };
       };
     }

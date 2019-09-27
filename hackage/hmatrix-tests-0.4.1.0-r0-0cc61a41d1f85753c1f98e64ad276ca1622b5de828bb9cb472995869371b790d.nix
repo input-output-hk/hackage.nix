@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
           ] ++ (pkgs.lib).optional (flags.gsl) (hsPkgs."hmatrix-gsl" or (buildDepError "hmatrix-gsl"));
+        buildable = true;
         };
       tests = {
         "hmatrix-base-testsuite" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "hmatrix-gsl-testsuite" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if flags.gsl then true else false;
           };
         };
       benchmarks = {
@@ -92,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

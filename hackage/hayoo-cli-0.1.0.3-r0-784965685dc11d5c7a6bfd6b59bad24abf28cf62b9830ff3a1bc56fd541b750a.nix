@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."url" or (buildDepError "url"))
             (hsPkgs."http-types" or (buildDepError "http-types"))
             ];
+          buildable = true;
           };
         };
       };

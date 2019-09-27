@@ -61,6 +61,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc" or (buildDepError "ghc"))
           (hsPkgs."extra" or (buildDepError "extra"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "8.6"
+          then false
+          else true;
         };
       exes = {
         "record-dot-preprocessor" = {
@@ -68,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."extra" or (buildDepError "extra"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -78,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."record-hasfield" or (buildDepError "record-hasfield"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.6") (hsPkgs."record-dot-preprocessor" or (buildDepError "record-dot-preprocessor"));
+          buildable = true;
           };
         };
       };

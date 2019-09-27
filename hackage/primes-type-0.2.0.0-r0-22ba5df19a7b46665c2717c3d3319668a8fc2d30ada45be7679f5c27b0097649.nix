@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."primes" or (buildDepError "primes"))
           ];
+        buildable = true;
         };
       tests = {
         "primes-type-test" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."primes-type" or (buildDepError "primes-type"))
             (hsPkgs."HTF" or (buildDepError "HTF"))
             ];
+          buildable = true;
           };
         };
       };

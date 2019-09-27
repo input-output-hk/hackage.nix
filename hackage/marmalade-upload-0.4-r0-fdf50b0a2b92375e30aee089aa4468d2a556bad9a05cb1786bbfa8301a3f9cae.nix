@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."Security" or (sysDepError "Security"))
             (pkgs."CoreFoundation" or (sysDepError "CoreFoundation"))
             ];
+          buildable = true;
           };
         };
       };

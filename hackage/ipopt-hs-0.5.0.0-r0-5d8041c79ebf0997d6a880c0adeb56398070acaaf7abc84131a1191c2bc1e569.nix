@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "ipopt-hs_Tests" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
             (hsPkgs."linear" or (buildDepError "linear"))
             ];
+          buildable = if !flags.build_examples then false else true;
           };
         };
       };

@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hasktorch-types-thc" or (buildDepError "hasktorch-types-thc"))
           (hsPkgs."cuda" or (buildDepError "cuda"))
           ];
+        buildable = true;
         };
       sublibs = {
         "hasktorch-indef-floating" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-indef" or (buildDepError "hasktorch-indef"))
             (hsPkgs."hasktorch-signatures-partial" or (buildDepError "hasktorch-signatures-partial"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -104,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

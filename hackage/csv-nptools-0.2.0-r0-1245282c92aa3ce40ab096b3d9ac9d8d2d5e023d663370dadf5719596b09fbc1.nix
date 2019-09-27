@@ -61,36 +61,42 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."txt-sushi" or (buildDepError "txt-sushi"))
             (hsPkgs."json" or (buildDepError "json"))
             ];
+          buildable = true;
           };
         "csv-add-id" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."txt-sushi" or (buildDepError "txt-sushi"))
             ];
+          buildable = true;
           };
         "csv-reformat" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."txt-sushi" or (buildDepError "txt-sushi"))
             ];
+          buildable = true;
           };
         "csv-tr" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."txt-sushi" or (buildDepError "txt-sushi"))
             ];
+          buildable = true;
           };
         "csv-transpose" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."txt-sushi" or (buildDepError "txt-sushi"))
             ];
+          buildable = true;
           };
         "csv-pad" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."txt-sushi" or (buildDepError "txt-sushi"))
             ];
+          buildable = true;
           };
         };
       };

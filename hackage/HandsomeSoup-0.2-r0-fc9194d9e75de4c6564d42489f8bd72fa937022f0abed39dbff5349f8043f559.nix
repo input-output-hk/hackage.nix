@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hxt" or (buildDepError "hxt"))
           (hsPkgs."network" or (buildDepError "network"))
           ];
+        buildable = true;
         };
       };
     }

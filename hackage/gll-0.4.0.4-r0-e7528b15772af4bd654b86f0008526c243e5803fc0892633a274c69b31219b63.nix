@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."regex-applicative" or (buildDepError "regex-applicative"))
           ];
+        buildable = true;
         };
       };
     }

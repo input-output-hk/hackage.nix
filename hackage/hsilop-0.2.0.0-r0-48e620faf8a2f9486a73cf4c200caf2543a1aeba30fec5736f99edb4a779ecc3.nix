@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."xdg-basedir" or (buildDepError "xdg-basedir"))
             ];
+          buildable = true;
           };
         };
       };

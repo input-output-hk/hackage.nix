@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
           (hsPkgs."setenv" or (buildDepError "setenv"))
           ];
+        buildable = true;
         };
       exes = {
         "clientsession-generate" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."clientsession" or (buildDepError "clientsession"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."clientsession" or (buildDepError "clientsession"))
             ];
+          buildable = true;
           };
         };
       };

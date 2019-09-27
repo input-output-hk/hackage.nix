@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-src-exts-observe" or (buildDepError "haskell-src-exts-observe"))
             ]
           else [ (hsPkgs."NoHoed" or (buildDepError "NoHoed")) ]);
+        buildable = true;
         };
       exes = {
         "arrowp-ext" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if flags.debug
             then [ (hsPkgs."Hoed" or (buildDepError "Hoed")) ]
             else [ (hsPkgs."NoHoed" or (buildDepError "NoHoed")) ]);
+          buildable = true;
           };
         };
       tests = {
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."arrowp-qq" or (buildDepError "arrowp-qq"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = if flags.testexamples then true else false;
           };
         };
       };

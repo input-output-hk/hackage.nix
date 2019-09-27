@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
           ];
+        buildable = true;
         };
       tests = {
         "conduits" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."split" or (buildDepError "split"))
             ];
+          buildable = true;
           };
         };
       };

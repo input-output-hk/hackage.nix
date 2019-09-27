@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."fftw3f" or (pkgConfDepError "fftw3f"))
           (pkgconfPkgs."fftw3" or (pkgConfDepError "fftw3"))
           ];
+        buildable = true;
         };
       tests = {
         "test-fft" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

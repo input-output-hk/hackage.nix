@@ -92,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ [
           (hsPkgs."base" or (buildDepError "base"))
           ]) ++ (pkgs.lib).optional (flags.test) (hsPkgs."wai-test" or (buildDepError "wai-test"));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -111,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."enumerator" or (buildDepError "enumerator"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

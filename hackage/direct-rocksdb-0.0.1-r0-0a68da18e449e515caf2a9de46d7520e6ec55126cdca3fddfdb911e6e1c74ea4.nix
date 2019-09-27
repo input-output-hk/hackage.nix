@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = [
           (pkgs."stdc++" or (sysDepError "stdc++"))
           ] ++ (pkgs.lib).optional (system.isWindows) (pkgs."rpcrt4" or (sysDepError "rpcrt4"));
+        buildable = true;
         };
       tests = {
         "direct-rocksdb-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           libs = [
             (pkgs."stdc++" or (sysDepError "stdc++"))
             ] ++ (pkgs.lib).optional (system.isWindows) (pkgs."rpcrt4" or (sysDepError "rpcrt4"));
+          buildable = true;
           };
         };
       };

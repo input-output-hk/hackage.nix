@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsndfile" or (buildDepError "hsndfile"))
           (hsPkgs."repa" or (buildDepError "repa"))
           ];
+        buildable = true;
         };
       exes = {
         "rw" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."repa-sndfile" or (buildDepError "repa-sndfile"))
             ];
+          buildable = if flags.example then true else false;
           };
         "gensine" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa" or (buildDepError "repa"))
             (hsPkgs."repa-sndfile" or (buildDepError "repa-sndfile"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       tests = {
@@ -95,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."repa-sndfile" or (buildDepError "repa-sndfile"))
             ];
+          buildable = true;
           };
         };
       };

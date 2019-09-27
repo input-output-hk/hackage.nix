@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           then [ (pkgs."glu32" or (sysDepError "glu32")) ]
           else (pkgs.lib).optional (!system.isOsx) (pkgs."GLU" or (sysDepError "GLU"));
         frameworks = (pkgs.lib).optionals (!(system.isWindows && flags.usenativewindowslibraries)) ((pkgs.lib).optional (system.isOsx) (pkgs."OpenGL" or (sysDepError "OpenGL")));
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."servant" or (buildDepError "servant"))
           (hsPkgs."servant-server" or (buildDepError "servant-server"))
           ];
+        buildable = true;
         };
       };
     }

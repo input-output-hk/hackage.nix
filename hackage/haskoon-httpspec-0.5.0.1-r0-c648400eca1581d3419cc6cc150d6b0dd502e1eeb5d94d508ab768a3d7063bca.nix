@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bidispec" or (buildDepError "bidispec"))
           (hsPkgs."httpspec" or (buildDepError "httpspec"))
           ];
+        buildable = true;
         };
       };
     }

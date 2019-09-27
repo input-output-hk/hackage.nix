@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."intervals" or (buildDepError "intervals"))
           (hsPkgs."base-orphans" or (buildDepError "base-orphans"))
           ];
+        buildable = true;
         };
       };
     }

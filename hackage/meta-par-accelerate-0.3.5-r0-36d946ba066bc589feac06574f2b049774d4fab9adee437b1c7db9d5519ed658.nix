@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (pkgs.lib).optional (flags.newaccelerate && flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"))) ++ [
           (hsPkgs."accelerate" or (buildDepError "accelerate"))
           ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."json" or (buildDepError "json"))
           (hsPkgs."JSON-Combinator" or (buildDepError "JSON-Combinator"))
           ];
+        buildable = true;
         };
       };
     }

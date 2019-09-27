@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stb-image" or (buildDepError "stb-image"))
           (hsPkgs."bitmap" or (buildDepError "bitmap"))
           ];
+        buildable = true;
         };
       };
     }

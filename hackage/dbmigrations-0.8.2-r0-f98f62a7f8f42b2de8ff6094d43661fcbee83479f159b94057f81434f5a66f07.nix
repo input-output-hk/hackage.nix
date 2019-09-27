@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
           (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
           ];
+        buildable = true;
         };
       exes = {
         "moo" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
             (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -115,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

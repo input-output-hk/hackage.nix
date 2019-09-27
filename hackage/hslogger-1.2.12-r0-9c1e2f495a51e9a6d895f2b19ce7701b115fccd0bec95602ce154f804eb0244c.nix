@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."time" or (buildDepError "time"))
             ]);
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

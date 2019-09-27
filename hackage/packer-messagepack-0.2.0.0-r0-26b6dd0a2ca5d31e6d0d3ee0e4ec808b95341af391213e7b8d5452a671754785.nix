@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
           ];
+        buildable = true;
         };
       tests = {
         "packer-msgpack-test-suite" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             ];
+          buildable = true;
           };
         };
       };

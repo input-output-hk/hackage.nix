@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
           else (pkgs.lib).optional (!(system.isLinux && !flags.portable)) (hsPkgs."bytestring" or (buildDepError "bytestring")));
         libs = (pkgs.lib).optional (system.isWindows && !flags.portable) (pkgs."mswsock" or (sysDepError "mswsock"));
+        buildable = true;
         };
       };
     }

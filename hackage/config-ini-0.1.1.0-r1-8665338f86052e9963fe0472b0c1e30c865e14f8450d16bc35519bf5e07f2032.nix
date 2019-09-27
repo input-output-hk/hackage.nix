@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
           ];
+        buildable = true;
         };
       exes = {
         "basic-example" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."config-ini" or (buildDepError "config-ini"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "config-example" = {
           depends = [
@@ -77,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."config-ini" or (buildDepError "config-ini"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         };
       tests = {
@@ -89,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "test-prewritten" = {
           depends = [
@@ -98,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

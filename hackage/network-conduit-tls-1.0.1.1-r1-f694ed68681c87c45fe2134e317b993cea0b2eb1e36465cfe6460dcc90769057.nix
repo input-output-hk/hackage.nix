@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-random-api" or (buildDepError "crypto-random-api"))
           (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
           ];
+        buildable = true;
         };
       };
     }

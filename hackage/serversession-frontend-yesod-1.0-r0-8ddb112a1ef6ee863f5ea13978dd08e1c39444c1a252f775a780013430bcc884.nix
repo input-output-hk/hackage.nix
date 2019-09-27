@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           (hsPkgs."serversession" or (buildDepError "serversession"))
           ];
+        buildable = true;
         };
       };
     }

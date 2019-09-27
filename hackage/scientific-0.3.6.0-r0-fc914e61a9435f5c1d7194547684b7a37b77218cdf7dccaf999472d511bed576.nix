@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ])) ++ (if flags.integer-simple
           then [ (hsPkgs."integer-simple" or (buildDepError "integer-simple")) ]
           else [ (hsPkgs."integer-gmp" or (buildDepError "integer-gmp")) ]);
+        buildable = true;
         };
       tests = {
         "test-scientific" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
               ]
             else [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ]);
+          buildable = true;
           };
         };
       benchmarks = {
@@ -104,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

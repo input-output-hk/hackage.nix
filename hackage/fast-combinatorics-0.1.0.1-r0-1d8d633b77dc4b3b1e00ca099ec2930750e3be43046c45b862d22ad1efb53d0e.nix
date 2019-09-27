@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."composition-prelude" or (buildDepError "composition-prelude"))
           ];
+        buildable = true;
         };
       tests = {
         "fast-combinatorics-test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."combinatorics" or (buildDepError "combinatorics"))
             (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."combinatorics" or (buildDepError "combinatorics"))
             ];
+          buildable = true;
           };
         };
       };

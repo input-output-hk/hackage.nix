@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."StateVar" or (buildDepError "StateVar"))
           ];
+        buildable = true;
         };
       exes = {
         "sdl2-comp-example" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."StateVar" or (buildDepError "StateVar"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "sdl2-comp-res-independent" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."StateVar" or (buildDepError "StateVar"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       tests = {
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."lrucache" or (buildDepError "lrucache"))
             ];
+          buildable = true;
           };
         };
       };

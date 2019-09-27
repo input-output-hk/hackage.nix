@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."constraint-manip" or (buildDepError "constraint-manip"))
           (hsPkgs."polydata-core" or (buildDepError "polydata-core"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polydata-core" or (buildDepError "polydata-core"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

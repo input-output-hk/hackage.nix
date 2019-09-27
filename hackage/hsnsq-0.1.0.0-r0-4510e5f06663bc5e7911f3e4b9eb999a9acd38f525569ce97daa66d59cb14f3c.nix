@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hslogger" or (buildDepError "hslogger"))
           (hsPkgs."hostname" or (buildDepError "hostname"))
           ];
+        buildable = true;
         };
       exes = {
         "nsq-example" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."hostname" or (buildDepError "hostname"))
             ];
+          buildable = true;
           };
         };
       };

@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."zeromq-haskell" or (buildDepError "zeromq-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "hbro" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."webkit" or (buildDepError "webkit"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."FontyFruity" or (buildDepError "FontyFruity"))
           (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
           ];
+        buildable = true;
         };
       exes = {
         "asciidiagram" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."FontyFruity" or (buildDepError "FontyFruity"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rasterific-svg" or (buildDepError "rasterific-svg"))
             (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
             ];
+          buildable = true;
           };
         "test" = {
           depends = [
@@ -114,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rasterific-svg" or (buildDepError "rasterific-svg"))
             (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
             ];
+          buildable = true;
           };
         };
       };

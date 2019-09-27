@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."ghcjs-perch" or (buildDepError "ghcjs-perch"))
           ] ++ (pkgs.lib).optional (compiler.isGhcjs && (compiler.version).ge "0.1") (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"));
+        buildable = true;
         };
       };
     }

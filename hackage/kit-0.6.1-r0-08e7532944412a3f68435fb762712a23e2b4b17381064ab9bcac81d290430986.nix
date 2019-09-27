@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-object" or (buildDepError "data-object"))
             (hsPkgs."data-object-yaml" or (buildDepError "data-object-yaml"))
             ];
+          buildable = true;
           };
         };
       };

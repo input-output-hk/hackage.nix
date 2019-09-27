@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell98" or (buildDepError "haskell98"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ] ++ (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.8") (hsPkgs."unix" or (buildDepError "unix")))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.8") (hsPkgs."directory" or (buildDepError "directory"));
+        buildable = true;
         };
       };
     }

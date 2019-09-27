@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe" or (buildDepError "safe"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
       tests = {
         "goat-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."goat" or (buildDepError "goat"))
             (hsPkgs."safe" or (buildDepError "safe"))
             ];
+          buildable = true;
           };
         };
       };

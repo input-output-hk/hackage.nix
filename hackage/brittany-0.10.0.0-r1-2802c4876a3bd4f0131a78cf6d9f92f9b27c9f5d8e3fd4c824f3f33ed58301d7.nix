@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-boot-th" or (buildDepError "ghc-boot-th"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
       exes = {
         "brittany" = {
@@ -124,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.brittany-dev-lib then false else true;
           };
         };
       tests = {
@@ -161,6 +163,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-boot-th" or (buildDepError "ghc-boot-th"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = if flags.brittany-dev-lib then false else true;
           };
         "littests" = {
           depends = [
@@ -198,6 +201,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ];
+          buildable = if flags.brittany-dev-lib then false else true;
           };
         "libinterfacetests" = {
           depends = [
@@ -207,6 +211,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = if flags.brittany-dev-lib then false else true;
           };
         };
       };

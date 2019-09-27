@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."bindings-yices" or (buildDepError "bindings-yices"))
           ];
+        buildable = true;
         };
       };
     }

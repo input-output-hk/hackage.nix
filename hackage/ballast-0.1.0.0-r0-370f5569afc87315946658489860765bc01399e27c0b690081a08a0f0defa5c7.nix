@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
             ];
+          buildable = true;
           };
         };
       };

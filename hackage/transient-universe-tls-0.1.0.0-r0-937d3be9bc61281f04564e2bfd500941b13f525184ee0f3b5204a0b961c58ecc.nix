@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."x509-store" or (buildDepError "x509-store"))
           ];
+        buildable = true;
         };
       };
     }

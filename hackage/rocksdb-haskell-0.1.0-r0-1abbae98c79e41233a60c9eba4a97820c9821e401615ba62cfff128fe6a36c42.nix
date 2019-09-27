@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
         libs = [ (pkgs."rocksdb" or (sysDepError "rocksdb")) ];
+        buildable = true;
         };
       };
     }

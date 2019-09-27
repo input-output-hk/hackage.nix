@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libnotify" or (pkgConfDepError "libnotify"))
           ];
+        buildable = true;
         };
       };
     }

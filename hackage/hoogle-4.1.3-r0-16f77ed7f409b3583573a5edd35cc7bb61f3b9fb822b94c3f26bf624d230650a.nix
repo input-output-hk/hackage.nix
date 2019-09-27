@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
           ];
+        buildable = true;
         };
       exes = {
         "hoogle" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         };
       };

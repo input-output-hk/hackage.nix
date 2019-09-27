@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text-show" or (buildDepError "text-show"))
           (hsPkgs."either" or (buildDepError "either"))
           ];
+        buildable = true;
         };
       tests = {
         "tibetan-utils-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
             ];
+          buildable = true;
           };
         };
       };

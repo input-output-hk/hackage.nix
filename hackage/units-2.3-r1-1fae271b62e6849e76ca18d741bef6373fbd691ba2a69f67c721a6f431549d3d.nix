@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."units-parser" or (buildDepError "units-parser"))
           ];
+        buildable = true;
         };
       tests = {
         "main" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."units-parser" or (buildDepError "units-parser"))
             ];
+          buildable = true;
           };
         };
       };

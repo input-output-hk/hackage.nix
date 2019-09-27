@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."primitive" or (buildDepError "primitive"))
           ];
+        buildable = true;
         };
       tests = {
         "props" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."unordered-intmap" or (buildDepError "unordered-intmap"))
             ];
+          buildable = true;
           };
         };
       };

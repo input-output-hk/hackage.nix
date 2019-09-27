@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ];
+        buildable = true;
         };
       exes = {
         "bench" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gochan" or (buildDepError "gochan"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "weight" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."weigh" or (buildDepError "weigh"))
             (hsPkgs."gochan" or (buildDepError "gochan"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -91,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
             (hsPkgs."gochan" or (buildDepError "gochan"))
             ];
+          buildable = true;
           };
         };
       };

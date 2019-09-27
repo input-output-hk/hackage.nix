@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."snap-core" or (buildDepError "snap-core"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "test" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."snap-core" or (buildDepError "snap-core"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.test then false else true;
           };
         };
       };

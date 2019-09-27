@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       exes = {
         "sensei-web" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."sensei" or (buildDepError "sensei"))
             ];
+          buildable = true;
           };
         "seito" = {
           depends = [
@@ -119,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."sensei" or (buildDepError "sensei"))
             ];
+          buildable = true;
           };
         "sensei" = {
           depends = [
@@ -141,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."sensei" or (buildDepError "sensei"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -170,6 +174,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."silently" or (buildDepError "silently"))
             (hsPkgs."interpolate" or (buildDepError "interpolate"))
             ];
+          buildable = true;
           };
         };
       };

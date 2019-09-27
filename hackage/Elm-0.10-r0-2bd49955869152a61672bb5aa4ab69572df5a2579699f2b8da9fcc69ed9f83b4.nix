@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."union-find" or (buildDepError "union-find"))
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           ];
+        buildable = true;
         };
       exes = {
         "elm" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."union-find" or (buildDepError "union-find"))
             (hsPkgs."uniplate" or (buildDepError "uniplate"))
             ];
+          buildable = true;
           };
         "elm-doc" = {
           depends = [
@@ -117,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -126,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."HTF" or (buildDepError "HTF"))
             ];
+          buildable = true;
           };
         };
       };

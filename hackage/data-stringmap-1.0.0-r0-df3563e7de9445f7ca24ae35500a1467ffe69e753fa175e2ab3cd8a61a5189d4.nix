@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ] ++ (pkgs.lib).optional (flags.test-strict) (hsPkgs."bytestring" or (buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.with-sizeable) (hsPkgs."data-size" or (buildDepError "data-size"));
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ] ++ (pkgs.lib).optional (flags.with-sizeable) (hsPkgs."data-size" or (buildDepError "data-size")));
+          buildable = if !flags.test-properties then false else true;
           };
         "strict" = {
           depends = (pkgs.lib).optionals (!(!flags.test-strict)) ([
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ] ++ (pkgs.lib).optional (flags.with-sizeable) (hsPkgs."data-size" or (buildDepError "data-size")));
+          buildable = if !flags.test-strict then false else true;
           };
         };
       };

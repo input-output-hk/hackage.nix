@@ -64,7 +64,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
           (hsPkgs."ADPfusion" or (buildDepError "ADPfusion"))
           ];
+        buildable = true;
         };
-      exes = { "Nussinov78" = {}; };
+      exes = { "Nussinov78" = { buildable = true; }; };
       };
     }

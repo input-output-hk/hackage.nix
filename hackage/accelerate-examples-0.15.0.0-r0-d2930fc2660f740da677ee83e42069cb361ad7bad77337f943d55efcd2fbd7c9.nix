@@ -94,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             ];
           libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+          buildable = if !flags.nofib then false else true;
           };
         "accelerate-smvm" = {
           depends = ((((pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda")) ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-gpu) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs."ekg" or (buildDepError "ekg"))) ++ (pkgs.lib).optionals (!(!flags.smvm)) [
@@ -109,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
             ];
+          buildable = if !flags.smvm then false else true;
           };
         "accelerate-crystal" = {
           depends = ((((pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda")) ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-gpu) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs."ekg" or (buildDepError "ekg"))) ++ (pkgs.lib).optionals (!(!flags.crystal)) [
@@ -118,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             (hsPkgs."gloss-raster-accelerate" or (buildDepError "gloss-raster-accelerate"))
             ];
+          buildable = if !flags.crystal then false else true;
           };
         "accelerate-canny" = {
           depends = ((((pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda")) ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-gpu) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs."ekg" or (buildDepError "ekg"))) ++ (pkgs.lib).optionals (!(!flags.canny)) [
@@ -130,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa-io" or (buildDepError "repa-io"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if !flags.canny then false else true;
           };
         "accelerate-mandelbrot" = {
           depends = (((((pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda")) ++ (pkgs.lib).optionals (flags.llvm-cpu) [
@@ -144,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."gloss-accelerate" or (buildDepError "gloss-accelerate"))
             ];
+          buildable = if !flags.mandelbrot then false else true;
           };
         "accelerate-fluid" = {
           depends = ((((pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda")) ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-gpu) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs."ekg" or (buildDepError "ekg"))) ++ (pkgs.lib).optionals (!(!flags.fluid)) [
@@ -155,6 +160,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = if !flags.fluid then false else true;
           };
         "accelerate-nbody" = {
           depends = ((((pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda")) ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-gpu) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs."ekg" or (buildDepError "ekg"))) ++ (pkgs.lib).optionals (!(!flags.nbody)) [
@@ -165,6 +171,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
             ];
+          buildable = if !flags.nbody then false else true;
           };
         "accelerate-smoothlife" = {
           depends = ((((pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda")) ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-gpu) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs."ekg" or (buildDepError "ekg"))) ++ (pkgs.lib).optionals (!(!flags.smoothlife)) [
@@ -178,6 +185,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss-accelerate" or (buildDepError "gloss-accelerate"))
             (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
             ];
+          buildable = if !flags.smoothlife then false else true;
           };
         "accelerate-hashcat" = {
           depends = ((((pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda")) ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-gpu) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs."ekg" or (buildDepError "ekg"))) ++ (pkgs.lib).optionals (!(!flags.hashcat)) [
@@ -190,6 +198,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
             ];
+          buildable = if !flags.hashcat then false else true;
           };
         "accelerate-fft" = {
           depends = (((pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda")) ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-gpu) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))) ++ (pkgs.lib).optionals (!(!flags.fft)) [
@@ -201,6 +210,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if !flags.fft then false else true;
           };
         "accelerate-pagerank" = {
           depends = (((pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda")) ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-gpu) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))) ++ (pkgs.lib).optionals (!(!flags.pagerank)) [
@@ -215,6 +225,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
             ];
+          buildable = if !flags.pagerank then false else true;
           };
         "accelerate-ray" = {
           depends = (((((pkgs.lib).optionals (!(!flags.ray)) [
@@ -227,6 +238,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss-accelerate" or (buildDepError "gloss-accelerate"))
             (hsPkgs."gloss-raster-accelerate" or (buildDepError "gloss-raster-accelerate"))
             ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"))) ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-gpu) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))) ++ (pkgs.lib).optional (flags.llvm-cpu && flags.llvm-gpu && flags.llvm-multi) (hsPkgs."accelerate-llvm-multidev" or (buildDepError "accelerate-llvm-multidev"))) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs."ekg" or (buildDepError "ekg"));
+          buildable = if !flags.ray then false else true;
           };
         "accelerate-kmeans" = {
           depends = ((((pkgs.lib).optionals (!(!flags.kmeans)) [
@@ -237,6 +249,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."normaldistribution" or (buildDepError "normaldistribution"))
             (hsPkgs."random" or (buildDepError "random"))
             ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"))) ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-gpu) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs."ekg" or (buildDepError "ekg"));
+          buildable = if !flags.kmeans then false else true;
           };
         };
       };

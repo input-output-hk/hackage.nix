@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
           (hsPkgs."http-client-conduit" or (buildDepError "http-client-conduit"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             (hsPkgs."http-client-multipart" or (buildDepError "http-client-multipart"))
             ];
+          buildable = true;
           };
         };
       };

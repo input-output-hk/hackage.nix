@@ -60,12 +60,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mxnet" or (buildDepError "mxnet"))
             ];
+          buildable = true;
           };
         "symbol" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mxnet" or (buildDepError "mxnet"))
             ];
+          buildable = true;
           };
         };
       };

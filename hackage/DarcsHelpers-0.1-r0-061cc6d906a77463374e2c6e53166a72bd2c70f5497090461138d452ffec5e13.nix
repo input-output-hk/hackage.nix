@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-parsec" or (buildDepError "xml-parsec"))
           (hsPkgs."HaXml" or (buildDepError "HaXml"))
           ];
+        buildable = true;
         };
       };
     }

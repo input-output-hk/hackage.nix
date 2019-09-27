@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ];
+          buildable = true;
           };
         };
       };

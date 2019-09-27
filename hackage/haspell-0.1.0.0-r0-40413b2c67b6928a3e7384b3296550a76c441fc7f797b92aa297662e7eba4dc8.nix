@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
         libs = [ (pkgs."aspell" or (sysDepError "aspell")) ];
+        buildable = true;
         };
       };
     }

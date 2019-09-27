@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           ];
+        buildable = true;
         };
       exes = {
         "yesod-mangopay" = {
@@ -108,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."wai" or (buildDepError "wai"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         };
       };

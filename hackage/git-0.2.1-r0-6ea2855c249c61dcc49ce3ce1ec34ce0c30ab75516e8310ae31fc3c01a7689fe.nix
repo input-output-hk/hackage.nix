@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
           (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
           ];
+        buildable = true;
         };
       tests = {
         "test-unit" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hourglass" or (buildDepError "hourglass"))
             (hsPkgs."git" or (buildDepError "git"))
             ];
+          buildable = true;
           };
         "test-repository" = {
           depends = [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytedump" or (buildDepError "bytedump"))
             (hsPkgs."git" or (buildDepError "git"))
             ];
+          buildable = true;
           };
         };
       };

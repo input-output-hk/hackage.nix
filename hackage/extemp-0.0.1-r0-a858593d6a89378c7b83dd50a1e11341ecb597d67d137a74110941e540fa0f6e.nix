@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-parallel" or (buildDepError "monad-parallel"))
             (hsPkgs."happstack-auth" or (buildDepError "happstack-auth"))
             ];
+          buildable = true;
           };
         };
       };

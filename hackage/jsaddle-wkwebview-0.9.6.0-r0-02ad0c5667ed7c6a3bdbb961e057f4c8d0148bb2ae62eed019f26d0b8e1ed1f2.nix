@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."UserNotifications" or (sysDepError "UserNotifications"))
             ]
           else [ (pkgs."Cocoa" or (sysDepError "Cocoa")) ]);
+        buildable = true;
         };
       };
     }

@@ -62,15 +62,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       exes = {
-        "wash2hs" = {};
+        "wash2hs" = { buildable = true; };
         "washc" = {
           depends = [
             (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

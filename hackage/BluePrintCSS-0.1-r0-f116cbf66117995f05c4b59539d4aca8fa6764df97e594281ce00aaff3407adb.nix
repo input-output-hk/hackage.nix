@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ] ++ (pkgs.lib).optional (flags.blaze) (hsPkgs."blaze-html" or (buildDepError "blaze-html"))) ++ (pkgs.lib).optional (flags.hsx) (hsPkgs."hsx" or (buildDepError "hsx"));
+        buildable = true;
         };
       };
     }

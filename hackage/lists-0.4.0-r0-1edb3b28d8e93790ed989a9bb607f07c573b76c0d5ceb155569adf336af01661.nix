@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."list-extras" or (buildDepError "list-extras"))
           ];
+        buildable = true;
         };
       };
     }

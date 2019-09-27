@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."cpphs" or (buildDepError "cpphs"))
           ];
+        buildable = true;
         };
       exes = {
         "tuplepp" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec2" or (buildDepError "parsec2"))
             (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             ];
+          buildable = true;
           };
         };
       };

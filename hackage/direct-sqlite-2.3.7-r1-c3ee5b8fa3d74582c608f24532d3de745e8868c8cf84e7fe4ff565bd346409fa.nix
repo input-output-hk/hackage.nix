@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if flags.systemlib
           then [ (pkgs."sqlite3" or (sysDepError "sqlite3")) ]
           else (pkgs.lib).optional (!system.isWindows) (pkgs."pthread" or (sysDepError "pthread"));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."direct-sqlite" or (buildDepError "direct-sqlite"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

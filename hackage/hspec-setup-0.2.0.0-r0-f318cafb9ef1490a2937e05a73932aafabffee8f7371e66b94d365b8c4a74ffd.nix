@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
       exes = {
         "hspec-setup" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."hspec-setup" or (buildDepError "hspec-setup"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -107,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."hspec-setup" or (buildDepError "hspec-setup"))
             ];
+          buildable = true;
           };
         };
       };

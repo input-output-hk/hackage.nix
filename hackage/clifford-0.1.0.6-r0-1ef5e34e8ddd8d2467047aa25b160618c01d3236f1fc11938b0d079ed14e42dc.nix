@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hspec" or (buildDepError "hspec"))
           (hsPkgs."MemoTrie" or (buildDepError "MemoTrie"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."nats" or (buildDepError "nats"))
             ];
+          buildable = true;
           };
         };
       };

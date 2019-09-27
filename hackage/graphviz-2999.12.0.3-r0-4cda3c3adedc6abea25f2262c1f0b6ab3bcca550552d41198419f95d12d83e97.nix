@@ -70,7 +70,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
           (hsPkgs."dlist" or (buildDepError "dlist"))
           ] ++ (pkgs.lib).optional (flags.test) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+        buildable = true;
         };
-      exes = { "graphviz-testsuite" = {}; };
+      exes = {
+        "graphviz-testsuite" = {
+          buildable = if flags.test then true else false;
+          };
+        };
       };
     }

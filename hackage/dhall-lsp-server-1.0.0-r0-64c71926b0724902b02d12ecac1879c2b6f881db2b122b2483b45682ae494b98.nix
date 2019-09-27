@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uri-encode" or (buildDepError "uri-encode"))
           (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
           ];
+        buildable = if compiler.isEta && true then false else true;
         };
       exes = {
         "dhall-lsp-server" = {
@@ -110,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
             ];
+          buildable = if compiler.isEta && true then false else true;
           };
         };
       tests = {
@@ -120,6 +122,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "8.0"
+            then false
+            else true;
           };
         };
       };

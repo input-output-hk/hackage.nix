@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."language-slice" or (buildDepError "language-slice"))
             ];
+          buildable = true;
           };
         };
       };

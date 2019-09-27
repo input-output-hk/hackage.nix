@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             ];
+          buildable = true;
           };
         };
       };

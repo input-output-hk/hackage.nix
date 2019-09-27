@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
           ];
+        buildable = true;
         };
       };
     }

@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."FormalGrammars" or (buildDepError "FormalGrammars"))
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           ];
+        buildable = true;
         };
       exes = {
         "AlignGlobal" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GrammarProducts" or (buildDepError "GrammarProducts"))
             (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

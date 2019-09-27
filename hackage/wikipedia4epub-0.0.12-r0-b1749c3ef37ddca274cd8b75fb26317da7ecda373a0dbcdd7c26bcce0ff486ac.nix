@@ -72,7 +72,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           (hsPkgs."xml" or (buildDepError "xml"))
           ];
+        buildable = true;
         };
-      exes = { "wiki4e-mkepub-subtree" = {}; };
+      exes = { "wiki4e-mkepub-subtree" = { buildable = true; }; };
       };
     }

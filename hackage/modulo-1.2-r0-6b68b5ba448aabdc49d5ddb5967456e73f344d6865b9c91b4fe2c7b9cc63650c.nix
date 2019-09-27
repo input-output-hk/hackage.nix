@@ -67,7 +67,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
           (hsPkgs."atto-lisp" or (buildDepError "atto-lisp"))
           ];
+        buildable = true;
         };
-      exes = { "modulo" = {}; };
+      exes = { "modulo" = { buildable = true; }; };
       };
     }

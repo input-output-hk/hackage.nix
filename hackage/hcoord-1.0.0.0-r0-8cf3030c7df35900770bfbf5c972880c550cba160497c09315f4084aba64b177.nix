@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
           ];
+        buildable = true;
         };
       exes = {
         "hcoord-exe" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hcoord" or (buildDepError "hcoord"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ieee754" or (buildDepError "ieee754"))
             (hsPkgs."data-default" or (buildDepError "data-default"))
             ];
+          buildable = true;
           };
         };
       };

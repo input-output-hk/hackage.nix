@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
           (hsPkgs."zip" or (buildDepError "zip"))
           ];
+        buildable = true;
         };
       exes = {
         "hwormhole-exe" = {
@@ -99,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -121,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."magic-wormhole" or (buildDepError "magic-wormhole"))
             (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,15 +69,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."music-dynamics" or (buildDepError "music-dynamics"))
           (hsPkgs."music-dynamics-literal" or (buildDepError "music-dynamics-literal"))
           ];
+        buildable = true;
         };
       exes = {
-        "complex" = {};
-        "duo" = {};
-        "erlkonig" = {};
-        "triplets" = {};
-        "music2ly" = {};
-        "music2midi" = {};
-        "music2musicxml" = {};
+        "complex" = { buildable = true; };
+        "duo" = { buildable = true; };
+        "erlkonig" = { buildable = true; };
+        "triplets" = { buildable = true; };
+        "music2ly" = { buildable = true; };
+        "music2midi" = { buildable = true; };
+        "music2musicxml" = { buildable = true; };
         };
       tests = {
         "properties" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
             (hsPkgs."test-framework-quickcheck" or (buildDepError "test-framework-quickcheck"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."fltk" or (sysDepError "fltk"))
           (pkgs."fltk_images" or (sysDepError "fltk_images"))
           ];
+        buildable = true;
         };
       };
     }

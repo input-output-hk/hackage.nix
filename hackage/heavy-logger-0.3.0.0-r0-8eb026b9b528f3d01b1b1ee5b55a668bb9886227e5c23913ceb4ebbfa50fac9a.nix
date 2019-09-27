@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text-format-heavy" or (buildDepError "text-format-heavy"))
           (hsPkgs."thread-local-storage" or (buildDepError "thread-local-storage"))
           ];
+        buildable = true;
         };
       };
     }

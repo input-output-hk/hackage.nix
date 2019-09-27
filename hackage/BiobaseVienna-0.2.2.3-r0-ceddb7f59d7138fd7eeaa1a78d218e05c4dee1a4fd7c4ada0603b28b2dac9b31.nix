@@ -70,10 +70,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           ];
+        buildable = true;
         };
       exes = {
         "ViennaConverter" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

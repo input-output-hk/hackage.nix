@@ -91,9 +91,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."special-functors" or (buildDepError "special-functors"))
             ]);
+        buildable = true;
         };
       exes = {
-        "test" = {};
+        "test" = { buildable = if !flags.buildtests then false else true; };
         "fouriertest" = {
           depends = (pkgs.lib).optionals (flags.buildprofilers) [
             (hsPkgs."storablevector" or (buildDepError "storablevector"))
@@ -102,15 +103,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."timeit" or (buildDepError "timeit"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildprofilers then true else false;
           };
-        "speedtest" = {};
+        "speedtest" = {
+          buildable = if !flags.buildprofilers then false else true;
+          };
         "speedtest-exp" = {
           depends = (pkgs.lib).optionals (flags.splitbase) [
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = if !flags.buildprofilers then false else true;
           };
-        "speedtest-simple" = {};
+        "speedtest-simple" = {
+          buildable = if !flags.buildprofilers then false else true;
+          };
         };
       };
     }

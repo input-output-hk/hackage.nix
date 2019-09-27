@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."event-list" or (buildDepError "event-list"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "live-sequencer" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "live-sequencer-gui" = {
           depends = [
@@ -111,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cgi" or (buildDepError "cgi"))
             (hsPkgs."html" or (buildDepError "html"))
             ];
+          buildable = true;
           };
         };
       };

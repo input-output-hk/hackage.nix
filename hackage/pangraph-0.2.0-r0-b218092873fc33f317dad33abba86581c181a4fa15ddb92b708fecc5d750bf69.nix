@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."html-entities" or (buildDepError "html-entities"))
           ];
+        buildable = true;
         };
       tests = {
         "pangraph-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."pangraph" or (buildDepError "pangraph"))
             ];
+          buildable = true;
           };
         };
       };

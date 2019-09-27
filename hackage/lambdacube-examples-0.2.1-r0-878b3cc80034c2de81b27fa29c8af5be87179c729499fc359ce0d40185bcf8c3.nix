@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."elerea" or (buildDepError "elerea"))
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             ];
+          buildable = true;
           };
         "lambdacube-cameratrack" = {
           depends = [
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."elerea" or (buildDepError "elerea"))
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             ];
+          buildable = true;
           };
         };
       };

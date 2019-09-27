@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."convertible" or (buildDepError "convertible"))
           (hsPkgs."hinduce-missingh" or (buildDepError "hinduce-missingh"))
           ];
+        buildable = true;
         };
       };
     }

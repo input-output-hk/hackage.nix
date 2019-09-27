@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
         pkgconfig = [ (pkgconfPkgs."libpcre" or (pkgConfDepError "libpcre")) ];
+        buildable = true;
         };
       };
     }

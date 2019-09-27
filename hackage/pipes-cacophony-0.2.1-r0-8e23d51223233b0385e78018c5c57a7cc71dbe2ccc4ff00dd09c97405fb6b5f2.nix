@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cacophony" or (buildDepError "cacophony"))
           (hsPkgs."pipes" or (buildDepError "pipes"))
           ];
+        buildable = true;
         };
       tests = {
         "hlint" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = if !flags.hlint then false else true;
           };
         };
       };

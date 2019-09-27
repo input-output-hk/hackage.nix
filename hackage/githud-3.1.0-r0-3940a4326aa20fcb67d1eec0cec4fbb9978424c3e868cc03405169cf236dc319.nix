@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
       exes = {
         "githud" = {
@@ -76,12 +77,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."githud" or (buildDepError "githud"))
             ];
+          buildable = true;
           };
         "githudd" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."githud" or (buildDepError "githud"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -97,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."githud" or (buildDepError "githud"))
             ];
+          buildable = true;
           };
         };
       };

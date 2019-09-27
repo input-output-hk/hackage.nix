@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mysql-simple" or (buildDepError "mysql-simple"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
       exes = {
         "moo-mysql" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dbmigrations-mysql" or (buildDepError "dbmigrations-mysql"))
             (hsPkgs."dbmigrations" or (buildDepError "dbmigrations"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         };
       };

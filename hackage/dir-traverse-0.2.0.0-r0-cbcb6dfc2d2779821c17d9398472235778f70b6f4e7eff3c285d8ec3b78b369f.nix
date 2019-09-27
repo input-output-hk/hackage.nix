@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "dir-traverse-bench" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
             (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
           (hsPkgs."memory" or (buildDepError "memory"))
           ];
+        buildable = true;
         };
       exes = {
         "haskell-spake2-interop-entrypoint" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."spake2" or (buildDepError "spake2"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
             ];
+          buildable = true;
           };
         };
       };

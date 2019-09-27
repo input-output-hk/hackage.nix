@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shake" or (buildDepError "shake"))
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           ];
+        buildable = true;
         };
       exes = {
         "pecgen" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."shake" or (buildDepError "shake"))
             ];
+          buildable = true;
           };
         "pec" = {
           depends = [
@@ -108,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."shake" or (buildDepError "shake"))
             ];
+          buildable = true;
           };
         "pecgencnt" = {
           depends = [
@@ -125,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."shake" or (buildDepError "shake"))
             ];
+          buildable = true;
           };
         };
       };

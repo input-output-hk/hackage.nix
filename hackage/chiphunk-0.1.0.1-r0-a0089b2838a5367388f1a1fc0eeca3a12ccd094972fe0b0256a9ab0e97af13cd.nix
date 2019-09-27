@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           ];
+        buildable = true;
         };
       exes = {
         "chiphunk" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."nanovg" or (buildDepError "nanovg"))
             (hsPkgs."nanovg-simple" or (buildDepError "nanovg-simple"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         };
       };

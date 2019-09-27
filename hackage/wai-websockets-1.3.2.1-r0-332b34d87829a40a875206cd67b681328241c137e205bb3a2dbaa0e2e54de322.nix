@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."io-streams" or (buildDepError "io-streams"))
           ];
+        buildable = true;
         };
       exes = {
         "wai-websockets-example" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."file-embed" or (buildDepError "file-embed"))
             (hsPkgs."io-streams" or (buildDepError "io-streams"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

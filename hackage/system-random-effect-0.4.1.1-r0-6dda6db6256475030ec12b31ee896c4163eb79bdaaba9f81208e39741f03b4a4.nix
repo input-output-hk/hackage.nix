@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
             (hsPkgs."system-random-effect" or (buildDepError "system-random-effect"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."system-random-effect" or (buildDepError "system-random-effect"))
             ];
+          buildable = true;
           };
         };
       };

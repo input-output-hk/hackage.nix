@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hoauth" or (buildDepError "hoauth"))
           (hsPkgs."urlencoded" or (buildDepError "urlencoded"))
           ];
+        buildable = true;
         };
       };
     }

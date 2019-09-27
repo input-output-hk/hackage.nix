@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mmorph" or (buildDepError "mmorph"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         "unit_Applicative" = {
           depends = [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
+          buildable = true;
           };
         "unit_Commutative" = {
           depends = [
@@ -83,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
+          buildable = true;
           };
         "unit_Monad" = {
           depends = [
@@ -92,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."safe" or (buildDepError "safe"))
             ];
+          buildable = true;
           };
         "unit_Monad-Level1" = {
           depends = [
@@ -101,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
+          buildable = true;
           };
         "unit_Monad-Level2" = {
           depends = [
@@ -110,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
+          buildable = true;
           };
         "unit_MonadTrans-2" = {
           depends = [
@@ -119,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
+          buildable = true;
           };
         "unit_MonadTrans" = {
           depends = [
@@ -127,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
+          buildable = true;
           };
         "unit_MonadMorph" = {
           depends = [
@@ -135,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
+          buildable = true;
           };
         };
       };

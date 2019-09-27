@@ -59,7 +59,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."pretty" or (buildDepError "pretty"))
           ];
+        buildable = true;
         };
-      exes = { "thih" = {}; };
+      exes = { "thih" = { buildable = true; }; };
       };
     }

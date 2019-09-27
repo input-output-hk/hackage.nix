@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."penny-lib" or (buildDepError "penny-lib"))
             ];
+          buildable = if !flags.build-penny then false else true;
           };
         "penny-selloff" = {
           depends = [
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multiarg" or (buildDepError "multiarg"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-selloff then false else true;
           };
         "penny-diff" = {
           depends = [
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multiarg" or (buildDepError "multiarg"))
             (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
             ];
+          buildable = if !flags.build-diff then false else true;
           };
         "penny-reprint" = {
           depends = [
@@ -98,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.build-reprint then false else true;
           };
         "penny-reconcile" = {
           depends = [
@@ -107,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multiarg" or (buildDepError "multiarg"))
             (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
             ];
+          buildable = if !flags.build-reconcile then false else true;
           };
         };
       };

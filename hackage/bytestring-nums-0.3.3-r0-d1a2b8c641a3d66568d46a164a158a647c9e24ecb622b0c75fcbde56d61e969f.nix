@@ -60,7 +60,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
-      exes = { "spoj-eugene" = {}; };
+      exes = { "spoj-eugene" = { buildable = true; }; };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."basic-lens" or (buildDepError "basic-lens"))
             (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             ];
+          buildable = true;
           };
         };
       };

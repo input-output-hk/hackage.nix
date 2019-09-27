@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."frame" or (buildDepError "frame"))
           (hsPkgs."pandoc" or (buildDepError "pandoc"))
           ];
+        buildable = true;
         };
       };
     }

@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "penny" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."penny" or (buildDepError "penny"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.build-penny then false else true;
           };
         "penny-selloff" = {
           depends = [
@@ -106,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multiarg" or (buildDepError "multiarg"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-selloff then false else true;
           };
         "penny-diff" = {
           depends = [
@@ -115,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multiarg" or (buildDepError "multiarg"))
             (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
             ];
+          buildable = if !flags.build-diff then false else true;
           };
         "penny-reprint" = {
           depends = [
@@ -124,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.build-reprint then false else true;
           };
         "penny-reconcile" = {
           depends = [
@@ -133,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multiarg" or (buildDepError "multiarg"))
             (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
             ];
+          buildable = if !flags.build-reconcile then false else true;
           };
         "penny-test" = {
           depends = (pkgs.lib).optionals (flags.test) [
@@ -148,6 +154,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if flags.test then true else false;
           };
         "penny-gibberish" = {
           depends = (pkgs.lib).optionals (flags.test) [
@@ -163,6 +170,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

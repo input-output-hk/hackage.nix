@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cipher-blowfish" or (buildDepError "cipher-blowfish"))
           (hsPkgs."cipher-camellia" or (buildDepError "cipher-camellia"))
           ];
+        buildable = true;
         };
       };
     }

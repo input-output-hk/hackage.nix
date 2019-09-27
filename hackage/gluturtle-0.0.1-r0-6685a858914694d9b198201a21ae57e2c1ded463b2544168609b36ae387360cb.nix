@@ -63,11 +63,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Imlib" or (buildDepError "Imlib"))
           (hsPkgs."GLUT" or (buildDepError "GLUT"))
           ];
+        buildable = true;
         };
       exes = {
-        "testTurtle" = {};
+        "testTurtle" = { buildable = true; };
         "randomTurtle" = {
           depends = [ (hsPkgs."random" or (buildDepError "random")) ];
+          buildable = true;
           };
         };
       };

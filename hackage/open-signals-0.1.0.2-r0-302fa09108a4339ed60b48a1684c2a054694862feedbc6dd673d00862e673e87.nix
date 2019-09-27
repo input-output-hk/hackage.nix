@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."either" or (buildDepError "either"))
           ];
+        buildable = true;
         };
       tests = {
         "open-signals-test" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."open-signals" or (buildDepError "open-signals"))
             ];
+          buildable = true;
           };
         };
       };

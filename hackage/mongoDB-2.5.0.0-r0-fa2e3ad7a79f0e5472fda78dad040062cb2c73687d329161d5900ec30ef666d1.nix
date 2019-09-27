@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."network-bsd" or (buildDepError "network-bsd"))
             ]);
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -136,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network" or (buildDepError "network"))
               (hsPkgs."network-bsd" or (buildDepError "network-bsd"))
               ]);
+          buildable = true;
           };
         };
       };

@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wl-pprint-extras" or (buildDepError "wl-pprint-extras"))
           (hsPkgs."wl-pprint-terminfo" or (buildDepError "wl-pprint-terminfo"))
           ];
+        buildable = true;
         };
       };
     }

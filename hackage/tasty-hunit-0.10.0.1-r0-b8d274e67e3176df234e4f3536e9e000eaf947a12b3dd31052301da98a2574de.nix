@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tasty" or (buildDepError "tasty"))
           (hsPkgs."call-stack" or (buildDepError "call-stack"))
           ];
+        buildable = true;
         };
       };
     }

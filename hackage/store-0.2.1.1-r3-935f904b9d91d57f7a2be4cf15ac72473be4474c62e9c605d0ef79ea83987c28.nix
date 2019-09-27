@@ -96,6 +96,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."void" or (buildDepError "void"))
           ] ++ (pkgs.lib).optional (!system.isI386 && !system.isX86_64 && !system.isIa64 && !(compiler.isGhcjs && true)) (hsPkgs."base" or (buildDepError "base"));
+        buildable = if !system.isI386 && !system.isX86_64 && !system.isIa64 && !(compiler.isGhcjs && true)
+          then false
+          else true;
         };
       tests = {
         "store-test" = {
@@ -141,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."void" or (buildDepError "void"))
             (hsPkgs."store" or (buildDepError "store"))
             ];
+          buildable = true;
           };
         "store-weigh" = {
           depends = [
@@ -190,6 +194,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal-vector" or (buildDepError "cereal-vector"))
             (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -242,6 +247,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
             (hsPkgs."cereal-vector" or (buildDepError "cereal-vector"))
             ];
+          buildable = true;
           };
         };
       };

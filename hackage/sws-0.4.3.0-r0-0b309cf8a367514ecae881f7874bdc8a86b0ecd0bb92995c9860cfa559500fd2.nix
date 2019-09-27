@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp" or (buildDepError "warp"))
             (hsPkgs."warp-tls" or (buildDepError "warp-tls"))
             ];
+          buildable = true;
           };
         };
       };

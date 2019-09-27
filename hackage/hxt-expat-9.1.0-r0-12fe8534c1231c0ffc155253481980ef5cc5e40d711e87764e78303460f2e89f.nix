@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hexpat" or (buildDepError "hexpat"))
           (hsPkgs."hxt" or (buildDepError "hxt"))
           ];
+        buildable = true;
         };
       };
     }

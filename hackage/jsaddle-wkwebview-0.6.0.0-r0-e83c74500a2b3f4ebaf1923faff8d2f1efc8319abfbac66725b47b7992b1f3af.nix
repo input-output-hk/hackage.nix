@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."jsaddle" or (buildDepError "jsaddle"))
           ];
+        buildable = true;
         };
       };
     }

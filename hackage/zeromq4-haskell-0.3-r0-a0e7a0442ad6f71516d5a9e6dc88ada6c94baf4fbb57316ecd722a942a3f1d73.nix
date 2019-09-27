@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optional (system.isFreebsd) (pkgs."pthread" or (sysDepError "pthread"));
         pkgconfig = [ (pkgconfPkgs."libzmq" or (pkgConfDepError "libzmq")) ];
+        buildable = true;
         };
       tests = {
         "zeromq-haskell-tests" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

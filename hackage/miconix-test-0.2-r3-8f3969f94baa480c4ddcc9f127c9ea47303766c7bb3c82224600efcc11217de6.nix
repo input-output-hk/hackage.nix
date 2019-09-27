@@ -55,7 +55,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       };
     components = {
       exes = {
-        "test1" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "test1" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         };
       };
     }

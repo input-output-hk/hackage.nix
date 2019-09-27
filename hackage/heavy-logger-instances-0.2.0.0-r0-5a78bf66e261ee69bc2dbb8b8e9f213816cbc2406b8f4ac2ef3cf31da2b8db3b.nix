@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."text-format-heavy" or (buildDepError "text-format-heavy"))
           ];
+        buildable = true;
         };
       tests = {
         "binary-test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."text-format-heavy" or (buildDepError "text-format-heavy"))
             ];
+          buildable = true;
           };
         };
       };

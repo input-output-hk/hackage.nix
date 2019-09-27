@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
           (hsPkgs."mersenne-random-pure64" or (buildDepError "mersenne-random-pure64"))
           ];
+        buildable = true;
         };
       };
     }

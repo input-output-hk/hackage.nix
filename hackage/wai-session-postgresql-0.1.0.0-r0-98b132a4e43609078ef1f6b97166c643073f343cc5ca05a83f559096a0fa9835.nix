@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."wai-session" or (buildDepError "wai-session"))
           ];
+        buildable = true;
         };
       tests = {
         "postgresql-session-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."postgresql-session" or (buildDepError "postgresql-session"))
             ];
+          buildable = true;
           };
         };
       };

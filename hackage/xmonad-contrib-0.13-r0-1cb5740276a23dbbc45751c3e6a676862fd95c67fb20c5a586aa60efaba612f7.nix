@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xmonad" or (buildDepError "xmonad"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ] ++ (pkgs.lib).optional (flags.use_xft) (hsPkgs."X11-xft" or (buildDepError "X11-xft"));
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."X11" or (buildDepError "X11"))
           ];
         libs = [ (pkgs."Imlib2" or (sysDepError "Imlib2")) ];
+        buildable = true;
         };
       };
     }

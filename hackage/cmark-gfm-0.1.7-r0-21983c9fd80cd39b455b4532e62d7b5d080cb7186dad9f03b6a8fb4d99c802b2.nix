@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."cmark-gfm" or (sysDepError "cmark-gfm"))
           (pkgs."cmark-gfm-extensions" or (sysDepError "cmark-gfm-extensions"))
           ];
+        buildable = true;
         };
       tests = {
         "test-cmark-gfm" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."discount" or (buildDepError "discount"))
             (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
             ];
+          buildable = true;
           };
         };
       };

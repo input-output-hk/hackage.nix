@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           ];
         libs = (pkgs.lib).optional (system.isLinux) (pkgs."bluetooth" or (sysDepError "bluetooth"));
+        buildable = true;
         };
       exes = {
         "nxt-shutdown" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."NXT" or (buildDepError "NXT"))
             ];
+          buildable = true;
           };
         "nxt-upload" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."NXT" or (buildDepError "NXT"))
             ];
+          buildable = true;
           };
         };
       };

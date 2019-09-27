@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
           ];
+        buildable = true;
         };
       };
     }

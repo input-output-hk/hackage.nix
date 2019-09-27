@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."text-show" or (buildDepError "text-show"))
           ];
+        buildable = true;
         };
       tests = {
         "versions-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-show" or (buildDepError "text-show"))
             (hsPkgs."versions" or (buildDepError "versions"))
             ];
+          buildable = true;
           };
         };
       };

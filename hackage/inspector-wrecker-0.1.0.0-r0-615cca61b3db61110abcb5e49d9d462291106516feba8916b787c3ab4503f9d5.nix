@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."connection" or (buildDepError "connection"))
           (hsPkgs."data-default" or (buildDepError "data-default"))
           ];
+        buildable = true;
         };
       exes = {
         "inspector-wrecker-exe" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."inspector-wrecker" or (buildDepError "inspector-wrecker"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."inspector-wrecker" or (buildDepError "inspector-wrecker"))
             ];
+          buildable = true;
           };
         };
       };

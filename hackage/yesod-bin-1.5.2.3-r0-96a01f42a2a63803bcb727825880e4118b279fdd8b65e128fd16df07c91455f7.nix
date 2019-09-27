@@ -106,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."typed-process" or (buildDepError "typed-process"))
             ];
+          buildable = true;
           };
         };
       };

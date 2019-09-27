@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."haskeline" or (buildDepError "haskeline"))
           ];
+        buildable = true;
         };
       };
     }

@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hack" or (buildDepError "hack"))
           (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
           ];
+        buildable = true;
         };
       };
     }

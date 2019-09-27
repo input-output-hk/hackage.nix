@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
             ];
+          buildable = true;
           };
         };
       };

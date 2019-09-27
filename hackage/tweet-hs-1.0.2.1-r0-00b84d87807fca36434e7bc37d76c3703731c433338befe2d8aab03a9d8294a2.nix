@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."composition-prelude" or (buildDepError "composition-prelude"))
           (hsPkgs."extra" or (buildDepError "extra"))
           ];
+        buildable = true;
         };
       exes = {
         "tweet" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.library then false else true;
           };
         };
       benchmarks = {
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
             ];
+          buildable = true;
           };
         };
       };

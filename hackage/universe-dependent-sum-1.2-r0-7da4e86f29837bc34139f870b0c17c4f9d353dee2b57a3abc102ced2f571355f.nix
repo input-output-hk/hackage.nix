@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."universe-base" or (buildDepError "universe-base"))
           (hsPkgs."universe-some" or (buildDepError "universe-some"))
           ];
+        buildable = true;
         };
       };
     }

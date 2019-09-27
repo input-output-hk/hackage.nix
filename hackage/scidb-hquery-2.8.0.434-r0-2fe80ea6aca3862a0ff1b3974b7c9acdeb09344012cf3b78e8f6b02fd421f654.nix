@@ -92,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
           (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
           ];
+        buildable = true;
         };
       exes = {
         "hquery" = {
@@ -124,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tls" or (buildDepError "tls"))
             (hsPkgs."x509-store" or (buildDepError "x509-store"))
             ];
+          buildable = true;
           };
         };
       };

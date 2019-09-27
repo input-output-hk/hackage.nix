@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
           ];
+        buildable = true;
         };
       exes = {
         "threepenny-gui-contextmenu-exe" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."threepenny-gui-contextmenu" or (buildDepError "threepenny-gui-contextmenu"))
             ];
+          buildable = true;
           };
         };
       };

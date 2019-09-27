@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."constraint" or (buildDepError "constraint"))
           (hsPkgs."unconstrained" or (buildDepError "unconstrained"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
             (hsPkgs."constrained-category" or (buildDepError "constrained-category"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."constrained-category" or (buildDepError "constrained-category"))
             ];
+          buildable = true;
           };
         };
       };

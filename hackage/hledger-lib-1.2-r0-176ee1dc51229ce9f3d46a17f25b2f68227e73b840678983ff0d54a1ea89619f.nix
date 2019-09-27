@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ]
           else [ (hsPkgs."time" or (buildDepError "time")) ]);
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -125,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."Glob" or (buildDepError "Glob"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         "hunittests" = {
           depends = ([
@@ -165,6 +167,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."old-locale" or (buildDepError "old-locale"))
               ]
             else [ (hsPkgs."time" or (buildDepError "time")) ]);
+          buildable = true;
           };
         };
       };

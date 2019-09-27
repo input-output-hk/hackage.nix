@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.11") (hsPkgs."transformers" or (buildDepError "transformers"))) ++ (pkgs.lib).optional (!flags.haste && flags.localcache) (hsPkgs."psqueues" or (buildDepError "psqueues"));
+        buildable = true;
         };
       };
     }

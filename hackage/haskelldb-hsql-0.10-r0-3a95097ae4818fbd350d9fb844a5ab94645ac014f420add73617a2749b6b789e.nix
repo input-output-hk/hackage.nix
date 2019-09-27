@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskelldb" or (buildDepError "haskelldb"))
           (hsPkgs."hsql" or (buildDepError "hsql"))
           ];
+        buildable = true;
         };
       };
     }

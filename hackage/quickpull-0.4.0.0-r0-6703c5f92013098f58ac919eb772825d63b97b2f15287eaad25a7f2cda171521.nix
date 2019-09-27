@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ] ++ [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+        buildable = true;
         };
       exes = {
         "quickpull" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ] ++ [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+          buildable = true;
           };
         "quickpull-test-gen" = {
           depends = [
@@ -77,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ] ++ [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ]);
+          buildable = if flags.build-test-gen then true else false;
           };
         };
       tests = {
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ] ++ [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+          buildable = true;
           };
         };
       };

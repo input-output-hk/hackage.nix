@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "fltkhs-texteditor-simple" = {
@@ -69,60 +70,70 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-textdisplay-with-colors" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-hello-world" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-doublebuffer" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-make-tree" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-tree-simple" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-table-spreadsheet-with-keyboard-nav" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-test_call" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-buttons" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-table-simple" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-table-sort" = {
           depends = [
@@ -130,12 +141,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "fltkhs-arc" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-bitmap" = {
           depends = [
@@ -143,6 +156,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "fltkhs-boxtype" = {
           depends = [
@@ -150,6 +164,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "fltkhs-browser" = {
           depends = [
@@ -157,6 +172,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "fltkhs-clock" = {
           depends = [
@@ -164,6 +180,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

@@ -90,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "csv2yxdb" = {
@@ -97,12 +98,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."yxdb-utils" or (buildDepError "yxdb-utils"))
             ];
+          buildable = true;
           };
         "yxdb2csv" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."yxdb-utils" or (buildDepError "yxdb-utils"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -147,6 +150,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
             ];
+          buildable = true;
           };
         };
       };

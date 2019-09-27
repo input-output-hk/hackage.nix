@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
           (hsPkgs."ekg-core" or (buildDepError "ekg-core"))
           ];
+        buildable = true;
         };
       };
     }

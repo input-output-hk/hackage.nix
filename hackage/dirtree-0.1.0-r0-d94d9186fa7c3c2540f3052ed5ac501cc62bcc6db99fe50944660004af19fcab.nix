@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
           ];
+        buildable = true;
         };
       tests = {
         "dirtree-test" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             ];
+          buildable = true;
           };
         };
       };

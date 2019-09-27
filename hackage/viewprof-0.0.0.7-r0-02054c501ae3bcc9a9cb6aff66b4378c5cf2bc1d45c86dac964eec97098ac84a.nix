@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = true;
           };
         };
       };

@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets" or (buildDepError "websockets"))
           (hsPkgs."wuss" or (buildDepError "wuss"))
           ];
+        buildable = true;
         };
       exes = {
         "ping-pong" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."discord-haskell" or (buildDepError "discord-haskell"))
             ];
+          buildable = true;
           };
         };
       };

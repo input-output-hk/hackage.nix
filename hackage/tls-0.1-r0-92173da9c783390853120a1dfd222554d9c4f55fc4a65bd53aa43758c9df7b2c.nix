@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptocipher" or (buildDepError "cryptocipher"))
           (hsPkgs."certificate" or (buildDepError "certificate"))
           ];
+        buildable = true;
         };
       exes = {
         "stunnel" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             (hsPkgs."RSA" or (buildDepError "RSA"))
             ];
+          buildable = if flags.executable then true else false;
           };
         "Tests" = {
           depends = (pkgs.lib).optionals (flags.test) [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

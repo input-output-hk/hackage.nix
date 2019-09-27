@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haste-lib" or (buildDepError "haste-lib"))
           (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
           ];
+        buildable = true;
         };
       };
     }

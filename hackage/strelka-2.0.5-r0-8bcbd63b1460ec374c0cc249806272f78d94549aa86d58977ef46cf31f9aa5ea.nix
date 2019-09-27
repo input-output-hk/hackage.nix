@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."url-decoders" or (buildDepError "url-decoders"))
           (hsPkgs."uuid" or (buildDepError "uuid"))
           ];
+        buildable = true;
         };
       };
     }

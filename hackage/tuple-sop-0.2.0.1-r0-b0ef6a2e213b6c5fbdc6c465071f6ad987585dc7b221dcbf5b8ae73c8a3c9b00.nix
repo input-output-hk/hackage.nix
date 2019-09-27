@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
           ];
+        buildable = true;
         };
       tests = {
         "tuple-sop-test" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
             (hsPkgs."tuple-sop" or (buildDepError "tuple-sop"))
             ];
+          buildable = true;
           };
         };
       };

@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
           (hsPkgs."logict" or (buildDepError "logict"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "test" = {
           depends = [
@@ -107,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
             (hsPkgs."logict" or (buildDepError "logict"))
             ];
+          buildable = true;
           };
         "find-hs" = {
           depends = [
@@ -123,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

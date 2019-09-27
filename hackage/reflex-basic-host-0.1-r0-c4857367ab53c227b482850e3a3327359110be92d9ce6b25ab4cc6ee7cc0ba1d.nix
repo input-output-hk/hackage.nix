@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."reflex" or (buildDepError "reflex"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reflex" or (buildDepError "reflex"))
             (hsPkgs."reflex-basic-host" or (buildDepError "reflex-basic-host"))
             ];
+          buildable = true;
           };
         "counter" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reflex" or (buildDepError "reflex"))
             (hsPkgs."reflex-basic-host" or (buildDepError "reflex-basic-host"))
             ];
+          buildable = true;
           };
         };
       };

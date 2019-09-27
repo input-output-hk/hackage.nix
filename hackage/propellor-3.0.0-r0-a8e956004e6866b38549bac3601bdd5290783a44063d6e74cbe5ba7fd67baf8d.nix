@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."concurrent-output" or (buildDepError "concurrent-output"))
           ];
+        buildable = true;
         };
       exes = {
         "propellor" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."concurrent-output" or (buildDepError "concurrent-output"))
             ];
+          buildable = true;
           };
         "propellor-config" = {
           depends = [
@@ -132,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."concurrent-output" or (buildDepError "concurrent-output"))
             ];
+          buildable = true;
           };
         };
       };

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."gi-gtk-declarative" or (buildDepError "gi-gtk-declarative"))
           ];
+        buildable = true;
         };
       };
     }

@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."connection" or (buildDepError "connection"))
           (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
           ];
+        buildable = true;
         };
       tests = {
         "integration-tests" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
             (hsPkgs."uuid" or (buildDepError "uuid"))
             ];
+          buildable = true;
           };
         };
       };

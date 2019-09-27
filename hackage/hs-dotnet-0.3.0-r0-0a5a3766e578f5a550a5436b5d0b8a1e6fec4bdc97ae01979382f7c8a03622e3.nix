@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."ole32" or (sysDepError "ole32"))
           (pkgs."oleaut32" or (sysDepError "oleaut32"))
           ];
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-posix" or (buildDepError "bindings-posix"))
           (hsPkgs."bindings-common" or (buildDepError "bindings-common"))
           ];
+        buildable = true;
         };
       };
     }

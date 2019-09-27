@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."FilePath" or (buildDepError "FilePath"))
             (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
             ];
+          buildable = true;
           };
         };
       };

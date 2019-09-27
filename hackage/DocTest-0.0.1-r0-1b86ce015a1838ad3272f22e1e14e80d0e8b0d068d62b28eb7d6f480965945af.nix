@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."plugins" or (buildDepError "plugins"))
             ];
+          buildable = true;
           };
         };
       };

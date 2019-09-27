@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."Codec-Image-DevIL" or (buildDepError "Codec-Image-DevIL"))
           ];
+        buildable = true;
         };
       };
     }

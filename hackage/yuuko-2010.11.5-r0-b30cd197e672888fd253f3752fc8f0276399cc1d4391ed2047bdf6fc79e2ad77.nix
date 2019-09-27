@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hxt" or (buildDepError "hxt"))
           (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
           ];
+        buildable = true;
         };
       exes = {
         "yuuko" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             ];
+          buildable = true;
           };
         };
       };

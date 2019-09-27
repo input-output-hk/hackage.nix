@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."monoid-owns" or (buildDepError "monoid-owns"))
           ];
+        buildable = true;
         };
       };
     }

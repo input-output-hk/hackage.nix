@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml" or (buildDepError "xml"))
           (hsPkgs."network" or (buildDepError "network"))
           ];
+        buildable = true;
         };
       tests = {
         "Tests" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."twiml" or (buildDepError "twiml"))
             ];
+          buildable = true;
           };
         };
       };

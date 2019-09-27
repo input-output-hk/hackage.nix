@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell98" or (buildDepError "haskell98"))
           (hsPkgs."polyparse" or (buildDepError "polyparse"))
           ];
+        buildable = true;
         };
       exes = {
         "Canonicalise" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "CanonicaliseLazy" = {
           depends = [
@@ -75,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "Xtract" = {
           depends = [
@@ -82,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "XtractLazy" = {
           depends = [
@@ -89,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "Validate" = {
           depends = [
@@ -96,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "MkOneOf" = {
           depends = [
@@ -103,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "DtdToHaskell" = {
           depends = [
@@ -110,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         };
       };

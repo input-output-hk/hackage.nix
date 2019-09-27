@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "kafka-client-example" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hw-kafka-client" or (buildDepError "hw-kafka-client"))
             (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
             ];
+          buildable = true;
           };
         "tests" = {
           depends = [
@@ -107,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hw-kafka-client" or (buildDepError "hw-kafka-client"))
             (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
             ];
+          buildable = true;
           };
         };
       };

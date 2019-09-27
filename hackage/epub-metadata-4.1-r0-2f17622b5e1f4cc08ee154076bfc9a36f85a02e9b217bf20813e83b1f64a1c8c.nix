@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
           (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
           ];
+        buildable = true;
         };
       tests = {
         "test-epub-metadata" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             ];
+          buildable = true;
           };
         };
       };

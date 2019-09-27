@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "midimory-reactive" = {
           depends = (pkgs.lib).optionals (flags.reactive) [
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.reactive then true else false;
           };
         };
       };

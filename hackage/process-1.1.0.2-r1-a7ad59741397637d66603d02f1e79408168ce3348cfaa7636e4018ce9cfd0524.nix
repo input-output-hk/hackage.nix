@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           ];
         libs = (pkgs.lib).optionals (!(compiler.isNhc98 && true)) ((pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32")));
+        buildable = true;
         };
       };
     }

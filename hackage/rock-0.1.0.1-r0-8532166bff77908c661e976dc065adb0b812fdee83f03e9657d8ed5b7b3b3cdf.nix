@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."protolude" or (buildDepError "protolude"))
           ];
+        buildable = true;
         };
       exes = {
         "rock-spreadsheet" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."protolude" or (buildDepError "protolude"))
             (hsPkgs."dependent-sum-template" or (buildDepError "dependent-sum-template"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

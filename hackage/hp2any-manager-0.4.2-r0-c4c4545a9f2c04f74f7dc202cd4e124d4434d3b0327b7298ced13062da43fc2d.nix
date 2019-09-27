@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hp2any-core" or (buildDepError "hp2any-core"))
             (hsPkgs."hp2any-graph" or (buildDepError "hp2any-graph"))
             ];
+          buildable = true;
           };
         };
       };

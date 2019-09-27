@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."json" or (buildDepError "json"))
             (hsPkgs."uniplate" or (buildDepError "uniplate"))
             ];
+          buildable = true;
           };
         };
       };

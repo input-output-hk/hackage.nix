@@ -64,7 +64,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
           (hsPkgs."cpphs" or (buildDepError "cpphs"))
           ];
+        buildable = true;
         };
-      exes = { "precis" = {}; };
+      exes = { "precis" = { buildable = true; }; };
       };
     }

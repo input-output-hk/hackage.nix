@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."webkit" or (buildDepError "webkit"))
               (hsPkgs."webkit-javascriptcore" or (buildDepError "webkit-javascriptcore"))
               ]));
+        buildable = true;
         };
       tests = {
         "test-tool" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."webkit" or (buildDepError "webkit"))
               (hsPkgs."webkit-javascriptcore" or (buildDepError "webkit-javascriptcore"))
               ]));
+          buildable = if compiler.isGhcjs && true then false else true;
           };
         };
       };

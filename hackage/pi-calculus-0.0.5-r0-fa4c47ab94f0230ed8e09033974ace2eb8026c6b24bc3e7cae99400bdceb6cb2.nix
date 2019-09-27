@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."AES" or (buildDepError "AES"))
             (hsPkgs."RSA" or (buildDepError "RSA"))
             ];
+          buildable = true;
           };
         };
       };

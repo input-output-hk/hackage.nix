@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cairo" or (buildDepError "cairo"))
             (hsPkgs."hcwiid" or (buildDepError "hcwiid"))
             ];
+          buildable = true;
           };
         };
       };

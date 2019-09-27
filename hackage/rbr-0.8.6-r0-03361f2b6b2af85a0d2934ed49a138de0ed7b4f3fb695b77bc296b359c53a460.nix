@@ -62,9 +62,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."bio" or (buildDepError "bio"))
             ];
+          buildable = true;
           };
         "mct" = {
           depends = [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ];
+          buildable = true;
           };
         };
       };

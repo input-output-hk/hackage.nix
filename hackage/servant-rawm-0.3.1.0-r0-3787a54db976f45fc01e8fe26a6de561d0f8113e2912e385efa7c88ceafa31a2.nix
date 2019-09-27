@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
           ];
+        buildable = true;
         };
       exes = {
         "servant-rawm-example-client" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-client-core" or (buildDepError "servant-client-core"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.buildexample then true else false;
           };
         "servant-rawm-example-docs" = {
           depends = [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-docs" or (buildDepError "servant-docs"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.buildexample then true else false;
           };
         "servant-rawm-example-server" = {
           depends = [
@@ -106,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if flags.buildexample then true else false;
           };
         };
       tests = {
@@ -115,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."Glob" or (buildDepError "Glob"))
             ];
+          buildable = true;
           };
         "servant-rawm-test" = {
           depends = [
@@ -137,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = true;
           };
         };
       };

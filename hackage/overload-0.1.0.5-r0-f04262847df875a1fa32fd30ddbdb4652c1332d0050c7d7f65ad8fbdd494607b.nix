@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."simple-effects" or (buildDepError "simple-effects"))
           (hsPkgs."th-expand-syns" or (buildDepError "th-expand-syns"))
           ];
+        buildable = true;
         };
       };
     }

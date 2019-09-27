@@ -92,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."webkitgtk3" or (buildDepError "webkitgtk3"))
           (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."integer-simple" or (buildDepError "integer-simple"));
+        buildable = true;
         };
       exes = {
         "hbro" = {
@@ -99,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hbro" or (buildDepError "hbro"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

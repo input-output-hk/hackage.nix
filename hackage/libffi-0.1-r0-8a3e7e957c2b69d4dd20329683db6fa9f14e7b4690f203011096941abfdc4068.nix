@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = [ (pkgs."ffi" or (sysDepError "ffi")) ];
         pkgconfig = [ (pkgconfPkgs."libffi" or (pkgConfDepError "libffi")) ];
+        buildable = true;
         };
       };
     }

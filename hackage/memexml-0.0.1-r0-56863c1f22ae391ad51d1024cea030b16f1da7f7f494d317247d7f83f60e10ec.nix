@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hxt" or (buildDepError "hxt"))
           (hsPkgs."memexml" or (buildDepError "memexml"))
           ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."gssapi_krb5" or (sysDepError "gssapi_krb5"))
           (pkgs."krb5" or (sysDepError "krb5"))
           ];
+        buildable = true;
         };
       };
     }

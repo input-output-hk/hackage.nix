@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monadLib" or (buildDepError "monadLib"))
           (hsPkgs."fclabels" or (buildDepError "fclabels"))
           ];
+        buildable = true;
         };
       };
     }

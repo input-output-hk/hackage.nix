@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Boolean" or (buildDepError "Boolean"))
           (hsPkgs."temporal-media" or (buildDepError "temporal-media"))
           ];
+        buildable = true;
         };
       };
     }

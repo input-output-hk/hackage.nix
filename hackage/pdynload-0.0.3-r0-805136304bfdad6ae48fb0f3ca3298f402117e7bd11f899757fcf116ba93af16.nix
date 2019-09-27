@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           (hsPkgs."ghc" or (buildDepError "ghc"))
           ];
+        buildable = true;
         };
       };
     }

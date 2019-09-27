@@ -54,6 +54,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."wai" or (buildDepError "wai")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."wai" or (buildDepError "wai")) ];
+        buildable = true;
+        };
       };
     }

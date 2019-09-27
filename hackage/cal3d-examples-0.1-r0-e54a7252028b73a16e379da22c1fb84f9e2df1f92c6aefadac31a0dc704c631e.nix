@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cal3d" or (buildDepError "cal3d"))
             (hsPkgs."cal3d-opengl" or (buildDepError "cal3d-opengl"))
             ];
+          buildable = true;
           };
         "cally-gl" = {
           depends = [
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cal3d" or (buildDepError "cal3d"))
             (hsPkgs."cal3d-opengl" or (buildDepError "cal3d-opengl"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
             (hsPkgs."markdown-pap" or (buildDepError "markdown-pap"))
             ];
+          buildable = true;
           };
         };
       };

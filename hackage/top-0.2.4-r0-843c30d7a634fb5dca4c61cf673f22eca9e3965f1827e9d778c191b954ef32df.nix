@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safecopy" or (buildDepError "safecopy"))
             (hsPkgs."websockets" or (buildDepError "websockets"))
             ]);
+        buildable = true;
         };
       tests = {
         "top-test-repo" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."top" or (buildDepError "top"))
             (hsPkgs."zm" or (buildDepError "zm"))
             ];
+          buildable = true;
           };
         "top-doctest" = {
           depends = [
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."filemanip" or (buildDepError "filemanip"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OneTuple" or (buildDepError "OneTuple"))
           (hsPkgs."HList" or (buildDepError "HList"))
           ];
+        buildable = true;
         };
       };
     }

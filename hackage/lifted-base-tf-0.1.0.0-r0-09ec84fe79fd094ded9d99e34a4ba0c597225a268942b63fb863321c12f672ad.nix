@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."basic" or (buildDepError "basic"))
           (hsPkgs."control" or (buildDepError "control"))
           ];
+        buildable = true;
         };
       tests = {
         "test-lifted-base" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-control" or (buildDepError "monad-control"))
             (hsPkgs."monad-peel" or (buildDepError "monad-peel"))
             ];
+          buildable = true;
           };
         };
       };

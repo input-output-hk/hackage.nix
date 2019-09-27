@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."dl" or (sysDepError "dl"))
             (pkgs."m" or (sysDepError "m"))
             ];
+          buildable = true;
           };
         "beind" = {
           depends = [
@@ -96,12 +97,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "beinclient" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = true;
           };
         "beinminion" = {
           depends = [
@@ -118,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "beinhttpd" = {
           depends = [
@@ -141,6 +145,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

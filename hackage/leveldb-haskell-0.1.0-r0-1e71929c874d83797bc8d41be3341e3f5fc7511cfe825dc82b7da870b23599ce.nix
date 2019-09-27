@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default" or (buildDepError "data-default"))
           ];
         libs = [ (pkgs."leveldb" or (sysDepError "leveldb")) ];
+        buildable = true;
         };
       };
     }

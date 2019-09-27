@@ -93,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets-simple" or (buildDepError "websockets-simple"))
           (hsPkgs."wuss" or (buildDepError "wuss"))
           ];
+        buildable = true;
         };
       tests = {
         "sparrow-test" = {
@@ -135,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."websockets-simple" or (buildDepError "websockets-simple"))
             (hsPkgs."wuss" or (buildDepError "wuss"))
             ];
+          buildable = true;
           };
         };
       };

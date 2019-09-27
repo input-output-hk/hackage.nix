@@ -121,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskeline" or (buildDepError "haskeline"))
             (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
             ]);
+        buildable = true;
         };
       exes = {
         "hnix" = {
@@ -156,6 +157,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cryptohash-sha512" or (buildDepError "cryptohash-sha512"))
             (hsPkgs."serialise" or (buildDepError "serialise"))
             ];
+          buildable = if compiler.isGhcjs && true then false else true;
           };
         };
       tests = {
@@ -203,6 +205,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cryptohash-sha512" or (buildDepError "cryptohash-sha512"))
             (hsPkgs."serialise" or (buildDepError "serialise"))
             ];
+          buildable = if compiler.isGhcjs && true then false else true;
           };
         };
       benchmarks = {
@@ -233,6 +236,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cryptohash-sha512" or (buildDepError "cryptohash-sha512"))
             (hsPkgs."serialise" or (buildDepError "serialise"))
             ];
+          buildable = if compiler.isGhcjs && true then false else true;
           };
         };
       };

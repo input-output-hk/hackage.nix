@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-types" or (buildDepError "http-types"))
             (hsPkgs."text" or (buildDepError "text"))
             ]);
+        buildable = true;
         };
       exes = {
         "hackernews-example" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
               (hsPkgs."http-client" or (buildDepError "http-client"))
               ];
+          buildable = true;
           };
         "ghcjs-tests" = {
           depends = (pkgs.lib).optionals (compiler.isGhcjs && true) [
@@ -104,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = if compiler.isGhcjs && true then true else false;
           };
         };
       tests = {
@@ -118,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
             ];
+          buildable = if compiler.isGhcjs && true then false else true;
           };
         };
       };

@@ -92,11 +92,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."syb" or (buildDepError "syb"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = true;
           };
         "lhc-regress" = {
           depends = [ (hsPkgs."process" or (buildDepError "process")) ] ++ [
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.lhc-regress then true else false;
           };
         };
       };

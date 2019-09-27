@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
           (hsPkgs."http-streams" or (buildDepError "http-streams"))
           ];
+        buildable = true;
         };
       };
     }

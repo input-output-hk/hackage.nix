@@ -99,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
       tests = {
         "test-routes" = {
@@ -113,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         "tests" = {
           depends = [
@@ -140,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -153,6 +156,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,24 +60,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."alsa" or (buildDepError "alsa"))
             ];
+          buildable = true;
           };
         "play" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."alsa" or (buildDepError "alsa"))
             ];
+          buildable = true;
           };
         "record" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."alsa" or (buildDepError "alsa"))
             ];
+          buildable = true;
           };
         "volume_meter" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."alsa" or (buildDepError "alsa"))
             ];
+          buildable = true;
           };
         };
       };

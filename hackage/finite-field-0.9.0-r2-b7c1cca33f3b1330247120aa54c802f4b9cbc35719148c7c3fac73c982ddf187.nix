@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."type-level-numbers" or (buildDepError "type-level-numbers"))
             ]);
+        buildable = true;
         };
       tests = {
         "TestPrimeField" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."type-level-numbers" or (buildDepError "type-level-numbers"))
               ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.7") (hsPkgs."tagged" or (buildDepError "tagged"));
+          buildable = true;
           };
         };
       };

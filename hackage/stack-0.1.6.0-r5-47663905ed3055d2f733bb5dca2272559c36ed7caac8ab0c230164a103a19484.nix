@@ -134,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+        buildable = true;
         };
       exes = {
         "stack" = {
@@ -168,6 +169,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."http-client" or (buildDepError "http-client"))
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
+          buildable = true;
           };
         };
       tests = {
@@ -196,6 +198,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."retry" or (buildDepError "retry"))
             ];
+          buildable = true;
           };
         "stack-integration-test" = {
           depends = [
@@ -215,6 +218,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.integration-tests then true else false;
           };
         };
       };

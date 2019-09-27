@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shake" or (buildDepError "shake"))
           (hsPkgs."language-ats" or (buildDepError "language-ats"))
           ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zoom-cache" or (buildDepError "zoom-cache"))
             (hsPkgs."zoom-cache-pcm" or (buildDepError "zoom-cache-pcm"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

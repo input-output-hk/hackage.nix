@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           (hsPkgs."bits-atomic" or (buildDepError "bits-atomic"))
           ];
+        buildable = true;
         };
       };
     }

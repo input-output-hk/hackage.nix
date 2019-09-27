@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."list-extras" or (buildDepError "list-extras"))
           (hsPkgs."heap" or (buildDepError "heap"))
           ];
+        buildable = true;
         };
       };
     }

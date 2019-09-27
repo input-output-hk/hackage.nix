@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cheapskate" or (buildDepError "cheapskate"))
           (hsPkgs."lucid" or (buildDepError "lucid"))
           ];
+        buildable = true;
         };
       };
     }

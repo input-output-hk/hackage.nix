@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."process-extras" or (buildDepError "process-extras"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."temporary-rc" or (buildDepError "temporary-rc"))
             ];
+          buildable = true;
           };
         };
       };

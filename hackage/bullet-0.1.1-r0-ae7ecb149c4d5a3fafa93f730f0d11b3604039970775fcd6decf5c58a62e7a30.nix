@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."LinearMath" or (sysDepError "LinearMath"))
           (pkgs."BulletCollision" or (sysDepError "BulletCollision"))
           ];
+        buildable = true;
         };
       };
     }

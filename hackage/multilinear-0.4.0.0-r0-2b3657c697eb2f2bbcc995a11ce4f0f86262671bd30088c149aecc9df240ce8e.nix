@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel" or (buildDepError "parallel"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "multicore" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multilinear" or (buildDepError "multilinear"))
             (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
             ];
+          buildable = true;
           };
         "sequential" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multilinear" or (buildDepError "multilinear"))
             (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -94,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multilinear" or (buildDepError "multilinear"))
             (hsPkgs."weigh" or (buildDepError "weigh"))
             ];
+          buildable = true;
           };
         "multicore-profile" = {
           depends = [
@@ -101,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."multilinear" or (buildDepError "multilinear"))
             ];
+          buildable = true;
           };
         "multicore-time" = {
           depends = [
@@ -108,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."multilinear" or (buildDepError "multilinear"))
             ];
+          buildable = true;
           };
         "sequential-memory" = {
           depends = [
@@ -115,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multilinear" or (buildDepError "multilinear"))
             (hsPkgs."weigh" or (buildDepError "weigh"))
             ];
+          buildable = true;
           };
         "sequential-profile" = {
           depends = [
@@ -122,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."multilinear" or (buildDepError "multilinear"))
             ];
+          buildable = true;
           };
         "sequential-time" = {
           depends = [
@@ -129,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."multilinear" or (buildDepError "multilinear"))
             ];
+          buildable = true;
           };
         };
       };

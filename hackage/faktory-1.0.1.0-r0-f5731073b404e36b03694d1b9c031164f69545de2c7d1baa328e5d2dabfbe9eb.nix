@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       exes = {
         "faktory-example-consumer" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."faktory" or (buildDepError "faktory"))
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             ];
+          buildable = true;
           };
         "faktory-example-producer" = {
           depends = [
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."faktory" or (buildDepError "faktory"))
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -98,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."faktory" or (buildDepError "faktory"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         "readme" = {
           depends = [
@@ -106,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."faktory" or (buildDepError "faktory"))
             (hsPkgs."markdown-unlit" or (buildDepError "markdown-unlit"))
             ];
+          buildable = true;
           };
         };
       };

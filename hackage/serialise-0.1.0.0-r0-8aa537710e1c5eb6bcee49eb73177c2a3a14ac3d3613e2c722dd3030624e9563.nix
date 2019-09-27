@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ]);
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -124,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."time" or (buildDepError "time"))
               (hsPkgs."old-locale" or (buildDepError "old-locale"))
               ]);
+          buildable = true;
           };
         "micro" = {
           depends = [
@@ -141,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal-vector" or (buildDepError "cereal-vector"))
             (hsPkgs."store" or (buildDepError "store"))
             ];
+          buildable = true;
           };
         "versus" = {
           depends = [
@@ -171,6 +175,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."time" or (buildDepError "time"))
               (hsPkgs."old-locale" or (buildDepError "old-locale"))
               ]);
+          buildable = true;
           };
         };
       };

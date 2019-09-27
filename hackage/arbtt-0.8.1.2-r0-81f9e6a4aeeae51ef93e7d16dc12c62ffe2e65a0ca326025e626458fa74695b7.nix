@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           libs = if system.isWindows
             then [ (pkgs."psapi" or (sysDepError "psapi")) ]
             else [ (pkgs."Xss" or (sysDepError "Xss")) ];
+          buildable = true;
           };
         "arbtt-stats" = {
           depends = [
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."terminal-progress-bar" or (buildDepError "terminal-progress-bar"))
             (hsPkgs."bytestring-progress" or (buildDepError "bytestring-progress"))
             ];
+          buildable = true;
           };
         "arbtt-dump" = {
           depends = [
@@ -122,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ];
+          buildable = true;
           };
         "arbtt-import" = {
           depends = [
@@ -139,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "arbtt-recover" = {
           depends = [
@@ -156,6 +160,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -180,6 +185,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

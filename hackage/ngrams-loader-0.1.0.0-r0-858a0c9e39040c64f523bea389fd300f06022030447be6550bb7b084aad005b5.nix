@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."sqlite-simple" or (buildDepError "sqlite-simple"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "ngrams-loader" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ngrams-loader" or (buildDepError "ngrams-loader"))
             (hsPkgs."parseargs" or (buildDepError "parseargs"))
             ];
+          buildable = true;
           };
         };
       };

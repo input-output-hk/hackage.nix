@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       exes = {
         "Rolfsen-Kh" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."knots" or (buildDepError "knots"))
             ];
+          buildable = true;
           };
         };
       };

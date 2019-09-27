@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."dotgen" or (buildDepError "dotgen"))
             ];
+          buildable = true;
           };
         };
       };

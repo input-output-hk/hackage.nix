@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."storable-complex" or (buildDepError "storable-complex"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
           libs = [ (pkgs."blas" or (sysDepError "blas")) ];
+          buildable = true;
           };
         };
       };

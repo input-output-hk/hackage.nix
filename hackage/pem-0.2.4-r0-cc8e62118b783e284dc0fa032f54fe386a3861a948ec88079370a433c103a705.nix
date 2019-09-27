@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."basement" or (buildDepError "basement"))
           (hsPkgs."memory" or (buildDepError "memory"))
           ];
+        buildable = true;
         };
       tests = {
         "test-pem" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."pem" or (buildDepError "pem"))
             ];
+          buildable = true;
           };
         };
       };

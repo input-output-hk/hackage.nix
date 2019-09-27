@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bindings-posix" or (buildDepError "bindings-posix"))
             (hsPkgs."relation" or (buildDepError "relation"))
             ];
+          buildable = true;
           };
         };
       };

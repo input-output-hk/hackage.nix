@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = (pkgs.lib).optionals (flags.system-lua) (if flags.luajit
           then [ (pkgs."luajit-5.1" or (sysDepError "luajit-5.1")) ]
           else [ (pkgs."lua" or (sysDepError "lua")) ]);
+        buildable = true;
         };
       tests = {
         "simple-test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hslua" or (buildDepError "hslua"))
             ];
+          buildable = true;
           };
         "callbacks" = {
           depends = [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."hslua" or (buildDepError "hslua"))
             ];
+          buildable = true;
           };
         "haskellfun" = {
           depends = [
@@ -83,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."hslua" or (buildDepError "hslua"))
             ];
+          buildable = true;
           };
         "err_prop" = {
           depends = [
@@ -90,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."hslua" or (buildDepError "hslua"))
             ];
+          buildable = true;
           };
         "test" = {
           depends = [
@@ -101,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

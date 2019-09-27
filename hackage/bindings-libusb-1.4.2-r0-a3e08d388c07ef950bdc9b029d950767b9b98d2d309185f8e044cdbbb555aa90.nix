@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libusb-1.0" or (pkgConfDepError "libusb-1.0"))
           ];
+        buildable = true;
         };
       };
     }

@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."websockets" or (buildDepError "websockets"))
             ]);
+        buildable = true;
         };
       exes = {
         "monitorService" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transient" or (buildDepError "transient"))
             (hsPkgs."transient-universe" or (buildDepError "transient-universe"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -126,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."websockets" or (buildDepError "websockets"))
             ];
+          buildable = true;
           };
         };
       };

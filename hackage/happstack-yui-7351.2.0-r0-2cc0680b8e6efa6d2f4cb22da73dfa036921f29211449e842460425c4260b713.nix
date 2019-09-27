@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."web-routes-boomerang" or (buildDepError "web-routes-boomerang"))
           (hsPkgs."web-routes-happstack" or (buildDepError "web-routes-happstack"))
           ];
+        buildable = true;
         };
       };
     }

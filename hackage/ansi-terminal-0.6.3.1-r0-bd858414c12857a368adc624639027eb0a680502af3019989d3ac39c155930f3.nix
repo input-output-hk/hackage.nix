@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Win32" or (buildDepError "Win32"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
         "ansi-terminal-example" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base-compat" or (buildDepError "base-compat"))
             (hsPkgs."Win32" or (buildDepError "Win32"))
             ];
+          buildable = if !flags.example then false else true;
           };
         };
       };

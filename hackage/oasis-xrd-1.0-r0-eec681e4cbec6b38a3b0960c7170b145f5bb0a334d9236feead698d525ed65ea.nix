@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           (hsPkgs."xml-conduit-writer" or (buildDepError "xml-conduit-writer"))
           ];
+        buildable = true;
         };
       tests = {
         "example-json" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
             (hsPkgs."xml-conduit-writer" or (buildDepError "xml-conduit-writer"))
             ];
+          buildable = true;
           };
         "example-xml" = {
           depends = [
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
             (hsPkgs."xml-conduit-writer" or (buildDepError "xml-conduit-writer"))
             ];
+          buildable = true;
           };
         };
       };

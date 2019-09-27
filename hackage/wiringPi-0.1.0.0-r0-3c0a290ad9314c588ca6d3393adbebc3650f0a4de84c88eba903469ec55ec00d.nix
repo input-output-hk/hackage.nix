@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "pwm-example" = {
@@ -67,42 +68,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."wiringPi" or (buildDepError "wiringPi"))
             ];
+          buildable = true;
           };
         "output-example" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."wiringPi" or (buildDepError "wiringPi"))
             ];
+          buildable = true;
           };
         "write-byte-example" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."wiringPi" or (buildDepError "wiringPi"))
             ];
+          buildable = true;
           };
         "info-example" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."wiringPi" or (buildDepError "wiringPi"))
             ];
+          buildable = true;
           };
         "broadcom-example" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."wiringPi" or (buildDepError "wiringPi"))
             ];
+          buildable = true;
           };
         "turn-off" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."wiringPi" or (buildDepError "wiringPi"))
             ];
+          buildable = true;
           };
         "wiringPi-test" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."wiringPi" or (buildDepError "wiringPi"))
             ];
+          buildable = true;
           };
         };
       };

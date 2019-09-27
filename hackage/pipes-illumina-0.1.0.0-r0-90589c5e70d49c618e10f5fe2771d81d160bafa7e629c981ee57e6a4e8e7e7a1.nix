@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes" or (buildDepError "pipes"))
           (hsPkgs."pipes-bgzf" or (buildDepError "pipes-bgzf"))
           ];
+        buildable = true;
         };
       };
     }

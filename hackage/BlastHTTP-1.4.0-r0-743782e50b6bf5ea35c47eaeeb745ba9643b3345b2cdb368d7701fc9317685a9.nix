@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
           (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
           ];
+        buildable = true;
         };
       };
     }

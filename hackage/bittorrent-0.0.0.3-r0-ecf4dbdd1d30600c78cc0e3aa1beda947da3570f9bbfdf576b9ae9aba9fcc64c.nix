@@ -101,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."mmap" or (buildDepError "mmap"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -120,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bencoding" or (buildDepError "bencoding"))
             (hsPkgs."bittorrent" or (buildDepError "bittorrent"))
             ];
+          buildable = true;
           };
         };
       };

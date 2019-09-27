@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

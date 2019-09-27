@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."keera-hails-mvc-view" or (buildDepError "keera-hails-mvc-view"))
           (hsPkgs."keera-hails-mvc-view-gtk" or (buildDepError "keera-hails-mvc-view-gtk"))
           ];
+        buildable = true;
         };
       };
     }

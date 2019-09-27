@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework" or (buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
           ];
+        buildable = true;
         };
       tests = {
         "TestCH" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         "TestClosure" = {
           depends = [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         "TestStats" = {
           depends = [
@@ -101,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         "TestMx" = {
           depends = [
@@ -111,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         "TestTracing" = {
           depends = [
@@ -121,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mysql" or (buildDepError "mysql"))
             (hsPkgs."persistent-mysql" or (buildDepError "persistent-mysql"))
             ];
+          buildable = true;
           };
         };
       };

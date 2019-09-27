@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           ];
+        buildable = true;
         };
       exes = {
         "gpio" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gpio" or (buildDepError "gpio"))
             (hsPkgs."basic-prelude" or (buildDepError "basic-prelude"))
             ];
+          buildable = true;
           };
         };
       };

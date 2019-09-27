@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."feldspar-compiler" or (buildDepError "feldspar-compiler"))
           (hsPkgs."feldspar-compiler-shim" or (buildDepError "feldspar-compiler-shim"))
           ];
+        buildable = true;
         };
       };
     }

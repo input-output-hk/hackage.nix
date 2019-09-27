@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."entropy" or (buildDepError "entropy"))
           (hsPkgs."memory" or (buildDepError "memory"))
           ];
+        buildable = true;
         };
       };
     }

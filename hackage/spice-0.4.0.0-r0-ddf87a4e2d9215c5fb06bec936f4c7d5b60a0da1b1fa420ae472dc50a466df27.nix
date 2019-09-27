@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."JuicyPixels-repa" or (buildDepError "JuicyPixels-repa"))
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           ];
+        buildable = true;
         };
       };
     }

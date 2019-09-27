@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           (hsPkgs."conduit" or (buildDepError "conduit"))
           ];
+        buildable = true;
         };
       exes = {
         "stackage" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -120,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-client" or (buildDepError "http-client"))
             (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
             ];
+          buildable = true;
           };
         };
       };

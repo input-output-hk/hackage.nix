@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unliftio" or (buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
           ];
+        buildable = true;
         };
       tests = {
         "examples" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unliftio" or (buildDepError "unliftio"))
             ] ++ (pkgs.lib).optional (flags.hspec-jenkins) (hsPkgs."hspec-jenkins" or (buildDepError "hspec-jenkins"));
+          buildable = true;
           };
         };
       };

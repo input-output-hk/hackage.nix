@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2.0") (hsPkgs."semigroups" or (buildDepError "semigroups"));
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2.0") (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         };
       };

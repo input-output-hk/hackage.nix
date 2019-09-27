@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."compact-string" or (buildDepError "compact-string"))
             ];
         libs = [ (pkgs."icuuc" or (sysDepError "icuuc")) ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."cgi" or (buildDepError "cgi"))
           ];
+        buildable = true;
         };
       };
     }

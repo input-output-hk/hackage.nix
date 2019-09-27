@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
             (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
             ];
+          buildable = true;
           };
         };
       };

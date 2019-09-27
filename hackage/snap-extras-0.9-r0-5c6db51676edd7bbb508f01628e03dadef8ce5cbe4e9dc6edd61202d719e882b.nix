@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
           (hsPkgs."jmacro" or (buildDepError "jmacro"))
           ];
+        buildable = true;
         };
       };
     }

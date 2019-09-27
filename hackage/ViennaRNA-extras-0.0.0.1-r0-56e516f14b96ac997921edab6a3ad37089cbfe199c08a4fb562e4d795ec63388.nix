@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
           (hsPkgs."ViennaRNA-bindings" or (buildDepError "ViennaRNA-bindings"))
           ];
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."ViennaRNA-extras" or (buildDepError "ViennaRNA-extras"))
             ];
+          buildable = true;
           };
         };
       };

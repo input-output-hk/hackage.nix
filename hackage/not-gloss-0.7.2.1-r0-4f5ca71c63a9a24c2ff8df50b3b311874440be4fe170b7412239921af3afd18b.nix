@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."bmp" or (buildDepError "bmp"))
           ];
+        buildable = true;
         };
       };
     }

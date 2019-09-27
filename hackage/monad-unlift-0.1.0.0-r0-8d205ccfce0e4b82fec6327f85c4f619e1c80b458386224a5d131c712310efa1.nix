@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."constraints" or (buildDepError "constraints"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
         libs = (pkgs.lib).optional (flags.external-udis86) (pkgs."udis86" or (sysDepError "udis86"));
+        buildable = true;
         };
       };
     }

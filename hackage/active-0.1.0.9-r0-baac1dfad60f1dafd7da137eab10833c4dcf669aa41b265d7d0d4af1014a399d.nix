@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           (hsPkgs."newtype" or (buildDepError "newtype"))
           ];
+        buildable = true;
         };
       tests = {
         "active-tests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."newtype" or (buildDepError "newtype"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

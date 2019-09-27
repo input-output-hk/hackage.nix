@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."wai-conduit" or (buildDepError "wai-conduit"))
           ];
+        buildable = true;
         };
       tests = {
         "integration-test" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp" or (buildDepError "warp"))
             (hsPkgs."warp-tls" or (buildDepError "warp-tls"))
             ];
+          buildable = true;
           };
         };
       };

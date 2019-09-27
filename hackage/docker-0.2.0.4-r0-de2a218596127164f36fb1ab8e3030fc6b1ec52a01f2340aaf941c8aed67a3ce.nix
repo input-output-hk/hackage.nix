@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
           (hsPkgs."http-client-openssl" or (buildDepError "http-client-openssl"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
             (hsPkgs."http-client-openssl" or (buildDepError "http-client-openssl"))
             ];
+          buildable = true;
           };
         };
       };

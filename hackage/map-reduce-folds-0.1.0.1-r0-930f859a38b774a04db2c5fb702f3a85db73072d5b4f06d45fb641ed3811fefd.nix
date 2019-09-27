@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."streaming" or (buildDepError "streaming"))
           (hsPkgs."streamly" or (buildDepError "streamly"))
           ] ++ (pkgs.lib).optional (flags.dump-core) (hsPkgs."dump-core" or (buildDepError "dump-core"));
+        buildable = true;
         };
       exes = {
         "listStats" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."map-reduce-folds" or (buildDepError "map-reduce-folds"))
             ];
+          buildable = true;
           };
         "readmeExample" = {
           depends = [
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."map-reduce-folds" or (buildDepError "map-reduce-folds"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -105,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."foldl" or (buildDepError "foldl"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -121,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."random" or (buildDepError "random"))
             ] ++ (pkgs.lib).optional (flags.dump-core) (hsPkgs."dump-core" or (buildDepError "dump-core"));
+          buildable = true;
           };
         };
       };

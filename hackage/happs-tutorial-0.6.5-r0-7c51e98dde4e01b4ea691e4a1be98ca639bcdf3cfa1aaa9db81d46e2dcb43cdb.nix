@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HAppSHelpers" or (buildDepError "HAppSHelpers"))
             (hsPkgs."DebugTraceHelpers" or (buildDepError "DebugTraceHelpers"))
             ];
+          buildable = true;
           };
         };
       };

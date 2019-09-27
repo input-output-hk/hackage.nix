@@ -54,7 +54,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       tests = {
         "number" = {
           depends = [
@@ -62,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."percent-format" or (buildDepError "percent-format"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "scientific" = {
           depends = [
@@ -69,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."percent-format" or (buildDepError "percent-format"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "prop" = {
           depends = [
@@ -76,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."percent-format" or (buildDepError "percent-format"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "quotient" = {
           depends = [
@@ -83,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."percent-format" or (buildDepError "percent-format"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "unit" = {
           depends = [
@@ -90,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."percent-format" or (buildDepError "percent-format"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = [
@@ -97,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."percent-format" or (buildDepError "percent-format"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         };
       };

@@ -83,12 +83,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."failure" or (buildDepError "failure"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
         "yesod" = {
           depends = [ (hsPkgs."parsec" or (buildDepError "parsec")) ] ++ [
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "runtests" = {
           depends = [
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

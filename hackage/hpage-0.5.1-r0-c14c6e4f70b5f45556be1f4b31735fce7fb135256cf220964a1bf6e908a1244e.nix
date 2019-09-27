@@ -88,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hint-server" or (buildDepError "hint-server"))
             (hsPkgs."hint-server" or (buildDepError "hint-server"))
             ];
+          buildable = true;
           };
         };
       };

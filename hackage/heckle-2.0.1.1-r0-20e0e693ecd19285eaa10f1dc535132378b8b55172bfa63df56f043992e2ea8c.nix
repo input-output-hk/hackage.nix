@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pandoc" or (buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
           ];
+        buildable = true;
         };
       exes = {
         "heckle" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
             ];
+          buildable = true;
           };
         };
       };

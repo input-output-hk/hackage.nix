@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           (hsPkgs."base" or (buildDepError "base"))
           ] ++ (pkgs.lib).optional (flags.tfp) (hsPkgs."tfp" or (buildDepError "tfp"));
+        buildable = true;
         };
       };
     }

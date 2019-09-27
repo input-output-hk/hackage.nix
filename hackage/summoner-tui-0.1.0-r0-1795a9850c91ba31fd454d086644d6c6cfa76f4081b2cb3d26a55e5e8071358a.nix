@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."vty" or (buildDepError "vty"))
           ];
+        buildable = if system.isWindows then false else true;
         };
       exes = {
         "summon-tui" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."summoner-tui" or (buildDepError "summoner-tui"))
             ];
+          buildable = if system.isWindows then false else true;
           };
         };
       };

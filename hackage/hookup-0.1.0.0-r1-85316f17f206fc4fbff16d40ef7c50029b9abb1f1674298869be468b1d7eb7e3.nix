@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
         libs = [ (pkgs."ssl" or (sysDepError "ssl")) ];
+        buildable = true;
         };
       };
     }

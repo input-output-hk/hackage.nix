@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."composition-prelude" or (buildDepError "composition-prelude"))
           (hsPkgs."dir-traverse" or (buildDepError "dir-traverse"))
           ];
+        buildable = true;
         };
       };
     }

@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shortcut" or (buildDepError "shortcut"))
           (hsPkgs."NoTrace" or (buildDepError "NoTrace"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Imprevu" or (buildDepError "Imprevu"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         };
       };

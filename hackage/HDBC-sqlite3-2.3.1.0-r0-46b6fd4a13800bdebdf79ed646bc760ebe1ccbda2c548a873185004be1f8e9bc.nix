@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
         libs = [ (pkgs."sqlite3" or (sysDepError "sqlite3")) ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ];
           libs = [ (pkgs."sqlite3" or (sysDepError "sqlite3")) ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib-bindings" or (buildDepError "zlib-bindings"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "Hit" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."hit" or (buildDepError "hit"))
             ];
+          buildable = if flags.executable then true else false;
           };
         };
       tests = {
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."hit" or (buildDepError "hit"))
             ];
+          buildable = true;
           };
         "test-repository" = {
           depends = [
@@ -115,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytedump" or (buildDepError "bytedump"))
             (hsPkgs."hit" or (buildDepError "hit"))
             ];
+          buildable = true;
           };
         };
       };

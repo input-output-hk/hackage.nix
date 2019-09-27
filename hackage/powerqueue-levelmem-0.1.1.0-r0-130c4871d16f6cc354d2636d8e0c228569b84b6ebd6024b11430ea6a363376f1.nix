@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."timespan" or (buildDepError "timespan"))
           ];
+        buildable = true;
         };
       tests = {
         "powerqueue-levelmem-test" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."leveldb" or (sysDepError "leveldb"))
             (pkgs."snappy" or (sysDepError "snappy"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -105,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."leveldb" or (sysDepError "leveldb"))
             (pkgs."snappy" or (sysDepError "snappy"))
             ];
+          buildable = true;
           };
         };
       };

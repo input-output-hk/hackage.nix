@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iproute" or (buildDepError "iproute"))
           (hsPkgs."persistent" or (buildDepError "persistent"))
           ];
+        buildable = true;
         };
       };
     }

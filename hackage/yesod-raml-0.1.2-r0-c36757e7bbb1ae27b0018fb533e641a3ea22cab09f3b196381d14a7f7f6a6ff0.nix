@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network-uri" or (buildDepError "network-uri"))
           (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
           ];
+        buildable = true;
         };
       exes = {
         "raml-utils" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             ];
+          buildable = if flags.utils then true else false;
           };
         };
       tests = {
@@ -105,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             ];
+          buildable = true;
           };
         };
       };

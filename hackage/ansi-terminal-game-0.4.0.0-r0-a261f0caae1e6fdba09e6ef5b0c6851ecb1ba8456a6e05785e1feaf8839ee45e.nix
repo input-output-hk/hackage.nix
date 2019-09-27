@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."terminal-size" or (buildDepError "terminal-size"))
           (hsPkgs."timers-tick" or (buildDepError "timers-tick"))
           ];
+        buildable = true;
         };
       exes = {
         "alone" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ansi-terminal-game" or (buildDepError "ansi-terminal-game"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "alone-playback" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ansi-terminal-game" or (buildDepError "ansi-terminal-game"))
             (hsPkgs."temporary" or (buildDepError "temporary"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -105,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."timers-tick" or (buildDepError "timers-tick"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

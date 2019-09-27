@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe-failure" or (buildDepError "safe-failure"))
           (hsPkgs."control-monad-exception" or (buildDepError "control-monad-exception"))
           ];
+        buildable = true;
         };
       };
     }

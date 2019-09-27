@@ -104,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."auto-update" or (buildDepError "auto-update"))
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           ];
+        buildable = true;
         };
       tests = {
         "test-routes" = {
@@ -118,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         "tests" = {
           depends = [
@@ -148,6 +150,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
             (hsPkgs."cookie" or (buildDepError "cookie"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -161,6 +164,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
             ];
+          buildable = true;
           };
         };
       };

@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."blas" or (sysDepError "blas"))
             ];
         frameworks = (pkgs.lib).optional (flags.accelerate) (pkgs."Accelerate" or (sysDepError "Accelerate"));
+        buildable = true;
         };
       };
     }

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."auto-update" or (buildDepError "auto-update"))
           ];
+        buildable = true;
         };
       };
     }

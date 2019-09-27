@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."dbusmenu-glib-0.4" or (pkgConfDepError "dbusmenu-glib-0.4"))
           ];
+        buildable = true;
         };
       };
     }

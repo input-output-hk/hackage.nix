@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cdeps" or (buildDepError "cdeps"))
           (hsPkgs."composition-prelude" or (buildDepError "composition-prelude"))
           ];
+        buildable = true;
         };
       };
     }

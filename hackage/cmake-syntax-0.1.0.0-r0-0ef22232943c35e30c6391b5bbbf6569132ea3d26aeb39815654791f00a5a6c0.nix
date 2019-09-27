@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."raw-strings-qq" or (buildDepError "raw-strings-qq"))
           (hsPkgs."trifecta" or (buildDepError "trifecta"))
           ];
+        buildable = true;
         };
       tests = {
         "cmake-syntax-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."raw-strings-qq" or (buildDepError "raw-strings-qq"))
             (hsPkgs."trifecta" or (buildDepError "trifecta"))
             ];
+          buildable = true;
           };
         };
       };

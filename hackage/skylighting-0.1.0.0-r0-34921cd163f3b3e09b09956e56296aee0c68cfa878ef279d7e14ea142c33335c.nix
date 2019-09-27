@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = if flags.bootstrap then false else true;
         };
       exes = {
         "skylighting-extract" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = if flags.bootstrap then true else false;
           };
         "skylighting" = {
           depends = [
@@ -102,6 +104,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
             (hsPkgs."skylighting" or (buildDepError "skylighting"))
             ];
+          buildable = (if flags.bootstrap
+            then false
+            else true) && (if flags.executable then true else false);
           };
         };
       tests = {
@@ -122,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."skylighting" or (buildDepError "skylighting"))
             ];
+          buildable = if flags.bootstrap then false else true;
           };
         };
       };

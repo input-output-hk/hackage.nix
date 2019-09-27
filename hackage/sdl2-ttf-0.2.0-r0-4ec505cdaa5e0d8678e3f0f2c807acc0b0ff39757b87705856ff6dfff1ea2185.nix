@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."SDL2" or (sysDepError "SDL2"))
           (pkgs."SDL2_ttf" or (sysDepError "SDL2_ttf"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             (hsPkgs."sdl2-ttf" or (buildDepError "sdl2-ttf"))
             ];
+          buildable = true;
           };
         };
       };

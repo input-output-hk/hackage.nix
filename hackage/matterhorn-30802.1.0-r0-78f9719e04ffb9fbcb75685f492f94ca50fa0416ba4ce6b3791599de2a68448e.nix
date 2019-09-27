@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Hclip" or (buildDepError "Hclip"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -127,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vty" or (buildDepError "vty"))
             (hsPkgs."xdg-basedir" or (buildDepError "xdg-basedir"))
             ];
+          buildable = true;
           };
         };
       };

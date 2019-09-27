@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aivika" or (buildDepError "aivika"))
           (hsPkgs."aivika-experiment" or (buildDepError "aivika-experiment"))
           ];
+        buildable = true;
         };
       };
     }

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "vector-algorithms-bench" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if !flags.bench then false else true;
           };
         };
       tests = {
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
             ];
+          buildable = if !flags.properties then false else true;
           };
         };
       };

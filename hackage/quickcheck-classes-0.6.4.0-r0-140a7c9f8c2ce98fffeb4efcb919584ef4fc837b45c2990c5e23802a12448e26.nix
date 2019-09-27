@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           ]) ++ (pkgs.lib).optional (flags.aeson) (hsPkgs."aeson" or (buildDepError "aeson"))) ++ (pkgs.lib).optional (flags.semigroupoids) (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))) ++ (pkgs.lib).optional (flags.semirings) (hsPkgs."semirings" or (buildDepError "semirings"))) ++ (pkgs.lib).optional (flags.vector) (hsPkgs."vector" or (buildDepError "vector"));
+        buildable = true;
         };
       tests = {
         "basic" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."tagged" or (buildDepError "tagged"))
             ] ++ (pkgs.lib).optional (flags.aeson) (hsPkgs."aeson" or (buildDepError "aeson"))) ++ (pkgs.lib).optional (flags.semigroupoids) (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))) ++ (pkgs.lib).optional (flags.vector) (hsPkgs."vector" or (buildDepError "vector"));
+          buildable = true;
           };
         "advanced" = {
           depends = [
@@ -112,6 +114,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "8.6"
+            then false
+            else true;
           };
         };
       };

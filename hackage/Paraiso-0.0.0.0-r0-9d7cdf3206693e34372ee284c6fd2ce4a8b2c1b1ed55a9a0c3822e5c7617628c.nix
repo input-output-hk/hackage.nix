@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
           (hsPkgs."repa" or (buildDepError "repa"))
           ];
+        buildable = true;
         };
       };
     }

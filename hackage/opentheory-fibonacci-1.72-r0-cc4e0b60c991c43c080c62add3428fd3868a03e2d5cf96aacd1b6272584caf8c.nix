@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."opentheory" or (buildDepError "opentheory"))
           (hsPkgs."opentheory-stream" or (buildDepError "opentheory-stream"))
           ];
+        buildable = true;
         };
       tests = {
         "opentheory-fibonacci-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."opentheory" or (buildDepError "opentheory"))
             (hsPkgs."opentheory-stream" or (buildDepError "opentheory-stream"))
             ];
+          buildable = true;
           };
         };
       };

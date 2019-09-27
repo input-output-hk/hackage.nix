@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
           (hsPkgs."crypto-random-api" or (buildDepError "crypto-random-api"))
           ];
+        buildable = true;
         };
       };
     }

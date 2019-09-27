@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ];
+        buildable = true;
         };
       tests = {
         "ManagedProcessTests" = {
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rematch" or (buildDepError "rematch"))
             (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             ];
+          buildable = true;
           };
         "PrioritisedProcessTests" = {
           depends = [
@@ -133,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rematch" or (buildDepError "rematch"))
             (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           ];
+        buildable = true;
         };
       tests = {
         "example-aeson" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unparse-attoparsec" or (buildDepError "unparse-attoparsec"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "example-regex" = {
           depends = [
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."profunctor-monad" or (buildDepError "profunctor-monad"))
             (hsPkgs."unparse-attoparsec" or (buildDepError "unparse-attoparsec"))
             ];
+          buildable = true;
           };
         };
       };

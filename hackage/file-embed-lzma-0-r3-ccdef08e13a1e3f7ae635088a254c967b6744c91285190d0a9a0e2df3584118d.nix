@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lzma" or (buildDepError "lzma"))
           (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
           ];
+        buildable = true;
         };
       tests = {
         "example" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."file-embed-lzma" or (buildDepError "file-embed-lzma"))
             ];
+          buildable = true;
           };
         };
       };

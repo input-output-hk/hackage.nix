@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."reactive-banana" or (buildDepError "reactive-banana"))
           (hsPkgs."termbox" or (buildDepError "termbox"))
           ];
+        buildable = true;
         };
       exes = {
         "termbox-banana-example-echo" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reactive-banana" or (buildDepError "reactive-banana"))
             (hsPkgs."termbox-banana" or (buildDepError "termbox-banana"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "termbox-banana-example-hoogle" = {
           depends = [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
             (hsPkgs."termbox-banana" or (buildDepError "termbox-banana"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         };
       };

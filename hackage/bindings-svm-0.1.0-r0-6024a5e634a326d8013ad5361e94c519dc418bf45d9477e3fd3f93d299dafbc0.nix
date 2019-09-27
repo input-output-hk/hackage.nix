@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = [ (pkgs."svm" or (sysDepError "svm")) ];
         pkgconfig = [ (pkgconfPkgs."libsvm" or (pkgConfDepError "libsvm")) ];
+        buildable = true;
         };
       };
     }

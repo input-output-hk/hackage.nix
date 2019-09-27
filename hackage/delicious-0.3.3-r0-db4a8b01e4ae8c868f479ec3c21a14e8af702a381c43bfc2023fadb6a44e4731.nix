@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."nano-md5" or (buildDepError "nano-md5"))
           (hsPkgs."json" or (buildDepError "json"))
           ];
+        buildable = true;
         };
       };
     }

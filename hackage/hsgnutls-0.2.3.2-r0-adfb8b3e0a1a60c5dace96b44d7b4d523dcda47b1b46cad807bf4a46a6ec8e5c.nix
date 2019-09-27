@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."gnutls" or (sysDepError "gnutls"))
           (pkgs."gcrypt" or (sysDepError "gcrypt"))
           ];
+        buildable = true;
         };
       };
     }

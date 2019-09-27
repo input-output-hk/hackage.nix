@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primes" or (buildDepError "primes"))
           (hsPkgs."toolshed" or (buildDepError "toolshed"))
           ] ++ [ (hsPkgs."parallel" or (buildDepError "parallel")) ];
+        buildable = true;
         };
       exes = {
         "factory" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

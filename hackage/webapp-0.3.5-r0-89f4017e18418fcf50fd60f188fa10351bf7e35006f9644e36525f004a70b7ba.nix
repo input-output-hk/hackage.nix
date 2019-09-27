@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
           ];
+        buildable = true;
         };
       };
     }

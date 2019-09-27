@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."failure" or (buildDepError "failure"))
           (hsPkgs."safe" or (buildDepError "safe"))
           ];
+        buildable = if flags.buildtests then false else true;
         };
       exes = {
         "runtests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."convertible" or (buildDepError "convertible"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

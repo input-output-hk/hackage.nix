@@ -60,36 +60,42 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ] ++ (pkgs.lib).optional (flags.par) (hsPkgs."parallel" or (buildDepError "parallel"));
+          buildable = true;
           };
         "cpsagraph" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "cpsashapes" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "cpsaannotations" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "cpsaparameters" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "cpsapp" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         };
       };

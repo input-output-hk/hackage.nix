@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."threads" or (buildDepError "threads"))
           (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
           ];
+        buildable = true;
         };
       tests = {
         "test-io-threads" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."io-throttle" or (buildDepError "io-throttle"))
             ];
+          buildable = true;
           };
         };
       };

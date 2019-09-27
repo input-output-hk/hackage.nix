@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."kernel32" or (sysDepError "kernel32"))
           (pkgs."ws2_32" or (sysDepError "ws2_32"))
           ];
+        buildable = true;
         };
       };
     }

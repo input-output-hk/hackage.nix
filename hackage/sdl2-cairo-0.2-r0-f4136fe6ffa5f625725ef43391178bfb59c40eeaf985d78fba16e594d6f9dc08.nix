@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cairo" or (buildDepError "cairo"))
           (hsPkgs."linear" or (buildDepError "linear"))
           ];
+        buildable = true;
         };
       };
     }

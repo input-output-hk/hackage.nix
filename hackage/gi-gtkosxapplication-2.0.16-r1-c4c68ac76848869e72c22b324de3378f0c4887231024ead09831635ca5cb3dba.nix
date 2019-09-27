@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."gtk-mac-integration-gtk3" or (pkgConfDepError "gtk-mac-integration-gtk3"))
           ];
+        buildable = true;
         };
       };
     }

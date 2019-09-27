@@ -93,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ShortestPathProblems" or (buildDepError "ShortestPathProblems"))
           (hsPkgs."ViennaRNA-bindings" or (buildDepError "ViennaRNA-bindings"))
           ];
+        buildable = true;
         };
       exes = {
         "MutationOrder" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."MutationOrder" or (buildDepError "MutationOrder"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -119,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."MutationOrder" or (buildDepError "MutationOrder"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pcap" or (buildDepError "pcap"))
           (hsPkgs."conduit" or (buildDepError "conduit"))
           ];
+        buildable = true;
         };
       };
     }

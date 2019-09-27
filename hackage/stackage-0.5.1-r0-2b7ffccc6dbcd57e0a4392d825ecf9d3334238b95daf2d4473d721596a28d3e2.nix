@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           ];
+        buildable = true;
         };
       exes = {
         "stackage" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stackage" or (buildDepError "stackage"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -114,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-client" or (buildDepError "http-client"))
             (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
             ];
+          buildable = true;
           };
         };
       };

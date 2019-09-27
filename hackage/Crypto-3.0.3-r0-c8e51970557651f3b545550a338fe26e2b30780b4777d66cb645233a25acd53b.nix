@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
           ];
+        buildable = true;
         };
       exes = {
         "BERTest" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         "X509Example" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         "PKCS8Example" = {
           depends = [
@@ -90,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         "AttributeCertificate" = {
           depends = [
@@ -99,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         "RSAEncryptionExample" = {
           depends = [
@@ -108,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         "RSAVerifyExample" = {
           depends = [
@@ -117,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         "SymmetricTest" = {
           depends = [
@@ -126,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         "RSATest" = {
           depends = [
@@ -135,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         "QuickTest" = {
           depends = [
@@ -144,6 +153,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         };
       };

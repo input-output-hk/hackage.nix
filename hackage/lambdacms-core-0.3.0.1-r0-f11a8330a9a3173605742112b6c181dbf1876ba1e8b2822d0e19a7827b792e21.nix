@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."esqueleto" or (buildDepError "esqueleto"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."classy-prelude-yesod" or (buildDepError "classy-prelude-yesod"))
             (hsPkgs."lambdacms-core" or (buildDepError "lambdacms-core"))
             ];
+          buildable = true;
           };
         };
       };

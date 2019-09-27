@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
           (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-megaparsec" or (buildDepError "hspec-megaparsec"))
             (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
             ];
+          buildable = true;
           };
         };
       };

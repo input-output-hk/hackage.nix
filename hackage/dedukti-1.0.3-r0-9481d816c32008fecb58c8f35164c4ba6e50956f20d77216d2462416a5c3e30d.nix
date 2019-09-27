@@ -54,7 +54,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."time" or (buildDepError "time")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."time" or (buildDepError "time")) ];
+        buildable = true;
+        };
       exes = {
         "dedukti" = {
           depends = [
@@ -72,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hmk" or (buildDepError "hmk"))
             ];
+          buildable = true;
           };
         };
       };

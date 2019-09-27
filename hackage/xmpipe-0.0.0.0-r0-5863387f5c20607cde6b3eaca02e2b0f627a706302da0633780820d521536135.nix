@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."sasl" or (buildDepError "sasl"))
           (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
           ];
+        buildable = true;
         };
       };
     }

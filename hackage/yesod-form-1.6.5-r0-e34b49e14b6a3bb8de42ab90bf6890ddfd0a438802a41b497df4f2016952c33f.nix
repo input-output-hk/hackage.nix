@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           (hsPkgs."yesod-persistent" or (buildDepError "yesod-persistent"))
           ] ++ (pkgs.lib).optional (flags.network-uri) (hsPkgs."network-uri" or (buildDepError "network-uri"));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

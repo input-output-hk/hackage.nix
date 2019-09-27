@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."network" or (buildDepError "network"))
           ];
+        buildable = true;
         };
       exes = {
         "network-simple-example-echo-tcp" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-simple" or (buildDepError "network-simple"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "network-simple-example-chat-tcp" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

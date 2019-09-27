@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."hspec" or (buildDepError "hspec"))
           ];
+        buildable = true;
         };
       tests = {
         "hzulip-spec" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."raw-strings-qq" or (buildDepError "raw-strings-qq"))
             ];
+          buildable = true;
           };
         };
       };

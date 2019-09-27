@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ] ++ [ (hsPkgs."binary" or (buildDepError "binary")) ];
+        buildable = true;
         };
       exes = {
         "test_sha" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ] ++ [ (hsPkgs."binary" or (buildDepError "binary")) ]);
+          buildable = if flags.test then true else false;
           };
         "sha1" = {
           depends = [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."SHA" or (buildDepError "SHA"))
             ];
+          buildable = if !flags.exe then false else true;
           };
         "sha384" = {
           depends = [
@@ -87,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."SHA" or (buildDepError "SHA"))
             ];
+          buildable = if !flags.exe then false else true;
           };
         };
       };

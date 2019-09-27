@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dotgen" or (buildDepError "dotgen"))
             (hsPkgs."haskell-lexer" or (buildDepError "haskell-lexer"))
             ];
+          buildable = true;
           };
         };
       };

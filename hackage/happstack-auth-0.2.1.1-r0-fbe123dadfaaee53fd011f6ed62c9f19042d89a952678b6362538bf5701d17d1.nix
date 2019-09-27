@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."happstack-data" or (buildDepError "happstack-data"))
           (hsPkgs."convertible" or (buildDepError "convertible"))
           ];
+        buildable = true;
         };
       };
     }

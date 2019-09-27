@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Sprig" or (buildDepError "Sprig"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       };
     }

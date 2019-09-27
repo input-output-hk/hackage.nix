@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gsl-random" or (buildDepError "gsl-random"))
           (hsPkgs."uvector" or (buildDepError "uvector"))
           ];
+        buildable = true;
         };
       };
     }

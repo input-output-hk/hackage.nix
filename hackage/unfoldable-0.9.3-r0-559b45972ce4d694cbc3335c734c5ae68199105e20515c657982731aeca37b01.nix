@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."one-liner" or (buildDepError "one-liner"))
           ];
+        buildable = true;
         };
       };
     }

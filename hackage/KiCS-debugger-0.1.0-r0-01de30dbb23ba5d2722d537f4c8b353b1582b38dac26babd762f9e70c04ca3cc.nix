@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."readline" or (buildDepError "readline"))
           (hsPkgs."KiCS" or (buildDepError "KiCS"))
           ];
+        buildable = true;
         };
       exes = {
         "mkstrict" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."KiCS" or (buildDepError "KiCS"))
             (hsPkgs."KiCS-prophecy" or (buildDepError "KiCS-prophecy"))
             ];
+          buildable = true;
           };
         };
       };

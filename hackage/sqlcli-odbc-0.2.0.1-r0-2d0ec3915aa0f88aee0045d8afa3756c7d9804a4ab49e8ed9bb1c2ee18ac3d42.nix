@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."logging" or (buildDepError "logging"))
           (hsPkgs."sqlcli" or (buildDepError "sqlcli"))
           ];
+        buildable = true;
         };
       };
     }

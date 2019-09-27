@@ -64,7 +64,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
-      exes = { "hstest-fullstop" = {}; };
+      exes = { "hstest-fullstop" = { buildable = true; }; };
       };
     }

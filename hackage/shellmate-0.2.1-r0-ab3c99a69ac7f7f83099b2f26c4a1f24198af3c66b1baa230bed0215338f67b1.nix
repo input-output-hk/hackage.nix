@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."temporary" or (buildDepError "temporary"))
           ];
+        buildable = true;
         };
       };
     }

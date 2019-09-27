@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           (hsPkgs."SHA" or (buildDepError "SHA"))
           ];
+        buildable = true;
         };
       };
     }

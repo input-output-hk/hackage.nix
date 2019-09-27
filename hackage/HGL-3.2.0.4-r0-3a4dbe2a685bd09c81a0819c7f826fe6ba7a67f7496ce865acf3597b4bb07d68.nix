@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ]) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
           else [ (hsPkgs."X11" or (buildDepError "X11")) ]);
+        buildable = true;
         };
       };
     }

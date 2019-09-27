@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."yi-language" or (buildDepError "yi-language"))
           ];
+        buildable = true;
         };
       };
     }

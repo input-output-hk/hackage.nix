@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
           (hsPkgs."memory" or (buildDepError "memory"))
           ];
+        buildable = true;
         };
       exes = {
         "zerobin" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zerobin" or (buildDepError "zerobin"))
             (hsPkgs."raw-strings-qq" or (buildDepError "raw-strings-qq"))
             ];
+          buildable = if flags.cli then true else false;
           };
         "zerobin-nodejs" = {
           depends = (pkgs.lib).optionals (flags.nodejs) [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zerobin" or (buildDepError "zerobin"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = if flags.nodejs then true else false;
           };
         };
       };

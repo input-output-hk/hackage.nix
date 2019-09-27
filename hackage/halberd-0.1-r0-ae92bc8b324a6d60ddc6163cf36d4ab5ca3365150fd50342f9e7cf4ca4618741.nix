@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe" or (buildDepError "safe"))
             (hsPkgs."syb" or (buildDepError "syb"))
             ];
+          buildable = true;
           };
         };
       };

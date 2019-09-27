@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
           (hsPkgs."streaming" or (buildDepError "streaming"))
           ];
+        buildable = true;
         };
       };
     }

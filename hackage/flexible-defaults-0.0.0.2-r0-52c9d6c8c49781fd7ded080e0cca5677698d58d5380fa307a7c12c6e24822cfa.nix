@@ -61,6 +61,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).eq "7.2.1"
+          then false
+          else true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.transformers
           then [ (hsPkgs."transformers" or (buildDepError "transformers")) ]
           else [ (hsPkgs."mtl" or (buildDepError "mtl")) ]);
+        buildable = true;
         };
       };
     }

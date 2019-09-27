@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dbmigrations" or (buildDepError "dbmigrations"))
             (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         };
       };

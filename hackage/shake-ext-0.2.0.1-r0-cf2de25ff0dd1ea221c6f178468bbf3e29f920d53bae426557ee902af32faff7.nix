@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shake" or (buildDepError "shake"))
           (hsPkgs."ats-format" or (buildDepError "ats-format"))
           ];
+        buildable = true;
         };
       };
     }

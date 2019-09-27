@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
             ]
           else [ (hsPkgs."mtl" or (buildDepError "mtl")) ]);
+        buildable = true;
         };
       };
     }

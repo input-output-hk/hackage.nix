@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           ];
         libs = [ (pkgs."cmph" or (sysDepError "cmph")) ];
+        buildable = true;
         };
       tests = {
         "cmph-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             ];
           libs = [ (pkgs."cmph" or (sysDepError "cmph")) ];
+          buildable = true;
           };
         };
       };

@@ -111,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
           (hsPkgs."http-types" or (buildDepError "http-types"))
           ];
+        buildable = true;
         };
       exes = {
         "scholdoc" = {
@@ -130,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if flags.network-uri
             then [ (hsPkgs."network-uri" or (buildDepError "network-uri")) ]
             else [ (hsPkgs."network" or (buildDepError "network")) ]);
+          buildable = true;
           };
         "tryscholdoc" = {
           depends = (pkgs.lib).optionals (flags.tryscholdoc) [
@@ -142,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."http-types" or (buildDepError "http-types"))
             ];
+          buildable = if flags.tryscholdoc then true else false;
           };
         };
       tests = {
@@ -164,6 +167,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -173,6 +177,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

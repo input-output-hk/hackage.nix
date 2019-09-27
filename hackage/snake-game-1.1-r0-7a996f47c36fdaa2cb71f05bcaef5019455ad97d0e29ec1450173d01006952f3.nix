@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       };
     }

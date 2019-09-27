@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."microlens" or (buildDepError "microlens"))
           (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
           ];
+        buildable = true;
         };
       tests = {
         "ats-storable-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ats-storable" or (buildDepError "ats-storable"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

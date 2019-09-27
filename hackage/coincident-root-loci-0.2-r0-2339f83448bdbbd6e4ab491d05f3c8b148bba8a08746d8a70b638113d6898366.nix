@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."combinat" or (buildDepError "combinat"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."combinat" or (buildDepError "combinat"))
             (hsPkgs."coincident-root-loci" or (buildDepError "coincident-root-loci"))
             ];
+          buildable = true;
           };
         };
       };

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if flags.readline
             then [ (hsPkgs."readline" or (buildDepError "readline")) ]
             else (pkgs.lib).optional (flags.haskeline) (hsPkgs."haskeline" or (buildDepError "haskeline")));
+          buildable = true;
           };
         };
       };

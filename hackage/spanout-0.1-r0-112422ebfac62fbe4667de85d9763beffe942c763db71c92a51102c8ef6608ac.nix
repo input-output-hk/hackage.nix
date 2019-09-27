@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."netwire" or (buildDepError "netwire"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         };
       };

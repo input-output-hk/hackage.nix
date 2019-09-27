@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
           (hsPkgs."byteable" or (buildDepError "byteable"))
           ];
+        buildable = true;
         };
       exes = {
         "repl" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             (hsPkgs."amazon-products" or (buildDepError "amazon-products"))
             ];
+          buildable = true;
           };
         };
       };

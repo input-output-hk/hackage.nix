@@ -67,7 +67,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."proc" or (buildDepError "proc"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
-      exes = { "manatee-processmanager" = {}; };
+      exes = { "manatee-processmanager" = { buildable = true; }; };
       };
     }

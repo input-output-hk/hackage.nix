@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
           ];
+        buildable = true;
         };
       };
     }

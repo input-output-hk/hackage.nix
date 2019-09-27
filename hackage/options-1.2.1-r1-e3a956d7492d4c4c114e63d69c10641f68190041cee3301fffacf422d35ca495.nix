@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (pkgs.lib).optional (!system.isWindows && (compiler.isGhc && (compiler.version).lt "7.2")) (hsPkgs."bytestring" or (buildDepError "bytestring"));
+        buildable = true;
         };
       tests = {
         "options_tests" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ] ++ (pkgs.lib).optional (!system.isWindows && (compiler.isGhc && (compiler.version).lt "7.2")) (hsPkgs."bytestring" or (buildDepError "bytestring"));
+          buildable = true;
           };
         };
       };

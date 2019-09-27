@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."reflection" or (buildDepError "reflection"))
           ];
+        buildable = true;
         };
       exes = {
         "LinearRegression" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."csv" or (buildDepError "csv"))
             (hsPkgs."nonlinear-optimization-ad" or (buildDepError "nonlinear-optimization-ad"))
             ];
+          buildable = if !flags.buildsampleprograms then false else true;
           };
         };
       };

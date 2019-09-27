@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
           ];
+        buildable = true;
         };
       exes = {
         "migrate" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."postgresql-simple-migration" or (buildDepError "postgresql-simple-migration"))
             ];
+          buildable = true;
           };
         };
       };

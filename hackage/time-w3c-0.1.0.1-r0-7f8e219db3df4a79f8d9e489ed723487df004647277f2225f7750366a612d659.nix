@@ -61,10 +61,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "W3CDateTimeUnitTest" = {
           depends = (pkgs.lib).optional (flags.build-test-suite) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if flags.build-test-suite then true else false;
           };
         };
       };

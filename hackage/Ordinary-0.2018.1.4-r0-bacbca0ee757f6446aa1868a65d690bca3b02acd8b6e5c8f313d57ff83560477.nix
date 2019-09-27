@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe" or (buildDepError "safe"))
           (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
           ];
+        buildable = true;
         };
       exes = {
         "Ordinary-exe" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe" or (buildDepError "safe"))
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe" or (buildDepError "safe"))
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             ];
+          buildable = true;
           };
         };
       };

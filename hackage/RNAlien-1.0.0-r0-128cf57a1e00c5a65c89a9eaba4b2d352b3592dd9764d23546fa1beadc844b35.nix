@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           ];
+        buildable = true;
         };
       exes = {
         "RNAlien" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "RNAlienStatistics" = {
           depends = [
@@ -116,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."ViennaRNAParser" or (buildDepError "ViennaRNAParser"))
             ];
+          buildable = true;
           };
         "SelectSequences" = {
           depends = [
@@ -124,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
             (hsPkgs."RNAlien" or (buildDepError "RNAlien"))
             ];
+          buildable = true;
           };
         };
       };

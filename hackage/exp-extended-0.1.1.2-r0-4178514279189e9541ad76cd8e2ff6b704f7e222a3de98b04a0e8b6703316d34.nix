@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."compensated" or (buildDepError "compensated"))
           (hsPkgs."log-domain" or (buildDepError "log-domain"))
           ];
+        buildable = true;
         };
       };
     }

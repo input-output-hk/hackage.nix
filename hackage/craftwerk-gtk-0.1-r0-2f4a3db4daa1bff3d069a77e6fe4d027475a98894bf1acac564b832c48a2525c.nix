@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."craftwerk" or (buildDepError "craftwerk"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       exes = {
         "example1" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."craftwerk-gtk" or (buildDepError "craftwerk-gtk"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

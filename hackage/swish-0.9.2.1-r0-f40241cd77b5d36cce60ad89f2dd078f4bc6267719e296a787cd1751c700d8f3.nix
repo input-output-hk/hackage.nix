@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             (hsPkgs."network" or (buildDepError "network"))
             ]);
+        buildable = true;
         };
       exes = {
         "Swish" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."swish" or (buildDepError "swish"))
             ];
+          buildable = true;
           };
         "runw3ctests" = {
           depends = (pkgs.lib).optionals (flags.w3ctests) ([
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network-uri" or (buildDepError "network-uri"))
               (hsPkgs."network" or (buildDepError "network"))
               ]));
+          buildable = if flags.w3ctests then true else false;
           };
         };
       tests = {
@@ -108,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         "test-graphpartition" = {
           depends = [
@@ -119,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         "test-graph" = {
           depends = [
@@ -130,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         "test-nt" = {
           depends = [
@@ -141,6 +147,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "test-turtle" = {
           depends = [
@@ -157,6 +164,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network-uri" or (buildDepError "network-uri"))
               (hsPkgs."network" or (buildDepError "network"))
               ]);
+          buildable = true;
           };
         "test-n3parser" = {
           depends = [
@@ -173,6 +181,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network-uri" or (buildDepError "network-uri"))
               (hsPkgs."network" or (buildDepError "network"))
               ]);
+          buildable = true;
           };
         "test-n3formatter" = {
           depends = [
@@ -189,6 +198,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network-uri" or (buildDepError "network-uri"))
               (hsPkgs."network" or (buildDepError "network"))
               ]);
+          buildable = true;
           };
         "test-rdfdatatypexsdinteger" = {
           depends = [
@@ -205,6 +215,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network-uri" or (buildDepError "network-uri"))
               (hsPkgs."network" or (buildDepError "network"))
               ]);
+          buildable = true;
           };
         "test-rdfgraph" = {
           depends = [
@@ -223,6 +234,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network-uri" or (buildDepError "network-uri"))
               (hsPkgs."network" or (buildDepError "network"))
               ]);
+          buildable = true;
           };
         "test-rdfproofcontext" = {
           depends = [
@@ -239,6 +251,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network-uri" or (buildDepError "network-uri"))
               (hsPkgs."network" or (buildDepError "network"))
               ]);
+          buildable = true;
           };
         "test-rdfproof" = {
           depends = [
@@ -255,6 +268,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network-uri" or (buildDepError "network-uri"))
               (hsPkgs."network" or (buildDepError "network"))
               ]);
+          buildable = true;
           };
         "test-rdfquery" = {
           depends = [
@@ -271,6 +285,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network-uri" or (buildDepError "network-uri"))
               (hsPkgs."network" or (buildDepError "network"))
               ]);
+          buildable = true;
           };
         "test-rdfruleset" = {
           depends = [
@@ -287,6 +302,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network-uri" or (buildDepError "network-uri"))
               (hsPkgs."network" or (buildDepError "network"))
               ]);
+          buildable = true;
           };
         "test-varbinding" = {
           depends = [
@@ -297,6 +313,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         "test-qname" = {
           depends = [
@@ -313,6 +330,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network-uri" or (buildDepError "network-uri"))
               (hsPkgs."network" or (buildDepError "network"))
               ]);
+          buildable = true;
           };
         };
       };

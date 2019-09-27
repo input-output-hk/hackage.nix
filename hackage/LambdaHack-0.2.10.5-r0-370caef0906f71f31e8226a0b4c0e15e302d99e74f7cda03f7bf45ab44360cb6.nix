@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else if flags.curses
               then [ (hsPkgs."hscurses" or (buildDepError "hscurses")) ]
               else [ (hsPkgs."gtk" or (buildDepError "gtk")) ]);
+        buildable = true;
         };
       exes = {
         "LambdaHack" = {
@@ -117,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
+          buildable = true;
           };
         };
       };

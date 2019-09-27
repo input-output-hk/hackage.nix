@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."servant-docs" or (buildDepError "servant-docs"))
           (hsPkgs."servant-streaming" or (buildDepError "servant-streaming"))
           ];
+        buildable = true;
         };
       };
     }

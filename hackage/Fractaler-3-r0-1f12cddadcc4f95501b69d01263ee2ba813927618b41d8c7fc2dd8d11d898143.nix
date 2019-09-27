@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             (hsPkgs."FTGL" or (buildDepError "FTGL"))
             ];
+          buildable = true;
           };
         };
       };

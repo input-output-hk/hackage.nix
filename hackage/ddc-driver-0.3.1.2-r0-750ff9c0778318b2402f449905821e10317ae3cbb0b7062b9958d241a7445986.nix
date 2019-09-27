@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ddc-core-llvm" or (buildDepError "ddc-core-llvm"))
           (hsPkgs."ddc-build" or (buildDepError "ddc-build"))
           ];
+        buildable = true;
         };
       };
     }

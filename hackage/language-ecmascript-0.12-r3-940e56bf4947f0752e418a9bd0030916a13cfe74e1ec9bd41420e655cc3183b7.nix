@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."charset" or (buildDepError "charset"))
           ];
+        buildable = true;
         };
       tests = {
         "unittest" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."charset" or (buildDepError "charset"))
             ];
+          buildable = true;
           };
         "prettytest" = {
           depends = [
@@ -101,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."uniplate" or (buildDepError "uniplate"))
             ];
+          buildable = true;
           };
         };
       };

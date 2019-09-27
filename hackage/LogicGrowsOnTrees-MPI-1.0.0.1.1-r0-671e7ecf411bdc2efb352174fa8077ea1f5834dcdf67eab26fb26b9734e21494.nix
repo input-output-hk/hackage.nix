@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
           ];
         libs = [ (pkgs."mpi" or (sysDepError "mpi")) ];
+        buildable = true;
         };
       exes = {
         "count-all-trivial-tree-leavesl" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."LogicGrowsOnTrees-MPI" or (buildDepError "LogicGrowsOnTrees-MPI"))
             ];
           libs = [ (pkgs."mpi" or (sysDepError "mpi")) ];
+          buildable = if flags.examples then true else false;
           };
         "test-trivial" = {
           depends = [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."LogicGrowsOnTrees-MPI" or (buildDepError "LogicGrowsOnTrees-MPI"))
             ];
           libs = [ (pkgs."mpi" or (sysDepError "mpi")) ];
+          buildable = if flags.tests then true else false;
           };
         "test-nqueens" = {
           depends = [
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."LogicGrowsOnTrees-MPI" or (buildDepError "LogicGrowsOnTrees-MPI"))
             ];
           libs = [ (pkgs."mpi" or (sysDepError "mpi")) ];
+          buildable = if flags.tests then true else false;
           };
         };
       };

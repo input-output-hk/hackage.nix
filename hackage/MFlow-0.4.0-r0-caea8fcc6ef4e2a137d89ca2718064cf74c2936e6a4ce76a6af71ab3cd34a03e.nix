@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."acid-state" or (buildDepError "acid-state"))
           (hsPkgs."hscolour" or (buildDepError "hscolour"))
           ];
+        buildable = true;
         };
       };
     }

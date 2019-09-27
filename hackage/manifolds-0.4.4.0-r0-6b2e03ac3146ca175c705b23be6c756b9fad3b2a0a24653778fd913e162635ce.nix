@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."constrained-categories" or (buildDepError "constrained-categories"))
           (hsPkgs."pragmatic-show" or (buildDepError "pragmatic-show"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."linearmap-category" or (buildDepError "linearmap-category"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hmidi" or (buildDepError "hmidi"))
           (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
           ];
+        buildable = true;
         };
       };
     }

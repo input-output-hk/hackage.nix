@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytedump" or (buildDepError "bytedump"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       exes = {
         "Hit" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             (hsPkgs."bytedump" or (buildDepError "bytedump"))
             ];
+          buildable = if flags.executable then true else false;
           };
         "Tests" = {
           depends = (pkgs.lib).optionals (flags.test) [
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

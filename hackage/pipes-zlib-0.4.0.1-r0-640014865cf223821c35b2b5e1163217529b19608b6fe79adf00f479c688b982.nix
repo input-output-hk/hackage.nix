@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           (hsPkgs."zlib-bindings" or (buildDepError "zlib-bindings"))
           ];
+        buildable = true;
         };
       };
     }

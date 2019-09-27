@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             (hsPkgs."rsagl" or (buildDepError "rsagl"))
             ];
+          buildable = true;
           };
         };
       };

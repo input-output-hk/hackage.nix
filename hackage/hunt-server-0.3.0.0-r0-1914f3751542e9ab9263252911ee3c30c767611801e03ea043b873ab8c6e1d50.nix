@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."ekg-core" or (buildDepError "ekg-core"))
             ] ++ (pkgs.lib).optional (flags.statsd) (hsPkgs."ekg-statsd" or (buildDepError "ekg-statsd"));
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."opengl-dlp-stereo" or (buildDepError "opengl-dlp-stereo"))
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           ];
+        buildable = true;
         };
       };
     }

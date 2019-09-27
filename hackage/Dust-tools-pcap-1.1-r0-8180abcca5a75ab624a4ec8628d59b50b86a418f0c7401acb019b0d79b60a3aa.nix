@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."pcap" or (buildDepError "pcap"))
             ];
+          buildable = true;
           };
         "update" = {
           depends = [
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pcap" or (buildDepError "pcap"))
             (hsPkgs."csv" or (buildDepError "csv"))
             ];
+          buildable = true;
           };
         "export" = {
           depends = [
@@ -118,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pcap" or (buildDepError "pcap"))
             (hsPkgs."csv" or (buildDepError "csv"))
             ];
+          buildable = true;
           };
         "show" = {
           depends = [
@@ -139,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pcap" or (buildDepError "pcap"))
             (hsPkgs."csv" or (buildDepError "csv"))
             ];
+          buildable = true;
           };
         };
       };

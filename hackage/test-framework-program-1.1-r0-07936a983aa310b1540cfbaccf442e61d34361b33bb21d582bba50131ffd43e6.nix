@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."test-framework" or (buildDepError "test-framework"))
           ];
+        buildable = true;
         };
       };
     }

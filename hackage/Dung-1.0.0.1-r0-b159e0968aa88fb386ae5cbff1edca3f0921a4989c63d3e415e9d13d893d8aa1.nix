@@ -61,7 +61,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ];
+        buildable = true;
         };
-      exes = { "dungell" = {}; };
+      exes = { "dungell" = { buildable = true; }; };
       };
     }

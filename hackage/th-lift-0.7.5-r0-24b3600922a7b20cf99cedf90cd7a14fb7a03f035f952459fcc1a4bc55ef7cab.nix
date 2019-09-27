@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ]);
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
               ]);
+          buildable = true;
           };
         };
       };

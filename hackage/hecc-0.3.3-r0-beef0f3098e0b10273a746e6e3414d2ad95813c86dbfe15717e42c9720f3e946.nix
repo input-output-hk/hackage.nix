@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
           (hsPkgs."hF2" or (buildDepError "hF2"))
           ];
+        buildable = true;
         };
       };
     }

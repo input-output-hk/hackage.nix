@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."handa-gdata" or (buildDepError "handa-gdata"))
           (hsPkgs."hsbencher" or (buildDepError "hsbencher"))
           ];
+        buildable = true;
         };
       };
     }

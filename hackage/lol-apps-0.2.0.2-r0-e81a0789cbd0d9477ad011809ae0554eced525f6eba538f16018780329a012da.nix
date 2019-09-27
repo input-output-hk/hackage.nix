@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."singletons" or (buildDepError "singletons"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
       exes = {
         "homomprf" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."singletons" or (buildDepError "singletons"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         "khprf" = {
           depends = [
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
             ];
+          buildable = true;
           };
         "symmshe" = {
           depends = [
@@ -107,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -122,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -138,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
             ];
+          buildable = true;
           };
         };
       };

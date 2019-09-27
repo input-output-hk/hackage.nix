@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."argparser" or (buildDepError "argparser"))
             (hsPkgs."posix-escape" or (buildDepError "posix-escape"))
             ];
+          buildable = true;
           };
         };
       };

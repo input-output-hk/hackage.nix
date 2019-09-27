@@ -64,15 +64,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wx" or (buildDepError "wx"))
           (hsPkgs."wxcore" or (buildDepError "wxcore"))
           ];
+        buildable = true;
         };
       exes = {
-        "Asteroids" = {};
-        "Counter" = {};
-        "CurrencyConverter" = {};
-        "CRUD" = {};
-        "NetMonitor" = {};
-        "TwoCounters" = {};
-        "Wave" = {};
+        "Asteroids" = { buildable = true; };
+        "Counter" = { buildable = true; };
+        "CurrencyConverter" = { buildable = true; };
+        "CRUD" = { buildable = true; };
+        "NetMonitor" = { buildable = true; };
+        "TwoCounters" = { buildable = true; };
+        "Wave" = { buildable = true; };
         };
       };
     }

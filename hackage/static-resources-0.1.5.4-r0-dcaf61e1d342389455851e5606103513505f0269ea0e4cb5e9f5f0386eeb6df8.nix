@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."old-time" or (buildDepError "old-time"))
           ];
+        buildable = true;
         };
       tests = {
         "test-static-resources" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."static-resources" or (buildDepError "static-resources"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         };
       };

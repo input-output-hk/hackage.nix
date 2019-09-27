@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ]);
+        buildable = true;
         };
       exes = {
         "Canonicalise" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = true;
           };
         "CanonicaliseLazy" = {
           depends = [
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = true;
           };
         "Xtract" = {
           depends = [
@@ -95,18 +98,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = true;
           };
         "Validate" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             ];
+          buildable = true;
           };
         "MkOneOf" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             ];
+          buildable = true;
           };
         "DtdToHaskell" = {
           depends = [
@@ -114,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = true;
           };
         "XsdToHaskell" = {
           depends = [
@@ -123,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "FpMLToHaskell" = {
           depends = [
@@ -132,6 +140,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

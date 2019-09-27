@@ -81,13 +81,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."safe" or (buildDepError "safe"))
             ];
+          buildable = true;
           };
-        "darcswatch-import-mail" = {};
-        "darcswatch-import-bundle" = {};
-        "darcswatch-convert-data" = {};
-        "darcswatch-pull-repos" = {};
-        "darcswatch-update-data" = {};
-        "darcswatch-cgi" = {};
+        "darcswatch-import-mail" = { buildable = true; };
+        "darcswatch-import-bundle" = { buildable = true; };
+        "darcswatch-convert-data" = { buildable = true; };
+        "darcswatch-pull-repos" = { buildable = true; };
+        "darcswatch-update-data" = { buildable = true; };
+        "darcswatch-cgi" = { buildable = true; };
         };
       };
     }

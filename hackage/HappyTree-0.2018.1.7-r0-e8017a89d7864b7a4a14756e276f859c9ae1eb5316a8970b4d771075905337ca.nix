@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
           (hsPkgs."singletons" or (buildDepError "singletons"))
           ];
+        buildable = true;
         };
       tests = {
         "HappyTree-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
             (hsPkgs."singletons" or (buildDepError "singletons"))
             ];
+          buildable = true;
           };
         };
       };

@@ -92,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."minioperational" or (buildDepError "minioperational"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
       exes = {
         "hello-world" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."call" or (buildDepError "call"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = if flags.buildhelloworld then true else false;
           };
         };
       };

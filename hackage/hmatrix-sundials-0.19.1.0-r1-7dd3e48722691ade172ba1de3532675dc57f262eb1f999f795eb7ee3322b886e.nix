@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."sundials_arkode" or (sysDepError "sundials_arkode"))
           (pkgs."sundials_cvode" or (sysDepError "sundials_cvode"))
           ];
+        buildable = true;
         };
       tests = {
         "hmatrix-sundials-testsuite" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."sundials_arkode" or (sysDepError "sundials_arkode"))
             (pkgs."sundials_cvode" or (sysDepError "sundials_cvode"))
             ];
+          buildable = true;
           };
         };
       };

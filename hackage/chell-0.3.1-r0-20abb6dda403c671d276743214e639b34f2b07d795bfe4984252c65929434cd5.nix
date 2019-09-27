@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (pkgs.lib).optional (flags.color-output) (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"));
+        buildable = true;
         };
       };
     }

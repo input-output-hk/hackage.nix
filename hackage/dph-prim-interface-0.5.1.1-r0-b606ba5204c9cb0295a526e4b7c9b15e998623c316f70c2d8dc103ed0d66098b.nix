@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."dph-base" or (buildDepError "dph-base"))
           ];
+        buildable = true;
         };
       };
     }

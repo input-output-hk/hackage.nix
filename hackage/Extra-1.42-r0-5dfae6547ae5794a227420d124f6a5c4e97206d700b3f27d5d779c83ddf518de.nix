@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           (hsPkgs."bzlib" or (buildDepError "bzlib"))
           ];
+        buildable = true;
         };
       };
     }

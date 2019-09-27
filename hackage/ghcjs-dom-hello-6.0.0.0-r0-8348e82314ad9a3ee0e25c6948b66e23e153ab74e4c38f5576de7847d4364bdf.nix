@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."jsaddle" or (buildDepError "jsaddle"))
           (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
           ];
+        buildable = true;
         };
       exes = {
         "ghcjs-dom-hello" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               else [
                 (hsPkgs."jsaddle-webkitgtk" or (buildDepError "jsaddle-webkitgtk"))
                 ]);
+          buildable = true;
           };
         "ghcjs-dom-hello-warp" = {
           depends = [
@@ -91,6 +93,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if !flags.warp || compiler.isGhcjs && true || system.isIos
+            then false
+            else true;
           };
         "ghcjs-dom-hello-webkitgtk" = {
           depends = [
@@ -104,6 +109,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."jsaddle-webkitgtk" or (buildDepError "jsaddle-webkitgtk"))
               ]);
+          buildable = if !flags.webkitgtk || compiler.isGhcjs && true || system.isIos
+            then false
+            else true;
           };
         "ghcjs-dom-hello-wkwebview" = {
           depends = [
@@ -112,6 +120,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."jsaddle-wkwebview" or (buildDepError "jsaddle-wkwebview"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if !system.isOsx || compiler.isGhcjs && true
+            then false
+            else true;
           };
         };
       };

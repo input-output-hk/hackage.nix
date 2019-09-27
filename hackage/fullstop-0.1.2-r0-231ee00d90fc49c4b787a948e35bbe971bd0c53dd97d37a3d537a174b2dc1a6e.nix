@@ -59,9 +59,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
       exes = {
-        "fullstop" = {};
+        "fullstop" = { buildable = true; };
         "hstest-fullstop" = {
           depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs."base" or (buildDepError "base"))
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

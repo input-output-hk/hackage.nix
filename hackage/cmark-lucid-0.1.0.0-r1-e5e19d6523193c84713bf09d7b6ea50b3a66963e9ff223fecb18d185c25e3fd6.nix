@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cmark" or (buildDepError "cmark"))
           (hsPkgs."lucid" or (buildDepError "lucid"))
           ];
+        buildable = true;
         };
       };
     }

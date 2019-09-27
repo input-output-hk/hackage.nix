@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."hourglass" or (buildDepError "hourglass"))
           ];
+        buildable = true;
         };
       tests = {
         "experiment" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."chronologique" or (buildDepError "chronologique"))
             ];
+          buildable = false;
           };
         "check" = {
           depends = [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."chronologique" or (buildDepError "chronologique"))
             ];
+          buildable = true;
           };
         };
       };

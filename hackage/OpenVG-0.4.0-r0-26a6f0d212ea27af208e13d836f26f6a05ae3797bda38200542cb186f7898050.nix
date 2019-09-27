@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."StateVar" or (buildDepError "StateVar"))
           (hsPkgs."Tensor" or (buildDepError "Tensor"))
           ];
+        buildable = true;
         };
       };
     }

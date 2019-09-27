@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."th-lift" or (buildDepError "th-lift"))
           (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
           ];
+        buildable = true;
         };
       exes = {
         "dockerfmt" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
             (hsPkgs."language-dockerfile" or (buildDepError "language-dockerfile"))
             ];
+          buildable = false;
           };
         "hadolint" = {
           depends = [
@@ -101,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
             (hsPkgs."language-dockerfile" or (buildDepError "language-dockerfile"))
             ];
+          buildable = false;
           };
         };
       tests = {
@@ -121,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         "hspec" = {
           depends = [
@@ -139,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."language-dockerfile" or (buildDepError "language-dockerfile"))
             ];
+          buildable = true;
           };
         };
       };

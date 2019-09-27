@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cairo" or (buildDepError "cairo"))
             (hsPkgs."gtk" or (buildDepError "gtk"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-smallcheck" or (buildDepError "test-framework-smallcheck"))
             (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
             ];
+          buildable = true;
           };
         };
       };

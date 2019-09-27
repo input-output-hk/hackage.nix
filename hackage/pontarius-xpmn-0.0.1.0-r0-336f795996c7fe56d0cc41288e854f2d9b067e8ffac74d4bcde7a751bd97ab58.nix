@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."xml-types" or (buildDepError "xml-types"))
           ];
+        buildable = true;
         };
       };
     }

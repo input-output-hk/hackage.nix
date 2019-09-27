@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."data-ref" or (buildDepError "data-ref"))
           ];
+        buildable = true;
         };
       };
     }

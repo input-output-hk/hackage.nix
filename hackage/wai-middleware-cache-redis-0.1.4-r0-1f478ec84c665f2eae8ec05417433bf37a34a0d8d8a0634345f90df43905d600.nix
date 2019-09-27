@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-middleware-cache" or (buildDepError "wai-middleware-cache"))
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           ];
+        buildable = true;
         };
       };
     }

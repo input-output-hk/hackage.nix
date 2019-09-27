@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."spatial-math" or (buildDepError "spatial-math"))
           (hsPkgs."gloss" or (buildDepError "gloss"))
           ];
+        buildable = true;
         };
       exes = {
         "not-gloss-example" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."not-gloss" or (buildDepError "not-gloss"))
             ];
+          buildable = true;
           };
         };
       };

@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."haddock-api" or (buildDepError "haddock-api"))
             ];
+          buildable = true;
           };
         };
       };

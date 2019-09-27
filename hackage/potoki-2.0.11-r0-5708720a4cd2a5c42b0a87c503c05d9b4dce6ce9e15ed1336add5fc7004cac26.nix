@@ -56,6 +56,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [ (hsPkgs."potoki-core" or (buildDepError "potoki-core")) ];
+        buildable = true;
         };
       };
     }

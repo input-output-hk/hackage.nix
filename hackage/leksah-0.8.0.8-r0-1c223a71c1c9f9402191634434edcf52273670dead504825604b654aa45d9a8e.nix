@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."unix" or (buildDepError "unix"))
               ])) ++ (pkgs.lib).optional (flags.yi) (hsPkgs."yi" or (buildDepError "yi"));
           libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32")) ++ (pkgs.lib).optional (system.isOsx) (pkgs."igemacintegration" or (sysDepError "igemacintegration"));
+          buildable = true;
           };
         };
       };

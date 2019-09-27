@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."classy-prelude-yesod" or (buildDepError "classy-prelude-yesod"))
           (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
           ];
+        buildable = true;
         };
       };
     }

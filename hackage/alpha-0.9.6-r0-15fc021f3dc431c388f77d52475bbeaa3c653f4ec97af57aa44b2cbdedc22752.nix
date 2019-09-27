@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."bindings-posix" or (buildDepError "bindings-posix"))
             ];
+          buildable = true;
           };
         };
       };

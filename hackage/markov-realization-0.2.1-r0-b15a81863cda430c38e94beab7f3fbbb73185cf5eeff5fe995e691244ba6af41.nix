@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
           (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
           ];
+        buildable = true;
         };
       tests = {
         "markov-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTF" or (buildDepError "HTF"))
             (hsPkgs."markov-realization" or (buildDepError "markov-realization"))
             ];
+          buildable = true;
           };
         };
       };

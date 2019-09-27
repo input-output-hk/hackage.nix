@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
           ];
+        buildable = true;
         };
       exes = {
         "demo" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
             ];
+          buildable = true;
           };
         };
       };

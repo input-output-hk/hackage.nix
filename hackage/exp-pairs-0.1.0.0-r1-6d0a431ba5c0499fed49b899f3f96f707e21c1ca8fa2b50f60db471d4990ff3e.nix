@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."memoize" or (buildDepError "memoize"))
           (hsPkgs."matrix" or (buildDepError "matrix"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."memoize" or (buildDepError "memoize"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = true;
           };
         };
       };

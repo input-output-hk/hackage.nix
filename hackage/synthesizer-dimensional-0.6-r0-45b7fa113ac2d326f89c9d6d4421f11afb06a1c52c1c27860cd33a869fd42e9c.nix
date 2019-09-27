@@ -69,16 +69,20 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
-        "rain" = {};
+        "rain" = { buildable = if !flags.buildexamples then false else true; };
         "demonstration" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
-        "traumzauberbaum" = {};
+        "traumzauberbaum" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
         };
       };
     }

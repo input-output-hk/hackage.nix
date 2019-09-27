@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe" or (buildDepError "safe"))
           (hsPkgs."zifter" or (buildDepError "zifter"))
           ];
+        buildable = true;
         };
       };
     }

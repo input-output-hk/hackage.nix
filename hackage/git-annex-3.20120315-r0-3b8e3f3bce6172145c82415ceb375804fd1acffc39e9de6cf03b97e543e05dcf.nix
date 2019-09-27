@@ -87,8 +87,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."bloomfilter" or (buildDepError "bloomfilter"))
             ];
+          buildable = true;
           };
-        "git-annex-shell" = {};
+        "git-annex-shell" = { buildable = true; };
         };
       };
     }

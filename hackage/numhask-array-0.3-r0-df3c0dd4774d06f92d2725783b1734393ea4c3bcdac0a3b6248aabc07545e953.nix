@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."singletons" or (buildDepError "singletons"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
             (hsPkgs."adjunctions" or (buildDepError "adjunctions"))
             ];
+          buildable = true;
           };
         };
       };

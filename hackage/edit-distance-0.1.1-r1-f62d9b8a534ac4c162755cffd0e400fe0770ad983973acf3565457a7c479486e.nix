@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
         "edit-distance-tests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."random" or (buildDepError "random"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = if !flags.tests then false else true;
           };
         "edit-distance-benchmark" = {
           depends = if flags.splitbase
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."parallel" or (buildDepError "parallel"))
               (hsPkgs."unix" or (buildDepError "unix"))
               ];
+          buildable = if !flags.benchmark then false else true;
           };
         };
       };

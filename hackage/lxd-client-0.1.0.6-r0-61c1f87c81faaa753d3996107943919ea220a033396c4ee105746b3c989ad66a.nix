@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."x509-store" or (buildDepError "x509-store"))
           (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
           ];
+        buildable = true;
         };
       exes = {
         "lxd-client-example" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."lxd-client" or (buildDepError "lxd-client"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -109,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."turtle" or (buildDepError "turtle"))
             (hsPkgs."uuid" or (buildDepError "uuid"))
             ];
+          buildable = true;
           };
         };
       };

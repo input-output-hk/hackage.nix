@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ] ++ (pkgs.lib).optional (flags.capture) (hsPkgs."Codec-Image-DevIL" or (buildDepError "Codec-Image-DevIL"));
+          buildable = true;
           };
         };
       };

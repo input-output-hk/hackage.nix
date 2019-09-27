@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod" or (buildDepError "yesod"))
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           ];
+        buildable = true;
         };
       exes = {
         "festung" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."festung" or (buildDepError "festung"))
             (hsPkgs."yesod" or (buildDepError "yesod"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -113,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod" or (buildDepError "yesod"))
             (hsPkgs."yesod-test" or (buildDepError "yesod-test"))
             ];
+          buildable = true;
           };
         };
       };

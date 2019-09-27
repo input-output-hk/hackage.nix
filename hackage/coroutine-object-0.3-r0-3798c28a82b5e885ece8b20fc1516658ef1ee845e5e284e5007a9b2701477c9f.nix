@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cereal" or (buildDepError "cereal"))
           (hsPkgs."either" or (buildDepError "either"))
           ];
+        buildable = true;
         };
       };
     }

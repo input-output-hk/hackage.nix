@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."music-pitch-literal" or (buildDepError "music-pitch-literal"))
           (hsPkgs."music-dynamics-literal" or (buildDepError "music-dynamics-literal"))
           ];
+        buildable = true;
         };
       };
     }

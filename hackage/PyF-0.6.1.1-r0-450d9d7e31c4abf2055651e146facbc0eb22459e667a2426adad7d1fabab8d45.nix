@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."formatting" or (buildDepError "formatting"))
           (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))
           ];
+        buildable = true;
         };
       tests = {
         "pyf-test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.python3 or (pkgs.buildPackages.python3 or (buildToolDepError "python3")))
             ];
+          buildable = true;
           };
         };
       };

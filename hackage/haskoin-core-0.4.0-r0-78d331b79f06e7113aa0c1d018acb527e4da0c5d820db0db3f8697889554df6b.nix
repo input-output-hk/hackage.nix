@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."largeword" or (buildDepError "largeword"))
           (hsPkgs."entropy" or (buildDepError "entropy"))
           ];
+        buildable = true;
         };
       tests = {
         "test-haskoin-core" = {
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."scientific" or (buildDepError "scientific"))
             ];
+          buildable = true;
           };
         };
       };

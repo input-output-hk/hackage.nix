@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
           ];
+        buildable = true;
         };
       };
     }

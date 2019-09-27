@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           (hsPkgs."word8" or (buildDepError "word8"))
           ];
+        buildable = true;
         };
       exes = {
         "raft-example" = {
@@ -120,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             (hsPkgs."word8" or (buildDepError "word8"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -167,6 +169,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tree-diff" or (buildDepError "tree-diff"))
             (hsPkgs."word8" or (buildDepError "word8"))
             ];
+          buildable = true;
           };
         };
       };

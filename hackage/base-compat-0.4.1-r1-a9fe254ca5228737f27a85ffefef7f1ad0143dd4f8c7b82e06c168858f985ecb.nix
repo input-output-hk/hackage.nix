@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."errorcall-eq-instance" or (buildDepError "errorcall-eq-instance"))
           (hsPkgs."setenv" or (buildDepError "setenv"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."setenv" or (buildDepError "setenv"))
             ];
+          buildable = true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) (if system.isIos
           then [ (pkgs."UIKit" or (sysDepError "UIKit")) ]
           else [ (pkgs."Cocoa" or (sysDepError "Cocoa")) ]);
+        buildable = true;
         };
       };
     }

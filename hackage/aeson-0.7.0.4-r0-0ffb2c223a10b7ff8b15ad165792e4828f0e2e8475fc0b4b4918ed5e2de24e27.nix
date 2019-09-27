@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ]) ++ (if flags.blaze-builder
           then [ (hsPkgs."blaze-builder" or (buildDepError "blaze-builder")) ]
           else [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ]);
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             ];
+          buildable = true;
           };
         };
       };

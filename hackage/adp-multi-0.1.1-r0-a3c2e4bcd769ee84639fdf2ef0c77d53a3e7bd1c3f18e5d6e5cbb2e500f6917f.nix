@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."htrace" or (buildDepError "htrace"))
           (hsPkgs."monadiccp" or (buildDepError "monadiccp"))
           ];
+        buildable = true;
         };
       exes = {
         "adp-multi-benchmarks" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = if !flags.buildtests then false else true;
           };
         "adp-test" = {
           depends = [
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
             ];
+          buildable = if !flags.buildtests then false else true;
           };
         };
       tests = {
@@ -111,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
             ];
+          buildable = true;
           };
         };
       };

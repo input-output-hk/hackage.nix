@@ -98,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           libs = ([
             (pkgs."Xrandr" or (sysDepError "Xrandr"))
             ] ++ (pkgs.lib).optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw" or (sysDepError "iw"))) ++ (pkgs.lib).optional (flags.with_xpm || flags.all_extensions) (pkgs."Xpm" or (sysDepError "Xpm"));
+          buildable = true;
           };
         };
       };

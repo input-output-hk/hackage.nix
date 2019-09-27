@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-middleware-static" or (buildDepError "wai-middleware-static"))
             (hsPkgs."wai-eventsource" or (buildDepError "wai-eventsource"))
             ];
+          buildable = true;
           };
         };
       };

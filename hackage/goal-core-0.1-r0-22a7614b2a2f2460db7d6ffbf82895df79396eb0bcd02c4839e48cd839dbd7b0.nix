@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"))
           (hsPkgs."Chart-gtk" or (buildDepError "Chart-gtk"))
           ];
+        buildable = true;
         };
       exes = {
         "contours" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."goal-core" or (buildDepError "goal-core"))
             ];
+          buildable = true;
           };
         };
       };

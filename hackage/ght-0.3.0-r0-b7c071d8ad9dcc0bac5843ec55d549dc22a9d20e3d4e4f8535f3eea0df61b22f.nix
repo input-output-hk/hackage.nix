@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "ght" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             (hsPkgs."SHA" or (buildDepError "SHA"))
             ];
+          buildable = true;
           };
         };
       };

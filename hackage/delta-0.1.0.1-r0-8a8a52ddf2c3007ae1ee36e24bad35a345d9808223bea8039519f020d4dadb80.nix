@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."sodium" or (buildDepError "sodium"))
           (hsPkgs."fs-events" or (buildDepError "fs-events"))
           ];
+        buildable = true;
         };
       exes = {
         "delta-cli" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sodium" or (buildDepError "sodium"))
             (hsPkgs."delta" or (buildDepError "delta"))
             ];
+          buildable = true;
           };
         };
       };

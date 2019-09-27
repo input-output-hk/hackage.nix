@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
           ];
+        buildable = true;
         };
       tests = {
         "process-extras-tests" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."process-extras" or (buildDepError "process-extras"))
             ];
+          buildable = true;
           };
         };
       };

@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else if system.isOsx
             then [ (pkgs."c++" or (sysDepError "c++")) ]
             else [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
             (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
             ] ++ (pkgs.lib).optional (flags.inlinemarkdown) (hsPkgs."pandoc" or (buildDepError "pandoc"));
+          buildable = true;
           };
         };
       };

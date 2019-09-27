@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
       exes = {
         "hakaru" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "compile" = {
           depends = [
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "simplify" = {
           depends = [
@@ -109,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "density" = {
           depends = [
@@ -118,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "disintegrate" = {
           depends = [
@@ -127,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "pretty" = {
           depends = [
@@ -135,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "momiji" = {
           depends = [
@@ -142,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "normalize" = {
           depends = [
@@ -152,6 +160,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         "hkc" = {
           depends = [
@@ -165,6 +174,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = true;
           };
         "mh" = {
           depends = [
@@ -175,6 +185,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -202,6 +213,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

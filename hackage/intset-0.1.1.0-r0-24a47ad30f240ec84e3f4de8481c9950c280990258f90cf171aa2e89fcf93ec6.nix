@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -71,12 +72,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."intset" or (buildDepError "intset"))
             ];
+          buildable = if !flags.testing then false else true;
           };
         "fusion" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."intset" or (buildDepError "intset"))
             ];
+          buildable = if !flags.testing then false else true;
           };
         };
       benchmarks = {
@@ -89,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."intset" or (buildDepError "intset"))
             ];
+          buildable = if !flags.testing then false else true;
           };
         };
       };

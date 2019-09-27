@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
           (hsPkgs."lens" or (buildDepError "lens"))
           ];
+        buildable = true;
         };
       tests = {
         "aeson-lens" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."libstackexchange" or (buildDepError "libstackexchange"))
             ];
+          buildable = true;
           };
         "request" = {
           depends = [
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."libstackexchange" or (buildDepError "libstackexchange"))
             ];
+          buildable = true;
           };
         "api" = {
           depends = [
@@ -96,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             (hsPkgs."libstackexchange" or (buildDepError "libstackexchange"))
             ];
+          buildable = if !flags.enable-doctests then false else true;
           };
         };
       };

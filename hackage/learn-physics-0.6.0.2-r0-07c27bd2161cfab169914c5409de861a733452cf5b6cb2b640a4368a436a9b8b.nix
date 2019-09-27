@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."linear" or (buildDepError "linear"))
           (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
           ];
+        buildable = true;
         };
       exes = {
         "learn-physics-PlaneWave" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."learn-physics" or (buildDepError "learn-physics"))
             ];
+          buildable = true;
           };
         "learn-physics-eFieldLine3D" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."learn-physics" or (buildDepError "learn-physics"))
             ];
+          buildable = true;
           };
         "learn-physics-LorentzForceSimulation" = {
           depends = [
@@ -88,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."learn-physics" or (buildDepError "learn-physics"))
             ];
+          buildable = true;
           };
         "learn-physics-BCircularLoop" = {
           depends = [
@@ -95,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."learn-physics" or (buildDepError "learn-physics"))
             ];
+          buildable = true;
           };
         "learn-physics-sunEarth" = {
           depends = [
@@ -102,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."learn-physics" or (buildDepError "learn-physics"))
             ];
+          buildable = true;
           };
         "learn-physics-eFieldLine2D" = {
           depends = [
@@ -109,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."learn-physics" or (buildDepError "learn-physics"))
             ];
+          buildable = true;
           };
         "learn-physics-Projectile" = {
           depends = [
@@ -116,12 +123,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."learn-physics" or (buildDepError "learn-physics"))
             ];
+          buildable = true;
           };
         "learn-physics-NMR" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."learn-physics" or (buildDepError "learn-physics"))
             ];
+          buildable = true;
           };
         };
       };

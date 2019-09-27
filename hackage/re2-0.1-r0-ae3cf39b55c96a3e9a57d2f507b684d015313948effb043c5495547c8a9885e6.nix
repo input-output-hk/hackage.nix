@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."stdc++" or (sysDepError "stdc++"))
           (pkgs."pthread" or (sysDepError "pthread"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."chell" or (buildDepError "chell"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

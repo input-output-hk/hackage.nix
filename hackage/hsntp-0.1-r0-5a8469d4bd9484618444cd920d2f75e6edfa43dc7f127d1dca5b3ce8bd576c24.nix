@@ -63,12 +63,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."old-time" or (buildDepError "old-time"))
           ];
+        buildable = true;
         };
       exes = {
         "sntpdate" = {
           depends = [ (hsPkgs."unix" or (buildDepError "unix")) ];
+          buildable = true;
           };
-        "sntpd" = {};
+        "sntpd" = { buildable = true; };
         };
       };
     }

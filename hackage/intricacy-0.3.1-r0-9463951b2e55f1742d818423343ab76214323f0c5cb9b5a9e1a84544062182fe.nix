@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."SDL_gfx" or (sysDepError "SDL_gfx"))
             (pkgs."freetype" or (sysDepError "freetype"))
             ]));
+          buildable = if flags.game then true else false;
           };
         "intricacy-server" = {
           depends = (pkgs.lib).optionals (flags.server) [
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."pipes" or (buildDepError "pipes"))
             ];
+          buildable = if flags.server then true else false;
           };
         };
       };

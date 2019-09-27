@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."convertible" or (buildDepError "convertible"))
           (hsPkgs."X11" or (buildDepError "X11"))
           ];
+        buildable = true;
         };
       };
     }

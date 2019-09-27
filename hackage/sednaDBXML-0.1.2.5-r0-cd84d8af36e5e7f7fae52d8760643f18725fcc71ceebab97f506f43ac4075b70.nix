@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           ];
         libs = [ (pkgs."sedna" or (sysDepError "sedna")) ];
+        buildable = true;
         };
       };
     }

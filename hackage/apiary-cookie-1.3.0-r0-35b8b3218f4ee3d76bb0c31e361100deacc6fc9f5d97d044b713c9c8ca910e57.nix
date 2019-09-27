@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."web-routing" or (buildDepError "web-routing"))
           ];
+        buildable = true;
         };
       };
     }

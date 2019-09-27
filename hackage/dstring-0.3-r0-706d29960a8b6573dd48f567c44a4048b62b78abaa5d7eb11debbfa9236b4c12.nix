@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dlist" or (buildDepError "dlist"))
           (hsPkgs."to-string-class" or (buildDepError "to-string-class"))
           ];
+        buildable = true;
         };
       };
     }

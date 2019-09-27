@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."web-css" or (buildDepError "web-css"))
           ];
+        buildable = true;
         };
       };
     }

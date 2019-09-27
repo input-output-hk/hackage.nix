@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."crypto" or (sysDepError "crypto"))
             (pkgs."pthread" or (sysDepError "pthread"))
             ];
+        buildable = true;
         };
       tests = {
         "smoke" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.git or (pkgs.buildPackages.git or (buildToolDepError "git")))
             ];
+          buildable = true;
           };
         };
       };

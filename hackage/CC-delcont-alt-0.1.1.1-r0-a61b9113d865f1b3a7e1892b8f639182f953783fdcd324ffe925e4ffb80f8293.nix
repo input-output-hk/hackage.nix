@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."CC-delcont-exc" or (buildDepError "CC-delcont-exc"))
           (hsPkgs."CC-delcont-cxe" or (buildDepError "CC-delcont-cxe"))
           ];
+        buildable = true;
         };
       tests = {
         "DocTest" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."CC-delcont-alt" or (buildDepError "CC-delcont-alt"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         };
       };

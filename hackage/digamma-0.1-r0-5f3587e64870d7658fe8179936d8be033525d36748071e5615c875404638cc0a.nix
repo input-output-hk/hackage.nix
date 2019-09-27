@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."polynomial" or (buildDepError "polynomial"))
           ];
+        buildable = true;
         };
       };
     }

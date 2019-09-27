@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."foreign-var" or (buildDepError "foreign-var"))
           ];
+        buildable = true;
         };
       exes = {
         "record-lock" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."unix-fcntl" or (buildDepError "unix-fcntl"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

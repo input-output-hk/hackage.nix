@@ -59,10 +59,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       exes = {
         "operational-TicTacToe" = {
           depends = (pkgs.lib).optional (flags.buildexamples) (hsPkgs."random" or (buildDepError "random"));
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

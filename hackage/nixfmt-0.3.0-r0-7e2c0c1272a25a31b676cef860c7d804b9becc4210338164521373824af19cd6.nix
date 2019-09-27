@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parser-combinators" or (buildDepError "parser-combinators"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "nixfmt" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             ];
+          buildable = if compiler.isGhcjs && true then false else true;
           };
         "js-interface" = {
           depends = (pkgs.lib).optionals (compiler.isGhcjs && true) [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
             (hsPkgs."nixfmt" or (buildDepError "nixfmt"))
             ];
+          buildable = if compiler.isGhcjs && true then true else false;
           };
         };
       };

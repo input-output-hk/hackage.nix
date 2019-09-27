@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ]
           else [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ]);
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."bytestring" or (buildDepError "bytestring"))
               ]
             else [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ]);
+          buildable = true;
           };
         };
       benchmarks = {
@@ -119,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

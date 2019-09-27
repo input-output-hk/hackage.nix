@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib-bindings" or (buildDepError "zlib-bindings"))
           (hsPkgs."conduit" or (buildDepError "conduit"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."zlib-conduit" or (buildDepError "zlib-conduit"))
             ];
+          buildable = true;
           };
         };
       };

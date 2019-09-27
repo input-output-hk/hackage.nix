@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hgis-readshp" or (buildDepError "hgis-readshp"))
           (hsPkgs."spherical" or (buildDepError "spherical"))
           ] ++ (pkgs.lib).optional (flags.cairo) (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"))) ++ (pkgs.lib).optional (flags.diagrams) (hsPkgs."Chart-diagrams" or (buildDepError "Chart-diagrams"));
+        buildable = true;
         };
       sublibs = {
         "hgis-readshp" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."spherical" or (buildDepError "spherical"))
             ];
+          buildable = true;
           };
         };
       };

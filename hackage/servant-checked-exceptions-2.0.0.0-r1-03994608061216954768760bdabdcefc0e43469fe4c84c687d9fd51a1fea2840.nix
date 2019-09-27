@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."world-peace" or (buildDepError "world-peace"))
           ];
+        buildable = true;
         };
       exes = {
         "servant-checked-exceptions-example-client" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-client" or (buildDepError "servant-client"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.buildexample then true else false;
           };
         "servant-checked-exceptions-example-docs" = {
           depends = [
@@ -104,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-docs" or (buildDepError "servant-docs"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.buildexample then true else false;
           };
         "servant-checked-exceptions-example-server" = {
           depends = [
@@ -119,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if flags.buildexample then true else false;
           };
         };
       tests = {
@@ -136,6 +140,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-server" or (buildDepError "servant-server"))
             (hsPkgs."wai" or (buildDepError "wai"))
             ];
+          buildable = true;
           };
         };
       };

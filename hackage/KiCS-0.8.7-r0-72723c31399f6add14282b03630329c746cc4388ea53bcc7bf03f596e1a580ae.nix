@@ -54,7 +54,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."syb" or (buildDepError "syb")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."syb" or (buildDepError "syb")) ];
+        buildable = true;
+        };
       exes = {
         "kics" = {
           depends = [
@@ -68,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."curry-base" or (buildDepError "curry-base"))
             (hsPkgs."curry-frontend" or (buildDepError "curry-frontend"))
             ];
+          buildable = true;
           };
         };
       };

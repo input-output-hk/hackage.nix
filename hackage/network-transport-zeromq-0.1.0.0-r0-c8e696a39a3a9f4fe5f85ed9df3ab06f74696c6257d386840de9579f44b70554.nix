@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       exes = {
         "bench-dp-latency" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."binary" or (buildDepError "binary"))
             (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
             ];
+          buildable = if flags.benchmarks then true else false;
           };
         "bench-dp-throughput" = {
           depends = (pkgs.lib).optionals (flags.benchmarks) [
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ];
+          buildable = if flags.benchmarks then true else false;
           };
         "bench-dp-channels" = {
           depends = (pkgs.lib).optionals (flags.benchmarks) [
@@ -99,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ];
+          buildable = if flags.benchmarks then true else false;
           };
         };
       tests = {
@@ -110,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
             (hsPkgs."network-transport-tests" or (buildDepError "network-transport-tests"))
             ];
+          buildable = true;
           };
         "test-api" = {
           depends = [
@@ -118,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-zeromq" or (buildDepError "network-transport-zeromq"))
             (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
             ];
+          buildable = true;
           };
         "test-ch-core" = {
           depends = [
@@ -132,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "test-ch-closure" = {
           depends = [
@@ -146,6 +153,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "test-ch-stat" = {
           depends = [
@@ -160,6 +168,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

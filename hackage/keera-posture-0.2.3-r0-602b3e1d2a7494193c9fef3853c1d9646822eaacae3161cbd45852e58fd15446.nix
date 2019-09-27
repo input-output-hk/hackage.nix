@@ -131,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."keera-hails-reactivevalues" or (buildDepError "keera-hails-reactivevalues"))
               ];
           libs = [ (pkgs."SDL_mixer" or (sysDepError "SDL_mixer")) ];
+          buildable = true;
           };
         };
       };

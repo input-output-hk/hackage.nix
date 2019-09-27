@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default" or (buildDepError "data-default"))
           (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-types" or (buildDepError "xml-types"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ];
+          buildable = true;
           };
         };
       };

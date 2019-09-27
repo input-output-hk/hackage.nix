@@ -93,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."servant" or (buildDepError "servant"))
               (hsPkgs."bytestring-conversion" or (buildDepError "bytestring-conversion"))
               ]);
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -130,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."servant" or (buildDepError "servant"))
               (hsPkgs."bytestring-conversion" or (buildDepError "bytestring-conversion"))
               ]));
+          buildable = if flags.build-examples then true else false;
           };
         };
       tests = {
@@ -148,6 +150,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."time" or (buildDepError "time"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs."tagged" or (buildDepError "tagged"));
+          buildable = true;
           };
         "example-tests" = {
           depends = (pkgs.lib).optionals (flags.build-examples) (([
@@ -192,6 +195,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
                 (hsPkgs."servant" or (buildDepError "servant"))
                 (hsPkgs."bytestring-conversion" or (buildDepError "bytestring-conversion"))
                 ])) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs."tagged" or (buildDepError "tagged")));
+          buildable = if flags.build-examples then true else false;
           };
         };
       benchmarks = {
@@ -204,6 +208,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-auth-cookie" or (buildDepError "servant-auth-cookie"))
             (hsPkgs."servant-server" or (buildDepError "servant-server"))
             ];
+          buildable = true;
           };
         };
       };

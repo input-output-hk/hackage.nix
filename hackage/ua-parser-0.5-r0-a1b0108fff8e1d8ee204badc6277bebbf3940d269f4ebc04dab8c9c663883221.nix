@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb" or (buildDepError "syb"))
           (hsPkgs."file-embed" or (buildDepError "file-embed"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."file-embed" or (buildDepError "file-embed"))
             ];
+          buildable = true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
           (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"))
           ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-list" or (buildDepError "type-list"))
           (hsPkgs."vinyl" or (buildDepError "vinyl"))
           ];
+        buildable = true;
         };
       };
     }

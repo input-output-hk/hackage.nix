@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."contravariant" or (buildDepError "contravariant"))
           (hsPkgs."trivial-constraint" or (buildDepError "trivial-constraint"))
           ];
+        buildable = true;
         };
       };
     }

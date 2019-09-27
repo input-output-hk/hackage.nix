@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."unix" or (buildDepError "unix"))
               ])) ++ (pkgs.lib).optional (!flags.standalone) (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"));
+          buildable = true;
           };
         };
       };

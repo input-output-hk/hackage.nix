@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."static-hash" or (buildDepError "static-hash"))
           (hsPkgs."byteorder" or (buildDepError "byteorder"))
           ];
+        buildable = true;
         };
       };
     }

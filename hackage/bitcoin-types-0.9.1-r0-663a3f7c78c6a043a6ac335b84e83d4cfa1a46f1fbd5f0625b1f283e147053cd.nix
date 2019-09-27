@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hexstring" or (buildDepError "hexstring"))
           (hsPkgs."base58string" or (buildDepError "base58string"))
           ];
+        buildable = true;
         };
       tests = {
         "test-suite" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hexstring" or (buildDepError "hexstring"))
             (hsPkgs."bitcoin-types" or (buildDepError "bitcoin-types"))
             ];
+          buildable = true;
           };
         };
       };

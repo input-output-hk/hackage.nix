@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (pkgs.lib).optional (flags.arrow-tr) (hsPkgs."arrows" or (buildDepError "arrows"));
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."machinecell" or (buildDepError "machinecell"))
             ];
+          buildable = true;
           };
         };
       };

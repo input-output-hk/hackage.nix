@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "test-shine-animateeverything" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom"))
             (hsPkgs."shine" or (buildDepError "shine"))
             ];
+          buildable = true;
           };
         "test-shine-simpleinteraction" = {
           depends = [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom"))
             (hsPkgs."shine" or (buildDepError "shine"))
             ];
+          buildable = true;
           };
         };
       };

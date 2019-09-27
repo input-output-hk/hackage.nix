@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."singletons" or (buildDepError "singletons"))
           ];
+        buildable = true;
         };
       };
     }

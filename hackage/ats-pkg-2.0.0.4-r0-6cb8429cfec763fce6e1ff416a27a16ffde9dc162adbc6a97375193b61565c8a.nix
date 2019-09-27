@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."temporary" or (buildDepError "temporary"))
           (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
           ];
+        buildable = true;
         };
       exes = {
         "atspkg" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ats-pkg" or (buildDepError "ats-pkg"))
             ];
+          buildable = true;
           };
         };
       };

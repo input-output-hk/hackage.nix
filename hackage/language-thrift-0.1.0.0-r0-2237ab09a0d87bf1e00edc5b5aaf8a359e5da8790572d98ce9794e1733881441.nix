@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsers" or (buildDepError "parsers"))
           (hsPkgs."trifecta" or (buildDepError "trifecta"))
           ];
+        buildable = true;
         };
       };
     }

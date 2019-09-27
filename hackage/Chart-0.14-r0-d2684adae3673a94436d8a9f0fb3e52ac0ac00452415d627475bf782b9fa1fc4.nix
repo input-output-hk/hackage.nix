@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."base" or (buildDepError "base"))
             ])) ++ (pkgs.lib).optional (flags.gtk) (hsPkgs."gtk" or (buildDepError "gtk"));
+        buildable = true;
         };
       };
     }

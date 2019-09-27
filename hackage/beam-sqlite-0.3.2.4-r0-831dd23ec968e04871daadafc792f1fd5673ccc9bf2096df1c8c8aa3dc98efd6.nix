@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"))) ++ (pkgs.lib).optional (system.isFreebsd || system.isNetbsd || system.isOsx || system.isLinux || system.isSolaris) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       };
     }

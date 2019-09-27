@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = [
           (pkgs."atomspace-cwrapper" or (sysDepError "atomspace-cwrapper"))
           ];
+        buildable = true;
         };
       };
     }

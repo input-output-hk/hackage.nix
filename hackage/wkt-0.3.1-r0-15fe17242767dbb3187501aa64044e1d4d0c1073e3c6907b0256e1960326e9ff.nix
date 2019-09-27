@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."linear" or (buildDepError "linear"))
           (hsPkgs."trifecta" or (buildDepError "trifecta"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
             (hsPkgs."wkt" or (buildDepError "wkt"))
             ];
+          buildable = true;
           };
         };
       };

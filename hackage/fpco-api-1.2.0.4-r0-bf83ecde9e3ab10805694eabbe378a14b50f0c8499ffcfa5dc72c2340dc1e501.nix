@@ -102,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           ];
+        buildable = true;
         };
       exes = {
         "fpco-api" = {
@@ -121,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = if flags.jenkins-build then false else true;
           };
         };
       };

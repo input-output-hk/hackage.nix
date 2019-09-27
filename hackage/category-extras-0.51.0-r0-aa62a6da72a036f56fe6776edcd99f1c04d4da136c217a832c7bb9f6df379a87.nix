@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."base" or (buildDepError "base"))
             ])) ++ (pkgs.lib).optional (flags.redefinableeithermonad) (hsPkgs."ghc" or (buildDepError "ghc"));
+        buildable = true;
         };
       };
     }

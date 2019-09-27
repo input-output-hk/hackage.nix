@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."preamble" or (buildDepError "preamble"))
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           ];
+        buildable = true;
         };
       exes = {
         "skylark-client" = {
@@ -75,12 +76,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."preamble" or (buildDepError "preamble"))
             (hsPkgs."skylark-client" or (buildDepError "skylark-client"))
             ];
+          buildable = true;
           };
         "shake-skylark-client" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."shakers" or (buildDepError "shakers"))
             ];
+          buildable = true;
           };
         };
       };

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "7.8.4") (hsPkgs."haddock-api" or (buildDepError "haddock-api"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "7.8.3") (hsPkgs."haddock" or (buildDepError "haddock"))) ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."haddock" or (buildDepError "haddock"))) ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."haddock" or (buildDepError "haddock"))) ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."haddock" or (buildDepError "haddock"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.8.4") (hsPkgs."haddock-api" or (buildDepError "haddock-api"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.2") (hsPkgs."haddock" or (buildDepError "haddock"));
+        buildable = true;
         };
       exes = {
         "haskell-docs" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-docs" or (buildDepError "haskell-docs"))
             (hsPkgs."ghc" or (buildDepError "ghc"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haskell-docs" or (buildDepError "haskell-docs"))
             ];
+          buildable = true;
           };
         };
       };

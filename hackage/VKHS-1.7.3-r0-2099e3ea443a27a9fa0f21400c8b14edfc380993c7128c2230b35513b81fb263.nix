@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."taglib" or (buildDepError "taglib"))
           (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
           ];
+        buildable = true;
         };
       exes = {
         "vkq" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regexpr" or (buildDepError "regexpr"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

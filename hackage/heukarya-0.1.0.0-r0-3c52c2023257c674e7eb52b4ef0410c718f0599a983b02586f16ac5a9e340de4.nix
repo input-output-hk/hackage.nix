@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel" or (buildDepError "parallel"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
-      exes = { "ExponentailRegression" = {}; };
+      exes = { "ExponentailRegression" = { buildable = true; }; };
       };
     }

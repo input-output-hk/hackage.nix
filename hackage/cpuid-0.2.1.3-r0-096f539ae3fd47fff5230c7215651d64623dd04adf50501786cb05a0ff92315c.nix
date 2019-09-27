@@ -54,7 +54,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-      exes = { "cpuid-test" = {}; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = if !system.isI386 then false else true;
+        };
+      exes = {
+        "cpuid-test" = {
+          buildable = if !(flags.buildexamples && system.isI386)
+            then false
+            else true;
+          };
+        };
       };
     }

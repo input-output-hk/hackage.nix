@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xmonad" or (buildDepError "xmonad"))
           (hsPkgs."gtk" or (buildDepError "gtk"))
           ];
+        buildable = true;
         };
       };
     }

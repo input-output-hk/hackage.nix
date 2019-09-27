@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc" or (buildDepError "ghc"))
           (hsPkgs."haskell-tools-ast" or (buildDepError "haskell-tools-ast"))
           ];
+        buildable = true;
         };
       };
     }

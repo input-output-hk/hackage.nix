@@ -53,5 +53,5 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "Control overloading support in haskell-gi generated bindings";
       buildType = "Simple";
       };
-    components = { "library" = {}; };
+    components = { "library" = { buildable = true; }; };
     }

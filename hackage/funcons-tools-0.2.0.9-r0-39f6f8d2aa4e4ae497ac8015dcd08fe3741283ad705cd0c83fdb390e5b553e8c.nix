@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random-strings" or (buildDepError "random-strings"))
           (hsPkgs."funcons-values" or (buildDepError "funcons-values"))
           ];
+        buildable = true;
         };
       exes = {
         "runfct" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random-strings" or (buildDepError "random-strings"))
             (hsPkgs."funcons-values" or (buildDepError "funcons-values"))
             ];
+          buildable = true;
           };
         };
       };

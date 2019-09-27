@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-WinEvent" or (buildDepError "HGamer3D-WinEvent"))
           (hsPkgs."HGamer3D-GUI" or (buildDepError "HGamer3D-GUI"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."typelits-witnesses" or (buildDepError "typelits-witnesses"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
             (hsPkgs."bitvec" or (buildDepError "bitvec"))
             ];
+          buildable = true;
           };
         };
       };

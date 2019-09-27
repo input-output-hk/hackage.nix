@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yu-utils" or (buildDepError "yu-utils"))
           (hsPkgs."yu-auth" or (buildDepError "yu-auth"))
           ];
+        buildable = true;
         };
       tests = {
         "test-mvc" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yu-core" or (buildDepError "yu-core"))
             (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
             ];
+          buildable = true;
           };
         };
       };

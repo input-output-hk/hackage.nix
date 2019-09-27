@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
           ];
+        buildable = true;
         };
       tests = {
         "stm-conduit-tests" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

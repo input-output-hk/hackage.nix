@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
           (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
           ] ++ [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+        buildable = true;
         };
       tests = {
         "tdd-util-tests" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ] ++ [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+          buildable = true;
           };
         };
       };

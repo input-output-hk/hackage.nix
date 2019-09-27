@@ -68,10 +68,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "vty-ui-tests" = {
           depends = [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+          buildable = if !flags.testing then false else true;
           };
         "vty-ui-list-demo" = {
           depends = [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-progressbar-demo" = {
           depends = [
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-complex-demo" = {
           depends = [
@@ -96,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-dirbrowser-demo" = {
           depends = [
@@ -103,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-phoneinput-demo" = {
           depends = [
@@ -110,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-dialog-demo" = {
           depends = [
@@ -117,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-edit-demo" = {
           depends = [
@@ -124,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         };
       };

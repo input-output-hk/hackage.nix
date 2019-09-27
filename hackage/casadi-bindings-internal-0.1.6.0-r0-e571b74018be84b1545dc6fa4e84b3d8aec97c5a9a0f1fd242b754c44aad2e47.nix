@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."stdc++" or (sysDepError "stdc++"))
           (pkgs."casadi" or (sysDepError "casadi"))
           ];
+        buildable = true;
         };
       };
     }

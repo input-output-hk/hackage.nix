@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
           (hsPkgs."binary" or (buildDepError "binary"))
           ];
+        buildable = true;
         };
       tests = {
         "UnitTest" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ];
+          buildable = true;
           };
         };
       };

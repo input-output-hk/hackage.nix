@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default-instances-dlist" or (buildDepError "data-default-instances-dlist"))
           (hsPkgs."data-default-instances-old-locale" or (buildDepError "data-default-instances-old-locale"))
           ];
+        buildable = true;
         };
       };
     }

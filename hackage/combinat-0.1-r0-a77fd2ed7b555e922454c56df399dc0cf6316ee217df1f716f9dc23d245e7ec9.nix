@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       };
     }

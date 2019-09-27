@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."tasty" or (buildDepError "tasty"))
           ];
+        buildable = true;
         };
       };
     }

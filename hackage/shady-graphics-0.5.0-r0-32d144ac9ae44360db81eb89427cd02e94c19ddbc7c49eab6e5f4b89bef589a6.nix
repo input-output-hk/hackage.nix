@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Boolean" or (buildDepError "Boolean"))
           (hsPkgs."shady-gen" or (buildDepError "shady-gen"))
           ];
+        buildable = true;
         };
       };
     }

@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."debian" or (buildDepError "debian"))
           ] ++ [ (hsPkgs."Cabal" or (buildDepError "Cabal")) ];
+        buildable = true;
         };
       exes = {
         "cabal-debian" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ] ++ [ (hsPkgs."Cabal" or (buildDepError "Cabal")) ];
+          buildable = true;
           };
         "cabal-debian-tests" = {
           depends = [
@@ -107,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."text" or (buildDepError "text"))
             ] ++ [ (hsPkgs."Cabal" or (buildDepError "Cabal")) ];
+          buildable = true;
           };
         };
       };

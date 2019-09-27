@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."these" or (buildDepError "these"))
           ];
+        buildable = true;
         };
       exes = {
         "casa-abbreviations-and-acronyms" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."casa-abbreviations-and-acronyms" or (buildDepError "casa-abbreviations-and-acronyms"))
             ];
+          buildable = true;
           };
         };
       };

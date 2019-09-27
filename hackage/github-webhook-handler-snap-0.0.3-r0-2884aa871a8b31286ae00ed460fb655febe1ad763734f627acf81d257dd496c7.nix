@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."github-types" or (buildDepError "github-types"))
           (hsPkgs."github-webhook-handler" or (buildDepError "github-webhook-handler"))
           ];
+        buildable = true;
         };
       };
     }

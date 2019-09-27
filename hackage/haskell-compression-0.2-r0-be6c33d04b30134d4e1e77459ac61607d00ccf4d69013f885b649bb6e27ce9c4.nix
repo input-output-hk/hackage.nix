@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bimap" or (buildDepError "bimap"))
           (hsPkgs."booleanlist" or (buildDepError "booleanlist"))
           ];
+        buildable = true;
         };
       exes = {
         "hs-compress" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."bimap" or (buildDepError "bimap"))
             ];
+          buildable = true;
           };
         };
       };

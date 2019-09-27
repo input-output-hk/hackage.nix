@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fps" or (buildDepError "fps"))
             ];
+          buildable = true;
           };
         };
       };

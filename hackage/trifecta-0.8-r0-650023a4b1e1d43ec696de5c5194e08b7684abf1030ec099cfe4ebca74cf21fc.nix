@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wl-pprint-terminfo" or (buildDepError "wl-pprint-terminfo"))
           (hsPkgs."terminfo" or (buildDepError "terminfo"))
           ];
+        buildable = true;
         };
       };
     }

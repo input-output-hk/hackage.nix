@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."timezone-series" or (buildDepError "timezone-series"))
           (hsPkgs."timezone-olson" or (buildDepError "timezone-olson"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
             (hsPkgs."timezone-unix" or (buildDepError "timezone-unix"))
             ];
+          buildable = true;
           };
         };
       };

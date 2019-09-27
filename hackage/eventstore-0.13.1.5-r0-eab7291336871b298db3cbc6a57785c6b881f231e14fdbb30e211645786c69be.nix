@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."connection" or (buildDepError "connection"))
           (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
           ];
+        buildable = true;
         };
       tests = {
         "integration-tests" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dotnet-timespan" or (buildDepError "dotnet-timespan"))
             (hsPkgs."connection" or (buildDepError "connection"))
             ];
+          buildable = true;
           };
         };
       };

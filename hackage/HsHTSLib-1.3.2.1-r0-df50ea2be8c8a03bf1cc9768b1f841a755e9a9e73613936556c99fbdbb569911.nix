@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
         libs = [ (pkgs."pthread" or (sysDepError "pthread")) ];
+        buildable = true;
         };
       };
     }

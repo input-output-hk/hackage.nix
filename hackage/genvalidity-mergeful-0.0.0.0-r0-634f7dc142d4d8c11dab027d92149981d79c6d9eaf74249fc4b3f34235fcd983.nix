@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."genvalidity-time" or (buildDepError "genvalidity-time"))
           (hsPkgs."mergeful" or (buildDepError "mergeful"))
           ];
+        buildable = true;
         };
       tests = {
         "mergeful-test" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."uuid" or (buildDepError "uuid"))
             ];
+          buildable = true;
           };
         };
       };

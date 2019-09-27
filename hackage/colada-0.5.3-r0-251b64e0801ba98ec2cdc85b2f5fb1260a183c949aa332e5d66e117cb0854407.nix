@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."swift-lda" or (buildDepError "swift-lda"))
           ];
+        buildable = true;
         };
       exes = {
         "colada" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."swift-lda" or (buildDepError "swift-lda"))
             ];
+          buildable = true;
           };
         };
       };

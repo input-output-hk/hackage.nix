@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yaml" or (buildDepError "yaml"))
           (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
           ];
+        buildable = true;
         };
       exes = {
         "Macbeth" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."macbeth-lib" or (buildDepError "macbeth-lib"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -105,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
             ];
+          buildable = true;
           };
         };
       };

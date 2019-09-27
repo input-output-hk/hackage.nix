@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
           ];
         libs = [ (pkgs."toxcore" or (sysDepError "toxcore")) ];
+        buildable = true;
         };
       exes = {
         "groupbot" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."toxcore" or (buildDepError "toxcore"))
             ];
           libs = [ (pkgs."toxcore" or (sysDepError "toxcore")) ];
+          buildable = true;
           };
         };
       tests = {
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."saltine" or (buildDepError "saltine"))
             (hsPkgs."toxcore" or (buildDepError "toxcore"))
             ];
+          buildable = true;
           };
         };
       };

@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-bytestring" or (buildDepError "network-bytestring"))
             (hsPkgs."PSQueue" or (buildDepError "PSQueue"))
             ]);
+        buildable = true;
         };
       };
     }

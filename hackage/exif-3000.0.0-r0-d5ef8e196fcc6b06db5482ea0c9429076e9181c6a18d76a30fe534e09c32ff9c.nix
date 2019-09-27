@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."exif" or (sysDepError "exif"))
           (pkgs."m" or (sysDepError "m"))
           ];
+        buildable = true;
         };
       };
     }

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."qhull" or (sysDepError "qhull"))
           (pkgs."pthread" or (sysDepError "pthread"))
           ];
+        buildable = true;
         };
       };
     }

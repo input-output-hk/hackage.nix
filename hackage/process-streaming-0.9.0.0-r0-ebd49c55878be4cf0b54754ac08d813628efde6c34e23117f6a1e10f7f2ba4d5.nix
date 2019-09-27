@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes-transduce" or (buildDepError "pipes-transduce"))
           (hsPkgs."conceit" or (buildDepError "conceit"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -109,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."process-streaming" or (buildDepError "process-streaming"))
             ];
+          buildable = true;
           };
         "doctests" = {
           depends = [
@@ -143,6 +145,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."process-streaming" or (buildDepError "process-streaming"))
             ];
+          buildable = true;
           };
         };
       };

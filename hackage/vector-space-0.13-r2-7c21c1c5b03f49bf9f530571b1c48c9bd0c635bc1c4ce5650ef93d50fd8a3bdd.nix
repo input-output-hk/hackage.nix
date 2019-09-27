@@ -61,6 +61,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Boolean" or (buildDepError "Boolean"))
           (hsPkgs."NumInstances" or (buildDepError "NumInstances"))
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.9")) (hsPkgs."void" or (buildDepError "void"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+        buildable = if compiler.isGhc && (compiler.version).lt "6.10"
+          then false
+          else true;
         };
       };
     }

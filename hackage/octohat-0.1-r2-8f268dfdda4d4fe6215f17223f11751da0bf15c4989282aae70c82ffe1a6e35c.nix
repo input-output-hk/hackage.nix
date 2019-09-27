@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wreq" or (buildDepError "wreq"))
           (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."octohat" or (buildDepError "octohat"))
             ];
+          buildable = true;
           };
         };
       };

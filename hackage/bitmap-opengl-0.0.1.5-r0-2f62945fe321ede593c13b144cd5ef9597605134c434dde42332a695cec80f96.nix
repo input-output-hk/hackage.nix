@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."bitmap" or (buildDepError "bitmap"))
           ] ++ [ (hsPkgs."OpenGL" or (buildDepError "OpenGL")) ];
+        buildable = true;
         };
       };
     }

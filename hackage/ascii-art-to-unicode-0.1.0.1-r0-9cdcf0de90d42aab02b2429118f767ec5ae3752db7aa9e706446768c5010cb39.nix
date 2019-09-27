@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."comonad" or (buildDepError "comonad"))
           ];
+        buildable = true;
         };
       exes = {
         "aa2u" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ascii-art-to-unicode" or (buildDepError "ascii-art-to-unicode"))
             (hsPkgs."strict" or (buildDepError "strict"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ascii-art-to-unicode" or (buildDepError "ascii-art-to-unicode"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         };
       };

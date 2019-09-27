@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
           ];
+        buildable = true;
         };
       };
     }

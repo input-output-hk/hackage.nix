@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagged" or (buildDepError "tagged"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (pkgs.lib).optional (flags.herbie) (hsPkgs."HerbiePlugin" or (buildDepError "HerbiePlugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"));
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."simple-reflect" or (buildDepError "simple-reflect"))
             ];
+          buildable = if !flags.test-doctests then false else true;
           };
         };
       };

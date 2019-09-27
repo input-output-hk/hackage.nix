@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."star-to-star" or (buildDepError "star-to-star"))
           ];
+        buildable = true;
         };
       };
     }

@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base64-string" or (buildDepError "base64-string"))
             (hsPkgs."clock" or (buildDepError "clock"))
             ];
+          buildable = true;
           };
         };
       };

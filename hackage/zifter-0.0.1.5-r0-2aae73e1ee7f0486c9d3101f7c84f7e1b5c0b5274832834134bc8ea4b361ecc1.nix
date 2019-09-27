@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."validity" or (buildDepError "validity"))
           (hsPkgs."validity-path" or (buildDepError "validity-path"))
           ];
+        buildable = true;
         };
       tests = {
         "zifter-test" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

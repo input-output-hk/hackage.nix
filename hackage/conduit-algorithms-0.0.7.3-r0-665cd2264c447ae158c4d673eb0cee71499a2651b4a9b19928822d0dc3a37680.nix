@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."lzma-conduit" or (buildDepError "lzma-conduit"));
+        buildable = true;
         };
       tests = {
         "conduit-algorithms-test" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."lzma-conduit" or (buildDepError "lzma-conduit"));
+          buildable = true;
           };
         };
       };

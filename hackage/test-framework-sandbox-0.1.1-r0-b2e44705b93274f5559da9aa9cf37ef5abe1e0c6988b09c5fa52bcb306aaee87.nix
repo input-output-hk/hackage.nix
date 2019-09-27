@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-sandbox" or (buildDepError "test-sandbox"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-sandbox" or (buildDepError "test-sandbox"))
             (hsPkgs."test-sandbox-hunit" or (buildDepError "test-sandbox-hunit"))
             ];
+          buildable = true;
           };
         };
       };

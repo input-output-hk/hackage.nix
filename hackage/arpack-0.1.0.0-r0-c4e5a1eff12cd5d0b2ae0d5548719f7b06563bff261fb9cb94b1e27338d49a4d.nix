@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
           ];
         pkgconfig = [ (pkgconfPkgs."arpack" or (pkgConfDepError "arpack")) ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
             ];
+          buildable = true;
           };
         };
       };

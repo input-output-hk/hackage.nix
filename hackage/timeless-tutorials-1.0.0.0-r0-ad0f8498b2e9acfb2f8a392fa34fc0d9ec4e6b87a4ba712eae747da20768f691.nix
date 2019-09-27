@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."timeless" or (buildDepError "timeless"))
           ];
+        buildable = true;
         };
       exes = {
         "Tutorial1" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."timeless-tutorials" or (buildDepError "timeless-tutorials"))
             ];
+          buildable = true;
           };
         };
       };

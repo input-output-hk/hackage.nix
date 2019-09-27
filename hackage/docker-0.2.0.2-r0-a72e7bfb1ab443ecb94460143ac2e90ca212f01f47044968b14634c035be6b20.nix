@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes-text" or (buildDepError "pipes-text"))
           (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."http-types" or (buildDepError "http-types"))
             ];
+          buildable = true;
           };
         };
       };

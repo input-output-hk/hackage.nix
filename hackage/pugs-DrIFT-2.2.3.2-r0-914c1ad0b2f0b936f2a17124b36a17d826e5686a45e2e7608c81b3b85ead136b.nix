@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."HsSyck" or (buildDepError "HsSyck"))
           ];
+        buildable = true;
         };
       exes = {
         "pugs-DrIFT" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."HsSyck" or (buildDepError "HsSyck"))
             ];
+          buildable = true;
           };
         };
       };

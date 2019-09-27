@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."xdg-basedir" or (buildDepError "xdg-basedir"))
             ];
+          buildable = true;
           };
         };
       };

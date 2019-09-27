@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
           (hsPkgs."data-default-instances-base" or (buildDepError "data-default-instances-base"))
           ];
+        buildable = true;
         };
       exes = {
         "jespresso" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."Diff" or (buildDepError "Diff"))
             ];
+          buildable = true;
           };
         };
       };

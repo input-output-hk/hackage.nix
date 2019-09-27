@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."websockets" or (buildDepError "websockets"))
             (hsPkgs."iproute" or (buildDepError "iproute"))
             ]);
+        buildable = true;
         };
       exes = {
         "monitorService" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."transformers" or (buildDepError "transformers"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

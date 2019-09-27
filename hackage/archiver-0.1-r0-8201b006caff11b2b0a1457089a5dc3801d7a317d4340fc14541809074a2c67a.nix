@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."curl" or (buildDepError "curl"))
           (hsPkgs."hinotify" or (buildDepError "hinotify"))
           ];
+        buildable = true;
         };
       exes = {
         "archiver" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."hinotify" or (buildDepError "hinotify"))
             ];
+          buildable = true;
           };
         };
       };

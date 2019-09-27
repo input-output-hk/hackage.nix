@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hack-handler-simpleserver" or (buildDepError "hack-handler-simpleserver"))
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             ];
+          buildable = true;
           };
         };
       };

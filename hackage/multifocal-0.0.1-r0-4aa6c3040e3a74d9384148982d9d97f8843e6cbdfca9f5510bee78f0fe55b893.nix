@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pretty" or (buildDepError "pretty"))
           (hsPkgs."HaXml" or (buildDepError "HaXml"))
           ];
+        buildable = true;
         };
       exes = {
         "multifocal" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.parsec3
           then [ (hsPkgs."parsec3" or (buildDepError "parsec3")) ]
           else [ (hsPkgs."parsec" or (buildDepError "parsec")) ]);
+        buildable = true;
         };
       };
     }

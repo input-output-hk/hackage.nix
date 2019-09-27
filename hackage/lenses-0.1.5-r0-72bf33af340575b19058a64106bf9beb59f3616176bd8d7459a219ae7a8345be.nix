@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."template-haskell" or (buildDepError "template-haskell"));
+        buildable = true;
         };
       };
     }

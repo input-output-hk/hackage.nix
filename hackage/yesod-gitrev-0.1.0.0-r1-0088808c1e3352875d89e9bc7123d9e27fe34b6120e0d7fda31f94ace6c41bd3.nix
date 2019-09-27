@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           ];
+        buildable = true;
         };
       };
     }

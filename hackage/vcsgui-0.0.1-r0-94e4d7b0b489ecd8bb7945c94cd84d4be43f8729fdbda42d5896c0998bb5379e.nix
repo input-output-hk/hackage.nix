@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."gtk" or (buildDepError "gtk"))
           ];
+        buildable = true;
         };
       exes = {
         "vcsgui" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."gtk" or (buildDepError "gtk"))
             ];
+          buildable = true;
           };
         "vcsgui-askpass" = {
           depends = [
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."gtk" or (buildDepError "gtk"))
             ];
+          buildable = true;
           };
         };
       };

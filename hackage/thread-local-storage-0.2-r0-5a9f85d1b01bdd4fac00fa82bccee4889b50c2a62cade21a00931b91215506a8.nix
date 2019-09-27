@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
         libs = [ (pkgs."pthread" or (sysDepError "pthread")) ];
+        buildable = true;
         };
       tests = {
         "test-tls" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
             (hsPkgs."thread-local-storage" or (buildDepError "thread-local-storage"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
             ];
+          buildable = true;
           };
         };
       };

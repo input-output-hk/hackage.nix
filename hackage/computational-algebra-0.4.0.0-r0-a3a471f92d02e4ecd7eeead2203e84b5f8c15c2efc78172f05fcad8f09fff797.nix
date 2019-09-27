@@ -93,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."singletons" or (buildDepError "singletons"))
           (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
           ];
+        buildable = true;
         };
       exes = {
         "groebner-prof" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."computational-algebra" or (buildDepError "computational-algebra"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = false;
           };
         "solve" = {
           depends = [
@@ -119,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
+          buildable = false;
           };
         "algebraic" = {
           depends = [
@@ -126,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."algebraic-prelude" or (buildDepError "algebraic-prelude"))
             (hsPkgs."computational-algebra" or (buildDepError "computational-algebra"))
             ];
+          buildable = false;
           };
         "ipsolve" = {
           depends = [
@@ -148,6 +152,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."singletons" or (buildDepError "singletons"))
             ];
+          buildable = false;
           };
         "faugere-prof" = {
           depends = [
@@ -168,6 +173,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
+          buildable = false;
           };
         "hensel-prof" = {
           depends = [
@@ -188,6 +194,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
+          buildable = false;
           };
         "sandpit-poly" = {
           depends = [
@@ -199,6 +206,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."algebra" or (buildDepError "algebra"))
             (hsPkgs."sized" or (buildDepError "sized"))
             ];
+          buildable = false;
           };
         "quotient" = {
           depends = [
@@ -211,6 +219,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sized" or (buildDepError "sized"))
             (hsPkgs."reflection" or (buildDepError "reflection"))
             ];
+          buildable = false;
           };
         };
       tests = {
@@ -238,6 +247,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
             ];
+          buildable = false;
           };
         "singular-test" = {
           depends = [
@@ -266,6 +276,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."singletons" or (buildDepError "singletons"))
             ];
+          buildable = false;
           };
         "monomial-order-test" = {
           depends = [
@@ -286,6 +297,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
             (hsPkgs."sized" or (buildDepError "sized"))
             ];
+          buildable = false;
           };
         "linear-test" = {
           depends = [
@@ -313,6 +325,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = true;
           };
         "matrix-test" = {
           depends = [
@@ -340,6 +353,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."matrix" or (buildDepError "matrix"))
             (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
             ];
+          buildable = false;
           };
         "specs" = {
           depends = [
@@ -371,6 +385,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."singletons" or (buildDepError "singletons"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = true;
           };
         "new-div-test" = {
           depends = [
@@ -397,6 +412,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = false;
           };
         };
       benchmarks = {
@@ -417,6 +433,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = true;
           };
         "normal-bench" = {
           depends = [
@@ -435,6 +452,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = true;
           };
         "elimination-bench" = {
           depends = [
@@ -453,6 +471,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = false;
           };
         "quotient-bench-randomized" = {
           depends = [
@@ -480,6 +499,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
             (hsPkgs."monomorphic" or (buildDepError "monomorphic"))
             ];
+          buildable = true;
           };
         "monomial-order-bench" = {
           depends = [
@@ -507,6 +527,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = false;
           };
         "linear-bench" = {
           depends = [
@@ -538,6 +559,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."matrix" or (buildDepError "matrix"))
             (hsPkgs."monomorphic" or (buildDepError "monomorphic"))
             ];
+          buildable = false;
           };
         "division-bench" = {
           depends = [
@@ -569,6 +591,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."matrix" or (buildDepError "matrix"))
             (hsPkgs."monomorphic" or (buildDepError "monomorphic"))
             ];
+          buildable = false;
           };
         "sugar-paper-bench" = {
           depends = [
@@ -600,6 +623,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."matrix" or (buildDepError "matrix"))
             (hsPkgs."monomorphic" or (buildDepError "monomorphic"))
             ];
+          buildable = true;
           };
         "solve-bench" = {
           depends = [
@@ -631,6 +655,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = true;
           };
         "coercion-bench" = {
           depends = [
@@ -662,6 +687,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = false;
           };
         "faugere4-bench" = {
           depends = [
@@ -692,6 +718,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = true;
           };
         "unipol-mult-bench" = {
           depends = [
@@ -722,6 +749,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = true;
           };
         "unipol-div-bench" = {
           depends = [
@@ -752,6 +780,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = true;
           };
         };
       };

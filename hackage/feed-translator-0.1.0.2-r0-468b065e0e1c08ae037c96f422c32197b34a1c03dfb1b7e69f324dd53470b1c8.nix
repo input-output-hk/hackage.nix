@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wreq" or (buildDepError "wreq"))
             (hsPkgs."xml" or (buildDepError "xml"))
             ];
+          buildable = true;
           };
         };
       };

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."syb" or (buildDepError "syb"))
             ];
+          buildable = true;
           };
         "fibon-init" = {
           depends = [
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         "fibon-analyse" = {
           depends = (pkgs.lib).optionals (flags.analyse) [
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."syb" or (buildDepError "syb"))
             ];
+          buildable = if flags.analyse then true else false;
           };
         };
       };

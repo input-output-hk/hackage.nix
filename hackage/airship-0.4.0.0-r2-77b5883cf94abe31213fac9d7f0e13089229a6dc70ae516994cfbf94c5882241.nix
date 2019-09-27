@@ -88,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
           ];
+        buildable = true;
         };
       tests = {
         "unit" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."wai" or (buildDepError "wai"))
             ];
+          buildable = true;
           };
         };
       };

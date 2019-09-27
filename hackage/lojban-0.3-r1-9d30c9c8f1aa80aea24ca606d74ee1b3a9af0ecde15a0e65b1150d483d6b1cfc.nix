@@ -71,10 +71,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."markov-chain" or (buildDepError "markov-chain"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       exes = {
         "jbovlastegendb" = {
           depends = [ (hsPkgs."haskell98" or (buildDepError "haskell98")) ];
+          buildable = true;
           };
         };
       };

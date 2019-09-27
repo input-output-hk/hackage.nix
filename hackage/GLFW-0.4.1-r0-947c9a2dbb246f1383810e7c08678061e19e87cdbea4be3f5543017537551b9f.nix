@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."Carbon" or (sysDepError "Carbon"))
           (pkgs."OpenGL" or (sysDepError "OpenGL"))
           ]));
+        buildable = true;
         };
       };
     }

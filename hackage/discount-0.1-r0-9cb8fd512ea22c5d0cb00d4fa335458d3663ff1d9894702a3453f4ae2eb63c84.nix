@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
         libs = [ (pkgs."markdown" or (sysDepError "markdown")) ];
+        buildable = true;
         };
       };
     }

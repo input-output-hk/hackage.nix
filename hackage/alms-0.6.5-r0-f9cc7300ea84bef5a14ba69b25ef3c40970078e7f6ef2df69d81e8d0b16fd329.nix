@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else (pkgs.lib).optional (flags.editline) (hsPkgs."editline" or (buildDepError "editline")))) ++ [
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ];
+          buildable = true;
           };
         };
       };

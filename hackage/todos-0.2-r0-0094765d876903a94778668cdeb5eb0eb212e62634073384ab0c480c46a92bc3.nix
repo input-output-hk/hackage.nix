@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."data-hash" or (buildDepError "data-hash"))
             ];
+          buildable = true;
           };
         };
       };

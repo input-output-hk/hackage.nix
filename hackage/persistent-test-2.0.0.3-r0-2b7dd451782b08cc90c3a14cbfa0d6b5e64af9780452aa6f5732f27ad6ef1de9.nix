@@ -131,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
         "persistent-test" = {
@@ -144,6 +145,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             (hsPkgs."scientific" or (buildDepError "scientific"))
             ];
+          buildable = true;
           };
         };
       };

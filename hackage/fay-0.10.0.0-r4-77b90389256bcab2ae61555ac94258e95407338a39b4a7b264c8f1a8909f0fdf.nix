@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
           (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
           ];
+        buildable = true;
         };
       exes = {
         "fay" = {
@@ -118,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."haskeline" or (buildDepError "haskeline"))
             ];
+          buildable = true;
           };
         "fay-tests" = {
           depends = [
@@ -147,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
             ];
+          buildable = if flags.devel then false else true;
           };
         "fay-docs" = {
           depends = [
@@ -177,6 +180,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."groom" or (buildDepError "groom"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if flags.devel then false else true;
           };
         };
       };

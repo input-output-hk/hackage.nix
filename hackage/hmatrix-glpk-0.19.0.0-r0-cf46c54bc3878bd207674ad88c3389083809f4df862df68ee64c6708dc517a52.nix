@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
         libs = [ (pkgs."glpk" or (sysDepError "glpk")) ];
+        buildable = true;
         };
       };
     }

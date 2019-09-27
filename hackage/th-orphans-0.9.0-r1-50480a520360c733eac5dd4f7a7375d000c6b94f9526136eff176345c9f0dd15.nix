@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."th-lift" or (buildDepError "th-lift"))
           (hsPkgs."th-reify-many" or (buildDepError "th-reify-many"))
           ];
+        buildable = true;
         };
       };
     }

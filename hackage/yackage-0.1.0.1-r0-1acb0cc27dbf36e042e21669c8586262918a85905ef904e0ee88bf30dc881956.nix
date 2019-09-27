@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hamlet" or (buildDepError "hamlet"))
             (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
             ];
+          buildable = if flags.yackage then true else false;
           };
         "yackage-upload" = {
           depends = (pkgs.lib).optionals (flags.upload) [
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.upload then true else false;
           };
         };
       };

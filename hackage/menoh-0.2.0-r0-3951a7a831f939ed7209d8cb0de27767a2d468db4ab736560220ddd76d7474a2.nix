@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
         pkgconfig = [ (pkgconfPkgs."menoh" or (pkgConfDepError "menoh")) ];
+        buildable = true;
         };
       exes = {
         "vgg16_example" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."menoh" or (buildDepError "menoh"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         "mnist_example" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."menoh" or (buildDepError "menoh"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         };
       tests = {
@@ -100,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             ];
+          buildable = true;
           };
         };
       };

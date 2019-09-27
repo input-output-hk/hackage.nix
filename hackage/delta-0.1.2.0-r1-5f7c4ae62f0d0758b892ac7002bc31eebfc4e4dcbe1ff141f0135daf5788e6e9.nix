@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."sodium" or (buildDepError "sodium"))
           ];
+        buildable = true;
         };
       exes = {
         "delta-cli" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."delta" or (buildDepError "delta"))
             ];
+          buildable = true;
           };
         };
       };

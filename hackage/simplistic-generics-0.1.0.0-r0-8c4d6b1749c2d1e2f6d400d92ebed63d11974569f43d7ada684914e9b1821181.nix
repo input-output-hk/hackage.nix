@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."kind-apply" or (buildDepError "kind-apply"))
           (hsPkgs."comonad" or (buildDepError "comonad"))
           ];
+        buildable = true;
         };
       };
     }

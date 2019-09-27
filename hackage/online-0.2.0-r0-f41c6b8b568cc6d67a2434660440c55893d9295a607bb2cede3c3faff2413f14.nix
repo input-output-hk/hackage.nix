@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."numhask" or (buildDepError "numhask"))
           (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
           ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MonadCatchIO-transformers-foreign" or (buildDepError "MonadCatchIO-transformers-foreign"))
           (hsPkgs."usb" or (buildDepError "usb"))
           ];
+        buildable = true;
         };
       };
     }

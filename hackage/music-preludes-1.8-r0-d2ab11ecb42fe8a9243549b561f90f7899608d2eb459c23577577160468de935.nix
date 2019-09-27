@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."music-dynamics-literal" or (buildDepError "music-dynamics-literal"))
           (hsPkgs."async" or (buildDepError "async"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       exes = {
         "music2ly" = {
@@ -89,36 +90,42 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."music-preludes" or (buildDepError "music-preludes"))
             ];
+          buildable = true;
           };
         "music2pdf" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."music-preludes" or (buildDepError "music-preludes"))
             ];
+          buildable = true;
           };
         "music2png" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."music-preludes" or (buildDepError "music-preludes"))
             ];
+          buildable = true;
           };
         "music2svg" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."music-preludes" or (buildDepError "music-preludes"))
             ];
+          buildable = true;
           };
         "music2musicxml" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."music-preludes" or (buildDepError "music-preludes"))
             ];
+          buildable = true;
           };
         "music2midi" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."music-preludes" or (buildDepError "music-preludes"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -129,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

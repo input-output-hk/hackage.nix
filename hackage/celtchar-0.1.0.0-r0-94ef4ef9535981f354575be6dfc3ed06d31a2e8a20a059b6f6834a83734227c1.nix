@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
           (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
           ];
+        buildable = true;
         };
       exes = {
         "celtchar" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."celtchar" or (buildDepError "celtchar"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."celtchar" or (buildDepError "celtchar"))
             ];
+          buildable = true;
           };
         };
       };

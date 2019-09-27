@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."web-routes" or (buildDepError "web-routes"))
           ];
+        buildable = true;
         };
       tests = {
         "Test" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."web-routes" or (buildDepError "web-routes"))
             (hsPkgs."web-routes-th" or (buildDepError "web-routes-th"))
             ];
+          buildable = true;
           };
         };
       };

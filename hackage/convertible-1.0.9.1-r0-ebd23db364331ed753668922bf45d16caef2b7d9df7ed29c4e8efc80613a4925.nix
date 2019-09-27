@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ] ++ [ (hsPkgs."time" or (buildDepError "time")) ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."testpack" or (buildDepError "testpack"))
             ] ++ [ (hsPkgs."time" or (buildDepError "time")) ]);
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

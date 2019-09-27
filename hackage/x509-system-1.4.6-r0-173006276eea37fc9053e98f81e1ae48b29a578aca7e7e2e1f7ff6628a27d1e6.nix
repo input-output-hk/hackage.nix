@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."x509-store" or (buildDepError "x509-store"))
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."Crypt32" or (sysDepError "Crypt32"));
+        buildable = true;
         };
       };
     }

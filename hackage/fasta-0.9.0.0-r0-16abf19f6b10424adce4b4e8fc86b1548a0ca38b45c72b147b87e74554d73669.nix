@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."foldl" or (buildDepError "foldl"))
           ];
+        buildable = true;
         };
       };
     }

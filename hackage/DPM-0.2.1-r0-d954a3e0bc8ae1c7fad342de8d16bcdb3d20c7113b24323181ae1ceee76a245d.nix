@@ -54,7 +54,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = true; };
       exes = {
         "dpm-tests" = {
           depends = [
@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTF" or (buildDepError "HTF"))
             (hsPkgs."HSH" or (buildDepError "HSH"))
             ];
+          buildable = if flags.test then true else false;
           };
         "dpm" = {
           depends = [
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTF" or (buildDepError "HTF"))
             (hsPkgs."HSH" or (buildDepError "HSH"))
             ];
+          buildable = true;
           };
         };
       };

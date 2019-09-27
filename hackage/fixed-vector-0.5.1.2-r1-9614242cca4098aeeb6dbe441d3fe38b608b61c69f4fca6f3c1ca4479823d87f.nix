@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."primitive" or (buildDepError "primitive"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."filemanip" or (buildDepError "filemanip"))
             ];
+          buildable = true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix-bytestring" or (buildDepError "unix-bytestring"))
           (hsPkgs."unix-memory" or (buildDepError "unix-memory"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "random-access-file-benchmark" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix-memory" or (buildDepError "unix-memory"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

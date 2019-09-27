@@ -70,11 +70,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."non-negative" or (buildDepError "non-negative"))
             ];
         libs = [ (pkgs."asound" or (sysDepError "asound")) ];
+        buildable = true;
         };
       exes = {
-        "playnote" = { libs = [ (pkgs."asound" or (sysDepError "asound")) ]; };
-        "playmidi" = { libs = [ (pkgs."asound" or (sysDepError "asound")) ]; };
-        "mididump" = { libs = [ (pkgs."asound" or (sysDepError "asound")) ]; };
+        "playnote" = {
+          libs = [ (pkgs."asound" or (sysDepError "asound")) ];
+          buildable = true;
+          };
+        "playmidi" = {
+          libs = [ (pkgs."asound" or (sysDepError "asound")) ];
+          buildable = true;
+          };
+        "mididump" = {
+          libs = [ (pkgs."asound" or (sysDepError "asound")) ];
+          buildable = true;
+          };
         };
       };
     }

@@ -112,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-unlift" or (buildDepError "monad-unlift"))
           (hsPkgs."monad-unlift-ref" or (buildDepError "monad-unlift-ref"))
           ];
+        buildable = true;
         };
       exes = {
         "stackage-curator" = {
@@ -125,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "stackage-build-plan" = {
           depends = [
@@ -135,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -153,6 +156,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             (hsPkgs."EEConfig" or (buildDepError "EEConfig"))
             ];
+          buildable = true;
           };
         };
       };

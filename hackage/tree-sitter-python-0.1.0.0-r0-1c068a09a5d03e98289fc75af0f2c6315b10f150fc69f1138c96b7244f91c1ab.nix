@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."tree-sitter-python-internal" or (buildDepError "tree-sitter-python-internal"))
           ];
+        buildable = true;
         };
       sublibs = {
         "tree-sitter-python-internal" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tree-sitter" or (buildDepError "tree-sitter"))
             ];
           libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+          buildable = true;
           };
         };
       };

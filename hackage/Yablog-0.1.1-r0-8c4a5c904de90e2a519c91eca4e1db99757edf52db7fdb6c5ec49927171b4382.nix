@@ -54,7 +54,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = if flags.library-only then true else false; };
       exes = {
         "Yablog" = {
           depends = [
@@ -99,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         };
       };

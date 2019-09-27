@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bmp" or (buildDepError "bmp"))
           (hsPkgs."gloss-rendering" or (buildDepError "gloss-rendering"))
           ] ++ (pkgs.lib).optional (flags.glfw) (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"));
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           (hsPkgs."HaXml" or (buildDepError "HaXml"))
           ];
+        buildable = true;
         };
       exes = {
         "bitly" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."regexpr" or (buildDepError "regexpr"))
             ];
+          buildable = true;
           };
         };
       };

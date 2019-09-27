@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MonadCatchIO-mtl" or (buildDepError "MonadCatchIO-mtl"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."primitive" or (buildDepError "primitive"));
+        buildable = true;
         };
       };
     }

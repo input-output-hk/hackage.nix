@@ -65,14 +65,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskore" or (buildDepError "haskore"))
           (hsPkgs."non-negative" or (buildDepError "non-negative"))
           ];
+        buildable = true;
         };
       exes = {
         "HaMusic" = {
           depends = [ (hsPkgs."filepath" or (buildDepError "filepath")) ];
+          buildable = true;
           };
-        "MusicTranslate" = {};
-        "MusicCount" = {};
-        "MusicAnnotate" = {};
+        "MusicTranslate" = { buildable = true; };
+        "MusicCount" = { buildable = true; };
+        "MusicAnnotate" = { buildable = true; };
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           (hsPkgs."MonadCatchIO-mtl" or (buildDepError "MonadCatchIO-mtl"))
           ];
+        buildable = true;
         };
       };
     }

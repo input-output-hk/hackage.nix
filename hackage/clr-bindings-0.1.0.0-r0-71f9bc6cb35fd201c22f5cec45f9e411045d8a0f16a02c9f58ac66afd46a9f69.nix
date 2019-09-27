@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."pipes" or (buildDepError "pipes"))
           ];
+        buildable = true;
         };
       tests = {
         "clr-bindings-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."clr-bindings" or (buildDepError "clr-bindings"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel-io" or (buildDepError "parallel-io"))
           (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
           ];
+        buildable = true;
         };
       exes = {
         "DumpLLVMModule" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
             ];
+          buildable = true;
           };
         "FindValue" = {
           depends = [
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         "ViewIRGraph" = {
           depends = [
@@ -94,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."graphviz" or (buildDepError "graphviz"))
             ];
+          buildable = true;
           };
         "TypeUnificationCheck" = {
           depends = [
@@ -106,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       tests = {
         "creason" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."speculate" or (buildDepError "speculate"))
             ];
+          buildable = true;
           };
         "engine" = {
           depends = [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."speculate" or (buildDepError "speculate"))
             ];
+          buildable = true;
           };
         "eval" = {
           depends = [
@@ -83,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."speculate" or (buildDepError "speculate"))
             ];
+          buildable = true;
           };
         "expr" = {
           depends = [
@@ -90,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."speculate" or (buildDepError "speculate"))
             ];
+          buildable = true;
           };
         "match" = {
           depends = [
@@ -97,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."speculate" or (buildDepError "speculate"))
             ];
+          buildable = true;
           };
         "misc" = {
           depends = [
@@ -104,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."speculate" or (buildDepError "speculate"))
             ];
+          buildable = true;
           };
         "order" = {
           depends = [
@@ -111,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."speculate" or (buildDepError "speculate"))
             ];
+          buildable = true;
           };
         "reason" = {
           depends = [
@@ -118,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."speculate" or (buildDepError "speculate"))
             ];
+          buildable = true;
           };
         "utils" = {
           depends = [
@@ -125,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."speculate" or (buildDepError "speculate"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -133,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."speculate" or (buildDepError "speculate"))
             ];
+          buildable = true;
           };
         "test-stats" = {
           depends = [
@@ -140,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."speculate" or (buildDepError "speculate"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Biobase" or (buildDepError "Biobase"))
             (hsPkgs."HsTools" or (buildDepError "HsTools"))
             ];
+          buildable = true;
           };
         };
       };

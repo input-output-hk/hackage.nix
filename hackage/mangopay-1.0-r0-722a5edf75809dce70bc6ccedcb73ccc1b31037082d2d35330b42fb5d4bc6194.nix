@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
           (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
           ];
+        buildable = true;
         };
       exes = {
         "mangopay-passphrase" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -137,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
             (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
             ];
+          buildable = true;
           };
         };
       };

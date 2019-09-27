@@ -88,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit" or (buildDepError "conduit"))
             (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
             ]);
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -110,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."fb" or (buildDepError "fb"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes" or (buildDepError "pipes"))
           (hsPkgs."streaming" or (buildDepError "streaming"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-text" or (buildDepError "pipes-text"))
             (hsPkgs."streaming" or (buildDepError "streaming"))
             ];
+          buildable = true;
           };
         "tests" = {
           depends = [
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."foldl" or (buildDepError "foldl"))
             (hsPkgs."streaming-eversion" or (buildDepError "streaming-eversion"))
             ];
+          buildable = true;
           };
         };
       };

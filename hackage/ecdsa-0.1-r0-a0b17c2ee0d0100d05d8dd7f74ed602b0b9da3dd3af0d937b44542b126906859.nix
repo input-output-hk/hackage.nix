@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-pubkey-types" or (buildDepError "crypto-pubkey-types"))
           (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
           ];
+        buildable = true;
         };
       };
     }

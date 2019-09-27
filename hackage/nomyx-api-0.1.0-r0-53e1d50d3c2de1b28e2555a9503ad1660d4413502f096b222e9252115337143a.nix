@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe" or (buildDepError "safe"))
           (hsPkgs."hslogger" or (buildDepError "hslogger"))
           ];
+        buildable = true;
         };
       };
     }

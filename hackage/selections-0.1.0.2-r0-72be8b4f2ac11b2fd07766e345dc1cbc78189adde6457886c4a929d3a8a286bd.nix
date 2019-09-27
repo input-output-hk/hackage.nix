@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."comonad" or (buildDepError "comonad"))
           (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
           ];
+        buildable = true;
         };
       };
     }

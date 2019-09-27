@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
           ];
+        buildable = true;
         };
       tests = {
         "test-queens" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = true;
           };
         "test-1" = {
           depends = [
@@ -101,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "test-2" = {
           depends = [
@@ -109,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "test-3" = {
           depends = [
@@ -117,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "test-4" = {
           depends = [
@@ -125,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "test-5" = {
           depends = [
@@ -133,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "test-6" = {
           depends = [
@@ -141,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "test-7" = {
           depends = [
@@ -149,6 +157,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "test-th" = {
           depends = [
@@ -157,6 +166,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

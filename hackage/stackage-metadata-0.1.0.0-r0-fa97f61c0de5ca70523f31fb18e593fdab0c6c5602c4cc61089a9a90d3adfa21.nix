@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
+        buildable = true;
         };
       exes = {
         "all-cabal-metadata-tool" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tar" or (buildDepError "tar"))
             (hsPkgs."stackage-update" or (buildDepError "stackage-update"))
             ];
+          buildable = true;
           };
         };
       };

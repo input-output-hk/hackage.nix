@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."permute" or (buildDepError "permute"))
             ];
+          buildable = true;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       exes = {
         "senoid" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."AC-Angle" or (buildDepError "AC-Angle"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "image2term" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."terminal-size" or (buildDepError "terminal-size"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if !flags.no-tests then true else false;
           };
         };
       };

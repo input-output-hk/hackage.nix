@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLURaw" or (buildDepError "GLURaw"))
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             ];
+          buildable = true;
           };
         "lesson02" = {
           depends = [
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLURaw" or (buildDepError "GLURaw"))
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             ];
+          buildable = true;
           };
         "lesson03" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLURaw" or (buildDepError "GLURaw"))
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             ];
+          buildable = true;
           };
         "lesson04" = {
           depends = [
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLURaw" or (buildDepError "GLURaw"))
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             ];
+          buildable = true;
           };
         "lesson05" = {
           depends = [
@@ -94,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLURaw" or (buildDepError "GLURaw"))
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             ];
+          buildable = true;
           };
         "lesson06" = {
           depends = [
@@ -105,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "lesson07" = {
           depends = [
@@ -116,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "lesson08" = {
           depends = [
@@ -127,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "lesson09" = {
           depends = [
@@ -139,6 +147,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "lesson10" = {
           depends = [
@@ -150,6 +159,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "lesson11" = {
           depends = [
@@ -162,6 +172,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "lesson12" = {
           depends = [
@@ -173,6 +184,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

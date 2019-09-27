@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (pkgs.lib).optional (flags.printer) (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))) ++ (pkgs.lib).optional (flags.cli) (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))) ++ (pkgs.lib).optional (flags.yaml) (hsPkgs."yaml" or (buildDepError "yaml"));
+        buildable = true;
         };
       tests = {
         "etc-testsuite" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-rerun" or (buildDepError "tasty-rerun"))
             (hsPkgs."etc" or (buildDepError "etc"))
             ] ++ (pkgs.lib).optional (flags.cli) (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))) ++ (pkgs.lib).optional (flags.yaml) (hsPkgs."yaml" or (buildDepError "yaml"));
+          buildable = true;
           };
         };
       };

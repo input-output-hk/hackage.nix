@@ -97,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."timezone-series" or (buildDepError "timezone-series"))
             ];
           libs = (pkgs.lib).optional true (pkgs."Xrandr" or (sysDepError "Xrandr")) ++ (pkgs.lib).optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw" or (sysDepError "iw"));
+          buildable = true;
           };
         };
       };

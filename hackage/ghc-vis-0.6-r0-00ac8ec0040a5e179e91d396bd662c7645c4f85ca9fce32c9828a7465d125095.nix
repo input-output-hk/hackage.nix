@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."SDL" or (buildDepError "SDL"))
           (hsPkgs."cairo" or (buildDepError "cairo"))
           ];
+        buildable = true;
         };
       };
     }

@@ -97,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cassava" or (buildDepError "cassava"))
           (hsPkgs."jwt" or (buildDepError "jwt"))
           ];
+        buildable = true;
         };
       exes = {
         "postgrest" = {
@@ -143,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cassava" or (buildDepError "cassava"))
             (hsPkgs."jwt" or (buildDepError "jwt"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -198,6 +200,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."heredoc" or (buildDepError "heredoc"))
             (hsPkgs."jwt" or (buildDepError "jwt"))
             ];
+          buildable = true;
           };
         };
       };

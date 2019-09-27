@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OddWord" or (buildDepError "OddWord"))
             (hsPkgs."hsqml" or (buildDepError "hsqml"))
             ];
+          buildable = true;
           };
         };
       };

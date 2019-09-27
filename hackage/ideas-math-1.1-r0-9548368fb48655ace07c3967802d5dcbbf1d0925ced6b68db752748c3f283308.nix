@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."ideas" or (buildDepError "ideas"))
             ];
+          buildable = true;
           };
         };
       };

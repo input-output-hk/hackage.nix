@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."read-env-var" or (buildDepError "read-env-var"))
           (hsPkgs."hsI2C" or (buildDepError "hsI2C"))
           ];
+        buildable = true;
         };
       };
     }

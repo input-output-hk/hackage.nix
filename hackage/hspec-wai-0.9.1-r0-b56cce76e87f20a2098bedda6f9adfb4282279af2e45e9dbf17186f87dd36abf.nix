@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
           ];
+        buildable = true;
         };
       exes = {
         "hgold" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-golden" or (buildDepError "hspec-golden"))
             (hsPkgs."simple-get-opt" or (buildDepError "simple-get-opt"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-golden" or (buildDepError "hspec-golden"))
             (hsPkgs."silently" or (buildDepError "silently"))
             ];
+          buildable = true;
           };
         };
       };

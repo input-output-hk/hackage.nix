@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."WL500gPLib" or (buildDepError "WL500gPLib"))
             ];
+          buildable = true;
           };
         "WL500gPControl" = {
           depends = if !system.isWindows
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."mtl" or (buildDepError "mtl"))
               (hsPkgs."Win32" or (buildDepError "Win32"))
               ];
+          buildable = true;
           };
         };
       };

@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."language-javascript" or (buildDepError "language-javascript"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ];
+        buildable = true;
         };
       exes = {
         "cake3" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "urembed" = {
           depends = [
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monadloc" or (buildDepError "monadloc"))
             (hsPkgs."mime-types" or (buildDepError "mime-types"))
             ];
+          buildable = true;
           };
         };
       };

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."mysnapsession" or (buildDepError "mysnapsession"))
             ];
+          buildable = true;
           };
         };
       };

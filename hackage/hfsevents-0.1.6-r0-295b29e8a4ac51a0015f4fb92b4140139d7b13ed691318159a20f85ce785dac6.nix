@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = [ (pkgs."pthread" or (sysDepError "pthread")) ];
         frameworks = [ (pkgs."Cocoa" or (sysDepError "Cocoa")) ];
+        buildable = if system.isOsx then true else false;
         };
       };
     }

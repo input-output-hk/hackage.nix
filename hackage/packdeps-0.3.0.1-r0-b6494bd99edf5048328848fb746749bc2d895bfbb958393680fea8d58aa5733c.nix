@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
       exes = {
         "packdeps" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."packdeps" or (buildDepError "packdeps"))
             ];
+          buildable = if flags.web then false else true;
           };
         "packdeps-yesod" = {
           depends = (pkgs.lib).optionals (flags.web) [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cautious-file" or (buildDepError "cautious-file"))
             (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
+          buildable = if flags.web then true else false;
           };
         };
       };

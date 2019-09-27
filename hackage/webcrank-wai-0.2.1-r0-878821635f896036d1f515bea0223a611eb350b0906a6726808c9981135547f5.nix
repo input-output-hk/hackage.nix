@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."webcrank" or (buildDepError "webcrank"))
           (hsPkgs."webcrank-dispatch" or (buildDepError "webcrank-dispatch"))
           ];
+        buildable = true;
         };
       };
     }

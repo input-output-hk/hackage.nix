@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."lapack" or (sysDepError "lapack"))
             (pkgs."blas" or (sysDepError "blas"))
             ];
+          buildable = true;
           };
         };
       };

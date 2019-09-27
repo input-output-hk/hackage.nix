@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."adjunctions" or (buildDepError "adjunctions"))
           (hsPkgs."representable-functors" or (buildDepError "representable-functors"))
           ];
+        buildable = true;
         };
       };
     }

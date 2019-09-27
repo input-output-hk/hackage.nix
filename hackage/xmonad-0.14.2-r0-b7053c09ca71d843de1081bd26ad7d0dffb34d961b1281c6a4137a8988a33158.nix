@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = if flags.testing then false else true;
         };
       exes = {
         "xmonad" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."xmonad" or (buildDepError "xmonad"))
             ];
+          buildable = true;
           };
         "generatemanpage" = {
           depends = (pkgs.lib).optionals (flags.generatemanpage) [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.generatemanpage then true else false;
           };
         };
       tests = {
@@ -99,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
             (hsPkgs."xmonad" or (buildDepError "xmonad"))
             ];
+          buildable = true;
           };
         };
       };

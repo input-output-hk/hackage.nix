@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tar" or (buildDepError "tar"))
             (hsPkgs."compression" or (buildDepError "compression"))
             ];
+          buildable = true;
           };
         };
       };

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."SHA" or (buildDepError "SHA"))
           (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
           ];
+        buildable = true;
         };
       };
     }

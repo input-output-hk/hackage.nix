@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if flags.use-libcpp || system.isOsx
           then [ (pkgs."c++" or (sysDepError "c++")) ]
           else [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+        buildable = true;
         };
       tests = {
         "cppfilt-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cppfilt" or (buildDepError "cppfilt"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cppfilt" or (buildDepError "cppfilt"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+        buildable = true;
         };
       };
     }

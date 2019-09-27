@@ -87,10 +87,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."web-routes" or (buildDepError "web-routes"))
           (hsPkgs."xss-sanitize" or (buildDepError "xss-sanitize"))
           ];
+        buildable = true;
         };
       exes = {
         "yesod" = {
           depends = [ (hsPkgs."parsec" or (buildDepError "parsec")) ];
+          buildable = true;
           };
         "runtests" = {
           depends = (pkgs.lib).optionals (flags.buildtests) [
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

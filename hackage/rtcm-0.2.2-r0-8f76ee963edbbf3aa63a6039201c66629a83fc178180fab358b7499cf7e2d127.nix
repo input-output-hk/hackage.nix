@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."word24" or (buildDepError "word24"))
           ];
+        buildable = true;
         };
       exes = {
         "rtcm32json" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             (hsPkgs."rtcm" or (buildDepError "rtcm"))
             ];
+          buildable = true;
           };
         "json2rtcm3" = {
           depends = [
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             (hsPkgs."rtcm" or (buildDepError "rtcm"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -115,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."word24" or (buildDepError "word24"))
             ];
+          buildable = true;
           };
         };
       };

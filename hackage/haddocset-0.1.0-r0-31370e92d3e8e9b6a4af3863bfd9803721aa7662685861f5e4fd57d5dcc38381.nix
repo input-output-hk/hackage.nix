@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ] ++ [ (hsPkgs."haddock" or (buildDepError "haddock")) ];
+          buildable = true;
           };
         };
       };

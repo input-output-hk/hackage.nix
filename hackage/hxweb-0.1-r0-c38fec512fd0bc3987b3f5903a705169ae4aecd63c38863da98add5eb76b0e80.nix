@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."libxml" or (buildDepError "libxml"))
           (hsPkgs."xslt" or (buildDepError "xslt"))
           ];
+        buildable = true;
         };
       };
     }

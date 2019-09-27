@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."listsafe" or (buildDepError "listsafe"))
           (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
           ];
+        buildable = true;
         };
       };
     }

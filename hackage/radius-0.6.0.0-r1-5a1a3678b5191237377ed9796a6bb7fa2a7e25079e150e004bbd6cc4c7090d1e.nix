@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iproute" or (buildDepError "iproute"))
           (hsPkgs."memory" or (buildDepError "memory"))
           ];
+        buildable = true;
         };
       };
     }

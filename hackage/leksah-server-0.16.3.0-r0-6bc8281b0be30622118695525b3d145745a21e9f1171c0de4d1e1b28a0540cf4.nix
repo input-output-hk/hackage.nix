@@ -103,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."pango-1.0" or (sysDepError "pango-1.0"))
           (pkgs."glib-2.0" or (sysDepError "glib-2.0"))
           ];
+        buildable = true;
         };
       exes = {
         "leksah-server" = {
@@ -154,6 +155,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."pango-1.0" or (sysDepError "pango-1.0"))
             (pkgs."glib-2.0" or (sysDepError "glib-2.0"))
             ];
+          buildable = true;
           };
         "leksahecho" = {
           depends = [
@@ -170,9 +172,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."leksah-server" or (buildDepError "leksah-server"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = true;
           };
         "leksahtrue" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       tests = {
@@ -191,6 +195,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."text" or (buildDepError "text"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."doctest" or (buildDepError "doctest"));
+          buildable = true;
           };
         };
       };

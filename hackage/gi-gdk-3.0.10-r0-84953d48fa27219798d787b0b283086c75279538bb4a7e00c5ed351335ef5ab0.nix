@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
         pkgconfig = [ (pkgconfPkgs."gdk-3.0" or (pkgConfDepError "gdk-3.0")) ];
+        buildable = true;
         };
       };
     }

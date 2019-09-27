@@ -62,10 +62,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "prednote-test" = {
           depends = (pkgs.lib).optional (flags.test) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+          buildable = if flags.test then true else false;
           };
         };
       };

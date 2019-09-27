@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Strafunski-StrategyLib" or (buildDepError "Strafunski-StrategyLib"))
           (hsPkgs."syz" or (buildDepError "syz"))
           ];
+        buildable = true;
         };
       exes = {
         "ghc-hare" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syz" or (buildDepError "syz"))
             (hsPkgs."HaRe" or (buildDepError "HaRe"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -137,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syz" or (buildDepError "syz"))
             (hsPkgs."HaRe" or (buildDepError "HaRe"))
             ];
+          buildable = true;
           };
         };
       };

@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
               ])
           else (pkgs.lib).optional (flags.integer-gmp2) (hsPkgs."integer-gmp" or (buildDepError "integer-gmp")));
+        buildable = true;
         };
       tests = {
         "text-show-properties" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."transformers" or (buildDepError "transformers"))
               (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
               ]));
+          buildable = true;
           };
         };
       };

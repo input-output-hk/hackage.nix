@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-typelits-presburger" or (buildDepError "ghc-typelits-presburger"))
           (hsPkgs."singletons" or (buildDepError "singletons"))
           ];
+        buildable = true;
         };
       };
     }

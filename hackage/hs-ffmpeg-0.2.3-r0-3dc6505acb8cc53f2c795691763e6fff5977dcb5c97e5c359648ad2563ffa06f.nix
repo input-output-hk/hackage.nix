@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."z" or (sysDepError "z"))
           (pkgs."dc1394_control" or (sysDepError "dc1394_control"))
           ];
+        buildable = true;
         };
       };
     }

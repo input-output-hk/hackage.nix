@@ -65,7 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."json" or (buildDepError "json"))
           ];
+        buildable = true;
         };
-      exes = { "shellcheck" = {}; };
+      exes = { "shellcheck" = { buildable = true; }; };
       };
     }

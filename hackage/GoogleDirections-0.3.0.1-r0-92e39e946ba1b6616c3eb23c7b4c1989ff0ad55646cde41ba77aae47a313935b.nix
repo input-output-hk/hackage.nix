@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."AttoJson" or (buildDepError "AttoJson"))
           (hsPkgs."download-curl" or (buildDepError "download-curl"))
           ];
+        buildable = true;
         };
       };
     }

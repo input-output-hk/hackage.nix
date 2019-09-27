@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yi-language" or (buildDepError "yi-language"))
           (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -108,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yi-core" or (buildDepError "yi-core"))
             (hsPkgs."yi-keymap-vim" or (buildDepError "yi-keymap-vim"))
             ];
+          buildable = true;
           };
         };
       };

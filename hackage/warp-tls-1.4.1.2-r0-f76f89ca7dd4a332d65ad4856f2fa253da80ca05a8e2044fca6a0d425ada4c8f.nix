@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-random-api" or (buildDepError "crypto-random-api"))
           (hsPkgs."network" or (buildDepError "network"))
           ];
+        buildable = true;
         };
       };
     }

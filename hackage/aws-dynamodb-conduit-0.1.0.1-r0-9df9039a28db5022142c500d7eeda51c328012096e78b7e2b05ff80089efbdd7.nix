@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."json-togo" or (buildDepError "json-togo"))
           (hsPkgs."attoparsec-trans" or (buildDepError "attoparsec-trans"))
           ];
+        buildable = true;
         };
       };
     }

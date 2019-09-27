@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
           (hsPkgs."tree-fun" or (buildDepError "tree-fun"))
           ];
+        buildable = true;
         };
       };
     }

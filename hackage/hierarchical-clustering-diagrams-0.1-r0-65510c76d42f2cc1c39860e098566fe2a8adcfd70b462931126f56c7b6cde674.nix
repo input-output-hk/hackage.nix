@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hierarchical-clustering" or (buildDepError "hierarchical-clustering"))
           (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."hierarchical-clustering-diagrams" or (buildDepError "hierarchical-clustering-diagrams"))
             ];
+          buildable = true;
           };
         };
       };

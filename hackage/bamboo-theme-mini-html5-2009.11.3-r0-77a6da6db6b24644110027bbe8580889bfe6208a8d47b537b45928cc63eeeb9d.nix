@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bamboo" or (buildDepError "bamboo"))
           (hsPkgs."moe" or (buildDepError "moe"))
           ];
+        buildable = true;
         };
       };
     }

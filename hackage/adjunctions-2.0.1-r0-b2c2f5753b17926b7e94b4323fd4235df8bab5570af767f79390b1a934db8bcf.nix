@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."comonad-transformers" or (buildDepError "comonad-transformers"))
           (hsPkgs."representable-functors" or (buildDepError "representable-functors"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
           (hsPkgs."miso" or (buildDepError "miso"))
           ];
+        buildable = true;
         };
       };
     }

@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
             ]
           else [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ]);
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."bytestring" or (buildDepError "bytestring"))
               ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = true;
           };
         };
       benchmarks = {
@@ -115,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
             ];
+          buildable = true;
           };
         "decode-memory-usage" = {
           depends = [
@@ -123,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
             ];
+          buildable = true;
           };
         "builder-to-bytestring-io" = {
           depends = [
@@ -137,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
               ]
             else [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ]);
+          buildable = true;
           };
         };
       };

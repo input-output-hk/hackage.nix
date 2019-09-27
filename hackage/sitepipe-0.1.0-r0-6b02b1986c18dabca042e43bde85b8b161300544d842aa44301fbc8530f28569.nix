@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shelly" or (buildDepError "shelly"))
           (hsPkgs."MissingH" or (buildDepError "MissingH"))
           ];
+        buildable = true;
         };
       exes = {
         "sitepipe-exe" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."mustache" or (buildDepError "mustache"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sitepipe" or (buildDepError "sitepipe"))
             ];
+          buildable = true;
           };
         };
       };

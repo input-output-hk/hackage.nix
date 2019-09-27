@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           ];
         pkgconfig = [ (pkgconfPkgs."alsa" or (pkgConfDepError "alsa")) ];
+        buildable = true;
         };
       exes = {
         "alsa-minisynth" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."storablevector" or (buildDepError "storablevector"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildsynthesizer then true else false;
           };
         "alsa-sine" = {
           depends = (pkgs.lib).optionals (flags.buildsynthesizer) [
@@ -82,30 +84,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."storablevector" or (buildDepError "storablevector"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildsynthesizer then true else false;
           };
         "alsa-duplex" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs."alsa-pcm" or (buildDepError "alsa-pcm"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "alsa-play" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs."alsa-pcm" or (buildDepError "alsa-pcm"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "alsa-record" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs."alsa-pcm" or (buildDepError "alsa-pcm"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "alsa-volume-meter" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs."alsa-pcm" or (buildDepError "alsa-pcm"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

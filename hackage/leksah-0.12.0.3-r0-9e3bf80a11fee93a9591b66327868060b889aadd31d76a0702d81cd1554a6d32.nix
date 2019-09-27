@@ -94,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             ])) ++ (pkgs.lib).optional (system.isOsx) (hsPkgs."gtk-mac-integration" or (buildDepError "gtk-mac-integration"))) ++ (pkgs.lib).optional (flags.yi) (hsPkgs."yi" or (buildDepError "yi"))) ++ (pkgs.lib).optional (flags.yi && flags.dyre) (hsPkgs."dyre" or (buildDepError "dyre"));
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32"));
+        buildable = true;
         };
       exes = {
         "leksah" = {
@@ -141,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."base" or (buildDepError "base"))
               ]);
           libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32"));
+          buildable = true;
           };
         };
       };

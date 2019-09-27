@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."fixed-vector" or (buildDepError "fixed-vector"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hArduino" or (buildDepError "hArduino"))
           (hsPkgs."tuples-homogenous-h98" or (buildDepError "tuples-homogenous-h98"))
           ];
+        buildable = true;
         };
       };
     }

@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (flags.template-haskell && (compiler.isGhc && true)) (hsPkgs."template-haskell" or (buildDepError "template-haskell"));
+        buildable = true;
         };
       tests = {
         "Simple" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             ];
+          buildable = true;
           };
         "Overkill" = {
           depends = [
@@ -95,6 +97,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."functor-classes-compat" or (buildDepError "functor-classes-compat"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if !(compiler.isGhc && (compiler.version).ge "7.8")
+            then false
+            else true;
           };
         "Deriving" = {
           depends = [
@@ -103,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             ];
+          buildable = true;
           };
         "Imperative" = {
           depends = [
@@ -112,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             (hsPkgs."void" or (buildDepError "void"))
             ];
+          buildable = true;
           };
         "doctests" = {
           depends = [
@@ -120,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."void" or (buildDepError "void"))
             ];
+          buildable = true;
           };
         };
       };

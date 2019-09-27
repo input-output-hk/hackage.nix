@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tagged" or (buildDepError "tagged"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       tests = {
         "unit-tests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."tagged" or (buildDepError "tagged"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = true;
           };
         };
       benchmarks = {
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."tagged" or (buildDepError "tagged"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = true;
           };
         };
       };

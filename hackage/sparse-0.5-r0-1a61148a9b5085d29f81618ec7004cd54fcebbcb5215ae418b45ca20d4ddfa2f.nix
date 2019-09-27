@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pointed" or (buildDepError "pointed"))
           (hsPkgs."monadplus" or (buildDepError "monadplus"))
           ];
+        buildable = true;
         };
       };
     }

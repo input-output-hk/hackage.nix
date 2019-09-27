@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
         "test" = {
@@ -79,9 +80,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."random" or (buildDepError "random"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = if !flags.buildtests then false else true;
           };
         "speedtest" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if !flags.buildtests then false else true;
           };
         };
       };

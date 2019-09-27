@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes" or (buildDepError "pipes"))
           (hsPkgs."pipes-parse" or (buildDepError "pipes-parse"))
           ];
+        buildable = true;
         };
       };
     }

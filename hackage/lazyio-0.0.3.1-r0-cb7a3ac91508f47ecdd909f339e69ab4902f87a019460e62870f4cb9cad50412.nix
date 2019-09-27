@@ -63,7 +63,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."special-functors" or (buildDepError "special-functors"))
             (hsPkgs."base" or (buildDepError "base"))
             ]);
+        buildable = true;
         };
-      exes = { "test" = {}; };
+      exes = {
+        "test" = { buildable = if !flags.buildtests then false else true; };
+        };
       };
     }

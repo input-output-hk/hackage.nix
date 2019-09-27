@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
           (hsPkgs."http-types" or (buildDepError "http-types"))
           ];
+        buildable = true;
         };
       exes = {
         "ntrip-client" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
             (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
             ];
+          buildable = true;
           };
         };
       };

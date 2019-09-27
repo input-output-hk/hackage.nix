@@ -70,14 +70,23 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HDBC" or (buildDepError "HDBC"))
           (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
           ]) ++ (pkgs.lib).optional (flags.webtools) (hsPkgs."json" or (buildDepError "json"));
+        buildable = true;
         };
       exes = {
-        "runGarden" = {};
-        "renderAsPNG" = {};
-        "validate" = {};
-        "fastScorer" = {};
-        "dbclient" = {};
-        "dbscorer" = {};
+        "runGarden" = {
+          buildable = if !flags.renderercairo then false else true;
+          };
+        "renderAsPNG" = {
+          buildable = if !flags.renderercairo then false else true;
+          };
+        "validate" = { buildable = if !flags.webtools then false else true; };
+        "fastScorer" = { buildable = true; };
+        "dbclient" = {
+          buildable = if !flags.database || !flags.renderercairo
+            then false
+            else true;
+          };
+        "dbscorer" = { buildable = if !flags.database then false else true; };
         };
       };
     }

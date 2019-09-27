@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-level-numbers" or (buildDepError "type-level-numbers"))
           (hsPkgs."algebra" or (buildDepError "algebra"))
           ];
+        buildable = true;
         };
       tests = {
         "TestPrimeField" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."primes" or (buildDepError "primes"))
             (hsPkgs."type-level-numbers" or (buildDepError "type-level-numbers"))
             ];
+          buildable = true;
           };
         };
       };

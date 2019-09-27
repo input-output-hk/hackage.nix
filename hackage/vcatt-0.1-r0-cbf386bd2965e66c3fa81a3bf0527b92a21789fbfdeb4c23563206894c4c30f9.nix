@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."extra" or (buildDepError "extra"))
           (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
           ];
+        buildable = true;
         };
       exes = {
         "vcatt" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shelly" or (buildDepError "shelly"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

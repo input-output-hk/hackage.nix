@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monads-fd" or (buildDepError "monads-fd"))
             ]
           else [ (hsPkgs."mtl" or (buildDepError "mtl")) ]);
+        buildable = true;
         };
       };
     }

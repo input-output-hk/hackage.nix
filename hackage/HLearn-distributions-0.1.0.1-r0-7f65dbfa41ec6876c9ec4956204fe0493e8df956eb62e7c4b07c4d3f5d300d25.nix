@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."math-functions" or (buildDepError "math-functions"))
           (hsPkgs."normaldistribution" or (buildDepError "normaldistribution"))
           ];
+        buildable = true;
         };
       exes = {
         "HLearn-Distributions-Criterion" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."statistics" or (buildDepError "statistics"))
             ];
+          buildable = true;
           };
         "HLearn-Distributions-SpaceTests" = {
           depends = [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."logfloat" or (buildDepError "logfloat"))
             (hsPkgs."statistics" or (buildDepError "statistics"))
             ];
+          buildable = true;
           };
         };
       };

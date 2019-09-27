@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
           (hsPkgs."websockets" or (buildDepError "websockets"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
             (hsPkgs."websockets" or (buildDepError "websockets"))
             ];
+          buildable = if flags.example then true else false;
           };
         "example-client" = {
           depends = [
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
             (hsPkgs."websockets" or (buildDepError "websockets"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       tests = {
@@ -113,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             ];
+          buildable = true;
           };
         };
       };

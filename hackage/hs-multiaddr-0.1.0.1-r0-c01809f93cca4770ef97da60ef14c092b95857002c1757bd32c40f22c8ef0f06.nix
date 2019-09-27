@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."multihash" or (buildDepError "multihash"))
           ];
+        buildable = true;
         };
       tests = {
         "haskell-multiaddr-test" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multihash" or (buildDepError "multihash"))
             (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
             ];
+          buildable = true;
           };
         };
       };

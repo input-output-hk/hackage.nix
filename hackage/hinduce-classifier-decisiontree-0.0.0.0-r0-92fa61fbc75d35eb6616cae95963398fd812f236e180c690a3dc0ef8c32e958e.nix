@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hinduce-classifier" or (buildDepError "hinduce-classifier"))
           (hsPkgs."convertible" or (buildDepError "convertible"))
           ];
+        buildable = true;
         };
       };
     }

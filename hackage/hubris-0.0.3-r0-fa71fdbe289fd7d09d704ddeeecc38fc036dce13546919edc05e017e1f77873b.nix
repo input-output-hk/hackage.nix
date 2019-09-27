@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hint" or (buildDepError "hint"))
           ];
         libs = [ (pkgs."ruby" or (sysDepError "ruby")) ];
+        buildable = true;
         };
       exes = {
         "Hubrify" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             ];
           libs = [ (pkgs."ruby1.8" or (sysDepError "ruby1.8")) ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "6.3") (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       };
     }

@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."vty" or (buildDepError "vty"))
           ];
+        buildable = true;
         };
       exes = {
         "vgrep" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vgrep" or (buildDepError "vgrep"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -104,12 +106,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."vgrep" or (buildDepError "vgrep"))
             ];
+          buildable = true;
           };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         };
       };

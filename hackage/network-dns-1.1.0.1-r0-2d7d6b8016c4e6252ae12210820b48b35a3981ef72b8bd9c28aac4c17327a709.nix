@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsers" or (buildDepError "parsers"))
           (hsPkgs."network-ip" or (buildDepError "network-ip"))
           ];
+        buildable = true;
         };
       exes = {
         "hs-network-dns-examples-resolver" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-ip" or (buildDepError "network-ip"))
             (hsPkgs."network-dns" or (buildDepError "network-dns"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."posix-socket" or (buildDepError "posix-socket"));
+          buildable = true;
           };
         };
       };

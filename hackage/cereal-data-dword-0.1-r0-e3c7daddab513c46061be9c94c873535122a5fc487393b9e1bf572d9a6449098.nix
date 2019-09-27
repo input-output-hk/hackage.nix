@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cereal" or (buildDepError "cereal"))
           (hsPkgs."data-dword" or (buildDepError "data-dword"))
           ];
+        buildable = true;
         };
       };
     }

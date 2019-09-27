@@ -60,6 +60,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."co-log-core" or (buildDepError "co-log-core"))
           (hsPkgs."polysemy" or (buildDepError "polysemy"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "8.6"
+          then false
+          else true;
         };
       exes = {
         "play-colog-poly" = {
@@ -69,6 +72,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."co-log-polysemy" or (buildDepError "co-log-polysemy"))
             (hsPkgs."polysemy" or (buildDepError "polysemy"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "8.6"
+            then false
+            else true;
           };
         };
       };

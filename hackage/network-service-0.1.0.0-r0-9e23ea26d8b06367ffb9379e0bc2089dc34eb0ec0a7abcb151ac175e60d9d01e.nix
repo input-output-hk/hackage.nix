@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
           ] ++ (pkgs.lib).optional (flags.documentation) (hsPkgs."hscolour" or (buildDepError "hscolour"));
+        buildable = true;
         };
       exes = {
         "echo" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

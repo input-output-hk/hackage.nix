@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."contravariant" or (buildDepError "contravariant"))
           ];
+        buildable = true;
         };
       exes = {
         "postgres-websockets" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
             (hsPkgs."envparse" or (buildDepError "envparse"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -122,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         };
       };

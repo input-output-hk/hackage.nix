@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
           ];
+        buildable = true;
         };
       };
     }

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."monetdb-mapi" or (pkgConfDepError "monetdb-mapi"))
           ];
+        buildable = true;
         };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
           ];
+        buildable = true;
         };
       tests = {
         "linear-code-test" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
             ];
+          buildable = true;
           };
         };
       };

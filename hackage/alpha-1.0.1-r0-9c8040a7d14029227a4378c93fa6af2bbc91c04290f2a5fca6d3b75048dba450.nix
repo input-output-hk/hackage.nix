@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."AvlTree" or (buildDepError "AvlTree"))
             (hsPkgs."COrdering" or (buildDepError "COrdering"))
             ];
+          buildable = true;
           };
         };
       };

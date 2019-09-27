@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."prelude-extras" or (buildDepError "prelude-extras"))
           (hsPkgs."eq" or (buildDepError "eq"))
           ];
+        buildable = true;
         };
       };
     }

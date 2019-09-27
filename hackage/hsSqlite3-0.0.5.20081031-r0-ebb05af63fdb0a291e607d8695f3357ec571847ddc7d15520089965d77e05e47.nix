@@ -57,7 +57,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         pkgconfig = [ (pkgconfPkgs."sqlite3" or (pkgConfDepError "sqlite3")) ];
+        buildable = true;
         };
-      exes = { "5minutes" = {}; };
+      exes = { "5minutes" = { buildable = false; }; };
       };
     }

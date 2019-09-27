@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."sodium" or (buildDepError "sodium"))
           ] ++ (pkgs.lib).optional (system.isOsx && flags.build_fs_events) (hsPkgs."hfsevents" or (buildDepError "hfsevents"));
+        buildable = true;
         };
       exes = {
         "delta-cli" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."delta" or (buildDepError "delta"))
             ];
+          buildable = true;
           };
         "delta-run" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."sodium" or (buildDepError "sodium"))
             ];
+          buildable = true;
           };
         };
       };

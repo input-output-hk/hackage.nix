@@ -61,19 +61,23 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."simpleargs" or (buildDepError "simpleargs"))
             ];
+          buildable = true;
           };
         "clusc" = {
           depends = [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ];
+          buildable = true;
           };
-        "add_single" = {};
+        "add_single" = { buildable = true; };
         "ace2contigs" = {
           depends = [ (hsPkgs."bio" or (buildDepError "bio")) ];
+          buildable = true;
           };
-        "ace2fasta" = {};
+        "ace2fasta" = { buildable = true; };
         "clusterlibs" = {
           depends = [
             (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
             ];
+          buildable = true;
           };
         };
       };

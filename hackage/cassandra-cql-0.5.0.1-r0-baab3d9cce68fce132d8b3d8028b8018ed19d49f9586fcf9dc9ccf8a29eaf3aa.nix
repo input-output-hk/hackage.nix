@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
           (hsPkgs."hslogger" or (buildDepError "hslogger"))
           ];
+        buildable = true;
         };
       };
     }

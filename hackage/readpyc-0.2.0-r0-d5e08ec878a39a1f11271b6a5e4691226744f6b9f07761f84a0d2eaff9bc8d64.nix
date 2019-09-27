@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bliplib" or (buildDepError "bliplib"))
             (hsPkgs."parseargs" or (buildDepError "parseargs"))
             ];
+          buildable = true;
           };
         };
       };

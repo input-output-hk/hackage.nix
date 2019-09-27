@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
           (hsPkgs."monoid-extras" or (buildDepError "monoid-extras"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."nats" or (buildDepError "nats"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
             (hsPkgs."stream-fusion" or (buildDepError "stream-fusion"))
             ];
+          buildable = true;
           };
         };
       };

@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
             (hsPkgs."http-client" or (buildDepError "http-client"))
             ]);
+        buildable = true;
         };
       exes = {
         "influx-random-points" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "influx-write-udp" = {
           depends = [
@@ -106,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -123,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

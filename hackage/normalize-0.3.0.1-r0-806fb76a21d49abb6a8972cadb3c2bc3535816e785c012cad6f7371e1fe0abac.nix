@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cassava" or (buildDepError "cassava"))
           (hsPkgs."statistics" or (buildDepError "statistics"))
           ];
+        buildable = true;
         };
       exes = {
         "normalize" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."cassava" or (buildDepError "cassava"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."toolshed" or (buildDepError "toolshed"))
           ];
+        buildable = true;
         };
       exes = {
         "squeeze" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."squeeze" or (buildDepError "squeeze"))
             (hsPkgs."toolshed" or (buildDepError "toolshed"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."squeeze" or (buildDepError "squeeze"))
             (hsPkgs."toolshed" or (buildDepError "toolshed"))
             ];
+          buildable = true;
           };
         };
       };

@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           (hsPkgs."old-time" or (buildDepError "old-time"))
           ];
+        buildable = true;
         };
       };
     }

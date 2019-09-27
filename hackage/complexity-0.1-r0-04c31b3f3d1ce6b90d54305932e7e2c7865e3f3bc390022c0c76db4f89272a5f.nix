@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Chart" or (buildDepError "Chart"))
           (hsPkgs."hstats" or (buildDepError "hstats"))
           ];
+        buildable = true;
         };
       };
     }

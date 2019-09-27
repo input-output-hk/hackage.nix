@@ -100,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
           ];
+        buildable = true;
         };
       exes = {
         "groebner-prof" = {
@@ -108,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."computational-algebra" or (buildDepError "computational-algebra"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = if flags.profile then true else false;
           };
         "solve" = {
           depends = [
@@ -126,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sized" or (buildDepError "sized"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "algebraic" = {
           depends = [
@@ -133,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."computational-algebra" or (buildDepError "computational-algebra"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "ipsolve" = {
           depends = [
@@ -155,6 +159,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "hensel-prof" = {
           depends = [
@@ -175,6 +180,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.profile then true else false;
           };
         "sandpit-poly" = {
           depends = [
@@ -186,6 +192,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sized" or (buildDepError "sized"))
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "quotient" = {
           depends = [
@@ -198,6 +205,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sized" or (buildDepError "sized"))
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -225,6 +233,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = false;
           };
         "singular-test" = {
           depends = [
@@ -254,6 +263,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = false;
           };
         "monomial-order-test" = {
           depends = [
@@ -274,6 +284,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = false;
           };
         "linear-test" = {
           depends = [
@@ -301,6 +312,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "matrix-test" = {
           depends = [
@@ -328,6 +340,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = false;
           };
         "specs" = {
           depends = [
@@ -359,6 +372,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "new-div-test" = {
           depends = [
@@ -385,6 +399,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = false;
           };
         };
       benchmarks = {
@@ -405,6 +420,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "normal-bench" = {
           depends = [
@@ -423,6 +439,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "elimination-bench" = {
           depends = [
@@ -441,6 +458,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = false;
           };
         "quotient-bench-randomized" = {
           depends = [
@@ -468,6 +486,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."constraints" or (buildDepError "constraints"))
             ];
+          buildable = true;
           };
         "monomial-order-bench" = {
           depends = [
@@ -495,6 +514,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = false;
           };
         "linear-bench" = {
           depends = [
@@ -525,6 +545,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = false;
           };
         "division-bench" = {
           depends = [
@@ -555,6 +576,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = false;
           };
         "sugar-paper-bench" = {
           depends = [
@@ -586,6 +608,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "solve-bench" = {
           depends = [
@@ -617,6 +640,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "coercion-bench" = {
           depends = [
@@ -648,6 +672,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = false;
           };
         "unipol-mult-bench" = {
           depends = [
@@ -678,6 +703,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-natural" or (buildDepError "type-natural"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "unipol-div-bench" = {
           depends = [
@@ -708,6 +734,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."constraints" or (buildDepError "constraints"))
             ];
+          buildable = true;
           };
         };
       };

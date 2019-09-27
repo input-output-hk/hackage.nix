@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
           (hsPkgs."lambdacube-ir" or (buildDepError "lambdacube-ir"))
           ];
+        buildable = true;
         };
       exes = {
         "lambdacube-gl-hello" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lambdacube-gl" or (buildDepError "lambdacube-gl"))
             (hsPkgs."lambdacube-ir" or (buildDepError "lambdacube-ir"))
             ];
+          buildable = if flags.example then true else false;
           };
         "lambdacube-gl-hello-obj" = {
           depends = [
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lambdacube-gl" or (buildDepError "lambdacube-gl"))
             (hsPkgs."lambdacube-ir" or (buildDepError "lambdacube-ir"))
             ];
+          buildable = if flags.example then true else false;
           };
         "lambdacube-gl-test-client" = {
           depends = [
@@ -116,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lambdacube-gl" or (buildDepError "lambdacube-gl"))
             (hsPkgs."lambdacube-ir" or (buildDepError "lambdacube-ir"))
             ];
+          buildable = if flags.testclient then true else false;
           };
         };
       };

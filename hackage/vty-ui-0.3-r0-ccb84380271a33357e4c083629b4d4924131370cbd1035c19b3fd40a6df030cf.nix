@@ -61,13 +61,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
           ];
+        buildable = true;
         };
       exes = {
         "vty-ui-tests" = {
           depends = [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+          buildable = if !flags.testing then false else true;
           };
         "vty-ui-demo" = {
           depends = [ (hsPkgs."mtl" or (buildDepError "mtl")) ];
+          buildable = true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
             ]
           else [ (hsPkgs."deepseq" or (buildDepError "deepseq")) ]);
+        buildable = true;
         };
       };
     }

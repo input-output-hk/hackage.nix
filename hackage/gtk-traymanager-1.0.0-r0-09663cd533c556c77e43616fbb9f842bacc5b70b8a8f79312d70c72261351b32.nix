@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."gtk+-3.0" or (pkgConfDepError "gtk+-3.0"))
           (pkgconfPkgs."x11" or (pkgConfDepError "x11"))
           ];
+        buildable = true;
         };
       };
     }

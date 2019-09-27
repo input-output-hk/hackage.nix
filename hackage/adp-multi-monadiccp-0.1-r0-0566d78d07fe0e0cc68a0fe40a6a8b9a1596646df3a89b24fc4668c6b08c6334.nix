@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."adp-multi" or (buildDepError "adp-multi"))
           (hsPkgs."monadiccp" or (buildDepError "monadiccp"))
           ];
+        buildable = true;
         };
       };
     }

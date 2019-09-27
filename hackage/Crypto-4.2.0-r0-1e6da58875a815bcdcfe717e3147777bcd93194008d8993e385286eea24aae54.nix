@@ -66,14 +66,15 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
-        "SymmetricTest" = {};
-        "SHA1Test" = {};
-        "RSATest" = {};
-        "QuickTest" = {};
-        "HMACTest" = {};
-        "WordListTest" = {};
+        "SymmetricTest" = { buildable = true; };
+        "SHA1Test" = { buildable = true; };
+        "RSATest" = { buildable = true; };
+        "QuickTest" = { buildable = true; };
+        "HMACTest" = { buildable = true; };
+        "WordListTest" = { buildable = true; };
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wumpus-basic" or (buildDepError "wumpus-basic"))
           (hsPkgs."wumpus-drawing" or (buildDepError "wumpus-drawing"))
           ];
+        buildable = true;
         };
       };
     }

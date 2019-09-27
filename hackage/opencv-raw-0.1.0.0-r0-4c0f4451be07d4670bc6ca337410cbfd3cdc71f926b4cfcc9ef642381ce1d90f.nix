@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
         pkgconfig = [ (pkgconfPkgs."opencv" or (pkgConfDepError "opencv")) ];
+        buildable = true;
         };
       };
     }

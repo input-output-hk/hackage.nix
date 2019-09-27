@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."primitive" or (buildDepError "primitive"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."prim-instances" or (buildDepError "prim-instances"))
             (hsPkgs."quickcheck-classes" or (buildDepError "quickcheck-classes"))
             ];
+          buildable = true;
           };
         };
       };

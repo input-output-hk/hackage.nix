@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."contravariant" or (buildDepError "contravariant"))
           (hsPkgs."microlens" or (buildDepError "microlens"))
           ];
+        buildable = true;
         };
       };
     }

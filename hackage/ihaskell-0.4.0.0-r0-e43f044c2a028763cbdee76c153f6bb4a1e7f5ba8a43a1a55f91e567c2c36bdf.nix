@@ -98,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "IHaskell" = {
@@ -116,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -164,6 +166,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
             (hsPkgs."setenv" or (buildDepError "setenv"))
             ];
+          buildable = true;
           };
         };
       };

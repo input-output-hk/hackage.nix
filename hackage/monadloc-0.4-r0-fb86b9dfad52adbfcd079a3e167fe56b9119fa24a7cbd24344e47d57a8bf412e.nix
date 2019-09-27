@@ -64,12 +64,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."syb" or (buildDepError "syb"))
             ])) ++ (pkgs.lib).optional (flags.mtl) (hsPkgs."mtl" or (buildDepError "mtl"))) ++ (pkgs.lib).optional (flags.transformers) (hsPkgs."transformers" or (buildDepError "transformers"));
+        buildable = true;
         };
       exes = {
         "MonadLoc" = {
           depends = [
             (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             ];
+          buildable = true;
           };
         };
       };

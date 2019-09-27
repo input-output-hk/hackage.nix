@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lojbanParser" or (buildDepError "lojbanParser"))
             (hsPkgs."yjtools" or (buildDepError "yjtools"))
             ];
+          buildable = true;
           };
         };
       };

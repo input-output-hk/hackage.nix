@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."network-simple-sockaddr" or (buildDepError "network-simple-sockaddr"))
           ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."Carbon" or (sysDepError "Carbon"))
           (pkgs."Cocoa" or (sysDepError "Cocoa"))
           ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safecopy" or (buildDepError "safecopy"))
           (hsPkgs."special-keys" or (buildDepError "special-keys"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,12 +69,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."syntactic" or (buildDepError "syntactic"))
           ];
+        buildable = true;
         };
       exes = {
         "feldspar" = {
           depends = [
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             ];
+          buildable = true;
           };
         };
       };

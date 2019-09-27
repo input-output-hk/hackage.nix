@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."priority-sync" or (buildDepError "priority-sync"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "flatten" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mcpi" or (buildDepError "mcpi"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "freefall" = {
           depends = [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mcpi" or (buildDepError "mcpi"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "hmcpi" = {
           depends = [
@@ -83,18 +86,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."pipes" or (buildDepError "pipes"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "isongold" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mcpi" or (buildDepError "mcpi"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "xjump" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mcpi" or (buildDepError "mcpi"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         };
       };

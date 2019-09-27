@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
           (hsPkgs."entropy" or (buildDepError "entropy"))
           ];
+        buildable = true;
         };
       tests = {
         "quickcheck-highlevel" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
             (hsPkgs."entropy" or (buildDepError "entropy"))
             ];
+          buildable = true;
           };
         };
       };

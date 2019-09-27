@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optional (!flags.usepkgconfig) (pkgs."tag_c" or (sysDepError "tag_c"));
         pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."taglib_c" or (pkgConfDepError "taglib_c"));
+        buildable = true;
         };
       };
     }

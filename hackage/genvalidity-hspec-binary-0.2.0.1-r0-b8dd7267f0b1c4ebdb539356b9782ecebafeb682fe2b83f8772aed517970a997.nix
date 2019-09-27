@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."genvalidity-hspec" or (buildDepError "genvalidity-hspec"))
           (hsPkgs."hspec" or (buildDepError "hspec"))
           ];
+        buildable = true;
         };
       tests = {
         "genvalidity-hspec-binary-doctests" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."genvalidity-hspec-binary" or (buildDepError "genvalidity-hspec-binary"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         "genvalidity-hspec-binary-test" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."genvalidity-hspec-binary" or (buildDepError "genvalidity-hspec-binary"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

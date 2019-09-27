@@ -75,12 +75,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hamlet" or (buildDepError "hamlet"))
             (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
             ];
+          buildable = true;
           };
         "yackage-upload" = {
           depends = [
             (hsPkgs."http-enumerator" or (buildDepError "http-enumerator"))
             (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
             ];
+          buildable = true;
           };
         };
       };

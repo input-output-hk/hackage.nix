@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."streaming-bytestring" or (buildDepError "streaming-bytestring"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
             (hsPkgs."io-capture" or (buildDepError "io-capture"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hxt-xpath" or (buildDepError "hxt-xpath"))
             (hsPkgs."listsafe" or (buildDepError "listsafe"))
             ];
+          buildable = true;
           };
         };
       };

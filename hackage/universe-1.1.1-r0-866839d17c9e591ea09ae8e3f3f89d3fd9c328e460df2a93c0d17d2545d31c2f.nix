@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."universe-reverse-instances" or (buildDepError "universe-reverse-instances"))
           (hsPkgs."universe-dependent-sum" or (buildDepError "universe-dependent-sum"))
           ];
+        buildable = true;
         };
       };
     }

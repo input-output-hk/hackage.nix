@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
           (hsPkgs."http-types" or (buildDepError "http-types"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."tagged" or (buildDepError "tagged"));
+        buildable = true;
         };
       };
     }

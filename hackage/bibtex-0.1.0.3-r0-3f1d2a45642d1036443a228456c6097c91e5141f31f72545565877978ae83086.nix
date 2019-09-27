@@ -65,9 +65,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."special-functors" or (buildDepError "special-functors"))
             ]);
+        buildable = true;
         };
       exes = {
-        "publication-overview" = {};
+        "publication-overview" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
         "hackage-bibtex" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs."old-time" or (buildDepError "old-time"))
@@ -76,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

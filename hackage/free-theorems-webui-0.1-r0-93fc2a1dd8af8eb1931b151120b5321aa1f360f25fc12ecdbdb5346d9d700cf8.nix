@@ -69,8 +69,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base64-string" or (buildDepError "base64-string"))
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             ];
+          buildable = true;
           };
-        "free-theorems-webui" = {};
+        "free-theorems-webui" = { buildable = true; };
         };
       };
     }

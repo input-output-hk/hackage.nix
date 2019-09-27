@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HCodecs" or (buildDepError "HCodecs"))
           (hsPkgs."boxes" or (buildDepError "boxes"))
           ];
+        buildable = true;
         };
       tests = {
         "mezzo-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."should-not-typecheck" or (buildDepError "should-not-typecheck"))
             ];
+          buildable = true;
           };
         };
       };

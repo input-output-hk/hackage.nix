@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
         libs = (pkgs.lib).optional (!system.isOsx) (pkgs."dns_sd" or (sysDepError "dns_sd"));
+        buildable = true;
         };
       };
     }

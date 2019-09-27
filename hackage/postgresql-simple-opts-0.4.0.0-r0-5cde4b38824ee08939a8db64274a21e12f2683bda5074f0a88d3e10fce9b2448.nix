@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
           (hsPkgs."postgres-options" or (buildDepError "postgres-options"))
           ];
+        buildable = true;
         };
       tests = {
         "postgresql-simple-opts-test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."postgres-options" or (buildDepError "postgres-options"))
             ];
+          buildable = true;
           };
         };
       };

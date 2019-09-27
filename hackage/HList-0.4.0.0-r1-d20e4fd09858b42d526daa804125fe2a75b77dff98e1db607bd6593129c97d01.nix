@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           (hsPkgs."array" or (buildDepError "array"))
           ] ++ (pkgs.lib).optional (flags.new_type_eq) (hsPkgs."base" or (buildDepError "base"));
+        buildable = true;
         };
       tests = {
         "examples" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HList" or (buildDepError "HList"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         "doctests" = {
           depends = [
@@ -87,6 +89,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).le "7.9"
+            then false
+            else true;
           };
         "properties" = {
           depends = [
@@ -100,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."syb" or (buildDepError "syb"))
             ];
+          buildable = true;
           };
         };
       };

@@ -91,12 +91,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."formlets" or (buildDepError "formlets"))
           (hsPkgs."formlets-hsp" or (buildDepError "formlets-hsp"))
           ];
+        buildable = true;
         };
       exes = {
         "demo" = {
           build-tools = [
             (hsPkgs.buildPackages.trhsx or (pkgs.buildPackages.trhsx or (buildToolDepError "trhsx")))
             ];
+          buildable = false;
           };
         };
       };

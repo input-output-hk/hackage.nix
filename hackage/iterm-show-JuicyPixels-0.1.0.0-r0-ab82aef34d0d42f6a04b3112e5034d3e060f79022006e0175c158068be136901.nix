@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iterm-show" or (buildDepError "iterm-show"))
           (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
           ];
+        buildable = true;
         };
       };
     }

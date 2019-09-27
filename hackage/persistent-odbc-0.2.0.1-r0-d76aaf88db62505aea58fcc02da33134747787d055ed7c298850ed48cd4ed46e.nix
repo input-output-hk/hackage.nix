@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."esqueleto" or (buildDepError "esqueleto"))
           ];
+        buildable = true;
         };
       exes = {
         "TestODBC" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."persistent" or (buildDepError "persistent"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.tester then true else false;
           };
         };
       };

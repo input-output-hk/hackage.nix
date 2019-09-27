@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."inline-c" or (buildDepError "inline-c"))
           ];
         libs = (pkgs.lib).optional (flags.enable-cuda) (pkgs."cudart" or (sysDepError "cudart"));
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."inline-c" or (buildDepError "inline-c"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

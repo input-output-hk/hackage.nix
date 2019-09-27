@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."opentheory-primitive" or (buildDepError "opentheory-primitive"))
           (hsPkgs."opentheory" or (buildDepError "opentheory"))
           ];
+        buildable = true;
         };
       exes = {
         "opentheory-prime-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."opentheory-primitive" or (buildDepError "opentheory-primitive"))
             (hsPkgs."opentheory" or (buildDepError "opentheory"))
             ];
+          buildable = true;
           };
         };
       };

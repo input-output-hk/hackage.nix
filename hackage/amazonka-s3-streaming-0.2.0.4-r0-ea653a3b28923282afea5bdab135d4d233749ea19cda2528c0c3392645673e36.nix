@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ]) ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."foundation" or (buildDepError "foundation"));
+        buildable = true;
         };
       exes = {
         "s3upload" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = false;
           };
         };
       };

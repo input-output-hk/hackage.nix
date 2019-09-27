@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = [ (pkgs."eskit" or (sysDepError "eskit")) ];
         pkgconfig = [ (pkgconfPkgs."eskit" or (pkgConfDepError "eskit")) ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           (hsPkgs."terminal-size" or (buildDepError "terminal-size"))
           ];
+        buildable = true;
         };
       exes = {
         "ghcid" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             (hsPkgs."terminal-size" or (buildDepError "terminal-size"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         };
       };

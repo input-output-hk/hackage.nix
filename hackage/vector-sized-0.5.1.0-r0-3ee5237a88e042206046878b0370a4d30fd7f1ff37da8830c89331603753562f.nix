@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."finite-typelits" or (buildDepError "finite-typelits"))
           ];
+        buildable = true;
         };
       };
     }

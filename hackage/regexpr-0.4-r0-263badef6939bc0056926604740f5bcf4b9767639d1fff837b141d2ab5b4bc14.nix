@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           (hsPkgs."mtlparse" or (buildDepError "mtlparse"))
           ];
+        buildable = true;
         };
       };
     }

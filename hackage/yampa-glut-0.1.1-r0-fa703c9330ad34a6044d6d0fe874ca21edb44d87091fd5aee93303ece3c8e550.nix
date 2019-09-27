@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Yampa" or (buildDepError "Yampa"))
           (hsPkgs."newtype" or (buildDepError "newtype"))
           ];
+        buildable = true;
         };
       };
     }

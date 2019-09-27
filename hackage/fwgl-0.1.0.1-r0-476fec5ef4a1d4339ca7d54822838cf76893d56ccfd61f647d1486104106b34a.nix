@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
           ];
+        buildable = true;
         };
       };
     }

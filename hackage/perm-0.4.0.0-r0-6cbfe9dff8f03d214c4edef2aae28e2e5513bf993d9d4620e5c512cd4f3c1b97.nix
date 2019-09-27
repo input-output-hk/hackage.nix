@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."catch-fd" or (buildDepError "catch-fd"))
           ];
+        buildable = true;
         };
       tests = {
         "reddit-tests" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."perm" or (buildDepError "perm"))
             ];
+          buildable = true;
           };
         };
       };

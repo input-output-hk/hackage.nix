@@ -60,12 +60,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-clock" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-eden" = {
           depends = [
@@ -73,18 +75,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "gloss-flake" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-hello" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-lifespan" = {
           depends = [
@@ -92,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "gloss-styrene" = {
           depends = [
@@ -100,18 +106,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             ];
+          buildable = true;
           };
         "gloss-tree" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-zen" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         };
       };

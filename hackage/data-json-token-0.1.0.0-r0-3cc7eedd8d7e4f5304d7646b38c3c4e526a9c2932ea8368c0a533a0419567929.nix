@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "data-json-token-exe" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."data-json-token" or (buildDepError "data-json-token"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -69,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."data-json-token" or (buildDepError "data-json-token"))
             ];
+          buildable = true;
           };
         };
       };

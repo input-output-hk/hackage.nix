@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pretty" or (buildDepError "pretty"))
           (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
           ];
+        buildable = true;
         };
       exes = {
         "hgdata" = {
@@ -110,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
             ];
+          buildable = true;
           };
         };
       };

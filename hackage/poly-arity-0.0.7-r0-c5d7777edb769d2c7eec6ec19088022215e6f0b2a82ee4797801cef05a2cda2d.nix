@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."constraints" or (buildDepError "constraints"))
           (hsPkgs."HList" or (buildDepError "HList"))
           ];
+        buildable = true;
         };
       };
     }

@@ -77,12 +77,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               then [ (hsPkgs."vty" or (buildDepError "vty")) ]
               else (pkgs.lib).optional (!flags.std) (hsPkgs."gtk" or (buildDepError "gtk")));
           libs = (pkgs.lib).optional (flags.curses) (pkgs."curses" or (sysDepError "curses"));
+          buildable = true;
           };
         "BotAllure" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

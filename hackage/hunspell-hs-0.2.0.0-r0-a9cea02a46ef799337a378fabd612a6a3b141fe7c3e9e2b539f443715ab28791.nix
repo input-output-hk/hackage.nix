@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optional (system.isOsx) (pkgs."hunspell-1.6" or (sysDepError "hunspell-1.6"));
         pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."hunspell" or (pkgConfDepError "hunspell"));
+        buildable = true;
         };
       tests = {
         "hunspell-hs-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ];
           libs = (pkgs.lib).optional (system.isOsx) (pkgs."hunspell-1.6" or (sysDepError "hunspell-1.6"));
           pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."hunspell" or (pkgConfDepError "hunspell"));
+          buildable = true;
           };
         };
       benchmarks = {
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ];
           libs = (pkgs.lib).optional (system.isOsx) (pkgs."hunspell-1.6" or (sysDepError "hunspell-1.6"));
           pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."hunspell" or (pkgConfDepError "hunspell"));
+          buildable = true;
           };
         };
       };

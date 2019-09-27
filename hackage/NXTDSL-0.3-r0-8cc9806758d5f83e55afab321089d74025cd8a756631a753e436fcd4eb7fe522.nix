@@ -65,7 +65,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."hashable" or (buildDepError "hashable"))
           ];
+        buildable = true;
         };
-      exes = { "ExampleRun" = {}; "ExampleVM" = {}; "Compiler" = {}; };
+      exes = {
+        "ExampleRun" = { buildable = true; };
+        "ExampleVM" = { buildable = true; };
+        "Compiler" = { buildable = true; };
+        };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [ (hsPkgs."base" or (buildDepError "base")) ])) ++ [
           (hsPkgs."syb-with-class" or (buildDepError "syb-with-class"))
           ];
+        buildable = true;
         };
       tests = {
         "test-ixset" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

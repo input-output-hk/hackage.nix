@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           (hsPkgs."yaml" or (buildDepError "yaml"))
           ] ++ (pkgs.lib).optional (!flags.nocapture && system.isLinux) (hsPkgs."v4l2" or (buildDepError "v4l2"));
+        buildable = true;
         };
       exes = {
         "color-counter" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-space" or (buildDepError "vector-space"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ] ++ (pkgs.lib).optional (!flags.nocapture && system.isLinux) (hsPkgs."v4l2" or (buildDepError "v4l2"));
+          buildable = true;
           };
         };
       };

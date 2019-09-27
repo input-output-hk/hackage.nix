@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-textual" or (buildDepError "data-textual"))
           (hsPkgs."parsers" or (buildDepError "parsers"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsers" or (buildDepError "parsers"))
             (hsPkgs."network-ip" or (buildDepError "network-ip"))
             ];
+          buildable = true;
           };
         };
       };

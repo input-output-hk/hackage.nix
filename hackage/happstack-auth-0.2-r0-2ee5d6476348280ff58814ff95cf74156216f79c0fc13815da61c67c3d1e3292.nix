@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Crypto" or (buildDepError "Crypto"))
           (hsPkgs."convertible" or (buildDepError "convertible"))
           ];
+        buildable = true;
         };
       };
     }

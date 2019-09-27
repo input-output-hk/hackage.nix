@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."first-class-families" or (buildDepError "first-class-families"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."first-class-families" or (buildDepError "first-class-families"))
             (hsPkgs."type-errors" or (buildDepError "type-errors"))
             ];
+          buildable = true;
           };
         };
       };

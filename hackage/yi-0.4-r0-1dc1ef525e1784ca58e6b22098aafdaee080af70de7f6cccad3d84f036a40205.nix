@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (pkgs.lib).optional (flags.vty) (hsPkgs."vty" or (buildDepError "vty"));
+        buildable = true;
         };
       exes = {
         "yi" = {
@@ -96,6 +97,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
             ];
+          buildable = if !(flags.vty || flags.gtk || flags.cocoa)
+            then false
+            else true;
           };
         };
       };

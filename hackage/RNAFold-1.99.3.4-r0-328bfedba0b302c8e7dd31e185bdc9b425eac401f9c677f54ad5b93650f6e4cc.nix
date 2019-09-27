@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           ];
+        buildable = true;
         };
       exes = {
         "RNAFold" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
             (hsPkgs."RNAFold" or (buildDepError "RNAFold"))
             ];
+          buildable = true;
           };
         "RNAEval" = {
           depends = [
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
             (hsPkgs."RNAFold" or (buildDepError "RNAFold"))
             ];
+          buildable = true;
           };
         };
       };

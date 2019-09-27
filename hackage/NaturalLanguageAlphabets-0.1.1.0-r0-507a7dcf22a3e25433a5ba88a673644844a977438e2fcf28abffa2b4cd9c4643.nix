@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."LinguisticsTypes" or (buildDepError "LinguisticsTypes"))
           ];
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."LinguisticsTypes" or (buildDepError "LinguisticsTypes"))
             (hsPkgs."NaturalLanguageAlphabets" or (buildDepError "NaturalLanguageAlphabets"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."LinguisticsTypes" or (buildDepError "LinguisticsTypes"))
             (hsPkgs."NaturalLanguageAlphabets" or (buildDepError "NaturalLanguageAlphabets"))
             ];
+          buildable = true;
           };
         };
       };

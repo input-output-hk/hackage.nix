@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-interval" or (buildDepError "data-interval"))
           (hsPkgs."finite-field" or (buildDepError "finite-field"))
           ];
+        buildable = true;
         };
       exes = {
         "toysolver" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parse-dimacs" or (buildDepError "parse-dimacs"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = true;
           };
         "toysat" = {
           depends = [
@@ -111,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-space" or (buildDepError "vector-space"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ] ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs."base" or (buildDepError "base"));
+          buildable = true;
           };
         "toyfmf" = {
           depends = [
@@ -119,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             (hsPkgs."logic-TPTP" or (buildDepError "logic-TPTP"))
             ];
+          buildable = true;
           };
         "lpconvert" = {
           depends = [
@@ -128,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parse-dimacs" or (buildDepError "parse-dimacs"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = true;
           };
         "pbconvert" = {
           depends = [
@@ -137,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parse-dimacs" or (buildDepError "parse-dimacs"))
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -151,6 +157,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         "TestSimplex2" = {
           depends = [
@@ -163,6 +170,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         "TestMIPSolver2" = {
           depends = [
@@ -177,6 +185,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OptDir" or (buildDepError "OptDir"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         "TestPolynomial" = {
           depends = [
@@ -193,6 +202,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."finite-field" or (buildDepError "finite-field"))
             (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
             ];
+          buildable = true;
           };
         "TestAReal" = {
           depends = [
@@ -207,6 +217,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."data-interval" or (buildDepError "data-interval"))
             ];
+          buildable = true;
           };
         "TestQE" = {
           depends = [
@@ -222,6 +233,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         "TestContiTraverso" = {
           depends = [
@@ -237,6 +249,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         "TestLPFile" = {
           depends = [
@@ -250,6 +263,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         "TestMPSFile" = {
           depends = [
@@ -263,6 +277,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         "TestPBFile" = {
           depends = [
@@ -275,6 +290,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         "TestUtil" = {
           depends = [
@@ -287,6 +303,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -300,6 +317,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."toysolver" or (buildDepError "toysolver"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

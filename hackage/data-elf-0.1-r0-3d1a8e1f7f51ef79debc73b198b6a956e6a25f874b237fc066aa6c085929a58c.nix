@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-flags" or (buildDepError "data-flags"))
           (hsPkgs."text-latin1" or (buildDepError "text-latin1"))
           ];
+        buildable = true;
         };
       };
     }

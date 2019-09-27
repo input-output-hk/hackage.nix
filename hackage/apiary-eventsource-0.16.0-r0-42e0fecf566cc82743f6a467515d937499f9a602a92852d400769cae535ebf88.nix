@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ]
           else [ (hsPkgs."wai-extra" or (buildDepError "wai-extra")) ]);
+        buildable = true;
         };
       };
     }

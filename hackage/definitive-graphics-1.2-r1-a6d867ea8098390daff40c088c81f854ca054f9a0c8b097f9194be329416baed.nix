@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stb-truetype" or (buildDepError "stb-truetype"))
           (hsPkgs."GLFW" or (buildDepError "GLFW"))
           ];
+        buildable = true;
         };
       };
     }

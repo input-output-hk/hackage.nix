@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-DSL" or (buildDepError "bindings-DSL"))
           ];
         libs = [ (pkgs."hamlib" or (sysDepError "hamlib")) ];
+        buildable = true;
         };
       exes = {
         "hamlib-hs-demo" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bindings-hamlib" or (buildDepError "bindings-hamlib"))
             ];
+          buildable = true;
           };
         };
       };

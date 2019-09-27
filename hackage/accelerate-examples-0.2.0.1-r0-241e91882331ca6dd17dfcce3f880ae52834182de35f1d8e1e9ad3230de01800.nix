@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
             ];
           libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+          buildable = true;
           };
         };
       };

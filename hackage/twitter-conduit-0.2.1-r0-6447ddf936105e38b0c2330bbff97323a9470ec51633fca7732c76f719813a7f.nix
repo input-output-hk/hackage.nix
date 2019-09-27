@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             ]
           else [ (hsPkgs."lens" or (buildDepError "lens")) ]);
+        buildable = true;
         };
       tests = {
         "hlint" = {
@@ -94,12 +95,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "spec_main" = {
           depends = ([
@@ -130,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."network" or (buildDepError "network"))
               ])) ++ (pkgs.lib).optional (flags.lens-aeson) (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"));
+          buildable = true;
           };
         };
       };

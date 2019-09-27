@@ -59,10 +59,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."vty" or (buildDepError "vty"))
           ];
+        buildable = true;
         };
       exes = {
         "vty-ui-demo" = {
           depends = [ (hsPkgs."mtl" or (buildDepError "mtl")) ];
+          buildable = true;
           };
         };
       };

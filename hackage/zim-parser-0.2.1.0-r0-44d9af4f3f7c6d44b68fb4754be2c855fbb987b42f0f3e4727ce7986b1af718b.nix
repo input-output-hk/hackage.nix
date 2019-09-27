@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary-conduit" or (buildDepError "binary-conduit"))
           (hsPkgs."lzma" or (buildDepError "lzma"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lzma" or (buildDepError "lzma"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

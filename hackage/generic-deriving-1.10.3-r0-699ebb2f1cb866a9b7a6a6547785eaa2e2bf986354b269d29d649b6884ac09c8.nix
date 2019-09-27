@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).gt "7.0") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+        buildable = true;
         };
       };
     }

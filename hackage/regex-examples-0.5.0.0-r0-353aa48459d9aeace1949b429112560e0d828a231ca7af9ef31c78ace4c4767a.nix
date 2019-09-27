@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shelly" or (buildDepError "shelly"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "re-gen-modules" = {
           depends = [
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shelly" or (buildDepError "shelly"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "re-include" = {
           depends = [
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shelly" or (buildDepError "shelly"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "re-nginx-log-processor" = {
           depends = [
@@ -112,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         "re-prep" = {
           depends = [
@@ -125,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shelly" or (buildDepError "shelly"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "re-tests" = {
           depends = [
@@ -148,6 +153,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         "re-tutorial" = {
           depends = [
@@ -176,6 +182,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -193,6 +200,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shelly" or (buildDepError "shelly"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "re-gen-modules-test" = {
           depends = [
@@ -207,6 +215,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shelly" or (buildDepError "shelly"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "re-include-test" = {
           depends = [
@@ -218,6 +227,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shelly" or (buildDepError "shelly"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "re-nginx-log-processor-test" = {
           depends = [
@@ -236,6 +246,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         "re-prep-test" = {
           depends = [
@@ -249,6 +260,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shelly" or (buildDepError "shelly"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "re-tests-test" = {
           depends = [
@@ -272,6 +284,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         "re-tutorial-test" = {
           depends = [
@@ -300,6 +313,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         "re-tutorial-os-test" = {
           depends = [
@@ -328,6 +342,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         };
       };

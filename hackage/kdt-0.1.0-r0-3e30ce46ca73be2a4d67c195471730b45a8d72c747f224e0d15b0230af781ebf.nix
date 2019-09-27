@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pqueue" or (buildDepError "pqueue"))
           (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
           ];
+        buildable = true;
         };
       tests = {
         "KdTreeTest" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."kdt" or (buildDepError "kdt"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."pqueue" or (buildDepError "pqueue"))
             ];
+          buildable = true;
           };
         };
       };

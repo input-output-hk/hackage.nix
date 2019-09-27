@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
           (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
           ];
+        buildable = true;
         };
       tests = {
         "test-nibblestring" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         };
       };

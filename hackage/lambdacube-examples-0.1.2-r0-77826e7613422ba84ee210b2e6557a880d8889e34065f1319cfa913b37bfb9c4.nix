@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             ];
+          buildable = true;
           };
         "lambdacube-cameratrack" = {
           depends = [
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             ];
+          buildable = true;
           };
         };
       };

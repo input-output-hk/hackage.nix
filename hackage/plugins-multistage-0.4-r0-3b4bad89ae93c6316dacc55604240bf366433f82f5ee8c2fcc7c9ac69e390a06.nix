@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."storable-record" or (buildDepError "storable-record"))
           (hsPkgs."storable-tuple" or (buildDepError "storable-tuple"))
           ];
+        buildable = true;
         };
       };
     }

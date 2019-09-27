@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."readline" or (buildDepError "readline"))
           (hsPkgs."network" or (buildDepError "network"))
           ];
+        buildable = true;
         };
       };
     }

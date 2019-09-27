@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."enumerator" or (buildDepError "enumerator"))
           (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
           ];
+        buildable = true;
         };
       };
     }

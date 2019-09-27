@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unique" or (buildDepError "unique"))
           (hsPkgs."unliftio" or (buildDepError "unliftio"))
           ];
+        buildable = true;
         };
       tests = {
         "haskoin-node-test" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
             (hsPkgs."unliftio" or (buildDepError "unliftio"))
             ];
+          buildable = true;
           };
         };
       };

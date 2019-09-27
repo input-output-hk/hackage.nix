@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
           (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."clientsession" or (buildDepError "clientsession"))
             ];
+          buildable = true;
           };
         };
       };

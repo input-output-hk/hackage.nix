@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
           ];
+        buildable = true;
         };
       };
     }

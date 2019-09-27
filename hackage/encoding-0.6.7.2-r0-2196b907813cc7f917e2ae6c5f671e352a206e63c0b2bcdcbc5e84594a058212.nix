@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               ]
             else [ (hsPkgs."ghc" or (buildDepError "ghc")) ])
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       };
     }

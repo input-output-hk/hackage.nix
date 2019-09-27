@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
           (hsPkgs."ihaskell" or (buildDepError "ihaskell"))
           ];
+        buildable = true;
         };
       };
     }

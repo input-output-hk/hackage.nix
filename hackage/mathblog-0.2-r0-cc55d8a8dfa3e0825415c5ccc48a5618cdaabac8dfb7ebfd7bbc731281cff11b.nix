@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HStringTemplate" or (buildDepError "HStringTemplate"))
             (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
             ];
+          buildable = true;
           };
         };
       };

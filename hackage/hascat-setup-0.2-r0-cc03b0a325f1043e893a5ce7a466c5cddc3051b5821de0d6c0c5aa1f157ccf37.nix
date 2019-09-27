@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell98" or (buildDepError "haskell98"))
           (hsPkgs."plugins" or (buildDepError "plugins"))
           ];
+        buildable = true;
         };
       exes = {
         "hascat-setup" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             (hsPkgs."plugins" or (buildDepError "plugins"))
             ];
+          buildable = true;
           };
         };
       };

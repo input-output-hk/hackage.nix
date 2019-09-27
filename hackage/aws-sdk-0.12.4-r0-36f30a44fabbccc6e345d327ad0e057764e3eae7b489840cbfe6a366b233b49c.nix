@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ]
           else [ (hsPkgs."conduit" or (buildDepError "conduit")) ]);
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -113,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."resourcet" or (buildDepError "resourcet"))
               ]
             else [ (hsPkgs."conduit" or (buildDepError "conduit")) ]);
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         "lesson02" = {
           depends = [
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         "lesson03" = {
           depends = [
@@ -75,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         "lesson04" = {
           depends = [
@@ -82,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         "lesson05" = {
           depends = [
@@ -89,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         "lesson06" = {
           depends = [
@@ -97,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             ];
+          buildable = true;
           };
         "lesson07" = {
           depends = [
@@ -104,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         "lesson08" = {
           depends = [
@@ -111,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         "lesson09" = {
           depends = [
@@ -118,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         "lesson10" = {
           depends = [
@@ -126,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = true;
           };
         "lesson11" = {
           depends = [
@@ -133,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         "lesson12" = {
           depends = [
@@ -140,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         };
       };

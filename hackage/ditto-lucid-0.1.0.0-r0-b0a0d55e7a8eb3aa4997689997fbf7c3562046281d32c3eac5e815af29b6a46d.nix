@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
           ];
+        buildable = true;
         };
       };
     }

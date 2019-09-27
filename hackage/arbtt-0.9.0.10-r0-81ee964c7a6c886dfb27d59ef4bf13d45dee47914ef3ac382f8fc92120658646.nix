@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."Carbon" or (sysDepError "Carbon"))
             (pkgs."IOKit" or (sysDepError "IOKit"))
             ]);
+          buildable = true;
           };
         "arbtt-stats" = {
           depends = ([
@@ -109,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."old-locale" or (buildDepError "old-locale"))
               ]
             else [ (hsPkgs."time" or (buildDepError "time")) ]);
+          buildable = true;
           };
         "arbtt-dump" = {
           depends = ([
@@ -131,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."old-locale" or (buildDepError "old-locale"))
               ]
             else [ (hsPkgs."time" or (buildDepError "time")) ]);
+          buildable = true;
           };
         "arbtt-import" = {
           depends = ([
@@ -151,6 +154,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."old-locale" or (buildDepError "old-locale"))
               ]
             else [ (hsPkgs."time" or (buildDepError "time")) ]);
+          buildable = true;
           };
         "arbtt-recover" = {
           depends = ([
@@ -168,6 +172,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."old-locale" or (buildDepError "old-locale"))
               ]
             else [ (hsPkgs."time" or (buildDepError "time")) ]);
+          buildable = true;
           };
         };
       tests = {
@@ -193,6 +198,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."old-locale" or (buildDepError "old-locale"))
               ]
             else [ (hsPkgs."time" or (buildDepError "time")) ]);
+          buildable = true;
           };
         };
       };

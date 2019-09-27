@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gd" or (buildDepError "gd"))
             (hsPkgs."X11" or (buildDepError "X11"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           (hsPkgs."fgl" or (buildDepError "fgl"))
           ];
+        buildable = true;
         };
       };
     }

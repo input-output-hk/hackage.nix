@@ -66,12 +66,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."special-functors" or (buildDepError "special-functors"))
             (hsPkgs."base" or (buildDepError "base"))
             ]);
+        buildable = true;
         };
       exes = {
         "test" = {
           depends = (pkgs.lib).optionals (flags.buildtests) ([
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ] ++ (pkgs.lib).optional (flags.splitbase) (hsPkgs."random" or (buildDepError "random")));
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

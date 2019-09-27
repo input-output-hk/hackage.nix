@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Thrift" or (buildDepError "Thrift"))
           (hsPkgs."cassandra-thrift" or (buildDepError "cassandra-thrift"))
           ];
+        buildable = true;
         };
       };
     }

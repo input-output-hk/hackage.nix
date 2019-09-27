@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2") (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"));
+        buildable = true;
         };
       };
     }

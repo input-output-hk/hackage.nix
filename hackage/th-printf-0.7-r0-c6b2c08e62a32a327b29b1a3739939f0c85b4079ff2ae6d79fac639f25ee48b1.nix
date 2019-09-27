@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."th-lift" or (buildDepError "th-lift"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."primitive" or (buildDepError "primitive"));
+        buildable = true;
         };
       tests = {
         "format" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."th-printf" or (buildDepError "th-printf"))
             ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."primitive" or (buildDepError "primitive"))) ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."hspec-core" or (buildDepError "hspec-core"));
+          buildable = true;
           };
         };
       };

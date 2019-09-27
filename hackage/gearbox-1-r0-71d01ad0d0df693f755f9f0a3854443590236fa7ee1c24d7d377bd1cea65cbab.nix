@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Vec" or (buildDepError "Vec"))
             (hsPkgs."Vec-OpenGLRaw" or (buildDepError "Vec-OpenGLRaw"))
             ];
+          buildable = true;
           };
         };
       };

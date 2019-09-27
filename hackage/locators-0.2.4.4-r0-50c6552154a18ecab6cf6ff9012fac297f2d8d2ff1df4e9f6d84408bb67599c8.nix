@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
           ];
+        buildable = true;
         };
       tests = {
         "check" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
             (hsPkgs."locators" or (buildDepError "locators"))
             ];
+          buildable = true;
           };
         };
       };

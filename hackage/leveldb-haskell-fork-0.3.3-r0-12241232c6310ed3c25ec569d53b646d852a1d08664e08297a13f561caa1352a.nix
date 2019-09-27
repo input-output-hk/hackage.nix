@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
         libs = [ (pkgs."leveldb" or (sysDepError "leveldb")) ];
+        buildable = true;
         };
       exes = {
         "leveldb-example-comparator" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "leveldb-example-features" = {
           depends = [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "leveldb-example-filterpolicy" = {
           depends = [
@@ -91,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "leveldb-example-iterforkio" = {
           depends = [
@@ -100,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -116,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

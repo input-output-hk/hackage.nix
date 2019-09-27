@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."process" or (buildDepError "process"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = true;
           };
         };
       };

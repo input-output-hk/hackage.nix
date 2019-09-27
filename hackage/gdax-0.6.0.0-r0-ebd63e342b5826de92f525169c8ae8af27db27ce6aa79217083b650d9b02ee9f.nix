@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wreq" or (buildDepError "wreq"))
           (hsPkgs."wuss" or (buildDepError "wuss"))
           ];
+        buildable = true;
         };
       exes = {
         "sandbox" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."websockets" or (buildDepError "websockets"))
             (hsPkgs."wuss" or (buildDepError "wuss"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -125,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."websockets" or (buildDepError "websockets"))
             (hsPkgs."wuss" or (buildDepError "wuss"))
             ];
+          buildable = true;
           };
         };
       };

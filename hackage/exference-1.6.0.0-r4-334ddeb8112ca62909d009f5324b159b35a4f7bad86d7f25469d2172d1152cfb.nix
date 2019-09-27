@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."multistate" or (buildDepError "multistate"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "exference" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."either" or (buildDepError "either"))
             (hsPkgs."multistate" or (buildDepError "multistate"))
             ];
+          buildable = if flags.build-executables then true else false;
           };
         };
       };

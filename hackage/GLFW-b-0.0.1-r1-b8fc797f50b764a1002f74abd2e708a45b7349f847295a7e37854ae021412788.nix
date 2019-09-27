@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."Cocoa" or (sysDepError "Cocoa"))
           (pkgs."OpenGL" or (sysDepError "OpenGL"))
           ]);
+        buildable = true;
         };
       };
     }

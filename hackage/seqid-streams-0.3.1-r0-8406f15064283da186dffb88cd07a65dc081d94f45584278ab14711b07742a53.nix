@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."io-streams" or (buildDepError "io-streams"))
           (hsPkgs."seqid" or (buildDepError "seqid"))
           ];
+        buildable = true;
         };
       };
     }

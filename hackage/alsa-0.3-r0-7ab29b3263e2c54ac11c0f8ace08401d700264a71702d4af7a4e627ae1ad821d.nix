@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           ];
         libs = [ (pkgs."asound" or (sysDepError "asound")) ];
+        buildable = true;
         };
       };
     }

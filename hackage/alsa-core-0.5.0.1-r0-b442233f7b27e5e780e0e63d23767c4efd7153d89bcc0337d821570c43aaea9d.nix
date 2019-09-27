@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optional (!flags.pkgconfig) (pkgs."asound" or (sysDepError "asound"));
         pkgconfig = (pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs."alsa" or (pkgConfDepError "alsa"));
+        buildable = true;
         };
       };
     }

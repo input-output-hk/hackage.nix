@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."snap" or (buildDepError "snap"))
           (hsPkgs."yaml-rpc" or (buildDepError "yaml-rpc"))
           ];
+        buildable = true;
         };
       };
     }

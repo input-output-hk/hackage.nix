@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-parsec" or (buildDepError "xml-parsec"))
           (hsPkgs."adhoc-network" or (buildDepError "adhoc-network"))
           ];
+        buildable = true;
         };
       exes = {
         "Barracuda" = {
@@ -112,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-parsec" or (buildDepError "xml-parsec"))
             (hsPkgs."adhoc-network" or (buildDepError "adhoc-network"))
             ];
+          buildable = true;
           };
         };
       };

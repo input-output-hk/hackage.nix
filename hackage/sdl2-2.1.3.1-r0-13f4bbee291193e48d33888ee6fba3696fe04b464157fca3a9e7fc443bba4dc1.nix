@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (pkgs.lib).optional (!flags.no-linear) (hsPkgs."linear" or (buildDepError "linear"));
         libs = [ (pkgs."SDL2" or (sysDepError "SDL2")) ];
         pkgconfig = [ (pkgconfPkgs."sdl2" or (pkgConfDepError "sdl2")) ];
+        buildable = true;
         };
       exes = {
         "lazyfoo-lesson-01" = {
@@ -73,96 +74,112 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-02" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-03" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-04" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-05" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-07" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-08" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-09" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-10" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-11" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-12" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-13" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-14" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-15" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-17" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-18" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-19" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -170,6 +187,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-20" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -177,42 +195,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = false;
           };
         "lazyfoo-lesson-43" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "twinklebear-lesson-01" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "twinklebear-lesson-02" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "twinklebear-lesson-04" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "twinklebear-lesson-04a" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "twinklebear-lesson-05" = {
           depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "audio-example" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -220,6 +245,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "opengl-example" = {
           depends = (pkgs.lib).optionals (flags.opengl-example) [
@@ -229,6 +255,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.opengl-example then true else false;
           };
         };
       };

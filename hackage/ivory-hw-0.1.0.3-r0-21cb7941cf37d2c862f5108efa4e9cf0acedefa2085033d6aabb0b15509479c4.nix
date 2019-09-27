@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ivory-artifact" or (buildDepError "ivory-artifact"))
           (hsPkgs."ivory-backend-c" or (buildDepError "ivory-backend-c"))
           ];
+        buildable = true;
         };
       };
     }

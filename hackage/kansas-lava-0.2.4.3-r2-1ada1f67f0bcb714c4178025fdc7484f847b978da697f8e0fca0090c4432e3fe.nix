@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."data-reify" or (buildDepError "data-reify"))
           ];
+        buildable = true;
         };
       exes = {
         "kansas-lava-unittest" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."data-reify" or (buildDepError "data-reify"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.unit || flags.all then true else false;
           };
         "kansas-lava-testreport" = {
           depends = if flags.unit || flags.all
@@ -118,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."data-reify" or (buildDepError "data-reify"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.unit || flags.all then true else false;
           };
         "kansas-lava-tbf2vcd" = {
           depends = if flags.tools || flags.all
@@ -140,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."data-reify" or (buildDepError "data-reify"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.tools || flags.all then true else false;
           };
         };
       };

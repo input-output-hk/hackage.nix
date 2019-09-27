@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-lens" or (buildDepError "data-lens"))
           (hsPkgs."sgd" or (buildDepError "sgd"))
           ];
+        buildable = true;
         };
       };
     }

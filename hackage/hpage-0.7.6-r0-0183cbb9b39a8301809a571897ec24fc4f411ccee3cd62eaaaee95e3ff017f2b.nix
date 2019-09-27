@@ -94,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."FindBin" or (buildDepError "FindBin"))
             (hsPkgs."FindBin" or (buildDepError "FindBin"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-applicative" or (buildDepError "regex-applicative"))
           (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
           ];
+        buildable = true;
         };
       tests = {
         "sample" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."file-embed" or (buildDepError "file-embed"))
             (hsPkgs."Slides" or (buildDepError "Slides"))
             ];
+          buildable = true;
           };
         };
       };

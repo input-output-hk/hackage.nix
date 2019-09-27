@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (pkgs.lib).optional (flags.base4) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (if flags.parsec1
           then [ (hsPkgs."parsec1" or (buildDepError "parsec1")) ]
           else [ (hsPkgs."parsec" or (buildDepError "parsec")) ]);
+        buildable = true;
         };
       };
     }

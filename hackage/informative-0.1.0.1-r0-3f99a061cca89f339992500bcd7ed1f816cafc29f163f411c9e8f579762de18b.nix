@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           ];
+        buildable = true;
         };
       exes = {
         "informative-test" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             ];
+          buildable = true;
           };
         };
       };

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."syb-with-class" or (buildDepError "syb-with-class"))
           ];
+        buildable = true;
         };
       };
     }

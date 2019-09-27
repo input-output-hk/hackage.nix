@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."msgpack" or (buildDepError "msgpack"))
           ];
+        buildable = true;
         };
       };
     }

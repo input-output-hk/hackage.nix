@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stateref" or (buildDepError "stateref"))
           (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
           ];
+        buildable = true;
         };
       };
     }

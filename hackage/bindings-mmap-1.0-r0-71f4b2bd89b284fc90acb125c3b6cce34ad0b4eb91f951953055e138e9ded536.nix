@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [
           (hsPkgs."bindings-posix" or (buildDepError "bindings-posix"))
           ];
+        buildable = true;
         };
       };
     }

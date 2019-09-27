@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."ssl" or (sysDepError "ssl"))
           (pkgs."crypto" or (sysDepError "crypto"))
           ];
+        buildable = true;
         };
       tests = {
         "compiling-ok" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."second-transfer" or (buildDepError "second-transfer"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ];
+          buildable = true;
           };
         };
       };

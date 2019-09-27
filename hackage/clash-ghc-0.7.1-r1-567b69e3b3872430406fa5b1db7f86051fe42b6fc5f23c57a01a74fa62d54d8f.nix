@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+        buildable = true;
         };
       exes = {
         "clash" = {
@@ -96,12 +97,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."clash-ghc" or (buildDepError "clash-ghc"))
             ];
+          buildable = true;
           };
         "clashi" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."clash-ghc" or (buildDepError "clash-ghc"))
             ];
+          buildable = true;
           };
         };
       };

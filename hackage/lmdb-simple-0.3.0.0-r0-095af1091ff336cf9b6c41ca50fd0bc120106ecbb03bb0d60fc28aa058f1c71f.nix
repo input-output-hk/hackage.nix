@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."serialise" or (buildDepError "serialise"))
           (hsPkgs."lmdb" or (buildDepError "lmdb"))
           ];
+        buildable = true;
         };
       tests = {
         "sample" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."lmdb-simple" or (buildDepError "lmdb-simple"))
             ];
+          buildable = true;
           };
         "hspec" = {
           depends = [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lmdb-simple" or (buildDepError "lmdb-simple"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -85,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."lmdb-simple" or (buildDepError "lmdb-simple"))
             ];
+          buildable = true;
           };
         };
       };

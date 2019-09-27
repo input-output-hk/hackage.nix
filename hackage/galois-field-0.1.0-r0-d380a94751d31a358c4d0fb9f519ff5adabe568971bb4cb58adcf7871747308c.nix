@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
           (hsPkgs."protolude" or (buildDepError "protolude"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
             (hsPkgs."protolude" or (buildDepError "protolude"))
             ];
+          buildable = true;
           };
         };
       };

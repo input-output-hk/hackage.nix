@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."twee-lib" or (buildDepError "twee-lib"))
           (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
           ];
+        buildable = true;
         };
       };
     }

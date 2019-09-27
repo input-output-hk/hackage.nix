@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."invariant" or (buildDepError "invariant"))
           (hsPkgs."witherable" or (buildDepError "witherable"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."invariant" or (buildDepError "invariant"))
             (hsPkgs."witherable" or (buildDepError "witherable"))
             ];
+          buildable = true;
           };
         };
       };

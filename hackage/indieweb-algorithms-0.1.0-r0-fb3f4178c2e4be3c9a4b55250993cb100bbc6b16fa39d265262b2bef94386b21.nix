@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."microformats2-parser" or (buildDepError "microformats2-parser"))
           (hsPkgs."http-link-header" or (buildDepError "http-link-header"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson-qq" or (buildDepError "aeson-qq"))
             (hsPkgs."data-default" or (buildDepError "data-default"))
             ];
+          buildable = true;
           };
         };
       };

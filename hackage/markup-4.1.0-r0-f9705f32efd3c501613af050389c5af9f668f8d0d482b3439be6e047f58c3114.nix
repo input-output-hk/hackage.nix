@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           (hsPkgs."urlpath" or (buildDepError "urlpath"))
           ];
+        buildable = true;
         };
       };
     }

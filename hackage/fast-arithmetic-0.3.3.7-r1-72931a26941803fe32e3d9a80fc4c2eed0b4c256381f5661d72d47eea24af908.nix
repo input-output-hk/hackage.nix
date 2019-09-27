@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gmpint" or (buildDepError "gmpint"))
           ];
         libs = [ (pkgs."numbertheory" or (sysDepError "numbertheory")) ];
+        buildable = true;
         };
       tests = {
         "fast-arithmetic-test" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
             (hsPkgs."combinat-compat" or (buildDepError "combinat-compat"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
             (hsPkgs."combinat-compat" or (buildDepError "combinat-compat"))
             ];
+          buildable = true;
           };
         };
       };

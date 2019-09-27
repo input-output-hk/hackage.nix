@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."io-streams" or (buildDepError "io-streams"))
           (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
           ] ++ (pkgs.lib).optional (flags.fusion) (hsPkgs."handa-gdata" or (buildDepError "handa-gdata"));
+        buildable = true;
         };
       tests = {
         "test1" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
             (hsPkgs."hsbencher" or (buildDepError "hsbencher"))
             ];
+          buildable = true;
           };
         "test2" = {
           depends = [
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
             (hsPkgs."hsbencher" or (buildDepError "hsbencher"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,7 +62,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           (hsPkgs."cairo" or (buildDepError "cairo"))
           ];
+        buildable = true;
         };
-      exes = { "hsdip" = {}; };
+      exes = { "hsdip" = { buildable = true; }; };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             ];
+          buildable = true;
           };
         };
       };

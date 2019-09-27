@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mozembed" or (buildDepError "mozembed"))
             (hsPkgs."glib" or (buildDepError "glib"))
             ];
+          buildable = true;
           };
         };
       };

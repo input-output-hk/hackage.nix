@@ -54,7 +54,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       tests = {
         "oddword-tests" = {
           depends = [
@@ -62,12 +65,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."OddWord" or (buildDepError "OddWord"))
             ];
+          buildable = true;
           };
         "oddword-tests-typelits" = {
           depends = (pkgs.lib).optionals (flags.typelitssupport && (compiler.isGhc && (compiler.version).ge "7.8")) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."OddWord" or (buildDepError "OddWord"))
             ];
+          buildable = if flags.typelitssupport && (compiler.isGhc && (compiler.version).ge "7.8")
+            then true
+            else false;
           };
         };
       benchmarks = {
@@ -77,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."OddWord" or (buildDepError "OddWord"))
             ];
+          buildable = true;
           };
         };
       };

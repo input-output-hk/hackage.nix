@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."cryptopp" or (sysDepError "cryptopp"))
           (pkgs."ssl" or (sysDepError "ssl"))
           ];
+        buildable = true;
         };
       };
     }

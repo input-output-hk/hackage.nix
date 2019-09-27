@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
           (hsPkgs."hmatrix-special" or (buildDepError "hmatrix-special"))
           ];
+        buildable = true;
         };
       };
     }

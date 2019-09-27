@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cairo" or (buildDepError "cairo"))
           (hsPkgs."gtk" or (buildDepError "gtk"))
           ];
+        buildable = true;
         };
       };
     }

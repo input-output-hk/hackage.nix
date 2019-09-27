@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."lenses" or (buildDepError "lenses"))
           ];
+        buildable = true;
         };
       exes = {
         "demo-options" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."lenses" or (buildDepError "lenses"))
             ];
+          buildable = true;
           };
         };
       };

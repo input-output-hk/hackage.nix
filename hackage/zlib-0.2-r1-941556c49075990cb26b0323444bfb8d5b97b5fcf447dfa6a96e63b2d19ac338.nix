@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fps" or (buildDepError "fps"))
           ];
         libs = [ (pkgs."z" or (sysDepError "z")) ];
+        buildable = true;
         };
       };
     }

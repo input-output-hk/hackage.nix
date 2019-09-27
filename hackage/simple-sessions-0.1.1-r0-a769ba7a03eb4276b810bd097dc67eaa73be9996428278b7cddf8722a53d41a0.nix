@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."category-extras" or (buildDepError "category-extras"))
           (hsPkgs."synchronous-channels" or (buildDepError "synchronous-channels"))
           ];
+        buildable = true;
         };
       };
     }

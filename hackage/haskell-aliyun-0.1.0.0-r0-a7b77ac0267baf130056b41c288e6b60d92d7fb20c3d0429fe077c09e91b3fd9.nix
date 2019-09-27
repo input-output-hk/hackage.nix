@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe" or (buildDepError "safe"))
           (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
           ];
+        buildable = true;
         };
       };
     }

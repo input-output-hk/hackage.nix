@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
           ];
         libs = [ (pkgs."expat" or (sysDepError "expat")) ];
+        buildable = true;
         };
       };
     }

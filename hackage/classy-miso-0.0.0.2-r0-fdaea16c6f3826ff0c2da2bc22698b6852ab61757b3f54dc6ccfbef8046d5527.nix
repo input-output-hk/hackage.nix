@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
           ];
+        buildable = true;
         };
       exes = {
         "classy-miso-demo" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."miso" or (buildDepError "miso"))
             (hsPkgs."rfc" or (buildDepError "rfc"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."miso" or (buildDepError "miso"))
             (hsPkgs."rfc" or (buildDepError "rfc"))
             ];
+          buildable = true;
           };
         };
       };

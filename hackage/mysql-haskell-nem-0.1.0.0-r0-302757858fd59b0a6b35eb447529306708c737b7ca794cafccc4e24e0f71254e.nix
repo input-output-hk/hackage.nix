@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."scientific" or (buildDepError "scientific"))
           (hsPkgs."io-streams" or (buildDepError "io-streams"))
           ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "misfortune" = {
@@ -76,8 +77,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-base" or (buildDepError "regex-base"))
             (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
             ];
+          buildable = true;
           };
-        "misfortune-strfile" = {};
+        "misfortune-strfile" = { buildable = true; };
         };
       };
     }

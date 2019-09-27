@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optional (!flags.usepkgconfig) (pkgs."nettle" or (sysDepError "nettle"));
         pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."nettle" or (pkgConfDepError "nettle"));
+        buildable = true;
         };
       tests = {
         "test-ciphers" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."crypto-cipher-tests" or (buildDepError "crypto-cipher-tests"))
             (hsPkgs."nettle" or (buildDepError "nettle"))
             ];
+          buildable = true;
           };
         "test-hashes" = {
           depends = [
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."nettle" or (buildDepError "nettle"))
             ];
+          buildable = true;
           };
         "test-hmac" = {
           depends = [
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."nettle" or (buildDepError "nettle"))
             ];
+          buildable = true;
           };
         "test-umac" = {
           depends = [
@@ -114,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."nettle" or (buildDepError "nettle"))
             ];
+          buildable = true;
           };
         };
       };

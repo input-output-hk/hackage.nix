@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."casr-logbook-reports-meta" or (buildDepError "casr-logbook-reports-meta"))
           (hsPkgs."casr-logbook-reports-meta-html" or (buildDepError "casr-logbook-reports-meta-html"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = true;
           };
         };
       };

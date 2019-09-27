@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."casadi_control" or (pkgConfDepError "casadi_control"))
           ];
+        buildable = true;
         };
       };
     }

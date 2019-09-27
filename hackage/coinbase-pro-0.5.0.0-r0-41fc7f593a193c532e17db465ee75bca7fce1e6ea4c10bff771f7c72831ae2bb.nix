@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets" or (buildDepError "websockets"))
           (hsPkgs."wuss" or (buildDepError "wuss"))
           ];
+        buildable = true;
         };
       exes = {
         "test-request" = {
@@ -119,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."websockets" or (buildDepError "websockets"))
             (hsPkgs."wuss" or (buildDepError "wuss"))
             ];
+          buildable = true;
           };
         "test-stream" = {
           depends = [
@@ -152,6 +154,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."websockets" or (buildDepError "websockets"))
             (hsPkgs."wuss" or (buildDepError "wuss"))
             ];
+          buildable = true;
           };
         };
       };

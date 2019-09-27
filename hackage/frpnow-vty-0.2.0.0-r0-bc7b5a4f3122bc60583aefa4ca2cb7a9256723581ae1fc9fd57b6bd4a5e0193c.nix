@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."frpnow" or (buildDepError "frpnow"))
           (hsPkgs."vty" or (buildDepError "vty"))
           ];
+        buildable = true;
         };
       exes = {
         "frpnow-vty-demo" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."frpnow" or (buildDepError "frpnow"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         };
       };

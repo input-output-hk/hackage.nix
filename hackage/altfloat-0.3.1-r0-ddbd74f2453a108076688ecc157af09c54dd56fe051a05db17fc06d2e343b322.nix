@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."integer-simple" or (buildDepError "integer-simple"))
               ]
           else [ (hsPkgs."integer" or (buildDepError "integer")) ]);
+        buildable = true;
         };
       };
     }

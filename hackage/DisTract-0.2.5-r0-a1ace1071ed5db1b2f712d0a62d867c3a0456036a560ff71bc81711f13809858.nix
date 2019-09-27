@@ -71,15 +71,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
-        "DisTractNewBug" = {};
-        "DisTractModifyBug" = {};
-        "DisTractUpdateFormatAllBugs" = {};
-        "DisTractUpdateFormatBug" = {};
-        "DisTractFormatNew" = {};
-        "DisTractSortBugs" = {};
-        "DisTractInstaller" = {};
+        "DisTractNewBug" = { buildable = true; };
+        "DisTractModifyBug" = { buildable = true; };
+        "DisTractUpdateFormatAllBugs" = { buildable = true; };
+        "DisTractUpdateFormatBug" = { buildable = true; };
+        "DisTractFormatNew" = { buildable = true; };
+        "DisTractSortBugs" = { buildable = true; };
+        "DisTractInstaller" = { buildable = true; };
         };
       };
     }

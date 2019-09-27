@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."special-functors" or (buildDepError "special-functors"))
             (hsPkgs."base" or (buildDepError "base"))
             ]);
+        buildable = true;
         };
       };
     }

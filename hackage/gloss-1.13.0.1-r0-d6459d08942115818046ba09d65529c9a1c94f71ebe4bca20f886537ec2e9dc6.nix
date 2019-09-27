@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GLUT" or (buildDepError "GLUT"))
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           ] ++ (pkgs.lib).optional (flags.glfw) (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"));
+        buildable = true;
         };
       };
     }

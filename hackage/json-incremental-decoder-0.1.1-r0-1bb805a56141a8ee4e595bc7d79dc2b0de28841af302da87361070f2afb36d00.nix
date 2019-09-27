@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
           ];
+        buildable = true;
         };
       tests = {
         "parsing-test" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."rebase" or (buildDepError "rebase"))
             ];
+          buildable = true;
           };
         };
       };

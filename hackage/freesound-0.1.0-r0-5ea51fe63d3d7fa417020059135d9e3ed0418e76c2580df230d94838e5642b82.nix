@@ -65,7 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."xml" or (buildDepError "xml"))
           ];
+        buildable = true;
         };
-      exes = { "freesound" = {}; };
+      exes = { "freesound" = { buildable = true; }; };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."contravariant" or (buildDepError "contravariant"))
           ];
+        buildable = true;
         };
       tests = {
         "test-unbound-generics" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."unbound-generics" or (buildDepError "unbound-generics"))
             ];
+          buildable = true;
           };
         };
       };

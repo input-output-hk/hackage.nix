@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fgl" or (buildDepError "fgl"))
           (hsPkgs."multiset" or (buildDepError "multiset"))
           ];
+        buildable = true;
         };
       tests = {
         "test-graph-generators" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multiset" or (buildDepError "multiset"))
             (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
             ];
+          buildable = true;
           };
         };
       };

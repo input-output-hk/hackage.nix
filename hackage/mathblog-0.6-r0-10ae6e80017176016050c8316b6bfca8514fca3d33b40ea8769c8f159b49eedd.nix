@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
             ];
+          buildable = true;
           };
         "mb-tests" = {
           depends = [
@@ -115,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
             ];
+          buildable = true;
           };
         };
       };

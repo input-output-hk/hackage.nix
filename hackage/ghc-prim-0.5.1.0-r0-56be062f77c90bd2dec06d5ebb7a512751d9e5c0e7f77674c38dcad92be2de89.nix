@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."mingw32" or (sysDepError "mingw32"))
           (pkgs."mingwex" or (sysDepError "mingwex"))
           ];
+        buildable = true;
         };
       };
     }

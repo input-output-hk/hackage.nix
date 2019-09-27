@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -75,12 +76,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+            then false
+            else true;
           };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -94,6 +99,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gauge" or (buildDepError "gauge"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+            then false
+            else true;
           };
         };
       };

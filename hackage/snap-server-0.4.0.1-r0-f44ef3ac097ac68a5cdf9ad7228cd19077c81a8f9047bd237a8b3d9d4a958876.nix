@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."PSQueue" or (buildDepError "PSQueue"))
           ] ++ (pkgs.lib).optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (flags.libev) (hsPkgs."hlibev" or (buildDepError "hlibev"));
         libs = (pkgs.lib).optional (flags.gnutls) (pkgs."gnutls" or (sysDepError "gnutls"));
+        buildable = true;
         };
       };
     }

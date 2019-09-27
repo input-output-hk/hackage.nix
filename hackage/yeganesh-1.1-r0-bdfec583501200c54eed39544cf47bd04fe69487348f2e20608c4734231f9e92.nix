@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."strict" or (buildDepError "strict"))
             ];
+          buildable = true;
           };
         };
       };

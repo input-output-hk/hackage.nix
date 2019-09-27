@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monoids" or (buildDepError "monoids"))
           (hsPkgs."Boolean" or (buildDepError "Boolean"))
           ];
+        buildable = if flags.testing then false else true;
         };
       exes = {
         "hstestsemi" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
+          buildable = if !flags.testing then false else true;
           };
         };
       };

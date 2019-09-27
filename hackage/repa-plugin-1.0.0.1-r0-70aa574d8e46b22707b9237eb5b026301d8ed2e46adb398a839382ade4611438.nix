@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ddc-core-flow" or (buildDepError "ddc-core-flow"))
           (hsPkgs."ddc-core-simpl" or (buildDepError "ddc-core-simpl"))
           ];
+        buildable = true;
         };
       };
     }

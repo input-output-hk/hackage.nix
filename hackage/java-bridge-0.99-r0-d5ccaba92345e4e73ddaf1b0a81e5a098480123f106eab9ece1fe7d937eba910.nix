@@ -74,6 +74,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           then [ (hsPkgs."unix" or (buildDepError "unix")) ]
           else (pkgs.lib).optional (system.isLinux) (hsPkgs."unix" or (buildDepError "unix")));
         frameworks = (pkgs.lib).optionals (system.isOsx) ((pkgs.lib).optional (flags.osx_gui) (pkgs."Cocoa" or (sysDepError "Cocoa")) ++ (pkgs.lib).optional (flags.osx_framework) (pkgs."JavaVM" or (sysDepError "JavaVM")));
+        buildable = if system.isOsx
+          then true
+          else if system.isLinux
+            then true
+            else if system.isWindows then true else false;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
         libs = [ (pkgs."jvm" or (sysDepError "jvm")) ];
+        buildable = true;
         };
       };
     }

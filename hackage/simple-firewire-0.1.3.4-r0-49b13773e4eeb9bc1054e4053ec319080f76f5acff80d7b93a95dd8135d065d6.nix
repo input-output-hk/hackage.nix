@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-dc1394" or (buildDepError "bindings-dc1394"))
           (hsPkgs."CV" or (buildDepError "CV"))
           ];
+        buildable = true;
         };
       };
     }

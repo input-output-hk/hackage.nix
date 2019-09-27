@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
           (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -112,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
             (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
             ];
+          buildable = true;
           };
         };
       };

@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hscurses" or (buildDepError "hscurses"))
           (hsPkgs."setlocale" or (buildDepError "setlocale"))
           ];
+        buildable = true;
         };
       exes = {
         "todos" = {
@@ -99,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
             (hsPkgs."dates" or (buildDepError "dates"))
             ];
+          buildable = true;
           };
         };
       };

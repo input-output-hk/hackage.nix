@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."AC-EasyRaster-GTK" or (buildDepError "AC-EasyRaster-GTK"))
           (hsPkgs."AC-HalfInteger" or (buildDepError "AC-HalfInteger"))
           ];
+        buildable = true;
         };
       };
     }

@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."curses" or (sysDepError "curses"))
             (pkgs."curl" or (sysDepError "curl"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."http-client" or (buildDepError "http-client"))
           ];
+        buildable = true;
         };
       tests = {
         "sparql-protocol-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sparql-protocol" or (buildDepError "sparql-protocol"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
           (hsPkgs."stm" or (buildDepError "stm"))
           ];
+        buildable = if flags.nolib then false else true;
         };
       exes = {
         "test-concurrent-extra" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

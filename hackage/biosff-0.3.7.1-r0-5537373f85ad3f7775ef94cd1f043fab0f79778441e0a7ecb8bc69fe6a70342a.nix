@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       exes = {
         "flower" = {
@@ -71,11 +72,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = if flags.flower then true else false;
           };
         "frecover" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.frecover then true else false;
           };
-        "fclip" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "fclip" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.fclip then true else false;
+          };
         };
       };
     }

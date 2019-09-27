@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."newtype-generics" or (buildDepError "newtype-generics"))
           (hsPkgs."monoid-extras" or (buildDepError "monoid-extras"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."dual-tree" or (buildDepError "dual-tree"))
             ];
+          buildable = true;
           };
         };
       };

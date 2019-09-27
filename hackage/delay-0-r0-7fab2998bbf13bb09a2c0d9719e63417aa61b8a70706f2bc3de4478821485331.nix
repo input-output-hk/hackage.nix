@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dimensional" or (buildDepError "dimensional"))
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dimensional" or (buildDepError "dimensional"))
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             ];
+          buildable = true;
           };
         };
       };

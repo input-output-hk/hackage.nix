@@ -59,11 +59,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9") (hsPkgs."base" or (buildDepError "base"));
         libs = [ (pkgs."ldap" or (sysDepError "ldap")) ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
           depends = (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9") (hsPkgs."base" or (buildDepError "base"));
           libs = [ (pkgs."ldap" or (sysDepError "ldap")) ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

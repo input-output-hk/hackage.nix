@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."xlsx" or (buildDepError "xlsx"))
           ];
+        buildable = true;
         };
       tests = {
         "xlsx-tabular-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."xlsx-tabular" or (buildDepError "xlsx-tabular"))
             ];
+          buildable = true;
           };
         };
       };

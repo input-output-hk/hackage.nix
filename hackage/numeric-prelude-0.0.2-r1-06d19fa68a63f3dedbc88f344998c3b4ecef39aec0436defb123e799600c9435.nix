@@ -68,7 +68,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
-      exes = { "test" = {}; "testsuite" = {}; };
+      exes = {
+        "test" = { buildable = true; };
+        "testsuite" = { buildable = true; };
+        };
       };
     }

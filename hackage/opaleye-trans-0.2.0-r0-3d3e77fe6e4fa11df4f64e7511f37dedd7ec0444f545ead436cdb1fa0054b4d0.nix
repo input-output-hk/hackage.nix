@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
           (hsPkgs."product-profunctors" or (buildDepError "product-profunctors"))
           ];
+        buildable = true;
         };
       exes = {
         "opaleye-rosetree" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."product-profunctors" or (buildDepError "product-profunctors"))
             (hsPkgs."opaleye-trans" or (buildDepError "opaleye-trans"))
             ];
+          buildable = true;
           };
         "opaleye-rosetree2" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."product-profunctors" or (buildDepError "product-profunctors"))
             (hsPkgs."opaleye-trans" or (buildDepError "opaleye-trans"))
             ];
+          buildable = true;
           };
         };
       };

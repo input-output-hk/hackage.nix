@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."algebra-dag" or (buildDepError "algebra-dag"))
           ];
+        buildable = true;
         };
       exes = {
         "tadot" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."algebra-dag" or (buildDepError "algebra-dag"))
             ];
+          buildable = true;
           };
         "sqlgen" = {
           depends = [
@@ -112,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."algebra-dag" or (buildDepError "algebra-dag"))
             ];
+          buildable = true;
           };
         };
       };

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."gdk-pixbuf-2.0" or (pkgConfDepError "gdk-pixbuf-2.0"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."singletons" or (buildDepError "singletons"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.11") (hsPkgs."th-lift" or (buildDepError "th-lift"))) ++ (pkgs.lib).optional (flags.doclinks) (hsPkgs."transformers" or (buildDepError "transformers"));
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = if !flags.doctests then false else true;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."tag-bits" or (buildDepError "tag-bits"))
           ];
+        buildable = true;
         };
       exes = {
         "test-unamb" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."checkers" or (buildDepError "checkers"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

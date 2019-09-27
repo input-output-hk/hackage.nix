@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."terminfo" or (buildDepError "terminfo"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ]);
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
           (hsPkgs."async" or (buildDepError "async"))
           ];
+        buildable = true;
         };
       };
     }

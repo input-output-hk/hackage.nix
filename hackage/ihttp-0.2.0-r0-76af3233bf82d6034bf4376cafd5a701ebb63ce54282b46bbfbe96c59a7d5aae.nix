@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."enumerator" or (buildDepError "enumerator"))
           (hsPkgs."netlines" or (buildDepError "netlines"))
           ];
+        buildable = true;
         };
       };
     }

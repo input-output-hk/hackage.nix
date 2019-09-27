@@ -75,17 +75,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ]);
+        buildable = true;
         };
       exes = {
-        "Canonicalise" = {};
-        "CanonicaliseLazy" = {};
-        "Xtract" = {};
-        "Validate" = {};
-        "MkOneOf" = {};
-        "DtdToHaskell" = {};
-        "XsdToHaskell" = {};
+        "Canonicalise" = { buildable = true; };
+        "CanonicaliseLazy" = { buildable = true; };
+        "Xtract" = { buildable = true; };
+        "Validate" = { buildable = true; };
+        "MkOneOf" = { buildable = true; };
+        "DtdToHaskell" = { buildable = true; };
+        "XsdToHaskell" = { buildable = true; };
         "FpMLToHaskell" = {
           depends = [ (hsPkgs."directory" or (buildDepError "directory")) ];
+          buildable = true;
           };
         };
       };

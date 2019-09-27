@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."machines" or (buildDepError "machines"))
           ];
+        buildable = true;
         };
       };
     }

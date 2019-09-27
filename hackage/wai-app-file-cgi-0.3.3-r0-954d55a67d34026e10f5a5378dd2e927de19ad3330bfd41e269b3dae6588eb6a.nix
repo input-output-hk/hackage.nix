@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."static-hash" or (buildDepError "static-hash"))
           (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
           ];
+        buildable = true;
         };
       };
     }

@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."comonads-fd" or (buildDepError "comonads-fd"))
           (hsPkgs."data-lens" or (buildDepError "data-lens"))
           ];
+        buildable = true;
         };
       };
     }

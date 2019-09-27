@@ -54,7 +54,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = true; };
       exes = {
         "HListPP" = {
           depends = [
@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."applicative-quoters" or (buildDepError "applicative-quoters"))
             (hsPkgs."regex-applicative" or (buildDepError "regex-applicative"))
             ];
+          buildable = true;
           };
         };
       };

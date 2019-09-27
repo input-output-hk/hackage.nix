@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
           libs = [ (pkgs."curses" or (sysDepError "curses")) ];
+          buildable = true;
           };
         };
       };

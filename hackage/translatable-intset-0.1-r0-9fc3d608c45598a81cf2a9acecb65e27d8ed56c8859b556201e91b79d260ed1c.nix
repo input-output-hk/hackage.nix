@@ -59,7 +59,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."fingertree" or (buildDepError "fingertree"))
           ];
+        buildable = true;
         };
-      exes = { "test" = {}; };
+      exes = { "test" = { buildable = false; }; };
       };
     }

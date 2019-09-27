@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."sass" or (sysDepError "sass"))
             (pkgs."stdc++" or (sysDepError "stdc++"))
             ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."hlibsass" or (buildDepError "hlibsass"))
             ];
+          buildable = true;
           };
         };
       };

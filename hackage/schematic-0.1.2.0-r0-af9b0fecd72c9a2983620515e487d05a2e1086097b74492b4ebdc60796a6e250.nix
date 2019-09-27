@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."vinyl" or (buildDepError "vinyl"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."validationt" or (buildDepError "validationt"))
             (hsPkgs."vinyl" or (buildDepError "vinyl"))
             ];
+          buildable = true;
           };
         };
       };

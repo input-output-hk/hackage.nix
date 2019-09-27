@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."extra" or (buildDepError "extra"))
           ];
+        buildable = true;
         };
       exes = {
         "tweet" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tweet-hs" or (buildDepError "tweet-hs"))
             ];
+          buildable = true;
           };
         };
       };

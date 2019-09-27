@@ -96,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           (hsPkgs."wizards" or (buildDepError "wizards"))
           ] ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (buildDepError "terminfo"));
+        buildable = true;
         };
       exes = {
         "hledger" = {
@@ -138,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."wizards" or (buildDepError "wizards"))
             ] ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (buildDepError "terminfo"));
+          buildable = true;
           };
         };
       tests = {
@@ -183,6 +185,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."wizards" or (buildDepError "wizards"))
             ] ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (buildDepError "terminfo"));
+          buildable = true;
           };
         };
       benchmarks = {
@@ -228,6 +231,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."wizards" or (buildDepError "wizards"))
             ] ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (buildDepError "terminfo"));
+          buildable = true;
           };
         };
       };

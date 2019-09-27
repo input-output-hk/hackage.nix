@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hw-excess" or (buildDepError "hw-excess"))
           (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
           ];
+        buildable = true;
         };
       tests = {
         "hw-balancedparens-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
             ];
+          buildable = true;
           };
         };
       };

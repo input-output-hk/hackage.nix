@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."zeromq-haskell" or (buildDepError "zeromq-haskell"))
           ];
+        buildable = true;
         };
       };
     }

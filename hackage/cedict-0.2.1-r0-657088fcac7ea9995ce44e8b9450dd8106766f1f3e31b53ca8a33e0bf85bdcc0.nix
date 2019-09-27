@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
-      exes = { "zi4pu3" = {}; };
+      exes = { "zi4pu3" = { buildable = true; }; };
       };
     }

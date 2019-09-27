@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           (hsPkgs."data-default" or (buildDepError "data-default"))
           ];
+        buildable = true;
         };
-      exes = { "ui-cmd-hello" = {}; };
+      exes = { "ui-cmd-hello" = { buildable = true; }; };
       };
     }

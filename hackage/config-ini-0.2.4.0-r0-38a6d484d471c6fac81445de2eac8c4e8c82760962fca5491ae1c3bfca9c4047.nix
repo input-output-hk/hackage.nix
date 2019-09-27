@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
           ];
+        buildable = true;
         };
       tests = {
         "test-ini-compat" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "test-prewritten" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "test-doctest" = {
           depends = [
@@ -93,6 +96,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10" || !flags.enable-doctests
+            then false
+            else true;
           };
         };
       };

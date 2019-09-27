@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ]) ++ (pkgs.lib).optional (flags.benchmarks) (hsPkgs."criterion" or (buildDepError "criterion"));
+        buildable = true;
         };
       };
     }

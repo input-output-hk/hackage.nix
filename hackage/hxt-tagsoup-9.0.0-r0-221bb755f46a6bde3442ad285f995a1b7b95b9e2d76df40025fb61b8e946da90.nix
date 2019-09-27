@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hxt-charproperties" or (buildDepError "hxt-charproperties"))
           (hsPkgs."hxt" or (buildDepError "hxt"))
           ];
+        buildable = true;
         };
       };
     }

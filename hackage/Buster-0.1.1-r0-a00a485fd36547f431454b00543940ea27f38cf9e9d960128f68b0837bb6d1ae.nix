@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."hinotify" or (buildDepError "hinotify"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."errors" or (buildDepError "errors"))
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             ];
+          buildable = true;
           };
         };
       };

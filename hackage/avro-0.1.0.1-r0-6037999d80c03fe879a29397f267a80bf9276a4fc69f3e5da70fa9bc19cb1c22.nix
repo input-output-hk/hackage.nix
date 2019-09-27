@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."tagged" or (buildDepError "tagged"))
           ] ++ (pkgs.lib).optional (flags.templatehaskell) (hsPkgs."template-haskell" or (buildDepError "template-haskell"));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ] ++ (pkgs.lib).optional (flags.templatehaskell) (hsPkgs."template-haskell" or (buildDepError "template-haskell"));
+          buildable = true;
           };
         };
       };

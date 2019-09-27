@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
           (hsPkgs."trasa" or (buildDepError "trasa"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."trasa" or (buildDepError "trasa"))
             (hsPkgs."trasa-th" or (buildDepError "trasa-th"))
             ];
+          buildable = true;
           };
         };
       };

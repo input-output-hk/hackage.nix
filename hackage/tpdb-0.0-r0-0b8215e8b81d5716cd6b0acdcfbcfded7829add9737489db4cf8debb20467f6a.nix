@@ -61,7 +61,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pretty" or (buildDepError "pretty"))
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ];
+        buildable = true;
         };
-      tests = { "XML" = {}; "TRS" = {}; "SRS" = {}; };
+      tests = {
+        "XML" = { buildable = true; };
+        "TRS" = { buildable = true; };
+        "SRS" = { buildable = true; };
+        };
       };
     }

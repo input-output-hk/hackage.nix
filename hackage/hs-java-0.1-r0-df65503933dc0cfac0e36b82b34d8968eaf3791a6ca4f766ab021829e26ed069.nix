@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary-state" or (buildDepError "binary-state"))
           (hsPkgs."control-monad-exception" or (buildDepError "control-monad-exception"))
           ];
+        buildable = true;
         };
       };
     }

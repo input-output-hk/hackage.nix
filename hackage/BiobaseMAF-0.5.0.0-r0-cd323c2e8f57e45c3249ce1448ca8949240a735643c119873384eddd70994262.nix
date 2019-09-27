@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."iteratee" or (buildDepError "iteratee"))
           ];
+        buildable = true;
         };
       };
     }

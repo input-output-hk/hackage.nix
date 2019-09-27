@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.2.1") (hsPkgs."haskell98" or (buildDepError "haskell98"));
+        buildable = true;
         };
-      exes = { "flow2dot" = {}; };
+      exes = { "flow2dot" = { buildable = true; }; };
       };
     }

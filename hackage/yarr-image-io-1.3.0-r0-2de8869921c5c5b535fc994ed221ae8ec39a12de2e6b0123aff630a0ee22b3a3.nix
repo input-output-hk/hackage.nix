@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yarr" or (buildDepError "yarr"))
           ];
         libs = [ (pkgs."IL" or (sysDepError "IL")) ];
+        buildable = true;
         };
       };
     }

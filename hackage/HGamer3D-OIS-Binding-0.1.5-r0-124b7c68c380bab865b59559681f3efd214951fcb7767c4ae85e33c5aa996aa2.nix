@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell98" or (buildDepError "haskell98"))
           ];
         libs = [ (pkgs."HGamer3DOIS015" or (sysDepError "HGamer3DOIS015")) ];
+        buildable = true;
         };
       };
     }

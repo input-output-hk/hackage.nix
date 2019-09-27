@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             ])) ++ (pkgs.lib).optional (flags.libcurl) (hsPkgs."curl" or (buildDepError "curl"));
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32"));
+        buildable = true;
         };
       exes = {
         "leksah-server" = {
@@ -116,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."unix" or (buildDepError "unix"))
               ])) ++ (pkgs.lib).optional (flags.libcurl) (hsPkgs."curl" or (buildDepError "curl"));
           libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32"));
+          buildable = true;
           };
         "leksahecho" = {
           depends = [
@@ -124,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."process-leksah" or (buildDepError "process-leksah"))
             ];
+          buildable = true;
           };
         };
       };

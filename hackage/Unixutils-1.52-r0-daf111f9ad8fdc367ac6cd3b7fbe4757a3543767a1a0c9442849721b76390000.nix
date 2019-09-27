@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
         libs = (pkgs.lib).optional (!system.isOsx) (pkgs."crypt" or (sysDepError "crypt"));
+        buildable = true;
         };
       };
     }

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."nats" or (buildDepError "nats"))
           ];
+        buildable = true;
         };
       tests = {
         "binary-orphans-test" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."void" or (buildDepError "void"))
             (hsPkgs."nats" or (buildDepError "nats"))
             ];
+          buildable = true;
           };
         };
       };

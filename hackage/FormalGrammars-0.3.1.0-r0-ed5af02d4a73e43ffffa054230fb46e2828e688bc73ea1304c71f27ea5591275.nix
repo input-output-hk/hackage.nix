@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ADPfusion" or (buildDepError "ADPfusion"))
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           ];
+        buildable = true;
         };
       exes = {
         "GrammarPP" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."FormalGrammars" or (buildDepError "FormalGrammars"))
             (hsPkgs."trifecta" or (buildDepError "trifecta"))
             ];
+          buildable = true;
           };
         "NussinovFG" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "NeedlemanWunschFG" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -106,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "TriNeedleFG" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -117,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

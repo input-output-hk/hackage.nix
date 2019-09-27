@@ -63,10 +63,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."ldap" or (sysDepError "ldap"))
           (pkgs."lber" or (sysDepError "lber"))
           ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       tests = {
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."ldap" or (sysDepError "ldap"))
             (pkgs."lber" or (sysDepError "lber"))
             ];
+          buildable = true;
           };
         };
       };

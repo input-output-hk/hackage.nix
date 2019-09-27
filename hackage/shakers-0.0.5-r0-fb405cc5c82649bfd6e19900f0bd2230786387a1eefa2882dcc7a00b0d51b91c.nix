@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."shake" or (buildDepError "shake"))
           ];
+        buildable = true;
         };
       exes = {
         "shake-shakers" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."shakers" or (buildDepError "shakers"))
             ];
+          buildable = true;
           };
         };
       };

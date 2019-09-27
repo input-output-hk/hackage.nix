@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."free" or (buildDepError "free"))
           ];
+        buildable = true;
         };
       tests = {
         "crjdt-haskell-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
             ];
+          buildable = true;
           };
         };
       };

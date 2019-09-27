@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb" or (buildDepError "syb"))
           (hsPkgs."ghc" or (buildDepError "ghc"))
           ];
+        buildable = true;
         };
       };
     }

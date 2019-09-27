@@ -60,10 +60,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ];
+        buildable = true;
         };
       exes = {
         "simple-expression" = {
           depends = (pkgs.lib).optional (!(!flags.examples)) (hsPkgs."parsec" or (buildDepError "parsec"));
+          buildable = if !flags.examples then false else true;
           };
         };
       };

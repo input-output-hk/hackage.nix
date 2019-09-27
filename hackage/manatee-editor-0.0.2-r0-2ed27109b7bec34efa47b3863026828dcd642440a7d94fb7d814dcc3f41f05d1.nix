@@ -69,7 +69,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dbus-core" or (buildDepError "dbus-core"))
           (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
           ];
+        buildable = true;
         };
-      exes = { "manatee-editor" = {}; };
+      exes = { "manatee-editor" = { buildable = true; }; };
       };
     }

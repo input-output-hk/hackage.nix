@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           (hsPkgs."html-conduit" or (buildDepError "html-conduit"))
           ];
+        buildable = true;
         };
       tests = {
         "doctest" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "hspec" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
             (hsPkgs."xml-html-conduit-lens" or (buildDepError "xml-html-conduit-lens"))
             ];
+          buildable = true;
           };
         };
       };

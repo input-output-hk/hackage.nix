@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."fei-base" or (buildDepError "fei-base"))
           ];
+        buildable = true;
         };
       exes = {
         "lenet" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fei-base" or (buildDepError "fei-base"))
             (hsPkgs."fei-nn" or (buildDepError "fei-nn"))
             ];
+          buildable = true;
           };
         };
       };

@@ -65,7 +65,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GLUT" or (buildDepError "GLUT"))
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           ];
+        buildable = true;
         };
-      exes = { "ski-inet" = {}; "ski-direct" = {}; };
+      exes = {
+        "ski-inet" = { buildable = true; };
+        "ski-direct" = { buildable = true; };
+        };
       };
     }

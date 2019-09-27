@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."yesod-elements" or (buildDepError "yesod-elements"))
           ];
+        buildable = true;
         };
       };
     }

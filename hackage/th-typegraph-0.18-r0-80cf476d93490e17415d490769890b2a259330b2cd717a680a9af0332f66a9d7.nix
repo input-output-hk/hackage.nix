@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."th-desugar" or (buildDepError "th-desugar"))
           (hsPkgs."th-orphans" or (buildDepError "th-orphans"))
           ];
+        buildable = true;
         };
       tests = {
         "th-typegraph-tests" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."th-orphans" or (buildDepError "th-orphans"))
             (hsPkgs."th-reify-many" or (buildDepError "th-reify-many"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."contravariant" or (buildDepError "contravariant"))
           ];
+        buildable = true;
         };
       tests = {
         "test-calc" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."unbound-generics" or (buildDepError "unbound-generics"))
             ];
+          buildable = true;
           };
         "test-parallelreduction" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."unbound-generics" or (buildDepError "unbound-generics"))
             ];
+          buildable = true;
           };
         };
       };

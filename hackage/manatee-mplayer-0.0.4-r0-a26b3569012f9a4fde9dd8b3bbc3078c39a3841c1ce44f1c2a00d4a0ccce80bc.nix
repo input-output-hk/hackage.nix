@@ -76,7 +76,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
-      exes = { "manatee-mplayer-daemon" = {}; "manatee-mplayer" = {}; };
+      exes = {
+        "manatee-mplayer-daemon" = { buildable = true; };
+        "manatee-mplayer" = { buildable = true; };
+        };
       };
     }

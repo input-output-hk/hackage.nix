@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attempt" or (buildDepError "attempt"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ] ++ [ (hsPkgs."time" or (buildDepError "time")) ];
+        buildable = if flags.nolib then false else true;
         };
       exes = {
         "runtests" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

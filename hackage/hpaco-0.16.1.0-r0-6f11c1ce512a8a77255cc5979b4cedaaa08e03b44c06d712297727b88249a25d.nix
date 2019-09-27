@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hpaco-lib" or (buildDepError "hpaco-lib"))
             (hsPkgs."strict" or (buildDepError "strict"))
             ];
+          buildable = true;
           };
         };
       };

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."TCache" or (buildDepError "TCache"))
           (hsPkgs."SHA" or (buildDepError "SHA"))
           ];
+        buildable = true;
         };
       };
     }

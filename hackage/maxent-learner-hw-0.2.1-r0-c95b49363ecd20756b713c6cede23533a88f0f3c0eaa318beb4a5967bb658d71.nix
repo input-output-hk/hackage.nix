@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."readcsv" or (buildDepError "readcsv"))
           ];
+        buildable = true;
         };
       exes = {
         "phono-learner-hw" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mwc-probability" or (buildDepError "mwc-probability"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "rosenbrock" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mighty-metropolis" or (buildDepError "mighty-metropolis"))
             (hsPkgs."mwc-probability" or (buildDepError "mwc-probability"))
             ];
+          buildable = true;
           };
         "bnn" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mighty-metropolis" or (buildDepError "mighty-metropolis"))
             (hsPkgs."mwc-probability" or (buildDepError "mwc-probability"))
             ];
+          buildable = true;
           };
         };
       };

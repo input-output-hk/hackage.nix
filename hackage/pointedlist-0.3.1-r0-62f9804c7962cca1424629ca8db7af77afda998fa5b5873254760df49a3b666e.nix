@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
           ];
+        buildable = true;
         };
       };
     }

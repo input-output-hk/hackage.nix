@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bitmap" or (buildDepError "bitmap"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ]
           else [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       };
     }

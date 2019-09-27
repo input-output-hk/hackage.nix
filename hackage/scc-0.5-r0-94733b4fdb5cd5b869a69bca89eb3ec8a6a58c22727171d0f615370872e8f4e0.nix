@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-parallel" or (buildDepError "monad-parallel"))
           (hsPkgs."monad-coroutine" or (buildDepError "monad-coroutine"))
           ];
+        buildable = true;
         };
       exes = {
         "shsh" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."readline" or (buildDepError "readline"))
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ];
+          buildable = true;
           };
         };
       };

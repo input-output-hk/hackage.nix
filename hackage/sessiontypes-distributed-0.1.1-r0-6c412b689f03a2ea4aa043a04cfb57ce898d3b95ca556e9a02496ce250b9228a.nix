@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."rank1dynamic" or (buildDepError "rank1dynamic"))
           ];
+        buildable = true;
         };
       tests = {
         "sessiontypes-distributed-spawn" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
             (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
             ];
+          buildable = true;
           };
         "sessiontypes-distributed-lifted" = {
           depends = [
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
             (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
             ];
+          buildable = true;
           };
         };
       };

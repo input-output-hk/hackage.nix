@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
           ];
+        buildable = true;
         };
       };
     }

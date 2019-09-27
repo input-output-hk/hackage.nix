@@ -62,10 +62,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."ftphs" or (buildDepError "ftphs"))
           ];
+        buildable = true;
         };
       exes = {
         "yjftp" = {
           depends = [ (hsPkgs."hsConfigure" or (buildDepError "hsConfigure")) ];
+          buildable = true;
           };
         };
       };

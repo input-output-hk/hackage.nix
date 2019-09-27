@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."goal-core" or (buildDepError "goal-core"))
           (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
           ];
+        buildable = true;
         };
       exes = {
         "cross-entropy-descent" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
             (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
             ];
+          buildable = true;
           };
         "poisson-binomial" = {
           depends = [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
             (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
             ];
+          buildable = true;
           };
         "univariate" = {
           depends = [
@@ -91,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
             (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
             ];
+          buildable = true;
           };
         "multivariate" = {
           depends = [
@@ -100,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "transducer" = {
           depends = [
@@ -108,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
             (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
             ];
+          buildable = true;
           };
         "transducer-field" = {
           depends = [
@@ -116,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
             (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
             ];
+          buildable = true;
           };
         "divergence" = {
           depends = [
@@ -124,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
             (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
             ];
+          buildable = true;
           };
         "backpropagation" = {
           depends = [
@@ -132,6 +140,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
             (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
             ];
+          buildable = true;
           };
         };
       };

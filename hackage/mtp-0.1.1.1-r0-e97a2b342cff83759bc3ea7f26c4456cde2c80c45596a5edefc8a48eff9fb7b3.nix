@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
         libs = [ (pkgs."mtp" or (sysDepError "mtp")) ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."contstuff" or (buildDepError "contstuff"))
           (hsPkgs."enumerator" or (buildDepError "enumerator"))
           ];
+        buildable = true;
         };
       };
     }

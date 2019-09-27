@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-gi-overloading" or (buildDepError "haskell-gi-overloading"))
           ];
         pkgconfig = [ (pkgconfPkgs."x11" or (pkgConfDepError "x11")) ];
+        buildable = true;
         };
       };
     }

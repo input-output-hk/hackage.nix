@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."convertible" or (buildDepError "convertible"))
           ];
         libs = [ (pkgs."wlc" or (sysDepError "wlc")) ];
+        buildable = true;
         };
       tests = {
         "bindings-wlc-test" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bindings-wlc" or (buildDepError "bindings-wlc"))
             ];
+          buildable = true;
           };
         };
       };

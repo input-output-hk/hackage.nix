@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
           (hsPkgs."ihaskell" or (buildDepError "ihaskell"))
           ];
+        buildable = true;
         };
       };
     }

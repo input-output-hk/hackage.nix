@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hack-handler-cgi" or (buildDepError "hack-handler-cgi"))
           ];
         libs = [ (pkgs."fcgi" or (sysDepError "fcgi")) ];
+        buildable = true;
         };
       };
     }

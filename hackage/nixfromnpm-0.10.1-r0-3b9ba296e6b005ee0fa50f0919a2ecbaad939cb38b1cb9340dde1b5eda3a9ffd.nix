@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semver-range" or (buildDepError "semver-range"))
             (hsPkgs."data-fix" or (buildDepError "data-fix"))
             ];
+          buildable = true;
           };
         };
       };

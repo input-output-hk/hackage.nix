@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if system.isWindows
           then [ (pkgs."fftw3-3" or (sysDepError "fftw3-3")) ]
           else [ (pkgs."fftw3" or (sysDepError "fftw3")) ];
+        buildable = true;
         };
       };
     }

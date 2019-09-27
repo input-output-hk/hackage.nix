@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
           (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
           ];
+        buildable = true;
         };
       exes = {
         "simple" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
             (hsPkgs."postie" or (buildDepError "postie"))
             ];
+          buildable = true;
           };
         };
       };

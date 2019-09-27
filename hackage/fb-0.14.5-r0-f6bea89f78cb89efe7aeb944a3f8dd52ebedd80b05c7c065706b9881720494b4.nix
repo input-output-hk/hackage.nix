@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
           (hsPkgs."cryptohash-cryptoapi" or (buildDepError "cryptohash-cryptoapi"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."fb" or (buildDepError "fb"))
             ];
+          buildable = true;
           };
         };
       };

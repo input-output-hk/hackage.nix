@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."either" or (buildDepError "either"))
           (hsPkgs."pipes" or (buildDepError "pipes"))
           ];
+        buildable = true;
         };
       };
     }

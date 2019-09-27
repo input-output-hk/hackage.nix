@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vinyl" or (buildDepError "vinyl"))
           (hsPkgs."vinyl-gl" or (buildDepError "vinyl-gl"))
           ];
+        buildable = true;
         };
       exes = {
         "liveplot" = {
@@ -88,12 +89,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes" or (buildDepError "pipes"))
             (hsPkgs."liveplot" or (buildDepError "liveplot"))
             ];
+          buildable = true;
           };
         "liveplot-demo" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."liveplot" or (buildDepError "liveplot"))
             ];
+          buildable = true;
           };
         };
       };

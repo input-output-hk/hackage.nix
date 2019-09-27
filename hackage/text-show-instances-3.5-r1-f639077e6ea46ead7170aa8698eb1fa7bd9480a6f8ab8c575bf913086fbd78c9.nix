@@ -104,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."terminfo" or (buildDepError "terminfo"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ]);
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -157,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."terminfo" or (buildDepError "terminfo"))
               (hsPkgs."unix" or (buildDepError "unix"))
               ]);
+          buildable = true;
           };
         };
       };

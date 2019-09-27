@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tomland" or (buildDepError "tomland"))
           (hsPkgs."relude" or (buildDepError "relude"))
           ];
+        buildable = true;
         };
       exes = {
         "summon" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."relude" or (buildDepError "relude"))
             (hsPkgs."summoner" or (buildDepError "summoner"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover or (buildToolDepError "tasty-discover")))
             ];
+          buildable = true;
           };
         };
       };

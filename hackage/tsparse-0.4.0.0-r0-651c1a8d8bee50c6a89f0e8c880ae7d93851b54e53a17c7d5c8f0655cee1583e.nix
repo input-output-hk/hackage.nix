@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."pretty" or (buildDepError "pretty"))
           ];
+        buildable = true;
         };
       exes = {
         "parse-tsp-pdf" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = if !flags.test then false else true;
           };
         "parse-tsp-text" = {
           depends = [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = if !flags.test then false else true;
           };
         "test-tsp" = {
           depends = [
@@ -98,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ] ++ (pkgs.lib).optional (!(!flags.test)) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+          buildable = if !flags.test then false else true;
           };
         "gen-tsp" = {
           depends = [
@@ -110,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."random" or (buildDepError "random"))
             ] ++ (pkgs.lib).optional (!(!flags.test)) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+          buildable = if !flags.test then false else true;
           };
         };
       };

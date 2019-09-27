@@ -60,7 +60,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."biocore" or (buildDepError "biocore"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
-      exes = { "psluniq" = {}; };
+      exes = { "psluniq" = { buildable = true; }; };
       };
     }

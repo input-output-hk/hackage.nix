@@ -62,7 +62,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Imlib" or (buildDepError "Imlib"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
-      exes = { "piet" = {}; };
+      exes = { "piet" = { buildable = true; }; };
       };
     }

@@ -60,10 +60,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
         "csvreplace" = {
           depends = (pkgs.lib).optional (flags.buildexamples) (hsPkgs."bytestring" or (buildDepError "bytestring"));
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

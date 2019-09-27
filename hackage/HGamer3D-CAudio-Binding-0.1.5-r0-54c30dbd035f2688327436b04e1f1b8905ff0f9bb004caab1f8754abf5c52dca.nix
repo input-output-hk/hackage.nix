@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = [
           (pkgs."HGamer3DCAudio015" or (sysDepError "HGamer3DCAudio015"))
           ];
+        buildable = true;
         };
       };
     }

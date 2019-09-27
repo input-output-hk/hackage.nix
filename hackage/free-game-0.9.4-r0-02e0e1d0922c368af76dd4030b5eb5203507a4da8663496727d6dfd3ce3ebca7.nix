@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."colors" or (buildDepError "colors"))
           (hsPkgs."control-bool" or (buildDepError "control-bool"))
           ];
+        buildable = true;
         };
       };
     }

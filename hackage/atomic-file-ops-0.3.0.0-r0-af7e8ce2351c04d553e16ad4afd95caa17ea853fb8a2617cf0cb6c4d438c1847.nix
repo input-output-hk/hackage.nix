@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."io-string-like" or (buildDepError "io-string-like"))
           ];
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
           ];
+        buildable = true;
         };
       };
     }

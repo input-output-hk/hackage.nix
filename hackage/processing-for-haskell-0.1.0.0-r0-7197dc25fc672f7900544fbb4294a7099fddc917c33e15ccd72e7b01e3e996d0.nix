@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           (hsPkgs."NumInstances" or (buildDepError "NumInstances"))
           ];
+        buildable = true;
         };
       };
     }

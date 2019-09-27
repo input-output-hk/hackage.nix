@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "demo" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reflex-dom" or (buildDepError "reflex-dom"))
             (hsPkgs."reflex-dom-fragment-shader-canvas" or (buildDepError "reflex-dom-fragment-shader-canvas"))
             ];
+          buildable = true;
           };
         };
       };

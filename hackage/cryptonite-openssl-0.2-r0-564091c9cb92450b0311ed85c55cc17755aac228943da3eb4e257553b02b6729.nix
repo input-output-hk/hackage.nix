@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."ssl32" or (sysDepError "ssl32"))
             ]
           else [ (pkgs."crypto" or (sysDepError "crypto")) ];
+        buildable = true;
         };
       tests = {
         "test-cryptonite-openssl" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-kat" or (buildDepError "tasty-kat"))
             (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
             ];
+          buildable = true;
           };
         };
       };

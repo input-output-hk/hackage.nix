@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xss-sanitize" or (buildDepError "xss-sanitize"))
           (hsPkgs."pcre-heavy" or (buildDepError "pcre-heavy"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."html-conduit" or (buildDepError "html-conduit"))
             (hsPkgs."xml-lens" or (buildDepError "xml-lens"))
             ];
+          buildable = true;
           };
         };
       };

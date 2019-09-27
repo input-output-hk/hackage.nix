@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."varying" or (buildDepError "varying"))
           (hsPkgs."keycode" or (buildDepError "keycode"))
           ];
+        buildable = true;
         };
       tests = {
         "test-shine-varying-misc" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."varying" or (buildDepError "varying"))
             (hsPkgs."keycode" or (buildDepError "keycode"))
             ];
+          buildable = true;
           };
         "test-shine-varying-resize" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shine" or (buildDepError "shine"))
             (hsPkgs."shine-varying" or (buildDepError "shine-varying"))
             ];
+          buildable = true;
           };
         };
       };

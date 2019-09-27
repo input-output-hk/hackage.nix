@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."AspectAG" or (buildDepError "AspectAG"))
           (hsPkgs."HList" or (buildDepError "HList"))
           ];
+        buildable = true;
         };
       };
     }

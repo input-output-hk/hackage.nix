@@ -88,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hcheat" or (buildDepError "hcheat"))
           (hsPkgs."hack" or (buildDepError "hack"))
           ];
+        buildable = true;
         };
       };
     }

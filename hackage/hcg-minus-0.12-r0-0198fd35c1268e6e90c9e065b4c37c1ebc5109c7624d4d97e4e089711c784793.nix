@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."colour" or (buildDepError "colour"))
           (hsPkgs."SG" or (buildDepError "SG"))
           ];
+        buildable = true;
         };
       };
     }

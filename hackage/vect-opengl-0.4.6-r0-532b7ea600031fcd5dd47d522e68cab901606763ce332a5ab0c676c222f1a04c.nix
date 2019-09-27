@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = ([ (hsPkgs."vect" or (buildDepError "vect")) ] ++ [
           (hsPkgs."base" or (buildDepError "base"))
           ]) ++ [ (hsPkgs."OpenGL" or (buildDepError "OpenGL")) ];
+        buildable = true;
         };
       };
     }

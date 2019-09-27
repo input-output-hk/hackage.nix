@@ -67,10 +67,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ];
+        buildable = true;
         };
       exes = {
         "dbus" = {
           depends = (pkgs.lib).optional (flags.executable) (hsPkgs."network" or (buildDepError "network"));
+          buildable = if flags.executable then true else false;
           };
         "Tests" = {
           depends = (pkgs.lib).optionals (flags.test) [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

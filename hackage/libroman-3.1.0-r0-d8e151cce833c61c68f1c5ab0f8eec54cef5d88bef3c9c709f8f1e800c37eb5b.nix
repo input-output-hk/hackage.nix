@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."markdown-unlit" or (buildDepError "markdown-unlit"))
           ];
+        buildable = true;
         };
       tests = {
         "libroman-test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."libroman" or (buildDepError "libroman"))
             ];
+          buildable = true;
           };
         };
       };

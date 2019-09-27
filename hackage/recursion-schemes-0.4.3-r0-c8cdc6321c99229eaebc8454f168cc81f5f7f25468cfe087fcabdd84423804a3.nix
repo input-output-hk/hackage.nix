@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."free" or (buildDepError "free"))
           (hsPkgs."streams" or (buildDepError "streams"))
           ];
+        buildable = true;
         };
       };
     }

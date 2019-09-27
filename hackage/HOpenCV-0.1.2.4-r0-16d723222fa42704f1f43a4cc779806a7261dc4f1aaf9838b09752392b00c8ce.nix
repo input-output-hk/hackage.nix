@@ -61,11 +61,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           ];
         pkgconfig = [ (pkgconfPkgs."opencv" or (pkgConfDepError "opencv")) ];
+        buildable = true;
         };
       exes = {
         "test-hopencv" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
           pkgconfig = [ (pkgconfPkgs."opencv" or (pkgConfDepError "opencv")) ];
+          buildable = true;
           };
         };
       };

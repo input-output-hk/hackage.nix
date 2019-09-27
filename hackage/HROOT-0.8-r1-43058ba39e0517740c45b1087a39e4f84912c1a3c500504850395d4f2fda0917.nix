@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HROOT-io" or (buildDepError "HROOT-io"))
           ];
         libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
           (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
           ];
+        buildable = true;
         };
       };
     }

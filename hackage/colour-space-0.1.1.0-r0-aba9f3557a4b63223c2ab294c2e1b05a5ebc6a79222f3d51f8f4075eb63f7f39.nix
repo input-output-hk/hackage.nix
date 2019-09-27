@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."colour" or (buildDepError "colour"))
           (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
           ];
+        buildable = true;
         };
       };
     }

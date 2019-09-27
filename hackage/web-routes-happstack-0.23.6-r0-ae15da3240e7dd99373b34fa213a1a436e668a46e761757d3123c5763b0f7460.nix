@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."web-routes" or (buildDepError "web-routes"))
           ];
+        buildable = true;
         };
       };
     }

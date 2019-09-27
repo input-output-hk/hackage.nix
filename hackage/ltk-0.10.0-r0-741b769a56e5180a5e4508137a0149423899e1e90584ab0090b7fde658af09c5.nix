@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haddock" or (buildDepError "haddock"))
           (hsPkgs."ghc" or (buildDepError "ghc"))
           ];
+        buildable = true;
         };
       };
     }

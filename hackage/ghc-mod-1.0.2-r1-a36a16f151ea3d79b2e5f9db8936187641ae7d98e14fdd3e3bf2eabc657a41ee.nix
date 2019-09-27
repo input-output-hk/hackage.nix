@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."enumerator" or (buildDepError "enumerator"))
             (hsPkgs."attoparsec-enumerator" or (buildDepError "attoparsec-enumerator"))
             ];
+          buildable = true;
           };
         };
       };

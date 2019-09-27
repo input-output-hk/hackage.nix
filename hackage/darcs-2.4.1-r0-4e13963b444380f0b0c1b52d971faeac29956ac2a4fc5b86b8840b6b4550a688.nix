@@ -93,9 +93,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo"));
         libs = (pkgs.lib).optional (flags.curl) (pkgs."curl" or (sysDepError "curl"));
         pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl" or (pkgConfDepError "libcurl"))));
+        buildable = if !flags.curl && !flags.http || flags.deps-only
+          then false
+          else true;
         };
       exes = {
-        "witnesses" = {};
+        "witnesses" = {
+          buildable = if !flags.type-witnesses then false else true;
+          };
         "darcs" = {
           depends = ((([
             (hsPkgs."base" or (buildDepError "base"))
@@ -122,6 +127,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo"));
           libs = (pkgs.lib).optional (flags.curl) (pkgs."curl" or (sysDepError "curl"));
           pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl" or (pkgConfDepError "libcurl"))));
+          buildable = if !flags.curl && !flags.http || flags.deps-only
+            then false
+            else true;
           };
         "unit" = {
           depends = ((([
@@ -147,6 +155,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo"));
+          buildable = if !flags.test then false else true;
           };
         };
       };

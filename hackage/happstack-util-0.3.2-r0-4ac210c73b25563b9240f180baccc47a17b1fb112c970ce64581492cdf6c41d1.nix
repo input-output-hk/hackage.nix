@@ -78,12 +78,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ [
           (hsPkgs."base" or (buildDepError "base"))
           ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       exes = {
         "happstack-util-tests" = {
           depends = [
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ] ++ (pkgs.lib).optional (flags.tests) (hsPkgs."network" or (buildDepError "network"));
+          buildable = if flags.tests then true else false;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe" or (buildDepError "safe"))
           (hsPkgs."singletons" or (buildDepError "singletons"))
           ];
+        buildable = true;
         };
       tests = {
         "HappyTree-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe" or (buildDepError "safe"))
             (hsPkgs."singletons" or (buildDepError "singletons"))
             ];
+          buildable = true;
           };
         };
       };

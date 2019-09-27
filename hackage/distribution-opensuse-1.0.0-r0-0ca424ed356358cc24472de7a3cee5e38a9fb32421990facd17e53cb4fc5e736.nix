@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."turtle" or (buildDepError "turtle"))
           ];
+        buildable = true;
         };
       exes = {
         "guess-changelog" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."turtle" or (buildDepError "turtle"))
             ];
+          buildable = true;
           };
         };
       };

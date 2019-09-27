@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "resize" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "extent" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -104,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "floodfill" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -120,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "cyclops" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -136,6 +140,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "clipmask" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -152,6 +157,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "paint-trans" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -168,6 +174,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "round-mask" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -184,6 +191,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "make-tile" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -200,6 +208,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "draw-shapes" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -216,6 +225,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "text-effects" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -232,6 +242,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "gel" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -249,6 +260,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "reflect" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -265,6 +277,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "3dlogo" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -281,6 +294,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "affine" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -297,6 +311,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "grayscale" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -313,6 +328,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "modulate" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -329,6 +345,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = false;
           };
         "landscape3d" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -345,6 +362,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "tilt-shift" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -361,6 +379,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "bunny" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -377,6 +396,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "pixel-mod" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -393,6 +413,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "wandtest" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -409,6 +430,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       tests = {
@@ -432,6 +454,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."ImageMagick" or (pkgConfDepError "ImageMagick"))
             (pkgconfPkgs."MagickWand" or (pkgConfDepError "MagickWand"))
             ];
+          buildable = true;
           };
         };
       };

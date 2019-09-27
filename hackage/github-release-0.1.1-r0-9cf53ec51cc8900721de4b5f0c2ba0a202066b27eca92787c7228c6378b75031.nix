@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."uri-templater" or (buildDepError "uri-templater"))
           ];
+        buildable = true;
         };
       exes = {
         "github-release" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."github-release" or (buildDepError "github-release"))
             ];
+          buildable = true;
           };
         };
       };

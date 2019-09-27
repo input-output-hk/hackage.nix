@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-DSL" or (buildDepError "bindings-DSL"))
           ];
         pkgconfig = [ (pkgconfPkgs."sqlite3" or (pkgConfDepError "sqlite3")) ];
+        buildable = true;
         };
       };
     }

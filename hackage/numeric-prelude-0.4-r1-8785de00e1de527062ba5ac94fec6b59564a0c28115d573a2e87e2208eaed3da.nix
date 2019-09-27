@@ -70,17 +70,20 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
-        "test" = {};
+        "test" = { buildable = if !flags.buildtests then false else true; };
         "testsuite" = {
           depends = (pkgs.lib).optional (flags.buildtests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if flags.buildtests then true else false;
           };
         "test-gaussian" = {
           depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs."gnuplot" or (buildDepError "gnuplot"))
             (hsPkgs."HTam" or (buildDepError "HTam"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

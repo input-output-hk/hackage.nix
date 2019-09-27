@@ -66,7 +66,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."data-named" or (buildDepError "data-named"))
           ];
+        buildable = true;
         };
-      exes = { "named2enamex" = {}; };
+      exes = { "named2enamex" = { buildable = true; }; };
       };
     }

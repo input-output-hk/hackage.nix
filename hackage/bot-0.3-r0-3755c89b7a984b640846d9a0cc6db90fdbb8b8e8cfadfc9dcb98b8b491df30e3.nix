@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."arrows" or (buildDepError "arrows"))
           (hsPkgs."Stream" or (buildDepError "Stream"))
           ];
+        buildable = true;
         };
       };
     }

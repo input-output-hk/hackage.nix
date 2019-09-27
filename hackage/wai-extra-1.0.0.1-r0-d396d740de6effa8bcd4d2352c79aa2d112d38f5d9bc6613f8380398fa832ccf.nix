@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib-conduit" or (buildDepError "zlib-conduit"))
           (hsPkgs."blaze-builder-conduit" or (buildDepError "blaze-builder-conduit"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ];
+          buildable = true;
           };
         };
       };

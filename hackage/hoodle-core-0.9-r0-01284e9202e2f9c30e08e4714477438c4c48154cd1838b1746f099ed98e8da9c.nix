@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           ] ++ (pkgs.lib).optional (flags.poppler) (hsPkgs."poppler" or (buildDepError "poppler"));
+        buildable = true;
         };
       };
     }

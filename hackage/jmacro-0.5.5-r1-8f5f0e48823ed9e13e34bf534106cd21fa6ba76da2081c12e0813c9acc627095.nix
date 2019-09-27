@@ -71,10 +71,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."web-encodings" or (buildDepError "web-encodings"))
           (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
           ];
+        buildable = true;
         };
       exes = {
         "jmacro" = {
           depends = [ (hsPkgs."parseargs" or (buildDepError "parseargs")) ];
+          buildable = true;
           };
         };
       };

@@ -65,9 +65,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
-        "testTeXMathML" = {};
+        "testTeXMathML" = { buildable = if flags.test then true else false; };
         "texmath-cgi" = {
           depends = [
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cgi" or (buildDepError "cgi"))
             (hsPkgs."json" or (buildDepError "json"))
             ];
+          buildable = if flags.cgi then true else false;
           };
         };
       };

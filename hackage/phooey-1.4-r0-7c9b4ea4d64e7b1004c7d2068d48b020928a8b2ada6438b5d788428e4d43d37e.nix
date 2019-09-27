@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."TypeCompose" or (buildDepError "TypeCompose"))
           (hsPkgs."DataDriven" or (buildDepError "DataDriven"))
           ];
+        buildable = true;
         };
       };
     }

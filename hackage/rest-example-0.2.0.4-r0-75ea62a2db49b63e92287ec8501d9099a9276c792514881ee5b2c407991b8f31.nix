@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       exes = {
         "rest-example-happstack" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rest-happstack" or (buildDepError "rest-happstack"))
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             ];
+          buildable = if flags.happstack then true else false;
           };
         "rest-example-wai" = {
           depends = (pkgs.lib).optionals (flags.wai) [
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rest-wai" or (buildDepError "rest-wai"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if flags.wai then true else false;
           };
         "rest-example-snap" = {
           depends = (pkgs.lib).optionals (flags.snap) [
@@ -109,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."snap-server" or (buildDepError "snap-server"))
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             ];
+          buildable = if flags.snap then true else false;
           };
         "rest-example-gen" = {
           depends = (pkgs.lib).optionals (flags.gen) [
@@ -117,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rest-example" or (buildDepError "rest-example"))
             (hsPkgs."rest-gen" or (buildDepError "rest-gen"))
             ];
+          buildable = if flags.gen then true else false;
           };
         };
       };

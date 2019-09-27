@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."terminal-size" or (buildDepError "terminal-size"));
+        buildable = true;
         };
       exes = {
         "ghcid" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."terminal-size" or (buildDepError "terminal-size"));
+          buildable = true;
           };
         };
       tests = {
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."terminal-size" or (buildDepError "terminal-size"));
+          buildable = true;
           };
         };
       };

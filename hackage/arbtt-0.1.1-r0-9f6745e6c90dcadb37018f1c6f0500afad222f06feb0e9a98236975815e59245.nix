@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."X11" or (buildDepError "X11"))
             ];
           libs = [ (pkgs."Xss" or (sysDepError "Xss")) ];
+          buildable = true;
           };
         "arbtt-stats" = {
           depends = [
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
             (hsPkgs."tabular" or (buildDepError "tabular"))
             ];
+          buildable = true;
           };
         };
       };

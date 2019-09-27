@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
           ];
+        buildable = true;
         };
       exes = {
         "BERTest" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         "BERTest2" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         "X509Example" = {
           depends = [
@@ -90,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         "PKCS8Example" = {
           depends = [
@@ -99,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         "AttributeCertificate" = {
           depends = [
@@ -108,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (buildDepError "NewBinary"))
             ];
+          buildable = true;
           };
         };
       };

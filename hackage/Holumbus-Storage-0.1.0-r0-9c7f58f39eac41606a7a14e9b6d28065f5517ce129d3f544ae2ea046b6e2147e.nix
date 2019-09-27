@@ -70,7 +70,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Holumbus-Distribution" or (buildDepError "Holumbus-Distribution"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
-      exes = { "StorageControllerDaemon" = {}; "StorageNodeDaemon" = {}; };
+      exes = {
+        "StorageControllerDaemon" = { buildable = true; };
+        "StorageNodeDaemon" = { buildable = true; };
+        };
       };
     }

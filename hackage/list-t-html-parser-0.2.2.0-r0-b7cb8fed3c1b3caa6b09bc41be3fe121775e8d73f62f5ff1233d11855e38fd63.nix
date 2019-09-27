@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl-prelude" or (buildDepError "mtl-prelude"))
           (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
           ];
+        buildable = true;
         };
       tests = {
         "hspec" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             ];
+          buildable = true;
           };
         };
       };

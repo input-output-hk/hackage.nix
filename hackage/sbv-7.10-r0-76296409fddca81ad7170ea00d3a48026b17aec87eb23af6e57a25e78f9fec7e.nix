@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
           (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
           ];
+        buildable = true;
         };
       tests = {
         "SBVTest" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         "SBVDocTest" = {
           depends = [
@@ -116,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."sbv" or (buildDepError "sbv"))
             ];
+          buildable = true;
           };
         "SBVHLint" = {
           depends = [
@@ -133,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."sbv" or (buildDepError "sbv"))
             ];
+          buildable = true;
           };
         };
       };

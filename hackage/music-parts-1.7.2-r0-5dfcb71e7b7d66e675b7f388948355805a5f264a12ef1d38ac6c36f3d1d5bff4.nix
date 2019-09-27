@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."roman-numerals" or (buildDepError "roman-numerals"))
           (hsPkgs."music-pitch" or (buildDepError "music-pitch"))
           ];
+        buildable = true;
         };
       };
     }

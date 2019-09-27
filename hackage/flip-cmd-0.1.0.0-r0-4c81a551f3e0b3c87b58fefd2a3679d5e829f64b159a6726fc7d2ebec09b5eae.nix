@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             ];
+          buildable = true;
           };
         };
       };

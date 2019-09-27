@@ -68,27 +68,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           ];
+        buildable = true;
         };
       exes = {
-        "BuiltInMapTest" = {};
-        "GraphPartitionTest" = {};
-        "GraphTest" = {};
-        "N3ParserTest" = {};
-        "N3FormatterTest" = {};
-        "RDFDatatypeXsdIntegerTest" = {};
-        "RDFGraphTest" = {};
-        "RDFProofContextTest" = {};
-        "RDFProofText" = {};
-        "RDFQueryTest" = {};
-        "RDFRulesetTest" = {};
-        "VarBindingTest" = {};
-        "LookupMapTest" = {};
-        "ParseTest" = {};
-        "ParseURITest" = {};
-        "QNameTest" = {};
-        "URITest" = {};
-        "SwishTest" = {};
-        "Swish" = {};
+        "BuiltInMapTest" = { buildable = true; };
+        "GraphPartitionTest" = { buildable = true; };
+        "GraphTest" = { buildable = true; };
+        "N3ParserTest" = { buildable = true; };
+        "N3FormatterTest" = { buildable = true; };
+        "RDFDatatypeXsdIntegerTest" = { buildable = true; };
+        "RDFGraphTest" = { buildable = true; };
+        "RDFProofContextTest" = { buildable = true; };
+        "RDFProofText" = { buildable = true; };
+        "RDFQueryTest" = { buildable = true; };
+        "RDFRulesetTest" = { buildable = true; };
+        "VarBindingTest" = { buildable = true; };
+        "LookupMapTest" = { buildable = true; };
+        "ParseTest" = { buildable = true; };
+        "ParseURITest" = { buildable = true; };
+        "QNameTest" = { buildable = true; };
+        "URITest" = { buildable = true; };
+        "SwishTest" = { buildable = true; };
+        "Swish" = { buildable = true; };
         };
       };
     }

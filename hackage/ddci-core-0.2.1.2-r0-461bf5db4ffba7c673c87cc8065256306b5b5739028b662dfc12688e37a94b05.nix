@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ddc-core-eval" or (buildDepError "ddc-core-eval"))
             (hsPkgs."ddc-core-simpl" or (buildDepError "ddc-core-simpl"))
             ];
+          buildable = true;
           };
         };
       };

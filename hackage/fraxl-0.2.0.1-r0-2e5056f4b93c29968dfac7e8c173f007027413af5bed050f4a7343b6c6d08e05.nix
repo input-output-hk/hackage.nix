@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vinyl" or (buildDepError "vinyl"))
           (hsPkgs."type-aligned" or (buildDepError "type-aligned"))
           ];
+        buildable = true;
         };
       exes = {
         "examples" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         };
       benchmarks = {
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fraxl" or (buildDepError "fraxl"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

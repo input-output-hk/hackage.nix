@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."grapefruit-records" or (buildDepError "grapefruit-records"))
           (hsPkgs."grapefruit-ui" or (buildDepError "grapefruit-ui"))
           ];
+        buildable = true;
         };
       };
     }

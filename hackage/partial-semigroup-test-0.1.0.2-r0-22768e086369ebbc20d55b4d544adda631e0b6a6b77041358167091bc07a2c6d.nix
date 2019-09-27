@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
           (hsPkgs."partial-semigroup" or (buildDepError "partial-semigroup"))
           ];
+        buildable = true;
         };
       };
     }

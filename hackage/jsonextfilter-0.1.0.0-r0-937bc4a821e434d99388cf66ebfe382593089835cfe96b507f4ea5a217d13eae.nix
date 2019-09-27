@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."string-qq" or (buildDepError "string-qq"))
             (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
             ];
+          buildable = true;
           };
         };
       };

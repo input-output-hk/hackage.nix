@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unpacked-either" or (buildDepError "unpacked-either"))
           (hsPkgs."validation" or (buildDepError "validation"))
           ];
+        buildable = true;
         };
       tests = {
         "unpacked-validation-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-classes" or (buildDepError "quickcheck-classes"))
             ];
+          buildable = true;
           };
         };
       };

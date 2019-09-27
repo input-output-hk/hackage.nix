@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb" or (buildDepError "syb"))
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           ];
+        buildable = true;
         };
       exes = {
         "pandoc-crossref" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pandoc" or (buildDepError "pandoc"))
             (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
             (hsPkgs."data-accessor-transformers" or (buildDepError "data-accessor-transformers"))
             ];
+          buildable = true;
           };
         "test-integrative" = {
           depends = [
@@ -110,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."pandoc-crossref" or (buildDepError "pandoc-crossref"))
             ];
+          buildable = true;
           };
         };
       };

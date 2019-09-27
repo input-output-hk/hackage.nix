@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."network" or (buildDepError "network"))
           ];
+        buildable = true;
         };
       tests = {
         "TestTCP" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport" or (buildDepError "network-transport"))
             (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
             ];
+          buildable = true;
           };
         };
       };

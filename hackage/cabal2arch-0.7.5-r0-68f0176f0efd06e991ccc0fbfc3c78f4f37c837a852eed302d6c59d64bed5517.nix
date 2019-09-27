@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."archlinux" or (buildDepError "archlinux"))
             ];
+          buildable = true;
           };
         "manycabal2arch" = {
           depends = [
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."archlinux" or (buildDepError "archlinux"))
             ];
+          buildable = true;
           };
         };
       };

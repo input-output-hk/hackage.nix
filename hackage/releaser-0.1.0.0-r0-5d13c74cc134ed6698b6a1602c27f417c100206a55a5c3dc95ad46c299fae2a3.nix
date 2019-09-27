@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."pretty-terminal" or (buildDepError "pretty-terminal"))
           ];
+        buildable = true;
         };
       exes = {
         "releaser" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."releaser" or (buildDepError "releaser"))
             ];
+          buildable = true;
           };
         };
       };

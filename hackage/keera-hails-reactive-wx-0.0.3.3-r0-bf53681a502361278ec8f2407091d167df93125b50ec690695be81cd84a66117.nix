@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wx" or (buildDepError "wx"))
           (hsPkgs."keera-hails-reactivevalues" or (buildDepError "keera-hails-reactivevalues"))
           ];
+        buildable = true;
         };
       };
     }

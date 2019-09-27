@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       exes = {
         "shh" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (buildToolDepError "ghc")))
             ];
+          buildable = true;
           };
         "shh-example" = {
           depends = [
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs.buildPackages.coreutils or (pkgs.buildPackages.coreutils or (buildToolDepError "coreutils")))
             (hsPkgs.buildPackages.vim or (pkgs.buildPackages.vim or (buildToolDepError "vim")))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -109,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs.buildPackages.perl or (pkgs.buildPackages.perl or (buildToolDepError "perl")))
             (hsPkgs.buildPackages.vim or (pkgs.buildPackages.vim or (buildToolDepError "vim")))
             ];
+          buildable = true;
           };
         };
       };

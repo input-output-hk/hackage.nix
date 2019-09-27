@@ -63,8 +63,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."dataenc" or (buildDepError "dataenc"))
             ];
+          buildable = true;
           };
-        "oenc" = {};
+        "oenc" = { buildable = true; };
         };
       };
     }

@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"))
             ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.2") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"));
+          buildable = true;
           };
         };
       };

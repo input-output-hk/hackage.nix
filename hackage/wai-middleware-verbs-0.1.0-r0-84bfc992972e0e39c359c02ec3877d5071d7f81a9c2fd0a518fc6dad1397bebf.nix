@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
           ];
+        buildable = true;
         };
       };
     }

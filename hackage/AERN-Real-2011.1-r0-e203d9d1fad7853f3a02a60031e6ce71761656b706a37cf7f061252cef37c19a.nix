@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."criterion" or (buildDepError "criterion"))
           (hsPkgs."AERN-Basics" or (buildDepError "AERN-Basics"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."th-strict-compat" or (buildDepError "th-strict-compat"))
           (hsPkgs."th-utilities" or (buildDepError "th-utilities"))
           ];
+        buildable = true;
         };
       tests = {
         "typesafe-precure-test" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."typesafe-precure" or (buildDepError "typesafe-precure"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

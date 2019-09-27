@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
           (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
           ];
+        buildable = true;
         };
       tests = {
         "unit-tests" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
             ];
+          buildable = true;
           };
         };
       };

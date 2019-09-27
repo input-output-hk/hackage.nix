@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pandoc" or (buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
           ];
+        buildable = true;
         };
       exes = {
         "pandoc-csv2table" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
             (hsPkgs."pandoc-csv2table" or (buildDepError "pandoc-csv2table"))
             ];
+          buildable = true;
           };
         };
       };

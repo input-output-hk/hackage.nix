@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."typelits-witnesses" or (buildDepError "typelits-witnesses"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "iris" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."neural" or (buildDepError "neural"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "sqrt" = {
           depends = [
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."neural" or (buildDepError "neural"))
             ];
+          buildable = true;
           };
         "MNIST" = {
           depends = [
@@ -109,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes" or (buildDepError "pipes"))
             (hsPkgs."pipes-zlib" or (buildDepError "pipes-zlib"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -119,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."neural" or (buildDepError "neural"))
             ];
+          buildable = true;
           };
         "neural-doctest" = {
           depends = [
@@ -126,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."Glob" or (buildDepError "Glob"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -135,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."neural" or (buildDepError "neural"))
             ];
+          buildable = true;
           };
         };
       };

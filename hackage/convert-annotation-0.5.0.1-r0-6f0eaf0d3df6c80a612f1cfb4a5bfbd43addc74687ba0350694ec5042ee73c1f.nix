@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe" or (buildDepError "safe"))
           (hsPkgs."inline-r" or (buildDepError "inline-r"))
           ];
+        buildable = true;
         };
       exes = {
         "convert-annotation" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."inline-r" or (buildDepError "inline-r"))
             ];
+          buildable = true;
           };
         };
       };

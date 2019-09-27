@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gitrev" or (buildDepError "gitrev"))
           (hsPkgs."either" or (buildDepError "either"))
           ];
+        buildable = true;
         };
       };
     }

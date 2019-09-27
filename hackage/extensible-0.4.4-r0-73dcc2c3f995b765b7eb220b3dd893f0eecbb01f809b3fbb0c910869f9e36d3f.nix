@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-skeleton" or (buildDepError "monad-skeleton"))
           (hsPkgs."StateVar" or (buildDepError "StateVar"))
           ];
+        buildable = true;
         };
       tests = {
         "effects" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."extensible" or (buildDepError "extensible"))
             ];
+          buildable = true;
           };
         };
       };

@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -95,12 +97,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."carray" or (buildDepError "carray"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "meteor-contest-u" = {
           depends = [
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "nsieve-bits-c" = {
           depends = [
@@ -108,18 +112,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "nsieve-bits-s" = {
           depends = [
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "nsieve-bits-u" = {
           depends = [
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

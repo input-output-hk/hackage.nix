@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."taglib_c" or (pkgConfDepError "taglib_c"))
           ];
+        buildable = true;
         };
       };
     }

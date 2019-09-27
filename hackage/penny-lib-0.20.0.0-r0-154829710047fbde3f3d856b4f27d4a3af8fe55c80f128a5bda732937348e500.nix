@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = if !flags.buildlib then false else true;
         };
       exes = {
         "penny-test" = {
@@ -84,12 +85,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
             ];
+          buildable = if flags.test then true else false;
           };
         "penny-gibberish" = {
           depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

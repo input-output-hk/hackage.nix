@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hasql" or (buildDepError "hasql"))
           (hsPkgs."ptr" or (buildDepError "ptr"))
           ];
+        buildable = true;
         };
       };
     }

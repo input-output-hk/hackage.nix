@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pandoc" or (buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
           ];
+        buildable = true;
         };
       exes = {
         "pandoc-sidenote" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pandoc-sidenote" or (buildDepError "pandoc-sidenote"))
             (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
             ];
+          buildable = true;
           };
         };
       };

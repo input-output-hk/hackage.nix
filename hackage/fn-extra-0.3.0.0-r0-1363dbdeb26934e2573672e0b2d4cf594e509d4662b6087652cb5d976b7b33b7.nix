@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."digestive-functors" or (buildDepError "digestive-functors"))
           (hsPkgs."fn" or (buildDepError "fn"))
           ];
+        buildable = true;
         };
       };
     }

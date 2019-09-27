@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             (hsPkgs."haxr" or (buildDepError "haxr"))
             ];
+          buildable = true;
           };
         };
       };

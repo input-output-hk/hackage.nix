@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "alsa-midi-program" = {
           depends = [
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "alsa-midi-controller" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

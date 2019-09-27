@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       exes = {
         "benchmark" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if !flags.benchmark then false else true;
           };
         "tests" = {
           depends = (pkgs.lib).optionals (!(!flags.tests)) [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         "fuzz" = {
           depends = (pkgs.lib).optionals (!(!flags.fuzz)) [
@@ -90,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if !flags.fuzz then false else true;
           };
         "fuzz-seq" = {
           depends = (pkgs.lib).optionals (!(!flags.fuzz)) [
@@ -98,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if !flags.fuzz then false else true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
           (hsPkgs."type-level-sets" or (buildDepError "type-level-sets"))
           ];
+        buildable = true;
         };
       exes = {
         "readme" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."markdown-unlit" or (buildDepError "markdown-unlit"))
             (hsPkgs."type-level-sets" or (buildDepError "type-level-sets"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-level-sets" or (buildDepError "type-level-sets"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = [
@@ -92,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."type-level-sets" or (buildDepError "type-level-sets"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -103,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
             (hsPkgs."type-level-sets" or (buildDepError "type-level-sets"))
             ];
+          buildable = true;
           };
         };
       };

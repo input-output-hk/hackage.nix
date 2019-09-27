@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ] ++ (pkgs.lib).optional (flags.filepath) (hsPkgs."system-filepath" or (buildDepError "system-filepath"))) ++ (pkgs.lib).optional (flags.unicode-collation) (hsPkgs."rfc5051" or (buildDepError "rfc5051"));
+        buildable = true;
         };
       };
     }

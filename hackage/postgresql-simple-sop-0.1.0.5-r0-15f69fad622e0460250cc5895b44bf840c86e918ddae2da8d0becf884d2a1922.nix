@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
           (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
           ];
+        buildable = true;
         };
       };
     }

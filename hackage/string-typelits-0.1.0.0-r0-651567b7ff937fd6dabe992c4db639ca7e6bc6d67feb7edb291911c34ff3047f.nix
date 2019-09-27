@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-combinators" or (buildDepError "type-combinators"))
           (hsPkgs."type-combinators-quote" or (buildDepError "type-combinators-quote"))
           ];
+        buildable = true;
         };
       };
     }

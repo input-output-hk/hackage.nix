@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes-core" or (buildDepError "pipes-core"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "telnet" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "compress" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-extra" or (buildDepError "pipes-extra"))
             (hsPkgs."pipes-zlib" or (buildDepError "pipes-zlib"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "decompress" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -87,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-extra" or (buildDepError "pipes-extra"))
             (hsPkgs."pipes-zlib" or (buildDepError "pipes-zlib"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -102,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-core" or (buildDepError "pipes-core"))
             (hsPkgs."pipes-extra" or (buildDepError "pipes-extra"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -114,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit" or (buildDepError "conduit"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         "bench-simple" = {
           depends = [
@@ -122,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         "bench-zlib" = {
           depends = [
@@ -137,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

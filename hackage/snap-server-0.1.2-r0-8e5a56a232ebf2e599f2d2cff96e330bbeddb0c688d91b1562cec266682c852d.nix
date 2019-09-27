@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."network-bytestring" or (buildDepError "network-bytestring"))
             ]);
+        buildable = true;
         };
       };
     }

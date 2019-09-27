@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."cluss" or (buildDepError "cluss"))
           ];
+        buildable = true;
         };
       };
     }

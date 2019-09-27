@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
           (hsPkgs."terminal-size" or (buildDepError "terminal-size"))
           ];
+        buildable = true;
         };
       };
     }

@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."codeworld-prediction" or (buildDepError "codeworld-prediction"))
             ]
           else [ (hsPkgs."blank-canvas" or (buildDepError "blank-canvas")) ]);
+        buildable = true;
         };
       };
     }

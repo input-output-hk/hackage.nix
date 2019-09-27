@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."dyepack" or (buildDepError "dyepack"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

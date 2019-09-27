@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."sandi" or (buildDepError "sandi"))
             ];
+          buildable = true;
           };
         "oenc" = {
           depends = [
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."sandi" or (buildDepError "sandi"))
             ];
+          buildable = true;
           };
         };
       };

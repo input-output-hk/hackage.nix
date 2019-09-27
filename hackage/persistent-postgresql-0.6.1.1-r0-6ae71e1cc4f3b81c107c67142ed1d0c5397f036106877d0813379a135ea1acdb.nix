@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-object" or (buildDepError "data-object"))
           (hsPkgs."neither" or (buildDepError "neither"))
           ];
+        buildable = true;
         };
       };
     }

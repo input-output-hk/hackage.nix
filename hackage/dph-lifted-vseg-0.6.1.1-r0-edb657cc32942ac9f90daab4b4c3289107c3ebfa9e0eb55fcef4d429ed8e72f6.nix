@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dph-prim-par" or (buildDepError "dph-prim-par"))
           (hsPkgs."dph-lifted-base" or (buildDepError "dph-lifted-base"))
           ];
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."qd" or (buildDepError "qd"))
           (hsPkgs."Vec" or (buildDepError "Vec"))
           ];
+        buildable = true;
         };
       };
     }

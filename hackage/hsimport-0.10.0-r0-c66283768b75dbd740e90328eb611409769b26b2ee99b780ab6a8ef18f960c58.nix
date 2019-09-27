@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."dyre" or (buildDepError "dyre"))
           ];
+        buildable = true;
         };
       sublibs = {
         "library-internal" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."dyre" or (buildDepError "dyre"))
             ];
+          buildable = true;
           };
         };
       exes = {
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsimport" or (buildDepError "hsimport"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -104,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             (hsPkgs."library-internal" or (buildDepError "library-internal"))
             ];
+          buildable = true;
           };
         };
       };

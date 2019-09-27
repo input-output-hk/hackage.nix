@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network-conduit" or (buildDepError "network-conduit"))
           (hsPkgs."process-conduit" or (buildDepError "process-conduit"))
           ];
+        buildable = true;
         };
       exes = {
         "simple-ftp-server" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-conduit" or (buildDepError "network-conduit"))
             (hsPkgs."process-conduit" or (buildDepError "process-conduit"))
             ];
+          buildable = true;
           };
         };
       };

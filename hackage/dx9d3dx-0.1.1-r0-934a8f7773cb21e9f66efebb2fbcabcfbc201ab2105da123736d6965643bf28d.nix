@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dx9d3d" or (buildDepError "dx9d3d"))
           ];
         libs = [ (pkgs."d3dx9" or (sysDepError "d3dx9")) ];
+        buildable = true;
         };
       };
     }

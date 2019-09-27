@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
           ];
+        buildable = true;
         };
       };
     }

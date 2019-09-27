@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-inttrie" or (buildDepError "data-inttrie"))
           (hsPkgs."lub" or (buildDepError "lub"))
           ];
+        buildable = true;
         };
       };
     }

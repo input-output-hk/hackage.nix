@@ -76,7 +76,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml" or (buildDepError "xml"))
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ];
+        buildable = true;
         };
-      exes = { "wiki4e-mkepub-subtree" = {}; };
+      exes = { "wiki4e-mkepub-subtree" = { buildable = true; }; };
       };
     }

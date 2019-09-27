@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
           (hsPkgs."async" or (buildDepError "async"))
           ] ++ (pkgs.lib).optional (flags.network) (hsPkgs."network" or (buildDepError "network"))) ++ (pkgs.lib).optional (flags.hans) (hsPkgs."hans" or (buildDepError "hans"));
+        buildable = true;
         };
       tests = {
         "test-tls" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
             (hsPkgs."hourglass" or (buildDepError "hourglass"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -108,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."tls" or (buildDepError "tls"))
             ];
+          buildable = true;
           };
         };
       };

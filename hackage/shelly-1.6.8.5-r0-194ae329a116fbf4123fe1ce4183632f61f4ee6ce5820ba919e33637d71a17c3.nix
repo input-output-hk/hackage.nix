@@ -75,8 +75,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
-      exes = { "drain" = {}; "run-handles" = {}; "Color" = {}; };
+      exes = {
+        "drain" = { buildable = true; };
+        "run-handles" = { buildable = true; };
+        "Color" = { buildable = true; };
+        };
       tests = {
         "shelly-testsuite" = {
           depends = [
@@ -102,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."enclosed-exceptions" or (buildDepError "enclosed-exceptions"))
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             ];
+          buildable = true;
           };
         };
       };

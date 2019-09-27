@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."odbc" or (sysDepError "odbc"))
             (pkgs."pthread" or (sysDepError "pthread"))
             ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             (hsPkgs."convertible" or (buildDepError "convertible"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         "stresstest" = {
           depends = (pkgs.lib).optionals (flags.buildstresstest) [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
             ];
+          buildable = if flags.buildstresstest then true else false;
           };
         };
       };

@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."lapack" or (sysDepError "lapack"))
           ]) ++ (pkgs.lib).optional (flags.cblas) (pkgs."cblas" or (sysDepError "cblas"));
         frameworks = (pkgs.lib).optional (system.isOsx && !flags.openblas) (pkgs."Accelerate" or (sysDepError "Accelerate"));
+        buildable = true;
         };
       tests = {
         "unit-testsuite" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."primitive" or (buildDepError "primitive"))
             ];
+          buildable = true;
           };
         };
       };

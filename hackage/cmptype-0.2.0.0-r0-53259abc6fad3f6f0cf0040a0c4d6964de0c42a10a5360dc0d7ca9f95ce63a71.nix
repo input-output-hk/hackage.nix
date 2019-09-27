@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc" or (buildDepError "ghc"))
           (hsPkgs."magic-tyfams" or (buildDepError "magic-tyfams"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."magic-tyfams" or (buildDepError "magic-tyfams"))
             (hsPkgs."should-not-typecheck" or (buildDepError "should-not-typecheck"))
             ];
+          buildable = true;
           };
         };
       };

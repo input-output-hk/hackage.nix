@@ -62,7 +62,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HDBC" or (buildDepError "HDBC"))
           (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
-      exes = { "DBDirect-hdbc-sqlite3" = {}; };
+      exes = { "DBDirect-hdbc-sqlite3" = { buildable = true; }; };
       };
     }

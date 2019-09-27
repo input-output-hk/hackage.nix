@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
           (hsPkgs."silently" or (buildDepError "silently"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-control" or (buildDepError "monad-control"))
             (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
             ];
+          buildable = true;
           };
         };
       };

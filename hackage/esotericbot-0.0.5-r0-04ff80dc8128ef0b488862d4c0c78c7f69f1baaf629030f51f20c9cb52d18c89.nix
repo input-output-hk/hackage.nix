@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."fgl" or (buildDepError "fgl"))
           ];
+        buildable = true;
         };
       exes = {
         "esotericbot" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."fgl" or (buildDepError "fgl"))
             ];
+          buildable = true;
           };
         };
       };

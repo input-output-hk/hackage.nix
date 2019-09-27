@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network-api-support" or (buildDepError "network-api-support"))
           (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
           ];
+        buildable = true;
         };
       exes = {
         "postmark-demo" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."postmark" or (buildDepError "postmark"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.demo then true else false;
           };
         };
       };

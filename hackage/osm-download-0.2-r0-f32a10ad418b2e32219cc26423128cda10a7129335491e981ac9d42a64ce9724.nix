@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monadIO" or (buildDepError "monadIO"))
           (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
           ];
+        buildable = true;
         };
       };
     }

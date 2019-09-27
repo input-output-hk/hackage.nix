@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ] ++ (pkgs.lib).optional (!flags.no-lattices) (hsPkgs."lattices" or (buildDepError "lattices"));
+        buildable = true;
         };
       tests = {
         "unittests" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."ChasingBottoms" or (buildDepError "ChasingBottoms"))
             ] ++ (pkgs.lib).optional (!flags.no-lattices) (hsPkgs."lattices" or (buildDepError "lattices"));
+          buildable = true;
           };
         "doctests" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."Glob" or (buildDepError "Glob"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -92,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ] ++ (pkgs.lib).optional (!flags.no-lattices) (hsPkgs."lattices" or (buildDepError "lattices"));
+          buildable = true;
           };
         };
       };

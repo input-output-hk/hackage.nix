@@ -59,7 +59,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
-      exes = { "utf8-test" = {}; };
+      exes = { "utf8-test" = { buildable = true; }; };
       };
     }

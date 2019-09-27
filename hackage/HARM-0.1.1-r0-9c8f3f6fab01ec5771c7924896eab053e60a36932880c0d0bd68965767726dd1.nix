@@ -55,12 +55,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       };
     components = {
       exes = {
-        "runarm" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "runarm" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "dbgarm" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = true;
           };
         };
       };

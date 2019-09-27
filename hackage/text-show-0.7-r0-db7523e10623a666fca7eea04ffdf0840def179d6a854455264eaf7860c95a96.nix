@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."void" or (buildDepError "void"))
             ]
           else [ (hsPkgs."integer-gmp" or (buildDepError "integer-gmp")) ]);
+        buildable = true;
         };
       tests = {
         "text-show-properties" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             (hsPkgs."void" or (buildDepError "void"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."SVGPath" or (buildDepError "SVGPath"))
           ];
+        buildable = true;
         };
-      exes = { "Examples" = {}; };
+      exes = { "Examples" = { buildable = true; }; };
       };
     }

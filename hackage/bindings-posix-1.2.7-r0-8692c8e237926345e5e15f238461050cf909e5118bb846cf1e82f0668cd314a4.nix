@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = [
           (pkgs."pthread" or (sysDepError "pthread"))
           ] ++ (pkgs.lib).optional (!system.isOsx) (pkgs."rt" or (sysDepError "rt"));
+        buildable = true;
         };
       };
     }

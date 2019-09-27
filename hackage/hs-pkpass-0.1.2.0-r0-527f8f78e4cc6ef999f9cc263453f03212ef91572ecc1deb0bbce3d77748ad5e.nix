@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
           ];
+        buildable = true;
         };
       };
     }

@@ -74,7 +74,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hslogger" or (buildDepError "hslogger"))
           (hsPkgs."async" or (buildDepError "async"))
           ];
+        buildable = true;
         };
-      exes = { "test" = {}; };
+      exes = { "test" = { buildable = true; }; };
       };
     }

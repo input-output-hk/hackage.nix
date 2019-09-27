@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "rain" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "demonstration" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "traumzauberbaum" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -109,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."storablevector" or (buildDepError "storablevector"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

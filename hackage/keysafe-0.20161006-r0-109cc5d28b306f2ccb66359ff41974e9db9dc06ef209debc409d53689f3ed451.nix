@@ -102,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."argon2" or (buildDepError "argon2"))
             ];
+          buildable = true;
           };
         };
       };

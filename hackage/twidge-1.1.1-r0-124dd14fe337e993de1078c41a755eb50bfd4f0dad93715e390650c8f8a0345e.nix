@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."text" or (buildDepError "text"))
             ] ++ (pkgs.lib).optional (flags.withbitly) (hsPkgs."Bitly" or (buildDepError "Bitly"));
+          buildable = true;
           };
         };
       };

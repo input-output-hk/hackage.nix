@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."impossible" or (buildDepError "impossible"))
           (hsPkgs."typelevel" or (buildDepError "typelevel"))
           ];
+        buildable = true;
         };
       };
     }

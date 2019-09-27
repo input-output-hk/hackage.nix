@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mime-types" or (buildDepError "mime-types"))
           (hsPkgs."wai" or (buildDepError "wai"))
           ] ++ (pkgs.lib).optional (flags.monadlogger) (hsPkgs."monad-logger" or (buildDepError "monad-logger"));
+        buildable = true;
         };
       };
     }

@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."AspectAG" or (buildDepError "AspectAG"))
           (hsPkgs."HList" or (buildDepError "HList"))
           ] ++ (pkgs.lib).optional (flags.t5) (hsPkgs."language-c" or (buildDepError "language-c"));
+        buildable = true;
         };
       exes = {
         "l1t1" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             (hsPkgs."HList" or (buildDepError "HList"))
             ];
+          buildable = if !(flags.l1 && flags.t1) then false else true;
           };
         "l1t2" = {
           depends = [
@@ -105,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             (hsPkgs."HList" or (buildDepError "HList"))
             ];
+          buildable = if !(flags.l1 && flags.t2) then false else true;
           };
         "l1t3" = {
           depends = [
@@ -118,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             (hsPkgs."HList" or (buildDepError "HList"))
             ];
+          buildable = if !(flags.l1 && flags.t3) then false else true;
           };
         "l1t5" = {
           depends = [
@@ -132,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HList" or (buildDepError "HList"))
             (hsPkgs."language-c" or (buildDepError "language-c"))
             ];
+          buildable = if !(flags.l1 && flags.t5) then false else true;
           };
         "l2t1" = {
           depends = [
@@ -144,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             (hsPkgs."HList" or (buildDepError "HList"))
             ];
+          buildable = if !(flags.l2 && flags.t1) then false else true;
           };
         "l2t2" = {
           depends = [
@@ -157,6 +163,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             (hsPkgs."HList" or (buildDepError "HList"))
             ];
+          buildable = if !(flags.l2 && flags.t2) then false else true;
           };
         "l2t3" = {
           depends = [
@@ -170,6 +177,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             (hsPkgs."HList" or (buildDepError "HList"))
             ];
+          buildable = if !(flags.l2 && flags.t3) then false else true;
           };
         "l2t5" = {
           depends = [
@@ -184,6 +192,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HList" or (buildDepError "HList"))
             (hsPkgs."language-c" or (buildDepError "language-c"))
             ];
+          buildable = if !(flags.l2 && flags.t5) then false else true;
           };
         "l3t1" = {
           depends = [
@@ -196,6 +205,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             (hsPkgs."HList" or (buildDepError "HList"))
             ];
+          buildable = if !(flags.l3 && flags.t1) then false else true;
           };
         "l3t2" = {
           depends = [
@@ -209,6 +219,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             (hsPkgs."HList" or (buildDepError "HList"))
             ];
+          buildable = if !(flags.l3 && flags.t2) then false else true;
           };
         "l3t3" = {
           depends = [
@@ -222,6 +233,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             (hsPkgs."HList" or (buildDepError "HList"))
             ];
+          buildable = if !(flags.l3 && flags.t3) then false else true;
           };
         "l3t5" = {
           depends = [
@@ -236,6 +248,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HList" or (buildDepError "HList"))
             (hsPkgs."language-c" or (buildDepError "language-c"))
             ];
+          buildable = if !(flags.l3 && flags.t5) then false else true;
           };
         "l4t1" = {
           depends = [
@@ -248,6 +261,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             (hsPkgs."HList" or (buildDepError "HList"))
             ];
+          buildable = if !(flags.l4 && flags.t1) then false else true;
           };
         "l4t2" = {
           depends = [
@@ -261,6 +275,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             (hsPkgs."HList" or (buildDepError "HList"))
             ];
+          buildable = if !(flags.l4 && flags.t2) then false else true;
           };
         "l4t3" = {
           depends = [
@@ -274,6 +289,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             (hsPkgs."HList" or (buildDepError "HList"))
             ];
+          buildable = if !(flags.l4 && flags.t3) then false else true;
           };
         "l4t5" = {
           depends = [
@@ -288,6 +304,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HList" or (buildDepError "HList"))
             (hsPkgs."language-c" or (buildDepError "language-c"))
             ];
+          buildable = if !(flags.l4 && flags.t5) then false else true;
           };
         };
       };

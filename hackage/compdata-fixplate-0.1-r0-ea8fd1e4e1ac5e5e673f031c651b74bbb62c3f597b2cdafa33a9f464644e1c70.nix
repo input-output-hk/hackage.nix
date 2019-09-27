@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fixplate" or (buildDepError "fixplate"))
           (hsPkgs."tree-view" or (buildDepError "tree-view"))
           ];
+        buildable = true;
         };
       };
     }

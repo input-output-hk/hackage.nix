@@ -71,7 +71,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
-      exes = { "test" = {}; };
+      exes = {
+        "test" = { buildable = if !flags.buildtests then false else true; };
+        };
       };
     }

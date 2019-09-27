@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
           (hsPkgs."asn1-parse" or (buildDepError "asn1-parse"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
             (hsPkgs."asn1-parse" or (buildDepError "asn1-parse"))
             ];
+          buildable = true;
           };
         };
       };

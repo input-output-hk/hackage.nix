@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ]) ++ (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+        buildable = true;
         };
       exes = {
         "happstack-server-tests" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ];
+          buildable = if flags.tests then true else false;
           };
         };
       };

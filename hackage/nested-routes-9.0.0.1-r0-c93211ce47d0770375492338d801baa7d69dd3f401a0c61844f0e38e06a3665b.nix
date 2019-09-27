@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-middleware-verbs" or (buildDepError "wai-middleware-verbs"))
           (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-middleware-verbs" or (buildDepError "wai-middleware-verbs"))
             (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
             ];
+          buildable = true;
           };
         };
       };

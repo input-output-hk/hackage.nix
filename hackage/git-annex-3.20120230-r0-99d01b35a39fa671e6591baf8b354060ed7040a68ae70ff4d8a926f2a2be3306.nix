@@ -84,10 +84,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."IfElse" or (buildDepError "IfElse"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
-        "git-annex-shell" = {};
+        "git-annex-shell" = { buildable = true; };
         "git-union-merge" = {
           depends = [ (hsPkgs."text" or (buildDepError "text")) ];
+          buildable = true;
           };
         };
       };

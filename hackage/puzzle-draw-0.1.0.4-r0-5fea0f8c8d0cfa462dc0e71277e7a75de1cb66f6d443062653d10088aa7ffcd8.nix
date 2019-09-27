@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.cairo
           then [ (hsPkgs."diagrams-cairo" or (buildDepError "diagrams-cairo")) ]
           else [ (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg")) ]);
+        buildable = true;
         };
       exes = {
         "drawpuzzle" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."diagrams-cairo" or (buildDepError "diagrams-cairo"))
               ]
             else [ (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg")) ]);
+          buildable = true;
           };
         };
       tests = {
@@ -107,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."puzzle-draw" or (buildDepError "puzzle-draw"))
             ];
+          buildable = true;
           };
         };
       };

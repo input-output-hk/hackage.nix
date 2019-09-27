@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       tests = {
         "feature-flipper-postgres-test" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."feature-flipper" or (buildDepError "feature-flipper"))
             (hsPkgs."feature-flipper-postgres" or (buildDepError "feature-flipper-postgres"))
             ];
+          buildable = true;
           };
         };
       };

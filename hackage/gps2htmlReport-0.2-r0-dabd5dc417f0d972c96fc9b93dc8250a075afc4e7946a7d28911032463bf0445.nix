@@ -75,7 +75,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsmagick" or (buildDepError "hsmagick"))
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           ];
+        buildable = true;
         };
-      exes = { "gps2htmlReport" = {}; };
+      exes = { "gps2htmlReport" = { buildable = true; }; };
       };
     }

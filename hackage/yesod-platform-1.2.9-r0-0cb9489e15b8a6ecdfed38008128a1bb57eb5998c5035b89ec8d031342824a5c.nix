@@ -198,6 +198,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-test" or (buildDepError "yesod-test"))
           (hsPkgs."zlib-conduit" or (buildDepError "zlib-conduit"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
           ];
+        buildable = true;
         };
       exes = {
         "dump_nl80211" = {
@@ -71,18 +72,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."netlink" or (buildDepError "netlink"))
             ];
+          buildable = true;
           };
         "genlinfo" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."netlink" or (buildDepError "netlink"))
             ];
+          buildable = true;
           };
         "dump_rtnetlink" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."netlink" or (buildDepError "netlink"))
             ];
+          buildable = true;
           };
         };
       };

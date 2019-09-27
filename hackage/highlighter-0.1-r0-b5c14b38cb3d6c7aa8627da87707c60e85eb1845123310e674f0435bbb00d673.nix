@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "highlighter" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.executable then false else true;
           };
         };
       };

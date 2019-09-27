@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."transaction" or (buildDepError "transaction"))
           ];
+        buildable = true;
         };
       tests = {
         "ochintin-daicho-test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ochintin-daicho" or (buildDepError "ochintin-daicho"))
             ];
+          buildable = true;
           };
         "doctest" = {
           depends = [
@@ -77,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."ochintin-daicho" or (buildDepError "ochintin-daicho"))
             ];
+          buildable = true;
           };
         };
       };

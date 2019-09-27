@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
           (hsPkgs."hoppy-generator" or (buildDepError "hoppy-generator"))
           ];
+        buildable = true;
         };
       };
     }

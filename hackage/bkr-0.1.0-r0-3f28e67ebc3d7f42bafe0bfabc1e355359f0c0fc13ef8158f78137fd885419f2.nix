@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HDBC" or (buildDepError "HDBC"))
           (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
           ];
+        buildable = true;
         };
       exes = {
         "bkr" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HDBC" or (buildDepError "HDBC"))
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             ];
+          buildable = true;
           };
         };
       };

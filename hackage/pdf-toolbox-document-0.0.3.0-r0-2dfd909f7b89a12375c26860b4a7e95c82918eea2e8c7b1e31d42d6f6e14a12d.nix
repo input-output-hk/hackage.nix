@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pdf-toolbox-core" or (buildDepError "pdf-toolbox-core"))
           (hsPkgs."pdf-toolbox-content" or (buildDepError "pdf-toolbox-content"))
           ];
+        buildable = true;
         };
       };
     }

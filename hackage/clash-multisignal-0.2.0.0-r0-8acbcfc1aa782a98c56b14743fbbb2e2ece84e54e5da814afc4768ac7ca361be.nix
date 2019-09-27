@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."ghc-typelits-knownnat" or (buildDepError "ghc-typelits-knownnat"))
           ];
+        buildable = true;
         };
       };
     }

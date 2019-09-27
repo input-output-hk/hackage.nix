@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."roundtrip" or (buildDepError "roundtrip"))
           (hsPkgs."roundtrip-string" or (buildDepError "roundtrip-string"))
           ];
+        buildable = true;
         };
       };
     }

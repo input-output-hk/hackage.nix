@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."skylighting" or (buildDepError "skylighting"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -131,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vty" or (buildDepError "vty"))
             (hsPkgs."xdg-basedir" or (buildDepError "xdg-basedir"))
             ];
+          buildable = true;
           };
         };
       };

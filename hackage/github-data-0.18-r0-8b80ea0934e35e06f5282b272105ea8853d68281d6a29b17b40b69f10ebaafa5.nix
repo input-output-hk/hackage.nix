@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.aeson-compat
           then [ (hsPkgs."aeson-compat" or (buildDepError "aeson-compat")) ]
           else [ (hsPkgs."aeson-extra" or (buildDepError "aeson-extra")) ]);
+        buildable = true;
         };
       };
     }

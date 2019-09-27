@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
         libs = [ (pkgs."mpdec" or (sysDepError "mpdec")) ];
+        buildable = true;
         };
       tests = {
         "dectest" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes" or (buildDepError "pipes"))
             ];
           libs = [ (pkgs."mpdec" or (sysDepError "mpdec")) ];
+          buildable = true;
           };
         "native" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             ];
           libs = [ (pkgs."mpdec" or (sysDepError "mpdec")) ];
+          buildable = true;
           };
         };
       };

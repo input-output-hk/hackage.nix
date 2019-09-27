@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."category" or (buildDepError "category"))
           (hsPkgs."unconstrained" or (buildDepError "unconstrained"))
           ];
+        buildable = true;
         };
       };
     }

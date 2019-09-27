@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "Swish" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -105,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         "test-graphpartition" = {
           depends = [
@@ -113,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         "test-graph" = {
           depends = [
@@ -121,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         "test-nt" = {
           depends = [
@@ -136,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "test-n3parser" = {
           depends = [
@@ -151,6 +157,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "test-n3formatter" = {
           depends = [
@@ -166,6 +173,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "test-rdfdatatypexsdinteger" = {
           depends = [
@@ -181,6 +189,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "test-rdfgraph" = {
           depends = [
@@ -195,6 +204,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."intern" or (buildDepError "intern"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "test-rdfproofcontext" = {
           depends = [
@@ -210,6 +220,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "test-rdfproof" = {
           depends = [
@@ -225,6 +236,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "test-rdfquery" = {
           depends = [
@@ -240,6 +252,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "test-rdfruleset" = {
           depends = [
@@ -255,6 +268,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
+          buildable = true;
           };
         "test-varbinding" = {
           depends = [
@@ -266,12 +280,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "test-lookupmap" = {
           depends = [
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "test-qname" = {
           depends = [
@@ -283,6 +299,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

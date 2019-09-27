@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
           (hsPkgs."dimensional" or (buildDepError "dimensional"))
           ];
+        buildable = true;
         };
       exes = {
         "lambda-devs-example" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."numtype" or (buildDepError "numtype"))
             (hsPkgs."dimensional" or (buildDepError "dimensional"))
             ];
+          buildable = true;
           };
         };
       };

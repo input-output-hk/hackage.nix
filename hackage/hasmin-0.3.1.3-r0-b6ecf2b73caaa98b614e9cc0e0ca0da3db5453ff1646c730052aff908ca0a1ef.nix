@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsers" or (buildDepError "parsers"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "hasmin" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."numbers" or (buildDepError "numbers"))
             (hsPkgs."hasmin" or (buildDepError "hasmin"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hasmin" or (buildDepError "hasmin"))
             ];
+          buildable = true;
           };
         "doctest" = {
           depends = [
@@ -107,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."hasmin" or (buildDepError "hasmin"))
             ];
+          buildable = true;
           };
         };
       };

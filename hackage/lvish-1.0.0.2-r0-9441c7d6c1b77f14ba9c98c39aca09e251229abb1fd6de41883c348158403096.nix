@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
           (hsPkgs."bytestring-mmap" or (buildDepError "bytestring-mmap"))
           ] ++ (pkgs.lib).optional (flags.abstract-par) (hsPkgs."abstract-par" or (buildDepError "abstract-par"));
+        buildable = true;
         };
       tests = {
         "test-lvish" = {
@@ -108,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
             ];
+          buildable = true;
           };
         };
       };

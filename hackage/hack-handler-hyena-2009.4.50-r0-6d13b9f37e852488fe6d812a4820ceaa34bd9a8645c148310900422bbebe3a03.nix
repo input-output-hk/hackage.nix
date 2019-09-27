@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hack-contrib" or (buildDepError "hack-contrib"))
           (hsPkgs."hyena" or (buildDepError "hyena"))
           ];
+        buildable = true;
         };
       };
     }

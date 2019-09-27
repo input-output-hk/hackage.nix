@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       exes = {
         "brick-skylighting-demo" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."skylighting" or (buildDepError "skylighting"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         };
       };

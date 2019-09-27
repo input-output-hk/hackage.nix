@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."uniplate" or (buildDepError "uniplate"))
             ]);
+        buildable = true;
         };
       };
     }

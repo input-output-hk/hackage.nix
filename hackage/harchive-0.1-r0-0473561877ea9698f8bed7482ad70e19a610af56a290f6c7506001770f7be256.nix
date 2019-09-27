@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ];
           libs = [ (pkgs."ssl" or (sysDepError "ssl")) ];
+          buildable = true;
           };
         "hpool" = {
           depends = [
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."ssl" or (sysDepError "ssl"))
             (pkgs."sqlite3" or (sysDepError "sqlite3"))
             ];
+          buildable = true;
           };
         };
       };

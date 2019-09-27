@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fused-effects" or (buildDepError "fused-effects"))
           (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
           ];
+        buildable = true;
         };
       };
     }

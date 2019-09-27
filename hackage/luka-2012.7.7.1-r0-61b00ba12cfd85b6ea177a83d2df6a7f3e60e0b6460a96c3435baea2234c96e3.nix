@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."libffi" or (buildDepError "libffi"))
           ];
         libs = [ (pkgs."objc" or (sysDepError "objc")) ];
+        buildable = true;
         };
       };
     }

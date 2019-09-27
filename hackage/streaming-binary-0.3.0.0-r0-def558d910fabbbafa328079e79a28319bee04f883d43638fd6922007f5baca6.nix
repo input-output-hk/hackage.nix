@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."streaming" or (buildDepError "streaming"))
           (hsPkgs."streaming-bytestring" or (buildDepError "streaming-bytestring"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."streaming-binary" or (buildDepError "streaming-binary"))
             (hsPkgs."streaming-bytestring" or (buildDepError "streaming-bytestring"))
             ];
+          buildable = true;
           };
         };
       };

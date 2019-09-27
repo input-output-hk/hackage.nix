@@ -63,14 +63,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mime" or (buildDepError "mime"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
       exes = {
-        "main" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "main" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "listCat" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = true;
           };
         };
       };

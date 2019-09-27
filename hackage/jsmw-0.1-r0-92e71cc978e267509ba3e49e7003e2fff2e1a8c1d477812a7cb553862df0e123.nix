@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."WebBits" or (buildDepError "WebBits"))
           (hsPkgs."DOM" or (buildDepError "DOM"))
           ];
+        buildable = true;
         };
       };
     }

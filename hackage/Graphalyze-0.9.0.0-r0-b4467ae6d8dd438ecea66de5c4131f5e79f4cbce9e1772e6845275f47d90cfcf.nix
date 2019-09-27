@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."graphviz" or (buildDepError "graphviz"))
           (hsPkgs."pandoc" or (buildDepError "pandoc"))
           ];
+        buildable = true;
         };
       };
     }

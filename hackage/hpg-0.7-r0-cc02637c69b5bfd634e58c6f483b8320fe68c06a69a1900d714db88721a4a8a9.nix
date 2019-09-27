@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."random" or (buildDepError "random"))
             ] ++ (pkgs.lib).optional (system.isOpenbsd) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = true;
           };
         };
       };

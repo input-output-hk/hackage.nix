@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsek" or (buildDepError "parsek"))
           (hsPkgs."process" or (buildDepError "process"))
           ] ++ (pkgs.lib).optional (flags.graphviz) (hsPkgs."graphviz" or (buildDepError "graphviz"));
+        buildable = true;
         };
       };
     }

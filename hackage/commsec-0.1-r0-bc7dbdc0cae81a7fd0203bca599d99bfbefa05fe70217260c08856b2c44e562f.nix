@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
           ];
+        buildable = true;
         };
       };
     }

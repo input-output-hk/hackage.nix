@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
           (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
           ];
+        buildable = true;
         };
       tests = {
         "pure-shuffle-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pure-shuffle" or (buildDepError "pure-shuffle"))
             (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
             ];
+          buildable = true;
           };
         };
       };

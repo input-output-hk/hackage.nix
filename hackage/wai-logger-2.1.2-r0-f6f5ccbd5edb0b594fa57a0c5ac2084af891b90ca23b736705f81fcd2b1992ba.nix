@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."unix-time" or (buildDepError "unix-time"))
             ]);
+        buildable = true;
         };
       tests = {
         "doctest" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."wai-test" or (buildDepError "wai-test"))
             ];
+          buildable = true;
           };
         };
       };

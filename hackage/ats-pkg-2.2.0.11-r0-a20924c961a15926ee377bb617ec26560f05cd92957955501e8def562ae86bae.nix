@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."dependency" or (buildDepError "dependency"))
           ];
+        buildable = true;
         };
       exes = {
         "atspkg" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ats-pkg" or (buildDepError "ats-pkg"))
             ];
+          buildable = true;
           };
         };
       };

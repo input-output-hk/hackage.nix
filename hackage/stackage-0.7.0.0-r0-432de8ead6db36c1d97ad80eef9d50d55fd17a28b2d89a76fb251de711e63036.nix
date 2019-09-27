@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stackage-cli" or (buildDepError "stackage-cli"))
           (hsPkgs."stackage-update" or (buildDepError "stackage-update"))
           ];
+        buildable = true;
         };
       };
     }

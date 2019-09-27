@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           (hsPkgs."xml-hamlet" or (buildDepError "xml-hamlet"))
           ];
+        buildable = true;
         };
       exes = {
         "hdav" = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network" or (buildDepError "network"))
               ]
             else [ (hsPkgs."network" or (buildDepError "network")) ]);
+          buildable = true;
           };
         };
       };

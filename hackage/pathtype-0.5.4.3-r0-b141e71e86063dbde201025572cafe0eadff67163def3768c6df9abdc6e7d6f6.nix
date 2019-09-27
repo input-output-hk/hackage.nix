@@ -65,10 +65,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ]
           else [ (hsPkgs."directory" or (buildDepError "directory")) ]);
+        buildable = true;
         };
       exes = {
         "create-pathtype-test" = {
           depends = (pkgs.lib).optional (flags.buildtools) (hsPkgs."base" or (buildDepError "base"));
+          buildable = true;
           };
         };
       tests = {
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

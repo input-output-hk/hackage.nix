@@ -62,11 +62,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yjsvg" or (buildDepError "yjsvg"))
           (hsPkgs."GLUT" or (buildDepError "GLUT"))
           ];
+        buildable = true;
         };
       exes = {
-        "testTurtle" = {};
+        "testTurtle" = { buildable = true; };
         "randomTurtle" = {
           depends = [ (hsPkgs."random" or (buildDepError "random")) ];
+          buildable = true;
           };
         };
       };

@@ -90,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-types" or (buildDepError "http-types"))
           (hsPkgs."text-metrics" or (buildDepError "text-metrics"))
           ];
+        buildable = true;
         };
       exes = {
         "RNAlien" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "RNAlienStatistics" = {
           depends = [
@@ -124,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."ViennaRNAParser" or (buildDepError "ViennaRNAParser"))
             ];
+          buildable = true;
           };
         "cmsearchToBed" = {
           depends = [
@@ -134,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "RNAcentralHTTPRequest" = {
           depends = [
@@ -142,6 +146,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
             (hsPkgs."RNAlien" or (buildDepError "RNAlien"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."HGL" or (buildDepError "HGL"))
             ];
+          buildable = true;
           };
         "asteroids-aufgabe" = {
           depends = [
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."HGL" or (buildDepError "HGL"))
             ];
+          buildable = true;
           };
         "asteroids-basic" = {
           depends = [
@@ -75,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."HGL" or (buildDepError "HGL"))
             ];
+          buildable = true;
           };
         "asteroids-haskelly" = {
           depends = [
@@ -82,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."HGL" or (buildDepError "HGL"))
             ];
+          buildable = true;
           };
         };
       };

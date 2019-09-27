@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bitmap-opengl" or (buildDepError "bitmap-opengl"))
           (hsPkgs."stb-image" or (buildDepError "stb-image"))
           ];
+        buildable = true;
         };
       };
     }

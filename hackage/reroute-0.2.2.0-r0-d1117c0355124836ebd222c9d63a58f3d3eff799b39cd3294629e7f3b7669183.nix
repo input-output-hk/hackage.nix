@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."graph-core" or (buildDepError "graph-core"))
           ];
+        buildable = true;
         };
       tests = {
         "reroute-test" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."graph-core" or (buildDepError "graph-core"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -104,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
             (hsPkgs."graph-core" or (buildDepError "graph-core"))
             ];
+          buildable = true;
           };
         };
       };

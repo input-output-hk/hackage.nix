@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."OpenGL" or (sysDepError "OpenGL"))
           (pkgs."IOKit" or (sysDepError "IOKit"))
           ]);
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
           ];
         libs = (pkgs.lib).optional (flags.systemlib) (pkgs."sqlite3" or (sysDepError "sqlite3"));
+        buildable = true;
         };
       };
     }

@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+        buildable = true;
         };
       exes = {
         "highlight" = {
@@ -88,12 +89,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."highlight" or (buildDepError "highlight"))
             ];
+          buildable = true;
           };
         "hrep" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."highlight" or (buildDepError "highlight"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -103,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         "highlight-test" = {
           depends = [
@@ -121,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+          buildable = true;
           };
         };
       benchmarks = {
@@ -130,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."highlight" or (buildDepError "highlight"))
             ];
+          buildable = true;
           };
         };
       };

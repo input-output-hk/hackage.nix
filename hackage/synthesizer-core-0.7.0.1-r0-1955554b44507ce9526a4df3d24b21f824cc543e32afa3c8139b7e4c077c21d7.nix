@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "test" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         "fouriertest" = {
           depends = (pkgs.lib).optionals (flags.buildprofilers) [
@@ -114,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildprofilers then true else false;
           };
         "speedtest" = {
           depends = (pkgs.lib).optionals (flags.buildprofilers) [
@@ -126,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildprofilers then true else false;
           };
         "speedtest-exp" = {
           depends = (pkgs.lib).optionals (flags.buildprofilers) ([
@@ -139,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ]);
+          buildable = if flags.buildprofilers then true else false;
           };
         "speedtest-simple" = {
           depends = (pkgs.lib).optionals (flags.buildprofilers) [
@@ -148,6 +153,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildprofilers then true else false;
           };
         };
       };

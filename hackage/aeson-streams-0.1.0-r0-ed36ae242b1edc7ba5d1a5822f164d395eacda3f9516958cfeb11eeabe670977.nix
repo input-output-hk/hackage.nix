@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-streams" or (buildDepError "http-streams"))
           (hsPkgs."io-streams" or (buildDepError "io-streams"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
           ];
+        buildable = true;
         };
       };
     }

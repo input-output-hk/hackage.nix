@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hxt" or (buildDepError "hxt"))
           (hsPkgs."HandsomeSoup" or (buildDepError "HandsomeSoup"))
           ];
+        buildable = true;
         };
       tests = {
         "test-snap-testing" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HandsomeSoup" or (buildDepError "HandsomeSoup"))
             (hsPkgs."snap-testing" or (buildDepError "snap-testing"))
             ];
+          buildable = true;
           };
         };
       };

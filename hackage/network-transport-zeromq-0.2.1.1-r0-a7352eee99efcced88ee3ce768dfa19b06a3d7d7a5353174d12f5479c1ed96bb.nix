@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
           ];
+        buildable = true;
         };
       exes = {
         "bench-dp-latency" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
             ];
+          buildable = if !flags.install-benchmarks then false else true;
           };
         "bench-dp-throughput" = {
           depends = [
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ];
+          buildable = if !flags.install-benchmarks then false else true;
           };
         "bench-dp-channels" = {
           depends = [
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ];
+          buildable = if !flags.install-benchmarks then false else true;
           };
         };
       tests = {
@@ -113,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
             (hsPkgs."network-transport-tests" or (buildDepError "network-transport-tests"))
             ];
+          buildable = true;
           };
         "test-api" = {
           depends = [
@@ -123,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         "test-ch-core" = {
           depends = [
@@ -137,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if !flags.distributed-process-tests then false else true;
           };
         "test-ch-closure" = {
           depends = [
@@ -151,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if !flags.distributed-process-tests then false else true;
           };
         "test-ch-stat" = {
           depends = [
@@ -165,6 +173,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if !flags.distributed-process-tests then false else true;
           };
         };
       benchmarks = {
@@ -177,6 +186,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         "bench-latency-local" = {
           depends = [
@@ -187,6 +197,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         "bench-throughput-local" = {
           depends = [
@@ -197,6 +208,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

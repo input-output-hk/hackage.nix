@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))
           ];
+        buildable = true;
         };
       exes = {
         "BasicPlotting" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."QuickPlot" or (buildDepError "QuickPlot"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

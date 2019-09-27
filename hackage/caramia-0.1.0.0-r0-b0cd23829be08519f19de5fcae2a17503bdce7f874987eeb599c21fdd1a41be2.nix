@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
           ];
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."OpenGL" or (sysDepError "OpenGL"));
+        buildable = true;
         };
       tests = {
         "smoke-test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "memory-info" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."caramia" or (buildDepError "caramia"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = true;
           };
         };
       };

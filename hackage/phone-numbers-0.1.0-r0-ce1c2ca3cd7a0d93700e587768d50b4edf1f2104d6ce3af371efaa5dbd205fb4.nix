@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."phonenumber" or (sysDepError "phonenumber"))
           (pkgs."stdc++" or (sysDepError "stdc++"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."phone-numbers" or (buildDepError "phone-numbers"))
             ];
+          buildable = true;
           };
         };
       };

@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-lucid" or (buildDepError "servant-lucid"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ]);
+        buildable = true;
         };
       exes = {
         "todo-mvc" = {
@@ -89,6 +90,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) || !flags.examples
+            then false
+            else true;
           };
         "router" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
@@ -98,6 +102,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."miso" or (buildDepError "miso"))
             (hsPkgs."servant" or (buildDepError "servant"))
             ];
+          buildable = if !(compiler.isGhcjs && true) || !flags.examples
+            then false
+            else true;
           };
         "websocket" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
@@ -106,6 +113,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) || !flags.examples
+            then false
+            else true;
           };
         "mario" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
@@ -113,6 +123,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) || !flags.examples
+            then false
+            else true;
           };
         "simple" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
@@ -121,6 +134,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) || !flags.examples
+            then false
+            else true;
           };
         "tests" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.tests)) [
@@ -131,6 +147,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
             (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
             ];
+          buildable = if !(compiler.isGhcjs && true) || !flags.tests
+            then false
+            else true;
           };
         };
       };

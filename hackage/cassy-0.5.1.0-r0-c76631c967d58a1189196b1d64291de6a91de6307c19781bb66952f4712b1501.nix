@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."retry" or (buildDepError "retry"))
           (hsPkgs."conduit" or (buildDepError "conduit"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -112,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."derive" or (buildDepError "derive"))
             ];
+          buildable = true;
           };
         };
       };

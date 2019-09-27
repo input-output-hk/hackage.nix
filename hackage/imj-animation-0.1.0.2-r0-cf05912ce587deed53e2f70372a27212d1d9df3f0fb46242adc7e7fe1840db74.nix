@@ -61,10 +61,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."imj-base" or (buildDepError "imj-base"))
           (hsPkgs."imj-prelude" or (buildDepError "imj-prelude"))
           ];
+        buildable = true;
         };
       tests = {
         "imj-animation-test" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

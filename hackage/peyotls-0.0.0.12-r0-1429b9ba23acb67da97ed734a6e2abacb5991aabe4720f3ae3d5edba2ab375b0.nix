@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytable" or (buildDepError "bytable"))
           (hsPkgs."handle-like" or (buildDepError "handle-like"))
           ];
+        buildable = true;
         };
       tests = {
         "stm-test" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."x509-store" or (buildDepError "x509-store"))
             (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
             ];
+          buildable = true;
           };
         };
       };

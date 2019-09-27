@@ -53,5 +53,5 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "SAND is a Multi-Agent Systems data serialization and manipulation method.\nIt is used by monitoring & surveillance systems agent wiring to monitor-server\nand representation of agent data.";
       buildType = "Simple";
       };
-    components = { "library" = {}; };
+    components = { "library" = { buildable = true; }; };
     }

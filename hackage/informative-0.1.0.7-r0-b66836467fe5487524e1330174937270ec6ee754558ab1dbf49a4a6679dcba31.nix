@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))
           (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
           ];
+        buildable = true;
         };
       exes = {
         "informative-test" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))
             (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
             ];
+          buildable = true;
           };
         };
       };

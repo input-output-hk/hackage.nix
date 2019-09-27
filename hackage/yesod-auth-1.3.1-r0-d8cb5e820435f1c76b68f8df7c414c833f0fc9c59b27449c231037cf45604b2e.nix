@@ -100,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
           (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
           ];
+        buildable = true;
         };
       };
     }

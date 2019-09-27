@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."xml2" or (sysDepError "xml2"))
           (pkgs."stdc++" or (sysDepError "stdc++"))
           ];
+        buildable = true;
         };
       };
     }

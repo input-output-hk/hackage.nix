@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."primitive-unlifted" or (buildDepError "primitive-unlifted"))
           ];
+        buildable = true;
         };
       tests = {
         "unit" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."primitive" or (buildDepError "primitive"))
             (hsPkgs."primitive-unlifted" or (buildDepError "primitive-unlifted"))
             ];
+          buildable = true;
           };
         };
       };

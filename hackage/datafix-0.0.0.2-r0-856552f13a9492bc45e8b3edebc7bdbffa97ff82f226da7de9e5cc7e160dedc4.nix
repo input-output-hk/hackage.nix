@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."pomaps" or (buildDepError "pomaps"))
           ] ++ (pkgs.lib).optional (!flags.no-lattices) (hsPkgs."lattices" or (buildDepError "lattices"));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."turtle" or (buildDepError "turtle"))
             (hsPkgs."text" or (buildDepError "text"))
             ] ++ (pkgs.lib).optional (!flags.no-lattices) (hsPkgs."lattices" or (buildDepError "lattices"))) ++ (pkgs.lib).optional (flags.no-lattices) (hsPkgs."pomaps" or (buildDepError "pomaps"));
+          buildable = true;
           };
         "doctests" = {
           depends = [
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."datafix" or (buildDepError "datafix"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -119,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."turtle" or (buildDepError "turtle"))
             (hsPkgs."text" or (buildDepError "text"))
             ] ++ (pkgs.lib).optional (!flags.no-lattices) (hsPkgs."lattices" or (buildDepError "lattices"))) ++ (pkgs.lib).optional (flags.no-lattices) (hsPkgs."pomaps" or (buildDepError "pomaps"));
+          buildable = true;
           };
         };
       };

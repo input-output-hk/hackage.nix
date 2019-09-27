@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."SHA" or (buildDepError "SHA"))
           ]) ++ (pkgs.lib).optional (flags.usebinary) (hsPkgs."binary" or (buildDepError "binary"))) ++ (pkgs.lib).optional (flags.includemd5 && flags.usebinary) (hsPkgs."pureMD5" or (buildDepError "pureMD5"));
+        buildable = true;
         };
       exes = {
         "test_rsa" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
               ] ++ [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ]));
+          buildable = if flags.skiptests then false else true;
           };
         };
       };

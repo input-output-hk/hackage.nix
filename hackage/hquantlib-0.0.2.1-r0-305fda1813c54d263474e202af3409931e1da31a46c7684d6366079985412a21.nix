@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel" or (buildDepError "parallel"))
           (hsPkgs."mersenne-random" or (buildDepError "mersenne-random"))
           ];
+        buildable = true;
         };
       };
     }

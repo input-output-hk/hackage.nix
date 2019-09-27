@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."web-encodings" or (buildDepError "web-encodings"))
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           ];
         libs = [ (pkgs."systemd-journal" or (sysDepError "systemd-journal")) ];
+        buildable = true;
         };
       };
     }

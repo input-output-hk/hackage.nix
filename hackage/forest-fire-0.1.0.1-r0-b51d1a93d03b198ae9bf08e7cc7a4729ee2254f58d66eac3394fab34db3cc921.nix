@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."pretty-tree" or (buildDepError "pretty-tree"))
           ];
+        buildable = true;
         };
       exes = {
         "forest-fire" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cli" or (buildDepError "cli"))
             (hsPkgs."forest-fire" or (buildDepError "forest-fire"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."forest-fire" or (buildDepError "forest-fire"))
             ];
+          buildable = true;
           };
         };
       };

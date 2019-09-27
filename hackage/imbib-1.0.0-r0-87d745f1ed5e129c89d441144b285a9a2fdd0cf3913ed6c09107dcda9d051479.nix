@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
             ];
+          buildable = true;
           };
         "imbibatch" = {
           depends = [
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
             ];
+          buildable = true;
           };
         };
       };

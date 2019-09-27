@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
             ];
+          buildable = true;
           };
         };
       };

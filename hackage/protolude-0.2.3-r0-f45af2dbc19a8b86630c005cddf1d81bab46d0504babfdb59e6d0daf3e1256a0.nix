@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
           (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
           ];
+        buildable = true;
         };
       };
     }

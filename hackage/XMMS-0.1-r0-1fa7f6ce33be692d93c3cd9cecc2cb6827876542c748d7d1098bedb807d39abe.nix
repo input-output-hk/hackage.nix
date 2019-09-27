@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."xmmsclient" or (sysDepError "xmmsclient"))
           (pkgs."xmmsclient-glib" or (sysDepError "xmmsclient-glib"))
           ];
+        buildable = true;
         };
       };
     }

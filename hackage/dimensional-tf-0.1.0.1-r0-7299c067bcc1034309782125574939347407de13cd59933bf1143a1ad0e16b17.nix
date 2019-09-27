@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."numtype-tf" or (buildDepError "numtype-tf"))
           ];
+        buildable = true;
         };
       };
     }

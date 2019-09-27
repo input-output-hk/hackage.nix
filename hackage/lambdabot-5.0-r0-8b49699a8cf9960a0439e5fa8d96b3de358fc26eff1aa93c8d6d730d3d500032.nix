@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lambdabot-reference-plugins" or (buildDepError "lambdabot-reference-plugins"))
             (hsPkgs."lambdabot-social-plugins" or (buildDepError "lambdabot-social-plugins"))
             ];
+          buildable = true;
           };
         };
       };

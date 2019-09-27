@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."haskell98" or (buildDepError "haskell98"))
           ];
+        buildable = true;
         };
       exes = {
         "Canonicalise" = {
@@ -66,30 +67,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             ];
+          buildable = true;
           };
         "Xtract" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             ];
+          buildable = true;
           };
         "Validate" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             ];
+          buildable = true;
           };
         "MkOneOf" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             ];
+          buildable = true;
           };
         "DtdToHaskell" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             ];
+          buildable = true;
           };
         };
       };

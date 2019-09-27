@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."simple-log" or (buildDepError "simple-log"))
           (hsPkgs."hsyslog" or (buildDepError "hsyslog"))
           ];
+        buildable = true;
         };
       };
     }

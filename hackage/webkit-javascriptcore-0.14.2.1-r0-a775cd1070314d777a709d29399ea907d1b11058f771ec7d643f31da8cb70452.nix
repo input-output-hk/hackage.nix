@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."webkit-1.0" or (pkgConfDepError "webkit-1.0"))
           ];
+        buildable = true;
         };
       };
     }

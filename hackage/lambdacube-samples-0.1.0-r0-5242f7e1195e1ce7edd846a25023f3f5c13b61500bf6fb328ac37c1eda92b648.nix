@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             (hsPkgs."stb-image" or (buildDepError "stb-image"))
             ];
+          buildable = true;
           };
         "lambdacube-shadowmapping" = {
           depends = [
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             ];
+          buildable = true;
           };
         "lambdacube-cubemap" = {
           depends = [
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             ];
+          buildable = true;
           };
         "lambdacube-convolutionfilter" = {
           depends = [
@@ -115,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             ];
+          buildable = true;
           };
         "lambdacube-bulletexample" = {
           depends = (pkgs.lib).optionals (flags.bulletinstalled) [
@@ -131,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             ];
+          buildable = if flags.bulletinstalled then true else false;
           };
         };
       };

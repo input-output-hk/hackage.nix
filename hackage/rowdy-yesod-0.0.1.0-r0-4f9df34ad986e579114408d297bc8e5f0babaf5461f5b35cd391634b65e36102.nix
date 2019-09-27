@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rowdy" or (buildDepError "rowdy"))
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           ];
+        buildable = true;
         };
       tests = {
         "specs" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rowdy-yesod" or (buildDepError "rowdy-yesod"))
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             ];
+          buildable = true;
           };
         };
       };

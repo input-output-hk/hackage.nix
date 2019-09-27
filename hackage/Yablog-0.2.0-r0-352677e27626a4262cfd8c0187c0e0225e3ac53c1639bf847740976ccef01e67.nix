@@ -54,7 +54,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = if flags.library-only then true else false; };
       exes = {
         "Yablog" = {
           depends = [
@@ -105,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         };
       };

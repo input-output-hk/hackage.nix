@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."papa-semigroupoids-export" or (buildDepError "papa-semigroupoids-export"))
           (hsPkgs."papa-semigroupoids-implement" or (buildDepError "papa-semigroupoids-implement"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = true;
           };
         };
       };

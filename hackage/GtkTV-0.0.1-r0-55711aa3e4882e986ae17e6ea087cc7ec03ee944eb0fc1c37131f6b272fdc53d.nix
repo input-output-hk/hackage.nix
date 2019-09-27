@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."TypeCompose" or (buildDepError "TypeCompose"))
           (hsPkgs."TV" or (buildDepError "TV"))
           ];
+        buildable = true;
         };
       };
     }

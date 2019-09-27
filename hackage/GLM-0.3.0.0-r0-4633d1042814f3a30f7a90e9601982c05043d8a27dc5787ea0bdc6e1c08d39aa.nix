@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
           ];
+        buildable = true;
         };
       exes = {
         "glm2props" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."GLM" or (buildDepError "GLM"))
             ];
+          buildable = true;
           };
         "glm2dot" = {
           depends = [
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."GLM" or (buildDepError "GLM"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -114,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."GLM" or (buildDepError "GLM"))
             ];
+          buildable = true;
           };
         };
       };

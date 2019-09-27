@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       tests = {
         "main" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."nats" or (buildDepError "nats"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "text" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck-instances" or (buildDepError "leancheck-instances"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

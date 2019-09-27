@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "DumpExpl" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sequent-core" or (buildDepError "sequent-core"))
             ];
+          buildable = true;
           };
         "SpecConstrExpl" = {
           depends = [
@@ -75,12 +77,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sequent-core" or (buildDepError "sequent-core"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "SimplExpl" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sequent-core" or (buildDepError "sequent-core"))
             ];
+          buildable = true;
           };
         };
       };

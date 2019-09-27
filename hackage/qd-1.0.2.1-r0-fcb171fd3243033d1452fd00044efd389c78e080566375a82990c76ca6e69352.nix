@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."floatshow" or (buildDepError "floatshow"))
           ];
         libs = [ (pkgs."qd" or (sysDepError "qd")) ];
+        buildable = true;
         };
       };
     }

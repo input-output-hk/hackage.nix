@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
         libs = [ (pkgs."morfeusz" or (sysDepError "morfeusz")) ];
+        buildable = true;
         };
       };
     }

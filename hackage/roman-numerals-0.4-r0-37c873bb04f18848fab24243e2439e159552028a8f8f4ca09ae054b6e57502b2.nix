@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."monads-fd" or (buildDepError "monads-fd"))
           ];
+        buildable = true;
         };
       };
     }

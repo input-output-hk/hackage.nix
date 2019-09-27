@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."numhask" or (buildDepError "numhask"))
           (hsPkgs."foldl" or (buildDepError "foldl"))
           ];
+        buildable = true;
         };
       exes = {
         "Kepler" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."plots" or (buildDepError "plots"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

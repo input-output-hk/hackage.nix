@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pandoc" or (buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."hakyll-contrib-links" or (buildDepError "hakyll-contrib-links"))
             ];
+          buildable = true;
           };
         };
       };

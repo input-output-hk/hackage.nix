@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pcre-heavy" or (buildDepError "pcre-heavy"))
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           ];
+        buildable = true;
         };
       exes = {
         "microformats2-parser" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
             (hsPkgs."microformats2-parser" or (buildDepError "microformats2-parser"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -123,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."html-conduit" or (buildDepError "html-conduit"))
             (hsPkgs."xml-lens" or (buildDepError "xml-lens"))
             ];
+          buildable = true;
           };
         };
       };

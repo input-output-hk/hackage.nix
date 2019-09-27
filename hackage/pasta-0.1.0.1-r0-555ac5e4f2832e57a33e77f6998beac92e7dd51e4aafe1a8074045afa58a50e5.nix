@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."protolude" or (buildDepError "protolude"))
           ];
+        buildable = true;
         };
       tests = {
         "pasta-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."protolude" or (buildDepError "protolude"))
             ];
+          buildable = true;
           };
         };
       };

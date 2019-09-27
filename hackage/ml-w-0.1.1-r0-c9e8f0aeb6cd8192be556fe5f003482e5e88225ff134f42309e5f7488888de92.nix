@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."pretty" or (buildDepError "pretty"));
+        buildable = true;
         };
       exes = {
         "ML" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."pretty" or (buildDepError "pretty"));
+          buildable = true;
           };
         };
       };

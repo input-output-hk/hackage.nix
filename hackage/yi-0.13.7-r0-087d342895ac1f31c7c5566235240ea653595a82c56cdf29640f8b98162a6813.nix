@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yi-mode-javascript" or (buildDepError "yi-mode-javascript"))
             (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
             ] ++ (pkgs.lib).optional (flags.vty) (hsPkgs."yi-frontend-vty" or (buildDepError "yi-frontend-vty"))) ++ (pkgs.lib).optional (flags.pango) (hsPkgs."yi-frontend-pango" or (buildDepError "yi-frontend-pango"))) ++ (pkgs.lib).optional (flags.vim) (hsPkgs."yi-keymap-vim" or (buildDepError "yi-keymap-vim"))) ++ (pkgs.lib).optional (flags.emacs) (hsPkgs."yi-keymap-emacs" or (buildDepError "yi-keymap-emacs"));
+          buildable = true;
           };
         };
       };

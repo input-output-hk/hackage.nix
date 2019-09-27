@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
           ];
+        buildable = true;
         };
       };
     }

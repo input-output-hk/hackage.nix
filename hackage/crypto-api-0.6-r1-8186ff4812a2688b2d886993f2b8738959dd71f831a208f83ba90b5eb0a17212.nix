@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."advapi32" or (sysDepError "advapi32"));
+        buildable = true;
         };
       };
     }

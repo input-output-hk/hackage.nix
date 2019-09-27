@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-audiofile" or (buildDepError "bindings-audiofile"))
           ];
         pkgconfig = [ (pkgconfPkgs."esound" or (pkgConfDepError "esound")) ];
+        buildable = true;
         };
       };
     }

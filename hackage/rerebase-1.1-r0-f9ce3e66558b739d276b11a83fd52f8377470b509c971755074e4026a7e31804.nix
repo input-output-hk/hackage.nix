@@ -56,6 +56,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [ (hsPkgs."rebase" or (buildDepError "rebase")) ];
+        buildable = true;
         };
       };
     }

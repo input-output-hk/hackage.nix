@@ -60,10 +60,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           ];
+        buildable = true;
         };
       exes = {
         "nsis" = {
           depends = [ (hsPkgs."process" or (buildDepError "process")) ];
+          buildable = if flags.testprog then true else false;
           };
         };
       };

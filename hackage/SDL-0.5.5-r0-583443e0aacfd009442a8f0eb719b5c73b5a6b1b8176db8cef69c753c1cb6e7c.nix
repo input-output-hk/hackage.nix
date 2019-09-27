@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = [ (pkgs."SDL" or (sysDepError "SDL")) ];
         frameworks = [ (pkgs."AppKit" or (sysDepError "AppKit")) ];
+        buildable = true;
         };
       };
     }

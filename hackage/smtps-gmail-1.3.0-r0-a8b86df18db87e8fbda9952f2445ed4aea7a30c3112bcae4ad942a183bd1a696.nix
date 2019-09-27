@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."tls" or (buildDepError "tls"))
           ];
+        buildable = true;
         };
       };
     }

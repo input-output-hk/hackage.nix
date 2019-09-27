@@ -66,6 +66,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb" or (buildDepError "syb"))
           (hsPkgs."free" or (buildDepError "free"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+          then false
+          else true;
         };
       exes = {
         "roundtrip" = {
@@ -82,6 +85,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             (hsPkgs."temporary" or (buildDepError "temporary"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).ge "7.10.2" && flags.roundtrip
+            then true
+            else false;
           };
         "static" = {
           depends = (pkgs.lib).optionals (flags.roundtrip) [
@@ -90,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."Diff" or (buildDepError "Diff"))
             ];
+          buildable = if flags.roundtrip then true else false;
           };
         };
       tests = {
@@ -108,6 +115,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."silently" or (buildDepError "silently"))
             (hsPkgs."filemanip" or (buildDepError "filemanip"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+            then false
+            else true;
           };
         };
       };

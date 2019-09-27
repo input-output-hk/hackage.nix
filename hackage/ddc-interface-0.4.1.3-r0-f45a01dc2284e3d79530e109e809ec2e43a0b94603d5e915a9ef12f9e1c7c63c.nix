@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."ddc-base" or (buildDepError "ddc-base"))
           ];
+        buildable = true;
         };
       };
     }

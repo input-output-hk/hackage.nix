@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets" or (buildDepError "websockets"))
           (hsPkgs."hslogger" or (buildDepError "hslogger"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."uuid" or (buildDepError "uuid"))
             ];
+          buildable = true;
           };
         "priority-semaphore" = {
           depends = [
@@ -105,12 +107,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."mqtt" or (buildDepError "mqtt"))
             ];
+          buildable = true;
           };
         "retained-store-strictness-test" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mqtt" or (buildDepError "mqtt"))
             ];
+          buildable = true;
           };
         "routing-tree-size-test" = {
           depends = [
@@ -119,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mqtt" or (buildDepError "mqtt"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -131,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mqtt" or (buildDepError "mqtt"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "binary" = {
           depends = [
@@ -141,6 +147,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mqtt" or (buildDepError "mqtt"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

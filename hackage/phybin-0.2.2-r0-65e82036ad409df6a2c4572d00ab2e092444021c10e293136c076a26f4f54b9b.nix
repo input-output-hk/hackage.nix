@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."hierarchical-clustering" or (buildDepError "hierarchical-clustering"))
           ];
+        buildable = true;
         };
       exes = {
         "phybin" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."hierarchical-clustering" or (buildDepError "hierarchical-clustering"))
             ];
+          buildable = true;
           };
         };
       };

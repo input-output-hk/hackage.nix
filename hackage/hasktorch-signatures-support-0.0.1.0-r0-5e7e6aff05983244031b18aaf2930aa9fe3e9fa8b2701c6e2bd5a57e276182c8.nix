@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hasktorch-signatures-types" or (buildDepError "hasktorch-signatures-types"))
           (hsPkgs."hasktorch-types-th" or (buildDepError "hasktorch-types-th"))
           ];
+        buildable = true;
         };
       };
     }

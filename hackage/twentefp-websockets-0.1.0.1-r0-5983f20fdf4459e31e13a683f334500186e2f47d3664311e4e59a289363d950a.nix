@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."entropy" or (buildDepError "entropy"))
           ];
+        buildable = true;
         };
       };
     }

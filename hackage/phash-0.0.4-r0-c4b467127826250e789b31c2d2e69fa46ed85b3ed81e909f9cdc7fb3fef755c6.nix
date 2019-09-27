@@ -57,6 +57,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = [ (pkgs."pHash" or (sysDepError "pHash")) ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
             ];
           libs = [ (pkgs."pHash" or (sysDepError "pHash")) ];
+          buildable = true;
           };
         "docs" = {
           depends = [
@@ -77,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."phash" or (buildDepError "phash"))
             ];
           libs = [ (pkgs."pHash" or (sysDepError "pHash")) ];
+          buildable = true;
           };
         };
       };

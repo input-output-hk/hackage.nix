@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."db_cxx" or (sysDepError "db_cxx"))
             ]
           else [ (pkgs."db" or (sysDepError "db")) ];
+        buildable = true;
         };
       };
     }

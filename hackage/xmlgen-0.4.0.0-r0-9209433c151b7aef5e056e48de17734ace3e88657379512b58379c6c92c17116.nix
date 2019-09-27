@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."xml-types" or (buildDepError "xml-types"))
           ];
+        buildable = true;
         };
       exes = {
         "tests" = {
@@ -75,9 +76,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = if flags.tests then true else false;
           };
         "benchmarks" = {
           depends = (pkgs.lib).optional (flags.benchmarks) (hsPkgs."criterion" or (buildDepError "criterion"));
+          buildable = if flags.benchmarks then true else false;
           };
         };
       };

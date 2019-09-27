@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
           (hsPkgs."aeson" or (buildDepError "aeson"))
           ];
+        buildable = true;
         };
       exes = {
         "yesod-ghc-wrapper" = {
@@ -82,18 +83,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         "yesod-ld-wrapper" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         "yesod-ar-wrapper" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         "yesod" = {
           depends = [
@@ -137,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             (hsPkgs."project-template" or (buildDepError "project-template"))
             ];
+          buildable = true;
           };
         };
       };

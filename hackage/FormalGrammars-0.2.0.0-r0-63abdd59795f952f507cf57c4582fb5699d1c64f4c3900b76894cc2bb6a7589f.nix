@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "GrammarPP" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."FormalGrammars" or (buildDepError "FormalGrammars"))
             ];
+          buildable = true;
           };
         "NussinovFG" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "NeedlemanWunschFG" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -105,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."repa" or (buildDepError "repa"))
           (hsPkgs."bmp" or (buildDepError "bmp"))
           ];
+        buildable = true;
         };
       };
     }

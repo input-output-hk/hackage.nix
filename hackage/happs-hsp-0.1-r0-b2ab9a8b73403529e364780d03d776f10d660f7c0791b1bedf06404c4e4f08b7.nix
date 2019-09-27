@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HAppS-Server" or (buildDepError "HAppS-Server"))
           (hsPkgs."hsp" or (buildDepError "hsp"))
           ];
+        buildable = true;
         };
       };
     }

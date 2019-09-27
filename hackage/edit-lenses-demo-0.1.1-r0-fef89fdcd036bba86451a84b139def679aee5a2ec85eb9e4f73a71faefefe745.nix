@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

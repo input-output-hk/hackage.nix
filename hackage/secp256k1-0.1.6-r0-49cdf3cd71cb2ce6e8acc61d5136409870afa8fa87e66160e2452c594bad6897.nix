@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
           ];
         libs = [ (pkgs."secp256k1" or (sysDepError "secp256k1")) ];
+        buildable = true;
         };
       tests = {
         "secp256k1-test" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."entropy" or (buildDepError "entropy"))
             ];
+          buildable = true;
           };
         };
       };

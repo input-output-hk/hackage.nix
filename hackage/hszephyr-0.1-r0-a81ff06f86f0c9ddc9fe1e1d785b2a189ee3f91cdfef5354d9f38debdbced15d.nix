@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."zephyr" or (sysDepError "zephyr"))
           (pkgs."com_err" or (sysDepError "com_err"))
           ];
+        buildable = true;
         };
       };
     }

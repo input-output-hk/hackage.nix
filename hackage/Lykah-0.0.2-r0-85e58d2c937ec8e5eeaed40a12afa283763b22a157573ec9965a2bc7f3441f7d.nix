@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filesystem-trees" or (buildDepError "filesystem-trees"))
           (hsPkgs."formatting" or (buildDepError "formatting"))
           ];
+        buildable = true;
         };
       exes = {
         "lykah" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filesystem-trees" or (buildDepError "filesystem-trees"))
             (hsPkgs."formatting" or (buildDepError "formatting"))
             ];
+          buildable = true;
           };
         };
       };

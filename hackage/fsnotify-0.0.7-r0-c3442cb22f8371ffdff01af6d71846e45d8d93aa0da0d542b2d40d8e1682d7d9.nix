@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else if system.isWindows
             then [ (hsPkgs."Win32-notify" or (buildDepError "Win32-notify")) ]
             else (pkgs.lib).optional (system.isOsx) (hsPkgs."hfsevents" or (buildDepError "hfsevents")));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
                 (hsPkgs."ghc" or (buildDepError "ghc"))
                 ]
               else (pkgs.lib).optional (system.isOsx) (hsPkgs."hfsevents" or (buildDepError "hfsevents")));
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
           (hsPkgs."DRBG" or (buildDepError "DRBG"))
           ];
+        buildable = true;
         };
       };
     }

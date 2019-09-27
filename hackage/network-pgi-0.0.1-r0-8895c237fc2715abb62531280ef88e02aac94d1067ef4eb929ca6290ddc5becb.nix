@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."enumerator" or (buildDepError "enumerator"))
           (hsPkgs."tnet" or (buildDepError "tnet"))
           ];
+        buildable = true;
         };
       };
     }

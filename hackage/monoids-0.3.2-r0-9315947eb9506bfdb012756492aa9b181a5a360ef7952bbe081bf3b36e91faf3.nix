@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."parallel" or (buildDepError "parallel"))
           ];
+        buildable = true;
         };
       };
     }

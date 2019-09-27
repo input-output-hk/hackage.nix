@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
             ]
           else [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ]);
+        buildable = true;
         };
       tests = {
         "test-cereal" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."cereal" or (buildDepError "cereal"))
             ];
+          buildable = true;
           };
         };
       };

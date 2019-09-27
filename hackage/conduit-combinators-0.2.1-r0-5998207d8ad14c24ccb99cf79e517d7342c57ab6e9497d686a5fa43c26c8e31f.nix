@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
             ];
+          buildable = true;
           };
         };
       };

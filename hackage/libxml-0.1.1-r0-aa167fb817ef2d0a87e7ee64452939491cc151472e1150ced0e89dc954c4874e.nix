@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
         libs = [ (pkgs."xml2" or (sysDepError "xml2")) ];
+        buildable = true;
         };
       };
     }

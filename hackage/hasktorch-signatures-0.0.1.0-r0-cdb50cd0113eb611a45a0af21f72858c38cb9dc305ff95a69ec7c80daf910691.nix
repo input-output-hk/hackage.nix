@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hasktorch-types-thc" or (buildDepError "hasktorch-types-thc"))
           (hsPkgs."hasktorch-signatures-types" or (buildDepError "hasktorch-signatures-types"))
           ];
+        buildable = true;
         };
       sublibs = {
         "hasktorch-partial-floating" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-signatures-support" or (buildDepError "hasktorch-signatures-support"))
             (hsPkgs."hasktorch-signatures" or (buildDepError "hasktorch-signatures"))
             ];
+          buildable = true;
           };
         "hasktorch-partial-signed" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-signatures-support" or (buildDepError "hasktorch-signatures-support"))
             (hsPkgs."hasktorch-signatures" or (buildDepError "hasktorch-signatures"))
             ];
+          buildable = true;
           };
         "hasktorch-partial-unsigned" = {
           depends = [
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-signatures-support" or (buildDepError "hasktorch-signatures-support"))
             (hsPkgs."hasktorch-signatures" or (buildDepError "hasktorch-signatures"))
             ];
+          buildable = true;
           };
         };
       exes = {
@@ -96,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-types-th" or (buildDepError "hasktorch-types-th"))
             (hsPkgs."hasktorch-partial-unsigned" or (buildDepError "hasktorch-partial-unsigned"))
             ];
+          buildable = true;
           };
         "isdefinite-unsigned-thc" = {
           depends = [
@@ -104,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-types-thc" or (buildDepError "hasktorch-types-thc"))
             (hsPkgs."hasktorch-partial-unsigned" or (buildDepError "hasktorch-partial-unsigned"))
             ];
+          buildable = true;
           };
         "isdefinite-signed-th" = {
           depends = [
@@ -112,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-types-th" or (buildDepError "hasktorch-types-th"))
             (hsPkgs."hasktorch-partial-signed" or (buildDepError "hasktorch-partial-signed"))
             ];
+          buildable = true;
           };
         "isdefinite-signed-thc" = {
           depends = [
@@ -120,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-types-thc" or (buildDepError "hasktorch-types-thc"))
             (hsPkgs."hasktorch-partial-signed" or (buildDepError "hasktorch-partial-signed"))
             ];
+          buildable = true;
           };
         "isdefinite-floating-th" = {
           depends = [
@@ -128,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-types-th" or (buildDepError "hasktorch-types-th"))
             (hsPkgs."hasktorch-partial-floating" or (buildDepError "hasktorch-partial-floating"))
             ];
+          buildable = true;
           };
         "isdefinite-floating-thc" = {
           depends = [
@@ -136,6 +145,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-types-thc" or (buildDepError "hasktorch-types-thc"))
             (hsPkgs."hasktorch-partial-floating" or (buildDepError "hasktorch-partial-floating"))
             ];
+          buildable = true;
           };
         };
       };

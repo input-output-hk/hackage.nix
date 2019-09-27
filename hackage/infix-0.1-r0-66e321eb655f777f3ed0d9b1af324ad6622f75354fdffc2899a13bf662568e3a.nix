@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
           (hsPkgs."FiniteMap" or (buildDepError "FiniteMap"))
           ];
+        buildable = true;
         };
       };
     }

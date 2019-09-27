@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           (hsPkgs."setlocale" or (buildDepError "setlocale"))
           ];
+        buildable = true;
         };
       exes = {
         "hgettext" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uniplate" or (buildDepError "uniplate"))
             (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             ];
+          buildable = true;
           };
         };
       };

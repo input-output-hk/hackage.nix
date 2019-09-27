@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pwstore-fast" or (buildDepError "pwstore-fast"))
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       };
     }

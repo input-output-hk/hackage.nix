@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Chart" or (buildDepError "Chart"))
           (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
           ];
+        buildable = true;
         };
       };
     }

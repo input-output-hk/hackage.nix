@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."gtksourceview2" or (buildDepError "gtksourceview2"))
             ];
+          buildable = true;
           };
         };
       };

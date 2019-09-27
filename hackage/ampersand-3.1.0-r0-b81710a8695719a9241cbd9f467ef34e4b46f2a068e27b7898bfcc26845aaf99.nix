@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MissingH" or (buildDepError "MissingH"))
             (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -114,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = true;
           };
         };
       };

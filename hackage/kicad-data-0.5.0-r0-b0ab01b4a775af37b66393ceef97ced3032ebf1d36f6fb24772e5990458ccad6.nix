@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ieee754" or (buildDepError "ieee754"))
           (hsPkgs."pretty-compact" or (buildDepError "pretty-compact"))
           ];
+        buildable = true;
         };
       tests = {
         "kicad-data-quickcheck" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."encoding" or (buildDepError "encoding"))
             (hsPkgs."kicad-data" or (buildDepError "kicad-data"))
             ];
+          buildable = true;
           };
         };
       };

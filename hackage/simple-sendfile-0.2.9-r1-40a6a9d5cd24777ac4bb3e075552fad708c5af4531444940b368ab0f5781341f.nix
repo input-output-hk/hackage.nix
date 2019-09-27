@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
                 (hsPkgs."conduit" or (buildDepError "conduit"))
                 (hsPkgs."transformers" or (buildDepError "transformers"))
                 ]);
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."simple-sendfile" or (buildDepError "simple-sendfile"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         };
       };

@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."word24" or (buildDepError "word24"))
           (hsPkgs."tls" or (buildDepError "tls"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."io-streams" or (buildDepError "io-streams"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

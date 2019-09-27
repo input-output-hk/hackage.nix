@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monadIO" or (buildDepError "monadIO"))
           (hsPkgs."terminal-progress-bar" or (buildDepError "terminal-progress-bar"))
           ];
+        buildable = true;
         };
       };
     }

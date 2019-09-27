@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."wai-conduit" or (buildDepError "wai-conduit"))
           ];
+        buildable = true;
         };
       exes = {
         "wai-middleware-consul-example" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-middleware-consul" or (buildDepError "wai-middleware-consul"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

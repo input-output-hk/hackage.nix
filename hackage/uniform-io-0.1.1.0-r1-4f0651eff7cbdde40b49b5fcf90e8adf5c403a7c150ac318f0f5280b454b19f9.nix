@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
           ];
         libs = [ (pkgs."ssl" or (sysDepError "ssl")) ];
+        buildable = true;
         };
       tests = {
         "lazyness" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."uniform-io" or (buildDepError "uniform-io"))
             ];
+          buildable = true;
           };
         };
       };

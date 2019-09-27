@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
           ];
+        buildable = true;
         };
       exes = {
         "ppaterm" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
             ];
+          buildable = true;
           };
         };
       };

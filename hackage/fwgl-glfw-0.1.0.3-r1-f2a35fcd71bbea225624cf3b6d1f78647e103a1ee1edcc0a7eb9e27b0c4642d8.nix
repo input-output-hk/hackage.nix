@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
           (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
           ];
+        buildable = true;
         };
       };
     }

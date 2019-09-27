@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."path-io" or (buildDepError "path-io"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "projectile-test" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-rerun" or (buildDepError "tasty-rerun"))
             (hsPkgs."projectile" or (buildDepError "projectile"))
             ];
+          buildable = true;
           };
         };
       };

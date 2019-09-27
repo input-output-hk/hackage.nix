@@ -74,11 +74,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
           (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
           ];
+        buildable = true;
         };
       exes = {
-        "hws" = {};
+        "hws" = { buildable = true; };
         "hws-dyn" = {
           depends = (pkgs.lib).optional (flags.dynamic) (hsPkgs."ghc" or (buildDepError "ghc"));
+          buildable = if flags.dynamic then true else false;
           };
         };
       };

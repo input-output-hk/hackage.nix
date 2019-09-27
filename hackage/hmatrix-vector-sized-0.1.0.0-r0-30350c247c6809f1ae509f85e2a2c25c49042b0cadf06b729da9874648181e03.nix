@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."vector-sized" or (buildDepError "vector-sized"))
           ];
+        buildable = true;
         };
       tests = {
         "hmatrix-vector-sized-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."vector-sized" or (buildDepError "vector-sized"))
             ];
+          buildable = true;
           };
         };
       };

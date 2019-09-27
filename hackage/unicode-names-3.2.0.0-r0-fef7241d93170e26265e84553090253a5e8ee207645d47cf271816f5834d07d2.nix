@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."unicode-properties" or (buildDepError "unicode-properties"))
           ];
+        buildable = true;
         };
       };
     }

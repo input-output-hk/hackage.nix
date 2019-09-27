@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lucid" or (buildDepError "lucid"))
           (hsPkgs."ditto-lucid" or (buildDepError "ditto-lucid"))
           ];
+        buildable = true;
         };
       };
     }

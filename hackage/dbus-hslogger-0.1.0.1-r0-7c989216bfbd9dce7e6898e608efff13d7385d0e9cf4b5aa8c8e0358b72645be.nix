@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dbus" or (buildDepError "dbus"))
           (hsPkgs."hslogger" or (buildDepError "hslogger"))
           ];
+        buildable = true;
         };
       exes = {
         "dbus-hslogger-client" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       };

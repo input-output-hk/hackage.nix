@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random-fu" or (buildDepError "random-fu"))
           (hsPkgs."random-source" or (buildDepError "random-source"))
           ];
+        buildable = true;
         };
       exes = {
         "SimpleExample" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polysemy" or (buildDepError "polysemy"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "MtlExample" = {
           depends = [
@@ -111,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polysemy" or (buildDepError "polysemy"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "RandomExample" = {
           depends = [
@@ -126,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random-fu" or (buildDepError "random-fu"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

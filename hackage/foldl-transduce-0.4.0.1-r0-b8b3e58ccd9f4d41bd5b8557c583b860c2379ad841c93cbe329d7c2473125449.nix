@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."free" or (buildDepError "free"))
           (hsPkgs."monoid-subclasses" or (buildDepError "monoid-subclasses"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."free" or (buildDepError "free"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "tests" = {
           depends = [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."foldl" or (buildDepError "foldl"))
             (hsPkgs."foldl-transduce" or (buildDepError "foldl-transduce"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -97,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."foldl" or (buildDepError "foldl"))
             (hsPkgs."foldl-transduce" or (buildDepError "foldl-transduce"))
             ];
+          buildable = true;
           };
         };
       };

@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ]) ++ (pkgs.lib).optional (flags.test-suite) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+        buildable = true;
         };
       };
     }

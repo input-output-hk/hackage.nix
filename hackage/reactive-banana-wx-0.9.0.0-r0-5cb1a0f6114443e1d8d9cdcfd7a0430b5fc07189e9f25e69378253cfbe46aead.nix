@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wxcore" or (buildDepError "wxcore"))
           (hsPkgs."wx" or (buildDepError "wx"))
           ];
+        buildable = true;
         };
       exes = {
         "Animation" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "Arithmetic" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "Asteroids" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -94,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "BarTab" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -102,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "Counter" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -110,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "CurrencyConverter" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -118,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "CRUD" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -127,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "NetMonitor" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -136,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "TicTacToe" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -145,6 +154,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "TwoCounters" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -153,6 +163,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "Wave" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -161,6 +172,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

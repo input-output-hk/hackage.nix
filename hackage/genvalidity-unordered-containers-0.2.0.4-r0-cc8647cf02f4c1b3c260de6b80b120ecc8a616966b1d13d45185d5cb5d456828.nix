@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."validity" or (buildDepError "validity"))
           (hsPkgs."validity-unordered-containers" or (buildDepError "validity-unordered-containers"))
           ];
+        buildable = true;
         };
       tests = {
         "genvalidity-unordered-containers-test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."validity" or (buildDepError "validity"))
             ];
+          buildable = true;
           };
         };
       };

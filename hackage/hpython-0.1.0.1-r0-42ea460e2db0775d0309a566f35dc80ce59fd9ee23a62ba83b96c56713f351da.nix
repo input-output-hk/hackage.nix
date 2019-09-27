@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."validation" or (buildDepError "validation"))
           (hsPkgs."parsers-megaparsec" or (buildDepError "parsers-megaparsec"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hpython" or (buildDepError "hpython"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
             (hsPkgs."validation" or (buildDepError "validation"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -110,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."validation" or (buildDepError "validation"))
             ];
+          buildable = true;
           };
         };
       };

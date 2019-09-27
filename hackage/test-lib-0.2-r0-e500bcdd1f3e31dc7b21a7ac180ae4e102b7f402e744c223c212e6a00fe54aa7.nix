@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework" or (buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
           ];
+        buildable = true;
         };
       exes = {
         "test-runner" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."simple-get-opt" or (buildDepError "simple-get-opt"))
             (hsPkgs."test-lib" or (buildDepError "test-lib"))
             ];
+          buildable = true;
           };
         };
       };

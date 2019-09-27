@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."io-streams" or (buildDepError "io-streams"))
           (hsPkgs."SHA" or (buildDepError "SHA"))
           ];
+        buildable = true;
         };
       exes = {
         "sha-streams" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SHA" or (buildDepError "SHA"))
             (hsPkgs."sha-streams" or (buildDepError "sha-streams"))
             ];
+          buildable = true;
           };
         };
       };

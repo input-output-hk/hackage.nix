@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."ziptastic-core" or (buildDepError "ziptastic-core"))
           ];
+        buildable = true;
         };
       tests = {
         "test-client" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-client" or (buildDepError "servant-client"))
             (hsPkgs."ziptastic-client" or (buildDepError "ziptastic-client"))
             ];
+          buildable = true;
           };
         };
       };

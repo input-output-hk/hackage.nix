@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           ];
         libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+        buildable = true;
         };
       };
     }

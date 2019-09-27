@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.integer-simple
           then [ (hsPkgs."integer-simple" or (buildDepError "integer-simple")) ]
           else [ (hsPkgs."integer-gmp" or (buildDepError "integer-gmp")) ]);
+        buildable = true;
         };
       tests = {
         "test-numerals" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."numerals" or (buildDepError "numerals"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."numerals" or (buildDepError "numerals"))
             ];
+          buildable = true;
           };
         };
       };

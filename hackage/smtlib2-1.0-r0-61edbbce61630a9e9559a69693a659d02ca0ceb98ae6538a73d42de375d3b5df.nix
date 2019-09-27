@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
           (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
           ];
+        buildable = true;
         };
       };
     }

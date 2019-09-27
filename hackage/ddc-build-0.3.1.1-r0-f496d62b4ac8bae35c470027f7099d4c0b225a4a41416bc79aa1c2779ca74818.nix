@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ddc-core-salt" or (buildDepError "ddc-core-salt"))
           (hsPkgs."ddc-core-llvm" or (buildDepError "ddc-core-llvm"))
           ];
+        buildable = true;
         };
       };
     }

@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           ] ++ (pkgs.lib).optional (flags.hakyll) (hsPkgs."hakyll" or (buildDepError "hakyll"));
+        buildable = true;
         };
       tests = {
         "wai-static-extra-spec" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ] ++ (pkgs.lib).optional (flags.hakyll) (hsPkgs."hakyll" or (buildDepError "hakyll"));
+          buildable = true;
           };
         };
       };

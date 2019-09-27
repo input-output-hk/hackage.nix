@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xdg-basedir" or (buildDepError "xdg-basedir"))
           (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "hbro" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."glib" or (buildDepError "glib"))
             (hsPkgs."gtk" or (buildDepError "gtk"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ] ++ (pkgs.lib).optional (flags.chaselev) (hsPkgs."chaselev-deque" or (buildDepError "chaselev-deque"));
+        buildable = true;
         };
       tests = {
         "test-lvish" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
             ] ++ (pkgs.lib).optional (flags.chaselev) (hsPkgs."chaselev-deque" or (buildDepError "chaselev-deque"));
+          buildable = true;
           };
         };
       };

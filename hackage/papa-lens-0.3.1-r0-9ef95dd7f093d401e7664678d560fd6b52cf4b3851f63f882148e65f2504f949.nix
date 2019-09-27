@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."papa-lens-export" or (buildDepError "papa-lens-export"))
           (hsPkgs."papa-lens-implement" or (buildDepError "papa-lens-implement"))
           ];
+        buildable = true;
         };
       };
     }

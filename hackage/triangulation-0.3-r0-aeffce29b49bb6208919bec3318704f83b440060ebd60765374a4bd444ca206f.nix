@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
           (hsPkgs."tuple" or (buildDepError "tuple"))
           ];
+        buildable = true;
         };
       };
     }

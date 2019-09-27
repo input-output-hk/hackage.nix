@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else if flags.curses
               then [ (hsPkgs."hscurses" or (buildDepError "hscurses")) ]
               else (pkgs.lib).optional (!(flags.std || compiler.isGhc && (compiler.version).eq "7.6.1")) (hsPkgs."gtk" or (buildDepError "gtk")));
+        buildable = true;
         };
       exes = {
         "LambdaHack" = {
@@ -98,12 +99,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
+          buildable = true;
           };
         "DumbBot" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

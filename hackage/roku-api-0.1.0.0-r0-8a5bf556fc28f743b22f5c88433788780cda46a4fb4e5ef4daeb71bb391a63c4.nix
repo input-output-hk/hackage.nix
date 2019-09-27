@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml" or (buildDepError "xml"))
           (hsPkgs."xml-extractors" or (buildDepError "xml-extractors"))
           ];
+        buildable = true;
         };
       };
     }

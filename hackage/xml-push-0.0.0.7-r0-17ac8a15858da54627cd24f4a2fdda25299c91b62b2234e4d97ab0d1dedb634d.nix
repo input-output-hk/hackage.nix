@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."x509-store" or (buildDepError "x509-store"))
           (hsPkgs."tighttp" or (buildDepError "tighttp"))
           ];
+        buildable = true;
         };
       };
     }

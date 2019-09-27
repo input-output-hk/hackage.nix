@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       tests = {
         "test-suite" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-attoparsec" or (buildDepError "hspec-attoparsec"))
             (hsPkgs."network-anonymous-i2p" or (buildDepError "network-anonymous-i2p"))
             ];
+          buildable = true;
           };
         };
       };

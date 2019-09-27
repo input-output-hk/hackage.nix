@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ffi" or (buildDepError "ffi"))
           (hsPkgs."greencard" or (buildDepError "greencard"))
           ];
+        buildable = true;
         };
       };
     }

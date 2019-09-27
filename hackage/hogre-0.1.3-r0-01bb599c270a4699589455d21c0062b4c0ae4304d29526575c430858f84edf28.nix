@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs.buildPackages.grgen or (pkgs.buildPackages.grgen or (buildToolDepError "grgen")))
           (hsPkgs.buildPackages.cgen-hs or (pkgs.buildPackages.cgen-hs or (buildToolDepError "cgen-hs")))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."yaya" or (buildDepError "yaya"))
           ];
+        buildable = true;
         };
       tests = {
         "yaya-unsafe-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yaya-hedgehog" or (buildDepError "yaya-hedgehog"))
             (hsPkgs."yaya-unsafe" or (buildDepError "yaya-unsafe"))
             ];
+          buildable = true;
           };
         };
       };

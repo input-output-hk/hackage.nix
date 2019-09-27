@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-lens-light" or (buildDepError "data-lens-light"))
           (hsPkgs."traverse-with-class" or (buildDepError "traverse-with-class"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.8") (hsPkgs."tagged" or (buildDepError "tagged"));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."traverse-with-class" or (buildDepError "traverse-with-class"))
             (hsPkgs."haskell-names" or (buildDepError "haskell-names"))
             ];
+          buildable = true;
           };
         };
       };

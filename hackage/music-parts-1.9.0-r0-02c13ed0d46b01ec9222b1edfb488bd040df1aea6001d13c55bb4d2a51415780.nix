@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."music-pitch" or (buildDepError "music-pitch"))
           (hsPkgs."music-dynamics" or (buildDepError "music-dynamics"))
           ];
+        buildable = true;
         };
       };
     }

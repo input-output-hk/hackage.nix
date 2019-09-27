@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
           ];
+        buildable = true;
         };
       };
     }

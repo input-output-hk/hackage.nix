@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xdg-basedir" or (buildDepError "xdg-basedir"))
           (hsPkgs."zeromq3-haskell" or (buildDepError "zeromq3-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "hbro" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

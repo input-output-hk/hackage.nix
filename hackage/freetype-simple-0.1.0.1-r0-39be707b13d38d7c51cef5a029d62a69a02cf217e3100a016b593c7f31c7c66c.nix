@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."linear" or (buildDepError "linear"))
           (hsPkgs."freetype2" or (buildDepError "freetype2"))
           ];
+        buildable = true;
         };
       };
     }

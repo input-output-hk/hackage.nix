@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."temporal-media" or (buildDepError "temporal-media"))
           (hsPkgs."type-level-natural-number-decimal" or (buildDepError "type-level-natural-number-decimal"))
           ];
+        buildable = true;
         };
       };
     }

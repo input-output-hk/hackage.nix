@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-gi-overloading" or (buildDepError "haskell-gi-overloading"))
           ];
         pkgconfig = [ (pkgconfPkgs."atk" or (pkgConfDepError "atk")) ];
+        buildable = true;
         };
       };
     }

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."HSH" or (buildDepError "HSH"))
             ];
+          buildable = true;
           };
         };
       };

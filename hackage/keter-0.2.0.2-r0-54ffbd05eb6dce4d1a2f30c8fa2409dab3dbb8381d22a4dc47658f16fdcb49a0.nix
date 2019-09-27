@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tls-extra" or (buildDepError "tls-extra"))
           (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
           ];
+        buildable = true;
         };
       exes = {
         "keter" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."keter" or (buildDepError "keter"))
             ];
+          buildable = true;
           };
         };
       };

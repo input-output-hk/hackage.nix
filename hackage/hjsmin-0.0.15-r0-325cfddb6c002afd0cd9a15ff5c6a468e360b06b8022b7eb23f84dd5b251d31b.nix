@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."language-javascript" or (buildDepError "language-javascript"))
           ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

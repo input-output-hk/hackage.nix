@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."ieee754" or (buildDepError "ieee754"))
           ];
+        buildable = true;
         };
       };
     }

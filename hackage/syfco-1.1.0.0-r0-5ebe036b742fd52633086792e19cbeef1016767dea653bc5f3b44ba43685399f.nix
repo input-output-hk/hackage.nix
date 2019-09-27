@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."convertible" or (buildDepError "convertible"))
           ];
+        buildable = true;
         };
       exes = {
         "syfco" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."convertible" or (buildDepError "convertible"))
             ];
+          buildable = true;
           };
         };
       };

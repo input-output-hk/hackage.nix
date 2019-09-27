@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."algebra" or (buildDepError "algebra"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
             (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
             ];
+          buildable = true;
           };
         };
       };

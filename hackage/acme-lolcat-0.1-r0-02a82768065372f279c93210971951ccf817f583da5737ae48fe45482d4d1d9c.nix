@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
           ];
+        buildable = true;
         };
       };
     }

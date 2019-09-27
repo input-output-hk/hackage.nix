@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conceit" or (buildDepError "conceit"))
           (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."foldl" or (buildDepError "foldl"))
             ];
+          buildable = true;
           };
         "tests" = {
           depends = [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes" or (buildDepError "pipes"))
             (hsPkgs."pipes-transduce" or (buildDepError "pipes-transduce"))
             ];
+          buildable = true;
           };
         };
       };

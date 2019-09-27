@@ -68,13 +68,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagset-positional" or (buildDepError "tagset-positional"))
           (hsPkgs."crf-chain2-generic" or (buildDepError "crf-chain2-generic"))
           ];
+        buildable = true;
         };
       exes = {
         "concraft-guess" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         "concraft-disamb" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

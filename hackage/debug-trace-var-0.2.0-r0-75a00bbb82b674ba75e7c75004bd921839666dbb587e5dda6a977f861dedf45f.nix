@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."unicode-show" or (buildDepError "unicode-show"))
           ];
+        buildable = true;
         };
       };
     }

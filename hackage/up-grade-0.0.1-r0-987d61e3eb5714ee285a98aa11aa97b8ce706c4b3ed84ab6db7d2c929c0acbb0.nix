@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."ports-tools" or (buildDepError "ports-tools"))
             ];
+          buildable = true;
           };
         };
       };

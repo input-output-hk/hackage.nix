@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."opentheory-unicode" or (buildDepError "opentheory-unicode"))
           (hsPkgs."api-opentheory-unicode" or (buildDepError "api-opentheory-unicode"))
           ];
+        buildable = true;
         };
       exes = {
         "fen2s" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."opentheory-unicode" or (buildDepError "opentheory-unicode"))
             (hsPkgs."api-opentheory-unicode" or (buildDepError "api-opentheory-unicode"))
             ];
+          buildable = true;
           };
         "fen2s-test" = {
           depends = [
@@ -75,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."opentheory-unicode" or (buildDepError "opentheory-unicode"))
             (hsPkgs."api-opentheory-unicode" or (buildDepError "api-opentheory-unicode"))
             ];
+          buildable = true;
           };
         };
       };

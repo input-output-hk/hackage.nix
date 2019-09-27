@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
           (hsPkgs."memory" or (buildDepError "memory"))
           ] ++ (pkgs.lib).optional (flags.fastpbkdf2) (hsPkgs."fastpbkdf2" or (buildDepError "fastpbkdf2"));
+        buildable = true;
         };
       exes = {
         "rncryptor-decrypt" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."io-streams" or (buildDepError "io-streams"))
             (hsPkgs."rncryptor" or (buildDepError "rncryptor"))
             ];
+          buildable = true;
           };
         "rncryptor-encrypt" = {
           depends = [
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
             (hsPkgs."rncryptor" or (buildDepError "rncryptor"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."bytestring-arbitrary" or (buildDepError "bytestring-arbitrary"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -112,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."rncryptor" or (buildDepError "rncryptor"))
             ];
+          buildable = true;
           };
         };
       };

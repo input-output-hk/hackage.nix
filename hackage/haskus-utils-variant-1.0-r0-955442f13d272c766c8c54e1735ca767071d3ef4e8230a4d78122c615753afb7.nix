@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskus-utils-types" or (buildDepError "haskus-utils-types"))
           (hsPkgs."haskus-utils-data" or (buildDepError "haskus-utils-data"))
           ];
+        buildable = true;
         };
       };
     }

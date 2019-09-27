@@ -101,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-cli" or (buildDepError "wai-cli"))
           (hsPkgs."wai-middleware-metrics" or (buildDepError "wai-middleware-metrics"))
           ];
+        buildable = true;
         };
       };
     }

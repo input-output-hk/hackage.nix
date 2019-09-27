@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (pkgs.lib).optional (flags.conduit11) (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))) ++ [
           (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."crypto-conduit" or (buildDepError "crypto-conduit"))
             ] ++ (pkgs.lib).optional (flags.conduit11) (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"));
+          buildable = true;
           };
         };
       };

@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
           ];
+        buildable = if flags.library then true else false;
         };
       exes = {
         "ampersand" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.executable then true else false;
           };
         };
       };

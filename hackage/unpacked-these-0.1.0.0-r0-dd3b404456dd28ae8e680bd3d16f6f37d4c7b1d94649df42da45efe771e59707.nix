@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."these" or (buildDepError "these"))
           (hsPkgs."unpacked-maybe" or (buildDepError "unpacked-maybe"))
           ];
+        buildable = true;
         };
       tests = {
         "unpacked-these-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-classes" or (buildDepError "quickcheck-classes"))
             ];
+          buildable = true;
           };
         };
       };

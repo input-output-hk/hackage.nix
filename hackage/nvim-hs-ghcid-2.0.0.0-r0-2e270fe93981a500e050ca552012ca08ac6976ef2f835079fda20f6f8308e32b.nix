@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."unliftio" or (buildDepError "unliftio"))
           ];
+        buildable = true;
         };
       exes = {
         "nvim-hs-ghcid" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."nvim-hs" or (buildDepError "nvim-hs"))
             (hsPkgs."nvim-hs-ghcid" or (buildDepError "nvim-hs-ghcid"))
             ];
+          buildable = true;
           };
         };
       };

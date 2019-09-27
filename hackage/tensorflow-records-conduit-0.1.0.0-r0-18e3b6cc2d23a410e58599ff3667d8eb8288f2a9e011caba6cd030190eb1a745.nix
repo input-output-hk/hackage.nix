@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           (hsPkgs."tensorflow-records" or (buildDepError "tensorflow-records"))
           ];
+        buildable = true;
         };
       };
     }

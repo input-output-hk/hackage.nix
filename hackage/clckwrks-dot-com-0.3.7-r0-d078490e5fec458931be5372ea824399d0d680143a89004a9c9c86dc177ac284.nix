@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.hsx2hs or (pkgs.buildPackages.hsx2hs or (buildToolDepError "hsx2hs")))
             ];
+          buildable = true;
           };
         "clckwrks-dot-com-backups" = {
           depends = (pkgs.lib).optionals (flags.backups) [
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."cabal-debian" or (buildDepError "cabal-debian"))
             ];
+          buildable = if flags.backups then true else false;
           };
         };
       };

@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."neat-interpolation" or (buildDepError "neat-interpolation"))
           ];
+        buildable = true;
         };
       };
     }

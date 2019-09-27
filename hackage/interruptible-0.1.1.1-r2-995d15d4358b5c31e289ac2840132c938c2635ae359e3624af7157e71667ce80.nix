@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           (hsPkgs."either" or (buildDepError "either"))
           ];
+        buildable = true;
         };
       tests = {
         "all" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."interruptible" or (buildDepError "interruptible"))
             ];
+          buildable = true;
           };
         };
       };

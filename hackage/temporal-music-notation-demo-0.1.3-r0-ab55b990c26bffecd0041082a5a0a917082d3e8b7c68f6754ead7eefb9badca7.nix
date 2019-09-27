@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."cmath" or (buildDepError "cmath"))
           ];
+        buildable = true;
         };
       };
     }

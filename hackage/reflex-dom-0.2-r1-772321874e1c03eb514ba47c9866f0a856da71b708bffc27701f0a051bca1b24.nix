@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."webkitgtk3" or (buildDepError "webkitgtk3"))
             (hsPkgs."webkitgtk3-javascriptcore" or (buildDepError "webkitgtk3-javascriptcore"))
             ]);
+        buildable = true;
         };
       };
     }

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
             ];
+          buildable = true;
           };
         };
       };

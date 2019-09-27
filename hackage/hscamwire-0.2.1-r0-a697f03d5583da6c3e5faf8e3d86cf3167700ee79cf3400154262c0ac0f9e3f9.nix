@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."raw1394" or (sysDepError "raw1394"))
           (pkgs."camwire_1394" or (sysDepError "camwire_1394"))
           ];
+        buildable = true;
         };
       };
     }

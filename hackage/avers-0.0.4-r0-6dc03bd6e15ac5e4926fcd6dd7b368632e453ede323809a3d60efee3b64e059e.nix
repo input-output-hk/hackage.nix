@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rethinkdb-client-driver" or (buildDepError "rethinkdb-client-driver"))
           (hsPkgs."scrypt" or (buildDepError "scrypt"))
           ];
+        buildable = true;
         };
       };
     }

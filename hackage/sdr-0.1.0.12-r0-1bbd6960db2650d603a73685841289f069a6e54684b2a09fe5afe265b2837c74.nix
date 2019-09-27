@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
           ];
+        buildable = if system.isI386 then false else true;
         };
       tests = {
         "test" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."sdr" or (buildDepError "sdr"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."storable-complex" or (buildDepError "storable-complex"))
             (hsPkgs."sdr" or (buildDepError "sdr"))
             ];
+          buildable = true;
           };
         };
       };

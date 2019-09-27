@@ -62,9 +62,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       exes = {
-        "hangman" = { depends = [ (hsPkgs."HCL" or (buildDepError "HCL")) ]; };
+        "hangman" = {
+          depends = [ (hsPkgs."HCL" or (buildDepError "HCL")) ];
+          buildable = true;
+          };
         };
       };
     }

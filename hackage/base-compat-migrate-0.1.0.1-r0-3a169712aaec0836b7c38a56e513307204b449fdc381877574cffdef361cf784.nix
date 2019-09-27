@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."base-compat" or (buildDepError "base-compat"))
           ];
+        buildable = true;
         };
       exes = {
         "base-compat-migrate-generate" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
             ];
+          buildable = if flags.exe then true else false;
           };
         };
       };

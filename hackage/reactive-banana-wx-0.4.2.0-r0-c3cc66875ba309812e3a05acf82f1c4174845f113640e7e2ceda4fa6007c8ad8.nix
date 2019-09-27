@@ -62,29 +62,34 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wx" or (buildDepError "wx"))
           (hsPkgs."wxcore" or (buildDepError "wxcore"))
           ];
+        buildable = true;
         };
       exes = {
-        "Arithmetic" = {};
+        "Arithmetic" = { buildable = true; };
         "Asteroids" = {
           depends = [
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
-        "Counter" = {};
-        "CurrencyConverter" = {};
+        "Counter" = { buildable = true; };
+        "CurrencyConverter" = { buildable = true; };
         "CRUD" = {
           depends = [ (hsPkgs."containers" or (buildDepError "containers")) ];
+          buildable = true;
           };
         "NetMonitor" = {
           depends = [ (hsPkgs."process" or (buildDepError "process")) ];
+          buildable = true;
           };
         "TicTacToe" = {
           depends = [ (hsPkgs."array" or (buildDepError "array")) ];
+          buildable = true;
           };
-        "TwoCounters" = {};
-        "Wave" = {};
+        "TwoCounters" = { buildable = true; };
+        "Wave" = { buildable = true; };
         };
       };
     }

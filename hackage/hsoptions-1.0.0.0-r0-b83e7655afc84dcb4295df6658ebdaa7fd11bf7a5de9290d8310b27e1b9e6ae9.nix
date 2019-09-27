@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = true;
         };
       exes = {
         "SimpleFlag" = {
@@ -70,18 +71,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsoptions" or (buildDepError "hsoptions"))
             ];
+          buildable = true;
           };
         "ComplexFlag" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsoptions" or (buildDepError "hsoptions"))
             ];
+          buildable = true;
           };
         "DependentDefaultsDemo" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsoptions" or (buildDepError "hsoptions"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -100,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm-hamt" or (buildDepError "stm-hamt"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rerebase" or (buildDepError "rerebase"))
             (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
             ];
+          buildable = true;
           };
         };
       };

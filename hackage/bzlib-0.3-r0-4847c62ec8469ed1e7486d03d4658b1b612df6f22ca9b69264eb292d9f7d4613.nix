@@ -57,6 +57,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = [ (pkgs."bz2" or (sysDepError "bz2")) ];
+        buildable = true;
         };
       };
     }

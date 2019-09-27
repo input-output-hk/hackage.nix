@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."ssl32" or (sysDepError "ssl32"))
             ]
           else [ (pkgs."crypto" or (sysDepError "crypto")) ]);
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."io-streams" or (buildDepError "io-streams"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

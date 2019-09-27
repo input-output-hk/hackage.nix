@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."diagrams-core" or (buildDepError "diagrams-core"))
           (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
           ];
+        buildable = true;
         };
       };
     }

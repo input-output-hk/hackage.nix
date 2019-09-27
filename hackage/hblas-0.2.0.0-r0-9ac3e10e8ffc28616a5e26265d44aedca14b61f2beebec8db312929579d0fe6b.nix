@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."lapack" or (sysDepError "lapack"))
           ];
         frameworks = (pkgs.lib).optional (system.isOsx && !flags.openblas) (pkgs."Accelerate" or (sysDepError "Accelerate"));
+        buildable = true;
         };
       tests = {
         "unit-testsuite" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."hblas" or (buildDepError "hblas"))
             ];
+          buildable = true;
           };
         };
       };

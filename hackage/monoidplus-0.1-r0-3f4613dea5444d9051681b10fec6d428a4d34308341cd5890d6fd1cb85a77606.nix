@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."contravariant" or (buildDepError "contravariant"))
           ];
+        buildable = true;
         };
       };
     }

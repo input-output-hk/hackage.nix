@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."sql-simple" or (buildDepError "sql-simple"))
           (hsPkgs."sqlite-simple" or (buildDepError "sqlite-simple"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."tagged" or (buildDepError "tagged"));
+        buildable = true;
         };
       };
     }

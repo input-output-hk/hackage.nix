@@ -99,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
           (hsPkgs."async" or (buildDepError "async"))
           ];
+        buildable = true;
         };
       tests = {
         "store-test" = {
@@ -147,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."store" or (buildDepError "store"))
             ];
+          buildable = true;
           };
         "store-weigh" = {
           depends = [
@@ -199,6 +201,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal-vector" or (buildDepError "cereal-vector"))
             (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -254,6 +257,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
             (hsPkgs."cereal-vector" or (buildDepError "cereal-vector"))
             ];
+          buildable = true;
           };
         };
       };

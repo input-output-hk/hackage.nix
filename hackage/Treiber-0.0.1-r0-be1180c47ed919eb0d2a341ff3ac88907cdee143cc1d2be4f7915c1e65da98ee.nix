@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
           (hsPkgs."ref-mtl" or (buildDepError "ref-mtl"))
           ];
+        buildable = true;
         };
       };
     }

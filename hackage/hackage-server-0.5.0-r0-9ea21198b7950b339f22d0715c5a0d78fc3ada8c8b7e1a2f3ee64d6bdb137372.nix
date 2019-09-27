@@ -118,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
             (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
             ];
+          buildable = if !flags.build-hackage-server then false else true;
           };
         "hackage-mirror" = {
           depends = [
@@ -145,6 +146,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
+          buildable = if !flags.build-hackage-mirror then false else true;
           };
         "hackage-build" = {
           depends = [
@@ -174,6 +176,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."hscolour" or (buildDepError "hscolour"))
             ];
+          buildable = if !flags.build-hackage-build then false else true;
           };
         "hackage-import" = {
           depends = [
@@ -204,6 +207,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = if !flags.build-hackage-import then false else true;
           };
         };
       tests = {
@@ -228,6 +232,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml" or (buildDepError "xml"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "CreateUserTest" = {
           depends = [
@@ -250,6 +255,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml" or (buildDepError "xml"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if !flags.test-create-user then false else true;
           };
         };
       };

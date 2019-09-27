@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."protocol-buffers-fork" or (buildDepError "protocol-buffers-fork"))
           (hsPkgs."protocol-buffers-descriptor-fork" or (buildDepError "protocol-buffers-descriptor-fork"))
           ];
+        buildable = true;
         };
       };
     }

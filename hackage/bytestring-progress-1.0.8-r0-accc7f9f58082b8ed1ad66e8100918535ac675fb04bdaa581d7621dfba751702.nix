@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ] ++ (pkgs.lib).optional (flags.use-system-progressbar) (hsPkgs."terminal-progress-bar" or (buildDepError "terminal-progress-bar"));
+        buildable = true;
         };
       };
     }

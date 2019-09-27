@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       tests = {
         "ErrorExample" = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "MtlExample" = {
           depends = [
@@ -119,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "MultiDocExample" = {
           depends = [
@@ -132,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "RandomExample" = {
           depends = [
@@ -151,6 +155,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random-source" or (buildDepError "random-source"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "SimpleExample" = {
           depends = [
@@ -165,6 +170,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

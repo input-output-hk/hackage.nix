@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."parallel" or (buildDepError "parallel"))
           ];
+        buildable = true;
         };
       exes = {
         "hlcm" = {
@@ -74,8 +75,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."bytestring-csv" or (buildDepError "bytestring-csv"))
             ];
+          buildable = true;
           };
-        "benchHLCM" = {};
+        "benchHLCM" = { buildable = true; };
         };
       };
     }

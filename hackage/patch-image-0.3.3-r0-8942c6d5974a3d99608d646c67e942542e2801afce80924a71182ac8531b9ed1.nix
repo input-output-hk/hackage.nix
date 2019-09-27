@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."prelude-compat" or (buildDepError "prelude-compat"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.llvm then true else false;
           };
         "patch-image-cuda" = {
           depends = (pkgs.lib).optionals (flags.cuda) [
@@ -113,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.cuda then true else false;
           };
         "patch-image-draft" = {
           depends = (pkgs.lib).optionals (flags.builddraft) [
@@ -121,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.builddraft then true else false;
           };
         };
       };

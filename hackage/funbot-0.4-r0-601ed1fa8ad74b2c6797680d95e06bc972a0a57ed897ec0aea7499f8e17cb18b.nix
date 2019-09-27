@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."vcs-web-hook-parse" or (buildDepError "vcs-web-hook-parse"))
             ];
+          buildable = true;
           };
         };
       };

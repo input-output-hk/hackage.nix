@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-general" or (buildDepError "llvm-general"))
             (hsPkgs."llvm-general-pure" or (buildDepError "llvm-general-pure"))
             ];
+          buildable = true;
           };
         };
       };

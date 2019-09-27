@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."SDL" or (buildDepError "SDL"))
           ];
         libs = [ (pkgs."SDL_mixer" or (sysDepError "SDL_mixer")) ];
+        buildable = true;
         };
       };
     }

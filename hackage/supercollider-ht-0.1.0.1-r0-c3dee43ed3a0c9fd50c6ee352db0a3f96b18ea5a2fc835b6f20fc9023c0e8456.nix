@@ -68,7 +68,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
-      exes = { "timing-example" = {}; };
+      exes = {
+        "timing-example" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        };
       };
     }

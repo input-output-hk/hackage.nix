@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+        buildable = true;
         };
       exes = {
         "paddle" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = true;
           };
         };
       };

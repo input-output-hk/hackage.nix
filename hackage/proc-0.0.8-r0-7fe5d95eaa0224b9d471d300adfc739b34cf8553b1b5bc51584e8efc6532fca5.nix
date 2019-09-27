@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."strict" or (buildDepError "strict"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
       };
     }

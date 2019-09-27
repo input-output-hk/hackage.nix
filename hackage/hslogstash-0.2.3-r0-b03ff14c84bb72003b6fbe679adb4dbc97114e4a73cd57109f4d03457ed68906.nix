@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel-io" or (buildDepError "parallel-io"))
           (hsPkgs."stm-conduit" or (buildDepError "stm-conduit"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.0.0") (hsPkgs."utility-ht" or (buildDepError "utility-ht"));
+        buildable = true;
         };
       };
     }

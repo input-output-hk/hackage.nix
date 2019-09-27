@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."algebra-dag" or (buildDepError "algebra-dag"))
           (hsPkgs."algebra-sql" or (buildDepError "algebra-sql"))
           ];
+        buildable = true;
         };
       exes = {
         "vldot" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."algebra-dag" or (buildDepError "algebra-dag"))
             (hsPkgs."algebra-sql" or (buildDepError "algebra-sql"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -108,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."DSH" or (buildDepError "DSH"))
             ];
+          buildable = true;
           };
         };
       };

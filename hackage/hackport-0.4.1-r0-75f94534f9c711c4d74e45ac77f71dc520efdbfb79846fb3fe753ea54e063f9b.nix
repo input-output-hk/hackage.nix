@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."bytestring" or (buildDepError "bytestring"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = true;
           };
         "hackport-guess-ghc-version" = {
           depends = [
@@ -110,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."bytestring" or (buildDepError "bytestring"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = false;
           };
         };
       tests = {
@@ -130,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."xml" or (buildDepError "xml"))
             ];
+          buildable = true;
           };
         "test-print-deps" = {
           depends = [
@@ -148,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."xml" or (buildDepError "xml"))
             ];
+          buildable = true;
           };
         "test-normalize-deps" = {
           depends = [
@@ -166,6 +170,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."xml" or (buildDepError "xml"))
             ];
+          buildable = true;
           };
         };
       };

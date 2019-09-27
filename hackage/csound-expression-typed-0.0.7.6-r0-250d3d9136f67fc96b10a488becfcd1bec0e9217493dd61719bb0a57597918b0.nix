@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."csound-expression-dynamic" or (buildDepError "csound-expression-dynamic"))
           (hsPkgs."temporal-media" or (buildDepError "temporal-media"))
           ];
+        buildable = true;
         };
       };
     }

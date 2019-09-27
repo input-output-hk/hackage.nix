@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc" or (buildDepError "ghc"))
           (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
           ]) ++ (pkgs.lib).optional (flags.readfile) (hsPkgs."haskell-src" or (buildDepError "haskell-src"))) ++ (pkgs.lib).optional (flags.ghc7) (hsPkgs."ghc" or (buildDepError "ghc"));
+        buildable = true;
         };
       };
     }

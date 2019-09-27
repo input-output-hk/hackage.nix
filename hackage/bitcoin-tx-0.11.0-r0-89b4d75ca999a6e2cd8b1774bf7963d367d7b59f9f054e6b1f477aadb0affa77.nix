@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."bitcoin-script" or (buildDepError "bitcoin-script"))
           ];
+        buildable = true;
         };
       tests = {
         "test-suite" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bitcoin-tx" or (buildDepError "bitcoin-tx"))
             (hsPkgs."bitcoin-script" or (buildDepError "bitcoin-script"))
             ];
+          buildable = true;
           };
         };
       };

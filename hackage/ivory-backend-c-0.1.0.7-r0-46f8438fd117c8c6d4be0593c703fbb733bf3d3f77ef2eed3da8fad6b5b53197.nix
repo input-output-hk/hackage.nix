@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ivory-opts" or (buildDepError "ivory-opts"))
           (hsPkgs."ivory-artifact" or (buildDepError "ivory-artifact"))
           ];
+        buildable = true;
         };
       };
     }

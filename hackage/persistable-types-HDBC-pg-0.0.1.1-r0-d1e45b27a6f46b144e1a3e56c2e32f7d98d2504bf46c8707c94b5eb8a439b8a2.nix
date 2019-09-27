@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."persistable-record" or (buildDepError "persistable-record"))
           (hsPkgs."relational-query-HDBC" or (buildDepError "relational-query-HDBC"))
           ];
+        buildable = true;
         };
       };
     }

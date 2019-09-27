@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."containers" or (buildDepError "containers"))
             ])) ++ (pkgs.lib).optional (flags.chaselev) (hsPkgs."chaselev-deque" or (buildDepError "chaselev-deque"));
+        buildable = true;
         };
       tests = {
         "test-lvish" = {
@@ -110,6 +111,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."par-classes" or (buildDepError "par-classes"))
             (hsPkgs."par-collections" or (buildDepError "par-collections"))
             ]) ++ (pkgs.lib).optional (flags.chaselev) (hsPkgs."chaselev-deque" or (buildDepError "chaselev-deque"));
+          buildable = if compiler.isGhc && (compiler.version).lt "7.7" && system.isLinux
+            then false
+            else true;
           };
         };
       };

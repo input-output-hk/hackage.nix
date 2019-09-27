@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."vector-sized" or (buildDepError "vector-sized"))
           ];
+        buildable = true;
         };
       tests = {
         "z85-bytestring-test" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-sized" or (buildDepError "vector-sized"))
             (hsPkgs."z85" or (buildDepError "z85"))
             ];
+          buildable = true;
           };
         };
       };

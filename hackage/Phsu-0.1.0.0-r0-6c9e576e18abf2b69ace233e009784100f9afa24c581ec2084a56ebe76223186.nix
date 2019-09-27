@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."friendly-time" or (buildDepError "friendly-time"))
             (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
             ];
+          buildable = true;
           };
         };
       };

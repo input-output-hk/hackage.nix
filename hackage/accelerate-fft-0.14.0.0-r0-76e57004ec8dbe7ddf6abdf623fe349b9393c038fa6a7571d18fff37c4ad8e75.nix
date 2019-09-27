@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cuda" or (buildDepError "cuda"))
           (hsPkgs."cufft" or (buildDepError "cufft"))
           ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."to-string-class" or (buildDepError "to-string-class"))
           (hsPkgs."dstring" or (buildDepError "dstring"))
           ];
+        buildable = true;
         };
       };
     }

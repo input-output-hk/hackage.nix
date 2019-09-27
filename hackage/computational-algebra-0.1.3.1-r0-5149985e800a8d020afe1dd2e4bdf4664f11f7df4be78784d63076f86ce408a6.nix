@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
           (hsPkgs."heaps" or (buildDepError "heaps"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6.1") (hsPkgs."monomorphic" or (buildDepError "monomorphic"));
+        buildable = true;
         };
       };
     }

@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
           (hsPkgs."vault" or (buildDepError "vault"))
           ];
+        buildable = true;
         };
       tests = {
         "test-webapp" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."webapp" or (buildDepError "webapp"))
             ];
+          buildable = true;
           };
         };
       };

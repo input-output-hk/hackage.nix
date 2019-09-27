@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."peano" or (buildDepError "peano"))
           (hsPkgs."natural-induction" or (buildDepError "natural-induction"))
           ];
+        buildable = true;
         };
       };
     }

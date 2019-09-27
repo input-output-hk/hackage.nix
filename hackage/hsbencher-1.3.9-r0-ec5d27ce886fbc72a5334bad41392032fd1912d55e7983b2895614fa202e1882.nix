@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
           (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
           ] ++ (pkgs.lib).optional (flags.hydra) (hsPkgs."hydra-print" or (buildDepError "hydra-print"))) ++ (pkgs.lib).optional (flags.fusion) (hsPkgs."handa-gdata" or (buildDepError "handa-gdata"));
+        buildable = true;
         };
       tests = {
         "test1" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             (hsPkgs."hsbencher" or (buildDepError "hsbencher"))
             ] ++ (pkgs.lib).optional (flags.hydra) (hsPkgs."hydra-print" or (buildDepError "hydra-print"))) ++ (pkgs.lib).optional (flags.fusion) (hsPkgs."handa-gdata" or (buildDepError "handa-gdata"));
+          buildable = true;
           };
         "test2" = {
           depends = ([
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             (hsPkgs."hsbencher" or (buildDepError "hsbencher"))
             ] ++ (pkgs.lib).optional (flags.hydra) (hsPkgs."hydra-print" or (buildDepError "hydra-print"))) ++ (pkgs.lib).optional (flags.fusion) (hsPkgs."handa-gdata" or (buildDepError "handa-gdata"));
+          buildable = true;
           };
         };
       };

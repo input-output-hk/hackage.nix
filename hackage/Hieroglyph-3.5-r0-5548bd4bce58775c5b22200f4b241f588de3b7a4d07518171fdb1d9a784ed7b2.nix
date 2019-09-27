@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."glib" or (buildDepError "glib"))
           (hsPkgs."buster-gtk" or (buildDepError "buster-gtk"))
           ];
+        buildable = true;
         };
       };
     }

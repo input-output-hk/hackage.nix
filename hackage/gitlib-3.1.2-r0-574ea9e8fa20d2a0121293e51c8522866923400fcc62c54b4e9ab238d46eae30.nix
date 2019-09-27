@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if !system.isWindows
           then [ (hsPkgs."unix" or (buildDepError "unix")) ]
           else [ (hsPkgs."unix-compat" or (buildDepError "unix-compat")) ]);
+        buildable = true;
         };
       };
     }

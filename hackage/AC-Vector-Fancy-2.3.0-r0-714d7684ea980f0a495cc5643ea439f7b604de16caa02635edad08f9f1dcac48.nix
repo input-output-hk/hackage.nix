@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."AC-Angle" or (buildDepError "AC-Angle"))
           (hsPkgs."AC-Vector" or (buildDepError "AC-Vector"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."bindings-libusb" or (buildDepError "bindings-libusb"))
           ];
+        buildable = true;
         };
       };
     }

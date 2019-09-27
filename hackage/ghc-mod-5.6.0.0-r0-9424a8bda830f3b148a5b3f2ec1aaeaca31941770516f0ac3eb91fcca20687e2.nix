@@ -100,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."convertible" or (buildDepError "convertible"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"));
+        buildable = true;
         };
       exes = {
         "ghc-mod" = {
@@ -117,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
             ];
+          buildable = true;
           };
         "ghc-modi" = {
           depends = [
@@ -130,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -138,8 +141,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
-        "spec" = { depends = [ (hsPkgs."hspec" or (buildDepError "hspec")) ]; };
+        "spec" = {
+          depends = [ (hsPkgs."hspec" or (buildDepError "hspec")) ];
+          buildable = true;
+          };
         };
       };
     }

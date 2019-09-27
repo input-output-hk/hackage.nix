@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."chr-data" or (buildDepError "chr-data"))
           (hsPkgs."chr-core" or (buildDepError "chr-core"))
           ];
+        buildable = true;
         };
       };
     }

@@ -62,16 +62,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
-        "hach-client" = {};
+        "hach-client" = { buildable = true; };
         "hach-nclient" = {
           depends = [
             (hsPkgs."vty" or (buildDepError "vty"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = true;
           };
-        "hach-server" = {};
+        "hach-server" = { buildable = true; };
         };
       };
     }

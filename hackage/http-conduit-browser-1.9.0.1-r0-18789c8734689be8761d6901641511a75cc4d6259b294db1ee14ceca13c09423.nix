@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."certificate" or (buildDepError "certificate"))
           (hsPkgs."tls" or (buildDepError "tls"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -109,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."certificate" or (buildDepError "certificate"))
             (hsPkgs."tls" or (buildDepError "tls"))
             ];
+          buildable = true;
           };
         };
       };

@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (buildDepError "semigroups"));
+        buildable = true;
         };
       exes = {
         "nano-bench" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if flags.dev then true else false;
           };
         "adaptive" = {
           depends = (pkgs.lib).optionals (flags.dev) [
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gauge" or (buildDepError "gauge"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if flags.dev then true else false;
           };
         "chart" = {
           depends = (pkgs.lib).optionals (flags.dev) [
@@ -110,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if flags.dev then true else false;
           };
         "SearchQuery" = {
           depends = (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
@@ -117,6 +121,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             ];
+          buildable = if flags.examples || flags.examples-sdl
+            then true
+            else false;
           };
         "ListDir" = {
           depends = (pkgs.lib).optionals (flags.examples || flags.examples-sdl) ([
@@ -124,6 +131,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."path-io" or (buildDepError "path-io"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers")));
+          buildable = if flags.examples || flags.examples-sdl
+            then true
+            else false;
           };
         "MergeSort" = {
           depends = (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
@@ -131,6 +141,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if flags.examples || flags.examples-sdl
+            then true
+            else false;
           };
         "AcidRain" = {
           depends = (pkgs.lib).optionals (flags.examples || flags.examples-sdl) ([
@@ -141,6 +154,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ]);
+          buildable = if flags.examples || flags.examples-sdl
+            then true
+            else false;
           };
         "CirclingSquare" = {
           depends = (pkgs.lib).optionals (flags.examples-sdl) [
@@ -148,6 +164,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."SDL" or (buildDepError "SDL"))
             ];
+          buildable = if flags.examples-sdl then true else false;
           };
         "ControlFlow" = {
           depends = (pkgs.lib).optionals (flags.examples || flags.examples-sdl) ([
@@ -157,6 +174,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (buildDepError "semigroups")));
+          buildable = if flags.examples || flags.examples-sdl
+            then true
+            else false;
           };
         };
       tests = {
@@ -170,6 +190,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             ];
+          buildable = true;
           };
         "properties" = {
           depends = [
@@ -178,6 +199,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+          buildable = true;
           };
         "maxrate" = {
           depends = (pkgs.lib).optionals (flags.dev) [
@@ -187,12 +209,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if flags.dev then true else false;
           };
         "loops" = {
           depends = [
             (hsPkgs."streamly" or (buildDepError "streamly"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "nested-loops" = {
           depends = [
@@ -200,6 +224,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "parallel-loops" = {
           depends = [
@@ -207,6 +232,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -218,6 +244,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."gauge" or (buildDepError "gauge"))
             ];
+          buildable = true;
           };
         "linear-async" = {
           depends = [
@@ -227,6 +254,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."gauge" or (buildDepError "gauge"))
             ];
+          buildable = true;
           };
         "linear-rate" = {
           depends = [
@@ -236,6 +264,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."gauge" or (buildDepError "gauge"))
             ];
+          buildable = true;
           };
         "nested" = {
           depends = [
@@ -245,6 +274,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."gauge" or (buildDepError "gauge"))
             ];
+          buildable = true;
           };
         "base" = {
           depends = (pkgs.lib).optionals (flags.dev) ([
@@ -264,6 +294,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (buildDepError "semigroups")));
+          buildable = if flags.dev then true else false;
           };
         };
       };

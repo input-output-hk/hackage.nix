@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."prologue" or (buildDepError "prologue"))
           ];
+        buildable = true;
         };
       };
     }

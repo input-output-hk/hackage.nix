@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libpostal" or (pkgConfDepError "libpostal"))
           ];
+        buildable = true;
         };
       exes = {
         "haskell-postal" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           pkgconfig = [
             (pkgconfPkgs."libpostal" or (pkgConfDepError "libpostal"))
             ];
+          buildable = true;
           };
         };
       };

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ddc-base" or (buildDepError "ddc-base"))
           (hsPkgs."ddc-core" or (buildDepError "ddc-core"))
           ];
+        buildable = true;
         };
       };
     }

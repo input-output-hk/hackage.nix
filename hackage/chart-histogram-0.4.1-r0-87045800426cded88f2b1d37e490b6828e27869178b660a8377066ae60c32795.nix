@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."colour" or (buildDepError "colour"))
           (hsPkgs."Chart" or (buildDepError "Chart"))
           ];
+        buildable = true;
         };
       };
     }

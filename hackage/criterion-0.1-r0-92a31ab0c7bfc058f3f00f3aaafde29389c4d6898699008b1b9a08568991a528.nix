@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uvector" or (buildDepError "uvector"))
           (hsPkgs."uvector-algorithms" or (buildDepError "uvector-algorithms"))
           ];
+        buildable = true;
         };
       };
     }

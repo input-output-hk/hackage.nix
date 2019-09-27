@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hxt-curl" or (buildDepError "hxt-curl"))
           (hsPkgs."curl" or (buildDepError "curl"))
           ];
+        buildable = true;
         };
       exes = {
         "xml-to-json" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."xml-to-json" or (buildDepError "xml-to-json"))
             ];
+          buildable = true;
           };
         "xml-to-json-fast" = {
           depends = [
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."xml-to-json" or (buildDepError "xml-to-json"))
             ];
+          buildable = true;
           };
         };
       };

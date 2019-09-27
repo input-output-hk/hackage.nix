@@ -73,7 +73,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-peel" or (buildDepError "monad-peel"))
           (hsPkgs."hslogger" or (buildDepError "hslogger"))
           ];
+        buildable = true;
         };
-      exes = { "test" = {}; };
+      exes = { "test" = { buildable = true; }; };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tls" or (buildDepError "tls"))
           (hsPkgs."tls-extra" or (buildDepError "tls-extra"))
           ];
+        buildable = true;
         };
       exes = {
         "network-simple-tls-example-https-client" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tls" or (buildDepError "tls"))
             (hsPkgs."certificate" or (buildDepError "certificate"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "network-simple-tls-example-echo" = {
           depends = [
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tls" or (buildDepError "tls"))
             (hsPkgs."certificate" or (buildDepError "certificate"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

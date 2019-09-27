@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."generic-lens" or (buildDepError "generic-lens"))
           ] ++ (pkgs.lib).optional (flags.binary) (hsPkgs."binary" or (buildDepError "binary"))) ++ (pkgs.lib).optional (flags.data-default) (hsPkgs."data-default-class" or (buildDepError "data-default-class"))) ++ (pkgs.lib).optional (flags.deepseq) (hsPkgs."deepseq" or (buildDepError "deepseq"))) ++ (pkgs.lib).optional (flags.cereal) (hsPkgs."cereal" or (buildDepError "cereal"))) ++ (pkgs.lib).optional (flags.safecopy) (hsPkgs."safecopy" or (buildDepError "safecopy"))) ++ (pkgs.lib).optional (flags.lattices) (hsPkgs."lattices" or (buildDepError "lattices"))) ++ (pkgs.lib).optional (flags.dhall) (hsPkgs."dhall" or (buildDepError "dhall"))) ++ (pkgs.lib).optional (flags.serialise) (hsPkgs."serialise" or (buildDepError "serialise"));
+        buildable = true;
         };
       };
     }

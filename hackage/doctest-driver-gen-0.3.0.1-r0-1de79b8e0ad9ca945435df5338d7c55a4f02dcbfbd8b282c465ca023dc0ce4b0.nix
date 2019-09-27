@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "doctest-driver-gen" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest-driver-gen" or (buildDepError "doctest-driver-gen"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -72,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.doctest-driver-gen or (pkgs.buildPackages.doctest-driver-gen or (buildToolDepError "doctest-driver-gen")))
             ];
+          buildable = true;
           };
         };
       };

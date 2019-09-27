@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mintty" or (buildDepError "mintty"))
           (hsPkgs."Win32" or (buildDepError "Win32"))
           ];
+        buildable = true;
         };
       exes = {
         "password" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."echo" or (buildDepError "echo"))
             ];
+          buildable = if !flags.example then false else true;
           };
         };
       };

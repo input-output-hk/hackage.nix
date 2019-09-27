@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."buildbox" or (buildDepError "buildbox"))
             (hsPkgs."parseargs" or (buildDepError "parseargs"))
             ];
+          buildable = true;
           };
         };
       };

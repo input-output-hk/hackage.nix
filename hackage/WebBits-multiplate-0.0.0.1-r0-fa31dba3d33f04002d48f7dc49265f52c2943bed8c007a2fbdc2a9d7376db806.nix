@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."multiplate-simplified" or (buildDepError "multiplate-simplified"))
           (hsPkgs."WebBits" or (buildDepError "WebBits"))
           ];
+        buildable = true;
         };
       };
     }

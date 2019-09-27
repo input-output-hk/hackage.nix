@@ -63,10 +63,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."BiobaseFR3D" or (buildDepError "BiobaseFR3D"))
           (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
           ];
+        buildable = true;
         };
       exes = {
         "MkTrainingData" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

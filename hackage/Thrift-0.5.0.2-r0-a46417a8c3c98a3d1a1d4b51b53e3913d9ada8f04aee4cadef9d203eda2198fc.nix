@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           ];
+        buildable = true;
         };
       };
     }

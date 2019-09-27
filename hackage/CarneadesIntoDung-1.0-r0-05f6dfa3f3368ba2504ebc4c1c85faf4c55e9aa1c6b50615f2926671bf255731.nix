@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."CarneadesDSL" or (buildDepError "CarneadesDSL"))
           (hsPkgs."Dung" or (buildDepError "Dung"))
           ];
+        buildable = true;
         };
-      exes = { "caell" = {}; };
+      exes = { "caell" = { buildable = true; }; };
       };
     }

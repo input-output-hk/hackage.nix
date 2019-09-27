@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         "hayooSnap" = {
           depends = [
@@ -112,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."snap-core" or (buildDepError "snap-core"))
               (hsPkgs."snap-server" or (buildDepError "snap-server"))
               ]);
+          buildable = true;
           };
         };
       };

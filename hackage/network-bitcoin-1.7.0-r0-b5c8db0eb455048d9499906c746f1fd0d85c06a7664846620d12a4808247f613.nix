@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."http-client" or (buildDepError "http-client"))
           ];
+        buildable = true;
         };
       exes = {
         "network-bitcoin-tests" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-client" or (buildDepError "http-client"))
             (hsPkgs."network-bitcoin" or (buildDepError "network-bitcoin"))
             ];
+          buildable = true;
           };
         };
       };

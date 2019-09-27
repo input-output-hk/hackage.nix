@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."monads-fd" or (buildDepError "monads-fd"))
           ];
+        buildable = true;
         };
       };
     }

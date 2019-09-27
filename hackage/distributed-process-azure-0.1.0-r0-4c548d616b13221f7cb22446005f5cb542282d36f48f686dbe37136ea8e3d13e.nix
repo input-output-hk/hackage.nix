@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rank1dynamic" or (buildDepError "rank1dynamic"))
           (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
           ];
+        buildable = true;
         };
       exes = {
         "cloud-haskell-azure-echo" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if flags.build-demos then true else false;
           };
         "cloud-haskell-azure-ping" = {
           depends = (pkgs.lib).optionals (flags.build-demos) [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."libssh2" or (buildDepError "libssh2"))
             ];
+          buildable = if flags.build-demos then true else false;
           };
         "cloud-haskell-azure-fib" = {
           depends = (pkgs.lib).optionals (flags.build-demos) [
@@ -109,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if flags.build-demos then true else false;
           };
         };
       };

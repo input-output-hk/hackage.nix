@@ -107,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
             ]
           else [ (hsPkgs."blaze-html" or (buildDepError "blaze-html")) ]);
+        buildable = true;
         };
       exes = {
         "hledger-web" = {
@@ -149,6 +150,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
               ]
             else [ (hsPkgs."blaze-html" or (buildDepError "blaze-html")) ]);
+          buildable = if flags.library-only then false else true;
           };
         };
       tests = {
@@ -160,6 +162,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-default" or (buildDepError "yesod-default"))
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             ];
+          buildable = true;
           };
         };
       };

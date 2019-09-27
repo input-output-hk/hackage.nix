@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-endian" or (buildDepError "data-endian"))
           (hsPkgs."pointed" or (buildDepError "pointed"))
           ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
           (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
           ];
+        buildable = true;
         };
       exes = {
         "file-modules" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
             (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
             ];
+          buildable = true;
           };
         };
       };

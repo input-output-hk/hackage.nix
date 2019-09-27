@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
         frameworks = [ (pkgs."Carbon" or (sysDepError "Carbon")) ];
+        buildable = true;
         };
       };
     }

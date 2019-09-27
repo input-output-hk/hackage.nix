@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
           (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
           ];
+        buildable = true;
         };
       };
     }

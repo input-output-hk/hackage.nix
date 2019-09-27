@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."pthread" or (sysDepError "pthread"))
           ]) ++ (pkgs.lib).optional (system.isWindows) (pkgs."openal32" or (sysDepError "openal32"));
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."OpenAL" or (sysDepError "OpenAL"));
+        buildable = true;
         };
       };
     }

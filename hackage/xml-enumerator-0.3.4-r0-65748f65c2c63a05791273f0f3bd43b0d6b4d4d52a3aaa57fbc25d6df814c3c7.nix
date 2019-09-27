@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."failure" or (buildDepError "failure"))
           ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

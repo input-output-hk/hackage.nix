@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."Xrandr" or (sysDepError "Xrandr"))
           (pkgs."Xext" or (sysDepError "Xext"))
           ];
+        buildable = true;
         };
       };
     }

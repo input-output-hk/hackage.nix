@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."integer" or (buildDepError "integer"))
           ];
+        buildable = true;
         };
       };
     }

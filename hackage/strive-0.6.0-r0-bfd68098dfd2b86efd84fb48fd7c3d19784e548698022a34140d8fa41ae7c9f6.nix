@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ [ (hsPkgs."text" or (buildDepError "text")) ];
+        buildable = true;
         };
       tests = {
         "readme" = {
@@ -81,12 +82,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."markdown-unlit" or (buildDepError "markdown-unlit"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         };
       };

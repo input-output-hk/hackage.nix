@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Diff" or (buildDepError "Diff"))
           (hsPkgs."testing-feat" or (buildDepError "testing-feat"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Diff" or (buildDepError "Diff"))
             (hsPkgs."language-ecmascript" or (buildDepError "language-ecmascript"))
             ];
+          buildable = true;
           };
         };
       };

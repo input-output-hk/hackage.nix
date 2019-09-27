@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           (hsPkgs."yesod-persistent" or (buildDepError "yesod-persistent"))
           ];
+        buildable = true;
         };
       exes = {
         "yesod-job-queue-example" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."classy-prelude-yesod" or (buildDepError "classy-prelude-yesod"))
             (hsPkgs."hedis" or (buildDepError "hedis"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       tests = {
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."yesod-job-queue" or (buildDepError "yesod-job-queue"))
             ];
+          buildable = true;
           };
         };
       };

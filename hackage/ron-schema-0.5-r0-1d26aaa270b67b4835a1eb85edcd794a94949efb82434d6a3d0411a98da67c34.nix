@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ron" or (buildDepError "ron"))
           (hsPkgs."ron-rdt" or (buildDepError "ron-rdt"))
           ];
+        buildable = true;
         };
       };
     }

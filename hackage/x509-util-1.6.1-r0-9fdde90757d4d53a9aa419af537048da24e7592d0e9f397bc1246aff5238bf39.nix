@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hourglass" or (buildDepError "hourglass"))
             (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
             ];
+          buildable = true;
           };
         };
       };

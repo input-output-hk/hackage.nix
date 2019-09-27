@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tasty" or (buildDepError "tasty"))
           (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
           ];
+        buildable = true;
         };
       exes = {
         "tasty-quickcheck-laws-demo" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tasty-quickcheck-laws" or (buildDepError "tasty-quickcheck-laws"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."tasty" or (buildDepError "tasty"))
             ];
+          buildable = true;
           };
         };
       };

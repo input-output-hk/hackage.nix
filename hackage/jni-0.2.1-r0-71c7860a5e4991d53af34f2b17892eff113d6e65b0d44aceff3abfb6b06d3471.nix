@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."thread-local-storage" or (buildDepError "thread-local-storage"))
           ];
         libs = [ (pkgs."jvm" or (sysDepError "jvm")) ];
+        buildable = true;
         };
       };
     }

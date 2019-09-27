@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."persistent" or (buildDepError "persistent"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."eventful-test-helpers" or (buildDepError "eventful-test-helpers"))
             (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
             ];
+          buildable = true;
           };
         };
       };

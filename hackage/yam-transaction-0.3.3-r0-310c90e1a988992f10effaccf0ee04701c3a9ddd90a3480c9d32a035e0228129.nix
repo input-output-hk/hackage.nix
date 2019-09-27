@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vault" or (buildDepError "vault"))
           (hsPkgs."yam-logger" or (buildDepError "yam-logger"))
           ];
+        buildable = true;
         };
       };
     }

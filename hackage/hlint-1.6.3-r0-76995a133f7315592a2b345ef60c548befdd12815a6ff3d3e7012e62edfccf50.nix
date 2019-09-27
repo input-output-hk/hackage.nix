@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uniplate" or (buildDepError "uniplate"))
             (hsPkgs."parallel" or (buildDepError "parallel"))
             ];
+          buildable = true;
           };
         };
       };

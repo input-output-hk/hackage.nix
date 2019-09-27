@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "free-er-examples" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."free-er" or (buildDepError "free-er"))
             ];
+          buildable = true;
           };
         };
       };

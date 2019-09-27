@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
           ];
+        buildable = true;
         };
       };
     }

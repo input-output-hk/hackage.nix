@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."file-embed" or (buildDepError "file-embed"))
             ];
+          buildable = true;
           };
         };
       };

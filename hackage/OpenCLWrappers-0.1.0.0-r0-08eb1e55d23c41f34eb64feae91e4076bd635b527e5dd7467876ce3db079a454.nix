@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
         libs = (pkgs.lib).optional (flags.link) (pkgs."OpenCL" or (sysDepError "OpenCL"));
+        buildable = true;
         };
       };
     }

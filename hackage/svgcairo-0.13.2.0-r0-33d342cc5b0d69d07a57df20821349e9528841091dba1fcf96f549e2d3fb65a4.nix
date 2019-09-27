@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."librsvg-2.0" or (pkgConfDepError "librsvg-2.0"))
           ];
+        buildable = true;
         };
       };
     }

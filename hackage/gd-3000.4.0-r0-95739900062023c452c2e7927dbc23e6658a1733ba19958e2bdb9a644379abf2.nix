@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."pthread" or (sysDepError "pthread"))
           (pkgs."expat" or (sysDepError "expat"))
           ];
+        buildable = true;
         };
       };
     }

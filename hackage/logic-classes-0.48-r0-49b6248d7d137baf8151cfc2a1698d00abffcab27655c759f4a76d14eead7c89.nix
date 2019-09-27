@@ -70,10 +70,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."set-extra" or (buildDepError "set-extra"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ];
+        buildable = true;
         };
       exes = {
         "tests" = {
           depends = [ (hsPkgs."HUnit" or (buildDepError "HUnit")) ];
+          buildable = true;
           };
         };
       };

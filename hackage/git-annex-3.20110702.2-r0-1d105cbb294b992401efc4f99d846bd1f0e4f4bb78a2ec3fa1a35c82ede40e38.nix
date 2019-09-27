@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."curl" or (buildDepError "curl"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "git-annex-shell" = {
           depends = [
@@ -104,8 +105,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."curl" or (buildDepError "curl"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
-        "git-union-merge" = {};
+        "git-union-merge" = { buildable = true; };
         };
       };
     }

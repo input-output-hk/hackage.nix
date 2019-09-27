@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."record" or (buildDepError "record"))
           (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
           ];
+        buildable = true;
         };
       exes = {
         "demo" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."record" or (buildDepError "record"))
             (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             ];
+          buildable = if !flags.demo then false else true;
           };
         };
       };

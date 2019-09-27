@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rio" or (buildDepError "rio"))
           (hsPkgs."teardown" or (buildDepError "teardown"))
           ];
+        buildable = true;
         };
       tests = {
         "componentm-tests" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."teardown" or (buildDepError "teardown"))
             ];
+          buildable = true;
           };
         };
       };

@@ -96,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."versions" or (buildDepError "versions"))
           (hsPkgs."witherable" or (buildDepError "witherable"))
           ];
+        buildable = true;
         };
       exes = {
         "aura" = {
@@ -122,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."typed-process" or (buildDepError "typed-process"))
             (hsPkgs."versions" or (buildDepError "versions"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -150,6 +152,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."typed-process" or (buildDepError "typed-process"))
             (hsPkgs."versions" or (buildDepError "versions"))
             ];
+          buildable = true;
           };
         };
       };

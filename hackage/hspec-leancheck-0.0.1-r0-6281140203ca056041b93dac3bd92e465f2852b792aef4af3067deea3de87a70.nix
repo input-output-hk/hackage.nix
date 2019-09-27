@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."leancheck" or (buildDepError "leancheck"))
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."hspec-leancheck" or (buildDepError "hspec-leancheck"))
             ];
+          buildable = true;
           };
         "should" = {
           depends = [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."hspec-leancheck" or (buildDepError "hspec-leancheck"))
             ];
+          buildable = true;
           };
         };
       };

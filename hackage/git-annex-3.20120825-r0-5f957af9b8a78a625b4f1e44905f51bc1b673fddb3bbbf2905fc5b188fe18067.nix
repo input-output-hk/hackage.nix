@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bloomfilter" or (buildDepError "bloomfilter"))
             (hsPkgs."edit-distance" or (buildDepError "edit-distance"))
             ] ++ (pkgs.lib).optional (flags.s3) (hsPkgs."hS3" or (buildDepError "hS3"))) ++ (pkgs.lib).optional (flags.assistant) (hsPkgs."stm" or (buildDepError "stm"))) ++ (pkgs.lib).optional (system.isLinux && flags.inotify) (hsPkgs."hinotify" or (buildDepError "hinotify"));
+          buildable = true;
           };
         };
       tests = {
@@ -122,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bloomfilter" or (buildDepError "bloomfilter"))
             (hsPkgs."edit-distance" or (buildDepError "edit-distance"))
             ];
+          buildable = true;
           };
         };
       };

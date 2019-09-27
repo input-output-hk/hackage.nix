@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."accelerate" or (buildDepError "accelerate"))
           (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
           ];
+        buildable = true;
         };
       };
     }

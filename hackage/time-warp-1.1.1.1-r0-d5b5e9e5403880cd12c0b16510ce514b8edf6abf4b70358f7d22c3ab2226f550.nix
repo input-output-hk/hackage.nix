@@ -103,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       exes = {
         "ping-pong" = {
@@ -120,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time-warp" or (buildDepError "time-warp"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if flags.build-executables then true else false;
           };
         "socket-state" = {
           depends = [
@@ -139,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time-warp" or (buildDepError "time-warp"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if flags.build-executables then true else false;
           };
         "net-playground" = {
           depends = [
@@ -166,6 +169,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "bench-sender" = {
           depends = [
@@ -194,6 +198,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = if flags.build-executables then true else false;
           };
         "bench-receiver" = {
           depends = [
@@ -217,6 +222,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time-warp" or (buildDepError "time-warp"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = if flags.build-executables then true else false;
           };
         "bench-log-reader" = {
           depends = [
@@ -245,6 +251,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time-warp" or (buildDepError "time-warp"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = if flags.build-executables then true else false;
           };
         };
       tests = {
@@ -269,6 +276,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

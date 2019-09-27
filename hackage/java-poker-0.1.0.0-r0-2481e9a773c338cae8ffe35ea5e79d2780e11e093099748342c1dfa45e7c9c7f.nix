@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
           ];
+        buildable = true;
         };
       exes = {
         "java-poker" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."java-poker" or (buildDepError "java-poker"))
             ];
+          buildable = true;
           };
         };
       };

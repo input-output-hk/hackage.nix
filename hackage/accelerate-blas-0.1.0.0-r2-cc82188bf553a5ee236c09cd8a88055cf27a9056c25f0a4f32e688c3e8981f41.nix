@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."storable-complex" or (buildDepError "storable-complex"))
           ];
+        buildable = true;
         };
       tests = {
         "accelerate-blas-test" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."accelerate-blas" or (buildDepError "accelerate-blas"))
             (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
             ] ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-ptx) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"));
+          buildable = true;
           };
         };
       benchmarks = {
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
             ] ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-ptx) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"));
+          buildable = true;
           };
         };
       };

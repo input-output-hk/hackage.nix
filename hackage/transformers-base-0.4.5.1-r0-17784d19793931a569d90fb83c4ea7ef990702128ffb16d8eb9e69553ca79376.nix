@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
           ] ++ (pkgs.lib).optional (flags.orphaninstances) (hsPkgs."base-orphans" or (buildDepError "base-orphans"));
+        buildable = true;
         };
       };
     }

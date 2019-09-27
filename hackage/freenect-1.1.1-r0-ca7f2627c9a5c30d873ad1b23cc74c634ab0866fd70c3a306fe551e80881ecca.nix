@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."freenect" or (sysDepError "freenect"))
           (pkgs."freenect_sync" or (sysDepError "freenect_sync"))
           ];
+        buildable = true;
         };
       };
     }

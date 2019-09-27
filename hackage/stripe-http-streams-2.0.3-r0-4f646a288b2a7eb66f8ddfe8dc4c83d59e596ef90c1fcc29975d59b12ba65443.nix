@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stripe-core" or (buildDepError "stripe-core"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stripe-http-streams" or (buildDepError "stripe-http-streams"))
             (hsPkgs."stripe-tests" or (buildDepError "stripe-tests"))
             ];
+          buildable = true;
           };
         };
       };

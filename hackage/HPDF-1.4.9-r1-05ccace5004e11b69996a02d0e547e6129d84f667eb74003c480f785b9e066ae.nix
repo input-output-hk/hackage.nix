@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."errors" or (buildDepError "errors"))
           (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
           ];
+        buildable = true;
         };
       tests = {
         "HPDF-Tests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTF" or (buildDepError "HTF"))
             (hsPkgs."HPDF" or (buildDepError "HPDF"))
             ];
+          buildable = true;
           };
         };
       };

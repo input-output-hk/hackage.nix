@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
         pkgconfig = [ (pkgconfPkgs."libkmod" or (pkgConfDepError "libkmod")) ];
+        buildable = true;
         };
       };
     }

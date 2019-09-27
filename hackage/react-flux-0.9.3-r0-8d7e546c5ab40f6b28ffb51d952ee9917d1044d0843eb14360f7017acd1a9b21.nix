@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."text" or (buildDepError "text"))
           ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"));
+        buildable = true;
         };
       exes = {
         "todo" = {
@@ -70,12 +71,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."react-flux" or (buildDepError "react-flux"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = if !flags.example then false else true;
           };
         "test-client" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."react-flux" or (buildDepError "react-flux"))
             ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"));
+          buildable = if !flags.test-client then false else true;
           };
         "route-example" = {
           depends = (pkgs.lib).optionals (flags.example) [
@@ -89,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"));
+          buildable = if !flags.example then false else true;
           };
         };
       };

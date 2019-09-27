@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashtables" or (buildDepError "hashtables"))
           (hsPkgs."hashable" or (buildDepError "hashable"))
           ];
+        buildable = true;
         };
       exes = {
         "seqaid" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."process" or (buildDepError "process"))
             ] ++ (pkgs.lib).optional (flags.use_cpphs) (hsPkgs."cpphs" or (buildDepError "cpphs"));
+          buildable = true;
           };
         "seqaidpp" = {
           depends = [
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ] ++ (pkgs.lib).optional (flags.use_cpphs) (hsPkgs."cpphs" or (buildDepError "cpphs"));
+          buildable = true;
           };
         };
       };

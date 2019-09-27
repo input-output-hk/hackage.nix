@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."press" or (buildDepError "press"))
           (hsPkgs."json" or (buildDepError "json"))
           ];
+        buildable = true;
         };
       };
     }

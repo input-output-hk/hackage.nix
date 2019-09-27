@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."pthread" or (sysDepError "pthread"))
             ]
           else [ (pkgs."zmq" or (sysDepError "zmq")) ];
+        buildable = true;
         };
       };
     }

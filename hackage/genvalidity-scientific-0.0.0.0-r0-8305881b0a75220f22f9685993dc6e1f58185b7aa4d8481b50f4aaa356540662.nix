@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."validity" or (buildDepError "validity"))
           (hsPkgs."validity-scientific" or (buildDepError "validity-scientific"))
           ];
+        buildable = true;
         };
       tests = {
         "genvalidity-scientific-test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."scientific" or (buildDepError "scientific"))
             ];
+          buildable = true;
           };
         };
       };

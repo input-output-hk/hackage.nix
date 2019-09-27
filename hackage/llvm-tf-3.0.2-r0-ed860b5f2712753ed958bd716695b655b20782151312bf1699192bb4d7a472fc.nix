@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           ];
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."vecLib" or (sysDepError "vecLib"));
+        buildable = true;
         };
       exes = {
         "llvm-align" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tfp" or (buildDepError "tfp"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "llvm-arith" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tfp" or (buildDepError "tfp"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "llvm-array" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tfp" or (buildDepError "tfp"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "llvm-brainf" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -93,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tfp" or (buildDepError "tfp"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "llvm-call-conv" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -101,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tfp" or (buildDepError "tfp"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "llvm-dot-prod" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -108,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tfp" or (buildDepError "tfp"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "llvm-fibonacci" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -115,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tfp" or (buildDepError "tfp"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "llvm-hello-jit" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -122,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tfp" or (buildDepError "tfp"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "llvm-list" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -129,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tfp" or (buildDepError "tfp"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "llvm-struct" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -136,6 +146,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tfp" or (buildDepError "tfp"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "llvm-varargs" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -143,6 +154,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tfp" or (buildDepError "tfp"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "llvm-vector" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -150,6 +162,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tfp" or (buildDepError "tfp"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

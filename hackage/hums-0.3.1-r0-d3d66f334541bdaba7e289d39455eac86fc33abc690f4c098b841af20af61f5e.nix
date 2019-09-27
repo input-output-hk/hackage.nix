@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."network-bytestring" or (buildDepError "network-bytestring"))
             ];
+          buildable = true;
           };
         };
       };

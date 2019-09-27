@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens-compat" or (buildDepError "microlens-compat"))
             ]
           else [ (hsPkgs."lens" or (buildDepError "lens")) ]);
+        buildable = true;
         };
       tests = {
         "th-typegraph-tests" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."microlens-compat" or (buildDepError "microlens-compat"))
               ]
             else [ (hsPkgs."lens" or (buildDepError "lens")) ]);
+          buildable = true;
           };
         };
       };

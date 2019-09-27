@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."text" or (buildDepError "text"))
           ] ++ (pkgs.lib).optional (flags.blaze) (hsPkgs."blaze-html" or (buildDepError "blaze-html"));
+        buildable = true;
         };
       };
     }

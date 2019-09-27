@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
           (hsPkgs."yesod-persistent" or (buildDepError "yesod-persistent"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
             (hsPkgs."yesod-auth-account" or (buildDepError "yesod-auth-account"))
             ];
+          buildable = true;
           };
         };
       };

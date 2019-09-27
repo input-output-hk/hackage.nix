@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pool" or (buildDepError "pool"))
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           ];
+        buildable = if flags.test then false else true;
         };
       exes = {
         "runtests" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."web-routes-quasi" or (buildDepError "web-routes-quasi"))
             ];
           libs = [ (pkgs."sqlite3" or (sysDepError "sqlite3")) ];
+          buildable = if flags.test then true else false;
           };
         };
       };

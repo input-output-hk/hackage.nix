@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rank2classes" or (buildDepError "rank2classes"))
           (hsPkgs."grammatical-parsers" or (buildDepError "grammatical-parsers"))
           ];
+        buildable = true;
         };
       exes = {
         "parse" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."language-oberon" or (buildDepError "language-oberon"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."language-oberon" or (buildDepError "language-oberon"))
             ];
+          buildable = true;
           };
         };
       };

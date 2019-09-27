@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes" or (buildDepError "pipes"))
             (hsPkgs."pipes-text" or (buildDepError "pipes-text"))
             ];
+          buildable = true;
           };
         };
       };

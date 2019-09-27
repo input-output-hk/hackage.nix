@@ -69,7 +69,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."download-curl" or (buildDepError "download-curl"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
-      exes = { "manatee-reader" = {}; };
+      exes = { "manatee-reader" = { buildable = true; }; };
       };
     }

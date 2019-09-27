@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pandoc" or (buildDepError "pandoc"))
           (hsPkgs."hack2" or (buildDepError "hack2"))
           ];
+        buildable = true;
         };
       exes = {
         "geek" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pandoc" or (buildDepError "pandoc"))
             (hsPkgs."hack2" or (buildDepError "hack2"))
             ];
+          buildable = true;
           };
         };
       };

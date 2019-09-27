@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           (hsPkgs."servant" or (buildDepError "servant"))
           ];
+        buildable = true;
         };
       tests = {
         "example" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp" or (buildDepError "warp"))
             (hsPkgs."http-client" or (buildDepError "http-client"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-random-effect" or (buildDepError "crypto-random-effect"))
           (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
           ];
+        buildable = true;
         };
       };
     }

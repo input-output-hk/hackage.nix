@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monadLib" or (buildDepError "monadLib"))
           (hsPkgs."network-fancy" or (buildDepError "network-fancy"))
           ];
+        buildable = true;
         };
       };
     }

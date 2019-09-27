@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bzlib" or (buildDepError "bzlib"))
           (hsPkgs."file-embed" or (buildDepError "file-embed"))
           ];
+        buildable = true;
         };
       };
     }

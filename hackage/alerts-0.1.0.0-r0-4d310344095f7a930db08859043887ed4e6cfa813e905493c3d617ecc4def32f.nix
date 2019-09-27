@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -69,6 +70,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
             (hsPkgs."hedgehog-fn" or (buildDepError "hedgehog-fn"))
             ];
+          buildable = if flags.build-examples && (compiler.isGhc && (compiler.version).ge "8.0")
+            then true
+            else false;
           };
         };
       };

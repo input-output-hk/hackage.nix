@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = true;
           };
         };
       };

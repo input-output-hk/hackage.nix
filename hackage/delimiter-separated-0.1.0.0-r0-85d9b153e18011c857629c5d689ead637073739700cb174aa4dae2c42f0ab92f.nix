@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uhc-util" or (buildDepError "uhc-util"))
           (hsPkgs."uulib" or (buildDepError "uulib"))
           ];
+        buildable = true;
         };
       };
     }

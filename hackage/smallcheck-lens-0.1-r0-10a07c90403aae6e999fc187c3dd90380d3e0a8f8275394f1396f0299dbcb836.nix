@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tasty" or (buildDepError "tasty"))
           (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
           ];
+        buildable = true;
         };
       tests = {
         "tasty" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
             (hsPkgs."smallcheck-lens" or (buildDepError "smallcheck-lens"))
             ];
+          buildable = true;
           };
         };
       };

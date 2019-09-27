@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."strict" or (buildDepError "strict"))
           (hsPkgs."iteratee-compress" or (buildDepError "iteratee-compress"))
           ];
+        buildable = true;
         };
       };
     }

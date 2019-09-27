@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."polimorf" or (buildDepError "polimorf"))
           (hsPkgs."hist-pl-lexicon" or (buildDepError "hist-pl-lexicon"))
           ];
+        buildable = true;
         };
       exes = {
         "hist-pl-fuse" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."binary" or (buildDepError "binary"))
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             ];
+          buildable = true;
           };
         };
       };

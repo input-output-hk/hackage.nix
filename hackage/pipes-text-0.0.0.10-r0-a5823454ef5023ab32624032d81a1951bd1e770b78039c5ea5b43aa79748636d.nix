@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (pkgs.lib).optional (!flags.noio) (hsPkgs."text" or (buildDepError "text"));
+        buildable = true;
         };
       };
     }

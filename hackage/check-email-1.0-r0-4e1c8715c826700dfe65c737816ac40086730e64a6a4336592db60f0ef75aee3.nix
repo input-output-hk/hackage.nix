@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."email-validate" or (buildDepError "email-validate"))
           ];
         libs = [ (pkgs."resolv" or (sysDepError "resolv")) ];
+        buildable = true;
         };
       };
     }

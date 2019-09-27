@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ibus-hs" or (buildDepError "ibus-hs"))
           (hsPkgs."dbus" or (buildDepError "dbus"))
           ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.8") ((pkgs.lib).optional (flags.pulse) (hsPkgs."pulseaudio" or (buildDepError "pulseaudio")));
+        buildable = true;
         };
       exes = {
         "monky" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monky" or (buildDepError "monky"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."conduit" or (buildDepError "conduit"))
           ];
+        buildable = true;
         };
       };
     }

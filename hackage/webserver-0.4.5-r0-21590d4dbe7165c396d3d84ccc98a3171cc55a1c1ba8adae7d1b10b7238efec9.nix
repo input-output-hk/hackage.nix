@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."c10k" or (buildDepError "c10k"))
           ];
+        buildable = true;
         };
       };
     }

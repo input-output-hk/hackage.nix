@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."tf-random" or (buildDepError "tf-random"))
           ];
+        buildable = true;
         };
       };
     }

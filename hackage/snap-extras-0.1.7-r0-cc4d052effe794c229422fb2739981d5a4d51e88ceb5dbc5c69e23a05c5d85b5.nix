@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."digestive-functors-blaze" or (buildDepError "digestive-functors-blaze"))
           (hsPkgs."digestive-functors-snap" or (buildDepError "digestive-functors-snap"))
           ];
+        buildable = true;
         };
       };
     }

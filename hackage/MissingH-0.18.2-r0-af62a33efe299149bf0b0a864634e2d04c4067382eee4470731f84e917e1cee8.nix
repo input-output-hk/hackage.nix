@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."FilePath" or (buildDepError "FilePath"))
           (hsPkgs."hslogger" or (buildDepError "hslogger"))
           ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."FilePath" or (buildDepError "FilePath"))
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             ];
+          buildable = false;
           };
         };
       };

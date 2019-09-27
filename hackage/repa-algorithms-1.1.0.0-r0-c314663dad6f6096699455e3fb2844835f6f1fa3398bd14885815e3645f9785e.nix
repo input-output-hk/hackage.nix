@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dph-base" or (buildDepError "dph-base"))
           (hsPkgs."repa" or (buildDepError "repa"))
           ];
+        buildable = true;
         };
       };
     }

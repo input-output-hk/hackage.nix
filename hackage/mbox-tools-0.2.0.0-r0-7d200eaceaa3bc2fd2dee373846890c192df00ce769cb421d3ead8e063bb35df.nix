@@ -67,25 +67,33 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."codec-mbox" or (buildDepError "codec-mbox"))
           (hsPkgs."hsemail" or (buildDepError "hsemail"))
           ];
+        buildable = true;
         };
       exes = {
-        "mbox-counting" = {};
-        "mbox-average-size" = {};
-        "mbox-quoting" = {};
+        "mbox-counting" = { buildable = true; };
+        "mbox-average-size" = {
+          buildable = if !flags.useless then false else true;
+          };
+        "mbox-quoting" = {
+          buildable = if !flags.useless then false else true;
+          };
         "redact-mbox" = {
           depends = [ (hsPkgs."random" or (buildDepError "random")) ];
+          buildable = if !flags.useless then false else true;
           };
-        "mbox-list" = {};
-        "mbox-pick" = {};
-        "mbox-partition" = {};
+        "mbox-list" = { buildable = true; };
+        "mbox-pick" = { buildable = true; };
+        "mbox-partition" = { buildable = true; };
         "mbox-grep" = {
           depends = (pkgs.lib).optional (flags.use_hutt) (hsPkgs."hutt" or (buildDepError "hutt"));
+          buildable = if flags.use_hutt then true else false;
           };
-        "split-mbox" = {};
+        "split-mbox" = { buildable = true; };
         "mbox-iter" = {
           depends = [ (hsPkgs."process" or (buildDepError "process")) ];
+          buildable = true;
           };
-        "mbox-from-files" = {};
+        "mbox-from-files" = { buildable = true; };
         };
       };
     }

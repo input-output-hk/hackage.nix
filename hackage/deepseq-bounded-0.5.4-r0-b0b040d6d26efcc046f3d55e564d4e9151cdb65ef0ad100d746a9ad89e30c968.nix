@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."syb" or (buildDepError "syb"))) ++ (pkgs.lib).optionals (flags.use_ww_deepseq) ([
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_sop) (hsPkgs."generics-sop" or (buildDepError "generics-sop")))) ++ (pkgs.lib).optional (flags.parallelism_experiment) (hsPkgs."parallel" or (buildDepError "parallel"));
+        buildable = true;
         };
       tests = {
         "deepseq-bounded-tests" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."syb" or (buildDepError "syb"))) ++ (pkgs.lib).optionals (flags.use_ww_deepseq) ([
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_sop) (hsPkgs."generics-sop" or (buildDepError "generics-sop")))) ++ (pkgs.lib).optional (flags.parallelism_experiment) (hsPkgs."parallel" or (buildDepError "parallel"));
+          buildable = true;
           };
         };
       };

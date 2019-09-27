@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fingertree" or (buildDepError "fingertree"))
           (hsPkgs."intervals" or (buildDepError "intervals"))
           ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."nats" or (buildDepError "nats"))
           (hsPkgs."type-unary" or (buildDepError "type-unary"))
           ];
+        buildable = true;
         };
       };
     }

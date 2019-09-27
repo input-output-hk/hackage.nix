@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hydrogen-prelude" or (buildDepError "hydrogen-prelude"))
           (hsPkgs."hydrogen-parsing" or (buildDepError "hydrogen-parsing"))
           ];
+        buildable = true;
         };
       };
     }

@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-builder-enumerator" or (buildDepError "blaze-builder-enumerator"))
             (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
             ];
+          buildable = true;
           };
         };
       };

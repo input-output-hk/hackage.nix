@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         frameworks = (pkgs.lib).optionals (!(system.isWindows && flags.usenativewindowslibraries)) (if system.isOsx
           then [ (pkgs."OpenGL" or (sysDepError "OpenGL")) ]
           else (pkgs.lib).optional (system.isIos) (pkgs."OpenGLES" or (sysDepError "OpenGLES")));
+        buildable = true;
         };
       };
     }

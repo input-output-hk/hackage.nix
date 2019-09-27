@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parseargs" or (buildDepError "parseargs"))
             (hsPkgs."pandoc" or (buildDepError "pandoc"))
             ];
+          buildable = true;
           };
         };
       };

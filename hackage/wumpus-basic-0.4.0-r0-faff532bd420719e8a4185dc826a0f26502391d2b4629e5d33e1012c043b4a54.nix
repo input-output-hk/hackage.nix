@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monadLib" or (buildDepError "monadLib"))
           (hsPkgs."wumpus-core" or (buildDepError "wumpus-core"))
           ];
+        buildable = true;
         };
       };
     }

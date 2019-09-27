@@ -88,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hack-contrib" or (buildDepError "hack-contrib"))
           (hsPkgs."bamboo" or (buildDepError "bamboo"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."music-dynamics" or (buildDepError "music-dynamics"))
           (hsPkgs."music-dynamics-literal" or (buildDepError "music-dynamics-literal"))
           ];
+        buildable = true;
         };
       exes = {
         "complex" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."music-score" or (buildDepError "music-score"))
             (hsPkgs."music-preludes" or (buildDepError "music-preludes"))
             ];
+          buildable = true;
           };
         "duo" = {
           depends = [
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."music-score" or (buildDepError "music-score"))
             (hsPkgs."music-preludes" or (buildDepError "music-preludes"))
             ];
+          buildable = true;
           };
         "triplets" = {
           depends = [
@@ -103,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."music-score" or (buildDepError "music-score"))
             (hsPkgs."music-preludes" or (buildDepError "music-preludes"))
             ];
+          buildable = true;
           };
         };
       };

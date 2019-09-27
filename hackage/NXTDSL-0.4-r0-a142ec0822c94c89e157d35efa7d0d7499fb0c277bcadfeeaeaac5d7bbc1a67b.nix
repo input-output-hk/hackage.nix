@@ -65,7 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."hashable" or (buildDepError "hashable"))
           ];
+        buildable = true;
         };
-      exes = { "legoDSL" = {}; };
+      exes = { "legoDSL" = { buildable = true; }; };
       };
     }

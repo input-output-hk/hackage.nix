@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           (hsPkgs."lazy-io" or (buildDepError "lazy-io"))
           ];
+        buildable = true;
         };
       exes = {
         "concraft-analyse-model" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
             (hsPkgs."colour" or (buildDepError "colour"))
             ];
+          buildable = if flags.buildanatool then true else false;
           };
         };
       };

@@ -53,5 +53,5 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "Preview of a new build system.";
       buildType = "Custom";
       };
-    components = { "library" = {}; };
+    components = { "library" = { buildable = true; }; };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
           ];
+        buildable = true;
         };
       exes = {
         "glsl-pprint" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
             ];
+          buildable = true;
           };
         };
       };

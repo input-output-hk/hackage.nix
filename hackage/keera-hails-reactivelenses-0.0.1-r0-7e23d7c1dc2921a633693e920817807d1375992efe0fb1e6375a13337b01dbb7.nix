@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."keera-hails-reactivevalues" or (buildDepError "keera-hails-reactivevalues"))
           ];
+        buildable = true;
         };
       };
     }

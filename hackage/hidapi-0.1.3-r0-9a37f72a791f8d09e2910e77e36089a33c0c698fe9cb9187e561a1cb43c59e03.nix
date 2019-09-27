@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if system.isWindows
           then [ (pkgs."setupapi" or (sysDepError "setupapi")) ]
           else (pkgs.lib).optional (!system.isOsx) (pkgs."udev" or (sysDepError "udev"));
+        buildable = true;
         };
       };
     }

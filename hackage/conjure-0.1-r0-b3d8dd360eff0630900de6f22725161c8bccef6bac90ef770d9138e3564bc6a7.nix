@@ -72,7 +72,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           (hsPkgs."pretty" or (buildDepError "pretty"))
           ];
+        buildable = true;
         };
-      exes = { "conjure" = {}; };
+      exes = { "conjure" = { buildable = true; }; };
       };
     }

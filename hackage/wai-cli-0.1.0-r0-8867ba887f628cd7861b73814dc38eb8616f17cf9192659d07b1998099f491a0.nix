@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
           (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
           ] ++ (pkgs.lib).optional (flags.tls) (hsPkgs."warp-tls" or (buildDepError "warp-tls"));
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib-conduit" or (buildDepError "zlib-conduit"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."process" or (buildDepError "process"));
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."Shell32" or (sysDepError "Shell32"));
+        buildable = true;
         };
       };
     }

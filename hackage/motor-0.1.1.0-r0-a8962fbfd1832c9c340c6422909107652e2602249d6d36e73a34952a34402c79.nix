@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."CTRex" or (buildDepError "CTRex"))
           (hsPkgs."reflection" or (buildDepError "reflection"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."CTRex" or (buildDepError "CTRex"))
             (hsPkgs."motor" or (buildDepError "motor"))
             ];
+          buildable = true;
           };
         };
       };

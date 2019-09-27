@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."haskell98" or (buildDepError "haskell98"))
           ];
+        buildable = true;
         };
       };
     }

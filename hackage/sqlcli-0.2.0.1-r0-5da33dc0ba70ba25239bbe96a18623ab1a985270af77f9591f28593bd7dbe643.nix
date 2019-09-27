@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = (pkgs.lib).optionals (flags.odbc) (if system.isWindows
           then [ (pkgs."odbc32" or (sysDepError "odbc32")) ]
           else [ (pkgs."odbc" or (sysDepError "odbc")) ]);
+        buildable = true;
         };
       };
     }

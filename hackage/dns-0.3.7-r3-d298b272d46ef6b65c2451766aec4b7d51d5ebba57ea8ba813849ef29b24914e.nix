@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-conduit" or (buildDepError "network-conduit"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-conduit" or (buildDepError "network-conduit"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

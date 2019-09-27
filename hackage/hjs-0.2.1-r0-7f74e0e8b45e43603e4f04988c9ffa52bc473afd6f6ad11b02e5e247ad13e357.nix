@@ -65,7 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
-      exes = { "hjs" = {}; };
+      exes = { "hjs" = { buildable = true; }; };
       };
     }

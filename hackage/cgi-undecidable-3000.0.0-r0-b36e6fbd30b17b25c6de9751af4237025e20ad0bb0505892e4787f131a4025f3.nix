@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."cgi" or (buildDepError "cgi"))
           ];
+        buildable = true;
         };
       };
     }

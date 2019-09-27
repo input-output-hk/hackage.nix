@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lp-diagrams" or (buildDepError "lp-diagrams"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "marxup" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsek" or (buildDepError "parsek"))
             (hsPkgs."dlist" or (buildDepError "dlist"))
             ];
+          buildable = true;
           };
         "marxup-example" = {
           depends = [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."graphviz" or (buildDepError "graphviz"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

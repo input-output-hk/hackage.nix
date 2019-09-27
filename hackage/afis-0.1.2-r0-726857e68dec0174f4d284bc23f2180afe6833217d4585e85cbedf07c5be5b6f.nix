@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."packer" or (buildDepError "packer"))
           (hsPkgs."byteable" or (buildDepError "byteable"))
           ];
+        buildable = true;
         };
       tests = {
         "test-afis" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."byteable" or (buildDepError "byteable"))
             ];
+          buildable = true;
           };
         };
       };

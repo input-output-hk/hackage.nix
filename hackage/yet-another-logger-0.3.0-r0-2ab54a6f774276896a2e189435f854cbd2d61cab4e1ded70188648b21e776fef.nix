@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             ]
           else [ (hsPkgs."time" or (buildDepError "time")) ]);
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."yet-another-logger" or (buildDepError "yet-another-logger"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -115,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."void" or (buildDepError "void"))
             (hsPkgs."yet-another-logger" or (buildDepError "yet-another-logger"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.9")) (hsPkgs."nats" or (buildDepError "nats"));
+          buildable = true;
           };
         };
       };

@@ -83,7 +83,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           (hsPkgs."MorseCode" or (buildDepError "MorseCode"))
           ];
+        buildable = true;
         };
-      exes = { "manatee-irc-daemon" = {}; "manatee-ircclient" = {}; };
+      exes = {
+        "manatee-irc-daemon" = { buildable = true; };
+        "manatee-ircclient" = { buildable = true; };
+        };
       };
     }

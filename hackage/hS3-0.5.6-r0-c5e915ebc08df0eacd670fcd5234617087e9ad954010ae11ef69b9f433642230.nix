@@ -70,7 +70,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."MissingH" or (buildDepError "MissingH"))
           ];
+        buildable = true;
         };
-      exes = { "hs3" = {}; };
+      exes = { "hs3" = { buildable = true; }; };
       };
     }

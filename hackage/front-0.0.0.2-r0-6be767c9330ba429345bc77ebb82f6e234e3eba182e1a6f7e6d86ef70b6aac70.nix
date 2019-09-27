@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fay-websockets" or (buildDepError "fay-websockets"))
           (hsPkgs."websockets" or (buildDepError "websockets"))
           ];
+        buildable = true;
         };
       exes = {
         "todo-servant-example" = {
@@ -112,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp" or (buildDepError "warp"))
             (hsPkgs."front" or (buildDepError "front"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "todo-yesod-example" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -129,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm-lifted" or (buildDepError "stm-lifted"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

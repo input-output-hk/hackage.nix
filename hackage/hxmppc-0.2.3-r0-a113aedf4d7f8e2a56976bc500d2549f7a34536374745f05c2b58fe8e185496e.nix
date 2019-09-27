@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-protocol-xmpp" or (buildDepError "network-protocol-xmpp"))
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."graph-core" or (buildDepError "graph-core"))
           ];
+        buildable = true;
         };
       tests = {
         "reroutetest" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."graph-core" or (buildDepError "graph-core"))
             ];
+          buildable = true;
           };
         };
       };

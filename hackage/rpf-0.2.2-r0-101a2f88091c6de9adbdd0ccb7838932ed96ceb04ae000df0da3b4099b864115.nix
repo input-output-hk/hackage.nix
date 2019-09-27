@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dns" or (buildDepError "dns"))
             (hsPkgs."domain-auth" or (buildDepError "domain-auth"))
             ];
+          buildable = true;
           };
         };
       };

@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."crypto" or (sysDepError "crypto"))
             (pkgs."ssl" or (sysDepError "ssl"))
             ];
+        buildable = true;
         };
       tests = {
         "test-dsa" = {
@@ -87,12 +88,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "test-der" = {
           depends = [
             (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "test-evp-base64" = {
           depends = [
@@ -100,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

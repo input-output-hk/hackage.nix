@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hsqml" or (buildDepError "hsqml"))
             ];
+          buildable = true;
           };
         "hsqml-factorial2" = {
           depends = [
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hsqml" or (buildDepError "hsqml"))
             ];
+          buildable = true;
           };
         "hsqml-opengl1" = {
           depends = [
@@ -77,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
             (hsPkgs."hsqml" or (buildDepError "hsqml"))
             ];
+          buildable = if !flags.opengl then false else true;
           };
         "hsqml-opengl2" = {
           depends = [
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
             (hsPkgs."hsqml" or (buildDepError "hsqml"))
             ];
+          buildable = if !flags.opengl then false else true;
           };
         };
       };

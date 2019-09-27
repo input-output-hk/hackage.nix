@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "cabal-plan" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = if flags.exe then true else false;
           };
         };
       };

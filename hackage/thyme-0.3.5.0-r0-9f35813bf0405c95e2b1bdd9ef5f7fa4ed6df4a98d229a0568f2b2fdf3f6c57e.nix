@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"))) ++ (if flags.lens
           then [ (hsPkgs."lens" or (buildDepError "lens")) ]
           else [ (hsPkgs."profunctors" or (buildDepError "profunctors")) ]);
+        buildable = true;
         };
       tests = {
         "sanity" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."profunctors" or (buildDepError "profunctors"))
               (hsPkgs."mtl" or (buildDepError "mtl"))
               ]);
+          buildable = true;
           };
         "rewrite" = {
           depends = [
@@ -113,12 +115,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."thyme" or (buildDepError "thyme"))
             ];
+          buildable = true;
           };
         "hlint" = {
           depends = (pkgs.lib).optionals (flags.hlint) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = if flags.hlint then true else false;
           };
         };
       benchmarks = {
@@ -137,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if flags.lens
             then [ (hsPkgs."lens" or (buildDepError "lens")) ]
             else [ (hsPkgs."profunctors" or (buildDepError "profunctors")) ]);
+          buildable = true;
           };
         };
       };

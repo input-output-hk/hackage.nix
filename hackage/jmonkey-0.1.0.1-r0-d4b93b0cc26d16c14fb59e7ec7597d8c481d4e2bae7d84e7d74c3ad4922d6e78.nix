@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."free" or (buildDepError "free"))
           (hsPkgs."jmacro" or (buildDepError "jmacro"))
           ];
+        buildable = true;
         };
       tests = {
         "jmonkey-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."jmacro" or (buildDepError "jmacro"))
             (hsPkgs."jmonkey" or (buildDepError "jmonkey"))
             ];
+          buildable = true;
           };
         };
       };

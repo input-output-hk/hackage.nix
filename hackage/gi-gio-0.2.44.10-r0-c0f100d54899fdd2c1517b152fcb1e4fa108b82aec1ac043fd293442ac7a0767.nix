@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
         pkgconfig = [ (pkgconfPkgs."gio-2.0" or (pkgConfDepError "gio-2.0")) ];
+        buildable = true;
         };
       };
     }

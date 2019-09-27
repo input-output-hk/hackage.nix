@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."th-desugar" or (buildDepError "th-desugar"))
             ]);
+        buildable = true;
         };
       };
     }

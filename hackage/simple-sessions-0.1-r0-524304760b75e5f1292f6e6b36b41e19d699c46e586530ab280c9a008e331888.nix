@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."category-extras" or (buildDepError "category-extras"))
           ];
+        buildable = true;
         };
       };
     }

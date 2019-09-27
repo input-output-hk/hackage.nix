@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."next-ref" or (buildDepError "next-ref"))
           (hsPkgs."immortal" or (buildDepError "immortal"))
           ];
+        buildable = true;
         };
       exes = {
         "example-server" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = true;
           };
         "example-client" = {
           depends = [
@@ -112,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."http-client" or (buildDepError "http-client"))
             ];
+          buildable = true;
           };
         "example" = {
           depends = [
@@ -132,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -156,6 +160,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."immortal" or (buildDepError "immortal"))
             (hsPkgs."next-ref" or (buildDepError "next-ref"))
             ];
+          buildable = true;
           };
         };
       };

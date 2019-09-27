@@ -63,6 +63,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+          then false
+          else true;
         };
       tests = {
         "sanity" = {
@@ -73,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."basement" or (buildDepError "basement"))
             (hsPkgs."foundation" or (buildDepError "foundation"))
             ];
+          buildable = true;
           };
         "cleanup" = {
           depends = [
@@ -83,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."foundation" or (buildDepError "foundation"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -91,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gauge" or (buildDepError "gauge"))
             ];
+          buildable = true;
           };
         };
       };

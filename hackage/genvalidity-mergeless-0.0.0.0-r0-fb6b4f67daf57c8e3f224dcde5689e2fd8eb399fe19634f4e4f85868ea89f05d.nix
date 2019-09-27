@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."genvalidity-time" or (buildDepError "genvalidity-time"))
           (hsPkgs."mergeless" or (buildDepError "mergeless"))
           ];
+        buildable = true;
         };
       tests = {
         "genvalidity-mergeless-test" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."typed-uuid" or (buildDepError "typed-uuid"))
             (hsPkgs."uuid" or (buildDepError "uuid"))
             ];
+          buildable = true;
           };
         };
       };

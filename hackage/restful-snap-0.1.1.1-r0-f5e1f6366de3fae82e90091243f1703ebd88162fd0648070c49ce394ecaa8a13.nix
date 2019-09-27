@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
           (hsPkgs."errors" or (buildDepError "errors"))
           ];
+        buildable = true;
         };
       };
     }

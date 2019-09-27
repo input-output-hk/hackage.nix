@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework" or (buildDepError "test-framework"))
           (hsPkgs."leancheck" or (buildDepError "leancheck"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."test-framework-leancheck" or (buildDepError "test-framework-leancheck"))
             ];
+          buildable = true;
           };
         };
       };

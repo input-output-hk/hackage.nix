@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gasp" or (buildDepError "gasp"))
           ];
         libs = [ (pkgs."glpk" or (sysDepError "glpk")) ];
+        buildable = true;
         };
       };
     }

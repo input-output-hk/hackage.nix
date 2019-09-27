@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."serversession" or (buildDepError "serversession"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."serversession" or (buildDepError "serversession"))
             (hsPkgs."serversession-backend-acid-state" or (buildDepError "serversession-backend-acid-state"))
             ];
+          buildable = true;
           };
         };
       };

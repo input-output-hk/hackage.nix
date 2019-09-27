@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."layout" or (buildDepError "layout"))
           (hsPkgs."hinduce-missingh" or (buildDepError "hinduce-missingh"))
           ];
+        buildable = true;
         };
       };
     }

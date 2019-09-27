@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."editline" or (buildDepError "editline"))
           (hsPkgs."Shellac" or (buildDepError "Shellac"))
           ];
+        buildable = true;
         };
       };
     }

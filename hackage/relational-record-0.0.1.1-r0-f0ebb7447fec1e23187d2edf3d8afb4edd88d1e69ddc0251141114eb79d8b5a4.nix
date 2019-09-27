@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."relational-query" or (buildDepError "relational-query"))
           (hsPkgs."relational-query-HDBC" or (buildDepError "relational-query-HDBC"))
           ];
+        buildable = true;
         };
       };
     }

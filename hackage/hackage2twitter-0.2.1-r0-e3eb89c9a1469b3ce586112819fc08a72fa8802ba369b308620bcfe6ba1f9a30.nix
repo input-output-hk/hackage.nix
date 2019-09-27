@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."feed" or (buildDepError "feed"))
             (hsPkgs."feed2twitter" or (buildDepError "feed2twitter"))
             ];
+          buildable = true;
           };
         };
       };

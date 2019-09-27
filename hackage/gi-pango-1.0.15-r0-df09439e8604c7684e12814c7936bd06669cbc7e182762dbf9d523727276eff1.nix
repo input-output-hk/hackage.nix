@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-gi-overloading" or (buildDepError "haskell-gi-overloading"))
           ];
         pkgconfig = [ (pkgconfPkgs."pango" or (pkgConfDepError "pango")) ];
+        buildable = true;
         };
       };
     }

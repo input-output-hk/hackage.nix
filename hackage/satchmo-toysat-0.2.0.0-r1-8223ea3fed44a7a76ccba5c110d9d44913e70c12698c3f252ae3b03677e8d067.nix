@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."satchmo" or (buildDepError "satchmo"))
           (hsPkgs."toysolver" or (buildDepError "toysolver"))
           ];
+        buildable = true;
         };
       };
     }

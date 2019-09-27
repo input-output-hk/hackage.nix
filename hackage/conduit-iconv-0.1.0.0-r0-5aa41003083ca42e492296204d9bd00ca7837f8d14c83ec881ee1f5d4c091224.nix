@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
         libs = (pkgs.lib).optional (system.isOsx || system.isFreebsd) (pkgs."iconv" or (sysDepError "iconv"));
+        buildable = true;
         };
       tests = {
         "Tests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit" or (buildDepError "conduit"))
             (hsPkgs."conduit-iconv" or (buildDepError "conduit-iconv"))
             ];
+          buildable = true;
           };
         };
       };

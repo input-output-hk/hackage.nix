@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."hsI2C" or (buildDepError "hsI2C"))
           ];
+        buildable = true;
         };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."mat" or (sysDepError "mat"))
           ] ++ (pkgs.lib).optional (flags.engine) (pkgs."eng" or (sysDepError "eng"));
         build-tools = (pkgs.lib).optional (flags.runtime) (hsPkgs.buildPackages.mcc or (pkgs.buildPackages.mcc or (buildToolDepError "mcc")));
+        buildable = true;
         };
       };
     }

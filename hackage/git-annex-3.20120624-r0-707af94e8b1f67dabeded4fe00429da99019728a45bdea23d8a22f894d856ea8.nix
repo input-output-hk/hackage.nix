@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."edit-distance" or (buildDepError "edit-distance"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ] ++ (pkgs.lib).optional (flags.s3) (hsPkgs."hS3" or (buildDepError "hS3"))) ++ (pkgs.lib).optional (flags.inotify) (hsPkgs."hinotify" or (buildDepError "hinotify"));
+          buildable = true;
           };
         };
       tests = {
@@ -124,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."edit-distance" or (buildDepError "edit-distance"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         };
       };

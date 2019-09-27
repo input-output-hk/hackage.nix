@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."semi-iso" or (buildDepError "semi-iso"))
           ];
+        buildable = true;
         };
       };
     }

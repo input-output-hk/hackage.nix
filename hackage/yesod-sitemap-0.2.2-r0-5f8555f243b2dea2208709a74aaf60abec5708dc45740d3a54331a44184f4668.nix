@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."hamlet" or (buildDepError "hamlet"))
           ];
+        buildable = true;
         };
       };
     }

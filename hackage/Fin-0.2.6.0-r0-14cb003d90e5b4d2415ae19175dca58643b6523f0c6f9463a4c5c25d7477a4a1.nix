@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."natural-induction" or (buildDepError "natural-induction"))
           (hsPkgs."universe-base" or (buildDepError "universe-base"))
           ];
+        buildable = true;
         };
       };
     }

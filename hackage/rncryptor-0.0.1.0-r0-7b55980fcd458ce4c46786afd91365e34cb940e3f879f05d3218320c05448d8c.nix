@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
           (hsPkgs."pbkdf" or (buildDepError "pbkdf"))
           ];
+        buildable = true;
         };
       exes = {
         "rncryptor-stream" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
             (hsPkgs."rncryptor" or (buildDepError "rncryptor"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         };
       };

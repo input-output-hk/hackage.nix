@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           (hsPkgs."linearmap-category" or (buildDepError "linearmap-category"))
           ];
+        buildable = true;
         };
       };
     }

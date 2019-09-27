@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."selda" or (buildDepError "selda"))
           (hsPkgs."text" or (buildDepError "text"))
           ] ++ (pkgs.lib).optional (!flags.haste) (hsPkgs."direct-sqlite" or (buildDepError "direct-sqlite"));
+        buildable = true;
         };
       };
     }

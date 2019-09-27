@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."base" or (buildDepError "base"))
             ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (buildDepError "base"));
+        buildable = true;
         };
       exes = {
         "LanguageASN1Testsuite" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."syb" or (buildDepError "syb"))
             ];
+          buildable = if flags.test then true else false;
           };
         "TestASN1Parser" = {
           depends = (pkgs.lib).optionals (flags.test) [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."syb" or (buildDepError "syb"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

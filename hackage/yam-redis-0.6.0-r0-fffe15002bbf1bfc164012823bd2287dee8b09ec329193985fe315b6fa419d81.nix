@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."servant-server" or (buildDepError "servant-server"))
           (hsPkgs."yam" or (buildDepError "yam"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-network" or (buildDepError "pipes-network"))
             (hsPkgs."pipes-p2p" or (buildDepError "pipes-p2p"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cairo" or (buildDepError "cairo"))
           (hsPkgs."colour" or (buildDepError "colour"))
           ];
+        buildable = true;
         };
       };
     }

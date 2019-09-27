@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fgl" or (buildDepError "fgl"))
           (hsPkgs."pretty" or (buildDepError "pretty"))
           ];
+        buildable = true;
         };
       exes = {
         "visual-graphrewrite" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."svgcairo" or (buildDepError "svgcairo"))
             (hsPkgs."cairo" or (buildDepError "cairo"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."oleaut32" or (sysDepError "oleaut32"))
           (pkgs."wbemuuid" or (sysDepError "wbemuuid"))
           ];
+        buildable = true;
         };
       tests = {
         "system-info-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."system-info" or (buildDepError "system-info"))
             ];
+          buildable = true;
           };
         };
       };

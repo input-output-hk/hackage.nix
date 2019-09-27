@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
           (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
           ];
+        buildable = true;
         };
       exes = {
         "dpm-tests" = {
@@ -93,12 +94,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTF" or (buildDepError "HTF"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = if flags.test then true else false;
           };
         "dpm" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."DPM" or (buildDepError "DPM"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."ftd2xx" or (sysDepError "ftd2xx"))
           (pkgs."stdc++" or (sysDepError "stdc++"))
           ];
+        buildable = true;
         };
       exes = {
         "rmp-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."ftd2xx" or (sysDepError "ftd2xx"))
             (pkgs."stdc++" or (sysDepError "stdc++"))
             ];
+          buildable = true;
           };
         "rmp-test-facedetect" = {
           depends = [
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."ftd2xx" or (sysDepError "ftd2xx"))
             (pkgs."stdc++" or (sysDepError "stdc++"))
             ];
+          buildable = true;
           };
         };
       };

@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."web-routing" or (buildDepError "web-routing"))
           (hsPkgs."types-compat" or (buildDepError "types-compat"))
           ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."turtle" or (buildDepError "turtle"))
           ];
+        buildable = true;
         };
       exes = {
         "nix-delegate" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."nix-delegate" or (buildDepError "nix-delegate"))
             ];
+          buildable = true;
           };
         };
       };

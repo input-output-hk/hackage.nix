@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ])) ++ (pkgs.lib).optional (flags.bounded-channels) (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"))) ++ [
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
       exes = {
         "test" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."XenDevice" or (buildDepError "XenDevice"))
             (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
             ];
+          buildable = if flags.example then true else false;
           };
         "web-server" = {
           depends = (pkgs.lib).optionals (!system.isHalvm) ((pkgs.lib).optionals (flags.web-server) [
@@ -110,6 +112,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
             (hsPkgs."hans" or (buildDepError "hans"))
             ]);
+          buildable = if system.isHalvm
+            then false
+            else if flags.web-server then true else false;
           };
         "tcp-test" = {
           depends = [
@@ -125,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."XenDevice" or (buildDepError "XenDevice"))
             (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
             ];
+          buildable = true;
           };
         "test-suite" = {
           depends = (pkgs.lib).optionals (flags.enable-tests) [
@@ -139,6 +145,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."hans" or (buildDepError "hans"))
             ];
+          buildable = if flags.enable-tests then true else false;
           };
         };
       };

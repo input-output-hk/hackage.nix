@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."text-icu" or (buildDepError "text-icu"))
           ];
+        buildable = true;
         };
       tests = {
         "text-regex-replace-specs" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."text-icu" or (buildDepError "text-icu"))
             ];
+          buildable = true;
           };
         };
       };

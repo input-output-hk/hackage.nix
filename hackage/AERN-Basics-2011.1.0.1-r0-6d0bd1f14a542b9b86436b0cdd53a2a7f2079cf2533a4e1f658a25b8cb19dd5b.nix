@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework" or (buildDepError "test-framework"))
           (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
           ];
+        buildable = true;
         };
       exes = {
         "toolAERN-bench-csv-to-gnuplot" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         };
       };

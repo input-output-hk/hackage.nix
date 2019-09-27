@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HaTeX" or (buildDepError "HaTeX"))
           (hsPkgs."ihaskell" or (buildDepError "ihaskell"))
           ];
+        buildable = true;
         };
       };
     }

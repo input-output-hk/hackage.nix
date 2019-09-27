@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "BenchmarkHistogram" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Chart-diagrams" or (buildDepError "Chart-diagrams"))
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             ];
+          buildable = if flags.exe then true else false;
           };
         };
       };

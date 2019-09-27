@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gi-gst" or (buildDepError "gi-gst"))
             (hsPkgs."gi-gtk" or (buildDepError "gi-gtk"))
             ];
+          buildable = true;
           };
         };
       };

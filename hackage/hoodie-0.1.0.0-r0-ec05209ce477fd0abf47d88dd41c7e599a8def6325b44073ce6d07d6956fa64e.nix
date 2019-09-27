@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ncurses" or (buildDepError "ncurses"))
             (hsPkgs."hfov" or (buildDepError "hfov"))
             ];
+          buildable = true;
           };
         };
       };

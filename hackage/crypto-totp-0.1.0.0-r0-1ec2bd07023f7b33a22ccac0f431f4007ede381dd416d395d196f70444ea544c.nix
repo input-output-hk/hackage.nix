@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagged" or (buildDepError "tagged"))
           (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
           ];
+        buildable = true;
         };
       };
     }

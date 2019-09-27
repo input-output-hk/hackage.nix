@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       tests = {
         "Simple" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
             ];
+          buildable = true;
           };
         "SlaveUpdates" = {
           depends = [
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
             ];
+          buildable = true;
           };
         "CRCFail" = {
           depends = [
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
             ];
+          buildable = true;
           };
         "CheckpointSync" = {
           depends = [
@@ -112,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
             ];
+          buildable = true;
           };
         "OrderingRandom" = {
           depends = [
@@ -123,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
             ];
+          buildable = true;
           };
         "NReplication" = {
           depends = [
@@ -133,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
             ];
+          buildable = true;
           };
         "UpdateError" = {
           depends = [
@@ -143,6 +150,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
             ];
+          buildable = true;
           };
         "SyncTimeout" = {
           depends = [
@@ -153,6 +161,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -165,6 +174,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safecopy" or (buildDepError "safecopy"))
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             ];
+          buildable = true;
           };
         "MasterOnly" = {
           depends = [
@@ -176,6 +186,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
             ];
+          buildable = true;
           };
         "MasterSlave" = {
           depends = [
@@ -187,6 +198,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
             ];
+          buildable = true;
           };
         "Slave" = {
           depends = [
@@ -198,6 +210,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
             ];
+          buildable = true;
           };
         };
       };

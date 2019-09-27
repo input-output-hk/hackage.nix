@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uulib" or (buildDepError "uulib"))
           (hsPkgs."uu-cco" or (buildDepError "uu-cco"))
           ];
+        buildable = true;
         };
       };
     }

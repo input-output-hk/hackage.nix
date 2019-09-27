@@ -64,7 +64,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
           ];
+        buildable = true;
         };
-      exes = { "ExampleRun" = {}; "ExampleVM" = {}; "Parser" = {}; };
+      exes = {
+        "ExampleRun" = { buildable = true; };
+        "ExampleVM" = { buildable = true; };
+        "Parser" = { buildable = true; };
+        };
       };
     }

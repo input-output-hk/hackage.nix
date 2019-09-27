@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."temporary" or (buildDepError "temporary"))
           (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
           ];
+        buildable = true;
         };
       exes = {
         "himg" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."temporary" or (buildDepError "temporary"))
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             ];
+          buildable = true;
           };
         };
       };

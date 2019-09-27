@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hack2" or (buildDepError "hack2"))
           (hsPkgs."hack2-handler-snap-server" or (buildDepError "hack2-handler-snap-server"))
           ];
+        buildable = true;
         };
       };
     }

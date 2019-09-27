@@ -57,11 +57,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = [ (pkgs."doublefann" or (sysDepError "doublefann")) ];
+        buildable = true;
         };
       exes = {
         "HFANNTest" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
           libs = [ (pkgs."doublefann" or (sysDepError "doublefann")) ];
+          buildable = true;
           };
         };
       };

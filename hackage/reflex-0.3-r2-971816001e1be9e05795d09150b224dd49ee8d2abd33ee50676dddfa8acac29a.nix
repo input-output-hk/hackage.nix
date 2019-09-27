@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
           ];
+        buildable = true;
         };
       tests = {
         "cross-impl" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
             (hsPkgs."MemoTrie" or (buildDepError "MemoTrie"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."reflex" or (buildDepError "reflex"))
             ];
+          buildable = true;
           };
         };
       };

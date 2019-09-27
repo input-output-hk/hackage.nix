@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."free" or (buildDepError "free"))
           ];
+        buildable = true;
         };
       tests = {
         "test-range" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."free" or (buildDepError "free"))
             (hsPkgs."range" or (buildDepError "range"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."hashable" or (buildDepError "hashable"))
           ];
+        buildable = true;
         };
       exes = {
         "memcache-sample-client" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-conduit" or (buildDepError "network-conduit"))
             (hsPkgs."memcache-haskell" or (buildDepError "memcache-haskell"))
             ];
+          buildable = if flags.sample then true else false;
           };
         "memcache-sample-retrieval" = {
           depends = [
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-conduit" or (buildDepError "network-conduit"))
             (hsPkgs."memcache-haskell" or (buildDepError "memcache-haskell"))
             ];
+          buildable = if flags.sample then true else false;
           };
         };
       tests = {
@@ -110,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."memcache-haskell" or (buildDepError "memcache-haskell"))
             ];
+          buildable = true;
           };
         };
       };

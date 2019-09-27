@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Glob" or (buildDepError "Glob"))
           (hsPkgs."air" or (buildDepError "air"))
           ];
+        buildable = true;
         };
       exes = {
         "nemesis" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."air" or (buildDepError "air"))
             ];
+          buildable = true;
           };
         };
       };

@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."objective" or (buildDepError "objective"))
           (hsPkgs."bindings-portaudio" or (buildDepError "bindings-portaudio"))
           ];
+        buildable = true;
         };
       };
     }

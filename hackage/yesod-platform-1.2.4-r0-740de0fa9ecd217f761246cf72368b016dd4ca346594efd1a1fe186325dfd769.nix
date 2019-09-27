@@ -186,6 +186,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib-bindings" or (buildDepError "zlib-bindings"))
           (hsPkgs."zlib-conduit" or (buildDepError "zlib-conduit"))
           ];
+        buildable = true;
         };
       };
     }

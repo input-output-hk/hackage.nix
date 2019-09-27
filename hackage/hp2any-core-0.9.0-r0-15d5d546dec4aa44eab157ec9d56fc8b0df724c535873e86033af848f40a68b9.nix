@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."bytestring-trie" or (buildDepError "bytestring-trie"))
           ];
+        buildable = true;
         };
       };
     }

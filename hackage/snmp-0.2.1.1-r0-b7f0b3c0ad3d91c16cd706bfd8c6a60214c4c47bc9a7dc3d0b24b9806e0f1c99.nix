@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
           ];
+        buildable = true;
         };
       };
     }

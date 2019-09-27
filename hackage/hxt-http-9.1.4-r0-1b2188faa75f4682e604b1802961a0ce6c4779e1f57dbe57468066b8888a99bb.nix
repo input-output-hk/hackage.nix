@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           (hsPkgs."hxt" or (buildDepError "hxt"))
           ];
+        buildable = true;
         };
       };
     }

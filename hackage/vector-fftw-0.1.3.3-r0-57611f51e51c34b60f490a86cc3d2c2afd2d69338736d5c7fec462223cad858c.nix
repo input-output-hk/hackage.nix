@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."storable-complex" or (buildDepError "storable-complex"))
           ];
         libs = [ (pkgs."fftw3" or (sysDepError "fftw3")) ];
+        buildable = true;
         };
       };
     }

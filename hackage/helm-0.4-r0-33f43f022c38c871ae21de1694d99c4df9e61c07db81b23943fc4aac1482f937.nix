@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."SDL" or (buildDepError "SDL"))
           ];
+        buildable = true;
         };
       tests = {
         "helm-tests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."elerea" or (buildDepError "elerea"))
             (hsPkgs."SDL" or (buildDepError "SDL"))
             ];
+          buildable = true;
           };
         };
       };

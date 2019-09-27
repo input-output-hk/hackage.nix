@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."persistent" or (buildDepError "persistent"))
             (hsPkgs."parsers" or (buildDepError "parsers"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."writer-cps-lens" or (buildDepError "writer-cps-lens"))
           (hsPkgs."writer-cps-morph" or (buildDepError "writer-cps-morph"))
           ];
+        buildable = true;
         };
       };
     }

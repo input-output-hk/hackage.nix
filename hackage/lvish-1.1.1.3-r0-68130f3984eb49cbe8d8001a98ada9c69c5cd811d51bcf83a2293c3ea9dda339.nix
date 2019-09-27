@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."graphviz" or (buildDepError "graphviz"))
           (hsPkgs."text" or (buildDepError "text"))
           ]) ++ (pkgs.lib).optional (flags.chaselev) (hsPkgs."chaselev-deque" or (buildDepError "chaselev-deque"));
+        buildable = true;
         };
       tests = {
         "test-lvish" = {
@@ -119,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."graphviz" or (buildDepError "graphviz"))
             (hsPkgs."text" or (buildDepError "text"))
             ]) ++ (pkgs.lib).optional (flags.chaselev) (hsPkgs."chaselev-deque" or (buildDepError "chaselev-deque"));
+          buildable = true;
           };
         };
       };

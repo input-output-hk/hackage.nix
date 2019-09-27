@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."alsa-seq" or (buildDepError "alsa-seq"))
           (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
           ];
+        buildable = true;
         };
       };
     }

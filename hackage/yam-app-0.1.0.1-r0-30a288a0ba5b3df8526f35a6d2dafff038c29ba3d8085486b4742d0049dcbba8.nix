@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."reflection" or (buildDepError "reflection"))
           (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
           ];
+        buildable = true;
         };
       };
     }

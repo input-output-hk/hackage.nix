@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."singletons" or (buildDepError "singletons"))
           ];
+        buildable = true;
         };
       exes = {
         "sized-types-example1" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base-compat" or (buildDepError "base-compat"))
             (hsPkgs."sized-types" or (buildDepError "sized-types"))
             ];
+          buildable = if flags.all then true else false;
           };
         };
       tests = {
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."sized-types" or (buildDepError "sized-types"))
             ];
+          buildable = if flags.all then true else false;
           };
         };
       };

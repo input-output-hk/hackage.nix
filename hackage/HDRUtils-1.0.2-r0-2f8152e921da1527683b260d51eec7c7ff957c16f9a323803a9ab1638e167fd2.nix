@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
         libs = [ (pkgs."pfs-1.2" or (sysDepError "pfs-1.2")) ];
+        buildable = true;
         };
       };
     }

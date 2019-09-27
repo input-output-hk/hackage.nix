@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."toolshed" or (buildDepError "toolshed"))
             ] ++ [ (hsPkgs."parallel" or (buildDepError "parallel")) ];
+          buildable = true;
           };
         };
       };

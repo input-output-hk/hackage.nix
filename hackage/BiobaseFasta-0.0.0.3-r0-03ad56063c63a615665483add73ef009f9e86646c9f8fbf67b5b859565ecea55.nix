@@ -62,7 +62,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iteratee-compress" or (buildDepError "iteratee-compress"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
-      exes = { "Test" = {}; };
+      exes = { "Test" = { buildable = if flags.tests then true else false; }; };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
           (hsPkgs."ip" or (buildDepError "ip"))
           ];
+        buildable = true;
         };
       };
     }

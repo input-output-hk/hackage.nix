@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Win32" or (buildDepError "Win32"))
           ];
         libs = [ (pkgs."xinput" or (sysDepError "xinput")) ];
+        buildable = true;
         };
       };
     }

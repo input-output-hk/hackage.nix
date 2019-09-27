@@ -68,7 +68,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mstate" or (buildDepError "mstate"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
-      exes = { "test" = {}; };
+      exes = { "test" = { buildable = true; }; };
       };
     }

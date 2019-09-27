@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Crypto" or (buildDepError "Crypto"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         "hulk-generate-pass" = {
           depends = [
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."Crypto" or (buildDepError "Crypto"))
             ];
+          buildable = true;
           };
         };
       };

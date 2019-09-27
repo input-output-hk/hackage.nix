@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mlist" or (buildDepError "mlist"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       };
     }

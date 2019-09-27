@@ -97,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             ]
           else [ (hsPkgs."debian" or (buildDepError "debian")) ]);
+        buildable = true;
         };
       exes = {
         "cabal-debian" = {
@@ -143,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."debian" or (buildDepError "debian"))
               (hsPkgs."cabal-debian" or (buildDepError "cabal-debian"))
               ]);
+          buildable = true;
           };
         "cabal-debian-tests" = {
           depends = [
@@ -195,6 +197,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."debian" or (buildDepError "debian"))
               (hsPkgs."cabal-debian" or (buildDepError "cabal-debian"))
               ]);
+          buildable = true;
           };
         };
       };

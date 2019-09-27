@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           (hsPkgs."hackage-security" or (buildDepError "hackage-security"))
           ];
+        buildable = true;
         };
       };
     }

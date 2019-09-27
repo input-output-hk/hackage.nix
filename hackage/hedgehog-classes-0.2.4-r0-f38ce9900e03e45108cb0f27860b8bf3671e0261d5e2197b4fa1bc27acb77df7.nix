@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."wl-pprint-annotated" or (buildDepError "wl-pprint-annotated"))
           ] ++ (pkgs.lib).optional (flags.aeson) (hsPkgs."aeson" or (buildDepError "aeson"))) ++ (pkgs.lib).optional (flags.semirings) (hsPkgs."semirings" or (buildDepError "semirings"))) ++ (pkgs.lib).optional (flags.comonad) (hsPkgs."comonad" or (buildDepError "comonad"))) ++ (pkgs.lib).optional (flags.primitive) (hsPkgs."primitive" or (buildDepError "primitive"));
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
             (hsPkgs."hedgehog-classes" or (buildDepError "hedgehog-classes"))
             ];
+          buildable = true;
           };
         };
       };

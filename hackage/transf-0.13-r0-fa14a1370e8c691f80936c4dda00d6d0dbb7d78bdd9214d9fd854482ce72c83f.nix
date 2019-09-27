@@ -68,7 +68,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."hint" or (buildDepError "hint"))
           ];
+        buildable = true;
         };
-      exes = { "transf" = {}; };
+      exes = { "transf" = { buildable = true; }; };
       };
     }

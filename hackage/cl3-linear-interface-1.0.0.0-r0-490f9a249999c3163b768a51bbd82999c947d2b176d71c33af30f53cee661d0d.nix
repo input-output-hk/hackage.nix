@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cl3" or (buildDepError "cl3"))
           (hsPkgs."linear" or (buildDepError "linear"))
           ];
+        buildable = true;
         };
       };
     }

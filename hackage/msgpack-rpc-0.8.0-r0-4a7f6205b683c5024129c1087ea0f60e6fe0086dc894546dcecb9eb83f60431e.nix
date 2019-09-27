@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
           (hsPkgs."msgpack" or (buildDepError "msgpack"))
           ];
+        buildable = true;
         };
       tests = {
         "msgpack-rpc-test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."msgpack-rpc" or (buildDepError "msgpack-rpc"))
             ];
+          buildable = true;
           };
         };
       };

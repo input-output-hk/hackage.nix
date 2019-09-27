@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."msgpack" or (buildDepError "msgpack"))
           (hsPkgs."peggy" or (buildDepError "peggy"))
           ];
+        buildable = true;
         };
       exes = {
         "mpidl" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."peggy" or (buildDepError "peggy"))
             (hsPkgs."msgpack-idl" or (buildDepError "msgpack-idl"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."msgpack-idl" or (buildDepError "msgpack-idl"))
             ];
+          buildable = true;
           };
         };
       };

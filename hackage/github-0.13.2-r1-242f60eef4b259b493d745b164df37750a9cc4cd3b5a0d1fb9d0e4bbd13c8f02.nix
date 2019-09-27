@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."byteable" or (buildDepError "byteable"))
           (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
           ];
+        buildable = true;
         };
       tests = {
         "github-test" = {
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

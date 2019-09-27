@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
           (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
           ];
+        buildable = true;
         };
       exes = {
         "exe" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
             ];
+          buildable = true;
           };
         };
       };

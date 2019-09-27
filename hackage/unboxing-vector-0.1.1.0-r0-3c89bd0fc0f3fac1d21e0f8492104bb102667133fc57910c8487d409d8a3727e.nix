@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "unboxing-vector-test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unboxing-vector" or (buildDepError "unboxing-vector"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "unboxing-vector-test-deriving-via" = {
           depends = [
@@ -87,6 +89,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unboxing-vector" or (buildDepError "unboxing-vector"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).ge "8.6.1"
+            then true
+            else false;
           };
         "unboxing-vector-test-gnd" = {
           depends = [
@@ -98,6 +103,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unboxing-vector" or (buildDepError "unboxing-vector"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).ge "8.2.1"
+            then true
+            else false;
           };
         };
       benchmarks = {
@@ -110,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unboxing-vector" or (buildDepError "unboxing-vector"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

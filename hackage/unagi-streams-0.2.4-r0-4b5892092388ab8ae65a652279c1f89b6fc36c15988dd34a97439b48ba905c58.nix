@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."io-streams" or (buildDepError "io-streams"))
           (hsPkgs."unagi-chan" or (buildDepError "unagi-chan"))
           ];
+        buildable = true;
         };
       };
     }

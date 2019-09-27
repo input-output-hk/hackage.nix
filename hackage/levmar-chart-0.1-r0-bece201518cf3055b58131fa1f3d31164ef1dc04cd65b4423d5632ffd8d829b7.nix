@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
           (hsPkgs."levmar" or (buildDepError "levmar"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."levmar" or (buildDepError "levmar"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

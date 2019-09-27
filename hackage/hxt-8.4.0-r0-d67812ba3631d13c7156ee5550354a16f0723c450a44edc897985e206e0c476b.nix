@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
           (hsPkgs."curl" or (buildDepError "curl"))
           ];
+        buildable = true;
         };
       };
     }

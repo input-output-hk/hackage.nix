@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."ssl" or (sysDepError "ssl"))
           (pkgs."crypto" or (sysDepError "crypto"))
           ];
+        buildable = true;
         };
       tests = {
         "smoke" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hlibgit2" or (buildDepError "hlibgit2"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

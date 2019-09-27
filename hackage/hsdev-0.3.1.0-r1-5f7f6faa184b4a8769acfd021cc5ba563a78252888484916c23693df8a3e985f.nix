@@ -120,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bin-package-db" or (buildDepError "bin-package-db"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ] ++ (pkgs.lib).optional (flags.docs) (hsPkgs."haddock-api" or (buildDepError "haddock-api")))) ++ (pkgs.lib).optional (flags.docs) (hsPkgs."hdocs" or (buildDepError "hdocs"));
+        buildable = true;
         };
       exes = {
         "hsdev" = {
@@ -143,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -164,6 +166,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

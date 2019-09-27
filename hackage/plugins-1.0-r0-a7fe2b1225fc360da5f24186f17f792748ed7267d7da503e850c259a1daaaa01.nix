@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
           ];
+        buildable = true;
         };
       };
     }

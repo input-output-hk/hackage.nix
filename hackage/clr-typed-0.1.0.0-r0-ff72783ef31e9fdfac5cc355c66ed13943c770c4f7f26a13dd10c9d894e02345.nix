@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."clr-marshal" or (buildDepError "clr-marshal"))
           ];
+        buildable = true;
         };
       tests = {
         "clr-typed-test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."clr-typed" or (buildDepError "clr-typed"))
             ];
+          buildable = true;
           };
         };
       };

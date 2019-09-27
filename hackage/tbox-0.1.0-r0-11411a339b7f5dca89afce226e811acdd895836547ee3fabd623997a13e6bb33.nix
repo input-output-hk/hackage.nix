@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."IfElse" or (buildDepError "IfElse"))
           (hsPkgs."safe-failure" or (buildDepError "safe-failure"))
           ];
+        buildable = true;
         };
       };
     }

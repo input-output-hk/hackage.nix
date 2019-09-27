@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lifted-base-tf" or (buildDepError "lifted-base-tf"))
           (hsPkgs."util" or (buildDepError "util"))
           ];
+        buildable = true;
         };
       };
     }

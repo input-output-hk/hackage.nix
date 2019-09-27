@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."elevator" or (buildDepError "elevator"))
           (hsPkgs."clean-unions" or (buildDepError "clean-unions"))
           ];
+        buildable = true;
         };
       };
     }

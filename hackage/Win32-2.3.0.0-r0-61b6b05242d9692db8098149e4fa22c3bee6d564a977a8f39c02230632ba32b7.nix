@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."shell32" or (sysDepError "shell32"))
           (pkgs."shfolder" or (sysDepError "shfolder"))
           ];
+        buildable = true;
         };
       };
     }

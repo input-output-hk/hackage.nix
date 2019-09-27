@@ -55,8 +55,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       };
     components = {
       exes = {
-        "gtk2hsTypeGen" = {};
-        "gtk2hsHookGenerator" = {};
+        "gtk2hsTypeGen" = { buildable = true; };
+        "gtk2hsHookGenerator" = { buildable = true; };
         "gtk2hsC2hs" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
             (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
             ];
+          buildable = true;
           };
         };
       };

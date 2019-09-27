@@ -90,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fail" or (buildDepError "fail"))
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           ];
+        buildable = true;
         };
       exes = {
         "gpio-mellon-server" = {
@@ -108,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if !flags.gpio-example then false else true;
           };
         "mellon-schedule-unlock" = {
           depends = (pkgs.lib).optionals (!(!flags.client-unlock-example)) [
@@ -127,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.client-unlock-example then false else true;
           };
         "mock-mellon-server" = {
           depends = (pkgs.lib).optionals (!(!flags.mock-example)) [
@@ -136,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."protolude" or (buildDepError "protolude"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if !flags.mock-example then false else true;
           };
         };
       tests = {
@@ -145,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."protolude" or (buildDepError "protolude"))
             ];
+          buildable = if !flags.test-doctests then false else true;
           };
         "hlint" = {
           depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
@@ -152,6 +157,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hlint" or (buildDepError "hlint"))
             (hsPkgs."protolude" or (buildDepError "protolude"))
             ];
+          buildable = if !flags.test-hlint then false else true;
           };
         "spec" = {
           depends = [
@@ -186,6 +192,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = true;
           };
         };
       };

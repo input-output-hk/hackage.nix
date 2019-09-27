@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."vinyl" or (buildDepError "vinyl"))
           ];
+        buildable = true;
         };
       exes = {
         "h-booru" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."vinyl" or (buildDepError "vinyl"))
             ];
+          buildable = true;
           };
         };
       };

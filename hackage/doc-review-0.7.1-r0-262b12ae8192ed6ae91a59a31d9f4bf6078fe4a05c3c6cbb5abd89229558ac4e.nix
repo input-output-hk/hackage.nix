@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml" or (buildDepError "xml"))
             (hsPkgs."xml-basic" or (buildDepError "xml-basic"))
             ];
+          buildable = true;
           };
         "doc-review-test" = {
           depends = (pkgs.lib).optionals (flags.test) [
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

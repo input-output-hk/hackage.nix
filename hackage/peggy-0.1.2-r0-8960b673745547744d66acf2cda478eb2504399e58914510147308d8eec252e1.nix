@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))
           ];
+        buildable = true;
         };
       exes = {
         "peggy" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))
             ];
+          buildable = true;
           };
         };
       };

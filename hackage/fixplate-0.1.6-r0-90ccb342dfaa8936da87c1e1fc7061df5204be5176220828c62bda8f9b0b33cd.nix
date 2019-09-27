@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = ([
           (hsPkgs."base" or (buildDepError "base"))
           ] ++ (pkgs.lib).optional (flags.withutils) (hsPkgs."containers" or (buildDepError "containers"))) ++ (pkgs.lib).optional (flags.withquickcheck) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+        buildable = true;
         };
       };
     }

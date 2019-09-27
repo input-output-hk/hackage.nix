@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."TypeCompose" or (buildDepError "TypeCompose"))
           (hsPkgs."gd" or (buildDepError "gd"))
           ] ++ (pkgs.lib).optional (flags.poppler) (hsPkgs."poppler" or (buildDepError "poppler"));
+        buildable = true;
         };
       };
     }

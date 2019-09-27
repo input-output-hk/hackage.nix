@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = if flags.testing then false else true;
         };
       exes = {
         "xmonad" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
             ];
+          buildable = true;
           };
         };
       };

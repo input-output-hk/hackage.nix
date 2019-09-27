@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
             (hsPkgs."diagrams-postscript" or (buildDepError "diagrams-postscript"))
             ];
+          buildable = true;
           };
         };
       };

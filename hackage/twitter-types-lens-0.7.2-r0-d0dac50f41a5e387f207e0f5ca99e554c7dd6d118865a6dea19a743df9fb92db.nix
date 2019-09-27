@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."twitter-types" or (buildDepError "twitter-types"))
           ];
+        buildable = true;
         };
       };
     }

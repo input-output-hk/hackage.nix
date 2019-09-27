@@ -54,7 +54,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = true; };
       exes = {
         "Perf" = {
           depends = [
@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         };
       };

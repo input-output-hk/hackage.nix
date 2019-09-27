@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Glob" or (buildDepError "Glob"))
             (hsPkgs."preprocessor-tools" or (buildDepError "preprocessor-tools"))
             ];
+          buildable = true;
           };
         };
       };

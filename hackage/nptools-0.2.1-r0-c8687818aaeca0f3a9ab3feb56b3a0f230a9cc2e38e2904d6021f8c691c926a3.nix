@@ -61,9 +61,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."HSH" or (buildDepError "HSH"))
             ];
+          buildable = true;
           };
         "color-diff" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "events-to-timelog" = {
           depends = [
@@ -71,9 +73,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ];
+          buildable = true;
           };
         "extract-non-ascii" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "git-prompt" = {
           depends = [
@@ -81,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             (hsPkgs."HSH" or (buildDepError "HSH"))
             ];
+          buildable = true;
           };
         "iter-lines" = {
           depends = [
@@ -88,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "label" = {
           depends = [
@@ -96,15 +102,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "bufferize" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "mh-gen-message-id-mapping" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "show-non-ascii" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "show-pollbox" = {
           depends = [
@@ -113,22 +123,41 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SHA" or (buildDepError "SHA"))
             (hsPkgs."MissingH" or (buildDepError "MissingH"))
             ];
+          buildable = true;
           };
-        "summ" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-        "tac" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-        "rot" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-        "pad" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-        "myrev" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "summ" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
+        "tac" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
+        "rot" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
+        "pad" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
+        "myrev" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "loopback" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "what-I-have-done-today" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "x-printable" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
-        "cp-rescue" = {};
+        "cp-rescue" = { buildable = true; };
         };
       };
     }

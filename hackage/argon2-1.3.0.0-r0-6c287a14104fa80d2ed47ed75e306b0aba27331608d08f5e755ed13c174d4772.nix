@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text-short" or (buildDepError "text-short"))
           ];
         pkgconfig = (pkgs.lib).optional (flags.use-system-library) (pkgconfPkgs."argon2" or (pkgConfDepError "argon2"));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."tasty" or (buildDepError "tasty"))
             ];
+          buildable = true;
           };
         };
       };

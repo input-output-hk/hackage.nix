@@ -64,10 +64,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."random" or (buildDepError "random"))
           ] ++ (pkgs.lib).optional (flags.havedeepseq) (hsPkgs."deepseq" or (buildDepError "deepseq"));
+        buildable = true;
         };
       exes = {
         "toolshed" = {
           depends = [ (hsPkgs."Cabal" or (buildDepError "Cabal")) ];
+          buildable = true;
           };
         };
       };

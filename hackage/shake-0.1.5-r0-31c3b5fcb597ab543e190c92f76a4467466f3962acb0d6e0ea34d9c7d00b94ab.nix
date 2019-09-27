@@ -71,7 +71,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."access-time" or (buildDepError "access-time"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
-      exes = { "shake" = {}; };
+      exes = {
+        "shake" = { buildable = if flags.testprog then true else false; };
+        };
       };
     }

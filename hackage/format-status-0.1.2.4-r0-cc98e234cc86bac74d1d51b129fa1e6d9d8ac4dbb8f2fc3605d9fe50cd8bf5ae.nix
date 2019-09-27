@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             (hsPkgs."data-concurrent-queue" or (buildDepError "data-concurrent-queue"))
             ];
+          buildable = true;
           };
         };
       };

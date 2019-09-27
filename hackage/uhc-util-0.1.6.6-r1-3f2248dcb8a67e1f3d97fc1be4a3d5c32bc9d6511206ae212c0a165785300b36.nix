@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."logict-state" or (buildDepError "logict-state"))
           (hsPkgs."pqueue" or (buildDepError "pqueue"))
           ];
+        buildable = true;
         };
       };
     }

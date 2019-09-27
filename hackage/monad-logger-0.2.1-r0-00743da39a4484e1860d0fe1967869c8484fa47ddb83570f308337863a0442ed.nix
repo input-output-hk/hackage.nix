@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
           ];
+        buildable = true;
         };
       };
     }

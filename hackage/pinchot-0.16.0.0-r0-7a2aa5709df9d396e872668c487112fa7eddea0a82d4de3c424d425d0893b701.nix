@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."ListLike" or (buildDepError "ListLike"))
           ];
+        buildable = true;
         };
       exes = {
         "newman" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."ListLike" or (buildDepError "ListLike"))
             ];
+          buildable = if flags.executables then true else false;
           };
         };
       };

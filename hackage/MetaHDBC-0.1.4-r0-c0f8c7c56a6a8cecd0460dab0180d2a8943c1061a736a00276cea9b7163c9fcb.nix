@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."convertible" or (buildDepError "convertible"))
           (hsPkgs."hashtables" or (buildDepError "hashtables"))
           ];
+        buildable = true;
         };
       };
     }

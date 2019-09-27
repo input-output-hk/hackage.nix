@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-reify" or (buildDepError "data-reify"))
           (hsPkgs."copilot-core" or (buildDepError "copilot-core"))
           ];
+        buildable = true;
         };
       };
     }

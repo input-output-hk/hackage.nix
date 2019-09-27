@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fay" or (buildDepError "fay"))
           (hsPkgs."fay-text" or (buildDepError "fay-text"))
           ];
+        buildable = true;
         };
       };
     }

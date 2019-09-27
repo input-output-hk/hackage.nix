@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (buildDepError "GLFW"))
             ];
+          buildable = true;
           };
         "elerea-breakout" = {
           depends = [
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (buildDepError "GLFW"))
             ];
+          buildable = true;
           };
         "elerea-chase" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (buildDepError "GLFW"))
             ];
+          buildable = true;
           };
         };
       };

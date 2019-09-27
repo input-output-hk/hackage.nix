@@ -61,17 +61,20 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           (hsPkgs."network" or (buildDepError "network"))
           ];
+        buildable = true;
         };
       exes = {
-        "hach-client" = {};
+        "hach-client" = { buildable = true; };
         "hach-nclient" = {
           depends = [
             (hsPkgs."vty" or (buildDepError "vty"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = true;
           };
         "hach-server" = {
           depends = [ (hsPkgs."time" or (buildDepError "time")) ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-types" or (buildDepError "xml-types"))
           (hsPkgs."failable-list" or (buildDepError "failable-list"))
           ];
+        buildable = true;
         };
       };
     }

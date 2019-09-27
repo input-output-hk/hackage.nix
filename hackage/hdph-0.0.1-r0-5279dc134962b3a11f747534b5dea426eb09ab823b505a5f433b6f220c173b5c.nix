@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."hdph-closure" or (buildDepError "hdph-closure"))
           ];
+        buildable = true;
         };
       exes = {
         "hello" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."hdph-closure" or (buildDepError "hdph-closure"))
             ];
+          buildable = true;
           };
         "fib" = {
           depends = [
@@ -111,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."hdph-closure" or (buildDepError "hdph-closure"))
             ];
+          buildable = true;
           };
         "sumeuler" = {
           depends = [
@@ -130,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."hdph-closure" or (buildDepError "hdph-closure"))
             ];
+          buildable = true;
           };
         "nbody" = {
           depends = [
@@ -149,6 +153,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."hdph-closure" or (buildDepError "hdph-closure"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."music-dynamics-literal" or (buildDepError "music-dynamics-literal"))
           ];
+        buildable = true;
         };
       };
     }

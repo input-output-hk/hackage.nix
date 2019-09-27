@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."peakachu" or (buildDepError "peakachu"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         };
       };

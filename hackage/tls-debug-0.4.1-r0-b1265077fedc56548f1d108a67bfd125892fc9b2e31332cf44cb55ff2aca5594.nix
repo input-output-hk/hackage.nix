@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
             (hsPkgs."tls" or (buildDepError "tls"))
             ];
+          buildable = if system.isWindows then false else true;
           };
         "tls-retrievecertificate" = {
           depends = [
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
             (hsPkgs."tls" or (buildDepError "tls"))
             ];
+          buildable = true;
           };
         "tls-simpleclient" = {
           depends = [
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."x509-system" or (buildDepError "x509-system"))
             (hsPkgs."tls" or (buildDepError "tls"))
             ];
+          buildable = true;
           };
         "tls-simpleserver" = {
           depends = [
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."x509-system" or (buildDepError "x509-system"))
             (hsPkgs."tls" or (buildDepError "tls"))
             ];
+          buildable = true;
           };
         };
       };

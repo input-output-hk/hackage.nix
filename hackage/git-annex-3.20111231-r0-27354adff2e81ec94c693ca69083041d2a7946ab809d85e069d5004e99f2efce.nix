@@ -82,9 +82,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
             ];
+          buildable = true;
           };
-        "git-annex-shell" = {};
-        "git-union-merge" = {};
+        "git-annex-shell" = { buildable = true; };
+        "git-union-merge" = { buildable = true; };
         };
       };
     }

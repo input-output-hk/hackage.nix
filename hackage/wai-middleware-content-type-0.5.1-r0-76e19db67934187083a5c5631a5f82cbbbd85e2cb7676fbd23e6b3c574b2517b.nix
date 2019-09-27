@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
           (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -122,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = true;
           };
         };
       };

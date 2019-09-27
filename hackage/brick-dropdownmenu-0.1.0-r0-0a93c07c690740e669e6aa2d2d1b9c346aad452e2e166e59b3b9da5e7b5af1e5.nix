@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."vty" or (buildDepError "vty"))
           ];
+        buildable = true;
         };
       exes = {
         "brick-dropdownmenu-demo" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = if flags.demo then true else false;
           };
         };
       };

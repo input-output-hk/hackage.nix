@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           ];
+        buildable = true;
         };
       tests = {
         "test-quickcheck" = {
@@ -73,24 +74,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = if !flags.templatehaskell then false else true;
           };
         "test-quickcheck-gcoarbitrary" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2" && (compiler.isGhc && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = if !(compiler.isGhc && (compiler.version).ge "7.2")
+            then false
+            else true;
           };
         "test-quickcheck-generators" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = if !flags.templatehaskell then false else true;
           };
         "test-quickcheck-gshrink" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2" && (compiler.isGhc && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = if !(compiler.isGhc && (compiler.version).ge "7.2")
+            then false
+            else true;
           };
         };
       };

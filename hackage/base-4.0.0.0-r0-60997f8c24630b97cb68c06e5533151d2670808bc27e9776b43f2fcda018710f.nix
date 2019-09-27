@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."user32" or (sysDepError "user32"))
           (pkgs."shell32" or (sysDepError "shell32"))
           ];
+        buildable = true;
         };
       };
     }

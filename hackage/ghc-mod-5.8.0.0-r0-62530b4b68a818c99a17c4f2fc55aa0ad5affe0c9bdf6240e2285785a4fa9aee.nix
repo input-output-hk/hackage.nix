@@ -100,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cabal-helper" or (buildDepError "cabal-helper"))
           (hsPkgs."ghc" or (buildDepError "ghc"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."convertible" or (buildDepError "convertible"));
+        buildable = true;
         };
       exes = {
         "ghc-mod" = {
@@ -117,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
             ];
+          buildable = true;
           };
         "ghc-modi" = {
           depends = [
@@ -130,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -138,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = ([
@@ -157,6 +161,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."convertible" or (buildDepError "convertible"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"));
+          buildable = true;
           };
         "shelltest" = {
           depends = [
@@ -166,6 +171,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.shelltest or (pkgs.buildPackages.shelltest or (buildToolDepError "shelltest")))
             ];
+          buildable = if !flags.shelltest then false else true;
           };
         };
       benchmarks = {
@@ -178,6 +184,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."temporary" or (buildDepError "temporary"))
             (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
             ];
+          buildable = true;
           };
         };
       };

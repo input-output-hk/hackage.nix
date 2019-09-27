@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."basement" or (buildDepError "basement"))
           (hsPkgs."foundation" or (buildDepError "foundation"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cli" or (buildDepError "cli"))
             (hsPkgs."foundation" or (buildDepError "foundation"))
             ];
+          buildable = true;
           };
         };
       };

@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             (hsPkgs."hsx" or (buildDepError "hsx"))
             ]);
+        buildable = true;
         };
       exes = {
         "happstack" = {
@@ -85,9 +86,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "happstack-tests" = {
           depends = [ (hsPkgs."HUnit" or (buildDepError "HUnit")) ];
+          buildable = if flags.tests then true else false;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."genvalidity" or (buildDepError "genvalidity"))
           (hsPkgs."path" or (buildDepError "path"))
           ];
+        buildable = true;
         };
       tests = {
         "genvalidity-path-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."genvalidity-hspec" or (buildDepError "genvalidity-hspec"))
             (hsPkgs."path" or (buildDepError "path"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
           (hsPkgs."terminfo" or (buildDepError "terminfo"))
           ];
+        buildable = true;
         };
       exes = {
         "mdcat" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             (hsPkgs."terminfo" or (buildDepError "terminfo"))
             ];
+          buildable = true;
           };
         };
       };

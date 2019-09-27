@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."polysemy" or (buildDepError "polysemy"))
           (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
           ];
+        buildable = true;
         };
       tests = {
         "polysemy-zoo-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
             (hsPkgs."polysemy-zoo" or (buildDepError "polysemy-zoo"))
             ];
+          buildable = true;
           };
         };
       };

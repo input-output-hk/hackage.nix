@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."authenticate-oauth" or (buildDepError "authenticate-oauth"))
             ]
           else [ (hsPkgs."authenticate" or (buildDepError "authenticate")) ]);
+        buildable = true;
         };
       };
     }

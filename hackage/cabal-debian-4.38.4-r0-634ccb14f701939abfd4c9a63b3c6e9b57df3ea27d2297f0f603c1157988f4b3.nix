@@ -92,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty" or (buildDepError "pretty"))
             (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
             ]);
+        buildable = true;
         };
       exes = {
         "cabal-debian" = {
@@ -110,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."pretty" or (buildDepError "pretty"))
               (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
               ]);
+          buildable = true;
           };
         };
       tests = {
@@ -134,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."pretty" or (buildDepError "pretty"))
               (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
               ]);
+          buildable = false;
           };
         };
       };

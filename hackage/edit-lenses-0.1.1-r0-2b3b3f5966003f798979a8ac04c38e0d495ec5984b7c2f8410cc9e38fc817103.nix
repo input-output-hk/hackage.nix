@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
           ];
+        buildable = true;
         };
       exes = {
         "lens-editor" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."edit-lenses" or (buildDepError "edit-lenses"))
             (hsPkgs."gtk" or (buildDepError "gtk"))
             ];
+          buildable = true;
           };
         };
       };

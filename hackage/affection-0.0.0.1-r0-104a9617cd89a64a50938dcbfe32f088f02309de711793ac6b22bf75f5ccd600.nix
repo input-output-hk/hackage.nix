@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."clock" or (buildDepError "clock"))
           (hsPkgs."glib" or (buildDepError "glib"))
           ];
+        buildable = true;
         };
       exes = {
         "example00" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "example01" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "example02" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "example03" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -114,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

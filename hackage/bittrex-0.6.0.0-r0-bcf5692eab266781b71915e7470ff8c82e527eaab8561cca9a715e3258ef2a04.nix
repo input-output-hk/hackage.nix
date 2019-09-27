@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wreq" or (buildDepError "wreq"))
           (hsPkgs."flow" or (buildDepError "flow"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."turtle" or (buildDepError "turtle"))
             ];
+          buildable = true;
           };
         };
       };

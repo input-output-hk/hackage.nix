@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tree-sitter" or (buildDepError "tree-sitter"))
             (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
             ];
+          buildable = true;
           };
         "codegen-test" = {
           depends = [
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tree-sitter" or (buildDepError "tree-sitter"))
             (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe-failure" or (buildDepError "safe-failure"))
           (hsPkgs."attempt" or (buildDepError "attempt"))
           ] ++ [ (hsPkgs."time" or (buildDepError "time")) ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."binary-strict" or (buildDepError "binary-strict"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-par" or (buildDepError "monad-par"))
           (hsPkgs."monad-par-extras" or (buildDepError "monad-par-extras"))
           ];
+        buildable = true;
         };
       };
     }

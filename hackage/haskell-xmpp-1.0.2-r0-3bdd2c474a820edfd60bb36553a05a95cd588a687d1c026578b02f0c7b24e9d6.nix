@@ -69,10 +69,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
       exes = {
         "haskell-xmpp-test" = {
           depends = (pkgs.lib).optional (flags.examples) (hsPkgs."base" or (buildDepError "base"));
+          buildable = if flags.examples then true else false;
           };
         };
       };

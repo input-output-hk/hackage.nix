@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-tools-prettyprint" or (buildDepError "haskell-tools-prettyprint"))
           (hsPkgs."haskell-tools-refactor" or (buildDepError "haskell-tools-refactor"))
           ];
+        buildable = true;
         };
       exes = {
         "ht-daemon" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haskell-tools-daemon" or (buildDepError "haskell-tools-daemon"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."haskell-tools-daemon" or (buildDepError "haskell-tools-daemon"))
             ];
+          buildable = true;
           };
         };
       };

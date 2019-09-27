@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets-snap" or (buildDepError "websockets-snap"))
           (hsPkgs."vault" or (buildDepError "vault"))
           ];
+        buildable = true;
         };
       exes = {
         "threepenny-examples-bartab" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "threepenny-examples-buttons" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "threepenny-examples-chat" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -105,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "threepenny-examples-crud" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -112,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "threepenny-examples-currencyconverter" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -119,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."safe" or (buildDepError "safe"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "threepenny-examples-dragndropexample" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -126,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "threepenny-examples-drummachine" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -133,6 +140,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "threepenny-examples-missing-dollars" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -141,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."safe" or (buildDepError "safe"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "threepenny-examples-use-words" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -149,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

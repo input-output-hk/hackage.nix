@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."glew" or (pkgConfDepError "glew"))
           (pkgconfPkgs."egl" or (pkgConfDepError "egl"))
           ];
+        buildable = true;
         };
       };
     }

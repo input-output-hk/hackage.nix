@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskelldb" or (buildDepError "haskelldb"))
           (hsPkgs."plugins" or (buildDepError "plugins"))
           ];
+        buildable = true;
         };
       exes = {
         "DBDirect" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskelldb" or (buildDepError "haskelldb"))
             (hsPkgs."plugins" or (buildDepError "plugins"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           ];
+        buildable = true;
         };
       exes = {
         "derive" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."derive" or (buildDepError "derive"))
             ];
+          buildable = true;
           };
         };
       };

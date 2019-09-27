@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."iteratee" or (buildDepError "iteratee"))
           ];
+        buildable = true;
         };
       exes = {
         "bam-filter" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."iteratee" or (buildDepError "iteratee"))
             (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
             ];
+          buildable = if !flags.utilities then false else true;
           };
         };
       };

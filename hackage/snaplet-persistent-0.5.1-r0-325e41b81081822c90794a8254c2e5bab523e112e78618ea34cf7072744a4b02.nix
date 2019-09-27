@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."map-syntax" or (buildDepError "map-syntax"))
           ];
+        buildable = true;
         };
       };
     }

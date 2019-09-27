@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."ostree-1" or (pkgConfDepError "ostree-1"))
           ];
+        buildable = true;
         };
       };
     }

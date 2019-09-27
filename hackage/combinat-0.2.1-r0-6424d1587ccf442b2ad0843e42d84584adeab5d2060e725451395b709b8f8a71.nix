@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             ] ++ (pkgs.lib).optional (flags.withquickcheck) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           else [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       };
     }

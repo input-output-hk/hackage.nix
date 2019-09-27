@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."th-fold" or (buildDepError "th-fold"))
           ] ++ [ (hsPkgs."HaXml" or (buildDepError "HaXml")) ];
+        buildable = true;
         };
       };
     }

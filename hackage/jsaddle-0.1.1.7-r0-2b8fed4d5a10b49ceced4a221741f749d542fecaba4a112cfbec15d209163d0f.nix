@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."webkit" or (buildDepError "webkit"))
             (hsPkgs."webkit-javascriptcore" or (buildDepError "webkit-javascriptcore"))
             ])) ++ (pkgs.lib).optional (flags.jmacro) (hsPkgs."jmacro" or (buildDepError "jmacro"));
+        buildable = true;
         };
       tests = {
         "test-tool" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."webkit" or (buildDepError "webkit"))
               (hsPkgs."webkit-javascriptcore" or (buildDepError "webkit-javascriptcore"))
               ]))) ++ (pkgs.lib).optional (flags.jmacro) (hsPkgs."jmacro" or (buildDepError "jmacro"));
+          buildable = if flags.jsffi then false else true;
           };
         };
       };

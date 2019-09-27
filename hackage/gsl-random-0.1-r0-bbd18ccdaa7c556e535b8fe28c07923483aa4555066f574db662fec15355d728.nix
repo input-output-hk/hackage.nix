@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."gsl" or (sysDepError "gsl"))
           (pkgs."cblas" or (sysDepError "cblas"))
           ];
+        buildable = true;
         };
       };
     }

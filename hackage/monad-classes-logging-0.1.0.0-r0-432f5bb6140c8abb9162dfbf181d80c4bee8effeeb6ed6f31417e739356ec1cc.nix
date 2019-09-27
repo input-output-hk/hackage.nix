@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."logging-effect" or (buildDepError "logging-effect"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ [ (hsPkgs."monad-classes" or (buildDepError "monad-classes")) ];
+        buildable = true;
         };
       tests = {
         "monad-classes-logging-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ [
             (hsPkgs."monad-classes" or (buildDepError "monad-classes"))
             ];
+          buildable = true;
           };
         };
       };

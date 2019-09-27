@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."unix-time" or (buildDepError "unix-time"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "tinylog-bench" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."tinylog" or (buildDepError "tinylog"))
             ];
+          buildable = true;
           };
         };
       };

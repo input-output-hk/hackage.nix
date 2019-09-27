@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "stunnel" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
             (hsPkgs."pem" or (buildDepError "pem"))
             ];
+          buildable = if flags.executable then true else false;
           };
         "checkciphers" = {
           depends = (pkgs.lib).optionals (flags.executable) [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
             ];
+          buildable = if flags.executable then true else false;
           };
         "retrievecertificate" = {
           depends = (pkgs.lib).optionals (flags.executable) [
@@ -92,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
             ];
+          buildable = if flags.executable then true else false;
           };
         "simpleclient" = {
           depends = (pkgs.lib).optionals (flags.executable) [
@@ -99,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
             ];
+          buildable = if flags.executable then true else false;
           };
         "Tests" = {
           depends = (pkgs.lib).optionals (flags.test) [
@@ -108,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

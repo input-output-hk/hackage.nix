@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           (hsPkgs."boxes" or (buildDepError "boxes"))
           ];
+        buildable = true;
         };
       exes = {
         "wordlint" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."boxes" or (buildDepError "boxes"))
             ];
+          buildable = true;
           };
         };
       };

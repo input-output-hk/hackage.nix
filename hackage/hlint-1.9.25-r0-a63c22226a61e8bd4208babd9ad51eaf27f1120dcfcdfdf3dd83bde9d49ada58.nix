@@ -70,9 +70,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."extra" or (buildDepError "extra"))
           (hsPkgs."refact" or (buildDepError "refact"))
           ] ++ (pkgs.lib).optional (flags.gpl) (hsPkgs."hscolour" or (buildDepError "hscolour"));
+        buildable = true;
         };
       exes = {
-        "hlint" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "hlint" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         };
       };
     }

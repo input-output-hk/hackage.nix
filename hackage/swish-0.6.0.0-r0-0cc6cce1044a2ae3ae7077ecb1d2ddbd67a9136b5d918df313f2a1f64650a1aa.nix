@@ -71,54 +71,70 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."intern" or (buildDepError "intern"))
           ];
+        buildable = true;
         };
       exes = {
         "BuiltInMapTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "GraphPartitionTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "GraphTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "NTTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "N3ParserTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "N3FormatterTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "RDFDatatypeXsdIntegerTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "RDFGraphTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "RDFProofContextTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "RDFProofTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "RDFQueryTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "RDFRulesetTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "VarBindingTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "LookupMapTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
         "QNameTest" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if !flags.tests then false else true;
           };
-        "Swish" = {};
+        "Swish" = { buildable = true; };
         };
       };
     }

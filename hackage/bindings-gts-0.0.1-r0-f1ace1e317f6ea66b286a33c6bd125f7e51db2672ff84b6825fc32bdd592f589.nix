@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."gmodule-2.0" or (pkgConfDepError "gmodule-2.0"))
           (pkgconfPkgs."gts" or (pkgConfDepError "gts"))
           ];
+        buildable = true;
         };
       };
     }

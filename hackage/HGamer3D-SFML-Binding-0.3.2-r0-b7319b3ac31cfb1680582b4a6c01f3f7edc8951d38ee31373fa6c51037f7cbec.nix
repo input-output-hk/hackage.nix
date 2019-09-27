@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."sfml-window" or (sysDepError "sfml-window"))
             (pkgs."sfml-network" or (sysDepError "sfml-network"))
             ];
+        buildable = true;
         };
       };
     }

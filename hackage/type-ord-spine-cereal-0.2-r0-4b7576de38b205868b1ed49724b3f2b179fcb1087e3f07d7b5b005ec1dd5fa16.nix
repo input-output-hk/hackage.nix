@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-cereal" or (buildDepError "type-cereal"))
           (hsPkgs."type-ord" or (buildDepError "type-ord"))
           ];
+        buildable = true;
         };
       };
     }

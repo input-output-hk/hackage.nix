@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."ghc" or (buildDepError "ghc"))
           ];
+        buildable = true;
         };
       tests = {
         "demo" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-justdoit" or (buildDepError "ghc-justdoit"))
             (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
             ];
+          buildable = true;
           };
         };
       };

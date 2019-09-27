@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gloss-rendering" or (buildDepError "gloss-rendering"))
           (hsPkgs."repa" or (buildDepError "repa"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."constrained-categories" or (buildDepError "constrained-categories"))
           ];
+        buildable = true;
         };
       };
     }

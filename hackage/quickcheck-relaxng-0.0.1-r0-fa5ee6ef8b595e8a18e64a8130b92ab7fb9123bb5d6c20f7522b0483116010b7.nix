@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hxt-relaxng" or (buildDepError "hxt-relaxng"))
           (hsPkgs."hxt" or (buildDepError "hxt"))
           ];
+        buildable = true;
         };
       };
     }

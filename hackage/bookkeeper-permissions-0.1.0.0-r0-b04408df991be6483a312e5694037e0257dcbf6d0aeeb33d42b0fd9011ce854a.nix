@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bookkeeper" or (buildDepError "bookkeeper"))
           (hsPkgs."type-level-sets" or (buildDepError "type-level-sets"))
           ];
+        buildable = true;
         };
       };
     }

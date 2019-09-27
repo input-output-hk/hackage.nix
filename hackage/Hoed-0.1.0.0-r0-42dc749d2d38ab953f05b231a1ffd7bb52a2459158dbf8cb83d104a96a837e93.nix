@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       exes = {
         "hoed-examples-SternBrocot" = {
@@ -67,18 +68,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-GDM-hello" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-TH-hello" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

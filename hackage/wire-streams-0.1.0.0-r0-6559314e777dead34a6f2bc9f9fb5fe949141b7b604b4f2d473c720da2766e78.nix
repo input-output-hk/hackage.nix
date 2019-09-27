@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary-parsers" or (buildDepError "binary-parsers"))
           (hsPkgs."io-streams" or (buildDepError "io-streams"))
           ];
+        buildable = true;
         };
       tests = {
         "encode-decode-binary" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."cabal-test-quickcheck" or (buildDepError "cabal-test-quickcheck"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

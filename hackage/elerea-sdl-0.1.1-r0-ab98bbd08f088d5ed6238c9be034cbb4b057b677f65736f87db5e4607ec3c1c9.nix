@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."elerea" or (buildDepError "elerea"))
           (hsPkgs."SDL" or (buildDepError "SDL"))
           ];
+        buildable = true;
         };
       };
     }

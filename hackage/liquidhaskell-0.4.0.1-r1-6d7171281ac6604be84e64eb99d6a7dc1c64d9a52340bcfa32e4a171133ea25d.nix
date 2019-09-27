@@ -90,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."fingertree" or (buildDepError "fingertree"))
           ];
+        buildable = true;
         };
       exes = {
         "liquid" = {
@@ -128,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fingertree" or (buildDepError "fingertree"))
             (hsPkgs."liquidhaskell" or (buildDepError "liquidhaskell"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -144,6 +146,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."tasty-rerun" or (buildDepError "tasty-rerun"))
             ];
+          buildable = true;
           };
         };
       };

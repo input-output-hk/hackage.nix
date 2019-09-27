@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes" or (buildDepError "pipes"))
           (hsPkgs."webex-teams-api" or (buildDepError "webex-teams-api"))
           ];
+        buildable = true;
         };
       exes = {
         "webex-teams-pipes-exe" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."webex-teams-api" or (buildDepError "webex-teams-api"))
             (hsPkgs."webex-teams-pipes" or (buildDepError "webex-teams-pipes"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."webex-teams-api" or (buildDepError "webex-teams-api"))
             (hsPkgs."webex-teams-pipes" or (buildDepError "webex-teams-pipes"))
             ];
+          buildable = true;
           };
         };
       };

@@ -74,7 +74,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."collada-output" or (buildDepError "collada-output"))
           (hsPkgs."triangulation" or (buildDepError "triangulation"))
           ];
+        buildable = true;
         };
-      exes = { "Fonts" = {}; };
+      exes = { "Fonts" = { buildable = true; }; };
       };
     }

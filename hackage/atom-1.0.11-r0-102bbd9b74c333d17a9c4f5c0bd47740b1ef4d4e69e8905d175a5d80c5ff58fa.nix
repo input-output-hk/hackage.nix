@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."bimap" or (buildDepError "bimap"))
           ];
+        buildable = true;
         };
       };
     }

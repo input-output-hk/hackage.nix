@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
           (hsPkgs."lucid" or (buildDepError "lucid"))
           ];
+        buildable = true;
         };
       exes = {
         "pandoc-emphasize-code" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
             (hsPkgs."pandoc-emphasize-code" or (buildDepError "pandoc-emphasize-code"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

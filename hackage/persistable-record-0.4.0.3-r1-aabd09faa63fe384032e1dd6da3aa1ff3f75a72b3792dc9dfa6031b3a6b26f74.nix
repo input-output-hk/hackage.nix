@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dlist" or (buildDepError "dlist"))
           (hsPkgs."names-th" or (buildDepError "names-th"))
           ];
+        buildable = true;
         };
       };
     }

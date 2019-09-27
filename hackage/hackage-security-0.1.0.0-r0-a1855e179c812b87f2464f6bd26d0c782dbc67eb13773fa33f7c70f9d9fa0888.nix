@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.base48
           then [ (hsPkgs."base" or (buildDepError "base")) ]
           else [ (hsPkgs."old-locale" or (buildDepError "old-locale")) ]);
+        buildable = true;
         };
       };
     }

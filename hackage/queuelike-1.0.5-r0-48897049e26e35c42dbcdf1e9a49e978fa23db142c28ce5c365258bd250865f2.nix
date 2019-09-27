@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stateful-mtl" or (buildDepError "stateful-mtl"))
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           ];
+        buildable = true;
         };
       };
     }

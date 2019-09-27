@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."hashable" or (buildDepError "hashable"))
           ];
+        buildable = true;
         };
       tests = {
         "XML" = {
@@ -75,24 +76,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             ];
+          buildable = true;
           };
         "TRS" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             ];
+          buildable = true;
           };
         "TRS_02" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             ];
+          buildable = true;
           };
         "SRS" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tpdb" or (buildDepError "tpdb"))
             ];
+          buildable = true;
           };
         "Speed" = {
           depends = [
@@ -102,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = true;
           };
         };
       };

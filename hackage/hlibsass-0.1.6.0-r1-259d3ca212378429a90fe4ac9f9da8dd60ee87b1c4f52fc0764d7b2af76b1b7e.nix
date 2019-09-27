@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (pkgs.lib).optionals (!flags.externallibsass && !flags.sharedlibsass) (if system.isOsx
           then [ (pkgs."c++" or (sysDepError "c++")) ]
           else [ (pkgs."stdc++" or (sysDepError "stdc++")) ]);
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."hlibsass" or (buildDepError "hlibsass"))
             ];
+          buildable = true;
           };
         };
       };

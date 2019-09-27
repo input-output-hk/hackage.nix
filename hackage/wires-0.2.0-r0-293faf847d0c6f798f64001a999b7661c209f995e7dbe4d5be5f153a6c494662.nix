@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
           (hsPkgs."these" or (buildDepError "these"))
           ];
+        buildable = true;
         };
       exes = {
         "wires-feedback" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."wires" or (buildDepError "wires"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "wires-ping-pong" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."profunctors" or (buildDepError "profunctors"))
             (hsPkgs."wires" or (buildDepError "wires"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

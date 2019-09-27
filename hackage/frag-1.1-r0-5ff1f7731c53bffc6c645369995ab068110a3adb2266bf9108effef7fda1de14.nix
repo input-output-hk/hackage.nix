@@ -62,7 +62,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
-      exes = { "frag" = {}; };
+      exes = { "frag" = { buildable = true; }; };
       };
     }

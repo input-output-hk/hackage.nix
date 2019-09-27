@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."djinn-lib" or (buildDepError "djinn-lib"))
           (hsPkgs."async" or (buildDepError "async"))
           ];
+        buildable = true;
         };
       };
     }

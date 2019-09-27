@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -87,18 +88,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "regression-broken-pipe" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."turtle" or (buildDepError "turtle"))
             ];
+          buildable = true;
           };
         "regression-masking-exception" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."turtle" or (buildDepError "turtle"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -108,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."turtle" or (buildDepError "turtle"))
             ] ++ [ (hsPkgs."criterion" or (buildDepError "criterion")) ];
+          buildable = true;
           };
         };
       };

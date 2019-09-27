@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
           (hsPkgs."list-extras" or (buildDepError "list-extras"))
           ];
+        buildable = true;
         };
       };
     }

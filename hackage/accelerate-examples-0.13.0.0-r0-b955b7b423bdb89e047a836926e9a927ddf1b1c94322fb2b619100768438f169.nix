@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"))
             (hsPkgs."cuda" or (buildDepError "cuda"))
             ]) ++ (pkgs.lib).optional (flags.opencl) (hsPkgs."accelerate-opencl" or (buildDepError "accelerate-opencl"));
+          buildable = true;
           };
         "accelerate-examples" = {
           depends = ([
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
             ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"))) ++ (pkgs.lib).optional (flags.opencl) (hsPkgs."accelerate-opencl" or (buildDepError "accelerate-opencl"));
           libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+          buildable = true;
           };
         "accelerate-crystal" = {
           depends = ([
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"))) ++ (pkgs.lib).optional (flags.opencl) (hsPkgs."accelerate-opencl" or (buildDepError "accelerate-opencl"));
+          buildable = true;
           };
         "accelerate-canny" = {
           depends = ([
@@ -112,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa-io" or (buildDepError "repa-io"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"))) ++ (pkgs.lib).optional (flags.opencl) (hsPkgs."accelerate-opencl" or (buildDepError "accelerate-opencl"));
+          buildable = true;
           };
         "accelerate-mandelbrot" = {
           depends = ([
@@ -121,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"))) ++ (pkgs.lib).optional (flags.opencl) (hsPkgs."accelerate-opencl" or (buildDepError "accelerate-opencl"));
+          buildable = true;
           };
         "accelerate-fluid" = {
           depends = [
@@ -132,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"));
+          buildable = true;
           };
         "accelerate-nbody" = {
           depends = [
@@ -141,6 +147,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"));
+          buildable = true;
           };
         "accelerate-smoothlife" = {
           depends = [
@@ -151,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"));
+          buildable = true;
           };
         "accelerate-hashcat" = {
           depends = [
@@ -162,6 +170,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"));
+          buildable = true;
           };
         };
       };

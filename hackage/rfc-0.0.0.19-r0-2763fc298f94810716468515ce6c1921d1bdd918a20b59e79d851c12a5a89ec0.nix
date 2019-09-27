@@ -106,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."markdown" or (buildDepError "markdown"))
           (hsPkgs."servant-client" or (buildDepError "servant-client"))
           ];
+        buildable = true;
         };
       };
     }

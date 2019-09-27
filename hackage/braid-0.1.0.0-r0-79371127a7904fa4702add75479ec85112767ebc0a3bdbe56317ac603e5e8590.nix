@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."diagrams-contrib" or (buildDepError "diagrams-contrib"))
           (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg"))
           ];
+        buildable = true;
         };
       exes = {
         "KappaView" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."diagrams-contrib" or (buildDepError "diagrams-contrib"))
             (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg"))
             ];
+          buildable = true;
           };
         };
       };

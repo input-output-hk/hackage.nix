@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
           ];
+        buildable = true;
         };
       exes = {
         "demoinfo" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."darkplaces-demo" or (buildDepError "darkplaces-demo"))
             (hsPkgs."darkplaces-text" or (buildDepError "darkplaces-text"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."darkplaces-demo" or (buildDepError "darkplaces-demo"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

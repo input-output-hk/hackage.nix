@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."free" or (buildDepError "free"))
           (hsPkgs."representable-functors" or (buildDepError "representable-functors"))
           ];
+        buildable = true;
         };
       };
     }

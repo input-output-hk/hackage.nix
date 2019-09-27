@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."path" or (buildDepError "path"))
           (hsPkgs."path-io" or (buildDepError "path-io"))
           ];
+        buildable = true;
         };
       };
     }

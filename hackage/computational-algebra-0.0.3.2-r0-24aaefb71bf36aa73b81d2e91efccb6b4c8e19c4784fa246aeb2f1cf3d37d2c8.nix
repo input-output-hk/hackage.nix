@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."peggy" or (buildDepError "peggy"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6.1") (hsPkgs."monomorphic" or (buildDepError "monomorphic"));
+        buildable = true;
         };
       };
     }

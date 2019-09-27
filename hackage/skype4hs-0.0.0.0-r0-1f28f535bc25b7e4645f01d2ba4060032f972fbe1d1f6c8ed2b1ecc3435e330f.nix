@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."word8" or (buildDepError "word8"))
           ] ++ (pkgs.lib).optional (system.isLinux || system.isFreebsd || flags.x11) (hsPkgs."X11" or (buildDepError "X11"));
         frameworks = (pkgs.lib).optional (system.isOsx || flags.carbon) (pkgs."Carbon" or (sysDepError "Carbon"));
+        buildable = true;
         };
       };
     }

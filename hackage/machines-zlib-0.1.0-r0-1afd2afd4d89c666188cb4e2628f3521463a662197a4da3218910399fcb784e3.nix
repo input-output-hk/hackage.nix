@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."machines" or (buildDepError "machines"))
           (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
           ];
+        buildable = true;
         };
       };
     }

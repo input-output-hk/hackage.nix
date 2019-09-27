@@ -80,7 +80,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
           (hsPkgs."dbus-core" or (buildDepError "dbus-core"))
           ];
+        buildable = true;
         };
-      exes = { "manatee-curl" = {}; };
+      exes = { "manatee-curl" = { buildable = true; }; };
       };
     }

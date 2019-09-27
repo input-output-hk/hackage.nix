@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HDBC" or (buildDepError "HDBC"))
             (hsPkgs."bimap" or (buildDepError "bimap"))
             ];
+          buildable = true;
           };
         };
       };

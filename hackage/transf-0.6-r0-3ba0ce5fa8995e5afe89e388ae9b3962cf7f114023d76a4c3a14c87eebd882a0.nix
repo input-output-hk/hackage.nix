@@ -67,7 +67,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hint" or (buildDepError "hint"))
           (hsPkgs."music-preludes" or (buildDepError "music-preludes"))
           ];
+        buildable = true;
         };
-      exes = { "transf" = {}; };
+      exes = { "transf" = { buildable = true; }; };
       };
     }

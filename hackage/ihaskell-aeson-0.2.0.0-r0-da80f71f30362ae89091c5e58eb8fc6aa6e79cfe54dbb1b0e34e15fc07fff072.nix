@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."chunked-data" or (buildDepError "chunked-data"))
           (hsPkgs."ihaskell" or (buildDepError "ihaskell"))
           ];
+        buildable = true;
         };
       };
     }

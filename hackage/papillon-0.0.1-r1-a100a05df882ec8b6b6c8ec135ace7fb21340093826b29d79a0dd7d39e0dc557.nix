@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
           ];
+        buildable = true;
         };
       exes = {
         "papillon" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
             ];
+          buildable = true;
           };
         };
       };

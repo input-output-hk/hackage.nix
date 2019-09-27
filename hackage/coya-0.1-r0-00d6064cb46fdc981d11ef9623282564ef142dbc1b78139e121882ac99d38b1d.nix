@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."refined" or (buildDepError "refined"))
           (hsPkgs."semirings" or (buildDepError "semirings"))
           ];
+        buildable = true;
         };
       };
     }

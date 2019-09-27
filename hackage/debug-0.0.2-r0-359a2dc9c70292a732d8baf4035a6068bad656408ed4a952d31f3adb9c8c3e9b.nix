@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."js-jquery" or (buildDepError "js-jquery"))
           (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
           ];
+        buildable = true;
         };
       tests = {
         "debug-test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."extra" or (buildDepError "extra"))
             (hsPkgs."debug" or (buildDepError "debug"))
             ];
+          buildable = true;
           };
         };
       };

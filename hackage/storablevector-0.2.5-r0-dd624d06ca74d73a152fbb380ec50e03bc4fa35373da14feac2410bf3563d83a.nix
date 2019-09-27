@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
                 ]
               else [ (hsPkgs."base" or (buildDepError "base")) ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
         "test" = {
@@ -88,15 +89,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."base" or (buildDepError "base"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]));
+          buildable = if flags.buildtests then true else false;
           };
         "speedtest" = {
           depends = (pkgs.lib).optionals (flags.buildtests) ([
             (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = if flags.buildtests then true else false;
           };
         "speedpointer" = {
           depends = (pkgs.lib).optional (flags.buildtests) (hsPkgs."base" or (buildDepError "base"));
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

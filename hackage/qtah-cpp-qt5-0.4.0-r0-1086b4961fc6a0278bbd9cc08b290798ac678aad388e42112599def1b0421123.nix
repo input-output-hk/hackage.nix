@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."qtah-generator" or (buildDepError "qtah-generator"))
           ];
+        buildable = true;
         };
       };
     }

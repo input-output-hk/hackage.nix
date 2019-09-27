@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."nagios-perfdata" or (buildDepError "nagios-perfdata"))
           ];
+        buildable = true;
         };
       tests = {
         "nagios-check-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."nagios-check" or (buildDepError "nagios-check"))
             ];
+          buildable = true;
           };
         };
       };

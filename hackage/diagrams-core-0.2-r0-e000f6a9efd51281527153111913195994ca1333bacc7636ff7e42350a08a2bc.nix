@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           (hsPkgs."MemoTrie" or (buildDepError "MemoTrie"))
           ];
+        buildable = true;
         };
       };
     }

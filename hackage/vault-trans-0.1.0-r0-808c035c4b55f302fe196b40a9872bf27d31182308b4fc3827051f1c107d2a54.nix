@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."vault-tool" or (buildDepError "vault-tool"))
           ];
+        buildable = true;
         };
       };
     }

@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             (hsPkgs."uu-parsinglib" or (buildDepError "uu-parsinglib"))
             ];
+          buildable = true;
           };
         };
       };

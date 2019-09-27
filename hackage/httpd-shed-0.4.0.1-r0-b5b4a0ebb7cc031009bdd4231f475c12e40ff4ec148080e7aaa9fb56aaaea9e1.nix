@@ -59,7 +59,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
-      exes = { "httpd-shed-test" = {}; };
+      exes = {
+        "httpd-shed-test" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        };
       };
     }

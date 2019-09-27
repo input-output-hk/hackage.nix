@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semver" or (buildDepError "semver"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "nirum" = {
@@ -74,12 +75,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."nirum" or (buildDepError "nirum"))
             ];
+          buildable = true;
           };
         "nirum-static" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."nirum" or (buildDepError "nirum"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -102,12 +105,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."temporary" or (buildDepError "temporary"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         };
       };

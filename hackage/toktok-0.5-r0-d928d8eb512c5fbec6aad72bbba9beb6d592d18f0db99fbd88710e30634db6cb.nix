@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."haskell98" or (buildDepError "haskell98"))
           ];
+        buildable = true;
         };
       exes = {
         "toktok-benchmark" = {
@@ -68,12 +69,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."progression" or (buildDepError "progression"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if !flags.benchmark then false else true;
           };
         "toktok-test" = {
           depends = [
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = if !flags.test then false else true;
           };
         "toktok" = {
           depends = [
@@ -82,9 +85,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gf" or (buildDepError "gf"))
             (hsPkgs."iconv" or (buildDepError "iconv"))
             ];
+          buildable = true;
           };
         "gf-extract-lexicon" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

@@ -67,7 +67,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml" or (buildDepError "xml"))
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ];
+        buildable = true;
         };
-      exes = { "xhtml2epub" = {}; };
+      exes = { "xhtml2epub" = { buildable = true; }; };
       };
     }

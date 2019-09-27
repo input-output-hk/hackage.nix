@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yuiGrid" or (buildDepError "yuiGrid"))
           (hsPkgs."xhtml" or (buildDepError "xhtml"))
           ];
+        buildable = true;
         };
       };
     }

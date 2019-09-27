@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."socks" or (buildDepError "socks"))
           (hsPkgs."certificate" or (buildDepError "certificate"))
           ];
+        buildable = true;
         };
       };
     }

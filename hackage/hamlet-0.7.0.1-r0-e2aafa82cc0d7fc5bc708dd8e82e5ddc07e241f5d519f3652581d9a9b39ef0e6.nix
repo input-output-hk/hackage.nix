@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -74,9 +75,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = if flags.test then true else false;
           };
         "hamlet6to7" = {
           depends = [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+          buildable = true;
           };
         };
       };

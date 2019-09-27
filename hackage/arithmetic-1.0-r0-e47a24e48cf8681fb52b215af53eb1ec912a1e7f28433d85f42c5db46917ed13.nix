@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."opentheory-bits" or (buildDepError "opentheory-bits"))
           (hsPkgs."opentheory-divides" or (buildDepError "opentheory-divides"))
           ];
+        buildable = true;
         };
       exes = {
         "arithmetic" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."opentheory-bits" or (buildDepError "opentheory-bits"))
             (hsPkgs."opentheory-divides" or (buildDepError "opentheory-divides"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."opentheory-bits" or (buildDepError "opentheory-bits"))
             (hsPkgs."opentheory-divides" or (buildDepError "opentheory-divides"))
             ];
+          buildable = true;
           };
         };
       };

@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
                 ]
               else [ (hsPkgs."base" or (buildDepError "base")) ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."base" or (buildDepError "base"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = true;
           };
         };
       benchmarks = {
@@ -97,12 +99,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "speedpointer" = {
           depends = [
             (hsPkgs."storablevector" or (buildDepError "storablevector"))
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

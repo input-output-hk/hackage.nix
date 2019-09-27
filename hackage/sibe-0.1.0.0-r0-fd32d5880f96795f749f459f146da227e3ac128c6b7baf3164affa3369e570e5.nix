@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"))
           (hsPkgs."lens" or (buildDepError "lens"))
           ];
+        buildable = true;
         };
       exes = {
         "example-xor" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
             (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
             ];
+          buildable = true;
           };
         "example-word2vec" = {
           depends = [
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "example-424" = {
           depends = [
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
             (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
             ];
+          buildable = true;
           };
         "example-notmnist" = {
           depends = [
@@ -117,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Chart" or (buildDepError "Chart"))
             (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"))
             ];
+          buildable = true;
           };
         "example-naivebayes-doc-classifier" = {
           depends = [
@@ -126,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."split" or (buildDepError "split"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -135,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sibe" or (buildDepError "sibe"))
             (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
             ];
+          buildable = true;
           };
         };
       };

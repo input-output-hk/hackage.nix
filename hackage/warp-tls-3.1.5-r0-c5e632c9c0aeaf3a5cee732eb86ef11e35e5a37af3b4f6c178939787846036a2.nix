@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
           (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
           ];
+        buildable = true;
         };
       };
     }

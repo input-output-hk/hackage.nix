@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
       exes = {
         "curry-memcached" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-conduit" or (buildDepError "network-conduit"))
             (hsPkgs."CurryDB" or (buildDepError "CurryDB"))
             ];
+          buildable = true;
           };
         "curry-redis" = {
           depends = [
@@ -104,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."CurryDB" or (buildDepError "CurryDB"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -114,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "hspec" = {
           depends = [
@@ -125,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
             (hsPkgs."CurryDB" or (buildDepError "CurryDB"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -136,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mersenne-random-pure64" or (buildDepError "mersenne-random-pure64"))
             (hsPkgs."CurryDB" or (buildDepError "CurryDB"))
             ];
+          buildable = true;
           };
         };
       };

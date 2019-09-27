@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
           ];
+        buildable = true;
         };
       tests = {
         "slack-verify-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."slack-verify" or (buildDepError "slack-verify"))
             ];
+          buildable = true;
           };
         };
       };

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."stdc++.dll" or (sysDepError "stdc++.dll"))
           (pkgs."HGamer3DOIS014" or (sysDepError "HGamer3DOIS014"))
           ];
+        buildable = true;
         };
       };
     }

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-base" or (buildDepError "regex-base"))
           (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
           ];
+        buildable = true;
         };
       };
     }

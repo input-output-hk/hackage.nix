@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagged" or (buildDepError "tagged"))
           (hsPkgs."control-monad-omega" or (buildDepError "control-monad-omega"))
           ];
+        buildable = true;
         };
       };
     }

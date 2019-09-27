@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Top" or (buildDepError "Top"))
           (hsPkgs."lvmlib" or (buildDepError "lvmlib"))
           ];
+        buildable = true;
         };
       exes = {
         "helium" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Top" or (buildDepError "Top"))
             (hsPkgs."lvmlib" or (buildDepError "lvmlib"))
             ];
+          buildable = true;
           };
         "texthint" = {
           depends = [
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "runhelium" = {
           depends = [
@@ -107,9 +110,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "heliumpath" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

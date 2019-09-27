@@ -68,10 +68,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = if flags.testing then false else true;
         };
       exes = {
         "xmonad" = {
           depends = (pkgs.lib).optional (flags.testing) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ++ (pkgs.lib).optional (flags.testing && flags.small_base) (hsPkgs."random" or (buildDepError "random"));
+          buildable = if flags.testing then true else false;
           };
         };
       };

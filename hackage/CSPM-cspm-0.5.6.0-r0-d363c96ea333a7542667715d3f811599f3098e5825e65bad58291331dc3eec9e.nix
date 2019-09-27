@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb" or (buildDepError "syb"))
           (hsPkgs."hslua" or (buildDepError "hslua"))
           ];
+        buildable = true;
         };
       exes = {
         "cspm" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             (hsPkgs."hslua" or (buildDepError "hslua"))
             ];
+          buildable = true;
           };
         };
       };

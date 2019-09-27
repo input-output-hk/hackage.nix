@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libpostal" or (pkgConfDepError "libpostal"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           pkgconfig = [
             (pkgconfPkgs."libpostal" or (pkgConfDepError "libpostal"))
             ];
+          buildable = true;
           };
         };
       };

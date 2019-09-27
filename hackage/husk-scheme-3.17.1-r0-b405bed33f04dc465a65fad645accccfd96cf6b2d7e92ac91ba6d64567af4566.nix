@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc" or (buildDepError "ghc"))
           (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
           ];
+        buildable = true;
         };
       exes = {
         "huski" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
             ];
+          buildable = true;
           };
         "huskc" = {
           depends = [
@@ -115,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."ListLike" or (buildDepError "ListLike"))
           ];
+        buildable = true;
         };
       tests = {
         "model-test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."model" or (buildDepError "model"))
             ];
+          buildable = true;
           };
         };
       };

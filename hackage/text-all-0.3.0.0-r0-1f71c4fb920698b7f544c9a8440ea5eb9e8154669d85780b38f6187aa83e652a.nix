@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text-show" or (buildDepError "text-show"))
           (hsPkgs."text-format" or (buildDepError "text-format"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.yampa-core
           then [ (hsPkgs."Yampa-core" or (buildDepError "Yampa-core")) ]
           else [ (hsPkgs."Yampa" or (buildDepError "Yampa")) ]);
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if flags.yampa-core
             then [ (hsPkgs."Yampa-core" or (buildDepError "Yampa-core")) ]
             else [ (hsPkgs."Yampa" or (buildDepError "Yampa")) ]);
+          buildable = if !flags.examples then false else true;
           };
         };
       };

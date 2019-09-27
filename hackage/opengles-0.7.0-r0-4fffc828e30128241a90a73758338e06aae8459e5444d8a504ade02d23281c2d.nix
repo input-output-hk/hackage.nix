@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."QuartzCore" or (sysDepError "QuartzCore"))
           (pkgs."OpenGLES" or (sysDepError "OpenGLES"))
           ];
+        buildable = true;
         };
       };
     }

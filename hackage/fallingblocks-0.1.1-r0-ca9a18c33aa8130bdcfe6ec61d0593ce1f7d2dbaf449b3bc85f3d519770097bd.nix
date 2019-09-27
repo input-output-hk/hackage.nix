@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL-ttf" or (buildDepError "SDL-ttf"))
             (hsPkgs."SDL-mixer" or (buildDepError "SDL-mixer"))
             ];
+          buildable = true;
           };
         };
       };

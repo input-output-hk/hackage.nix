@@ -131,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
           ];
+        buildable = if flags.hacking then false else true;
         };
       exes = {
         "parserTest" = {
@@ -141,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ] ++ (pkgs.lib).optional (!flags.dochack) (hsPkgs."yi" or (buildDepError "yi"));
+          buildable = false;
           };
         "yi" = {
           depends = [
@@ -149,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
             ];
+          buildable = if flags.dochack then false else true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shelly" or (buildDepError "shelly"))
           ];
         libs = [ (pkgs."drmaa" or (sysDepError "drmaa")) ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."constraint" or (buildDepError "constraint"))
           (hsPkgs."reflection" or (buildDepError "reflection"))
           ];
+        buildable = true;
         };
       };
     }

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."contravariant" or (buildDepError "contravariant"))
           ];
+        buildable = true;
         };
       };
     }

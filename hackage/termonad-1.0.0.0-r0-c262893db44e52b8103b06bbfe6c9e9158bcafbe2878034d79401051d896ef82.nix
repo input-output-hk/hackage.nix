@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."gtk+-3.0" or (pkgConfDepError "gtk+-3.0"))
           ];
+        buildable = true;
         };
       exes = {
         "termonad" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."termonad" or (buildDepError "termonad"))
             ];
+          buildable = true;
           };
         "termonad-readme" = {
           depends = [
@@ -106,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."termonad" or (buildDepError "termonad"))
             (hsPkgs."colour" or (buildDepError "colour"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "termonad-example-colour-extension" = {
           depends = [
@@ -113,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."termonad" or (buildDepError "termonad"))
             (hsPkgs."colour" or (buildDepError "colour"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       tests = {
@@ -123,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = true;
           };
         "termonad-test" = {
           depends = [
@@ -137,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
             ];
+          buildable = true;
           };
         };
       };

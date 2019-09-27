@@ -95,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."base" or (buildDepError "base"))
             ])) ++ (pkgs.lib).optional (flags.highlighting) (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"));
+        buildable = if flags.library then true else false;
         };
       exes = {
         "pandoc" = {
@@ -130,8 +131,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."base" or (buildDepError "base"))
               ])) ++ (pkgs.lib).optional (flags.highlighting) (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"));
+          buildable = if flags.executable || flags.wrappers
+            then true
+            else false;
           };
-        "markdown2pdf" = {};
+        "markdown2pdf" = {
+          buildable = if flags.wrappers then true else false;
+          };
         "test-pandoc" = {
           depends = (pkgs.lib).optionals (!(!flags.tests)) [
             (hsPkgs."base" or (buildDepError "base"))
@@ -144,6 +150,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         };
       };

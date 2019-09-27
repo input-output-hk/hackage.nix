@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."Earley" or (buildDepError "Earley"))
           ];
+        buildable = true;
         };
       exes = {
         "print-postal-grammar" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."Earley" or (buildDepError "Earley"))
             ];
+          buildable = if flags.executables then true else false;
           };
         "postal-parser" = {
           depends = (pkgs.lib).optionals (flags.executables) [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."Earley" or (buildDepError "Earley"))
             ];
+          buildable = if flags.executables then true else false;
           };
         };
       };

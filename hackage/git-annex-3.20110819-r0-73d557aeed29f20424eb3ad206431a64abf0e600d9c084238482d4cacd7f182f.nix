@@ -80,9 +80,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."monad-control" or (buildDepError "monad-control"))
             ];
+          buildable = true;
           };
-        "git-annex-shell" = {};
-        "git-union-merge" = {};
+        "git-annex-shell" = { buildable = true; };
+        "git-union-merge" = { buildable = true; };
         };
       };
     }

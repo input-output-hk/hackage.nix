@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
           (hsPkgs."tagstream-conduit" or (buildDepError "tagstream-conduit"))
           ];
+        buildable = true;
         };
       exes = {
         "xml2json" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
             (hsPkgs."tagstream-conduit" or (buildDepError "tagstream-conduit"))
             ];
+          buildable = true;
           };
         };
       };

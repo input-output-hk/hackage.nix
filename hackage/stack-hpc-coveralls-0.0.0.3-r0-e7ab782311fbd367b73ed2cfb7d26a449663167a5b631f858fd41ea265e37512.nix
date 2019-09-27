@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
           (hsPkgs."safe" or (buildDepError "safe"))
           ];
+        buildable = true;
         };
       exes = {
         "stack-hpc-coveralls" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."docopt" or (buildDepError "docopt"))
             (hsPkgs."stack-hpc-coveralls" or (buildDepError "stack-hpc-coveralls"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -93,12 +95,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stack-hpc-coveralls" or (buildDepError "stack-hpc-coveralls"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         "style" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         };
       };

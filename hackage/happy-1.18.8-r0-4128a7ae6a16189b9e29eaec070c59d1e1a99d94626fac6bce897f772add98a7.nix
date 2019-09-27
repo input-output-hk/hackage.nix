@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.perl or (pkgs.buildPackages.perl or (buildToolDepError "perl")))
             ];
+          buildable = true;
           };
         };
       };

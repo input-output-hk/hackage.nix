@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SHA" or (buildDepError "SHA"))
             (hsPkgs."datetime" or (buildDepError "datetime"))
             ];
+          buildable = true;
           };
         };
       };

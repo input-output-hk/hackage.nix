@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
         pkgconfig = [ (pkgconfPkgs."atk" or (pkgConfDepError "atk")) ];
+        buildable = true;
         };
       };
     }

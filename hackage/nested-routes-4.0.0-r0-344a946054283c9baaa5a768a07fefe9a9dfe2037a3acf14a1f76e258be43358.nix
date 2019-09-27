@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."sets" or (buildDepError "sets"))
           (hsPkgs."errors" or (buildDepError "errors"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -120,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sets" or (buildDepError "sets"))
             (hsPkgs."errors" or (buildDepError "errors"))
             ];
+          buildable = if flags.example then true else false;
           };
         "example-stm" = {
           depends = [
@@ -166,6 +168,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
             (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
             ];
+          buildable = if flags.example-stm then true else false;
           };
         };
       tests = {
@@ -200,6 +203,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sets" or (buildDepError "sets"))
             (hsPkgs."errors" or (buildDepError "errors"))
             ];
+          buildable = true;
           };
         };
       };

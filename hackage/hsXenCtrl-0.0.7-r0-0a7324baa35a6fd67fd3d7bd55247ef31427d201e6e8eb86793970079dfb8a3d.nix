@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dlist" or (buildDepError "dlist"))
           ];
         libs = [ (pkgs."xenctrl" or (sysDepError "xenctrl")) ];
+        buildable = true;
         };
       };
     }

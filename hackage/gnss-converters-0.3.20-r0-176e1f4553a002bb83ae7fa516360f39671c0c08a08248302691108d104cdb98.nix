@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "sbp2rtcm3" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
             (hsPkgs."gnss-converters" or (buildDepError "gnss-converters"))
             ];
+          buildable = true;
           };
         "rtcm32sbp" = {
           depends = [
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
             (hsPkgs."gnss-converters" or (buildDepError "gnss-converters"))
             ];
+          buildable = true;
           };
         "rtcm32rtcm3" = {
           depends = [
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
             (hsPkgs."gnss-converters" or (buildDepError "gnss-converters"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -127,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         };
       };

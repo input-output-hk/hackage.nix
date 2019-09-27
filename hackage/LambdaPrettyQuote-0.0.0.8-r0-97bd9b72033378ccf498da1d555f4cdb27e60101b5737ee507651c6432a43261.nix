@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."tuple" or (buildDepError "tuple"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tuple" or (buildDepError "tuple"))
             (hsPkgs."checkers" or (buildDepError "checkers"))
             ];
+          buildable = true;
           };
         };
       };

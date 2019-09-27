@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."distributive" or (buildDepError "distributive"))
           (hsPkgs."representable-functors" or (buildDepError "representable-functors"))
           ];
+        buildable = true;
         };
       };
     }

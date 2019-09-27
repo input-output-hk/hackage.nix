@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
           (hsPkgs."hakyll" or (buildDepError "hakyll"))
           ];
+        buildable = true;
         };
       };
     }

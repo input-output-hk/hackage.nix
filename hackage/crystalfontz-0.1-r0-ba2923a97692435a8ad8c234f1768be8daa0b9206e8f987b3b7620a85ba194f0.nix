@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."serialport" or (buildDepError "serialport"))
           (hsPkgs."MaybeT" or (buildDepError "MaybeT"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."handa-gdata" or (buildDepError "handa-gdata"))
           (hsPkgs."hsbencher" or (buildDepError "hsbencher"))
           ];
+        buildable = true;
         };
       exes = {
         "hsbencher-fusion-upload-criterion" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsbencher-fusion" or (buildDepError "hsbencher-fusion"))
             (hsPkgs."hsbencher" or (buildDepError "hsbencher"))
             ];
+          buildable = true;
           };
         "hsbencher-fusion-upload-csv" = {
           depends = [
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsbencher" or (buildDepError "hsbencher"))
             (hsPkgs."handa-gdata" or (buildDepError "handa-gdata"))
             ];
+          buildable = true;
           };
         };
       };

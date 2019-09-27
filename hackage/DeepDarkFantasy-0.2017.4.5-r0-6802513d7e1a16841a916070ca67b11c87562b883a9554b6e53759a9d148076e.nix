@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."constraints" or (buildDepError "constraints"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       tests = {
         "TestPoly" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."constraints" or (buildDepError "constraints"))
             (hsPkgs."DeepDarkFantasy" or (buildDepError "DeepDarkFantasy"))
             ];
+          buildable = true;
           };
         "TestXor" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."constraints" or (buildDepError "constraints"))
             (hsPkgs."DeepDarkFantasy" or (buildDepError "DeepDarkFantasy"))
             ];
+          buildable = true;
           };
         };
       };

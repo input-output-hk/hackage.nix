@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
           (hsPkgs."symantic-document" or (buildDepError "symantic-document"))
           ];
+        buildable = true;
         };
       };
     }

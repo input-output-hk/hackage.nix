@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."crypto" or (sysDepError "crypto"))
             (pkgs."ssl" or (sysDepError "ssl"))
             ];
+        buildable = true;
         };
       };
     }

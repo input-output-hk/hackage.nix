@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."stringsearch" or (buildDepError "stringsearch"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit" or (buildDepError "conduit"))
             (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
             ];
+          buildable = true;
           };
         };
       };

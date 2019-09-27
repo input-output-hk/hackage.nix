@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
           (hsPkgs."reflection" or (buildDepError "reflection"))
           ];
+        buildable = true;
         };
       exes = {
         "simple-arith" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-typelits-presburger" or (buildDepError "ghc-typelits-presburger"))
             (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

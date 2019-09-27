@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           ];
         libs = [ (pkgs."db" or (sysDepError "db")) ];
+        buildable = true;
         };
       };
     }

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."convertible" or (buildDepError "convertible"))
             (hsPkgs."datetime" or (buildDepError "datetime"))
             ];
+          buildable = true;
           };
         };
       };

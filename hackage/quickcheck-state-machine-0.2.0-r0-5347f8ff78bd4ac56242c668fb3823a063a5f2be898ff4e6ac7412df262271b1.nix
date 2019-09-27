@@ -71,10 +71,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."th-abstraction" or (buildDepError "th-abstraction"))
           ];
+        buildable = true;
         };
       tests = {
         "quickcheck-state-machine-test" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

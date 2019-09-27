@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."Win32" or (buildDepError "Win32"))
           ];
+        buildable = true;
         };
       tests = {
         "Win32-errors-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Win32-errors" or (buildDepError "Win32-errors"))
             (hsPkgs."Win32" or (buildDepError "Win32"))
             ];
+          buildable = true;
           };
         };
       };

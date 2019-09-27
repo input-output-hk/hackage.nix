@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
+        buildable = true;
         };
       tests = {
         "API_Usage_Example" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boolector" or (buildDepError "boolector"))
             ];
           libs = [ (pkgs."boolector" or (sysDepError "boolector")) ];
+          buildable = true;
           };
         "Array_Example" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boolector" or (buildDepError "boolector"))
             ];
           libs = [ (pkgs."boolector" or (sysDepError "boolector")) ];
+          buildable = true;
           };
         "UF_Example" = {
           depends = [
@@ -89,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boolector" or (buildDepError "boolector"))
             ];
           libs = [ (pkgs."boolector" or (sysDepError "boolector")) ];
+          buildable = true;
           };
         "Arith_Example" = {
           depends = [
@@ -96,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boolector" or (buildDepError "boolector"))
             ];
           libs = [ (pkgs."boolector" or (sysDepError "boolector")) ];
+          buildable = true;
           };
         "Arith_Example2" = {
           depends = [
@@ -103,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boolector" or (buildDepError "boolector"))
             ];
           libs = [ (pkgs."boolector" or (sysDepError "boolector")) ];
+          buildable = true;
           };
         "Arith_Example3" = {
           depends = [
@@ -110,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boolector" or (buildDepError "boolector"))
             ];
           libs = [ (pkgs."boolector" or (sysDepError "boolector")) ];
+          buildable = true;
           };
         "GetSetSymbol_Example" = {
           depends = [
@@ -117,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boolector" or (buildDepError "boolector"))
             ];
           libs = [ (pkgs."boolector" or (sysDepError "boolector")) ];
+          buildable = true;
           };
         "UF_Example2" = {
           depends = [
@@ -124,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boolector" or (buildDepError "boolector"))
             ];
           libs = [ (pkgs."boolector" or (sysDepError "boolector")) ];
+          buildable = true;
           };
         "Const_Example" = {
           depends = [
@@ -131,6 +140,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boolector" or (buildDepError "boolector"))
             ];
           libs = [ (pkgs."boolector" or (sysDepError "boolector")) ];
+          buildable = true;
           };
         };
       };

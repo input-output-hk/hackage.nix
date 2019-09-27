@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GLUT" or (buildDepError "GLUT"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "example1" = {
@@ -68,24 +69,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."HGE2D" or (buildDepError "HGE2D"))
             ];
+          buildable = true;
           };
         "example2" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."HGE2D" or (buildDepError "HGE2D"))
             ];
+          buildable = true;
           };
         "example3" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."HGE2D" or (buildDepError "HGE2D"))
             ];
+          buildable = true;
           };
         "example4" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."HGE2D" or (buildDepError "HGE2D"))
             ];
+          buildable = true;
           };
         };
       };

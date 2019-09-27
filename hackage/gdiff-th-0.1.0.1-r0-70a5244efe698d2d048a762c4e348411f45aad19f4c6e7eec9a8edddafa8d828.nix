@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."th-expand-syns" or (buildDepError "th-expand-syns"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."language-ecmascript" or (buildDepError "language-ecmascript"))
             (hsPkgs."hdis86" or (buildDepError "hdis86"))
             ];
+          buildable = true;
           };
         };
       };

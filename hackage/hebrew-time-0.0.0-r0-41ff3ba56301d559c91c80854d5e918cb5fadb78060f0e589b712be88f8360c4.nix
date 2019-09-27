@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring-class" or (buildDepError "bytestring-class"))
           (hsPkgs."data-object" or (buildDepError "data-object"))
           ];
+        buildable = true;
         };
       };
     }

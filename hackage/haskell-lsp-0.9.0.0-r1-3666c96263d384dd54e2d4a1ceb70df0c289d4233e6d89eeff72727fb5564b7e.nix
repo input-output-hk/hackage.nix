@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
           ];
+        buildable = true;
         };
       exes = {
         "lsp-hello" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
             (hsPkgs."haskell-lsp" or (buildDepError "haskell-lsp"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -126,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."modern-uri" or (buildDepError "modern-uri"))
           (hsPkgs."req" or (buildDepError "req"))
           ];
+        buildable = true;
         };
       exes = {
         "sample" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."req-url-extra" or (buildDepError "req-url-extra"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."req" or (buildDepError "req"))
             (hsPkgs."req-url-extra" or (buildDepError "req-url-extra"))
             ];
+          buildable = true;
           };
         };
       };

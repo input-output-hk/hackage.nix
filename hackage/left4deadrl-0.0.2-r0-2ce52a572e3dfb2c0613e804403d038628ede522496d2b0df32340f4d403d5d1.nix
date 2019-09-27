@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
             (hsPkgs."hscharm" or (buildDepError "hscharm"))
             ];
+          buildable = true;
           };
         };
       };

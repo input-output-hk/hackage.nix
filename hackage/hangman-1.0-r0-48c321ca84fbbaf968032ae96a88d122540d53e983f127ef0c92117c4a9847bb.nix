@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             ];
+          buildable = true;
           };
         };
       };

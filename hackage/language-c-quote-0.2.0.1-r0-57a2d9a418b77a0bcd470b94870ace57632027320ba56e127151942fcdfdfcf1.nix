@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."symbol" or (buildDepError "symbol"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "6.10" && (compiler.version).lt "6.12")) (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "6.12" && (compiler.version).lt "6.13")) (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"));
+        buildable = true;
         };
       exes = {
         "unit-test" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."language-c-quote" or (buildDepError "language-c-quote"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         };
       };

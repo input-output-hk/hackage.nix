@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
           (hsPkgs."mmap" or (buildDepError "mmap"))
           ];
+        buildable = true;
         };
       exes = {
         "hashed-storage-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

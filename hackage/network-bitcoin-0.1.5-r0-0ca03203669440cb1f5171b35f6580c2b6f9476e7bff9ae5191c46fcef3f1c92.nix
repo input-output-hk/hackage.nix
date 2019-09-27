@@ -65,7 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
-      tests = { "test-main" = {}; };
+      tests = { "test-main" = { buildable = true; }; };
       };
     }

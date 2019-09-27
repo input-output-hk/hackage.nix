@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "testParser" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."lojbanParser" or (buildDepError "lojbanParser"))
             ];
+          buildable = true;
           };
         };
       };

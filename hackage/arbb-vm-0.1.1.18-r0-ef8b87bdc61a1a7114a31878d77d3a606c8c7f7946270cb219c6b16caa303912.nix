@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pretty" or (buildDepError "pretty"))
           ];
         libs = [ (pkgs."arbb_dev" or (sysDepError "arbb_dev")) ];
+        buildable = true;
         };
       };
     }

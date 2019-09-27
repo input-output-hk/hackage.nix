@@ -67,7 +67,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
-      exes = { "hs-esd-player-example" = {}; };
+      exes = {
+        "hs-esd-player-example" = {
+          buildable = if flags.build-examples then true else false;
+          };
+        };
       };
     }

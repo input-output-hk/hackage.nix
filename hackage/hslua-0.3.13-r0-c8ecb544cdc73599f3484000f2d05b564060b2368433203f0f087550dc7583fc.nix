@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
         pkgconfig = (pkgs.lib).optional (flags.system-lua) (pkgconfPkgs."lua" or (pkgConfDepError "lua"));
+        buildable = true;
         };
       tests = {
         "simple-test" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hslua" or (buildDepError "hslua"))
             ];
+          buildable = true;
           };
         };
       };

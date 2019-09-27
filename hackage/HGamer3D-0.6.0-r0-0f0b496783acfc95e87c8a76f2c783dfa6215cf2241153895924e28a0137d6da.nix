@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."hgamer3d0" or (sysDepError "hgamer3d0"))
             (pkgs."Urho3D" or (sysDepError "Urho3D"))
             ];
+        buildable = true;
         };
       };
     }

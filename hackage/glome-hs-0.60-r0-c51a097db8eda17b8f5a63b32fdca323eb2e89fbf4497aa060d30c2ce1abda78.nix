@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GlomeVec" or (buildDepError "GlomeVec"))
           (hsPkgs."GlomeTrace" or (buildDepError "GlomeTrace"))
           ];
+        buildable = true;
         };
       exes = {
         "Glome" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GlomeVec" or (buildDepError "GlomeVec"))
             (hsPkgs."GlomeTrace" or (buildDepError "GlomeTrace"))
             ];
+          buildable = true;
           };
         };
       };

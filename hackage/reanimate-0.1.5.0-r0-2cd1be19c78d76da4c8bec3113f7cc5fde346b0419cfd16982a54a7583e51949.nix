@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
           (hsPkgs."open-browser" or (buildDepError "open-browser"))
           ];
+        buildable = true;
         };
       exes = {
         "reanimate-server" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if flags.server then true else false;
           };
         };
       };

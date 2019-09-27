@@ -69,10 +69,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
         "happstack-ixset-tests" = {
           depends = [ (hsPkgs."HUnit" or (buildDepError "HUnit")) ];
+          buildable = if flags.tests then true else false;
           };
         };
       };

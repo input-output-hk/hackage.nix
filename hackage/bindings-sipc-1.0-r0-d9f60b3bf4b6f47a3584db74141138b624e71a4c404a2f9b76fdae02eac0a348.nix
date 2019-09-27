@@ -57,6 +57,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = [ (pkgs."sipc" or (sysDepError "sipc")) ];
+        buildable = true;
         };
       exes = {
         "MQCreator" = {
@@ -64,24 +65,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bindings-sipc" or (buildDepError "bindings-sipc"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "MQDestroyer" = {
           depends = [
             (hsPkgs."bindings-sipc" or (buildDepError "bindings-sipc"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "MQReader" = {
           depends = [
             (hsPkgs."bindings-sipc" or (buildDepError "bindings-sipc"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "MQSender" = {
           depends = [
             (hsPkgs."bindings-sipc" or (buildDepError "bindings-sipc"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

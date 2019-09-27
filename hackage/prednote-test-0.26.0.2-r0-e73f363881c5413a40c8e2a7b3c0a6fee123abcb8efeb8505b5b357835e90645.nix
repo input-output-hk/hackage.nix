@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."quickpull" or (buildDepError "quickpull"))
           (hsPkgs."barecheck" or (buildDepError "barecheck"))
           ];
+        buildable = true;
         };
       exes = {
         "prednote-test" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickpull" or (buildDepError "quickpull"))
             (hsPkgs."barecheck" or (buildDepError "barecheck"))
             ];
+          buildable = true;
           };
         "prednote-visual-test" = {
           depends = [
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickpull" or (buildDepError "quickpull"))
             (hsPkgs."barecheck" or (buildDepError "barecheck"))
             ];
+          buildable = true;
           };
         };
       };

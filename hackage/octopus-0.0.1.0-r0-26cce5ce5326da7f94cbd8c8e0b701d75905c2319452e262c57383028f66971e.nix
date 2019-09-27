@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."hexpr" or (buildDepError "hexpr"))
           ];
+        buildable = true;
         };
       exes = {
         "octopus" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."hexpr" or (buildDepError "hexpr"))
             ];
+          buildable = true;
           };
         };
       };

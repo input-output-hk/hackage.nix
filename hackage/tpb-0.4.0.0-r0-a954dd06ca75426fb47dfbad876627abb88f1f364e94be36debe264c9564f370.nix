@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant" or (buildDepError "servant"))
             (hsPkgs."servant-client" or (buildDepError "servant-client"))
             ];
+          buildable = true;
           };
         "pb-notify" = {
           depends = [
@@ -99,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp" or (buildDepError "warp"))
             (hsPkgs."wuss" or (buildDepError "wuss"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
         libs = [ (pkgs."b2" or (sysDepError "b2")) ];
+        buildable = true;
         };
       tests = {
         "test-all" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             ];
           libs = [ (pkgs."b2" or (sysDepError "b2")) ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hs-blake2" or (buildDepError "hs-blake2"))
             ];
           libs = [ (pkgs."b2" or (sysDepError "b2")) ];
+          buildable = true;
           };
         };
       };

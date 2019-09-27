@@ -61,14 +61,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       exes = {
-        "preLieBad" = {};
-        "altDual" = {};
+        "preLieBad" = { buildable = true; };
+        "altDual" = { buildable = true; };
         "OperadTest" = {
           depends = [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+          buildable = true;
           };
-        "example" = {};
+        "example" = { buildable = true; };
         };
       };
     }

@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."universum" or (buildDepError "universum"))
           (hsPkgs."yaml" or (buildDepError "yaml"))
           ];
+        buildable = true;
         };
       exes = {
         "orgstat" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."orgstat" or (buildDepError "orgstat"))
             (hsPkgs."universum" or (buildDepError "universum"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -115,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."universum" or (buildDepError "universum"))
             ];
+          buildable = true;
           };
         };
       };

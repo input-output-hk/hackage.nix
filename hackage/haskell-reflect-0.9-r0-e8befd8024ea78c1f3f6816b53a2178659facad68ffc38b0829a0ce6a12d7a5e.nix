@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."MonadCatchIO-mtl" or (buildDepError "MonadCatchIO-mtl"))
           ];
+        buildable = true;
         };
       };
     }

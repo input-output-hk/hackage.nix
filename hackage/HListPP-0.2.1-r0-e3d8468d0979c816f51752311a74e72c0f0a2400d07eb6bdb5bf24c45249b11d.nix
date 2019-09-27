@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."applicative-quoters" or (buildDepError "applicative-quoters"))
             (hsPkgs."regex-applicative" or (buildDepError "regex-applicative"))
             ];
+          buildable = true;
           };
         };
       };

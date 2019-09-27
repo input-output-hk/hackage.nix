@@ -64,7 +64,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell98" or (buildDepError "haskell98"))
           (hsPkgs."mersenne-random-pure64" or (buildDepError "mersenne-random-pure64"))
           ];
+        buildable = true;
         };
-      exes = { "HSGEP_Regression" = {}; };
+      exes = { "HSGEP_Regression" = { buildable = true; }; };
       };
     }

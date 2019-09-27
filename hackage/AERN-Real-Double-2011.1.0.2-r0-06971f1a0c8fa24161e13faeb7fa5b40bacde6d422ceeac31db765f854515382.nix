@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."AERN-Real-Interval" or (buildDepError "AERN-Real-Interval"))
           (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
           ];
+        buildable = true;
         };
       exes = {
         "testAERN-Real-Double" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."AERN-Real-Interval" or (buildDepError "AERN-Real-Interval"))
             (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
             ];
+          buildable = true;
           };
         "benchAERN-Real-Double" = {
           depends = [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."AERN-Real-Interval" or (buildDepError "AERN-Real-Interval"))
             (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
             ];
+          buildable = true;
           };
         "demoAERN-Real-Double-Quadratic" = {
           depends = [
@@ -101,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."AERN-Real-Interval" or (buildDepError "AERN-Real-Interval"))
             (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
             ];
+          buildable = true;
           };
         "demoAERN-Real-Double-Riemann" = {
           depends = [
@@ -111,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."AERN-Real-Interval" or (buildDepError "AERN-Real-Interval"))
             (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
             ];
+          buildable = true;
           };
         "demoAERN-Real-Double-Zero" = {
           depends = [
@@ -121,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."AERN-Real-Interval" or (buildDepError "AERN-Real-Interval"))
             (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
             ];
+          buildable = true;
           };
         };
       };

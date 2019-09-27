@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsyslog" or (buildDepError "hsyslog"))
           ];
         libs = [ (pkgs."systemd-journal" or (sysDepError "systemd-journal")) ];
+        buildable = true;
         };
       };
     }

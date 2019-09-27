@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."monad-primitive" or (buildDepError "monad-primitive"))
           ];
+        buildable = true;
         };
       };
     }

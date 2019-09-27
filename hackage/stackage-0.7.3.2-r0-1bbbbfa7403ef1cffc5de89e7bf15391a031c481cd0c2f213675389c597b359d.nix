@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stackage-sandbox" or (buildDepError "stackage-sandbox"))
           (hsPkgs."stackage-setup" or (buildDepError "stackage-setup"))
           ];
+        buildable = true;
         };
       };
     }

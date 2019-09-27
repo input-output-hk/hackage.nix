@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           (hsPkgs."csv" or (buildDepError "csv"))
           ];
+        buildable = true;
         };
       exes = {
         "arch-report" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."csv" or (buildDepError "csv"))
             ];
+          buildable = true;
           };
         "distro-map" = {
           depends = [
@@ -114,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."csv" or (buildDepError "csv"))
             ];
+          buildable = true;
           };
         "get-arch-url" = {
           depends = [
@@ -134,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."csv" or (buildDepError "csv"))
             ];
+          buildable = true;
           };
         "arch-haskell-packages" = {
           depends = [
@@ -154,9 +158,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."csv" or (buildDepError "csv"))
             ];
+          buildable = true;
           };
         "update-aur-log" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

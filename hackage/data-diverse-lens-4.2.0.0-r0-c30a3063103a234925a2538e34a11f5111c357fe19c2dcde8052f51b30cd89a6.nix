@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."data-has" or (buildDepError "data-has"))
           ];
+        buildable = true;
         };
       tests = {
         "data-diverse-lens-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."tagged" or (buildDepError "tagged"))
             ];
+          buildable = true;
           };
         };
       };

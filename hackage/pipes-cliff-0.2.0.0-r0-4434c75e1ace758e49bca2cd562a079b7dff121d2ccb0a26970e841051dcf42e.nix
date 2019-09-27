@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."async" or (buildDepError "async"))
           (hsPkgs."pipes-concurrency" or (buildDepError "pipes-concurrency"))
           ];
+        buildable = true;
         };
       exes = {
         "numsToLess" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."pipes-concurrency" or (buildDepError "pipes-concurrency"))
             ];
+          buildable = if flags.tests then true else false;
           };
         "alphaNumbers" = {
           depends = [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."pipes-concurrency" or (buildDepError "pipes-concurrency"))
             ];
+          buildable = if flags.tests then true else false;
           };
         "limitedAlphaNumbers" = {
           depends = [
@@ -98,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."pipes-concurrency" or (buildDepError "pipes-concurrency"))
             ];
+          buildable = if flags.tests then true else false;
           };
         "alphaNumbersByteString" = {
           depends = [
@@ -109,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."pipes-concurrency" or (buildDepError "pipes-concurrency"))
             ];
+          buildable = if flags.tests then true else false;
           };
         };
       };

@@ -146,6 +146,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2") (hsPkgs."binary-shared" or (buildDepError "binary-shared"));
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32"));
+        buildable = true;
         };
       exes = {
         "leksah" = {
@@ -158,6 +159,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."setlocale" or (buildDepError "setlocale"))
             ];
           libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32"));
+          buildable = true;
           };
         "bewleksah" = {
           depends = (pkgs.lib).optionals (!(!flags.webkit)) ([
@@ -178,6 +180,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."webkit" or (buildDepError "webkit"))
               (hsPkgs."webkit-javascriptcore" or (buildDepError "webkit-javascriptcore"))
               ]));
+          buildable = if !flags.webkit then false else true;
           };
         };
       tests = {
@@ -206,6 +209,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."gtksourceview2" or (buildDepError "gtksourceview2"))
               (hsPkgs."webkit" or (buildDepError "webkit"))
               ])) ++ (pkgs.lib).optional (flags.yi) (hsPkgs."yi" or (buildDepError "yi"));
+          buildable = true;
           };
         };
       };

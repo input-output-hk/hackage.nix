@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
           (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
           ];
+        buildable = true;
         };
       exes = {
         "mm-get-teams" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "mm-get-channels" = {
           depends = [
@@ -103,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "mm-get-posts" = {
           depends = [
@@ -115,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "mm-make-post" = {
           depends = [
@@ -127,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "mm-get-websocket-connection" = {
           depends = [
@@ -139,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "mm-show-raw-events" = {
           depends = [
@@ -151,6 +157,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         };
       tests = {
@@ -169,6 +176,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
+          buildable = true;
           };
         };
       };

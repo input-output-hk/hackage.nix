@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (pkgs.lib).optional (flags.enable-overloading) (hsPkgs."haskell-gi-overloading" or (buildDepError "haskell-gi-overloading"));
         pkgconfig = [ (pkgconfPkgs."gio-2.0" or (pkgConfDepError "gio-2.0")) ];
+        buildable = true;
         };
       };
     }

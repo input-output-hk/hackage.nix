@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-DSL" or (buildDepError "bindings-DSL"))
           ];
         pkgconfig = [ (pkgconfPkgs."apr-1" or (pkgConfDepError "apr-1")) ];
+        buildable = true;
         };
       };
     }

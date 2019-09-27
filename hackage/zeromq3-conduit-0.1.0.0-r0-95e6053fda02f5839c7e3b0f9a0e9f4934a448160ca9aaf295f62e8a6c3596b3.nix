@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."zeromq3-haskell" or (buildDepError "zeromq3-haskell"))
           ];
+        buildable = true;
         };
       };
     }

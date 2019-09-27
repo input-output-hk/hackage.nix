@@ -54,7 +54,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Custom";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = true; };
       exes = {
         "hledger" = {
           depends = ((([
@@ -105,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Chart" or (buildDepError "Chart"))
             (hsPkgs."colour" or (buildDepError "colour"))
             ];
+          buildable = true;
           };
         };
       };

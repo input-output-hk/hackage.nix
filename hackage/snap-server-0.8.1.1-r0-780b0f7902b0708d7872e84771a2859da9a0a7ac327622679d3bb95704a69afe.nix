@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
           (hsPkgs."PSQueue" or (buildDepError "PSQueue"))
           ] ++ (pkgs.lib).optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (flags.libev) (hsPkgs."hlibev" or (buildDepError "hlibev"))) ++ (pkgs.lib).optional (flags.openssl) (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"));
+        buildable = true;
         };
       };
     }

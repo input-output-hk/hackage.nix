@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xhtml" or (buildDepError "xhtml"))
             (hsPkgs."pandoc" or (buildDepError "pandoc"))
             ];
+          buildable = true;
           };
         };
       };

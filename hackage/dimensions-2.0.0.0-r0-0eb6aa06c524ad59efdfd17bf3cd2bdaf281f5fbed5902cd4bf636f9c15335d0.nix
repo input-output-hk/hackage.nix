@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."constraints-deriving" or (buildDepError "constraints-deriving"))
           (hsPkgs."ghc" or (buildDepError "ghc"))
           ];
+        buildable = true;
         };
       tests = {
         "dimensions-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."constraints-deriving" or (buildDepError "constraints-deriving"))
             (hsPkgs."dimensions" or (buildDepError "dimensions"))
             ];
+          buildable = true;
           };
         };
       };

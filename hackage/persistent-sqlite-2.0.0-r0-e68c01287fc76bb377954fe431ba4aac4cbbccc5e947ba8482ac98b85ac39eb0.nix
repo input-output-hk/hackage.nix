@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           ];
         libs = (pkgs.lib).optional (flags.systemlib) (pkgs."sqlite3" or (sysDepError "sqlite3")) ++ (pkgs.lib).optional (!system.isWindows) (pkgs."pthread" or (sysDepError "pthread"));
+        buildable = true;
         };
       exes = {
         "sanity" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
             ];
+          buildable = if flags.build-sanity-exe then true else false;
           };
         };
       };

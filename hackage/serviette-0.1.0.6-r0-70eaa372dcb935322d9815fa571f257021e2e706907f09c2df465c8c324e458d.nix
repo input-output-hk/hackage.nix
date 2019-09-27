@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text-show" or (buildDepError "text-show"))
           (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
           ];
+        buildable = true;
         };
       };
     }

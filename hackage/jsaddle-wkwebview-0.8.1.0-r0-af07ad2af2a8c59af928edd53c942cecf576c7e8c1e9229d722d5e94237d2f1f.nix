@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."Cocoa" or (sysDepError "Cocoa"))
           (pkgs."WebKit" or (sysDepError "WebKit"))
           ];
+        buildable = true;
         };
       };
     }

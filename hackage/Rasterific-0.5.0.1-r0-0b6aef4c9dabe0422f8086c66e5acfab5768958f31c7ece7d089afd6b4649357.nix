@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
           ] ++ (pkgs.lib).optional (!flags.embed_linear) (hsPkgs."linear" or (buildDepError "linear"));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."statistics" or (buildDepError "statistics"))
             ];
+          buildable = true;
           };
         };
       };

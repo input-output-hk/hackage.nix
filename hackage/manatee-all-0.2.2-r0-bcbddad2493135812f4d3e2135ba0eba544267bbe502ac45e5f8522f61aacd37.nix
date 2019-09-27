@@ -72,7 +72,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."manatee-welcome" or (buildDepError "manatee-welcome"))
           (hsPkgs."manatee" or (buildDepError "manatee"))
           ];
+        buildable = true;
         };
-      exes = { "manatee-all" = {}; };
+      exes = { "manatee-all" = { buildable = true; }; };
       };
     }

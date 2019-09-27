@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-sub-th" or (buildDepError "type-sub-th"))
           (hsPkgs."gdiff" or (buildDepError "gdiff"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gdiff" or (buildDepError "gdiff"))
             (hsPkgs."tuple" or (buildDepError "tuple"))
             ];
+          buildable = true;
           };
         };
       };

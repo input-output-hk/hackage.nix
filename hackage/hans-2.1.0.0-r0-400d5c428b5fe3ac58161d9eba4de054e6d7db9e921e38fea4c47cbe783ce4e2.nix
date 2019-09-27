@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."unix" or (buildDepError "unix"))
             ])) ++ (pkgs.lib).optional (flags.bounded-channels) (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"));
+        buildable = true;
         };
       exes = {
         "test" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
             (hsPkgs."communication" or (buildDepError "communication"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

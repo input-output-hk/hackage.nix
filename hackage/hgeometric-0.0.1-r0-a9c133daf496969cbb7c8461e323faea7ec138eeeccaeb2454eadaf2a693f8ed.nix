@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
         libs = [ (pkgs."gpcl" or (sysDepError "gpcl")) ];
+        buildable = true;
         };
       };
     }

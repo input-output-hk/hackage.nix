@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."extended-reals" or (buildDepError "extended-reals"))
           (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         "server-test-suite" = {
           depends = (pkgs.lib).optionals (flags.server-test) [
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             (hsPkgs."hspec-need-env" or (buildDepError "hspec-need-env"))
             ];
+          buildable = if flags.server-test then true else false;
           };
         "doctest" = {
           depends = [
@@ -105,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (buildDepError "doctest-discover"))
             ];
+          buildable = true;
           };
         };
       };

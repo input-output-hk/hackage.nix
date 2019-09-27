@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GrammarProducts" or (buildDepError "GrammarProducts"))
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           ];
+        buildable = true;
         };
       exes = {
         "AlignNewickTrees" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
             (hsPkgs."PrimitiveArray-Pretty" or (buildDepError "PrimitiveArray-Pretty"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "AffineAlignNewickTreesSmall" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -109,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
             (hsPkgs."PrimitiveArray-Pretty" or (buildDepError "PrimitiveArray-Pretty"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -121,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             (hsPkgs."ADPfusionForest" or (buildDepError "ADPfusionForest"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -130,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."ForestStructures" or (buildDepError "ForestStructures"))
             ];
+          buildable = true;
           };
         };
       };

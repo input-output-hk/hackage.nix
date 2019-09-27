@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           (hsPkgs."stb-truetype" or (buildDepError "stb-truetype"))
           ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filemanip" or (buildDepError "filemanip"))
             (hsPkgs."hfsevents" or (buildDepError "hfsevents"))
             ];
+          buildable = true;
           };
         };
       };

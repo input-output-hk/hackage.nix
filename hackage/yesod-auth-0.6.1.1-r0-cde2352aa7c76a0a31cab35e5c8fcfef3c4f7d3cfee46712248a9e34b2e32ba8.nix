@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."web-routes-quasi" or (buildDepError "web-routes-quasi"))
           (hsPkgs."pwstore-fast" or (buildDepError "pwstore-fast"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       };
     }

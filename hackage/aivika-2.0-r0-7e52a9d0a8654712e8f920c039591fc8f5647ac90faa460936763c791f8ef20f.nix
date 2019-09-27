@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."random" or (buildDepError "random"))
           ] ++ (pkgs.lib).optional (!flags.haste-inst) (hsPkgs."vector" or (buildDepError "vector"));
+        buildable = true;
         };
       };
     }

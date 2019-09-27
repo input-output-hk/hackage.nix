@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gi-gstvideo" or (buildDepError "gi-gstvideo"))
             (hsPkgs."gi-gtk" or (buildDepError "gi-gtk"))
             ];
+          buildable = true;
           };
         };
       };

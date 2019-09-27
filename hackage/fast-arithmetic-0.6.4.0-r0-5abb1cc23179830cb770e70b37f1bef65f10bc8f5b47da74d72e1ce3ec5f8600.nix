@@ -59,6 +59,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."composition-prelude" or (buildDepError "composition-prelude"))
           ] ++ (pkgs.lib).optional (!flags.no-integer-gmp) (hsPkgs."gmpint" or (buildDepError "gmpint"));
+        buildable = (if system.isWindows
+          then false
+          else true) && (if system.isWindows then false else true);
         };
       tests = {
         "fast-arithmetic-test" = {
@@ -70,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
             (hsPkgs."combinat" or (buildDepError "combinat"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -81,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
             (hsPkgs."combinat" or (buildDepError "combinat"))
             ];
+          buildable = true;
           };
         };
       };

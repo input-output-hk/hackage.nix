@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."ghc-pkg-lib" or (buildDepError "ghc-pkg-lib"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6") (hsPkgs."time" or (buildDepError "time"));
+        buildable = true;
         };
       exes = {
         "buildwrapper" = {
@@ -110,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."ghc-pkg-lib" or (buildDepError "ghc-pkg-lib"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6") (hsPkgs."time" or (buildDepError "time"));
+          buildable = true;
           };
         };
       tests = {
@@ -136,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."ghc-pkg-lib" or (buildDepError "ghc-pkg-lib"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6") (hsPkgs."time" or (buildDepError "time"));
+          buildable = true;
           };
         };
       };

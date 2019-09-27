@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       tests = {
         "type-level-integers-test" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."type-level-integers" or (buildDepError "type-level-integers"))
             ];
+          buildable = true;
           };
         };
       };

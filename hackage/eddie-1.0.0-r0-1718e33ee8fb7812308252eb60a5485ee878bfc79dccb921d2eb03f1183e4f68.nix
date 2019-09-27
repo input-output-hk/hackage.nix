@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe" or (buildDepError "safe"))
             (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
             ];
+          buildable = true;
           };
         };
       };

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uri-templater" or (buildDepError "uri-templater"))
           (hsPkgs."either" or (buildDepError "either"))
           ];
+        buildable = true;
         };
       };
     }

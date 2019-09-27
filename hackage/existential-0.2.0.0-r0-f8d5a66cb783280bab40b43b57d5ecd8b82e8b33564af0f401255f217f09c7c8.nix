@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."portable-template-haskell-lens" or (buildDepError "portable-template-haskell-lens"))
           (hsPkgs."control-invariants" or (buildDepError "control-invariants"))
           ];
+        buildable = true;
         };
       };
     }

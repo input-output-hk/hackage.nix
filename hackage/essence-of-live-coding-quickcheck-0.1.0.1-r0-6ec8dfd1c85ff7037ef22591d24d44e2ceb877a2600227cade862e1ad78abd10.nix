@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."boltzmann-samplers" or (buildDepError "boltzmann-samplers"))
           ];
+        buildable = true;
         };
       };
     }

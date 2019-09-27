@@ -81,7 +81,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
-      exes = { "vkq" = {}; };
+      exes = { "vkq" = { buildable = true; }; };
       };
     }

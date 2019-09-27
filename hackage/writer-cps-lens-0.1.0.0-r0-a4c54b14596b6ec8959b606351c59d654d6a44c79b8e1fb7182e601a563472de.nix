@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           (hsPkgs."writer-cps-mtl" or (buildDepError "writer-cps-mtl"))
           ];
+        buildable = true;
         };
       };
     }

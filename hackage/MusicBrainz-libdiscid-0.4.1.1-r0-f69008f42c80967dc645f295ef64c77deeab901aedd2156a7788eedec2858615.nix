@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."winmm" or (sysDepError "winmm"));
+        buildable = true;
         };
       };
     }

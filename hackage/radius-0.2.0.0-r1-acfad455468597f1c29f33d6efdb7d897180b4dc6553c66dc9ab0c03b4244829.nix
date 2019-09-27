@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iproute" or (buildDepError "iproute"))
           (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
           ];
+        buildable = true;
         };
       };
     }

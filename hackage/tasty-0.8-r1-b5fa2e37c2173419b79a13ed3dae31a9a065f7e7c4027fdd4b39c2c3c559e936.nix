@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unbounded-delays" or (buildDepError "unbounded-delays"))
           (hsPkgs."async" or (buildDepError "async"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (flags.colors) (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"));
+        buildable = true;
         };
       };
     }

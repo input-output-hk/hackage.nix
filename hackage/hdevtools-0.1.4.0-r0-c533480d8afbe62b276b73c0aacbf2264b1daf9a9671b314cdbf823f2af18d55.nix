@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"))
             ];
+          buildable = true;
           };
         };
       };

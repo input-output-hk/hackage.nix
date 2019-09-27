@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hogre" or (buildDepError "hogre"))
           ];
         libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+        buildable = true;
         };
       exes = {
         "bogre-banana-snake" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hois" or (buildDepError "hois"))
             (hsPkgs."hogre" or (buildDepError "hogre"))
             ];
+          buildable = true;
           };
         };
       };

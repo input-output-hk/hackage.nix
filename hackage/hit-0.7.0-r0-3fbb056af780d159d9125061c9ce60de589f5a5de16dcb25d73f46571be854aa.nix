@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hourglass" or (buildDepError "hourglass"))
             (hsPkgs."git" or (buildDepError "git"))
             ];
+          buildable = true;
           };
         };
       };

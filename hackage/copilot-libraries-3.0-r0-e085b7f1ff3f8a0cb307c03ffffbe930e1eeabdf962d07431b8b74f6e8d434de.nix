@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."copilot-language" or (buildDepError "copilot-language"))
           ];
+        buildable = true;
         };
       };
     }

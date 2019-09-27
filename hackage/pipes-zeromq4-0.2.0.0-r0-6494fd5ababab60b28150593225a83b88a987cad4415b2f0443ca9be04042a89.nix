@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes" or (buildDepError "pipes"))
           (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
           ];
+        buildable = true;
         };
       exes = {
         "proxy" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "client" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "server" = {
           depends = [
@@ -96,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "serverPipeline" = {
           depends = [
@@ -107,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

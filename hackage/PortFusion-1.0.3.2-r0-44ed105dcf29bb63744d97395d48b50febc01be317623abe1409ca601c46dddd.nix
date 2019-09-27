@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."splice" or (buildDepError "splice"))
             ] ++ [ (hsPkgs."network" or (buildDepError "network")) ];
+          buildable = true;
           };
         };
       };

@@ -53,5 +53,5 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "Currently being prepared for release, reserving the namespace here.";
       buildType = "Simple";
       };
-    components = { exes = { "fcg" = {}; }; };
+    components = { exes = { "fcg" = { buildable = true; }; }; };
     }

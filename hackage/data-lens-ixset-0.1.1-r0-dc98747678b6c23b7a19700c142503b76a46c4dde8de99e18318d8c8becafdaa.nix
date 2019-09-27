@@ -60,10 +60,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-lens" or (buildDepError "data-lens"))
           (hsPkgs."ixset" or (buildDepError "ixset"))
           ];
+        buildable = true;
         };
       tests = {
         "test-data-lens-ixset" = {
           depends = [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+          buildable = true;
           };
         };
       };

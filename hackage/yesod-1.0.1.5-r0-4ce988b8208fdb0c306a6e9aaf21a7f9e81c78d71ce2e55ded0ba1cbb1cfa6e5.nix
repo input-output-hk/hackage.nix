@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
             ]
           else [ (hsPkgs."blaze-html" or (buildDepError "blaze-html")) ]);
+        buildable = true;
         };
       exes = {
         "yesod" = {
@@ -99,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

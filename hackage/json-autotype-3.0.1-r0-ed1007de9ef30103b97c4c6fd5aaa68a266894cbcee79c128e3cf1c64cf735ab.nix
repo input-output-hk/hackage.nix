@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."json-alt" or (buildDepError "json-alt"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "json-autotype" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."json-autotype" or (buildDepError "json-autotype"))
             (hsPkgs."json-alt" or (buildDepError "json-alt"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -125,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."json-autotype" or (buildDepError "json-autotype"))
             (hsPkgs."json-alt" or (buildDepError "json-alt"))
             ];
+          buildable = true;
           };
         "json-autotype-examples" = {
           depends = [
@@ -151,6 +154,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."json-autotype" or (buildDepError "json-autotype"))
             (hsPkgs."json-alt" or (buildDepError "json-alt"))
             ];
+          buildable = true;
           };
         "json-autotype-gen-test" = {
           depends = [
@@ -178,6 +182,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."json-autotype" or (buildDepError "json-autotype"))
             (hsPkgs."json-alt" or (buildDepError "json-alt"))
             ];
+          buildable = true;
           };
         };
       };

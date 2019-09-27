@@ -99,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = if flags.library then true else false;
         };
       exes = {
         "pandoc" = {
@@ -141,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."syb" or (buildDepError "syb"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = if flags.executable then true else false;
           };
         "test-pandoc" = {
           depends = (([
@@ -193,6 +195,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         };
       };

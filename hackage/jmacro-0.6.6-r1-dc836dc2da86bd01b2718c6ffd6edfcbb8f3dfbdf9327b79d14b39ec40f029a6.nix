@@ -73,13 +73,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       exes = {
         "jmacro" = {
           depends = [ (hsPkgs."parseargs" or (buildDepError "parseargs")) ];
+          buildable = true;
           };
         "jmacro-bench" = {
           depends = (pkgs.lib).optional (flags.benchmarks) (hsPkgs."criterion" or (buildDepError "criterion"));
+          buildable = if flags.benchmarks then true else false;
           };
         };
       };

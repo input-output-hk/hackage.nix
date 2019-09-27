@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syz" or (buildDepError "syz"))
           (hsPkgs."haskell-token-utils" or (buildDepError "haskell-token-utils"))
           ];
+        buildable = true;
         };
       exes = {
         "ghc-hare" = {
@@ -111,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-token-utils" or (buildDepError "haskell-token-utils"))
             (hsPkgs."HaRe" or (buildDepError "HaRe"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -148,6 +150,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-token-utils" or (buildDepError "haskell-token-utils"))
             (hsPkgs."HaRe" or (buildDepError "HaRe"))
             ];
+          buildable = true;
           };
         };
       };

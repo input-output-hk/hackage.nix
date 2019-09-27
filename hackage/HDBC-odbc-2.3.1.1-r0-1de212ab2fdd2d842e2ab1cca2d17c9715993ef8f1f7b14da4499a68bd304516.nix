@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if system.isWindows || system.isWindows
           then [ (pkgs."odbc32" or (sysDepError "odbc32")) ]
           else [ (pkgs."odbc" or (sysDepError "odbc")) ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           libs = if system.isWindows || system.isWindows
             then [ (pkgs."odbc32" or (sysDepError "odbc32")) ]
             else [ (pkgs."odbc" or (sysDepError "odbc")) ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

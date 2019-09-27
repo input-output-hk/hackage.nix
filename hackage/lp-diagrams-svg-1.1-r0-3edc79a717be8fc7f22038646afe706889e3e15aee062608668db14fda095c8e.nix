@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
           (hsPkgs."gasp" or (buildDepError "gasp"))
           ];
+        buildable = true;
         };
       exes = {
         "lp-diagrams-svg-example" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."FontyFruity" or (buildDepError "FontyFruity"))
             (hsPkgs."gasp" or (buildDepError "gasp"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

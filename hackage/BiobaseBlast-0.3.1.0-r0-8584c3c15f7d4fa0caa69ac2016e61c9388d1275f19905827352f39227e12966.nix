@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           (hsPkgs."SciBaseTypes" or (buildDepError "SciBaseTypes"))
           ];
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."BiobaseBlast" or (buildDepError "BiobaseBlast"))
             ];
+          buildable = true;
           };
         };
       };

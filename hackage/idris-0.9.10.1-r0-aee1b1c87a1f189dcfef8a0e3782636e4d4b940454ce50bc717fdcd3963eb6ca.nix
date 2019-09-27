@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-general" or (buildDepError "llvm-general"))
             (hsPkgs."llvm-general-pure" or (buildDepError "llvm-general-pure"))
             ]) ++ (pkgs.lib).optional (flags.ffi) (hsPkgs."libffi" or (buildDepError "libffi"))) ++ (pkgs.lib).optional (flags.gmp) (hsPkgs."libffi" or (buildDepError "libffi"));
+          buildable = true;
           };
         };
       };

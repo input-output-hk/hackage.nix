@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
           (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
           ] ++ [ (hsPkgs."deepseq" or (buildDepError "deepseq")) ];
+        buildable = true;
         };
       exes = {
         "example-spiros" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -107,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."spiros" or (buildDepError "spiros"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = if compiler.isGhcjs && true then false else true;
           };
         };
       };

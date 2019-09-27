@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
           (hsPkgs."happstack-server-tls" or (buildDepError "happstack-server-tls"))
           ];
+        buildable = true;
         };
       };
     }

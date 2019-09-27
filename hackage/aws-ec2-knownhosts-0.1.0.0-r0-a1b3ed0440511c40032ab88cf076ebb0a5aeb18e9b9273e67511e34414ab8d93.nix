@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."text-format" or (buildDepError "text-format"))
           ];
+        buildable = true;
         };
       exes = {
         "aws-ec2-pubkeys" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
             (hsPkgs."turtle" or (buildDepError "turtle"))
             ];
+          buildable = true;
           };
         "aws-ec2-knownhosts" = {
           depends = [
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
             (hsPkgs."turtle" or (buildDepError "turtle"))
             ];
+          buildable = true;
           };
         "aws-ec2-keysync" = {
           depends = [
@@ -98,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
             (hsPkgs."turtle" or (buildDepError "turtle"))
             ];
+          buildable = true;
           };
         };
       };

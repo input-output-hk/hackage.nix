@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."Cabal" or (buildDepError "Cabal"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.7") (hsPkgs."Cabal" or (buildDepError "Cabal"));
+          buildable = true;
           };
         };
       };

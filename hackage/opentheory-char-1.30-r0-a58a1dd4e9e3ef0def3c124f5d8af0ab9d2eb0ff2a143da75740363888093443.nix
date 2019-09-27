@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."opentheory" or (buildDepError "opentheory"))
           (hsPkgs."opentheory-parser" or (buildDepError "opentheory-parser"))
           ];
+        buildable = true;
         };
       exes = {
         "opentheory-char-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."opentheory" or (buildDepError "opentheory"))
             (hsPkgs."opentheory-parser" or (buildDepError "opentheory-parser"))
             ];
+          buildable = true;
           };
         };
       };

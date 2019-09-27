@@ -107,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vty" or (buildDepError "vty"))
           (hsPkgs."wreq" or (buildDepError "wreq"))
           ];
+        buildable = true;
         };
       exes = {
         "wreck" = {
@@ -121,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wrecker" or (buildDepError "wrecker"))
             (hsPkgs."wreq" or (buildDepError "wreq"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cborg" or (buildDepError "cborg"))
             (hsPkgs."cborg-json" or (buildDepError "cborg-json"))
             ];
+          buildable = true;
           };
         };
       };

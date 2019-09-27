@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.4" && (compiler.version).lt "8.6")) (hsPkgs."temporary" or (buildDepError "temporary"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       tests = {
         "unit-tests" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = true;
           };
         };
       };

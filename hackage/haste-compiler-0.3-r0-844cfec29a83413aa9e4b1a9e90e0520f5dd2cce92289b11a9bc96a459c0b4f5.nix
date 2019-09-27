@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
         "haste-boot" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             (hsPkgs."shellmate" or (buildDepError "shellmate"))
             ];
+          buildable = true;
           };
         "hastec" = {
           depends = [
@@ -119,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             (hsPkgs."shellmate" or (buildDepError "shellmate"))
             ];
+          buildable = true;
           };
         "haste-inst" = {
           depends = [
@@ -128,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
+          buildable = true;
           };
         "haste-pkg" = {
           depends = [
@@ -137,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
+          buildable = true;
           };
         "haste-install-his" = {
           depends = [
@@ -146,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
+          buildable = true;
           };
         "haste-copy-pkg" = {
           depends = [
@@ -159,6 +165,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             (hsPkgs."shellmate" or (buildDepError "shellmate"))
             ];
+          buildable = true;
           };
         };
       };

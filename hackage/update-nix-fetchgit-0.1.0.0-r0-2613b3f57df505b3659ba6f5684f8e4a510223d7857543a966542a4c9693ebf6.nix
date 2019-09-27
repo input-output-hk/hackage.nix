@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."errors" or (buildDepError "errors"))
           ];
+        buildable = true;
         };
       exes = {
         "update-nix-fetchgit" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."update-nix-fetchgit" or (buildDepError "update-nix-fetchgit"))
             ];
+          buildable = true;
           };
         };
       };

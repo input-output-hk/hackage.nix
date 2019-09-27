@@ -63,17 +63,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ];
+        buildable = true;
         };
       exes = {
-        "diffLDIF" = {};
-        "ldif2html" = {};
-        "ldifmodify" = {};
-        "ldifparse" = {};
+        "diffLDIF" = { buildable = true; };
+        "ldif2html" = { buildable = true; };
+        "ldifmodify" = { buildable = true; };
+        "ldifparse" = { buildable = true; };
         "test" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = if !flags.test then false else true;
           };
         };
       };

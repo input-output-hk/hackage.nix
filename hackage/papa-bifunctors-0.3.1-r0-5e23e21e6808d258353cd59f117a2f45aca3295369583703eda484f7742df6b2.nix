@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."papa-bifunctors-export" or (buildDepError "papa-bifunctors-export"))
           (hsPkgs."papa-bifunctors-implement" or (buildDepError "papa-bifunctors-implement"))
           ];
+        buildable = true;
         };
       };
     }

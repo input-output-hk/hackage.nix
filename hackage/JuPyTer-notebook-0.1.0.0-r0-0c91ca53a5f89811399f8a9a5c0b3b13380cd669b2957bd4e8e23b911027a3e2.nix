@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."json-autotype" or (buildDepError "json-autotype"))
           ];
+        buildable = true;
         };
       exes = {
         "jupyter-extract" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."JuPyTer-notebook" or (buildDepError "JuPyTer-notebook"))
             ];
+          buildable = true;
           };
         };
       };

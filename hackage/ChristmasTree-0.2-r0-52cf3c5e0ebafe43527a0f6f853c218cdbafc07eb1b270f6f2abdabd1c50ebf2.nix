@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."TTTAS" or (buildDepError "TTTAS"))
           (hsPkgs."uulib" or (buildDepError "uulib"))
           ];
+        buildable = true;
         };
       };
     }

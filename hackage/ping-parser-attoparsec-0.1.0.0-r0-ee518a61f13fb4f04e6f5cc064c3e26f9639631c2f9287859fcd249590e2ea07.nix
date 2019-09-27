@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."iproute" or (buildDepError "iproute"))
           ];
+        buildable = true;
         };
       exes = {
         "ping-parser-attoparsec-exe" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ping-parser-attoparsec" or (buildDepError "ping-parser-attoparsec"))
             (hsPkgs."placeholders" or (buildDepError "placeholders"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickcheck-text" or (buildDepError "quickcheck-text"))
             (hsPkgs."iproute" or (buildDepError "iproute"))
             ];
+          buildable = true;
           };
         };
       };

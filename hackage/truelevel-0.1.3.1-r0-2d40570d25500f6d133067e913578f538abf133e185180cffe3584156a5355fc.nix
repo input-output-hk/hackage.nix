@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parseargs" or (buildDepError "parseargs"))
             (hsPkgs."WAVE" or (buildDepError "WAVE"))
             ];
+          buildable = true;
           };
         };
       };

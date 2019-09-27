@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
             ]);
+        buildable = true;
         };
       };
     }

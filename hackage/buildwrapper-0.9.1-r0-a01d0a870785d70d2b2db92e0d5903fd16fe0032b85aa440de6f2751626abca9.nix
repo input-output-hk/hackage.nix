@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
           (hsPkgs."async" or (buildDepError "async"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6") (hsPkgs."time" or (buildDepError "time"));
+        buildable = true;
         };
       exes = {
         "buildwrapper" = {
@@ -116,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
             (hsPkgs."async" or (buildDepError "async"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6") (hsPkgs."time" or (buildDepError "time"));
+          buildable = true;
           };
         };
       tests = {
@@ -145,6 +147,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
             (hsPkgs."async" or (buildDepError "async"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6") (hsPkgs."time" or (buildDepError "time"));
+          buildable = true;
           };
         };
       };

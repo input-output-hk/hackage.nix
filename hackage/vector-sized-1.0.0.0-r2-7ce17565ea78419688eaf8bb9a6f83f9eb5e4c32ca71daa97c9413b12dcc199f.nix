@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."finite-typelits" or (buildDepError "finite-typelits"))
           (hsPkgs."primitive" or (buildDepError "primitive"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.3") (hsPkgs."indexed-list-literals" or (buildDepError "indexed-list-literals"));
+        buildable = true;
         };
       };
     }

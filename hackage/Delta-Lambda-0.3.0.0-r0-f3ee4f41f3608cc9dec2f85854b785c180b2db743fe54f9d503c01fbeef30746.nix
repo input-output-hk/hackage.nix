@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
             ];
+          buildable = true;
           };
         };
       };

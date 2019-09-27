@@ -90,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
                 ]
               else (pkgs.lib).optional (!flags.android) (hsPkgs."jsaddle-webkit2gtk" or (buildDepError "jsaddle-webkit2gtk")));
         build-tools = (pkgs.lib).optional (flags.android) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")));
+        buildable = true;
         };
       exes = {
         "sortableList" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "benchmark" = {
           depends = [
@@ -123,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
             ];
+          buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "krausest" = {
           depends = [
@@ -141,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if compiler.isGhcjs && true then true else false;
           };
         };
       };

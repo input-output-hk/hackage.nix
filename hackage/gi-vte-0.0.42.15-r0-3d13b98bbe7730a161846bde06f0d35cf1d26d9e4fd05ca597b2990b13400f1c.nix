@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."vte-2.91" or (pkgConfDepError "vte-2.91"))
           ];
+        buildable = true;
         };
       };
     }

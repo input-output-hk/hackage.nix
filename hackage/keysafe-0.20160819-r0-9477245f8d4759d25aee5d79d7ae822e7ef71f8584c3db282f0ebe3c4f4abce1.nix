@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polynomial" or (buildDepError "polynomial"))
             ];
           libs = [ (pkgs."argon2" or (sysDepError "argon2")) ];
+          buildable = true;
           };
         };
       };

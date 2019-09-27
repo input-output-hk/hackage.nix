@@ -62,7 +62,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = true;
         };
-      exes = { "mecha-csg" = {}; "mecha-bent-axis" = {}; };
+      exes = {
+        "mecha-csg" = { buildable = true; };
+        "mecha-bent-axis" = { buildable = true; };
+        };
       };
     }

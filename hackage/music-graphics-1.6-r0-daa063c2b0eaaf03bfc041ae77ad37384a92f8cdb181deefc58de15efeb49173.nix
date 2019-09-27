@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."music-preludes" or (buildDepError "music-preludes"))
           (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
           ];
+        buildable = true;
         };
       };
     }

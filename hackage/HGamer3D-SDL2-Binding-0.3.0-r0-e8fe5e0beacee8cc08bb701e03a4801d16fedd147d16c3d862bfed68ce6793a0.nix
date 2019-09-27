@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs.":libSDL2-2.0.so.1" or (sysDepError ":libSDL2-2.0.so.1"))
             (pkgs."X11" or (sysDepError "X11"))
             ];
+        buildable = true;
         };
       };
     }

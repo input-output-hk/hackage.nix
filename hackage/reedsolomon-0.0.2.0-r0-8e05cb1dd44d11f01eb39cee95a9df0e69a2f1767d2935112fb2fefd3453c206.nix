@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gitrev" or (buildDepError "gitrev"))
           ];
         libs = (pkgs.lib).optional (flags.simd) (pkgs."reedsolomon" or (sysDepError "reedsolomon"));
+        buildable = true;
         };
       exes = {
         "reedsolomon-simple-encoder" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring-mmap" or (buildDepError "bytestring-mmap"))
             (hsPkgs."reedsolomon" or (buildDepError "reedsolomon"))
             ];
+          buildable = if !system.isWindows then true else false;
           };
         "reedsolomon-simple-decoder" = {
           depends = (pkgs.lib).optionals (!system.isWindows) [
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring-mmap" or (buildDepError "bytestring-mmap"))
             (hsPkgs."reedsolomon" or (buildDepError "reedsolomon"))
             ];
+          buildable = if !system.isWindows then true else false;
           };
         "reedsolomon-simple-bench" = {
           depends = [
@@ -100,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."statistics" or (buildDepError "statistics"))
             (hsPkgs."reedsolomon" or (buildDepError "reedsolomon"))
             ];
+          buildable = true;
           };
         "reedsolomon-profiling" = {
           depends = [
@@ -111,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."clock" or (buildDepError "clock"))
             (hsPkgs."reedsolomon" or (buildDepError "reedsolomon"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -132,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."reedsolomon" or (buildDepError "reedsolomon"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -146,6 +152,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."reedsolomon" or (buildDepError "reedsolomon"))
             ];
+          buildable = true;
           };
         };
       };

@@ -81,6 +81,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."parallel" or (buildDepError "parallel"))
             ];
+          buildable = if compiler.isGhc && false && system.isX86_64
+            then true
+            else false;
           };
         "lhc-regress" = {
           depends = [
@@ -93,6 +96,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck" or (buildDepError "test-framework-quickcheck"))
             ];
+          buildable = if flags.lhc-regress && (compiler.isGhc && false) && system.isX86_64
+            then true
+            else false;
           };
         "lhc-pkg" = {
           depends = [
@@ -104,6 +110,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = if flags.lhc-pkg && (compiler.isGhc && false) && system.isX86_64
+            then true
+            else false;
           };
         };
       };

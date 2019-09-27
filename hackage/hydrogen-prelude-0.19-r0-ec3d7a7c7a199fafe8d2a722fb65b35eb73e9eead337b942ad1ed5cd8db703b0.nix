@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."uuid" or (buildDepError "uuid"))
           ] ++ (pkgs.lib).optional (flags.explicittext) (hsPkgs."text" or (buildDepError "text"));
+        buildable = true;
         };
       };
     }

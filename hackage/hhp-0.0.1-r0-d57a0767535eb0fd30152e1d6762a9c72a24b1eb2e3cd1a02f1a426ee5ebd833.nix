@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb" or (buildDepError "syb"))
           (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"))
           ];
+        buildable = true;
         };
       exes = {
         "hhpc" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."hhp" or (buildDepError "hhp"))
             ];
+          buildable = true;
           };
         "hhpi" = {
           depends = [
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."hhp" or (buildDepError "hhp"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -97,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = [
@@ -113,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hlint" or (buildDepError "hlint"))
             (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"))
             ];
+          buildable = true;
           };
         };
       };

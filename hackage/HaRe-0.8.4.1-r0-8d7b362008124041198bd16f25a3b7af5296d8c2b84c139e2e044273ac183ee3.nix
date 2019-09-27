@@ -72,6 +72,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb" or (buildDepError "syb"))
           (hsPkgs."syz" or (buildDepError "syz"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+          then false
+          else true;
         };
       exes = {
         "ghc-hare" = {
@@ -85,6 +88,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."HaRe" or (buildDepError "HaRe"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+            then false
+            else true;
           };
         };
       tests = {
@@ -114,6 +120,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
             (hsPkgs."HaRe" or (buildDepError "HaRe"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+            then false
+            else true;
           };
         };
       };

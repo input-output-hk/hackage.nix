@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."snappy" or (sysDepError "snappy"))
           (pkgs."stdc++" or (sysDepError "stdc++"))
           ];
+        buildable = true;
         };
       exes = {
         "leveldb-example-comparator" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "leveldb-example-features" = {
           depends = [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "leveldb-example-filterpolicy" = {
           depends = [
@@ -95,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "leveldb-example-iterforkio" = {
           depends = [
@@ -104,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

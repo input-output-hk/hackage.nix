@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           (hsPkgs."mersenne-random" or (buildDepError "mersenne-random"))
           ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."opentheory-parser" or (buildDepError "opentheory-parser"))
           (hsPkgs."opentheory-probability" or (buildDepError "opentheory-probability"))
           ];
+        buildable = true;
         };
       exes = {
         "opentheory-unicode-test" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."opentheory-parser" or (buildDepError "opentheory-parser"))
             (hsPkgs."opentheory-probability" or (buildDepError "opentheory-probability"))
             ];
+          buildable = true;
           };
         };
       };

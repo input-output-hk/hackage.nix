@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gamma" or (buildDepError "gamma"))
           (hsPkgs."statistics" or (buildDepError "statistics"))
           ];
+        buildable = true;
         };
       };
     }

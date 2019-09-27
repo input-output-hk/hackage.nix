@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."asn1-parse" or (buildDepError "asn1-parse"))
           (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
           ];
+        buildable = true;
         };
       tests = {
         "test-x509" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."x509" or (buildDepError "x509"))
             (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
             ];
+          buildable = true;
           };
         };
       };

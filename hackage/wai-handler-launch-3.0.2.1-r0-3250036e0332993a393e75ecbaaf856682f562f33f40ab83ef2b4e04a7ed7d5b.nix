@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."Shell32" or (sysDepError "Shell32"))
           (pkgs."msvcrt" or (sysDepError "msvcrt"))
           ];
+        buildable = true;
         };
       };
     }

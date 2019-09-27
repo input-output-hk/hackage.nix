@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."toolshed" or (buildDepError "toolshed"))
             ];
+          buildable = true;
           };
         };
       };

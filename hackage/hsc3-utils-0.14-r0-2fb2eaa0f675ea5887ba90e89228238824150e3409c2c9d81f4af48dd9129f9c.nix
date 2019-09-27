@@ -60,18 +60,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3-rw" or (buildDepError "hsc3-rw"))
             ];
+          buildable = true;
           };
         "hsc3-id-rewrite" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3-rw" or (buildDepError "hsc3-rw"))
             ];
+          buildable = true;
           };
         "hsc3-id-clear" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3-rw" or (buildDepError "hsc3-rw"))
             ];
+          buildable = true;
           };
         };
       };

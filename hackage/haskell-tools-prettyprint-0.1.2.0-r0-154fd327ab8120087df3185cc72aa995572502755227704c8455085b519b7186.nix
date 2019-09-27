@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-tools-ast-trf" or (buildDepError "haskell-tools-ast-trf"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
       };
     }

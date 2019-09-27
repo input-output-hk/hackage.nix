@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."select" or (buildDepError "select"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = true;
           };
         };
       };

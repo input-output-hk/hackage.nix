@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           ];
         pkgconfig = [ (pkgconfPkgs."blkid" or (pkgConfDepError "blkid")) ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."PrimitiveArray-Pretty" or (buildDepError "PrimitiveArray-Pretty"))
           (hsPkgs."ShortestPathProblems" or (buildDepError "ShortestPathProblems"))
           ];
+        buildable = true;
         };
       exes = {
         "GeneCluEDO" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."Gene-CluEDO" or (buildDepError "Gene-CluEDO"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."Gene-CluEDO" or (buildDepError "Gene-CluEDO"))
             ];
+          buildable = true;
           };
         };
       };

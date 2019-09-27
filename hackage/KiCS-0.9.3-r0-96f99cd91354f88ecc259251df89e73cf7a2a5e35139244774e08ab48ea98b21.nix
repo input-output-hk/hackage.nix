@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.kics or (pkgs.buildPackages.kics or (buildToolDepError "kics")))
           ];
+        buildable = true;
         };
       exes = {
         "kics" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."curry-base" or (buildDepError "curry-base"))
             (hsPkgs."curry-frontend" or (buildDepError "curry-frontend"))
             ];
+          buildable = true;
           };
         "kicsi" = {
           depends = [
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."curry-base" or (buildDepError "curry-base"))
             (hsPkgs."curry-frontend" or (buildDepError "curry-frontend"))
             ];
+          buildable = true;
           };
         };
       };

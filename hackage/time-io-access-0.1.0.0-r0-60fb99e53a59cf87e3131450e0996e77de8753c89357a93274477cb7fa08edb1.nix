@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."base-io-access" or (buildDepError "base-io-access"))
           ];
+        buildable = true;
         };
       };
     }

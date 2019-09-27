@@ -108,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
           (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
           ];
+        buildable = true;
         };
       exes = {
         "futhark" = {
@@ -161,6 +162,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         "futhark-bench" = {
           depends = [
@@ -212,6 +214,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         "futhark-c" = {
           depends = [
@@ -263,6 +266,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         "futhark-cs" = {
           depends = [
@@ -314,6 +318,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         "futhark-csopencl" = {
           depends = [
@@ -365,6 +370,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         "futhark-dataset" = {
           depends = [
@@ -416,6 +422,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         "futhark-doc" = {
           depends = [
@@ -467,6 +474,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         "futhark-opencl" = {
           depends = [
@@ -518,6 +526,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         "futhark-pkg" = {
           depends = [
@@ -569,6 +578,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         "futhark-py" = {
           depends = [
@@ -620,6 +630,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         "futhark-pyopencl" = {
           depends = [
@@ -671,6 +682,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         "futhark-test" = {
           depends = [
@@ -722,6 +734,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         "futharki" = {
           depends = [
@@ -773,6 +786,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         };
       tests = {
@@ -832,6 +846,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         };
       };

@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
           (hsPkgs."uuid-types" or (buildDepError "uuid-types"))
           ] ++ (pkgs.lib).optional (!flags.production) (hsPkgs."base" or (buildDepError "base"));
+        buildable = true;
         };
       };
     }

@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."special-functors" or (buildDepError "special-functors"))
               ]));
+        buildable = true;
         };
       };
     }

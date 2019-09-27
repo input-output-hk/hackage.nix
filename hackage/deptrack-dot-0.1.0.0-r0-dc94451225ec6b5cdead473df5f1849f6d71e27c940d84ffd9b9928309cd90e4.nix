@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deptrack-core" or (buildDepError "deptrack-core"))
           (hsPkgs."dotgen" or (buildDepError "dotgen"))
           ];
+        buildable = true;
         };
       tests = {
         "deptrack-dot-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deptrack-dot" or (buildDepError "deptrack-dot"))
             (hsPkgs."dotgen" or (buildDepError "dotgen"))
             ];
+          buildable = true;
           };
         };
       };

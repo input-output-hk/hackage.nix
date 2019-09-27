@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bmp" or (buildDepError "bmp"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (pkgs.lib).optional (flags.glfw) (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"));
+        buildable = true;
         };
       };
     }

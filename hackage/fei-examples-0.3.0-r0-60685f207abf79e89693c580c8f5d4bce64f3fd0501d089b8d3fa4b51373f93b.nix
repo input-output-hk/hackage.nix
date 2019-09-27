@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fei-nn" or (buildDepError "fei-nn"))
             (hsPkgs."fei-dataiter" or (buildDepError "fei-dataiter"))
             ];
+          buildable = true;
           };
         "cifar10" = {
           depends = [
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fei-nn" or (buildDepError "fei-nn"))
             (hsPkgs."fei-dataiter" or (buildDepError "fei-dataiter"))
             ];
+          buildable = true;
           };
         "custom-op" = {
           depends = [
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "rcnn" = {
           depends = [
@@ -106,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fei-dataiter" or (buildDepError "fei-dataiter"))
             (hsPkgs."fei-cocoapi" or (buildDepError "fei-cocoapi"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."validity" or (buildDepError "validity"))
           (hsPkgs."validity-time" or (buildDepError "validity-time"))
           ];
+        buildable = true;
         };
       tests = {
         "pretty-relative-time-test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."validity" or (buildDepError "validity"))
             (hsPkgs."validity-time" or (buildDepError "validity-time"))
             ];
+          buildable = true;
           };
         };
       };

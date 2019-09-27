@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ] ++ (pkgs.lib).optional (flags.foreign) (hsPkgs."bits-atomic" or (buildDepError "bits-atomic"));
+        buildable = true;
         };
       };
     }

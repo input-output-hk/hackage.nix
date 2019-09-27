@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."Chart" or (buildDepError "Chart"))
           ];
+        buildable = true;
         };
       };
     }

@@ -71,7 +71,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dawg" or (buildDepError "dawg"))
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           ];
+        buildable = true;
         };
-      exes = { "nerf" = {}; };
+      exes = { "nerf" = { buildable = true; }; };
       };
     }

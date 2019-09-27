@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."network-uri" or (buildDepError "network-uri"))
           ];
+        buildable = true;
         };
       exes = {
         "haste-boot" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = if flags.only-library then false else true;
           };
         "hastec" = {
           depends = [
@@ -117,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."ghc-simple" or (buildDepError "ghc-simple"))
             ];
+          buildable = if flags.only-library then false else true;
           };
         "haste-cabal" = {
           depends = [
@@ -126,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = if flags.only-library then false else true;
           };
         "haste-pkg" = {
           depends = [
@@ -144,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."terminfo" or (buildDepError "terminfo"))
             ];
+          buildable = if flags.only-library then false else true;
           };
         "haste-install-his" = {
           depends = [
@@ -153,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = if flags.only-library then false else true;
           };
         "haste-copy-pkg" = {
           depends = [
@@ -162,6 +168,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc" or (buildDepError "ghc"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = if flags.only-library then false else true;
           };
         "haste-cat" = {
           depends = [
@@ -180,6 +187,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = if flags.only-library then false else true;
           };
         };
       };

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."gtk-mac-integration-gtk2" or (pkgConfDepError "gtk-mac-integration-gtk2"))
           ];
+        buildable = true;
         };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pwstore-fast" or (buildDepError "pwstore-fast"))
           (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
           ];
+        buildable = true;
         };
       };
     }

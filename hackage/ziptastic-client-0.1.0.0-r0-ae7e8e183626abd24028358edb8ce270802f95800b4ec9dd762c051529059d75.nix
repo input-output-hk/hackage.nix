@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tz" or (buildDepError "tz"))
           (hsPkgs."ziptastic-core" or (buildDepError "ziptastic-core"))
           ];
+        buildable = true;
         };
       };
     }

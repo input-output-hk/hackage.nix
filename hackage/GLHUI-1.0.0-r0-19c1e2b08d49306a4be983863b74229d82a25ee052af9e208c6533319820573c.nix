@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."GL" or (sysDepError "GL"))
           (pkgs."rt" or (sysDepError "rt"))
           ];
+        buildable = true;
         };
       };
     }

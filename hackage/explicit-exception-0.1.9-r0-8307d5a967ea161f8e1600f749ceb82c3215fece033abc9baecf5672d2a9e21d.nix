@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."special-functors" or (buildDepError "special-functors"))
               (hsPkgs."base" or (buildDepError "base"))
               ]);
+        buildable = true;
         };
       exes = {
         "ee-tar" = {
@@ -76,12 +77,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."tar" or (buildDepError "tar"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         "ee-test" = {
           depends = (pkgs.lib).optional (flags.buildtests) (hsPkgs."bytestring" or (buildDepError "bytestring"));
+          buildable = if flags.buildtests then true else false;
           };
-        "ee-unzip" = {};
-        "ee-writer" = {};
+        "ee-unzip" = { buildable = if !flags.buildtests then false else true; };
+        "ee-writer" = {
+          buildable = if !flags.buildtests then false else true;
+          };
         };
       };
     }

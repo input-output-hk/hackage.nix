@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
           (hsPkgs."url" or (buildDepError "url"))
           ];
+        buildable = true;
         };
       };
     }

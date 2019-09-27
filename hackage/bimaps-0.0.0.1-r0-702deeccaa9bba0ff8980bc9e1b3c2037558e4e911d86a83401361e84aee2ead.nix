@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
           (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
           ];
+        buildable = true;
         };
       exes = {
         "BenchmarkBimaps" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.benchmark then true else false;
           };
         };
       };

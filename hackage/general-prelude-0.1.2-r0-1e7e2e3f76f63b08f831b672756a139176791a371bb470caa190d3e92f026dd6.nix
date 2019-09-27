@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."strict" or (buildDepError "strict"))
           (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
           ];
+        buildable = true;
         };
       };
     }

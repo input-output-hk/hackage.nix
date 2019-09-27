@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashtables" or (buildDepError "hashtables"))
           (hsPkgs."ttrie" or (buildDepError "ttrie"))
           ];
+        buildable = true;
         };
       };
     }

@@ -77,20 +77,25 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."RSA" or (buildDepError "RSA"))
           (hsPkgs."uri" or (buildDepError "uri"))
           ];
+        buildable = true;
         };
       exes = {
         "hell-insert" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "hell-get" = {
           depends = [ (hsPkgs."regex-posix" or (buildDepError "regex-posix")) ];
+          buildable = true;
           };
-        "hell-meta" = {};
+        "hell-meta" = { buildable = true; };
         "hell-nodes" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "hell-fsck" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "hell-serve" = {
           depends = [
@@ -99,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         };
       };

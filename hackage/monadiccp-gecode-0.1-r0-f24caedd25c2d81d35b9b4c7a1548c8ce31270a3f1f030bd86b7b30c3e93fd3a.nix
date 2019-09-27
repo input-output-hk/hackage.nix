@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."gecodesearch" or (sysDepError "gecodesearch"))
           ];
         frameworks = [ (pkgs."gecode" or (sysDepError "gecode")) ];
+        buildable = true;
         };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."toolshed" or (buildDepError "toolshed"))
             ];
+          buildable = true;
           };
         };
       };

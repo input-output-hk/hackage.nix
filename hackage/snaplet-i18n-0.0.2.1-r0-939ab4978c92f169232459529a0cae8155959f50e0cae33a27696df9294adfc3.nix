@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
           (hsPkgs."heist" or (buildDepError "heist"))
           ];
+        buildable = true;
         };
       };
     }

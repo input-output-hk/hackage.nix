@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
             ];
+          buildable = true;
           };
         };
       };

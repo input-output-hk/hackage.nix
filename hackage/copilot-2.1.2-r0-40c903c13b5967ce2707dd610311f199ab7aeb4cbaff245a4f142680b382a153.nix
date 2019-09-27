@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."copilot-cbmc" or (buildDepError "copilot-cbmc"))
           (hsPkgs."copilot-c99" or (buildDepError "copilot-c99"))
           ];
+        buildable = true;
         };
       exes = {
         "copilot-regression" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

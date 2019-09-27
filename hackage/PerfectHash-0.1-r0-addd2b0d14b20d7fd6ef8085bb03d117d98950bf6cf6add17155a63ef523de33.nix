@@ -65,14 +65,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           ];
         libs = [ (pkgs."cmph" or (sysDepError "cmph")) ];
+        buildable = true;
         };
       exes = {
-        "benchmark" = { libs = [ (pkgs."cmph" or (sysDepError "cmph")) ]; };
+        "benchmark" = {
+          libs = [ (pkgs."cmph" or (sysDepError "cmph")) ];
+          buildable = true;
+          };
         "benchmark_trie" = {
           depends = [
             (hsPkgs."bytestring-trie" or (buildDepError "bytestring-trie"))
             ];
           libs = [ (pkgs."cmph" or (sysDepError "cmph")) ];
+          buildable = true;
           };
         "test" = {
           depends = [
@@ -80,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
           libs = [ (pkgs."cmph" or (sysDepError "cmph")) ];
+          buildable = true;
           };
         };
       };

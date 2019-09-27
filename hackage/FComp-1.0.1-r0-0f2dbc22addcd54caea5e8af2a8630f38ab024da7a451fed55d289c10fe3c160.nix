@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."time" or (buildDepError "time"))
           ] ++ [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+        buildable = true;
         };
       exes = {
         "fcomp" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."time" or (buildDepError "time"))
             ] ++ [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ];
+          buildable = true;
           };
         };
       };

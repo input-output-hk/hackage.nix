@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."bin-package-db" or (buildDepError "bin-package-db"))
             ];
+          buildable = true;
           };
         };
       };

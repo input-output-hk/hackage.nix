@@ -61,6 +61,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."th-extras" or (buildDepError "th-extras"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+          then false
+          else true;
         };
       tests = {
         "test" = {
@@ -70,6 +73,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
             (hsPkgs."dependent-sum-template" or (buildDepError "dependent-sum-template"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "8.0"
+            then false
+            else true;
           };
         };
       };

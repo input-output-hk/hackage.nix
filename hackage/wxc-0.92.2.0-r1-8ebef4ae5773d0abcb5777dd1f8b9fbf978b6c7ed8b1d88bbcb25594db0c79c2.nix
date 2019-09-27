@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wxdirect" or (buildDepError "wxdirect"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
       };
     }

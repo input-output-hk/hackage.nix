@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."floatshow" or (buildDepError "floatshow"))
           (hsPkgs."type-level-natural-number" or (buildDepError "type-level-natural-number"))
           ];
+        buildable = true;
         };
       };
     }

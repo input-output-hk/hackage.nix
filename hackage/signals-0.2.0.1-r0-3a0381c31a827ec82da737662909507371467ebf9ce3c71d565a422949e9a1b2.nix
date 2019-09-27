@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exception-transformers" or (buildDepError "exception-transformers"))
           (hsPkgs."exception-mtl" or (buildDepError "exception-mtl"))
           ];
+        buildable = true;
         };
       };
     }

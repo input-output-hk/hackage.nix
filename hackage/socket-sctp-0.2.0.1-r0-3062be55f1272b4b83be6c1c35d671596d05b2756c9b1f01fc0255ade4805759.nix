@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
+        buildable = true;
         };
       tests = {
         "SendReceiveMessage" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."socket" or (buildDepError "socket"))
             (hsPkgs."socket-sctp" or (buildDepError "socket-sctp"))
             ];
+          buildable = true;
           };
         "TooSmallBuffer" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."socket" or (buildDepError "socket"))
             (hsPkgs."socket-sctp" or (buildDepError "socket-sctp"))
             ];
+          buildable = true;
           };
         "SendAll" = {
           depends = [
@@ -92,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
             ];
+          buildable = true;
           };
         "Notifications" = {
           depends = [
@@ -100,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."socket" or (buildDepError "socket"))
             (hsPkgs."socket-sctp" or (buildDepError "socket-sctp"))
             ];
+          buildable = true;
           };
         };
       };

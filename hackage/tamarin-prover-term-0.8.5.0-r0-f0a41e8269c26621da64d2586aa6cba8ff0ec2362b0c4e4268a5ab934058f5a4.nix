@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           (hsPkgs."tamarin-prover-utils" or (buildDepError "tamarin-prover-utils"))
           ];
+        buildable = true;
         };
       };
     }

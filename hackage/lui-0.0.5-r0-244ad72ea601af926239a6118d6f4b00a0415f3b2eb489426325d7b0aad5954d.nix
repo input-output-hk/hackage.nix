@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskgame" or (buildDepError "haskgame"))
           (hsPkgs."MaybeT" or (buildDepError "MaybeT"))
           ];
+        buildable = true;
         };
       };
     }

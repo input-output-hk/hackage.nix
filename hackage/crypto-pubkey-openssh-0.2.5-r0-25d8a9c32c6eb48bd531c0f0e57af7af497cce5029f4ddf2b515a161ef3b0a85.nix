@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."asn1-types" or (buildDepError "asn1-types"))
           (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
           ];
+        buildable = true;
         };
       tests = {
         "crypto-pubkey-openssh-tests" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         };
       };

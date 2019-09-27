@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "shunya-library-exe" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."shunya-library" or (buildDepError "shunya-library"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -69,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."shunya-library" or (buildDepError "shunya-library"))
             ];
+          buildable = true;
           };
         };
       };

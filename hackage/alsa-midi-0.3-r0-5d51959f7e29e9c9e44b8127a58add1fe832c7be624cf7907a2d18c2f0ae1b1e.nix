@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."non-negative" or (buildDepError "non-negative"))
           ];
         libs = [ (pkgs."asound" or (sysDepError "asound")) ];
+        buildable = true;
         };
       exes = {
         "playnote" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."non-negative" or (buildDepError "non-negative"))
             ];
           libs = [ (pkgs."asound" or (sysDepError "asound")) ];
+          buildable = true;
           };
         "playmidi" = {
           depends = [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."non-negative" or (buildDepError "non-negative"))
             ];
           libs = [ (pkgs."asound" or (sysDepError "asound")) ];
+          buildable = true;
           };
         "mididump" = {
           depends = [
@@ -90,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."non-negative" or (buildDepError "non-negative"))
             ];
           libs = [ (pkgs."asound" or (sysDepError "asound")) ];
+          buildable = true;
           };
         };
       };

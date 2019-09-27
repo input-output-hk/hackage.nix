@@ -93,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
           (hsPkgs."natural" or (buildDepError "natural"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -108,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."waargonaut" or (buildDepError "waargonaut"))
             ];
+          buildable = true;
           };
         "waarg-tests" = {
           depends = [
@@ -137,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."contravariant" or (buildDepError "contravariant"))
             (hsPkgs."waargonaut" or (buildDepError "waargonaut"))
             ];
+          buildable = true;
           };
         };
       };

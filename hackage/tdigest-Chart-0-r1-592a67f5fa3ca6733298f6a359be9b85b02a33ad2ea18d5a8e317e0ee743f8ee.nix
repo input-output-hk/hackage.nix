@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."Chart" or (buildDepError "Chart"))
           ];
+        buildable = true;
         };
       tests = {
         "tdigest-chart-examples" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
             (hsPkgs."statistics" or (buildDepError "statistics"))
             ];
+          buildable = true;
           };
         };
       };

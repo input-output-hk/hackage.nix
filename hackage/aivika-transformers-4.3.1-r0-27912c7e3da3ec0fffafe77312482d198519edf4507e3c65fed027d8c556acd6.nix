@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."aivika" or (buildDepError "aivika"))
           ];
+        buildable = true;
         };
       };
     }

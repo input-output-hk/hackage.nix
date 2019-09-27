@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."easytensor" or (buildDepError "easytensor"))
           (hsPkgs."vulkan-api" or (buildDepError "vulkan-api"))
           ];
+        buildable = true;
         };
       };
     }

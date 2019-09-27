@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."kafka-device" or (buildDepError "kafka-device"))
           (hsPkgs."milena" or (buildDepError "milena"))
           ];
+        buildable = true;
         };
       exes = {
         "kafka-device-spacenav" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."milena" or (buildDepError "milena"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         };
       };

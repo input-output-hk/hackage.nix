@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
           ];
+        buildable = true;
         };
       exes = {
         "benchmark" = {
@@ -118,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -157,6 +159,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
             ];
+          buildable = true;
           };
         };
       };

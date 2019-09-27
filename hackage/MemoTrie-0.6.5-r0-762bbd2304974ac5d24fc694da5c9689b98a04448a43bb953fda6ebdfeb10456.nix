@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."void" or (buildDepError "void"))
             ];
+        buildable = true;
         };
       exes = {
         "generic" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."MemoTrie" or (buildDepError "MemoTrie"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

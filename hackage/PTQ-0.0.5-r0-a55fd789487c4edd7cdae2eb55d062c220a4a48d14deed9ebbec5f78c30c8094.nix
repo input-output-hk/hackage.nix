@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ] ++ (pkgs.lib).optional (flags.utf8terminal) (hsPkgs."utf8-string" or (buildDepError "utf8-string"));
+          buildable = true;
           };
         "ptq.cgi" = {
           depends = [
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."xml" or (buildDepError "xml"))
             ] ++ (pkgs.lib).optional (flags.utf8cgi) (hsPkgs."utf8-string" or (buildDepError "utf8-string"));
+          buildable = true;
           };
         };
       };

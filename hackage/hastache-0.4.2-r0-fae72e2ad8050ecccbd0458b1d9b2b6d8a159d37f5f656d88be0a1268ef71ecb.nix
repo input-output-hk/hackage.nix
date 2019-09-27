@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
           (hsPkgs."ieee754" or (buildDepError "ieee754"))
           ];
+        buildable = true;
         };
       };
     }

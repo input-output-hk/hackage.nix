@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsyslog" or (buildDepError "hsyslog"))
             (hsPkgs."hdaemonize" or (buildDepError "hdaemonize"))
             ];
+          buildable = true;
           };
         };
       };

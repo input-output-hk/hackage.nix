@@ -107,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."unix" or (buildDepError "unix"))
             ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"));
+        buildable = true;
         };
       tests = {
         "doctest" = {
@@ -115,12 +116,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."accelerate" or (buildDepError "accelerate"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+            then false
+            else true;
           };
         "nofib-interpreter" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."accelerate" or (buildDepError "accelerate"))
             ];
+          buildable = true;
           };
         };
       };

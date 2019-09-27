@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           ];
+        buildable = true;
         };
       };
     }

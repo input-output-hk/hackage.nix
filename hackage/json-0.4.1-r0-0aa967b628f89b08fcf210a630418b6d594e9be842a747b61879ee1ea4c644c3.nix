@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             ]) ++ (pkgs.lib).optional (flags.parsec) (hsPkgs."parsec" or (buildDepError "parsec"))) ++ (pkgs.lib).optional (flags.pretty) (hsPkgs."pretty" or (buildDepError "pretty"))
           else [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       };
     }

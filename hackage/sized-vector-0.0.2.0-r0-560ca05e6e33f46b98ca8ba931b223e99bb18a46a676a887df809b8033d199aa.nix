@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-natural" or (buildDepError "type-natural"))
           (hsPkgs."monomorphic" or (buildDepError "monomorphic"))
           ];
+        buildable = true;
         };
       };
     }

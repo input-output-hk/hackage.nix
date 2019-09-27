@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."vector-sized" or (buildDepError "vector-sized"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."finite-typelits" or (buildDepError "finite-typelits"))
             (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
             ];
+          buildable = true;
           };
         };
       };

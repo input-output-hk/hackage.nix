@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."audiofile" or (pkgConfDepError "audiofile"))
           ];
+        buildable = true;
         };
       };
     }

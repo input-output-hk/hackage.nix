@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."functor-apply" or (buildDepError "functor-apply"))
           (hsPkgs."comonad-transformers" or (buildDepError "comonad-transformers"))
           ];
+        buildable = true;
         };
       };
     }

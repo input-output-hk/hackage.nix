@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time-units" or (buildDepError "time-units"))
           (hsPkgs."vty" or (buildDepError "vty"))
           ];
+        buildable = true;
         };
       exes = {
         "betris" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time-units" or (buildDepError "time-units"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = true;
           };
         };
       };

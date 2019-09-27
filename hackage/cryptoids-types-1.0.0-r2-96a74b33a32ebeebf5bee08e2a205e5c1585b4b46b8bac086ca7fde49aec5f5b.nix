@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
           (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
           ];
+        buildable = true;
         };
       };
     }

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default" or (buildDepError "data-default"))
           (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
           ] ++ (pkgs.lib).optional (flags.hydra) (hsPkgs."hydra-print" or (buildDepError "hydra-print"));
+        buildable = true;
         };
       tests = {
         "hsbencher-unit-tests" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."text" or (buildDepError "text"))
             ] ++ (pkgs.lib).optional (flags.hydra) (hsPkgs."hydra-print" or (buildDepError "hydra-print"));
+          buildable = true;
           };
         "hsbencher-test1" = {
           depends = [
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ] ++ (pkgs.lib).optional (flags.hydra) (hsPkgs."hydra-print" or (buildDepError "hydra-print"));
+          buildable = true;
           };
         "hsbencher-test2" = {
           depends = [
@@ -103,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ] ++ (pkgs.lib).optional (flags.hydra) (hsPkgs."hydra-print" or (buildDepError "hydra-print"));
+          buildable = true;
           };
         "hsbencher-test3" = {
           depends = [
@@ -112,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ] ++ (pkgs.lib).optional (flags.hydra) (hsPkgs."hydra-print" or (buildDepError "hydra-print"));
+          buildable = true;
           };
         };
       };

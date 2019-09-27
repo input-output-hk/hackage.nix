@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
             ];
           libs = (pkgs.lib).optional (system.isLinux) (pkgs."X11" or (sysDepError "X11")) ++ (pkgs.lib).optional (system.isOsx) (pkgs."objc" or (sysDepError "objc"));
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."repa-convert" or (buildDepError "repa-convert"))
           (hsPkgs."filelock" or (buildDepError "filelock"))
           ];
+        buildable = true;
         };
       };
     }

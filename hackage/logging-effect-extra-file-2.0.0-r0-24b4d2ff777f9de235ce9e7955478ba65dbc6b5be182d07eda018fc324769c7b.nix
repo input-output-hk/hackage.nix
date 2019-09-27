@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "log-file" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."logging-effect-extra-file" or (buildDepError "logging-effect-extra-file"))
             (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
             ];
+          buildable = true;
           };
         "log-file-and-severity" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."logging-effect-extra-file" or (buildDepError "logging-effect-extra-file"))
             (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
             ];
+          buildable = true;
           };
         };
       };

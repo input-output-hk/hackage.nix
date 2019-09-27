@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ]);
+        buildable = true;
         };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Shellac-readline" or (buildDepError "Shellac-readline"))
             ];
           libs = [ (pkgs."readline" or (sysDepError "readline")) ];
+          buildable = true;
           };
         };
       };

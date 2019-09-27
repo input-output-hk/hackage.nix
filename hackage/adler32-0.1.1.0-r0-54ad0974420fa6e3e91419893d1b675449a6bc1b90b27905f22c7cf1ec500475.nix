@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ] ++ (pkgs.lib).optionals (flags.zlib) ((pkgs.lib).optional (!(!system.isWindows)) (hsPkgs."zlib" or (buildDepError "zlib")));
         libs = (pkgs.lib).optionals (flags.zlib) ((pkgs.lib).optional (!system.isWindows) (pkgs."z" or (sysDepError "z")));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

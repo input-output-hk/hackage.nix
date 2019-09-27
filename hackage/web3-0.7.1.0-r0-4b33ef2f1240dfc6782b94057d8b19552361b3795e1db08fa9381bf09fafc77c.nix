@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ] ++ (pkgs.lib).optional (flags.tls) (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"));
+        buildable = true;
         };
       tests = {
         "unit" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."web3" or (buildDepError "web3"))
             ];
+          buildable = true;
           };
         "live" = {
           depends = [
@@ -116,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."web3" or (buildDepError "web3"))
             ];
+          buildable = true;
           };
         };
       };

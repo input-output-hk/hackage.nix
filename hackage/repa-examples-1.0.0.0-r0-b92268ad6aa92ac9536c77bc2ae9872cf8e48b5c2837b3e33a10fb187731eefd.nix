@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dph-prim-par" or (buildDepError "dph-prim-par"))
             (hsPkgs."repa" or (buildDepError "repa"))
             ];
+          buildable = true;
           };
         "repa-mmult" = {
           depends = [
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dph-prim-par" or (buildDepError "dph-prim-par"))
             (hsPkgs."repa" or (buildDepError "repa"))
             ];
+          buildable = true;
           };
         "repa-fft" = {
           depends = [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dph-base" or (buildDepError "dph-base"))
             (hsPkgs."repa" or (buildDepError "repa"))
             ];
+          buildable = true;
           };
         };
       };

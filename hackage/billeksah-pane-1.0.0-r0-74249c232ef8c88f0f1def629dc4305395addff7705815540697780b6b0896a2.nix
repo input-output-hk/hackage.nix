@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."billeksah-services" or (buildDepError "billeksah-services"))
           ];
+        buildable = true;
         };
       };
     }

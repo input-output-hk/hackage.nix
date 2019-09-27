@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-middleware-content-type" or (buildDepError "wai-middleware-content-type"))
           (hsPkgs."wai-middleware-verbs" or (buildDepError "wai-middleware-verbs"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-middleware-verbs" or (buildDepError "wai-middleware-verbs"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       tests = {
@@ -132,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."hspec-wai" or (buildDepError "hspec-wai"))
             ];
+          buildable = true;
           };
         };
       };

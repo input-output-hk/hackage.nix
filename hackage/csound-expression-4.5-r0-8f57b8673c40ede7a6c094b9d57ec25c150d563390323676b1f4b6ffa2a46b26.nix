@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."csound-expression-dynamic" or (buildDepError "csound-expression-dynamic"))
           (hsPkgs."csound-expression-opcodes" or (buildDepError "csound-expression-opcodes"))
           ];
+        buildable = true;
         };
       };
     }

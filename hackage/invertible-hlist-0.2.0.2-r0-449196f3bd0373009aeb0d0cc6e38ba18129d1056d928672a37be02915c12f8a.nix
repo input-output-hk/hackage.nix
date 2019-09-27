@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."invertible" or (buildDepError "invertible"))
           (hsPkgs."HList" or (buildDepError "HList"))
           ];
+        buildable = true;
         };
       };
     }

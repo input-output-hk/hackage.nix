@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rio" or (buildDepError "rio"))
           (hsPkgs."teardown" or (buildDepError "teardown"))
           ];
+        buildable = true;
         };
       };
     }

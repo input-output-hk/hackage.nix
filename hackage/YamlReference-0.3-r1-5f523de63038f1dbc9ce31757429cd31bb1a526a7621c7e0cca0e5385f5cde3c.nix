@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
           (hsPkgs."dlist" or (buildDepError "dlist"))
           ];
+        buildable = true;
         };
       exes = {
         "yaml2yeast" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
             (hsPkgs."dlist" or (buildDepError "dlist"))
             ];
+          buildable = true;
           };
         "yaml2yeast-test" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
             (hsPkgs."dlist" or (buildDepError "dlist"))
             ];
+          buildable = true;
           };
         };
       };

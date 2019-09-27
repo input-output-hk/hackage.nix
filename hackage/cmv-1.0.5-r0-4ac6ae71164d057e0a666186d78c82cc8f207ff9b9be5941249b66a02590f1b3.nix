@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."diagrams-core" or (buildDepError "diagrams-core"))
           ];
+        buildable = true;
         };
       exes = {
         "CMCV" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."StockholmAlignment" or (buildDepError "StockholmAlignment"))
             ];
+          buildable = true;
           };
         "CMV" = {
           depends = [
@@ -121,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."StockholmAlignment" or (buildDepError "StockholmAlignment"))
             ];
+          buildable = true;
           };
         "CMCWStoCMCV" = {
           depends = [
@@ -141,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "CMCtoHMMC" = {
           depends = [
@@ -162,6 +166,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."BioHMM" or (buildDepError "BioHMM"))
             ];
+          buildable = true;
           };
         "HMMCtoCMC" = {
           depends = [
@@ -183,6 +188,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."BioHMM" or (buildDepError "BioHMM"))
             ];
+          buildable = true;
           };
         "CMVJson" = {
           depends = [
@@ -201,6 +207,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
+          buildable = true;
           };
         "HMMCV" = {
           depends = [
@@ -220,6 +227,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."BioHMM" or (buildDepError "BioHMM"))
             (hsPkgs."StockholmAlignment" or (buildDepError "StockholmAlignment"))
             ];
+          buildable = true;
           };
         "HMMV" = {
           depends = [
@@ -239,6 +247,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."BioHMM" or (buildDepError "BioHMM"))
             (hsPkgs."StockholmAlignment" or (buildDepError "StockholmAlignment"))
             ];
+          buildable = true;
           };
         };
       };

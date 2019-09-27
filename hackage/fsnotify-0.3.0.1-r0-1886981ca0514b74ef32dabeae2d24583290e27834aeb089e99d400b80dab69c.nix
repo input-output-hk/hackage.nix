@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else if system.isWindows
             then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
             else (pkgs.lib).optional (system.isOsx) (hsPkgs."hfsevents" or (buildDepError "hfsevents")));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."temporary" or (buildDepError "temporary"))
               (hsPkgs."random" or (buildDepError "random"))
               ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."comark-parser" or (buildDepError "comark-parser"))
           (hsPkgs."comark-html" or (buildDepError "comark-html"))
           ];
+        buildable = true;
         };
       exes = {
         "comark-hs" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."comark" or (buildDepError "comark"))
             ];
+          buildable = true;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       tests = {
         "Homogeneous" = {
@@ -66,18 +67,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."homoiconic" or (buildDepError "homoiconic"))
             ];
+          buildable = true;
           };
         "Heterogeneous" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."homoiconic" or (buildDepError "homoiconic"))
             ];
+          buildable = true;
           };
         "Constrained" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."homoiconic" or (buildDepError "homoiconic"))
             ];
+          buildable = true;
           };
         };
       };

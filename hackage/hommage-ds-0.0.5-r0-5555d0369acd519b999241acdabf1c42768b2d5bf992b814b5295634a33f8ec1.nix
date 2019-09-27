@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."DirectSound" or (buildDepError "DirectSound"))
           (hsPkgs."hommage" or (buildDepError "hommage"))
           ];
+        buildable = true;
         };
       };
     }

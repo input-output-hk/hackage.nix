@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           ];
         libs = [ (pkgs."terrahsc" or (sysDepError "terrahsc")) ];
+        buildable = true;
         };
       };
     }

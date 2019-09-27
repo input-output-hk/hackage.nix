@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iproute" or (buildDepError "iproute"))
           (hsPkgs."reinterpret-cast" or (buildDepError "reinterpret-cast"))
           ];
+        buildable = true;
         };
       };
     }

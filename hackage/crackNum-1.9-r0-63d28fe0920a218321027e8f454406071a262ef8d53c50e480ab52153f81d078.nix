@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
           (hsPkgs."FloatingHex" or (buildDepError "FloatingHex"))
           ];
+        buildable = true;
         };
       exes = {
         "crackNum" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
             (hsPkgs."FloatingHex" or (buildDepError "FloatingHex"))
             ];
+          buildable = true;
           };
         };
       };

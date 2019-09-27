@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."SDL" or (buildDepError "SDL"))
           (hsPkgs."SDL-ttf" or (buildDepError "SDL-ttf"))
           ];
+        buildable = true;
         };
       };
     }

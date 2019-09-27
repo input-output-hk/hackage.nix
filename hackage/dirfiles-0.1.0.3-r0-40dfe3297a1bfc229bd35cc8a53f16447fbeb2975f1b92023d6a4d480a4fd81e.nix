@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safecopy" or (buildDepError "safecopy"))
           (hsPkgs."hblock" or (buildDepError "hblock"))
           ];
+        buildable = true;
         };
       };
     }

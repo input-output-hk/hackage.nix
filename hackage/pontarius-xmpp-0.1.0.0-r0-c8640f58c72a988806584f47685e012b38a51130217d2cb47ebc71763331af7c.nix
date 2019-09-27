@@ -84,7 +84,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default" or (buildDepError "data-default"))
           (hsPkgs."stringprep" or (buildDepError "stringprep"))
           ];
+        buildable = true;
         };
-      exes = { "pontarius-xmpp-echoclient" = {}; };
+      exes = { "pontarius-xmpp-echoclient" = { buildable = true; }; };
       };
     }

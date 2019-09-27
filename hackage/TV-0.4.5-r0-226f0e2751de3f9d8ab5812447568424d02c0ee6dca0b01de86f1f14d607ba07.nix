@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."DeepArrow" or (buildDepError "DeepArrow"))
           (hsPkgs."TypeCompose" or (buildDepError "TypeCompose"))
           ];
+        buildable = true;
         };
       };
     }

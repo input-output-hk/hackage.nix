@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib-enum" or (buildDepError "zlib-enum"))
           ] ++ (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (!system.isOsx) (hsPkgs."process" or (buildDepError "process")));
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."Shell32" or (sysDepError "Shell32"));
+        buildable = true;
         };
       };
     }

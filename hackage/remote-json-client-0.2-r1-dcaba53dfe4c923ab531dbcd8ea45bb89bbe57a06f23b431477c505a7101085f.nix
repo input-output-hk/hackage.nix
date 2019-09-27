@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."natural-transformation" or (buildDepError "natural-transformation"))
           (hsPkgs."remote-json" or (buildDepError "remote-json"))
           ];
+        buildable = true;
         };
       };
     }

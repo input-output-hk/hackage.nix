@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           (hsPkgs."package-description-remote" or (buildDepError "package-description-remote"))
           ];
+        buildable = true;
         };
       exes = {
         "extract-dependencies" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."package-description-remote" or (buildDepError "package-description-remote"))
             ];
+          buildable = true;
           };
         };
       };

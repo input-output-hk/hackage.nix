@@ -59,10 +59,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
         "change-monger" = {
           depends = [ (hsPkgs."directory" or (buildDepError "directory")) ];
+          buildable = true;
           };
         };
       };

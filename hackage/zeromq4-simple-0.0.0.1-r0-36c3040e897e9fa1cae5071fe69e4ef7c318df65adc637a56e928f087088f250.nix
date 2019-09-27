@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uuid" or (buildDepError "uuid"))
           (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
           ];
+        buildable = true;
         };
       };
     }

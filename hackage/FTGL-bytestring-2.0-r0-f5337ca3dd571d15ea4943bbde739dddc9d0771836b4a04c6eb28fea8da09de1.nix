@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."StateVar-transformer" or (buildDepError "StateVar-transformer"))
           ];
         libs = [ (pkgs."ftgl" or (sysDepError "ftgl")) ];
+        buildable = true;
         };
       };
     }

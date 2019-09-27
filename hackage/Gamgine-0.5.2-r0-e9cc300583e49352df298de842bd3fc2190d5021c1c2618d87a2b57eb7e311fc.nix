@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ListZipper" or (buildDepError "ListZipper"))
           (hsPkgs."composition" or (buildDepError "composition"))
           ];
+        buildable = true;
         };
       };
     }

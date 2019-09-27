@@ -63,7 +63,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."colock" or (buildDepError "colock"))
           ] ++ (pkgs.lib).optional (flags.small_base) (hsPkgs."directory" or (buildDepError "directory"));
+        buildable = true;
         };
-      exes = { "plox-read" = {}; "plox-write" = {}; };
+      exes = {
+        "plox-read" = { buildable = true; };
+        "plox-write" = { buildable = true; };
+        };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
           ];
+        buildable = true;
         };
       tests = {
         "zeromq4-conduit-test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."zeromq4-conduit" or (buildDepError "zeromq4-conduit"))
             ];
+          buildable = true;
           };
         };
       };

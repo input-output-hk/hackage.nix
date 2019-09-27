@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."uuid-types" or (buildDepError "uuid-types"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.1" && (compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+        buildable = true;
         };
       };
     }

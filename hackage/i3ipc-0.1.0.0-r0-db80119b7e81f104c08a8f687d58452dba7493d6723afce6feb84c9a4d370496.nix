@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."typed-process" or (buildDepError "typed-process"))
           ];
+        buildable = true;
         };
       tests = {
         "i3ipc-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."i3ipc" or (buildDepError "i3ipc"))
             ];
+          buildable = true;
           };
         };
       };

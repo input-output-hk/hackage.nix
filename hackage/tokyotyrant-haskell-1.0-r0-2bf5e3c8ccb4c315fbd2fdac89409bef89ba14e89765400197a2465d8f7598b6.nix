@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."tokyocabinet" or (sysDepError "tokyocabinet"))
           (pkgs."tokyotyrant" or (sysDepError "tokyotyrant"))
           ];
+        buildable = true;
         };
       };
     }

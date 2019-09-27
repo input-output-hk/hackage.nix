@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."Decimal" or (buildDepError "Decimal"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hakyll" or (buildDepError "hakyll"))
           (hsPkgs."ogmarkup" or (buildDepError "ogmarkup"))
           ];
+        buildable = true;
         };
       };
     }

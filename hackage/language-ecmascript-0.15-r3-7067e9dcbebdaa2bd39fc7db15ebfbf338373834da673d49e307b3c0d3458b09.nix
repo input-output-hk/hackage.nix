@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."Diff" or (buildDepError "Diff"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Diff" or (buildDepError "Diff"))
             (hsPkgs."language-ecmascript" or (buildDepError "language-ecmascript"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if flags.link-nlopt-cxx
           then [ (pkgs."nlopt_cxx" or (sysDepError "nlopt_cxx")) ]
           else [ (pkgs."nlopt" or (sysDepError "nlopt")) ];
+        buildable = true;
         };
       tests = {
         "example" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."nlopt-haskell" or (buildDepError "nlopt-haskell"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

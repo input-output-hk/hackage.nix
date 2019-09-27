@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
           ];
+        buildable = true;
         };
       tests = {
         "rainbow-instances" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
             ];
+          buildable = true;
           };
         "test8color" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
             ];
+          buildable = true;
           };
         "test256color" = {
           depends = [
@@ -91,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
             ];
+          buildable = true;
           };
         "colorTest" = {
           depends = [
@@ -100,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
             ];
+          buildable = true;
           };
         };
       };

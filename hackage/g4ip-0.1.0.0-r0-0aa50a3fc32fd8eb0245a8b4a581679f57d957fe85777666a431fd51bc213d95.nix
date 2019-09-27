@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       tests = {
         "test-g4ip" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."g4ip" or (buildDepError "g4ip"))
             ];
+          buildable = true;
           };
         };
       };

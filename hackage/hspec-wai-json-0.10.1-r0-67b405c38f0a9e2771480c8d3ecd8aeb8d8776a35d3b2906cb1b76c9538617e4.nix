@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hspec-wai" or (buildDepError "hspec-wai"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-wai" or (buildDepError "hspec-wai"))
             (hsPkgs."hspec-wai-json" or (buildDepError "hspec-wai-json"))
             ];
+          buildable = true;
           };
         };
       };

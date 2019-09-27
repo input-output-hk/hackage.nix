@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."regex-pcre-builtin" or (buildDepError "regex-pcre-builtin"))
           ];
+        buildable = true;
         };
       tests = {
         "Test" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."prefix-expression" or (buildDepError "prefix-expression"))
             ];
+          buildable = true;
           };
         };
       };

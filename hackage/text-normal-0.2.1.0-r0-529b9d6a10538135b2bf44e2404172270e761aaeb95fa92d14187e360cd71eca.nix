@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."text-icu" or (buildDepError "text-icu"))
           ];
+        buildable = true;
         };
       tests = {
         "main" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
             (hsPkgs."text-normal" or (buildDepError "text-normal"))
             ];
+          buildable = true;
           };
         };
       };

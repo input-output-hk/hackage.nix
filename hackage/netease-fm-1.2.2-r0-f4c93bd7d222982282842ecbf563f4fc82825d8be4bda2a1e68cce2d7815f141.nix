@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
           (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
           ];
+        buildable = true;
         };
       exes = {
         "netease-fm" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vty" or (buildDepError "vty"))
             (hsPkgs."netease-fm" or (buildDepError "netease-fm"))
             ];
+          buildable = true;
           };
         };
       };

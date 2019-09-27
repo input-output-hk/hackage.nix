@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xmonad" or (buildDepError "xmonad"))
           (hsPkgs."xmonad-contrib" or (buildDepError "xmonad-contrib"))
           ];
+        buildable = true;
         };
       };
     }

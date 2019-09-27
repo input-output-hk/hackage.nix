@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel" or (buildDepError "parallel"))
           (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
           ];
+        buildable = true;
         };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."CEGUIBase-0.7.7" or (sysDepError "CEGUIBase-0.7.7"))
             (pkgs."CEGUIOgreRenderer-0.7.7" or (sysDepError "CEGUIOgreRenderer-0.7.7"))
             ];
+        buildable = true;
         };
       };
     }

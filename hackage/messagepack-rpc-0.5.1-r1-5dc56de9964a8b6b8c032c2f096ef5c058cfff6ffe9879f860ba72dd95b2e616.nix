@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."messagepack" or (buildDepError "messagepack"))
           (hsPkgs."network-simple" or (buildDepError "network-simple"))
           ];
+        buildable = true;
         };
       };
     }

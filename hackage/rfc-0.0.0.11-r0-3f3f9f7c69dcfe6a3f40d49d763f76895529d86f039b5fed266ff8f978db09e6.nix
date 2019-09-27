@@ -98,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."markdown" or (buildDepError "markdown"))
           ];
+        buildable = true;
         };
       };
     }

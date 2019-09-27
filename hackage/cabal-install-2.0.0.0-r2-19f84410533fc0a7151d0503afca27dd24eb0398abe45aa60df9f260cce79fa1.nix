@@ -147,6 +147,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
           libs = (pkgs.lib).optional (system.isAix) (pkgs."bsd" or (sysDepError "bsd"));
+          buildable = true;
           };
         };
       tests = {
@@ -186,6 +187,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."unix" or (buildDepError "unix"))
               ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs."base" or (buildDepError "base"))) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs."tracetree" or (buildDepError "tracetree"));
+          buildable = true;
           };
         "memory-usage-tests" = {
           depends = ((((([
@@ -221,6 +223,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."unix" or (buildDepError "unix"))
               ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs."base" or (buildDepError "base"))) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs."tracetree" or (buildDepError "tracetree"));
+          buildable = true;
           };
         "solver-quickcheck" = {
           depends = ((((([
@@ -257,6 +260,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."unix" or (buildDepError "unix"))
               ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs."base" or (buildDepError "base"))) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs."tracetree" or (buildDepError "tracetree"));
+          buildable = true;
           };
         "integration-tests2" = {
           depends = ((([
@@ -292,6 +296,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (pkgs.lib).optional (flags.old-bytestring) (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))) ++ (pkgs.lib).optional (flags.old-directory) (hsPkgs."old-time" or (buildDepError "old-time"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+          buildable = true;
           };
         };
       };

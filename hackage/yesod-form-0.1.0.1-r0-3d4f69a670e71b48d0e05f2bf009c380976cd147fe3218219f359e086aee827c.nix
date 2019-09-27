@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."web-routes-quasi" or (buildDepError "web-routes-quasi"))
           ];
+        buildable = true;
         };
       };
     }

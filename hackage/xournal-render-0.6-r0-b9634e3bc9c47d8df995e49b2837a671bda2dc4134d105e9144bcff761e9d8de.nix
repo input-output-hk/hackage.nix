@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xournal-types" or (buildDepError "xournal-types"))
             (hsPkgs."TypeCompose" or (buildDepError "TypeCompose"))
             ];
+        buildable = true;
         };
       };
     }

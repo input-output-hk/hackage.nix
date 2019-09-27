@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ddc-core-salt" or (buildDepError "ddc-core-salt"))
           (hsPkgs."ddc-core-simpl" or (buildDepError "ddc-core-simpl"))
           ];
+        buildable = true;
         };
       };
     }

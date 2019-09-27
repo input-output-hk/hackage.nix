@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MissingH" or (buildDepError "MissingH"))
             (hsPkgs."happstack-state" or (buildDepError "happstack-state"))
             ];
+          buildable = true;
           };
         };
       };

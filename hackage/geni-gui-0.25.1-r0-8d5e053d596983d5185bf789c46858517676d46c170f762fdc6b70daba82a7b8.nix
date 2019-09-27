@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."graphviz" or (buildDepError "graphviz"))
           ];
+        buildable = true;
         };
       exes = {
         "geni-gui" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GenI" or (buildDepError "GenI"))
             (hsPkgs."geni-gui" or (buildDepError "geni-gui"))
             ];
+          buildable = true;
           };
         };
       };

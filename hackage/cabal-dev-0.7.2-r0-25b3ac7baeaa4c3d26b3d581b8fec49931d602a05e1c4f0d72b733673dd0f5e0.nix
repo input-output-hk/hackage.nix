@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         "cabal-dev-test" = {
           depends = (pkgs.lib).optionals (!(flags.no-cabal-dev || !flags.build-tests)) ([
@@ -75,6 +76,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ [
             (hsPkgs."base" or (buildDepError "base"))
             ]) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
+          buildable = if flags.no-cabal-dev || !flags.build-tests
+            then false
+            else true;
           };
         "cabal-dev" = {
           depends = (pkgs.lib).optionals (!flags.no-cabal-dev) ([
@@ -95,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (buildToolDepError "cabal")))
             ];
+          buildable = if flags.no-cabal-dev then false else true;
           };
         };
       };

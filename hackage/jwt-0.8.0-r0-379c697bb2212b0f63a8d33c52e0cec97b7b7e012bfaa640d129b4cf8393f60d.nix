@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."RSA" or (buildDepError "RSA"))
           (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
           ];
+        buildable = true;
         };
       tests = {
         "testsuite" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."RSA" or (buildDepError "RSA"))
             (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
             ];
+          buildable = true;
           };
         "doctests" = {
           depends = [
@@ -109,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."jwt" or (buildDepError "jwt"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         };
       };

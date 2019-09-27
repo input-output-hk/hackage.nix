@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if compiler.isGhc && (compiler.version).ge "7.8"
             then [ (hsPkgs."haddock-api" or (buildDepError "haddock-api")) ]
             else [ (hsPkgs."haddock" or (buildDepError "haddock")) ]);
+          buildable = true;
           };
         };
       };

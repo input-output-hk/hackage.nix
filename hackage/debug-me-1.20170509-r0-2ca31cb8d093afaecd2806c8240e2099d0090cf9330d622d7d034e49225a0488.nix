@@ -94,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
           ];
+        buildable = true;
         };
       };
     }

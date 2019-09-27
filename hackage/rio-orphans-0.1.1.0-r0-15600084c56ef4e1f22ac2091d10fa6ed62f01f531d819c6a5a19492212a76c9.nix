@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rio" or (buildDepError "rio"))
           (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           ];
+        buildable = true;
         };
       tests = {
         "rio-orphans-test" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rio-orphans" or (buildDepError "rio-orphans"))
             (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             ];
+          buildable = true;
           };
         };
       };

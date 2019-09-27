@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."stdc++" or (sysDepError "stdc++"))
           ];
         frameworks = [ (pkgs."gecode" or (sysDepError "gecode")) ];
+        buildable = true;
         };
       tests = {
         "Queens" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."monadiccp-gecode" or (buildDepError "monadiccp-gecode"))
             ];
+          buildable = true;
           };
         };
       };

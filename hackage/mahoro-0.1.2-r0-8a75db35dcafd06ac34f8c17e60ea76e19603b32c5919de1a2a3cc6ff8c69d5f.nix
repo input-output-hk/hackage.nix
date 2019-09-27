@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
             (hsPkgs."curl" or (buildDepError "curl"))
             ];
+          buildable = true;
           };
         };
       };

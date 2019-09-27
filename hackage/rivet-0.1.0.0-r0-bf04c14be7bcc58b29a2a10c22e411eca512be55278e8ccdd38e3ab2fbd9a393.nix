@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rivet-core" or (buildDepError "rivet-core"))
             (hsPkgs."rivet-simple-deploy" or (buildDepError "rivet-simple-deploy"))
             ];
+          buildable = true;
           };
         };
       };

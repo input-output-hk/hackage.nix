@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."mkl_core" or (sysDepError "mkl_core"))
             ]);
         frameworks = (pkgs.lib).optional (flags.accelerate) (pkgs."Accelerate" or (sysDepError "Accelerate"));
+        buildable = true;
         };
       };
     }

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hcwiid" or (buildDepError "hcwiid"))
             (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))
             ];
+          buildable = true;
           };
         "carettah" = {
           depends = [
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

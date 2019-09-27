@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."path-io" or (buildDepError "path-io"))
           (hsPkgs."random" or (buildDepError "random"))
           ]) ++ (pkgs.lib).optional (flags.examples-sdl) (hsPkgs."SDL" or (buildDepError "SDL"));
+        buildable = true;
         };
       exes = {
         "loops" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."streamly" or (buildDepError "streamly"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "nested-loops" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "parallel-loops" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -98,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -108,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+          buildable = true;
           };
         };
       benchmarks = {
@@ -125,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."simple-conduit" or (buildDepError "simple-conduit"))
             (hsPkgs."transient" or (buildDepError "transient"))
             ];
+          buildable = true;
           };
         };
       };

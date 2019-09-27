@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."approximate" or (buildDepError "approximate"))
           (hsPkgs."lens" or (buildDepError "lens"))
           ];
+        buildable = true;
         };
       tests = {
         "TestSuite-Unoptimized" = {
@@ -89,24 +90,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = true;
           };
         "Example0001" = {
           depends = [
             (hsPkgs."subhask" or (buildDepError "subhask"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "Example0002" = {
           depends = [
             (hsPkgs."subhask" or (buildDepError "subhask"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "Example0003" = {
           depends = [
             (hsPkgs."subhask" or (buildDepError "subhask"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -117,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
+          buildable = true;
           };
         };
       };

@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Boolean" or (buildDepError "Boolean"))
           (hsPkgs."safecopy" or (buildDepError "safecopy"))
           ];
+        buildable = true;
         };
       };
     }

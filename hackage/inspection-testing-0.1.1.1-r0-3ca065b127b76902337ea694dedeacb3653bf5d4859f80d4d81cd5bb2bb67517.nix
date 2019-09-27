@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       tests = {
         "NS_NP" = {
@@ -68,18 +69,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "simple" = {
           depends = [
             (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "fusion" = {
           depends = [
             (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "text" = {
           depends = (pkgs.lib).optionals (flags.more-tests) [
@@ -88,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.more-tests then true else false;
           };
         "generic-lens" = {
           depends = (pkgs.lib).optionals (flags.more-tests) [
@@ -95,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."generic-lens" or (buildDepError "generic-lens"))
             ];
+          buildable = if flags.more-tests then true else false;
           };
         };
       };

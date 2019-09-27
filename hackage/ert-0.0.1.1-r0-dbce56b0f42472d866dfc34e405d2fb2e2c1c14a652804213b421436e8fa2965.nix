@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."attoparsec-expr" or (buildDepError "attoparsec-expr"))
           ] ++ (pkgs.lib).optional (flags.regex) (hsPkgs."regex-compat" or (buildDepError "regex-compat"));
+        buildable = true;
         };
       exes = {
         "ert" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
             ] ++ (pkgs.lib).optional (flags.yaml) (hsPkgs."yaml" or (buildDepError "yaml"));
+          buildable = true;
           };
         };
       };

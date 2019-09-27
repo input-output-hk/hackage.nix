@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fps" or (buildDepError "fps"))
           ];
         libs = [ (pkgs."pcre" or (sysDepError "pcre")) ];
+        buildable = true;
         };
       };
     }

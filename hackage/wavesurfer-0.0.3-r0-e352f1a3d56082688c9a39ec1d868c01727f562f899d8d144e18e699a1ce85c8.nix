@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring-show" or (buildDepError "bytestring-show"))
           (hsPkgs."delimited-text" or (buildDepError "delimited-text"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."show-combinators" or (buildDepError "show-combinators"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       tests = {
         "unit-test" = {
@@ -70,18 +71,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."generic-data" or (buildDepError "generic-data"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "record-test" = {
           depends = [
             (hsPkgs."generic-data" or (buildDepError "generic-data"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "example-test" = {
           depends = [
             (hsPkgs."generic-data" or (buildDepError "generic-data"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "microsurgery-test" = {
           depends = [
@@ -90,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."generic-data" or (buildDepError "generic-data"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "lens-surgery-test" = {
           depends = [
@@ -99,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."generic-lens" or (buildDepError "generic-lens"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "one-liner-surgery-test" = {
           depends = [
@@ -109,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."one-liner" or (buildDepError "one-liner"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

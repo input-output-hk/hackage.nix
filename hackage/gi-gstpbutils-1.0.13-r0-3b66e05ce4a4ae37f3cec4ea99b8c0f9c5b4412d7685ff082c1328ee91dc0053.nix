@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."gstreamer-pbutils-1.0" or (pkgConfDepError "gstreamer-pbutils-1.0"))
           ];
+        buildable = true;
         };
       };
     }

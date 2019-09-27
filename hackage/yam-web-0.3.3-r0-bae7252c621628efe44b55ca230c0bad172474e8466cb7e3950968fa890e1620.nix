@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yam-logger" or (buildDepError "yam-logger"))
           (hsPkgs."yam-transaction" or (buildDepError "yam-transaction"))
           ];
+        buildable = true;
         };
       exes = {
         "yam-web" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yam-transaction" or (buildDepError "yam-transaction"))
             (hsPkgs."yam-web" or (buildDepError "yam-web"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gruff" or (buildDepError "gruff"))
             (hsPkgs."ruff" or (buildDepError "ruff"))
             ];
+          buildable = true;
           };
         "gruff-octopus" = {
           depends = [
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."qd-vec" or (buildDepError "qd-vec"))
             (hsPkgs."Vec" or (buildDepError "Vec"))
             ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or (buildDepError "hmpfr"));
+          buildable = true;
           };
         "gruff-patterns" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."qd-vec" or (buildDepError "qd-vec"))
             (hsPkgs."Vec" or (buildDepError "Vec"))
             ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or (buildDepError "hmpfr"));
+          buildable = true;
           };
         "gruff-randoms" = {
           depends = [
@@ -93,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Vec" or (buildDepError "Vec"))
             (hsPkgs."random" or (buildDepError "random"))
             ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or (buildDepError "hmpfr"));
+          buildable = true;
           };
         "gruff-whn" = {
           depends = [
@@ -104,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Vec" or (buildDepError "Vec"))
             (hsPkgs."data-memocombinators" or (buildDepError "data-memocombinators"))
             ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or (buildDepError "hmpfr"));
+          buildable = true;
           };
         };
       };

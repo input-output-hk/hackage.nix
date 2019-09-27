@@ -98,6 +98,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo")));
         libs = (pkgs.lib).optionals (!(!flags.library)) ((pkgs.lib).optional (flags.curl) (pkgs."curl" or (sysDepError "curl")));
         build-tools = (pkgs.lib).optional (!(!flags.library)) (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (buildToolDepError "ghc")));
+        buildable = if !flags.library
+          then false
+          else if !flags.curl && !flags.http || flags.deps-only
+            then false
+            else true;
         };
       exes = {
         "witnesses" = {
@@ -133,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ]);
           build-tools = (pkgs.lib).optional (!(!flags.type-witnesses)) (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (buildToolDepError "ghc")));
+          buildable = if !flags.type-witnesses then false else true;
           };
         "darcs" = {
           depends = (((([
@@ -167,6 +173,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (buildToolDepError "ghc")))
             ];
+          buildable = if !flags.curl && !flags.http || flags.deps-only
+            then false
+            else true;
           };
         "unit" = {
           depends = (pkgs.lib).optionals (!(!flags.test)) ((((([
@@ -202,6 +211,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ]);
           build-tools = (pkgs.lib).optional (!(!flags.test)) (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (buildToolDepError "ghc")));
+          buildable = if !flags.test then false else true;
           };
         };
       };

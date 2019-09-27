@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = false;
         };
       exes = {
         "lambdabot" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-memocombinators" or (buildDepError "data-memocombinators"))
             (hsPkgs."arrows" or (buildDepError "arrows"))
             ];
+          buildable = true;
           };
         };
       };

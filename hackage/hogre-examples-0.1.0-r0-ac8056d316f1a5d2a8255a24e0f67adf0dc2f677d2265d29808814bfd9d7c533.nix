@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hogre" or (buildDepError "hogre"))
             ];
           libs = [ (pkgs."OgreMain" or (sysDepError "OgreMain")) ];
+          buildable = true;
           };
         "example_02" = {
           depends = [
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hogre" or (buildDepError "hogre"))
             ];
           libs = [ (pkgs."OgreMain" or (sysDepError "OgreMain")) ];
+          buildable = true;
           };
         };
       };

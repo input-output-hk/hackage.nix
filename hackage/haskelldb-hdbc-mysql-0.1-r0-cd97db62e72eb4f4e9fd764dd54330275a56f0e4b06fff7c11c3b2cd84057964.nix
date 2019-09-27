@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HDBC" or (buildDepError "HDBC"))
           (hsPkgs."HDBC-mysql" or (buildDepError "HDBC-mysql"))
           ];
+        buildable = true;
         };
-      exes = { "DBDirect-hdbc-mysql" = {}; };
+      exes = { "DBDirect-hdbc-mysql" = { buildable = true; }; };
       };
     }

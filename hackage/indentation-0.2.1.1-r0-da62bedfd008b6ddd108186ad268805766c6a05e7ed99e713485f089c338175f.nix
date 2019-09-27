@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."trifecta" or (buildDepError "trifecta"))
           (hsPkgs."parsers" or (buildDepError "parsers"))
           ];
+        buildable = true;
         };
       tests = {
         "test-indentation" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."indentation" or (buildDepError "indentation"))
             ] ++ (pkgs.lib).optional (flags.parsec) (hsPkgs."parsec" or (buildDepError "parsec"))) ++ (pkgs.lib).optional (flags.parsec) (hsPkgs."trifecta" or (buildDepError "trifecta"));
+          buildable = true;
           };
         };
       };

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."quickpull" or (buildDepError "quickpull"))
           ];
+        buildable = true;
         };
       exes = {
         "prednote-test" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."quickpull" or (buildDepError "quickpull"))
             ];
+          buildable = true;
           };
         "prednote-visual-test" = {
           depends = [
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."quickpull" or (buildDepError "quickpull"))
             ];
+          buildable = true;
           };
         };
       };

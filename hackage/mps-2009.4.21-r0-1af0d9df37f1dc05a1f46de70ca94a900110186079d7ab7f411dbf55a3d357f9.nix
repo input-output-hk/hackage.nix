@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."interpolatedstring-qq" or (buildDepError "interpolatedstring-qq"))
           ];
+        buildable = true;
         };
       };
     }

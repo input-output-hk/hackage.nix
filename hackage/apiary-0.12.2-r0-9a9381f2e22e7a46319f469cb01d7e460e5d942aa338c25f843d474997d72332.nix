@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ]);
+        buildable = true;
         };
       tests = {
         "test-framework" = {
@@ -99,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."wai" or (buildDepError "wai"))
               (hsPkgs."wai-test" or (buildDepError "wai-test"))
               ]);
+          buildable = true;
           };
         };
       };

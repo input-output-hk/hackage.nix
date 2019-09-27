@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."reactive-banana" or (buildDepError "reactive-banana"))
           (hsPkgs."sdl2" or (buildDepError "sdl2"))
           ];
+        buildable = true;
         };
       tests = {
         "reactive-banana-sdl2-test" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."reactive-banana-sdl2" or (buildDepError "reactive-banana-sdl2"))
             ];
+          buildable = true;
           };
         };
       };

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
           ];
+        buildable = true;
         };
       tests = {
         "stm-conduit-tests" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
             ];
+          buildable = true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."typed-process" or (buildDepError "typed-process"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."streamly" or (buildDepError "streamly"))
             ];
+          buildable = true;
           };
         };
       };

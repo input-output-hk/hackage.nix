@@ -61,10 +61,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Pup-Events-Client" or (buildDepError "Pup-Events-Client"))
           (hsPkgs."Pup-Events-PQueue" or (buildDepError "Pup-Events-PQueue"))
           ];
+        buildable = true;
         };
       exes = {
         "pupevents-all" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

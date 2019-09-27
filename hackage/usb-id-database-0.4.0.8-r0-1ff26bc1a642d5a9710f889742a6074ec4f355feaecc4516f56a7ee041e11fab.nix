@@ -63,7 +63,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers-unicode-symbols" or (buildDepError "containers-unicode-symbols"))
           (hsPkgs."parsimony" or (buildDepError "parsimony"))
           ];
+        buildable = true;
         };
-      exes = { "example" = {}; };
+      exes = {
+        "example" = { buildable = if flags.example then true else false; };
+        };
       };
     }

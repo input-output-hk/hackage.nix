@@ -197,6 +197,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-multicast" or (buildDepError "network-multicast"))
             (hsPkgs."network-info" or (buildDepError "network-info"))
             ]) ++ (pkgs.lib).optional (flags.torrentparser) (hsPkgs."torrent" or (buildDepError "torrent"))) ++ (pkgs.lib).optionals (flags.magicmime) ((pkgs.lib).optional (!system.isWindows) (hsPkgs."magic" or (buildDepError "magic")))) ++ (pkgs.lib).optional (flags.benchmark) (hsPkgs."criterion" or (buildDepError "criterion"));
+          buildable = true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           (hsPkgs."xml-conduit-writer" or (buildDepError "xml-conduit-writer"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-conduit-writer" or (buildDepError "xml-conduit-writer"))
             (hsPkgs."xml-isogen" or (buildDepError "xml-isogen"))
             ];
+          buildable = true;
           };
         };
       };

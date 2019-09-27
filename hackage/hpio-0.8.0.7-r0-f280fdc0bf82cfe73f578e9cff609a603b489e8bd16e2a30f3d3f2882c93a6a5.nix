@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."unix-bytestring" or (buildDepError "unix-bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "hpio-sysfs-example" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "hpio-example" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -105,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "hpio-reader-example" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -119,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -127,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = if !flags.test-hlint then false else true;
           };
         "doctest" = {
           depends = (pkgs.lib).optionals (!(!flags.test-doctests || compiler.isGhc && (compiler.version).lt "7.10")) [
@@ -134,6 +139,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if !flags.test-doctests || compiler.isGhc && (compiler.version).lt "7.10"
+            then false
+            else true;
           };
         "spec" = {
           depends = [
@@ -155,6 +163,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."unix-bytestring" or (buildDepError "unix-bytestring"))
             ];
+          buildable = true;
           };
         };
       };

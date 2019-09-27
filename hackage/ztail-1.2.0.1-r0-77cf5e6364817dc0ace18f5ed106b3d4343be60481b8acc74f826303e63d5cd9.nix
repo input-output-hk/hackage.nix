@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ] ++ (pkgs.lib).optional (flags.inotify) (hsPkgs."hinotify" or (buildDepError "hinotify"));
+          buildable = true;
           };
         };
       };

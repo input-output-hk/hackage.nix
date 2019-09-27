@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
           ];
+        buildable = true;
         };
       };
     }

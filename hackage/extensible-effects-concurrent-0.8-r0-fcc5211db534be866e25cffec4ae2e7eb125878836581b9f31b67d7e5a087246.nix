@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."tagged" or (buildDepError "tagged"))
           ];
+        buildable = true;
         };
       exes = {
         "extensible-effects-concurrent-example-1" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."extensible-effects-concurrent" or (buildDepError "extensible-effects-concurrent"))
             (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
             ];
+          buildable = true;
           };
         "extensible-effects-concurrent-example-2" = {
           depends = [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."extensible-effects-concurrent" or (buildDepError "extensible-effects-concurrent"))
             (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -109,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         };
       };

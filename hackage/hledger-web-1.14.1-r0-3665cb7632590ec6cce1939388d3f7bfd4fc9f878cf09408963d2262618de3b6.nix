@@ -97,6 +97,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
           (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
           ];
+        buildable = if system.isOsx && (compiler.isGhc && (compiler.version).lt "8.0")
+          then false
+          else true;
         };
       exes = {
         "hledger-web" = {
@@ -104,6 +107,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hledger-web" or (buildDepError "hledger-web"))
             ];
+          buildable = (if flags.library-only
+            then false
+            else true) && (if system.isOsx && (compiler.isGhc && (compiler.version).lt "8.0")
+            then false
+            else true);
           };
         };
       };

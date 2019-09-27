@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."simple-stacked-vm" or (buildDepError "simple-stacked-vm"))
           ];
+        buildable = true;
         };
-      exes = { "spc" = {}; };
+      exes = { "spc" = { buildable = true; }; };
       };
     }

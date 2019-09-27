@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hack" or (buildDepError "hack"))
           (hsPkgs."kibro" or (buildDepError "kibro"))
           ];
+        buildable = true;
         };
       };
     }

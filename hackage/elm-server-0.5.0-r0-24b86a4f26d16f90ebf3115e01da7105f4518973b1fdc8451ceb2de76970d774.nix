@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."Elm" or (buildDepError "Elm"))
             ];
+          buildable = true;
           };
         };
       };

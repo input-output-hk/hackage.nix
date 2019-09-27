@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safecopy" or (buildDepError "safecopy"))
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           ];
+        buildable = true;
         };
       tests = {
         "test-enummapmap-lazy" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         "test-enummapmap-intmap-lazy" = {
           depends = [
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         "test-enummapmap-strict" = {
           depends = [
@@ -104,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         "test-enummapmap-intmap-strict" = {
           depends = [
@@ -116,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         "test-enummapset" = {
           depends = [
@@ -130,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         "test-enummapset-intset" = {
           depends = [
@@ -141,6 +147,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         "test-both-lazy" = {
           depends = [
@@ -153,6 +160,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safecopy" or (buildDepError "safecopy"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         "test-both-strict" = {
           depends = [
@@ -165,6 +173,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safecopy" or (buildDepError "safecopy"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -177,6 +186,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         };
       };

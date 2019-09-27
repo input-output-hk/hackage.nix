@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-fix" or (buildDepError "data-fix"))
           (hsPkgs."data-fix-cse" or (buildDepError "data-fix-cse"))
           ];
+        buildable = true;
         };
       };
     }

@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = [ (pkgs."babl-0.1" or (sysDepError "babl-0.1")) ];
         pkgconfig = [ (pkgconfPkgs."babl" or (pkgConfDepError "babl")) ];
+        buildable = true;
         };
       };
     }

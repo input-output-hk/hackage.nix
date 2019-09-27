@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "fltkhs-fluidtohs" = {
@@ -80,12 +81,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         "fltkhs-buttons" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         };
       };

@@ -102,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
           (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
           ];
+        buildable = true;
         };
       exes = {
         "espial" = {
@@ -153,6 +154,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
             (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         "migration" = {
           depends = [
@@ -204,6 +206,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
             (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         };
       tests = {
@@ -259,6 +262,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
             (hsPkgs."yesod-test" or (buildDepError "yesod-test"))
             ];
+          buildable = true;
           };
         };
       };

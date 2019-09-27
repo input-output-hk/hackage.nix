@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."music-dynamics" or (buildDepError "music-dynamics"))
           (hsPkgs."music-dynamics-literal" or (buildDepError "music-dynamics-literal"))
           ];
+        buildable = true;
         };
       };
     }

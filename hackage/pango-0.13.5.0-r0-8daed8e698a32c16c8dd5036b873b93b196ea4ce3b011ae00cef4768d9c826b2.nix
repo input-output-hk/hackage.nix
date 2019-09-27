@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."cairo" or (pkgConfDepError "cairo"))
           (pkgconfPkgs."pangocairo" or (pkgConfDepError "pangocairo"))
           ] ++ [ (pkgconfPkgs."pango" or (pkgConfDepError "pango")) ];
+        buildable = true;
         };
       };
     }

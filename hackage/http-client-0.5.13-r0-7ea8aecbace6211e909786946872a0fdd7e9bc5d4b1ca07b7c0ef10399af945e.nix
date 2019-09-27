@@ -88,6 +88,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Win32" or (buildDepError "Win32"))
           (hsPkgs."safe" or (buildDepError "safe"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+          then false
+          else true;
         };
       tests = {
         "spec" = {
@@ -110,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
             ];
+          buildable = true;
           };
         "spec-nonet" = {
           depends = [
@@ -133,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         };
       };

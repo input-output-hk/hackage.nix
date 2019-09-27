@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       foreignlibs = {
         "hexchat-haskell" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghci" or (buildDepError "ghci"))
             (hsPkgs."hexchat" or (buildDepError "hexchat"))
             ];
+          buildable = true;
           };
         };
       };

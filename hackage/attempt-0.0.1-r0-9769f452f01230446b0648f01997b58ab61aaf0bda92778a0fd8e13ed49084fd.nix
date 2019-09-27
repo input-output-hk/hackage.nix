@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."control-monad-failure" or (buildDepError "control-monad-failure"))
           ];
+        buildable = true;
         };
       };
     }

@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             then [ (pkgs."openblas" or (sysDepError "openblas")) ]
             else (pkgs.lib).optionals (!((system.isOsx || system.isOsx) && !flags.no-accelerate)) ((pkgs.lib).optional (!flags.no-netlib) (pkgs."blas" or (sysDepError "blas"))));
         frameworks = (pkgs.lib).optionals (!flags.mkl) ((pkgs.lib).optionals (!flags.openblas) ((pkgs.lib).optional ((system.isOsx || system.isOsx) && !flags.no-accelerate) (pkgs."Accelerate" or (sysDepError "Accelerate"))));
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blas-hs" or (buildDepError "blas-hs"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

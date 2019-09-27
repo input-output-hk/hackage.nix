@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes" or (buildDepError "pipes"))
           (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
           ];
+        buildable = true;
         };
       tests = {
         "pipes" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes" or (buildDepError "pipes"))
             (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
             ];
+          buildable = true;
           };
         };
       };

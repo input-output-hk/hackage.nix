@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit-audio" or (buildDepError "conduit-audio"))
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
+        buildable = true;
         };
       exes = {
         "jammittools" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boxes" or (buildDepError "boxes"))
             (hsPkgs."jammittools" or (buildDepError "jammittools"))
             ];
+          buildable = true;
           };
         };
       };

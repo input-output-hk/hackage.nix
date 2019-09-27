@@ -59,7 +59,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
-      exes = { "fst" = {}; };
+      exes = { "fst" = { buildable = true; }; };
       };
     }

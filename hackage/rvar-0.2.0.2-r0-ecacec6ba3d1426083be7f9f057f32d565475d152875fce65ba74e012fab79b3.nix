@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random-source" or (buildDepError "random-source"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ [ (hsPkgs."mtl" or (buildDepError "mtl")) ];
+        buildable = true;
         };
       };
     }

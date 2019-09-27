@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
           ];
+        buildable = true;
         };
       };
     }

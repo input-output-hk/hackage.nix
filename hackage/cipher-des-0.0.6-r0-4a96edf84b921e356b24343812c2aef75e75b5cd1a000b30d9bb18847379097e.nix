@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."securemem" or (buildDepError "securemem"))
           (hsPkgs."crypto-cipher-types" or (buildDepError "crypto-cipher-types"))
           ];
+        buildable = true;
         };
       tests = {
         "test-cipher-des" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."crypto-cipher-tests" or (buildDepError "crypto-cipher-tests"))
             (hsPkgs."cipher-des" or (buildDepError "cipher-des"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."crypto-cipher-benchmarks" or (buildDepError "crypto-cipher-benchmarks"))
             (hsPkgs."cipher-des" or (buildDepError "cipher-des"))
             ];
+          buildable = true;
           };
         };
       };

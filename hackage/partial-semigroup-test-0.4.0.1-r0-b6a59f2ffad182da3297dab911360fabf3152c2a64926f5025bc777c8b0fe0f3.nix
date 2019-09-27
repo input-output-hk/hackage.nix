@@ -56,6 +56,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (pkgs.lib).optional (flags.enable-hedgehog) (hsPkgs."partial-semigroup-hedgehog" or (buildDepError "partial-semigroup-hedgehog"));
+        buildable = true;
         };
       };
     }

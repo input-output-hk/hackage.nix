@@ -76,7 +76,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
           (hsPkgs."NumInstances" or (buildDepError "NumInstances"))
           ];
+        buildable = true;
         };
-      exes = { "extopenscad" = {}; };
+      exes = { "extopenscad" = { buildable = true; }; };
       };
     }

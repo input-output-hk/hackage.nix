@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stripe-core" or (buildDepError "stripe-core"))
           (hsPkgs."stripe-http-streams" or (buildDepError "stripe-http-streams"))
           ];
+        buildable = true;
         };
       };
     }

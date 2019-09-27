@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zip" or (buildDepError "zip"))
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
+        buildable = true;
         };
       exes = {
         "ingest_communications" = {
@@ -111,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             (hsPkgs."concrete-haskell" or (buildDepError "concrete-haskell"))
             ];
+          buildable = true;
           };
         "inspect_communications" = {
           depends = [
@@ -140,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             (hsPkgs."concrete-haskell" or (buildDepError "concrete-haskell"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -171,6 +174,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             (hsPkgs."concrete-haskell" or (buildDepError "concrete-haskell"))
             ];
+          buildable = true;
           };
         };
       };

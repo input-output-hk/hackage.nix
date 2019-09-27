@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."dataenc" or (buildDepError "dataenc"))
           ];
+        buildable = true;
         };
       };
     }

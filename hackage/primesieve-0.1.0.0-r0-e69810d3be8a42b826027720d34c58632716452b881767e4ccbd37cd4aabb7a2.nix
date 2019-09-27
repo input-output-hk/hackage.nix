@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."foundation" or (buildDepError "foundation"))
           ];
+        buildable = true;
         };
       exes = {
         "prime-example" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."primesieve" or (buildDepError "primesieve"))
             ];
           libs = [ (pkgs."primesieve" or (sysDepError "primesieve")) ];
+          buildable = true;
           };
         };
       };

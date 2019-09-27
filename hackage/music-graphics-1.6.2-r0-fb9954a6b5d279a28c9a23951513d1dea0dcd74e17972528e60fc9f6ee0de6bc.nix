@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."music-pitch" or (buildDepError "music-pitch"))
           (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
           ];
+        buildable = true;
         };
       };
     }

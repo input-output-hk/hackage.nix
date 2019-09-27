@@ -67,6 +67,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."category-extras" or (buildDepError "category-extras"))
           (hsPkgs."Stream" or (buildDepError "Stream"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "6.9"
+          then false
+          else true;
         };
       };
     }

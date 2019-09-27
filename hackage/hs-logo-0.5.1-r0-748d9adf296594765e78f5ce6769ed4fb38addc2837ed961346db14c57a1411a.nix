@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
             (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
             (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg"))
             ];
+          buildable = true;
           };
         };
       };

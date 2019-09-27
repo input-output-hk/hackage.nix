@@ -65,7 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."system-uuid" or (buildDepError "system-uuid"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
-      exes = { "yesodContinuationsTest" = {}; };
+      exes = { "yesodContinuationsTest" = { buildable = true; }; };
       };
     }

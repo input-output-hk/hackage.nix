@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."gtk+-2.0" or (pkgConfDepError "gtk+-2.0"))
             (pkgconfPkgs."pango" or (pkgConfDepError "pango"))
             ];
+          buildable = true;
           };
         };
       };

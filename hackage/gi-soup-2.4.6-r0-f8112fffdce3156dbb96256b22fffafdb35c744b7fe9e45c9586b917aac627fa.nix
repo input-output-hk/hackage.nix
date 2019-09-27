@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libsoup-2.4" or (pkgConfDepError "libsoup-2.4"))
           ];
+        buildable = true;
         };
       };
     }

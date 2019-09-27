@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."ghcjs-dom-jsaddle" or (buildDepError "ghcjs-dom-jsaddle"))
               ]);
+        buildable = true;
         };
       };
     }

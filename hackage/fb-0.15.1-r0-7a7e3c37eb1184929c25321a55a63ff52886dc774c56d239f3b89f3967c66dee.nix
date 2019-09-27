@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptohash-cryptoapi" or (buildDepError "cryptohash-cryptoapi"))
           (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."fb" or (buildDepError "fb"))
             ];
+          buildable = true;
           };
         };
       };

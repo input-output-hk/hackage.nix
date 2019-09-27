@@ -97,20 +97,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."base" or (buildDepError "base"))
               (hsPkgs."special-functors" or (buildDepError "special-functors"))
               ]);
+        buildable = true;
         };
       exes = {
-        "demonstration" = {};
-        "traumzauberbaum" = {};
-        "test" = {};
-        "fusiontest" = {};
-        "speedtest" = {};
+        "demonstration" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        "traumzauberbaum" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        "test" = { buildable = if !flags.buildtests then false else true; };
+        "fusiontest" = {
+          buildable = if !flags.buildprofilers then false else true;
+          };
+        "speedtest" = {
+          buildable = if !flags.buildprofilers then false else true;
+          };
         "speedtest-exp" = {
           depends = (pkgs.lib).optionals (flags.splitbase) [
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = if !flags.buildprofilers then false else true;
           };
-        "speedtest-simple" = {};
+        "speedtest-simple" = {
+          buildable = if !flags.buildprofilers then false else true;
+          };
         };
       };
     }

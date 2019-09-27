@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."monad-peel" or (buildDepError "monad-peel"))
           ];
+        buildable = true;
         };
       exes = {
         "smpl" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."setenv" or (buildDepError "setenv"))
             (hsPkgs."stringsearch" or (buildDepError "stringsearch"))
             ];
+          buildable = true;
           };
         };
       };

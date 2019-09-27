@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets" or (buildDepError "websockets"))
           (hsPkgs."web-routing" or (buildDepError "web-routing"))
           ];
+        buildable = true;
         };
       };
     }

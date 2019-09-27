@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."opentheory-primitive" or (buildDepError "opentheory-primitive"))
           (hsPkgs."opentheory" or (buildDepError "opentheory"))
           ];
+        buildable = true;
         };
       tests = {
         "opentheory-divides-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."opentheory-primitive" or (buildDepError "opentheory-primitive"))
             (hsPkgs."opentheory" or (buildDepError "opentheory"))
             ];
+          buildable = true;
           };
         };
       };

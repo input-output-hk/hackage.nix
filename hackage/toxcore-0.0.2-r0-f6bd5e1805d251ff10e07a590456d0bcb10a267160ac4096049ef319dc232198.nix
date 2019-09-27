@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."saltine" or (buildDepError "saltine"))
           ];
         libs = [ (pkgs."toxcore" or (sysDepError "toxcore")) ];
+        buildable = true;
         };
       tests = {
         "testsuite" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."saltine" or (buildDepError "saltine"))
             (hsPkgs."toxcore" or (buildDepError "toxcore"))
             ];
+          buildable = true;
           };
         };
       };

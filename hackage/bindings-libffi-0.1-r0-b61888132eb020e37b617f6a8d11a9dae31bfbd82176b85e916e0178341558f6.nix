@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-common" or (buildDepError "bindings-common"))
           ];
         pkgconfig = [ (pkgconfPkgs."libffi" or (pkgConfDepError "libffi")) ];
+        buildable = true;
         };
       };
     }

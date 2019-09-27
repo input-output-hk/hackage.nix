@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."executable-path" or (buildDepError "executable-path"))
           ];
+        buildable = true;
         };
       exes = {
         "embedtool" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
+          buildable = true;
           };
         };
       };

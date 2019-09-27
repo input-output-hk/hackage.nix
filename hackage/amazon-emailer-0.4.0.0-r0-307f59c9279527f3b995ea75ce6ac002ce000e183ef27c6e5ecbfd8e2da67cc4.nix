@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."configurator" or (buildDepError "configurator"))
             ];
+          buildable = true;
           };
         "amazon-emailer-queue-cleaner" = {
           depends = [
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
             (hsPkgs."configurator" or (buildDepError "configurator"))
             ];
+          buildable = true;
           };
         };
       };

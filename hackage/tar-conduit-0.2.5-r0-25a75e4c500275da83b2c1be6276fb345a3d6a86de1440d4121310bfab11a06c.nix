@@ -70,6 +70,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
             ]
           else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+        buildable = if compiler.isGhc && (compiler.version).lt "8"
+          then false
+          else true;
         };
       tests = {
         "tests" = {
@@ -85,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."tar-conduit" or (buildDepError "tar-conduit"))
             ];
+          buildable = true;
           };
         "space" = {
           depends = [
@@ -100,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tar-conduit" or (buildDepError "tar-conduit"))
             (hsPkgs."weigh" or (buildDepError "weigh"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -117,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."tar-conduit" or (buildDepError "tar-conduit"))
             ];
+          buildable = true;
           };
         };
       };

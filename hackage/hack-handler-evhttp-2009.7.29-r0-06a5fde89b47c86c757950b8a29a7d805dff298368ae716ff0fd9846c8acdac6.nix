@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hack-contrib" or (buildDepError "hack-contrib"))
           ];
         libs = [ (pkgs."event" or (sysDepError "event")) ];
+        buildable = true;
         };
       };
     }

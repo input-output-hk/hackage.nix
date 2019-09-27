@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GiveYouAHead" or (buildDepError "GiveYouAHead"))
             (hsPkgs."extra" or (buildDepError "extra"))
             ];
+          buildable = true;
           };
         };
       };

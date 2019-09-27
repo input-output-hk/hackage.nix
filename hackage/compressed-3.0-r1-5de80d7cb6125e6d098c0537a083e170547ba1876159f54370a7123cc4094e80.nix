@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."keys" or (buildDepError "keys"))
           (hsPkgs."reducers" or (buildDepError "reducers"))
           ];
+        buildable = true;
         };
       };
     }

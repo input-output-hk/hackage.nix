@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."semirings" or (buildDepError "semirings"))
           ];
+        buildable = true;
         };
       };
     }

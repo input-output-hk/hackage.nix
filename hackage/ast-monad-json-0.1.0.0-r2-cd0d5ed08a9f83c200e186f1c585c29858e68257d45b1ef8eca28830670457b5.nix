@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."ast-monad" or (buildDepError "ast-monad"))
           ];
+        buildable = true;
         };
       tests = {
         "ast-monad-json-test" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ast-monad" or (buildDepError "ast-monad"))
             (hsPkgs."ast-monad-json" or (buildDepError "ast-monad-json"))
             ];
+          buildable = true;
           };
         };
       };

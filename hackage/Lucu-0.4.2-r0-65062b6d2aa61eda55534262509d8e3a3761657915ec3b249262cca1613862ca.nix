@@ -72,7 +72,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
+        buildable = true;
         };
-      exes = { "lucu-implant-file" = {}; };
+      exes = {
+        "lucu-implant-file" = {
+          buildable = if flags.build-lucu-implant-file then true else false;
+          };
+        };
       };
     }

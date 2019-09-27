@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."dl" or (sysDepError "dl"))
           ];
         pkgconfig = [ (pkgconfPkgs."ipopt" or (pkgConfDepError "ipopt")) ];
+        buildable = true;
         };
       };
     }

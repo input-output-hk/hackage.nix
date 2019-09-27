@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           ];
         libs = (pkgs.lib).optional (flags.external-udis86) (pkgs."udis86" or (sysDepError "udis86"));
+        buildable = true;
         };
       };
     }

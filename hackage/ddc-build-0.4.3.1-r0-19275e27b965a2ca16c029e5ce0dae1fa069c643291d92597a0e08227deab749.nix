@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ddc-core-babel" or (buildDepError "ddc-core-babel"))
           (hsPkgs."ddc-source-tetra" or (buildDepError "ddc-source-tetra"))
           ];
+        buildable = true;
         };
       };
     }

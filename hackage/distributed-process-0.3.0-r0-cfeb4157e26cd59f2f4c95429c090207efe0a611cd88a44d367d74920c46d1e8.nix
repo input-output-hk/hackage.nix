@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rank1dynamic" or (buildDepError "rank1dynamic"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ];
+        buildable = true;
         };
       tests = {
         "TestCH" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
             (hsPkgs."rank1dynamic" or (buildDepError "rank1dynamic"))
             ];
+          buildable = true;
           };
         "TestClosure" = {
           depends = [
@@ -120,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rank1dynamic" or (buildDepError "rank1dynamic"))
             (hsPkgs."syb" or (buildDepError "syb"))
             ];
+          buildable = true;
           };
         };
       };

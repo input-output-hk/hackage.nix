@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs.buildPackages.proto-lens-protoc or (pkgs.buildPackages.proto-lens-protoc or (buildToolDepError "proto-lens-protoc")))
           (hsPkgs.buildPackages.protoc or (pkgs.buildPackages.protoc or (buildToolDepError "protoc")))
           ];
+        buildable = true;
         };
       };
     }

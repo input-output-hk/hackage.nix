@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."BiobaseTypes" or (buildDepError "BiobaseTypes"))
           ];
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."BiobaseFasta" or (buildDepError "BiobaseFasta"))
             ];
+          buildable = true;
           };
         };
       };

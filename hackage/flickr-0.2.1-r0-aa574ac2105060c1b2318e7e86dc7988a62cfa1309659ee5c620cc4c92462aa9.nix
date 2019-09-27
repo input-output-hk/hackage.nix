@@ -65,14 +65,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
-        "showPublic" = {};
-        "searchPics" = {};
+        "showPublic" = { buildable = true; };
+        "searchPics" = { buildable = true; };
         "gallery" = {
           depends = [ (hsPkgs."xhtml" or (buildDepError "xhtml")) ];
+          buildable = true;
           };
-        "uploader" = {};
+        "uploader" = { buildable = true; };
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
           ];
+        buildable = true;
         };
       exes = {
         "ironforge-yesod" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
             ];
+          buildable = true;
           };
         };
       };

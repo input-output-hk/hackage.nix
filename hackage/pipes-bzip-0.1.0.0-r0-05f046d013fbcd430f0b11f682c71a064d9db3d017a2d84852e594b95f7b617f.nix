@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
           ];
+        buildable = true;
         };
       tests = {
         "pipes-bzip-test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pipes-bzip" or (buildDepError "pipes-bzip"))
             ];
+          buildable = true;
           };
         };
       };

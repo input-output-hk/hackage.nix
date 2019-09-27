@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uu-cco" or (buildDepError "uu-cco"))
           (hsPkgs."ListLike" or (buildDepError "ListLike"))
           ];
+        buildable = true;
         };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."witherable" or (buildDepError "witherable"))
           ];
+        buildable = true;
         };
       };
     }

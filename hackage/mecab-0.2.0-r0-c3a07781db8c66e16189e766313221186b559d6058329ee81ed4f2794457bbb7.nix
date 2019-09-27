@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           ];
         libs = [ (pkgs."mecab" or (sysDepError "mecab")) ];
+        buildable = true;
         };
       };
     }

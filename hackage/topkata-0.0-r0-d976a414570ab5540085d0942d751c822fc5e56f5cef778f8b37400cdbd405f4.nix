@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenAL" or (buildDepError "OpenAL"))
             (hsPkgs."ALUT" or (buildDepError "ALUT"))
             ];
+          buildable = true;
           };
         "pdflaby" = {
           depends = [
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenAL" or (buildDepError "OpenAL"))
             (hsPkgs."ALUT" or (buildDepError "ALUT"))
             ];
+          buildable = true;
           };
         };
       };

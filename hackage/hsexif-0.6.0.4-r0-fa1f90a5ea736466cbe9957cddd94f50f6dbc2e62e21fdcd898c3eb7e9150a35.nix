@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."text" or (buildDepError "text"))
           ] ++ (pkgs.lib).optional (flags.iconv) (hsPkgs."iconv" or (buildDepError "iconv"));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."text" or (buildDepError "text"))
             ] ++ (pkgs.lib).optional (flags.iconv) (hsPkgs."iconv" or (buildDepError "iconv"));
+          buildable = true;
           };
         };
       };

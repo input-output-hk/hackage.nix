@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."free-game" or (buildDepError "free-game"))
             ];
+          buildable = true;
           };
         };
       };

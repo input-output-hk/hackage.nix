@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
           (hsPkgs."map-syntax" or (buildDepError "map-syntax"))
           ];
+        buildable = true;
         };
       };
     }

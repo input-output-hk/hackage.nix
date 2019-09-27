@@ -138,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-gitrev" or (buildDepError "yesod-gitrev"))
           (hsPkgs."yesod-transloadit" or (buildDepError "yesod-transloadit"))
           ];
+        buildable = true;
         };
       };
     }

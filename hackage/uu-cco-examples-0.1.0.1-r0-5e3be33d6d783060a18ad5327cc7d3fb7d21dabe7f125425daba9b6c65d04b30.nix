@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuagc" or (buildDepError "uuagc"))
             (hsPkgs."uuagc-cabal" or (buildDepError "uuagc-cabal"))
             ];
+          buildable = true;
           };
         "uu-cco-parse-arithbool" = {
           depends = [
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuagc" or (buildDepError "uuagc"))
             (hsPkgs."uuagc-cabal" or (buildDepError "uuagc-cabal"))
             ];
+          buildable = true;
           };
         "uu-cco-pp-arith" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuagc" or (buildDepError "uuagc"))
             (hsPkgs."uuagc-cabal" or (buildDepError "uuagc-cabal"))
             ];
+          buildable = true;
           };
         "uu-cco-pp-arithbool" = {
           depends = [
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuagc" or (buildDepError "uuagc"))
             (hsPkgs."uuagc-cabal" or (buildDepError "uuagc-cabal"))
             ];
+          buildable = true;
           };
         "uu-cco-eval-arith" = {
           depends = [
@@ -94,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuagc" or (buildDepError "uuagc"))
             (hsPkgs."uuagc-cabal" or (buildDepError "uuagc-cabal"))
             ];
+          buildable = true;
           };
         "uu-cco-eval-arithbool" = {
           depends = [
@@ -102,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuagc" or (buildDepError "uuagc"))
             (hsPkgs."uuagc-cabal" or (buildDepError "uuagc-cabal"))
             ];
+          buildable = true;
           };
         "uu-cco-interp-arith" = {
           depends = [
@@ -110,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuagc" or (buildDepError "uuagc"))
             (hsPkgs."uuagc-cabal" or (buildDepError "uuagc-cabal"))
             ];
+          buildable = true;
           };
         "uu-cco-interp-arithbool" = {
           depends = [
@@ -118,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuagc" or (buildDepError "uuagc"))
             (hsPkgs."uuagc-cabal" or (buildDepError "uuagc-cabal"))
             ];
+          buildable = true;
           };
         "uu-cco-tc-arithbool" = {
           depends = [
@@ -126,12 +134,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuagc" or (buildDepError "uuagc"))
             (hsPkgs."uuagc-cabal" or (buildDepError "uuagc-cabal"))
             ];
+          buildable = true;
           };
         "uu-cco-pp-aterm" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."uu-cco" or (buildDepError "uu-cco"))
             ];
+          buildable = true;
           };
         };
       };

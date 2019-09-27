@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           pkgconfig = [
             (pkgconfPkgs."glib-2.0" or (pkgConfDepError "glib-2.0"))
             ];
+          buildable = true;
           };
         "test-monitor" = {
           depends = [
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           pkgconfig = [
             (pkgconfPkgs."glib-2.0" or (pkgConfDepError "glib-2.0"))
             ];
+          buildable = if flags.interactivetests then true else false;
           };
         "dump-messages" = {
           depends = [
@@ -118,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pcap" or (buildDepError "pcap"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.interactivetests then true else false;
           };
         };
       tests = {
@@ -134,12 +137,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hgettext" or (buildDepError "hgettext"))
             (hsPkgs."setlocale" or (buildDepError "setlocale"))
             ];
+          buildable = true;
           };
         "test-regions" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         "test-renderer" = {
           depends = [
@@ -160,6 +165,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hgettext" or (buildDepError "hgettext"))
             (hsPkgs."setlocale" or (buildDepError "setlocale"))
             ];
+          buildable = true;
           };
         };
       };

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."setlocale" or (buildDepError "setlocale"))
           (hsPkgs."yjsvg" or (buildDepError "yjsvg"))
           ];
+        buildable = true;
         };
       };
     }

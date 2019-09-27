@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fgl" or (buildDepError "fgl"))
           (hsPkgs."dotgen" or (buildDepError "dotgen"))
           ];
+        buildable = true;
         };
       };
     }

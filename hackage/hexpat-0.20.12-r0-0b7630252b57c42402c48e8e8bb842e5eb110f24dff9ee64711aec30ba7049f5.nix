@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."List" or (buildDepError "List"))
           ];
         libs = (pkgs.lib).optional (!flags.bundle) (pkgs."expat" or (sysDepError "expat"));
+        buildable = true;
         };
       };
     }

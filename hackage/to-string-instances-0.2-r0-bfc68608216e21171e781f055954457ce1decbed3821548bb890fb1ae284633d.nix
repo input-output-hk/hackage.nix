@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = (([
           (hsPkgs."to-string-class" or (buildDepError "to-string-class"))
           ] ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.doc) (hsPkgs."pretty" or (buildDepError "pretty"))) ++ (pkgs.lib).optional (flags.text) (hsPkgs."text" or (buildDepError "text"));
+        buildable = true;
         };
       };
     }

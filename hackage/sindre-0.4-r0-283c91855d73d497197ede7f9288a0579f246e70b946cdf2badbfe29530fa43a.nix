@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
         pkgconfig = [ (pkgconfPkgs."xft" or (pkgConfDepError "xft")) ];
+        buildable = true;
         };
       exes = {
         "sindre" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
           pkgconfig = [ (pkgconfPkgs."xft" or (pkgConfDepError "xft")) ];
+          buildable = true;
           };
         };
       };

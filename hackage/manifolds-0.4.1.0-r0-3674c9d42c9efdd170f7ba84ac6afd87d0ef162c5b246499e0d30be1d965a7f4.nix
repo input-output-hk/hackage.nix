@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."constrained-categories" or (buildDepError "constrained-categories"))
           ];
+        buildable = true;
         };
       };
     }

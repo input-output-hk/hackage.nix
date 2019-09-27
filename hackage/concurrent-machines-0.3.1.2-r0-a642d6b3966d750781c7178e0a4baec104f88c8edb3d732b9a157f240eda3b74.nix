@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         "splotime" = {
           depends = (pkgs.lib).optionals (flags.splot) [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if flags.splot then true else false;
           };
         };
       benchmarks = {
@@ -101,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."machines" or (buildDepError "machines"))
             (hsPkgs."concurrent-machines" or (buildDepError "concurrent-machines"))
             ];
+          buildable = true;
           };
         };
       };

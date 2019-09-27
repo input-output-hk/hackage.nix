@@ -201,6 +201,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."persistent" or (buildDepError "persistent"))
             (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
             ]) ++ (pkgs.lib).optional (flags.concurrentoutput) (hsPkgs."concurrent-output" or (buildDepError "concurrent-output"))) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs."ekg" or (buildDepError "ekg"));
+          buildable = true;
           };
         };
       };

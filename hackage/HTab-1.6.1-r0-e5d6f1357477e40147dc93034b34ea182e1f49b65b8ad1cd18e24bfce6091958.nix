@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."hylolib" or (buildDepError "hylolib"))
             ];
+          buildable = true;
           };
         };
       };

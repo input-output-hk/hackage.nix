@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."comonad" or (buildDepError "comonad"))
           (hsPkgs."universe-base" or (buildDepError "universe-base"))
           ];
+        buildable = true;
         };
       };
     }

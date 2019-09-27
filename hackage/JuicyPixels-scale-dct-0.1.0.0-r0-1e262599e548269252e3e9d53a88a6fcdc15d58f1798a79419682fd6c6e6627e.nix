@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fft" or (buildDepError "fft"))
           (hsPkgs."carray" or (buildDepError "carray"))
           ];
+        buildable = true;
         };
       tests = {
         "example" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."JuicyPixels-util" or (buildDepError "JuicyPixels-util"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

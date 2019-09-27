@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
         libs = [ (pkgs."mp3lame" or (sysDepError "mp3lame")) ];
+        buildable = true;
         };
       };
     }

@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rio" or (buildDepError "rio"))
           (hsPkgs."rio-prettyprint" or (buildDepError "rio-prettyprint"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rio" or (buildDepError "rio"))
             (hsPkgs."rio-prettyprint" or (buildDepError "rio-prettyprint"))
             ];
+          buildable = true;
           };
         };
       };

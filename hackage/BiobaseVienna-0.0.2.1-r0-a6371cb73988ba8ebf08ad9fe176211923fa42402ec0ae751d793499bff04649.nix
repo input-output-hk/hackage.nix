@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."BiobaseTurner" or (buildDepError "BiobaseTurner"))
           (hsPkgs."BiobaseTypes" or (buildDepError "BiobaseTypes"))
           ];
+        buildable = true;
         };
       };
     }

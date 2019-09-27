@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tasty" or (buildDepError "tasty"))
           (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
           ];
+        buildable = true;
         };
       tests = {
         "tasty-hedgehog-tests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
             (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
             ];
+          buildable = true;
           };
         };
       };

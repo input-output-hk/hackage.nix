@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           ];
+        buildable = true;
         };
       };
     }

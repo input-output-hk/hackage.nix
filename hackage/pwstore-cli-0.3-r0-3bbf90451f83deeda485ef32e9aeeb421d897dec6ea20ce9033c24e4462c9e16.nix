@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."pwstore-purehaskell" or (buildDepError "pwstore-purehaskell"))
               ]);
+          buildable = true;
           };
         };
       tests = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."pwstore-fast" or (buildDepError "pwstore-fast"))
             ];
+          buildable = true;
           };
         };
       };

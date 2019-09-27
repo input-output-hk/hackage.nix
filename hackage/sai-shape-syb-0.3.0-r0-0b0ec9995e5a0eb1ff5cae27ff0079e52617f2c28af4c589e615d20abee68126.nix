@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc" or (buildDepError "ghc"))
           (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
           ] ++ (pkgs.lib).optional (flags.use_data_tree) (hsPkgs."containers" or (buildDepError "containers"));
+        buildable = true;
         };
       tests = {
         "unit-tests" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = true;
           };
         };
       };

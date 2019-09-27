@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hint" or (buildDepError "hint"))
           (hsPkgs."network" or (buildDepError "network"))
           ]) ++ (pkgs.lib).optional (flags.with_mpd) (hsPkgs."libmpd" or (buildDepError "libmpd"));
+        buildable = true;
         };
       };
     }

@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vivid-osc" or (buildDepError "vivid-osc"))
           (hsPkgs."vivid-supercollider" or (buildDepError "vivid-supercollider"))
           ];
+        buildable = true;
         };
       };
     }

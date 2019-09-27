@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."protobuf" or (pkgConfDepError "protobuf"))
           ];
+        buildable = true;
         };
       };
     }

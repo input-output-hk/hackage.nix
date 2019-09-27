@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."mime-types" or (buildDepError "mime-types"))
             ];
+          buildable = true;
           };
         };
       };

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "ttnc" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mqtt-hs" or (buildDepError "mqtt-hs"))
             (hsPkgs."cayene-lpp" or (buildDepError "cayene-lpp"))
             ];
+          buildable = true;
           };
         };
       };

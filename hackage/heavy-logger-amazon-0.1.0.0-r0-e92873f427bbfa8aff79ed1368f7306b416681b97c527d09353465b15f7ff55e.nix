@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."heavy-logger" or (buildDepError "heavy-logger"))
           (hsPkgs."amazonka-core" or (buildDepError "amazonka-core"))
           ];
+        buildable = true;
         };
       };
     }

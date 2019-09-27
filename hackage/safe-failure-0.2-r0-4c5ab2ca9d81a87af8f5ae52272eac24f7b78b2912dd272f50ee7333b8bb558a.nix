@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."control-monad-failure" or (buildDepError "control-monad-failure"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (pkgs.lib).optional (flags.cme) (hsPkgs."control-monad-exception" or (buildDepError "control-monad-exception"));
+        buildable = true;
         };
       };
     }

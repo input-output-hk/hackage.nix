@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
         libs = (pkgs.lib).optional (system.isLinux || system.isFreebsd) (pkgs."util" or (sysDepError "util"));
+        buildable = true;
         };
       };
     }

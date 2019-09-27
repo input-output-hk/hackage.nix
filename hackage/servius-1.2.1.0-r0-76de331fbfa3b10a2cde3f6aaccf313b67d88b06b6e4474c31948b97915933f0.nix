@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
             ];
+          buildable = true;
           };
         };
       };

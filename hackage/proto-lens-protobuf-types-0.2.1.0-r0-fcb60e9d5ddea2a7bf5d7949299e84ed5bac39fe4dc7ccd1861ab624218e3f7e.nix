@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [
           (hsPkgs."proto-lens-protoc" or (buildDepError "proto-lens-protoc"))
           ];
+        buildable = true;
         };
       };
     }

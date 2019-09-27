@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."brick" or (buildDepError "brick"))
           (hsPkgs."cursor" or (buildDepError "cursor"))
           ];
+        buildable = true;
         };
       };
     }

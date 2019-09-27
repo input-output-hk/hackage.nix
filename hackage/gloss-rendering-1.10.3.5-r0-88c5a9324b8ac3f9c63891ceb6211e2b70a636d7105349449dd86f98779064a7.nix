@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GLUT" or (buildDepError "GLUT"))
           (hsPkgs."bmp" or (buildDepError "bmp"))
           ];
+        buildable = true;
         };
       };
     }

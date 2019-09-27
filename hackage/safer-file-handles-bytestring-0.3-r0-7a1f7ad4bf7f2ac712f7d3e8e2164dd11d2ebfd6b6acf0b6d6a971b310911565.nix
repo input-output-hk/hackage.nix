@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."explicit-iomodes-bytestring" or (buildDepError "explicit-iomodes-bytestring"))
           (hsPkgs."safer-file-handles" or (buildDepError "safer-file-handles"))
           ];
+        buildable = true;
         };
       };
     }

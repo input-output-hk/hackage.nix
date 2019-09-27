@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pandoc" or (buildDepError "pandoc"))
           (hsPkgs."safe" or (buildDepError "safe"))
           ];
+        buildable = true;
         };
       exes = {
         "BlogLiteratelyD" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."BlogLiterately" or (buildDepError "BlogLiterately"))
             (hsPkgs."BlogLiterately-diagrams" or (buildDepError "BlogLiterately-diagrams"))
             ];
+          buildable = true;
           };
         };
       };

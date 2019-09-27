@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           (hsPkgs."OpenAL" or (buildDepError "OpenAL"))
           ];
+        buildable = true;
         };
       };
     }

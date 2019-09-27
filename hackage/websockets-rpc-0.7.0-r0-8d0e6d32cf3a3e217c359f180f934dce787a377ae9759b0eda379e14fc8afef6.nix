@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets" or (buildDepError "websockets"))
           (hsPkgs."websockets-simple" or (buildDepError "websockets-simple"))
           ];
+        buildable = true;
         };
       tests = {
         "sparrow-server-test" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."websockets-rpc" or (buildDepError "websockets-rpc"))
             (hsPkgs."websockets-simple" or (buildDepError "websockets-simple"))
             ];
+          buildable = true;
           };
         };
       };

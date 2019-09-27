@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-tdfa-text" or (buildDepError "regex-tdfa-text"))
           (hsPkgs."fasta" or (buildDepError "fasta"))
           ];
+        buildable = true;
         };
       exes = {
         "modify-fasta" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-text" or (buildDepError "pipes-text"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = true;
           };
         };
       };

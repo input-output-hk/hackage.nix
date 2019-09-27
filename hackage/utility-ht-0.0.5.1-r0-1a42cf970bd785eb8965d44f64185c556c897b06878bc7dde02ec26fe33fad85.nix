@@ -54,10 +54,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "test" = {
           depends = (pkgs.lib).optional (flags.buildtests) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

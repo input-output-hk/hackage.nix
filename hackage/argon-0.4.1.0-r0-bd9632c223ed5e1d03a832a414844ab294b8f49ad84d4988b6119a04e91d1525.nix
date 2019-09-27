@@ -74,6 +74,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "7.8"
+          then false
+          else true;
         };
       exes = {
         "argon" = {
@@ -84,6 +87,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes" or (buildDepError "pipes"))
             (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "7.8"
+            then false
+            else true;
           };
         };
       tests = {
@@ -100,12 +106,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes" or (buildDepError "pipes"))
             (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "7.8"
+            then false
+            else true;
           };
         "style" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         };
       };

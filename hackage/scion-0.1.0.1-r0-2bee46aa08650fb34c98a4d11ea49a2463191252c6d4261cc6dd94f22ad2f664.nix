@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           ] ++ (pkgs.lib).optional (flags.testing) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+        buildable = true;
         };
       exes = {
         "scion-server" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-bytestring" or (buildDepError "network-bytestring"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ]) ++ (pkgs.lib).optional (flags.testing) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+          buildable = if !flags.server then false else true;
           };
         };
       };

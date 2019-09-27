@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
             ];
+          buildable = true;
           };
         };
       };

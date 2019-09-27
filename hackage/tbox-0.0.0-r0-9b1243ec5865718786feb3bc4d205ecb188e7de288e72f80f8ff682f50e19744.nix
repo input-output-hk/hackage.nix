@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."cautious-file" or (buildDepError "cautious-file"))
           ];
+        buildable = true;
         };
       };
     }

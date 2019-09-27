@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
         libs = [ (pkgs."fftw3" or (sysDepError "fftw3")) ];
+        buildable = true;
         };
       };
     }

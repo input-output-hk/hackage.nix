@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
           (hsPkgs."lensref" or (buildDepError "lensref"))
           ] ++ (pkgs.lib).optional (flags.gtk) (hsPkgs."gtk" or (buildDepError "gtk"));
+        buildable = true;
         };
       exes = {
         "lgtkdemo" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
             (hsPkgs."lgtk" or (buildDepError "lgtk"))
             ];
+          buildable = true;
           };
         };
       };

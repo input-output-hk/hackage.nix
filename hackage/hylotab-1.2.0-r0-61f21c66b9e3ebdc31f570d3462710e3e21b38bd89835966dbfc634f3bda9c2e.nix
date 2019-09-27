@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hylolib" or (buildDepError "hylolib"))
             (hsPkgs."hylolib" or (buildDepError "hylolib"))
             ];
+          buildable = true;
           };
         };
       };

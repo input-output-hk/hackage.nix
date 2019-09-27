@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ObjectName" or (buildDepError "ObjectName"))
           (hsPkgs."Tensor" or (buildDepError "Tensor"))
           ];
+        buildable = true;
         };
       };
     }

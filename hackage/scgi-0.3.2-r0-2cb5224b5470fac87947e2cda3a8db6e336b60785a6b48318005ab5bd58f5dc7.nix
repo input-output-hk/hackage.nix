@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network-bytestring" or (buildDepError "network-bytestring"))
           (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
           ];
+        buildable = true;
         };
       };
     }

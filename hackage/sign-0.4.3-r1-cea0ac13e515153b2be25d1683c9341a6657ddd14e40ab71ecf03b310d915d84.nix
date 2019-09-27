@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."universe-base" or (buildDepError "universe-base"))
             ]
           else [ (hsPkgs."lattices" or (buildDepError "lattices")) ]);
+        buildable = true;
         };
       tests = {
         "TestSign" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ] ++ (pkgs.lib).optional (flags.lattices14) (hsPkgs."universe-base" or (buildDepError "universe-base"));
+          buildable = true;
           };
         };
       };

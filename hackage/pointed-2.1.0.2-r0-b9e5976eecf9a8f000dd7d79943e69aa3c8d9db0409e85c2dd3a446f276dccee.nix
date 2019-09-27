@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."comonad-transformers" or (buildDepError "comonad-transformers"))
           ];
+        buildable = true;
         };
       };
     }

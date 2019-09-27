@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."th-abstraction" or (buildDepError "th-abstraction"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."kind-generics" or (buildDepError "kind-generics"))
             (hsPkgs."kind-generics-th" or (buildDepError "kind-generics-th"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."trifecta" or (buildDepError "trifecta"))
           (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
             (hsPkgs."language-thrift" or (buildDepError "language-thrift"))
             ];
+          buildable = true;
           };
         };
       };

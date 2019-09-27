@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."free" or (buildDepError "free"))
           (hsPkgs."recursion-schemes" or (buildDepError "recursion-schemes"))
           ];
+        buildable = true;
         };
       };
     }

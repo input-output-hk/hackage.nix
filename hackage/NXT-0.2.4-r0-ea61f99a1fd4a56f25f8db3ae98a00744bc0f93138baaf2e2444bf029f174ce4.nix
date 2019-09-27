@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."serialport" or (buildDepError "serialport"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
         libs = (pkgs.lib).optional (system.isLinux) (pkgs."bluetooth" or (sysDepError "bluetooth"));
+        buildable = true;
         };
       exes = {
         "nxt-shutdown" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."NXT" or (buildDepError "NXT"))
             ];
+          buildable = true;
           };
         "nxt-status" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."NXT" or (buildDepError "NXT"))
             ];
+          buildable = true;
           };
         "nxt-upload" = {
           depends = [
@@ -87,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."NXT" or (buildDepError "NXT"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -104,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."NXT" or (buildDepError "NXT"))
             ];
+          buildable = true;
           };
         };
       };

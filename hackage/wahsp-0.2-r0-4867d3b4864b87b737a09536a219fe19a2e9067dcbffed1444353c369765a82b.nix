@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."kansas-comet" or (buildDepError "kansas-comet"))
           (hsPkgs."scotty" or (buildDepError "scotty"))
           ];
+        buildable = true;
         };
       };
     }

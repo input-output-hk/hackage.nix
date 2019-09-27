@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blank-canvas" or (buildDepError "blank-canvas"))
             (hsPkgs."time" or (buildDepError "time"))
             ]);
+        buildable = true;
         };
       };
     }

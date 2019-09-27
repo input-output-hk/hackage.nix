@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."hexpat-tagsoup" or (buildDepError "hexpat-tagsoup"))
           ];
+        buildable = true;
         };
       };
     }

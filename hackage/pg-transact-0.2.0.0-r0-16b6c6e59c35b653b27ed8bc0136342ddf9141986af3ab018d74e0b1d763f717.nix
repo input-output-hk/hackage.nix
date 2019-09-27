@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       tests = {
         "pg-transact-test" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tmp-postgres" or (buildDepError "tmp-postgres"))
             (hsPkgs."hspec-expectations-lifted" or (buildDepError "hspec-expectations-lifted"))
             ];
+          buildable = true;
           };
         };
       };

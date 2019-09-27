@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."attoparsec-text" or (buildDepError "attoparsec-text"))
           ];
+        buildable = true;
         };
       };
     }

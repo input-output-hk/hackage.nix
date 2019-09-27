@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."billeksah-services" or (buildDepError "billeksah-services"))
             ];
+          buildable = true;
           };
         };
       };

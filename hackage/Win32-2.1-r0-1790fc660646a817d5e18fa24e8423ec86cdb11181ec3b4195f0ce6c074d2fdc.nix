@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."kernel32" or (sysDepError "kernel32"))
           (pkgs."advapi32" or (sysDepError "advapi32"))
           ];
+        buildable = true;
         };
       };
     }

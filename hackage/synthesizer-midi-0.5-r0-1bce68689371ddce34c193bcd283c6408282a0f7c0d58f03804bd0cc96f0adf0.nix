@@ -73,7 +73,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
-      exes = { "render-midi" = {}; "test" = {}; };
+      exes = {
+        "render-midi" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        "test" = { buildable = if !flags.buildtests then false else true; };
+        };
       };
     }

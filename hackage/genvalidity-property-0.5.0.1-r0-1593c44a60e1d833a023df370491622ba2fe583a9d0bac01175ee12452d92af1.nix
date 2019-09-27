@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
           (hsPkgs."validity" or (buildDepError "validity"))
           ];
+        buildable = true;
         };
       tests = {
         "genvalidity-property-doctests" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."genvalidity-property" or (buildDepError "genvalidity-property"))
             ];
+          buildable = true;
           };
         };
       };

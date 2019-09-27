@@ -54,13 +54,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Custom";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = true; };
       exes = {
         "heapsort-example" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = true;
           };
         "heapsort-tests" = {
           depends = [
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = if !flags.test then false else true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uniplate" or (buildDepError "uniplate"))
             (hsPkgs."hylolib" or (buildDepError "hylolib"))
             ];
+          buildable = true;
           };
         "rewriter" = {
           depends = [
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."hylolib" or (buildDepError "hylolib"))
             ];
+          buildable = true;
           };
         };
       };

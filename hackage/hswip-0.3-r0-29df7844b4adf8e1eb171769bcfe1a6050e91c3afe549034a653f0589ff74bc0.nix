@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."readline" or (sysDepError "readline"))
           (pkgs."ncurses" or (sysDepError "ncurses"))
           ];
+        buildable = true;
         };
       };
     }

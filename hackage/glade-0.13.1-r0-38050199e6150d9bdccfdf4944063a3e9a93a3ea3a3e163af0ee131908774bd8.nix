@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libglade-2.0" or (pkgConfDepError "libglade-2.0"))
           ];
+        buildable = true;
         };
       };
     }

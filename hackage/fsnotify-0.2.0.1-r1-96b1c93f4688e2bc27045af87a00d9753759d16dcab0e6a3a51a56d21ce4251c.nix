@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
               (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
               ]);
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."temporary-rc" or (buildDepError "temporary-rc"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cqrs" or (buildDepError "cqrs"))
           (hsPkgs."direct-sqlite" or (buildDepError "direct-sqlite"))
           ];
+        buildable = true;
         };
       };
     }

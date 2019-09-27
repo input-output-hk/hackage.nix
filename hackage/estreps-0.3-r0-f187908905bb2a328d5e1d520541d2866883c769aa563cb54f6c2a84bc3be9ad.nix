@@ -63,8 +63,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bio" or (buildDepError "bio"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
-        "reps" = {};
+        "reps" = { buildable = true; };
         };
       };
     }

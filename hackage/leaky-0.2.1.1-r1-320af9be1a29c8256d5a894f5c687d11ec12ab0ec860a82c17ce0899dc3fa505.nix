@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."seqaid" or (buildDepError "seqaid"))
             ] ++ (pkgs.lib).optional (flags.use_cpphs) (hsPkgs."cpphs" or (buildDepError "cpphs"))) ++ (pkgs.lib).optional (flags.omnitypic) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
           build-tools = (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")));
+          buildable = true;
           };
         };
       };

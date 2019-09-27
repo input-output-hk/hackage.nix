@@ -68,7 +68,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
-      exes = { "NeedlemanWunsch" = {}; };
+      exes = { "NeedlemanWunsch" = { buildable = true; }; };
       };
     }

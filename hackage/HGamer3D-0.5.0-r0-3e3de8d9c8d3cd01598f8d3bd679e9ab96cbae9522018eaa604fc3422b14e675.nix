@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-Network" or (buildDepError "HGamer3D-Network"))
           (hsPkgs."HGamer3D-InputSystem" or (buildDepError "HGamer3D-InputSystem"))
           ];
+        buildable = true;
         };
       };
     }

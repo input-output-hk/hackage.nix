@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."concurrent-extra" or (buildDepError "concurrent-extra"))
           ];
+        buildable = true;
         };
       };
     }

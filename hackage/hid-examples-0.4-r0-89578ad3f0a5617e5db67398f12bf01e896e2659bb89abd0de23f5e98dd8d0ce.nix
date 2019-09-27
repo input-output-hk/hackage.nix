@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
             (hsPkgs."iplookup-lib" or (buildDepError "iplookup-lib"))
             ];
+          buildable = true;
           };
         "iplookup-lib" = {
           depends = [
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             (hsPkgs."split" or (buildDepError "split"))
             ];
+          buildable = true;
           };
         };
       exes = {
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "du" = {
           depends = [
@@ -88,18 +91,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
             ];
+          buildable = true;
           };
         "filecount" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."extra" or (buildDepError "extra"))
             ];
+          buildable = true;
           };
         "gcd" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         "genSQL" = {
           depends = [
@@ -107,8 +113,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
-        "ioref" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "ioref" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "ipgen" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
@@ -117,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             ];
+          buildable = true;
           };
         "iplookup" = {
           depends = [
@@ -125,21 +136,25 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             ];
+          buildable = true;
           };
         "locator" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "maybe" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."safe" or (buildDepError "safe"))
             ];
+          buildable = true;
           };
         "reader" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         "rpnexpr" = {
           depends = [
@@ -148,18 +163,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe" or (buildDepError "safe"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "showexpr" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hint" or (buildDepError "hint"))
             ];
+          buildable = true;
           };
         "shunting-yard" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         "stockquotes" = {
           depends = [
@@ -175,8 +193,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
-        "stref" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "stref" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "suntimes" = {
           depends = [
             (hsPkgs."aeson" or (buildDepError "aeson"))
@@ -193,24 +215,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "vocab1" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "vocab2" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "vocab3" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "weapons" = {
           depends = [
@@ -218,6 +244,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -226,6 +253,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "iplookup-test" = {
           depends = [
@@ -239,6 +267,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
             ];
+          buildable = true;
           };
         };
       };

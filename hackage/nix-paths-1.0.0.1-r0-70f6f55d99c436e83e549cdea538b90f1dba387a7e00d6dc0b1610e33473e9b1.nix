@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs.buildPackages.nix-env or (pkgs.buildPackages.nix-env or (buildToolDepError "nix-env")))
           (hsPkgs.buildPackages.nix-store or (pkgs.buildPackages.nix-store or (buildToolDepError "nix-store")))
           ];
+        buildable = true;
         };
       };
     }

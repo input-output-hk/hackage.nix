@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."regex-pcre-builtin" or (buildDepError "regex-pcre-builtin"))
             ]);
+        buildable = true;
         };
       exes = {
         "Highlight" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xhtml" or (buildDepError "xhtml"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.executable then true else false;
           };
         };
       };

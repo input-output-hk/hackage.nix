@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lazysmallcheck" or (buildDepError "lazysmallcheck"))
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       };
     }

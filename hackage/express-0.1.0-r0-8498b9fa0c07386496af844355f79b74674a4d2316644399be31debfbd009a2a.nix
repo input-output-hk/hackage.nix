@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       tests = {
         "main" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "core" = {
           depends = [
@@ -74,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "canon" = {
           depends = [
@@ -81,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "hole" = {
           depends = [
@@ -88,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "match" = {
           depends = [
@@ -95,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "map" = {
           depends = [
@@ -102,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "fixtures" = {
           depends = [
@@ -109,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "instances" = {
           depends = [
@@ -116,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "express-instances" = {
           depends = [
@@ -123,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "express-derive" = {
           depends = [
@@ -130,6 +140,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "ord" = {
           depends = [
@@ -137,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "listable" = {
           depends = [
@@ -144,6 +156,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "name" = {
           depends = [
@@ -151,6 +164,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "name-derive" = {
           depends = [
@@ -158,6 +172,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "fold" = {
           depends = [
@@ -165,6 +180,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "show" = {
           depends = [
@@ -172,6 +188,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "utils" = {
           depends = [
@@ -179,6 +196,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -188,6 +206,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "pairs" = {
           depends = [
@@ -195,6 +214,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "tiers" = {
           depends = [
@@ -202,6 +222,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "u-extrapolate" = {
           depends = [
@@ -209,6 +230,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         "u-speculate" = {
           depends = [
@@ -216,6 +238,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."express" or (buildDepError "express"))
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             ];
+          buildable = true;
           };
         };
       };

@@ -54,7 +54,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "symengine-hs-exe" = {
           depends = [
@@ -67,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."gmpxx" or (sysDepError "gmpxx"))
             (pkgs."gmp" or (sysDepError "gmp"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -81,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."gmpxx" or (sysDepError "gmpxx"))
             (pkgs."gmp" or (sysDepError "gmp"))
             ];
+          buildable = true;
           };
         };
       };

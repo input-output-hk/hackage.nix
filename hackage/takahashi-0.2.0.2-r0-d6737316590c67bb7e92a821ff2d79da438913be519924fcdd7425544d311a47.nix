@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."reasonable-lens" or (buildDepError "reasonable-lens"))
           ];
+        buildable = true;
         };
       };
     }

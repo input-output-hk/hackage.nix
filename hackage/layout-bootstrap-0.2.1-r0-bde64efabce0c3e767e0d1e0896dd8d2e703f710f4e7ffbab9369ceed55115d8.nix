@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
           ];
+        buildable = true;
         };
       };
     }

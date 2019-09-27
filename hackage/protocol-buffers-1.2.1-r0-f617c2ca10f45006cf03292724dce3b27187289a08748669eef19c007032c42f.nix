@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+        buildable = true;
         };
       };
     }

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bitcoin-tx" or (buildDepError "bitcoin-tx"))
           (hsPkgs."bitcoin-api" or (buildDepError "bitcoin-api"))
           ];
+        buildable = true;
         };
       tests = {
         "test-suite" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bitcoin-tx" or (buildDepError "bitcoin-tx"))
             (hsPkgs."bitcoin-api-extra" or (buildDepError "bitcoin-api-extra"))
             ];
+          buildable = true;
           };
         };
       };

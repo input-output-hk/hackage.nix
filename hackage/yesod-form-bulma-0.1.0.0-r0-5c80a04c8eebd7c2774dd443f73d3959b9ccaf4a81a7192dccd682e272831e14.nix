@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
             (hsPkgs."yesod-form-bulma" or (buildDepError "yesod-form-bulma"))
             ];
+          buildable = true;
           };
         "showcase" = {
           depends = [
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
             (hsPkgs."yesod-form-bulma" or (buildDepError "yesod-form-bulma"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -101,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
             (hsPkgs."yesod-form-bulma" or (buildDepError "yesod-form-bulma"))
             ];
+          buildable = true;
           };
         };
       };

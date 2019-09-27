@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."pwstore-purehaskell" or (buildDepError "pwstore-purehaskell"))
               ]);
+          buildable = true;
           };
         };
       };

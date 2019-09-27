@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."simple-nix" or (buildDepError "simple-nix"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."simple-nix" or (buildDepError "simple-nix"))
             ];
+          buildable = true;
           };
         };
       };

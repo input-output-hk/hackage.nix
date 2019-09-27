@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-predicates" or (buildDepError "wai-predicates"))
           (hsPkgs."wai-route" or (buildDepError "wai-route"))
           ];
+        buildable = true;
         };
       tests = {
         "wai-routing-tests" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-predicates" or (buildDepError "wai-predicates"))
             (hsPkgs."wai-routing" or (buildDepError "wai-routing"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-predicates" or (buildDepError "wai-predicates"))
             (hsPkgs."wai-routing" or (buildDepError "wai-routing"))
             ];
+          buildable = true;
           };
         };
       };

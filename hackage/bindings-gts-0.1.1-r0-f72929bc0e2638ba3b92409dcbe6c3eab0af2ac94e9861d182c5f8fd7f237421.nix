@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-glib" or (buildDepError "bindings-glib"))
           ];
         pkgconfig = [ (pkgconfPkgs."gts" or (pkgConfDepError "gts")) ];
+        buildable = true;
         };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ihaskell" or (buildDepError "ihaskell"))
           (hsPkgs."active" or (buildDepError "active"))
           ];
+        buildable = true;
         };
       };
     }

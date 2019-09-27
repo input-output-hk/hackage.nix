@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."vrpn" or (sysDepError "vrpn"))
             (pkgs."stdc++" or (sysDepError "stdc++"))
             ];
+        buildable = true;
         };
       exes = {
         "test-vrpn" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."vrpn" or (sysDepError "vrpn"))
             (pkgs."stdc++" or (sysDepError "stdc++"))
             ];
+          buildable = true;
           };
         };
       };

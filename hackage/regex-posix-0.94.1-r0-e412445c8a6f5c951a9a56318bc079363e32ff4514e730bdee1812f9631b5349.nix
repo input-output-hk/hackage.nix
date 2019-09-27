@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-base" or (buildDepError "regex-base"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+        buildable = true;
         };
       };
     }

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."trasa" or (buildDepError "trasa"))
           (hsPkgs."trasa-server" or (buildDepError "trasa-server"))
           ];
+        buildable = true;
         };
       };
     }

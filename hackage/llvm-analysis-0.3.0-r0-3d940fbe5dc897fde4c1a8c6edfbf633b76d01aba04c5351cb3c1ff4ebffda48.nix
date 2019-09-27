@@ -88,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."itanium-abi" or (buildDepError "itanium-abi"))
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           ];
+        buildable = true;
         };
       tests = {
         "CallGraphTests" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-analysis" or (buildDepError "llvm-analysis"))
             (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
             ];
+          buildable = true;
           };
         "BlockReturnTests" = {
           depends = [
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-analysis" or (buildDepError "llvm-analysis"))
             (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
             ];
+          buildable = true;
           };
         "ReturnTests" = {
           depends = [
@@ -122,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
             (hsPkgs."llvm-analysis" or (buildDepError "llvm-analysis"))
             ];
+          buildable = true;
           };
         "AccessPathTests" = {
           depends = [
@@ -132,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
             (hsPkgs."llvm-analysis" or (buildDepError "llvm-analysis"))
             ];
+          buildable = true;
           };
         "ClassHierarchyTests" = {
           depends = [
@@ -144,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
             (hsPkgs."itanium-abi" or (buildDepError "itanium-abi"))
             ];
+          buildable = true;
           };
         "AndersenTests" = {
           depends = [
@@ -154,6 +160,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
             (hsPkgs."llvm-analysis" or (buildDepError "llvm-analysis"))
             ] ++ (pkgs.lib).optional (flags.debugandersengraph) (hsPkgs."graphviz" or (buildDepError "graphviz"));
+          buildable = true;
           };
         };
       };

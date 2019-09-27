@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."servant-server" or (buildDepError "servant-server"))
           (hsPkgs."safe" or (buildDepError "safe"))
           ];
+        buildable = true;
         };
       exes = {
         "servant-pagination-simple" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-server" or (buildDepError "servant-server"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "servant-pagination-complex" = {
           depends = [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-server" or (buildDepError "servant-server"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

@@ -66,6 +66,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."checkers" or (buildDepError "checkers"))
           (hsPkgs."category-extras" or (buildDepError "category-extras"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "6.9"
+          then false
+          else true;
         };
       };
     }

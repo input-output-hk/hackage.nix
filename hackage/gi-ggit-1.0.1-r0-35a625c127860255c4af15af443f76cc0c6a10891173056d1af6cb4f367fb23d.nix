@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libgit2-glib-1.0" or (pkgConfDepError "libgit2-glib-1.0"))
           ];
+        buildable = true;
         };
       };
     }

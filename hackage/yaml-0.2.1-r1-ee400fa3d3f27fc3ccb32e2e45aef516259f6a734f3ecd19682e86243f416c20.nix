@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."control-monad-failure" or (buildDepError "control-monad-failure"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ] ++ [ (hsPkgs."transformers" or (buildDepError "transformers")) ];
+        buildable = if flags.nolib then false else true;
         };
       exes = {
         "runtests" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ] ++ [ (hsPkgs."transformers" or (buildDepError "transformers")) ]);
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."graphviz" or (buildDepError "graphviz"))
             (hsPkgs."bktrees" or (buildDepError "bktrees"))
             ];
+        buildable = true;
         };
       };
     }

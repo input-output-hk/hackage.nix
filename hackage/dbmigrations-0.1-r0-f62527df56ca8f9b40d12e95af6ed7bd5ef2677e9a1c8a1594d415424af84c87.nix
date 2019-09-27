@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fgl" or (buildDepError "fgl"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "test" = {
@@ -76,10 +77,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = if !flags.testing then false else true;
           };
-        "moo" = {};
+        "moo" = { buildable = true; };
         "store-manager" = {
           depends = [ (hsPkgs."hscurses" or (buildDepError "hscurses")) ];
+          buildable = if !flags.testing then false else true;
           };
         };
       };

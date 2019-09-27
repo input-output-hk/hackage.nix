@@ -99,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."cryptopp" or (sysDepError "cryptopp"))
           (pkgs."ssl" or (sysDepError "ssl"))
           ];
+        buildable = true;
         };
       exes = {
         "happstack-server-tests" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ];
+          buildable = if flags.tests then true else false;
           };
         };
       };

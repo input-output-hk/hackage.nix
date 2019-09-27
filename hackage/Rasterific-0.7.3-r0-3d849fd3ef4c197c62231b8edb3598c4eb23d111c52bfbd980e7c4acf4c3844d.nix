@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fail" or (buildDepError "fail"))
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           ]) ++ (pkgs.lib).optional (!flags.embed_linear) (hsPkgs."linear" or (buildDepError "linear"));
+        buildable = true;
         };
       };
     }

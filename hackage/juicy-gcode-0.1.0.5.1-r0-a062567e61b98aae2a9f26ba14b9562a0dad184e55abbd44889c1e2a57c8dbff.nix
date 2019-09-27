@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."matrix" or (buildDepError "matrix"))
             (hsPkgs."svg-tree" or (buildDepError "svg-tree"))
             ];
+          buildable = true;
           };
         };
       };

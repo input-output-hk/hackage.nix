@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pem" or (buildDepError "pem"))
           (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
           ];
+        buildable = true;
         };
       exes = {
         "testServer" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
             (hsPkgs."http-types" or (buildDepError "http-types"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

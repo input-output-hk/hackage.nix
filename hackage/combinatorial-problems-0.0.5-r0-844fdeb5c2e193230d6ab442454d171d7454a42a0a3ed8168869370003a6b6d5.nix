@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."bytestring-lexing" or (buildDepError "bytestring-lexing"))
           ];
+        buildable = true;
         };
       };
     }

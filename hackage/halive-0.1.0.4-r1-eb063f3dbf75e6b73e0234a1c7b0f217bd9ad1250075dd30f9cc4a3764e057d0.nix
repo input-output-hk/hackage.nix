@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."foreign-store" or (buildDepError "foreign-store"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       exes = {
         "halive" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
             (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
             ];
+          buildable = true;
           };
         };
       };

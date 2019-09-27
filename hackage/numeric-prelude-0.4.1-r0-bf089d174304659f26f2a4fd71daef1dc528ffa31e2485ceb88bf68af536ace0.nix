@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "numeric-prelude-demo" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         "numeric-prelude-test" = {
           depends = (pkgs.lib).optionals (flags.buildtests) [
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         "numeric-prelude-gaussian" = {
           depends = (pkgs.lib).optionals (flags.buildtests) [
@@ -94,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

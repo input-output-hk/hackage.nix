@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uuid" or (buildDepError "uuid"))
           (hsPkgs."uuid-types" or (buildDepError "uuid-types"))
           ];
+        buildable = true;
         };
       };
     }

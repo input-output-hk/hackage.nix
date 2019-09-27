@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.7") (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"));
+          buildable = true;
           };
         };
       };

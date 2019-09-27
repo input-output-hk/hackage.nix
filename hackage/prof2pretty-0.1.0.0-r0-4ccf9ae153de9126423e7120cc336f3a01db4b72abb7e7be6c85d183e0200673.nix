@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."zenc" or (buildDepError "zenc"))
             ];
+          buildable = true;
           };
         "sccpragmabomb" = {
           depends = [
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uniplate" or (buildDepError "uniplate"))
             (hsPkgs."zenc" or (buildDepError "zenc"))
             ];
+          buildable = true;
           };
         };
       };

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."names-th" or (buildDepError "names-th"))
           (hsPkgs."persistable-record" or (buildDepError "persistable-record"))
           ];
+        buildable = true;
         };
       tests = {
         "SQLs" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cabal-test-compat" or (buildDepError "cabal-test-compat"))
             (hsPkgs."relational-query" or (buildDepError "relational-query"))
             ];
+          buildable = true;
           };
         };
       };

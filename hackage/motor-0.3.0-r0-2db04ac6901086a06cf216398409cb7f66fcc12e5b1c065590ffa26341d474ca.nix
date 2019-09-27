@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."row-types" or (buildDepError "row-types"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "example-door" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."row-types" or (buildDepError "row-types"))
             (hsPkgs."motor" or (buildDepError "motor"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."row-types" or (buildDepError "row-types"))
             (hsPkgs."motor" or (buildDepError "motor"))
             ];
+          buildable = true;
           };
         };
       };

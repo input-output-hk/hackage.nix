@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."MaybeT" or (buildDepError "MaybeT"))
           ];
+        buildable = true;
         };
       };
     }

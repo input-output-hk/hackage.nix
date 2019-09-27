@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."superdoc" or (buildDepError "superdoc"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       exes = {
         "gridsynth" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."superdoc" or (buildDepError "superdoc"))
             (hsPkgs."newsynth" or (buildDepError "newsynth"))
             ];
+          buildable = true;
           };
         };
       };

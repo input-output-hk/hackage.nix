@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."icui18n" or (sysDepError "icui18n"))
             (pkgs."icudata" or (sysDepError "icudata"))
             ]);
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."text-icu" or (buildDepError "text-icu"))
             ];
+          buildable = true;
           };
         };
       };

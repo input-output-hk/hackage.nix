@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
           (hsPkgs."these" or (buildDepError "these"))
           ];
+        buildable = true;
         };
       exes = {
         "wires-ping-pong" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."profunctors" or (buildDepError "profunctors"))
             (hsPkgs."wires" or (buildDepError "wires"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

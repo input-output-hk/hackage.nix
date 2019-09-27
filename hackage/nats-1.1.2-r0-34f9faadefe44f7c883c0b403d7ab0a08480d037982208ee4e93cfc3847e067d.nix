@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.9") ((([
           (hsPkgs."base" or (buildDepError "base"))
           ] ++ (pkgs.lib).optional (flags.binary) (hsPkgs."binary" or (buildDepError "binary"))) ++ (pkgs.lib).optional (flags.template-haskell) (hsPkgs."template-haskell" or (buildDepError "template-haskell"))) ++ (pkgs.lib).optional (flags.hashable) (hsPkgs."hashable" or (buildDepError "hashable")));
+        buildable = true;
         };
       };
     }

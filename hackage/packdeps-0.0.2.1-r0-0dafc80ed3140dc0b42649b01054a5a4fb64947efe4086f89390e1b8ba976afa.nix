@@ -67,16 +67,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = if flags.web then false else true;
         };
       exes = {
-        "packdeps" = {};
-        "packdeps-yesod" = {};
+        "packdeps" = { buildable = if flags.web then false else true; };
+        "packdeps-yesod" = { buildable = if !flags.web then false else true; };
         "save-newest" = {
           depends = [
             (hsPkgs."yesod-newsfeed" or (buildDepError "yesod-newsfeed"))
             (hsPkgs."yesod" or (buildDepError "yesod"))
             (hsPkgs."hamlet" or (buildDepError "hamlet"))
             ];
+          buildable = if !flags.web then false else true;
           };
         };
       };

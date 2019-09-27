@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tasty" or (buildDepError "tasty"))
           (hsPkgs."leancheck" or (buildDepError "leancheck"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leancheck" or (buildDepError "leancheck"))
             (hsPkgs."tasty-leancheck" or (buildDepError "tasty-leancheck"))
             ];
+          buildable = true;
           };
         };
       };

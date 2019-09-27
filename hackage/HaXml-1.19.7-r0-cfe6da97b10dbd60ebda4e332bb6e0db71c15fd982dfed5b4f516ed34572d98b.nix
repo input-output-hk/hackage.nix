@@ -75,15 +75,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ]);
+        buildable = true;
         };
       exes = {
-        "Canonicalise" = {};
-        "CanonicaliseLazy" = {};
-        "Xtract" = {};
-        "XtractLazy" = {};
-        "Validate" = {};
-        "MkOneOf" = {};
-        "DtdToHaskell" = {};
+        "Canonicalise" = { buildable = true; };
+        "CanonicaliseLazy" = { buildable = true; };
+        "Xtract" = { buildable = true; };
+        "XtractLazy" = { buildable = true; };
+        "Validate" = { buildable = true; };
+        "MkOneOf" = { buildable = true; };
+        "DtdToHaskell" = { buildable = true; };
         };
       };
     }

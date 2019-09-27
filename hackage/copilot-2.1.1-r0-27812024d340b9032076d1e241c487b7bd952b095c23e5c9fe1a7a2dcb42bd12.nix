@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."copilot-language" or (buildDepError "copilot-language"))
           (hsPkgs."copilot-libraries" or (buildDepError "copilot-libraries"))
           ];
+        buildable = true;
         };
       exes = {
         "copilot-regression" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

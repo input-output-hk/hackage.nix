@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."Only" or (buildDepError "Only"))
           ];
+        buildable = true;
         };
       tests = {
         "HeterogenousListLiterals-test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."heterogeneous-list-literals" or (buildDepError "heterogeneous-list-literals"))
             ];
+          buildable = true;
           };
         };
       };

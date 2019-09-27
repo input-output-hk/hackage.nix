@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."reinterpret-cast" or (buildDepError "reinterpret-cast"))
           (hsPkgs."lrucache" or (buildDepError "lrucache"))
           ];
+        buildable = true;
         };
       };
     }

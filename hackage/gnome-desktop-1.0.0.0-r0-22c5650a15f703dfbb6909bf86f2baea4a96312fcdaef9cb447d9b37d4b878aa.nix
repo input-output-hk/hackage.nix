@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."glib" or (buildDepError "glib"))
             (hsPkgs."gconf" or (buildDepError "gconf"))
             ];
+          buildable = true;
           };
         };
       };

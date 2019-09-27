@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."temporal-music-notation" or (buildDepError "temporal-music-notation"))
           (hsPkgs."csound-expression" or (buildDepError "csound-expression"))
           ];
+        buildable = true;
         };
       };
     }

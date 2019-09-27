@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ] ++ (pkgs.lib).optional (flags.inotify) (hsPkgs."hinotify" or (buildDepError "hinotify"));
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hs-carbon" or (buildDepError "hs-carbon"))
             (hsPkgs."tf-random" or (buildDepError "tf-random"))
             ];
+          buildable = true;
           };
         "IntegralExample" = {
           depends = [
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hs-carbon" or (buildDepError "hs-carbon"))
             (hsPkgs."tf-random" or (buildDepError "tf-random"))
             ];
+          buildable = true;
           };
         "TransportExample" = {
           depends = [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         };
       };

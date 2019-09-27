@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             ];
+          buildable = true;
           };
         };
       };

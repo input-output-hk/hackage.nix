@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-sized" or (buildDepError "vector-sized"))
           ];
         libs = [ (pkgs."vulkan" or (sysDepError "vulkan")) ];
+        buildable = true;
         };
       };
     }

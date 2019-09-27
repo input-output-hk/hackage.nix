@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."HGamer3D-Data" or (buildDepError "HGamer3D-Data"))
           ];
+        buildable = true;
         };
       };
     }

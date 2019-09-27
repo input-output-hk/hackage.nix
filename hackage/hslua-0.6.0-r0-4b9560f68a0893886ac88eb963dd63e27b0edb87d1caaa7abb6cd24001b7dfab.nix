@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else if flags.lua502
               then [ (pkgconfPkgs."lua5.2" or (pkgConfDepError "lua5.2")) ]
               else [ (pkgconfPkgs."lua5.3" or (pkgConfDepError "lua5.3")) ]));
+        buildable = true;
         };
       tests = {
         "test-hslua" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

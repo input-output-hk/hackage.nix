@@ -91,9 +91,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xhtml" or (buildDepError "xhtml"))
             (hsPkgs."xml" or (buildDepError "xml"))
             ];
+          buildable = true;
           };
-        "darcsden-ssh" = {};
-        "darcsden-post-hook" = {};
+        "darcsden-ssh" = { buildable = true; };
+        "darcsden-post-hook" = { buildable = true; };
         };
       };
     }

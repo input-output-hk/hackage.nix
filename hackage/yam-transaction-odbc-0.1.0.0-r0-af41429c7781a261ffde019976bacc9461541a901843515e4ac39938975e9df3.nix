@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HDBC-odbc" or (buildDepError "HDBC-odbc"))
           (hsPkgs."persistent-odbc" or (buildDepError "persistent-odbc"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."util-plus" or (buildDepError "util-plus"))
           ];
+        buildable = true;
         };
       tests = {
         "text-plus-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."text-plus" or (buildDepError "text-plus"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."validity" or (buildDepError "validity"))
           ];
+        buildable = true;
         };
       tests = {
         "genvalidity-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
             ];
+          buildable = true;
           };
         };
       };

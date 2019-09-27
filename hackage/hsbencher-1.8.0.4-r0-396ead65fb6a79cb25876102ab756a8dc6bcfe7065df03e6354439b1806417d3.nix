@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."io-streams" or (buildDepError "io-streams"))
           (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
           ] ++ (pkgs.lib).optional (flags.hydra) (hsPkgs."hydra-print" or (buildDepError "hydra-print"));
+        buildable = true;
         };
       tests = {
         "hsbencher-unit-tests" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."text" or (buildDepError "text"))
             ] ++ (pkgs.lib).optional (flags.hydra) (hsPkgs."hydra-print" or (buildDepError "hydra-print"));
+          buildable = true;
           };
         "hsbencher-test1" = {
           depends = [
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
             (hsPkgs."hsbencher" or (buildDepError "hsbencher"))
             ] ++ (pkgs.lib).optional (flags.hydra) (hsPkgs."hydra-print" or (buildDepError "hydra-print"));
+          buildable = true;
           };
         "hsbencher-test2" = {
           depends = [
@@ -120,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
             (hsPkgs."hsbencher" or (buildDepError "hsbencher"))
             ] ++ (pkgs.lib).optional (flags.hydra) (hsPkgs."hydra-print" or (buildDepError "hydra-print"));
+          buildable = true;
           };
         };
       };

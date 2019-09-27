@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
             (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc or (buildToolDepError "uuagc")))
             ];
+          buildable = true;
           };
         };
       };

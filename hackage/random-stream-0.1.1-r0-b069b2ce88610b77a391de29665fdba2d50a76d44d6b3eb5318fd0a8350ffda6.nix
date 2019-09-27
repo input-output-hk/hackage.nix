@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = (pkgs.lib).optionals (!flags.have_urandom) (if flags.have_ssl
           then [ (pkgs."ssl" or (sysDepError "ssl")) ]
           else (pkgs.lib).optional (flags.have_win32_crypt) (pkgs."advapi32" or (sysDepError "advapi32")));
+        buildable = true;
         };
       };
     }

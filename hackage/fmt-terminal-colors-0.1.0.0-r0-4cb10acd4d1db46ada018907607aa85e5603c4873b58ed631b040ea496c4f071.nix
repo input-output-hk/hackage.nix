@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."fmt" or (buildDepError "fmt"))
           ];
+        buildable = true;
         };
       tests = {
         "fmt-terminal-colors-test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fmt" or (buildDepError "fmt"))
             (hsPkgs."fmt-terminal-colors" or (buildDepError "fmt-terminal-colors"))
             ];
+          buildable = true;
           };
         };
       };

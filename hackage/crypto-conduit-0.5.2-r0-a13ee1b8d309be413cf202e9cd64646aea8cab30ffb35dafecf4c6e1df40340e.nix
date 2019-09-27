@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ [ (hsPkgs."crypto-api" or (buildDepError "crypto-api")) ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."crypto-conduit" or (buildDepError "crypto-conduit"))
             ];
+          buildable = true;
           };
         };
       };

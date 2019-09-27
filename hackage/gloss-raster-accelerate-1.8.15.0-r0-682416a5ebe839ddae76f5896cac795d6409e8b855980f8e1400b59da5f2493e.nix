@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gloss" or (buildDepError "gloss"))
           (hsPkgs."gloss-accelerate" or (buildDepError "gloss-accelerate"))
           ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"));
+        buildable = true;
         };
       };
     }

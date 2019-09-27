@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             (hsPkgs."nixos-types" or (buildDepError "nixos-types"))
             ];
+          buildable = true;
           };
         "hackage4nix" = {
           depends = [
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."nixos-types" or (buildDepError "nixos-types"))
             (hsPkgs."hackage-db" or (buildDepError "hackage-db"))
             ];
+          buildable = true;
           };
         };
       };

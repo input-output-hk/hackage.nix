@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uni-reactor" or (buildDepError "uni-reactor"))
           (hsPkgs."uni-htk" or (buildDepError "uni-htk"))
           ];
+        buildable = true;
         };
       };
     }

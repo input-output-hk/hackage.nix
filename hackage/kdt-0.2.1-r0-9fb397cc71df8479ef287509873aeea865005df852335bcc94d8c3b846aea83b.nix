@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pqueue" or (buildDepError "pqueue"))
           (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
           ];
+        buildable = true;
         };
       tests = {
         "StaticTest" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
             ];
+          buildable = true;
           };
         "DynamicTest" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -95,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = if !system.isI386 && !system.isX86_64 && !system.isIa64 && !(compiler.isGhcjs && true)
+          then false
+          else true;
         };
       };
     }

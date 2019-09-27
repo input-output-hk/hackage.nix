@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."tasty" or (buildDepError "tasty"))
           ];
+        buildable = true;
         };
       tests = {
         "test-tasty-kat" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."tasty-kat" or (buildDepError "tasty-kat"))
             ];
+          buildable = true;
           };
         };
       };

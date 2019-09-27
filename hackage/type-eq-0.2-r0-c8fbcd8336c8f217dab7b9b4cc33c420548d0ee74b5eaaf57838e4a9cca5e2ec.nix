@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
           (hsPkgs."groupoids" or (buildDepError "groupoids"))
           ];
+        buildable = true;
         };
       };
     }

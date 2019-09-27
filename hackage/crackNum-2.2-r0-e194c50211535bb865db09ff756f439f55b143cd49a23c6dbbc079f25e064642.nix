@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."reinterpret-cast" or (buildDepError "reinterpret-cast"))
           (hsPkgs."FloatingHex" or (buildDepError "FloatingHex"))
           ];
+        buildable = true;
         };
       exes = {
         "crackNum" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reinterpret-cast" or (buildDepError "reinterpret-cast"))
             (hsPkgs."FloatingHex" or (buildDepError "FloatingHex"))
             ];
+          buildable = true;
           };
         };
       };

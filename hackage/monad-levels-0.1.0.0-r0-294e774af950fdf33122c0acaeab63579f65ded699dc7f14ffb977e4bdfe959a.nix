@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."constraints" or (buildDepError "constraints"))
           ];
+        buildable = true;
         };
       };
     }

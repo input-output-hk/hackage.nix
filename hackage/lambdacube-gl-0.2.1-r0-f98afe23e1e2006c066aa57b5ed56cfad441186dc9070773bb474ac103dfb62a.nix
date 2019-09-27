@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lambdacube-core" or (buildDepError "lambdacube-core"))
           (hsPkgs."lambdacube-edsl" or (buildDepError "lambdacube-edsl"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haste-compiler" or (buildDepError "haste-compiler"))
             ];
+        buildable = true;
         };
       };
     }

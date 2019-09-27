@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fixedprec" or (buildDepError "fixedprec"))
           (hsPkgs."superdoc" or (buildDepError "superdoc"))
           ];
+        buildable = true;
         };
       exes = {
         "newsynth" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."superdoc" or (buildDepError "superdoc"))
             (hsPkgs."newsynth" or (buildDepError "newsynth"))
             ];
+          buildable = true;
           };
         };
       };

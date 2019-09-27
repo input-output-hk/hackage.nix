@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-spine" or (buildDepError "type-spine"))
           (hsPkgs."type-digits" or (buildDepError "type-digits"))
           ];
+        buildable = true;
         };
       };
     }

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ]) ++ (pkgs.lib).optional (system.isSolaris) (hsPkgs."unix" or (buildDepError "unix"));
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32"));
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."CoreFoundation" or (sysDepError "CoreFoundation"));
+        buildable = true;
         };
       };
     }

@@ -60,42 +60,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "haunted-house" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "solar-system" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "parabolic" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "stare" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "waves" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "windmills" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         };
       };

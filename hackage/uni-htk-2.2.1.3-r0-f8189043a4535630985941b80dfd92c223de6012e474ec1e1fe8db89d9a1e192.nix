@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uni-posixutil" or (buildDepError "uni-posixutil"))
           (hsPkgs."uni-reactor" or (buildDepError "uni-reactor"))
           ];
+        buildable = true;
         };
       };
     }

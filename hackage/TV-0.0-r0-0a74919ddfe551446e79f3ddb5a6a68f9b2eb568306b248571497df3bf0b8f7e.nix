@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."phooey" or (buildDepError "phooey"))
           (hsPkgs."DeepArrow" or (buildDepError "DeepArrow"))
           ];
+        buildable = true;
         };
       };
     }

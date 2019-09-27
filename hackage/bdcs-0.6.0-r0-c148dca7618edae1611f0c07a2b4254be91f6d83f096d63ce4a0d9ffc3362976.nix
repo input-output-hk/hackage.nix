@@ -111,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."ostree-1" or (pkgConfDepError "ostree-1"))
           ];
+        buildable = true;
         };
       exes = {
         "bdcs" = {
@@ -125,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."typed-process" or (buildDepError "typed-process"))
             ];
+          buildable = true;
           };
         "bdcs-import" = {
           depends = [
@@ -137,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-uri" or (buildDepError "network-uri"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "bdcs-inspect" = {
           depends = [
@@ -150,6 +153,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."typed-process" or (buildDepError "typed-process"))
             ];
+          buildable = true;
           };
         "inspect-groups" = {
           depends = [
@@ -166,6 +170,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "inspect-ls" = {
           depends = [
@@ -182,6 +187,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         "inspect-nevras" = {
           depends = [
@@ -194,6 +200,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "bdcs-export" = {
           depends = [
@@ -206,6 +213,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "bdcs-tmpfiles" = {
           depends = [
@@ -214,6 +222,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
             ];
+          buildable = true;
           };
         "bdcs-depsolve" = {
           depends = [
@@ -222,6 +231,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -255,6 +265,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         };
       };

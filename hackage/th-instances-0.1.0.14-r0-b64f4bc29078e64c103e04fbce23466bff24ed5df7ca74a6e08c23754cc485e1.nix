@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."derive" or (buildDepError "derive"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."checkers" or (buildDepError "checkers"))
             (hsPkgs."derive" or (buildDepError "derive"))
             ];
+          buildable = true;
           };
         };
       };

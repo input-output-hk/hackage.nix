@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."llvm-pretty" or (buildDepError "llvm-pretty"))
           ];
+        buildable = true;
         };
       exes = {
         "llvm-disasm" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-pretty" or (buildDepError "llvm-pretty"))
             (hsPkgs."llvm-pretty-bc-parser" or (buildDepError "llvm-pretty-bc-parser"))
             ];
+          buildable = true;
           };
         "fuzz-llvm-disasm" = {
           depends = [
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-pretty" or (buildDepError "llvm-pretty"))
             (hsPkgs."llvm-pretty-bc-parser" or (buildDepError "llvm-pretty-bc-parser"))
             ];
+          buildable = if flags.fuzz then true else false;
           };
         };
       tests = {
@@ -115,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-pretty" or (buildDepError "llvm-pretty"))
             (hsPkgs."llvm-pretty-bc-parser" or (buildDepError "llvm-pretty-bc-parser"))
             ];
+          buildable = true;
           };
         };
       };

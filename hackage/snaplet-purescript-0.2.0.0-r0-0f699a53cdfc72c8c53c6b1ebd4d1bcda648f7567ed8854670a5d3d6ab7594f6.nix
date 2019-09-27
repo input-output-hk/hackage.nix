@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."configurator" or (buildDepError "configurator"))
           (hsPkgs."shelly" or (buildDepError "shelly"))
           ];
+        buildable = true;
         };
       };
     }

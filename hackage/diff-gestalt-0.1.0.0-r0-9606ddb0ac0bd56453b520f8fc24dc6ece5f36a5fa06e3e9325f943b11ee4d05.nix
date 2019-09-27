@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."KMP" or (buildDepError "KMP"))
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           ];
+        buildable = true;
         };
       tests = {
         "diff-gestalt-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Diff" or (buildDepError "Diff"))
             (hsPkgs."diff-gestalt" or (buildDepError "diff-gestalt"))
             ];
+          buildable = true;
           };
         };
       };

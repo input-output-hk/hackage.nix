@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."memory" or (buildDepError "memory"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "test-merkle-patricia-db" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-contrib" or (buildDepError "hspec-contrib"))
             (hsPkgs."merkle-patricia-db" or (buildDepError "merkle-patricia-db"))
             ];
+          buildable = true;
           };
         };
       };

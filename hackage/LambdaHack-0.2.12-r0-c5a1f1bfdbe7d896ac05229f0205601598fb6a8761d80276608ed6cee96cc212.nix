@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else if flags.vty
             then [ (hsPkgs."vty" or (buildDepError "vty")) ]
             else [ (hsPkgs."gtk" or (buildDepError "gtk")) ]);
+        buildable = true;
         };
       exes = {
         "LambdaHack" = {
@@ -120,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
+          buildable = true;
           };
         };
       };

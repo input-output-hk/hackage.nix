@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optionals (flags.use-system-library) ((pkgs.lib).optional (!flags.pkg-config) (pkgs."argon2" or (sysDepError "argon2")));
         pkgconfig = (pkgs.lib).optionals (flags.use-system-library) ((pkgs.lib).optional (flags.pkg-config) (pkgconfPkgs."libargon2" or (pkgConfDepError "libargon2")));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."tasty" or (buildDepError "tasty"))
             ];
+          buildable = true;
           };
         };
       };

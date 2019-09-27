@@ -68,7 +68,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."colour" or (buildDepError "colour"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (pkgs.lib).optional (flags.test) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+        buildable = true;
         };
-      exes = { "graphviz-testsuite" = {}; };
+      exes = {
+        "graphviz-testsuite" = {
+          buildable = if flags.test then true else false;
+          };
+        };
       };
     }

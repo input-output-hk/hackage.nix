@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MissingH" or (buildDepError "MissingH"))
             (hsPkgs."language-slice" or (buildDepError "language-slice"))
             ];
+          buildable = true;
           };
         };
       };

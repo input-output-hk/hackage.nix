@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
-      exes = { "hsx2hs" = {}; };
+      exes = { "hsx2hs" = { buildable = true; }; };
       };
     }

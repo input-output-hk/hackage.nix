@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xhtml" or (buildDepError "xhtml"))
           (hsPkgs."kibro" or (buildDepError "kibro"))
           ];
+        buildable = true;
         };
       };
     }

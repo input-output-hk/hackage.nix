@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."grapefruit-frp" or (buildDepError "grapefruit-frp"))
           (hsPkgs."grapefruit-records" or (buildDepError "grapefruit-records"))
           ];
+        buildable = true;
         };
       };
     }

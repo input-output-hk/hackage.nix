@@ -66,12 +66,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
         "pubsub.fcgi" = {
           depends = [ (hsPkgs."fastcgi" or (buildDepError "fastcgi")) ];
+          buildable = true;
           };
-        "feeder" = {};
+        "feeder" = { buildable = true; };
         };
       };
     }

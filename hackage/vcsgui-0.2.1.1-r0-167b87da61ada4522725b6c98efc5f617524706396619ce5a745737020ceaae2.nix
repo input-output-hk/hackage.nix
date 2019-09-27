@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gi-gtk" or (buildDepError "gi-gtk"))
           (hsPkgs."gi-gtk-hs" or (buildDepError "gi-gtk-hs"))
           ];
+        buildable = true;
         };
       exes = {
         "vcsgui" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gi-gtk" or (buildDepError "gi-gtk"))
             (hsPkgs."gi-gtk-hs" or (buildDepError "gi-gtk-hs"))
             ];
+          buildable = true;
           };
         "vcsgui-askpass" = {
           depends = [
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gi-gtk" or (buildDepError "gi-gtk"))
             (hsPkgs."gi-gtk-hs" or (buildDepError "gi-gtk-hs"))
             ];
+          buildable = true;
           };
         };
       };

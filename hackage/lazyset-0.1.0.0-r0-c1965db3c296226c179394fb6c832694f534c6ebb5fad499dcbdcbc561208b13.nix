@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-ordlist" or (buildDepError "data-ordlist"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       tests = {
         "settest" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."data-ordlist" or (buildDepError "data-ordlist"))
             ];
+          buildable = true;
           };
         "maptest" = {
           depends = [
@@ -77,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."data-ordlist" or (buildDepError "data-ordlist"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -88,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-ordlist" or (buildDepError "data-ordlist"))
             (hsPkgs."timeit" or (buildDepError "timeit"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "btrfs-defrag" = {
@@ -75,12 +76,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."linux-file-extents" or (buildDepError "linux-file-extents"))
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "btrfs-clone-range" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."btrfs" or (buildDepError "btrfs"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "btrfs-split" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -88,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."btrfs" or (buildDepError "btrfs"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "btrfs-join" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -95,12 +99,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."btrfs" or (buildDepError "btrfs"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "btrfs-list-subvols" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."btrfs" or (buildDepError "btrfs"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "btrfs-print-creation-time" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -109,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

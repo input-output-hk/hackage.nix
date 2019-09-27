@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4.0") (hsPkgs."unsupported-ghc-version" or (buildDepError "unsupported-ghc-version"))) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+          buildable = true;
           };
         };
       };

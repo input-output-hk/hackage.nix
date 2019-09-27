@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."data-lens" or (buildDepError "data-lens"))
           ];
+        buildable = true;
         };
       };
     }

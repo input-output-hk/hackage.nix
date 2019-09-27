@@ -61,18 +61,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "filecount" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."extra" or (buildDepError "extra"))
             ];
+          buildable = true;
           };
         "gcd" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         "genSQL" = {
           depends = [
@@ -80,34 +83,43 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
-        "ioref" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "ioref" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "locator" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "maybe" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."safe" or (buildDepError "safe"))
             ];
+          buildable = true;
           };
         "reader" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         "showexpr" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hint" or (buildDepError "hint"))
             ];
+          buildable = true;
           };
         "shunting-yard" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
         "stockquotes" = {
           depends = [
@@ -123,25 +135,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
-        "stref" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "stref" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "vocab1" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "vocab2" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "vocab3" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "weapons" = {
           depends = [
@@ -149,6 +168,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

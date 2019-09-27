@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
           (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
           ] ++ (pkgs.lib).optional (flags.colors) (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"));
+        buildable = true;
         };
       };
     }

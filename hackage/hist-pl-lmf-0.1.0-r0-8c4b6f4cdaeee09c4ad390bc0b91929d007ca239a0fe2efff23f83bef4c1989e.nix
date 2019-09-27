@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."polysoup" or (buildDepError "polysoup"))
           (hsPkgs."hist-pl-types" or (buildDepError "hist-pl-types"))
           ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."utf8-prelude" or (buildDepError "utf8-prelude"))
           ];
+        buildable = true;
         };
       };
     }

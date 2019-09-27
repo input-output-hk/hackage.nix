@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-tools-prettyprint" or (buildDepError "haskell-tools-prettyprint"))
           (hsPkgs."haskell-tools-refactor" or (buildDepError "haskell-tools-refactor"))
           ];
+        buildable = true;
         };
       tests = {
         "haskell-tools-builtin-refactorings-test" = {
@@ -110,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-tools-refactor" or (buildDepError "haskell-tools-refactor"))
             (hsPkgs."haskell-tools-builtin-refactorings" or (buildDepError "haskell-tools-builtin-refactorings"))
             ];
+          buildable = true;
           };
         "ht-extension-organizer-test" = {
           depends = [
@@ -137,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-tools-refactor" or (buildDepError "haskell-tools-refactor"))
             (hsPkgs."haskell-tools-builtin-refactorings" or (buildDepError "haskell-tools-builtin-refactorings"))
             ];
+          buildable = true;
           };
         };
       };

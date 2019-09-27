@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
           (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
           ];
+        buildable = true;
         };
       };
     }

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
           ];
+        buildable = true;
         };
       exes = {
         "toboggan" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."toboggan" or (buildDepError "toboggan"))
             ];
+          buildable = true;
           };
         };
       };

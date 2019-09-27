@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wtk" or (buildDepError "wtk"))
           (hsPkgs."lenses" or (buildDepError "lenses"))
           ];
+        buildable = true;
         };
       };
     }

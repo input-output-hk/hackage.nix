@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monadloc" or (buildDepError "monadloc"))
           (hsPkgs."clientsession" or (buildDepError "clientsession"))
           ];
+        buildable = true;
         };
       exes = {
         "demos-blaze" = {
@@ -122,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

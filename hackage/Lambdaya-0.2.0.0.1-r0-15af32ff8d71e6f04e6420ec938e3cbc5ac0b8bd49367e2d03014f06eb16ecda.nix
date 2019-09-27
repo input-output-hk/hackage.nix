@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes-binary" or (buildDepError "pipes-binary"))
           (hsPkgs."pipes-parse" or (buildDepError "pipes-parse"))
           ] ++ (pkgs.lib).optional (system.isArm) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       };
     }

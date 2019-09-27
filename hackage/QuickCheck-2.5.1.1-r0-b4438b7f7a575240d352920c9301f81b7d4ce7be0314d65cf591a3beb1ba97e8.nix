@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."base" or (buildDepError "base"))
               ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.7" && (compiler.isGhc && (compiler.version).lt "6.13")) (hsPkgs."ghc" or (buildDepError "ghc"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9" && (compiler.isGhc && (compiler.version).lt "7.0")) (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))) ++ (pkgs.lib).optionals (compiler.isGhc && true) ((pkgs.lib).optional (flags.templatehaskell && (compiler.isGhc && (compiler.version).ge "6.12")) (hsPkgs."template-haskell" or (buildDepError "template-haskell")));
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL-gfx" or (buildDepError "SDL-gfx"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = if !flags.experiments then false else true;
           };
         "pang-a-lambda-arrowup" = {
           depends = [
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL-gfx" or (buildDepError "SDL-gfx"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = if !flags.experiments then false else true;
           };
         "pang-a-lambda-stickyarrow" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL-gfx" or (buildDepError "SDL-gfx"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = if !flags.experiments then false else true;
           };
         "pang-a-lambda-player" = {
           depends = [
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL-gfx" or (buildDepError "SDL-gfx"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = if !flags.experiments then false else true;
           };
         "pang-a-lambda-physics" = {
           depends = [
@@ -100,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL-gfx" or (buildDepError "SDL-gfx"))
             (hsPkgs."SDL-ttf" or (buildDepError "SDL-ttf"))
             ];
+          buildable = if !flags.experiments then false else true;
           };
         "pang-a-lambda-circlingboxes" = {
           depends = [
@@ -107,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL" or (buildDepError "SDL"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = if !flags.experiments then false else true;
           };
         "pang-a-lambda-splittingboxes" = {
           depends = [
@@ -114,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL" or (buildDepError "SDL"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = if !flags.experiments then false else true;
           };
         "pang-a-lambda-split" = {
           depends = [
@@ -121,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL" or (buildDepError "SDL"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = if !flags.experiments then false else true;
           };
         "pang-a-lambda-splitballs" = {
           depends = [
@@ -135,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL-gfx" or (buildDepError "SDL-gfx"))
             (hsPkgs."SDL-ttf" or (buildDepError "SDL-ttf"))
             ];
+          buildable = if !flags.experiments then false else true;
           };
         "pang-a-lambda" = {
           depends = [
@@ -149,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL-gfx" or (buildDepError "SDL-gfx"))
             (hsPkgs."SDL-ttf" or (buildDepError "SDL-ttf"))
             ];
+          buildable = true;
           };
         };
       };

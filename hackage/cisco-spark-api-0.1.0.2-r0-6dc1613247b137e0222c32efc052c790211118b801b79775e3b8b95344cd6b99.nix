@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."bitset-word8" or (buildDepError "bitset-word8"))
           ];
+        buildable = true;
         };
       exes = {
         "cisco-spark-api-exe" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."cisco-spark-api" or (buildDepError "cisco-spark-api"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -103,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."cisco-spark-api" or (buildDepError "cisco-spark-api"))
             ];
+          buildable = true;
           };
         };
       };

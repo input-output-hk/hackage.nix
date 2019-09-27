@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ];
+        buildable = true;
         };
       tests = {
         "test-enummapmap-lazy" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         "test-enummapmap-intmap-lazy" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         "test-enummapmap-strict" = {
           depends = [
@@ -92,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         "test-enummapmap-intmap-strict" = {
           depends = [
@@ -103,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         "test-enummapset-intset" = {
           depends = [
@@ -114,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."enummapmap" or (buildDepError "enummapmap"))
             ];
+          buildable = true;
           };
         };
       };

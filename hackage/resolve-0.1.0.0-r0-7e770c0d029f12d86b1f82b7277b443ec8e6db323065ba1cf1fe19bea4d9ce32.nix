@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hslogger" or (buildDepError "hslogger"))
           (hsPkgs."iproute" or (buildDepError "iproute"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Pathfinder" or (buildDepError "Pathfinder"))
           (hsPkgs."FerryCore" or (buildDepError "FerryCore"))
           ];
+        buildable = true;
         };
       };
     }

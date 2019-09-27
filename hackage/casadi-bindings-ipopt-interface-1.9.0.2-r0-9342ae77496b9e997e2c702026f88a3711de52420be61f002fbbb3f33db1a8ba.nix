@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."casadi_ipopt_interface" or (pkgConfDepError "casadi_ipopt_interface"))
           ];
+        buildable = true;
         };
       };
     }

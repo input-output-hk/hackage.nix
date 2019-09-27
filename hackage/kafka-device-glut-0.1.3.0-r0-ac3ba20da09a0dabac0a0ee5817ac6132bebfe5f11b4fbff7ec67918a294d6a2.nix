@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."milena" or (buildDepError "milena"))
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           ];
+        buildable = true;
         };
       exes = {
         "kafka-device-glut" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."milena" or (buildDepError "milena"))
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             ];
+          buildable = true;
           };
         };
       };

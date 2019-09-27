@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hydrogen-prelude" or (buildDepError "hydrogen-prelude"))
             (hsPkgs."hydrogen-syntax" or (buildDepError "hydrogen-syntax"))
             ];
+          buildable = true;
           };
         };
       };

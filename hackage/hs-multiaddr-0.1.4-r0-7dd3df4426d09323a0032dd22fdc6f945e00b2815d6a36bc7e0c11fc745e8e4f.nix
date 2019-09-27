@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iproute" or (buildDepError "iproute"))
           (hsPkgs."sandi" or (buildDepError "sandi"))
           ];
+        buildable = true;
         };
       tests = {
         "hs-multiaddr-test" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."iproute" or (buildDepError "iproute"))
             (hsPkgs."sandi" or (buildDepError "sandi"))
             ];
+          buildable = true;
           };
         };
       };

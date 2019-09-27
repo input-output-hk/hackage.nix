@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."base" or (buildDepError "base"))
             ] ++ (pkgs.lib).optional (flags.cme) (hsPkgs."control-monad-exception" or (buildDepError "control-monad-exception")));
+        buildable = true;
         };
       };
     }

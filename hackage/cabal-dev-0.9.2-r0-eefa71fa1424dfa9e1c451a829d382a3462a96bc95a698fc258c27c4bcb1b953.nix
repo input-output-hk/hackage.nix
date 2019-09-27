@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (buildToolDepError "cabal")))
             ];
+          buildable = if flags.no-cabal-dev then false else true;
           };
         "ghc-pkg-6_8-compat" = {
           depends = [
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "cabal-dev-test" = {
           depends = (pkgs.lib).optionals (!(flags.no-cabal-dev || !flags.build-tests)) ([
@@ -95,9 +97,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ [
             (hsPkgs."base" or (buildDepError "base"))
             ]) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
+          buildable = if flags.no-cabal-dev || !flags.build-tests
+            then false
+            else true;
           };
         "fake-ghc-cabal-dev" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

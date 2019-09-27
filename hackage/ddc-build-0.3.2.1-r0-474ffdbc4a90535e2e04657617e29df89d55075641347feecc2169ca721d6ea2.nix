@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ddc-core-flow" or (buildDepError "ddc-core-flow"))
           (hsPkgs."ddc-core-tetra" or (buildDepError "ddc-core-tetra"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             (hsPkgs."HCodecs" or (buildDepError "HCodecs"))
             ];
+          buildable = if flags.wav then true else false;
           };
         "yampasynth-openal" = {
           depends = (pkgs.lib).optionals (flags.openal) [
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             (hsPkgs."HCodecs" or (buildDepError "HCodecs"))
             ];
+          buildable = if flags.openal then true else false;
           };
         "yampasynth-gtk" = {
           depends = (pkgs.lib).optionals (flags.gtk) [
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             (hsPkgs."HCodecs" or (buildDepError "HCodecs"))
             ];
+          buildable = if flags.gtk then true else false;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
       exes = {
         "YampaElevator" = {
@@ -68,12 +69,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Yampa-core" or (buildDepError "Yampa-core"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "YampaTailgatingDetector" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Yampa-core" or (buildDepError "Yampa-core"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -82,12 +85,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = if !flags.test-hlint then false else true;
           };
         "testAFRP" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Yampa-core" or (buildDepError "Yampa-core"))
             ];
+          buildable = if !flags.test-afrp then false else true;
           };
         };
       };

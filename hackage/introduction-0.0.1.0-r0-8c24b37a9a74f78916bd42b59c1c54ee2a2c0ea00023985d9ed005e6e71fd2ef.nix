@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."validity" or (buildDepError "validity"))
           (hsPkgs."validity-containers" or (buildDepError "validity-containers"))
           ];
+        buildable = true;
         };
       };
     }

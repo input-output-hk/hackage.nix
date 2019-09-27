@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."haskoin-core" or (buildDepError "haskoin-core"))
           ];
+        buildable = true;
         };
       };
     }

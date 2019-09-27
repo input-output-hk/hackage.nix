@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml" or (buildDepError "xml"))
           (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
           ];
+        buildable = true;
         };
       exes = {
         "openid-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

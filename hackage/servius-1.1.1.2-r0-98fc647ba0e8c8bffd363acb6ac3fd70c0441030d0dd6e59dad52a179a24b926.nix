@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."mime-types" or (buildDepError "mime-types"))
             ];
+          buildable = true;
           };
         };
       };

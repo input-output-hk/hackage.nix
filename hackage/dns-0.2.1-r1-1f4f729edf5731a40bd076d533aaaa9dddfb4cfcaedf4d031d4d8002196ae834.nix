@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."attoparsec-enumerator" or (buildDepError "attoparsec-enumerator"))
             (hsPkgs."network-enumerator" or (buildDepError "network-enumerator"))
             ];
+        buildable = true;
         };
       };
     }

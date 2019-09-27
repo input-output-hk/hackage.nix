@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uuid" or (buildDepError "uuid"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "example00" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "example01" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."nanovg" or (buildDepError "nanovg"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

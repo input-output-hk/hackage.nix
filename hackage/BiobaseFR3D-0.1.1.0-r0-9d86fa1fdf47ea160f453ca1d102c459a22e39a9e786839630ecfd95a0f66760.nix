@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filemanip" or (buildDepError "filemanip"))
           (hsPkgs."iteratee" or (buildDepError "iteratee"))
           ];
+        buildable = true;
         };
       };
     }

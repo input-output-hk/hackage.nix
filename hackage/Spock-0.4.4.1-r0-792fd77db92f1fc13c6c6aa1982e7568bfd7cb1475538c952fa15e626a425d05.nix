@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."digestive-functors" or (buildDepError "digestive-functors"))
           ];
+        buildable = true;
         };
       };
     }

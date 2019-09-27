@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."glib-2.0" or (pkgConfDepError "glib-2.0"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Win32" or (buildDepError "Win32"))
           (hsPkgs."Win32-errors" or (buildDepError "Win32-errors"))
           ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."ev" or (sysDepError "ev"))
           (pkgs."pthread" or (sysDepError "pthread"))
           ];
+        buildable = true;
         };
       };
     }

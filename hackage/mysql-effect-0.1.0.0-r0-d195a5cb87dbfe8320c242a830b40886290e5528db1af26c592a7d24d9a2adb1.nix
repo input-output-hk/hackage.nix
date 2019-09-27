@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
           (hsPkgs."mysql-simple" or (buildDepError "mysql-simple"))
           ];
+        buildable = true;
         };
       };
     }

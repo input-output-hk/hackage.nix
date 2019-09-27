@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if system.isWindows || system.isWindows
           then [ (pkgs."libmysql" or (sysDepError "libmysql")) ]
           else [ (pkgs."mysqlclient" or (sysDepError "mysqlclient")) ];
+        buildable = true;
         };
       };
     }

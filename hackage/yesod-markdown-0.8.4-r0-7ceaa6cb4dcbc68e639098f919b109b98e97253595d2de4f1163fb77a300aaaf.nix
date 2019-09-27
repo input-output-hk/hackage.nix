@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hamlet" or (buildDepError "hamlet"))
           (hsPkgs."persistent" or (buildDepError "persistent"))
           ];
+        buildable = true;
         };
       };
     }

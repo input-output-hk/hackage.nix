@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+        buildable = true;
         };
       tests = {
         "Example" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pqc" or (buildDepError "pqc"))
             (hsPkgs."ChasingBottoms" or (buildDepError "ChasingBottoms"))
             ];
+          buildable = true;
           };
         };
       };

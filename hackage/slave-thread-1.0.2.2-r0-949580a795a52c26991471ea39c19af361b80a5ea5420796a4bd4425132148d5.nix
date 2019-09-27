@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
             (hsPkgs."slave-thread" or (buildDepError "slave-thread"))
             ];
+          buildable = true;
           };
         };
       };

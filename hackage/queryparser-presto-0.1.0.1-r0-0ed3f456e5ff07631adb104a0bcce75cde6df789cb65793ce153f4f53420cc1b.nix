@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fixed-list" or (buildDepError "fixed-list"))
           (hsPkgs."predicate-class" or (buildDepError "predicate-class"))
           ];
+        buildable = true;
         };
       };
     }

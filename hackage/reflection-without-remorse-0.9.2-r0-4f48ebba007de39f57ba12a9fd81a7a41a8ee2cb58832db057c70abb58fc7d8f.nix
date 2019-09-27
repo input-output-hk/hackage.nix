@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."type-aligned" or (buildDepError "type-aligned"))
           ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."spatial-math" or (buildDepError "spatial-math"))
           (hsPkgs."gnuplot" or (buildDepError "gnuplot"))
           ];
+        buildable = true;
         };
       };
     }

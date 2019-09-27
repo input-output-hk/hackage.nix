@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."ridley" or (buildDepError "ridley"))
           ];
+        buildable = true;
         };
       tests = {
         "ridley-extras-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ridley-extras" or (buildDepError "ridley-extras"))
             ];
+          buildable = true;
           };
         };
       };

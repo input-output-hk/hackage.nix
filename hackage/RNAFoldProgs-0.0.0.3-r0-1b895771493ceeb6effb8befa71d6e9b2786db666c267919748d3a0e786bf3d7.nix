@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
             (hsPkgs."RNAFold" or (buildDepError "RNAFold"))
             ];
+          buildable = true;
           };
         "hsRNAEval" = {
           depends = [
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Biobase" or (buildDepError "Biobase"))
             (hsPkgs."RNAFold" or (buildDepError "RNAFold"))
             ];
+          buildable = true;
           };
         };
       };

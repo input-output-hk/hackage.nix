@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."base" or (buildDepError "base"))
             ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."X11" or (buildDepError "X11"));
+        buildable = true;
         };
       };
     }

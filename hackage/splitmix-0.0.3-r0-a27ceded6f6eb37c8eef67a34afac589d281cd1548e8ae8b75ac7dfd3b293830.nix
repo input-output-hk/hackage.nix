@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."time" or (buildDepError "time"))
           ] ++ (pkgs.lib).optional (flags.random) (hsPkgs."random" or (buildDepError "random"));
+        buildable = true;
         };
       tests = {
         "examples" = {
@@ -68,18 +69,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."splitmix" or (buildDepError "splitmix"))
             ];
+          buildable = true;
           };
         "montecarlo-pi" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."splitmix" or (buildDepError "splitmix"))
             ];
+          buildable = true;
           };
         "montecarlo-pi-32" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."splitmix" or (buildDepError "splitmix"))
             ];
+          buildable = true;
           };
         "splitmix-dieharder" = {
           depends = [
@@ -94,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tf-random" or (buildDepError "tf-random"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -106,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."splitmix" or (buildDepError "splitmix"))
             (hsPkgs."tf-random" or (buildDepError "tf-random"))
             ];
+          buildable = true;
           };
         "simple-sum" = {
           depends = [
@@ -113,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."splitmix" or (buildDepError "splitmix"))
             ];
+          buildable = true;
           };
         "range" = {
           depends = [
@@ -121,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."splitmix" or (buildDepError "splitmix"))
             ];
+          buildable = true;
           };
         };
       };

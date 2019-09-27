@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."enum-types" or (buildDepError "enum-types"))
           (hsPkgs."leancheck" or (buildDepError "leancheck"))
           ];
+        buildable = true;
         };
       };
     }

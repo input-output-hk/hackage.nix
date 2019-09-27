@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."NonEmpty" or (buildDepError "NonEmpty"))
             (hsPkgs."NonEmpty" or (buildDepError "NonEmpty"))
             ];
+          buildable = true;
           };
         };
       };

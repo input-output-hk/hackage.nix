@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."zmq" or (sysDepError "zmq")) ++ (pkgs.lib).optional (system.isFreebsd) (pkgs."pthread" or (sysDepError "pthread"));
         pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libzmq" or (pkgConfDepError "libzmq"));
+        buildable = true;
         };
       tests = {
         "zeromq-haskell-tests" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             ];
+          buildable = true;
           };
         };
       };

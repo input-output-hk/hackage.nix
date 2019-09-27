@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else if flags.vty
             then [ (hsPkgs."vty" or (buildDepError "vty")) ]
             else (pkgs.lib).optional (!flags.std) (hsPkgs."gtk" or (buildDepError "gtk")));
+        buildable = true;
         };
       exes = {
         "LambdaHack" = {
@@ -92,12 +93,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
+          buildable = true;
           };
         "DumbBot" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

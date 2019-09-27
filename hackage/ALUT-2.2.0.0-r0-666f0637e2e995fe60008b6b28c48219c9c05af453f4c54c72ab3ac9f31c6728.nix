@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."StateVar" or (buildDepError "StateVar"))
           (hsPkgs."OpenAL" or (buildDepError "OpenAL"))
           ];
+        buildable = true;
         };
       };
     }

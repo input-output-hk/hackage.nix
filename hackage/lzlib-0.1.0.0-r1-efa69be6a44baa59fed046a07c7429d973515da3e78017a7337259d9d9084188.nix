@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = [ (pkgs."lz" or (sysDepError "lz")) ];
         build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")));
+        buildable = true;
         };
       };
     }

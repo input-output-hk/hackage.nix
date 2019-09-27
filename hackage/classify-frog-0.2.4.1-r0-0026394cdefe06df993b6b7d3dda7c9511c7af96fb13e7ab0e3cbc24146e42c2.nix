@@ -98,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."llvm-extra" or (buildDepError "llvm-extra"))
             (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
             ];
+          buildable = true;
           };
         "spectral-distribution" = {
           depends = (pkgs.lib).optionals (flags.buildsketch) [
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildsketch then true else false;
           };
         };
       };

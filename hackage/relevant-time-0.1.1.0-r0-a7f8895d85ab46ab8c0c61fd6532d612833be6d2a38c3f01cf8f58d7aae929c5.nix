@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."chronos" or (buildDepError "chronos"))
           (hsPkgs."torsor" or (buildDepError "torsor"))
           ];
+        buildable = true;
         };
       };
     }

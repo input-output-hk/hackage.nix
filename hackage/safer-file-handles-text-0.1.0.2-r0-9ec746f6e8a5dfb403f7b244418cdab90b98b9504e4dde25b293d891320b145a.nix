@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."explicit-iomodes-text" or (buildDepError "explicit-iomodes-text"))
           (hsPkgs."safer-file-handles" or (buildDepError "safer-file-handles"))
           ];
+        buildable = true;
         };
       };
     }

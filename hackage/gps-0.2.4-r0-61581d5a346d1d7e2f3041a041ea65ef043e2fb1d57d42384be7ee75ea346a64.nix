@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
             (hsPkgs."xml" or (buildDepError "xml"))
             ];
+        buildable = true;
         };
       };
     }

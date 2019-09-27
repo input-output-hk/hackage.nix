@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."sdl2" or (pkgConfDepError "sdl2"))
           (pkgconfPkgs."SDL2_image" or (pkgConfDepError "SDL2_image"))
           ];
+        buildable = true;
         };
       };
     }

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."haskell-conll" or (buildDepError "haskell-conll"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-conll" or (buildDepError "haskell-conll"))
             (hsPkgs."cassava" or (buildDepError "cassava"))
             ];
+          buildable = true;
           };
         };
       };

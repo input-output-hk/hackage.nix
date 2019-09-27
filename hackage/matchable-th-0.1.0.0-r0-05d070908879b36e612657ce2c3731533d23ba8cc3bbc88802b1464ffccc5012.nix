@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."th-abstraction" or (buildDepError "th-abstraction"))
           ];
+        buildable = true;
         };
       tests = {
         "th-examples" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."matchable" or (buildDepError "matchable"))
             (hsPkgs."matchable-th" or (buildDepError "matchable-th"))
             ];
+          buildable = true;
           };
         };
       };

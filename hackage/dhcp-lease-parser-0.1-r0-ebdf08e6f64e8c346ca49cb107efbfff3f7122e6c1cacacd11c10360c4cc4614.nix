@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."chronos" or (buildDepError "chronos"))
           (hsPkgs."ip" or (buildDepError "ip"))
           ];
+        buildable = true;
         };
       tests = {
         "dhcp-lease-parser-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."chronos" or (buildDepError "chronos"))
             (hsPkgs."ip" or (buildDepError "ip"))
             ];
+          buildable = true;
           };
         };
       };

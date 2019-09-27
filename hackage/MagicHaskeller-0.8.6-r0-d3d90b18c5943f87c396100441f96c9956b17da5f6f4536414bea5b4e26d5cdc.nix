@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
           ];
+        buildable = true;
         };
       };
     }

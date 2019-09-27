@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."binary-parsers" or (buildDepError "binary-parsers"))
           ];
+        buildable = true;
         };
       exes = {
         "wsjtx-dump-udp" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."wsjtx-udp" or (buildDepError "wsjtx-udp"))
             ];
+          buildable = if compiler.isGhcjs && true then false else true;
           };
         };
       };

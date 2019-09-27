@@ -65,7 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           ];
+        buildable = true;
         };
-      exes = { "hfoil" = {}; };
+      exes = { "hfoil" = { buildable = if flags.repl then true else false; }; };
       };
     }

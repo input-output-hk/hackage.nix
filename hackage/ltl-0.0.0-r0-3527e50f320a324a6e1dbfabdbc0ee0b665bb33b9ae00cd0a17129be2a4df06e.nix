@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."vcd" or (buildDepError "vcd"))
           ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-media" or (buildDepError "http-media"))
           (hsPkgs."snap-core" or (buildDepError "snap-core"))
           ];
+        buildable = true;
         };
       };
     }

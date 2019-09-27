@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."prednote" or (buildDepError "prednote"))
           ];
         libs = [ (pkgs."pcre" or (sysDepError "pcre")) ];
+        buildable = true;
         };
       };
     }

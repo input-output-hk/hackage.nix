@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."keera-hails-reactivevalues" or (buildDepError "keera-hails-reactivevalues"))
           (hsPkgs."MissingK" or (buildDepError "MissingK"))
           ];
+        buildable = true;
         };
       };
     }

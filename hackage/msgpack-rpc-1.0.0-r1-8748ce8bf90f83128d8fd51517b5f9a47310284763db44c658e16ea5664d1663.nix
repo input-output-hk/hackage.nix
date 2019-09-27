@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."msgpack" or (buildDepError "msgpack"))
           ];
+        buildable = true;
         };
       tests = {
         "msgpack-rpc-test" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."msgpack-rpc" or (buildDepError "msgpack-rpc"))
             ];
+          buildable = true;
           };
         };
       };

@@ -106,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gitrev" or (buildDepError "gitrev"))
           (hsPkgs."optparse-simple" or (buildDepError "optparse-simple"))
           ];
+        buildable = true;
         };
       exes = {
         "liquid" = {
@@ -123,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."liquidhaskell" or (buildDepError "liquidhaskell"))
             (hsPkgs."hpc" or (buildDepError "hpc"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -147,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hpc" or (buildDepError "hpc"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "liquidhaskell-parser" = {
           depends = [
@@ -199,6 +202,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
               (hsPkgs."bytestring" or (buildDepError "bytestring"))
               ]);
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."genvalidity-uuid" or (buildDepError "genvalidity-uuid"))
           (hsPkgs."typed-uuid" or (buildDepError "typed-uuid"))
           ];
+        buildable = true;
         };
       tests = {
         "typed-uuid-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."typed-uuid" or (buildDepError "typed-uuid"))
             ];
+          buildable = true;
           };
         };
       };

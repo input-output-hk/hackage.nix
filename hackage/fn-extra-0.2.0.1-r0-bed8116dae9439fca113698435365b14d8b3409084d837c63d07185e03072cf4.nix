@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."either" or (buildDepError "either"))
           (hsPkgs."fn" or (buildDepError "fn"))
           ];
+        buildable = true;
         };
       };
     }

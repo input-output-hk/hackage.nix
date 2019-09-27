@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."x509" or (buildDepError "x509"))
           (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
           ];
+        buildable = true;
         };
       tests = {
         "test-cryptostore" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."x509" or (buildDepError "x509"))
             (hsPkgs."cryptostore" or (buildDepError "cryptostore"))
             ];
+          buildable = true;
           };
         };
       };

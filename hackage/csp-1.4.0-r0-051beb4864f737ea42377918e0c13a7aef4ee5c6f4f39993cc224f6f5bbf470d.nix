@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."nondeterminism" or (buildDepError "nondeterminism"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."nondeterminism" or (buildDepError "nondeterminism"))
             (hsPkgs."csp" or (buildDepError "csp"))
             ];
+          buildable = true;
           };
         };
       };

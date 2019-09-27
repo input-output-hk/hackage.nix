@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random-fu" or (buildDepError "random-fu"))
           (hsPkgs."random-extras" or (buildDepError "random-extras"))
           ];
+        buildable = true;
         };
       };
     }

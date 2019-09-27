@@ -60,18 +60,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."biocore" or (buildDepError "biocore"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "pslstats" = {
           depends = [
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
-        "psluniq" = {};
+        "psluniq" = { buildable = true; };
         "pslfilter" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
-        "pslcov" = {};
+        "pslcov" = { buildable = true; };
         };
       };
     }

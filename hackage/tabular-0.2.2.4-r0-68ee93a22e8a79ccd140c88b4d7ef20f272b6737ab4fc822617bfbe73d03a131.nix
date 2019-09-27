@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."csv" or (buildDepError "csv"))
           (hsPkgs."html" or (buildDepError "html"))
           ];
+        buildable = true;
         };
       };
     }

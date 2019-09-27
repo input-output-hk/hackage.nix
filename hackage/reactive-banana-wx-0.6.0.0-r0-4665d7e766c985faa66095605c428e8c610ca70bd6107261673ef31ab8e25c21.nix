@@ -62,32 +62,46 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wxcore" or (buildDepError "wxcore"))
           (hsPkgs."wx" or (buildDepError "wx"))
           ];
+        buildable = true;
         };
       exes = {
-        "Animation" = {};
-        "Arithmetic" = {};
+        "Animation" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        "Arithmetic" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
         "Asteroids" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
-        "Counter" = {};
+        "Counter" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
         "CurrencyConverter" = {
           depends = (pkgs.lib).optional (flags.buildexamples) (hsPkgs."process" or (buildDepError "process"));
+          buildable = if flags.buildexamples then true else false;
           };
         "CRUD" = {
           depends = (pkgs.lib).optional (flags.buildexamples) (hsPkgs."containers" or (buildDepError "containers"));
+          buildable = if flags.buildexamples then true else false;
           };
         "NetMonitor" = {
           depends = (pkgs.lib).optional (flags.buildexamples) (hsPkgs."process" or (buildDepError "process"));
+          buildable = if flags.buildexamples then true else false;
           };
         "TicTacToe" = {
           depends = (pkgs.lib).optional (flags.buildexamples) (hsPkgs."array" or (buildDepError "array"));
+          buildable = if flags.buildexamples then true else false;
           };
-        "TwoCounters" = {};
-        "Wave" = {};
+        "TwoCounters" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        "Wave" = { buildable = if !flags.buildexamples then false else true; };
         };
       };
     }

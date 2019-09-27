@@ -79,9 +79,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
-        "git-annex-shell" = {};
-        "git-union-merge" = {};
+        "git-annex-shell" = { buildable = true; };
+        "git-union-merge" = { buildable = true; };
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HDBC" or (buildDepError "HDBC"))
             (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
             ];
+          buildable = true;
           };
         };
       };

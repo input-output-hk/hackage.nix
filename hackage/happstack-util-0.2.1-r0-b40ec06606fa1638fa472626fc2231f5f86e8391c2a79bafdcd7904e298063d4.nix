@@ -71,12 +71,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
         "happstack-util-tests" = {
           depends = [
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ] ++ (pkgs.lib).optional (flags.tests) (hsPkgs."network" or (buildDepError "network"));
+          buildable = if flags.tests then true else false;
           };
         };
       };

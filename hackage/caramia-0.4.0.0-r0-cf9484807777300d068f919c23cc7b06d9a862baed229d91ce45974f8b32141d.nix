@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."OpenGL" or (sysDepError "OpenGL"));
+        buildable = true;
         };
       exes = {
         "smoke-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.build-toys then true else false;
           };
         "memory-info" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."caramia" or (buildDepError "caramia"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.build-toys then true else false;
           };
         "gl-info" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
@@ -90,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
             ];
+          buildable = if flags.build-toys then true else false;
           };
         "query-objects" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
@@ -100,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.build-toys then true else false;
           };
         "textures" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
@@ -107,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."caramia" or (buildDepError "caramia"))
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             ];
+          buildable = if flags.build-toys then true else false;
           };
         };
       };

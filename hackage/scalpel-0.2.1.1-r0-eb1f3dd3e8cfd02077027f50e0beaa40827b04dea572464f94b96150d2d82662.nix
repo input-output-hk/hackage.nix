@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "lib-tests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."scalpel" or (buildDepError "scalpel"))
             (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
             ];
+          buildable = true;
           };
         };
       };

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."speedy-slice" or (buildDepError "speedy-slice"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "rosenbrock" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mwc-probability" or (buildDepError "mwc-probability"))
             (hsPkgs."declarative" or (buildDepError "declarative"))
             ];
+          buildable = true;
           };
         };
       };

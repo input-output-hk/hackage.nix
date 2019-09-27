@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "rtnl-link" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."rtnetlink" or (buildDepError "rtnetlink"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "rtnl-address" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."rtnetlink" or (buildDepError "rtnetlink"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -101,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."linux-namespaces" or (buildDepError "linux-namespaces"))
             (hsPkgs."rtnetlink" or (buildDepError "rtnetlink"))
             ];
+          buildable = true;
           };
         };
       };

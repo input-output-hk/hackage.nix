@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsx" or (buildDepError "hsx"))
             (hsPkgs."HStringTemplate" or (buildDepError "HStringTemplate"))
             ]);
+        buildable = true;
         };
       exes = {
         "happstack" = {
@@ -87,9 +88,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "happstack-tests" = {
           depends = [ (hsPkgs."HUnit" or (buildDepError "HUnit")) ];
+          buildable = if flags.tests then true else false;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
         libs = (pkgs.lib).optional (!flags.builtin-sqlite3) (pkgs."sqlite3" or (sysDepError "sqlite3"));
+        buildable = true;
         };
       tests = {
         "sqlite-tests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sqlite" or (buildDepError "sqlite"))
             ];
+          buildable = true;
           };
         };
       };

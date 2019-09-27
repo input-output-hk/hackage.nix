@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
             ];
+          buildable = true;
           };
         };
       };

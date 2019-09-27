@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = if !system.isOsx then false else true;
         };
       };
     }

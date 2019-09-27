@@ -66,7 +66,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
+        buildable = true;
         };
-      exes = { "sfRecord" = {}; };
+      exes = { "sfRecord" = { buildable = true; }; };
       };
     }

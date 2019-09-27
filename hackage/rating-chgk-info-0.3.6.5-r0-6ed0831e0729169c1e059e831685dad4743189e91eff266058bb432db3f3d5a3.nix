@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."wreq" or (buildDepError "wreq"))
           ];
+        buildable = true;
         };
       exes = {
         "example1" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."relude" or (buildDepError "relude"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         "example2" = {
           depends = [
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."relude" or (buildDepError "relude"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "extra-rating-api" = {
           depends = [
@@ -106,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rating-chgk-info" or (buildDepError "rating-chgk-info"))
             (hsPkgs."relude" or (buildDepError "relude"))
             ];
+          buildable = true;
           };
         "calendar-rating" = {
           depends = [
@@ -117,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -126,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rating-chgk-info" or (buildDepError "rating-chgk-info"))
             (hsPkgs."relude" or (buildDepError "relude"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -136,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rating-chgk-info" or (buildDepError "rating-chgk-info"))
             (hsPkgs."relude" or (buildDepError "relude"))
             ];
+          buildable = true;
           };
         };
       };

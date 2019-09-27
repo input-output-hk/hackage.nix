@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."test-framework" or (buildDepError "test-framework"))
           (hsPkgs."testing-feat" or (buildDepError "testing-feat"))
           ];
+        buildable = true;
         };
       tests = {
         "Tests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."testing-feat" or (buildDepError "testing-feat"))
             ];
+          buildable = true;
           };
         };
       };

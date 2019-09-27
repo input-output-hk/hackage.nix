@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."erf" or (buildDepError "erf"))
           ];
+        buildable = true;
         };
       tests = {
         "vis" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."random-variates" or (buildDepError "random-variates"))
             ];
+          buildable = true;
           };
         "units" = {
           depends = [
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."random-variates" or (buildDepError "random-variates"))
             ];
+          buildable = true;
           };
         };
       };

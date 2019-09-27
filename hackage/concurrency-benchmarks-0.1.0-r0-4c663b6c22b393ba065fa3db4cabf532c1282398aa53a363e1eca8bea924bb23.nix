@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."typed-process" or (buildDepError "typed-process"))
             (hsPkgs."getopt-generics" or (buildDepError "getopt-generics"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."streamly" or (buildDepError "streamly"))
             ];
+          buildable = true;
           };
         };
       };

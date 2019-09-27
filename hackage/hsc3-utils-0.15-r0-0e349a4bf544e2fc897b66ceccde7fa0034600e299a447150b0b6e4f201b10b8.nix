@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsc3" or (buildDepError "hsc3"))
           (hsPkgs."hsc3-sf" or (buildDepError "hsc3-sf"))
           ];
+        buildable = true;
         };
       exes = {
         "hsc3-hash-at" = {
@@ -71,24 +72,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3-rw" or (buildDepError "hsc3-rw"))
             ];
+          buildable = true;
           };
         "hsc3-hash-paren" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3-rw" or (buildDepError "hsc3-rw"))
             ];
+          buildable = true;
           };
         "hsc3-id-rewrite" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3-rw" or (buildDepError "hsc3-rw"))
             ];
+          buildable = true;
           };
         "hsc3-id-clear" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3-rw" or (buildDepError "hsc3-rw"))
             ];
+          buildable = true;
           };
         "hsc3-scsyndef-to-dot" = {
           depends = [
@@ -98,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

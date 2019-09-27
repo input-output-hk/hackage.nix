@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
         pkgconfig = (pkgs.lib).optional (flags.system-lua) (pkgconfPkgs."lua" or (pkgConfDepError "lua"));
+        buildable = true;
         };
       };
     }

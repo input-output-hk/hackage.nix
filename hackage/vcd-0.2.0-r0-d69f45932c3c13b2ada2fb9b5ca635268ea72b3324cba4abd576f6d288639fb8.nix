@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."polyparse" or (buildDepError "polyparse"))
           (hsPkgs."improve" or (buildDepError "improve"))
           ];
+        buildable = true;
         };
       };
     }

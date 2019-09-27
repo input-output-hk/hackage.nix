@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."mime-directory" or (buildDepError "mime-directory"))
           ];
+        buildable = true;
         };
       };
     }

@@ -90,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."simple-ui" or (buildDepError "simple-ui"))
             ];
+          buildable = true;
           };
         };
       };

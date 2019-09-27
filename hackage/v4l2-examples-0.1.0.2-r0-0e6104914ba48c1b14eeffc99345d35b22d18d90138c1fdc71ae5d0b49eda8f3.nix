@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."v4l2" or (buildDepError "v4l2"))
             ];
+          buildable = true;
           };
         "v4l2-histogram" = {
           depends = [
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             (hsPkgs."v4l2" or (buildDepError "v4l2"))
             ];
+          buildable = true;
           };
         };
       };

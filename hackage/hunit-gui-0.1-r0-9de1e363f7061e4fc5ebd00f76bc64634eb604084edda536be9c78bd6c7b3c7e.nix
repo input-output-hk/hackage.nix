@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gtk" or (buildDepError "gtk"))
           (hsPkgs."cairo" or (buildDepError "cairo"))
           ];
+        buildable = true;
         };
       exes = {
         "tests" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gtk" or (buildDepError "gtk"))
             (hsPkgs."cairo" or (buildDepError "cairo"))
             ];
+          buildable = true;
           };
         };
       };

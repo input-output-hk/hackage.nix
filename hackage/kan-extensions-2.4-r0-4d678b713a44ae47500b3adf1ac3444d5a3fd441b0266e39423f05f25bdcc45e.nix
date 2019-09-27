@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."representable-functors" or (buildDepError "representable-functors"))
           (hsPkgs."speculation" or (buildDepError "speculation"))
           ];
+        buildable = true;
         };
       };
     }

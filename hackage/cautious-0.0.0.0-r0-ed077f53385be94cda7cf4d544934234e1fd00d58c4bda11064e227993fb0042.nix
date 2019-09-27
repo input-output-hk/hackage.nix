@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."validity" or (buildDepError "validity"))
           ];
+        buildable = true;
         };
       tests = {
         "cautious-test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."validity" or (buildDepError "validity"))
             ];
+          buildable = true;
           };
         };
       };

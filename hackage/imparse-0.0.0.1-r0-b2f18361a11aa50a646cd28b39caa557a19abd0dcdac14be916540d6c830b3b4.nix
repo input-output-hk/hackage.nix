@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uxadt" or (buildDepError "uxadt"))
           (hsPkgs."richreports" or (buildDepError "richreports"))
           ];
+        buildable = true;
         };
       exes = {
         "imparse" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uxadt" or (buildDepError "uxadt"))
             (hsPkgs."richreports" or (buildDepError "richreports"))
             ];
+          buildable = true;
           };
         };
       };

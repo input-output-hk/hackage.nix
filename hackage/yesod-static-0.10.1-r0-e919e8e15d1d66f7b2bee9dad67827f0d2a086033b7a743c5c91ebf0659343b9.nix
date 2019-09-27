@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-conduit" or (buildDepError "crypto-conduit"))
           (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."crypto-conduit" or (buildDepError "crypto-conduit"))
             (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
             ];
+          buildable = true;
           };
         };
       };

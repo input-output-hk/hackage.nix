@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."file-embed" or (buildDepError "file-embed"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "inject-executable-hash" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."executable-hash" or (buildDepError "executable-hash"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -79,18 +81,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."executable-hash" or (buildDepError "executable-hash"))
             ];
+          buildable = true;
           };
         "test-inject" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."executable-hash" or (buildDepError "executable-hash"))
             ];
+          buildable = true;
           };
         "test-no-inject" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."executable-hash" or (buildDepError "executable-hash"))
             ];
+          buildable = true;
           };
         };
       };

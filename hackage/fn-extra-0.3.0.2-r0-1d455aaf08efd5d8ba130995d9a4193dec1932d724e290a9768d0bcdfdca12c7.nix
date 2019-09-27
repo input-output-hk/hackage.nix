@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fn" or (buildDepError "fn"))
           (hsPkgs."map-syntax" or (buildDepError "map-syntax"))
           ];
+        buildable = true;
         };
       };
     }

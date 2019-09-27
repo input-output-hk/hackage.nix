@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hoppy-runtime" or (buildDepError "hoppy-runtime"))
             (hsPkgs."qtah-qt5" or (buildDepError "qtah-qt5"))
             ];
+          buildable = true;
           };
         };
       };

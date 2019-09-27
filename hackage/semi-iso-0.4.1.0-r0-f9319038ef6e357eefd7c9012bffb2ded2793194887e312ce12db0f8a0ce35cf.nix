@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."tuple-morph" or (buildDepError "tuple-morph"))
           ];
+        buildable = true;
         };
       };
     }

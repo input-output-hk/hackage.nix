@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs.buildPackages.nix-store or (pkgs.buildPackages.nix-store or (buildToolDepError "nix-store")))
           (hsPkgs.buildPackages.nix-hash or (pkgs.buildPackages.nix-hash or (buildToolDepError "nix-hash")))
           ];
+        buildable = true;
         };
       };
     }

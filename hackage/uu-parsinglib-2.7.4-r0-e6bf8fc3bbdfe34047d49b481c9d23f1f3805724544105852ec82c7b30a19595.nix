@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."ListLike" or (buildDepError "ListLike"))
           ];
+        buildable = true;
         };
       };
     }

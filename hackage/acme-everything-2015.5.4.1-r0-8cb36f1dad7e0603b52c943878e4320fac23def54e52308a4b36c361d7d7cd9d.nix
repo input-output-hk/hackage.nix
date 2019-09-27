@@ -4837,6 +4837,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zsh-battery" or (buildDepError "zsh-battery"))
           (hsPkgs."ztail" or (buildDepError "ztail"))
           ];
+        buildable = true;
         };
       };
     }

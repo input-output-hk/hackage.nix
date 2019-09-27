@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = true;
         };
       exes = {
         "hoed-examples-Foldl" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-HeadOnEmpty1" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-HeadOnEmpty2" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -99,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-IndirectRecursion" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -107,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Pretty" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -116,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Example1" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -124,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Example3" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -132,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Example4" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -140,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Insort1" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -148,6 +157,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Insort2" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -156,6 +166,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-DoublingServer1" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -165,6 +176,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-DoublingServer2" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -174,6 +186,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-DoublingServer3" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -183,6 +196,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-DoublingServer4" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -192,6 +206,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-DoublingServer5" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -201,6 +216,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Hashmap" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -210,6 +226,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Responsibility" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -219,6 +236,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-TightRope1" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -227,6 +245,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-TightRope2" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -235,6 +254,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-TightRope3" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -243,6 +263,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-AskName" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -251,78 +272,91 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "hoed-tests-Generic-r0" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-t0" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-r1" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-t1" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-r2" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-t2" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-r3" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-t3" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Pure-t1" = {
           depends = (pkgs.lib).optionals (flags.validatepure) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.validatepure then true else false;
           };
         "hoed-tests-Pure-t2" = {
           depends = (pkgs.lib).optionals (flags.validatepure) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.validatepure then true else false;
           };
         "hoed-tests-Pure-t3" = {
           depends = (pkgs.lib).optionals (flags.validatepure) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.validatepure then true else false;
           };
         "hoed-tests-Pure-t4" = {
           depends = (pkgs.lib).optionals (flags.validatepure) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Hoed" or (buildDepError "Hoed"))
             ];
+          buildable = if flags.validatepure then true else false;
           };
         "hoed-tests-Stk-DoublingServer" = {
           depends = (pkgs.lib).optionals (flags.validatestk) [
@@ -332,6 +366,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = if flags.validatestk then true else false;
           };
         "hoed-tests-Stk-Insort2" = {
           depends = (pkgs.lib).optionals (flags.validatestk) [
@@ -340,6 +375,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.validatestk then true else false;
           };
         "hoed-tests-Stk-Example1" = {
           depends = (pkgs.lib).optionals (flags.validatestk) [
@@ -348,6 +384,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.validatestk then true else false;
           };
         "hoed-tests-Stk-Example3" = {
           depends = (pkgs.lib).optionals (flags.validatestk) [
@@ -356,6 +393,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.validatestk then true else false;
           };
         "hoed-tests-Stk-Example4" = {
           depends = (pkgs.lib).optionals (flags.validatestk) [
@@ -364,6 +402,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.validatestk then true else false;
           };
         "hoed-tests-Stk-IndirectRecursion" = {
           depends = (pkgs.lib).optionals (flags.validatestk) [
@@ -372,6 +411,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.validatestk then true else false;
           };
         };
       };

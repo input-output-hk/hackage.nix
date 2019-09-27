@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           (hsPkgs."reactive" or (buildDepError "reactive"))
           ];
+        buildable = true;
         };
       };
     }

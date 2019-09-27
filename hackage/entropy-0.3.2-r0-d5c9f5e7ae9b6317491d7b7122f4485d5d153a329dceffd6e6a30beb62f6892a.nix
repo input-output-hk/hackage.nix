@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ] ++ (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (!flags.halvm) (hsPkgs."unix" or (buildDepError "unix")));
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."advapi32" or (sysDepError "advapi32"));
+        buildable = true;
         };
       };
     }

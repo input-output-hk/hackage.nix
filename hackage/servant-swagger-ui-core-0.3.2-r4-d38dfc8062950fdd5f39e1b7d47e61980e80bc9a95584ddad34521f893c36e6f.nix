@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
           (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
           ];
+        buildable = true;
         };
       };
     }

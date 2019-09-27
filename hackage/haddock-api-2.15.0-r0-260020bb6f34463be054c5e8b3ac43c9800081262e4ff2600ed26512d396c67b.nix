@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
           (hsPkgs."haddock-library" or (buildDepError "haddock-library"))
           ];
+        buildable = true;
         };
       };
     }

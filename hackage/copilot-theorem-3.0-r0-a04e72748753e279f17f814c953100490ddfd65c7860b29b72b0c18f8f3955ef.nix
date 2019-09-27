@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml" or (buildDepError "xml"))
           (hsPkgs."copilot-core" or (buildDepError "copilot-core"))
           ];
+        buildable = true;
         };
       };
     }

@@ -98,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."th-lift" or (buildDepError "th-lift"))
             ];
+          buildable = true;
           };
         "batchd-admin" = {
           depends = [
@@ -140,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."th-lift" or (buildDepError "th-lift"))
             ];
+          buildable = true;
           };
         "batch" = {
           depends = [
@@ -179,6 +181,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."scotty" or (buildDepError "scotty"))
             ];
+          buildable = true;
           };
         };
       };

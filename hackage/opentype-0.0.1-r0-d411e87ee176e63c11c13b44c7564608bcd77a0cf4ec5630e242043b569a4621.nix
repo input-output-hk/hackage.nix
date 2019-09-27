@@ -65,7 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
           ];
+        buildable = true;
         };
-      tests = { "test" = {}; };
+      tests = { "test" = { buildable = true; }; };
       };
     }

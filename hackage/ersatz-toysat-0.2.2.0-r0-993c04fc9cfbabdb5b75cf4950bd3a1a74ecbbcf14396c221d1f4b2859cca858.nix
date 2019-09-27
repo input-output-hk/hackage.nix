@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ersatz" or (buildDepError "ersatz"))
           (hsPkgs."toysolver" or (buildDepError "toysolver"))
           ];
+        buildable = true;
         };
       exes = {
         "ersatz-toysat-regexp-grid" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim")));
+          buildable = if flags.examples then true else false;
           };
         "ersatz-toysat-sudoku" = {
           depends = (pkgs.lib).optionals (flags.examples) ([
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ersatz-toysat" or (buildDepError "ersatz-toysat"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim")));
+          buildable = if flags.examples then true else false;
           };
         };
       };

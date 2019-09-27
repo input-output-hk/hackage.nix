@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gtk" or (buildDepError "gtk"))
           (hsPkgs."hps" or (buildDepError "hps"))
           ];
+        buildable = true;
         };
       exes = {
         "hps-cairo-animation" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hps-cairo" or (buildDepError "hps-cairo"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "hps-cairo-screen" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hps" or (buildDepError "hps"))
             (hsPkgs."hps-cairo" or (buildDepError "hps-cairo"))
             ];
+          buildable = true;
           };
         };
       };

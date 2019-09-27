@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."XenDevice" or (buildDepError "XenDevice"))
           (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
           ]) ++ (pkgs.lib).optional (system.isOsx || system.isLinux) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       exes = {
         "echo-server" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."hans" or (buildDepError "hans"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."hans" or (buildDepError "hans"))
             ];
+          buildable = true;
           };
         };
       };

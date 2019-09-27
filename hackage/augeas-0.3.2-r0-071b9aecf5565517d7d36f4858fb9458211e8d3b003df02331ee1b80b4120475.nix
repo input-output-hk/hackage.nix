@@ -61,11 +61,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "test-haskell-augeas" = {
           depends = [ (hsPkgs."HUnit" or (buildDepError "HUnit")) ];
           libs = [ (pkgs."augeas" or (sysDepError "augeas")) ];
+          buildable = true;
           };
         };
       };

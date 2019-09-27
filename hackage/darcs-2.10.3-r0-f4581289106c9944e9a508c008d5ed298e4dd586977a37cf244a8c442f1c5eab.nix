@@ -133,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ]))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo"))) ++ (pkgs.lib).optional (flags.hashed-storage-diff) (hsPkgs."lcs" or (buildDepError "lcs"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
         libs = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optional (!flags.pkgconfig) (pkgs."curl" or (sysDepError "curl")));
         pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs."libcurl" or (pkgConfDepError "libcurl")));
+        buildable = if !flags.curl && !flags.http then false else true;
         };
       exes = {
         "darcs" = {
@@ -142,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."regex-compat-tdfa" or (buildDepError "regex-compat-tdfa"))
             ];
+          buildable = if !flags.executable then false else true;
           };
         };
       tests = {
@@ -168,6 +170,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ] ++ [ (hsPkgs."text" or (buildDepError "text")) ];
+          buildable = true;
           };
         "hashed-storage-test" = {
           depends = [
@@ -191,6 +194,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
+          buildable = true;
           };
         };
       };

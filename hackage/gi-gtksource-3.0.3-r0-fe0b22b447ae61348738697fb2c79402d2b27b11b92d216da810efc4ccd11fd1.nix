@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."gtksourceview-3.0" or (pkgConfDepError "gtksourceview-3.0"))
           ];
+        buildable = true;
         };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
           (hsPkgs."diagrams-contrib" or (buildDepError "diagrams-contrib"))
           ] ++ (pkgs.lib).optional (flags.cairo) (hsPkgs."diagrams-cairo" or (buildDepError "diagrams-cairo"))) ++ (pkgs.lib).optional (flags.gtk) (hsPkgs."diagrams-gtk" or (buildDepError "diagrams-gtk"))) ++ (pkgs.lib).optional (flags.svg) (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg"))) ++ (pkgs.lib).optional (flags.ps) (hsPkgs."diagrams-postscript" or (buildDepError "diagrams-postscript"))) ++ (pkgs.lib).optional (flags.rasterific) (hsPkgs."diagrams-rasterific" or (buildDepError "diagrams-rasterific"));
+        buildable = true;
         };
       };
     }

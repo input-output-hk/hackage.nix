@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           ] ++ [ (hsPkgs."haddock" or (buildDepError "haddock")) ];
+        buildable = true;
         };
       exes = {
         "doctest" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ] ++ [ (hsPkgs."haddock" or (buildDepError "haddock")) ];
+          buildable = true;
           };
         };
       };

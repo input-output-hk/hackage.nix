@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."servant-jsonrpc" or (buildDepError "servant-jsonrpc"))
           (hsPkgs."servant-server" or (buildDepError "servant-server"))
           ];
+        buildable = true;
         };
       };
     }

@@ -104,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ]
           else [ (hsPkgs."dependent-sum" or (buildDepError "dependent-sum")) ]);
+        buildable = true;
         };
       tests = {
         "hlint" = {
@@ -111,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         "gc" = {
           depends = [
@@ -124,6 +126,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."temporary" or (buildDepError "temporary"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = if !system.isLinux || !system.isX86_64
+            then false
+            else true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "ttrender" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SVGFonts" or (buildDepError "SVGFonts"))
             (hsPkgs."tracetree" or (buildDepError "tracetree"))
             ];
+          buildable = if flags.ttrender then true else false;
           };
         };
       };

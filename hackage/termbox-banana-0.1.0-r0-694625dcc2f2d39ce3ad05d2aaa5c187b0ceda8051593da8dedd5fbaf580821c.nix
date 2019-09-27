@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."termbox" or (buildDepError "termbox"))
           ];
+        buildable = true;
         };
       };
     }

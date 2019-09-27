@@ -84,12 +84,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."base" or (buildDepError "base"))
             ])) ++ (pkgs.lib).optional (flags.highlighting) (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))) ++ (pkgs.lib).optional (flags.citeproc) (hsPkgs."citeproc-hs" or (buildDepError "citeproc-hs"));
+        buildable = if flags.library then true else false;
         };
       exes = {
         "pandoc" = {
           depends = (pkgs.lib).optional (flags.citeproc) (hsPkgs."citeproc-hs" or (buildDepError "citeproc-hs"));
+          buildable = if flags.executable then true else false;
           };
-        "hsmarkdown" = {};
+        "hsmarkdown" = { buildable = if flags.wrappers then true else false; };
         };
       };
     }

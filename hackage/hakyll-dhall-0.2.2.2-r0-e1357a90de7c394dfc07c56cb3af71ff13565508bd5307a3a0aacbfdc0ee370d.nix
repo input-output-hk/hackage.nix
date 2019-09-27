@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "hakyll-dhall-test-app" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hakyll" or (buildDepError "hakyll"))
             (hsPkgs."hakyll-dhall" or (buildDepError "hakyll-dhall"))
             ];
+          buildable = true;
           };
         };
       };

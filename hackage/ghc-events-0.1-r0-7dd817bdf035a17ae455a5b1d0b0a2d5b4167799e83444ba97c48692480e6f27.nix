@@ -62,7 +62,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
-      exes = { "show-ghc-events" = {}; };
+      exes = { "show-ghc-events" = { buildable = true; }; };
       };
     }

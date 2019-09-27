@@ -62,7 +62,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
-      exes = { "xenstore" = {}; };
+      exes = {
+        "xenstore" = { buildable = if flags.executable then true else false; };
+        };
       };
     }

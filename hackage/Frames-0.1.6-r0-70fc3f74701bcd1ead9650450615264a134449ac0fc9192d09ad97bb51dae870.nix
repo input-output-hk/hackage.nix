@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes" or (buildDepError "pipes"))
           (hsPkgs."vinyl" or (buildDepError "vinyl"))
           ];
+        buildable = true;
         };
       exes = {
         "getdata" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "plot" = {
           depends = (pkgs.lib).optionals (flags.demos) [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."statistics" or (buildDepError "statistics"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "plot2" = {
           depends = (pkgs.lib).optionals (flags.demos) [
@@ -113,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."statistics" or (buildDepError "statistics"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "demo" = {
           depends = (pkgs.lib).optionals (flags.demos) [
@@ -128,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."readable" or (buildDepError "readable"))
             (hsPkgs."pipes" or (buildDepError "pipes"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "tutorial" = {
           depends = (pkgs.lib).optionals (flags.demos) [
@@ -141,6 +146,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."foldl" or (buildDepError "foldl"))
             (hsPkgs."pipes" or (buildDepError "pipes"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "benchdemo" = {
           depends = (pkgs.lib).optionals (flags.demos) [
@@ -149,6 +155,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."foldl" or (buildDepError "foldl"))
             (hsPkgs."pipes" or (buildDepError "pipes"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "missing" = {
           depends = (pkgs.lib).optionals (flags.demos) [
@@ -156,6 +163,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Frames" or (buildDepError "Frames"))
             (hsPkgs."vinyl" or (buildDepError "vinyl"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "kata04" = {
           depends = (pkgs.lib).optionals (flags.demos) [
@@ -165,6 +173,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."readable" or (buildDepError "readable"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         };
       benchmarks = {
@@ -176,6 +185,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."pipes" or (buildDepError "pipes"))
             ];
+          buildable = true;
           };
         };
       };

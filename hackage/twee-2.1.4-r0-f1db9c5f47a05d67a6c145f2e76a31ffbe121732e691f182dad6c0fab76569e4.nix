@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."jukebox" or (buildDepError "jukebox"))
             ];
+          buildable = true;
           };
         };
       };

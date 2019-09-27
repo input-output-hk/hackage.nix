@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-builder-conduit" or (buildDepError "blaze-builder-conduit"))
           (hsPkgs."biocore" or (buildDepError "biocore"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."biostockholm" or (buildDepError "biostockholm"))
             ];
+          buildable = true;
           };
         };
       };

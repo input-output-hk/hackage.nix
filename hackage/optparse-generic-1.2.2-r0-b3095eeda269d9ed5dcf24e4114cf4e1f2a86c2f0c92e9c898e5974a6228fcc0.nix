@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagged" or (buildDepError "tagged"))
           (hsPkgs."th-desugar" or (buildDepError "th-desugar"))
           ];
+        buildable = true;
         };
       };
     }

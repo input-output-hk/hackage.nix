@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-SFML-Binding" or (buildDepError "HGamer3D-SFML-Binding"))
           (hsPkgs."HGamer3D-CEGUI-Binding" or (buildDepError "HGamer3D-CEGUI-Binding"))
           ];
+        buildable = true;
         };
       };
     }

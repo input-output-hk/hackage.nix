@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           ];
+        buildable = true;
         };
       exes = {
         "penny-gibberish" = {
@@ -104,36 +105,42 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if flags.build-gibberish then true else false;
           };
         "penny" = {
           depends = [
             (hsPkgs."penny" or (buildDepError "penny"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.build-penny then false else true;
           };
         "penny-selloff" = {
           depends = [
             (hsPkgs."penny" or (buildDepError "penny"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.build-selloff then false else true;
           };
         "penny-diff" = {
           depends = [
             (hsPkgs."penny" or (buildDepError "penny"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.build-diff then false else true;
           };
         "penny-reprint" = {
           depends = [
             (hsPkgs."penny" or (buildDepError "penny"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.build-reprint then false else true;
           };
         "penny-reconcile" = {
           depends = [
             (hsPkgs."penny" or (buildDepError "penny"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.build-reconcile then false else true;
           };
         };
       tests = {
@@ -151,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       };

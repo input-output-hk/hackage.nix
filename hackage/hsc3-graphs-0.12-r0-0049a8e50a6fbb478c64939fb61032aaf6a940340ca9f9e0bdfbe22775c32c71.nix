@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-1-4Q6" = {
           depends = [
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-1-4QM" = {
           depends = [
@@ -77,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             ];
+          buildable = true;
           };
         "hsc3-1-4QN" = {
           depends = [
@@ -85,12 +88,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-1-4Qx" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-1-Td" = {
           depends = [
@@ -100,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             ];
+          buildable = true;
           };
         "hsc3-acid-otophilia" = {
           depends = [
@@ -108,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "hsc3-adso" = {
           depends = [
@@ -116,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-after-goeyvaerts" = {
           depends = [
@@ -127,12 +135,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "hsc3-aleatoric-quartet-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-alien-froggies" = {
           depends = [
@@ -140,6 +150,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-alien-meadow" = {
           depends = [
@@ -147,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-ambient1" = {
           depends = [
@@ -154,12 +166,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-analog-bubbles" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-arpeggio" = {
           depends = [
@@ -167,30 +181,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-babbling-brook-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-birds-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-bit-reduction" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-bitwise" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-black-atlantic-currents" = {
           depends = [
@@ -200,6 +219,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
             ];
+          buildable = true;
           };
         "hsc3-bohlen-pierce-140" = {
           depends = [
@@ -207,6 +227,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-bottle-m" = {
           depends = [
@@ -214,6 +235,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-bowed-string-m" = {
           depends = [
@@ -221,6 +243,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-bs-070705" = {
           depends = [
@@ -229,6 +252,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-buffer-display" = {
           depends = [
@@ -239,12 +263,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-cairo" or (buildDepError "hsc3-cairo"))
             ];
+          buildable = true;
           };
         "hsc3-ccomb" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-cds-070701" = {
           depends = [
@@ -252,6 +278,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-chain-saw" = {
           depends = [
@@ -259,6 +286,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-choip" = {
           depends = [
@@ -267,12 +295,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-chrd-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-chrd-t" = {
           depends = [
@@ -281,6 +311,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-clustered-sines" = {
           depends = [
@@ -288,6 +319,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-comb-delay-sweeps" = {
           depends = [
@@ -296,6 +328,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "hsc3-contamination-zone" = {
           depends = [
@@ -304,6 +337,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-coolant" = {
           depends = [
@@ -311,6 +345,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-cricket-m" = {
           depends = [
@@ -318,12 +353,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-crotale" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-crotale-sine" = {
           depends = [
@@ -331,12 +368,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-cut-outs" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-cymbalism-accelerando" = {
           depends = [
@@ -344,6 +383,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-cymbalism-m" = {
           depends = [
@@ -351,6 +391,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-dark-sea-horns" = {
           depends = [
@@ -358,6 +399,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             ];
+          buildable = true;
           };
         "hsc3-data-space" = {
           depends = [
@@ -365,6 +407,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-deep-sea" = {
           depends = [
@@ -372,6 +415,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-deep-trip" = {
           depends = [
@@ -380,6 +424,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-default" = {
           depends = [
@@ -387,24 +432,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-demanding-studies" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-dial-history" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-diffraction" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-discretion" = {
           depends = [
@@ -412,12 +461,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             ];
+          buildable = true;
           };
         "hsc3-discretion-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-doppler" = {
           depends = [
@@ -425,12 +476,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-drummer" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-early-space-music-lp-side-two" = {
           depends = [
@@ -440,18 +493,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "hsc3-eggcrate" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-eggcrate-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-e-lamell" = {
           depends = [
@@ -460,6 +516,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-e-lamell-p" = {
           depends = [
@@ -467,84 +524,98 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-ellipse-based-synthesis" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f0-2012-04-19" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f0-tw0011" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f0-tw0014" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f0-tw0020" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f0-tw0028" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f0-tw0030" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f0-tw0033" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f0-tw0045" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f0-tw0049" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f0-tw0051" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f0-tw0077" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f0-tw0084" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-fb-090531" = {
           depends = [
@@ -553,12 +624,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-fbl-fbf" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-feedr" = {
           depends = [
@@ -566,18 +639,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-f-lets" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-fm-iter" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-fm-kltr" = {
           depends = [
@@ -586,6 +662,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-fm-kltr-p" = {
           depends = [
@@ -593,6 +670,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-for-ann" = {
           depends = [
@@ -600,12 +678,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-forest-sounds" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-fwalk" = {
           depends = [
@@ -613,12 +693,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-half-life" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-hansm" = {
           depends = [
@@ -626,6 +708,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-harmonic-swimming" = {
           depends = [
@@ -633,24 +716,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             ];
+          buildable = true;
           };
         "hsc3-harmonic-swimming-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-harmonic-tumbling" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-h-chatter" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-hell-is-busy" = {
           depends = [
@@ -658,42 +745,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-hh-808" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-implosion" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-insects" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-jl-1-Z" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-k2ws" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-kabelscahden" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-karplus-strong" = {
           depends = [
@@ -701,48 +795,56 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-klink" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-k-ppr" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-k-ppr-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-laser-bubble" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-lfo-modulation" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-lf-pulses" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-lg-timed" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-lin-sosc" = {
           depends = [
@@ -751,6 +853,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-lso-061101" = {
           depends = [
@@ -763,12 +866,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = true;
           };
         "hsc3-lucier" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-m21360" = {
           depends = [
@@ -776,12 +881,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-microhelix" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-modal-space" = {
           depends = [
@@ -789,12 +896,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-moto-rev" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-mouse-clatter-m" = {
           depends = [
@@ -802,6 +911,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-mridangam" = {
           depends = [
@@ -810,6 +920,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-music-box" = {
           depends = [
@@ -818,6 +929,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-nharm" = {
           depends = [
@@ -826,6 +938,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-nharm-p" = {
           depends = [
@@ -834,6 +947,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-noise-burst-sweep" = {
           depends = [
@@ -841,6 +955,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-noise-modulated-sines" = {
           depends = [
@@ -848,6 +963,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-nokia" = {
           depends = [
@@ -855,6 +971,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-non-real-time" = {
           depends = [
@@ -863,18 +980,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "hsc3-nv-tw-1" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-nv-tw-41" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-nv-tw-54" = {
           depends = [
@@ -882,6 +1002,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-nx102" = {
           depends = [
@@ -889,12 +1010,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-one-line" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-oscillator-cluster" = {
           depends = [
@@ -902,6 +1025,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-overlap-add" = {
           depends = [
@@ -909,6 +1033,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-pattern-buffer" = {
           depends = [
@@ -917,36 +1042,42 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-pebble-beach" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-pkt-26" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-pkt-28" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-plucked-strings" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-police-state" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-pond-life" = {
           depends = [
@@ -954,6 +1085,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-proxy-mixer" = {
           depends = [
@@ -961,6 +1093,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             ];
+          buildable = true;
           };
         "hsc3-proxy-mixer-m" = {
           depends = [
@@ -968,6 +1101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-pulsing-bottles" = {
           depends = [
@@ -975,6 +1109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-pulsing-bottles-m" = {
           depends = [
@@ -982,12 +1117,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-pwm-crossfade" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-rails" = {
           depends = [
@@ -995,12 +1132,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-rain-thunder" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-random-panning-sines" = {
           depends = [
@@ -1008,6 +1147,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-random-panning-sines-m" = {
           depends = [
@@ -1015,6 +1155,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-random-pulsations" = {
           depends = [
@@ -1022,6 +1163,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-random-sine-waves" = {
           depends = [
@@ -1029,6 +1171,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-record-scratcher" = {
           depends = [
@@ -1036,18 +1179,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-red-frik" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-reset" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-resonant-dust" = {
           depends = [
@@ -1055,12 +1201,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-reverberated-sine-percussion" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-ring-modulated-klank" = {
           depends = [
@@ -1069,18 +1217,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-rm-octaver" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-rzblp" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-rzblp-u" = {
           depends = [
@@ -1088,6 +1239,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-unsafe" or (buildDepError "hsc3-unsafe"))
             ];
+          buildable = true;
           };
         "hsc3-sam-i-am" = {
           depends = [
@@ -1097,12 +1249,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-sample-and-hold-liquidities" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-saucer-base" = {
           depends = [
@@ -1110,6 +1264,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-sawed-cymbals" = {
           depends = [
@@ -1117,6 +1272,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-s-chirp" = {
           depends = [
@@ -1124,18 +1280,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-scratchy" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-scratchy-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-scritto" = {
           depends = [
@@ -1144,6 +1303,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-scritto-m" = {
           depends = [
@@ -1151,6 +1311,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-seqr" = {
           depends = [
@@ -1158,6 +1319,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             ];
+          buildable = true;
           };
         "hsc3-shepard-tones" = {
           depends = [
@@ -1165,12 +1327,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-shifting-pulses" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-sidereal-time" = {
           depends = [
@@ -1178,6 +1342,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-sinusdeklinationen" = {
           depends = [
@@ -1186,6 +1351,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-slow-beating-harmonic-sines" = {
           depends = [
@@ -1194,6 +1360,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-slow-beating-sines" = {
           depends = [
@@ -1202,12 +1369,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-snare-909" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-sosc-lp" = {
           depends = [
@@ -1215,12 +1384,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-spe-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-spe-p" = {
           depends = [
@@ -1228,18 +1399,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-sprinkler" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-sprinkler-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-string-wander-cluster" = {
           depends = [
@@ -1248,18 +1422,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "hsc3-strummable-guitar" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-sweepy-noise" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-synthetic-piano-m" = {
           depends = [
@@ -1267,6 +1444,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-tank" = {
           depends = [
@@ -1274,12 +1452,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             ];
+          buildable = true;
           };
         "hsc3-tank-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-tgb" = {
           depends = [
@@ -1287,6 +1467,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-tgrn" = {
           depends = [
@@ -1294,6 +1475,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-tgr-rpr" = {
           depends = [
@@ -1302,6 +1484,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-thb" = {
           depends = [
@@ -1311,18 +1494,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."hosc" or (buildDepError "hosc"))
             ];
+          buildable = true;
           };
         "hsc3-theremin" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-three-cpsw" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-thx" = {
           depends = [
@@ -1330,18 +1516,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "hsc3-tipnso" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-train" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-tremulate" = {
           depends = [
@@ -1350,6 +1539,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             ];
+          buildable = true;
           };
         "hsc3-tremulate-m" = {
           depends = [
@@ -1357,6 +1547,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-trkl" = {
           depends = [
@@ -1364,6 +1555,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-trmlo" = {
           depends = [
@@ -1372,6 +1564,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-unsafe" or (buildDepError "hsc3-unsafe"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-tr-out" = {
           depends = [
@@ -1379,12 +1572,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hosc" or (buildDepError "hosc"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-tsort" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-uplink" = {
           depends = [
@@ -1392,6 +1587,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-urandom" = {
           depends = [
@@ -1402,6 +1598,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "hsc3-vla-addtn" = {
           depends = [
@@ -1410,6 +1607,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-vla-addtn-sharc" = {
           depends = [
@@ -1419,6 +1617,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-vlc-distrtn" = {
           depends = [
@@ -1427,6 +1626,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             ];
+          buildable = true;
           };
         "hsc3-voscil" = {
           depends = [
@@ -1436,6 +1636,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."hsc3-unsafe" or (buildDepError "hsc3-unsafe"))
             ];
+          buildable = true;
           };
         "hsc3-waveset" = {
           depends = [
@@ -1447,12 +1648,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "hsc3-what-was-i-thinking" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-why-supercollider" = {
           depends = [
@@ -1460,12 +1663,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."sc3-rdu" or (buildDepError "sc3-rdu"))
             ];
+          buildable = true;
           };
         "hsc3-wial" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-wind-metals-m" = {
           depends = [
@@ -1473,18 +1678,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3-lang" or (buildDepError "hsc3-lang"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-xy-interference" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         "hsc3-xy-interference-m" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             ];
+          buildable = true;
           };
         };
       };

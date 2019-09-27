@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
           (hsPkgs."tls-session-manager" or (buildDepError "tls-session-manager"))
           ];
+        buildable = true;
         };
       };
     }

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."ghc" or (buildDepError "ghc"))
           ] ++ (pkgs.lib).optional (flags.constraints) (hsPkgs."constraints" or (buildDepError "constraints"));
+        buildable = true;
         };
       exes = {
         "deriving-example" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."constraints-deriving" or (buildDepError "constraints-deriving"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."path" or (buildDepError "path"))
             (hsPkgs."path-io" or (buildDepError "path-io"))
             ];
+          buildable = true;
           };
         };
       };

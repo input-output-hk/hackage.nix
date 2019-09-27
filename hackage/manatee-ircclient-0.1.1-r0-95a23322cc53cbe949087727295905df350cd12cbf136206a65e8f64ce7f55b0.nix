@@ -86,7 +86,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MorseCode" or (buildDepError "MorseCode"))
           (hsPkgs."ghc" or (buildDepError "ghc"))
           ];
+        buildable = true;
         };
-      exes = { "manatee-irc-daemon" = {}; "manatee-ircclient" = {}; };
+      exes = {
+        "manatee-irc-daemon" = { buildable = true; };
+        "manatee-ircclient" = { buildable = true; };
+        };
       };
     }

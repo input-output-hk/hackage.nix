@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."errors" or (buildDepError "errors"))
           (hsPkgs."unexceptionalio" or (buildDepError "unexceptionalio"))
           ];
+        buildable = true;
         };
       };
     }

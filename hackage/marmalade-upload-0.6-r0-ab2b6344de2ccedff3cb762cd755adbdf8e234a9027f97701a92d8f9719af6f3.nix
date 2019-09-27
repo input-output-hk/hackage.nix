@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ]);
         libs = (pkgs.lib).optional (flags.libmagic) (pkgs."magic" or (sysDepError "magic"));
         build-tools = (pkgs.lib).optional (flags.libmagic) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")));
+        buildable = true;
         };
       exes = {
         "marmalade-upload" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."keyring" or (buildDepError "keyring"))
             (hsPkgs."marmalade-upload" or (buildDepError "marmalade-upload"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."marmalade-upload" or (buildDepError "marmalade-upload"))
             ];
+          buildable = true;
           };
         "marmalade" = {
           depends = [
@@ -105,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."marmalade-upload" or (buildDepError "marmalade-upload"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bimap" or (buildDepError "bimap"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       exes = {
         "bff-shell" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."hint" or (buildDepError "hint"))
             ];
+          buildable = if flags.binaries then true else false;
           };
         "bff-cgi" = {
           depends = (pkgs.lib).optionals (flags.binaries) [
@@ -84,13 +86,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hint" or (buildDepError "hint"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = if flags.binaries then true else false;
           };
         "bff-stats" = {
           depends = (pkgs.lib).optional (flags.stats) (hsPkgs."benchpress" or (buildDepError "benchpress"));
+          buildable = if flags.stats then true else false;
           };
-        "bff-stats-print" = {};
+        "bff-stats-print" = {
+          buildable = if flags.stats then true else false;
+          };
         "bff-stats-render" = {
           depends = (pkgs.lib).optional (flags.render) (hsPkgs."Chart" or (buildDepError "Chart"));
+          buildable = if flags.render then true else false;
           };
         };
       };

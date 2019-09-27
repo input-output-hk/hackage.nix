@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."pcap" or (buildDepError "pcap"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "rep-watcher" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."libstackexchange" or (buildDepError "libstackexchange"))
             ];
+          buildable = if !flags.enable-examples then false else true;
           };
         "badges-watcher" = {
           depends = [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."libstackexchange" or (buildDepError "libstackexchange"))
             ];
+          buildable = if !flags.enable-examples then false else true;
           };
         "server-side-authentication" = {
           depends = [
@@ -92,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."libstackexchange" or (buildDepError "libstackexchange"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if !flags.enable-examples then false else true;
           };
         };
       tests = {
@@ -102,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             (hsPkgs."libstackexchange" or (buildDepError "libstackexchange"))
             ];
+          buildable = if !flags.enable-doctests then false else true;
           };
         };
       };

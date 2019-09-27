@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."multirec" or (buildDepError "multirec"))
           ];
+        buildable = true;
         };
       };
     }

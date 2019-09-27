@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Earley" or (buildDepError "Earley"))
           (hsPkgs."lens" or (buildDepError "lens"))
           ];
+        buildable = true;
         };
       exes = {
         "print-postal-grammar" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Earley" or (buildDepError "Earley"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = if flags.executables then true else false;
           };
         "postal-parser" = {
           depends = (pkgs.lib).optionals (flags.executables) [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Earley" or (buildDepError "Earley"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = if flags.executables then true else false;
           };
         "parrot" = {
           depends = (pkgs.lib).optionals (flags.executables) [
@@ -95,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Earley" or (buildDepError "Earley"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = if flags.executables then true else false;
           };
         "parakeet" = {
           depends = (pkgs.lib).optionals (flags.executables) [
@@ -105,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Earley" or (buildDepError "Earley"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = if flags.executables then true else false;
           };
         };
       };

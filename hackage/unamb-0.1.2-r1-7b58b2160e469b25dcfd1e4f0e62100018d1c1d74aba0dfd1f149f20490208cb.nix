@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "test-unamb" = {
           depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."checkers" or (buildDepError "checkers"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

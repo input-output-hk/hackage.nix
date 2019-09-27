@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ];
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Carbon" or (sysDepError "Carbon"));
+        buildable = if system.isOsx then true else false;
         };
       };
     }

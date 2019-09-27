@@ -87,8 +87,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."xhtml" or (buildDepError "xhtml"))
             ];
+          buildable = true;
           };
-        "darcsden-ssh" = {};
+        "darcsden-ssh" = { buildable = true; };
         };
       };
     }

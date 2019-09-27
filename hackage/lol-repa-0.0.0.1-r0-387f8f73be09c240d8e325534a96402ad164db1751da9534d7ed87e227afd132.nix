@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
           ];
+        buildable = true;
         };
       tests = {
         "test-lol-repa" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lol-repa" or (buildDepError "lol-repa"))
             (hsPkgs."lol-tests" or (buildDepError "lol-tests"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -101,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lol-benches" or (buildDepError "lol-benches"))
             (hsPkgs."lol-repa" or (buildDepError "lol-repa"))
             ];
+          buildable = true;
           };
         };
       };

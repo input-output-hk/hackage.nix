@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
           (hsPkgs."pdf-toolbox-core" or (buildDepError "pdf-toolbox-core"))
           ];
+        buildable = true;
         };
       };
     }

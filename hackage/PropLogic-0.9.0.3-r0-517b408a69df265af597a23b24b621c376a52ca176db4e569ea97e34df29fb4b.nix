@@ -60,7 +60,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           (hsPkgs."random" or (buildDepError "random"))
           ];
+        buildable = true;
         };
-      exes = { "program" = {}; };
+      exes = { "program" = { buildable = true; }; };
       };
     }

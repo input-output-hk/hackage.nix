@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."zlib-conduit" or (buildDepError "zlib-conduit"))
           ];
+        buildable = true;
         };
       };
     }

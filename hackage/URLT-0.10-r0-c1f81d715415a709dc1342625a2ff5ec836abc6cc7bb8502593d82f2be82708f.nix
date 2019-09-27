@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsp" or (buildDepError "hsp"))
           (hsPkgs."applicative-extras" or (buildDepError "applicative-extras"))
           ];
+        buildable = true;
         };
       };
     }

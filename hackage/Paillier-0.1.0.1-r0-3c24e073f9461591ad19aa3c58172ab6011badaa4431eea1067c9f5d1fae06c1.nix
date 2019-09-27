@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-numbers" or (buildDepError "crypto-numbers"))
           (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
           ];
+        buildable = true;
         };
       tests = {
         "test-Paillier" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
             (hsPkgs."Paillier" or (buildDepError "Paillier"))
             ];
+          buildable = true;
           };
         };
       };

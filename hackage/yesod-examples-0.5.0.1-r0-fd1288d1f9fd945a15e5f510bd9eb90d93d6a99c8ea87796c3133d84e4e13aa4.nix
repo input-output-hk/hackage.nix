@@ -60,32 +60,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."yesod" or (buildDepError "yesod"))
             ];
+          buildable = true;
           };
-        "blog" = {};
-        "ajax" = {};
-        "file-echo" = {};
+        "blog" = { buildable = true; };
+        "ajax" = { buildable = true; };
+        "file-echo" = { buildable = true; };
         "pretty-yaml" = {
           depends = [
             (hsPkgs."data-object-yaml" or (buildDepError "data-object-yaml"))
             (hsPkgs."data-object" or (buildDepError "data-object"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
-        "i18n" = {};
-        "session" = {};
-        "widgets" = {};
-        "form" = {};
+        "i18n" = { buildable = true; };
+        "session" = { buildable = true; };
+        "widgets" = { buildable = true; };
+        "form" = { buildable = true; };
         "mkToForm" = {
           depends = [ (hsPkgs."time" or (buildDepError "time")) ];
+          buildable = true;
           };
         "persistent-synopsis" = {
           depends = [
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
             ];
+          buildable = true;
           };
         "hamlet-synopsis" = {
           depends = [ (hsPkgs."hamlet" or (buildDepError "hamlet")) ];
+          buildable = true;
           };
         };
       };

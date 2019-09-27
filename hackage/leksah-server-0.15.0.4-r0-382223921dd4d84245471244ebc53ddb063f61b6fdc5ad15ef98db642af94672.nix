@@ -110,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."pango-1.0" or (sysDepError "pango-1.0"))
           (pkgs."glib-2.0" or (sysDepError "glib-2.0"))
           ];
+        buildable = true;
         };
       exes = {
         "leksah-server" = {
@@ -168,6 +169,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."pango-1.0" or (sysDepError "pango-1.0"))
             (pkgs."glib-2.0" or (sysDepError "glib-2.0"))
             ];
+          buildable = true;
           };
         "leksahecho" = {
           depends = [
@@ -187,9 +189,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."process-leksah" or (buildDepError "process-leksah"))
               ]);
+          buildable = true;
           };
         "leksahtrue" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       tests = {
@@ -208,6 +212,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."process-leksah" or (buildDepError "process-leksah"))
               ]);
+          buildable = true;
           };
         };
       };

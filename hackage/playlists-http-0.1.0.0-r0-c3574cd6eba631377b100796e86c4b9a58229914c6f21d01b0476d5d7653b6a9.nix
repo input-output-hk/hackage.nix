@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."playlists" or (buildDepError "playlists"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."playlists-http" or (buildDepError "playlists-http"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         };
       };

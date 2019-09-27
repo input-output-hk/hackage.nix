@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           ];
         pkgconfig = [ (pkgconfPkgs."blas" or (pkgConfDepError "blas")) ];
+        buildable = true;
         };
       };
     }

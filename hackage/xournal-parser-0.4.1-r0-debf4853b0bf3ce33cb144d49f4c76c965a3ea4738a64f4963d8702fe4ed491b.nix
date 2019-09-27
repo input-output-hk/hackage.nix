@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fclabels" or (buildDepError "fclabels"))
           (hsPkgs."zlib-enum" or (buildDepError "zlib-enum"))
           ];
+        buildable = true;
         };
       };
     }

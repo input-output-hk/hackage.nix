@@ -65,7 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."dotgen" or (buildDepError "dotgen"))
           ];
+        buildable = true;
         };
-      exes = { "flow2dot" = {}; };
+      exes = { "flow2dot" = { buildable = true; }; };
       };
     }

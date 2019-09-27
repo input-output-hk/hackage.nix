@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."transformers" or (buildDepError "transformers"))
               ]
             else [ (hsPkgs."haddock-api" or (buildDepError "haddock-api")) ]);
+          buildable = true;
           };
         };
       tests = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock or (buildToolDepError "haddock")))
             ];
+          buildable = true;
           };
         "hypsrc-test" = {
           depends = [
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock or (buildToolDepError "haddock")))
             ];
+          buildable = true;
           };
         "latex-test" = {
           depends = [
@@ -107,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock or (buildToolDepError "haddock")))
             ];
+          buildable = true;
           };
         "hoogle-test" = {
           depends = [
@@ -117,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock or (buildToolDepError "haddock")))
             ];
+          buildable = true;
           };
         };
       };

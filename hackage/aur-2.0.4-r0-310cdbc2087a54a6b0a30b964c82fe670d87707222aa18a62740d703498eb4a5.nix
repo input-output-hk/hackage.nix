@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."wreq-sb" or (buildDepError "wreq-sb"))
           ];
+        buildable = true;
         };
       };
     }

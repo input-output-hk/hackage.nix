@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."enumerator" or (buildDepError "enumerator"))
           ];
+        buildable = if flags.nolib then false else true;
         };
       exes = {
         "runtests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."enumerator" or (buildDepError "enumerator"))
             (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

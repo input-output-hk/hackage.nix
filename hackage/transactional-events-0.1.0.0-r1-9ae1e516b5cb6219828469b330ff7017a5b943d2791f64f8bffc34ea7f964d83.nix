@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MonadPrompt" or (buildDepError "MonadPrompt"))
           (hsPkgs."ListZipper" or (buildDepError "ListZipper"))
           ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."type-level" or (buildDepError "type-level"))
             ];
+        buildable = true;
         };
       };
     }

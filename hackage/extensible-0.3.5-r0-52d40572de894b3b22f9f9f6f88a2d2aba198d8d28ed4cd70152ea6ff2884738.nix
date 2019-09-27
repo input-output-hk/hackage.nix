@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."monad-skeleton" or (buildDepError "monad-skeleton"))
           ];
+        buildable = true;
         };
       };
     }

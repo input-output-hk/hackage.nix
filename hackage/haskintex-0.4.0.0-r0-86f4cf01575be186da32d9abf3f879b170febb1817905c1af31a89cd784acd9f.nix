@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."hint" or (buildDepError "hint"))
           ];
+        buildable = true;
         };
       exes = {
         "haskintex" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haskintex" or (buildDepError "haskintex"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Shellac" or (buildDepError "Shellac"))
             (hsPkgs."Shellac-compatline" or (buildDepError "Shellac-compatline"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.8") (hsPkgs."containers" or (buildDepError "containers"));
+          buildable = true;
           };
         };
       };

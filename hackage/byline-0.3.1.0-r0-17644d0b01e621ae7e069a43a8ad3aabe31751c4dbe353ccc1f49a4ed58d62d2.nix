@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+        buildable = true;
         };
       exes = {
         "simple" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."byline" or (buildDepError "byline"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "menu" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."byline" or (buildDepError "byline"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         };
       };

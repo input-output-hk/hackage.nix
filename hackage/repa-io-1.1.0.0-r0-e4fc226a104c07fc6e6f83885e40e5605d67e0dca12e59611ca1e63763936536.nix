@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."repa-bytestring" or (buildDepError "repa-bytestring"))
           (hsPkgs."bmp" or (buildDepError "bmp"))
           ];
+        buildable = true;
         };
       };
     }

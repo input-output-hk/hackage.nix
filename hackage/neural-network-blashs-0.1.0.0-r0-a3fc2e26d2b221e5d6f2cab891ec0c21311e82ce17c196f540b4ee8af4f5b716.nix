@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."neural-network-base" or (buildDepError "neural-network-base"))
           ];
+        buildable = true;
         };
       tests = {
         "s1" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blas-hs" or (buildDepError "blas-hs"))
             (hsPkgs."neural-network-base" or (buildDepError "neural-network-base"))
             ];
+          buildable = true;
           };
         };
       };

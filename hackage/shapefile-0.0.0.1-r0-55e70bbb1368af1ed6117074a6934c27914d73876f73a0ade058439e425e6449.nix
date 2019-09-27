@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."rwlock" or (buildDepError "rwlock"))
           ];
+        buildable = true;
         };
       };
     }

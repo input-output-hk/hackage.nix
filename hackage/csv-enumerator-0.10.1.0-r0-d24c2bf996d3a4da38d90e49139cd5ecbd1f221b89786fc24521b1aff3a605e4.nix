@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe" or (buildDepError "safe"))
           (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
           ];
+        buildable = true;
         };
       };
     }

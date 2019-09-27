@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."string-conv" or (buildDepError "string-conv"))
           (hsPkgs."lens" or (buildDepError "lens"))
           ];
+        buildable = true;
         };
       tests = {
         "logging-test" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."simple-logging" or (buildDepError "simple-logging"))
             (hsPkgs."simple-effects" or (buildDepError "simple-effects"))
             ];
+          buildable = true;
           };
         };
       };

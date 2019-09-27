@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsemail" or (buildDepError "hsemail"))
             (hsPkgs."hopenssl" or (buildDepError "hopenssl"))
             ];
+          buildable = true;
           };
         };
       };

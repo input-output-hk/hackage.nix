@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
           (hsPkgs."lambdacube-ir" or (buildDepError "lambdacube-ir"))
           ];
+        buildable = true;
         };
       };
     }

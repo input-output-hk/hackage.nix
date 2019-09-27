@@ -107,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ]
           else [ (hsPkgs."debian" or (buildDepError "debian")) ]);
+        buildable = true;
         };
       exes = {
         "cabal-debian" = {
@@ -124,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."pretty" or (buildDepError "pretty"))
               (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
               ])) ++ (pkgs.lib).optional (!flags.local-debian) (hsPkgs."debian" or (buildDepError "debian"));
+          buildable = true;
           };
         };
       tests = {
@@ -147,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."pretty" or (buildDepError "pretty"))
               (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
               ])) ++ (pkgs.lib).optional (!flags.local-debian) (hsPkgs."debian" or (buildDepError "debian"));
+          buildable = if !flags.tests then false else true;
           };
         };
       };

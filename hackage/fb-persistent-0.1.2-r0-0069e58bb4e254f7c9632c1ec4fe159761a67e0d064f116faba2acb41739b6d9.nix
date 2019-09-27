@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fb" or (buildDepError "fb"))
           (hsPkgs."persistent" or (buildDepError "persistent"))
           ];
+        buildable = true;
         };
       };
     }

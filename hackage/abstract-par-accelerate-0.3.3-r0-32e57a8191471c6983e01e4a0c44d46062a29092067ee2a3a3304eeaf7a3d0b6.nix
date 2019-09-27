@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ [
           (hsPkgs."accelerate" or (buildDepError "accelerate"))
           ]) ++ (pkgs.lib).optional (flags.io && flags.newaccelerate) (hsPkgs."accelerate-io" or (buildDepError "accelerate-io"));
+        buildable = true;
         };
       };
     }

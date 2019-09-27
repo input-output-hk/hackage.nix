@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xhtml" or (buildDepError "xhtml"))
             (hsPkgs."safer-file-handles" or (buildDepError "safer-file-handles"))
             ];
+          buildable = true;
           };
         };
       };

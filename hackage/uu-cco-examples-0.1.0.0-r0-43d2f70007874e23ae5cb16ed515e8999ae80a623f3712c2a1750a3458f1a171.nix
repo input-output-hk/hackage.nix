@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             (hsPkgs."uu-cco" or (buildDepError "uu-cco"))
             ];
+          buildable = true;
           };
         };
       };

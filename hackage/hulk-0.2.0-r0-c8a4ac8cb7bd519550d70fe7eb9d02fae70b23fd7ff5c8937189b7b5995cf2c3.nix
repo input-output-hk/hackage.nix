@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
           (hsPkgs."monad-extras" or (buildDepError "monad-extras"))
           ];
+        buildable = true;
         };
       exes = {
         "hulk" = {
@@ -104,9 +105,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
             (hsPkgs."monad-extras" or (buildDepError "monad-extras"))
             ];
+          buildable = true;
           };
         "hulk-generate-pass" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

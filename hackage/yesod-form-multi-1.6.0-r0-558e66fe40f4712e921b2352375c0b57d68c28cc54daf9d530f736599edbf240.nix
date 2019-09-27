@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
           ] ++ (pkgs.lib).optional (flags.network-uri) (hsPkgs."network-uri" or (buildDepError "network-uri"));
+        buildable = true;
         };
       };
     }

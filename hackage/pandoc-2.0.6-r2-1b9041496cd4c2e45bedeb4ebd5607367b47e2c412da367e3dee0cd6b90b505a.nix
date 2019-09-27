@@ -128,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."network" or (buildDepError "network"))
             ])) ++ (pkgs.lib).optional (flags.embed_data_files) (hsPkgs."file-embed" or (buildDepError "file-embed"));
+        buildable = true;
         };
       exes = {
         "pandoc" = {
@@ -135,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pandoc" or (buildDepError "pandoc"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "trypandoc" = {
           depends = (pkgs.lib).optionals (flags.trypandoc) [
@@ -146,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."http-types" or (buildDepError "http-types"))
             ];
+          buildable = if flags.trypandoc then true else false;
           };
         "weigh-pandoc" = {
           depends = (pkgs.lib).optionals (flags.weigh-pandoc) [
@@ -155,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."weigh" or (buildDepError "weigh"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if flags.weigh-pandoc then true else false;
           };
         };
       tests = {
@@ -187,6 +191,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."time" or (buildDepError "time"))
               ]
             else [ (hsPkgs."time" or (buildDepError "time")) ]);
+          buildable = true;
           };
         };
       benchmarks = {
@@ -200,6 +205,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

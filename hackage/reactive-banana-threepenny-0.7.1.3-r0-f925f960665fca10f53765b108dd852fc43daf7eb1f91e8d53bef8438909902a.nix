@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."reactive-banana" or (buildDepError "reactive-banana"))
           (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
           ];
+        buildable = true;
         };
       exes = {
         "reactiva-banana-threepenny-Animation" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reactive-banana" or (buildDepError "reactive-banana"))
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "reactiva-banana-threepenny-Arithmetic" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reactive-banana" or (buildDepError "reactive-banana"))
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "reactiva-banana-threepenny-Asteroids" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -90,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "reactiva-banana-threepenny-BarTab" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -97,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "reactiva-banana-threepenny-Counter" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -104,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "reactiva-banana-threepenny-CurrencyConverter" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -111,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "reactiva-banana-threepenny-CRUD" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -119,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "reactiva-banana-threepenny-NetMonitor" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -127,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "reactiva-banana-threepenny-TicTacToe" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -136,6 +145,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "reactiva-banana-threepenny-TwoCounters" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -143,6 +153,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "reactiva-banana-threepenny-Wave" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -150,6 +161,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

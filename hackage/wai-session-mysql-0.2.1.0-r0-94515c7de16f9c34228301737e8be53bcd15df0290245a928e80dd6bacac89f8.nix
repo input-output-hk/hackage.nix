@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."wai-session" or (buildDepError "wai-session"))
           ];
+        buildable = true;
         };
       tests = {
         "mysql-session-test" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-session" or (buildDepError "wai-session"))
             (hsPkgs."wai-session-mysql" or (buildDepError "wai-session-mysql"))
             ];
+          buildable = true;
           };
         };
       };

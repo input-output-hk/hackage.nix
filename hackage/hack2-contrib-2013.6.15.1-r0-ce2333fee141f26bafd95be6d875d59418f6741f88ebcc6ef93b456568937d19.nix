@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regexpr" or (buildDepError "regexpr"))
           (hsPkgs."air-extra" or (buildDepError "air-extra"))
           ];
+        buildable = true;
         };
       };
     }

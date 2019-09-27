@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             (hsPkgs."xournal-types" or (buildDepError "xournal-types"))
             ];
+        buildable = true;
         };
       };
     }

@@ -122,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       exes = {
         "hermes" = {
@@ -138,6 +139,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hermes" or (buildDepError "hermes"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         "hermes-docs" = {
           depends = [
@@ -151,6 +153,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hermes" or (buildDepError "hermes"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         "hermes-server" = {
           depends = [
@@ -197,6 +200,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hermes" or (buildDepError "hermes"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         "hermes-progress" = {
           depends = [
@@ -210,6 +214,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."io-streams" or (buildDepError "io-streams"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         "hermes-tests" = {
           depends = [
@@ -251,6 +256,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."hermes" or (buildDepError "hermes"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         "hermes-bench" = {
           depends = [
@@ -263,6 +269,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."hermes" or (buildDepError "hermes"))
             ];
+          buildable = if flags.bench then true else false;
           };
         };
       };

@@ -98,16 +98,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ [
             (hsPkgs."darcs" or (buildDepError "darcs"))
             ]) ++ (pkgs.lib).optional (flags.highlightingkate) (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))) ++ (pkgs.lib).optional (flags.highlighter) (hsPkgs."highlighter" or (buildDepError "highlighter"))) ++ (pkgs.lib).optional (flags.ssh) (hsPkgs."ssh" or (buildDepError "ssh"));
+          buildable = true;
           };
         "darcsden-ssh" = {
           depends = [
             (hsPkgs."darcs" or (buildDepError "darcs"))
             ] ++ (pkgs.lib).optional (flags.ssh) (hsPkgs."ssh" or (buildDepError "ssh"));
+          buildable = true;
           };
         "darcsden-post-hook" = {
           depends = [
             (hsPkgs."darcs" or (buildDepError "darcs"))
             ] ++ (pkgs.lib).optional (flags.closing) (hsPkgs."pcre-light" or (buildDepError "pcre-light"));
+          buildable = true;
           };
         };
       };

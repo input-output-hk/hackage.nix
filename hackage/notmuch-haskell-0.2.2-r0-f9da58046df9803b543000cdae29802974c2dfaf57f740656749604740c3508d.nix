@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."talloc" or (sysDepError "talloc"))
           (pkgs."xapian" or (sysDepError "xapian"))
           ];
+        buildable = true;
         };
       exes = {
         "notmuch-test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parseargs" or (buildDepError "parseargs"))
             ];
           libs = [ (pkgs."notmuch" or (sysDepError "notmuch")) ];
+          buildable = true;
           };
         };
       };

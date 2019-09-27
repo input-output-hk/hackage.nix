@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."elm-export" or (buildDepError "elm-export"))
           ];
+        buildable = true;
         };
       tests = {
         "servant-elm-test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant" or (buildDepError "servant"))
             (hsPkgs."servant-elm" or (buildDepError "servant-elm"))
             ];
+          buildable = true;
           };
         };
       };

@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."BiobaseHTTP" or (buildDepError "BiobaseHTTP"))
           (hsPkgs."silently" or (buildDepError "silently"))
           ];
+        buildable = true;
         };
       exes = {
         "RNAlien" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."BiobaseFasta" or (buildDepError "BiobaseFasta"))
             ];
+          buildable = true;
           };
         "RNAlienScan" = {
           depends = [
@@ -120,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."BiobaseFasta" or (buildDepError "BiobaseFasta"))
             ];
+          buildable = true;
           };
         "RNAlienStatistics" = {
           depends = [
@@ -138,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."BiobaseFasta" or (buildDepError "BiobaseFasta"))
             (hsPkgs."BiobaseTypes" or (buildDepError "BiobaseTypes"))
             ];
+          buildable = true;
           };
         "cmsearchToBed" = {
           depends = [
@@ -148,6 +152,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "RNAcentralHTTPRequest" = {
           depends = [
@@ -156,6 +161,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
             (hsPkgs."RNAlien" or (buildDepError "RNAlien"))
             ];
+          buildable = true;
           };
         };
       };

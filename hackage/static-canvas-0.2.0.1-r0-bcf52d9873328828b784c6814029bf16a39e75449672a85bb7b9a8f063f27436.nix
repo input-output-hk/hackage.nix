@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."double-conversion" or (buildDepError "double-conversion"))
           ];
+        buildable = true;
         };
       };
     }

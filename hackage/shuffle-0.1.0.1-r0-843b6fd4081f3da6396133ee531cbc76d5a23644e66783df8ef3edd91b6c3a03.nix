@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuagc-cabal" or (buildDepError "uuagc-cabal"))
             (hsPkgs."uhc-util" or (buildDepError "uhc-util"))
             ];
+          buildable = true;
           };
         };
       };

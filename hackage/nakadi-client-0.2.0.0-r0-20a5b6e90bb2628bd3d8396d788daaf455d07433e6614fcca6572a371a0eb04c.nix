@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."retry" or (buildDepError "retry"))
           ];
+        buildable = true;
         };
       tests = {
         "nakadi-client-test-suite" = {
@@ -136,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."retry" or (buildDepError "retry"))
             ];
+          buildable = true;
           };
         };
       };

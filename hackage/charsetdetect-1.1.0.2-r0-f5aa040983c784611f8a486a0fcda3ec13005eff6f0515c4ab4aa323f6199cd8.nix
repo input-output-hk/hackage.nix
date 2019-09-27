@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (pkgs."gcc_s_dw2-1" or (sysDepError "gcc_s_dw2-1"))
               ]
           else [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+        buildable = true;
         };
       };
     }

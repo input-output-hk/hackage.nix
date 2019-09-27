@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hosc" or (buildDepError "hosc"))
           (hsPkgs."hsc3" or (buildDepError "hsc3"))
           ];
+        buildable = true;
         };
       };
     }

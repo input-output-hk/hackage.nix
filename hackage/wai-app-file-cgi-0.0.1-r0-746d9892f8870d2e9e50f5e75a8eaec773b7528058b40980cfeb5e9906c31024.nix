@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
           (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
           ];
+        buildable = true;
         };
       };
     }

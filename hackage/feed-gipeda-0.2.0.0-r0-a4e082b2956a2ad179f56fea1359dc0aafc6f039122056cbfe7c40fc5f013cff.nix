@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."async" or (buildDepError "async"))
           (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
           ];
+        buildable = true;
         };
       exes = {
         "feed-gipeda" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."logging" or (buildDepError "logging"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -128,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."free" or (buildDepError "free"))
             (hsPkgs."logging" or (buildDepError "logging"))
             ];
+          buildable = true;
           };
         };
       };

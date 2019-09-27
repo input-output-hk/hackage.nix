@@ -59,9 +59,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."io-reactive" or (buildDepError "io-reactive"))
           ];
+        buildable = true;
         };
       exes = {
-        "test" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "test" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = false;
+          };
         };
       };
     }

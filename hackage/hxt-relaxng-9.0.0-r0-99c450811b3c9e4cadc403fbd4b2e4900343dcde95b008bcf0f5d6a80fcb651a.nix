@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hxt-charproperties" or (buildDepError "hxt-charproperties"))
           (hsPkgs."hxt-regex-xmlschema" or (buildDepError "hxt-regex-xmlschema"))
           ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-endian-big" or (buildDepError "vector-endian-big"))
           (hsPkgs."vector-endian-little" or (buildDepError "vector-endian-little"))
           ];
+        buildable = true;
         };
       sublibs = {
         "endian-common" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         "little-endian" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."endian-common" or (buildDepError "endian-common"))
             ];
+          buildable = true;
           };
         "big-endian" = {
           depends = [
@@ -95,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."endian-common" or (buildDepError "endian-common"))
             ];
+          buildable = true;
           };
         "vector-endian-indef" = {
           depends = [
@@ -105,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."endian-common" or (buildDepError "endian-common"))
             ];
+          buildable = true;
           };
         "vector-endian-little" = {
           depends = [
@@ -116,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-endian-indef" or (buildDepError "vector-endian-indef"))
             (hsPkgs."little-endian" or (buildDepError "little-endian"))
             ];
+          buildable = true;
           };
         "vector-endian-big" = {
           depends = [
@@ -127,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-endian-indef" or (buildDepError "vector-endian-indef"))
             (hsPkgs."big-endian" or (buildDepError "big-endian"))
             ];
+          buildable = true;
           };
         };
       };

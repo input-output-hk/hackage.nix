@@ -60,7 +60,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
-      exes = { "trhsx" = {}; };
+      exes = { "trhsx" = { buildable = true; }; };
       };
     }

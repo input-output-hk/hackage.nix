@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."BiobaseTrainingData" or (buildDepError "BiobaseTrainingData"))
           (hsPkgs."StatisticalMethods" or (buildDepError "StatisticalMethods"))
           ];
+        buildable = true;
         };
       exes = {
         "RNAwolfTrain" = {
@@ -76,9 +77,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             ];
+          buildable = true;
           };
         "RNAwolf" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

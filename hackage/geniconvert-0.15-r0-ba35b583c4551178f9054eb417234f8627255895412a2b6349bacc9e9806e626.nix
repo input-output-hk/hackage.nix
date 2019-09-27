@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."HaXml" or (buildDepError "HaXml"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."clock" or (buildDepError "clock"))
           (hsPkgs."formatting" or (buildDepError "formatting"))
           ];
+        buildable = true;
         };
       };
     }

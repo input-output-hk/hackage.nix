@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fclabels" or (buildDepError "fclabels"))
           (hsPkgs."json" or (buildDepError "json"))
           ];
+        buildable = true;
         };
       };
     }

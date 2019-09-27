@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."c0parser" or (buildDepError "c0parser"))
             ];
+          buildable = true;
           };
         };
       };

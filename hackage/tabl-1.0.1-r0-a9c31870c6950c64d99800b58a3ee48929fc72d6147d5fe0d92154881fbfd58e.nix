@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe" or (buildDepError "safe"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "tabl-example-users" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tabl" or (buildDepError "tabl"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "tabl-example-multiply" = {
           depends = [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tabl" or (buildDepError "tabl"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "tabl-example-tictactoe" = {
           depends = [
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tabl" or (buildDepError "tabl"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "tabl-example-constants" = {
           depends = [
@@ -93,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tabl" or (buildDepError "tabl"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

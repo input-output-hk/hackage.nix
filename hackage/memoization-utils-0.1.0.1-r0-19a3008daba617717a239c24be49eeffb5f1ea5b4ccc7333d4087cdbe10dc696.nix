@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."time-units" or (buildDepError "time-units"))
           ];
+        buildable = true;
         };
       tests = {
         "hspec" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."memoization-utils" or (buildDepError "memoization-utils"))
             ];
+          buildable = true;
           };
         };
       };

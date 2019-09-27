@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."geodetics" or (buildDepError "geodetics"))
           ] ++ (pkgs.lib).optional (flags.embeded) (hsPkgs."bzlib" or (buildDepError "bzlib"));
+        buildable = true;
         };
       };
     }

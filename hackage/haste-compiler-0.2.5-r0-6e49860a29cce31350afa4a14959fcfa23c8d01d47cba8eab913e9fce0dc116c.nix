@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
+          buildable = true;
           };
         "hastec" = {
           depends = [
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
+          buildable = true;
           };
         "haste-inst" = {
           depends = [
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
+          buildable = true;
           };
         "haste-pkg" = {
           depends = [
@@ -111,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
+          buildable = true;
           };
         "haste-install-his" = {
           depends = [
@@ -120,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
+          buildable = true;
           };
         "haste-copy-pkg" = {
           depends = [
@@ -132,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
+          buildable = true;
           };
         };
       };

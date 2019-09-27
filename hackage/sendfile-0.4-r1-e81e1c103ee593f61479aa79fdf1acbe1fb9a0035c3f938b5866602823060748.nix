@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-bytestring" or (buildDepError "network-bytestring"))
             ]));
         libs = (pkgs.lib).optional (system.isWindows && !flags.portable) (pkgs."mswsock" or (sysDepError "mswsock"));
+        buildable = true;
         };
       };
     }

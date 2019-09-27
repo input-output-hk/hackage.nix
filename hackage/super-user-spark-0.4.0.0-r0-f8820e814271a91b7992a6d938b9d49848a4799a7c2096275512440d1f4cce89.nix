@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."path-io" or (buildDepError "path-io"))
           (hsPkgs."iostring" or (buildDepError "iostring"))
           ];
+        buildable = true;
         };
       exes = {
         "super-user-spark" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."super-user-spark" or (buildDepError "super-user-spark"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -116,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."iostring" or (buildDepError "iostring"))
             (hsPkgs."hashable" or (buildDepError "hashable"))
             ];
+          buildable = true;
           };
         };
       };

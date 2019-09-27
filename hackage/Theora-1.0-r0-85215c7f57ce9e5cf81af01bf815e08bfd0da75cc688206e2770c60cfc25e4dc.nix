@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."ogg" or (sysDepError "ogg"))
           (pkgs."theora" or (sysDepError "theora"))
           ];
+        buildable = true;
         };
       };
     }

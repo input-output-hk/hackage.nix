@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuid-types" or (buildDepError "uuid-types"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ]);
+        buildable = true;
         };
       };
     }

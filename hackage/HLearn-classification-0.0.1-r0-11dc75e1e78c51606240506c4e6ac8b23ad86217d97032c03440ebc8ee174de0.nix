@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."math-functions" or (buildDepError "math-functions"))
           (hsPkgs."normaldistribution" or (buildDepError "normaldistribution"))
           ];
+        buildable = true;
         };
       exes = {
         "HLearn-Classification-Demo" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

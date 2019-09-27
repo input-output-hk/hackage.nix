@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ]) ++ [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ]) ++ [
           (hsPkgs."vector" or (buildDepError "vector"))
           ]) ++ [ (hsPkgs."zlib" or (buildDepError "zlib")) ];
+        buildable = true;
         };
       };
     }

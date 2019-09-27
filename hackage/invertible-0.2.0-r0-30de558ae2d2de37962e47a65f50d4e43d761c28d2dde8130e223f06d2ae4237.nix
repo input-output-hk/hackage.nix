@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ] ++ (pkgs.lib).optional (flags.arrows) (hsPkgs."arrows" or (buildDepError "arrows"))) ++ (pkgs.lib).optional (flags.hlist) (hsPkgs."HList" or (buildDepError "HList"))) ++ (pkgs.lib).optional (flags.invariant) (hsPkgs."invariant" or (buildDepError "invariant"))) ++ (pkgs.lib).optional (flags.lens) (hsPkgs."lens" or (buildDepError "lens"))) ++ (pkgs.lib).optional (flags.partial-isomorphisms) (hsPkgs."partial-isomorphisms" or (buildDepError "partial-isomorphisms"))) ++ (pkgs.lib).optional (flags.piso) (hsPkgs."Piso" or (buildDepError "Piso"))) ++ (pkgs.lib).optional (flags.semigroupoids) (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))) ++ (pkgs.lib).optional (flags.typecompose) (hsPkgs."TypeCompose" or (buildDepError "TypeCompose"));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."invertible" or (buildDepError "invertible"))
             ];
+          buildable = true;
           };
         };
       };

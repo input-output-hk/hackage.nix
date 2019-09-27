@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pulse-simple" or (buildDepError "pulse-simple"))
           (hsPkgs."foreign-store" or (buildDepError "foreign-store"))
           ];
+        buildable = true;
         };
       };
     }

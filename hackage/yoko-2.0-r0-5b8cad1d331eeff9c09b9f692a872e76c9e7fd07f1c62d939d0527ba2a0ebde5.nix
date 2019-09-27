@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-ord" or (buildDepError "type-ord"))
           (hsPkgs."type-ord-spine-cereal" or (buildDepError "type-ord-spine-cereal"))
           ];
+        buildable = true;
         };
       };
     }

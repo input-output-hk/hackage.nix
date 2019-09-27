@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Shellac-readline" or (buildDepError "Shellac-readline"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.8") (hsPkgs."containers" or (buildDepError "containers"));
           libs = [ (pkgs."readline" or (sysDepError "readline")) ];
+          buildable = true;
           };
         };
       };

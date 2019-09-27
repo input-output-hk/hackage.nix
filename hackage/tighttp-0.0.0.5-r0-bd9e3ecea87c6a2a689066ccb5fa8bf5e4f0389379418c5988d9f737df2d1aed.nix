@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."papillon" or (buildDepError "papillon"))
           (hsPkgs."simple-pipe" or (buildDepError "simple-pipe"))
           ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."iteratee" or (buildDepError "iteratee"))
           (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
           ];
+        buildable = true;
         };
       };
     }

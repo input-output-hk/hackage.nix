@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."file-embed" or (buildDepError "file-embed"))
           ];
+        buildable = true;
         };
       exes = {
         "atsfmt" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ats-format" or (buildDepError "ats-format"))
             ];
+          buildable = if flags.library then false else true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashtables" or (buildDepError "hashtables"))
           (hsPkgs."RefSerialize" or (buildDepError "RefSerialize"))
           ];
+        buildable = true;
         };
       };
     }

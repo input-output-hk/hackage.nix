@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."monad-stm" or (buildDepError "monad-stm"))
           ];
+        buildable = true;
         };
       };
     }

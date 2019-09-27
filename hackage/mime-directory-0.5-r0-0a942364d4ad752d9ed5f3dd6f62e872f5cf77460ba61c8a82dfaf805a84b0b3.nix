@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."base64-string" or (buildDepError "base64-string"))
           ];
+        buildable = true;
         };
       };
     }

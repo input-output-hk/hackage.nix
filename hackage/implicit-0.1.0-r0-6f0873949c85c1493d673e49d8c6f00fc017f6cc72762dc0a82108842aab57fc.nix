@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."silently" or (buildDepError "silently"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "extopenscad" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."implicit" or (buildDepError "implicit"))
             ];
+          buildable = true;
           };
         "implicitsnap" = {
           depends = [
@@ -119,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."implicit" or (buildDepError "implicit"))
             ];
+          buildable = true;
           };
         "Benchmark" = {
           depends = [
@@ -142,6 +145,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."implicit" or (buildDepError "implicit"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -154,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."implicit" or (buildDepError "implicit"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -165,6 +170,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."implicit" or (buildDepError "implicit"))
             ];
+          buildable = true;
           };
         };
       };

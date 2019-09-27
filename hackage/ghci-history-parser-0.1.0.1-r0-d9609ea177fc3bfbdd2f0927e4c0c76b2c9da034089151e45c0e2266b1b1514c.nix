@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       tests = {
         "ghci-history-parser-test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."hspec" or (buildDepError "hspec"))
               (hsPkgs."ghci-history-parser" or (buildDepError "ghci-history-parser"))
               ];
+          buildable = true;
           };
         "ghci-history-parser-doctest" = {
           depends = if flags.use_parsec
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."ghci-history-parser" or (buildDepError "ghci-history-parser"))
               (hsPkgs."doctest" or (buildDepError "doctest"))
               ];
+          buildable = true;
           };
         };
       };

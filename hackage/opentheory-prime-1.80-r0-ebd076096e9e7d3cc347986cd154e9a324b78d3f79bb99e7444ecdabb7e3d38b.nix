@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."opentheory-divides" or (buildDepError "opentheory-divides"))
           (hsPkgs."opentheory-stream" or (buildDepError "opentheory-stream"))
           ];
+        buildable = true;
         };
       tests = {
         "opentheory-prime-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."opentheory-divides" or (buildDepError "opentheory-divides"))
             (hsPkgs."opentheory-stream" or (buildDepError "opentheory-stream"))
             ];
+          buildable = true;
           };
         };
       };

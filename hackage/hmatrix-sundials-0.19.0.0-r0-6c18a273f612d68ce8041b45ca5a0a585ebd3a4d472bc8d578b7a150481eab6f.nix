@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
           ];
         libs = [ (pkgs."sundials_arkode" or (sysDepError "sundials_arkode")) ];
+        buildable = true;
         };
       tests = {
         "hmatrix-sundials-testsuite" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           libs = [
             (pkgs."sundials_arkode" or (sysDepError "sundials_arkode"))
             ];
+          buildable = true;
           };
         };
       };

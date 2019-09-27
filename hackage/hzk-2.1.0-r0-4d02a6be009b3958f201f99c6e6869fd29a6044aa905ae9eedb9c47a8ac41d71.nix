@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           ];
         libs = [ (pkgs."zookeeper_mt" or (sysDepError "zookeeper_mt")) ];
+        buildable = true;
         };
       tests = {
         "test-zookeeper" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             ];
           libs = [ (pkgs."zookeeper_mt" or (sysDepError "zookeeper_mt")) ];
+          buildable = true;
           };
         };
       };

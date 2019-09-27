@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."foldable1" or (buildDepError "foldable1"))
           (hsPkgs."natural-induction" or (buildDepError "natural-induction"))
           ];
+        buildable = true;
         };
       };
     }

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "demo" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
             ] ++ (pkgs.lib).optional (flags.builddemo) (hsPkgs."ffmpeg-light" or (buildDepError "ffmpeg-light"));
+          buildable = if !flags.builddemo then false else true;
           };
         "raster" = {
           depends = [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ffmpeg-light" or (buildDepError "ffmpeg-light"))
             (hsPkgs."Rasterific" or (buildDepError "Rasterific"))
             ];
+          buildable = if !flags.buildrasterdemo then false else true;
           };
         };
       };

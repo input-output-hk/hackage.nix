@@ -57,6 +57,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = [ (pkgs."OIS" or (sysDepError "OIS")) ];
+        buildable = true;
         };
       exes = {
         "OISConsole" = {
@@ -65,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."X11" or (buildDepError "X11"))
             ];
+          buildable = true;
           };
         };
       };

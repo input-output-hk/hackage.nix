@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
           (hsPkgs."map-syntax" or (buildDepError "map-syntax"))
           ];
+        buildable = true;
         };
       exes = {
         "demo" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."snaplet-i18n" or (buildDepError "snaplet-i18n"))
             (hsPkgs."map-syntax" or (buildDepError "map-syntax"))
             ];
+          buildable = true;
           };
         };
       };

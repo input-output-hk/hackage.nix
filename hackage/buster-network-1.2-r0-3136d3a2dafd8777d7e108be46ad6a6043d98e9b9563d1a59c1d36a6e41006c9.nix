@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           (hsPkgs."dataenc" or (buildDepError "dataenc"))
           ];
+        buildable = true;
         };
       };
     }

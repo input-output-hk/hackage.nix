@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."open-typerep" or (buildDepError "open-typerep"))
             (hsPkgs."syntactic" or (buildDepError "syntactic"))
             ]);
+        buildable = true;
         };
       tests = {
         "Examples" = {
@@ -87,12 +88,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "Semantics" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."imperative-edsl" or (buildDepError "imperative-edsl"))
             ];
+          buildable = true;
           };
         };
       };

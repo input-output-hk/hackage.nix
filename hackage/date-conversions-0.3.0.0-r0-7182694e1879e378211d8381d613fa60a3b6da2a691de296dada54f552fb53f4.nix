@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."dates" or (buildDepError "dates"))
           ];
+        buildable = true;
         };
       tests = {
         "date-conversions-test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."dates" or (buildDepError "dates"))
             ];
+          buildable = true;
           };
         };
       };

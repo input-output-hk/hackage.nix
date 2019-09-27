@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haste-compiler" or (buildDepError "haste-compiler"))
             (hsPkgs."haste-perch" or (buildDepError "haste-perch"))
             ];
+        buildable = true;
         };
       };
     }

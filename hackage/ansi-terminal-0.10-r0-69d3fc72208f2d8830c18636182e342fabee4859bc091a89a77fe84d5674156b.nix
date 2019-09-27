@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mintty" or (buildDepError "mintty"))
           (hsPkgs."Win32" or (buildDepError "Win32"))
           ];
+        buildable = true;
         };
       exes = {
         "ansi-terminal-example" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             (hsPkgs."colour" or (buildDepError "colour"))
             ];
+          buildable = if !flags.example then false else true;
           };
         };
       };

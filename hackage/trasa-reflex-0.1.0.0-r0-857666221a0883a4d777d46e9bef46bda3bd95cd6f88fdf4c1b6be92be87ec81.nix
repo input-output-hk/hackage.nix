@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."reflex-dom" or (buildDepError "reflex-dom"))
           (hsPkgs."trasa" or (buildDepError "trasa"))
           ];
+        buildable = true;
         };
       };
     }

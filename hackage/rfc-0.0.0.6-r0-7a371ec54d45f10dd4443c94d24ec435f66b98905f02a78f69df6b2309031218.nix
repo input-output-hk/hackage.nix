@@ -97,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."swagger2" or (buildDepError "swagger2"))
           (hsPkgs."markdown" or (buildDepError "markdown"))
           ];
+        buildable = true;
         };
       };
     }

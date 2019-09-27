@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
           (hsPkgs."cuda" or (buildDepError "cuda"))
           ];
+        buildable = true;
         };
       };
     }

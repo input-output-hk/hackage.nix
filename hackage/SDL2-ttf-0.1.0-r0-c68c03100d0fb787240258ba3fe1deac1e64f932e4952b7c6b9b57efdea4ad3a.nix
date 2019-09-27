@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."SDL2" or (sysDepError "SDL2"))
           (pkgs."SDL2_ttf" or (sysDepError "SDL2_ttf"))
           ];
+        buildable = true;
         };
       };
     }

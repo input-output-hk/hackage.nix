@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptocipher" or (buildDepError "cryptocipher"))
           (hsPkgs."certificate" or (buildDepError "certificate"))
           ];
+        buildable = true;
         };
       exes = {
         "Tests" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
             (hsPkgs."cryptocipher" or (buildDepError "cryptocipher"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

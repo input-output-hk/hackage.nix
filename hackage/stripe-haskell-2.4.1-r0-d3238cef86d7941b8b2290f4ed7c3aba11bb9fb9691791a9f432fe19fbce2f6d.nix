@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."stripe-http-client" or (buildDepError "stripe-http-client"))
             ]);
+        buildable = true;
         };
       };
     }

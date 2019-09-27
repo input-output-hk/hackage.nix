@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if flags.nano-md5
             then [ (hsPkgs."nano-md5" or (buildDepError "nano-md5")) ]
             else [ (hsPkgs."pureMD5" or (buildDepError "pureMD5")) ]);
+          buildable = true;
           };
         };
       };

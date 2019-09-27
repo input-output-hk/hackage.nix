@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unexceptionalio" or (buildDepError "unexceptionalio"))
           (hsPkgs."base58address" or (buildDepError "base58address"))
           ];
+        buildable = true;
         };
       };
     }

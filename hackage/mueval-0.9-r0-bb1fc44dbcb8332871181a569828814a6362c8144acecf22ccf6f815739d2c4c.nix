@@ -70,12 +70,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
           (hsPkgs."simple-reflect" or (buildDepError "simple-reflect"))
           ];
+        buildable = true;
         };
       exes = {
         "mueval-core" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
-        "mueval" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "mueval" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         };
       };
     }

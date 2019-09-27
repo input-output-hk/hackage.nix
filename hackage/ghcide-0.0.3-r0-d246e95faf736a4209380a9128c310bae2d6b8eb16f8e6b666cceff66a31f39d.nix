@@ -96,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"))
             (hsPkgs."ghc" or (buildDepError "ghc"))
             ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       exes = {
         "ghcide" = {
@@ -115,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shake" or (buildDepError "shake"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.ghc-lib then false else true;
           };
         };
       tests = {
@@ -136,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.ghcide or (pkgs.buildPackages.ghcide or (buildToolDepError "ghcide")))
             ];
+          buildable = if flags.ghc-lib then false else true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
           (hsPkgs."lens-family-th" or (buildDepError "lens-family-th"))
           ];
+        buildable = true;
         };
       };
     }

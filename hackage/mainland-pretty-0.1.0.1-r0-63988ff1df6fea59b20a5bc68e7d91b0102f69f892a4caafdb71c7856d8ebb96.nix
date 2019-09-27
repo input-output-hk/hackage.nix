@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."srcloc" or (buildDepError "srcloc"))
           (hsPkgs."symbol" or (buildDepError "symbol"))
           ];
+        buildable = true;
         };
       };
     }

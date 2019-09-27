@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."instant-generics" or (buildDepError "instant-generics"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."instant-aeson" or (buildDepError "instant-aeson"))
             (hsPkgs."instant-generics" or (buildDepError "instant-generics"))
             ];
+          buildable = true;
           };
         };
       };

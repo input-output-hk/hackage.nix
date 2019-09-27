@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."roundtrip" or (buildDepError "roundtrip"))
           (hsPkgs."roundtrip-string" or (buildDepError "roundtrip-string"))
           ];
+        buildable = true;
         };
       exes = {
         "tests" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-enumerator" or (buildDepError "xml-enumerator"))
             (hsPkgs."reference" or (buildDepError "reference"))
             ];
+          buildable = if flags.tests then true else false;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."iproute" or (buildDepError "iproute"))
           ];
+        buildable = true;
         };
       };
     }

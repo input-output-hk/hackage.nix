@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
           (hsPkgs."data-default" or (buildDepError "data-default"))
           ];
+        buildable = true;
         };
       exes = {
         "expr-example" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rewrite-inspector" or (buildDepError "rewrite-inspector"))
             ];
           libs = [ (pkgs."pthread" or (sysDepError "pthread")) ];
+          buildable = true;
           };
         "str-example" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rewrite-inspector" or (buildDepError "rewrite-inspector"))
             ];
           libs = [ (pkgs."pthread" or (sysDepError "pthread")) ];
+          buildable = true;
           };
         };
       };

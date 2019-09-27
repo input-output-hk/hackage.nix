@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vacuum" or (buildDepError "vacuum"))
           (hsPkgs."graphviz" or (buildDepError "graphviz"))
           ];
+        buildable = true;
         };
       };
     }

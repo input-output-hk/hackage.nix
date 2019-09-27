@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."glib" or (buildDepError "glib"))
           (hsPkgs."glade" or (buildDepError "glade"))
           ];
+        buildable = true;
         };
       };
     }

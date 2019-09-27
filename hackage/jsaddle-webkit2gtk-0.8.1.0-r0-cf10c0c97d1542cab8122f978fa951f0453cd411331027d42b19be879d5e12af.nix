@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."webkit2gtk3-javascriptcore" or (buildDepError "webkit2gtk3-javascriptcore"))
           ];
+        buildable = true;
         };
       };
     }

@@ -94,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = true;
         };
       exes = {
         "main.fcgi" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."wai-handler-fastcgi" or (buildDepError "wai-handler-fastcgi"))
               ]);
+          buildable = if flags.library-only then false else true;
           };
         "img-gen" = {
           depends = [
@@ -118,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         "aibenchmark" = {
           depends = [
@@ -128,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         "key-gen" = {
           depends = [
@@ -136,6 +140,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         };
       };

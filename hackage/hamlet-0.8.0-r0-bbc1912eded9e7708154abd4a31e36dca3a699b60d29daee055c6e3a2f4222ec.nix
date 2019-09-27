@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = if flags.test then false else true;
         };
       };
     }

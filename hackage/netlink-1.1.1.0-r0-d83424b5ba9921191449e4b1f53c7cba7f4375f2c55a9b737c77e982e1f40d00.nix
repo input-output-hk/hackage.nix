@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
           ];
+        buildable = true;
         };
       exes = {
         "dump_nl80211" = {
@@ -71,18 +72,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."netlink" or (buildDepError "netlink"))
             ];
+          buildable = true;
           };
         "genlinfo" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."netlink" or (buildDepError "netlink"))
             ];
+          buildable = true;
           };
         "dump_rtnetlink" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."netlink" or (buildDepError "netlink"))
             ];
+          buildable = true;
           };
         "Generate" = {
           depends = (pkgs.lib).optionals (flags.generators) [
@@ -92,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
             ];
+          buildable = if flags.generators then true else false;
           };
         "GenerateGenl" = {
           depends = (pkgs.lib).optionals (flags.generators) [
@@ -101,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
             ];
+          buildable = if flags.generators then true else false;
           };
         "GenerateNL80211" = {
           depends = (pkgs.lib).optionals (flags.generators) [
@@ -110,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."regex-pcre" or (buildDepError "regex-pcre"))
             ];
+          buildable = if flags.generators then true else false;
           };
         };
       };

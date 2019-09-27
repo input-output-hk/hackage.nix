@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."biocore" or (buildDepError "biocore"))
           (hsPkgs."biofasta" or (buildDepError "biofasta"))
           ];
+        buildable = true;
         };
       };
     }

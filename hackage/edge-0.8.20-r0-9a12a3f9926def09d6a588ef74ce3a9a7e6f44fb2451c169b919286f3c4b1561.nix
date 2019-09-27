@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             ];
+          buildable = true;
           };
         };
       };

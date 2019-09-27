@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."crypto-pubkey-types" or (buildDepError "crypto-pubkey-types"))
           ];
+        buildable = true;
         };
       };
     }

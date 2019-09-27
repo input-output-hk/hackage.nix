@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."DysFRP" or (buildDepError "DysFRP"))
           (hsPkgs."DysFRP-Cairo" or (buildDepError "DysFRP-Cairo"))
           ];
+        buildable = true;
         };
       };
     }

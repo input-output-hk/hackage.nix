@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."graphviz" or (buildDepError "graphviz"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       exes = {
         "marxup3" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsek" or (buildDepError "parsek"))
             (hsPkgs."dlist" or (buildDepError "dlist"))
             ];
+          buildable = true;
           };
         };
       };

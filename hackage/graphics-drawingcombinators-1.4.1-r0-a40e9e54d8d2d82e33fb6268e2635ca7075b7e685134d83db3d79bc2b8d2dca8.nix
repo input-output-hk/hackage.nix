@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.ftgl
           then [ (hsPkgs."FTGL" or (buildDepError "FTGL")) ]
           else [ (hsPkgs."GLUT" or (buildDepError "GLUT")) ]);
+        buildable = true;
         };
       };
     }

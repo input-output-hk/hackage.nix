@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."webkitgtk3" or (buildDepError "webkitgtk3"))
           (hsPkgs."open-browser" or (buildDepError "open-browser"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."singletons" or (buildDepError "singletons"))
           (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6.1") (hsPkgs."monomorphic" or (buildDepError "monomorphic"));
+        buildable = true;
         };
       };
     }

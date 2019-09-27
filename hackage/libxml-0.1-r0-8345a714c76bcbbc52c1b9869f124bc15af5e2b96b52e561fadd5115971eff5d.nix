@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
         libs = [ (pkgs."xml2" or (sysDepError "xml2")) ];
+        buildable = true;
         };
       };
     }

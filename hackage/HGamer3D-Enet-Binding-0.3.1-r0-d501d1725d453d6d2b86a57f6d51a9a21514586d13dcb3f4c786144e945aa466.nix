@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."hg3denet031" or (sysDepError "hg3denet031"))
             (pkgs."enet" or (sysDepError "enet"))
             ];
+        buildable = true;
         };
       };
     }

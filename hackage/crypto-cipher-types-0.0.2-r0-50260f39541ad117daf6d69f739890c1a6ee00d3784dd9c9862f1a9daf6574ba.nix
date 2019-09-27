@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."byteable" or (buildDepError "byteable"))
           (hsPkgs."securemem" or (buildDepError "securemem"))
           ];
+        buildable = true;
         };
       };
     }

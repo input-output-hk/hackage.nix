@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
           ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."Crypt32" or (sysDepError "Crypt32"));
+        buildable = true;
         };
       };
     }

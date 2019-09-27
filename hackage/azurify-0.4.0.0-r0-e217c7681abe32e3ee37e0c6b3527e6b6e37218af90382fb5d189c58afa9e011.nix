@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           ] ++ (pkgs.lib).optional (!flags.no-hxt) (hsPkgs."hxt" or (buildDepError "hxt"));
+        buildable = true;
         };
       exes = {
         "azurify" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ] ++ (pkgs.lib).optional (!flags.no-hxt) (hsPkgs."hxt" or (buildDepError "hxt"));
+          buildable = if flags.library-only then false else true;
           };
         };
       };

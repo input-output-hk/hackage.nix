@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "counter" = {
@@ -69,12 +70,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ekg-core" or (buildDepError "ekg-core"))
             ];
+          buildable = true;
           };
         "distribution" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ekg-core" or (buildDepError "ekg-core"))
             ];
+          buildable = true;
           };
         };
       };

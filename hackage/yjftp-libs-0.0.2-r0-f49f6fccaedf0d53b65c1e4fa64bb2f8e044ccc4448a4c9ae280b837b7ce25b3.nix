@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ftphs" or (buildDepError "ftphs"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
-      exes = { "yjftp-ni" = {}; };
+      exes = { "yjftp-ni" = { buildable = true; }; };
       };
     }

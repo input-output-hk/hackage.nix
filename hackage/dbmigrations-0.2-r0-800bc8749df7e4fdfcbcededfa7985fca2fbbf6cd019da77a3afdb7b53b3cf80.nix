@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fgl" or (buildDepError "fgl"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "dbmigrations-tests" = {
@@ -77,12 +78,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = if !flags.testing then false else true;
           };
         "moo" = {
           depends = [
             (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
             (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
             ];
+          buildable = true;
           };
         };
       };

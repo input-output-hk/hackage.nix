@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if flags.beta
             then [ (hsPkgs."darcs-beta" or (buildDepError "darcs-beta")) ]
             else [ (hsPkgs."darcs" or (buildDepError "darcs")) ]);
+          buildable = true;
           };
         };
       };

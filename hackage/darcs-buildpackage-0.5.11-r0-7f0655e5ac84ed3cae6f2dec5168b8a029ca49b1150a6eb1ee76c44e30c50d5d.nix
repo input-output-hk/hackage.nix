@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
             ];
+          buildable = true;
           };
         "dbp-importorig" = {
           depends = [
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
             ];
+          buildable = true;
           };
         "dbp-importdsc" = {
           depends = [
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
             ];
+          buildable = true;
           };
         "dbp-markdeb" = {
           depends = [
@@ -102,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
             ];
+          buildable = true;
           };
         "dbp-get" = {
           depends = [
@@ -114,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
             ];
+          buildable = true;
           };
         };
       };

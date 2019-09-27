@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."repa-stream" or (buildDepError "repa-stream"))
           (hsPkgs."repa-array" or (buildDepError "repa-array"))
           ];
+        buildable = true;
         };
       };
     }

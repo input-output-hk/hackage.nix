@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."proto-lens-descriptors" or (buildDepError "proto-lens-descriptors"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = if flags.only-executable then false else true;
         };
       exes = {
         "proto-lens-protoc" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."proto-lens-descriptors" or (buildDepError "proto-lens-descriptors"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

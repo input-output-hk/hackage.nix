@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yam-app" or (buildDepError "yam-app"))
           (hsPkgs."cron" or (buildDepError "cron"))
           ];
+        buildable = true;
         };
       };
     }

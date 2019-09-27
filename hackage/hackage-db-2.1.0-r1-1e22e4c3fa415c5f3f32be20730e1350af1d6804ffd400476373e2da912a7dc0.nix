@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
       exes = {
         "list-known-versions" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."hackage-db" or (buildDepError "hackage-db"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         "show-meta-data" = {
           depends = (pkgs.lib).optionals (flags.install-examples) [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hackage-db" or (buildDepError "hackage-db"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         "show-package-versions" = {
           depends = (pkgs.lib).optionals (flags.install-examples) [
@@ -95,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."hackage-db" or (buildDepError "hackage-db"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         };
       };

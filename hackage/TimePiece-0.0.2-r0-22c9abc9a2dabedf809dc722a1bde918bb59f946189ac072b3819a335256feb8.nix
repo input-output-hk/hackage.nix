@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
           libs = [ (pkgs."SDLmain" or (sysDepError "SDLmain")) ];
+          buildable = true;
           };
         };
       };

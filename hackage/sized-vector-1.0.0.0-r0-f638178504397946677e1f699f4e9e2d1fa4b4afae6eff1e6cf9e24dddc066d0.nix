@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monomorphic" or (buildDepError "monomorphic"))
           (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
           ];
+        buildable = true;
         };
       };
     }

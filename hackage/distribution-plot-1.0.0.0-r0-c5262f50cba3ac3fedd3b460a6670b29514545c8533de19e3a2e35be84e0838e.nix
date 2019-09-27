@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."distribution" or (buildDepError "distribution"))
           ];
+        buildable = true;
         };
       };
     }

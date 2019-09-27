@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stringtable-atom" or (buildDepError "stringtable-atom"))
             (hsPkgs."HsSyck" or (buildDepError "HsSyck"))
             ] ++ (pkgs.lib).optional (flags.enablereadline) (hsPkgs."readline" or (buildDepError "readline"));
+          buildable = true;
           };
         };
       };

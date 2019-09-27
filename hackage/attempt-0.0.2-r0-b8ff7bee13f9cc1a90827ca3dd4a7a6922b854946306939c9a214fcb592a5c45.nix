@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."control-monad-failure" or (buildDepError "control-monad-failure"))
           (hsPkgs."monadloc" or (buildDepError "monadloc"))
           ];
+        buildable = true;
         };
       };
     }

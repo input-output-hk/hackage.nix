@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if flags.ruby19
           then [ (pkgs."ruby1.9" or (sysDepError "ruby1.9")) ]
           else [ (pkgs."ruby1.8" or (sysDepError "ruby1.8")) ];
+        buildable = true;
         };
       tests = {
         "test-roundtrip" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       };

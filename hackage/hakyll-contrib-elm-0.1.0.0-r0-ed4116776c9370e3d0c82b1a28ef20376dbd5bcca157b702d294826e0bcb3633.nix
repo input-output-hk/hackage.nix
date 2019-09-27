@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."temporary" or (buildDepError "temporary"))
           ];
+        buildable = true;
         };
       exes = {
         "hakyll-contrib-elm-example" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hakyll" or (buildDepError "hakyll"))
             (hsPkgs."hakyll-contrib-elm" or (buildDepError "hakyll-contrib-elm"))
             ];
+          buildable = true;
           };
         };
       };

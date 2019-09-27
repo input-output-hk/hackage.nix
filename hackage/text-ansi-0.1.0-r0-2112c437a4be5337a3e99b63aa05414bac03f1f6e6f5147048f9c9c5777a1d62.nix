@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."text-builder" or (buildDepError "text-builder"))
           ];
+        buildable = true;
         };
       };
     }

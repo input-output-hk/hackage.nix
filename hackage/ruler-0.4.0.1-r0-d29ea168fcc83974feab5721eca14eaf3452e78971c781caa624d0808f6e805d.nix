@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuagc-cabal" or (buildDepError "uuagc-cabal"))
             (hsPkgs."shuffle" or (buildDepError "shuffle"))
             ];
+          buildable = true;
           };
         };
       };

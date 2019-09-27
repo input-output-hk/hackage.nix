@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."tz" or (buildDepError "tz"))
           ];
+        buildable = true;
         };
       tests = {
         "time-exts-unit-tests" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."tz" or (buildDepError "tz"))
             ];
+          buildable = true;
           };
         };
       };

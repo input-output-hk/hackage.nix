@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."webkitgtk3" or (buildDepError "webkitgtk3"))
           ];
+        buildable = true;
         };
       };
     }

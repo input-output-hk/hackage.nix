@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."StateVar" or (buildDepError "StateVar"))
             (hsPkgs."GLFW" or (buildDepError "GLFW"))
             ];
+          buildable = true;
           };
         };
       };

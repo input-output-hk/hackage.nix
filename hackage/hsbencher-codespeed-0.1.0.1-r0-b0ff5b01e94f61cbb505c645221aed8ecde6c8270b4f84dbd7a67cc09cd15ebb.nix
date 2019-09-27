@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default" or (buildDepError "data-default"))
           (hsPkgs."hsbencher" or (buildDepError "hsbencher"))
           ];
+        buildable = true;
         };
       };
     }

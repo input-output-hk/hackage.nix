@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fei-base" or (buildDepError "fei-base"))
           (hsPkgs."fei-nn" or (buildDepError "fei-nn"))
           ];
+        buildable = true;
         };
       exes = {
         "mxnet-dataiter-gen" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fei-base" or (buildDepError "fei-base"))
             ];
           libs = [ (pkgs."mxnet" or (sysDepError "mxnet")) ];
+          buildable = true;
           };
         };
       tests = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fei-base" or (buildDepError "fei-base"))
             (hsPkgs."fei-dataiter" or (buildDepError "fei-dataiter"))
             ];
+          buildable = true;
           };
         "conduit" = {
           depends = [
@@ -98,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fei-base" or (buildDepError "fei-base"))
             (hsPkgs."fei-dataiter" or (buildDepError "fei-dataiter"))
             ];
+          buildable = true;
           };
         };
       };

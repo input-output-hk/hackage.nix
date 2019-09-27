@@ -66,7 +66,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dyre" or (buildDepError "dyre"))
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           ];
+        buildable = true;
         };
-      exes = { "lambdacat" = {}; };
+      exes = { "lambdacat" = { buildable = true; }; };
       };
     }

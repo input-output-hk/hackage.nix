@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-ste" or (buildDepError "monad-ste"))
           ];
         pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."libtls" or (pkgConfDepError "libtls"));
+        buildable = true;
         };
       tests = {
         "hunit" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."libressl" or (buildDepError "libressl"))
             ];
+          buildable = true;
           };
         };
       };

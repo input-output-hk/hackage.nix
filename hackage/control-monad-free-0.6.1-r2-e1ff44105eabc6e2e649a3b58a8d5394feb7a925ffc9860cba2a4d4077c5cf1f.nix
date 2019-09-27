@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."prelude-extras" or (buildDepError "prelude-extras"))
           ];
+        buildable = true;
         };
       };
     }

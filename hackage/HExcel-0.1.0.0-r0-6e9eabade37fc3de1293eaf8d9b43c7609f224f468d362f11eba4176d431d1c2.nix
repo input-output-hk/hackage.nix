@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."z" or (sysDepError "z"))
           (pkgs."xlsxwriter" or (sysDepError "xlsxwriter"))
           ];
+        buildable = true;
         };
       };
     }

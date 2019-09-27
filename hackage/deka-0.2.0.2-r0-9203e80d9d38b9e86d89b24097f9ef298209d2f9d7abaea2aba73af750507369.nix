@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-DSL" or (buildDepError "bindings-DSL"))
           ];
         libs = [ (pkgs."decnumber" or (sysDepError "decnumber")) ];
+        buildable = true;
         };
       tests = {
         "tasty-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
           libs = [ (pkgs."decnumber" or (sysDepError "decnumber")) ];
+          buildable = true;
           };
         };
       };

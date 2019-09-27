@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."moe" or (buildDepError "moe"))
           (hsPkgs."yuuko" or (buildDepError "yuuko"))
           ];
+        buildable = true;
         };
       };
     }

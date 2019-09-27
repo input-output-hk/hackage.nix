@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."split" or (buildDepError "split"))
             (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
             ];
+          buildable = true;
           };
         };
       };

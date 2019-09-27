@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."X11" or (buildDepError "X11"))
           (hsPkgs."libnotify" or (buildDepError "libnotify"))
           ];
+        buildable = true;
         };
       exes = {
         "hswchd" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."X11" or (buildDepError "X11"))
             (hsPkgs."libnotify" or (buildDepError "libnotify"))
             ];
+          buildable = true;
           };
         "hswcmcli" = {
           depends = [
@@ -114,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."X11" or (buildDepError "X11"))
             (hsPkgs."libnotify" or (buildDepError "libnotify"))
             ];
+          buildable = true;
           };
         };
       };

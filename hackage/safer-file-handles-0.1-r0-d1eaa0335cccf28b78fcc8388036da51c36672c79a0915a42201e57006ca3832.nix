@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
           (hsPkgs."explicit-iomodes" or (buildDepError "explicit-iomodes"))
           ];
+        buildable = true;
         };
       };
     }

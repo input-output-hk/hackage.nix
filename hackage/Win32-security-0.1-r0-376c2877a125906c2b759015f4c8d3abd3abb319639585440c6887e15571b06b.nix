@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Win32" or (buildDepError "Win32"))
           (hsPkgs."Win32-errors" or (buildDepError "Win32-errors"))
           ];
+        buildable = true;
         };
       exes = {
         "win32-security-sid-lookup" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."Win32-security" or (buildDepError "Win32-security"))
             ];
+          buildable = if flags.build-tests then true else false;
           };
         "win32-security-file-security" = {
           depends = (pkgs.lib).optionals (flags.build-tests) [
@@ -76,12 +78,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."Win32-security" or (buildDepError "Win32-security"))
             ];
+          buildable = if flags.build-tests then true else false;
           };
         "win32-security-get-process-sid" = {
           depends = (pkgs.lib).optionals (flags.build-tests) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Win32-security" or (buildDepError "Win32-security"))
             ];
+          buildable = if flags.build-tests then true else false;
           };
         };
       };

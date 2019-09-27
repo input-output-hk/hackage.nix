@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."persistent" or (buildDepError "persistent"))
           (hsPkgs."texmath" or (buildDepError "texmath"))
           ];
+        buildable = true;
         };
       };
     }

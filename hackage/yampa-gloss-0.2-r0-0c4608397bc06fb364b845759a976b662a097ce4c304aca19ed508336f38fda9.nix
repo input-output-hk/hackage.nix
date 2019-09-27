@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gloss" or (buildDepError "gloss"))
           (hsPkgs."Yampa" or (buildDepError "Yampa"))
           ];
+        buildable = true;
         };
       exes = {
         "yampa-examples-gloss-rotatingcolor" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             (hsPkgs."yampa-gloss" or (buildDepError "yampa-gloss"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

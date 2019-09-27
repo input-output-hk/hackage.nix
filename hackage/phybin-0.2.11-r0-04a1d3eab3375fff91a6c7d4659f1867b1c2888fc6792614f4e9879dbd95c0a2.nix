@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hierarchical-clustering" or (buildDepError "hierarchical-clustering"))
           (hsPkgs."split" or (buildDepError "split"))
           ] ++ (pkgs.lib).optional (flags.bitvec) (hsPkgs."bitvec" or (buildDepError "bitvec"));
+        buildable = true;
         };
       exes = {
         "phybin" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hierarchical-clustering" or (buildDepError "hierarchical-clustering"))
             (hsPkgs."split" or (buildDepError "split"))
             ] ++ (pkgs.lib).optional (flags.bitvec) (hsPkgs."bitvec" or (buildDepError "bitvec"));
+          buildable = true;
           };
         };
       };

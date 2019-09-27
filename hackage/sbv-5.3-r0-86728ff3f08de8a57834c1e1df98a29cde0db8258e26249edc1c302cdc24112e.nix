@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
           (hsPkgs."crackNum" or (buildDepError "crackNum"))
           ];
+        buildable = true;
         };
       exes = {
         "SBVUnitTests" = {
@@ -87,6 +88,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sbv" or (buildDepError "sbv"))
             (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).ge "7.10.1"
+            then true
+            else false;
           };
         };
       tests = {
@@ -100,6 +104,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sbv" or (buildDepError "sbv"))
             (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).ge "7.10.1"
+            then true
+            else false;
           };
         };
       };

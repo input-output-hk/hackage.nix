@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."distributive" or (buildDepError "distributive"))
           (hsPkgs."Stream" or (buildDepError "Stream"))
           ];
+        buildable = true;
         };
       };
     }

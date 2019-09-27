@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
           ];
+        buildable = true;
         };
       };
     }

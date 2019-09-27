@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ] ++ (pkgs.lib).optional (flags.ssl) (hsPkgs."connection" or (buildDepError "connection"));
+          buildable = true;
           };
         };
       };

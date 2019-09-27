@@ -72,7 +72,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tokenize" or (buildDepError "tokenize"))
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           ];
+        buildable = true;
         };
-      exes = { "nerf" = {}; };
+      exes = { "nerf" = { buildable = true; }; };
       };
     }

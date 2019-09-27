@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
           ];
         libs = [ (pkgs."asound" or (sysDepError "asound")) ];
+        buildable = true;
         };
       };
     }

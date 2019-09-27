@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
           ];
+        buildable = true;
         };
       };
     }

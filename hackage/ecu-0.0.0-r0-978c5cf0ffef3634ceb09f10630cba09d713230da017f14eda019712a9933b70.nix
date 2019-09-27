@@ -61,14 +61,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."vcd" or (buildDepError "vcd"))
             ];
+          buildable = true;
           };
         "cansend" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
           libs = [ (pkgs."canlib" or (sysDepError "canlib")) ];
+          buildable = true;
           };
         "canview" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
           libs = [ (pkgs."canlib" or (sysDepError "canlib")) ];
+          buildable = true;
           };
         "probe" = {
           depends = [
@@ -77,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vcd" or (buildDepError "vcd"))
             ];
           libs = [ (pkgs."canlib" or (sysDepError "canlib")) ];
+          buildable = true;
           };
         };
       };

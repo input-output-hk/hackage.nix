@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
           (hsPkgs."diagrams-rasterific" or (buildDepError "diagrams-rasterific"))
           ];
+        buildable = true;
         };
       };
     }

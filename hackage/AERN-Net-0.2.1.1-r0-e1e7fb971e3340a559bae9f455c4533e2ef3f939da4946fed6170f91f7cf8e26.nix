@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."AERN-RnToRm" or (buildDepError "AERN-RnToRm"))
           (hsPkgs."AERN-RnToRm" or (buildDepError "AERN-RnToRm"))
           ];
+        buildable = true;
         };
       };
     }

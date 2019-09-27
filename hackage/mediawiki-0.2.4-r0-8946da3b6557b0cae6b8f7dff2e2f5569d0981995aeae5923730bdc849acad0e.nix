@@ -62,13 +62,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mime" or (buildDepError "mime"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
-        "main" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "main" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "listCat" = {
           depends = [ (hsPkgs."pretty" or (buildDepError "pretty")) ] ++ [
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."snap-server" or (buildDepError "snap-server"))
           (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
           ];
+        buildable = true;
         };
       };
     }

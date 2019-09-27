@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp" or (buildDepError "warp"))
             (hsPkgs."werewolf" or (buildDepError "werewolf"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           ]) ++ (pkgs.lib).optional (compiler.isGhc && true && flags.integer-gmp) (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"));
         libs = (pkgs.lib).optionals (!flags.fixed-salt) ((pkgs.lib).optional (system.isWindows) (pkgs."advapi32" or (sysDepError "advapi32")));
+        buildable = true;
         };
       };
     }

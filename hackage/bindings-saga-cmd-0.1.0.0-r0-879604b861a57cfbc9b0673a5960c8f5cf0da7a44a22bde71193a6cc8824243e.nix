@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       exes = {
         "sagaPipe" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."bindings-saga-cmd" or (buildDepError "bindings-saga-cmd"))
             ];
+          buildable = true;
           };
         "sagaTopo" = {
           depends = [
@@ -90,12 +92,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."bindings-saga-cmd" or (buildDepError "bindings-saga-cmd"))
             ];
+          buildable = true;
           };
         "sagaLut" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bindings-saga-cmd" or (buildDepError "bindings-saga-cmd"))
             ];
+          buildable = true;
           };
         };
       };

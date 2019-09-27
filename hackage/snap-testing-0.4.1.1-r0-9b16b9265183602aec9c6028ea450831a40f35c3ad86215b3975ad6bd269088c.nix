@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."async" or (buildDepError "async"))
           (hsPkgs."digestive-functors" or (buildDepError "digestive-functors"))
           ];
+        buildable = true;
         };
       };
     }

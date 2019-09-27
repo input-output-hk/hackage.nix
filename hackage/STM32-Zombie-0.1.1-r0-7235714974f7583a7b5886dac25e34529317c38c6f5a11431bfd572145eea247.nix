@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."STM32F103xx-SVD" or (buildDepError "STM32F103xx-SVD"))
           (hsPkgs."STLinkUSB" or (buildDepError "STLinkUSB"))
           ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."strict" or (buildDepError "strict"))
           ];
+        buildable = true;
         };
       exes = {
         "hspec-setup" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."strict" or (buildDepError "strict"))
             (hsPkgs."hspec-setup" or (buildDepError "hspec-setup"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."hspec-setup" or (buildDepError "hspec-setup"))
             ];
+          buildable = true;
           };
         };
       };

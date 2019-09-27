@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.use_mtl
           then [ (hsPkgs."mtl" or (buildDepError "mtl")) ]
           else [ (hsPkgs."mmtl" or (buildDepError "mmtl")) ]);
+        buildable = true;
         };
       };
     }

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."icui18n" or (sysDepError "icui18n"))
             (pkgs."icudata" or (sysDepError "icudata"))
             ]);
+        buildable = true;
         };
       };
     }

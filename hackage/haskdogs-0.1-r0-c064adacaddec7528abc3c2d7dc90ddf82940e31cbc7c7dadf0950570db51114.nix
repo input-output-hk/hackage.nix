@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.hasktags or (pkgs.buildPackages.hasktags or (buildToolDepError "hasktags")))
             ];
+          buildable = true;
           };
         };
       };

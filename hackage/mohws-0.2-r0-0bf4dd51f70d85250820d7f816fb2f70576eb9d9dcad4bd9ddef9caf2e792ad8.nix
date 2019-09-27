@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
           (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
           ];
+        buildable = true;
         };
       exes = {
         "hws" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
             (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
             ];
+          buildable = true;
           };
         "hws-dyn" = {
           depends = [
@@ -118,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
             (hsPkgs."ghc" or (buildDepError "ghc"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
           ];
+        buildable = true;
         };
       };
     }

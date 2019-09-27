@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           ];
         libs = [ (pkgs."cabocha" or (sysDepError "cabocha")) ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cabocha" or (buildDepError "cabocha"))
             (hsPkgs."text-format" or (buildDepError "text-format"))
             ];
+          buildable = true;
           };
         };
       };

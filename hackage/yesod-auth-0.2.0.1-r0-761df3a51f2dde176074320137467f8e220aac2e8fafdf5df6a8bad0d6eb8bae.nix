@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
           ];
+        buildable = true;
         };
       };
     }

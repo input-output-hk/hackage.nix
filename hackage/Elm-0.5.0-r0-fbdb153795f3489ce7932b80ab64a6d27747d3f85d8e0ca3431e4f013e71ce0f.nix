@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
           ];
+        buildable = true;
         };
       exes = {
         "elm" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
             ];
+          buildable = true;
           };
         };
       };

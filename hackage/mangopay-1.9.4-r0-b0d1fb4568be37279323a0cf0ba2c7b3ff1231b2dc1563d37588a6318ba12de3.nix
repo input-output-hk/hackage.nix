@@ -92,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit" or (buildDepError "conduit"))
             (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
             ]);
+        buildable = true;
         };
       exes = {
         "mangopay-passphrase" = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."mangopay" or (buildDepError "mangopay"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -144,6 +146,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
               ]);
+          buildable = true;
           };
         };
       };

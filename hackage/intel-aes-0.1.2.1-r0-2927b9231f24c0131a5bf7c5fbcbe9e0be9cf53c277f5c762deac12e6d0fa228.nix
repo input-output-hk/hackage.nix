@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagged" or (buildDepError "tagged"))
           ];
         libs = [ (pkgs."intel_aes" or (sysDepError "intel_aes")) ];
+        buildable = true;
         };
       exes = {
         "benchmark-intel-aes-rng" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."intel-aes" or (buildDepError "intel-aes"))
             ];
+          buildable = true;
           };
         };
       };

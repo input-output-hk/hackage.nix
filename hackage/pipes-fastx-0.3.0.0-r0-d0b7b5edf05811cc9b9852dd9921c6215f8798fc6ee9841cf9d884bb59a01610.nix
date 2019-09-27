@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
           (hsPkgs."pipes-attoparsec" or (buildDepError "pipes-attoparsec"))
           ];
+        buildable = true;
         };
       };
     }

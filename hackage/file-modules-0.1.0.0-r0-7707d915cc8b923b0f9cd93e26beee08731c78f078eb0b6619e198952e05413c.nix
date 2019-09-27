@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
           ];
+        buildable = true;
         };
       exes = {
         "file-modules" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
             ];
+          buildable = true;
           };
         };
       };

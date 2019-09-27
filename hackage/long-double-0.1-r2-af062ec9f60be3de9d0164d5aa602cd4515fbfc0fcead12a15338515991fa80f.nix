@@ -59,6 +59,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
           ];
+        buildable = if system.isI386
+          then true
+          else if system.isX86_64
+            then true
+            else if system.isArm then true else false;
         };
       };
     }

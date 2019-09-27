@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ];
+        buildable = true;
         };
       exes = {
         "dev-example" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."unagi-chan" or (buildDepError "unagi-chan"))
             ];
+          buildable = if !flags.dev then false else true;
           };
         };
       tests = {
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -89,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unagi-chan" or (buildDepError "unagi-chan"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ] ++ (pkgs.lib).optional (flags.compare-benchmarks) (hsPkgs."stm" or (buildDepError "stm"));
+          buildable = true;
           };
         "multi" = {
           depends = [
@@ -97,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."async" or (buildDepError "async"))
             ] ++ (pkgs.lib).optional (flags.compare-benchmarks) (hsPkgs."stm" or (buildDepError "stm"));
+          buildable = true;
           };
         };
       };

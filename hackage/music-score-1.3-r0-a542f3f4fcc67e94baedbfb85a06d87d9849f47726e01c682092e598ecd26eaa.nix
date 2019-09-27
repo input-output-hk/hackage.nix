@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."music-dynamics-literal" or (buildDepError "music-dynamics-literal"))
           (hsPkgs."reenact" or (buildDepError "reenact"))
           ];
+        buildable = true;
         };
       };
     }

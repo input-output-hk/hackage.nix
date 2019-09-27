@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."scotty" or (buildDepError "scotty"))
           (hsPkgs."cookie" or (buildDepError "cookie"))
           ];
+        buildable = true;
         };
       };
     }

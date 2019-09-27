@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."setlocale" or (buildDepError "setlocale"))
           ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."libintl" or (sysDepError "libintl"));
+        buildable = true;
         };
       exes = {
         "hgettext" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             (hsPkgs."uniplate" or (buildDepError "uniplate"))
             ];
+          buildable = true;
           };
         };
       };

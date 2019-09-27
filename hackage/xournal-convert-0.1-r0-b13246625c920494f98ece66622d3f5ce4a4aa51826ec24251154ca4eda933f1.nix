@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xournal-render" or (buildDepError "xournal-render"))
           (hsPkgs."cairo" or (buildDepError "cairo"))
           ];
+        buildable = true;
         };
       exes = {
         "xournal-convert" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."xournal-convert" or (buildDepError "xournal-convert"))
             ];
+          buildable = true;
           };
         };
       };

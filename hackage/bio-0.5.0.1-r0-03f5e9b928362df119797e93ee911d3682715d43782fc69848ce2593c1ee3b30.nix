@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."directory" or (buildDepError "directory"))
           ];
+        buildable = true;
         };
       exes = {
         "qc" = {
@@ -78,24 +79,29 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ];
+          buildable = if flags.test then true else false;
           };
         "flx" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "fastout" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.examples then true else false;
           };
         "frecover" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.examples then true else false;
           };
         "frename" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

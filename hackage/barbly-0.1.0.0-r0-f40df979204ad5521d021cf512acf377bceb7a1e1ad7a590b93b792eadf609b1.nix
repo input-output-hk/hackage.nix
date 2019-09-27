@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
           frameworks = [ (pkgs."AppKit" or (sysDepError "AppKit")) ];
+          buildable = true;
           };
         };
       };

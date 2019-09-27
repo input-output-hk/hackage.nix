@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if system.isWindows
           then [ (pkgs."vulkan-1" or (sysDepError "vulkan-1")) ]
           else [ (pkgs."vulkan" or (sysDepError "vulkan")) ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."persistable-record" or (buildDepError "persistable-record"))
           (hsPkgs."relational-query" or (buildDepError "relational-query"))
           ];
+        buildable = true;
         };
       };
     }

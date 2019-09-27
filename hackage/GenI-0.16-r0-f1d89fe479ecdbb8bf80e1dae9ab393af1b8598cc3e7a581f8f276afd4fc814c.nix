@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."HaXml" or (buildDepError "HaXml"))
               (hsPkgs."libGenI" or (buildDepError "libGenI"))
               ];
+          buildable = true;
           };
         };
       };

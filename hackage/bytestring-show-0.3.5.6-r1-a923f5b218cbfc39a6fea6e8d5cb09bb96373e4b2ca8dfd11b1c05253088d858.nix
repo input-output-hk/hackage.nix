@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ] ++ (pkgs.lib).optional (flags.integer-simple) (hsPkgs."integer-simple" or (buildDepError "integer-simple"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.11" && !flags.integer-simple) (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9" && (compiler.isGhc && (compiler.version).lt "6.11") && !flags.integer-simple) (hsPkgs."integer" or (buildDepError "integer"));
+        buildable = true;
         };
       };
     }

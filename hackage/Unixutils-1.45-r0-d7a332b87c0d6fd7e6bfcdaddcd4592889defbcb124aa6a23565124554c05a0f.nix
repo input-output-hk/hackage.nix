@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
         libs = [ (pkgs."crypt" or (sysDepError "crypt")) ];
+        buildable = true;
         };
       };
     }

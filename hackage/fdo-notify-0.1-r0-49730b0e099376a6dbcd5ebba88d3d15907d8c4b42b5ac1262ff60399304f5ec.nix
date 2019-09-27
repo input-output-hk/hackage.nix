@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dbus-core" or (buildDepError "dbus-core"))
           (hsPkgs."dbus-client" or (buildDepError "dbus-client"))
           ];
+        buildable = true;
         };
       };
     }

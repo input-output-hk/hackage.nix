@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
           ];
+        buildable = true;
         };
       };
     }

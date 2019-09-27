@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel" or (buildDepError "parallel"))
           (hsPkgs."metric" or (buildDepError "metric"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "kmeans-benchmark" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."metric" or (buildDepError "metric"))
             ];
+          buildable = true;
           };
         };
       };

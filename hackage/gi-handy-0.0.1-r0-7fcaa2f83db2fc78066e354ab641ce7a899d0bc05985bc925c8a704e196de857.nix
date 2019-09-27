@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libhandy-0.0" or (pkgConfDepError "libhandy-0.0"))
           ];
+        buildable = true;
         };
       };
     }

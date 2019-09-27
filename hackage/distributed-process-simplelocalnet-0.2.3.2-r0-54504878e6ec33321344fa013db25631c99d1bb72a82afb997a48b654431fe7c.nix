@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
           (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
           ];
+        buildable = true;
         };
       exes = {
         "TestSimpleLocalnet" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
             (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
             ];
+          buildable = if flags.build-example then true else false;
           };
         };
       };

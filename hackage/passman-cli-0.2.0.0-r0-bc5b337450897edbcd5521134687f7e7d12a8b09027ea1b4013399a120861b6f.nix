@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ] ++ (pkgs.lib).optional (!flags.dummyclipboard) (hsPkgs."X11" or (buildDepError "X11"));
+          buildable = true;
           };
         };
       };

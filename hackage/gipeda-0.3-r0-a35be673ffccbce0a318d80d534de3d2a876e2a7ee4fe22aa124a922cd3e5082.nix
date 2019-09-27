@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
               ]
             else [ (hsPkgs."gitlib" or (buildDepError "gitlib")) ]);
+          buildable = true;
           };
         };
       };

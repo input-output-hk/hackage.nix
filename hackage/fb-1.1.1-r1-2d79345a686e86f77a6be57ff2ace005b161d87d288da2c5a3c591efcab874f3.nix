@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
           ];
+        buildable = true;
         };
       tests = {
         "runtests" = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."fb" or (buildDepError "fb"))
             ];
+          buildable = true;
           };
         };
       };

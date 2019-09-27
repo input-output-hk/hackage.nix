@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."parallel" or (buildDepError "parallel"))
             ];
+          buildable = true;
           };
         "sudoku1" = {
           depends = [
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = true;
           };
         "sudoku2" = {
           depends = [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         "sudoku3" = {
           depends = [
@@ -83,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = true;
           };
         "sudoku4" = {
           depends = [
@@ -90,24 +94,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = true;
           };
         "strat" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."parallel" or (buildDepError "parallel"))
             ];
+          buildable = true;
           };
         "strat2" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."parallel" or (buildDepError "parallel"))
             ];
+          buildable = true;
           };
         "strat3" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."parallel" or (buildDepError "parallel"))
             ];
+          buildable = true;
           };
         "rsa" = {
           depends = [
@@ -115,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         "rsa1" = {
           depends = [
@@ -123,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         "rsa2" = {
           depends = [
@@ -131,6 +141,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parallel" or (buildDepError "parallel"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         "kmeans" = {
           depends = [
@@ -144,6 +155,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         "GenSamples" = {
           depends = [
@@ -156,12 +168,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "parmonad" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."monad-par" or (buildDepError "monad-par"))
             ];
+          buildable = true;
           };
         "rsa-pipeline" = {
           depends = [
@@ -170,6 +184,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-par" or (buildDepError "monad-par"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         "fwsparse" = {
           depends = [
@@ -178,6 +193,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
         "fwsparse1" = {
           depends = [
@@ -188,6 +204,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-par" or (buildDepError "monad-par"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = true;
           };
         "timetable" = {
           depends = [
@@ -196,6 +213,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "timetable1" = {
           depends = [
@@ -205,6 +223,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-par" or (buildDepError "monad-par"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "timetable2" = {
           depends = [
@@ -214,6 +233,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-par" or (buildDepError "monad-par"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "timetable3" = {
           depends = [
@@ -223,12 +243,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-par" or (buildDepError "monad-par"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "fwdense" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."repa" or (buildDepError "repa"))
             ];
+          buildable = true;
           };
         "fwdense1" = {
           depends = [
@@ -236,24 +258,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa" or (buildDepError "repa"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         "rotateimage" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."repa" or (buildDepError "repa"))
             ] ++ (pkgs.lib).optional (flags.devil) (hsPkgs."repa-devil" or (buildDepError "repa-devil"));
+          buildable = if flags.devil then true else false;
           };
         "fwaccel" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."accelerate" or (buildDepError "accelerate"))
             ];
+          buildable = true;
           };
         "fwaccel-gpu" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."accelerate" or (buildDepError "accelerate"))
             ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"));
+          buildable = if flags.cuda then true else false;
           };
         "mandel" = {
           depends = [
@@ -262,26 +288,51 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fclabels" or (buildDepError "fclabels"))
             (hsPkgs."accelerate-io" or (buildDepError "accelerate-io"))
             ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"));
+          buildable = if flags.cuda then true else false;
           };
-        "fork" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "fork" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "reminders" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "reminders2" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
-        "mvar1" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-        "mvar2" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-        "mvar3" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-        "logger" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "mvar1" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
+        "mvar2" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
+        "mvar3" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
+        "logger" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "phonebook" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = true;
           };
-        "chan" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-        "chan2" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "chan" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
+        "chan2" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "geturls1" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
@@ -290,6 +341,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "geturls2" = {
           depends = [
@@ -300,6 +352,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         "geturls3" = {
           depends = [
@@ -310,6 +363,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         "geturls4" = {
           depends = [
@@ -320,6 +374,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         "geturls5" = {
           depends = [
@@ -330,6 +385,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         "geturls6" = {
           depends = [
@@ -340,6 +396,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         "geturlscancel" = {
           depends = [
@@ -350,6 +407,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         "geturlscancel2" = {
           depends = [
@@ -360,19 +418,27 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         "modifytwo" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
-        "chan3" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "chan3" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "timeout" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "catch-mask" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "catch-mask2" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "windowman" = {
           depends = [
@@ -380,12 +446,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         "tmvar" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         "geturlsfirst" = {
           depends = [
@@ -396,30 +464,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = true;
           };
         "TChan" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         "TList" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         "TQueue" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         "TBQueue" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         "geturls7" = {
           depends = [
@@ -430,6 +503,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         "geturls8" = {
           depends = [
@@ -440,6 +514,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         "geturls9" = {
           depends = [
@@ -450,12 +525,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         "timeout2" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         "findseq" = {
           depends = [
@@ -463,6 +540,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
         "findpar" = {
           depends = [
@@ -471,6 +549,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         "findpar2" = {
           depends = [
@@ -479,6 +558,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         "findpar3" = {
           depends = [
@@ -488,6 +568,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         "findpar4" = {
           depends = [
@@ -500,6 +581,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."abstract-par" or (buildDepError "abstract-par"))
             (hsPkgs."monad-par" or (buildDepError "monad-par"))
             ];
+          buildable = true;
           };
         "server" = {
           depends = [
@@ -507,6 +589,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = true;
           };
         "server2" = {
           depends = [
@@ -515,6 +598,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = true;
           };
         "chat" = {
           depends = [
@@ -524,6 +608,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."network" or (buildDepError "network"))
             ];
+          buildable = true;
           };
         "ping" = {
           depends = [
@@ -535,6 +620,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         "ping-multi" = {
           depends = [
@@ -546,6 +632,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         "ping-tc" = {
           depends = [
@@ -557,6 +644,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         "ping-tc-merge" = {
           depends = [
@@ -568,6 +656,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         "ping-tc-notify" = {
           depends = [
@@ -579,6 +668,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         "ping-fail" = {
           depends = [
@@ -590,6 +680,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         "distrib-chat" = {
           depends = [
@@ -605,6 +696,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         "distrib-chat-noslave" = {
           depends = [
@@ -620,6 +712,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         "distrib-db" = {
           depends = [
@@ -635,19 +728,27 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
-        "mvar4" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "mvar4" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "deadlock1" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "deadlock2" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "threadperf1" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "threadperf2" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "bingtranslator" = {
           depends = [
@@ -659,6 +760,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."xml" or (buildDepError "xml"))
             ];
+          buildable = true;
           };
         "bingtranslatorconc" = {
           depends = [
@@ -670,6 +772,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."xml" or (buildDepError "xml"))
             ];
+          buildable = true;
           };
         "geturlsstm" = {
           depends = [
@@ -680,12 +783,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ];
+          buildable = true;
           };
         "Async" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."stm" or (buildDepError "stm"))
             ];
+          buildable = true;
           };
         };
       };

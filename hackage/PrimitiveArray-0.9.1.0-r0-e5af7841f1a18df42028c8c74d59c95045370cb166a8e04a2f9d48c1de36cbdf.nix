@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."DPutils" or (buildDepError "DPutils"))
           (hsPkgs."OrderedBits" or (buildDepError "OrderedBits"))
           ];
+        buildable = true;
         };
       tests = {
         "properties" = {
@@ -113,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OrderedBits" or (buildDepError "OrderedBits"))
             (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
             ];
+          buildable = true;
           };
         };
       };

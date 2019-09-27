@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."data-object" or (buildDepError "data-object"))
           ];
+        buildable = true;
         };
       };
     }

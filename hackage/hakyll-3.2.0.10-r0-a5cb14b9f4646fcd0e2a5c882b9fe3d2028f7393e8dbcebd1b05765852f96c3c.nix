@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."snap-core" or (buildDepError "snap-core"))
           (hsPkgs."snap-server" or (buildDepError "snap-server"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tls" or (buildDepError "tls"))
             (hsPkgs."amqp" or (buildDepError "amqp"))
             ];
+          buildable = true;
           };
         "agitprop" = {
           depends = [
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hinotify" or (buildDepError "hinotify"))
             (hsPkgs."magic" or (buildDepError "magic"))
             ];
+          buildable = true;
           };
         };
       };

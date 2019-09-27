@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."adns" or (sysDepError "adns"))
             (pkgs."crypto" or (sysDepError "crypto"))
             ];
+          buildable = true;
           };
         };
       };

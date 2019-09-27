@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gitrev" or (buildDepError "gitrev"))
           (hsPkgs."proto-lens-runtime" or (buildDepError "proto-lens-runtime"))
           ];
+        buildable = true;
         };
       };
     }

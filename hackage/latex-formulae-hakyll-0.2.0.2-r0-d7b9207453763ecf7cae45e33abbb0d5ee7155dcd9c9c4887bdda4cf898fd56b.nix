@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
           (hsPkgs."lrucache" or (buildDepError "lrucache"))
           ];
+        buildable = true;
         };
       };
     }

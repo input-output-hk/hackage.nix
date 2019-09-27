@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           ] ++ (pkgs.lib).optional (!flags.no-hxt) (hsPkgs."hxt" or (buildDepError "hxt"));
+        buildable = true;
         };
       exes = {
         "azurify" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ] ++ (pkgs.lib).optional (!flags.no-hxt) (hsPkgs."hxt" or (buildDepError "hxt"));
+          buildable = if flags.library-only then false else true;
           };
         };
       };

@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ]) ++ (pkgs.lib).optional (flags.onlygsl) (pkgs."gsl" or (sysDepError "gsl"));
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate" or (sysDepError "Accelerate"));
         pkgconfig = (pkgs.lib).optional (!flags.onlygsl) (pkgconfPkgs."gsl" or (pkgConfDepError "gsl"));
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hgeometry" or (buildDepError "hgeometry"))
           (hsPkgs."colour" or (buildDepError "colour"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."quickcheck-text" or (buildDepError "quickcheck-text"))
             ];
+          buildable = true;
           };
         };
       };

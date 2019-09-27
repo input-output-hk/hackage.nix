@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."directfb" or (pkgConfDepError "directfb"))
           ];
+        buildable = true;
         };
       };
     }

@@ -78,7 +78,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."special-functors" or (buildDepError "special-functors"))
             ]);
+        buildable = true;
         };
-      exes = { "test" = {}; "autotrack" = {}; };
+      exes = {
+        "test" = { buildable = true; };
+        "autotrack" = { buildable = true; };
+        };
       };
     }

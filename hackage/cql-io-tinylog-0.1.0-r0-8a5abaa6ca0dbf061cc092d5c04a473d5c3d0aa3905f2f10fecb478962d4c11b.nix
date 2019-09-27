@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cql-io" or (buildDepError "cql-io"))
           (hsPkgs."tinylog" or (buildDepError "tinylog"))
           ];
+        buildable = true;
         };
       };
     }

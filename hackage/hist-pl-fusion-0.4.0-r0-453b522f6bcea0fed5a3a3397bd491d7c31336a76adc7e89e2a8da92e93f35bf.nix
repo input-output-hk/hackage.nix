@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."polimorf" or (buildDepError "polimorf"))
           (hsPkgs."hist-pl-lexicon" or (buildDepError "hist-pl-lexicon"))
           ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           (hsPkgs."mmap" or (buildDepError "mmap"))
           ] ++ (pkgs.lib).optional (flags.diff) (hsPkgs."lcs" or (buildDepError "lcs"));
+        buildable = true;
         };
       exes = {
         "hashed-storage-test" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-client" or (buildDepError "http-client"))
           (hsPkgs."dotnet-timespan" or (buildDepError "dotnet-timespan"))
           ];
+        buildable = true;
         };
       tests = {
         "integration-tests" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."dotnet-timespan" or (buildDepError "dotnet-timespan"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         };
       };

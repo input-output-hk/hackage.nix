@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."QuickTime" or (sysDepError "QuickTime"))
             (pkgs."Carbon" or (sysDepError "Carbon"))
             ];
+          buildable = true;
           };
         };
       };

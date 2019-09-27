@@ -75,10 +75,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."happstack-fastcgi" or (buildDepError "happstack-fastcgi"))
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           ];
+        buildable = true;
         };
       exes = {
         "frame-shell" = {
           depends = [ (hsPkgs."pretty" or (buildDepError "pretty")) ];
+          buildable = true;
           };
         };
       };

@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."PortMidi" or (buildDepError "PortMidi"))
           (hsPkgs."serialport" or (buildDepError "serialport"))
           ];
+        buildable = true;
         };
       };
     }

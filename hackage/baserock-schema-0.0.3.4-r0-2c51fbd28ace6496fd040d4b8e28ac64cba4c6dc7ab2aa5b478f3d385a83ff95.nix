@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rio" or (buildDepError "rio"))
           (hsPkgs."yaml-pretty-extras" or (buildDepError "yaml-pretty-extras"))
           ];
+        buildable = true;
         };
       exes = {
         "baserock" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rio" or (buildDepError "rio"))
             (hsPkgs."yaml-pretty-extras" or (buildDepError "yaml-pretty-extras"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rio" or (buildDepError "rio"))
             (hsPkgs."yaml-pretty-extras" or (buildDepError "yaml-pretty-extras"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."csound-expression-typed" or (buildDepError "csound-expression-typed"))
           (hsPkgs."csound-expression-dynamic" or (buildDepError "csound-expression-dynamic"))
           ];
+        buildable = true;
         };
       };
     }

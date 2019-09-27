@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vinyl" or (buildDepError "vinyl"))
           (hsPkgs."vinyl-utils" or (buildDepError "vinyl-utils"))
           ];
+        buildable = true;
         };
       tests = {
         "test-kvc" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vinyl" or (buildDepError "vinyl"))
             (hsPkgs."vinyl-utils" or (buildDepError "vinyl-utils"))
             ];
+          buildable = true;
           };
         };
       };

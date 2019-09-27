@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
           (hsPkgs."deque" or (buildDepError "deque"))
           ] ++ (pkgs.lib).optional (flags.butcher-dev) (hsPkgs."hspec" or (buildDepError "hspec"));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."extra" or (buildDepError "extra"))
             (hsPkgs."deque" or (buildDepError "deque"))
             ] ++ (pkgs.lib).optional (flags.butcher-dev) (hsPkgs."hspec" or (buildDepError "hspec"));
+          buildable = if flags.butcher-dev then true else false;
           };
         };
       };

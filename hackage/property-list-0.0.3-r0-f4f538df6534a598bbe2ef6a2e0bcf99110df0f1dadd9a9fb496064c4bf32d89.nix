@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."th-fold" or (buildDepError "th-fold"))
           (hsPkgs."void" or (buildDepError "void"))
           ] ++ [ (hsPkgs."HaXml" or (buildDepError "HaXml")) ];
+        buildable = true;
         };
       };
     }

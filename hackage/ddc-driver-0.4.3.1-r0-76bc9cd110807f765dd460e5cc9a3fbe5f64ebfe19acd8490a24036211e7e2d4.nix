@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ddc-source-tetra" or (buildDepError "ddc-source-tetra"))
           (hsPkgs."ddc-build" or (buildDepError "ddc-build"))
           ];
+        buildable = true;
         };
       };
     }

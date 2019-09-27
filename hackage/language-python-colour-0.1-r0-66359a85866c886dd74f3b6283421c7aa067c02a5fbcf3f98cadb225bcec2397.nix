@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."language-python" or (buildDepError "language-python"))
             (hsPkgs."xhtml" or (buildDepError "xhtml"))
             ];
+          buildable = true;
           };
         };
       };

@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "ghc-prof-flamegraph" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."ghc-prof-flamegraph" or (buildDepError "ghc-prof-flamegraph"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."logfloat" or (buildDepError "logfloat"))
           (hsPkgs."monad-par" or (buildDepError "monad-par"))
           ];
+        buildable = true;
         };
       };
     }

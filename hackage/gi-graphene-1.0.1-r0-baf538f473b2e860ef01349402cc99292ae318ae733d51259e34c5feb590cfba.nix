@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."graphene-gobject-1.0" or (pkgConfDepError "graphene-gobject-1.0"))
           ];
+        buildable = true;
         };
       };
     }

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (pkgs.lib).optional (flags.safe-st) (hsPkgs."base" or (buildDepError "base"))) ++ (pkgs.lib).optional (flags.strict-modifyref) (hsPkgs."base" or (buildDepError "base"));
+        buildable = true;
         };
       };
     }

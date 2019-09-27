@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."sop-core" or (buildDepError "sop-core"))
           (hsPkgs."red-black-record-internal" or (buildDepError "red-black-record-internal"))
           ];
+        buildable = true;
         };
       sublibs = {
         "red-black-record-internal" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."sop-core" or (buildDepError "sop-core"))
             ];
+          buildable = true;
           };
         "demoted" = {
           depends = [
@@ -74,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sop-core" or (buildDepError "sop-core"))
             (hsPkgs."red-black-record-internal" or (buildDepError "red-black-record-internal"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -88,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."profunctors" or (buildDepError "profunctors"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "tests" = {
           depends = [
@@ -98,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."red-black-record" or (buildDepError "red-black-record"))
             (hsPkgs."demoted" or (buildDepError "demoted"))
             ];
+          buildable = true;
           };
         };
       };

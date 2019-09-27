@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."hscolour" or (buildDepError "hscolour"))
           ];
+        buildable = true;
         };
       exes = {
         "dominion" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."hscolour" or (buildDepError "hscolour"))
             ];
+          buildable = true;
           };
         };
       };

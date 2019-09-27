@@ -57,6 +57,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."containers" or (buildDepError "containers")) ];
         libs = [ (pkgs."portaudio" or (sysDepError "portaudio")) ];
+        buildable = true;
         };
       };
     }

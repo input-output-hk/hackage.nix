@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."epic" or (buildDepError "epic"))
           ];
+        buildable = true;
         };
       exes = {
         "idris" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."binary" or (buildDepError "binary"))
             (hsPkgs."epic" or (buildDepError "epic"))
             ];
+          buildable = true;
           };
         };
       };

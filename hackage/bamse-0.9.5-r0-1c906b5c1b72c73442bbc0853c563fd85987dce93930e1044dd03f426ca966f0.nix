@@ -69,15 +69,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
-        "hsDotnetGen" = {};
-        "bamseGen" = {};
+        "hsDotnetGen" = {
+          buildable = if flags.hsdotnet && !flags.bamsegen then true else false;
+          };
+        "bamseGen" = { buildable = if flags.bamsegen then true else false; };
         "runTests" = {
           depends = [
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = if flags.build-tests then true else false;
           };
         };
       };

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ddc-core-simpl" or (buildDepError "ddc-core-simpl"))
           (hsPkgs."ddc-core-tetra" or (buildDepError "ddc-core-tetra"))
           ];
+        buildable = true;
         };
       };
     }

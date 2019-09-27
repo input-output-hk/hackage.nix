@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."mkl_sequential" or (sysDepError "mkl_sequential"))
           (pkgs."mkl_core" or (sysDepError "mkl_core"))
           ];
+        buildable = true;
         };
       };
     }

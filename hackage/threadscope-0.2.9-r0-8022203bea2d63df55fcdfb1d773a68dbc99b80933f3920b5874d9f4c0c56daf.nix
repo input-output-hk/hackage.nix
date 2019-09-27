@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."temporary" or (buildDepError "temporary"))
             ] ++ (pkgs.lib).optional (system.isOsx) (hsPkgs."gtk-mac-integration" or (buildDepError "gtk-mac-integration"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = true;
           };
         };
       };

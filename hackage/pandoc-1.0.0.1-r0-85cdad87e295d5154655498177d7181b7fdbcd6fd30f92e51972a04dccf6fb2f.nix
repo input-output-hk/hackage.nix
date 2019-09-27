@@ -77,10 +77,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."old-time" or (buildDepError "old-time"))
           ] ++ (pkgs.lib).optional (flags.highlighting) (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))) ++ (pkgs.lib).optional (flags.citeproc) (hsPkgs."citeproc-hs" or (buildDepError "citeproc-hs"));
+        buildable = if flags.library then true else false;
         };
       exes = {
         "pandoc" = {
           depends = (pkgs.lib).optional (flags.citeproc) (hsPkgs."citeproc-hs" or (buildDepError "citeproc-hs"));
+          buildable = if flags.executable then true else false;
           };
         };
       };

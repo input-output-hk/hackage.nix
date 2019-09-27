@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."SVGFonts" or (buildDepError "SVGFonts"))
           ];
+        buildable = true;
         };
       exes = {
         "chart-unit-examples" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."reflection" or (buildDepError "reflection"))
             (hsPkgs."tdigest" or (buildDepError "tdigest"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -124,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
             ];
+          buildable = true;
           };
         };
       };

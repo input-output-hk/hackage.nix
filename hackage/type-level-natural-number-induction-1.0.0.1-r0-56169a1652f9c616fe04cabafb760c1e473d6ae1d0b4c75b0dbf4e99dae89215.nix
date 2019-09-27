@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."type-level-natural-number" or (buildDepError "type-level-natural-number"))
           ];
+        buildable = true;
         };
       };
     }

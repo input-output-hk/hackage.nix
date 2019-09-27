@@ -83,6 +83,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+          then false
+          else true;
         };
       exes = {
         "ghc-hare" = {
@@ -117,6 +120,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."HaRe" or (buildDepError "HaRe"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+            then false
+            else true;
           };
         };
       tests = {
@@ -156,6 +162,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."HaRe" or (buildDepError "HaRe"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+            then false
+            else true;
           };
         };
       };

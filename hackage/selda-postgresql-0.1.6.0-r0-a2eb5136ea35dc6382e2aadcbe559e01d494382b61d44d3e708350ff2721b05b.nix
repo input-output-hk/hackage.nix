@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."selda" or (buildDepError "selda"))
           (hsPkgs."text" or (buildDepError "text"))
           ] ++ (pkgs.lib).optional (!flags.haste) (hsPkgs."postgresql-libpq" or (buildDepError "postgresql-libpq"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.11") (hsPkgs."transformers" or (buildDepError "transformers"));
+        buildable = true;
         };
       };
     }

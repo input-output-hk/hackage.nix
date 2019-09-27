@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."profunctors" or (buildDepError "profunctors"))
           (hsPkgs."array" or (buildDepError "array"))
           ] ++ (pkgs.lib).optional (flags.new_type_eq) (hsPkgs."base" or (buildDepError "base"));
+        buildable = true;
         };
       tests = {
         "examples" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
+          buildable = true;
           };
         "doctests" = {
           depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).le "7.9" && (compiler.isGhc && (compiler.version).le "7.11")) [
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = false;
           };
         "properties" = {
           depends = [
@@ -107,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."syb" or (buildDepError "syb"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.11") (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          buildable = true;
           };
         };
       };

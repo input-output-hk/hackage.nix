@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."array" or (buildDepError "array"))
             ] ++ (pkgs.lib).optional (flags.inotify) (hsPkgs."hinotify" or (buildDepError "hinotify"));
+          buildable = true;
           };
         };
       };

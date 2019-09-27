@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libtelnet" or (pkgConfDepError "libtelnet"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-simple" or (buildDepError "network-simple"))
             (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

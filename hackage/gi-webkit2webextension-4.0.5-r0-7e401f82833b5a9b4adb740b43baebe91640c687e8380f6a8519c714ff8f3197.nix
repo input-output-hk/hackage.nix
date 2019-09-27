@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."webkit2gtk-web-extension-4.0" or (pkgConfDepError "webkit2gtk-web-extension-4.0"))
           ];
+        buildable = true;
         };
       };
     }

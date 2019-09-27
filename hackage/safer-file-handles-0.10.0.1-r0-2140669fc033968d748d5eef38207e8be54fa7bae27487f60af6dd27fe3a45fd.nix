@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pathtype" or (buildDepError "pathtype"))
           (hsPkgs."regional-pointers" or (buildDepError "regional-pointers"))
           ];
+        buildable = true;
         };
       };
     }

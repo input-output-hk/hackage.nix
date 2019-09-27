@@ -76,7 +76,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           (hsPkgs."tar" or (buildDepError "tar"))
           ];
+        buildable = true;
         };
-      exes = { "gps2htmlReport" = {}; };
+      exes = { "gps2htmlReport" = { buildable = true; }; };
       };
     }

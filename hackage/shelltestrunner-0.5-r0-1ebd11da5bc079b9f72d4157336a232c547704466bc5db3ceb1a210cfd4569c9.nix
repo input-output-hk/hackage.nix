@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parseargs" or (buildDepError "parseargs"))
             (hsPkgs."regexpr" or (buildDepError "regexpr"))
             ];
+          buildable = true;
           };
         };
       };

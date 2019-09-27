@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."path-extra" or (buildDepError "path-extra"))
           ];
+        buildable = true;
         };
       };
     }

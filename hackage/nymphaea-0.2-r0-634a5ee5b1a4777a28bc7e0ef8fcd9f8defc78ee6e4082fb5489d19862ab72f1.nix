@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."glade" or (buildDepError "glade"))
             (hsPkgs."cairo" or (buildDepError "cairo"))
             ];
+          buildable = true;
           };
         };
       };

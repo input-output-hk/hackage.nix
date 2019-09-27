@@ -56,6 +56,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [ (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw")) ];
+        buildable = true;
         };
       };
     }

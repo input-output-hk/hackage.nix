@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-Audio" or (buildDepError "HGamer3D-Audio"))
           (hsPkgs."HGamer3D-WinEvent" or (buildDepError "HGamer3D-WinEvent"))
           ];
+        buildable = true;
         };
       };
     }

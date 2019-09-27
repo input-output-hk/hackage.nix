@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fclabels" or (buildDepError "fclabels"))
           (hsPkgs."force-layout" or (buildDepError "force-layout"))
           ];
+        buildable = true;
         };
       };
     }

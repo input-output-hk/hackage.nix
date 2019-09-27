@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."WAVE" or (buildDepError "WAVE"))
           ];
+        buildable = true;
         };
       exes = {
         "hello-world" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."call" or (buildDepError "call"))
             (hsPkgs."lens" or (buildDepError "lens"))
             ];
+          buildable = if flags.buildhelloworld then true else false;
           };
         };
       };

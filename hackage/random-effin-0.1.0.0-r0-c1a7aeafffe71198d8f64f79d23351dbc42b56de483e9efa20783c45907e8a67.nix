@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."effin" or (buildDepError "effin"))
           (hsPkgs."random" or (buildDepError "random"))
           ] ++ (pkgs.lib).optional (flags.monadrandom) (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"));
+        buildable = true;
         };
       };
     }

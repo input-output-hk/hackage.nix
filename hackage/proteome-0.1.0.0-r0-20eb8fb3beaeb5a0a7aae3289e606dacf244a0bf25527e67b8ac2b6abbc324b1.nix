@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."nvim-hs" or (buildDepError "nvim-hs"))
             ];
+          buildable = true;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fgl" or (buildDepError "fgl"))
           (hsPkgs."multiset" or (buildDepError "multiset"))
           ];
+        buildable = true;
         };
       exes = {
         "TestGen" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fgl" or (buildDepError "fgl"))
             (hsPkgs."multiset" or (buildDepError "multiset"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."multiset" or (buildDepError "multiset"))
             (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
             ];
+          buildable = true;
           };
         };
       };

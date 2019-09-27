@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shake" or (buildDepError "shake"))
           (hsPkgs."cdeps" or (buildDepError "cdeps"))
           ];
+        buildable = true;
         };
       };
     }

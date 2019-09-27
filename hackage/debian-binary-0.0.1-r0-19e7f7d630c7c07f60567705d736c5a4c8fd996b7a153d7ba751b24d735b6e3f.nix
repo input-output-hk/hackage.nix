@@ -61,7 +61,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."HSH" or (buildDepError "HSH"))
           ];
+        buildable = true;
         };
-      exes = { "manual" = {}; "query" = {}; "update" = {}; };
+      exes = {
+        "manual" = { buildable = true; };
+        "query" = { buildable = true; };
+        "update" = { buildable = true; };
+        };
       };
     }

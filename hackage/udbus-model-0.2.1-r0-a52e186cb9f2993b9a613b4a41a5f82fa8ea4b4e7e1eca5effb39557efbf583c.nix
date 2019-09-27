@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml" or (buildDepError "xml"))
           (hsPkgs."udbus" or (buildDepError "udbus"))
           ];
+        buildable = true;
         };
       exes = {
         "dbus-model-parse" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."udbus" or (buildDepError "udbus"))
             (hsPkgs."udbus-model" or (buildDepError "udbus-model"))
             ];
+          buildable = if flags.executable then true else false;
           };
         };
       };

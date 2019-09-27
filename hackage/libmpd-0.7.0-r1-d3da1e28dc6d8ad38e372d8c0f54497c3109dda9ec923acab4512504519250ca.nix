@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = if flags.test then false else true;
         };
       exes = {
         "test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if !flags.test then false else true;
           };
         };
       };

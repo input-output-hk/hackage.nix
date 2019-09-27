@@ -65,7 +65,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsimony" or (buildDepError "parsimony"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
-      exes = { "example" = {}; };
+      exes = {
+        "example" = { buildable = if flags.example then true else false; };
+        };
       };
     }

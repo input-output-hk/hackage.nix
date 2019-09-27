@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."c-io" or (buildDepError "c-io"))
             (hsPkgs."ioctl" or (buildDepError "ioctl"))
             ];
+          buildable = true;
           };
         };
       };

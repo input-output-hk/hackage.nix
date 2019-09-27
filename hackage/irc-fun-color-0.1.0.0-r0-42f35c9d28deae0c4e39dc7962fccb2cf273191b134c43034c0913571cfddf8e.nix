@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."irc-fun-color" or (buildDepError "irc-fun-color"))
             ];
+          buildable = true;
           };
         };
       };

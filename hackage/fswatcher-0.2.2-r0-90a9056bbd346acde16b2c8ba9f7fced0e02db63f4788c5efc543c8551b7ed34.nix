@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."regex-pcre-builtin" or (buildDepError "regex-pcre-builtin"))
             ];
+          buildable = true;
           };
         };
       };

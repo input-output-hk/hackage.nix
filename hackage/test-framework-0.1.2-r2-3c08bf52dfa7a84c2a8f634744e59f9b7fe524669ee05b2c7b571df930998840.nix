@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
       exes = {
         "test-framework-tests" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."containers" or (buildDepError "containers"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = if !flags.tests then false else true;
           };
         "test-framework-example" = {
           depends = [
@@ -103,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."containers" or (buildDepError "containers"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          buildable = if !flags.example then false else true;
           };
         };
       };

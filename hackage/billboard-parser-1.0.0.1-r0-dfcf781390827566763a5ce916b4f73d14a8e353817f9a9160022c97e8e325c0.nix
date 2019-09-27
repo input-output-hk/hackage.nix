@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."HarmTrace-Base" or (buildDepError "HarmTrace-Base"))
           ];
+        buildable = true;
         };
       exes = {
         "billboard-parser" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."HarmTrace-Base" or (buildDepError "HarmTrace-Base"))
             ];
+          buildable = true;
           };
         };
       };

@@ -94,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = ((pkgs.lib).optional (flags.curl) (pkgs."curl" or (sysDepError "curl")) ++ (pkgs.lib).optional (!flags.external-zlib) (pkgs."z" or (sysDepError "z"))) ++ (pkgs.lib).optional (flags.curses) (pkgs."curses" or (sysDepError "curses"));
         pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl" or (pkgConfDepError "libcurl"))));
         build-tools = (pkgs.lib).optionals (!flags.curl) ((pkgs.lib).optional (flags.libwww) (hsPkgs.buildPackages.libwww-config or (pkgs.buildPackages.libwww-config or (buildToolDepError "libwww-config"))));
+        buildable = true;
         };
       exes = {
         "darcs" = {
@@ -123,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           libs = (((pkgs.lib).optional (!flags.external-zlib) (pkgs."z" or (sysDepError "z")) ++ (pkgs.lib).optional (flags.curl) (pkgs."curl" or (sysDepError "curl"))) ++ (pkgs.lib).optional (!flags.external-zlib) (pkgs."z" or (sysDepError "z"))) ++ (pkgs.lib).optional (flags.curses) (pkgs."curses" or (sysDepError "curses"));
           pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl" or (pkgConfDepError "libcurl"))));
           build-tools = (pkgs.lib).optionals (!flags.curl) ((pkgs.lib).optional (flags.libwww) (hsPkgs.buildPackages.libwww-config or (pkgs.buildPackages.libwww-config or (buildToolDepError "libwww-config"))));
+          buildable = true;
           };
         };
       };

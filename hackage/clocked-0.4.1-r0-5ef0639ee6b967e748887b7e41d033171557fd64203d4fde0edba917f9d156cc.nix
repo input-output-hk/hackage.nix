@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (pkgs.lib).optional (system.isWindows) (pkgs."QtCore4" or (sysDepError "QtCore4"));
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."QtCore" or (sysDepError "QtCore"));
         pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."QtCore" or (pkgConfDepError "QtCore"));
+        buildable = true;
         };
       };
     }

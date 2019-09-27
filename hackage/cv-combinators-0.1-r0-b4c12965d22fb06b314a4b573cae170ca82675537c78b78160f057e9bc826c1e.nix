@@ -59,10 +59,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."HOpenCV" or (buildDepError "HOpenCV"))
           ];
+        buildable = true;
         };
       exes = {
         "test-cv-combinators" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

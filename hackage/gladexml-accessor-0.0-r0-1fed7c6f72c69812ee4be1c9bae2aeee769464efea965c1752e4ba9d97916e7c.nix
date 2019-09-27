@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HaXml" or (buildDepError "HaXml"))
           (hsPkgs."glade" or (buildDepError "glade"))
           ];
+        buildable = true;
         };
       };
     }

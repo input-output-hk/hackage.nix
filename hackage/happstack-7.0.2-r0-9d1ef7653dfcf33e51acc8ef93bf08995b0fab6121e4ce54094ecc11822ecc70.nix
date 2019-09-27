@@ -59,10 +59,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
           ];
+        buildable = true;
         };
       exes = {
         "happstack-tests" = {
           depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if flags.tests then true else false;
           };
         };
       };

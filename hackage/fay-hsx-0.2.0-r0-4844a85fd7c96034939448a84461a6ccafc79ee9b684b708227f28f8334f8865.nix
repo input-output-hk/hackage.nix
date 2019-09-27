@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fay-base" or (buildDepError "fay-base"))
           (hsPkgs."fay-jquery" or (buildDepError "fay-jquery"))
           ];
+        buildable = true;
         };
       };
     }

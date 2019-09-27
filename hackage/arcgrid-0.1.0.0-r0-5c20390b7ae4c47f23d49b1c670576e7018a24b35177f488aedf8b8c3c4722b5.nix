@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."parsec-numeric" or (buildDepError "parsec-numeric"))
           ];
+        buildable = true;
         };
       exes = {
         "arcgrid-dump" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."arcgrid" or (buildDepError "arcgrid"))
             ];
+          buildable = true;
           };
         };
       };

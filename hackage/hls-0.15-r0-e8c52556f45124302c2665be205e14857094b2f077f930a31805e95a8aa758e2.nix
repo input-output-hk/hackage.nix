@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hcg-minus" or (buildDepError "hcg-minus"))
           (hsPkgs."hps" or (buildDepError "hps"))
           ];
+        buildable = true;
         };
       };
     }

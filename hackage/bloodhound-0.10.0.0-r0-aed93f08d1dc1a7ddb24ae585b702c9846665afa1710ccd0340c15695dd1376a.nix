@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
           (hsPkgs."hashable" or (buildDepError "hashable"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -99,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."derive" or (buildDepError "derive"))
             (hsPkgs."errors" or (buildDepError "errors"))
             ];
+          buildable = true;
           };
         "doctests" = {
           depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.8") [
@@ -108,6 +110,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest-prop" or (buildDepError "doctest-prop"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).ge "7.8"
+            then true
+            else false;
           };
         };
       };

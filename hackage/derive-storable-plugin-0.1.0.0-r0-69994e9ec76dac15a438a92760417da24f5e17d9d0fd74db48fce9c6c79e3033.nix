@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghci" or (buildDepError "ghci"))
           (hsPkgs."derive-storable" or (buildDepError "derive-storable"))
           ];
+        buildable = true;
         };
       };
     }

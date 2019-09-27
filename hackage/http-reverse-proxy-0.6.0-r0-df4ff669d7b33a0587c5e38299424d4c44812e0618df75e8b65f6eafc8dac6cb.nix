@@ -75,6 +75,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "8"
+          then false
+          else true;
         };
       tests = {
         "test" = {
@@ -96,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."resourcet" or (buildDepError "resourcet"))
             (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
             ];
+          buildable = true;
           };
         };
       };

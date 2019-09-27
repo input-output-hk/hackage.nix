@@ -69,6 +69,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
               ]));
+          buildable = if !(compiler.isGhcjs && true) && !flags.jsaddle
+            then false
+            else true;
           };
         "threejs" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
@@ -78,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "file-reader" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
@@ -87,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "xhr" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
@@ -96,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "canvas2d" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
@@ -104,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "router" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle)) (([
@@ -120,6 +127,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
               ]));
+          buildable = if !(compiler.isGhcjs && true) && !flags.jsaddle
+            then false
+            else true;
           };
         "websocket" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle)) (([
@@ -135,6 +145,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
               ]));
+          buildable = if !(compiler.isGhcjs && true) && !flags.jsaddle
+            then false
+            else true;
           };
         "mario" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle)) (((([
@@ -147,6 +160,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp" or (buildDepError "warp"))
             (hsPkgs."websockets" or (buildDepError "websockets"))
             ]) ++ (pkgs.lib).optional (flags.ios && !(compiler.isGhcjs && true)) (hsPkgs."jsaddle-wkwebview" or (buildDepError "jsaddle-wkwebview"))) ++ (pkgs.lib).optional (!flags.ios) (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp")));
+          buildable = if !(compiler.isGhcjs && true) && !flags.jsaddle
+            then false
+            else true;
           };
         "svg" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
@@ -155,18 +171,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "compose-update" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "mathml" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         };
       };

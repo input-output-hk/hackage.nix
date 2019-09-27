@@ -68,10 +68,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
           ];
+        buildable = true;
         };
       exes = {
         "RNAdotplot" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

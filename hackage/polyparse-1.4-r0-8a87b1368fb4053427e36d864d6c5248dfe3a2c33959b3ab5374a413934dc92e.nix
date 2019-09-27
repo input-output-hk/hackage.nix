@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."haskell98" or (buildDepError "haskell98"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."bytestring" or (buildDepError "bytestring"));
+        buildable = true;
         };
       };
     }

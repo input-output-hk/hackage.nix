@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."regex-base" or (buildDepError "regex-base"))
           ];
+        buildable = true;
         };
       };
     }

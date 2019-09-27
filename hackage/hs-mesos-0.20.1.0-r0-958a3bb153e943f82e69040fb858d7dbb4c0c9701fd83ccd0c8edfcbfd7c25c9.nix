@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."stdc++" or (sysDepError "stdc++"))
           (pkgs."protobuf" or (sysDepError "protobuf"))
           ];
+        buildable = true;
         };
       exes = {
         "test-executor" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."mesos" or (sysDepError "mesos"))
             (pkgs."stdc++" or (sysDepError "stdc++"))
             ];
+          buildable = true;
           };
         "test-framework" = {
           depends = [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."mesos" or (sysDepError "mesos"))
             (pkgs."stdc++" or (sysDepError "stdc++"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -106,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."managed" or (buildDepError "managed"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."twentefp-number" or (buildDepError "twentefp-number"))
           (hsPkgs."twentefp-eventloop-graphics" or (buildDepError "twentefp-eventloop-graphics"))
           ];
+        buildable = true;
         };
       };
     }

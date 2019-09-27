@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."iproute" or (buildDepError "iproute"))
             (hsPkgs."dns" or (buildDepError "dns"))
             ];
+          buildable = true;
           };
         };
       };

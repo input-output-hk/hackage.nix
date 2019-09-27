@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."blaze-builder-conduit" or (buildDepError "blaze-builder-conduit"))
           ];
+        buildable = true;
         };
       };
     }

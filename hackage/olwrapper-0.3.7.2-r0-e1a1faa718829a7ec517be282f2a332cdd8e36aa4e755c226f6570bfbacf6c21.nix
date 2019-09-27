@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fay-text" or (buildDepError "fay-text"))
           (hsPkgs."fay-jquery" or (buildDepError "fay-jquery"))
           ];
+        buildable = true;
         };
       exes = {
         "olwrapper" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."snaplet-fay" or (buildDepError "snaplet-fay"))
             (hsPkgs."snap-loader-static" or (buildDepError "snap-loader-static"))
             ] ++ (pkgs.lib).optional (flags.development) (hsPkgs."snap-loader-dynamic" or (buildDepError "snap-loader-dynamic"));
+          buildable = true;
           };
         };
       };

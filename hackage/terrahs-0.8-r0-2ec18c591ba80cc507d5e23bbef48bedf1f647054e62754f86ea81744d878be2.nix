@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."terralib4c" or (sysDepError "terralib4c"))
           (pkgs."translib" or (sysDepError "translib"))
           ];
+        buildable = true;
         };
       };
     }

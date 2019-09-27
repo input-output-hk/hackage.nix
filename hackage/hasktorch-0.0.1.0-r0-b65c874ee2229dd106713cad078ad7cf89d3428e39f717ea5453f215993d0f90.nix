@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hasktorch-ffi-th" or (buildDepError "hasktorch-ffi-th"))
           (hsPkgs."hasktorch-types-th" or (buildDepError "hasktorch-types-th"))
           ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."hasktorch-gpu" or (buildDepError "hasktorch-gpu"));
+        buildable = true;
         };
       sublibs = {
         "hasktorch-cpu" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-indef-floating" or (buildDepError "hasktorch-indef-floating"))
             (hsPkgs."hasktorch-indef-signed" or (buildDepError "hasktorch-indef-signed"))
             ] ++ (pkgs.lib).optional (!flags.lite) (hsPkgs."hasktorch-indef-unsigned" or (buildDepError "hasktorch-indef-unsigned"));
+          buildable = true;
           };
         "hasktorch-gpu" = {
           depends = [
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-ffi-thc" or (buildDepError "hasktorch-ffi-thc"))
             (hsPkgs."hasktorch-types-thc" or (buildDepError "hasktorch-types-thc"))
             ] ++ (pkgs.lib).optional (!flags.lite) (hsPkgs."hasktorch-indef-unsigned" or (buildDepError "hasktorch-indef-unsigned"));
+          buildable = true;
           };
         "hasktorch-indef-unsigned" = {
           depends = [
@@ -103,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-signatures-partial" or (buildDepError "hasktorch-signatures-partial"))
             (hsPkgs."hasktorch-indef" or (buildDepError "hasktorch-indef"))
             ];
+          buildable = true;
           };
         "hasktorch-indef-signed" = {
           depends = [
@@ -110,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-signatures-partial" or (buildDepError "hasktorch-signatures-partial"))
             (hsPkgs."hasktorch-indef" or (buildDepError "hasktorch-indef"))
             ];
+          buildable = true;
           };
         "hasktorch-indef-floating" = {
           depends = [
@@ -117,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hasktorch-indef" or (buildDepError "hasktorch-indef"))
             (hsPkgs."hasktorch-signatures-partial" or (buildDepError "hasktorch-signatures-partial"))
             ];
+          buildable = true;
           };
         };
       exes = {
@@ -125,24 +131,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hasktorch-cpu" or (buildDepError "hasktorch-cpu"))
             ];
+          buildable = true;
           };
         "isdefinite-gpu" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hasktorch-gpu" or (buildDepError "hasktorch-gpu"))
             ];
+          buildable = true;
           };
         "isdefinite" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hasktorch" or (buildDepError "hasktorch"))
             ];
+          buildable = true;
           };
         "memcheck" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hasktorch" or (buildDepError "hasktorch"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -163,6 +173,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."generic-lens" or (buildDepError "generic-lens"))
             ];
+          buildable = true;
           };
         };
       };

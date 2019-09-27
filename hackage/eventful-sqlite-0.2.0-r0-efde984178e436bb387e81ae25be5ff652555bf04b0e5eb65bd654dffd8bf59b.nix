@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."uuid" or (buildDepError "uuid"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."eventful-test-helpers" or (buildDepError "eventful-test-helpers"))
             (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
             ];
+          buildable = true;
           };
         };
       };

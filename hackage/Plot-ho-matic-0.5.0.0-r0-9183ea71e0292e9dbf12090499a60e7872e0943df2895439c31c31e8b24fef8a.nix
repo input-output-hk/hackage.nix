@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."spatial-math" or (buildDepError "spatial-math"))
           (hsPkgs."generic-accessors" or (buildDepError "generic-accessors"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Plot-ho-matic" or (buildDepError "Plot-ho-matic"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

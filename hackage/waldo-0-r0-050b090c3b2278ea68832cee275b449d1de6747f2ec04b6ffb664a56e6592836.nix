@@ -88,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Glob" or (buildDepError "Glob"))
           (hsPkgs."browscap" or (buildDepError "browscap"))
           ];
+        buildable = true;
         };
       exes = {
         "waldo-example" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp" or (buildDepError "warp"))
             (hsPkgs."safe" or (buildDepError "safe"))
             ];
+          buildable = true;
           };
         "bench" = {
           depends = [
@@ -116,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
             (hsPkgs."zlib-conduit" or (buildDepError "zlib-conduit"))
             ];
+          buildable = true;
           };
         };
       };

@@ -104,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
                     (pkgconfPkgs."llvm-3.8" or (pkgConfDepError "llvm-3.8"))
                     ]
                   else [ (pkgconfPkgs."llvm" or (pkgConfDepError "llvm")) ]);
+        buildable = true;
         };
       exes = {
         "llvm-ffi-example" = {
@@ -112,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

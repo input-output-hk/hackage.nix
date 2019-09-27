@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."labeled-tree" or (buildDepError "labeled-tree"))
           ] ++ (pkgs.lib).optional (flags.graphviz) (hsPkgs."graphviz" or (buildDepError "graphviz"));
+        buildable = true;
         };
       };
     }

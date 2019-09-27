@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."priority-queue" or (buildDepError "priority-queue"))
           (hsPkgs."stateref" or (buildDepError "stateref"))
           ];
+        buildable = true;
         };
       };
     }

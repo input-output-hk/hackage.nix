@@ -64,10 +64,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ];
         libs = (pkgs.lib).optional (system.isLinux) (pkgs."uuid" or (sysDepError "uuid")) ++ (pkgs.lib).optional (system.isWindows) (pkgs."rpcrt4" or (sysDepError "rpcrt4"));
+        buildable = true;
         };
       exes = {
         "hooty" = {
           libs = (pkgs.lib).optional (system.isLinux) (pkgs."uuid" or (sysDepError "uuid")) ++ (pkgs.lib).optional (system.isWindows) (pkgs."rpcrt4" or (sysDepError "rpcrt4"));
+          buildable = true;
           };
         };
       };

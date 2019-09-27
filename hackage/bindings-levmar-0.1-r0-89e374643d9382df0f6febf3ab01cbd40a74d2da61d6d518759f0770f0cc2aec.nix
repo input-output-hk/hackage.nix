@@ -57,6 +57,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         pkgconfig = [ (pkgconfPkgs."lapack" or (pkgConfDepError "lapack")) ];
+        buildable = true;
         };
       };
     }

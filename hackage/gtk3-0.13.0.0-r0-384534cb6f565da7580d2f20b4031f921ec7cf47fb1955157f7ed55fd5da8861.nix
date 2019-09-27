@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs.buildPackages.gtk2hsHookGenerator or (pkgs.buildPackages.gtk2hsHookGenerator or (buildToolDepError "gtk2hsHookGenerator")))
           (hsPkgs.buildPackages.gtk2hsTypeGen or (pkgs.buildPackages.gtk2hsTypeGen or (buildToolDepError "gtk2hsTypeGen")))
           ];
+        buildable = true;
         };
       exes = {
         "gtk2hs-demo-actionMenu" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-buttonBox" = {
           depends = [
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-carsim" = {
           depends = [
@@ -106,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."cairo" or (buildDepError "cairo"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-progress" = {
           depends = [
@@ -113,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-progressThreadedRTS" = {
           depends = [
@@ -120,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-fastDraw" = {
           depends = [
@@ -129,12 +135,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."array" or (buildDepError "array"))
             (hsPkgs."cairo" or (buildDepError "cairo"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-fonts" = {
           depends = [
             (hsPkgs."gtk3" or (buildDepError "gtk3"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-builder" = {
           depends = [
@@ -142,6 +150,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-helloworld" = {
           depends = [
@@ -149,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-layout" = {
           depends = [
@@ -158,6 +168,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cairo" or (buildDepError "cairo"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-menudemo" = {
           depends = [
@@ -166,6 +177,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-combodemo" = {
           depends = [
@@ -174,6 +186,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-notebook" = {
           depends = [
@@ -182,6 +195,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-statusIcon" = {
           depends = [
@@ -189,6 +203,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-arabic" = {
           depends = [
@@ -197,6 +212,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         "gtk2hs-demo-overlay" = {
           depends = [
@@ -204,6 +220,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if !flags.build-demos then false else true;
           };
         };
       };

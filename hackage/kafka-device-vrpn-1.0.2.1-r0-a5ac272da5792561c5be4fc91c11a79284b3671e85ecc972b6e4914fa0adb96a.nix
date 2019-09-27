@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."kafka-device" or (buildDepError "kafka-device"))
           (hsPkgs."vrpn" or (buildDepError "vrpn"))
           ];
+        buildable = true;
         };
       exes = {
         "kafka-device-vrpn" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."kafka-device" or (buildDepError "kafka-device"))
             (hsPkgs."vrpn" or (buildDepError "vrpn"))
             ];
+          buildable = true;
           };
         };
       };

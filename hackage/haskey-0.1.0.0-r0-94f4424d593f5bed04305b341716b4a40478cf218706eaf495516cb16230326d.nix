@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."xxhash-ffi" or (buildDepError "xxhash-ffi"))
           ];
+        buildable = true;
         };
       tests = {
         "haskey-properties" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskey" or (buildDepError "haskey"))
             (hsPkgs."haskey-btree" or (buildDepError "haskey-btree"))
             ];
+          buildable = true;
           };
         "haskey-integration" = {
           depends = [
@@ -111,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."haskey" or (buildDepError "haskey"))
             (hsPkgs."haskey-btree" or (buildDepError "haskey-btree"))
             ];
+          buildable = true;
           };
         };
       };

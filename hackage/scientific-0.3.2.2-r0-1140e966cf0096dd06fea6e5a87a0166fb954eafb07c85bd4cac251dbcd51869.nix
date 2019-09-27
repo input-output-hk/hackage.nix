@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
             ])) ++ (pkgs.lib).optional (flags.bytestring-builder) (hsPkgs."bytestring" or (buildDepError "bytestring"));
+        buildable = true;
         };
       tests = {
         "test-scientific" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."integer-simple" or (buildDepError "integer-simple"))
               ]
             else [ (hsPkgs."integer-gmp" or (buildDepError "integer-gmp")) ]);
+          buildable = true;
           };
         };
       };

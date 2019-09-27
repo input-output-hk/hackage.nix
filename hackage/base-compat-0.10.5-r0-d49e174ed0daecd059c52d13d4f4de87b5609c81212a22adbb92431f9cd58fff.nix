@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [
           (hsPkgs."base" or (buildDepError "base"))
           ] ++ (pkgs.lib).optional (!system.isWindows && !system.isHalvm) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       };
     }

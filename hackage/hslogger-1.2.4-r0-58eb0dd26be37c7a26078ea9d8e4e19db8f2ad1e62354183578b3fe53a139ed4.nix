@@ -71,7 +71,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."time" or (buildDepError "time"))
             ]);
+        buildable = true;
         };
-      exes = { "runtests" = {}; };
+      exes = {
+        "runtests" = { buildable = if flags.buildtests then true else false; };
+        };
       };
     }

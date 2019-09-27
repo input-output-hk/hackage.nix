@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ddc-build" or (buildDepError "ddc-build"))
           (hsPkgs."ddc-interface" or (buildDepError "ddc-interface"))
           ];
+        buildable = true;
         };
       };
     }

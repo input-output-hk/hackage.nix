@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HPDF" or (buildDepError "HPDF"))
           (hsPkgs."language-dot" or (buildDepError "language-dot"))
           ];
+        buildable = true;
         };
       };
     }

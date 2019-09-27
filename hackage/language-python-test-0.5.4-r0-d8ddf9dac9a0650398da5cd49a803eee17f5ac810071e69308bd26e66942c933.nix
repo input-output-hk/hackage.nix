@@ -60,18 +60,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."language-python" or (buildDepError "language-python"))
             ];
+          buildable = true;
           };
         "language-python-tokens" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."language-python" or (buildDepError "language-python"))
             ];
+          buildable = true;
           };
         "language-python-parse-pretty" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."language-python" or (buildDepError "language-python"))
             ];
+          buildable = true;
           };
         };
       };

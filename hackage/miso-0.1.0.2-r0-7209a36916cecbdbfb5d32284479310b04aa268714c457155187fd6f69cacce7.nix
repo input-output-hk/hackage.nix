@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lucid" or (buildDepError "lucid"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ]);
+        buildable = true;
         };
       exes = {
         "todo-mvc" = {
@@ -87,6 +88,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) || !flags.examples
+            then false
+            else true;
           };
         "mario" = {
           depends = [
@@ -94,6 +98,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) || !flags.examples
+            then false
+            else true;
           };
         "simple" = {
           depends = [
@@ -102,6 +109,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."miso" or (buildDepError "miso"))
             ];
+          buildable = if !(compiler.isGhcjs && true) || !flags.examples
+            then false
+            else true;
           };
         "tests" = {
           depends = [
@@ -112,6 +122,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
             (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
             ];
+          buildable = if !(compiler.isGhcjs && true) || !flags.tests
+            then false
+            else true;
           };
         };
       };

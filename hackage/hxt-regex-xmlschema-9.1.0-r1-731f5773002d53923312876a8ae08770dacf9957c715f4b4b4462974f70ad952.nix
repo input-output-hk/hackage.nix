@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."hxt-charproperties" or (buildDepError "hxt-charproperties"))
           ];
+        buildable = true;
         };
       };
     }

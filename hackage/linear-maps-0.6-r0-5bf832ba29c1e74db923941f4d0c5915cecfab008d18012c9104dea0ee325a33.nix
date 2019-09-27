@@ -60,7 +60,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           ];
+        buildable = true;
         };
-      exes = { "linear-maps-introduction" = {}; "linear-maps-exercises" = {}; };
+      exes = {
+        "linear-maps-introduction" = { buildable = true; };
+        "linear-maps-exercises" = { buildable = true; };
+        };
       };
     }

@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."RNAFold" or (buildDepError "RNAFold"))
           (hsPkgs."ViennaRNA-bindings" or (buildDepError "ViennaRNA-bindings"))
           ];
+        buildable = true;
         };
       exes = {
         "RNAdesign" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."file-embed" or (buildDepError "file-embed"))
             ];
+          buildable = true;
           };
         };
       };

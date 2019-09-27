@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."hashabler" or (buildDepError "hashabler"))
           ];
+        buildable = true;
         };
       exes = {
         "dev-example" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."unagi-bloomfilter" or (buildDepError "unagi-bloomfilter"))
             ];
+          buildable = if !flags.dev then false else true;
           };
         };
       tests = {
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."hashabler" or (buildDepError "hashabler"))
             ];
+          buildable = if flags.dev then true else false;
           };
         };
       benchmarks = {
@@ -97,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."hashabler" or (buildDepError "hashabler"))
             ];
+          buildable = if flags.dev then true else false;
           };
         };
       };

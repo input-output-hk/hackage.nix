@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
         libs = [ (pkgs."cfitsio" or (sysDepError "cfitsio")) ];
+        buildable = true;
         };
       };
     }

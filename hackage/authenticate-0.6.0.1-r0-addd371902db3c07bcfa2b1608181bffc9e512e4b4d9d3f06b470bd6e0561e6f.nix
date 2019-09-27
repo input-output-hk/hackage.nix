@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe-failure" or (buildDepError "safe-failure"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ] ++ [ (hsPkgs."transformers" or (buildDepError "transformers")) ];
+        buildable = true;
         };
       };
     }

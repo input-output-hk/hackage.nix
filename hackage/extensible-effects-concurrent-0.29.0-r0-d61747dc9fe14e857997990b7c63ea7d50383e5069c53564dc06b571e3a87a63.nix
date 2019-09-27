@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
           ];
+        buildable = true;
         };
       exes = {
         "extensible-effects-concurrent-example-1" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
             ];
+          buildable = true;
           };
         "extensible-effects-concurrent-example-2" = {
           depends = [
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
             ];
+          buildable = true;
           };
         "extensible-effects-concurrent-example-3" = {
           depends = [
@@ -123,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
             ];
+          buildable = true;
           };
         "extensible-effects-concurrent-example-4" = {
           depends = [
@@ -134,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
             ];
+          buildable = true;
           };
         "extensible-effects-concurrent-example-embedded-protocols" = {
           depends = [
@@ -145,6 +150,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -171,6 +177,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hostname" or (buildDepError "hostname"))
             (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
             ];
+          buildable = true;
           };
         };
       };

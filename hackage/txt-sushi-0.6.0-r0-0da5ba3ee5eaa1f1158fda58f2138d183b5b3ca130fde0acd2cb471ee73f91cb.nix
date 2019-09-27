@@ -64,17 +64,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
           ];
+        buildable = true;
         };
       exes = {
-        "tssql" = {};
-        "csvtotab" = {};
-        "tabtocsv" = {};
-        "csvtopretty" = {};
-        "tabtopretty" = {};
-        "namecolumns" = {};
-        "transposecsv" = {};
-        "transposetab" = {};
-        "csvzip" = {};
+        "tssql" = { buildable = true; };
+        "csvtotab" = { buildable = true; };
+        "tabtocsv" = { buildable = true; };
+        "csvtopretty" = { buildable = true; };
+        "tabtopretty" = { buildable = true; };
+        "namecolumns" = { buildable = true; };
+        "transposecsv" = { buildable = true; };
+        "transposetab" = { buildable = true; };
+        "csvzip" = { buildable = true; };
         };
       };
     }

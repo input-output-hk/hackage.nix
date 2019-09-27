@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (buildDepError "semigroups"));
+        buildable = true;
         };
       tests = {
         "test-tree" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
             (hsPkgs."boltzmann-samplers" or (buildDepError "boltzmann-samplers"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       benchmarks = {
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."testing-feat" or (buildDepError "testing-feat"))
             (hsPkgs."boltzmann-samplers" or (buildDepError "boltzmann-samplers"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

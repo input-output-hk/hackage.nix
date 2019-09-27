@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."papa-base-export" or (buildDepError "papa-base-export"))
           (hsPkgs."papa-base-implement" or (buildDepError "papa-base-implement"))
           ];
+        buildable = true;
         };
       };
     }

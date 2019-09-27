@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gloss" or (buildDepError "gloss"))
           (hsPkgs."gloss-juicy" or (buildDepError "gloss-juicy"))
           ];
+        buildable = true;
         };
       };
     }

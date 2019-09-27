@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
           ];
+        buildable = true;
         };
       };
     }

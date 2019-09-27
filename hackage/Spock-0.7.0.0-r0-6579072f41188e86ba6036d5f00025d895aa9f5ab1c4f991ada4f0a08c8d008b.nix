@@ -94,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."xsd" or (buildDepError "xsd"))
           ];
+        buildable = true;
         };
       tests = {
         "spocktests" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Spock" or (buildDepError "Spock"))
             ];
+          buildable = true;
           };
         };
       };

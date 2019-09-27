@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."carray" or (buildDepError "carray"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."JuicyPixels-util" or (buildDepError "JuicyPixels-util"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if !flags.example then false else true;
           };
         };
       };

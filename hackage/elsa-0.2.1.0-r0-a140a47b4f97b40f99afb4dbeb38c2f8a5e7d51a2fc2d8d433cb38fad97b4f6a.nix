@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dequeue" or (buildDepError "dequeue"))
           (hsPkgs."json" or (buildDepError "json"))
           ];
+        buildable = true;
         };
       exes = {
         "elsa" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."elsa" or (buildDepError "elsa"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."elsa" or (buildDepError "elsa"))
             ];
+          buildable = true;
           };
         };
       };

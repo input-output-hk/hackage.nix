@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "powermate-print" = {
@@ -70,12 +71,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."powermate" or (buildDepError "powermate"))
             ];
+          buildable = true;
           };
         "powermate-pulse" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."powermate" or (buildDepError "powermate"))
             ];
+          buildable = true;
           };
         };
       };

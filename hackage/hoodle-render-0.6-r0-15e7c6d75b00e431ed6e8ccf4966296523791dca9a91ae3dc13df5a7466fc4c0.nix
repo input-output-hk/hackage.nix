@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uuid" or (buildDepError "uuid"))
           (hsPkgs."gtk3" or (buildDepError "gtk3"))
           ];
+        buildable = true;
         };
       };
     }

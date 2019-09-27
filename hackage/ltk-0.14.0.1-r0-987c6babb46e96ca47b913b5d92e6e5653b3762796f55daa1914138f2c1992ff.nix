@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.gtk3
           then [ (hsPkgs."gtk3" or (buildDepError "gtk3")) ]
           else [ (hsPkgs."gtk" or (buildDepError "gtk")) ]);
+        buildable = true;
         };
       };
     }

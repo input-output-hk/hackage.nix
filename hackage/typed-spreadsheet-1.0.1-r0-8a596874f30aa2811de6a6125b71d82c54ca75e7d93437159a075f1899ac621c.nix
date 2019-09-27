@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "typed-spreadsheet-example" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."typed-spreadsheet" or (buildDepError "typed-spreadsheet"))
             ];
+          buildable = true;
           };
         "typed-spreadsheet-example-graphics" = {
           depends = [
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
             (hsPkgs."typed-spreadsheet" or (buildDepError "typed-spreadsheet"))
             ];
+          buildable = true;
           };
         };
       };

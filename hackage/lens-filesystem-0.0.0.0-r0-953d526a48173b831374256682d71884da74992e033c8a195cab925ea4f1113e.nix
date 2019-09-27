@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."lens-action" or (buildDepError "lens-action"))
           ];
+        buildable = true;
         };
       tests = {
         "lens-filesystem-test" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens-action" or (buildDepError "lens-action"))
             (hsPkgs."lens-filesystem" or (buildDepError "lens-filesystem"))
             ];
+          buildable = true;
           };
         };
       };

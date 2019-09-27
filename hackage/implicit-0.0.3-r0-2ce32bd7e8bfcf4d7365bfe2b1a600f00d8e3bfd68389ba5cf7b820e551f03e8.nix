@@ -75,7 +75,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."storable-endian" or (buildDepError "storable-endian"))
           (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
           ];
+        buildable = true;
         };
-      exes = { "extopenscad" = {}; };
+      exes = { "extopenscad" = { buildable = true; }; };
       };
     }

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
           ];
+        buildable = true;
         };
       };
     }

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xmonad" or (buildDepError "xmonad"))
             (hsPkgs."xmonad-contrib" or (buildDepError "xmonad-contrib"))
             ];
+          buildable = true;
           };
         "gnome-bluetile-session" = {
           depends = [
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."unix" or (buildDepError "unix"))
             ];
+          buildable = true;
           };
         "bluetiledock" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gtk" or (buildDepError "gtk"))
             (hsPkgs."X11" or (buildDepError "X11"))
             ];
+          buildable = true;
           };
         "bluetilemockwin" = {
           depends = [
@@ -92,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gtk" or (buildDepError "gtk"))
             ];
+          buildable = true;
           };
         "bluetilegreet" = {
           depends = [
@@ -102,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."glade" or (buildDepError "glade"))
             (hsPkgs."gtk" or (buildDepError "gtk"))
             ];
+          buildable = true;
           };
         };
       };

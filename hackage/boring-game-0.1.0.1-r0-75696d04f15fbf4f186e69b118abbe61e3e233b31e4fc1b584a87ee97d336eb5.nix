@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."gloss" or (buildDepError "gloss"))
           ];
+        buildable = true;
         };
       exes = {
         "boring-game-exe" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."boring-game" or (buildDepError "boring-game"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -75,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."boring-game" or (buildDepError "boring-game"))
             ];
+          buildable = true;
           };
         };
       };

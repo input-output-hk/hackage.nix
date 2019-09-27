@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-base" or (buildDepError "regex-base"))
           ];
         libs = [ (pkgs."tre" or (sysDepError "tre")) ];
+        buildable = true;
         };
       };
     }

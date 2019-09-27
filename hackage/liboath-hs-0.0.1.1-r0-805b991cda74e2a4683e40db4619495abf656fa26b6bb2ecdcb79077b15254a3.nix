@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = [ (pkgs."oath" or (sysDepError "oath")) ];
         pkgconfig = [ (pkgconfPkgs."liboath" or (pkgConfDepError "liboath")) ];
+        buildable = true;
         };
       exes = {
         "oathtool-hs" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."liboath-hs" or (buildDepError "liboath-hs"))
             ];
+          buildable = true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
           (hsPkgs."th-expand-syns" or (buildDepError "th-expand-syns"))
           ];
+        buildable = true;
         };
       };
     }

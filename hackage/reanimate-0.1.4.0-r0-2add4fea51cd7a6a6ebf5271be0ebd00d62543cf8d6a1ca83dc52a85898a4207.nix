@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."websockets" or (buildDepError "websockets"))
           (hsPkgs."hashable" or (buildDepError "hashable"))
           ] ++ (pkgs.lib).optional (system.isLinux && flags.inotify) (hsPkgs."hinotify" or (buildDepError "hinotify"));
+        buildable = true;
         };
       exes = {
         "reanimate-server" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hashable" or (buildDepError "hashable"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if flags.server then true else false;
           };
         };
       };

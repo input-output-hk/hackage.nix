@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."json" or (buildDepError "json"))
           (hsPkgs."microlens-platform" or (buildDepError "microlens-platform"))
           ];
+        buildable = true;
         };
       exes = {
         "hasktags" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."hasktags" or (buildDepError "hasktags"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."microlens-platform" or (buildDepError "microlens-platform"))
             ];
+          buildable = true;
           };
         };
       };

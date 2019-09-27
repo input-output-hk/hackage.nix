@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."size-based" or (buildDepError "size-based"))
           (hsPkgs."testing-type-modifiers" or (buildDepError "testing-type-modifiers"))
           ];
+        buildable = true;
         };
       };
     }

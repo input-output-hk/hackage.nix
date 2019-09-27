@@ -76,9 +76,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-date" or (buildDepError "http-date"))
             (hsPkgs."hashmap" or (buildDepError "hashmap"))
             ];
+          buildable = true;
           };
         "mkindex" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

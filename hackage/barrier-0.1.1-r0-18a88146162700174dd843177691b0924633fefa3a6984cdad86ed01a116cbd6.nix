@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "barrier-data-generator" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."freetype2" or (buildDepError "freetype2"))
             ];
+          buildable = if flags.generator then true else false;
           };
         "barrier-example" = {
           depends = (pkgs.lib).optionals (flags.example) [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
             (hsPkgs."barrier" or (buildDepError "barrier"))
             ];
+          buildable = if flags.example then true else false;
           };
         "barrier-test-result-generator" = {
           depends = (pkgs.lib).optionals (flags.test-results) [
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
             (hsPkgs."barrier" or (buildDepError "barrier"))
             ];
+          buildable = if flags.test-results then true else false;
           };
         };
       tests = {
@@ -98,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
             (hsPkgs."barrier" or (buildDepError "barrier"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."json" or (buildDepError "json"))
             (hsPkgs."vcs-revision" or (buildDepError "vcs-revision"))
             ];
+          buildable = true;
           };
         };
       };

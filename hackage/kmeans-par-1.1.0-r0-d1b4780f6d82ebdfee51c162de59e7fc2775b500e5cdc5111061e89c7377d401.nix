@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."metric" or (buildDepError "metric"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "kmeans-benchmark" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."metric" or (buildDepError "metric"))
             ];
+          buildable = true;
           };
         };
       };

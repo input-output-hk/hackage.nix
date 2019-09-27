@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yjsvg" or (buildDepError "yjsvg"))
           (hsPkgs."Imlib" or (buildDepError "Imlib"))
           ];
+        buildable = true;
         };
       };
     }

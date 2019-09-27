@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sqlite-simple" or (buildDepError "sqlite-simple"))
             (hsPkgs."hsqml" or (buildDepError "hsqml"))
             ];
+          buildable = true;
           };
         };
       };

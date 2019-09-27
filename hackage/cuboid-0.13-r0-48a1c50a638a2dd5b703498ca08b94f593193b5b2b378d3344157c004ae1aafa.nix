@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."GLUT" or (buildDepError "GLUT"))
             ];
+          buildable = true;
           };
         };
       };

@@ -90,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."yjtools" or (buildDepError "yjtools"))
           ];
+        buildable = true;
         };
       exes = {
         "readme-simple" = {
@@ -98,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "readme-full" = {
           depends = [
@@ -106,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "count-all-nqueens-solutions" = {
           depends = [
@@ -113,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "print-all-nqueens-solutions" = {
           depends = [
@@ -121,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "print-an-nqueens-solution" = {
           depends = [
@@ -129,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "print-some-nqueens-solutions-using-pull" = {
           depends = [
@@ -137,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "print-some-nqueens-solutions-using-push" = {
           depends = [
@@ -145,6 +152,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "count-all-trivial-tree-leaves" = {
           depends = [
@@ -153,12 +161,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "tutorial-1" = {
           depends = [
             (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         "tutorial-2" = {
           depends = [
@@ -166,30 +176,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         "tutorial-3" = {
           depends = [
             (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         "tutorial-4" = {
           depends = [
             (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         "tutorial-5" = {
           depends = [
             (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         "tutorial-6" = {
           depends = [
             (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         "tutorial-7" = {
           depends = [
@@ -197,6 +212,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         "tutorial-8" = {
           depends = [
@@ -204,24 +220,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         "tutorial-9" = {
           depends = [
             (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         "tutorial-10" = {
           depends = [
             (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         "tutorial-11" = {
           depends = [
             (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         "tutorial-12" = {
           depends = [
@@ -229,6 +249,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         "tutorial-13" = {
           depends = [
@@ -236,6 +257,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             ];
+          buildable = if flags.tutorial then true else false;
           };
         };
       tests = {
@@ -267,6 +289,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uuid" or (buildDepError "uuid"))
             (hsPkgs."void" or (buildDepError "void"))
             ];
+          buildable = true;
           };
         "test-nqueens" = {
           depends = [
@@ -280,6 +303,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -289,6 +313,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         "tree-versus-list-nqueens" = {
           depends = [
@@ -296,6 +321,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

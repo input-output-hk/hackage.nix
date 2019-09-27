@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."scientific" or (buildDepError "scientific"))
           (hsPkgs."uom-plugin" or (buildDepError "uom-plugin"))
           ];
+        buildable = true;
         };
       tests = {
         "doctest" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."scientific" or (buildDepError "scientific"))
             (hsPkgs."uom-plugin" or (buildDepError "uom-plugin"))
             ];
+          buildable = true;
           };
         "hlint" = {
           depends = [
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."scientific" or (buildDepError "scientific"))
             (hsPkgs."uom-plugin" or (buildDepError "uom-plugin"))
             ];
+          buildable = true;
           };
         };
       };

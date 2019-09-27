@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."not-gloss" or (buildDepError "not-gloss"))
           (hsPkgs."spatial-math" or (buildDepError "spatial-math"))
           ];
+        buildable = true;
         };
       };
     }

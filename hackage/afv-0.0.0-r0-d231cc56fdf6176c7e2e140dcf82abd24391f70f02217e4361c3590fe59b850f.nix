@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."language-c" or (buildDepError "language-c"))
             (hsPkgs."yices" or (buildDepError "yices"))
             ];
+          buildable = true;
           };
         };
       };

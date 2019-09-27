@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
           (hsPkgs."representable-tries" or (buildDepError "representable-tries"))
           ];
+        buildable = true;
         };
       };
     }

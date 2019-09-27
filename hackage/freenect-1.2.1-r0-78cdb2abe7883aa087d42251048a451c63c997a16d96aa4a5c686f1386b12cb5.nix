@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libfreenect" or (pkgConfDepError "libfreenect"))
           ];
+        buildable = true;
         };
       };
     }

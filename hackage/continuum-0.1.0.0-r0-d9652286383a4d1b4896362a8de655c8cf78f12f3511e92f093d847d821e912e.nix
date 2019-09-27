@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       exes = {
         "continuum-server" = {
@@ -87,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."nanomsg-haskell" or (buildDepError "nanomsg-haskell"))
             ];
           libs = [ (pkgs."hyperleveldb" or (sysDepError "hyperleveldb")) ];
+          buildable = true;
           };
         };
       };

@@ -72,7 +72,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-time" or (buildDepError "old-time"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
-      exes = { "rain" = {}; "demonstration" = {}; "traumzauberbaum" = {}; };
+      exes = {
+        "rain" = { buildable = if !flags.buildexamples then false else true; };
+        "demonstration" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        "traumzauberbaum" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        };
       };
     }

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."concurrent-supply" or (buildDepError "concurrent-supply"))
           ];
+        buildable = true;
         };
       tests = {
         "stm-supply-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."Unique" or (buildDepError "Unique"))
             ];
+          buildable = true;
           };
         };
       };

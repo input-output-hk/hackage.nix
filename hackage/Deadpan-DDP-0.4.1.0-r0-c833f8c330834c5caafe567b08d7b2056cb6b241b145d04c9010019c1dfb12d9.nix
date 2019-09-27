@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."IfElse" or (buildDepError "IfElse"))
           ];
+        buildable = true;
         };
       exes = {
         "deadpan" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."IfElse" or (buildDepError "IfElse"))
             ];
+          buildable = true;
           };
         };
       };

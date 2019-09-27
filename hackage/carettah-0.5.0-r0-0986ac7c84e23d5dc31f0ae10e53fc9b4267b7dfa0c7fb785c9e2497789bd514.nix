@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))
             (hsPkgs."gtk2hs-buildtools" or (buildDepError "gtk2hs-buildtools"))
             ];
+          buildable = true;
           };
         "carettah" = {
           depends = [
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

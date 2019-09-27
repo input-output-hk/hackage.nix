@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsql" or (buildDepError "hsql"))
           (hsPkgs."hsql-mysql" or (buildDepError "hsql-mysql"))
           ];
+        buildable = true;
         };
       };
     }

@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."twitter-types" or (buildDepError "twitter-types"))
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ];
+          buildable = true;
           };
         "oauth_pin" = {
           depends = [
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."authenticate-oauth" or (buildDepError "authenticate-oauth"))
             (hsPkgs."twitter-conduit" or (buildDepError "twitter-conduit"))
             ];
+          buildable = true;
           };
         };
       };

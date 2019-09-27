@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
           (hsPkgs."hsass" or (buildDepError "hsass"))
           ];
+        buildable = true;
         };
       };
     }

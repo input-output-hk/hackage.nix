@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."base" or (buildDepError "base"))
             ]) ++ (pkgs.lib).optional (flags.opengl) (hsPkgs."OpenGL" or (buildDepError "OpenGL"));
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."nonlinear-optimization" or (buildDepError "nonlinear-optimization"))
           (hsPkgs."hmatrix-special" or (buildDepError "hmatrix-special"))
           ];
+        buildable = true;
         };
       };
     }

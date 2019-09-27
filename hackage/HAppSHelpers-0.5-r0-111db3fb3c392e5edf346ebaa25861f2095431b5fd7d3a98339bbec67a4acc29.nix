@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."HAppS-Data" or (buildDepError "HAppS-Data"))
           ];
+        buildable = true;
         };
       };
     }

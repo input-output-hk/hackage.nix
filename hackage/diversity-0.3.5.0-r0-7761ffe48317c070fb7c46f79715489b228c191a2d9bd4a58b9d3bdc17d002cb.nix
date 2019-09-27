@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fasta" or (buildDepError "fasta"))
           (hsPkgs."math-functions" or (buildDepError "math-functions"))
           ];
+        buildable = true;
         };
       exes = {
         "diversity" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."fasta" or (buildDepError "fasta"))
             ];
+          buildable = true;
           };
         };
       };

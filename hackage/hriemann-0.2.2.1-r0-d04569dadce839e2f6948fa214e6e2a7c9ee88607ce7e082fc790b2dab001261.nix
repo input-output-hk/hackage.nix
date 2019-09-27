@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."kazura-queue" or (buildDepError "kazura-queue"))
           (hsPkgs."criterion" or (buildDepError "criterion"))
           ];
+        buildable = true;
         };
       exes = {
         "hriemann-exe" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hriemann" or (buildDepError "hriemann"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hriemann" or (buildDepError "hriemann"))
             ];
+          buildable = true;
           };
         };
       };

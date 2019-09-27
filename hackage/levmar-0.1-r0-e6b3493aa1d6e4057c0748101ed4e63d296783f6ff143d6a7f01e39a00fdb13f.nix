@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."bindings-levmar" or (buildDepError "bindings-levmar"))
           ];
+        buildable = true;
         };
       };
     }

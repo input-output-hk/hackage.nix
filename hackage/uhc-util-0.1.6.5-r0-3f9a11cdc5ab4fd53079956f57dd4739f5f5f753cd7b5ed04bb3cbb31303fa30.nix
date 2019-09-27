@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb" or (buildDepError "syb"))
           (hsPkgs."logict-state" or (buildDepError "logict-state"))
           ];
+        buildable = true;
         };
       };
     }

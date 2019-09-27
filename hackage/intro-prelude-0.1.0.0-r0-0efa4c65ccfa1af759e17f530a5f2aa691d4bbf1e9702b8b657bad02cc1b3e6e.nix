@@ -56,6 +56,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [ (hsPkgs."intro" or (buildDepError "intro")) ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -63,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."intro" or (buildDepError "intro"))
             (hsPkgs."intro-prelude" or (buildDepError "intro-prelude"))
             ];
+          buildable = true;
           };
         };
       };

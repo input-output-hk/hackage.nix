@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."numtype-dk" or (buildDepError "numtype-dk"))
           ];
+        buildable = true;
         };
       };
     }

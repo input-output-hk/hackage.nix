@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ivory-bitdata" or (buildDepError "ivory-bitdata"))
           (hsPkgs."ivory-backend-c" or (buildDepError "ivory-backend-c"))
           ];
+        buildable = true;
         };
       };
     }

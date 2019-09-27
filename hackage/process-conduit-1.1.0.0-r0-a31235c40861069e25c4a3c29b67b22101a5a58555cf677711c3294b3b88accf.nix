@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
           (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
           ];
+        buildable = true;
         };
       tests = {
         "process-conduit-test" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit" or (buildDepError "conduit"))
             (hsPkgs."process-conduit" or (buildDepError "process-conduit"))
             ];
+          buildable = true;
           };
         };
       };

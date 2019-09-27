@@ -59,19 +59,24 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ];
+        buildable = true;
         };
       exes = {
         "data-reify-test1" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = false;
           };
         "data-reify-test2" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = false;
           };
         "data-reify-test3" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = false;
           };
         "data-reify-test4" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = false;
           };
         };
       };

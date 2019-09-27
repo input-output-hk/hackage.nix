@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dimensional" or (buildDepError "dimensional"))
           (hsPkgs."numtype-dk" or (buildDepError "numtype-dk"))
           ];
+        buildable = true;
         };
       };
     }

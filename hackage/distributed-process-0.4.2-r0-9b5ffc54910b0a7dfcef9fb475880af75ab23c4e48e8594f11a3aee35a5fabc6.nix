@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rank1dynamic" or (buildDepError "rank1dynamic"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ] ++ (pkgs.lib).optional (flags.th) (hsPkgs."template-haskell" or (buildDepError "template-haskell"));
+        buildable = true;
         };
       exes = {
         "distributed-process-throughput" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ];
+          buildable = if flags.benchmarks then true else false;
           };
         "distributed-process-latency" = {
           depends = (pkgs.lib).optionals (flags.benchmarks) [
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ];
+          buildable = if flags.benchmarks then true else false;
           };
         "distributed-process-channels" = {
           depends = (pkgs.lib).optionals (flags.benchmarks) [
@@ -101,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ];
+          buildable = if flags.benchmarks then true else false;
           };
         "distributed-process-spawns" = {
           depends = (pkgs.lib).optionals (flags.benchmarks) [
@@ -110,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ];
+          buildable = if flags.benchmarks then true else false;
           };
         };
       tests = {
@@ -127,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         "TestClosure" = {
           depends = [
@@ -143,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         "TestStats" = {
           depends = [
@@ -160,6 +167,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
+          buildable = true;
           };
         };
       };

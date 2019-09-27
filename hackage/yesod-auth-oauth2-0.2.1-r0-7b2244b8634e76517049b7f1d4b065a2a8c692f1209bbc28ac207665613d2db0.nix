@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.network-uri
           then [ (hsPkgs."network-uri" or (buildDepError "network-uri")) ]
           else [ (hsPkgs."network" or (buildDepError "network")) ]);
+        buildable = true;
         };
       exes = {
         "yesod-auth-oauth2-example" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
             (hsPkgs."yesod-auth-oauth2" or (buildDepError "yesod-auth-oauth2"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       tests = {
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-auth-oauth2" or (buildDepError "yesod-auth-oauth2"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

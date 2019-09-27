@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."th-lift" or (buildDepError "th-lift"))
           (hsPkgs."th-orphans" or (buildDepError "th-orphans"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."th-lift" or (buildDepError "th-lift"))
             (hsPkgs."th-orphans" or (buildDepError "th-orphans"))
             ];
+          buildable = true;
           };
         };
       };

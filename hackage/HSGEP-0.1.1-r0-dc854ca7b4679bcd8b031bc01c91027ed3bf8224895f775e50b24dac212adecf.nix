@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-mersenne-random" or (buildDepError "monad-mersenne-random"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       exes = {
         "HSGEP_Regression" = {
@@ -70,8 +71,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."csv" or (buildDepError "csv"))
             ];
+          buildable = true;
           };
-        "HSGEP_CADensity" = {};
+        "HSGEP_CADensity" = { buildable = false; };
         };
       };
     }

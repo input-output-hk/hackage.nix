@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OpenAL" or (buildDepError "OpenAL"))
           ];
         libs = [ (pkgs."alure" or (sysDepError "alure")) ];
+        buildable = true;
         };
       };
     }

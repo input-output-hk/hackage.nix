@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."time" or (buildDepError "time"))
           ] ++ (pkgs.lib).optional (system.isLinux && flags.fastaes && (system.isI386 || system.isX86_64)) (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"));
+        buildable = true;
         };
       exes = {
         "Tests" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
             ] ++ (pkgs.lib).optional (system.isLinux && flags.fastaes) (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"));
+          buildable = if flags.test then true else false;
           };
         };
       };

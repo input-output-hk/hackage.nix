@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."adjunctions" or (buildDepError "adjunctions"))
           (hsPkgs."distributive" or (buildDepError "distributive"))
           ];
+        buildable = true;
         };
       tests = {
         "readme" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."distributive" or (buildDepError "distributive"))
             (hsPkgs."markdown-unlit" or (buildDepError "markdown-unlit"))
             ];
+          buildable = true;
           };
         };
       };

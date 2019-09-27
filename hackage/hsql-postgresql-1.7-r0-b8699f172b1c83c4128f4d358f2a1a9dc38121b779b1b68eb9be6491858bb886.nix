@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsql" or (buildDepError "hsql"))
           ];
         libs = [ (pkgs."pq" or (sysDepError "pq")) ];
+        buildable = true;
         };
       };
     }

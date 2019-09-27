@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."oleaut32" or (sysDepError "oleaut32"))
           (pkgs."advapi32" or (sysDepError "advapi32"))
           ];
+        buildable = if system.isWindows then true else false;
         };
       };
     }

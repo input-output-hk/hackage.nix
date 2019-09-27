@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
           (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
           ];
+        buildable = true;
         };
       tests = {
         "example" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-smallcheck" or (buildDepError "hspec-smallcheck"))
             (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
             (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
             ];
+          buildable = true;
           };
         };
       };

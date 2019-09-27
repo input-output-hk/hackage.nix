@@ -65,10 +65,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ]) ++ [ (hsPkgs."parsec" or (buildDepError "parsec")) ];
+        buildable = true;
         };
       exes = {
         "clevercss" = {
           depends = [ (hsPkgs."parsec" or (buildDepError "parsec")) ];
+          buildable = true;
           };
         };
       };

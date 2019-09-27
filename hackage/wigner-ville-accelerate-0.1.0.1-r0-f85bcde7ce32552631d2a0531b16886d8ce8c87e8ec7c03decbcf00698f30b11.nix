@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."accelerate" or (buildDepError "accelerate"))
           (hsPkgs."accelerate-fft" or (buildDepError "accelerate-fft"))
           ];
+        buildable = true;
         };
       tests = {
         "wigner-test" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."wigner" or (buildDepError "wigner"))
             ];
+          buildable = true;
           };
         };
       };

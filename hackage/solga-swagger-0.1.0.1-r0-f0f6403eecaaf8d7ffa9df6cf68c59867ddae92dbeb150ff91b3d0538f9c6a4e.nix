@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dlist" or (buildDepError "dlist"))
           (hsPkgs."insert-ordered-containers" or (buildDepError "insert-ordered-containers"))
           ];
+        buildable = true;
         };
       };
     }

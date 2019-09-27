@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."readline" or (buildDepError "readline"))
           (hsPkgs."Shellac" or (buildDepError "Shellac"))
           ];
+        buildable = true;
         };
       };
     }

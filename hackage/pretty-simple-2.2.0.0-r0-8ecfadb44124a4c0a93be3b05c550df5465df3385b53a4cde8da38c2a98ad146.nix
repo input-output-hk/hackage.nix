@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "pretty-simple" = {
@@ -71,12 +72,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
+          buildable = if flags.buildexe then true else false;
           };
         "pretty-simple-example" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pretty-simple" or (buildDepError "pretty-simple"))
             ];
+          buildable = if flags.buildexample then true else false;
           };
         "pretty-simple-json-example" = {
           depends = [
@@ -86,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty-simple" or (buildDepError "pretty-simple"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.buildexample then true else false;
           };
         };
       tests = {
@@ -95,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."Glob" or (buildDepError "Glob"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -105,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pretty-simple" or (buildDepError "pretty-simple"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

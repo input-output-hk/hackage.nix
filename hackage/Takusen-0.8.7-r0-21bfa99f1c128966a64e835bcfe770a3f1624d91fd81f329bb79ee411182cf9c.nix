@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ])) ++ (pkgs.lib).optional (flags.postgres) (pkgs."pq" or (sysDepError "pq"))) ++ (pkgs.lib).optional (flags.sqlite) (pkgs."sqlite3" or (sysDepError "sqlite3"));
         pkgconfig = (pkgs.lib).optionals (flags.sqlite) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."sqlite3" or (pkgConfDepError "sqlite3")));
         build-tools = ((pkgs.lib).optional (flags.oracle) (hsPkgs.buildPackages.sqlplus or (pkgs.buildPackages.sqlplus or (buildToolDepError "sqlplus"))) ++ (pkgs.lib).optional (flags.postgres) (hsPkgs.buildPackages.pg_config or (pkgs.buildPackages.pg_config or (buildToolDepError "pg_config")))) ++ (pkgs.lib).optional (flags.sqlite) (hsPkgs.buildPackages.sqlite3 or (pkgs.buildPackages.sqlite3 or (buildToolDepError "sqlite3")));
+        buildable = if flags.buildtests then false else true;
         };
       exes = {
         "takusen_tests" = {
@@ -94,12 +95,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.8") (hsPkgs."old-time" or (buildDepError "old-time"))) ++ [
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.buildtests then false else true;
           };
         "miniunit_tests" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if !flags.buildtests then false else true;
           };
         };
       };

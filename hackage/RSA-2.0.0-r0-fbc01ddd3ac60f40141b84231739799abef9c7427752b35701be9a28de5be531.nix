@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
           (hsPkgs."SHA" or (buildDepError "SHA"))
           ];
+        buildable = true;
         };
       exes = {
         "rsa_test" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
             (hsPkgs."SHA" or (buildDepError "SHA"))
             ];
+          buildable = if flags.buildtestexecutable then true else false;
           };
         };
       tests = {
@@ -105,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
             (hsPkgs."SHA" or (buildDepError "SHA"))
             ];
+          buildable = true;
           };
         };
       };

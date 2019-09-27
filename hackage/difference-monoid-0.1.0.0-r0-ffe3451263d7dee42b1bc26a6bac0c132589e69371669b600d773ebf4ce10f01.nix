@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."groups" or (buildDepError "groups"))
           (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
           ];
+        buildable = true;
         };
       tests = {
         "difference-monoid-doctests" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."groups" or (buildDepError "groups"))
             (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
             ];
+          buildable = true;
           };
         "difference-monoid-test" = {
           depends = [
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hedgehog-checkers" or (buildDepError "hedgehog-checkers"))
             (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
             ];
+          buildable = true;
           };
         };
       };

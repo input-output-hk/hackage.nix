@@ -61,18 +61,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."vcd" or (buildDepError "vcd"))
             ];
+          buildable = true;
           };
         "cansend" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
           libs = [ (pkgs."canlib" or (sysDepError "canlib")) ];
+          buildable = true;
           };
         "canview" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
           libs = [ (pkgs."canlib" or (sysDepError "canlib")) ];
+          buildable = true;
           };
         "ccp" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
           libs = [ (pkgs."canlib" or (sysDepError "canlib")) ];
+          buildable = true;
           };
         "probe" = {
           depends = [
@@ -81,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vcd" or (buildDepError "vcd"))
             ];
           libs = [ (pkgs."canlib" or (sysDepError "canlib")) ];
+          buildable = true;
           };
         "toesb" = {
           depends = [
@@ -88,14 +93,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."digest" or (buildDepError "digest"))
             ];
+          buildable = true;
           };
-        "commit" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "commit" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "git2cc" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

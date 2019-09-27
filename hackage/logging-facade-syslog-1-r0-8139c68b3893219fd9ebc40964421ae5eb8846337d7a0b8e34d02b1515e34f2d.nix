@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."logging-facade" or (buildDepError "logging-facade"))
           (hsPkgs."hsyslog" or (buildDepError "hsyslog"))
           ];
+        buildable = true;
         };
       };
     }

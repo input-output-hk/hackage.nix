@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."ipython-kernel" or (buildDepError "ipython-kernel"))
           ] ++ (pkgs.lib).optional (flags.binpkgdb) (hsPkgs."bin-package-db" or (buildDepError "bin-package-db"));
+        buildable = true;
         };
       exes = {
         "ihaskell" = {
@@ -109,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."ipython-kernel" or (buildDepError "ipython-kernel"))
             ] ++ (pkgs.lib).optional (flags.binpkgdb) (hsPkgs."bin-package-db" or (buildDepError "bin-package-db"));
+          buildable = true;
           };
         };
       tests = {
@@ -153,6 +155,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."setenv" or (buildDepError "setenv"))
             (hsPkgs."ipython-kernel" or (buildDepError "ipython-kernel"))
             ] ++ (pkgs.lib).optional (flags.binpkgdb) (hsPkgs."bin-package-db" or (buildDepError "bin-package-db"));
+          buildable = true;
           };
         };
       };

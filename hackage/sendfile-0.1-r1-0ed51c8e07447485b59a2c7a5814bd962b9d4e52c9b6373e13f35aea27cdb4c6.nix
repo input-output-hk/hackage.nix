@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."kernel32" or (sysDepError "kernel32"))
           (pkgs."mswsock" or (sysDepError "mswsock"))
           ]);
+        buildable = true;
         };
       };
     }

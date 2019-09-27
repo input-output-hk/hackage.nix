@@ -73,7 +73,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."haskell98" or (buildDepError "haskell98"))
           ];
+        buildable = true;
         };
-      exes = { "Hsed" = {}; };
+      exes = { "Hsed" = { buildable = true; }; };
       };
     }

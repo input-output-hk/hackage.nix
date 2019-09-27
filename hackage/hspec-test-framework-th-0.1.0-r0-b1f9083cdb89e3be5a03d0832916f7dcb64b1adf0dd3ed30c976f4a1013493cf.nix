@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."language-haskell-extract" or (buildDepError "language-haskell-extract"))
           ];
+        buildable = true;
         };
       tests = {
         "example" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-test-framework" or (buildDepError "hspec-test-framework"))
             (hsPkgs."hspec-test-framework-th" or (buildDepError "hspec-test-framework-th"))
             ];
+          buildable = true;
           };
         };
       };

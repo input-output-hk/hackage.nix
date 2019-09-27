@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gtk3" or (buildDepError "gtk3"))
             (hsPkgs."glib" or (buildDepError "glib"))
             ];
+          buildable = true;
           };
         };
       };

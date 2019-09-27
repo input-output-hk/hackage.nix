@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."clustering" or (buildDepError "clustering"))
             (hsPkgs."hierarchical-clustering" or (buildDepError "hierarchical-clustering"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."clustering" or (buildDepError "clustering"))
             (hsPkgs."hierarchical-clustering" or (buildDepError "hierarchical-clustering"))
             ];
+          buildable = true;
           };
         };
       };

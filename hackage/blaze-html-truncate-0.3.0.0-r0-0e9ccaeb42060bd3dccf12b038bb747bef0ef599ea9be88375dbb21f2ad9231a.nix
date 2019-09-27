@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
           (hsPkgs."html-truncate" or (buildDepError "html-truncate"))
           ];
+        buildable = true;
         };
       };
     }

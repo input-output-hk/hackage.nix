@@ -54,7 +54,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = if flags.devel then true else false; };
       exes = {
         "hledger-web" = {
           depends = [
@@ -98,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-enumerator" or (buildDepError "http-enumerator"))
             (hsPkgs."tls-extra" or (buildDepError "tls-extra"))
             ];
+          buildable = if flags.devel then false else true;
           };
         };
       };

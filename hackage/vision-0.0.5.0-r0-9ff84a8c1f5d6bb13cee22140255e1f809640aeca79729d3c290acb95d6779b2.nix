@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."PSQueue" or (buildDepError "PSQueue"))
             ];
+          buildable = true;
           };
         };
       };

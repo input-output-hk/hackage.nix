@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           then [ (hsPkgs."integer-simple" or (buildDepError "integer-simple")) ]
           else [ (hsPkgs."integer-gmp" or (buildDepError "integer-gmp")) ]);
         libs = [ (pkgs."mpfr" or (sysDepError "mpfr")) ];
+        buildable = true;
         };
       };
     }

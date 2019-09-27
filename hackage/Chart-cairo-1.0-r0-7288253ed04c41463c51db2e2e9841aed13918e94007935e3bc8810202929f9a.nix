@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."operational" or (buildDepError "operational"))
           (hsPkgs."Chart" or (buildDepError "Chart"))
           ];
+        buildable = true;
         };
       };
     }

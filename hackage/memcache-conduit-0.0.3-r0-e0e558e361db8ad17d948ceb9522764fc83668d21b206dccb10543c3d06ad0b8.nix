@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec-binary" or (buildDepError "attoparsec-binary"))
           (hsPkgs."memcache-haskell" or (buildDepError "memcache-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "memcache-sample-hemcached" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."memcache-haskell" or (buildDepError "memcache-haskell"))
             (hsPkgs."memcache-conduit" or (buildDepError "memcache-conduit"))
             ];
+          buildable = if flags.sample then true else false;
           };
         "memcache-sample-proxy" = {
           depends = [
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."memcache-haskell" or (buildDepError "memcache-haskell"))
             (hsPkgs."memcache-conduit" or (buildDepError "memcache-conduit"))
             ];
+          buildable = if flags.sample then true else false;
           };
         };
       };

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xhtml" or (buildDepError "xhtml"))
           (hsPkgs."applicative-extras" or (buildDepError "applicative-extras"))
           ];
+        buildable = true;
         };
       };
     }

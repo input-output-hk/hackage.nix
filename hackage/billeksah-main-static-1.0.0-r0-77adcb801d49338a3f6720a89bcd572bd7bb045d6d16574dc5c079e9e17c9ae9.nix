@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."leksah-plugin-pane" or (buildDepError "leksah-plugin-pane"))
             (hsPkgs."leksah-dummy" or (buildDepError "leksah-dummy"))
             ];
+          buildable = true;
           };
         };
       };

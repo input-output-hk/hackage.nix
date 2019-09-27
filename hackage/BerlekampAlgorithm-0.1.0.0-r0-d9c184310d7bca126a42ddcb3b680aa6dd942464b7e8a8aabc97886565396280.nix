@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."besout" or (buildDepError "besout"))
           ];
+        buildable = true;
         };
       };
     }

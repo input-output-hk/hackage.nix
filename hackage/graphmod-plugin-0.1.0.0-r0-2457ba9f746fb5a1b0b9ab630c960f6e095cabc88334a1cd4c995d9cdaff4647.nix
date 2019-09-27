@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."dotgen" or (buildDepError "dotgen"))
           ];
+        buildable = true;
         };
       exes = {
         "graphmod-plugin" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."graphmod-plugin" or (buildDepError "graphmod-plugin"))
             ];
+          buildable = true;
           };
         };
       };

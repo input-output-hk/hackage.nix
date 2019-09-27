@@ -60,11 +60,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           ];
         libs = [ (pkgs."ldap" or (sysDepError "ldap")) ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
           libs = [ (pkgs."ldap" or (sysDepError "ldap")) ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

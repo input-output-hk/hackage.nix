@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."RefSerialize" or (buildDepError "RefSerialize"))
           ];
+        buildable = true;
         };
       };
     }

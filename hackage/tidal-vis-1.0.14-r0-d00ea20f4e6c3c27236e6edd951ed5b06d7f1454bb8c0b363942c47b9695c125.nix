@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."unagi-chan" or (buildDepError "unagi-chan"))
           ];
+        buildable = true;
         };
       exes = {
         "tidal-vis" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tidal-vis" or (buildDepError "tidal-vis"))
             ];
+          buildable = true;
           };
         };
       };

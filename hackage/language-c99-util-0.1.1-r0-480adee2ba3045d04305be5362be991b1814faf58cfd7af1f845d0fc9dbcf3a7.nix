@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."language-c99" or (buildDepError "language-c99"))
           ];
+        buildable = true;
         };
       };
     }

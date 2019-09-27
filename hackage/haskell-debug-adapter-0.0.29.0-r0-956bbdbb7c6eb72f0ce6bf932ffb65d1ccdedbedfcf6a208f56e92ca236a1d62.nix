@@ -81,6 +81,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "8.4.0"
+          then false
+          else true;
         };
       exes = {
         "haskell-debug-adapter" = {
@@ -111,6 +114,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "8.4.0"
+            then false
+            else true;
           };
         };
       tests = {
@@ -143,6 +149,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).lt "8.4.0"
+            then false
+            else true;
           };
         };
       };

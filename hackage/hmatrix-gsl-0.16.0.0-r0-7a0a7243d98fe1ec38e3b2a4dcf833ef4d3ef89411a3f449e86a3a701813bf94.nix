@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."gsl" or (sysDepError "gsl"))
           ] ++ (pkgs.lib).optional (system.isOsx) (pkgs."gsl" or (sysDepError "gsl"))) ++ (pkgs.lib).optional (system.isFreebsd) (pkgs."gsl" or (sysDepError "gsl"))) ++ (pkgs.lib).optional (system.isWindows) (pkgs."gsl-0" or (sysDepError "gsl-0"));
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate" or (sysDepError "Accelerate"));
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           (hsPkgs."Biobase" or (buildDepError "Biobase"))
           ];
+        buildable = true;
         };
       exes = {
         "MCFoldDP" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."split" or (buildDepError "split"))
             ];
+          buildable = true;
           };
         };
       };

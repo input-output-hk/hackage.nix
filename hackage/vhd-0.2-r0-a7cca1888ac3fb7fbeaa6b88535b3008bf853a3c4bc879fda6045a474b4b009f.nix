@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."storable-endian" or (buildDepError "storable-endian"))
           ];
+        buildable = true;
         };
       exes = {
         "Tests" = {
@@ -76,9 +77,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
+          buildable = if flags.test then true else false;
           };
         "vhd" = {
           depends = (pkgs.lib).optional (flags.executable) (hsPkgs."base" or (buildDepError "base"));
+          buildable = if flags.executable then true else false;
           };
         };
       };

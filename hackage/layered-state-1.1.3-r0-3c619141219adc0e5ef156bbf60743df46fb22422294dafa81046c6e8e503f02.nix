@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."typelevel" or (buildDepError "typelevel"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "layered-state-benchmark" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl-c" or (buildDepError "mtl-c"))
             (hsPkgs."timeit" or (buildDepError "timeit"))
             ];
+          buildable = true;
           };
         };
       };

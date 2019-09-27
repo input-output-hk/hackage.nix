@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
           (hsPkgs."strict-io" or (buildDepError "strict-io"))
           ];
+        buildable = true;
         };
       exes = {
         "egison" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             (hsPkgs."strict-io" or (buildDepError "strict-io"))
             ];
+          buildable = true;
           };
         "egisonc" = {
           depends = [
@@ -103,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."strict-io" or (buildDepError "strict-io"))
             ];
+          buildable = true;
           };
         };
       };

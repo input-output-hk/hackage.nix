@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."universe-base" or (buildDepError "universe-base"))
           (hsPkgs."universe-instances-base" or (buildDepError "universe-instances-base"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
             (hsPkgs."util-universe" or (buildDepError "util-universe"))
             ];
+          buildable = true;
           };
         };
       };

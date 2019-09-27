@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dph-base" or (buildDepError "dph-base"))
           (hsPkgs."dph-prim-seq" or (buildDepError "dph-prim-seq"))
           ];
+        buildable = true;
         };
       };
     }

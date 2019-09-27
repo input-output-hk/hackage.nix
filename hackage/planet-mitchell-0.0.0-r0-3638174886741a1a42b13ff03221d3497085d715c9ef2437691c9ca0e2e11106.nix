@@ -155,6 +155,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."weigh" or (buildDepError "weigh"))
           (hsPkgs."writer-cps-mtl" or (buildDepError "writer-cps-mtl"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mxnet" or (buildDepError "mxnet"))
           (hsPkgs."mxnet-nn" or (buildDepError "mxnet-nn"))
           ];
+        buildable = true;
         };
       tests = {
         "streaming" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mxnet" or (buildDepError "mxnet"))
             (hsPkgs."mxnet-dataiter" or (buildDepError "mxnet-dataiter"))
             ];
+          buildable = true;
           };
         "conduit" = {
           depends = [
@@ -82,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mxnet" or (buildDepError "mxnet"))
             (hsPkgs."mxnet-dataiter" or (buildDepError "mxnet-dataiter"))
             ];
+          buildable = true;
           };
         };
       };

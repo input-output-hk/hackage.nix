@@ -125,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-types" or (buildDepError "http-types"))
           ];
         build-tools = (pkgs.lib).optional (flags.embed_data_files) (hsPkgs.buildPackages.hsb2hs or (pkgs.buildPackages.hsb2hs or (buildToolDepError "hsb2hs")));
+        buildable = true;
         };
       exes = {
         "pandoc" = {
@@ -150,6 +151,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."network" or (buildDepError "network"))
               ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+          buildable = true;
           };
         "trypandoc" = {
           depends = (pkgs.lib).optionals (flags.trypandoc) [
@@ -161,6 +163,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."http-types" or (buildDepError "http-types"))
             ];
+          buildable = if flags.trypandoc then true else false;
           };
         "weigh-pandoc" = {
           depends = (pkgs.lib).optionals (flags.weigh-pandoc) [
@@ -168,6 +171,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."weigh" or (buildDepError "weigh"))
             ];
+          buildable = if flags.weigh-pandoc then true else false;
           };
         };
       tests = {
@@ -194,6 +198,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."executable-path" or (buildDepError "executable-path"))
             (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -204,6 +209,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

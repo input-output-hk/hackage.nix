@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."special-functors" or (buildDepError "special-functors"))
             (hsPkgs."base" or (buildDepError "base"))
             ]);
+        buildable = true;
         };
       exes = {
         "storable-record-speed" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."storablevector" or (buildDepError "storablevector"))
             (hsPkgs."timeit" or (buildDepError "timeit"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

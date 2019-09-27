@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dejafu" or (buildDepError "dejafu"))
           (hsPkgs."tasty" or (buildDepError "tasty"))
           ];
+        buildable = true;
         };
       };
     }

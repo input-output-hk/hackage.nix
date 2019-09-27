@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."memory" or (buildDepError "memory"))
           (hsPkgs."wai" or (buildDepError "wai"))
           ];
+        buildable = true;
         };
       exes = {
         "bot-example" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-middleware-slack-verify" or (buildDepError "wai-middleware-slack-verify"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = if flags.build-example then true else false;
           };
         };
       tests = {
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-slack-verify" or (buildDepError "wai-middleware-slack-verify"))
             ];
+          buildable = true;
           };
         };
       };

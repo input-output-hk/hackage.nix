@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."repa-eval" or (buildDepError "repa-eval"))
           (hsPkgs."repa-array" or (buildDepError "repa-array"))
           ];
+        buildable = true;
         };
       };
     }

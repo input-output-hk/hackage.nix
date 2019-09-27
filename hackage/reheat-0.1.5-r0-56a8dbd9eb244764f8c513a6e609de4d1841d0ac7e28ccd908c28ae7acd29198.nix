@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vty" or (buildDepError "vty"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vty" or (buildDepError "vty"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = true;
           };
         };
       };

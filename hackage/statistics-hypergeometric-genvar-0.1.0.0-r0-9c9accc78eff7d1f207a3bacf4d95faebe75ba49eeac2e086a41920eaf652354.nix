@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."math-functions" or (buildDepError "math-functions"))
           (hsPkgs."statistics" or (buildDepError "statistics"))
           ];
+        buildable = true;
         };
       };
     }

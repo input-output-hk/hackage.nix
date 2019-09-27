@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aivika" or (buildDepError "aivika"))
           (hsPkgs."aivika-transformers" or (buildDepError "aivika-transformers"))
           ];
+        buildable = true;
         };
       };
     }

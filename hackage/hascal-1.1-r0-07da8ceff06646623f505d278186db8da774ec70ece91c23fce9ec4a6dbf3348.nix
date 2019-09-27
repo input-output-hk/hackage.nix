@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."numbers" or (buildDepError "numbers"))
           ];
+        buildable = true;
         };
       exes = {
         "hascal" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."numbers" or (buildDepError "numbers"))
             ];
+          buildable = true;
           };
         };
       };

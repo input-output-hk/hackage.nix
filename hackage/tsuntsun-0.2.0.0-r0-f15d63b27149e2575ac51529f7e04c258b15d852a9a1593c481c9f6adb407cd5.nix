@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."typed-process" or (buildDepError "typed-process"))
             ];
+          buildable = true;
           };
         };
       };

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           ];
+        buildable = true;
         };
       exes = {
         "pandoc-crossref" = {
@@ -100,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -124,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             ];
+          buildable = true;
           };
         "test-pandoc-crossref" = {
           depends = [
@@ -145,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             ];
+          buildable = true;
           };
         };
       };

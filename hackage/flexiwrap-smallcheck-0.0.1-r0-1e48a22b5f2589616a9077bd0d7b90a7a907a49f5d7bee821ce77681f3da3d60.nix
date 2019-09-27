@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."flexiwrap" or (buildDepError "flexiwrap"))
           (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "6.6.1") (hsPkgs."special-functors" or (buildDepError "special-functors"));
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           (hsPkgs."xml-tydom-core" or (buildDepError "xml-tydom-core"))
           ];
+        buildable = true;
         };
       tests = {
         "xml-tydom-conduit-test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
             (hsPkgs."xml-tydom-conduit" or (buildDepError "xml-tydom-conduit"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Cocoa" or (sysDepError "Cocoa"));
+        buildable = true;
         };
       exes = {
         "typed-spreadsheet-example-text" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."typed-spreadsheet" or (buildDepError "typed-spreadsheet"))
             ];
           frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Cocoa" or (sysDepError "Cocoa"));
+          buildable = true;
           };
         "typed-spreadsheet-example-cell" = {
           depends = [
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."typed-spreadsheet" or (buildDepError "typed-spreadsheet"))
             ];
           frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Cocoa" or (sysDepError "Cocoa"));
+          buildable = true;
           };
         "typed-spreadsheet-example-graphics" = {
           depends = [
@@ -94,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."typed-spreadsheet" or (buildDepError "typed-spreadsheet"))
             ];
           frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Cocoa" or (sysDepError "Cocoa"));
+          buildable = true;
           };
         };
       };

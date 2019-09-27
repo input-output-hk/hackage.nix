@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGL" or (buildDepError "HGL"))
           (hsPkgs."Yampa" or (buildDepError "Yampa"))
           ];
+        buildable = true;
         };
       };
     }

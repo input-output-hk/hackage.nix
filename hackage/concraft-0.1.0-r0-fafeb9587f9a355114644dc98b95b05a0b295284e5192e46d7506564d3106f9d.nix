@@ -66,10 +66,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-ox" or (buildDepError "monad-ox"))
           (hsPkgs."sgd" or (buildDepError "sgd"))
           ];
+        buildable = true;
         };
       exes = {
         "concraft-guess" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lens" or (buildDepError "lens"))
           (hsPkgs."serialport" or (buildDepError "serialport"))
           ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."imj-base" or (buildDepError "imj-base"))
           (hsPkgs."imj-prelude" or (buildDepError "imj-prelude"))
           ];
+        buildable = true;
         };
       exes = {
         "imj-game-hamazed-exe" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."imj-game-hamazed" or (buildDepError "imj-game-hamazed"))
             (hsPkgs."imj-prelude" or (buildDepError "imj-prelude"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

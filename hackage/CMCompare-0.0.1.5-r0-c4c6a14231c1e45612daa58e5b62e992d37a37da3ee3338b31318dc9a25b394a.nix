@@ -63,10 +63,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
           (hsPkgs."BiobaseInfernal" or (buildDepError "BiobaseInfernal"))
           ];
+        buildable = true;
         };
       exes = {
         "CMCompare" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."base-orphans" or (buildDepError "base-orphans"))
           ];
+        buildable = true;
         };
       tests = {
         "Expr" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."recursion-schemes" or (buildDepError "recursion-schemes"))
             ];
+          buildable = true;
           };
         };
       };

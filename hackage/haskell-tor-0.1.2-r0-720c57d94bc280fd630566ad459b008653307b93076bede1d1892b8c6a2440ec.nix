@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."x509" or (buildDepError "x509"))
           (hsPkgs."x509-store" or (buildDepError "x509-store"))
           ] ++ (pkgs.lib).optional (flags.network && !system.isHalvm) (hsPkgs."network" or (buildDepError "network"))) ++ (pkgs.lib).optional (flags.hans) (hsPkgs."hans" or (buildDepError "hans"));
+        buildable = true;
         };
       exes = {
         "haskell-tor" = {
@@ -99,6 +100,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
             (hsPkgs."XenDevice" or (buildDepError "XenDevice"))
             ];
+          buildable = if !flags.hans && !flags.network || !flags.hans && system.isHalvm
+            then false
+            else true;
           };
         };
       tests = {
@@ -121,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."x509" or (buildDepError "x509"))
             ];
+          buildable = true;
           };
         };
       };

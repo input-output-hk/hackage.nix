@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           (hsPkgs."system-uuid" or (buildDepError "system-uuid"))
           ];
+        buildable = true;
         };
       };
     }

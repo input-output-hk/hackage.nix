@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
           (hsPkgs."stringsearch" or (buildDepError "stringsearch"))
           ];
+        buildable = true;
         };
       };
     }

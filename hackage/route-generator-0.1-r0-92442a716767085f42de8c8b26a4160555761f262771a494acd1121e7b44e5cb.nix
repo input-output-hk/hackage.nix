@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
             (hsPkgs."yesod-routes" or (buildDepError "yesod-routes"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stripe" or (buildDepError "stripe"))
           (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
           ];
+        buildable = true;
         };
       };
     }

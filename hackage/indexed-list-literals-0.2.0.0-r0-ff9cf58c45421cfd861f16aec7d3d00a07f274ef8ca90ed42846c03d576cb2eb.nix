@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."Only" or (buildDepError "Only"))
           ];
+        buildable = true;
         };
       tests = {
         "IndexedListLiterals-test" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."indexed-list-literals" or (buildDepError "indexed-list-literals"))
             ];
+          buildable = true;
           };
         };
       };

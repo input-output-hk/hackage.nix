@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
           (hsPkgs."securemem" or (buildDepError "securemem"))
           ];
+        buildable = true;
         };
       };
     }

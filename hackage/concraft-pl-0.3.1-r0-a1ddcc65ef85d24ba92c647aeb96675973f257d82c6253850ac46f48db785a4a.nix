@@ -71,10 +71,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."lazy-io" or (buildDepError "lazy-io"))
           ];
+        buildable = true;
         };
       exes = {
         "concraft-pl" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

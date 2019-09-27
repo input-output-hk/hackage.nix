@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
           (hsPkgs."BiobaseEnsembl" or (buildDepError "BiobaseEnsembl"))
           ];
+        buildable = true;
         };
       };
     }

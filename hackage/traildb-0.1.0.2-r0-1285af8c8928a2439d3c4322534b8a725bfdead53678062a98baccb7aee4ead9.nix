@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."traildb" or (sysDepError "traildb"))
           (pkgs."Judy" or (sysDepError "Judy"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "bench-traildb" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."traildb" or (buildDepError "traildb"))
             ];
+          buildable = true;
           };
         };
       };

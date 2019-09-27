@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."gecodesearch" or (sysDepError "gecodesearch"))
           ];
         frameworks = (pkgs.lib).optional (flags.runtimegecode) (pkgs."gecode" or (sysDepError "gecode"));
+        buildable = true;
         };
       };
     }

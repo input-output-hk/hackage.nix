@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."url-decoders" or (buildDepError "url-decoders"))
           ];
+        buildable = true;
         };
       };
     }

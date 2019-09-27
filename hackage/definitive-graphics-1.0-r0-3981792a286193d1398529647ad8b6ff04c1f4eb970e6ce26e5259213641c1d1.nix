@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zlib" or (buildDepError "zlib"))
           (hsPkgs."stb-truetype" or (buildDepError "stb-truetype"))
           ];
+        buildable = true;
         };
       };
     }

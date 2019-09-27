@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
             ]);
+        buildable = true;
         };
       };
     }

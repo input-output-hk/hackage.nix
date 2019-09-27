@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."simple-affine-space" or (buildDepError "simple-affine-space"))
           ];
+        buildable = true;
         };
       exes = {
         "yampa-examples-sdl-bouncingbox" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL" or (buildDepError "SDL"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "yampa-examples-sdl-circlingmouse" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SDL" or (buildDepError "SDL"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "yampa-examples-sdl-wiimote" = {
           depends = (pkgs.lib).optionals (flags.examples) [
@@ -95,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hcwiid" or (buildDepError "hcwiid"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -103,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = if !flags.test-hlint then false else true;
           };
         "haddock-coverage" = {
           depends = (pkgs.lib).optionals (!(!flags.test-doc-coverage)) [
@@ -112,12 +117,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             ];
+          buildable = if !flags.test-doc-coverage then false else true;
           };
         "regression" = {
           depends = (pkgs.lib).optionals (!(!flags.test-regression)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = if !flags.test-regression then false else true;
           };
         };
       };

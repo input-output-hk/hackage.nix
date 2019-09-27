@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."air" or (buildDepError "air"))
           (hsPkgs."hack2-interface-wai" or (buildDepError "hack2-interface-wai"))
           ];
+        buildable = true;
         };
       };
     }

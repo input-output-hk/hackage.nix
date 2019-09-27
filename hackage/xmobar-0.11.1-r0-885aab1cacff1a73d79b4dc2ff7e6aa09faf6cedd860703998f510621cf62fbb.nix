@@ -88,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."X11-xft" or (buildDepError "X11-xft"))
             ]) ++ (pkgs.lib).optional (flags.with_utf8) (hsPkgs."utf8-string" or (buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.with_inotify) (hsPkgs."hinotify" or (buildDepError "hinotify"))) ++ (pkgs.lib).optional (flags.with_mpd) (hsPkgs."libmpd" or (buildDepError "libmpd"));
           libs = (pkgs.lib).optional (flags.with_iwlib) (pkgs."iw" or (sysDepError "iw"));
+          buildable = true;
           };
         };
       };

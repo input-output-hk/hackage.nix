@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ] ++ (pkgs.lib).optional (flags.cairo) (hsPkgs."diagrams-cairo" or (buildDepError "diagrams-cairo"));
+        buildable = true;
         };
       exes = {
         "drawpuzzle" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."diagrams-cairo" or (buildDepError "diagrams-cairo"))
               ]
             else [ (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg")) ]);
+          buildable = true;
           };
         };
       };

@@ -67,7 +67,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
-      exes = { "manatee-terminal" = {}; };
+      exes = { "manatee-terminal" = { buildable = true; }; };
       };
     }

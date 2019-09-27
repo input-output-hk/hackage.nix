@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."mmap" or (buildDepError "mmap"))
           ];
+        buildable = true;
         };
       tests = {
         "btree-quickcheck" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."b-tree" or (buildDepError "b-tree"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -101,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."errors" or (buildDepError "errors"))
             (hsPkgs."mmap" or (buildDepError "mmap"))
             ];
+          buildable = true;
           };
         };
       };

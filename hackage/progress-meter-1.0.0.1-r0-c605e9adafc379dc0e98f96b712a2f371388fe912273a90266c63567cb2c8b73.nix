@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rapid" or (buildDepError "rapid"))
           (hsPkgs."rapid-term" or (buildDepError "rapid-term"))
           ];
+        buildable = true;
         };
       };
     }

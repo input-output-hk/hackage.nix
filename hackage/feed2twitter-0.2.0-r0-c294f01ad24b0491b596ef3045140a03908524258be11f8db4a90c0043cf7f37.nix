@@ -62,7 +62,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."feed" or (buildDepError "feed"))
           (hsPkgs."hs-twitter" or (buildDepError "hs-twitter"))
           ];
+        buildable = true;
         };
-      exes = { "feed2twitter" = {}; };
+      exes = { "feed2twitter" = { buildable = true; }; };
       };
     }

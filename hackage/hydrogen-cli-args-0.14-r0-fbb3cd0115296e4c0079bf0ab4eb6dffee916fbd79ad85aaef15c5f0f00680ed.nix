@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hydrogen-multimap" or (buildDepError "hydrogen-multimap"))
           (hsPkgs."hydrogen-prelude" or (buildDepError "hydrogen-prelude"))
           ];
+        buildable = true;
         };
       };
     }

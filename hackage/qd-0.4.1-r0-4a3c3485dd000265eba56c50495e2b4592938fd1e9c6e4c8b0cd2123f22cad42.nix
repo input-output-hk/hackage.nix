@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = [
           (pkgs."qd" or (sysDepError "qd"))
           ] ++ (pkgs.lib).optional (system.isLinux) (pkgs."stdc++" or (sysDepError "stdc++"));
+        buildable = true;
         };
       };
     }

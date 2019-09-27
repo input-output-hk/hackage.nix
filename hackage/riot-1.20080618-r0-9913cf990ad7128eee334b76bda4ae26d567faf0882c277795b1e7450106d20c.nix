@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ];
           libs = [ (pkgs."ncursesw" or (sysDepError "ncursesw")) ];
+          buildable = true;
           };
         };
       };

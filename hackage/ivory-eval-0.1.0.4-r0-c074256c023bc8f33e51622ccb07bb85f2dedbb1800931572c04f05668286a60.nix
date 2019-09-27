@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monadLib" or (buildDepError "monadLib"))
           (hsPkgs."ivory" or (buildDepError "ivory"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ivory" or (buildDepError "ivory"))
             (hsPkgs."ivory-eval" or (buildDepError "ivory-eval"))
             ];
+          buildable = true;
           };
         };
       };

@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uuid" or (buildDepError "uuid"))
           (hsPkgs."void" or (buildDepError "void"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sqlite-simple" or (buildDepError "sqlite-simple"))
             (hsPkgs."opaleye-sqlite" or (buildDepError "opaleye-sqlite"))
             ];
+          buildable = true;
           };
         "tutorial" = {
           depends = [
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."opaleye-sqlite" or (buildDepError "opaleye-sqlite"))
             ];
+          buildable = true;
           };
         };
       };

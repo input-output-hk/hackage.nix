@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hist-pl-transliter" or (buildDepError "hist-pl-transliter"))
           (hsPkgs."morfeusz" or (buildDepError "morfeusz"))
           ];
+        buildable = true;
         };
       exes = {
         "hist-pl" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hist-pl-dawg" or (buildDepError "hist-pl-dawg"))
             (hsPkgs."hist-pl-lmf" or (buildDepError "hist-pl-lmf"))
             ];
+          buildable = true;
           };
         };
       };

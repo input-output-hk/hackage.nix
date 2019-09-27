@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
           (hsPkgs."casing" or (buildDepError "casing"))
           ];
+        buildable = true;
         };
       exes = {
         "crud" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "parser" = {
           depends = [
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"))
             (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "person" = {
           depends = [
@@ -108,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
             (hsPkgs."casing" or (buildDepError "casing"))
             ] ++ (pkgs.lib).optional (flags.buildexamples) (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"));
+          buildable = if flags.buildexamples then true else false;
           };
         };
       };

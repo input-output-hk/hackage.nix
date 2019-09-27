@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."usb" or (buildDepError "usb"))
             (hsPkgs."usb-id-database" or (buildDepError "usb-id-database"))
             ];
+          buildable = true;
           };
         };
       };

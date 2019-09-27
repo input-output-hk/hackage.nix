@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       tests = {
         "memoize-test1" = {
@@ -66,12 +67,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."memoize" or (buildDepError "memoize"))
             ];
+          buildable = true;
           };
         "memoize-test2" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."memoize" or (buildDepError "memoize"))
             ];
+          buildable = true;
           };
         };
       };

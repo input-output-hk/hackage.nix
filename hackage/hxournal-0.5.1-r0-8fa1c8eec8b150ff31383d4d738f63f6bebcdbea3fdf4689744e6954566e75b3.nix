@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           (hsPkgs."configurator" or (buildDepError "configurator"))
           ];
+        buildable = true;
         };
       exes = {
         "hxournal" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."hxournal" or (buildDepError "hxournal"))
             ];
+          buildable = true;
           };
         };
       };

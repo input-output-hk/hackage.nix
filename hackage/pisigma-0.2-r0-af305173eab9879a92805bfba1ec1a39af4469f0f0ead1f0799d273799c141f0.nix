@@ -68,7 +68,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
-      exes = { "pisigma" = {}; };
+      exes = { "pisigma" = { buildable = true; }; };
       };
     }

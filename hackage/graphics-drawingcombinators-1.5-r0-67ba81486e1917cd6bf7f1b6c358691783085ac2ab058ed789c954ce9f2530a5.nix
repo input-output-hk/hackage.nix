@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.ftgl
           then [ (hsPkgs."FTGL" or (buildDepError "FTGL")) ]
           else [ (hsPkgs."GLUT" or (buildDepError "GLUT")) ]);
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."graphics-drawingcombinators" or (buildDepError "graphics-drawingcombinators"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."LDAP" or (buildDepError "LDAP"))
           ];
+        buildable = true;
         };
       };
     }

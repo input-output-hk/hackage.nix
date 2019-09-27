@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml-conduit-parse" or (buildDepError "xml-conduit-parse"))
           (hsPkgs."xml-types" or (buildDepError "xml-types"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
             (hsPkgs."xml-conduit-parse" or (buildDepError "xml-conduit-parse"))
             ];
+          buildable = true;
           };
         };
       };

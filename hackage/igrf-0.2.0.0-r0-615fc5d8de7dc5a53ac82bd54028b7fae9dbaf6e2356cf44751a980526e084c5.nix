@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ad" or (buildDepError "ad"))
           (hsPkgs."polynomial" or (buildDepError "polynomial"))
           ];
+        buildable = true;
         };
       };
     }

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
           (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
           ];
+        buildable = true;
         };
       tests = {
         "basic" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
             (hsPkgs."persistent-redis" or (buildDepError "persistent-redis"))
             ];
+          buildable = true;
           };
         };
       };

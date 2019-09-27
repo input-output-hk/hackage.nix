@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."sednaDBXML" or (buildDepError "sednaDBXML"))
           (hsPkgs."snap" or (buildDepError "snap"))
           ];
+        buildable = true;
         };
       };
     }

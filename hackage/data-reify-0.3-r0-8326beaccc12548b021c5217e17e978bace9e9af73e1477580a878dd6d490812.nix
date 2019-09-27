@@ -59,25 +59,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       exes = {
         "data-reify-test1" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = false;
           };
         "data-reify-test2" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = false;
           };
         "data-reify-test3" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = false;
           };
         "data-reify-test4" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = false;
           };
         "data-reify-test5" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = false;
           };
         "data-reify-test6" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = false;
           };
         };
       };

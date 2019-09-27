@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uniplate" or (buildDepError "uniplate"))
           (hsPkgs."tuple" or (buildDepError "tuple"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."checkers" or (buildDepError "checkers"))
             (hsPkgs."th-instances" or (buildDepError "th-instances"))
             ];
+          buildable = true;
           };
         };
       };

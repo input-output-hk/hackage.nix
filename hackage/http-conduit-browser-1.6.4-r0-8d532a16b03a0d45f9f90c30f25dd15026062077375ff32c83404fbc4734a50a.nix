@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."socks" or (buildDepError "socks"))
           ] ++ [ (hsPkgs."http-conduit" or (buildDepError "http-conduit")) ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -99,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."socks" or (buildDepError "socks"))
             ];
+          buildable = true;
           };
         };
       };

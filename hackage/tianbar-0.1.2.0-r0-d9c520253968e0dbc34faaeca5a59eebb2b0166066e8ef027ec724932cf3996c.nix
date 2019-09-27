@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xmonad-contrib" or (buildDepError "xmonad-contrib"))
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ];
+        buildable = true;
         };
       exes = {
         "tianbar" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           pkgconfig = [
             (pkgconfPkgs."gtk+-2.0" or (pkgConfDepError "gtk+-2.0"))
             ];
+          buildable = true;
           };
         };
       };

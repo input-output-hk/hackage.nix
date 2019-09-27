@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."opentheory-primitive" or (buildDepError "opentheory-primitive"))
             (hsPkgs."opentheory-prime" or (buildDepError "opentheory-prime"))
             ];
+          buildable = true;
           };
         "nth-prime-test" = {
           depends = [
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."opentheory-primitive" or (buildDepError "opentheory-primitive"))
             (hsPkgs."opentheory-prime" or (buildDepError "opentheory-prime"))
             ];
+          buildable = true;
           };
         };
       };

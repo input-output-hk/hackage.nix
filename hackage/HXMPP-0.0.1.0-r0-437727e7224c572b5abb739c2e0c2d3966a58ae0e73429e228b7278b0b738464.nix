@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."xml-enumerator" or (buildDepError "xml-enumerator"))
           ];
+        buildable = true;
         };
       exes = {
         "hxmpp-0.0.1.0-test" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."xml-enumerator" or (buildDepError "xml-enumerator"))
             ];
+          buildable = true;
           };
         };
       };

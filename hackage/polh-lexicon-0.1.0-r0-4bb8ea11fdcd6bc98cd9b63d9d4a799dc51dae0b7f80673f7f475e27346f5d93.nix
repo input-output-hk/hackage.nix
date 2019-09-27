@@ -67,7 +67,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
-      exes = { "polh-binarize" = {}; "polh-show" = {}; };
+      exes = {
+        "polh-binarize" = { buildable = true; };
+        "polh-show" = { buildable = true; };
+        };
       };
     }

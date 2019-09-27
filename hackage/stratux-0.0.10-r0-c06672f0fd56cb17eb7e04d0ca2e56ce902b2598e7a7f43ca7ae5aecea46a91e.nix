@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stratux-http" or (buildDepError "stratux-http"))
           (hsPkgs."stratux-websockets" or (buildDepError "stratux-websockets"))
           ];
+        buildable = true;
         };
       };
     }

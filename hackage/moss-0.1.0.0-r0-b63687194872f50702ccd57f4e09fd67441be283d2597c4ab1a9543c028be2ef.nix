@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network-simple" or (buildDepError "network-simple"))
           (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
           ];
+        buildable = true;
         };
       };
     }

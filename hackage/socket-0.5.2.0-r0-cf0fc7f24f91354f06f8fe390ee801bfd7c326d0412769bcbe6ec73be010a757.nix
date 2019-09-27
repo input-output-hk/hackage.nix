@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
+        buildable = true;
         };
       tests = {
         "UDP" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."socket" or (buildDepError "socket"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         "TCP" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."socket" or (buildDepError "socket"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         "TCP-sendAndRecvAll" = {
           depends = [
@@ -88,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."socket" or (buildDepError "socket"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         "PingPong" = {
           depends = [
@@ -96,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."socket" or (buildDepError "socket"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         "AddrInfo" = {
           depends = [
@@ -103,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."socket" or (buildDepError "socket"))
             ];
+          buildable = true;
           };
         "NonBlockingIO" = {
           depends = [
@@ -111,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."socket" or (buildDepError "socket"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         "NonBlockingIO-threaded" = {
           depends = [
@@ -119,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."socket" or (buildDepError "socket"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         "IPV6_V6ONLY" = {
           depends = [
@@ -127,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."socket" or (buildDepError "socket"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         "EPIPE" = {
           depends = [
@@ -135,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."socket" or (buildDepError "socket"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         };
       };

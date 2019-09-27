@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xhb" or (buildDepError "xhb"))
           (hsPkgs."xhb-atom-cache" or (buildDepError "xhb-atom-cache"))
           ];
+        buildable = true;
         };
       };
     }

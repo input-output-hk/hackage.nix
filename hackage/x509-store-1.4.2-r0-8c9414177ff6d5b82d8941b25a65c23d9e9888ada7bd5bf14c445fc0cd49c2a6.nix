@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."crypto-pubkey-types" or (buildDepError "crypto-pubkey-types"))
           (hsPkgs."x509" or (buildDepError "x509"))
           ];
+        buildable = true;
         };
       };
     }

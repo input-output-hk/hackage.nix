@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
           (hsPkgs."distributed-process-platform" or (buildDepError "distributed-process-platform"))
           ] ++ (pkgs.lib).optional (flags.tcp) (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))) ++ (pkgs.lib).optional (flags.simplelocalnet) (hsPkgs."distributed-process-simplelocalnet" or (buildDepError "distributed-process-simplelocalnet"))) ++ (pkgs.lib).optional (flags.p2p) (hsPkgs."distributed-process-p2p" or (buildDepError "distributed-process-p2p"));
+        buildable = true;
         };
       };
     }

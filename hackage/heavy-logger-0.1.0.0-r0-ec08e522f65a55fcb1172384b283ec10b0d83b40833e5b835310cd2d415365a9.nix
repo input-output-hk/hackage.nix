@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsyslog" or (buildDepError "hsyslog"))
           (hsPkgs."text-format-heavy" or (buildDepError "text-format-heavy"))
           ];
+        buildable = true;
         };
       };
     }

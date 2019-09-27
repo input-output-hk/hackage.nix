@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       exes = {
         "git-vogue" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "git-vogue-cabal" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."git-vogue" or (buildDepError "git-vogue"))
             ];
+          buildable = true;
           };
         "git-vogue-hlint" = {
           depends = [
@@ -97,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hlint" or (buildDepError "hlint"))
             (hsPkgs."hscolour" or (buildDepError "hscolour"))
             ];
+          buildable = true;
           };
         "git-vogue-packunused" = {
           depends = [
@@ -104,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."git-vogue" or (buildDepError "git-vogue"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         "git-vogue-stylish" = {
           depends = [
@@ -113,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."strict" or (buildDepError "strict"))
             (hsPkgs."stylish-haskell" or (buildDepError "stylish-haskell"))
             ];
+          buildable = true;
           };
         "git-vogue-ghc-mod" = {
           depends = (pkgs.lib).optionals (flags.ghc-mod) [
@@ -120,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
             (hsPkgs."git-vogue" or (buildDepError "git-vogue"))
             ];
+          buildable = if flags.ghc-mod then true else false;
           };
         };
       tests = {
@@ -137,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.git or (pkgs.buildPackages.git or (buildToolDepError "git")))
             ];
+          buildable = true;
           };
         };
       };

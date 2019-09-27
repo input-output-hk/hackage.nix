@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."dimensions" or (buildDepError "dimensions"))
           ];
+        buildable = true;
         };
       tests = {
         "et-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."easytensor" or (buildDepError "easytensor"))
             (hsPkgs."dimensions" or (buildDepError "dimensions"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."easytensor" or (buildDepError "easytensor"))
             (hsPkgs."dimensions" or (buildDepError "dimensions"))
             ];
+          buildable = true;
           };
         "et-bench-spfolds" = {
           depends = [
@@ -87,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dimensions" or (buildDepError "dimensions"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

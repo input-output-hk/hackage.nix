@@ -84,12 +84,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
-        "synthi-llvm-example" = {};
-        "synthi-llvm-server" = {};
+        "synthi-llvm-example" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        "synthi-llvm-server" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
         "synthi-llvm-test" = {
           depends = (pkgs.lib).optional (flags.buildtests) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

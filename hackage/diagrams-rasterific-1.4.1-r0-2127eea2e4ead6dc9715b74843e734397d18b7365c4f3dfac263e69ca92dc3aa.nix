@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."file-embed" or (buildDepError "file-embed"))
           ];
+        buildable = true;
         };
       tests = {
         "test0" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."diagrams-core" or (buildDepError "diagrams-core"))
             (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
             ];
+          buildable = true;
           };
         "test1" = {
           depends = [
@@ -89,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."diagrams-core" or (buildDepError "diagrams-core"))
             (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
             ];
+          buildable = true;
           };
         };
       };

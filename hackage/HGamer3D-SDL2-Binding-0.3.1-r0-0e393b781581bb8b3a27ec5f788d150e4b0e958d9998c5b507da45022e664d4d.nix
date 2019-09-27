@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."SDL2-2.0" or (sysDepError "SDL2-2.0"))
             (pkgs."X11" or (sysDepError "X11"))
             ];
+        buildable = true;
         };
       };
     }

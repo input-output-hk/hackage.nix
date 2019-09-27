@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
           ];
+        buildable = true;
         };
       };
     }

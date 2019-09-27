@@ -57,6 +57,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = (pkgs.lib).optionals (!system.isLinux) ((pkgs.lib).optional (system.isWindows) (pkgs."iphlpapi" or (sysDepError "iphlpapi")));
+        buildable = if system.isLinux
+          then true
+          else if system.isWindows then true else false;
         };
       exes = {
         "test-network-info" = {
@@ -64,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."network-info" or (buildDepError "network-info"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

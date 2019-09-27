@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."relational-schemas" or (buildDepError "relational-schemas"))
           ];
+        buildable = true;
         };
       exes = {
         "examples" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if flags.binary then true else false;
           };
         };
       };

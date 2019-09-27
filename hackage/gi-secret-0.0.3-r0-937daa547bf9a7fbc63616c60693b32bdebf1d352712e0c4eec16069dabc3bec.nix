@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libsecret-1" or (pkgConfDepError "libsecret-1"))
           ];
+        buildable = true;
         };
       };
     }

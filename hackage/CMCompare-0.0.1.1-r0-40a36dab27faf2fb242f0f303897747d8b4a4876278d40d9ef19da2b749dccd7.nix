@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."BiobaseInfernal" or (buildDepError "BiobaseInfernal"))
             (hsPkgs."HsTools" or (buildDepError "HsTools"))
             ];
+          buildable = true;
           };
         };
       };

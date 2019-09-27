@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
           ];
+        buildable = true;
         };
       exes = {
         "yesod-auth-oauth2-example" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
             (hsPkgs."yesod-auth-oauth2" or (buildDepError "yesod-auth-oauth2"))
             ];
+          buildable = if !flags.example then false else true;
           };
         };
       tests = {
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
             (hsPkgs."yesod-auth-oauth2" or (buildDepError "yesod-auth-oauth2"))
             ];
+          buildable = true;
           };
         };
       };

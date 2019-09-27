@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pipes-aeson" or (buildDepError "pipes-aeson"))
           (hsPkgs."pipes-wai" or (buildDepError "pipes-wai"))
           ];
+        buildable = true;
         };
       };
     }

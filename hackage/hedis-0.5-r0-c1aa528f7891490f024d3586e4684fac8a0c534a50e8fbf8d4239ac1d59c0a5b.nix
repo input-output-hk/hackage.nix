@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "hedis-benchmark" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hedis" or (buildDepError "hedis"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if flags.benchmark then true else false;
           };
         "hedis-test" = {
           depends = (pkgs.lib).optionals (flags.test) [
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
           (hsPkgs."hoauth2" or (buildDepError "hoauth2"))
           ];
+        buildable = true;
         };
       tests = {
         "oauth-unit-tests" = {
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."snaplet-oauth" or (buildDepError "snaplet-oauth"))
             ];
+          buildable = true;
           };
         };
       };

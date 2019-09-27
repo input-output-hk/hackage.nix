@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."rio" or (buildDepError "rio"))
           (hsPkgs."say" or (buildDepError "say"))
           ];
+        buildable = true;
         };
       exes = {
         "tonaparser-example" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."say" or (buildDepError "say"))
             (hsPkgs."tonaparser" or (buildDepError "tonaparser"))
             ];
+          buildable = if flags.buildexample then true else false;
           };
         };
       tests = {
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rio" or (buildDepError "rio"))
             (hsPkgs."say" or (buildDepError "say"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = [
@@ -92,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."say" or (buildDepError "say"))
             (hsPkgs."tonatona" or (buildDepError "tonatona"))
             ];
+          buildable = true;
           };
         };
       };

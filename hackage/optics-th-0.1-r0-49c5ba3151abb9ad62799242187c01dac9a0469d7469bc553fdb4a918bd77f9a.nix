@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."th-abstraction" or (buildDepError "th-abstraction"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "optics-th-tests" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optics-core" or (buildDepError "optics-core"))
             (hsPkgs."optics-th" or (buildDepError "optics-th"))
             ];
+          buildable = true;
           };
         };
       };

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."lambdacube-core" or (buildDepError "lambdacube-core"))
           ];
+        buildable = true;
         };
       };
     }

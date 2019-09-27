@@ -107,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network" or (buildDepError "network"))
               (hsPkgs."network" or (buildDepError "network"))
               ]);
+          buildable = true;
           };
         "gitriddance" = {
           depends = ([
@@ -142,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."network" or (buildDepError "network"))
               (hsPkgs."network" or (buildDepError "network"))
               ]);
+          buildable = true;
           };
         };
       };

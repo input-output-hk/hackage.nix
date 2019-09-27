@@ -70,7 +70,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
-      exes = { "manatee-pdfviewer" = {}; };
+      exes = { "manatee-pdfviewer" = { buildable = true; }; };
       };
     }

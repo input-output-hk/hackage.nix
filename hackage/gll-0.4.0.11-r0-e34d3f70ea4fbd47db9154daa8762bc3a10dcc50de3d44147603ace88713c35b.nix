@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."random-strings" or (buildDepError "random-strings"))
           ];
+        buildable = true;
         };
       };
     }

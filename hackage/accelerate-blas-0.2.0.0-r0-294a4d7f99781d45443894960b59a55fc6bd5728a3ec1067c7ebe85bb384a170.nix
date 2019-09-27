@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."llvm-hs-pure" or (buildDepError "llvm-hs-pure"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       tests = {
         "test-llvm-native" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
             ];
+          buildable = if !flags.llvm-cpu then false else true;
           };
         "test-llvm-ptx" = {
           depends = [
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
             ];
+          buildable = if !flags.llvm-ptx then false else true;
           };
         };
       benchmarks = {
@@ -108,6 +111,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
             ];
+          buildable = if !flags.llvm-cpu && !flags.llvm-ptx
+            then false
+            else true;
           };
         "bench-llvm-native" = {
           depends = [
@@ -119,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
             (hsPkgs."mwc-random-accelerate" or (buildDepError "mwc-random-accelerate"))
             ];
+          buildable = if !flags.llvm-cpu then false else true;
           };
         "bench-llvm-ptx" = {
           depends = [
@@ -130,6 +137,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
             (hsPkgs."mwc-random-accelerate" or (buildDepError "mwc-random-accelerate"))
             ];
+          buildable = if !flags.llvm-ptx then false else true;
           };
         };
       };

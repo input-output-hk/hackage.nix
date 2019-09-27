@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-pony-transformer-http" or (buildDepError "http-pony-transformer-http"))
           (hsPkgs."http-pony-transformer-startline" or (buildDepError "http-pony-transformer-startline"))
           ];
+        buildable = true;
         };
       };
     }

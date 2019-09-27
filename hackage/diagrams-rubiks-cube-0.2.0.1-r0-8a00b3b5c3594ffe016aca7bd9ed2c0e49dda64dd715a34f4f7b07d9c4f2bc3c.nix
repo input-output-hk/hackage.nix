@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."distributive" or (buildDepError "distributive"))
           (hsPkgs."adjunctions" or (buildDepError "adjunctions"))
           ];
+        buildable = true;
         };
       };
     }

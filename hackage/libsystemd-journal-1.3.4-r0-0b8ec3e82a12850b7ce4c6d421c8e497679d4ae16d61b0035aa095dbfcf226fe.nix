@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."libsystemd" or (pkgConfDepError "libsystemd"))
           ];
+        buildable = true;
         };
       };
     }

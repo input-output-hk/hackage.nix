@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."grapefruit-frp" or (buildDepError "grapefruit-frp"))
           ];
+        buildable = true;
         };
       };
     }

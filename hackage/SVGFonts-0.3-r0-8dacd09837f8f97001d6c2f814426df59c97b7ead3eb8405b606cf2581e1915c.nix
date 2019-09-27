@@ -71,7 +71,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tga" or (buildDepError "tga"))
           (hsPkgs."tuple" or (buildDepError "tuple"))
           ];
+        buildable = true;
         };
-      exes = { "Fonts" = {}; };
+      exes = { "Fonts" = { buildable = true; }; };
       };
     }

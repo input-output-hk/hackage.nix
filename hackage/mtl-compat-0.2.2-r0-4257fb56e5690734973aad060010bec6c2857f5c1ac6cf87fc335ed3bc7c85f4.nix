@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             ]
           else [ (hsPkgs."mtl" or (buildDepError "mtl")) ]);
+        buildable = true;
         };
       };
     }

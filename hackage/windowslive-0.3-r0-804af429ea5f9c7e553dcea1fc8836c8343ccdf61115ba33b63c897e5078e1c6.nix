@@ -67,10 +67,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."urlencoded" or (buildDepError "urlencoded"))
           ];
+        buildable = true;
         };
       exes = {
         "test" = {
           depends = (pkgs.lib).optional (flags.test) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if flags.test then true else false;
           };
         };
       };

@@ -202,6 +202,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ascii-progress" or (buildDepError "ascii-progress"))
             (hsPkgs."terminal-size" or (buildDepError "terminal-size"))
             ]) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs."ekg" or (buildDepError "ekg"));
+          buildable = true;
           };
         };
       };

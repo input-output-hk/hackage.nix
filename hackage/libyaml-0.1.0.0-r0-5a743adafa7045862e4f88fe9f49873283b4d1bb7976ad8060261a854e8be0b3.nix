@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           ];
         libs = (pkgs.lib).optional (!(!flags.system-libyaml)) (pkgs."yaml" or (sysDepError "yaml"));
+        buildable = true;
         };
       };
     }

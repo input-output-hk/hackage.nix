@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
           ];
+        buildable = true;
         };
       exes = {
         "GetObject" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "SimpleDb" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -101,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aws" or (buildDepError "aws"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "Sqs" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
@@ -108,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aws" or (buildDepError "aws"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

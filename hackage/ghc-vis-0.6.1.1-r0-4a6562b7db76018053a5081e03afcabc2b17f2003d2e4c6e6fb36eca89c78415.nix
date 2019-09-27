@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."graphviz" or (buildDepError "graphviz"))
           (hsPkgs."xdot" or (buildDepError "xdot"))
           ]) ++ (pkgs.lib).optional (flags.full) (hsPkgs."svgcairo" or (buildDepError "svgcairo"))) ++ (pkgs.lib).optional (flags.sdl) (hsPkgs."SDL" or (buildDepError "SDL"));
+        buildable = true;
         };
       };
     }

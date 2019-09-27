@@ -71,7 +71,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."data-memocombinators" or (buildDepError "data-memocombinators"))
           ];
+        buildable = true;
         };
-      exes = { "_rsagl_process_colors" = {}; };
+      exes = { "_rsagl_process_colors" = { buildable = true; }; };
       };
     }

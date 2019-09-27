@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dph-base" or (buildDepError "dph-base"))
           (hsPkgs."dph-prim-interface" or (buildDepError "dph-prim-interface"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
           ];
+        buildable = true;
         };
       };
     }

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."expat" or (sysDepError "expat"))
           (pkgs."resolv" or (sysDepError "resolv"))
           ];
+        buildable = true;
         };
       };
     }

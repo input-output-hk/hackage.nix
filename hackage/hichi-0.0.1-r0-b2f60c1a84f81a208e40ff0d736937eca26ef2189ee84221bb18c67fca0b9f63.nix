@@ -63,8 +63,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = true;
           };
-        "test-rc4" = {};
+        "test-rc4" = { buildable = if flags.test then true else false; };
         };
       };
     }

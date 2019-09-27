@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."unfoldable-restricted" or (buildDepError "unfoldable-restricted"))
           ];
+        buildable = true;
         };
       };
     }

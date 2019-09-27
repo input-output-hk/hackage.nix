@@ -62,6 +62,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+          then false
+          else true;
         };
       tests = {
         "test" = {
@@ -79,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

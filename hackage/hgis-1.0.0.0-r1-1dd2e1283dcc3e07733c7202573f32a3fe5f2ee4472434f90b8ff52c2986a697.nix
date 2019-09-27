@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
           ] ++ (pkgs.lib).optional (flags.cairo) (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"));
+        buildable = true;
         };
       tests = {
         "hgis-test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hgis" or (buildDepError "hgis"))
             (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
+          buildable = true;
           };
         };
       };

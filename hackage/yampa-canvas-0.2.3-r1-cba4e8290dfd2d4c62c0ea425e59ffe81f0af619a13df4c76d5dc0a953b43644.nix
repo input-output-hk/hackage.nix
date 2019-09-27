@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."Yampa" or (buildDepError "Yampa"))
           ];
+        buildable = true;
         };
       exes = {
         "yampa-canvas-bouncing-balls" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             (hsPkgs."yampa-canvas" or (buildDepError "yampa-canvas"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

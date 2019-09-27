@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."http-pony-transformer-http" or (buildDepError "http-pony-transformer-http"))
           ];
+        buildable = true;
         };
       };
     }

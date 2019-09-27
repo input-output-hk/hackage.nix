@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network-simple" or (buildDepError "network-simple"))
           (hsPkgs."rfc1413-types" or (buildDepError "rfc1413-types"))
           ];
+        buildable = true;
         };
       };
     }

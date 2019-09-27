@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenAL" or (buildDepError "OpenAL"))
             (hsPkgs."ALUT" or (buildDepError "ALUT"))
             ]) ++ (pkgs.lib).optional (flags.ftgl) (hsPkgs."FTGL" or (buildDepError "FTGL"));
+          buildable = true;
           };
         "pdflaby" = {
           depends = (pkgs.lib).optionals (flags.pdflaby) [
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."cairo" or (buildDepError "cairo"))
             ];
+          buildable = if flags.pdflaby then true else false;
           };
         };
       };

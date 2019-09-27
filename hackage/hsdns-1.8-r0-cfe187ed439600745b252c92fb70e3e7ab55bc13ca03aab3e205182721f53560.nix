@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "adns-reverse-lookup" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."hsdns" or (buildDepError "hsdns"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         "adns-srv-test" = {
           depends = (pkgs.lib).optionals (flags.install-examples) [
@@ -79,12 +81,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."hsdns" or (buildDepError "hsdns"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         "adns-test-and-traverse" = {
           depends = (pkgs.lib).optionals (flags.install-examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hsdns" or (buildDepError "hsdns"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hourglass" or (buildDepError "hourglass"))
           (hsPkgs."asn1-types" or (buildDepError "asn1-types"))
           ];
+        buildable = true;
         };
       tests = {
         "tests-asn1-encoding" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
             (hsPkgs."hourglass" or (buildDepError "hourglass"))
             ];
+          buildable = true;
           };
         };
       };

@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
           (hsPkgs."pqueue" or (buildDepError "pqueue"))
           ];
+        buildable = true;
         };
       };
     }

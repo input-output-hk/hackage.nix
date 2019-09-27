@@ -61,12 +61,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"))) ++ [
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "ansi-wl-pprint-example" = {
           depends = [
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if !flags.example then false else true;
           };
         };
       };

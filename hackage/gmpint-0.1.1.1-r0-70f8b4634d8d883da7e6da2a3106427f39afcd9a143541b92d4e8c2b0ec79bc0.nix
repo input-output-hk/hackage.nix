@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."micro-recursion-schemes" or (buildDepError "micro-recursion-schemes"))
           ];
         libs = [ (pkgs."gmp" or (sysDepError "gmp")) ];
+        buildable = true;
         };
       };
     }

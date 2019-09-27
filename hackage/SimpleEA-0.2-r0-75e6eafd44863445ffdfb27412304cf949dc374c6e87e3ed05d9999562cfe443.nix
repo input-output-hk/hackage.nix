@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
           (hsPkgs."mersenne-random-pure64" or (buildDepError "mersenne-random-pure64"))
           ];
+        buildable = true;
         };
       };
     }

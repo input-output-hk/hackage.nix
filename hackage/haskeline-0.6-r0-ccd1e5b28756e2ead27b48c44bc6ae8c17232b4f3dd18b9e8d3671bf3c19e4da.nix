@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             ] ++ (pkgs.lib).optional (flags.terminfo) (hsPkgs."terminfo" or (buildDepError "terminfo")));
         libs = (pkgs.lib).optional (!system.isWindows) (pkgs."iconv" or (sysDepError "iconv"));
+        buildable = true;
         };
       };
     }

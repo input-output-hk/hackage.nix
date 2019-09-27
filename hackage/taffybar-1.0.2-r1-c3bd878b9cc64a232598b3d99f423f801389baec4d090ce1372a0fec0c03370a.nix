@@ -109,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."gtk+-3.0" or (pkgConfDepError "gtk+-3.0"))
           ];
+        buildable = true;
         };
       exes = {
         "taffybar" = {
@@ -119,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           pkgconfig = [
             (pkgconfPkgs."gtk+-3.0" or (pkgConfDepError "gtk+-3.0"))
             ];
+          buildable = true;
           };
         };
       };

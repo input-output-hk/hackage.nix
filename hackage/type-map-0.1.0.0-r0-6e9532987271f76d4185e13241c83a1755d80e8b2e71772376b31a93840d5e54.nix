@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."base" or (buildDepError "base"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0.1") (hsPkgs."vector" or (buildDepError "vector"));
+        buildable = true;
         };
       tests = {
         "type-map-test" = {
@@ -67,6 +68,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."type-map" or (buildDepError "type-map"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).ge "8.0.1"
+            then true
+            else false;
           };
         "type-map-static-test" = {
           depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.0.1") [
@@ -76,6 +80,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             (hsPkgs."type-map" or (buildDepError "type-map"))
             ];
+          buildable = if compiler.isGhc && (compiler.version).ge "8.0.1"
+            then true
+            else false;
           };
         };
       };

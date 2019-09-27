@@ -57,11 +57,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = [ (pkgs."jack" or (sysDepError "jack")) ];
+        buildable = true;
         };
       exes = {
         "amplify" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
           libs = [ (pkgs."jack" or (sysDepError "jack")) ];
+          buildable = true;
           };
         };
       };

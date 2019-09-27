@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xmonad-contrib-bluetilebranch" or (buildDepError "xmonad-contrib-bluetilebranch"))
             (hsPkgs."xmonad-contrib-bluetilebranch" or (buildDepError "xmonad-contrib-bluetilebranch"))
             ];
+          buildable = true;
           };
         };
       };

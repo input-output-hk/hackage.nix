@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom"))
             ]
           else [ (hsPkgs."blank-canvas" or (buildDepError "blank-canvas")) ]);
+        buildable = true;
         };
       };
     }

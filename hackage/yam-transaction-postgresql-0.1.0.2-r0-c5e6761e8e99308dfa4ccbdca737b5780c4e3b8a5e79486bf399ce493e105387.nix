@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
           ];
+        buildable = true;
         };
       };
     }

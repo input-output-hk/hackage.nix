@@ -85,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
             ]
           else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]);
+        buildable = true;
         };
       sublibs = {
         "sockets-internal" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
               ]
             else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]);
+          buildable = true;
           };
         "sockets-interrupt" = {
           depends = [
@@ -111,9 +113,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."sockets-internal" or (buildDepError "sockets-internal"))
             ];
+          buildable = true;
           };
         "sockets-buffer" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "sockets-datagram-send" = {
           depends = [
@@ -125,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sockets-buffer" or (buildDepError "sockets-buffer"))
             (hsPkgs."sockets-interrupt" or (buildDepError "sockets-interrupt"))
             ];
+          buildable = true;
           };
         "sockets-datagram-receive" = {
           depends = [
@@ -137,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sockets-buffer" or (buildDepError "sockets-buffer"))
             (hsPkgs."sockets-interrupt" or (buildDepError "sockets-interrupt"))
             ];
+          buildable = true;
           };
         "sockets-datagram-receive-many" = {
           depends = [
@@ -153,6 +159,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
               ]
             else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]);
+          buildable = true;
           };
         "sockets-stream-send" = {
           depends = [
@@ -164,6 +171,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sockets-buffer" or (buildDepError "sockets-buffer"))
             (hsPkgs."sockets-interrupt" or (buildDepError "sockets-interrupt"))
             ];
+          buildable = true;
           };
         "sockets-stream-receive" = {
           depends = [
@@ -175,6 +183,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sockets-buffer" or (buildDepError "sockets-buffer"))
             (hsPkgs."sockets-interrupt" or (buildDepError "sockets-interrupt"))
             ];
+          buildable = true;
           };
         "sockets-stream-send-two" = {
           depends = [
@@ -186,6 +195,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sockets-interrupt" or (buildDepError "sockets-interrupt"))
             (hsPkgs."sockets-stream-send" or (buildDepError "sockets-stream-send"))
             ];
+          buildable = true;
           };
         "sockets-stream-bidirectional" = {
           depends = [
@@ -196,6 +206,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sockets-stream-send" or (buildDepError "sockets-stream-send"))
             (hsPkgs."sockets-stream-receive" or (buildDepError "sockets-stream-receive"))
             ];
+          buildable = true;
           };
         };
       exes = {
@@ -212,6 +223,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
               ]
             else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]));
+          buildable = if flags.example then true else false;
           };
         };
       tests = {
@@ -232,6 +244,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
               ]
             else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]);
+          buildable = true;
           };
         };
       benchmarks = {
@@ -247,6 +260,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
               ]
             else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]);
+          buildable = true;
           };
         "http" = {
           depends = [
@@ -260,6 +274,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
               ]
             else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]);
+          buildable = true;
           };
         };
       };

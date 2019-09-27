@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (pkgs.lib).optional (!flags.library-only) (hsPkgs."hspec" or (buildDepError "hspec"));
+        buildable = true;
         };
       exes = {
         "tox-spectest" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hstox" or (buildDepError "hstox"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         };
       tests = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."hstox" or (buildDepError "hstox"))
             ];
+          buildable = true;
           };
         };
       };

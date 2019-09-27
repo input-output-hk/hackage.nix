@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."warp-tls" or (buildDepError "warp-tls"))
           ];
+        buildable = true;
         };
       exes = {
         "warp-grpc-exe" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp-grpc" or (buildDepError "warp-grpc"))
             (hsPkgs."warp-tls" or (buildDepError "warp-tls"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -101,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp-grpc" or (buildDepError "warp-grpc"))
             (hsPkgs."warp-tls" or (buildDepError "warp-tls"))
             ];
+          buildable = true;
           };
         };
       };

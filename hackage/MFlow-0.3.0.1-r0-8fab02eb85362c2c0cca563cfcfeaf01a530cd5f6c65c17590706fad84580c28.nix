@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
           ];
+        buildable = true;
         };
       exes = {
         "demos-blaze" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."hamlet" or (buildDepError "hamlet"))
             ];
+          buildable = true;
           };
         };
       };

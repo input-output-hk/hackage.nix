@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."qtah-cpp-qt5" or (buildDepError "qtah-cpp-qt5"))
           (hsPkgs."qtah-generator" or (buildDepError "qtah-generator"))
           ];
+        buildable = true;
         };
       tests = {
         "test-qtah" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."qtah-qt5" or (buildDepError "qtah-qt5"))
             ];
+          buildable = true;
           };
         };
       };

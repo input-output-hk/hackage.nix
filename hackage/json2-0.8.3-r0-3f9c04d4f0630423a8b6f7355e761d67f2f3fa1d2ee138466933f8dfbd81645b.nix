@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pretty" or (buildDepError "pretty"))
           (hsPkgs."json2-types" or (buildDepError "json2-types"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."strict" or (buildDepError "strict"))
           (hsPkgs."TypeCompose" or (buildDepError "TypeCompose"))
           ];
+        buildable = true;
         };
       };
     }

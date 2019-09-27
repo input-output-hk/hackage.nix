@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."machines-io" or (buildDepError "machines-io"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       };
     }

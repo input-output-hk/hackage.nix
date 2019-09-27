@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."yesod" or (buildDepError "yesod"))
             ];
+          buildable = true;
           };
         "yesod-ajax" = {
           depends = [
@@ -67,12 +68,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
             (hsPkgs."yesod" or (buildDepError "yesod"))
             ];
+          buildable = true;
           };
         "yesod-file-echo" = {
           depends = [
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."yesod" or (buildDepError "yesod"))
             ];
+          buildable = true;
           };
         "yesod-pretty-yaml" = {
           depends = [
@@ -81,10 +84,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."yesod" or (buildDepError "yesod"))
             ];
+          buildable = true;
           };
-        "yesod-i18n" = {};
-        "yesod-session" = {};
-        "yesod-form" = {};
+        "yesod-i18n" = { buildable = true; };
+        "yesod-session" = { buildable = true; };
+        "yesod-form" = { buildable = true; };
         "yesod-persistent-synopsis" = {
           depends = [
             (hsPkgs."transformers" or (buildDepError "transformers"))
@@ -92,15 +96,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
             ];
           libs = [ (pkgs."sqlite3" or (sysDepError "sqlite3")) ];
+          buildable = true;
           };
         "yesod-hamlet-synopsis" = {
           depends = [
             (hsPkgs."hamlet" or (buildDepError "hamlet"))
             (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             ];
+          buildable = true;
           };
         "yesod-chat" = {
           depends = [ (hsPkgs."stm" or (buildDepError "stm")) ];
+          buildable = true;
           };
         };
       };

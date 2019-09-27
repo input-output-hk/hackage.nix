@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wtk" or (buildDepError "wtk"))
             (hsPkgs."wtk-gtk" or (buildDepError "wtk-gtk"))
             ];
+          buildable = true;
           };
         };
       };

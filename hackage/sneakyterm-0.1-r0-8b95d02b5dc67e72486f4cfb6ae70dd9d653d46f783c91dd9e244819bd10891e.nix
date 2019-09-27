@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
           ];
+        buildable = true;
         };
       };
     }

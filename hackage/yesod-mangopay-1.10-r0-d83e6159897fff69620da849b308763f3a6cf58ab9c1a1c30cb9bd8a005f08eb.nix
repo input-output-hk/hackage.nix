@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
           (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
           ];
+        buildable = true;
         };
       exes = {
         "yesod-mangopay" = {
@@ -116,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
               ]
             else [ (hsPkgs."conduit" or (buildDepError "conduit")) ]);
+          buildable = if flags.library-only then false else true;
           };
         };
       };

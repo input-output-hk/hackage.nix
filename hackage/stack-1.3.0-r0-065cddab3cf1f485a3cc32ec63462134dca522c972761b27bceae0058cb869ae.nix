@@ -154,6 +154,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."pid1" or (buildDepError "pid1"))
             ]);
+        buildable = true;
         };
       exes = {
         "stack" = {
@@ -183,6 +184,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gitrev" or (buildDepError "gitrev"))
             (hsPkgs."optparse-simple" or (buildDepError "optparse-simple"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -221,6 +223,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         "stack-integration-test" = {
           depends = [
@@ -240,6 +243,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
             ];
+          buildable = if !flags.integration-tests then false else true;
           };
         };
       };

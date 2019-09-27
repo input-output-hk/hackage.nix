@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gi-cairo" or (buildDepError "gi-cairo"))
           (hsPkgs."gi-cairo-render" or (buildDepError "gi-cairo-render"))
           ];
+        buildable = true;
         };
       };
     }

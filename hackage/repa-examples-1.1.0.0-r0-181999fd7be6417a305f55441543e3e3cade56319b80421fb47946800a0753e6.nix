@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             (hsPkgs."repa-io" or (buildDepError "repa-io"))
             ];
+          buildable = true;
           };
         "repa-fft2d-highpass" = {
           depends = [
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             (hsPkgs."repa-io" or (buildDepError "repa-io"))
             ];
+          buildable = true;
           };
         "repa-laplace" = {
           depends = [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa" or (buildDepError "repa"))
             (hsPkgs."repa-io" or (buildDepError "repa-io"))
             ];
+          buildable = true;
           };
         "repa-mmult" = {
           depends = [
@@ -94,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         };
       };

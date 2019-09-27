@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."primes" or (buildDepError "primes"))
           ];
+        buildable = true;
         };
       tests = {
         "NumberTheory_Tests" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."primes" or (buildDepError "primes"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."webapi" or (buildDepError "webapi"))
           ];
+        buildable = true;
         };
       tests = {
         "uber-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."uber" or (buildDepError "uber"))
             ];
+          buildable = true;
           };
         };
       };

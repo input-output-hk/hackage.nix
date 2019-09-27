@@ -63,6 +63,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."wl-pprint-annotated" or (buildDepError "wl-pprint-annotated"))
           ] ++ (pkgs.lib).optional (flags.aeson) (hsPkgs."aeson" or (buildDepError "aeson"));
+        buildable = if compiler.isGhc && (compiler.version).lt "8.5"
+          then false
+          else true;
         };
       tests = {
         "spec" = {
@@ -73,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
             (hsPkgs."hedgehog-classes" or (buildDepError "hedgehog-classes"))
             ];
+          buildable = true;
           };
         };
       };

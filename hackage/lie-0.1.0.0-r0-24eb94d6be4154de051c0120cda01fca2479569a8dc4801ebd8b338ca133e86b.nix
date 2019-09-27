@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "Lie" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."lie" or (buildDepError "lie"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."glib" or (buildDepError "glib"))
           ];
         pkgconfig = [ (pkgconfPkgs."gio-2.0" or (pkgConfDepError "gio-2.0")) ];
+        buildable = true;
         };
       };
     }

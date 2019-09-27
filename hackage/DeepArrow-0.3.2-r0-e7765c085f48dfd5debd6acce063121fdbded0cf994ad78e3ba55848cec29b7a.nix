@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."TypeCompose" or (buildDepError "TypeCompose"))
           (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
           ];
+        buildable = true;
         };
       };
     }

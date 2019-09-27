@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
       exes = {
         "spartan3e-demo" = {
@@ -84,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."filepath" or (buildDepError "filepath"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.spartan3e || flags.all then true else false;
           };
         "kansas-lava-cores-tests" = {
           depends = if flags.unit || flags.all
@@ -100,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."filepath" or (buildDepError "filepath"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.unit || flags.all then true else false;
           };
         };
       };

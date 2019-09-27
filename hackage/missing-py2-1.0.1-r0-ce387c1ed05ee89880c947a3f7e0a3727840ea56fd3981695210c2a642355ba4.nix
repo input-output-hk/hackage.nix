@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MissingH" or (buildDepError "MissingH"))
           (hsPkgs."anydbm" or (buildDepError "anydbm"))
           ];
+        buildable = true;
         };
       tests = {
         "originalunittests" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."missing-py2" or (buildDepError "missing-py2"))
             ];
+          buildable = true;
           };
         };
       };

@@ -65,10 +65,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
         "zoom-cache" = {
           depends = [ (hsPkgs."ui-command" or (buildDepError "ui-command")) ];
+          buildable = true;
           };
         };
       };

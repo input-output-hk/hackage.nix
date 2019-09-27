@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mmap" or (buildDepError "mmap"))
           (hsPkgs."data-endian" or (buildDepError "data-endian"))
           ];
+        buildable = true;
         };
       };
     }

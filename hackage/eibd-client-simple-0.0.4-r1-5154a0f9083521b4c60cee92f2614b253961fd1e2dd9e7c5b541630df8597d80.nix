@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
         libs = [ (pkgs."eibclient" or (sysDepError "eibclient")) ];
+        buildable = true;
         };
       };
     }

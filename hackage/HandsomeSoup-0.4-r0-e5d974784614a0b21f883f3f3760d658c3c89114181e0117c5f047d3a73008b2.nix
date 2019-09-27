@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."network-uri" or (buildDepError "network-uri"))
           ];
+        buildable = true;
         };
       exes = {
         "handsomesoup" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HandsomeSoup" or (buildDepError "HandsomeSoup"))
             (hsPkgs."hxt" or (buildDepError "hxt"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         };
       tests = {
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HandsomeSoup" or (buildDepError "HandsomeSoup"))
             (hsPkgs."hxt" or (buildDepError "hxt"))
             ];
+          buildable = true;
           };
         };
       };

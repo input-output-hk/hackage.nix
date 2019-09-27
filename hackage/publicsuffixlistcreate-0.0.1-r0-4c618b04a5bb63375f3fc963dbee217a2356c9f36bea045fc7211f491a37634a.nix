@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."publicsuffixlist" or (buildDepError "publicsuffixlist"))
           ];
+        buildable = true;
         };
       };
     }

@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."seqaid" or (buildDepError "seqaid"))
             (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ] ++ (pkgs.lib).optional (flags.omnitypic) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         };
       };

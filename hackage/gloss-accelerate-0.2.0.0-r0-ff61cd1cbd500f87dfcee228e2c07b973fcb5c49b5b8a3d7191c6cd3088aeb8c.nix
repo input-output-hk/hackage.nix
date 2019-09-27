@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gloss" or (buildDepError "gloss"))
           (hsPkgs."gloss-rendering" or (buildDepError "gloss-rendering"))
           ];
+        buildable = true;
         };
       };
     }

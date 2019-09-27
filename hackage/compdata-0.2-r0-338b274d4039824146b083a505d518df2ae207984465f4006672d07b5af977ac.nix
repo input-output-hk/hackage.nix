@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."th-expand-syns" or (buildDepError "th-expand-syns"))
           ];
+        buildable = true;
         };
       exes = {
         "test" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."th-expand-syns" or (buildDepError "th-expand-syns"))
             (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
+          buildable = if !flags.test then false else true;
           };
         "benchmark" = {
           depends = [
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uniplate" or (buildDepError "uniplate"))
             (hsPkgs."th-expand-syns" or (buildDepError "th-expand-syns"))
             ];
+          buildable = if !flags.benchmark then false else true;
           };
         };
       };

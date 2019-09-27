@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."happy-meta" or (buildDepError "happy-meta"))
           (hsPkgs."alex-meta" or (buildDepError "alex-meta"))
           ];
+        buildable = true;
         };
       };
     }

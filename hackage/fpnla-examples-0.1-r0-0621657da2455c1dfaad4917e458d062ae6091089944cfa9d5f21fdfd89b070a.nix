@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."linear-algebra-cblas" or (buildDepError "linear-algebra-cblas"))
           (hsPkgs."monad-par" or (buildDepError "monad-par"))
           ];
+        buildable = true;
         };
       tests = {
         "test-fpnla-blas" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."linear-algebra-cblas" or (buildDepError "linear-algebra-cblas"))
             (hsPkgs."monad-par" or (buildDepError "monad-par"))
             ];
+          buildable = true;
           };
         "test-fpnla-lapack" = {
           depends = [
@@ -119,6 +121,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."linear-algebra-cblas" or (buildDepError "linear-algebra-cblas"))
             (hsPkgs."monad-par" or (buildDepError "monad-par"))
             ];
+          buildable = true;
           };
         };
       };

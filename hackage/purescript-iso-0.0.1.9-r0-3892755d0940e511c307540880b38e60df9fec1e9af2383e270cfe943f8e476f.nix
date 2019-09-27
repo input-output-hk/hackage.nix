@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
           (hsPkgs."zeromq4-simple" or (buildDepError "zeromq4-simple"))
           ];
+        buildable = true;
         };
       tests = {
         "purescript-iso-test" = {
@@ -111,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
             (hsPkgs."zeromq4-simple" or (buildDepError "zeromq4-simple"))
             ];
+          buildable = true;
           };
         };
       };

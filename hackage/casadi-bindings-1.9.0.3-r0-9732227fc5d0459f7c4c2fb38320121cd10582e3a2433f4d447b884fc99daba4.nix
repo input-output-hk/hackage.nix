@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."casadi-bindings-internal" or (buildDepError "casadi-bindings-internal"))
           (hsPkgs."casadi-bindings-core" or (buildDepError "casadi-bindings-core"))
           ];
+        buildable = true;
         };
       };
     }

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."json" or (buildDepError "json"))
           ];
+        buildable = true;
         };
       tests = {
         "test-json-litobj" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."json" or (buildDepError "json"))
             (hsPkgs."json-litobj" or (buildDepError "json-litobj"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."sdl2" or (buildDepError "sdl2"))
           (hsPkgs."sdl2-image" or (buildDepError "sdl2-image"))
           ];
+        buildable = true;
         };
       exes = {
         "sdl2-sprite" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."split" or (buildDepError "split"))
             ];
+          buildable = true;
           };
         };
       };

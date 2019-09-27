@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stream-fusion" or (buildDepError "stream-fusion"))
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
         "speedtest" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."binary" or (buildDepError "binary"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if !flags.buildtests then false else true;
           };
         };
       };

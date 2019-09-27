@@ -58,27 +58,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = ([ (hsPkgs."base" or (buildDepError "base")) ] ++ [
           (hsPkgs."base" or (buildDepError "base"))
           ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (buildDepError "base"));
+        buildable = true;
         };
       exes = {
         "basic-tests" = {
           depends = ([ (hsPkgs."base" or (buildDepError "base")) ] ++ [
             (hsPkgs."base" or (buildDepError "base"))
             ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (buildDepError "base"));
+          buildable = true;
           };
         "extended-tests" = {
           depends = ([ (hsPkgs."base" or (buildDepError "base")) ] ++ [
             (hsPkgs."base" or (buildDepError "base"))
             ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (buildDepError "base"));
+          buildable = true;
           };
         "terminal-tests" = {
           depends = ([ (hsPkgs."base" or (buildDepError "base")) ] ++ [
             (hsPkgs."base" or (buildDepError "base"))
             ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (buildDepError "base"));
+          buildable = true;
           };
         "optimize-1-tests" = {
           depends = ([ (hsPkgs."base" or (buildDepError "base")) ] ++ [
             (hsPkgs."base" or (buildDepError "base"))
             ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (buildDepError "base"));
+          buildable = true;
           };
         };
       };

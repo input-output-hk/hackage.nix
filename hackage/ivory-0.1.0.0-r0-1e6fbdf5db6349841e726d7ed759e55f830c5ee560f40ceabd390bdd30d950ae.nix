@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."th-lift" or (buildDepError "th-lift"))
           ];
+        buildable = true;
         };
       };
     }

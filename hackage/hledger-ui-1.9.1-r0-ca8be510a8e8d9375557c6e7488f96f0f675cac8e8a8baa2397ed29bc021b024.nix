@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."brick" or (buildDepError "brick"))
             (hsPkgs."vty" or (buildDepError "vty"))
             ];
+          buildable = if system.isWindows then false else true;
           };
         };
       };

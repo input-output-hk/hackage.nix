@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "Hunt-Tests" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-r-tree" or (buildDepError "data-r-tree"))
             (hsPkgs."monad-parallel" or (buildDepError "monad-parallel"))
             ];
+          buildable = true;
           };
         "Hunt-Strictness" = {
           depends = (pkgs.lib).optionals (!(!flags.test-strict)) [
@@ -127,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-parallel" or (buildDepError "monad-parallel"))
             (hsPkgs."data-default" or (buildDepError "data-default"))
             ];
+          buildable = if !flags.test-strict then false else true;
           };
         };
       };

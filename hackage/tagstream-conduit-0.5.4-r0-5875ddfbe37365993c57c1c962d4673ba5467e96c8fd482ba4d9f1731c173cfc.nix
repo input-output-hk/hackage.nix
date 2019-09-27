@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-builder-conduit" or (buildDepError "blaze-builder-conduit"))
           (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."tagstream-conduit" or (buildDepError "tagstream-conduit"))
             ];
+          buildable = true;
           };
         };
       };

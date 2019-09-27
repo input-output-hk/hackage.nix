@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
             (hsPkgs."hcwiid" or (buildDepError "hcwiid"))
             ];
+          buildable = true;
           };
         };
       };

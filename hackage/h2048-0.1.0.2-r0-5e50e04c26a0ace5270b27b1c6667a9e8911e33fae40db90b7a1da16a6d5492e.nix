@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vty" or (buildDepError "vty"))
           (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
           ];
+        buildable = true;
         };
       exes = {
         "h2048-simple" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."h2048" or (buildDepError "h2048"))
             ];
+          buildable = if !flags.exe then false else true;
           };
         "h2048-vty" = {
           depends = [
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             (hsPkgs."h2048" or (buildDepError "h2048"))
             ];
+          buildable = if !flags.exe || !flags.vty then false else true;
           };
         };
       tests = {
@@ -98,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."h2048" or (buildDepError "h2048"))
             ];
+          buildable = true;
           };
         };
       };

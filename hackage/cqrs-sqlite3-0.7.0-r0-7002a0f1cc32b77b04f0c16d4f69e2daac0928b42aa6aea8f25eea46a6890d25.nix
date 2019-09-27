@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."enumerator" or (buildDepError "enumerator"))
           (hsPkgs."direct-sqlite" or (buildDepError "direct-sqlite"))
           ];
+        buildable = true;
         };
       };
     }

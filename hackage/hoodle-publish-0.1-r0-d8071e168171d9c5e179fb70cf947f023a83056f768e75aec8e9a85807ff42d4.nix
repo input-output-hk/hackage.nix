@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hoodle-parser" or (buildDepError "hoodle-parser"))
             (hsPkgs."hoodle-render" or (buildDepError "hoodle-render"))
             ];
+          buildable = true;
           };
         };
       };

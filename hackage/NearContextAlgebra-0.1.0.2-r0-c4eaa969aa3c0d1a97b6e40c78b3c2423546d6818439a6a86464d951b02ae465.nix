@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lattices" or (buildDepError "lattices"))
             (hsPkgs."multiset" or (buildDepError "multiset"))
             ];
+          buildable = true;
           };
         };
       };

@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."old-locale" or (buildDepError "old-locale"))
           (hsPkgs."plugins" or (buildDepError "plugins"))
           ];
+        buildable = true;
         };
       };
     }

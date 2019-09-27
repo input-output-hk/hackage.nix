@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."swift-lda" or (buildDepError "swift-lda"))
           (hsPkgs."nlp-scores" or (buildDepError "nlp-scores"))
           ];
+        buildable = true;
         };
       exes = {
         "colada" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."swift-lda" or (buildDepError "swift-lda"))
             (hsPkgs."nlp-scores" or (buildDepError "nlp-scores"))
             ];
+          buildable = true;
           };
         };
       };

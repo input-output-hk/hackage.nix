@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."fixed-list" or (buildDepError "fixed-list"))
           (hsPkgs."predicate-class" or (buildDepError "predicate-class"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "queryparser-bench" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

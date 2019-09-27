@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."timezone-olson" or (buildDepError "timezone-olson"))
             (hsPkgs."timezone-series" or (buildDepError "timezone-series"))
             ];
+          buildable = true;
           };
         };
       };

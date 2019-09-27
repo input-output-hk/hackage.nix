@@ -82,10 +82,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        buildable = true;
         };
       exes = {
         "happstack-state-tests" = {
           depends = [ (hsPkgs."HUnit" or (buildDepError "HUnit")) ];
+          buildable = if flags.tests then true else false;
           };
         };
       };

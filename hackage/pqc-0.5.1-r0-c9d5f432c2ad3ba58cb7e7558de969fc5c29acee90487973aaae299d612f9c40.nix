@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."stm" or (buildDepError "stm"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+        buildable = true;
         };
       };
     }

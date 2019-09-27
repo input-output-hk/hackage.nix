@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random-source" or (buildDepError "random-source"))
           (hsPkgs."svg-builder" or (buildDepError "svg-builder"))
           ];
+        buildable = true;
         };
       tests = {
         "SimpleExample" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polysemy" or (buildDepError "polysemy"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "ErrorExample" = {
           depends = [
@@ -114,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polysemy" or (buildDepError "polysemy"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "MultiDocExample" = {
           depends = [
@@ -126,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polysemy" or (buildDepError "polysemy"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "MtlExample" = {
           depends = [
@@ -139,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polysemy" or (buildDepError "polysemy"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         "RandomExample" = {
           depends = [
@@ -155,6 +160,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random-source" or (buildDepError "random-source"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

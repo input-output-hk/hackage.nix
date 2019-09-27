@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
           ];
+        buildable = true;
         };
       tests = {
         "gray-extended-tests" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
             (hsPkgs."gray-extended" or (buildDepError "gray-extended"))
             ];
+          buildable = true;
           };
         };
       };

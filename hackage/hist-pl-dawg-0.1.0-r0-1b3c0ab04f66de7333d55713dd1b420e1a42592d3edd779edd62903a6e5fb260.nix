@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text-binary" or (buildDepError "text-binary"))
           (hsPkgs."dawg" or (buildDepError "dawg"))
           ];
+        buildable = true;
         };
       };
     }

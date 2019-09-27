@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."streaming-attoparsec" or (buildDepError "streaming-attoparsec"))
           (hsPkgs."streaming-bytestring" or (buildDepError "streaming-bytestring"))
           ];
+        buildable = true;
         };
       tests = {
         "streaming-pcap-test" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         };
       };

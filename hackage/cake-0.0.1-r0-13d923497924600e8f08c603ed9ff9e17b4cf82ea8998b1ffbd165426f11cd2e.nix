@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
           ];
+        buildable = true;
         };
       };
     }

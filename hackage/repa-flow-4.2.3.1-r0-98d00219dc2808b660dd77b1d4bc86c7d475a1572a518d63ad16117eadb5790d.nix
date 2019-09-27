@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."repa-convert" or (buildDepError "repa-convert"))
           (hsPkgs."repa-array" or (buildDepError "repa-array"))
           ];
+        buildable = true;
         };
       };
     }

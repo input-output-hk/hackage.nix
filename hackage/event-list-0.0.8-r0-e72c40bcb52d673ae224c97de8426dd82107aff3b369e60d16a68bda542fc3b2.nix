@@ -59,12 +59,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."non-negative" or (buildDepError "non-negative"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
         "test" = {
           depends = [
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ] ++ (pkgs.lib).optional (flags.splitbase) (hsPkgs."random" or (buildDepError "random"));
+          buildable = if !flags.buildtests then false else true;
           };
         };
       };

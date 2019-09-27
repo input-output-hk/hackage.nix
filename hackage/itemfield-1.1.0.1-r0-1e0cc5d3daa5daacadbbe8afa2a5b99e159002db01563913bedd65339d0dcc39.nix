@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."microlens" or (buildDepError "microlens"))
           ] ++ [ (hsPkgs."brick" or (buildDepError "brick")) ];
+        buildable = true;
         };
       exes = {
         "bookcase" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."itemfield" or (buildDepError "itemfield"))
             (hsPkgs."data-default" or (buildDepError "data-default"))
             ] ++ [ (hsPkgs."brick" or (buildDepError "brick")) ];
+          buildable = if !flags.examples then false else true;
           };
         "workreport" = {
           depends = [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."random" or (buildDepError "random"))
             ] ++ [ (hsPkgs."brick" or (buildDepError "brick")) ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -104,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             ] ++ [ (hsPkgs."brick" or (buildDepError "brick")) ];
+          buildable = true;
           };
         "test_layout" = {
           depends = [
@@ -120,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             (hsPkgs."data-default" or (buildDepError "data-default"))
             ] ++ [ (hsPkgs."brick" or (buildDepError "brick")) ];
+          buildable = true;
           };
         };
       };

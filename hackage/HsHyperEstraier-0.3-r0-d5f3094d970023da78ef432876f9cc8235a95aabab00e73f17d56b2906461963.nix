@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."hyperestraier" or (pkgConfDepError "hyperestraier"))
           (pkgconfPkgs."qdbm" or (pkgConfDepError "qdbm"))
           ];
+        buildable = true;
         };
       };
     }

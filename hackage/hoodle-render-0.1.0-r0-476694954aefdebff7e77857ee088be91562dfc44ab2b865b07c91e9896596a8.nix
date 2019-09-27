@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hoodle-types" or (buildDepError "hoodle-types"))
             (hsPkgs."TypeCompose" or (buildDepError "TypeCompose"))
             ];
+        buildable = true;
         };
       };
     }

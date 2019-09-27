@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."microlens" or (buildDepError "microlens"))
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           ];
+        buildable = true;
         };
       exes = {
         "test-weibo" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."hoauth2" or (buildDepError "hoauth2"))
             ];
+          buildable = if flags.test then true else false;
           };
         "test-google" = {
           depends = [
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."hoauth2" or (buildDepError "hoauth2"))
             ];
+          buildable = if flags.test then true else false;
           };
         "test-github" = {
           depends = [
@@ -104,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."hoauth2" or (buildDepError "hoauth2"))
             ];
+          buildable = if flags.test then true else false;
           };
         "test-douban" = {
           depends = [
@@ -116,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."hoauth2" or (buildDepError "hoauth2"))
             ];
+          buildable = if flags.test then true else false;
           };
         "test-facebook" = {
           depends = [
@@ -128,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."hoauth2" or (buildDepError "hoauth2"))
             ];
+          buildable = if flags.test then true else false;
           };
         "test-fitbit" = {
           depends = [
@@ -143,6 +149,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."hoauth2" or (buildDepError "hoauth2"))
             ];
+          buildable = if flags.test then true else false;
           };
         "test-stackexchange" = {
           depends = [
@@ -155,6 +162,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."hoauth2" or (buildDepError "hoauth2"))
             ];
+          buildable = if flags.test then true else false;
           };
         "test-dropbox" = {
           depends = [
@@ -167,6 +175,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."hoauth2" or (buildDepError "hoauth2"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

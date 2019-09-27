@@ -61,9 +61,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."HSH" or (buildDepError "HSH"))
             ];
+          buildable = true;
           };
         "color-diff" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "events-to-timelog" = {
           depends = [
@@ -71,9 +73,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."old-locale" or (buildDepError "old-locale"))
             ];
+          buildable = true;
           };
         "extract-non-ascii" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "git-prompt" = {
           depends = [
@@ -81,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             (hsPkgs."HSH" or (buildDepError "HSH"))
             ];
+          buildable = true;
           };
         "label" = {
           depends = [
@@ -90,15 +95,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "bufferize" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "mh-gen-message-id-mapping" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "show-non-ascii" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "show-pollbox" = {
           depends = [
@@ -107,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SHA" or (buildDepError "SHA"))
             (hsPkgs."MissingH" or (buildDepError "MissingH"))
             ];
+          buildable = true;
           };
         "deliver-to-pollbox" = {
           depends = [
@@ -115,32 +125,55 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = true;
           };
-        "summ" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-        "mean" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-        "rot" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-        "pad" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
-        "myrev" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "summ" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
+        "mean" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
+        "rot" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
+        "pad" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
+        "myrev" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "loopback" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "what-I-have-done-today" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         "x-printable" = {
           depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
-        "cp-rescue" = {};
-        "timer" = { depends = [ (hsPkgs."unix" or (buildDepError "unix")) ]; };
-        "nest" = {};
-        "getpin" = {};
-        "starecho" = {};
+        "cp-rescue" = { buildable = true; };
+        "timer" = {
+          depends = [ (hsPkgs."unix" or (buildDepError "unix")) ];
+          buildable = true;
+          };
+        "nest" = { buildable = true; };
+        "getpin" = { buildable = true; };
+        "starecho" = { buildable = true; };
         "color-list" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."colour" or (buildDepError "colour"))
             (hsPkgs."array" or (buildDepError "array"))
             ];
+          buildable = true;
           };
         };
       };

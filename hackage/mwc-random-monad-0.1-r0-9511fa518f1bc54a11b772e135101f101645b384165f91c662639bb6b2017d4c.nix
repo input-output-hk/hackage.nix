@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
           ];
+        buildable = true;
         };
       };
     }

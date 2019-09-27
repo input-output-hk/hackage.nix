@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           (hsPkgs."colour" or (buildDepError "colour"))
           ];
+        buildable = true;
         };
       exes = {
         "example1" = {
@@ -68,18 +69,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."craftwerk" or (buildDepError "craftwerk"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "example2" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."craftwerk" or (buildDepError "craftwerk"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "example3" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."craftwerk" or (buildDepError "craftwerk"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "test-craftwerk" = {
           depends = (pkgs.lib).optionals (!(!flags.tests)) [
@@ -92,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         };
       };

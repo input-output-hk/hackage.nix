@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."csound-expression" or (buildDepError "csound-expression"))
           (hsPkgs."csound-sampler" or (buildDepError "csound-sampler"))
           ];
+        buildable = true;
         };
       };
     }

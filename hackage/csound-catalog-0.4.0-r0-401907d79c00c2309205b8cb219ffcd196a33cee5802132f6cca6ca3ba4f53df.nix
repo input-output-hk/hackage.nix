@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."csound-sampler" or (buildDepError "csound-sampler"))
           (hsPkgs."sharc-timbre" or (buildDepError "sharc-timbre"))
           ];
+        buildable = true;
         };
       };
     }

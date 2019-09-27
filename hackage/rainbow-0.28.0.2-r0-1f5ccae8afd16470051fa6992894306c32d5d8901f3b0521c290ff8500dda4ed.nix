@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."microlens" or (buildDepError "microlens"))
           (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
           ];
+        buildable = true;
         };
       tests = {
         "rainbow-instances" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             ];
+          buildable = true;
           };
         "test8color" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             ];
+          buildable = true;
           };
         "test256color" = {
           depends = [
@@ -95,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             ];
+          buildable = true;
           };
         "colorTest" = {
           depends = [
@@ -105,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."microlens" or (buildDepError "microlens"))
             (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
             ];
+          buildable = true;
           };
         };
       };

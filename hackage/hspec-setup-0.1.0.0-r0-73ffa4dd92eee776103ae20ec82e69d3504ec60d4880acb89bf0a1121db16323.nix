@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."projectroot" or (buildDepError "projectroot"))
             ];
+          buildable = true;
           };
         };
       };

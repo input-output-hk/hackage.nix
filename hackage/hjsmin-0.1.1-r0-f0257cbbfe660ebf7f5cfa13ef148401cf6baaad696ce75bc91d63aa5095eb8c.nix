@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."language-javascript" or (buildDepError "language-javascript"))
           ];
+        buildable = true;
         };
       tests = {
         "test-hjsmin" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."language-javascript" or (buildDepError "language-javascript"))
             ];
+          buildable = true;
           };
         };
       };

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."tagstream-conduit" or (buildDepError "tagstream-conduit"))
           ];
+        buildable = true;
         };
       };
     }

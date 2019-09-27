@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."simple-tabular" or (buildDepError "simple-tabular"))
           ];
+        buildable = true;
         };
       exes = {
         "oms" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."simple-tabular" or (buildDepError "simple-tabular"))
             (hsPkgs."mixed-strategies" or (buildDepError "mixed-strategies"))
             ];
+          buildable = true;
           };
         };
       };

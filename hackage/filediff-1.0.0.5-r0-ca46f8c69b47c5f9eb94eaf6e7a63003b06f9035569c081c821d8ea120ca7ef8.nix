@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."threads" or (buildDepError "threads"))
           (hsPkgs."hashmap" or (buildDepError "hashmap"))
           ];
+        buildable = true;
         };
       tests = {
         "test-filediff" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filediff" or (buildDepError "filediff"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = true;
           };
         };
       };

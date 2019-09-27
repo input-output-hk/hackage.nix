@@ -65,7 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
           (hsPkgs."xml" or (buildDepError "xml"))
           ];
+        buildable = true;
         };
-      exes = { "xhtml2epub" = {}; };
+      exes = { "xhtml2epub" = { buildable = true; }; };
       };
     }

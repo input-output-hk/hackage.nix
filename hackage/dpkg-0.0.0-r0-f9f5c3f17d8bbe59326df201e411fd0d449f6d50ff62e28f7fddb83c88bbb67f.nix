@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
           ];
         pkgconfig = [ (pkgconfPkgs."libdpkg" or (pkgConfDepError "libdpkg")) ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           pkgconfig = [
             (pkgconfPkgs."libdpkg" or (pkgConfDepError "libdpkg"))
             ];
+          buildable = true;
           };
         };
       };

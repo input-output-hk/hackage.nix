@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
         libs = [ (pkgs."tokyocabinet" or (sysDepError "tokyocabinet")) ];
+        buildable = true;
         };
       };
     }

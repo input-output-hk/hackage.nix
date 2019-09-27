@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
           (hsPkgs."SVGFonts" or (buildDepError "SVGFonts"))
           ];
+        buildable = true;
         };
       };
     }

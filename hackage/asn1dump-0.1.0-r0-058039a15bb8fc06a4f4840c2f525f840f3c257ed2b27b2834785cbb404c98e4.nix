@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
             (hsPkgs."pem" or (buildDepError "pem"))
             ];
+          buildable = true;
           };
         };
       };

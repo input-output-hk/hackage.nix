@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
           (hsPkgs."safe" or (buildDepError "safe"))
           ];
+        buildable = true;
         };
       exes = {
         "draw-poker" = {
@@ -67,12 +68,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."draw-poker" or (buildDepError "draw-poker"))
             ];
+          buildable = true;
           };
         "draw-poker-simple" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."draw-poker" or (buildDepError "draw-poker"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -81,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."draw-poker" or (buildDepError "draw-poker"))
             ];
+          buildable = true;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."colour" or (buildDepError "colour"))
           ];
+        buildable = true;
         };
       tests = {
         "hsluv-haskell-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."hsluv-haskell" or (buildDepError "hsluv-haskell"))
             ];
+          buildable = true;
           };
         };
       };

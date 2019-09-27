@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
             (hsPkgs."ghc-binary" or (buildDepError "ghc-binary"))
             ];
+          buildable = true;
           };
         };
       };

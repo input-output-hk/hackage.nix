@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."dbusmenu-gtk3-0.4" or (pkgConfDepError "dbusmenu-gtk3-0.4"))
           (pkgconfPkgs."gtk+-3.0" or (pkgConfDepError "gtk+-3.0"))
           ];
+        buildable = true;
         };
       };
     }

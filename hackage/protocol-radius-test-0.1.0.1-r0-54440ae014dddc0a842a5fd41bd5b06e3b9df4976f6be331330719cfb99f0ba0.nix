@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."protocol-radius" or (buildDepError "protocol-radius"))
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           ];
+        buildable = true;
         };
       tests = {
         "isomorphism" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."protocol-radius-test" or (buildDepError "protocol-radius-test"))
             (hsPkgs."quickcheck-simple" or (buildDepError "quickcheck-simple"))
             ];
+          buildable = true;
           };
         };
       };

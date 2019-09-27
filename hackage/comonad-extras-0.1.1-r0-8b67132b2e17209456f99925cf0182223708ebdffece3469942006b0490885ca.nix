@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."MemoTrie" or (buildDepError "MemoTrie"))
           ];
+        buildable = true;
         };
       };
     }

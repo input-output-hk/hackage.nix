@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "log-file" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             (hsPkgs."logging-effect-extra-file" or (buildDepError "logging-effect-extra-file"))
             ];
+          buildable = true;
           };
         "log-file-and-severity" = {
           depends = [
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             (hsPkgs."logging-effect-extra-file" or (buildDepError "logging-effect-extra-file"))
             ];
+          buildable = true;
           };
         };
       };

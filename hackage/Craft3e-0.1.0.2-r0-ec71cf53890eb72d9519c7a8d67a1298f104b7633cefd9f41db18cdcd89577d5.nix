@@ -63,11 +63,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."HUnit" or (buildDepError "HUnit"))
           ];
+        buildable = true;
         };
       exes = {
-        "performanceI" = {};
-        "performanceIA" = {};
-        "performanceIS" = {};
+        "performanceI" = { buildable = true; };
+        "performanceIA" = { buildable = true; };
+        "performanceIS" = { buildable = true; };
         };
       };
     }

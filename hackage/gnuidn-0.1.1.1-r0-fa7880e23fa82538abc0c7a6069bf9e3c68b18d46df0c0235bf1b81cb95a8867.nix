@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = [ (pkgs."idn" or (sysDepError "idn")) ];
         pkgconfig = [ (pkgconfPkgs."libidn" or (pkgConfDepError "libidn")) ];
+        buildable = true;
         };
       };
     }

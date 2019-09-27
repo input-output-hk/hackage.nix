@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."base" or (buildDepError "base"))
               ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.7") (hsPkgs."ghc" or (buildDepError "ghc"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9") (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"));
+        buildable = true;
         };
       };
     }

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."billeksah-services" or (buildDepError "billeksah-services"))
           (hsPkgs."billeksah-pane" or (buildDepError "billeksah-pane"))
           ];
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."opentheory-unicode" or (buildDepError "opentheory-unicode"))
           ];
+        buildable = true;
         };
       exes = {
         "api-opentheory-unicode-test" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."opentheory-unicode" or (buildDepError "opentheory-unicode"))
             ];
+          buildable = true;
           };
         };
       };

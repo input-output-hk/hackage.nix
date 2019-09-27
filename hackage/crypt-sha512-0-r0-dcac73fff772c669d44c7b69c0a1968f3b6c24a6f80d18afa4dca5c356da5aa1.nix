@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
           (hsPkgs."cryptohash-sha512" or (buildDepError "cryptohash-sha512"))
           ];
+        buildable = true;
         };
       tests = {
         "example" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
             ];
           libs = [ (pkgs."crypt" or (sysDepError "crypt")) ];
+          buildable = if !system.isLinux then false else true;
           };
         };
       };

@@ -65,10 +65,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MissingH" or (buildDepError "MissingH"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
           depends = (pkgs.lib).optional (flags.buildtests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

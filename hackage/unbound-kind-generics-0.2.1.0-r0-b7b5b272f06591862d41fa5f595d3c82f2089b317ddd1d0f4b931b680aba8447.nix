@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."kind-generics" or (buildDepError "kind-generics"))
           (hsPkgs."kind-generics-th" or (buildDepError "kind-generics-th"))
           ];
+        buildable = true;
         };
       };
     }

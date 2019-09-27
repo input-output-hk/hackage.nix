@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml" or (buildDepError "xml"))
           (hsPkgs."hostname" or (buildDepError "hostname"))
           ];
+        buildable = true;
         };
       exes = {
         "test-framework-tests" = {
@@ -86,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."libxml" or (buildDepError "libxml"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         };
       };

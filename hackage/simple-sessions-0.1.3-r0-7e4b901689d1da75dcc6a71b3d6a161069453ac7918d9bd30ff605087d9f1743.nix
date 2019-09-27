@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."indexed" or (buildDepError "indexed"))
           (hsPkgs."synchronous-channels" or (buildDepError "synchronous-channels"))
           ];
+        buildable = true;
         };
       };
     }

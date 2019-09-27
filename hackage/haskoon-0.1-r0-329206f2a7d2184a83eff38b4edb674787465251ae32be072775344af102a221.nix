@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsp" or (buildDepError "hsp"))
           (hsPkgs."hsx" or (buildDepError "hsx"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))
           (hsPkgs."llvm-hs-pure" or (buildDepError "llvm-hs-pure"))
           ];
+        buildable = true;
         };
       tests = {
         "test-llvm-native" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
             ];
+          buildable = if !flags.llvm-cpu then false else true;
           };
         "test-llvm-ptx" = {
           depends = [
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty" or (buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
             ];
+          buildable = if !flags.llvm-ptx then false else true;
           };
         };
       benchmarks = {
@@ -107,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
             (hsPkgs."wide-word" or (buildDepError "wide-word"))
             ] ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-ptx) (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"));
+          buildable = true;
           };
         };
       };

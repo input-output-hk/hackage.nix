@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gloss" or (buildDepError "gloss"))
           (hsPkgs."gnuplot" or (buildDepError "gnuplot"))
           ];
+        buildable = true;
         };
       exes = {
         "learn-physics-sunEarth" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."learn-physics" or (buildDepError "learn-physics"))
             ];
+          buildable = true;
           };
         "learn-physics-eFieldLine2D" = {
           depends = [
@@ -77,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."learn-physics" or (buildDepError "learn-physics"))
             ];
+          buildable = true;
           };
         "learn-physics-Projectile" = {
           depends = [
@@ -84,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."learn-physics" or (buildDepError "learn-physics"))
             ];
+          buildable = true;
           };
         };
       };

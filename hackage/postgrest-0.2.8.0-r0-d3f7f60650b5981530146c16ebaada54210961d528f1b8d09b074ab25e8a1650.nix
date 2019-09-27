@@ -97,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."cassava" or (buildDepError "cassava"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -151,6 +152,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."heredoc" or (buildDepError "heredoc"))
             ];
+          buildable = true;
           };
         };
       };

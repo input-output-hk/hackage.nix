@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."pool-conduit" or (buildDepError "pool-conduit"))
           ];
+        buildable = true;
         };
       };
     }

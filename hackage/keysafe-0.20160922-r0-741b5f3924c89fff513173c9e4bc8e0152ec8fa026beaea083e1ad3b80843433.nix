@@ -100,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."exceptions" or (buildDepError "exceptions"))
             ];
           libs = [ (pkgs."argon2" or (sysDepError "argon2")) ];
+          buildable = true;
           };
         };
       };

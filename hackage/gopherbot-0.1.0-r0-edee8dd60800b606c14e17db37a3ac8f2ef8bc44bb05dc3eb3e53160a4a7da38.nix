@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
             (hsPkgs."HDBC" or (buildDepError "HDBC"))
             ];
+          buildable = true;
           };
         };
       };

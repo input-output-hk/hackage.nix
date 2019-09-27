@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."th-data-compat" or (buildDepError "th-data-compat"))
           ];
+        buildable = true;
         };
       };
     }

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."ssl" or (sysDepError "ssl"))
           (pkgs."mysqlclient" or (sysDepError "mysqlclient"))
           ];
+        buildable = true;
         };
       };
     }

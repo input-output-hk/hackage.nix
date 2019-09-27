@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."index-core" or (buildDepError "index-core"))
           ];
+        buildable = true;
         };
       };
     }

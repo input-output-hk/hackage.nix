@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."trivial-constraint" or (buildDepError "trivial-constraint"))
           (hsPkgs."constrained-categories" or (buildDepError "constrained-categories"))
           ];
+        buildable = true;
         };
       };
     }

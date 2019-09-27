@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
           (hsPkgs."monad-parallel" or (buildDepError "monad-parallel"))
           ];
+        buildable = true;
         };
       };
     }

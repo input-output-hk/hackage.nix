@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hasql-backend" or (buildDepError "hasql-backend"))
           (hsPkgs."snap" or (buildDepError "snap"))
           ];
+        buildable = true;
         };
       };
     }

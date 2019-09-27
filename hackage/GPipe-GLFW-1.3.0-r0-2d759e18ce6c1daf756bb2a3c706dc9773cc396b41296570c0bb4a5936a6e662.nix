@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
           (hsPkgs."GPipe" or (buildDepError "GPipe"))
           ];
+        buildable = true;
         };
       exes = {
         "gpipe-glfw-smoketests" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."exception-transformers" or (buildDepError "exception-transformers"))
             ];
+          buildable = true;
           };
         };
       };

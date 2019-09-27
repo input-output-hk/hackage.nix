@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."time-recurrence" or (buildDepError "time-recurrence"))
           ];
+        buildable = true;
         };
       };
     }

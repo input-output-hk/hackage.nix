@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."stdc++" or (sysDepError "stdc++"))
           (pkgs."CacBDD" or (sysDepError "CacBDD"))
           ];
+        buildable = true;
         };
       tests = {
         "example" = {
@@ -76,12 +77,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."HasCacBDD" or (buildDepError "HasCacBDD"))
             ];
+          buildable = true;
           };
         "basics" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."HasCacBDD" or (buildDepError "HasCacBDD"))
             ];
+          buildable = true;
           };
         "tautologies" = {
           depends = [
@@ -89,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HasCacBDD" or (buildDepError "HasCacBDD"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       };

@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hoogle" or (buildDepError "hoogle"))
             (hsPkgs."typed-process" or (buildDepError "typed-process"))
             ];
+          buildable = true;
           };
         };
       };

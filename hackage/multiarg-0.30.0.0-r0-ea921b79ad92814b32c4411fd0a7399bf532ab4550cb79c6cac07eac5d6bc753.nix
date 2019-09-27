@@ -54,7 +54,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "grover" = {
           depends = (pkgs.lib).optionals (flags.programs) [
@@ -63,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickpull" or (buildDepError "quickpull"))
             (hsPkgs."barecheck" or (buildDepError "barecheck"))
             ];
+          buildable = if flags.programs then true else false;
           };
         "telly" = {
           depends = (pkgs.lib).optionals (flags.programs) [
@@ -71,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickpull" or (buildDepError "quickpull"))
             (hsPkgs."barecheck" or (buildDepError "barecheck"))
             ];
+          buildable = if flags.programs then true else false;
           };
         };
       tests = {
@@ -81,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickpull" or (buildDepError "quickpull"))
             (hsPkgs."barecheck" or (buildDepError "barecheck"))
             ];
+          buildable = true;
           };
         };
       };

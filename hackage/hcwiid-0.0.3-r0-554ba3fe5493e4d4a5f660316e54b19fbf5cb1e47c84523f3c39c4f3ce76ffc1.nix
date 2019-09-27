@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."bluetooth" or (sysDepError "bluetooth"))
           (pkgs."cwiid" or (sysDepError "cwiid"))
           ];
+        buildable = true;
         };
       };
     }

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."bullet" or (buildDepError "bullet"))
             ];
+          buildable = true;
           };
         };
       };

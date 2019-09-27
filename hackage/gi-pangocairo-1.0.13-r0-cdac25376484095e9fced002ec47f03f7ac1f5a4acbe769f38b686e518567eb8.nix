@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."pangocairo" or (pkgConfDepError "pangocairo"))
           ];
+        buildable = true;
         };
       };
     }

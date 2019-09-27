@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."her-lexer" or (buildDepError "her-lexer"))
           ];
+        buildable = true;
         };
       };
     }

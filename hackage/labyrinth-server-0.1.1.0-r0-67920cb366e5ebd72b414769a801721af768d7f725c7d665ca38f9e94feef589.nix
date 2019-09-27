@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."shakespeare-js" or (buildDepError "shakespeare-js"))
             (hsPkgs."hamlet" or (buildDepError "hamlet"))
             ];
+          buildable = true;
           };
         };
       };

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."dxgi" or (sysDepError "dxgi"))
           (pkgs."dxguid" or (sysDepError "dxguid"))
           ];
+        buildable = true;
         };
       exes = {
         "Triangle" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Win32" or (buildDepError "Win32"))
             (hsPkgs."d3d11binding" or (buildDepError "d3d11binding"))
             ];
+          buildable = true;
           };
         };
       };

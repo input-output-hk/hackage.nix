@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cacophony" or (buildDepError "cacophony"))
           (hsPkgs."pipes" or (buildDepError "pipes"))
           ];
+        buildable = true;
         };
       exes = {
         "echo-server" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."unix-time" or (buildDepError "unix-time"))
             ];
+          buildable = if flags.build-examples then true else false;
           };
         "echo-client" = {
           depends = (pkgs.lib).optionals (flags.build-examples) [
@@ -101,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-parse" or (buildDepError "pipes-parse"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.build-examples then true else false;
           };
         };
       tests = {
@@ -109,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = if !flags.hlint then false else true;
           };
         };
       };

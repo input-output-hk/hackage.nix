@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."text-icu" or (buildDepError "text-icu"))
           ];
+        buildable = true;
         };
       tests = {
         "test-normalizations" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-icu" or (buildDepError "text-icu"))
             (hsPkgs."text-icu-normalized" or (buildDepError "text-icu-normalized"))
             ];
+          buildable = true;
           };
         };
       };

@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."either" or (buildDepError "either"))
           ] ++ (pkgs.lib).optional (flags.colors) (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"));
+        buildable = true;
         };
       };
     }

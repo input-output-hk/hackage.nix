@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."indents" or (buildDepError "indents"))
           ];
+        buildable = true;
         };
       exes = {
         "imparse" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."indents" or (buildDepError "indents"))
             ];
+          buildable = true;
           };
         };
       };

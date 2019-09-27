@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
           (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
           ];
+        buildable = true;
         };
       exes = {
         "ironforge-yesod" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
             (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
             ];
+          buildable = true;
           };
         };
       };

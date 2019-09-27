@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.require or (pkgs.buildPackages.require or (buildToolDepError "require")))
           ];
+        buildable = true;
         };
       exes = {
         "tintin" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           build-tools = [
             (hsPkgs.buildPackages.require or (pkgs.buildPackages.require or (buildToolDepError "require")))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."require" or (buildDepError "require"))
             (hsPkgs."tintin" or (buildDepError "tintin"))
             ];
+          buildable = true;
           };
         };
       };

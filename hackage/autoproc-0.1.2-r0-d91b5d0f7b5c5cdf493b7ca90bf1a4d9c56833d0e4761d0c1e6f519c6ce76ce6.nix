@@ -62,7 +62,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
-      exes = { "autoproc" = {}; };
+      exes = { "autoproc" = { buildable = true; }; };
       };
     }

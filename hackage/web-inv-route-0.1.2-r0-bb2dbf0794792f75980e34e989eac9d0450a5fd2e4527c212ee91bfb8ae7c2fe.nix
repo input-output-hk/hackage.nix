@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-types" or (buildDepError "http-types"))
           (hsPkgs."invertible" or (buildDepError "invertible"))
           ] ++ (pkgs.lib).optional (flags.uri) (hsPkgs."network-uri" or (buildDepError "network-uri"))) ++ (pkgs.lib).optional (flags.wai) (hsPkgs."wai" or (buildDepError "wai"))) ++ (pkgs.lib).optional (flags.snap) (hsPkgs."snap-core" or (buildDepError "snap-core"))) ++ (pkgs.lib).optional (flags.happstack) (hsPkgs."happstack-server" or (buildDepError "happstack-server"));
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."web-inv-route" or (buildDepError "web-inv-route"))
             ];
+          buildable = true;
           };
         };
       };

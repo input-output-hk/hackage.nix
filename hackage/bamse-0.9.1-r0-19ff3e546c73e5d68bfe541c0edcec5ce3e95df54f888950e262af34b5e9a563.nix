@@ -61,7 +61,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."pretty" or (buildDepError "pretty"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
-      exes = { "bamse" = {}; };
+      exes = { "bamse" = { buildable = true; }; };
       };
     }

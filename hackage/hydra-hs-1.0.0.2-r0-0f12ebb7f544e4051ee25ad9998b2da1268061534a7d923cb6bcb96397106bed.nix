@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = if !system.isX86_64
           then (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."libsixense" or (pkgConfDepError "libsixense"))
           else (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."libsixense_x64" or (pkgConfDepError "libsixense_x64"));
+        buildable = true;
         };
       tests = {
         "hydra-test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hydra-hs" or (buildDepError "hydra-hs"))
             ];
+          buildable = true;
           };
         };
       };

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mysql-haskell" or (buildDepError "mysql-haskell"))
           (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
           ];
+        buildable = true;
         };
       };
     }

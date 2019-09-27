@@ -56,6 +56,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [ (hsPkgs."haskell2010" or (buildDepError "haskell2010")) ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."tagshare" or (buildDepError "tagshare"))
           ];
+        buildable = true;
         };
       };
     }

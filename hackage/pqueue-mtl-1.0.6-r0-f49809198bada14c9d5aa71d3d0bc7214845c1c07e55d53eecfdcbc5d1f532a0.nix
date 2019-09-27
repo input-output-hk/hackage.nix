@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MaybeT" or (buildDepError "MaybeT"))
           (hsPkgs."uvector" or (buildDepError "uvector"))
           ];
+        buildable = true;
         };
       };
     }

@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-tools-builtin-refactorings" or (buildDepError "haskell-tools-builtin-refactorings"))
           (hsPkgs."haskell-tools-refactor" or (buildDepError "haskell-tools-refactor"))
           ];
+        buildable = true;
         };
       exes = {
         "ht-demo" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."haskell-tools-demo" or (buildDepError "haskell-tools-demo"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -102,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."aeson" or (buildDepError "aeson"))
             (hsPkgs."haskell-tools-demo" or (buildDepError "haskell-tools-demo"))
             ];
+          buildable = true;
           };
         };
       };

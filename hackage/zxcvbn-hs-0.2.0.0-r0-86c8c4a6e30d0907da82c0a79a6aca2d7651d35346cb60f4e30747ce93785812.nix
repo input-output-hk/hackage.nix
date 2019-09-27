@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
+        buildable = true;
         };
       exes = {
         "zxcvbn-tools" = {
@@ -97,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pipes-text" or (buildDepError "pipes-text"))
             (hsPkgs."zxcvbn-hs" or (buildDepError "zxcvbn-hs"))
             ];
+          buildable = if !flags.tools then false else true;
           };
         "zxcvbn-example" = {
           depends = [
@@ -116,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zlib" or (buildDepError "zlib"))
             (hsPkgs."zxcvbn-hs" or (buildDepError "zxcvbn-hs"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -141,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."zxcvbn-hs" or (buildDepError "zxcvbn-hs"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -163,6 +167,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."zxcvbn-hs" or (buildDepError "zxcvbn-hs"))
             ];
+          buildable = true;
           };
         };
       };

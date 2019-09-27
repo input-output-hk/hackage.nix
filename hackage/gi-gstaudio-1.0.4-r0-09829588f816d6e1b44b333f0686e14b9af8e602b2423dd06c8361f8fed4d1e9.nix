@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."gstreamer-audio-1.0" or (pkgConfDepError "gstreamer-audio-1.0"))
           ];
+        buildable = true;
         };
       };
     }

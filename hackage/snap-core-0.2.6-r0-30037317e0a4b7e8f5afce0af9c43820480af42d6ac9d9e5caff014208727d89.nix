@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ] ++ (pkgs.lib).optional (!(flags.portable || system.isWindows)) (hsPkgs."bytestring-mmap" or (buildDepError "bytestring-mmap"));
+        buildable = true;
         };
       exes = {
         "snap" = {
@@ -102,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
             (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
+          buildable = true;
           };
         };
       };

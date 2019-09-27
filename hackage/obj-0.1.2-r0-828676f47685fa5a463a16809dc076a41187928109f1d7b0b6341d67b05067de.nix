@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Codec-Image-DevIL" or (buildDepError "Codec-Image-DevIL"))
           (hsPkgs."InfixApplicative" or (buildDepError "InfixApplicative"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GPX" or (buildDepError "GPX"))
           (hsPkgs."xsd" or (buildDepError "xsd"))
           ];
+        buildable = true;
         };
       };
     }

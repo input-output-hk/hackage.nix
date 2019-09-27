@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
           ];
+        buildable = true;
         };
       tests = {
         "test-lockfree-queue" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
             ];
+          buildable = true;
           };
         };
       };

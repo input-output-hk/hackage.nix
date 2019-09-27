@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."relational-query" or (buildDepError "relational-query"))
           (hsPkgs."relational-query-HDBC" or (buildDepError "relational-query-HDBC"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-postgresql" or (buildDepError "text-postgresql"))
             (hsPkgs."persistable-types-HDBC-pg" or (buildDepError "persistable-types-HDBC-pg"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+          buildable = true;
           };
         };
       };

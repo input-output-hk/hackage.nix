@@ -95,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           ]) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."bytestring" or (buildDepError "bytestring"));
         build-tools = (pkgs.lib).optional (system.isOsx) (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs"))) ++ (pkgs.lib).optional (system.isLinux) (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")));
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."GLUT" or (buildDepError "GLUT"))
           ];
+        buildable = true;
         };
       exes = {
         "gloss-export-exe" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."gloss-export" or (buildDepError "gloss-export"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss-export" or (buildDepError "gloss-export"))
             (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
             ];
+          buildable = true;
           };
         };
       };

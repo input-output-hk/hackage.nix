@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."syb" or (buildDepError "syb"))
             (hsPkgs."preprocessor-tools" or (buildDepError "preprocessor-tools"))
             ];
+          buildable = true;
           };
         };
       };

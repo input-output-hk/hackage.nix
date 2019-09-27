@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai" or (buildDepError "wai"))
           (hsPkgs."esqueleto" or (buildDepError "esqueleto"))
           ];
+        buildable = true;
         };
       };
     }

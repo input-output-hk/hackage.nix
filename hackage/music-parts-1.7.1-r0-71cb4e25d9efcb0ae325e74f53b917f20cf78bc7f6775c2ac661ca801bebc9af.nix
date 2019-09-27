@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."adjunctions" or (buildDepError "adjunctions"))
           (hsPkgs."roman-numerals" or (buildDepError "roman-numerals"))
           ];
+        buildable = true;
         };
       };
     }

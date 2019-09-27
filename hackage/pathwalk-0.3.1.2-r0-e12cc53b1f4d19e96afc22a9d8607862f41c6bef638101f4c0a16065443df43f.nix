@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       tests = {
         "basic" = {
@@ -68,24 +69,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pathwalk" or (buildDepError "pathwalk"))
             ];
+          buildable = true;
           };
         "stoprecursing" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pathwalk" or (buildDepError "pathwalk"))
             ];
+          buildable = true;
           };
         "accumulate" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pathwalk" or (buildDepError "pathwalk"))
             ];
+          buildable = true;
           };
         "lazy" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pathwalk" or (buildDepError "pathwalk"))
             ];
+          buildable = true;
           };
         };
       };

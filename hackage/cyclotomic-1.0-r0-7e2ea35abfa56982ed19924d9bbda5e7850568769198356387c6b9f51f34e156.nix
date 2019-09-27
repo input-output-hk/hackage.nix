@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
           ];
+        buildable = true;
         };
       tests = {
         "cyclotomic-tests" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-smallcheck" or (buildDepError "test-framework-smallcheck"))
             ];
+          buildable = true;
           };
         };
       };

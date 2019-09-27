@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           (hsPkgs."cabalrpmdeps" or (buildDepError "cabalrpmdeps"))
           ];
+        buildable = true;
         };
       exes = {
         "cabalmdvspec" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."cabalrpmdeps" or (buildDepError "cabalrpmdeps"))
             ];
+          buildable = true;
           };
         };
       };

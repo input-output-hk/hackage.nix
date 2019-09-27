@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."reactive-glut" or (buildDepError "reactive-glut"))
           (hsPkgs."FieldTrip" or (buildDepError "FieldTrip"))
           ];
+        buildable = true;
         };
       };
     }

@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Chart" or (buildDepError "Chart"))
           (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"))
           ];
+        buildable = true;
         };
       };
     }

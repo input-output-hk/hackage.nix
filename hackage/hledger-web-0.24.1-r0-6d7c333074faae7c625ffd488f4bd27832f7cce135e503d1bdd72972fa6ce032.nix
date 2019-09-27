@@ -92,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
           (hsPkgs."json" or (buildDepError "json"))
           ];
+        buildable = true;
         };
       exes = {
         "hledger-web" = {
@@ -133,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
             (hsPkgs."json" or (buildDepError "json"))
             ];
+          buildable = if flags.library-only then false else true;
           };
         };
       tests = {
@@ -144,6 +146,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod" or (buildDepError "yesod"))
             (hsPkgs."yesod-test" or (buildDepError "yesod-test"))
             ];
+          buildable = true;
           };
         };
       };

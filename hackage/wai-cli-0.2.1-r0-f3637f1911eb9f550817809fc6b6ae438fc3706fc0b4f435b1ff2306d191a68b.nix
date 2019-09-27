@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           (hsPkgs."socket-activation" or (buildDepError "socket-activation"))
           ];
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."composite-aeson" or (buildDepError "composite-aeson"))
           (hsPkgs."refined" or (buildDepError "refined"))
           ];
+        buildable = true;
         };
       };
     }

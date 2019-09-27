@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tls" or (buildDepError "tls"))
           (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
           ];
+        buildable = true;
         };
       };
     }

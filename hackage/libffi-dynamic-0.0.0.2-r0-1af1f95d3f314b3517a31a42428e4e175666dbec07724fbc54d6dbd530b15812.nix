@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."intern" or (buildDepError "intern"))
           ];
         libs = [ (pkgs."ffi" or (sysDepError "ffi")) ];
+        buildable = true;
         };
       };
     }

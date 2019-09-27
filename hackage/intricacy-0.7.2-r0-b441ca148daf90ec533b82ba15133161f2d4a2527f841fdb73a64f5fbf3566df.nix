@@ -96,6 +96,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."SDL_gfx" or (sysDepError "SDL_gfx"))
             (pkgs."freetype" or (sysDepError "freetype"))
             ] ++ (pkgs.lib).optional (flags.sound) (pkgs."SDL_mixer" or (sysDepError "SDL_mixer")))));
+          buildable = if flags.game
+            then if flags.sdl
+              then true
+              else if flags.curses then true else false
+            else false;
           };
         "intricacy-server" = {
           depends = (pkgs.lib).optionals (flags.server) ([
@@ -127,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."smtp-mail" or (buildDepError "smtp-mail"))
             (hsPkgs."argon2" or (buildDepError "argon2"))
             ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups")));
+          buildable = if flags.server then true else false;
           };
         };
       };

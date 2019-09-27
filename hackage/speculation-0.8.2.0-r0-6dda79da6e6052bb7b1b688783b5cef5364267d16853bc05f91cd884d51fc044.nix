@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel" or (buildDepError "parallel"))
           (hsPkgs."stm" or (buildDepError "stm"))
           ];
+        buildable = if !flags.lib then false else true;
         };
       exes = {
         "test-speculation" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         "benchmark-speculation" = {
           depends = (pkgs.lib).optionals (!(!flags.benchmarks)) [
@@ -92,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = if !flags.benchmarks then false else true;
           };
         };
       };

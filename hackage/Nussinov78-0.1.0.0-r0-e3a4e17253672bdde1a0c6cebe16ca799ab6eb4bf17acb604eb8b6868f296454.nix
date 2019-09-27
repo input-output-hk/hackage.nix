@@ -64,7 +64,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ADPfusion" or (buildDepError "ADPfusion"))
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           ];
+        buildable = true;
         };
-      exes = { "Nussinov78" = {}; };
+      exes = { "Nussinov78" = { buildable = true; }; };
       };
     }

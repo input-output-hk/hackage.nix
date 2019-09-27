@@ -90,17 +90,23 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."special-functors" or (buildDepError "special-functors"))
             ]);
+        buildable = true;
         };
       exes = {
-        "test" = {};
-        "speedtest" = {};
+        "test" = { buildable = if !flags.buildtests then false else true; };
+        "speedtest" = {
+          buildable = if !flags.buildprofilers then false else true;
+          };
         "speedtest-exp" = {
           depends = (pkgs.lib).optionals (flags.splitbase) [
             (hsPkgs."old-time" or (buildDepError "old-time"))
             (hsPkgs."directory" or (buildDepError "directory"))
             ];
+          buildable = if !flags.buildprofilers then false else true;
           };
-        "speedtest-simple" = {};
+        "speedtest-simple" = {
+          buildable = if !flags.buildprofilers then false else true;
+          };
         };
       };
     }

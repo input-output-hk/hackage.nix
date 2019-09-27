@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hashable" or (buildDepError "hashable"))
           (hsPkgs."HSet" or (buildDepError "HSet"))
           ];
+        buildable = true;
         };
       };
     }

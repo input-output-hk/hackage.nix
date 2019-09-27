@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."libbrotlidec" or (pkgConfDepError "libbrotlidec"))
           (pkgconfPkgs."libbrotlienc" or (pkgConfDepError "libbrotlienc"))
           ];
+        buildable = true;
         };
       tests = {
         "brotli-test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
             ];
+          buildable = true;
           };
         };
       };

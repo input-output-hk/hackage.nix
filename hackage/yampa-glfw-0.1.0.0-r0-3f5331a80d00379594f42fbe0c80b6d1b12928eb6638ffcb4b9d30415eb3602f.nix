@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           ];
+        buildable = true;
         };
       exes = {
         "yampa-glfw-example" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector-space" or (buildDepError "vector-space"))
             (hsPkgs."yampa-glfw" or (buildDepError "yampa-glfw"))
             ];
+          buildable = true;
           };
         };
       };

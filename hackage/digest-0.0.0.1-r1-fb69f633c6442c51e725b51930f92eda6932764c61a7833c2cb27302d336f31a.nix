@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ]);
         libs = (pkgs.lib).optional (!system.isWindows) (pkgs."z" or (sysDepError "z"));
+        buildable = true;
         };
       };
     }

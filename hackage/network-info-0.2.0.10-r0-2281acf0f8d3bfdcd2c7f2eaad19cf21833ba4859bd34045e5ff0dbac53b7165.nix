@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."socket" or (sysDepError "socket"))
           (pkgs."nsl" or (sysDepError "nsl"))
           ];
+        buildable = true;
         };
       };
     }

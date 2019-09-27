@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               ])
           else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."msvcrt" or (sysDepError "msvcrt"));
+        buildable = true;
         };
       };
     }

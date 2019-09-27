@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "synthi-llvm-example" = {
@@ -112,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."alsa-pcm" or (buildDepError "alsa-pcm"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples && flags.alsa then true else false;
           };
         "synthi-llvm-alsa" = {
           depends = (pkgs.lib).optionals (flags.buildexamples && flags.alsa) [
@@ -138,6 +140,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."alsa-pcm" or (buildDepError "alsa-pcm"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples && flags.alsa then true else false;
           };
         "synthi-llvm-jack" = {
           depends = (pkgs.lib).optionals (flags.buildexamples && flags.jack) [
@@ -163,6 +166,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples && flags.jack then true else false;
           };
         "synthi-llvm-render" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -187,6 +191,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "synthi-llvm-sample" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -198,6 +203,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "synthi-llvm-speech" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
@@ -211,6 +217,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "synthi-llvm-test" = {
           depends = (pkgs.lib).optionals (flags.buildtests) [
@@ -226,6 +233,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

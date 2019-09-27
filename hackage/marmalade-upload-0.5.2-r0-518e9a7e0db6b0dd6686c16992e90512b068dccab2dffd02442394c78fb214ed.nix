@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-client-multipart" or (buildDepError "http-client-multipart"))
             (hsPkgs."keyring" or (buildDepError "keyring"))
             ];
+          buildable = true;
           };
         };
       };

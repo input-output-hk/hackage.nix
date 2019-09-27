@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."clock" or (buildDepError "clock"))
           ];
+        buildable = true;
         };
       exes = {
         "transfer-db" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sqlcli-odbc" or (buildDepError "sqlcli-odbc"))
             (hsPkgs."transfer-db" or (buildDepError "transfer-db"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transfer-db" or (buildDepError "transfer-db"))
             (hsPkgs."sqlcli" or (buildDepError "sqlcli"))
             ];
+          buildable = true;
           };
         };
       };

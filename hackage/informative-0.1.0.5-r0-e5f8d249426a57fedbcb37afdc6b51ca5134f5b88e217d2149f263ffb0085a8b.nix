@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
           (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))
           ];
+        buildable = true;
         };
       exes = {
         "informative-test" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
             (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))
             ];
+          buildable = true;
           };
         };
       };

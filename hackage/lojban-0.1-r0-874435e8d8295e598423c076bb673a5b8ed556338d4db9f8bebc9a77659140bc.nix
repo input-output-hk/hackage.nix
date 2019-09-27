@@ -67,10 +67,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           (hsPkgs."curl" or (buildDepError "curl"))
           ];
+        buildable = true;
         };
       exes = {
         "jbovlastegendb" = {
           depends = [ (hsPkgs."haskell98" or (buildDepError "haskell98")) ];
+          buildable = true;
           };
         };
       };

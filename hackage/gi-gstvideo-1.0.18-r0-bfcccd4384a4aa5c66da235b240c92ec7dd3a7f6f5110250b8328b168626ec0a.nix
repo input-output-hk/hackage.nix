@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."gstreamer-video-1.0" or (pkgConfDepError "gstreamer-video-1.0"))
           ];
+        buildable = true;
         };
       };
     }

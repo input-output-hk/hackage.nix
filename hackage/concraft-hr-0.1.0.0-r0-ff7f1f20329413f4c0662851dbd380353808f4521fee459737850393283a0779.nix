@@ -71,10 +71,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."moan" or (buildDepError "moan"))
           (hsPkgs."double-conversion" or (buildDepError "double-conversion"))
           ];
+        buildable = true;
         };
       exes = {
         "concraft-hr" = {
           depends = [ (hsPkgs."cmdargs" or (buildDepError "cmdargs")) ];
+          buildable = true;
           };
         };
       };

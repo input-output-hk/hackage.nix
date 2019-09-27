@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."split" or (buildDepError "split"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "ghcjs-vdom-example-table" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "ghcjs-vdom-example-components" = {
           depends = [
@@ -84,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         "ghcjs-vdom-example-render" = {
           depends = [
@@ -93,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
             ];
+          buildable = if !flags.build-examples then false else true;
           };
         };
       };

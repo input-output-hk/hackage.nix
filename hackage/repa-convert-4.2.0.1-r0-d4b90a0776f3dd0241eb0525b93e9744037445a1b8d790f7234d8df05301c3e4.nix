@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."double-conversion" or (buildDepError "double-conversion"))
           (hsPkgs."repa-scalar" or (buildDepError "repa-scalar"))
           ];
+        buildable = true;
         };
       };
     }

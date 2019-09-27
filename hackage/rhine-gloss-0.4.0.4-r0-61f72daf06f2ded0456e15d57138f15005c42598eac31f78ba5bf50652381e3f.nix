@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dunai" or (buildDepError "dunai"))
           (hsPkgs."gloss" or (buildDepError "gloss"))
           ];
+        buildable = true;
         };
       exes = {
         "rhine-gloss-gears" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."rhine-gloss" or (buildDepError "rhine-gloss"))
             ];
+          buildable = true;
           };
         };
       };

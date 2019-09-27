@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel" or (buildDepError "parallel"))
           ];
         libs = [ (pkgs."expat" or (sysDepError "expat")) ];
+        buildable = true;
         };
       };
     }

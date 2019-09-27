@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aivika-experiment" or (buildDepError "aivika-experiment"))
           (hsPkgs."aivika-experiment-chart" or (buildDepError "aivika-experiment-chart"))
           ];
+        buildable = true;
         };
       };
     }

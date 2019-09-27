@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."binary" or (buildDepError "binary"))
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -84,24 +86,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
+          buildable = true;
           };
         "mpi-test-binary" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
+          buildable = true;
           };
         "mpi-test-serialize" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
+          buildable = true;
           };
         "mpi-test-store" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -111,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."mpi-hs" or (buildDepError "mpi-hs"))
             ];
+          buildable = true;
           };
         };
       };

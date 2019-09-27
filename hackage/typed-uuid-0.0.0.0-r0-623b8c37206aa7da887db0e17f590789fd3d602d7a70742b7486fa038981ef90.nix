@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."validity" or (buildDepError "validity"))
           (hsPkgs."validity-uuid" or (buildDepError "validity-uuid"))
           ];
+        buildable = true;
         };
       };
     }

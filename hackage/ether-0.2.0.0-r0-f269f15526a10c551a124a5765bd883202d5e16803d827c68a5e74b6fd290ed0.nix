@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."newtype-generics" or (buildDepError "newtype-generics"))
           ];
+        buildable = true;
         };
       tests = {
         "regression" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."ether" or (buildDepError "ether"))
             ];
+          buildable = true;
           };
         };
       };

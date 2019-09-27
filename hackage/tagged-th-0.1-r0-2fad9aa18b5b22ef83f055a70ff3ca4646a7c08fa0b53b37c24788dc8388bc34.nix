@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tagged" or (buildDepError "tagged"))
           (hsPkgs."type-spine" or (buildDepError "type-spine"))
           ];
+        buildable = true;
         };
       };
     }

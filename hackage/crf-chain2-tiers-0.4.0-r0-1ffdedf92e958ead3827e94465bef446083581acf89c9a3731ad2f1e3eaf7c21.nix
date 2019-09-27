@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pedestrian-dag" or (buildDepError "pedestrian-dag"))
           (hsPkgs."data-memocombinators" or (buildDepError "data-memocombinators"))
           ];
+        buildable = true;
         };
       };
     }

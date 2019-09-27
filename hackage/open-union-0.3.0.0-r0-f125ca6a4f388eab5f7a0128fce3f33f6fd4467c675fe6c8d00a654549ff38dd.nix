@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."type-fun" or (buildDepError "type-fun"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-fun" or (buildDepError "type-fun"))
             (hsPkgs."open-union" or (buildDepError "open-union"))
             ];
+          buildable = true;
           };
         };
       };

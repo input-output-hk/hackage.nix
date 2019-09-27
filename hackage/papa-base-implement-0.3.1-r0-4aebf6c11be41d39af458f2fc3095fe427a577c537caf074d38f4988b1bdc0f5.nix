@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."papa-base-export" or (buildDepError "papa-base-export"))
           ];
+        buildable = true;
         };
       };
     }

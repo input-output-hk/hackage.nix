@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."web-encodings" or (buildDepError "web-encodings"))
           (hsPkgs."hack" or (buildDepError "hack"))
           ];
+        buildable = true;
         };
       };
     }

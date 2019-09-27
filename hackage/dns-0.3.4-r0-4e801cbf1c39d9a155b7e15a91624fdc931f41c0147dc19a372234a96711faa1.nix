@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-enumerator" or (buildDepError "network-enumerator"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+        buildable = true;
         };
       };
     }

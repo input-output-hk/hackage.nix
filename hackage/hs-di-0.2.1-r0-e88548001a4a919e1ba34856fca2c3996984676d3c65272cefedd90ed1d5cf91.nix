@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."compose-ltr" or (buildDepError "compose-ltr"))
           ];
+        buildable = true;
         };
       tests = {
         "hs-di-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."MissingH" or (buildDepError "MissingH"))
             (hsPkgs."compose-ltr" or (buildDepError "compose-ltr"))
             ];
+          buildable = true;
           };
         };
       };

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
             ];
+          buildable = true;
           };
         };
       };

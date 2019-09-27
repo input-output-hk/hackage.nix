@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-fluid-tabs" = {
           depends = [
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-fluid-valuators" = {
           depends = [
@@ -75,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-fluid-inactive" = {
           depends = [
@@ -82,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-fluid-fast-slow" = {
           depends = [
@@ -89,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         "fltkhs-fluid-tree" = {
           depends = [
@@ -96,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."fltkhs" or (buildDepError "fltkhs"))
             ];
+          buildable = true;
           };
         };
       };

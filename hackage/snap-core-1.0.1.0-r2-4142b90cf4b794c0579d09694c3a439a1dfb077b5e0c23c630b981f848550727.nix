@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
             ]
           else [ (hsPkgs."old-locale" or (buildDepError "old-locale")) ]);
+        buildable = true;
         };
       tests = {
         "testsuite" = {
@@ -124,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
               ]
             else [ (hsPkgs."old-locale" or (buildDepError "old-locale")) ]);
+          buildable = true;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."lawful" or (buildDepError "lawful"))
           ];
+        buildable = true;
         };
       exes = {
         "gdp" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gdp" or (buildDepError "gdp"))
             ];
+          buildable = true;
           };
         };
       };

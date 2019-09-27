@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."containers" or (buildDepError "containers"))
           ];
+        buildable = true;
         };
       exes = {
         "data-reify-test1" = {
@@ -66,42 +67,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."data-reify" or (buildDepError "data-reify"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         "data-reify-test2" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."data-reify" or (buildDepError "data-reify"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         "data-reify-test3" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."data-reify" or (buildDepError "data-reify"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         "data-reify-test4" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."data-reify" or (buildDepError "data-reify"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         "data-reify-test5" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."data-reify" or (buildDepError "data-reify"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         "data-reify-test6" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."data-reify" or (buildDepError "data-reify"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         "data-reify-test7" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."data-reify" or (buildDepError "data-reify"))
             ];
+          buildable = if !flags.tests then false else true;
           };
         };
       };

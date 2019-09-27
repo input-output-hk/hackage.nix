@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."xdot" or (buildDepError "xdot"))
           ];
+        buildable = true;
         };
       };
     }

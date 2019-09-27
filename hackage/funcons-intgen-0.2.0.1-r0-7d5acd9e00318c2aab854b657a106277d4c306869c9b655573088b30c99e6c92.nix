@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."iml-tools" or (buildDepError "iml-tools"))
             (hsPkgs."funcons-values" or (buildDepError "funcons-values"))
             ];
+          buildable = true;
           };
         };
       };

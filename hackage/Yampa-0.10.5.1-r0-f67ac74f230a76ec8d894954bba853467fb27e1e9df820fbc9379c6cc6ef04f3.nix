@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
       tests = {
         "hlint" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = if !flags.test-hlint then false else true;
           };
         "haddock-coverage" = {
           depends = (pkgs.lib).optionals (!(!flags.test-doc-coverage)) [
@@ -80,12 +82,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             ];
+          buildable = if !flags.test-doc-coverage then false else true;
           };
         "regression" = {
           depends = (pkgs.lib).optionals (!(!flags.test-regression)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Yampa" or (buildDepError "Yampa"))
             ];
+          buildable = if !flags.test-regression then false else true;
           };
         };
       };

@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."gthread-2.0" or (pkgConfDepError "gthread-2.0"))
           (pkgconfPkgs."gtk+-2.0" or (pkgConfDepError "gtk+-2.0"))
           ];
+        buildable = true;
         };
       };
     }

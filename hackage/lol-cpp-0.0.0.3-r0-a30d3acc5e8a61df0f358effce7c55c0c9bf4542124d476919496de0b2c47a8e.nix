@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."reflection" or (buildDepError "reflection"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
       tests = {
         "test-lol-cpp" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lol-cpp" or (buildDepError "lol-cpp"))
             (hsPkgs."lol-tests" or (buildDepError "lol-tests"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lol-benches" or (buildDepError "lol-benches"))
             (hsPkgs."lol-cpp" or (buildDepError "lol-cpp"))
             ];
+          buildable = true;
           };
         };
       };

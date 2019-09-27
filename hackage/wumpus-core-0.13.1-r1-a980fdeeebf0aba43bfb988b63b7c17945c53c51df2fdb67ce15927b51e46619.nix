@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."algebra" or (buildDepError "algebra"))
           (hsPkgs."data-aviary" or (buildDepError "data-aviary"))
           ];
+        buildable = true;
         };
       };
     }

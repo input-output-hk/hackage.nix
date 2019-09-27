@@ -70,7 +70,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
-      exes = { "escape-tidy-html" = {}; };
+      exes = {
+        "escape-tidy-html" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        };
       };
     }

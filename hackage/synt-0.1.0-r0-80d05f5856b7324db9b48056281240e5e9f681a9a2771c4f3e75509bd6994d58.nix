@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regexpr" or (buildDepError "regexpr"))
           (hsPkgs."argparser" or (buildDepError "argparser"))
           ];
+        buildable = true;
         };
       exes = {
         "synt" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regexpr" or (buildDepError "regexpr"))
             (hsPkgs."argparser" or (buildDepError "argparser"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec" or (buildDepError "hspec"))
             (hsPkgs."hpc" or (buildDepError "hpc"))
             ];
+          buildable = true;
           };
         };
       };

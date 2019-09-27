@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."csv" or (buildDepError "csv"))
             ];
+          buildable = true;
           };
         };
       };

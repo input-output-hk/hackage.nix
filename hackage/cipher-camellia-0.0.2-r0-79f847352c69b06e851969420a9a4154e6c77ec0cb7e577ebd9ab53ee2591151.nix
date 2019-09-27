@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."securemem" or (buildDepError "securemem"))
           (hsPkgs."crypto-cipher-types" or (buildDepError "crypto-cipher-types"))
           ];
+        buildable = true;
         };
       tests = {
         "test-cipher-camellia" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."crypto-cipher-types" or (buildDepError "crypto-cipher-types"))
             (hsPkgs."crypto-cipher-tests" or (buildDepError "crypto-cipher-tests"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."crypto-cipher-types" or (buildDepError "crypto-cipher-types"))
             (hsPkgs."crypto-cipher-benchmarks" or (buildDepError "crypto-cipher-benchmarks"))
             ];
+          buildable = true;
           };
         };
       };

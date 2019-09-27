@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsc3" or (buildDepError "hsc3"))
           (hsPkgs."hsc3-db" or (buildDepError "hsc3-db"))
           ];
+        buildable = true;
         };
       };
     }

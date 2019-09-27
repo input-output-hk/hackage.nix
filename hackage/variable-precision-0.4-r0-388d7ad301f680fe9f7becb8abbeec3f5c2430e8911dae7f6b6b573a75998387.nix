@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."floatshow" or (buildDepError "floatshow"))
           (hsPkgs."type-level-natural-number" or (buildDepError "type-level-natural-number"))
           ] ++ (pkgs.lib).optional (flags.fast) (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"));
+        buildable = true;
         };
       };
     }

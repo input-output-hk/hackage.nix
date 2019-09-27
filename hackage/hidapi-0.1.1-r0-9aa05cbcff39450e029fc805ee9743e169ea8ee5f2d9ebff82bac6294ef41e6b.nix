@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
           ];
         libs = [ (pkgs."hidapi-hidraw" or (sysDepError "hidapi-hidraw")) ];
+        buildable = true;
         };
       };
     }

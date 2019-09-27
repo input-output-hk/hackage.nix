@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."uuid" or (buildDepError "uuid"))
           (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
           ];
+        buildable = true;
         };
       exes = {
         "zre" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
             (hsPkgs."zre" or (buildDepError "zre"))
             ];
+          buildable = true;
           };
         "mzre" = {
           depends = [
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
             (hsPkgs."zre" or (buildDepError "zre"))
             ];
+          buildable = true;
           };
         "zreworker" = {
           depends = [
@@ -109,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
             (hsPkgs."zre" or (buildDepError "zre"))
             ];
+          buildable = true;
           };
         "zgossip_server" = {
           depends = [
@@ -120,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
             (hsPkgs."zre" or (buildDepError "zre"))
             ];
+          buildable = true;
           };
         "zrematch" = {
           depends = [
@@ -131,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
             (hsPkgs."zre" or (buildDepError "zre"))
             ];
+          buildable = true;
           };
         "zretime" = {
           depends = [
@@ -140,6 +146,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
             (hsPkgs."zre" or (buildDepError "zre"))
             ];
+          buildable = true;
           };
         "zrecat" = {
           depends = [
@@ -149,6 +156,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
             (hsPkgs."zre" or (buildDepError "zre"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -157,6 +165,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."zre" or (buildDepError "zre"))
             ];
+          buildable = true;
           };
         };
       };

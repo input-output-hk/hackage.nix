@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."SDL2_mixer" or (pkgConfDepError "SDL2_mixer"))
           ];
+        buildable = true;
         };
       exes = {
         "sdl2-mixer-basic" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             (hsPkgs."sdl2-mixer" or (buildDepError "sdl2-mixer"))
             ];
+          buildable = if flags.example then true else false;
           };
         "sdl2-mixer-raw" = {
           depends = (pkgs.lib).optionals (flags.example) [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             (hsPkgs."sdl2-mixer" or (buildDepError "sdl2-mixer"))
             ];
+          buildable = if flags.example then true else false;
           };
         "sdl2-mixer-jumbled" = {
           depends = (pkgs.lib).optionals (flags.example) [
@@ -93,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             (hsPkgs."sdl2-mixer" or (buildDepError "sdl2-mixer"))
             ];
+          buildable = if flags.example then true else false;
           };
         "sdl2-mixer-music" = {
           depends = (pkgs.lib).optionals (flags.example) [
@@ -101,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2" or (buildDepError "sdl2"))
             (hsPkgs."sdl2-mixer" or (buildDepError "sdl2-mixer"))
             ];
+          buildable = if flags.example then true else false;
           };
         "sdl2-mixer-effect" = {
           depends = (pkgs.lib).optionals (flags.example) [
@@ -110,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2-mixer" or (buildDepError "sdl2-mixer"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -68,12 +69,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pathwalk" or (buildDepError "pathwalk"))
             ];
+          buildable = true;
           };
         "stoprecursing" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pathwalk" or (buildDepError "pathwalk"))
             ];
+          buildable = true;
           };
         };
       };

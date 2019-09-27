@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
           (hsPkgs."iproute" or (buildDepError "iproute"))
           ] ++ (pkgs.lib).optional (flags.tls) (hsPkgs."warp-tls" or (buildDepError "warp-tls"))) ++ (pkgs.lib).optional (flags.fastcgi) (hsPkgs."wai-handler-fastcgi" or (buildDepError "wai-handler-fastcgi"));
+        buildable = true;
         };
       };
     }

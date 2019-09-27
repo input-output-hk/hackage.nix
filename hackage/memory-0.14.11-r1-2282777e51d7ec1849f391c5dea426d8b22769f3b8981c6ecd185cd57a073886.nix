@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."basement" or (buildDepError "basement"))
           (hsPkgs."foundation" or (buildDepError "foundation"))
           ];
+        buildable = true;
         };
       tests = {
         "test-memory" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             (hsPkgs."memory" or (buildDepError "memory"))
             ] ++ (pkgs.lib).optional (flags.support_foundation) (hsPkgs."foundation" or (buildDepError "foundation"));
+          buildable = true;
           };
         };
       };

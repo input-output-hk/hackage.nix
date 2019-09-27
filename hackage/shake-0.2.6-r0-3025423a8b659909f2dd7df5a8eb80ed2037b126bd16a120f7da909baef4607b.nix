@@ -69,10 +69,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
       exes = {
         "shake" = {
           depends = [ (hsPkgs."random" or (buildDepError "random")) ];
+          buildable = if flags.testprog then true else false;
           };
         };
       };

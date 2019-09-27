@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."void" or (buildDepError "void"))
           (hsPkgs."algebraic-classes" or (buildDepError "algebraic-classes"))
           ];
+        buildable = true;
         };
       };
     }

@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.integer-simple
           then [ (hsPkgs."integer-simple" or (buildDepError "integer-simple")) ]
           else [ (hsPkgs."integer-gmp" or (buildDepError "integer-gmp")) ]);
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."integer-simple" or (buildDepError "integer-simple"))
               ]
             else [ (hsPkgs."integer-gmp" or (buildDepError "integer-gmp")) ]);
+          buildable = true;
           };
         };
       };

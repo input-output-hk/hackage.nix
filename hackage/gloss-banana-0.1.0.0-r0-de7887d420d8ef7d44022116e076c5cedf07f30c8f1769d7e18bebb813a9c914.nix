@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gloss" or (buildDepError "gloss"))
           (hsPkgs."reactive-banana" or (buildDepError "reactive-banana"))
           ];
+        buildable = true;
         };
       };
     }

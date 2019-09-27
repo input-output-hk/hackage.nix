@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."phonetic-code" or (buildDepError "phonetic-code"))
             (hsPkgs."sqlite" or (buildDepError "sqlite"))
             ];
+          buildable = true;
           };
         "thimk-makedb" = {
           depends = [
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sqlite" or (buildDepError "sqlite"))
             (hsPkgs."phonetic-code" or (buildDepError "phonetic-code"))
             ];
+          buildable = true;
           };
         };
       };

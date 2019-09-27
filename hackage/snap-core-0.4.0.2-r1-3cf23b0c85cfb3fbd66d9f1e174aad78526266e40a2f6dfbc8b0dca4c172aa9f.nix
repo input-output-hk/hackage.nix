@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ] ++ (pkgs.lib).optional (!(flags.portable || system.isWindows)) (hsPkgs."bytestring-mmap" or (buildDepError "bytestring-mmap"));
+        buildable = true;
         };
       };
     }

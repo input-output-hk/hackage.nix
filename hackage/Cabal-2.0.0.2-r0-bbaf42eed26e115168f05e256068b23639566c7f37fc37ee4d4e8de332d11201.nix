@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           ];
         build-tools = (pkgs.lib).optional (flags.parsec) (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")));
+        buildable = true;
         };
       tests = {
         "unit-tests" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = true;
           };
         "parser-tests" = {
           depends = [
@@ -114,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
+          buildable = if !flags.parsec then false else true;
           };
         "parser-hackage-tests" = {
           depends = [
@@ -130,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."singleton-bool" or (buildDepError "singleton-bool"))
             (hsPkgs."keys" or (buildDepError "keys"))
             ];
+          buildable = if !flags.parsec then false else true;
           };
         };
       };

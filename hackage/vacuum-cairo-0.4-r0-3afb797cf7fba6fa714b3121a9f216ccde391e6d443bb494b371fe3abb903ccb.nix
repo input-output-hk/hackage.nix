@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel" or (buildDepError "parallel"))
           (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
           ];
+        buildable = true;
         };
       };
     }

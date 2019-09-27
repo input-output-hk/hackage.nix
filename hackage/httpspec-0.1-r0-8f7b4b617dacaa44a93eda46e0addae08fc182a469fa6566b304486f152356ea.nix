@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."encoding" or (buildDepError "encoding"))
           ];
+        buildable = true;
         };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gtk" or (buildDepError "gtk"))
           (hsPkgs."gtk-helpers" or (buildDepError "gtk-helpers"))
           ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."comonad-transformers" or (buildDepError "comonad-transformers"))
           (hsPkgs."free" or (buildDepError "free"))
           ];
+        buildable = true;
         };
       };
     }

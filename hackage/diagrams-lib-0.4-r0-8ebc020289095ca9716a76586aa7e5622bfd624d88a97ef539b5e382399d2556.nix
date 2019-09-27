@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."newtype" or (buildDepError "newtype"))
           (hsPkgs."tau" or (buildDepError "tau"))
           ];
+        buildable = true;
         };
       };
     }

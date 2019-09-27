@@ -82,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."webkitgtk-3.0" or (pkgConfDepError "webkitgtk-3.0"))
           ];
+        buildable = true;
         };
       };
     }

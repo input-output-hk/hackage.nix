@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ListLike" or (buildDepError "ListLike"))
           (hsPkgs."uu-interleaved" or (buildDepError "uu-interleaved"))
           ];
+        buildable = true;
         };
       };
     }

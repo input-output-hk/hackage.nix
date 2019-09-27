@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."Win32" or (buildDepError "Win32"))
           ];
+        buildable = true;
         };
       tests = {
         "system-info-test" = {
@@ -66,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."system-info" or (buildDepError "system-info"))
             ];
+          buildable = true;
           };
         };
       };

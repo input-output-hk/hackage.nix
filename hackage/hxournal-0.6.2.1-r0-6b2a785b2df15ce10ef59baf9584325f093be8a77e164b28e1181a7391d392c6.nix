@@ -105,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."TypeCompose" or (buildDepError "TypeCompose"))
             ];
+        buildable = true;
         };
       exes = {
         "hxournal" = {
@@ -113,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             (hsPkgs."hxournal" or (buildDepError "hxournal"))
             ];
+          buildable = true;
           };
         };
       };

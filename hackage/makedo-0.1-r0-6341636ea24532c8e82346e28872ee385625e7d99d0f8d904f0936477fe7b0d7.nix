@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process" or (buildDepError "process"))
           (hsPkgs."HSH" or (buildDepError "HSH"))
           ];
+        buildable = true;
         };
       };
     }

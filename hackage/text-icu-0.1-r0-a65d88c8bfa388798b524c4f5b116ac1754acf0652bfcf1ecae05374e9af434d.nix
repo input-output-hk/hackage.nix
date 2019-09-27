@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."icuuc" or (sysDepError "icuuc"))
           (pkgs."icudata" or (sysDepError "icudata"))
           ];
+        buildable = true;
         };
       };
     }

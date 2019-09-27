@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."composition" or (buildDepError "composition"))
             (hsPkgs."Gamgine" or (buildDepError "Gamgine"))
             ];
+          buildable = true;
           };
         };
       };

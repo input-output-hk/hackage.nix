@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bitset" or (buildDepError "bitset"))
           ];
         libs = [ (pkgs."xenctrl" or (sysDepError "xenctrl")) ];
+        buildable = true;
         };
       };
     }

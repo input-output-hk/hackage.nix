@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."ssl" or (sysDepError "ssl"))
           (pkgs."pthread" or (sysDepError "pthread"))
           ];
+        buildable = true;
         };
       tests = {
         "targets" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."uniform-io" or (buildDepError "uniform-io"))
             ];
+          buildable = true;
           };
         "blocking" = {
           depends = [
@@ -87,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
             (hsPkgs."uniform-io" or (buildDepError "uniform-io"))
             ];
+          buildable = true;
           };
         };
       };

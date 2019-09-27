@@ -54,17 +54,24 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "hascal" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."numbers" or (buildDepError "numbers"))
             ];
+          buildable = true;
           };
         };
       tests = {
-        "test" = { depends = [ (hsPkgs."HUnit" or (buildDepError "HUnit")) ]; };
+        "test" = {
+          depends = [ (hsPkgs."HUnit" or (buildDepError "HUnit")) ];
+          buildable = true;
+          };
         };
       };
     }

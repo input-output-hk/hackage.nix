@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-CEGUI-Binding" or (buildDepError "HGamer3D-CEGUI-Binding"))
           (hsPkgs."HGamer3D-WinEvent" or (buildDepError "HGamer3D-WinEvent"))
           ];
+        buildable = true;
         };
       };
     }

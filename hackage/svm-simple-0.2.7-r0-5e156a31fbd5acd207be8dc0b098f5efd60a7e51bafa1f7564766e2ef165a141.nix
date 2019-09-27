@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."monad-par" or (buildDepError "monad-par"))
           ];
+        buildable = true;
         };
       };
     }

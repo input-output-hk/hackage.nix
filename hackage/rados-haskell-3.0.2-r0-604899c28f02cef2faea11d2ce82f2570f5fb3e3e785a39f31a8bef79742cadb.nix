@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."async" or (buildDepError "async"))
           ];
         libs = [ (pkgs."rados" or (sysDepError "rados")) ];
+        buildable = true;
         };
       tests = {
         "check" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."rados-haskell" or (buildDepError "rados-haskell"))
             ];
           libs = [ (pkgs."rados" or (sysDepError "rados")) ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."rados-haskell" or (buildDepError "rados-haskell"))
             ];
+          buildable = true;
           };
         "concurrency" = {
           depends = [
@@ -101,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."async" or (buildDepError "async"))
             (hsPkgs."rados-haskell" or (buildDepError "rados-haskell"))
             ];
+          buildable = true;
           };
         };
       };

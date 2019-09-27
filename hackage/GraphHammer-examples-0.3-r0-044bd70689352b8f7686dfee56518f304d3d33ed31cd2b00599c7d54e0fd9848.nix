@@ -54,7 +54,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = true; };
       exes = {
         "TriangleCountTest" = {
           depends = [
@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Graph500" or (buildDepError "Graph500"))
             (hsPkgs."GraphHammer" or (buildDepError "GraphHammer"))
             ];
+          buildable = true;
           };
         "ClusteringCoefficientTest" = {
           depends = [
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Graph500" or (buildDepError "Graph500"))
             (hsPkgs."GraphHammer" or (buildDepError "GraphHammer"))
             ];
+          buildable = false;
           };
         };
       };

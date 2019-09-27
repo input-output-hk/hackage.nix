@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."xhtml" or (buildDepError "xhtml"))
           ];
+        buildable = true;
         };
       exes = {
         "cookie.cgi" = {
@@ -75,36 +76,42 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cgi" or (buildDepError "cgi"))
             (hsPkgs."xhtml" or (buildDepError "xhtml"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         "error.cgi" = {
           depends = (pkgs.lib).optionals (flags.install-examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."cgi" or (buildDepError "cgi"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         "hello.cgi" = {
           depends = (pkgs.lib).optionals (flags.install-examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."cgi" or (buildDepError "cgi"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         "printinput.cgi" = {
           depends = (pkgs.lib).optionals (flags.install-examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."cgi" or (buildDepError "cgi"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         "redirect.cgi" = {
           depends = (pkgs.lib).optionals (flags.install-examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."cgi" or (buildDepError "cgi"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         "showAllInputs.cgi" = {
           depends = (pkgs.lib).optionals (flags.install-examples) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."cgi" or (buildDepError "cgi"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         "upload.cgi" = {
           depends = (pkgs.lib).optionals (flags.install-examples) [
@@ -113,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cgi" or (buildDepError "cgi"))
             (hsPkgs."xhtml" or (buildDepError "xhtml"))
             ];
+          buildable = if flags.install-examples then true else false;
           };
         };
       };

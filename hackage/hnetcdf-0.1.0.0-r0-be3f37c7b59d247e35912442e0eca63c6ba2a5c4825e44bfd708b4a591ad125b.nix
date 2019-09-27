@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
+        buildable = true;
         };
       tests = {
         "test-raw-metadata" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           libs = [ (pkgs."netcdf" or (sysDepError "netcdf")) ];
+          buildable = true;
           };
         "test-raw-get-put" = {
           depends = [
@@ -101,6 +103,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           libs = [ (pkgs."netcdf" or (sysDepError "netcdf")) ];
+          buildable = true;
           };
         "test-raw-attributes" = {
           depends = [
@@ -117,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           libs = [ (pkgs."netcdf" or (sysDepError "netcdf")) ];
+          buildable = true;
           };
         "test-get" = {
           depends = [
@@ -134,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           libs = [ (pkgs."netcdf" or (sysDepError "netcdf")) ];
+          buildable = true;
           };
         };
       };

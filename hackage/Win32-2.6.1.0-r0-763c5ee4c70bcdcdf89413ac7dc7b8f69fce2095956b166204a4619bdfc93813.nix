@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."msimg32" or (sysDepError "msimg32"))
           (pkgs."imm32" or (sysDepError "imm32"))
           ];
+        buildable = if !system.isWindows then false else true;
         };
       };
     }

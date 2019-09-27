@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           (hsPkgs."parsec-extra" or (buildDepError "parsec-extra"))
           ];
+        buildable = true;
         };
       };
     }

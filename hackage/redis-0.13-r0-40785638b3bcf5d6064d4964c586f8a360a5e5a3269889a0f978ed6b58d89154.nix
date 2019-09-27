@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."MonadCatchIO-mtl" or (buildDepError "MonadCatchIO-mtl"))
           (hsPkgs."concurrent-extra" or (buildDepError "concurrent-extra"))
           ];
+        buildable = true;
         };
       };
     }

@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
         "multiple_shooting" = {
@@ -96,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."colour" or (buildDepError "colour"))
             (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "sofa-viz-2000" = {
           depends = [
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "sofa-expand-o-matic" = {
           depends = [
@@ -122,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."linear" or (buildDepError "linear"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "homotopy" = {
           depends = [
@@ -130,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."casadi-bindings" or (buildDepError "casadi-bindings"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "vec" = {
           depends = [
@@ -137,6 +142,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "ocpDslSpring" = {
           depends = [
@@ -152,6 +158,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "ocpDslRocket" = {
           depends = [
@@ -167,6 +174,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cereal" or (buildDepError "cereal"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "nlpDsl" = {
           depends = [
@@ -180,6 +188,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "basic" = {
           depends = [
@@ -187,6 +196,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "basicJ" = {
           depends = [
@@ -195,6 +205,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."casadi-bindings" or (buildDepError "casadi-bindings"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "daeColl" = {
           depends = [
@@ -202,6 +213,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "glider" = {
           depends = [
@@ -214,6 +226,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "sailboat" = {
           depends = [
@@ -227,6 +240,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "dynoplot" = {
           depends = [
@@ -239,6 +253,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
             (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       tests = {
@@ -256,6 +271,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

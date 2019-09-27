@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."hcg-minus" or (buildDepError "hcg-minus"))
           ];
+        buildable = true;
         };
       exes = {
         "hps-fractals" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hcg-minus" or (buildDepError "hcg-minus"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = if !flags.build-exec then false else true;
           };
         };
       };

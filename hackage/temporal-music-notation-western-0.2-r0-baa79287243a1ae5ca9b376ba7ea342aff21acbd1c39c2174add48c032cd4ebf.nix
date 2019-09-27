@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."temporal-music-notation" or (buildDepError "temporal-music-notation"))
           ];
+        buildable = true;
         };
       };
     }

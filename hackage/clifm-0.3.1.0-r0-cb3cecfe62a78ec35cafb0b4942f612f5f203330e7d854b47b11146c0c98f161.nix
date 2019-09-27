@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pointedlist" or (buildDepError "pointedlist"))
             (hsPkgs."byteunits" or (buildDepError "byteunits"))
             ];
+          buildable = true;
           };
         };
       };

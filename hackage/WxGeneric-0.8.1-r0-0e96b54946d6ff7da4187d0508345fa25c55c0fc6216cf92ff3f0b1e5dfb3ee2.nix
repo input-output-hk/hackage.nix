@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."wxcore" or (buildDepError "wxcore"))
           ];
+        buildable = true;
         };
       };
     }

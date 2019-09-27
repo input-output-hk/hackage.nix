@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."clist" or (buildDepError "clist"))
           (hsPkgs."natural-induction" or (buildDepError "natural-induction"))
           ];
+        buildable = true;
         };
       };
     }

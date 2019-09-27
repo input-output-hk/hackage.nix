@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."constrained-categories" or (buildDepError "constrained-categories"))
           ];
+        buildable = true;
         };
       };
     }

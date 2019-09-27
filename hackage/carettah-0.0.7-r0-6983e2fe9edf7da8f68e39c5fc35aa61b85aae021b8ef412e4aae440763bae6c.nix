@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pango" or (buildDepError "pango"))
             (hsPkgs."hcwiid" or (buildDepError "hcwiid"))
             ];
+          buildable = true;
           };
         };
       };

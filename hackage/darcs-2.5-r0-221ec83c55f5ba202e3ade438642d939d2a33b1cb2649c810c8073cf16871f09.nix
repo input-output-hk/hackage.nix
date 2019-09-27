@@ -97,6 +97,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo")));
         libs = (pkgs.lib).optionals (!(!flags.library)) ((pkgs.lib).optional (flags.curl) (pkgs."curl" or (sysDepError "curl")));
+        buildable = if !flags.library
+          then false
+          else if !flags.curl && !flags.http || flags.deps-only
+            then false
+            else true;
         };
       exes = {
         "witnesses" = {
@@ -131,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ]);
+          buildable = if !flags.type-witnesses then false else true;
           };
         "darcs" = {
           depends = (((([
@@ -162,6 +168,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo"));
           libs = (pkgs.lib).optional (flags.curl) (pkgs."curl" or (sysDepError "curl"));
+          buildable = if !flags.curl && !flags.http || flags.deps-only
+            then false
+            else true;
           };
         "unit" = {
           depends = (pkgs.lib).optionals (!(!flags.test)) ((((([
@@ -196,6 +205,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network" or (buildDepError "network"))
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ]);
+          buildable = if !flags.test then false else true;
           };
         };
       };

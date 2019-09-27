@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "spider-bench" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."reflex" or (buildDepError "reflex"))
             ];
+          buildable = true;
           };
         };
       };

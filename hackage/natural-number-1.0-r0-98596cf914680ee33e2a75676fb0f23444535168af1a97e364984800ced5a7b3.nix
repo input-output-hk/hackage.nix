@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-level-natural-number-induction" or (buildDepError "type-level-natural-number-induction"))
           (hsPkgs."type-equality" or (buildDepError "type-equality"))
           ];
+        buildable = true;
         };
       };
     }

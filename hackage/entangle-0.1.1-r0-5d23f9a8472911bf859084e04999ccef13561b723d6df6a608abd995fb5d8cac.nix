@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."matrix" or (buildDepError "matrix"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       exes = {
         "entangle" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quipper-core" or (buildDepError "quipper-core"))
             (hsPkgs."matrix" or (buildDepError "matrix"))
             ];
+          buildable = true;
           };
         };
       };

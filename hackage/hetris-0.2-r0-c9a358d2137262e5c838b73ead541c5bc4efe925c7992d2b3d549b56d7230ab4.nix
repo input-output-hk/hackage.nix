@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hscurses" or (buildDepError "hscurses"))
             ];
           libs = [ (pkgs."curses" or (sysDepError "curses")) ];
+          buildable = true;
           };
         };
       };

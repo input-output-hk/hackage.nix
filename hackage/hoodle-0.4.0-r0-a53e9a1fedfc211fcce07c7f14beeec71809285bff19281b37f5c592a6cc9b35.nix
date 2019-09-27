@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."configurator" or (buildDepError "configurator"))
           (hsPkgs."hoodle-core" or (buildDepError "hoodle-core"))
           ] ++ (pkgs.lib).optional (flags.dyre) (hsPkgs."dyre" or (buildDepError "dyre"));
+        buildable = true;
         };
       exes = {
         "hoodle" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hoodle-core" or (buildDepError "hoodle-core"))
             (hsPkgs."hoodle" or (buildDepError "hoodle"))
             ];
+          buildable = true;
           };
         };
       };

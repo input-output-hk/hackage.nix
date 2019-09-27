@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-control" or (buildDepError "monad-control"))
           (hsPkgs."types-compat" or (buildDepError "types-compat"))
           ];
+        buildable = true;
         };
       };
     }

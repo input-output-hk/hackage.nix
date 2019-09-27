@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."OpenNI2" or (sysDepError "OpenNI2"))
           (pkgs."freenect" or (sysDepError "freenect"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."OpenNI2" or (sysDepError "OpenNI2"))
             (pkgs."freenect" or (sysDepError "freenect"))
             ];
+          buildable = true;
           };
         };
       };

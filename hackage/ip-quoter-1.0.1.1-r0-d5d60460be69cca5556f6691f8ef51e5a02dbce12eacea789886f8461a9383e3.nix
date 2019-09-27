@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."network" or (buildDepError "network"))
           (hsPkgs."cpu" or (buildDepError "cpu"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cpu" or (buildDepError "cpu"))
             (hsPkgs."ip-quoter" or (buildDepError "ip-quoter"))
             ];
+          buildable = true;
           };
         };
       };

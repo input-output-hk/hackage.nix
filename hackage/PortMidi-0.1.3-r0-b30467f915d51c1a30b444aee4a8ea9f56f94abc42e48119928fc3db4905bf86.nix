@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."CoreFoundation" or (sysDepError "CoreFoundation"))
           (pkgs."CoreAudio" or (sysDepError "CoreAudio"))
           ]);
+        buildable = true;
         };
       };
     }

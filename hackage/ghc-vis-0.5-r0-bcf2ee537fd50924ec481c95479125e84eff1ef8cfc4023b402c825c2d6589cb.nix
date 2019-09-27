@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."graphviz" or (buildDepError "graphviz"))
           (hsPkgs."xdot" or (buildDepError "xdot"))
           ];
+        buildable = true;
         };
       };
     }

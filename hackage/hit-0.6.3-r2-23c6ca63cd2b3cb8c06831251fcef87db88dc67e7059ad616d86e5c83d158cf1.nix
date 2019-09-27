@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."patience" or (buildDepError "patience"))
           ];
+        buildable = true;
         };
       exes = {
         "Hit" = {
@@ -93,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hourglass" or (buildDepError "hourglass"))
             (hsPkgs."patience" or (buildDepError "patience"))
             ];
+          buildable = if flags.executable then true else false;
           };
         };
       tests = {
@@ -105,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hourglass" or (buildDepError "hourglass"))
             (hsPkgs."hit" or (buildDepError "hit"))
             ];
+          buildable = true;
           };
         "test-repository" = {
           depends = [
@@ -116,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytedump" or (buildDepError "bytedump"))
             (hsPkgs."hit" or (buildDepError "hit"))
             ];
+          buildable = true;
           };
         };
       };

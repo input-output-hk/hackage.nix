@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ];
         libs = (pkgs.lib).optional (!flags.use-pkg-config) (pkgs."tcod" or (sysDepError "tcod"));
         pkgconfig = (pkgs.lib).optional (flags.use-pkg-config) (pkgconfPkgs."libtcod" or (pkgConfDepError "libtcod"));
+        buildable = true;
         };
       exes = {
         "tcod-haskell-sample01" = {
@@ -73,18 +74,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tcod-haskell" or (buildDepError "tcod-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "tcod-haskell-sample02" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tcod-haskell" or (buildDepError "tcod-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         "tcod-haskell-sample03" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."tcod-haskell" or (buildDepError "tcod-haskell"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

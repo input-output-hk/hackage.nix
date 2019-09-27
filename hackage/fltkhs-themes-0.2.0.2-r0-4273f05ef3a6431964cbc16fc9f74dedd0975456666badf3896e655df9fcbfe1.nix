@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
         libs = (pkgs.lib).optional (system.isLinux) (pkgs."fontconfig" or (sysDepError "fontconfig"));
+        buildable = true;
         };
       };
     }

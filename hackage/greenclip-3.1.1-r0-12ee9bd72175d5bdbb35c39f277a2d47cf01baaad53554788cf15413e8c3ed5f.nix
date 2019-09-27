@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgconfPkgs."xau" or (pkgConfDepError "xau"))
             (pkgconfPkgs."xdmcp" or (pkgConfDepError "xdmcp"))
             ];
+          buildable = true;
           };
         };
       };

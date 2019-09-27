@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
           (hsPkgs."these" or (buildDepError "these"))
           ];
+        buildable = true;
         };
       tests = {
         "nonempty-containers-test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."these" or (buildDepError "these"))
             ];
+          buildable = true;
           };
         };
       };

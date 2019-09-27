@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
           else (pkgs.lib).optional (!system.isHalvm) (hsPkgs."unix" or (buildDepError "unix")));
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."advapi32" or (sysDepError "advapi32"));
+        buildable = true;
         };
       };
     }

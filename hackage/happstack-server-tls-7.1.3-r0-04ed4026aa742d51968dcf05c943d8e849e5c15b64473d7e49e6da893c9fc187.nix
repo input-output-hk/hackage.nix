@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = [
           (pkgs."ssl" or (sysDepError "ssl"))
           ] ++ (pkgs.lib).optional (!system.isOsx) (pkgs."cryptopp" or (sysDepError "cryptopp"));
+        buildable = true;
         };
       };
     }

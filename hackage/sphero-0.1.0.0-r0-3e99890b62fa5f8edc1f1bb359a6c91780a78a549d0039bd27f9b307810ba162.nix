@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cereal" or (buildDepError "cereal"))
           (hsPkgs."simple-bluetooth" or (buildDepError "simple-bluetooth"))
           ];
+        buildable = true;
         };
       };
     }

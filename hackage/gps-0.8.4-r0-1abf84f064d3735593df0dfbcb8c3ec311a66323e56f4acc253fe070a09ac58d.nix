@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."statistics" or (buildDepError "statistics"))
           ];
+        buildable = true;
         };
       tests = {
         "gps-tests" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."statistics" or (buildDepError "statistics"))
             (hsPkgs."gps" or (buildDepError "gps"))
             ];
+          buildable = true;
           };
         };
       };

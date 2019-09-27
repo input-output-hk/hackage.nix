@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "validate-tagchup" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-basic" or (buildDepError "xml-basic"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         "escape-html" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-basic" or (buildDepError "xml-basic"))
             (hsPkgs."base" or (buildDepError "base"))
             ] ++ (pkgs.lib).optional (flags.buildexamples) (hsPkgs."hxt" or (buildDepError "hxt"));
+          buildable = if flags.buildexamples then true else false;
           };
         "strip-html" = {
           depends = [
@@ -87,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-basic" or (buildDepError "xml-basic"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         };
       tests = {
@@ -96,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."xml-basic" or (buildDepError "xml-basic"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -111,6 +116,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

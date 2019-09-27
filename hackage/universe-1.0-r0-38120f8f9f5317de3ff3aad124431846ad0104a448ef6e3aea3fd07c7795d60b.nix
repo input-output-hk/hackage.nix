@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."universe-reverse-instances" or (buildDepError "universe-reverse-instances"))
           (hsPkgs."universe-instances-trans" or (buildDepError "universe-instances-trans"))
           ];
+        buildable = true;
         };
       };
     }

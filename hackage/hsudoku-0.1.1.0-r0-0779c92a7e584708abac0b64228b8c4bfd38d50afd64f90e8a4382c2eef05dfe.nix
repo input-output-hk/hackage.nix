@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."haskell-gi-base" or (buildDepError "haskell-gi-base"))
           (hsPkgs."gi-gtk" or (buildDepError "gi-gtk"))
           ];
+        buildable = true;
         };
       exes = {
         "hsudoku" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gi-gtk" or (buildDepError "gi-gtk"))
             (hsPkgs."hsudoku" or (buildDepError "hsudoku"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -99,6 +101,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."hsudoku" or (buildDepError "hsudoku"))
             ];
+          buildable = true;
           };
         "travis" = {
           depends = [
@@ -115,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."hsudoku" or (buildDepError "hsudoku"))
             ];
+          buildable = true;
           };
         };
       };

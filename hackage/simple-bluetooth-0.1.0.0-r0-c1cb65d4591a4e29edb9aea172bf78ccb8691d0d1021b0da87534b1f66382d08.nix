@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if system.isWindows
           then [ (pkgs."ws2_32" or (sysDepError "ws2_32")) ]
           else [ (pkgs."bluetooth" or (sysDepError "bluetooth")) ];
+        buildable = true;
         };
       };
     }

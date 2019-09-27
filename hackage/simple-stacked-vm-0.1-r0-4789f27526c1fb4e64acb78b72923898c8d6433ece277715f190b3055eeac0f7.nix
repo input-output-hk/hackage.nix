@@ -64,7 +64,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary-state" or (buildDepError "binary-state"))
           (hsPkgs."array" or (buildDepError "array"))
           ];
+        buildable = true;
         };
-      exes = { "ssvm" = {}; };
+      exes = { "ssvm" = { buildable = true; }; };
       };
     }

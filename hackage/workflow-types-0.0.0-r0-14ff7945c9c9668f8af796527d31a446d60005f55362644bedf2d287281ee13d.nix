@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."exceptions" or (buildDepError "exceptions"))
           (hsPkgs."Earley" or (buildDepError "Earley"))
           ];
+        buildable = true;
         };
       exes = {
         "workflow-types-example" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."workflow-types" or (buildDepError "workflow-types"))
             ];
+          buildable = true;
           };
         };
       };

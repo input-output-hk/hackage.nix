@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."wl-pprint-annotated" or (buildDepError "wl-pprint-annotated"))
           ];
+        buildable = true;
         };
       };
     }

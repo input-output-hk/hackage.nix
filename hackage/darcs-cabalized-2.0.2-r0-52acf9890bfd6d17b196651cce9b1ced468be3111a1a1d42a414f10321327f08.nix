@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (pkgs."z" or (sysDepError "z"))
               (pkgs."curses" or (sysDepError "curses"))
               ];
+          buildable = true;
           };
         };
       };

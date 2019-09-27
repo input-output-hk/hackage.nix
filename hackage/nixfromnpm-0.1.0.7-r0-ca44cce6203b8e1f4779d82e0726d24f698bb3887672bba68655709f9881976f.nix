@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."hnix" or (buildDepError "hnix"))
           ];
+        buildable = true;
         };
       exes = {
         "nixfromnpm" = {
@@ -101,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hnix" or (buildDepError "hnix"))
             (hsPkgs."docopt" or (buildDepError "docopt"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -131,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."hnix" or (buildDepError "hnix"))
             ];
+          buildable = true;
           };
         };
       };

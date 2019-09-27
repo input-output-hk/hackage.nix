@@ -64,7 +64,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."collada-types" or (buildDepError "collada-types"))
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
+        buildable = true;
         };
-      exes = { "Examples" = {}; };
+      exes = { "Examples" = { buildable = true; }; };
       };
     }

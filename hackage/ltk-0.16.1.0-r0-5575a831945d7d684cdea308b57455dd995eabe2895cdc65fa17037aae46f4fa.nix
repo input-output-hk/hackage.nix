@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ])) ++ (if flags.gtk-320
           then [ (pkgconfPkgs."gtk+-3.0" or (pkgConfDepError "gtk+-3.0")) ]
           else [ (pkgconfPkgs."gdk-3.0" or (pkgConfDepError "gdk-3.0")) ]);
+        buildable = true;
         };
       };
     }

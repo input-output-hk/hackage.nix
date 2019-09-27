@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dimensional-tf" or (buildDepError "dimensional-tf"))
           (hsPkgs."numtype-tf" or (buildDepError "numtype-tf"))
           ];
+        buildable = true;
         };
       };
     }

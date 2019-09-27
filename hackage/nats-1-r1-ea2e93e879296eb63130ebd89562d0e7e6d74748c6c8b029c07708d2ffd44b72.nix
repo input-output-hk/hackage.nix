@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "7.9")) ([
           (hsPkgs."base" or (buildDepError "base"))
           ] ++ (pkgs.lib).optional (flags.hashable) (hsPkgs."hashable" or (buildDepError "hashable")));
+        buildable = true;
         };
       };
     }

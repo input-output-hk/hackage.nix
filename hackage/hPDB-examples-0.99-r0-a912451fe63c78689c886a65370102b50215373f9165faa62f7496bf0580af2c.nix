@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             ];
+          buildable = true;
           };
         "ShiftToCenter" = {
           depends = [
@@ -90,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "CleanPDB" = {
           depends = [
@@ -108,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             ];
+          buildable = true;
           };
         "SplitModels" = {
           depends = [
@@ -126,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         "CanonicalAxes" = {
           depends = [
@@ -144,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             ];
+          buildable = true;
           };
         "PrintEvents" = {
           depends = [
@@ -162,6 +167,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             ];
+          buildable = true;
           };
         "PrintStructureObject" = {
           depends = [
@@ -180,6 +186,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             ];
+          buildable = true;
           };
         "Rg" = {
           depends = [
@@ -198,6 +205,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             ];
+          buildable = true;
           };
         "StericClashCheck" = {
           depends = [
@@ -218,6 +226,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-format" or (buildDepError "text-format"))
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             ];
+          buildable = true;
           };
         "Viewer" = {
           depends = [
@@ -238,6 +247,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = true;
           };
         };
       };

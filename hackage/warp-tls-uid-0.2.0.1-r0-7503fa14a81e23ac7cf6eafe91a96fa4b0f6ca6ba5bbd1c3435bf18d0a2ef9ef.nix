@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."warp" or (buildDepError "warp"))
           (hsPkgs."warp-tls" or (buildDepError "warp-tls"))
           ];
+        buildable = true;
         };
       tests = {
         "warp-tls-uid-test" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."warp-tls" or (buildDepError "warp-tls"))
             (hsPkgs."warp-tls-uid" or (buildDepError "warp-tls-uid"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."text" or (buildDepError "text"))
           ];
+        buildable = true;
         };
       tests = {
         "extras" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unicode-transforms" or (buildDepError "unicode-transforms"))
             ];
+          buildable = true;
           };
         "quickcheck" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unicode-transforms" or (buildDepError "unicode-transforms"))
             ] ++ (pkgs.lib).optional (flags.has-icu) (hsPkgs."text-icu" or (buildDepError "text-icu"));
+          buildable = true;
           };
         "ucd" = {
           depends = [
@@ -89,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unicode-transforms" or (buildDepError "unicode-transforms"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -104,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."unicode-transforms" or (buildDepError "unicode-transforms"))
             ] ++ (pkgs.lib).optional (flags.has-icu) (hsPkgs."text-icu" or (buildDepError "text-icu"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."path" or (buildDepError "path"));
+          buildable = true;
           };
         };
       };

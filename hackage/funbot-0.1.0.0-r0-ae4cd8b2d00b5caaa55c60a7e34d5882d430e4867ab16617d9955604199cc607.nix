@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             (hsPkgs."vcs-web-hook-parse" or (buildDepError "vcs-web-hook-parse"))
             ];
+          buildable = true;
           };
         };
       };

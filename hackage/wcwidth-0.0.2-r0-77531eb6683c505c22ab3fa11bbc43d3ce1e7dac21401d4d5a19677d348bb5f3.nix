@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [ (hsPkgs."containers" or (buildDepError "containers")) ] ++ [
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "wcwidth-tools" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
             ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.cli then true else false;
           };
         };
       };

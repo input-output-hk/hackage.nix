@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = if flags.specificpkgconfig
           then [ (pkgconfPkgs."llvm-3.5" or (pkgConfDepError "llvm-3.5")) ]
           else [ (pkgconfPkgs."llvm" or (pkgConfDepError "llvm")) ];
+        buildable = true;
         };
       exes = {
         "llvm-ffi-example" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildexamples then true else false;
           };
         "llvm-diff-ffi" = {
           depends = (pkgs.lib).optionals (flags.buildtools) [
@@ -83,6 +85,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildtools then true else false;
           };
         "llvm-function-mangler" = {
           depends = (pkgs.lib).optionals (flags.buildtools) [
@@ -91,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildtools then true else false;
           };
         "llvm-intrinsic-mangler" = {
           depends = (pkgs.lib).optionals (flags.buildtools) [
@@ -98,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.buildtools then true else false;
           };
         };
       };

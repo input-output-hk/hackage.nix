@@ -89,10 +89,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.zlib) (hsPkgs."zlib" or (buildDepError "zlib"))) ++ (pkgs.lib).optional (flags.utf8-string) (hsPkgs."utf8-string" or (buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo"));
         libs = (pkgs.lib).optional (flags.curl) (pkgs."curl" or (sysDepError "curl")) ++ (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (sysDepError "z"));
         pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl" or (pkgConfDepError "libcurl"))));
+        buildable = if !flags.curl && !flags.http then false else true;
         };
       exes = {
         "witnesses" = {
           libs = (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (sysDepError "z"));
+          buildable = if !flags.type-witnesses then false else true;
           };
         "darcs" = {
           depends = (((((([
@@ -117,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.zlib) (hsPkgs."zlib" or (buildDepError "zlib"))) ++ (pkgs.lib).optional (flags.utf8-string) (hsPkgs."utf8-string" or (buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo"));
           libs = ((pkgs.lib).optional (!flags.zlib) (pkgs."z" or (sysDepError "z")) ++ (pkgs.lib).optional (flags.curl) (pkgs."curl" or (sysDepError "curl"))) ++ (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (sysDepError "z"));
           pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl" or (pkgConfDepError "libcurl"))));
+          buildable = if !flags.curl && !flags.http then false else true;
           };
         "unit" = {
           depends = ((((([
@@ -141,6 +144,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.zlib) (hsPkgs."zlib" or (buildDepError "zlib"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo"));
           libs = (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (sysDepError "z")) ++ (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (sysDepError "z"));
+          buildable = if !flags.test then false else true;
           };
         };
       };

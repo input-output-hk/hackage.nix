@@ -65,7 +65,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             ]
           else [ (hsPkgs."mtl" or (buildDepError "mtl")) ]);
+        buildable = true;
         };
-      exes = { "cmdlib-test" = {}; "cmdlib-rectest" = {}; };
+      exes = {
+        "cmdlib-test" = { buildable = if !flags.test then false else true; };
+        "cmdlib-rectest" = { buildable = if !flags.test then false else true; };
+        };
       };
     }

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."zstd" or (buildDepError "zstd"))
           ];
+        buildable = true;
         };
       tests = {
         "conduit-zstd-test" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
             (hsPkgs."zstd" or (buildDepError "zstd"))
             ];
+          buildable = true;
           };
         };
       };

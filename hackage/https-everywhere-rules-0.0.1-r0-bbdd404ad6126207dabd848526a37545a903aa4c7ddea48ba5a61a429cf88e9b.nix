@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text-icu" or (buildDepError "text-icu"))
           (hsPkgs."https-everywhere-rules-raw" or (buildDepError "https-everywhere-rules-raw"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text-icu" or (buildDepError "text-icu"))
             (hsPkgs."https-everywhere-rules-raw" or (buildDepError "https-everywhere-rules-raw"))
             ];
+          buildable = true;
           };
         };
       };

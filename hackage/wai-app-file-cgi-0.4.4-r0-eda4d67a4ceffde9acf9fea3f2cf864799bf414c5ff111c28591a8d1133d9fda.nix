@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-logger-prefork" or (buildDepError "wai-logger-prefork"))
           (hsPkgs."http-enumerator" or (buildDepError "http-enumerator"))
           ];
+        buildable = true;
         };
       };
     }

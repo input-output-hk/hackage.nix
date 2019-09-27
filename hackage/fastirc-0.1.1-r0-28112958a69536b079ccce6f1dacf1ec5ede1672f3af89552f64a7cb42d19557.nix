@@ -62,9 +62,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."monadLib" or (buildDepError "monadLib"))
           ];
+        buildable = true;
         };
       exes = {
-        "test" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "test" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = if flags.debug then true else false;
+          };
         };
       };
     }

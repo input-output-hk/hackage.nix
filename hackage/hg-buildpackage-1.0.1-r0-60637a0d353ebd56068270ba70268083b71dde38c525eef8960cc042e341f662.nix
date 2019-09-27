@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."HSH" or (buildDepError "HSH"))
             ];
+          buildable = true;
           };
         "hg-importdsc" = {
           depends = [
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."HSH" or (buildDepError "HSH"))
             ];
+          buildable = true;
           };
         "hg-buildpackage" = {
           depends = [
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."HSH" or (buildDepError "HSH"))
             ];
+          buildable = true;
           };
         "hg-markdeb" = {
           depends = [
@@ -106,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."HSH" or (buildDepError "HSH"))
             ];
+          buildable = true;
           };
         "hgmerge-debupstream" = {
           depends = [
@@ -119,6 +123,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."HSH" or (buildDepError "HSH"))
             ];
+          buildable = true;
           };
         };
       };

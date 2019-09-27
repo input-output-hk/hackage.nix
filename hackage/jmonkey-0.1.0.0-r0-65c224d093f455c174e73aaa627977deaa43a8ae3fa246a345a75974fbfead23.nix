@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."free" or (buildDepError "free"))
           (hsPkgs."jmacro" or (buildDepError "jmacro"))
           ];
+        buildable = true;
         };
       exes = {
         "jmonkey-example-exe" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wai" or (buildDepError "wai"))
             (hsPkgs."warp" or (buildDepError "warp"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."jmacro" or (buildDepError "jmacro"))
             (hsPkgs."jmonkey" or (buildDepError "jmonkey"))
             ];
+          buildable = true;
           };
         };
       };

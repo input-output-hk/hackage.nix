@@ -64,7 +64,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
           (hsPkgs."SoccerFun" or (buildDepError "SoccerFun"))
           ];
+        buildable = true;
         };
-      exes = { "sfPlayTape" = {}; };
+      exes = { "sfPlayTape" = { buildable = true; }; };
       };
     }

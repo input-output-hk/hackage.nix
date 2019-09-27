@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."nats" or (buildDepError "nats"))
           (hsPkgs."void" or (buildDepError "void"))
           ];
+        buildable = true;
         };
       tests = {
         "inspection" = {
@@ -72,6 +73,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
             (hsPkgs."tagged" or (buildDepError "tagged"))
             ];
+          buildable = if !(compiler.isGhc && (compiler.version).ge "8.0")
+            then false
+            else true;
           };
         };
       };

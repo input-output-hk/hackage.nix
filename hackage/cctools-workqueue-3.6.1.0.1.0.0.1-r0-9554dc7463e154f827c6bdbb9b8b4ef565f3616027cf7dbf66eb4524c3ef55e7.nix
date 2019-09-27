@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."base" or (buildDepError "base"))) ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."base" or (buildDepError "base"));
         libs = [ (pkgs."dttools" or (sysDepError "dttools")) ];
+        buildable = true;
         };
       };
     }

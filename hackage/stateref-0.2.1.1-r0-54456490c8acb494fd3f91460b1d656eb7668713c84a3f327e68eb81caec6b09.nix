@@ -59,6 +59,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ] ++ (pkgs.lib).optional (flags.usestm) (hsPkgs."stm" or (buildDepError "stm"));
+        buildable = if flags.usestm
+          then if flags.usetmvar
+            then if compiler.isHugs && true then false else true
+            else true
+          else true;
         };
       };
     }

@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "ls-example-exe" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hs-popen" or (buildDepError "hs-popen"))
             ];
+          buildable = true;
           };
         };
       };

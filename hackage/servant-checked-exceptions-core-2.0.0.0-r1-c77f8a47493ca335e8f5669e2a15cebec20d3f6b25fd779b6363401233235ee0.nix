@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."world-peace" or (buildDepError "world-peace"))
           ];
+        buildable = true;
         };
       exes = {
         "servant-checked-exceptions-example-docs" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-docs" or (buildDepError "servant-docs"))
             (hsPkgs."text" or (buildDepError "text"))
             ];
+          buildable = if flags.buildexample then true else false;
           };
         };
       tests = {
@@ -94,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."doctest" or (buildDepError "doctest"))
             (hsPkgs."Glob" or (buildDepError "Glob"))
             ];
+          buildable = if compiler.isGhcjs && true then false else true;
           };
         };
       };

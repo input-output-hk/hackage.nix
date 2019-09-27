@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hs-twitter" or (buildDepError "hs-twitter"))
             (hsPkgs."HStringTemplate" or (buildDepError "HStringTemplate"))
             ];
+          buildable = true;
           };
         };
       };

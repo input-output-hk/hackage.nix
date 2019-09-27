@@ -73,7 +73,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."time" or (buildDepError "time"))
             ]) ++ (pkgs.lib).optional (flags.http) (hsPkgs."HTTP1" or (buildDepError "HTTP1"));
+        buildable = true;
         };
-      exes = { "hogg" = {}; "ListMergeTest" = {}; };
+      exes = {
+        "hogg" = { buildable = true; };
+        "ListMergeTest" = { buildable = true; };
+        };
       };
     }

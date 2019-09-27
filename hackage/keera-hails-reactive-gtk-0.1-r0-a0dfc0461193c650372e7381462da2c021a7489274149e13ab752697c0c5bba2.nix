@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gtk-helpers" or (buildDepError "gtk-helpers"))
           (hsPkgs."keera-hails-reactivevalues" or (buildDepError "keera-hails-reactivevalues"))
           ];
+        buildable = true;
         };
       };
     }

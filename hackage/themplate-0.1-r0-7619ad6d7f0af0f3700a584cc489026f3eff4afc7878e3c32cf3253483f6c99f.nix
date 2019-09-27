@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."configurator" or (buildDepError "configurator"))
             (hsPkgs."errors" or (buildDepError "errors"))
             ];
+          buildable = true;
           };
         };
       };

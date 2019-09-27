@@ -86,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lens" or (buildDepError "lens"))
             ]
           else [ (hsPkgs."lens" or (buildDepError "lens")) ]);
+        buildable = true;
         };
       exes = {
         "simple" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."twitter-types-lens" or (buildDepError "twitter-types-lens"))
             (hsPkgs."twitter-conduit" or (buildDepError "twitter-conduit"))
             ];
+          buildable = if !flags.build-samples then false else true;
           };
         "userstream" = {
           depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
@@ -134,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ] ++ (if flags.network-uri
             then [ (hsPkgs."network-uri" or (buildDepError "network-uri")) ]
             else [ (hsPkgs."network" or (buildDepError "network")) ]);
+          buildable = if !flags.build-samples then false else true;
           };
         "oauth_callback" = {
           depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
@@ -152,6 +155,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."twitter-conduit" or (buildDepError "twitter-conduit"))
             (hsPkgs."scotty" or (buildDepError "scotty"))
             ];
+          buildable = if !flags.build-samples then false else true;
           };
         "oauth_pin" = {
           depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
@@ -169,6 +173,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."authenticate-oauth" or (buildDepError "authenticate-oauth"))
             (hsPkgs."twitter-conduit" or (buildDepError "twitter-conduit"))
             ];
+          buildable = if !flags.build-samples then false else true;
           };
         };
       tests = {
@@ -177,6 +182,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         "doctests" = {
           depends = [
@@ -185,6 +191,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."doctest" or (buildDepError "doctest"))
             ];
+          buildable = true;
           };
         "spec_main" = {
           depends = ([
@@ -217,6 +224,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."network" or (buildDepError "network"))
               ])) ++ (pkgs.lib).optional (flags.lens-aeson) (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"));
+          buildable = true;
           };
         };
       };

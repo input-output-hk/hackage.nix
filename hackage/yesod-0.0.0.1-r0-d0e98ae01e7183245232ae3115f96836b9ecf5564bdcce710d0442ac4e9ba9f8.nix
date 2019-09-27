@@ -81,10 +81,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."failure" or (buildDepError "failure"))
           (hsPkgs."safe-failure" or (buildDepError "safe-failure"))
           ];
+        buildable = if flags.nolib then false else true;
         };
       exes = {
         "yesod" = {
           depends = [ (hsPkgs."file-embed" or (buildDepError "file-embed")) ];
+          buildable = true;
           };
         "runtests" = {
           depends = (pkgs.lib).optionals (flags.buildtests) [
@@ -94,13 +96,20 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
-        "helloworld" = {};
-        "hellotemplate" = {};
-        "fact" = {};
-        "i18n" = {};
-        "pretty-yaml" = {};
-        "tweedle" = {};
+        "helloworld" = {
+          buildable = if flags.buildsamples then true else false;
+          };
+        "hellotemplate" = {
+          buildable = if flags.buildsamples then true else false;
+          };
+        "fact" = { buildable = if flags.buildsamples then true else false; };
+        "i18n" = { buildable = if flags.buildsamples then true else false; };
+        "pretty-yaml" = {
+          buildable = if flags.buildsamples then true else false;
+          };
+        "tweedle" = { buildable = if flags.buildsamples then true else false; };
         };
       };
     }

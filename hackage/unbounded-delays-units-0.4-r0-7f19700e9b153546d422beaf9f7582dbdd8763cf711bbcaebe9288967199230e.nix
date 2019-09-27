@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."units" or (buildDepError "units"))
           (hsPkgs."units-defs" or (buildDepError "units-defs"))
           ];
+        buildable = true;
         };
       };
     }

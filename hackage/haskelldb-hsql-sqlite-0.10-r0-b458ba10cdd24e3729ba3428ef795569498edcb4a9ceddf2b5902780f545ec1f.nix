@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsql" or (buildDepError "hsql"))
           (hsPkgs."hsql-sqlite" or (buildDepError "hsql-sqlite"))
           ];
+        buildable = true;
         };
       };
     }

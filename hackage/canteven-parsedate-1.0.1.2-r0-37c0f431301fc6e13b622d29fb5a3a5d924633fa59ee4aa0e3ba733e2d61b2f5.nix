@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."timezone-series" or (buildDepError "timezone-series"))
           (hsPkgs."tz" or (buildDepError "tz"))
           ];
+        buildable = true;
         };
       tests = {
         "test-parsedate" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."timezone-series" or (buildDepError "timezone-series"))
             (hsPkgs."tz" or (buildDepError "tz"))
             ];
+          buildable = true;
           };
         };
       };

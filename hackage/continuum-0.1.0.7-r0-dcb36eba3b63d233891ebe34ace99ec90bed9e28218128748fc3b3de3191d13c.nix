@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
       exes = {
         "continuum-client" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = if flags.binaries then true else false;
           };
         "continuum-server" = {
           depends = [
@@ -98,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."nanomsg-haskell" or (buildDepError "nanomsg-haskell"))
             ];
           libs = [ (pkgs."hyperleveldb" or (sysDepError "hyperleveldb")) ];
+          buildable = if flags.binaries then true else false;
           };
         };
       };

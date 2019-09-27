@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."binary" or (buildDepError "binary"))
           (hsPkgs."hamlet" or (buildDepError "hamlet"))
           ];
+        buildable = true;
         };
       };
     }

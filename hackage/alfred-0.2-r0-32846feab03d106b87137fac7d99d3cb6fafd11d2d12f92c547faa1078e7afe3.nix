@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HTTP" or (buildDepError "HTTP"))
           (hsPkgs."hexpat" or (buildDepError "hexpat"))
           ];
+        buildable = true;
         };
       };
     }

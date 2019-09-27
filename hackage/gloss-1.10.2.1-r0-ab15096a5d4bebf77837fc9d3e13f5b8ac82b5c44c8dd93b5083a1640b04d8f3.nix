@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
           (hsPkgs."bindings-GLFW" or (buildDepError "bindings-GLFW"))
           ];
+        buildable = true;
         };
       };
     }

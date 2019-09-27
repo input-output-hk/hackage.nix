@@ -61,6 +61,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Boolean" or (buildDepError "Boolean"))
           (hsPkgs."NumInstances" or (buildDepError "NumInstances"))
           ];
+        buildable = if compiler.isGhc && (compiler.version).lt "6.10"
+          then false
+          else true;
         };
       };
     }

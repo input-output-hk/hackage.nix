@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-DSL" or (buildDepError "bindings-DSL"))
           ];
         pkgconfig = [ (pkgconfPkgs."libcddb" or (pkgConfDepError "libcddb")) ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
           (hsPkgs."diagrams-cairo" or (buildDepError "diagrams-cairo"))
           ];
+        buildable = true;
         };
       };
     }

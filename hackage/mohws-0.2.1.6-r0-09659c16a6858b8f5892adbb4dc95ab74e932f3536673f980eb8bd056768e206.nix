@@ -75,11 +75,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
-        "hws" = {};
+        "hws" = { buildable = true; };
         "hws-dyn" = {
           depends = (pkgs.lib).optional (flags.dynamic) (hsPkgs."ghc" or (buildDepError "ghc"));
+          buildable = if flags.dynamic then true else false;
           };
         };
       };

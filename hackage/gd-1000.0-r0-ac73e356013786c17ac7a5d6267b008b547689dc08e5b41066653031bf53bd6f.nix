@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."freetype" or (sysDepError "freetype"))
           (pkgs."expat" or (sysDepError "expat"))
           ];
+        buildable = true;
         };
       };
     }

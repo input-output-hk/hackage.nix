@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."bits-atomic" or (buildDepError "bits-atomic"))
           ];
+        buildable = true;
         };
       tests = {
         "test-IORefCAS" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             (hsPkgs."bits-atomic" or (buildDepError "bits-atomic"))
             ];
+          buildable = true;
           };
         };
       };

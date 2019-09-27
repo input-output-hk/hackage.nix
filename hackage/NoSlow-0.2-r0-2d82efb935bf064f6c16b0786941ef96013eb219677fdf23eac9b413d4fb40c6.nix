@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."dph-prim-seq" or (buildDepError "dph-prim-seq"))
             (hsPkgs."dph-base" or (buildDepError "dph-base"))
             ]) ++ (pkgs.lib).optional (flags.vector) (hsPkgs."vector" or (buildDepError "vector"))) ++ (pkgs.lib).optional (flags.uvector) (hsPkgs."uvector" or (buildDepError "uvector"))) ++ (pkgs.lib).optional (flags.storablevector) (hsPkgs."storablevector" or (buildDepError "storablevector"));
+          buildable = true;
           };
         "noslow-table" = {
           depends = [
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."statistics" or (buildDepError "statistics"))
             ];
+          buildable = true;
           };
         };
       };

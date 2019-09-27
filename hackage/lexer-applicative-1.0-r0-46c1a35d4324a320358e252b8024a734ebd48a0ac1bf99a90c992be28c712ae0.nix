@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."srcloc" or (buildDepError "srcloc"))
           (hsPkgs."regex-applicative" or (buildDepError "regex-applicative"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."lexer-applicative" or (buildDepError "lexer-applicative"))
             (hsPkgs."srcloc" or (buildDepError "srcloc"))
             ];
+          buildable = true;
           };
         };
       };

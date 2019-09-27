@@ -57,6 +57,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = [ (hsPkgs."base" or (buildDepError "base")) ];
         libs = (pkgs.lib).optionals (!(system.isLinux || system.isOsx)) ((pkgs.lib).optional (system.isWindows) (pkgs."iphlpapi" or (sysDepError "iphlpapi")));
+        buildable = if system.isLinux || system.isOsx
+          then true
+          else if system.isWindows then true else false;
         };
       };
     }

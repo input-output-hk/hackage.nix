@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."indexed" or (buildDepError "indexed"))
           ];
+        buildable = true;
         };
       tests = {
         "do-notation-test" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."do-notation" or (buildDepError "do-notation"))
             (hsPkgs."indexed" or (buildDepError "indexed"))
             ];
+          buildable = true;
           };
         };
       };

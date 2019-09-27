@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."z" or (sysDepError "z"))
           ];
         pkgconfig = (pkgs.lib).optional (!flags.nopkgconfig) (pkgconfPkgs."libzip" or (pkgConfDepError "libzip"));
+        buildable = true;
         };
       };
     }

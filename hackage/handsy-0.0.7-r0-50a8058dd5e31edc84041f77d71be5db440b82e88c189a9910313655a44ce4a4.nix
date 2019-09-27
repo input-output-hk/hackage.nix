@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."process-extras" or (buildDepError "process-extras"))
           (hsPkgs."shell-escape" or (buildDepError "shell-escape"))
           ];
+        buildable = true;
         };
       };
     }

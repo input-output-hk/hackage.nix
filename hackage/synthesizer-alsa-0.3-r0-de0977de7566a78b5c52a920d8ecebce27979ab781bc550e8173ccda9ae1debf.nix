@@ -86,7 +86,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."old-time" or (buildDepError "old-time"))
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
+        buildable = true;
         };
-      exes = { "realtimesynth" = {}; "synthicate" = {}; "test" = {}; };
+      exes = {
+        "realtimesynth" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        "synthicate" = {
+          buildable = if !flags.buildexamples then false else true;
+          };
+        "test" = { buildable = if !flags.buildtests then false else true; };
+        };
       };
     }

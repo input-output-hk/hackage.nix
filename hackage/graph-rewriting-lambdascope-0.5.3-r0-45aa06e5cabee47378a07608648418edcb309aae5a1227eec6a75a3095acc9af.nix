@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
             (hsPkgs."IndentParser" or (buildDepError "IndentParser"))
             ];
+          buildable = true;
           };
         };
       };

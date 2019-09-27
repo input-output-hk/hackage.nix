@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."temporary" or (buildDepError "temporary"))
           (hsPkgs."lazy-io" or (buildDepError "lazy-io"))
           ];
+        buildable = true;
         };
       };
     }

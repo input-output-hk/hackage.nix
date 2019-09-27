@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+        buildable = true;
         };
       tests = {
         "prop-compiled" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
               ]
             else [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
           };
         };
       };

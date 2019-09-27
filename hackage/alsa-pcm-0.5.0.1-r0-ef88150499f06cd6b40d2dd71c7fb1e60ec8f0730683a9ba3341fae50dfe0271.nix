@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           ];
         pkgconfig = [ (pkgconfPkgs."alsa" or (pkgConfDepError "alsa")) ];
+        buildable = true;
         };
       exes = {
         "alsa-minisynth" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.buildsynthesizer then false else true;
           };
         "alsa-duplex" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         "alsa-play" = {
           depends = [
@@ -87,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         "alsa-record" = {
           depends = [
@@ -94,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         "alsa-volume-meter" = {
           depends = [
@@ -101,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if !flags.buildexamples then false else true;
           };
         };
       };

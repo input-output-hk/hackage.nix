@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."ssl" or (sysDepError "ssl"))
           (pkgs."crypto" or (sysDepError "crypto"))
           ];
+        buildable = true;
         };
       tests = {
         "compiling-ok" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."second-transfer" or (buildDepError "second-transfer"))
             (hsPkgs."conduit" or (buildDepError "conduit"))
             ];
+          buildable = true;
           };
         "hunit-tests" = {
           depends = [
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."http2" or (buildDepError "http2"))
             ];
+          buildable = true;
           };
         };
       };

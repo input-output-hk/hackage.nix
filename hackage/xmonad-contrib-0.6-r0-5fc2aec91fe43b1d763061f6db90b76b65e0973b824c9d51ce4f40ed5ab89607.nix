@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."base" or (buildDepError "base"))
             ])) ++ (pkgs.lib).optional (flags.use_xft) (hsPkgs."X11-xft" or (buildDepError "X11-xft"));
+        buildable = true;
         };
       };
     }

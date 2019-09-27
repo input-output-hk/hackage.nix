@@ -126,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gnutls" or (buildDepError "gnutls"))
             (hsPkgs."xml-types" or (buildDepError "xml-types"))
             ]) ++ (pkgs.lib).optional (flags.xmpp && flags.assistant && flags.dns) (hsPkgs."dns" or (buildDepError "dns"));
+          buildable = true;
           };
         };
       tests = {
@@ -163,6 +164,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."edit-distance" or (buildDepError "edit-distance"))
             (hsPkgs."process" or (buildDepError "process"))
             ];
+          buildable = true;
           };
         };
       };

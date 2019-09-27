@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vty" or (buildDepError "vty"))
           (hsPkgs."rasa-ext-logger" or (buildDepError "rasa-ext-logger"))
           ];
+        buildable = true;
         };
       };
     }

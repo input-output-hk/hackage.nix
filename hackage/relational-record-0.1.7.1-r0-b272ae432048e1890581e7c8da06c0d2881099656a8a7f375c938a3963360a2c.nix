@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."relational-query-HDBC" or (buildDepError "relational-query-HDBC"))
           (hsPkgs."persistable-types-HDBC-pg" or (buildDepError "persistable-types-HDBC-pg"))
           ];
+        buildable = true;
         };
       };
     }

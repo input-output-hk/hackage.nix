@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."compdata" or (buildDepError "compdata"))
           (hsPkgs."projection" or (buildDepError "projection"))
           ];
+        buildable = true;
         };
       benchmarks = {
         "macro" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."projection" or (buildDepError "projection"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

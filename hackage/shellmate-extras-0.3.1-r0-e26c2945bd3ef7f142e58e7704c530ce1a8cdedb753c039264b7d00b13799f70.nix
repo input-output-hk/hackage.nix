@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mime-types" or (buildDepError "mime-types"))
           (hsPkgs."shellmate" or (buildDepError "shellmate"))
           ];
+        buildable = true;
         };
       };
     }

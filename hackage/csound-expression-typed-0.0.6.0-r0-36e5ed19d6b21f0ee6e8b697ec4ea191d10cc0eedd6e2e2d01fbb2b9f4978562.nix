@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stable-maps" or (buildDepError "stable-maps"))
           (hsPkgs."csound-expression-dynamic" or (buildDepError "csound-expression-dynamic"))
           ];
+        buildable = true;
         };
       };
     }

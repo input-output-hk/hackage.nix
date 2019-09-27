@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if system.isI386 || flags.32bit
           then [ (pkgs."ML32i3" or (sysDepError "ML32i3")) ]
           else [ (pkgs."ML64i3" or (sysDepError "ML64i3")) ];
+        buildable = true;
         };
       };
     }

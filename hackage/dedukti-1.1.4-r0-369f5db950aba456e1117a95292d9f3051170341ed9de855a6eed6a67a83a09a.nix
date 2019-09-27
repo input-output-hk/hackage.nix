@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
+        buildable = true;
         };
       exes = {
         "dedukti" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hmk" or (buildDepError "hmk"))
             (hsPkgs."stringtable-atom" or (buildDepError "stringtable-atom"))
             ];
+          buildable = true;
           };
         "dedukti-tests" = {
           depends = (pkgs.lib).optionals (!(!flags.test)) [
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
+          buildable = if !flags.test then false else true;
           };
         };
       };

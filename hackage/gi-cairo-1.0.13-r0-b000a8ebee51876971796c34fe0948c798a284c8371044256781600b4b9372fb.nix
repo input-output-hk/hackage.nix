@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."cairo-gobject" or (pkgConfDepError "cairo-gobject"))
           ];
+        buildable = true;
         };
       };
     }

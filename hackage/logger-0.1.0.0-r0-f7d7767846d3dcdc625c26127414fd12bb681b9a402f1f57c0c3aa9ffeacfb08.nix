@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."unagi-chan" or (buildDepError "unagi-chan"))
           ];
+        buildable = true;
         };
       };
     }

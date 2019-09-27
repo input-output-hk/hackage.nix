@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-client-openssl" or (buildDepError "http-client-openssl"))
             (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
             ]);
+        buildable = true;
         };
       };
     }

@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         pkgconfig = [
           (pkgconfPkgs."javascriptcoregtk-4.0" or (pkgConfDepError "javascriptcoregtk-4.0"))
           ];
+        buildable = true;
         };
       };
     }

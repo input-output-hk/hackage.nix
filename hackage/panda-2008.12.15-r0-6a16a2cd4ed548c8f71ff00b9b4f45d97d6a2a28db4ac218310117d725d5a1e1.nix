@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default" or (buildDepError "data-default"))
           (hsPkgs."hcheat" or (buildDepError "hcheat"))
           ];
+        buildable = true;
         };
       };
     }

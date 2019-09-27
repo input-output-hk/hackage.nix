@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parsec" or (buildDepError "parsec"))
           (hsPkgs."toolshed" or (buildDepError "toolshed"))
           ];
+        buildable = true;
         };
       };
     }

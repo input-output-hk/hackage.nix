@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."unix-time" or (buildDepError "unix-time"))
             ]);
+        buildable = true;
         };
       };
     }

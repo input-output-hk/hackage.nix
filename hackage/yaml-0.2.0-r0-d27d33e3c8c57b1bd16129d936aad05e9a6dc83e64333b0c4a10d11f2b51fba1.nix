@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."control-monad-failure" or (buildDepError "control-monad-failure"))
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
+        buildable = if flags.nolib then false else true;
         };
       exes = {
         "runtests" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."control-monad-failure" or (buildDepError "control-monad-failure"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.buildtests then true else false;
           };
         };
       };

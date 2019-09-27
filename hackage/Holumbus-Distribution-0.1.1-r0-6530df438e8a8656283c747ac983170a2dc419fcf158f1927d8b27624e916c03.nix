@@ -72,7 +72,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."array" or (buildDepError "array"))
           (hsPkgs."readline" or (buildDepError "readline"))
           ];
+        buildable = true;
         };
-      exes = { "PortRegistry" = {}; "PortRegistryDaemon" = {}; };
+      exes = {
+        "PortRegistry" = { buildable = true; };
+        "PortRegistryDaemon" = { buildable = true; };
+        };
       };
     }

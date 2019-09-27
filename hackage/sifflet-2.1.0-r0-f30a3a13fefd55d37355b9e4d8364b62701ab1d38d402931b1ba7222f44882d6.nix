@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."gdk-x11-2.0" or (sysDepError "gdk-x11-2.0"))
             (pkgs."gtk-x11-2.0" or (sysDepError "gtk-x11-2.0"))
             ];
+          buildable = true;
           };
         };
       };

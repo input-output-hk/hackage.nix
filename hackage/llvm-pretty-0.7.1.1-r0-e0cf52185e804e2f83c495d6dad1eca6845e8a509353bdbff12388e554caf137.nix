@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pretty" or (buildDepError "pretty"))
           (hsPkgs."monadLib" or (buildDepError "monadLib"))
           ];
+        buildable = true;
         };
       };
     }

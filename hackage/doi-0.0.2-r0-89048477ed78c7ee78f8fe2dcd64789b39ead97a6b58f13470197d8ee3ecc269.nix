@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
           (hsPkgs."urlencoded" or (buildDepError "urlencoded"))
           ];
+        buildable = true;
         };
       exes = {
         "doi" = {
@@ -104,6 +105,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
             (hsPkgs."urlencoded" or (buildDepError "urlencoded"))
             ];
+          buildable = true;
           };
         };
       };

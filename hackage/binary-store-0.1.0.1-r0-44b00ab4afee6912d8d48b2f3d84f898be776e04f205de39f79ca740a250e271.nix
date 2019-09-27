@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bzlib" or (buildDepError "bzlib"))
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
+        buildable = true;
         };
       tests = {
         "binary-store-tests" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."binary-list" or (buildDepError "binary-list"))
             (hsPkgs."binary-store" or (buildDepError "binary-store"))
             ];
+          buildable = true;
           };
         };
       };

@@ -59,7 +59,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         ];
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       tests = {
         "doctests" = {
           depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
@@ -70,12 +73,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gc" or (buildDepError "gc"))
             (hsPkgs."parallel" or (buildDepError "parallel"))
             ];
+          buildable = if !flags.test-doctests then false else true;
           };
         "hlint" = {
           depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = if !flags.test-hlint then false else true;
           };
         };
       };

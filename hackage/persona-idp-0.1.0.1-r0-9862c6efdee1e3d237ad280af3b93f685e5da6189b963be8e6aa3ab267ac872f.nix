@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."jose" or (buildDepError "jose"))
             (hsPkgs."persona" or (buildDepError "persona"))
             ];
+          buildable = true;
           };
         };
       };

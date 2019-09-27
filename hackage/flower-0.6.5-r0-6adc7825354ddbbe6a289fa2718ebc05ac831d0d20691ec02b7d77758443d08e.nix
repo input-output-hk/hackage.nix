@@ -67,11 +67,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
+          buildable = true;
           };
-        "flowselect" = {};
-        "frecover" = {};
-        "frename" = {};
-        "flowt" = {};
+        "flowselect" = { buildable = true; };
+        "frecover" = { buildable = true; };
+        "frename" = { buildable = true; };
+        "flowt" = { buildable = true; };
         };
       };
     }

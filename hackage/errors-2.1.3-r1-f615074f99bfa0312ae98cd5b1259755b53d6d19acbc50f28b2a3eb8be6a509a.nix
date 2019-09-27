@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
           (hsPkgs."unexceptionalio" or (buildDepError "unexceptionalio"))
           ] ++ [ (hsPkgs."safe" or (buildDepError "safe")) ];
+        buildable = true;
         };
       };
     }

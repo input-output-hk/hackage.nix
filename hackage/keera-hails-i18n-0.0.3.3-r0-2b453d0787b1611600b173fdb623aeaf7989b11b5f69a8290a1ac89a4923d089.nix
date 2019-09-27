@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hgettext" or (buildDepError "hgettext"))
           (hsPkgs."setlocale" or (buildDepError "setlocale"))
           ];
+        buildable = true;
         };
       };
     }

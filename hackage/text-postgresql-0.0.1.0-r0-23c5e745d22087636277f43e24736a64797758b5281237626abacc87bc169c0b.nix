@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."dlist" or (buildDepError "dlist"))
           ];
+        buildable = true;
         };
       tests = {
         "pp" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."quickcheck-simple" or (buildDepError "quickcheck-simple"))
             (hsPkgs."text-postgresql" or (buildDepError "text-postgresql"))
             ];
+          buildable = true;
           };
         };
       };

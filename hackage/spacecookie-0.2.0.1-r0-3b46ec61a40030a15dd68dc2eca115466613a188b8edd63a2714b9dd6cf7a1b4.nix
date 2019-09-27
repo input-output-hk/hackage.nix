@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hxt-unicode" or (buildDepError "hxt-unicode"))
           (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
           ];
+        buildable = true;
         };
       exes = {
         "spacecookie" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
             (hsPkgs."spacecookie" or (buildDepError "spacecookie"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-tcplugins-extra" or (buildDepError "ghc-tcplugins-extra"))
           (hsPkgs."polysemy" or (buildDepError "polysemy"))
           ];
+        buildable = true;
         };
       tests = {
         "polysemy-plugin-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
             (hsPkgs."should-not-typecheck" or (buildDepError "should-not-typecheck"))
             ];
+          buildable = true;
           };
         };
       };

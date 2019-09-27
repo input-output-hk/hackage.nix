@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsx" or (buildDepError "hsx"))
           (hsPkgs."HJScript" or (buildDepError "HJScript"))
           ];
+        buildable = true;
         };
       };
     }

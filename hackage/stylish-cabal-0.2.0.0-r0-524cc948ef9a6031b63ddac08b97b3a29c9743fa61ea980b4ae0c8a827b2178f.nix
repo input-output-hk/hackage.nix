@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
       exes = {
         "stylish-cabal" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."stylish-cabal" or (buildDepError "stylish-cabal"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -79,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."hlint" or (buildDepError "hlint"))
             ];
+          buildable = true;
           };
         "strictness" = {
           depends = [
@@ -93,6 +96,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-expectations-pretty-diff" or (buildDepError "hspec-expectations-pretty-diff"))
             (hsPkgs."stylish-cabal" or (buildDepError "stylish-cabal"))
             ];
+          buildable = if !(flags.test-strictness && (compiler.isGhc && (compiler.version).ge "8.2"))
+            then false
+            else true;
           };
         "roundtrip" = {
           depends = [
@@ -105,6 +111,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-expectations-pretty-diff" or (buildDepError "hspec-expectations-pretty-diff"))
             (hsPkgs."stylish-cabal" or (buildDepError "stylish-cabal"))
             ];
+          buildable = true;
           };
         "roundtrip-hackage" = {
           depends = [
@@ -123,6 +130,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."wreq" or (buildDepError "wreq"))
             ];
+          buildable = if !flags.test-hackage then false else true;
           };
         };
       };

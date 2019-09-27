@@ -96,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."gslcblas" or (sysDepError "gslcblas"))
           (pkgs."m" or (sysDepError "m"))
           ];
+        buildable = true;
         };
       };
     }

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."brainfuck" or (buildDepError "brainfuck"))
           (hsPkgs."unlambda" or (buildDepError "unlambda"))
           ];
+        buildable = true;
         };
       };
     }

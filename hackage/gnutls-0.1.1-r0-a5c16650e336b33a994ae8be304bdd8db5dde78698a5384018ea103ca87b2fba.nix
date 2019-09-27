@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."gnutls" or (pkgConfDepError "gnutls"))
           (pkgconfPkgs."gnutls-extra" or (pkgConfDepError "gnutls-extra"))
           ];
+        buildable = true;
         };
       };
     }

@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."ole32" or (sysDepError "ole32"))
           (pkgs."uuid" or (sysDepError "uuid"))
           ];
+        buildable = true;
         };
       };
     }

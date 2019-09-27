@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
           ];
+        buildable = true;
         };
       };
     }

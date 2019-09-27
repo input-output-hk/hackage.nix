@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-fix" or (buildDepError "data-fix"))
           (hsPkgs."tagged" or (buildDepError "tagged"))
           ] ++ (pkgs.lib).optional (flags.withconstraints) (hsPkgs."constraints" or (buildDepError "constraints"));
+        buildable = true;
         };
       };
     }

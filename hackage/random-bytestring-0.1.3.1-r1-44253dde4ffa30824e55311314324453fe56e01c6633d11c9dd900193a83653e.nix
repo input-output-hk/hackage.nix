@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."nats" or (buildDepError "nats"))) ++ (pkgs.lib).optional (flags.with-pcg) (hsPkgs."pcg-random" or (buildDepError "pcg-random"));
+        buildable = true;
         };
       benchmarks = {
         "benchmark" = {
@@ -76,6 +77,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."nats" or (buildDepError "nats"))) ++ (pkgs.lib).optional (flags.with-pcg) (hsPkgs."pcg-random" or (buildDepError "pcg-random"));
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+            then false
+            else true;
           };
         "benchmark-compare" = {
           depends = ([
@@ -91,6 +95,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."nats" or (buildDepError "nats"))) ++ (pkgs.lib).optional (flags.with-pcg) (hsPkgs."pcg-random" or (buildDepError "pcg-random"));
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+            then false
+            else true;
           };
         "eventlog-compare" = {
           depends = ([
@@ -106,6 +113,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."nats" or (buildDepError "nats"))) ++ (pkgs.lib).optional (flags.with-pcg) (hsPkgs."pcg-random" or (buildDepError "pcg-random"));
+          buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+            then false
+            else true;
           };
         };
       };

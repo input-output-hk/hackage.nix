@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."stm" or (buildDepError "stm"))
           ];
+        buildable = true;
         };
       tests = {
         "TestMulticastInMemory" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport" or (buildDepError "network-transport"))
             (hsPkgs."network-transport-tests" or (buildDepError "network-transport-tests"))
             ];
+          buildable = false;
           };
         "TestInMemory" = {
           depends = [
@@ -80,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."network-transport-tests" or (buildDepError "network-transport-tests"))
             (hsPkgs."network-transport" or (buildDepError "network-transport"))
             ];
+          buildable = true;
           };
         };
       };

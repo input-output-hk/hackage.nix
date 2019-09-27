@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."cmptype" or (buildDepError "cmptype"))
           ];
+        buildable = true;
         };
       tests = {
         "type-sets-test" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cmptype" or (buildDepError "cmptype"))
             (hsPkgs."type-sets" or (buildDepError "type-sets"))
             ];
+          buildable = true;
           };
         };
       };

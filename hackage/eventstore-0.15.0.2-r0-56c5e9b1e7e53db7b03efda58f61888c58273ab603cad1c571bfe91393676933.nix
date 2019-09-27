@@ -97,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."interpolate" or (buildDepError "interpolate"))
           (hsPkgs."ekg-core" or (buildDepError "ekg-core"))
           ];
+        buildable = true;
         };
       tests = {
         "eventstore-tests" = {
@@ -135,6 +136,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
             (hsPkgs."async" or (buildDepError "async"))
             ];
+          buildable = true;
           };
         };
       };

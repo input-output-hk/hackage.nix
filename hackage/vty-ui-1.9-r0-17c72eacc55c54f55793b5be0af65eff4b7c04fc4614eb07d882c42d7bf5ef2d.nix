@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."data-default" or (buildDepError "data-default"))
           ];
+        buildable = true;
         };
       exes = {
         "vty-ui-tests" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vty" or (buildDepError "vty"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = if flags.no-tests then false else true;
           };
         "vty-ui-collection-demo" = {
           depends = [
@@ -90,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-list-demo" = {
           depends = [
@@ -99,6 +102,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-progressbar-demo" = {
           depends = [
@@ -108,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-complex-demo" = {
           depends = [
@@ -119,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-dirbrowser-demo" = {
           depends = [
@@ -127,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vty" or (buildDepError "vty"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-phoneinput-demo" = {
           depends = [
@@ -136,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-dialog-demo" = {
           depends = [
@@ -145,6 +153,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "vty-ui-edit-demo" = {
           depends = [
@@ -153,6 +162,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vty" or (buildDepError "vty"))
             (hsPkgs."vty-ui" or (buildDepError "vty-ui"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         };
       };

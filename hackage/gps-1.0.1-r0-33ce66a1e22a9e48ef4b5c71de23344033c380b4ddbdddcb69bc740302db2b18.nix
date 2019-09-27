@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."statistics" or (buildDepError "statistics"))
           (hsPkgs."data-lens" or (buildDepError "data-lens"))
           ];
+        buildable = true;
         };
       tests = {
         "gps-tests" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."statistics" or (buildDepError "statistics"))
             (hsPkgs."gps" or (buildDepError "gps"))
             ];
+          buildable = true;
           };
         };
       };

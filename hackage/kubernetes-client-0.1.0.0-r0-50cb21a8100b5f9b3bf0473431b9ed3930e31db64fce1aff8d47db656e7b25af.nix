@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."x509-system" or (buildDepError "x509-system"))
           (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
           ];
+        buildable = true;
         };
       tests = {
         "example" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."x509-system" or (buildDepError "x509-system"))
             (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
             ];
+          buildable = true;
           };
         "spec" = {
           depends = [
@@ -130,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
             (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
+          buildable = true;
           };
         };
       };

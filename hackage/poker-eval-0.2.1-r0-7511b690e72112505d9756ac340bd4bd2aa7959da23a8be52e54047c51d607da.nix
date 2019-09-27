@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           ];
         libs = [ (pkgs."poker-eval" or (sysDepError "poker-eval")) ];
+        buildable = true;
         };
       };
     }

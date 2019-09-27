@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ])) ++ (pkgs.lib).optional (flags.postgres) (pkgs."pq" or (sysDepError "pq"))) ++ (pkgs.lib).optional (flags.sqlite) (pkgs."sqlite3" or (sysDepError "sqlite3"));
         pkgconfig = (pkgs.lib).optionals (flags.sqlite) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."sqlite3" or (pkgConfDepError "sqlite3")));
         build-tools = (((pkgs.lib).optional (flags.odbc) (hsPkgs.buildPackages.odbcconf or (pkgs.buildPackages.odbcconf or (buildToolDepError "odbcconf"))) ++ (pkgs.lib).optional (flags.oracle) (hsPkgs.buildPackages.sqlplus or (pkgs.buildPackages.sqlplus or (buildToolDepError "sqlplus")))) ++ (pkgs.lib).optional (flags.postgres) (hsPkgs.buildPackages.pg_config or (pkgs.buildPackages.pg_config or (buildToolDepError "pg_config")))) ++ (pkgs.lib).optional (flags.sqlite) (hsPkgs.buildPackages.sqlite3 or (pkgs.buildPackages.sqlite3 or (buildToolDepError "sqlite3")));
+        buildable = true;
         };
       };
     }

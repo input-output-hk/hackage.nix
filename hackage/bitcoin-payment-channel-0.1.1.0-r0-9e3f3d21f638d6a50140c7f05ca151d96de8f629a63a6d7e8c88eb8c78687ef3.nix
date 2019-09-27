@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."scientific" or (buildDepError "scientific"))
           (hsPkgs."haskoin-core" or (buildDepError "haskoin-core"))
           ];
+        buildable = true;
         };
       exes = {
         "Test" = {
@@ -89,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."bitcoin-payment-channel" or (buildDepError "bitcoin-payment-channel"))
             ];
+          buildable = true;
           };
         };
       };

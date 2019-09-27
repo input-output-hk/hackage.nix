@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."syb-extras" or (buildDepError "syb-extras"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."syb-extras" or (buildDepError "syb-extras"));
+        buildable = true;
         };
       };
     }

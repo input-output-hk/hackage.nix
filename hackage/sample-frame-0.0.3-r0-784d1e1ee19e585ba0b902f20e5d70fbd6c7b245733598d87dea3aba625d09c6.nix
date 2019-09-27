@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."special-functors" or (buildDepError "special-functors"))
             (hsPkgs."base" or (buildDepError "base"))
             ]);
+        buildable = true;
         };
       exes = {
         "speedtest" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."storable-record" or (buildDepError "storable-record"))
             (hsPkgs."storable-tuple" or (buildDepError "storable-tuple"))
             ];
+          buildable = if flags.buildbenchmarks then true else false;
           };
         };
       };

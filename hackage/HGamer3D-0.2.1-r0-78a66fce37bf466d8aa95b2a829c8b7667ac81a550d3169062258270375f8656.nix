@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-Bullet-Binding" or (buildDepError "HGamer3D-Bullet-Binding"))
           (hsPkgs."HGamer3D-Enet-Binding" or (buildDepError "HGamer3D-Enet-Binding"))
           ];
+        buildable = true;
         };
       };
     }

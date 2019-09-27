@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-common" or (buildDepError "bindings-common"))
           ];
         pkgconfig = [ (pkgconfPkgs."sqlite3" or (pkgConfDepError "sqlite3")) ];
+        buildable = true;
         };
       };
     }

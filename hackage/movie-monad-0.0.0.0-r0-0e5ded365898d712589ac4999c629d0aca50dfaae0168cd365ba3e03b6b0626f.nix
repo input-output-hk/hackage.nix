@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gi-gstvideo" or (buildDepError "gi-gstvideo"))
             (hsPkgs."gi-gdkx11" or (buildDepError "gi-gdkx11"))
             ];
+          buildable = true;
           };
         };
       };

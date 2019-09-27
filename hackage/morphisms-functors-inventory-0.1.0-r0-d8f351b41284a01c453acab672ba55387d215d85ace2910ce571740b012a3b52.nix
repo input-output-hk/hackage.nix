@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."morphisms" or (buildDepError "morphisms"))
           (hsPkgs."morphisms-functors" or (buildDepError "morphisms-functors"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time-compat" or (buildDepError "time-compat"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
       exes = {
         "hsc3-sine" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-process" or (buildDepError "hsc3-process"))
             ];
+          buildable = if flags.build-examples then true else false;
           };
         "hsc3-nrt" = {
           depends = [
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hsc3" or (buildDepError "hsc3"))
             (hsPkgs."hsc3-process" or (buildDepError "hsc3-process"))
             ];
+          buildable = if flags.build-examples then true else false;
           };
         };
       };

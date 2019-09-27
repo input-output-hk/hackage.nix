@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."AC-Vector" or (buildDepError "AC-Vector"))
           (hsPkgs."FTGL" or (buildDepError "FTGL"))
           ];
+        buildable = true;
         };
       };
     }

@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hxt-tagsoup" or (buildDepError "hxt-tagsoup"))
             (hsPkgs."hxt-expat" or (buildDepError "hxt-expat"))
             ];
+          buildable = true;
           };
         };
       };

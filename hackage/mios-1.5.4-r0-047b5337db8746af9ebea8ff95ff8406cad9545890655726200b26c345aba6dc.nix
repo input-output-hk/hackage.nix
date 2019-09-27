@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."primitive" or (buildDepError "primitive"))
           ];
+        buildable = true;
         };
       exes = {
         "mios-1.5.4" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."mios" or (buildDepError "mios"))
             ];
+          buildable = true;
           };
         "cnf-stat" = {
           depends = [
@@ -76,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mios" or (buildDepError "mios"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.utils then true else false;
           };
         "mios-mc" = {
           depends = [
@@ -83,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mios" or (buildDepError "mios"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.multiconflict then true else false;
           };
         "mc-dump2csv" = {
           depends = [
@@ -90,6 +94,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mios" or (buildDepError "mios"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.multiconflict && flags.utils
+            then true
+            else false;
           };
         "mc-averagecsv" = {
           depends = [
@@ -97,6 +104,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mios" or (buildDepError "mios"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.multiconflict && flags.utils
+            then true
+            else false;
           };
         "mc-summary" = {
           depends = [
@@ -104,6 +114,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mios" or (buildDepError "mios"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.multiconflict && flags.utils
+            then true
+            else false;
           };
         "mc-stat2csv" = {
           depends = [
@@ -111,6 +124,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mios" or (buildDepError "mios"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.multiconflict && flags.utils
+            then true
+            else false;
           };
         "mc-pickup" = {
           depends = [
@@ -118,6 +134,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mios" or (buildDepError "mios"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.multiconflict && flags.utils
+            then true
+            else false;
           };
         "mc-numbers" = {
           depends = [
@@ -125,6 +144,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mios" or (buildDepError "mios"))
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
+          buildable = if flags.multiconflict && flags.utils
+            then true
+            else false;
           };
         };
       };

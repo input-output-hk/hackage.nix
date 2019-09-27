@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."conduit" or (buildDepError "conduit"))
           (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
           ];
+        buildable = true;
         };
       exes = {
         "process-conduit" = {
@@ -73,12 +74,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."conduit" or (buildDepError "conduit"))
             (hsPkgs."process-conduit" or (buildDepError "process-conduit"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "process-qq" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."process-conduit" or (buildDepError "process-conduit"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

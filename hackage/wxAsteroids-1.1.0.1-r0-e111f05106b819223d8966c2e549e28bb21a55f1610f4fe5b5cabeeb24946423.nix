@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wxcore" or (buildDepError "wxcore"))
             (hsPkgs."wx" or (buildDepError "wx"))
             ];
+          buildable = true;
           };
         };
       };

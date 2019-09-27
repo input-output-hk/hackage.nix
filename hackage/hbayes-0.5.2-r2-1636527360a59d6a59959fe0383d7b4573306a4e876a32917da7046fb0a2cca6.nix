@@ -78,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."statistics" or (buildDepError "statistics"))
           (hsPkgs."gamma" or (buildDepError "gamma"))
           ];
+        buildable = true;
         };
       tests = {
         "hbayes-Tests" = {
@@ -106,6 +107,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."statistics" or (buildDepError "statistics"))
             (hsPkgs."gamma" or (buildDepError "gamma"))
             ];
+          buildable = true;
           };
         };
       };

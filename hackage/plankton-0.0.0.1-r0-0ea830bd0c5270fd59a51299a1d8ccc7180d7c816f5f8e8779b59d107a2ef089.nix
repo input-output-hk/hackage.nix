@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."protolude" or (buildDepError "protolude"))
           (hsPkgs."adjunctions" or (buildDepError "adjunctions"))
           ];
+        buildable = true;
         };
       };
     }

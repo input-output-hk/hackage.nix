@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."music-score" or (buildDepError "music-score"))
           (hsPkgs."music-pitch" or (buildDepError "music-pitch"))
           ];
+        buildable = true;
         };
       };
     }

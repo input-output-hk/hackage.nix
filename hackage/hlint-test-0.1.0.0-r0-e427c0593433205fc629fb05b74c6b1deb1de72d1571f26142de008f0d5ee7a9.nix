@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."hlint" or (buildDepError "hlint"))
           ];
+        buildable = true;
         };
       exes = {
         "hlint-test" = {
@@ -67,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hlint" or (buildDepError "hlint"))
             (hsPkgs."hlint-test" or (buildDepError "hlint-test"))
             ];
+          buildable = true;
           };
         };
       };

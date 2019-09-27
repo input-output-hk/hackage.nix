@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Spock-api" or (buildDepError "Spock-api"))
           (hsPkgs."hvect" or (buildDepError "hvect"))
           ];
+        buildable = true;
         };
       };
     }

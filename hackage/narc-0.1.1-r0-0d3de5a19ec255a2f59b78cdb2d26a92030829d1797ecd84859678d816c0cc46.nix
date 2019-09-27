@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."HDBC" or (buildDepError "HDBC"))
           ];
+        buildable = true;
         };
       };
     }

@@ -54,7 +54,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = {};
+      "library" = { buildable = true; };
       exes = {
         "hVOIDP" = {
           depends = [
@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."lapack" or (sysDepError "lapack"))
             (pkgs."blas" or (sysDepError "blas"))
             ];
+          buildable = true;
           };
         };
       };

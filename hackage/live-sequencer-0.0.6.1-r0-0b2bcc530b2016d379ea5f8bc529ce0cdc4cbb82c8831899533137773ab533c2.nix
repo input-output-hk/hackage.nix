@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."event-list" or (buildDepError "event-list"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "live-sequencer" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."pathtype" or (buildDepError "pathtype"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "live-sequencer-gui" = {
           depends = (pkgs.lib).optionals (flags.gui) [
@@ -117,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cgi" or (buildDepError "cgi"))
             (hsPkgs."html" or (buildDepError "html"))
             ];
+          buildable = if flags.gui then true else false;
           };
         "live-mplayer-control" = {
           depends = (pkgs.lib).optionals (flags.mplayer) [
@@ -128,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.mplayer then true else false;
           };
         };
       };

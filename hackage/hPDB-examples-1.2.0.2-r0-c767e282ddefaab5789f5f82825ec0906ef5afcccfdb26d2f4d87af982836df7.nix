@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             (hsPkgs."iterable" or (buildDepError "iterable"))
             ];
+          buildable = true;
           };
         "ShiftToCenter" = {
           depends = [
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."iterable" or (buildDepError "iterable"))
             ];
+          buildable = true;
           };
         "CleanPDB" = {
           depends = [
@@ -111,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             (hsPkgs."iterable" or (buildDepError "iterable"))
             ];
+          buildable = true;
           };
         "SplitModels" = {
           depends = [
@@ -130,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."iterable" or (buildDepError "iterable"))
             ];
+          buildable = true;
           };
         "CanonicalAxes" = {
           depends = [
@@ -149,6 +153,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             (hsPkgs."iterable" or (buildDepError "iterable"))
             ];
+          buildable = true;
           };
         "PrintEvents" = {
           depends = [
@@ -168,6 +173,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             (hsPkgs."iterable" or (buildDepError "iterable"))
             ];
+          buildable = true;
           };
         "PrintStructureObject" = {
           depends = [
@@ -187,6 +193,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             (hsPkgs."iterable" or (buildDepError "iterable"))
             ];
+          buildable = true;
           };
         "Rg" = {
           depends = [
@@ -206,6 +213,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             (hsPkgs."iterable" or (buildDepError "iterable"))
             ];
+          buildable = true;
           };
         "StericClashCheck" = {
           depends = [
@@ -227,6 +235,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hPDB" or (buildDepError "hPDB"))
             (hsPkgs."iterable" or (buildDepError "iterable"))
             ];
+          buildable = true;
           };
         "Viewer" = {
           depends = [
@@ -248,6 +257,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."iterable" or (buildDepError "iterable"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -271,6 +281,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."time" or (buildDepError "time"))
             ];
+          buildable = true;
           };
         };
       };

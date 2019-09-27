@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."req" or (buildDepError "req"))
           (hsPkgs."wuss" or (buildDepError "wuss"))
           ];
+        buildable = true;
         };
       exes = {
         "docs" = {
@@ -88,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hakyll" or (buildDepError "hakyll"))
             (hsPkgs."split" or (buildDepError "split"))
             ];
+          buildable = if !flags.disable-docs then true else false;
           };
         };
       };

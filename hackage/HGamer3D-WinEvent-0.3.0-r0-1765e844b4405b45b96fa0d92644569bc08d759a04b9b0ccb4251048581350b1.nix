@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HGamer3D-Data" or (buildDepError "HGamer3D-Data"))
           (hsPkgs."HGamer3D-SDL2-Binding" or (buildDepError "HGamer3D-SDL2-Binding"))
           ];
+        buildable = true;
         };
       };
     }

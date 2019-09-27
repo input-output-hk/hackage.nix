@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."temporal-media" or (buildDepError "temporal-media"))
           (hsPkgs."temporal-music-notation-western" or (buildDepError "temporal-music-notation-western"))
           ];
+        buildable = true;
         };
       };
     }

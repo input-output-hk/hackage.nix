@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."optparse-simple" or (buildDepError "optparse-simple"))
           (hsPkgs."either" or (buildDepError "either"))
           ];
+        buildable = true;
         };
       exes = {
         "stackage" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."stackage-cli" or (buildDepError "stackage-cli"))
             ];
+          buildable = true;
           };
         "stk" = {
           depends = [
@@ -86,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."stackage-cli" or (buildDepError "stackage-cli"))
             ];
+          buildable = true;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix" or (buildDepError "unix"))
           ];
         libs = [ (pkgs."selinux" or (sysDepError "selinux")) ];
+        buildable = true;
         };
       };
     }

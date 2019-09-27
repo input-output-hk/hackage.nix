@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hist-pl-dawg" or (buildDepError "hist-pl-dawg"))
           (hsPkgs."hist-pl-lexicon" or (buildDepError "hist-pl-lexicon"))
           ];
+        buildable = true;
         };
       };
     }

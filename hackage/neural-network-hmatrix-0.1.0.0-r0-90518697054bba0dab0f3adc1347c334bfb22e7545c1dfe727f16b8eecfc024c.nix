@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."neural-network-base" or (buildDepError "neural-network-base"))
           ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."openblas" or (sysDepError "openblas")) ++ (pkgs.lib).optional (system.isLinux) (pkgs."blas" or (sysDepError "blas"));
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-parallel" or (buildDepError "monad-parallel"))
           (hsPkgs."incremental-parser" or (buildDepError "incremental-parser"))
           ];
+        buildable = true;
         };
       };
     }

@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."semigroups" or (buildDepError "semigroups"))
           (hsPkgs."non-empty-sequence" or (buildDepError "non-empty-sequence"))
           ];
+        buildable = true;
         };
       exes = {
         "newman" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."non-empty-sequence" or (buildDepError "non-empty-sequence"))
             ];
+          buildable = if !flags.executables then false else true;
           };
         "newmanPretty" = {
           depends = (pkgs.lib).optionals (!(!flags.executables)) [
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."non-empty-sequence" or (buildDepError "non-empty-sequence"))
             ];
+          buildable = if !flags.executables then false else true;
           };
         };
       };

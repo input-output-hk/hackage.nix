@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."constraint-unions" or (buildDepError "constraint-unions"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       tests = {
         "TestPoly" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."constraints" or (buildDepError "constraints"))
             (hsPkgs."DeepDarkFantasy" or (buildDepError "DeepDarkFantasy"))
             ];
+          buildable = true;
           };
         "TestXor" = {
           depends = [
@@ -85,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."constraints" or (buildDepError "constraints"))
             (hsPkgs."DeepDarkFantasy" or (buildDepError "DeepDarkFantasy"))
             ];
+          buildable = true;
           };
         "TestPE" = {
           depends = [
@@ -95,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."DeepDarkFantasy" or (buildDepError "DeepDarkFantasy"))
             ];
+          buildable = true;
           };
         };
       };

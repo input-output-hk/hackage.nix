@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."tomland" or (buildDepError "tomland"))
           ];
+        buildable = true;
         };
       exes = {
         "summon" = {
@@ -79,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."summoner" or (buildDepError "summoner"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -93,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tomland" or (buildDepError "tomland"))
             (hsPkgs."summoner" or (buildDepError "summoner"))
             ];
+          buildable = true;
           };
         };
       };

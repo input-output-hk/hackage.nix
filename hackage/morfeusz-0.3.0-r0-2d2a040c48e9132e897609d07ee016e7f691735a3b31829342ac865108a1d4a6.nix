@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
         libs = [ (pkgs."morfeusz" or (sysDepError "morfeusz")) ];
+        buildable = true;
         };
       };
     }

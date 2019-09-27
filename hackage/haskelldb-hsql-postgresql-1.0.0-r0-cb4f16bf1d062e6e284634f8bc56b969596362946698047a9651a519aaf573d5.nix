@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hsql" or (buildDepError "hsql"))
           (hsPkgs."hsql-postgresql" or (buildDepError "hsql-postgresql"))
           ];
+        buildable = true;
         };
-      exes = { "DBDirect-hsql-postgresql" = {}; };
+      exes = { "DBDirect-hsql-postgresql" = { buildable = true; }; };
       };
     }

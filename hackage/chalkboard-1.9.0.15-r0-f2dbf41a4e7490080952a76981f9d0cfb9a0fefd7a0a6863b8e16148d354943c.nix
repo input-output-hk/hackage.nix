@@ -78,17 +78,31 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
-        "chalkboard-server-1_9_0_15" = {};
-        "chalkboard-tests-test1" = {};
-        "chalkboard-tests-chalkmark" = {};
+        "chalkboard-server-1_9_0_15" = {
+          buildable = if flags.server then true else false;
+          };
+        "chalkboard-tests-test1" = {
+          buildable = if flags.all || flags.test1 then true else false;
+          };
+        "chalkboard-tests-chalkmark" = {
+          buildable = if flags.all || flags.chalkmark then true else false;
+          };
         "chalkboard-tests-simple" = {
           depends = (pkgs.lib).optional (!(flags.all || flags.simple)) (hsPkgs."base" or (buildDepError "base"));
+          buildable = if flags.all || flags.simple then true else false;
           };
-        "chalkboard-tests-cbbe1" = {};
-        "chalkboard-examples-example" = {};
-        "chalkboard-tutorial-basic" = {};
+        "chalkboard-tests-cbbe1" = {
+          buildable = if flags.all || flags.cbbe1 then true else false;
+          };
+        "chalkboard-examples-example" = {
+          buildable = if flags.all || flags.example then true else false;
+          };
+        "chalkboard-tutorial-basic" = {
+          buildable = if flags.all || flags.tutorial then true else false;
+          };
         };
       };
     }

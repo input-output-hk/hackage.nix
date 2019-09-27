@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."imprevu" or (buildDepError "imprevu"))
           (hsPkgs."shortcut" or (buildDepError "shortcut"))
           ];
+        buildable = true;
         };
       };
     }

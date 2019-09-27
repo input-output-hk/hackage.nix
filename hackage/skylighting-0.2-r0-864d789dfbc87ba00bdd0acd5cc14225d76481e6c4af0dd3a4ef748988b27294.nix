@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."regex-pcre-builtin" or (buildDepError "regex-pcre-builtin"))
             ]);
+        buildable = if flags.bootstrap then false else true;
         };
       exes = {
         "skylighting-extract" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."regex-pcre-builtin" or (buildDepError "regex-pcre-builtin"))
               ]);
+          buildable = if flags.bootstrap then true else false;
           };
         "skylighting" = {
           depends = [
@@ -108,6 +110,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
             (hsPkgs."skylighting" or (buildDepError "skylighting"))
             ];
+          buildable = (if flags.bootstrap
+            then false
+            else true) && (if flags.executable then true else false);
           };
         };
       tests = {
@@ -129,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."skylighting" or (buildDepError "skylighting"))
             ];
+          buildable = if flags.bootstrap then false else true;
           };
         };
       benchmarks = {
@@ -142,6 +148,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."directory" or (buildDepError "directory"))
             (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
+          buildable = true;
           };
         };
       };

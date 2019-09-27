@@ -59,7 +59,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
+        buildable = true;
         };
-      exes = { "cmdargs" = {}; };
+      exes = {
+        "cmdargs" = { buildable = if flags.testprog then true else false; };
+        };
       };
     }

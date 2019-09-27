@@ -62,10 +62,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."plugins" or (buildDepError "plugins"))
           (hsPkgs."base" or (buildDepError "base"))
           ];
+        buildable = true;
         };
       exes = {
         "DBDirect-dynamic" = {
           depends = [ (hsPkgs."haskelldb" or (buildDepError "haskelldb")) ];
+          buildable = true;
           };
         };
       };

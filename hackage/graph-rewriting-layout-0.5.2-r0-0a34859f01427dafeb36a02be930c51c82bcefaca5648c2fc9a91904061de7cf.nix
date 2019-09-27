@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."graph-rewriting" or (buildDepError "graph-rewriting"))
           (hsPkgs."AC-Vector" or (buildDepError "AC-Vector"))
           ];
+        buildable = true;
         };
       };
     }

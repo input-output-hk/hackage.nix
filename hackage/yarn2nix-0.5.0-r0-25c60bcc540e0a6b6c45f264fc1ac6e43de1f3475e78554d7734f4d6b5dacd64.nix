@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           (hsPkgs."yarn-lock" or (buildDepError "yarn-lock"))
           ];
+        buildable = true;
         };
       exes = {
         "setup-node-package-paths" = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."yarn2nix" or (buildDepError "yarn2nix"))
             ];
+          buildable = true;
           };
         "yarn2nix" = {
           depends = [
@@ -130,6 +132,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."yarn-lock" or (buildDepError "yarn-lock"))
             (hsPkgs."yarn2nix" or (buildDepError "yarn2nix"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -163,6 +166,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             (hsPkgs."yarn2nix" or (buildDepError "yarn2nix"))
             ];
+          buildable = true;
           };
         };
       };

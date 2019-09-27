@@ -65,7 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hack-handler-happstack" or (buildDepError "hack-handler-happstack"))
           (hsPkgs."data-default" or (buildDepError "data-default"))
           ];
+        buildable = true;
         };
-      exes = { "bird" = {}; };
+      exes = { "bird" = { buildable = true; }; };
       };
     }

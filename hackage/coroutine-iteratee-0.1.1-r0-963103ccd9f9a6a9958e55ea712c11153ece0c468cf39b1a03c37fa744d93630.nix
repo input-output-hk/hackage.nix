@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monad-coroutine" or (buildDepError "monad-coroutine"))
           (hsPkgs."iteratee" or (buildDepError "iteratee"))
           ];
+        buildable = true;
         };
       };
     }

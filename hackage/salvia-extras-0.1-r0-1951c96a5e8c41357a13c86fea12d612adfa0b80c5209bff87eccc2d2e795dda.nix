@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hscolour" or (buildDepError "hscolour"))
           (hsPkgs."salvia" or (buildDepError "salvia"))
           ];
+        buildable = true;
         };
       };
     }

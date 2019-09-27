@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
           (hsPkgs."AbortT-transformers" or (buildDepError "AbortT-transformers"))
           ];
+        buildable = true;
         };
       };
     }

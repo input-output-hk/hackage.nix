@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hslogger" or (buildDepError "hslogger"))
             (hsPkgs."hslogger-template" or (buildDepError "hslogger-template"))
             ];
+          buildable = true;
           };
         };
       };

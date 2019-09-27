@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."polyparse" or (buildDepError "polyparse"))
           ];
+        buildable = true;
         };
       exes = {
         "xdot-demo" = {
@@ -75,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."xdot" or (buildDepError "xdot"))
             ];
+          buildable = true;
           };
         };
       };

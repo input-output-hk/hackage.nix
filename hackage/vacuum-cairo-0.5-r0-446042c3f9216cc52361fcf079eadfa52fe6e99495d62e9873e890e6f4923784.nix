@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."deepseq" or (buildDepError "deepseq"))
           (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
           ];
+        buildable = true;
         };
       };
     }

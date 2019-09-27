@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bitcoin-tx" or (buildDepError "bitcoin-tx"))
           (hsPkgs."bitcoin-types" or (buildDepError "bitcoin-types"))
           ];
+        buildable = true;
         };
       tests = {
         "test-suite" = {
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bitcoin-types" or (buildDepError "bitcoin-types"))
             (hsPkgs."bitcoin-block" or (buildDepError "bitcoin-block"))
             ];
+          buildable = true;
           };
         };
       };

@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HDBC" or (buildDepError "HDBC"))
           (hsPkgs."HDBC-session" or (buildDepError "HDBC-session"))
           ];
+        buildable = true;
         };
       };
     }

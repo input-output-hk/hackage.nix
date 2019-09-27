@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           (hsPkgs."PrimitiveArray-Pretty" or (buildDepError "PrimitiveArray-Pretty"))
           ];
+        buildable = true;
         };
       exes = {
         "RNAforestry" = {
@@ -95,6 +96,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
             (hsPkgs."BiobaseTypes" or (buildDepError "BiobaseTypes"))
             ];
+          buildable = if flags.rnaforestry then true else false;
           };
         };
       tests = {
@@ -107,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
             (hsPkgs."Forestry" or (buildDepError "Forestry"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -116,6 +119,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."Forestry" or (buildDepError "Forestry"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."Wheb" or (buildDepError "Wheb"))
           (hsPkgs."StrappedTemplates" or (buildDepError "StrappedTemplates"))
           ];
+        buildable = true;
         };
       };
     }

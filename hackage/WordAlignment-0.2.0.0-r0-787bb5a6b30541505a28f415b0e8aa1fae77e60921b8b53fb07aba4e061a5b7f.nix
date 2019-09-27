@@ -90,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."NaturalLanguageAlphabets" or (buildDepError "NaturalLanguageAlphabets"))
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           ];
+        buildable = true;
         };
       exes = {
         "WordAlign" = {
@@ -117,6 +118,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."NaturalLanguageAlphabets" or (buildDepError "NaturalLanguageAlphabets"))
             (hsPkgs."WordAlignment" or (buildDepError "WordAlignment"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -136,6 +138,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."NaturalLanguageAlphabets" or (buildDepError "NaturalLanguageAlphabets"))
             (hsPkgs."WordAlignment" or (buildDepError "WordAlignment"))
             ];
+          buildable = true;
           };
         };
       };

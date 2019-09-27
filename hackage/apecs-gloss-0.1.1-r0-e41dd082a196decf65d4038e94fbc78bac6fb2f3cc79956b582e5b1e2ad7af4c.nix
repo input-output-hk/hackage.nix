@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."linear" or (buildDepError "linear"))
           (hsPkgs."gloss" or (buildDepError "gloss"))
           ];
+        buildable = true;
         };
       };
     }

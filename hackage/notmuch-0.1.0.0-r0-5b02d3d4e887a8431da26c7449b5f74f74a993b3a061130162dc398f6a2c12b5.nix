@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "hs-notmuch-files" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."notmuch" or (buildDepError "notmuch"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "hs-notmuch-tag-message" = {
           depends = [
@@ -88,6 +90,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."notmuch" or (buildDepError "notmuch"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "hs-notmuch-tag-count" = {
           depends = [
@@ -97,6 +100,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."notmuch" or (buildDepError "notmuch"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         "hs-notmuch-tag-set" = {
           depends = [
@@ -105,6 +109,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."notmuch" or (buildDepError "notmuch"))
             ];
+          buildable = if !flags.demos then false else true;
           };
         };
       };

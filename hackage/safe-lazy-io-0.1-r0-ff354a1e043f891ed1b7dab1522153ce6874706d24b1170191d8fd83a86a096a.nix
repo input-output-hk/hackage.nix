@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."strict-io" or (buildDepError "strict-io"))
           (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
           ];
+        buildable = true;
         };
       };
     }

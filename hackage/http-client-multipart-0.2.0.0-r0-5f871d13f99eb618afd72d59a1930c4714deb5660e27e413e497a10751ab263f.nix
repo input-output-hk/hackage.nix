@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."http-types" or (buildDepError "http-types"))
           (hsPkgs."mime-types" or (buildDepError "mime-types"))
           ];
+        buildable = true;
         };
       };
     }

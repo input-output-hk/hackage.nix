@@ -131,6 +131,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gnutls" or (buildDepError "gnutls"))
             (hsPkgs."xml-types" or (buildDepError "xml-types"))
             ]) ++ (pkgs.lib).optional (flags.xmpp && flags.assistant && flags.dns) (hsPkgs."dns" or (buildDepError "dns"));
+          buildable = true;
           };
         };
       tests = {
@@ -168,6 +169,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
             (hsPkgs."Glob" or (buildDepError "Glob"))
             ];
+          buildable = true;
           };
         };
       };

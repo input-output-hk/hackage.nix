@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."failure" or (buildDepError "failure"))
           ] ++ [ (hsPkgs."transformers" or (buildDepError "transformers")) ];
+        buildable = true;
         };
       };
     }

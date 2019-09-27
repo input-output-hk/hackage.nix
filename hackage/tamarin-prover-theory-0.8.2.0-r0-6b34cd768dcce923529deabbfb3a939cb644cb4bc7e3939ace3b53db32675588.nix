@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tamarin-prover-utils" or (buildDepError "tamarin-prover-utils"))
           (hsPkgs."tamarin-prover-term" or (buildDepError "tamarin-prover-term"))
           ];
+        buildable = true;
         };
       };
     }

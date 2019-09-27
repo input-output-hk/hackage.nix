@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."configurator" or (buildDepError "configurator"))
             ];
+          buildable = true;
           };
         };
       };

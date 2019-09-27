@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
           (hsPkgs."ztar" or (buildDepError "ztar"))
           ];
+        buildable = true;
         };
       exes = {
         "self-bundle" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."self-extract" or (buildDepError "self-extract"))
             ];
+          buildable = true;
           };
         };
       };

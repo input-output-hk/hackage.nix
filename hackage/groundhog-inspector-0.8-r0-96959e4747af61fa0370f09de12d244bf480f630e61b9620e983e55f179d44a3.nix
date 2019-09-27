@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
           (hsPkgs."syb" or (buildDepError "syb"))
           ];
+        buildable = true;
         };
       exes = {
         "groundhog_inspector" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."groundhog-th" or (buildDepError "groundhog-th"))
             (hsPkgs."groundhog-inspector" or (buildDepError "groundhog-inspector"))
             ] ++ (pkgs.lib).optional (flags.sqlite) (hsPkgs."groundhog-sqlite" or (buildDepError "groundhog-sqlite"))) ++ (pkgs.lib).optional (flags.postgresql) (hsPkgs."groundhog-postgresql" or (buildDepError "groundhog-postgresql"))) ++ (pkgs.lib).optional (flags.mysql) (hsPkgs."groundhog-mysql" or (buildDepError "groundhog-mysql"));
+          buildable = true;
           };
         };
       };

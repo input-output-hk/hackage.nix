@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
           (hsPkgs."uri-enumerator" or (buildDepError "uri-enumerator"))
           ];
+        buildable = true;
         };
       };
     }

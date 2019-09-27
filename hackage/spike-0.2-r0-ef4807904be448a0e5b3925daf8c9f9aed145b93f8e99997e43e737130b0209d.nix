@@ -74,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           pkgconfig = [
             (pkgconfPkgs."libsoup-gnome-2.4" or (pkgConfDepError "libsoup-gnome-2.4"))
             ];
+          buildable = true;
           };
         };
       };

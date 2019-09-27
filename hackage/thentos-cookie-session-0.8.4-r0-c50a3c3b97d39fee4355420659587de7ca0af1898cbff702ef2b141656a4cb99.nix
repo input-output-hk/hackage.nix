@@ -77,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
           (hsPkgs."wai-session" or (buildDepError "wai-session"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."vault" or (buildDepError "vault"))
             ];
+          buildable = true;
           };
         };
       };

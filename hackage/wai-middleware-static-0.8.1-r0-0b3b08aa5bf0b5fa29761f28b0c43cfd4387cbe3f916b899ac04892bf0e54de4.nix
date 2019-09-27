@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."time" or (buildDepError "time"))
           (hsPkgs."wai" or (buildDepError "wai"))
           ];
+        buildable = true;
         };
       tests = {
         "hpc-coveralls-stub" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hpc-coveralls" or (buildDepError "hpc-coveralls"))
             (hsPkgs."wai-middleware-static" or (buildDepError "wai-middleware-static"))
             ];
+          buildable = true;
           };
         };
       };

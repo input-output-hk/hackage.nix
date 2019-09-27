@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-treify" or (buildDepError "data-treify"))
           (hsPkgs."Boolean" or (buildDepError "Boolean"))
           ];
+        buildable = true;
         };
       };
     }

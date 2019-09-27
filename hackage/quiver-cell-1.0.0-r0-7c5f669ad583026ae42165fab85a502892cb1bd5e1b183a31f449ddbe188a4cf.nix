@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-cell" or (buildDepError "data-cell"))
           (hsPkgs."quiver" or (buildDepError "quiver"))
           ];
+        buildable = true;
         };
       };
     }

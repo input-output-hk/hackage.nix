@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "btrfs-defrag" = {
@@ -73,18 +74,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "btrfs-clone-range" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."btrfs" or (buildDepError "btrfs"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "btrfs-list-subvols" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."btrfs" or (buildDepError "btrfs"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

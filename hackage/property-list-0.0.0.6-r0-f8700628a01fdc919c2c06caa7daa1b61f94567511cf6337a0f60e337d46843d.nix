@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           (hsPkgs."th-fold" or (buildDepError "th-fold"))
           ] ++ [ (hsPkgs."data-object" or (buildDepError "data-object")) ];
+        buildable = true;
         };
       };
     }

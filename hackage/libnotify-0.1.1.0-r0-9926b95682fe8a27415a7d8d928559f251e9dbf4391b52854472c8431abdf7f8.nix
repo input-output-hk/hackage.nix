@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gtk" or (buildDepError "gtk"))
           ];
         libs = [ (pkgs."notify" or (sysDepError "notify")) ];
+        buildable = true;
         };
       };
     }

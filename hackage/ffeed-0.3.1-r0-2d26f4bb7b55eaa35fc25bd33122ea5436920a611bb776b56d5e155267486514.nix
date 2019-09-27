@@ -61,20 +61,26 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."json" or (buildDepError "json"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
       exes = {
-        "main" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+        "main" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          buildable = true;
+          };
         "showPublic" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = true;
           };
         "tweetStream" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
+          buildable = true;
           };
         };
       };

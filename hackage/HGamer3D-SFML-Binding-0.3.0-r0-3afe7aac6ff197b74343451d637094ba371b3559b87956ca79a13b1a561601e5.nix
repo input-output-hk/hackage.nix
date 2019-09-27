@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs.":libsfml-system.so.2" or (sysDepError ":libsfml-system.so.2"))
             (pkgs.":libsfml-window.so.2" or (sysDepError ":libsfml-window.so.2"))
             ];
+        buildable = true;
         };
       };
     }

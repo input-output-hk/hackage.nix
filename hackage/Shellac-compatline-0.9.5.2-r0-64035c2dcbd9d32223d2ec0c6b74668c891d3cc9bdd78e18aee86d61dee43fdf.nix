@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."Shellac" or (buildDepError "Shellac"))
           ] ++ (pkgs.lib).optional (flags.useeditline) (hsPkgs."Shellac-editline" or (buildDepError "Shellac-editline"))) ++ (pkgs.lib).optional (!flags.useeditline && flags.usereadline) (hsPkgs."Shellac-readline" or (buildDepError "Shellac-readline"))) ++ (pkgs.lib).optional (!flags.useeditline && !flags.usereadline) (hsPkgs."DependencyResolutionFailure" or (buildDepError "DependencyResolutionFailure"));
+        buildable = true;
         };
       };
     }

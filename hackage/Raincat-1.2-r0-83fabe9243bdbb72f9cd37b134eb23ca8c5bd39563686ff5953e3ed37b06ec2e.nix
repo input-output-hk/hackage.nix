@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."sdl2-image" or (buildDepError "sdl2-image"))
             (hsPkgs."sdl2-mixer" or (buildDepError "sdl2-mixer"))
             ];
+          buildable = true;
           };
         };
       };

@@ -76,6 +76,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."esqueleto" or (buildDepError "esqueleto"))
           ];
+        buildable = true;
         };
       };
     }

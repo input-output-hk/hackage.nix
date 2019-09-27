@@ -87,6 +87,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."ghc" or (buildDepError "ghc"))
             ]);
+        buildable = true;
         };
       exes = {
         "scion-browser" = {
@@ -124,6 +125,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
               (hsPkgs."filepath" or (buildDepError "filepath"))
               (hsPkgs."ghc" or (buildDepError "ghc"))
               ]);
+          buildable = true;
           };
         };
       };

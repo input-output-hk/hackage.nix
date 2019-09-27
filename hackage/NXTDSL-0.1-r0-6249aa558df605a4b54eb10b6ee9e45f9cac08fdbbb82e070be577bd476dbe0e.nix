@@ -62,7 +62,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."resourcet" or (buildDepError "resourcet"))
           (hsPkgs."stm" or (buildDepError "stm"))
           ];
+        buildable = true;
         };
-      exes = { "ExampleRun" = {}; "ExampleVM" = {}; };
+      exes = {
+        "ExampleRun" = { buildable = true; };
+        "ExampleVM" = { buildable = true; };
+        };
       };
     }

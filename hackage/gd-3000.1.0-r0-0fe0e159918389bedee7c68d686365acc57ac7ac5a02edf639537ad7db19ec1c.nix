@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."m" or (sysDepError "m"))
           (pkgs."png" or (sysDepError "png"))
           ];
+        buildable = true;
         };
       };
     }

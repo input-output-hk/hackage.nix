@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."blaze-svg" or (buildDepError "blaze-svg"))
           ];
+        buildable = true;
         };
       };
     }

@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."xhtml" or (buildDepError "xhtml"))
             ];
+          buildable = true;
           };
         "hask-home-upload" = {
           depends = [
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Cabal" or (buildDepError "Cabal"))
             (hsPkgs."xhtml" or (buildDepError "xhtml"))
             ];
+          buildable = true;
           };
         };
       };

@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."acme-dont" or (buildDepError "acme-dont"))
           ];
+        buildable = true;
         };
       };
     }

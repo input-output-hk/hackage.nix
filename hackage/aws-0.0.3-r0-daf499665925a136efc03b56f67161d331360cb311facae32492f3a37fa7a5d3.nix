@@ -79,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."xml" or (buildDepError "xml"))
           (hsPkgs."xml-monad" or (buildDepError "xml-monad"))
           ];
+        buildable = true;
         };
       };
     }

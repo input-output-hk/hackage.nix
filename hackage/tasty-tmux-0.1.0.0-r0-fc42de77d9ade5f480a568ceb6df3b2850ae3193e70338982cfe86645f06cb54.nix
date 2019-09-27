@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."tasty" or (buildDepError "tasty"))
           (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
           ];
+        buildable = true;
         };
       };
     }

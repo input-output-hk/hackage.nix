@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         libs = if system.isWindows || system.isWindows
           then [ (pkgs."odbc32" or (sysDepError "odbc32")) ]
           else [ (pkgs."odbc" or (sysDepError "odbc")) ];
+        buildable = true;
         };
       exes = {
         "runtests" = {
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           libs = if system.isWindows || system.isWindows
             then [ (pkgs."odbc32" or (sysDepError "odbc32")) ]
             else [ (pkgs."odbc" or (sysDepError "odbc")) ];
+          buildable = if flags.buildtests then true else false;
           };
         "stresstest" = {
           depends = (pkgs.lib).optionals (flags.buildstresstest) [
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
             ];
+          buildable = if flags.buildstresstest then true else false;
           };
         };
       };

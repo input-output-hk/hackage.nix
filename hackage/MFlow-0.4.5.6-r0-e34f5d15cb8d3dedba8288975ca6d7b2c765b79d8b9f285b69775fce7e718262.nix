@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."clientsession" or (buildDepError "clientsession"))
           (hsPkgs."pwstore-fast" or (buildDepError "pwstore-fast"))
           ];
+        buildable = true;
         };
       };
     }

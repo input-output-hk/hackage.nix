@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."extract-dependencies" or (buildDepError "extract-dependencies"))
           (hsPkgs."file-modules" or (buildDepError "file-modules"))
           ];
+        buildable = true;
         };
       exes = {
         "module-package" = {
@@ -91,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."file-modules" or (buildDepError "file-modules"))
             (hsPkgs."stack-run-auto" or (buildDepError "stack-run-auto"))
             ];
+          buildable = true;
           };
         "stack-run-auto" = {
           depends = [
@@ -110,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."file-modules" or (buildDepError "file-modules"))
             (hsPkgs."stack-run-auto" or (buildDepError "stack-run-auto"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -131,6 +134,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."file-modules" or (buildDepError "file-modules"))
             (hsPkgs."stack-run-auto" or (buildDepError "stack-run-auto"))
             ];
+          buildable = true;
           };
         };
       };

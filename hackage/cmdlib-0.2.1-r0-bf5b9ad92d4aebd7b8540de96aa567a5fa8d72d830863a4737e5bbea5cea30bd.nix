@@ -61,7 +61,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mtl" or (buildDepError "mtl"))
           (hsPkgs."split" or (buildDepError "split"))
           ];
+        buildable = true;
         };
-      exes = { "cmdlib-test" = {}; "cmdlib-rectest" = {}; };
+      exes = {
+        "cmdlib-test" = { buildable = if !flags.test then false else true; };
+        "cmdlib-rectest" = { buildable = if !flags.test then false else true; };
+        };
       };
     }

@@ -62,7 +62,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."HDBC" or (buildDepError "HDBC"))
           (hsPkgs."HDBC-odbc" or (buildDepError "HDBC-odbc"))
           ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
         };
-      exes = { "DBDirect-hdbc-odbc" = {}; };
+      exes = { "DBDirect-hdbc-odbc" = { buildable = true; }; };
       };
     }

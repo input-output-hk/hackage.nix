@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."web-plugins" or (buildDepError "web-plugins"))
           ];
+        buildable = true;
         };
       };
     }

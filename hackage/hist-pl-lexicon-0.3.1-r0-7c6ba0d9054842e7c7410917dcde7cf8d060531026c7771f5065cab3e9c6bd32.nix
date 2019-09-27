@@ -68,7 +68,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
+        buildable = true;
         };
-      exes = { "hist-pl-binarize" = {}; "hist-pl-show" = {}; };
+      exes = {
+        "hist-pl-binarize" = { buildable = true; };
+        "hist-pl-show" = { buildable = true; };
+        };
       };
     }

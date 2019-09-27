@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."Iphlpapi" or (sysDepError "Iphlpapi"))
             (pkgs."ws2_32" or (sysDepError "ws2_32"))
             ];
+          buildable = true;
           };
         };
       };

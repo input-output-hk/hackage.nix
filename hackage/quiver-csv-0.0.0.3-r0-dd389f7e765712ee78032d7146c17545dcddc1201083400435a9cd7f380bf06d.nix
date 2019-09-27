@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."quiver" or (buildDepError "quiver"))
           (hsPkgs."quiver-bytestring" or (buildDepError "quiver-bytestring"))
           ];
+        buildable = true;
         };
       };
     }

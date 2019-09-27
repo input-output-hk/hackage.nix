@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."pred-trie" or (buildDepError "pred-trie"))
           (hsPkgs."poly-arity" or (buildDepError "poly-arity"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -111,6 +112,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."http-media" or (buildDepError "http-media"))
             (hsPkgs."http-types" or (buildDepError "http-types"))
             ];
+          buildable = true;
           };
         };
       };

@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bindings-posix" or (buildDepError "bindings-posix"))
           ];
         libs = [ (pkgs."usb-1.0" or (sysDepError "usb-1.0")) ];
+        buildable = true;
         };
       };
     }

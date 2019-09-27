@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."BiobaseNewick" or (buildDepError "BiobaseNewick"))
           (hsPkgs."listsafe" or (buildDepError "listsafe"))
           ];
+        buildable = true;
         };
       exes = {
         "find-clumpiness" = {
@@ -85,6 +86,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             (hsPkgs."BiobaseNewick" or (buildDepError "BiobaseNewick"))
             ];
+          buildable = true;
           };
         };
       };

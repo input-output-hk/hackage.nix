@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [
             (hsPkgs."regex-pcre-builtin" or (buildDepError "regex-pcre-builtin"))
             ]);
+        buildable = true;
         };
       exes = {
         "skylighting" = {
@@ -94,6 +95,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
             (hsPkgs."skylighting" or (buildDepError "skylighting"))
             ];
+          buildable = if flags.executable then true else false;
           };
         };
       };

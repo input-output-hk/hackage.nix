@@ -73,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."traildb" or (sysDepError "traildb"))
           (pkgs."Judy" or (sysDepError "Judy"))
           ];
+        buildable = true;
         };
       exes = {
         "traildb-wikipedia-benchmark" = {
@@ -81,6 +82,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."traildb" or (buildDepError "traildb"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if !flags.build-wikipedia-benchmark then false else true;
           };
         };
       benchmarks = {
@@ -95,6 +97,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."traildb" or (buildDepError "traildb"))
             ];
+          buildable = true;
           };
         };
       };

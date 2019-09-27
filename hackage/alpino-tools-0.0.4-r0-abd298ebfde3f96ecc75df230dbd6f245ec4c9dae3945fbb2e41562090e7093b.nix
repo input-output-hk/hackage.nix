@@ -66,13 +66,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."random" or (buildDepError "random"))
           (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
           ];
+        buildable = true;
         };
       exes = {
-        "at_model_rescore_data" = {};
-        "at_model_filter_data" = {};
-        "at_model_oracle" = {};
-        "at_model_random_sample" = {};
-        "at_model_statistics_data" = {};
+        "at_model_rescore_data" = { buildable = true; };
+        "at_model_filter_data" = { buildable = true; };
+        "at_model_oracle" = { buildable = true; };
+        "at_model_random_sample" = { buildable = true; };
+        "at_model_statistics_data" = { buildable = true; };
         };
       };
     }

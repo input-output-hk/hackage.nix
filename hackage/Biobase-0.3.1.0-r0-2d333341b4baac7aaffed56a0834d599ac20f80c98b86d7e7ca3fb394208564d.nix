@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
           (hsPkgs."vector-read-instances" or (buildDepError "vector-read-instances"))
           ];
+        buildable = true;
         };
       };
     }

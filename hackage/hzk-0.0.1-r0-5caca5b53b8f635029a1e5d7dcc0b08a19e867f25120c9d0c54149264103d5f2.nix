@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
         libs = [ (pkgs."zookeeper_mt" or (sysDepError "zookeeper_mt")) ];
+        buildable = true;
         };
       tests = {
         "test-zookeeper" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
           libs = [ (pkgs."zookeeper_mt" or (sysDepError "zookeeper_mt")) ];
+          buildable = true;
           };
         };
       };

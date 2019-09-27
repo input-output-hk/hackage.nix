@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."servant" or (buildDepError "servant"))
           (hsPkgs."xmlbf" or (buildDepError "xmlbf"))
           ];
+        buildable = true;
         };
       };
     }

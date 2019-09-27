@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."glib-2.0" or (pkgConfDepError "glib-2.0"))
           (pkgconfPkgs."libnm-glib" or (pkgConfDepError "libnm-glib"))
           ];
+        buildable = true;
         };
       exes = {
         "nm-demo" = {
@@ -74,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."nm" or (buildDepError "nm"))
             ];
+          buildable = true;
           };
         };
       };

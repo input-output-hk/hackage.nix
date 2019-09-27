@@ -81,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."x509-store" or (buildDepError "x509-store"))
           (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
           ];
+        buildable = true;
         };
       exes = {
         "apns-http2-example" = {
@@ -114,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
             (hsPkgs."x509-system" or (buildDepError "x509-system"))
             ];
+          buildable = true;
           };
         };
       };

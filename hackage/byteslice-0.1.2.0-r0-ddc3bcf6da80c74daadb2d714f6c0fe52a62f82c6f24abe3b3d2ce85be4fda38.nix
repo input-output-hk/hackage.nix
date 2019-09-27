@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive-addr" or (buildDepError "primitive-addr"))
           (hsPkgs."run-st" or (buildDepError "run-st"))
           ];
+        buildable = true;
         };
       };
     }

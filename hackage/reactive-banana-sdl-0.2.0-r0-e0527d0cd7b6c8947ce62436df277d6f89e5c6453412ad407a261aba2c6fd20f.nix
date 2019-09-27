@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-lens-template" or (buildDepError "data-lens-template"))
           (hsPkgs."SDL-image" or (buildDepError "SDL-image"))
           ];
+        buildable = true;
         };
       };
     }

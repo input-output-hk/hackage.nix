@@ -94,6 +94,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."x509-store" or (buildDepError "x509-store"))
           (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -105,6 +106,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."postgresql-typed" or (buildDepError "postgresql-typed"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ] ++ (pkgs.lib).optional (flags.tls) (hsPkgs."tls" or (buildDepError "tls"));
+          buildable = true;
           };
         "hdbc" = {
           depends = (pkgs.lib).optionals (flags.hdbc) [
@@ -118,6 +120,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HDBC" or (buildDepError "HDBC"))
             (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ] ++ (pkgs.lib).optional (flags.tls) (hsPkgs."tls" or (buildDepError "tls"));
+          buildable = if flags.hdbc then true else false;
           };
         };
       benchmarks = {
@@ -130,6 +133,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."postgresql-typed" or (buildDepError "postgresql-typed"))
             ] ++ (pkgs.lib).optional (flags.tls) (hsPkgs."tls" or (buildDepError "tls"));
+          buildable = true;
           };
         };
       };

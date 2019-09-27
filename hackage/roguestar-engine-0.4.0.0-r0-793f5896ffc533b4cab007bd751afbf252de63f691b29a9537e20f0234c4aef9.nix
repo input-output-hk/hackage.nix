@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."PSQueue" or (buildDepError "PSQueue"))
             (hsPkgs."priority-sync" or (buildDepError "priority-sync"))
             ];
+          buildable = true;
           };
         };
       };

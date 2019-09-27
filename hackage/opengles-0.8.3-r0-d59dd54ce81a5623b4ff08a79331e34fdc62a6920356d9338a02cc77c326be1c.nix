@@ -91,6 +91,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."QuartzCore" or (sysDepError "QuartzCore"))
           (pkgs."OpenGLES" or (sysDepError "OpenGLES"))
           ] ++ (pkgs.lib).optional (system.isOsx) (pkgs."OpenGL" or (sysDepError "OpenGL"));
+        buildable = true;
         };
       exes = {
         "windmill" = {
@@ -103,6 +104,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."future-resource" or (buildDepError "future-resource"))
             ];
+          buildable = if !flags.buildexample then false else true;
           };
         "glsl-sandbox-player" = {
           depends = [
@@ -113,6 +115,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring" or (buildDepError "bytestring"))
             (hsPkgs."future-resource" or (buildDepError "future-resource"))
             ];
+          buildable = if !flags.buildexample then false else true;
           };
         };
       tests = {
@@ -121,6 +124,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."opengles" or (buildDepError "opengles"))
             ];
+          buildable = true;
           };
         };
       };

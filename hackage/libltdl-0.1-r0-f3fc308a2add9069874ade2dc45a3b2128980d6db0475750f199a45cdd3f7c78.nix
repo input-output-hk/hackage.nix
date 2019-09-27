@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Custom";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       exes = {
         "sin" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."libltdl" or (buildDepError "libltdl"))
             ];
+          buildable = if flags.examples then true else false;
           };
         };
       };

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."logict" or (buildDepError "logict"))
           ] ++ (pkgs.lib).optional (flags.safe-st) (hsPkgs."base" or (buildDepError "base"))) ++ (pkgs.lib).optional (flags.old-applicative) (hsPkgs."base" or (buildDepError "base"));
+        buildable = true;
         };
       };
     }

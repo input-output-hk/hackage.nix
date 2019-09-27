@@ -59,6 +59,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."base" or (buildDepError "base"))
           (hsPkgs."flow" or (buildDepError "flow"))
           ];
+        buildable = true;
         };
       tests = {
         "doctests" = {
@@ -69,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."flow" or (buildDepError "flow"))
             (hsPkgs."flow-er" or (buildDepError "flow-er"))
             ];
+          buildable = true;
           };
         };
       };

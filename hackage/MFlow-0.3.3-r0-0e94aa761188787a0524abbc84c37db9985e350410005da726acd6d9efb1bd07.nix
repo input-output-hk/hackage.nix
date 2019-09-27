@@ -84,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."monadloc" or (buildDepError "monadloc"))
           (hsPkgs."hamlet" or (buildDepError "hamlet"))
           ];
+        buildable = true;
         };
       };
     }

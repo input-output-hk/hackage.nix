@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."filepath" or (buildDepError "filepath"))
           (hsPkgs."base-io-access" or (buildDepError "base-io-access"))
           ];
+        buildable = true;
         };
       };
     }

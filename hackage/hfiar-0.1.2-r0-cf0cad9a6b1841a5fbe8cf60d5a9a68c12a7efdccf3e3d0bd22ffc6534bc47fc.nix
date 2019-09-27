@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."eprocess" or (buildDepError "eprocess"))
           (hsPkgs."eprocess" or (buildDepError "eprocess"))
           ];
+        buildable = true;
         };
       exes = {
         "hfiar" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."wx" or (buildDepError "wx"))
             (hsPkgs."wx" or (buildDepError "wx"))
             ];
+          buildable = true;
           };
         };
       };

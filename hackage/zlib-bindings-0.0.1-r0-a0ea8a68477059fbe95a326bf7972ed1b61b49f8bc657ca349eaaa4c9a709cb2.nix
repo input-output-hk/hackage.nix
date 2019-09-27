@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring" or (buildDepError "bytestring"))
           (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
+        buildable = if flags.test then false else true;
         };
       exes = {
         "zlib-bindings-test" = {
@@ -70,8 +71,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTF" or (buildDepError "HTF"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = if flags.test then true else false;
           };
-        "zlib-bindings-file-test" = {};
+        "zlib-bindings-file-test" = {
+          buildable = if flags.test then true else false;
+          };
         };
       };
     }

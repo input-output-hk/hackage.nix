@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."type-of-html" or (buildDepError "type-of-html"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       tests = {
         "test" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."type-of-html" or (buildDepError "type-of-html"))
             (hsPkgs."type-of-html-static" or (buildDepError "type-of-html-static"))
             ];
+          buildable = true;
           };
         };
       };

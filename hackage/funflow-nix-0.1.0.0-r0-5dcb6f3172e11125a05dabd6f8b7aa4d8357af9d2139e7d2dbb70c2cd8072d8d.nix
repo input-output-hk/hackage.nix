@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."path" or (buildDepError "path"))
           (hsPkgs."modern-uri" or (buildDepError "modern-uri"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."modern-uri" or (buildDepError "modern-uri"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = if flags.example then true else false;
           };
         };
       tests = {
@@ -97,6 +99,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."unix" or (buildDepError "unix"))
             (hsPkgs."modern-uri" or (buildDepError "modern-uri"))
             ];
+          buildable = true;
           };
         };
       };

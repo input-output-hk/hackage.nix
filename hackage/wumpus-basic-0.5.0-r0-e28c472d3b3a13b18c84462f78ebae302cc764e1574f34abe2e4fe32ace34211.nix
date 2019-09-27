@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector-space" or (buildDepError "vector-space"))
           (hsPkgs."wumpus-core" or (buildDepError "wumpus-core"))
           ];
+        buildable = true;
         };
       };
     }

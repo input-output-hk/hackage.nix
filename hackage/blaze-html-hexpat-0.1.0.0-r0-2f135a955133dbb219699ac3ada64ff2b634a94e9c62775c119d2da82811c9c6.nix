@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."hexpat" or (buildDepError "hexpat"))
           ];
+        buildable = true;
         };
       };
     }

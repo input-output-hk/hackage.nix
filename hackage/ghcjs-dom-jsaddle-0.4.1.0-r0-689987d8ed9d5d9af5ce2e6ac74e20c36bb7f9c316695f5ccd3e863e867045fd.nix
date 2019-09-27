@@ -56,6 +56,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [ (hsPkgs."jsaddle-dom" or (buildDepError "jsaddle-dom")) ];
+        buildable = true;
         };
       };
     }

@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-default" or (buildDepError "data-default"))
           (hsPkgs."shakespeare-css" or (buildDepError "shakespeare-css"))
           ];
+        buildable = true;
         };
       tests = {
         "tests" = {
@@ -109,6 +110,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."data-default" or (buildDepError "data-default"))
             (hsPkgs."shakespeare-css" or (buildDepError "shakespeare-css"))
             ];
+          buildable = true;
           };
         };
       };

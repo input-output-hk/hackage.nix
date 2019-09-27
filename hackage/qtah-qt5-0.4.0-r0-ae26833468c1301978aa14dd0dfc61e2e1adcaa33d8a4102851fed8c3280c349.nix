@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."qtah-generator" or (buildDepError "qtah-generator"))
           ];
         libs = [ (pkgs."qtah" or (sysDepError "qtah")) ];
+        buildable = true;
         };
       tests = {
         "test-qtah" = {
@@ -80,6 +81,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."qtah-qt5" or (buildDepError "qtah-qt5"))
             ];
           libs = [ (pkgs."qtah" or (sysDepError "qtah")) ];
+          buildable = true;
           };
         };
       };

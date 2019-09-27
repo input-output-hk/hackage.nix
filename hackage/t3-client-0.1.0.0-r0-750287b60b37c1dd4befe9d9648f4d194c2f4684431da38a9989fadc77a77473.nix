@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."t3-game" or (buildDepError "t3-game"))
           (hsPkgs."t3-server" or (buildDepError "t3-server"))
           ];
+        buildable = true;
         };
       };
     }

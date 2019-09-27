@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
           (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
           ];
+        buildable = true;
         };
       };
     }

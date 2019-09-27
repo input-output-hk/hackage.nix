@@ -76,7 +76,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hscurses" or (buildDepError "hscurses"))
           (hsPkgs."setlocale" or (buildDepError "setlocale"))
           ];
+        buildable = true;
         };
-      exes = { "todos" = {}; };
+      exes = { "todos" = { buildable = true; }; };
       };
     }

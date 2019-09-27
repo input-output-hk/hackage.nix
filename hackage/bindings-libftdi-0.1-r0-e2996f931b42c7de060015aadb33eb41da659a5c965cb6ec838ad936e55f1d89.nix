@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."libusb-1.0" or (pkgConfDepError "libusb-1.0"))
           (pkgconfPkgs."libftdi" or (pkgConfDepError "libftdi"))
           ];
+        buildable = true;
         };
       };
     }

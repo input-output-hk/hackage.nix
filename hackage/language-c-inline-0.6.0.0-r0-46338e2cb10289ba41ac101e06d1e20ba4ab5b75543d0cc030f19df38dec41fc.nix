@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."mainland-pretty" or (buildDepError "mainland-pretty"))
           (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
+        buildable = true;
         };
       tests = {
         "concept" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."language-c-inline" or (buildDepError "language-c-inline"))
             ];
           frameworks = [ (pkgs."Foundation" or (sysDepError "Foundation")) ];
+          buildable = if flags.manualtests then true else false;
           };
         };
       };

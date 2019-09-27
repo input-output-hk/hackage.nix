@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."gi-gtk" or (buildDepError "gi-gtk"))
           (hsPkgs."gi-gdkpixbuf" or (buildDepError "gi-gdkpixbuf"))
           ];
+        buildable = true;
         };
       };
     }

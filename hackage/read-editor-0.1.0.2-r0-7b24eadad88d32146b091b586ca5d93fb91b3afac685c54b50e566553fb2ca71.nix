@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."process" or (buildDepError "process"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -67,12 +68,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."read-editor" or (buildDepError "read-editor"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "example-with" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."read-editor" or (buildDepError "read-editor"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       };

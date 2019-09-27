@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."xerces-c" or (sysDepError "xerces-c"))
           (pkgs."xml2" or (sysDepError "xml2"))
           ];
+        buildable = true;
         };
       };
     }

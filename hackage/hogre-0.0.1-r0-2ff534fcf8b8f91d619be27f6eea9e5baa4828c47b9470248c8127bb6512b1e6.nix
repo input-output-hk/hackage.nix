@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgconfPkgs."CEGUI" or (pkgConfDepError "CEGUI"))
           (pkgconfPkgs."CEGUI-OGRE" or (pkgConfDepError "CEGUI-OGRE"))
           ];
+        buildable = true;
         };
       };
     }

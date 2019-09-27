@@ -62,18 +62,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bmp" or (buildDepError "bmp"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-boids" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-clock" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-conway" = {
           depends = [
@@ -81,18 +84,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-draw" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-easy" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-eden" = {
           depends = [
@@ -100,24 +106,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."random" or (buildDepError "random"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-flake" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-gameevent" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-hello" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-lifespan" = {
           depends = [
@@ -125,12 +135,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."random" or (buildDepError "random"))
             ];
+          buildable = true;
           };
         "gloss-machina" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-occlusion" = {
           depends = [
@@ -138,6 +150,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."gloss-rendering" or (buildDepError "gloss-rendering"))
             ];
+          buildable = true;
           };
         "gloss-styrene" = {
           depends = [
@@ -146,12 +159,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-tree" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-visibility" = {
           depends = [
@@ -159,12 +174,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."vector" or (buildDepError "vector"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-zen" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-crystal" = {
           depends = [
@@ -172,6 +189,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."gloss-raster" or (buildDepError "gloss-raster"))
             ];
+          buildable = true;
           };
         "gloss-ray" = {
           depends = [
@@ -179,6 +197,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."gloss-raster" or (buildDepError "gloss-raster"))
             ];
+          buildable = true;
           };
         "gloss-pulse" = {
           depends = [
@@ -186,6 +205,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."gloss-raster" or (buildDepError "gloss-raster"))
             ];
+          buildable = true;
           };
         "gloss-wave" = {
           depends = [
@@ -195,6 +215,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."gloss-raster" or (buildDepError "gloss-raster"))
             ];
+          buildable = true;
           };
         "gloss-fluid" = {
           depends = [
@@ -206,6 +227,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-snow" = {
           depends = [
@@ -213,6 +235,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa" or (buildDepError "repa"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-mandel" = {
           depends = [
@@ -220,6 +243,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."repa" or (buildDepError "repa"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-graph" = {
           depends = [
@@ -227,6 +251,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."containers" or (buildDepError "containers"))
             (hsPkgs."gloss" or (buildDepError "gloss"))
             ];
+          buildable = true;
           };
         "gloss-render" = {
           depends = [
@@ -235,6 +260,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gloss" or (buildDepError "gloss"))
             (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."regex-applicative" or (buildDepError "regex-applicative"))
           (hsPkgs."prometheus-client" or (buildDepError "prometheus-client"))
           ];
+        buildable = true;
         };
       };
     }

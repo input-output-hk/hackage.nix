@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."primitive" or (buildDepError "primitive"))
           (hsPkgs."primitive-addr" or (buildDepError "primitive-addr"))
           ];
+        buildable = true;
         };
       };
     }

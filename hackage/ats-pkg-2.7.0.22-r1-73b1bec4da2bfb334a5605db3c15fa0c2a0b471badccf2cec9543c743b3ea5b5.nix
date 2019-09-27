@@ -92,6 +92,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."dependency" or (buildDepError "dependency"))
           (hsPkgs."filemanip" or (buildDepError "filemanip"))
           ];
+        buildable = true;
         };
       exes = {
         "atspkg" = {
@@ -107,6 +108,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."text" or (buildDepError "text"))
             (hsPkgs."shake" or (buildDepError "shake"))
             ];
+          buildable = if flags.no-executable then false else true;
           };
         };
       };

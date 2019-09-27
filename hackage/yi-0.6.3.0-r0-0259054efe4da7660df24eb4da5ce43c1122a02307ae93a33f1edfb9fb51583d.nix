@@ -122,6 +122,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
           (hsPkgs."vty" or (buildDepError "vty"))
           ];
+        buildable = if flags.hacking then false else true;
         };
       exes = {
         "parserTest" = {
@@ -133,12 +134,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."filepath" or (buildDepError "filepath"))
             (hsPkgs."yi" or (buildDepError "yi"))
             ];
+          buildable = false;
           };
         "yi" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."yi" or (buildDepError "yi"))
             ];
+          buildable = true;
           };
         };
       };

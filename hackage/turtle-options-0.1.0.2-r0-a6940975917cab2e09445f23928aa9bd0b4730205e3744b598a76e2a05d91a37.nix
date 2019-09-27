@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."optional-args" or (buildDepError "optional-args"))
           (hsPkgs."turtle" or (buildDepError "turtle"))
           ];
+        buildable = true;
         };
       exes = {
         "example" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."turtle" or (buildDepError "turtle"))
             (hsPkgs."turtle-options" or (buildDepError "turtle-options"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -78,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."turtle-options" or (buildDepError "turtle-options"))
             ];
+          buildable = true;
           };
         };
       };

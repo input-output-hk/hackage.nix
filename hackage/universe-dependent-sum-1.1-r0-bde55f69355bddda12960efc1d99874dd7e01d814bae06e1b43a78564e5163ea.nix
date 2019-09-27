@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."transformers" or (buildDepError "transformers"))
           (hsPkgs."universe-base" or (buildDepError "universe-base"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10.3") (hsPkgs."transformers" or (buildDepError "transformers"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10.3")) (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"));
+        buildable = true;
         };
       tests = {
         "th-test" = {
@@ -73,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."universe-base" or (buildDepError "universe-base"))
             (hsPkgs."universe-dependent-sum" or (buildDepError "universe-dependent-sum"))
             ];
+          buildable = true;
           };
         };
       };

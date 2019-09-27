@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."haste-lib" or (buildDepError "haste-lib"))
           ];
+        buildable = true;
         };
       };
     }

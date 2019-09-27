@@ -71,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             ]
           else [ (hsPkgs."base" or (buildDepError "base")) ]);
         libs = (pkgs.lib).optional (flags.bibutils) (pkgs."bibutils" or (sysDepError "bibutils"));
+        buildable = true;
         };
       };
     }

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."asn1-data" or (buildDepError "asn1-data"))
           (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
           ];
+        buildable = true;
         };
       exes = {
         "certificate" = {
@@ -71,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hexdump" or (buildDepError "hexdump"))
             (hsPkgs."haskell98" or (buildDepError "haskell98"))
             ];
+          buildable = if flags.executable then true else false;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."potrace" or (sysDepError "potrace"))
           (pkgs."m" or (sysDepError "m"))
           ];
+        buildable = true;
         };
       };
     }

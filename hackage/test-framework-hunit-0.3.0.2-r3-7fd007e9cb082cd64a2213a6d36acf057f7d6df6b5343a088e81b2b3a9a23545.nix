@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           ] ++ (if flags.base3
           then [ (hsPkgs."base" or (buildDepError "base")) ]
           else (pkgs.lib).optional (flags.base4) (hsPkgs."base" or (buildDepError "base")));
+        buildable = true;
         };
       };
     }

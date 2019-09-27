@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
           (hsPkgs."murmur-hash" or (buildDepError "murmur-hash"))
           ];
+        buildable = true;
         };
       tests = {
         "beamable-tests" = {
@@ -77,6 +78,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
             (hsPkgs."murmur-hash" or (buildDepError "murmur-hash"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -91,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
             (hsPkgs."murmur-hash" or (buildDepError "murmur-hash"))
             ];
+          buildable = true;
           };
         };
       };

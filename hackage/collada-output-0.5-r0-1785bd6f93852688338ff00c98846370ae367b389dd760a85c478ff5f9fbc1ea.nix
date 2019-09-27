@@ -63,7 +63,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."SVGPath" or (buildDepError "SVGPath"))
           (hsPkgs."collada-types" or (buildDepError "collada-types"))
           ];
+        buildable = true;
         };
-      exes = { "Examples" = {}; };
+      exes = { "Examples" = { buildable = true; }; };
       };
     }

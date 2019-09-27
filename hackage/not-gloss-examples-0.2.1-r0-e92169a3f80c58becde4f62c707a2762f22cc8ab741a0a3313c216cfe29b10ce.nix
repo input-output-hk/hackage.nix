@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."spatial-math" or (buildDepError "spatial-math"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "not-gloss-animate" = {
           depends = [
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."spatial-math" or (buildDepError "spatial-math"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "not-gloss-simulate" = {
           depends = [
@@ -75,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."spatial-math" or (buildDepError "spatial-math"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         "not-gloss-game" = {
           depends = [
@@ -85,6 +88,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."X11" or (buildDepError "X11"))
             (hsPkgs."base" or (buildDepError "base"))
             ];
+          buildable = true;
           };
         };
       };

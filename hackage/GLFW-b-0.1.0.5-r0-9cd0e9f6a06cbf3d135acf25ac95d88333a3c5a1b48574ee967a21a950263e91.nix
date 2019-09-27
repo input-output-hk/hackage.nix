@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else if system.isOsx
             then [ (pkgs."glfw" or (sysDepError "glfw")) ]
             else (pkgs.lib).optional (system.isWindows) (pkgs."opengl32" or (sysDepError "opengl32"));
+        buildable = true;
         };
       };
     }

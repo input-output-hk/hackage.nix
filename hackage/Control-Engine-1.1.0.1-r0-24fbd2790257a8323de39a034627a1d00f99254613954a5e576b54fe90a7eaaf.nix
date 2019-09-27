@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."stm" or (buildDepError "stm"))
           (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"))
           ];
+        buildable = true;
         };
       };
     }

@@ -72,6 +72,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."text" or (buildDepError "text"))
           (hsPkgs."time" or (buildDepError "time"))
           ];
+        buildable = true;
         };
       exes = {
         "Tests" = {
@@ -83,6 +84,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
             (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
             ];
+          buildable = if flags.test then true else false;
           };
         };
       };

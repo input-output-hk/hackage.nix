@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."graphviz" or (buildDepError "graphviz"))
           (hsPkgs."fgl" or (buildDepError "fgl"))
           ];
+        buildable = true;
         };
       };
     }

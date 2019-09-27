@@ -63,9 +63,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ];
+        buildable = true;
         };
       exes = {
-        "maam" = { depends = [ (hsPkgs."maam" or (buildDepError "maam")) ]; };
+        "maam" = {
+          depends = [ (hsPkgs."maam" or (buildDepError "maam")) ];
+          buildable = true;
+          };
         };
       };
     }

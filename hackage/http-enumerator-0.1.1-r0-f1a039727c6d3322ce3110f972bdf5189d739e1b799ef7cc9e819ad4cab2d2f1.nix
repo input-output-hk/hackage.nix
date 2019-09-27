@@ -81,7 +81,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."mtl" or (buildDepError "mtl"))
             (hsPkgs."binary" or (buildDepError "binary"))
             ]);
+        buildable = true;
         };
-      exes = { "http-enumerator" = {}; };
+      exes = {
+        "http-enumerator" = { buildable = if flags.test then true else false; };
+        };
       };
     }

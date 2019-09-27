@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."copilot-core" or (buildDepError "copilot-core"))
           (hsPkgs."copilot-theorem" or (buildDepError "copilot-theorem"))
           ];
+        buildable = true;
         };
       };
     }

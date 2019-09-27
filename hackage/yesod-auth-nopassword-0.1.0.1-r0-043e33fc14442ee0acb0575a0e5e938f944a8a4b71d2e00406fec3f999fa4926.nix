@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
           (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
           ];
+        buildable = true;
         };
       };
     }

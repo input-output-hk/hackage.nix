@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."winspool" or (sysDepError "winspool"))
           (pkgs."ole32" or (sysDepError "ole32"))
           ];
+        buildable = true;
         };
       };
     }

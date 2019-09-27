@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (pkgs."kernel32" or (sysDepError "kernel32"))
           (pkgs."msvcrt" or (sysDepError "msvcrt"))
           ];
+        buildable = true;
         };
       exes = {
         "ansi-terminal-example" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (pkgs."kernel32" or (sysDepError "kernel32"))
             (pkgs."msvcrt" or (sysDepError "msvcrt"))
             ];
+          buildable = if !flags.example then false else true;
           };
         };
       };

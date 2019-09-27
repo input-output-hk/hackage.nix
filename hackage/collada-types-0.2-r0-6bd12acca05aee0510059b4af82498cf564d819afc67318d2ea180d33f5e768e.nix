@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."enumerable" or (buildDepError "enumerable"))
           (hsPkgs."tuple-gen" or (buildDepError "tuple-gen"))
           ];
+        buildable = true;
         };
       };
     }

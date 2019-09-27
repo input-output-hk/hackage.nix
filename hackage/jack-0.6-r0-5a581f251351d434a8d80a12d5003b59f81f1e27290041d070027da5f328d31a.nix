@@ -69,11 +69,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
+        buildable = true;
         };
       exes = {
-        "amplify" = { libs = [ (pkgs."jack" or (sysDepError "jack")) ]; };
-        "impulse-train" = { libs = [ (pkgs."jack" or (sysDepError "jack")) ]; };
-        "midimon" = { libs = [ (pkgs."jack" or (sysDepError "jack")) ]; };
+        "amplify" = {
+          libs = [ (pkgs."jack" or (sysDepError "jack")) ];
+          buildable = if !flags.buildexamples then false else true;
+          };
+        "impulse-train" = {
+          libs = [ (pkgs."jack" or (sysDepError "jack")) ];
+          buildable = if !flags.buildexamples then false else true;
+          };
+        "midimon" = {
+          libs = [ (pkgs."jack" or (sysDepError "jack")) ];
+          buildable = if !flags.buildexamples then false else true;
+          };
         };
       };
     }

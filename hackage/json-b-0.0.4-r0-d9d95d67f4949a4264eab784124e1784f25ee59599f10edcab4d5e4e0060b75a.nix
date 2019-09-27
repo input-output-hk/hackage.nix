@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."bytestring-nums" or (buildDepError "bytestring-nums"))
           (hsPkgs."bytestring-trie" or (buildDepError "bytestring-trie"))
           ];
+        buildable = true;
         };
       exes = {
         "json-schema" = {
@@ -76,6 +77,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."bytestring-nums" or (buildDepError "bytestring-nums"))
             (hsPkgs."bytestring-trie" or (buildDepError "bytestring-trie"))
             ];
+          buildable = true;
           };
         };
       };

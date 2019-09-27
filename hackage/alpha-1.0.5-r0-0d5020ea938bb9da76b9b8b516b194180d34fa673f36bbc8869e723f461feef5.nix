@@ -75,6 +75,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."COrdering" or (buildDepError "COrdering"))
             (hsPkgs."cpphs" or (buildDepError "cpphs"))
             ];
+          buildable = true;
           };
         };
       };

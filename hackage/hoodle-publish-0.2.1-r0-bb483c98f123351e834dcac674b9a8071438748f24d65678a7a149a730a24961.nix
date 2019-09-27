@@ -80,6 +80,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."hoodle-render" or (buildDepError "hoodle-render"))
           (hsPkgs."hoodle-types" or (buildDepError "hoodle-types"))
           ];
+        buildable = true;
         };
       exes = {
         "hoodle-publish" = {
@@ -92,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hoodle-publish" or (buildDepError "hoodle-publish"))
             (hsPkgs."gtk3" or (buildDepError "gtk3"))
             ];
+          buildable = true;
           };
         };
       };

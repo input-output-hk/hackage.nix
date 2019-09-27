@@ -70,6 +70,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."chr-pretty" or (buildDepError "chr-pretty"))
           ];
+        buildable = true;
         };
       };
     }

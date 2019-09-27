@@ -66,7 +66,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."hint" or (buildDepError "hint"))
           ];
+        buildable = true;
         };
-      exes = { "couch-hs" = {}; };
+      exes = { "couch-hs" = { buildable = true; }; };
       };
     }

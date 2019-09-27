@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."securemem" or (buildDepError "securemem"))
           (hsPkgs."crypto-cipher-types" or (buildDepError "crypto-cipher-types"))
           ];
+        buildable = true;
         };
       };
     }

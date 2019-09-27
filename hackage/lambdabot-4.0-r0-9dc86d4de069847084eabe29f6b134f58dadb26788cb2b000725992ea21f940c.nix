@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."plugins" or (buildDepError "plugins"))
             (hsPkgs."fps" or (buildDepError "fps"))
             ];
+          buildable = true;
           };
         "lambdabot" = {
           depends = [
@@ -82,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."plugins" or (buildDepError "plugins"))
             (hsPkgs."fps" or (buildDepError "fps"))
             ];
+          buildable = true;
           };
         "hoogle" = {
           depends = [
@@ -96,6 +98,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."plugins" or (buildDepError "plugins"))
             (hsPkgs."fps" or (buildDepError "fps"))
             ];
+          buildable = true;
           };
         "djinn" = {
           depends = [
@@ -110,6 +113,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."plugins" or (buildDepError "plugins"))
             (hsPkgs."fps" or (buildDepError "fps"))
             ];
+          buildable = true;
           };
         "unlambda" = {
           depends = [
@@ -124,6 +128,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."plugins" or (buildDepError "plugins"))
             (hsPkgs."fps" or (buildDepError "fps"))
             ];
+          buildable = true;
           };
         "runplugs" = {
           depends = [
@@ -138,6 +143,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."plugins" or (buildDepError "plugins"))
             (hsPkgs."fps" or (buildDepError "fps"))
             ];
+          buildable = true;
           };
         };
       };

@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."opentheory-bits" or (buildDepError "opentheory-bits"))
           (hsPkgs."opentheory-probability" or (buildDepError "opentheory-probability"))
           ];
+        buildable = true;
         };
       };
     }

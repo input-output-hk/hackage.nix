@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."vector" or (buildDepError "vector"))
           (hsPkgs."vector-read-instances" or (buildDepError "vector-read-instances"))
           ];
+        buildable = true;
         };
       };
     }

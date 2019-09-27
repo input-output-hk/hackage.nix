@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
           (hsPkgs."spoon" or (buildDepError "spoon"))
           ];
+        buildable = true;
         };
       tests = {
         "prim-spoon-test" = {
@@ -70,6 +71,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."prim-spoon" or (buildDepError "prim-spoon"))
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -81,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."prim-spoon" or (buildDepError "prim-spoon"))
             (hsPkgs."spoon" or (buildDepError "spoon"))
             ];
+          buildable = true;
           };
         };
       };

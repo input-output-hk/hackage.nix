@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."reactive-banana" or (buildDepError "reactive-banana"))
           (hsPkgs."termbox" or (buildDepError "termbox"))
           ];
+        buildable = true;
         };
       };
     }

@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."singletons" or (buildDepError "singletons"))
           (hsPkgs."equational-reasoning" or (buildDepError "equational-reasoning"))
           ];
+        buildable = true;
         };
       };
     }

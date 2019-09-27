@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           else [ (hsPkgs."base" or (buildDepError "base")) ])) ++ [
           (hsPkgs."syb-with-class" or (buildDepError "syb-with-class"))
           ];
+        buildable = true;
         };
       };
     }

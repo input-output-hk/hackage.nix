@@ -83,6 +83,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."servant-lucid" or (buildDepError "servant-lucid"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ]);
+        buildable = true;
         };
       exes = {
         "simple" = {
@@ -99,6 +100,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             else [
               (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
               ]));
+          buildable = if !(compiler.isGhcjs && true) && !flags.jsaddle
+            then false
+            else true;
           };
         "tests" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.tests)) [
@@ -120,6 +124,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."transformers" or (buildDepError "transformers"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = if !(compiler.isGhcjs && true) || !flags.tests
+            then false
+            else true;
           };
         };
       };

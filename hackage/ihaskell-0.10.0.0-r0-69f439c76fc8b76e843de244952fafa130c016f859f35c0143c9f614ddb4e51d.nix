@@ -93,6 +93,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."ipython-kernel" or (buildDepError "ipython-kernel"))
           (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"))
           ];
+        buildable = true;
         };
       exes = {
         "ihaskell" = {
@@ -113,6 +114,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."ipython-kernel" or (buildDepError "ipython-kernel"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = true;
           };
         };
       tests = {
@@ -133,6 +135,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."raw-strings-qq" or (buildDepError "raw-strings-qq"))
             (hsPkgs."setenv" or (buildDepError "setenv"))
             ];
+          buildable = true;
           };
         };
       };

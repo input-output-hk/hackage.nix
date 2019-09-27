@@ -58,6 +58,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         depends = [
           (hsPkgs."base" or (buildDepError "base"))
           ] ++ (pkgs.lib).optional (flags.usestm) (hsPkgs."stm" or (buildDepError "stm"));
+        buildable = true;
         };
       };
     }

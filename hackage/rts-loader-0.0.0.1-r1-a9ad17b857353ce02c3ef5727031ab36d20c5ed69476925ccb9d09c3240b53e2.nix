@@ -68,9 +68,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ];
+        buildable = true;
         };
       exes = {
-        "rts-loader" = {};
+        "rts-loader" = { buildable = true; };
         "rts-loader-example" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
@@ -78,6 +79,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."process" or (buildDepError "process"))
             (hsPkgs."rts-loader" or (buildDepError "rts-loader"))
             ];
+          buildable = true;
           };
         };
       };

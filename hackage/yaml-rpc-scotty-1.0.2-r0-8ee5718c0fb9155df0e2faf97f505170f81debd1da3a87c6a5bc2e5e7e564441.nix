@@ -67,6 +67,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."scotty" or (buildDepError "scotty"))
           (hsPkgs."yaml-rpc" or (buildDepError "yaml-rpc"))
           ];
+        buildable = true;
         };
       };
     }

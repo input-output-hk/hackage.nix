@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."data-flags" or (buildDepError "data-flags"))
           (hsPkgs."data-serializer" or (buildDepError "data-serializer"))
           ];
+        buildable = true;
         };
       };
     }

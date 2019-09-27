@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."semigroups" or (buildDepError "semigroups"))
             (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
             ];
+          buildable = true;
           };
         };
       };

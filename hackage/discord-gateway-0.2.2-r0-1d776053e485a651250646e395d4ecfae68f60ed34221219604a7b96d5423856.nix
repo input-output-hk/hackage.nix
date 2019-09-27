@@ -65,6 +65,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."wuss" or (buildDepError "wuss"))
           (hsPkgs."discord-types" or (buildDepError "discord-types"))
           ];
+        buildable = true;
         };
       };
     }

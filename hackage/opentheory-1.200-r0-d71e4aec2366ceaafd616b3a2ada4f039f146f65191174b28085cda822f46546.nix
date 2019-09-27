@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           (hsPkgs."opentheory-primitive" or (buildDepError "opentheory-primitive"))
           ];
+        buildable = true;
         };
       tests = {
         "opentheory-test" = {
@@ -68,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             (hsPkgs."opentheory-primitive" or (buildDepError "opentheory-primitive"))
             ];
+          buildable = true;
           };
         };
       };

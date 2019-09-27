@@ -69,6 +69,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."parallel-io" or (buildDepError "parallel-io"))
           (hsPkgs."aivika" or (buildDepError "aivika"))
           ];
+        buildable = true;
         };
       };
     }

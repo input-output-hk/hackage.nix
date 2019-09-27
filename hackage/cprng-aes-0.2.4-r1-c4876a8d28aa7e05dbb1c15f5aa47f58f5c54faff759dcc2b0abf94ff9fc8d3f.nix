@@ -64,6 +64,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."cryptocipher" or (buildDepError "cryptocipher"))
           (hsPkgs."cereal" or (buildDepError "cereal"))
           ] ++ (pkgs.lib).optional (system.isLinux && flags.fastaes && (system.isI386 || system.isX86_64)) (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"));
+        buildable = true;
         };
       };
     }

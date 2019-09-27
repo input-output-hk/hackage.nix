@@ -63,6 +63,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."aeson" or (buildDepError "aeson"))
           (hsPkgs."aeson-qq" or (buildDepError "aeson-qq"))
           ];
+        buildable = true;
         };
       tests = {
         "spec" = {
@@ -72,6 +73,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."hspec-wai" or (buildDepError "hspec-wai"))
             (hsPkgs."hspec2" or (buildDepError "hspec2"))
             ];
+          buildable = true;
           };
         };
       };

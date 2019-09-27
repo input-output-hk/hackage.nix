@@ -61,6 +61,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           (hsPkgs."hxt-regex-xmlschema" or (buildDepError "hxt-regex-xmlschema"))
           ];
+        buildable = true;
         };
       };
     }

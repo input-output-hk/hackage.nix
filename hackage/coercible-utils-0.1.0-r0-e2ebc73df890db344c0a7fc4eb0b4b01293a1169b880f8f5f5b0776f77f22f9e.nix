@@ -54,13 +54,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      "library" = {
+        depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+        buildable = true;
+        };
       tests = {
         "coercible-utils-test" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."coercible-utils" or (buildDepError "coercible-utils"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -70,6 +74,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."gauge" or (buildDepError "gauge"))
             (hsPkgs."coercible-utils" or (buildDepError "coercible-utils"))
             ];
+          buildable = true;
           };
         };
       };

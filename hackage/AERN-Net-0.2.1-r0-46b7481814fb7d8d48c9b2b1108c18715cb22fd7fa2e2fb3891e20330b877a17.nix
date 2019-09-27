@@ -66,6 +66,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
           (hsPkgs."AERN-RnToRm" or (buildDepError "AERN-RnToRm"))
           ];
+        buildable = true;
         };
       };
     }

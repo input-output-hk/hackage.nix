@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
           (hsPkgs."snap-core" or (buildDepError "snap-core"))
           ];
+        buildable = true;
         };
       };
     }

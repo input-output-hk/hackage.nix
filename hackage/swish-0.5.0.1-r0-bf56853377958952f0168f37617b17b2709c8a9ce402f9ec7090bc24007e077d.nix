@@ -72,24 +72,39 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."directory" or (buildDepError "directory"))
           (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
+        buildable = true;
         };
       exes = {
-        "BuiltInMapTest" = {};
-        "GraphPartitionTest" = {};
-        "GraphTest" = {};
-        "NTTest" = {};
-        "N3ParserTest" = {};
-        "N3FormatterTest" = {};
-        "RDFDatatypeXsdIntegerTest" = {};
-        "RDFGraphTest" = {};
-        "RDFProofContextTest" = {};
-        "RDFProofTest" = {};
-        "RDFQueryTest" = {};
-        "RDFRulesetTest" = {};
-        "VarBindingTest" = {};
-        "LookupMapTest" = {};
-        "QNameTest" = {};
-        "Swish" = {};
+        "BuiltInMapTest" = {
+          buildable = if !flags.tests then false else true;
+          };
+        "GraphPartitionTest" = {
+          buildable = if !flags.tests then false else true;
+          };
+        "GraphTest" = { buildable = if !flags.tests then false else true; };
+        "NTTest" = { buildable = if !flags.tests then false else true; };
+        "N3ParserTest" = { buildable = if !flags.tests then false else true; };
+        "N3FormatterTest" = {
+          buildable = if !flags.tests then false else true;
+          };
+        "RDFDatatypeXsdIntegerTest" = {
+          buildable = if !flags.tests then false else true;
+          };
+        "RDFGraphTest" = { buildable = if !flags.tests then false else true; };
+        "RDFProofContextTest" = {
+          buildable = if !flags.tests then false else true;
+          };
+        "RDFProofTest" = { buildable = if !flags.tests then false else true; };
+        "RDFQueryTest" = { buildable = if !flags.tests then false else true; };
+        "RDFRulesetTest" = {
+          buildable = if !flags.tests then false else true;
+          };
+        "VarBindingTest" = {
+          buildable = if !flags.tests then false else true;
+          };
+        "LookupMapTest" = { buildable = if !flags.tests then false else true; };
+        "QNameTest" = { buildable = if !flags.tests then false else true; };
+        "Swish" = { buildable = true; };
         };
       };
     }

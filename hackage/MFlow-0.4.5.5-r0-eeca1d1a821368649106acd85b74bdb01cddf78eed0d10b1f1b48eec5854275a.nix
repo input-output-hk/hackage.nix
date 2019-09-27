@@ -89,6 +89,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."clientsession" or (buildDepError "clientsession"))
           (hsPkgs."pwstore-fast" or (buildDepError "pwstore-fast"))
           ];
+        buildable = true;
         };
       exes = {
         "demos-blaze" = {
@@ -125,6 +126,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."time" or (buildDepError "time"))
             (hsPkgs."acid-state" or (buildDepError "acid-state"))
             ];
+          buildable = true;
           };
         };
       };

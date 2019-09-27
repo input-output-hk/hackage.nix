@@ -68,6 +68,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
+        buildable = true;
         };
       exes = {
         "delayed" = {
@@ -75,30 +76,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."friday" or (buildDepError "friday"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "canny" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."friday" or (buildDepError "friday"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "gaussian_blur" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."friday" or (buildDepError "friday"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "histogram" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."friday" or (buildDepError "friday"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "resize_image" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."friday" or (buildDepError "friday"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -111,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             (hsPkgs."vector" or (buildDepError "vector"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -120,6 +127,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."criterion" or (buildDepError "criterion"))
             (hsPkgs."friday" or (buildDepError "friday"))
             ];
+          buildable = true;
           };
         };
       };

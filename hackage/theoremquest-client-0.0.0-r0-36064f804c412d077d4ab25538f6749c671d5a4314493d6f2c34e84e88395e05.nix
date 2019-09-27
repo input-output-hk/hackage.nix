@@ -62,6 +62,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."HTTP" or (buildDepError "HTTP"))
             (hsPkgs."theoremquest" or (buildDepError "theoremquest"))
             ];
+          buildable = true;
           };
         };
       };

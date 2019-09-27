@@ -60,6 +60,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           (hsPkgs."containers" or (buildDepError "containers"))
           (hsPkgs."ListLike" or (buildDepError "ListLike"))
           ];
+        buildable = true;
         };
       exes = {
         "earley-english" = {
@@ -68,18 +69,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Earley" or (buildDepError "Earley"))
             (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "earley-expr" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Earley" or (buildDepError "Earley"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "earley-expr2" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Earley" or (buildDepError "Earley"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "earley-mixfix" = {
           depends = [
@@ -87,18 +91,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."Earley" or (buildDepError "Earley"))
             (hsPkgs."containers" or (buildDepError "containers"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "earley-very-ambiguous" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Earley" or (buildDepError "Earley"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         "earley-words" = {
           depends = [
             (hsPkgs."base" or (buildDepError "base"))
             (hsPkgs."Earley" or (buildDepError "Earley"))
             ];
+          buildable = if !flags.examples then false else true;
           };
         };
       tests = {
@@ -110,6 +117,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
+          buildable = true;
           };
         };
       benchmarks = {
@@ -121,6 +129,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
             (hsPkgs."parsec" or (buildDepError "parsec"))
             (hsPkgs."ListLike" or (buildDepError "ListLike"))
             ];
+          buildable = true;
           };
         };
       };
