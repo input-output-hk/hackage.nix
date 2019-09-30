@@ -1,0 +1,66 @@
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "data-tree-print"; version = "0.1.0.2"; };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (C) 2016 Lennart Spitzner";
+      maintainer = "Lennart Spitzner <hexagoxel@hexagoxel.de>";
+      author = "Lennart Spitzner";
+      homepage = "https://github.com/lspitzner/data-tree-print";
+      url = "";
+      synopsis = "Print Data instances as a nested tree";
+      description = "Provides functionality similar to that of the `Show` class: Taking some\narbitrary value and returning a String.\n\n* Output is not intended to be valid haskell.\n\n* Requires a `Data.Data.Data` instance instead of a `Text.Show` one.\n\n* Output, if large, is often easier to parse than `show` output\ndue to the formatting as a nested tree.\n\n* The user can adapt the behaviour at runtime using custom layouting\nexpressed via syb-style extension.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."syb" or (buildDepError "syb"))
+          ];
+        buildable = true;
+        };
+      };
+    }
