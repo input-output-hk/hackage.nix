@@ -1,0 +1,83 @@
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.9.2";
+      identifier = { name = "ChasingBottoms"; version = "1.3.1.7"; };
+      license = "MIT";
+      copyright = "Copyright (c) Nils Anders Danielsson 2004-2019.";
+      maintainer = "http://www.cse.chalmers.se/~nad/";
+      author = "Nils Anders Danielsson";
+      homepage = "";
+      url = "";
+      synopsis = "For testing partial and infinite values.";
+      description = "Do you ever feel the need to test code involving bottoms (e.g. calls to\nthe @error@ function), or code involving infinite values? Then this\nlibrary could be useful for you.\n\nIt is usually easy to get a grip on bottoms by showing a value and\nwaiting to see how much gets printed before the first exception is\nencountered. However, that quickly gets tiresome and is hard to automate\nusing e.g. QuickCheck\n(<http://www.cse.chalmers.se/~rjmh/QuickCheck/>). With this library you\ncan do the tests as simply as the following examples show.\n\nTesting explicitly for bottoms:\n\n> > isBottom (head [])\n> True\n\n> > isBottom bottom\n> True\n\n> > isBottom (\\_ -> bottom)\n> False\n\n> > isBottom (bottom, bottom)\n> False\n\nComparing finite, partial values:\n\n> > ((bottom, 3) :: (Bool, Int)) ==! (bottom, 2+5-4)\n> True\n\n> > ((bottom, bottom) :: (Bool, Int)) <! (bottom, 8)\n> True\n\nShowing partial and infinite values (@\\\\\\/!@ is join and @\\/\\\\!@ is meet):\n\n> > approxShow 4 \$ (True, bottom) \\/! (bottom, 'b')\n> \"Just (True, 'b')\"\n\n> > approxShow 4 \$ (True, bottom) /\\! (bottom, 'b')\n> \"(_|_, _|_)\"\n\n> > approxShow 4 \$ ([1..] :: [Int])\n> \"[1, 2, 3, _\"\n\n> > approxShow 4 \$ (cycle [bottom] :: [Bool])\n> \"[_|_, _|_, _|_, _\"\n\nApproximately comparing infinite, partial values:\n\n> > approx 100 [2,4..] ==! approx 100 (filter even [1..] :: [Int])\n> True\n\n> > approx 100 [2,4..] /=! approx 100 (filter even [bottom..] :: [Int])\n> True\n\nThe code above relies on the fact that @bottom@, just as @error\n\\\"...\\\"@, @undefined@ and pattern match failures, yield\nexceptions. Sometimes we are dealing with properly non-terminating\ncomputations, such as the following example, and then it can be nice to\nbe able to apply a time-out:\n\n> > timeOut' 1 (reverse [1..5])\n> Value [5,4,3,2,1]\n\n> > timeOut' 1 (reverse [1..])\n> NonTermination\n\nThe time-out functionality can be used to treat \\\"slow\\\" computations as\nbottoms:\n\n@\n\\> let tweak = Tweak &#x7b; approxDepth = Just 5, timeOutLimit = Just 2 &#x7d;\n\\> semanticEq tweak (reverse [1..], [1..]) (bottom :: [Int], [1..] :: [Int])\nTrue\n@\n\n@\n\\> let tweak = noTweak &#x7b; timeOutLimit = Just 2 &#x7d;\n\\> semanticJoin tweak (reverse [1..], True) ([] :: [Int], bottom)\nJust ([],True)\n@\n\nThis can of course be dangerous:\n\n@\n\\> let tweak = noTweak &#x7b; timeOutLimit = Just 0 &#x7d;\n\\> semanticEq tweak (reverse [1..100000000]) (bottom :: [Integer])\nTrue\n@\n\nTimeouts can also be applied to @IO@ computations:\n\n> > let primes () = unfoldr (\\(x:xs) -> Just (x, filter ((/= 0) . (`mod` x)) xs)) [2..]\n> > timeOutMicro 100 (print \$ primes ())\n> [2,NonTermination\n> > timeOutMicro 10000 (print \$ take 10 \$ primes ())\n> [2,3,5,7,11,13,17,19,23,29]\n> Value ()\n\nFor the underlying theory and a larger example involving use of\nQuickCheck, see the article \\\"Chasing Bottoms, A Case Study in Program\nVerification in the Presence of Partial and Infinite Values\\\"\n(<http://www.cse.chalmers.se/~nad/publications/danielsson-jansson-mpc2004.html>).\n\nThe code has been tested using GHC. Most parts can probably be\nported to other Haskell compilers, but this would require some work.\nThe @TimeOut@ functions require preemptive scheduling, and most of\nthe rest requires @Data.Generics@; @isBottom@ only requires\nexceptions, though.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."syb" or (buildDepError "syb"))
+          ];
+        buildable = true;
+        };
+      tests = {
+        "ChasingBottomsTestSuite" = {
+          depends = [
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."array" or (buildDepError "array"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }
