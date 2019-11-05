@@ -1,0 +1,135 @@
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "2.2";
+      identifier = { name = "ip"; version = "1.6.0"; };
+      license = "BSD-3-Clause";
+      copyright = "2016 Andrew Martin";
+      maintainer = "andrew.thaddeus@gmail.com";
+      author = "Andrew Martin";
+      homepage = "https://github.com/andrewthad/haskell-ip#readme";
+      url = "";
+      synopsis = "Library for IP and MAC addresses";
+      description = "The `ip` package provides types and functions for dealing with\nIPv4 addresses, CIDR blocks, and MAC addresses. We provide instances\nfor typeclasses found in commonly used packages like `aeson`, `vector`,\nand `hashable`. We also provide `Parser`s for working with attoparsec.\n\nNotably, this package does not overload functions by introducing any\ntypeclasses of its own. Neither does it prefix functions with the name\nof the type that they work on. Instead, functions of the same name are\nexported by several different modules, and it is expected that end users\ndisambiguate by importing these modules qualified.\n\nThe only module intended to be imported unqualified is `Net.Types`. The\ntypes in this package should not conflict with the types in\nany other commonly used packages.\n\nThe following packages are intended to be used with this package:\n\n* `yesod-ip`: Provides orphan instances needed to work with yesod and\npersistent. Also, provides a `yesod-form` helper.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."byteslice" or (buildDepError "byteslice"))
+          (hsPkgs."bytesmith" or (buildDepError "bytesmith"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."natural-arithmetic" or (buildDepError "natural-arithmetic"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."small-bytearray-builder" or (buildDepError "small-bytearray-builder"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."text-short" or (buildDepError "text-short"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."wide-word" or (buildDepError "wide-word"))
+          ];
+        buildable = true;
+        };
+      tests = {
+        "test" = {
+          depends = [
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."byteslice" or (buildDepError "byteslice"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."ip" or (buildDepError "ip"))
+            (hsPkgs."quickcheck-classes" or (buildDepError "quickcheck-classes"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."text-short" or (buildDepError "text-short"))
+            (hsPkgs."wide-word" or (buildDepError "wide-word"))
+            ];
+          buildable = true;
+          };
+        "spec" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."ip" or (buildDepError "ip"))
+            (hsPkgs."wide-word" or (buildDepError "wide-word"))
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
+            ];
+          buildable = true;
+          };
+        "doctest" = {
+          depends = [
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."ip" or (buildDepError "ip"))
+            (hsPkgs."wide-word" or (buildDepError "wide-word"))
+            ];
+          buildable = true;
+          };
+        };
+      benchmarks = {
+        "criterion" = {
+          depends = [
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."byteslice" or (buildDepError "byteslice"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."ip" or (buildDepError "ip"))
+            (hsPkgs."text" or (buildDepError "text"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }
