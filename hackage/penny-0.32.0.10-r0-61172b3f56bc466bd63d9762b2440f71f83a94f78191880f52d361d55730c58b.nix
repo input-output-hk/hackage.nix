@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       build-gibberish = false;
@@ -66,78 +27,78 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."anonymous-sums" or (buildDepError "anonymous-sums"))
-          (hsPkgs."matchers" or (buildDepError "matchers"))
-          (hsPkgs."multiarg" or (buildDepError "multiarg"))
-          (hsPkgs."ofx" or (buildDepError "ofx"))
-          (hsPkgs."prednote" or (buildDepError "prednote"))
-          (hsPkgs."rainbow" or (buildDepError "rainbow"))
-          (hsPkgs."rainbox" or (buildDepError "rainbox"))
-          (hsPkgs."action-permutations" or (buildDepError "action-permutations"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."contravariant" or (buildDepError "contravariant"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."anonymous-sums" or ((hsPkgs.pkgs-errors).buildDepError "anonymous-sums"))
+          (hsPkgs."matchers" or ((hsPkgs.pkgs-errors).buildDepError "matchers"))
+          (hsPkgs."multiarg" or ((hsPkgs.pkgs-errors).buildDepError "multiarg"))
+          (hsPkgs."ofx" or ((hsPkgs.pkgs-errors).buildDepError "ofx"))
+          (hsPkgs."prednote" or ((hsPkgs.pkgs-errors).buildDepError "prednote"))
+          (hsPkgs."rainbow" or ((hsPkgs.pkgs-errors).buildDepError "rainbow"))
+          (hsPkgs."rainbox" or ((hsPkgs.pkgs-errors).buildDepError "rainbox"))
+          (hsPkgs."action-permutations" or ((hsPkgs.pkgs-errors).buildDepError "action-permutations"))
+          (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+          (hsPkgs."contravariant" or ((hsPkgs.pkgs-errors).buildDepError "contravariant"))
+          (hsPkgs."either" or ((hsPkgs.pkgs-errors).buildDepError "either"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
           ];
         buildable = true;
         };
       exes = {
         "penny-gibberish" = {
           depends = (pkgs.lib).optionals (flags.build-gibberish) [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."multiarg" or (buildDepError "multiarg"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."penny" or ((hsPkgs.pkgs-errors).buildDepError "penny"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."multiarg" or ((hsPkgs.pkgs-errors).buildDepError "multiarg"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random-shuffle" or ((hsPkgs.pkgs-errors).buildDepError "random-shuffle"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = if flags.build-gibberish then true else false;
           };
         "penny" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."penny" or ((hsPkgs.pkgs-errors).buildDepError "penny"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if !flags.build-penny then false else true;
           };
         "penny-selloff" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."penny" or ((hsPkgs.pkgs-errors).buildDepError "penny"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if !flags.build-selloff then false else true;
           };
         "penny-diff" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."penny" or ((hsPkgs.pkgs-errors).buildDepError "penny"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if !flags.build-diff then false else true;
           };
         "penny-reprint" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."penny" or ((hsPkgs.pkgs-errors).buildDepError "penny"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if !flags.build-reprint then false else true;
           };
         "penny-reconcile" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."penny" or ((hsPkgs.pkgs-errors).buildDepError "penny"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if !flags.build-reconcile then false else true;
           };
@@ -145,18 +106,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "penny-test" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."anonymous-sums" or (buildDepError "anonymous-sums"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."penny" or ((hsPkgs.pkgs-errors).buildDepError "penny"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."anonymous-sums" or ((hsPkgs.pkgs-errors).buildDepError "anonymous-sums"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+            (hsPkgs."random-shuffle" or ((hsPkgs.pkgs-errors).buildDepError "random-shuffle"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };

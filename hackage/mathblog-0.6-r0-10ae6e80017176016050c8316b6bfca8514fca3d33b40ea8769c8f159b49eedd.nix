@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -57,64 +18,64 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "mb" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."pandoc" or (buildDepError "pandoc"))
-            (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."SHA" or (buildDepError "SHA"))
-            (hsPkgs."HStringTemplate" or (buildDepError "HStringTemplate"))
-            (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."http-server" or (buildDepError "http-server"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."url" or (buildDepError "url"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."pandoc" or ((hsPkgs.pkgs-errors).buildDepError "pandoc"))
+            (hsPkgs."pandoc-types" or ((hsPkgs.pkgs-errors).buildDepError "pandoc-types"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."SHA" or ((hsPkgs.pkgs-errors).buildDepError "SHA"))
+            (hsPkgs."HStringTemplate" or ((hsPkgs.pkgs-errors).buildDepError "HStringTemplate"))
+            (hsPkgs."ConfigFile" or ((hsPkgs.pkgs-errors).buildDepError "ConfigFile"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."fsnotify" or ((hsPkgs.pkgs-errors).buildDepError "fsnotify"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."either" or ((hsPkgs.pkgs-errors).buildDepError "either"))
+            (hsPkgs."http-server" or ((hsPkgs.pkgs-errors).buildDepError "http-server"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."url" or ((hsPkgs.pkgs-errors).buildDepError "url"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."JuicyPixels" or ((hsPkgs.pkgs-errors).buildDepError "JuicyPixels"))
             ];
           buildable = true;
           };
         "mb-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."pandoc" or (buildDepError "pandoc"))
-            (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."SHA" or (buildDepError "SHA"))
-            (hsPkgs."HStringTemplate" or (buildDepError "HStringTemplate"))
-            (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."http-server" or (buildDepError "http-server"))
-            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."url" or (buildDepError "url"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."pandoc" or ((hsPkgs.pkgs-errors).buildDepError "pandoc"))
+            (hsPkgs."pandoc-types" or ((hsPkgs.pkgs-errors).buildDepError "pandoc-types"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."SHA" or ((hsPkgs.pkgs-errors).buildDepError "SHA"))
+            (hsPkgs."HStringTemplate" or ((hsPkgs.pkgs-errors).buildDepError "HStringTemplate"))
+            (hsPkgs."ConfigFile" or ((hsPkgs.pkgs-errors).buildDepError "ConfigFile"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."fsnotify" or ((hsPkgs.pkgs-errors).buildDepError "fsnotify"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."either" or ((hsPkgs.pkgs-errors).buildDepError "either"))
+            (hsPkgs."http-server" or ((hsPkgs.pkgs-errors).buildDepError "http-server"))
+            (hsPkgs."system-filepath" or ((hsPkgs.pkgs-errors).buildDepError "system-filepath"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."url" or ((hsPkgs.pkgs-errors).buildDepError "url"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."test-framework" or ((hsPkgs.pkgs-errors).buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-hunit"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."JuicyPixels" or ((hsPkgs.pkgs-errors).buildDepError "JuicyPixels"))
             ];
           buildable = true;
           };

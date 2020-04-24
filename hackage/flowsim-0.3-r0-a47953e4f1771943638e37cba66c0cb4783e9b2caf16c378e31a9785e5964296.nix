@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -57,65 +18,65 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "flowsim" = {
           depends = [
-            (hsPkgs."bio" or (buildDepError "bio"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."bio" or ((hsPkgs.pkgs-errors).buildDepError "bio"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
             ];
           buildable = true;
           };
         "hplc" = {
           depends = [
-            (hsPkgs."bio" or (buildDepError "bio"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."bio" or ((hsPkgs.pkgs-errors).buildDepError "bio"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
             ];
           buildable = true;
           };
         "clonesim" = {
           depends = [
-            (hsPkgs."bio" or (buildDepError "bio"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
+            (hsPkgs."bio" or ((hsPkgs.pkgs-errors).buildDepError "bio"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
             ];
           buildable = true;
           };
         "kitsim" = {
           depends = [
-            (hsPkgs."bio" or (buildDepError "bio"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."bio" or ((hsPkgs.pkgs-errors).buildDepError "bio"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
             ];
           buildable = true;
           };
         "mutator" = {
           depends = [
-            (hsPkgs."bio" or (buildDepError "bio"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."bio" or ((hsPkgs.pkgs-errors).buildDepError "bio"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
             ];
           buildable = true;
           };
         "duplicator" = {
           depends = [
-            (hsPkgs."bio" or (buildDepError "bio"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bio" or ((hsPkgs.pkgs-errors).buildDepError "bio"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = true;
           };
         "gelfilter" = {
           depends = [
-            (hsPkgs."bio" or (buildDepError "bio"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bio" or ((hsPkgs.pkgs-errors).buildDepError "bio"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = true;
           };

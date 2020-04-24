@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,44 +17,44 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."hexstring" or (buildDepError "hexstring"))
-          (hsPkgs."base58string" or (buildDepError "base58string"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."wreq" or (buildDepError "wreq"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-          (hsPkgs."stm-conduit" or (buildDepError "stm-conduit"))
-          (hsPkgs."bitcoin-types" or (buildDepError "bitcoin-types"))
-          (hsPkgs."bitcoin-block" or (buildDepError "bitcoin-block"))
-          (hsPkgs."bitcoin-tx" or (buildDepError "bitcoin-tx"))
-          (hsPkgs."bitcoin-script" or (buildDepError "bitcoin-script"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          (hsPkgs."hexstring" or ((hsPkgs.pkgs-errors).buildDepError "hexstring"))
+          (hsPkgs."base58string" or ((hsPkgs.pkgs-errors).buildDepError "base58string"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."lens-aeson" or ((hsPkgs.pkgs-errors).buildDepError "lens-aeson"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."wreq" or ((hsPkgs.pkgs-errors).buildDepError "wreq"))
+          (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."stm-chans" or ((hsPkgs.pkgs-errors).buildDepError "stm-chans"))
+          (hsPkgs."stm-conduit" or ((hsPkgs.pkgs-errors).buildDepError "stm-conduit"))
+          (hsPkgs."bitcoin-types" or ((hsPkgs.pkgs-errors).buildDepError "bitcoin-types"))
+          (hsPkgs."bitcoin-block" or ((hsPkgs.pkgs-errors).buildDepError "bitcoin-block"))
+          (hsPkgs."bitcoin-tx" or ((hsPkgs.pkgs-errors).buildDepError "bitcoin-tx"))
+          (hsPkgs."bitcoin-script" or ((hsPkgs.pkgs-errors).buildDepError "bitcoin-script"))
           ];
         buildable = true;
         };
       tests = {
         "test-suite" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."base58string" or (buildDepError "base58string"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."wreq" or (buildDepError "wreq"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."bitcoin-tx" or (buildDepError "bitcoin-tx"))
-            (hsPkgs."bitcoin-script" or (buildDepError "bitcoin-script"))
-            (hsPkgs."bitcoin-api" or (buildDepError "bitcoin-api"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."base58string" or ((hsPkgs.pkgs-errors).buildDepError "base58string"))
+            (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+            (hsPkgs."wreq" or ((hsPkgs.pkgs-errors).buildDepError "wreq"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."bitcoin-tx" or ((hsPkgs.pkgs-errors).buildDepError "bitcoin-tx"))
+            (hsPkgs."bitcoin-script" or ((hsPkgs.pkgs-errors).buildDepError "bitcoin-script"))
+            (hsPkgs."bitcoin-api" or ((hsPkgs.pkgs-errors).buildDepError "bitcoin-api"))
             ];
           buildable = true;
           };

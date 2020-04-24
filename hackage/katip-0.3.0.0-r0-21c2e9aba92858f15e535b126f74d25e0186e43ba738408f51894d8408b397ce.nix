@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { lib-werror = false; };
     package = {
@@ -56,51 +17,51 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."auto-update" or (buildDepError "auto-update"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."hostname" or (buildDepError "hostname"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."string-conv" or (buildDepError "string-conv"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."microlens" or (buildDepError "microlens"))
-          (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."auto-update" or ((hsPkgs.pkgs-errors).buildDepError "auto-update"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."either" or ((hsPkgs.pkgs-errors).buildDepError "either"))
+          (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+          (hsPkgs."hostname" or ((hsPkgs.pkgs-errors).buildDepError "hostname"))
+          (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+          (hsPkgs."string-conv" or ((hsPkgs.pkgs-errors).buildDepError "string-conv"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."time-locale-compat" or ((hsPkgs.pkgs-errors).buildDepError "time-locale-compat"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."transformers-compat" or ((hsPkgs.pkgs-errors).buildDepError "transformers-compat"))
+          (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+          (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+          (hsPkgs."microlens" or ((hsPkgs.pkgs-errors).buildDepError "microlens"))
+          (hsPkgs."microlens-th" or ((hsPkgs.pkgs-errors).buildDepError "microlens-th"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
           ];
         buildable = true;
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."katip" or (buildDepError "katip"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."katip" or ((hsPkgs.pkgs-errors).buildDepError "katip"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+            (hsPkgs."quickcheck-instances" or ((hsPkgs.pkgs-errors).buildDepError "quickcheck-instances"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
             ];
           buildable = true;
           };
@@ -108,17 +69,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."katip" or (buildDepError "katip"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."blaze-builder" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder"))
+            (hsPkgs."katip" or ((hsPkgs.pkgs-errors).buildDepError "katip"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
             ];
           buildable = true;
           };

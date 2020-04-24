@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       build-samples = false;
@@ -60,111 +21,111 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."authenticate-oauth" or (buildDepError "authenticate-oauth"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."twitter-types" or (buildDepError "twitter-types"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."authenticate-oauth" or ((hsPkgs.pkgs-errors).buildDepError "authenticate-oauth"))
+          (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+          (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or ((hsPkgs.pkgs-errors).buildDepError "conduit-extra"))
+          (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+          (hsPkgs."shakespeare" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+          (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."twitter-types" or ((hsPkgs.pkgs-errors).buildDepError "twitter-types"))
           ];
         buildable = true;
         };
       exes = {
         "simple" = {
           depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."authenticate-oauth" or (buildDepError "authenticate-oauth"))
-            (hsPkgs."twitter-conduit" or (buildDepError "twitter-conduit"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+            (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+            (hsPkgs."authenticate-oauth" or ((hsPkgs.pkgs-errors).buildDepError "authenticate-oauth"))
+            (hsPkgs."twitter-conduit" or ((hsPkgs.pkgs-errors).buildDepError "twitter-conduit"))
             ];
           buildable = if !flags.build-samples then false else true;
           };
         "userstream" = {
           depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."authenticate-oauth" or (buildDepError "authenticate-oauth"))
-            (hsPkgs."twitter-conduit" or (buildDepError "twitter-conduit"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."case-insensitive" or ((hsPkgs.pkgs-errors).buildDepError "case-insensitive"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or ((hsPkgs.pkgs-errors).buildDepError "conduit-extra"))
+            (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+            (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+            (hsPkgs."authenticate-oauth" or ((hsPkgs.pkgs-errors).buildDepError "authenticate-oauth"))
+            (hsPkgs."twitter-conduit" or ((hsPkgs.pkgs-errors).buildDepError "twitter-conduit"))
             ];
           buildable = if !flags.build-samples then false else true;
           };
         "oauth_callback" = {
           depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."authenticate-oauth" or (buildDepError "authenticate-oauth"))
-            (hsPkgs."twitter-conduit" or (buildDepError "twitter-conduit"))
-            (hsPkgs."scotty" or (buildDepError "scotty"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+            (hsPkgs."authenticate-oauth" or ((hsPkgs.pkgs-errors).buildDepError "authenticate-oauth"))
+            (hsPkgs."twitter-conduit" or ((hsPkgs.pkgs-errors).buildDepError "twitter-conduit"))
+            (hsPkgs."scotty" or ((hsPkgs.pkgs-errors).buildDepError "scotty"))
             ];
           buildable = if !flags.build-samples then false else true;
           };
         "oauth_pin" = {
           depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."authenticate-oauth" or (buildDepError "authenticate-oauth"))
-            (hsPkgs."twitter-conduit" or (buildDepError "twitter-conduit"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+            (hsPkgs."authenticate-oauth" or ((hsPkgs.pkgs-errors).buildDepError "authenticate-oauth"))
+            (hsPkgs."twitter-conduit" or ((hsPkgs.pkgs-errors).buildDepError "twitter-conduit"))
             ];
           buildable = if !flags.build-samples then false else true;
           };
@@ -172,48 +133,48 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "hlint" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hlint" or (buildDepError "hlint"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hlint" or ((hsPkgs.pkgs-errors).buildDepError "hlint"))
             ];
           buildable = true;
           };
         "doctests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."doctest" or ((hsPkgs.pkgs-errors).buildDepError "doctest"))
             ];
           buildable = true;
           };
         "spec_main" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."authenticate-oauth" or (buildDepError "authenticate-oauth"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."twitter-types" or (buildDepError "twitter-types"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."shakespeare" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or ((hsPkgs.pkgs-errors).buildDepError "conduit-extra"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+            (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+            (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+            (hsPkgs."authenticate-oauth" or ((hsPkgs.pkgs-errors).buildDepError "authenticate-oauth"))
+            (hsPkgs."case-insensitive" or ((hsPkgs.pkgs-errors).buildDepError "case-insensitive"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."twitter-types" or ((hsPkgs.pkgs-errors).buildDepError "twitter-types"))
             ];
           buildable = true;
           };

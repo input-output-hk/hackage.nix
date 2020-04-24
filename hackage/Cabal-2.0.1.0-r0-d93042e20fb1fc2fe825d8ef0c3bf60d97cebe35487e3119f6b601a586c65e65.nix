@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       bundled-binary-generic = false;
@@ -61,77 +22,77 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ((((([
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
           ] ++ (if flags.old-directory
           then [
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
             ]
           else [
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
             ])) ++ [
-          (hsPkgs."binary" or (buildDepError "binary"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"))) ++ (pkgs.lib).optionals (flags.parsec) [
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or ((hsPkgs.pkgs-errors).buildDepError "Win32"))) ++ (pkgs.lib).optionals (flags.parsec) [
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
           ];
-        build-tools = (pkgs.lib).optional (flags.parsec) (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")));
+        build-tools = (pkgs.lib).optional (flags.parsec) (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or ((hsPkgs.pkgs-errors).buildToolDepError "alex")));
         buildable = true;
         };
       tests = {
         "unit-tests" = {
           depends = [
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."tagged" or (buildDepError "tagged"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+            (hsPkgs."tagged" or ((hsPkgs.pkgs-errors).buildDepError "tagged"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
             ];
           buildable = true;
           };
         "parser-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
             ];
           buildable = if !flags.parsec then false else true;
           };
         "parser-hackage-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."tar" or (buildDepError "tar"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."tar" or ((hsPkgs.pkgs-errors).buildDepError "tar"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
             ] ++ (pkgs.lib).optionals (flags.parsec-struct-diff) [
-            (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
-            (hsPkgs."these" or (buildDepError "these"))
-            (hsPkgs."singleton-bool" or (buildDepError "singleton-bool"))
-            (hsPkgs."keys" or (buildDepError "keys"))
+            (hsPkgs."generics-sop" or ((hsPkgs.pkgs-errors).buildDepError "generics-sop"))
+            (hsPkgs."these" or ((hsPkgs.pkgs-errors).buildDepError "these"))
+            (hsPkgs."singleton-bool" or ((hsPkgs.pkgs-errors).buildDepError "singleton-bool"))
+            (hsPkgs."keys" or ((hsPkgs.pkgs-errors).buildDepError "keys"))
             ];
           buildable = if !flags.parsec then false else true;
           };

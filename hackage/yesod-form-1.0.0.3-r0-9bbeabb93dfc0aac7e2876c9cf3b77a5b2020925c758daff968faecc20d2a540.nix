@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { blaze_html_0_5 = false; };
     package = {
@@ -56,31 +17,33 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
-          (hsPkgs."yesod-persistent" or (buildDepError "yesod-persistent"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."hamlet" or (buildDepError "hamlet"))
-          (hsPkgs."shakespeare-css" or (buildDepError "shakespeare-css"))
-          (hsPkgs."shakespeare-js" or (buildDepError "shakespeare-js"))
-          (hsPkgs."persistent" or (buildDepError "persistent"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."xss-sanitize" or (buildDepError "xss-sanitize"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."email-validate" or (buildDepError "email-validate"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."yesod-core" or ((hsPkgs.pkgs-errors).buildDepError "yesod-core"))
+          (hsPkgs."yesod-persistent" or ((hsPkgs.pkgs-errors).buildDepError "yesod-persistent"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."hamlet" or ((hsPkgs.pkgs-errors).buildDepError "hamlet"))
+          (hsPkgs."shakespeare-css" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare-css"))
+          (hsPkgs."shakespeare-js" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare-js"))
+          (hsPkgs."persistent" or ((hsPkgs.pkgs-errors).buildDepError "persistent"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."xss-sanitize" or ((hsPkgs.pkgs-errors).buildDepError "xss-sanitize"))
+          (hsPkgs."blaze-builder" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder"))
+          (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+          (hsPkgs."email-validate" or ((hsPkgs.pkgs-errors).buildDepError "email-validate"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
           ] ++ (if flags.blaze_html_0_5
           then [
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."blaze-html" or ((hsPkgs.pkgs-errors).buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or ((hsPkgs.pkgs-errors).buildDepError "blaze-markup"))
             ]
-          else [ (hsPkgs."blaze-html" or (buildDepError "blaze-html")) ]);
+          else [
+            (hsPkgs."blaze-html" or ((hsPkgs.pkgs-errors).buildDepError "blaze-html"))
+            ]);
         buildable = true;
         };
       };

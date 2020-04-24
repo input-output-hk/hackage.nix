@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { old_base = false; use-pkg-config = false; };
     package = {
@@ -56,26 +17,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = if flags.old_base
-          then [ (hsPkgs."base" or (buildDepError "base")) ]
+          then [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ]
           else [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
             ];
-        libs = (pkgs.lib).optional (!flags.use-pkg-config) (pkgs."pcre" or (sysDepError "pcre"));
-        pkgconfig = (pkgs.lib).optional (flags.use-pkg-config) (pkgconfPkgs."libpcre" or (pkgConfDepError "libpcre"));
+        libs = (pkgs.lib).optional (!flags.use-pkg-config) (pkgs."pcre" or ((hsPkgs.pkgs-errors).sysDepError "pcre"));
+        pkgconfig = (pkgs.lib).optional (flags.use-pkg-config) (pkgconfPkgs."libpcre" or ((hsPkgs.pkgs-errors).pkgConfDepError "libpcre"));
         buildable = true;
         };
       tests = {
         "unit" = {
           depends = if flags.old_base
-            then [ (hsPkgs."base" or (buildDepError "base")) ]
+            then [
+              (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+              ]
             else [
-              (hsPkgs."base" or (buildDepError "base"))
-              (hsPkgs."bytestring" or (buildDepError "bytestring"))
-              (hsPkgs."containers" or (buildDepError "containers"))
-              (hsPkgs."HUnit" or (buildDepError "HUnit"))
-              (hsPkgs."mtl" or (buildDepError "mtl"))
-              (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
+              (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+              (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+              (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+              (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+              (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+              (hsPkgs."pcre-light" or ((hsPkgs.pkgs-errors).buildDepError "pcre-light"))
               ];
           buildable = true;
           };

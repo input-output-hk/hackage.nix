@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { demo = false; };
     package = {
@@ -56,32 +17,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
           ];
         buildable = true;
         };
       exes = {
         "hssh-demo" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."hssh" or (buildDepError "hssh"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."socket" or (buildDepError "socket"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."hssh" or ((hsPkgs.pkgs-errors).buildDepError "hssh"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."socket" or ((hsPkgs.pkgs-errors).buildDepError "socket"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
             ];
           buildable = if flags.demo then true else false;
           };
@@ -89,19 +50,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "hssh-test" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."hssh" or (buildDepError "hssh"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."hssh" or ((hsPkgs.pkgs-errors).buildDepError "hssh"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
             ];
           buildable = true;
           };

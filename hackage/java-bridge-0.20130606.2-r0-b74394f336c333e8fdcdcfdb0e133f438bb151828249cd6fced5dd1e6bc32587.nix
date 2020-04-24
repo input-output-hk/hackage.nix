@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       only_core = false;
@@ -63,22 +24,24 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
           ] ++ (pkgs.lib).optionals (!flags.only_core) [
-          (hsPkgs."hinduce-missingh" or (buildDepError "hinduce-missingh"))
-          (hsPkgs."cpphs" or (buildDepError "cpphs"))
-          (hsPkgs."strings" or (buildDepError "strings"))
-          (hsPkgs."multimap" or (buildDepError "multimap"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."hinduce-missingh" or ((hsPkgs.pkgs-errors).buildDepError "hinduce-missingh"))
+          (hsPkgs."cpphs" or ((hsPkgs.pkgs-errors).buildDepError "cpphs"))
+          (hsPkgs."strings" or ((hsPkgs.pkgs-errors).buildDepError "strings"))
+          (hsPkgs."multimap" or ((hsPkgs.pkgs-errors).buildDepError "multimap"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
           ]) ++ (if system.isOsx
-          then [ (hsPkgs."unix" or (buildDepError "unix")) ]
-          else (pkgs.lib).optional (system.isLinux) (hsPkgs."unix" or (buildDepError "unix")));
-        frameworks = (pkgs.lib).optionals (system.isOsx) ((pkgs.lib).optional (flags.osx_gui) (pkgs."Cocoa" or (sysDepError "Cocoa")) ++ (pkgs.lib).optional (flags.osx_framework) (pkgs."JavaVM" or (sysDepError "JavaVM")));
+          then [
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            ]
+          else (pkgs.lib).optional (system.isLinux) (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix")));
+        frameworks = (pkgs.lib).optionals (system.isOsx) ((pkgs.lib).optional (flags.osx_gui) (pkgs."Cocoa" or ((hsPkgs.pkgs-errors).sysDepError "Cocoa")) ++ (pkgs.lib).optional (flags.osx_framework) (pkgs."JavaVM" or ((hsPkgs.pkgs-errors).sysDepError "JavaVM")));
         buildable = if system.isOsx
           then true
           else if system.isLinux
@@ -88,20 +51,20 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "j2hs" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."java-bridge" or (buildDepError "java-bridge"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."java-bridge" or ((hsPkgs.pkgs-errors).buildDepError "java-bridge"))
             ] ++ (pkgs.lib).optionals (!flags.only_core) ((pkgs.lib).optionals (!flags.no_tools) [
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."strings" or (buildDepError "strings"))
-            (hsPkgs."multimap" or (buildDepError "multimap"))
-            (hsPkgs."names" or (buildDepError "names"))
-            (hsPkgs."named-records" or (buildDepError "named-records"))
-            (hsPkgs."bimap" or (buildDepError "bimap"))
-            (hsPkgs."hint" or (buildDepError "hint"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."strings" or ((hsPkgs.pkgs-errors).buildDepError "strings"))
+            (hsPkgs."multimap" or ((hsPkgs.pkgs-errors).buildDepError "multimap"))
+            (hsPkgs."names" or ((hsPkgs.pkgs-errors).buildDepError "names"))
+            (hsPkgs."named-records" or ((hsPkgs.pkgs-errors).buildDepError "named-records"))
+            (hsPkgs."bimap" or ((hsPkgs.pkgs-errors).buildDepError "bimap"))
+            (hsPkgs."hint" or ((hsPkgs.pkgs-errors).buildDepError "hint"))
             ]);
           buildable = if flags.only_core
             then false
@@ -109,20 +72,20 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "h2js" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."java-bridge" or (buildDepError "java-bridge"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."java-bridge" or ((hsPkgs.pkgs-errors).buildDepError "java-bridge"))
             ] ++ (pkgs.lib).optionals (!flags.only_core) ((pkgs.lib).optionals (!flags.no_tools) [
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."strings" or (buildDepError "strings"))
-            (hsPkgs."multimap" or (buildDepError "multimap"))
-            (hsPkgs."names" or (buildDepError "names"))
-            (hsPkgs."named-records" or (buildDepError "named-records"))
-            (hsPkgs."bimap" or (buildDepError "bimap"))
-            (hsPkgs."hint" or (buildDepError "hint"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."strings" or ((hsPkgs.pkgs-errors).buildDepError "strings"))
+            (hsPkgs."multimap" or ((hsPkgs.pkgs-errors).buildDepError "multimap"))
+            (hsPkgs."names" or ((hsPkgs.pkgs-errors).buildDepError "names"))
+            (hsPkgs."named-records" or ((hsPkgs.pkgs-errors).buildDepError "named-records"))
+            (hsPkgs."bimap" or ((hsPkgs.pkgs-errors).buildDepError "bimap"))
+            (hsPkgs."hint" or ((hsPkgs.pkgs-errors).buildDepError "hint"))
             ]);
           buildable = if flags.only_core
             then false
@@ -130,8 +93,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "java-calculator" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."java-bridge" or (buildDepError "java-bridge"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."java-bridge" or ((hsPkgs.pkgs-errors).buildDepError "java-bridge"))
             ];
           buildable = if flags.examples
             then if system.isOsx
@@ -141,8 +104,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "java-system-properties" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."java-bridge" or (buildDepError "java-bridge"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."java-bridge" or ((hsPkgs.pkgs-errors).buildDepError "java-bridge"))
             ];
           buildable = if flags.examples then true else false;
           };

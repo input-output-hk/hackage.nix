@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,34 +17,34 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base-compat" or (buildDepError "base-compat"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."http-media" or (buildDepError "http-media"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."control-monad-omega" or (buildDepError "control-monad-omega"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base-compat" or ((hsPkgs.pkgs-errors).buildDepError "base-compat"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."aeson-pretty" or ((hsPkgs.pkgs-errors).buildDepError "aeson-pretty"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or ((hsPkgs.pkgs-errors).buildDepError "case-insensitive"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."http-media" or ((hsPkgs.pkgs-errors).buildDepError "http-media"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."servant" or ((hsPkgs.pkgs-errors).buildDepError "servant"))
+          (hsPkgs."string-conversions" or ((hsPkgs.pkgs-errors).buildDepError "string-conversions"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."control-monad-omega" or ((hsPkgs.pkgs-errors).buildDepError "control-monad-omega"))
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"));
         buildable = true;
         };
       exes = {
         "greet-docs" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."servant-docs" or (buildDepError "servant-docs"))
-            (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."servant" or ((hsPkgs.pkgs-errors).buildDepError "servant"))
+            (hsPkgs."servant-docs" or ((hsPkgs.pkgs-errors).buildDepError "servant-docs"))
+            (hsPkgs."string-conversions" or ((hsPkgs.pkgs-errors).buildDepError "string-conversions"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
             ];
           buildable = true;
           };
@@ -91,16 +52,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."servant-docs" or (buildDepError "servant-docs"))
-            (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."servant" or ((hsPkgs.pkgs-errors).buildDepError "servant"))
+            (hsPkgs."servant-docs" or ((hsPkgs.pkgs-errors).buildDepError "servant-docs"))
+            (hsPkgs."string-conversions" or ((hsPkgs.pkgs-errors).buildDepError "string-conversions"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or ((hsPkgs.pkgs-errors).buildToolDepError "hspec-discover")))
             ];
           buildable = true;
           };

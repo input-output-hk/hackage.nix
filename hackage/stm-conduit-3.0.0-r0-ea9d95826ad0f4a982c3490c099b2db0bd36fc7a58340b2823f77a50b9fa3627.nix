@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,51 +17,51 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."cereal-conduit" or (buildDepError "cereal-conduit"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
-          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
-          (hsPkgs."void" or (buildDepError "void"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."stm-chans" or ((hsPkgs.pkgs-errors).buildDepError "stm-chans"))
+          (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+          (hsPkgs."cereal-conduit" or ((hsPkgs.pkgs-errors).buildDepError "cereal-conduit"))
+          (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+          (hsPkgs."conduit-combinators" or ((hsPkgs.pkgs-errors).buildDepError "conduit-combinators"))
+          (hsPkgs."conduit-extra" or ((hsPkgs.pkgs-errors).buildDepError "conduit-extra"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+          (hsPkgs."monad-loops" or ((hsPkgs.pkgs-errors).buildDepError "monad-loops"))
+          (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
+          (hsPkgs."lifted-async" or ((hsPkgs.pkgs-errors).buildDepError "lifted-async"))
+          (hsPkgs."void" or ((hsPkgs.pkgs-errors).buildDepError "void"))
+          (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
           ];
         buildable = true;
         };
       tests = {
         "stm-conduit-doctests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."doctest" or ((hsPkgs.pkgs-errors).buildDepError "doctest"))
             ];
           buildable = true;
           };
         "stm-conduit-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."stm-conduit" or (buildDepError "stm-conduit"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."test-framework" or ((hsPkgs.pkgs-errors).buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."stm-conduit" or ((hsPkgs.pkgs-errors).buildDepError "stm-conduit"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."conduit-combinators" or ((hsPkgs.pkgs-errors).buildDepError "conduit-combinators"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."stm-chans" or ((hsPkgs.pkgs-errors).buildDepError "stm-chans"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
             ];
           buildable = true;
           };

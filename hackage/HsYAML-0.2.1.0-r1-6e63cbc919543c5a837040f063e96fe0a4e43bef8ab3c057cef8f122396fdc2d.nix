@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { exe = false; };
     package = {
@@ -56,29 +17,29 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."fail" or (buildDepError "fail"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs."nats" or (buildDepError "nats"));
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."fail" or ((hsPkgs.pkgs-errors).buildDepError "fail"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs."nats" or ((hsPkgs.pkgs-errors).buildDepError "nats"));
         buildable = true;
         };
       exes = {
         "yaml-test" = {
           depends = (pkgs.lib).optionals (flags.exe) [
-            (hsPkgs."HsYAML" or (buildDepError "HsYAML"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."microaeson" or (buildDepError "microaeson"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."HsYAML" or ((hsPkgs.pkgs-errors).buildDepError "HsYAML"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+            (hsPkgs."microaeson" or ((hsPkgs.pkgs-errors).buildDepError "microaeson"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
             ];
           buildable = if flags.exe then true else false;
           };
@@ -86,15 +47,15 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs."HsYAML" or (buildDepError "HsYAML"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."HsYAML" or ((hsPkgs.pkgs-errors).buildDepError "HsYAML"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
             ];
           buildable = true;
           };

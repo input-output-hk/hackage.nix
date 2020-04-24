@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { happstack = false; wai = false; snap = false; gen = true; };
     package = {
@@ -56,70 +17,70 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."generic-aeson" or (buildDepError "generic-aeson"))
-          (hsPkgs."hxt" or (buildDepError "hxt"))
-          (hsPkgs."json-schema" or (buildDepError "json-schema"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."regular" or (buildDepError "regular"))
-          (hsPkgs."regular-xmlpickler" or (buildDepError "regular-xmlpickler"))
-          (hsPkgs."rest-core" or (buildDepError "rest-core"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."generic-aeson" or ((hsPkgs.pkgs-errors).buildDepError "generic-aeson"))
+          (hsPkgs."hxt" or ((hsPkgs.pkgs-errors).buildDepError "hxt"))
+          (hsPkgs."json-schema" or ((hsPkgs.pkgs-errors).buildDepError "json-schema"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."regular" or ((hsPkgs.pkgs-errors).buildDepError "regular"))
+          (hsPkgs."regular-xmlpickler" or ((hsPkgs.pkgs-errors).buildDepError "regular-xmlpickler"))
+          (hsPkgs."rest-core" or ((hsPkgs.pkgs-errors).buildDepError "rest-core"))
+          (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
           ];
         buildable = true;
         };
       exes = {
         "rest-example-happstack" = {
           depends = (pkgs.lib).optionals (flags.happstack) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."rest-core" or (buildDepError "rest-core"))
-            (hsPkgs."rest-example" or (buildDepError "rest-example"))
-            (hsPkgs."rest-happstack" or (buildDepError "rest-happstack"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."happstack-server" or ((hsPkgs.pkgs-errors).buildDepError "happstack-server"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."rest-core" or ((hsPkgs.pkgs-errors).buildDepError "rest-core"))
+            (hsPkgs."rest-example" or ((hsPkgs.pkgs-errors).buildDepError "rest-example"))
+            (hsPkgs."rest-happstack" or ((hsPkgs.pkgs-errors).buildDepError "rest-happstack"))
             ];
           buildable = if flags.happstack then true else false;
           };
         "rest-example-wai" = {
           depends = (pkgs.lib).optionals (flags.wai) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."rest-core" or (buildDepError "rest-core"))
-            (hsPkgs."rest-example" or (buildDepError "rest-example"))
-            (hsPkgs."rest-wai" or (buildDepError "rest-wai"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."rest-core" or ((hsPkgs.pkgs-errors).buildDepError "rest-core"))
+            (hsPkgs."rest-example" or ((hsPkgs.pkgs-errors).buildDepError "rest-example"))
+            (hsPkgs."rest-wai" or ((hsPkgs.pkgs-errors).buildDepError "rest-wai"))
+            (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
             ];
           buildable = if flags.wai then true else false;
           };
         "rest-example-snap" = {
           depends = (pkgs.lib).optionals (flags.snap) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."rest-core" or (buildDepError "rest-core"))
-            (hsPkgs."rest-example" or (buildDepError "rest-example"))
-            (hsPkgs."rest-snap" or (buildDepError "rest-snap"))
-            (hsPkgs."snap-core" or (buildDepError "snap-core"))
-            (hsPkgs."snap-server" or (buildDepError "snap-server"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."rest-core" or ((hsPkgs.pkgs-errors).buildDepError "rest-core"))
+            (hsPkgs."rest-example" or ((hsPkgs.pkgs-errors).buildDepError "rest-example"))
+            (hsPkgs."rest-snap" or ((hsPkgs.pkgs-errors).buildDepError "rest-snap"))
+            (hsPkgs."snap-core" or ((hsPkgs.pkgs-errors).buildDepError "snap-core"))
+            (hsPkgs."snap-server" or ((hsPkgs.pkgs-errors).buildDepError "snap-server"))
             ];
           buildable = if flags.snap then true else false;
           };
         "rest-example-gen" = {
           depends = (pkgs.lib).optionals (flags.gen) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."rest-core" or (buildDepError "rest-core"))
-            (hsPkgs."rest-example" or (buildDepError "rest-example"))
-            (hsPkgs."rest-gen" or (buildDepError "rest-gen"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."rest-core" or ((hsPkgs.pkgs-errors).buildDepError "rest-core"))
+            (hsPkgs."rest-example" or ((hsPkgs.pkgs-errors).buildDepError "rest-example"))
+            (hsPkgs."rest-gen" or ((hsPkgs.pkgs-errors).buildDepError "rest-gen"))
             ];
           buildable = if flags.gen then true else false;
           };

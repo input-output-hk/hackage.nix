@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,77 +17,77 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."zlib" or (buildDepError "zlib"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."tar" or (buildDepError "tar"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
-          (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
-          (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
-          (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
-          (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."network-conduit" or (buildDepError "network-conduit"))
-          (hsPkgs."network-conduit-tls" or (buildDepError "network-conduit-tls"))
-          (hsPkgs."http-reverse-proxy" or (buildDepError "http-reverse-proxy"))
-          (hsPkgs."unix-process-conduit" or (buildDepError "unix-process-conduit"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-client-conduit" or (buildDepError "http-client-conduit"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."warp" or (buildDepError "warp"))
-          (hsPkgs."warp-tls" or (buildDepError "warp-tls"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."zlib" or ((hsPkgs.pkgs-errors).buildDepError "zlib"))
+          (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."tar" or ((hsPkgs.pkgs-errors).buildDepError "tar"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."blaze-builder" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder"))
+          (hsPkgs."yaml" or ((hsPkgs.pkgs-errors).buildDepError "yaml"))
+          (hsPkgs."unix-compat" or ((hsPkgs.pkgs-errors).buildDepError "unix-compat"))
+          (hsPkgs."fsnotify" or ((hsPkgs.pkgs-errors).buildDepError "fsnotify"))
+          (hsPkgs."system-filepath" or ((hsPkgs.pkgs-errors).buildDepError "system-filepath"))
+          (hsPkgs."system-fileio" or ((hsPkgs.pkgs-errors).buildDepError "system-fileio"))
+          (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+          (hsPkgs."network-conduit" or ((hsPkgs.pkgs-errors).buildDepError "network-conduit"))
+          (hsPkgs."network-conduit-tls" or ((hsPkgs.pkgs-errors).buildDepError "network-conduit-tls"))
+          (hsPkgs."http-reverse-proxy" or ((hsPkgs.pkgs-errors).buildDepError "http-reverse-proxy"))
+          (hsPkgs."unix-process-conduit" or ((hsPkgs.pkgs-errors).buildDepError "unix-process-conduit"))
+          (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+          (hsPkgs."wai-app-static" or ((hsPkgs.pkgs-errors).buildDepError "wai-app-static"))
+          (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+          (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+          (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+          (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+          (hsPkgs."http-client-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-client-conduit"))
+          (hsPkgs."case-insensitive" or ((hsPkgs.pkgs-errors).buildDepError "case-insensitive"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
+          (hsPkgs."warp-tls" or ((hsPkgs.pkgs-errors).buildDepError "warp-tls"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
           ];
         buildable = true;
         };
       exes = {
         "keter" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."keter" or (buildDepError "keter"))
-            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."keter" or ((hsPkgs.pkgs-errors).buildDepError "keter"))
+            (hsPkgs."system-filepath" or ((hsPkgs.pkgs-errors).buildDepError "system-filepath"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
             ];
           buildable = true;
           };
         "hello" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."keter" or (buildDepError "keter"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."keter" or ((hsPkgs.pkgs-errors).buildDepError "keter"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
+            (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+            (hsPkgs."wai-extra" or ((hsPkgs.pkgs-errors).buildDepError "wai-extra"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = false;
           };

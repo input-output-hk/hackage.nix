@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,55 +17,55 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."attoparsec-enumerator" or (buildDepError "attoparsec-enumerator"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."blaze-builder-enumerator" or (buildDepError "blaze-builder-enumerator"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."enumerator" or (buildDepError "enumerator"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."network-enumerator" or (buildDepError "network-enumerator"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."SHA" or (buildDepError "SHA"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-          (hsPkgs."entropy" or (buildDepError "entropy"))
+          (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+          (hsPkgs."attoparsec-enumerator" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec-enumerator"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base64-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base64-bytestring"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          (hsPkgs."blaze-builder" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder"))
+          (hsPkgs."blaze-builder-enumerator" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder-enumerator"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or ((hsPkgs.pkgs-errors).buildDepError "case-insensitive"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."enumerator" or ((hsPkgs.pkgs-errors).buildDepError "enumerator"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+          (hsPkgs."network-enumerator" or ((hsPkgs.pkgs-errors).buildDepError "network-enumerator"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."SHA" or ((hsPkgs.pkgs-errors).buildDepError "SHA"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+          (hsPkgs."entropy" or ((hsPkgs.pkgs-errors).buildDepError "entropy"))
           ];
         buildable = true;
         };
       tests = {
         "websockets-tests" = {
           depends = [
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."attoparsec-enumerator" or (buildDepError "attoparsec-enumerator"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."blaze-builder-enumerator" or (buildDepError "blaze-builder-enumerator"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."enumerator" or (buildDepError "enumerator"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-enumerator" or (buildDepError "network-enumerator"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."SHA" or (buildDepError "SHA"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-            (hsPkgs."entropy" or (buildDepError "entropy"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or ((hsPkgs.pkgs-errors).buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."attoparsec-enumerator" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec-enumerator"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base64-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base64-bytestring"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."blaze-builder" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder"))
+            (hsPkgs."blaze-builder-enumerator" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder-enumerator"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or ((hsPkgs.pkgs-errors).buildDepError "case-insensitive"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."enumerator" or ((hsPkgs.pkgs-errors).buildDepError "enumerator"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."network-enumerator" or ((hsPkgs.pkgs-errors).buildDepError "network-enumerator"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."SHA" or ((hsPkgs.pkgs-errors).buildDepError "SHA"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+            (hsPkgs."entropy" or ((hsPkgs.pkgs-errors).buildDepError "entropy"))
             ];
           buildable = true;
           };

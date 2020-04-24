@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test-hlint = false; test-doc-coverage = false; };
     package = {
@@ -57,24 +18,24 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "titan" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cairo" or (buildDepError "cairo"))
-            (hsPkgs."glib" or (buildDepError "glib"))
-            (hsPkgs."gtk" or (buildDepError "gtk"))
-            (hsPkgs."IfElse" or (buildDepError "IfElse"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-bsd" or (buildDepError "network-bsd"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."keera-hails-mvc-controller" or (buildDepError "keera-hails-mvc-controller"))
-            (hsPkgs."keera-hails-mvc-environment-gtk" or (buildDepError "keera-hails-mvc-environment-gtk"))
-            (hsPkgs."keera-hails-mvc-model-protectedmodel" or (buildDepError "keera-hails-mvc-model-protectedmodel"))
-            (hsPkgs."keera-hails-mvc-solutions-gtk" or (buildDepError "keera-hails-mvc-solutions-gtk"))
-            (hsPkgs."keera-hails-mvc-view" or (buildDepError "keera-hails-mvc-view"))
-            (hsPkgs."keera-hails-mvc-view-gtk" or (buildDepError "keera-hails-mvc-view-gtk"))
-            (hsPkgs."keera-hails-reactive-gtk" or (buildDepError "keera-hails-reactive-gtk"))
-            (hsPkgs."keera-hails-reactive-polling" or (buildDepError "keera-hails-reactive-polling"))
-            (hsPkgs."keera-hails-reactivevalues" or (buildDepError "keera-hails-reactivevalues"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."cairo" or ((hsPkgs.pkgs-errors).buildDepError "cairo"))
+            (hsPkgs."glib" or ((hsPkgs.pkgs-errors).buildDepError "glib"))
+            (hsPkgs."gtk" or ((hsPkgs.pkgs-errors).buildDepError "gtk"))
+            (hsPkgs."IfElse" or ((hsPkgs.pkgs-errors).buildDepError "IfElse"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."network-bsd" or ((hsPkgs.pkgs-errors).buildDepError "network-bsd"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."keera-hails-mvc-controller" or ((hsPkgs.pkgs-errors).buildDepError "keera-hails-mvc-controller"))
+            (hsPkgs."keera-hails-mvc-environment-gtk" or ((hsPkgs.pkgs-errors).buildDepError "keera-hails-mvc-environment-gtk"))
+            (hsPkgs."keera-hails-mvc-model-protectedmodel" or ((hsPkgs.pkgs-errors).buildDepError "keera-hails-mvc-model-protectedmodel"))
+            (hsPkgs."keera-hails-mvc-solutions-gtk" or ((hsPkgs.pkgs-errors).buildDepError "keera-hails-mvc-solutions-gtk"))
+            (hsPkgs."keera-hails-mvc-view" or ((hsPkgs.pkgs-errors).buildDepError "keera-hails-mvc-view"))
+            (hsPkgs."keera-hails-mvc-view-gtk" or ((hsPkgs.pkgs-errors).buildDepError "keera-hails-mvc-view-gtk"))
+            (hsPkgs."keera-hails-reactive-gtk" or ((hsPkgs.pkgs-errors).buildDepError "keera-hails-reactive-gtk"))
+            (hsPkgs."keera-hails-reactive-polling" or ((hsPkgs.pkgs-errors).buildDepError "keera-hails-reactive-polling"))
+            (hsPkgs."keera-hails-reactivevalues" or ((hsPkgs.pkgs-errors).buildDepError "keera-hails-reactivevalues"))
             ];
           buildable = true;
           };
@@ -82,18 +43,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "hlint" = {
           depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hlint" or (buildDepError "hlint"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hlint" or ((hsPkgs.pkgs-errors).buildDepError "hlint"))
             ];
           buildable = if !flags.test-hlint then false else true;
           };
         "haddock-coverage" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."regex-posix" or ((hsPkgs.pkgs-errors).buildDepError "regex-posix"))
             ];
           buildable = if !flags.test-doc-coverage then false else true;
           };

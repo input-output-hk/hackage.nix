@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,106 +17,106 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-casing" or (buildDepError "aeson-casing"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-          (hsPkgs."http-streams" or (buildDepError "http-streams"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."io-streams" or (buildDepError "io-streams"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."servant-client" or (buildDepError "servant-client"))
-          (hsPkgs."servant-client-core" or (buildDepError "servant-client-core"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unagi-streams" or (buildDepError "unagi-streams"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."websockets" or (buildDepError "websockets"))
-          (hsPkgs."wuss" or (buildDepError "wuss"))
+          (hsPkgs."HsOpenSSL" or ((hsPkgs.pkgs-errors).buildDepError "HsOpenSSL"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."aeson-casing" or ((hsPkgs.pkgs-errors).buildDepError "aeson-casing"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+          (hsPkgs."http-api-data" or ((hsPkgs.pkgs-errors).buildDepError "http-api-data"))
+          (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or ((hsPkgs.pkgs-errors).buildDepError "http-client-tls"))
+          (hsPkgs."http-streams" or ((hsPkgs.pkgs-errors).buildDepError "http-streams"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."io-streams" or ((hsPkgs.pkgs-errors).buildDepError "io-streams"))
+          (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+          (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+          (hsPkgs."servant" or ((hsPkgs.pkgs-errors).buildDepError "servant"))
+          (hsPkgs."servant-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-client"))
+          (hsPkgs."servant-client-core" or ((hsPkgs.pkgs-errors).buildDepError "servant-client-core"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."unagi-streams" or ((hsPkgs.pkgs-errors).buildDepError "unagi-streams"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."uuid" or ((hsPkgs.pkgs-errors).buildDepError "uuid"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."websockets" or ((hsPkgs.pkgs-errors).buildDepError "websockets"))
+          (hsPkgs."wuss" or ((hsPkgs.pkgs-errors).buildDepError "wuss"))
           ];
         buildable = true;
         };
       exes = {
         "test-request" = {
           depends = [
-            (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-casing" or (buildDepError "aeson-casing"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."coinbase-pro" or (buildDepError "coinbase-pro"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."http-streams" or (buildDepError "http-streams"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."io-streams" or (buildDepError "io-streams"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."servant-client" or (buildDepError "servant-client"))
-            (hsPkgs."servant-client-core" or (buildDepError "servant-client-core"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unagi-streams" or (buildDepError "unagi-streams"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
-            (hsPkgs."wuss" or (buildDepError "wuss"))
+            (hsPkgs."HsOpenSSL" or ((hsPkgs.pkgs-errors).buildDepError "HsOpenSSL"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."aeson-casing" or ((hsPkgs.pkgs-errors).buildDepError "aeson-casing"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."coinbase-pro" or ((hsPkgs.pkgs-errors).buildDepError "coinbase-pro"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+            (hsPkgs."http-api-data" or ((hsPkgs.pkgs-errors).buildDepError "http-api-data"))
+            (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or ((hsPkgs.pkgs-errors).buildDepError "http-client-tls"))
+            (hsPkgs."http-streams" or ((hsPkgs.pkgs-errors).buildDepError "http-streams"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."io-streams" or ((hsPkgs.pkgs-errors).buildDepError "io-streams"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."servant" or ((hsPkgs.pkgs-errors).buildDepError "servant"))
+            (hsPkgs."servant-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-client"))
+            (hsPkgs."servant-client-core" or ((hsPkgs.pkgs-errors).buildDepError "servant-client-core"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."unagi-streams" or ((hsPkgs.pkgs-errors).buildDepError "unagi-streams"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."uuid" or ((hsPkgs.pkgs-errors).buildDepError "uuid"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."websockets" or ((hsPkgs.pkgs-errors).buildDepError "websockets"))
+            (hsPkgs."wuss" or ((hsPkgs.pkgs-errors).buildDepError "wuss"))
             ];
           buildable = true;
           };
         "test-stream" = {
           depends = [
-            (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-casing" or (buildDepError "aeson-casing"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."coinbase-pro" or (buildDepError "coinbase-pro"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."http-streams" or (buildDepError "http-streams"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."io-streams" or (buildDepError "io-streams"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."servant-client" or (buildDepError "servant-client"))
-            (hsPkgs."servant-client-core" or (buildDepError "servant-client-core"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unagi-streams" or (buildDepError "unagi-streams"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
-            (hsPkgs."wuss" or (buildDepError "wuss"))
+            (hsPkgs."HsOpenSSL" or ((hsPkgs.pkgs-errors).buildDepError "HsOpenSSL"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."aeson-casing" or ((hsPkgs.pkgs-errors).buildDepError "aeson-casing"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."coinbase-pro" or ((hsPkgs.pkgs-errors).buildDepError "coinbase-pro"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+            (hsPkgs."http-api-data" or ((hsPkgs.pkgs-errors).buildDepError "http-api-data"))
+            (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or ((hsPkgs.pkgs-errors).buildDepError "http-client-tls"))
+            (hsPkgs."http-streams" or ((hsPkgs.pkgs-errors).buildDepError "http-streams"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."io-streams" or ((hsPkgs.pkgs-errors).buildDepError "io-streams"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."servant" or ((hsPkgs.pkgs-errors).buildDepError "servant"))
+            (hsPkgs."servant-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-client"))
+            (hsPkgs."servant-client-core" or ((hsPkgs.pkgs-errors).buildDepError "servant-client-core"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."unagi-streams" or ((hsPkgs.pkgs-errors).buildDepError "unagi-streams"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."uuid" or ((hsPkgs.pkgs-errors).buildDepError "uuid"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."websockets" or ((hsPkgs.pkgs-errors).buildDepError "websockets"))
+            (hsPkgs."wuss" or ((hsPkgs.pkgs-errors).buildDepError "wuss"))
             ];
           buildable = true;
           };

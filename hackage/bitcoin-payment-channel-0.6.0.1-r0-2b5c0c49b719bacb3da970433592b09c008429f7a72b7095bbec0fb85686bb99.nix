@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,41 +17,41 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."haskoin-core" or (buildDepError "haskoin-core"))
-          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."errors" or (buildDepError "errors"))
-          (hsPkgs."hexstring" or (buildDepError "hexstring"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."haskoin-core" or ((hsPkgs.pkgs-errors).buildDepError "haskoin-core"))
+          (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+          (hsPkgs."errors" or ((hsPkgs.pkgs-errors).buildDepError "errors"))
+          (hsPkgs."hexstring" or ((hsPkgs.pkgs-errors).buildDepError "hexstring"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."scientific" or ((hsPkgs.pkgs-errors).buildDepError "scientific"))
+          (hsPkgs."string-conversions" or ((hsPkgs.pkgs-errors).buildDepError "string-conversions"))
+          (hsPkgs."tagged" or ((hsPkgs.pkgs-errors).buildDepError "tagged"))
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
           ];
         buildable = true;
         };
       tests = {
         "test-bitcoin-payment-channel" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."haskoin-core" or (buildDepError "haskoin-core"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."hexstring" or (buildDepError "hexstring"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."bitcoin-payment-channel" or (buildDepError "bitcoin-payment-channel"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."haskoin-core" or ((hsPkgs.pkgs-errors).buildDepError "haskoin-core"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+            (hsPkgs."base64-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base64-bytestring"))
+            (hsPkgs."hexstring" or ((hsPkgs.pkgs-errors).buildDepError "hexstring"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."string-conversions" or ((hsPkgs.pkgs-errors).buildDepError "string-conversions"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."test-framework" or ((hsPkgs.pkgs-errors).buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."bitcoin-payment-channel" or ((hsPkgs.pkgs-errors).buildDepError "bitcoin-payment-channel"))
             ];
           buildable = true;
           };

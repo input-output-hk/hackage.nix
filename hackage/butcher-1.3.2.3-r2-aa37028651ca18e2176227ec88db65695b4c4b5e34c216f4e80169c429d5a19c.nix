@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,40 +17,40 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."free" or (buildDepError "free"))
-          (hsPkgs."unsafe" or (buildDepError "unsafe"))
-          (hsPkgs."microlens" or (buildDepError "microlens"))
-          (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
-          (hsPkgs."multistate" or (buildDepError "multistate"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."extra" or (buildDepError "extra"))
-          (hsPkgs."void" or (buildDepError "void"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."deque" or (buildDepError "deque"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."free" or ((hsPkgs.pkgs-errors).buildDepError "free"))
+          (hsPkgs."unsafe" or ((hsPkgs.pkgs-errors).buildDepError "unsafe"))
+          (hsPkgs."microlens" or ((hsPkgs.pkgs-errors).buildDepError "microlens"))
+          (hsPkgs."microlens-th" or ((hsPkgs.pkgs-errors).buildDepError "microlens-th"))
+          (hsPkgs."multistate" or ((hsPkgs.pkgs-errors).buildDepError "multistate"))
+          (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."extra" or ((hsPkgs.pkgs-errors).buildDepError "extra"))
+          (hsPkgs."void" or ((hsPkgs.pkgs-errors).buildDepError "void"))
+          (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+          (hsPkgs."deque" or ((hsPkgs.pkgs-errors).buildDepError "deque"))
           ];
         buildable = true;
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."butcher" or (buildDepError "butcher"))
-            (hsPkgs."free" or (buildDepError "free"))
-            (hsPkgs."unsafe" or (buildDepError "unsafe"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
-            (hsPkgs."multistate" or (buildDepError "multistate"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."deque" or (buildDepError "deque"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."butcher" or ((hsPkgs.pkgs-errors).buildDepError "butcher"))
+            (hsPkgs."free" or ((hsPkgs.pkgs-errors).buildDepError "free"))
+            (hsPkgs."unsafe" or ((hsPkgs.pkgs-errors).buildDepError "unsafe"))
+            (hsPkgs."microlens" or ((hsPkgs.pkgs-errors).buildDepError "microlens"))
+            (hsPkgs."microlens-th" or ((hsPkgs.pkgs-errors).buildDepError "microlens-th"))
+            (hsPkgs."multistate" or ((hsPkgs.pkgs-errors).buildDepError "multistate"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."extra" or ((hsPkgs.pkgs-errors).buildDepError "extra"))
+            (hsPkgs."deque" or ((hsPkgs.pkgs-errors).buildDepError "deque"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
             ];
           buildable = true;
           };

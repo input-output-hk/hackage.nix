@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,50 +17,50 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."microlens" or (buildDepError "microlens"))
-          (hsPkgs."microlens-mtl" or (buildDepError "microlens-mtl"))
-          (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."terminfo" or (buildDepError "terminfo"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."blaze-builder" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."microlens" or ((hsPkgs.pkgs-errors).buildDepError "microlens"))
+          (hsPkgs."microlens-mtl" or ((hsPkgs.pkgs-errors).buildDepError "microlens-mtl"))
+          (hsPkgs."microlens-th" or ((hsPkgs.pkgs-errors).buildDepError "microlens-th"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."terminfo" or ((hsPkgs.pkgs-errors).buildDepError "terminfo"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+          (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
           ];
         buildable = true;
         };
       exes = {
         "vty-mode-demo" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."microlens-mtl" or (buildDepError "microlens-mtl"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."microlens" or ((hsPkgs.pkgs-errors).buildDepError "microlens"))
+            (hsPkgs."microlens-mtl" or ((hsPkgs.pkgs-errors).buildDepError "microlens-mtl"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
             ];
           buildable = true;
           };
         "vty-demo" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."microlens-mtl" or (buildDepError "microlens-mtl"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."microlens" or ((hsPkgs.pkgs-errors).buildDepError "microlens"))
+            (hsPkgs."microlens-mtl" or ((hsPkgs.pkgs-errors).buildDepError "microlens-mtl"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
             ];
           buildable = true;
           };
@@ -107,312 +68,312 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "verify-attribute-ops" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-using-mock-terminal" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."terminfo" or (buildDepError "terminfo"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."terminfo" or ((hsPkgs.pkgs-errors).buildDepError "terminfo"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-terminal" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."terminfo" or (buildDepError "terminfo"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."terminfo" or ((hsPkgs.pkgs-errors).buildDepError "terminfo"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-display-attributes" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-empty-image-props" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-eval-terminfo-caps" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."terminfo" or (buildDepError "terminfo"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."blaze-builder" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."terminfo" or ((hsPkgs.pkgs-errors).buildDepError "terminfo"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-image-ops" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-image-trans" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-inline" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-parse-terminfo-caps" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."terminfo" or (buildDepError "terminfo"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."terminfo" or ((hsPkgs.pkgs-errors).buildDepError "terminfo"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-simple-span-generation" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-crop-span-generation" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-layers-span-generation" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-utf8-width" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-using-mock-input" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
-            (hsPkgs."quickcheck-assertions" or (buildDepError "quickcheck-assertions"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-smallcheck" or (buildDepError "test-framework-smallcheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."microlens-mtl" or (buildDepError "microlens-mtl"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."terminfo" or (buildDepError "terminfo"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."smallcheck" or ((hsPkgs.pkgs-errors).buildDepError "smallcheck"))
+            (hsPkgs."quickcheck-assertions" or ((hsPkgs.pkgs-errors).buildDepError "quickcheck-assertions"))
+            (hsPkgs."test-framework" or ((hsPkgs.pkgs-errors).buildDepError "test-framework"))
+            (hsPkgs."test-framework-smallcheck" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-smallcheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."microlens" or ((hsPkgs.pkgs-errors).buildDepError "microlens"))
+            (hsPkgs."microlens-mtl" or ((hsPkgs.pkgs-errors).buildDepError "microlens-mtl"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."terminfo" or ((hsPkgs.pkgs-errors).buildDepError "terminfo"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "verify-config" = {
           depends = [
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
-            (hsPkgs."quickcheck-assertions" or (buildDepError "quickcheck-assertions"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-smallcheck" or (buildDepError "test-framework-smallcheck"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."microlens-mtl" or (buildDepError "microlens-mtl"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."string-qq" or (buildDepError "string-qq"))
-            (hsPkgs."terminfo" or (buildDepError "terminfo"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."smallcheck" or ((hsPkgs.pkgs-errors).buildDepError "smallcheck"))
+            (hsPkgs."quickcheck-assertions" or ((hsPkgs.pkgs-errors).buildDepError "quickcheck-assertions"))
+            (hsPkgs."test-framework" or ((hsPkgs.pkgs-errors).buildDepError "test-framework"))
+            (hsPkgs."test-framework-smallcheck" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-smallcheck"))
+            (hsPkgs."test-framework-hunit" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-hunit"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."microlens" or ((hsPkgs.pkgs-errors).buildDepError "microlens"))
+            (hsPkgs."microlens-mtl" or ((hsPkgs.pkgs-errors).buildDepError "microlens-mtl"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."string-qq" or ((hsPkgs.pkgs-errors).buildDepError "string-qq"))
+            (hsPkgs."terminfo" or ((hsPkgs.pkgs-errors).buildDepError "terminfo"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; ghc7 = true; };
     package = {
@@ -56,59 +17,63 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
-          (hsPkgs."hamlet" or (buildDepError "hamlet"))
-          (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-          (hsPkgs."shakespeare-js" or (buildDepError "shakespeare-js"))
-          (hsPkgs."shakespeare-css" or (buildDepError "shakespeare-css"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."clientsession" or (buildDepError "clientsession"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."failure" or (buildDepError "failure"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."enumerator" or (buildDepError "enumerator"))
-          (hsPkgs."cookie" or (buildDepError "cookie"))
-          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."data-object" or (buildDepError "data-object"))
-          (hsPkgs."data-object-yaml" or (buildDepError "data-object-yaml"))
-          (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."aeson-native" or (buildDepError "aeson-native"))
-          ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+          (hsPkgs."wai-extra" or ((hsPkgs.pkgs-errors).buildDepError "wai-extra"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."path-pieces" or ((hsPkgs.pkgs-errors).buildDepError "path-pieces"))
+          (hsPkgs."hamlet" or ((hsPkgs.pkgs-errors).buildDepError "hamlet"))
+          (hsPkgs."shakespeare" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare"))
+          (hsPkgs."shakespeare-js" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare-js"))
+          (hsPkgs."shakespeare-css" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare-css"))
+          (hsPkgs."blaze-builder" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."clientsession" or ((hsPkgs.pkgs-errors).buildDepError "clientsession"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+          (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+          (hsPkgs."failure" or ((hsPkgs.pkgs-errors).buildDepError "failure"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+          (hsPkgs."enumerator" or ((hsPkgs.pkgs-errors).buildDepError "enumerator"))
+          (hsPkgs."cookie" or ((hsPkgs.pkgs-errors).buildDepError "cookie"))
+          (hsPkgs."blaze-html" or ((hsPkgs.pkgs-errors).buildDepError "blaze-html"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."case-insensitive" or ((hsPkgs.pkgs-errors).buildDepError "case-insensitive"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."data-object" or ((hsPkgs.pkgs-errors).buildDepError "data-object"))
+          (hsPkgs."data-object-yaml" or ((hsPkgs.pkgs-errors).buildDepError "data-object-yaml"))
+          (hsPkgs."strict-concurrency" or ((hsPkgs.pkgs-errors).buildDepError "strict-concurrency"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."aeson-native" or ((hsPkgs.pkgs-errors).buildDepError "aeson-native"))
+          ] ++ [
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          ];
         buildable = if flags.test then false else true;
         };
       tests = {
         "runtests" = {
           depends = [
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."wai-test" or (buildDepError "wai-test"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."hamlet" or (buildDepError "hamlet"))
-            (hsPkgs."shakespeare-css" or (buildDepError "shakespeare-css"))
-            (hsPkgs."shakespeare-js" or (buildDepError "shakespeare-js"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."enumerator" or (buildDepError "enumerator"))
-            ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."wai-test" or ((hsPkgs.pkgs-errors).buildDepError "wai-test"))
+            (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+            (hsPkgs."yesod-core" or ((hsPkgs.pkgs-errors).buildDepError "yesod-core"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."hamlet" or ((hsPkgs.pkgs-errors).buildDepError "hamlet"))
+            (hsPkgs."shakespeare-css" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare-css"))
+            (hsPkgs."shakespeare-js" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare-js"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."enumerator" or ((hsPkgs.pkgs-errors).buildDepError "enumerator"))
+            ] ++ [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         };

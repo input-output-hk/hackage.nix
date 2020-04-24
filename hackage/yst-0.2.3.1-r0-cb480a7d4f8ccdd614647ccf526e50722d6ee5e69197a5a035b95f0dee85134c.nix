@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -57,22 +18,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "yst" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HStringTemplate" or (buildDepError "HStringTemplate"))
-            (hsPkgs."HsSyck" or (buildDepError "HsSyck"))
-            (hsPkgs."csv" or (buildDepError "csv"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."xhtml" or (buildDepError "xhtml"))
-            (hsPkgs."pandoc" or (buildDepError "pandoc"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."HStringTemplate" or ((hsPkgs.pkgs-errors).buildDepError "HStringTemplate"))
+            (hsPkgs."HsSyck" or ((hsPkgs.pkgs-errors).buildDepError "HsSyck"))
+            (hsPkgs."csv" or ((hsPkgs.pkgs-errors).buildDepError "csv"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."xhtml" or ((hsPkgs.pkgs-errors).buildDepError "xhtml"))
+            (hsPkgs."pandoc" or ((hsPkgs.pkgs-errors).buildDepError "pandoc"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
             ];
           buildable = true;
           };

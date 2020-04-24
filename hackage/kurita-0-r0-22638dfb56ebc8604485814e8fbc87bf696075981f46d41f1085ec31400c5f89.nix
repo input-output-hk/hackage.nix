@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,105 +17,107 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."approximate" or (buildDepError "approximate"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."atomic-write" or (buildDepError "atomic-write"))
-          (hsPkgs."broadcast-chan" or (buildDepError "broadcast-chan"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."delay" or (buildDepError "delay"))
-          (hsPkgs."double-metaphone" or (buildDepError "double-metaphone"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."hyperloglog" or (buildDepError "hyperloglog"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."linklater" or (buildDepError "linklater"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."parser-combinators" or (buildDepError "parser-combinators"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."reflection" or (buildDepError "reflection"))
-          (hsPkgs."sorted-list" or (buildDepError "sorted-list"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
-          (hsPkgs."websockets" or (buildDepError "websockets"))
-          (hsPkgs."wreq" or (buildDepError "wreq"))
-          (hsPkgs."wuss" or (buildDepError "wuss"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."approximate" or ((hsPkgs.pkgs-errors).buildDepError "approximate"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."atomic-write" or ((hsPkgs.pkgs-errors).buildDepError "atomic-write"))
+          (hsPkgs."broadcast-chan" or ((hsPkgs.pkgs-errors).buildDepError "broadcast-chan"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."delay" or ((hsPkgs.pkgs-errors).buildDepError "delay"))
+          (hsPkgs."double-metaphone" or ((hsPkgs.pkgs-errors).buildDepError "double-metaphone"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."hyperloglog" or ((hsPkgs.pkgs-errors).buildDepError "hyperloglog"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."linklater" or ((hsPkgs.pkgs-errors).buildDepError "linklater"))
+          (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+          (hsPkgs."monad-loops" or ((hsPkgs.pkgs-errors).buildDepError "monad-loops"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."parser-combinators" or ((hsPkgs.pkgs-errors).buildDepError "parser-combinators"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."reflection" or ((hsPkgs.pkgs-errors).buildDepError "reflection"))
+          (hsPkgs."sorted-list" or ((hsPkgs.pkgs-errors).buildDepError "sorted-list"))
+          (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."uri-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "uri-bytestring"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+          (hsPkgs."wai-websockets" or ((hsPkgs.pkgs-errors).buildDepError "wai-websockets"))
+          (hsPkgs."websockets" or ((hsPkgs.pkgs-errors).buildDepError "websockets"))
+          (hsPkgs."wreq" or ((hsPkgs.pkgs-errors).buildDepError "wreq"))
+          (hsPkgs."wuss" or ((hsPkgs.pkgs-errors).buildDepError "wuss"))
           ];
         buildable = true;
         };
       exes = {
         "kurita" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bits" or (buildDepError "bits"))
-            (hsPkgs."bytes" or (buildDepError "bytes"))
-            (hsPkgs."delay" or (buildDepError "delay"))
-            (hsPkgs."kurita" or (buildDepError "kurita"))
-            (hsPkgs."siphash" or (buildDepError "siphash"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bits" or ((hsPkgs.pkgs-errors).buildDepError "bits"))
+            (hsPkgs."bytes" or ((hsPkgs.pkgs-errors).buildDepError "bytes"))
+            (hsPkgs."delay" or ((hsPkgs.pkgs-errors).buildDepError "delay"))
+            (hsPkgs."kurita" or ((hsPkgs.pkgs-errors).buildDepError "kurita"))
+            (hsPkgs."siphash" or ((hsPkgs.pkgs-errors).buildDepError "siphash"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
             ];
           buildable = true;
           };
         "kurita-central" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."delay" or (buildDepError "delay"))
-            (hsPkgs."kurita" or (buildDepError "kurita"))
-            (hsPkgs."linklater" or (buildDepError "linklater"))
-            (hsPkgs."siphash" or (buildDepError "siphash"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."delay" or ((hsPkgs.pkgs-errors).buildDepError "delay"))
+            (hsPkgs."kurita" or ((hsPkgs.pkgs-errors).buildDepError "kurita"))
+            (hsPkgs."linklater" or ((hsPkgs.pkgs-errors).buildDepError "linklater"))
+            (hsPkgs."siphash" or ((hsPkgs.pkgs-errors).buildDepError "siphash"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
             ];
           buildable = true;
           };
         "kurita-relay" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bits" or (buildDepError "bits"))
-            (hsPkgs."bytes" or (buildDepError "bytes"))
-            (hsPkgs."kurita" or (buildDepError "kurita"))
-            (hsPkgs."siphash" or (buildDepError "siphash"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bits" or ((hsPkgs.pkgs-errors).buildDepError "bits"))
+            (hsPkgs."bytes" or ((hsPkgs.pkgs-errors).buildDepError "bytes"))
+            (hsPkgs."kurita" or ((hsPkgs.pkgs-errors).buildDepError "kurita"))
+            (hsPkgs."siphash" or ((hsPkgs.pkgs-errors).buildDepError "siphash"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
             ];
           buildable = true;
           };
         "kurita-client" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."kurita" or (buildDepError "kurita"))
-            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."kurita" or ((hsPkgs.pkgs-errors).buildDepError "kurita"))
+            (hsPkgs."monad-loops" or ((hsPkgs.pkgs-errors).buildDepError "monad-loops"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."websockets" or ((hsPkgs.pkgs-errors).buildDepError "websockets"))
             ];
           buildable = true;
           };
         };
       tests = {
         "kurita-test" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         };

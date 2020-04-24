@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       skiptests = true;
@@ -63,30 +24,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
           ] ++ [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."SHA" or (buildDepError "SHA"))
-          ]) ++ (pkgs.lib).optional (flags.usebinary) (hsPkgs."binary" or (buildDepError "binary"))) ++ (pkgs.lib).optional (flags.includemd5 && flags.usebinary) (hsPkgs."pureMD5" or (buildDepError "pureMD5"));
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."SHA" or ((hsPkgs.pkgs-errors).buildDepError "SHA"))
+          ]) ++ (pkgs.lib).optional (flags.usebinary) (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))) ++ (pkgs.lib).optional (flags.includemd5 && flags.usebinary) (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"));
         buildable = true;
         };
       exes = {
         "test_rsa" = {
           depends = (pkgs.lib).optionals (!flags.skiptests) (([
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."test-framework" or ((hsPkgs.pkgs-errors).buildDepError "test-framework"))
             ] ++ [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."SHA" or (buildDepError "SHA"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."SHA" or ((hsPkgs.pkgs-errors).buildDepError "SHA"))
             ]) ++ (if flags.quickcheck1
             then [
-              (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-              (hsPkgs."test-framework-quickcheck" or (buildDepError "test-framework-quickcheck"))
+              (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+              (hsPkgs."test-framework-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-quickcheck"))
               ]
             else [
-              (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-              ] ++ [ (hsPkgs."QuickCheck" or (buildDepError "QuickCheck")) ]));
+              (hsPkgs."test-framework-quickcheck2" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-quickcheck2"))
+              ] ++ [
+              (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+              ]));
           buildable = if flags.skiptests then false else true;
           };
         };

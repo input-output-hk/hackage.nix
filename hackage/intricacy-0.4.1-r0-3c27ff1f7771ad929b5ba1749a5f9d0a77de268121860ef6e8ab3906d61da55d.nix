@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       game = true;
@@ -63,59 +24,59 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "intricacy" = {
           depends = ((pkgs.lib).optionals (flags.game) ([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."network-fancy" or (buildDepError "network-fancy"))
-            (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
-            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."network-fancy" or ((hsPkgs.pkgs-errors).buildDepError "network-fancy"))
+            (hsPkgs."cryptohash" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash"))
+            (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
             ] ++ (pkgs.lib).optionals (flags.sdl) ([
-            (hsPkgs."SDL" or (buildDepError "SDL"))
-            (hsPkgs."SDL-ttf" or (buildDepError "SDL-ttf"))
-            (hsPkgs."SDL-gfx" or (buildDepError "SDL-gfx"))
+            (hsPkgs."SDL" or ((hsPkgs.pkgs-errors).buildDepError "SDL"))
+            (hsPkgs."SDL-ttf" or ((hsPkgs.pkgs-errors).buildDepError "SDL-ttf"))
+            (hsPkgs."SDL-gfx" or ((hsPkgs.pkgs-errors).buildDepError "SDL-gfx"))
             ] ++ (pkgs.lib).optionals (flags.sound) [
-            (hsPkgs."SDL-mixer" or (buildDepError "SDL-mixer"))
-            (hsPkgs."random" or (buildDepError "random"))
-            ])) ++ (pkgs.lib).optional (flags.curses) (hsPkgs."hscurses" or (buildDepError "hscurses"))) ++ (pkgs.lib).optionals (!flags.sdl) ((pkgs.lib).optional (!flags.curses) (hsPkgs."Unsatisfiable" or (buildDepError "Unsatisfiable")));
+            (hsPkgs."SDL-mixer" or ((hsPkgs.pkgs-errors).buildDepError "SDL-mixer"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            ])) ++ (pkgs.lib).optional (flags.curses) (hsPkgs."hscurses" or ((hsPkgs.pkgs-errors).buildDepError "hscurses"))) ++ (pkgs.lib).optionals (!flags.sdl) ((pkgs.lib).optional (!flags.curses) (hsPkgs."Unsatisfiable" or ((hsPkgs.pkgs-errors).buildDepError "Unsatisfiable")));
           libs = (pkgs.lib).optionals (flags.game) ((pkgs.lib).optionals (flags.sdl) ((pkgs.lib).optionals (system.isWindows) ([
-            (pkgs."SDL_ttf" or (sysDepError "SDL_ttf"))
-            (pkgs."SDL" or (sysDepError "SDL"))
-            (pkgs."SDL_gfx" or (sysDepError "SDL_gfx"))
-            (pkgs."freetype" or (sysDepError "freetype"))
-            ] ++ (pkgs.lib).optional (flags.sound) (pkgs."SDL_mixer" or (sysDepError "SDL_mixer")))));
+            (pkgs."SDL_ttf" or ((hsPkgs.pkgs-errors).sysDepError "SDL_ttf"))
+            (pkgs."SDL" or ((hsPkgs.pkgs-errors).sysDepError "SDL"))
+            (pkgs."SDL_gfx" or ((hsPkgs.pkgs-errors).sysDepError "SDL_gfx"))
+            (pkgs."freetype" or ((hsPkgs.pkgs-errors).sysDepError "freetype"))
+            ] ++ (pkgs.lib).optional (flags.sound) (pkgs."SDL_mixer" or ((hsPkgs.pkgs-errors).sysDepError "SDL_mixer")))));
           buildable = (if flags.game then true else false) && (if flags.sdl
             then true
             else if flags.curses then true else false);
           };
         "intricacy-server" = {
           depends = (pkgs.lib).optionals (flags.server) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."network-fancy" or (buildDepError "network-fancy"))
-            (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."network-fancy" or ((hsPkgs.pkgs-errors).buildDepError "network-fancy"))
+            (hsPkgs."cryptohash" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."pipes" or ((hsPkgs.pkgs-errors).buildDepError "pipes"))
             ];
           buildable = if flags.server then true else false;
           };

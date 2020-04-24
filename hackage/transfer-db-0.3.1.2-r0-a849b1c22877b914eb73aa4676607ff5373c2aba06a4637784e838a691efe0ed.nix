@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,44 +17,44 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."sqlcli" or (buildDepError "sqlcli"))
-          (hsPkgs."sqlcli-odbc" or (buildDepError "sqlcli-odbc"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."logging" or (buildDepError "logging"))
-          (hsPkgs."store" or (buildDepError "store"))
-          (hsPkgs."store-core" or (buildDepError "store-core"))
-          (hsPkgs."th-utilities" or (buildDepError "th-utilities"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."temporary" or (buildDepError "temporary"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."clock" or (buildDepError "clock"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."sqlcli" or ((hsPkgs.pkgs-errors).buildDepError "sqlcli"))
+          (hsPkgs."sqlcli-odbc" or ((hsPkgs.pkgs-errors).buildDepError "sqlcli-odbc"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."logging" or ((hsPkgs.pkgs-errors).buildDepError "logging"))
+          (hsPkgs."store" or ((hsPkgs.pkgs-errors).buildDepError "store"))
+          (hsPkgs."store-core" or ((hsPkgs.pkgs-errors).buildDepError "store-core"))
+          (hsPkgs."th-utilities" or ((hsPkgs.pkgs-errors).buildDepError "th-utilities"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."clock" or ((hsPkgs.pkgs-errors).buildDepError "clock"))
           ];
         buildable = true;
         };
       exes = {
         "transfer-db" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."console-program" or (buildDepError "console-program"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."logging" or (buildDepError "logging"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."clock" or (buildDepError "clock"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."cassava" or (buildDepError "cassava"))
-            (hsPkgs."sqlcli" or (buildDepError "sqlcli"))
-            (hsPkgs."sqlcli-odbc" or (buildDepError "sqlcli-odbc"))
-            (hsPkgs."transfer-db" or (buildDepError "transfer-db"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."yaml" or ((hsPkgs.pkgs-errors).buildDepError "yaml"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."console-program" or ((hsPkgs.pkgs-errors).buildDepError "console-program"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."logging" or ((hsPkgs.pkgs-errors).buildDepError "logging"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."clock" or ((hsPkgs.pkgs-errors).buildDepError "clock"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."cassava" or ((hsPkgs.pkgs-errors).buildDepError "cassava"))
+            (hsPkgs."sqlcli" or ((hsPkgs.pkgs-errors).buildDepError "sqlcli"))
+            (hsPkgs."sqlcli-odbc" or ((hsPkgs.pkgs-errors).buildDepError "sqlcli-odbc"))
+            (hsPkgs."transfer-db" or ((hsPkgs.pkgs-errors).buildDepError "transfer-db"))
             ];
           buildable = true;
           };
@@ -101,16 +62,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "hspec-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."store" or (buildDepError "store"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."cpu" or (buildDepError "cpu"))
-            (hsPkgs."transfer-db" or (buildDepError "transfer-db"))
-            (hsPkgs."sqlcli" or (buildDepError "sqlcli"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."store" or ((hsPkgs.pkgs-errors).buildDepError "store"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."cpu" or ((hsPkgs.pkgs-errors).buildDepError "cpu"))
+            (hsPkgs."transfer-db" or ((hsPkgs.pkgs-errors).buildDepError "transfer-db"))
+            (hsPkgs."sqlcli" or ((hsPkgs.pkgs-errors).buildDepError "sqlcli"))
             ];
           buildable = true;
           };

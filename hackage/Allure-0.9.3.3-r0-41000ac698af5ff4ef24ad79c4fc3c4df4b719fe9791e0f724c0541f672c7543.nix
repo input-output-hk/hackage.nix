@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { supportnodejs = true; };
     package = {
@@ -56,30 +17,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."LambdaHack" or (buildDepError "LambdaHack"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."enummapset" or (buildDepError "enummapset"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."ghc-compact" or (buildDepError "ghc-compact"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."LambdaHack" or ((hsPkgs.pkgs-errors).buildDepError "LambdaHack"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."enummapset" or ((hsPkgs.pkgs-errors).buildDepError "enummapset"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."ghc-compact" or ((hsPkgs.pkgs-errors).buildDepError "ghc-compact"))
+          (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+          (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
           ];
         buildable = true;
         };
       exes = {
         "Allure" = {
           depends = [
-            (hsPkgs."LambdaHack" or (buildDepError "LambdaHack"))
-            (hsPkgs."Allure" or (buildDepError "Allure"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."LambdaHack" or ((hsPkgs.pkgs-errors).buildDepError "LambdaHack"))
+            (hsPkgs."Allure" or ((hsPkgs.pkgs-errors).buildDepError "Allure"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
             ];
           buildable = true;
           };
@@ -87,12 +48,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."LambdaHack" or (buildDepError "LambdaHack"))
-            (hsPkgs."Allure" or (buildDepError "Allure"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."LambdaHack" or ((hsPkgs.pkgs-errors).buildDepError "LambdaHack"))
+            (hsPkgs."Allure" or ((hsPkgs.pkgs-errors).buildDepError "Allure"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
             ];
           buildable = true;
           };

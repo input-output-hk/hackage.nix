@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { jenkins-build = false; };
     package = {
@@ -56,62 +17,62 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."ini" or (buildDepError "ini"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."fay" or (buildDepError "fay"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."monad-extras" or (buildDepError "monad-extras"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."texts" or (buildDepError "texts"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-          (hsPkgs."failure" or (buildDepError "failure"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."yesod-fay" or (buildDepError "yesod-fay"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."persistent" or (buildDepError "persistent"))
-          (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
-          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."scientific" or ((hsPkgs.pkgs-errors).buildDepError "scientific"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."ini" or ((hsPkgs.pkgs-errors).buildDepError "ini"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+          (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+          (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."fay" or ((hsPkgs.pkgs-errors).buildDepError "fay"))
+          (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
+          (hsPkgs."monad-extras" or ((hsPkgs.pkgs-errors).buildDepError "monad-extras"))
+          (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+          (hsPkgs."texts" or ((hsPkgs.pkgs-errors).buildDepError "texts"))
+          (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."pretty-show" or ((hsPkgs.pkgs-errors).buildDepError "pretty-show"))
+          (hsPkgs."failure" or ((hsPkgs.pkgs-errors).buildDepError "failure"))
+          (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+          (hsPkgs."yesod-fay" or ((hsPkgs.pkgs-errors).buildDepError "yesod-fay"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."persistent" or ((hsPkgs.pkgs-errors).buildDepError "persistent"))
+          (hsPkgs."persistent-template" or ((hsPkgs.pkgs-errors).buildDepError "persistent-template"))
+          (hsPkgs."tagged" or ((hsPkgs.pkgs-errors).buildDepError "tagged"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
           ];
         buildable = true;
         };
       exes = {
         "fpco-api" = {
           depends = [
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fpco-api" or (buildDepError "fpco-api"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ini" or (buildDepError "ini"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."scientific" or ((hsPkgs.pkgs-errors).buildDepError "scientific"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."fpco-api" or ((hsPkgs.pkgs-errors).buildDepError "fpco-api"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."ini" or ((hsPkgs.pkgs-errors).buildDepError "ini"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
             ];
           buildable = if flags.jenkins-build then false else true;
           };

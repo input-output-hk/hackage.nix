@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,32 +17,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."fuzzy-time" or (buildDepError "fuzzy-time"))
-          (hsPkgs."genvalidity" or (buildDepError "genvalidity"))
-          (hsPkgs."genvalidity-time" or (buildDepError "genvalidity-time"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."fuzzy-time" or ((hsPkgs.pkgs-errors).buildDepError "fuzzy-time"))
+          (hsPkgs."genvalidity" or ((hsPkgs.pkgs-errors).buildDepError "genvalidity"))
+          (hsPkgs."genvalidity-time" or ((hsPkgs.pkgs-errors).buildDepError "genvalidity-time"))
+          (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
           ];
         buildable = true;
         };
       tests = {
         "fuzzy-time-test" = {
           depends = [
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fuzzy-time" or (buildDepError "fuzzy-time"))
-            (hsPkgs."fuzzy-time-gen" or (buildDepError "fuzzy-time-gen"))
-            (hsPkgs."genvalidity" or (buildDepError "genvalidity"))
-            (hsPkgs."genvalidity-hspec" or (buildDepError "genvalidity-hspec"))
-            (hsPkgs."genvalidity-text" or (buildDepError "genvalidity-text"))
-            (hsPkgs."genvalidity-time" or (buildDepError "genvalidity-time"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."fuzzy-time" or ((hsPkgs.pkgs-errors).buildDepError "fuzzy-time"))
+            (hsPkgs."fuzzy-time-gen" or ((hsPkgs.pkgs-errors).buildDepError "fuzzy-time-gen"))
+            (hsPkgs."genvalidity" or ((hsPkgs.pkgs-errors).buildDepError "genvalidity"))
+            (hsPkgs."genvalidity-hspec" or ((hsPkgs.pkgs-errors).buildDepError "genvalidity-hspec"))
+            (hsPkgs."genvalidity-text" or ((hsPkgs.pkgs-errors).buildDepError "genvalidity-text"))
+            (hsPkgs."genvalidity-time" or ((hsPkgs.pkgs-errors).buildDepError "genvalidity-time"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
             ];
           buildable = true;
           };
@@ -89,11 +50,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "fuzzy-time-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."fuzzy-time" or (buildDepError "fuzzy-time"))
-            (hsPkgs."fuzzy-time-gen" or (buildDepError "fuzzy-time-gen"))
-            (hsPkgs."genvalidity-criterion" or (buildDepError "genvalidity-criterion"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."fuzzy-time" or ((hsPkgs.pkgs-errors).buildDepError "fuzzy-time"))
+            (hsPkgs."fuzzy-time-gen" or ((hsPkgs.pkgs-errors).buildDepError "fuzzy-time-gen"))
+            (hsPkgs."genvalidity-criterion" or ((hsPkgs.pkgs-errors).buildDepError "genvalidity-criterion"))
             ];
           buildable = true;
           };

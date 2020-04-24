@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,49 +17,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."rosezipper" or (buildDepError "rosezipper"))
-          (hsPkgs."random-fu" or (buildDepError "random-fu"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."monad-supply" or (buildDepError "monad-supply"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-          (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
-          (hsPkgs."wai-cors" or (buildDepError "wai-cors"))
-          (hsPkgs."delay" or (buildDepError "delay"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."SHA" or (buildDepError "SHA"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."hedis" or (buildDepError "hedis"))
-          (hsPkgs."zlib" or (buildDepError "zlib"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."rosezipper" or ((hsPkgs.pkgs-errors).buildDepError "rosezipper"))
+          (hsPkgs."random-fu" or ((hsPkgs.pkgs-errors).buildDepError "random-fu"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."monad-supply" or ((hsPkgs.pkgs-errors).buildDepError "monad-supply"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."wai-extra" or ((hsPkgs.pkgs-errors).buildDepError "wai-extra"))
+          (hsPkgs."wai-app-static" or ((hsPkgs.pkgs-errors).buildDepError "wai-app-static"))
+          (hsPkgs."wai-cors" or ((hsPkgs.pkgs-errors).buildDepError "wai-cors"))
+          (hsPkgs."delay" or ((hsPkgs.pkgs-errors).buildDepError "delay"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."SHA" or ((hsPkgs.pkgs-errors).buildDepError "SHA"))
+          (hsPkgs."uuid" or ((hsPkgs.pkgs-errors).buildDepError "uuid"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."hedis" or ((hsPkgs.pkgs-errors).buildDepError "hedis"))
+          (hsPkgs."zlib" or ((hsPkgs.pkgs-errors).buildDepError "zlib"))
           ];
         buildable = true;
         };
       exes = {
         "linden-example" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."linden" or (buildDepError "linden"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."rosezipper" or (buildDepError "rosezipper"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."random-fu" or (buildDepError "random-fu"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."linden" or ((hsPkgs.pkgs-errors).buildDepError "linden"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."rosezipper" or ((hsPkgs.pkgs-errors).buildDepError "rosezipper"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."random-fu" or ((hsPkgs.pkgs-errors).buildDepError "random-fu"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
+            (hsPkgs."uuid" or ((hsPkgs.pkgs-errors).buildDepError "uuid"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
             ];
           buildable = true;
           };

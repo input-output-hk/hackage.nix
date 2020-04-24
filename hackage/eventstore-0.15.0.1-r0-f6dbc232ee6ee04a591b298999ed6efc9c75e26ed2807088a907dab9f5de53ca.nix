@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,85 +17,85 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
-          (hsPkgs."connection" or (buildDepError "connection"))
-          (hsPkgs."dotnet-timespan" or (buildDepError "dotnet-timespan"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
-          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."protobuf" or (buildDepError "protobuf"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."dns" or (buildDepError "dns"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."text-format" or (buildDepError "text-format"))
-          (hsPkgs."clock" or (buildDepError "clock"))
-          (hsPkgs."machines" or (buildDepError "machines"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."interpolate" or (buildDepError "interpolate"))
-          (hsPkgs."ekg-core" or (buildDepError "ekg-core"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."mono-traversable" or ((hsPkgs.pkgs-errors).buildDepError "mono-traversable"))
+          (hsPkgs."connection" or ((hsPkgs.pkgs-errors).buildDepError "connection"))
+          (hsPkgs."dotnet-timespan" or ((hsPkgs.pkgs-errors).buildDepError "dotnet-timespan"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."uuid" or ((hsPkgs.pkgs-errors).buildDepError "uuid"))
+          (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."stm-chans" or ((hsPkgs.pkgs-errors).buildDepError "stm-chans"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."lifted-async" or ((hsPkgs.pkgs-errors).buildDepError "lifted-async"))
+          (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+          (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+          (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+          (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+          (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."protobuf" or ((hsPkgs.pkgs-errors).buildDepError "protobuf"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."dns" or ((hsPkgs.pkgs-errors).buildDepError "dns"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."fast-logger" or ((hsPkgs.pkgs-errors).buildDepError "fast-logger"))
+          (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+          (hsPkgs."text-format" or ((hsPkgs.pkgs-errors).buildDepError "text-format"))
+          (hsPkgs."clock" or ((hsPkgs.pkgs-errors).buildDepError "clock"))
+          (hsPkgs."machines" or ((hsPkgs.pkgs-errors).buildDepError "machines"))
+          (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+          (hsPkgs."interpolate" or ((hsPkgs.pkgs-errors).buildDepError "interpolate"))
+          (hsPkgs."ekg-core" or ((hsPkgs.pkgs-errors).buildDepError "ekg-core"))
           ];
         buildable = true;
         };
       tests = {
         "eventstore-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
-            (hsPkgs."connection" or (buildDepError "connection"))
-            (hsPkgs."dotnet-timespan" or (buildDepError "dotnet-timespan"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
-            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-            (hsPkgs."eventstore" or (buildDepError "eventstore"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."protobuf" or (buildDepError "protobuf"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
-            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."mono-traversable" or ((hsPkgs.pkgs-errors).buildDepError "mono-traversable"))
+            (hsPkgs."connection" or ((hsPkgs.pkgs-errors).buildDepError "connection"))
+            (hsPkgs."dotnet-timespan" or ((hsPkgs.pkgs-errors).buildDepError "dotnet-timespan"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."uuid" or ((hsPkgs.pkgs-errors).buildDepError "uuid"))
+            (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."stm-chans" or ((hsPkgs.pkgs-errors).buildDepError "stm-chans"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."lifted-async" or ((hsPkgs.pkgs-errors).buildDepError "lifted-async"))
+            (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+            (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+            (hsPkgs."eventstore" or ((hsPkgs.pkgs-errors).buildDepError "eventstore"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-hspec" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hspec"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."protobuf" or ((hsPkgs.pkgs-errors).buildDepError "protobuf"))
+            (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+            (hsPkgs."uuid" or ((hsPkgs.pkgs-errors).buildDepError "uuid"))
+            (hsPkgs."fast-logger" or ((hsPkgs.pkgs-errors).buildDepError "fast-logger"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
             ];
           buildable = true;
           };

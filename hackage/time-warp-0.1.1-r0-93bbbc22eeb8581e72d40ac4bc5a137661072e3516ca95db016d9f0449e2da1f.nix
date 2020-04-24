@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,62 +17,62 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."data-msgpack" or (buildDepError "data-msgpack"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."formatting" or (buildDepError "formatting"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."network-msgpack-rpc" or (buildDepError "network-msgpack-rpc"))
-          (hsPkgs."pqueue" or (buildDepError "pqueue"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."serokell-util" or (buildDepError "serokell-util"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-format" or (buildDepError "text-format"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."time-units" or (buildDepError "time-units"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."data-msgpack" or ((hsPkgs.pkgs-errors).buildDepError "data-msgpack"))
+          (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+          (hsPkgs."formatting" or ((hsPkgs.pkgs-errors).buildDepError "formatting"))
+          (hsPkgs."hslogger" or ((hsPkgs.pkgs-errors).buildDepError "hslogger"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+          (hsPkgs."monad-loops" or ((hsPkgs.pkgs-errors).buildDepError "monad-loops"))
+          (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+          (hsPkgs."network-msgpack-rpc" or ((hsPkgs.pkgs-errors).buildDepError "network-msgpack-rpc"))
+          (hsPkgs."pqueue" or ((hsPkgs.pkgs-errors).buildDepError "pqueue"))
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+          (hsPkgs."quickcheck-instances" or ((hsPkgs.pkgs-errors).buildDepError "quickcheck-instances"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+          (hsPkgs."serokell-util" or ((hsPkgs.pkgs-errors).buildDepError "serokell-util"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."text-format" or ((hsPkgs.pkgs-errors).buildDepError "text-format"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."time-units" or ((hsPkgs.pkgs-errors).buildDepError "time-units"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
           ];
         buildable = true;
         };
       exes = {
         "token-ring" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."data-msgpack" or (buildDepError "data-msgpack"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."formatting" or (buildDepError "formatting"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."network-msgpack-rpc" or (buildDepError "network-msgpack-rpc"))
-            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."serokell-util" or (buildDepError "serokell-util"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-format" or (buildDepError "text-format"))
-            (hsPkgs."time-units" or (buildDepError "time-units"))
-            (hsPkgs."time-warp" or (buildDepError "time-warp"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."data-msgpack" or ((hsPkgs.pkgs-errors).buildDepError "data-msgpack"))
+            (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+            (hsPkgs."formatting" or ((hsPkgs.pkgs-errors).buildDepError "formatting"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."network-msgpack-rpc" or ((hsPkgs.pkgs-errors).buildDepError "network-msgpack-rpc"))
+            (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."serokell-util" or ((hsPkgs.pkgs-errors).buildDepError "serokell-util"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."text-format" or ((hsPkgs.pkgs-errors).buildDepError "text-format"))
+            (hsPkgs."time-units" or ((hsPkgs.pkgs-errors).buildDepError "time-units"))
+            (hsPkgs."time-warp" or ((hsPkgs.pkgs-errors).buildDepError "time-warp"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = true;
           };
@@ -119,24 +80,24 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "time-warp-test" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."data-msgpack" or (buildDepError "data-msgpack"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network-msgpack-rpc" or (buildDepError "network-msgpack-rpc"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."serokell-util" or (buildDepError "serokell-util"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-format" or (buildDepError "text-format"))
-            (hsPkgs."time-units" or (buildDepError "time-units"))
-            (hsPkgs."time-warp" or (buildDepError "time-warp"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."data-msgpack" or ((hsPkgs.pkgs-errors).buildDepError "data-msgpack"))
+            (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network-msgpack-rpc" or ((hsPkgs.pkgs-errors).buildDepError "network-msgpack-rpc"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."serokell-util" or ((hsPkgs.pkgs-errors).buildDepError "serokell-util"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."text-format" or ((hsPkgs.pkgs-errors).buildDepError "text-format"))
+            (hsPkgs."time-units" or ((hsPkgs.pkgs-errors).buildDepError "time-units"))
+            (hsPkgs."time-warp" or ((hsPkgs.pkgs-errors).buildDepError "time-warp"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = true;
           };

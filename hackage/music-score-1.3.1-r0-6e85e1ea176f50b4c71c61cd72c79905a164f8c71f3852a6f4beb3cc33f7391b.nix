@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,29 +17,29 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."monadplus" or (buildDepError "monadplus"))
-          (hsPkgs."prettify" or (buildDepError "prettify"))
-          (hsPkgs."HCodecs" or (buildDepError "HCodecs"))
-          (hsPkgs."musicxml2" or (buildDepError "musicxml2"))
-          (hsPkgs."lilypond" or (buildDepError "lilypond"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."nats" or (buildDepError "nats"))
-          (hsPkgs."pointed" or (buildDepError "pointed"))
-          (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
-          (hsPkgs."vector-space" or (buildDepError "vector-space"))
-          (hsPkgs."music-pitch-literal" or (buildDepError "music-pitch-literal"))
-          (hsPkgs."music-dynamics-literal" or (buildDepError "music-dynamics-literal"))
-          (hsPkgs."reenact" or (buildDepError "reenact"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+          (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."monadplus" or ((hsPkgs.pkgs-errors).buildDepError "monadplus"))
+          (hsPkgs."prettify" or ((hsPkgs.pkgs-errors).buildDepError "prettify"))
+          (hsPkgs."HCodecs" or ((hsPkgs.pkgs-errors).buildDepError "HCodecs"))
+          (hsPkgs."musicxml2" or ((hsPkgs.pkgs-errors).buildDepError "musicxml2"))
+          (hsPkgs."lilypond" or ((hsPkgs.pkgs-errors).buildDepError "lilypond"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."nats" or ((hsPkgs.pkgs-errors).buildDepError "nats"))
+          (hsPkgs."pointed" or ((hsPkgs.pkgs-errors).buildDepError "pointed"))
+          (hsPkgs."semigroupoids" or ((hsPkgs.pkgs-errors).buildDepError "semigroupoids"))
+          (hsPkgs."vector-space" or ((hsPkgs.pkgs-errors).buildDepError "vector-space"))
+          (hsPkgs."music-pitch-literal" or ((hsPkgs.pkgs-errors).buildDepError "music-pitch-literal"))
+          (hsPkgs."music-dynamics-literal" or ((hsPkgs.pkgs-errors).buildDepError "music-dynamics-literal"))
+          (hsPkgs."reenact" or ((hsPkgs.pkgs-errors).buildDepError "reenact"))
           ];
         buildable = true;
         };

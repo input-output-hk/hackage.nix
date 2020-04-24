@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
@@ -56,35 +17,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
           ];
         libs = [
-          (pkgs."GLU" or (sysDepError "GLU"))
-          (pkgs."GL" or (sysDepError "GL"))
-          (pkgs."m" or (sysDepError "m"))
-          (pkgs."GLEW" or (sysDepError "GLEW"))
+          (pkgs."GLU" or ((hsPkgs.pkgs-errors).sysDepError "GLU"))
+          (pkgs."GL" or ((hsPkgs.pkgs-errors).sysDepError "GL"))
+          (pkgs."m" or ((hsPkgs.pkgs-errors).sysDepError "m"))
+          (pkgs."GLEW" or ((hsPkgs.pkgs-errors).sysDepError "GLEW"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or ((hsPkgs.pkgs-errors).buildToolDepError "c2hs")))
           ];
         buildable = true;
         };
       exes = {
         "example00" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."gl" or (buildDepError "gl"))
-            (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
-            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-            (hsPkgs."nanovg" or (buildDepError "nanovg"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."gl" or ((hsPkgs.pkgs-errors).buildDepError "gl"))
+            (hsPkgs."GLFW-b" or ((hsPkgs.pkgs-errors).buildDepError "GLFW-b"))
+            (hsPkgs."monad-loops" or ((hsPkgs.pkgs-errors).buildDepError "monad-loops"))
+            (hsPkgs."nanovg" or ((hsPkgs.pkgs-errors).buildDepError "nanovg"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = if flags.examples then true else false;
           };
@@ -92,12 +53,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "nanovg-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."inline-c" or (buildDepError "inline-c"))
-            (hsPkgs."nanovg" or (buildDepError "nanovg"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."inline-c" or ((hsPkgs.pkgs-errors).buildDepError "inline-c"))
+            (hsPkgs."nanovg" or ((hsPkgs.pkgs-errors).buildDepError "nanovg"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
             ];
           buildable = true;
           };

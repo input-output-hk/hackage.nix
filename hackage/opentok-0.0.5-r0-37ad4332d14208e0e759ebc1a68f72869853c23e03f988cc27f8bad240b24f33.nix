@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { documentation = true; };
     package = {
@@ -56,72 +17,72 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base-compat" or (buildDepError "base-compat"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-casing" or (buildDepError "aeson-casing"))
-          (hsPkgs."aeson-compat" or (buildDepError "aeson-compat"))
-          (hsPkgs."base64-string" or (buildDepError "base64-string"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."convertible" or (buildDepError "convertible"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."iproute" or (buildDepError "iproute"))
-          (hsPkgs."jose" or (buildDepError "jose"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."monad-time" or (buildDepError "monad-time"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."SHA" or (buildDepError "SHA"))
-          (hsPkgs."strings" or (buildDepError "strings"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.documentation) (hsPkgs."hscolour" or (buildDepError "hscolour"));
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base-compat" or ((hsPkgs.pkgs-errors).buildDepError "base-compat"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."aeson-casing" or ((hsPkgs.pkgs-errors).buildDepError "aeson-casing"))
+          (hsPkgs."aeson-compat" or ((hsPkgs.pkgs-errors).buildDepError "aeson-compat"))
+          (hsPkgs."base64-string" or ((hsPkgs.pkgs-errors).buildDepError "base64-string"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+          (hsPkgs."either" or ((hsPkgs.pkgs-errors).buildDepError "either"))
+          (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or ((hsPkgs.pkgs-errors).buildDepError "http-client-tls"))
+          (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."iproute" or ((hsPkgs.pkgs-errors).buildDepError "iproute"))
+          (hsPkgs."jose" or ((hsPkgs.pkgs-errors).buildDepError "jose"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."monad-time" or ((hsPkgs.pkgs-errors).buildDepError "monad-time"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."SHA" or ((hsPkgs.pkgs-errors).buildDepError "SHA"))
+          (hsPkgs."strings" or ((hsPkgs.pkgs-errors).buildDepError "strings"))
+          (hsPkgs."uuid" or ((hsPkgs.pkgs-errors).buildDepError "uuid"))
+          (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          ] ++ (pkgs.lib).optional (flags.documentation) (hsPkgs."hscolour" or ((hsPkgs.pkgs-errors).buildDepError "hscolour"));
         buildable = true;
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-casing" or (buildDepError "aeson-casing"))
-            (hsPkgs."aeson-compat" or (buildDepError "aeson-compat"))
-            (hsPkgs."base64-string" or (buildDepError "base64-string"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."convertible" or (buildDepError "convertible"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."iproute" or (buildDepError "iproute"))
-            (hsPkgs."jose" or (buildDepError "jose"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."monad-time" or (buildDepError "monad-time"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."SHA" or (buildDepError "SHA"))
-            (hsPkgs."strings" or (buildDepError "strings"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."opentok" or (buildDepError "opentok"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base-compat" or ((hsPkgs.pkgs-errors).buildDepError "base-compat"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."aeson-casing" or ((hsPkgs.pkgs-errors).buildDepError "aeson-casing"))
+            (hsPkgs."aeson-compat" or ((hsPkgs.pkgs-errors).buildDepError "aeson-compat"))
+            (hsPkgs."base64-string" or ((hsPkgs.pkgs-errors).buildDepError "base64-string"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+            (hsPkgs."either" or ((hsPkgs.pkgs-errors).buildDepError "either"))
+            (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or ((hsPkgs.pkgs-errors).buildDepError "http-client-tls"))
+            (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."iproute" or ((hsPkgs.pkgs-errors).buildDepError "iproute"))
+            (hsPkgs."jose" or ((hsPkgs.pkgs-errors).buildDepError "jose"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."monad-time" or ((hsPkgs.pkgs-errors).buildDepError "monad-time"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."SHA" or ((hsPkgs.pkgs-errors).buildDepError "SHA"))
+            (hsPkgs."strings" or ((hsPkgs.pkgs-errors).buildDepError "strings"))
+            (hsPkgs."uuid" or ((hsPkgs.pkgs-errors).buildDepError "uuid"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."opentok" or ((hsPkgs.pkgs-errors).buildDepError "opentok"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or ((hsPkgs.pkgs-errors).buildDepError "quickcheck-instances"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hspec" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hspec"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
             ];
           buildable = true;
           };

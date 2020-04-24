@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { library-only = true; };
     package = {
@@ -56,23 +17,23 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
-          (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-          (hsPkgs."nanovg" or (buildDepError "nanovg"))
-          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."GLFW-b" or ((hsPkgs.pkgs-errors).buildDepError "GLFW-b"))
+          (hsPkgs."OpenGL" or ((hsPkgs.pkgs-errors).buildDepError "OpenGL"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."monad-loops" or ((hsPkgs.pkgs-errors).buildDepError "monad-loops"))
+          (hsPkgs."nanovg" or ((hsPkgs.pkgs-errors).buildDepError "nanovg"))
+          (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
           ];
         buildable = true;
         };
       exes = {
         "nanovg-simple" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."nanovg" or (buildDepError "nanovg"))
-            (hsPkgs."nanovg-simple" or (buildDepError "nanovg-simple"))
-            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."nanovg" or ((hsPkgs.pkgs-errors).buildDepError "nanovg"))
+            (hsPkgs."nanovg-simple" or ((hsPkgs.pkgs-errors).buildDepError "nanovg-simple"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
             ];
           buildable = if flags.library-only then false else true;
           };

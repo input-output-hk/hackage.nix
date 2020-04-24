@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       with_xft = false;
@@ -72,59 +33,59 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ((((((((((([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."X11" or (buildDepError "X11"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."parsec-numbers" or (buildDepError "parsec-numbers"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-          (hsPkgs."async" or (buildDepError "async"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0.2") (hsPkgs."unsupported-ghc-version" or (buildDepError "unsupported-ghc-version"))) ++ (pkgs.lib).optionals (flags.with_xft || flags.all_extensions) [
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."X11-xft" or (buildDepError "X11-xft"))
-          ]) ++ (pkgs.lib).optional (flags.with_utf8 || flags.all_extensions) (hsPkgs."utf8-string" or (buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.with_inotify || flags.all_extensions) (hsPkgs."hinotify" or (buildDepError "hinotify"))) ++ (pkgs.lib).optional (flags.with_iwlib || flags.all_extensions) (hsPkgs."iwlib" or (buildDepError "iwlib"))) ++ (pkgs.lib).optional (flags.with_mpd || flags.all_extensions) (hsPkgs."libmpd" or (buildDepError "libmpd"))) ++ (pkgs.lib).optionals (flags.with_alsa || flags.all_extensions) [
-          (hsPkgs."alsa-mixer" or (buildDepError "alsa-mixer"))
-          (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
-          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."regex-compat" or ((hsPkgs.pkgs-errors).buildDepError "regex-compat"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."X11" or ((hsPkgs.pkgs-errors).buildDepError "X11"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."parsec-numbers" or ((hsPkgs.pkgs-errors).buildDepError "parsec-numbers"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."extensible-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "extensible-exceptions"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0.2") (hsPkgs."unsupported-ghc-version" or ((hsPkgs.pkgs-errors).buildDepError "unsupported-ghc-version"))) ++ (pkgs.lib).optionals (flags.with_xft || flags.all_extensions) [
+          (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+          (hsPkgs."X11-xft" or ((hsPkgs.pkgs-errors).buildDepError "X11-xft"))
+          ]) ++ (pkgs.lib).optional (flags.with_utf8 || flags.all_extensions) (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.with_inotify || flags.all_extensions) (hsPkgs."hinotify" or ((hsPkgs.pkgs-errors).buildDepError "hinotify"))) ++ (pkgs.lib).optional (flags.with_iwlib || flags.all_extensions) (hsPkgs."iwlib" or ((hsPkgs.pkgs-errors).buildDepError "iwlib"))) ++ (pkgs.lib).optional (flags.with_mpd || flags.all_extensions) (hsPkgs."libmpd" or ((hsPkgs.pkgs-errors).buildDepError "libmpd"))) ++ (pkgs.lib).optionals (flags.with_alsa || flags.all_extensions) [
+          (hsPkgs."alsa-mixer" or ((hsPkgs.pkgs-errors).buildDepError "alsa-mixer"))
+          (hsPkgs."alsa-core" or ((hsPkgs.pkgs-errors).buildDepError "alsa-core"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
           ]) ++ (pkgs.lib).optionals (flags.with_datezone || flags.all_extensions) [
-          (hsPkgs."timezone-olson" or (buildDepError "timezone-olson"))
-          (hsPkgs."timezone-series" or (buildDepError "timezone-series"))
-          ]) ++ (pkgs.lib).optional (flags.with_mpris || flags.all_extensions) (hsPkgs."dbus" or (buildDepError "dbus"))) ++ (pkgs.lib).optional (flags.with_dbus || flags.all_extensions) (hsPkgs."dbus" or (buildDepError "dbus"))) ++ (pkgs.lib).optionals (flags.with_weather || flags.all_extensions) [
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."timezone-olson" or ((hsPkgs.pkgs-errors).buildDepError "timezone-olson"))
+          (hsPkgs."timezone-series" or ((hsPkgs.pkgs-errors).buildDepError "timezone-series"))
+          ]) ++ (pkgs.lib).optional (flags.with_mpris || flags.all_extensions) (hsPkgs."dbus" or ((hsPkgs.pkgs-errors).buildDepError "dbus"))) ++ (pkgs.lib).optional (flags.with_dbus || flags.all_extensions) (hsPkgs."dbus" or ((hsPkgs.pkgs-errors).buildDepError "dbus"))) ++ (pkgs.lib).optionals (flags.with_weather || flags.all_extensions) [
+          (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
           ]) ++ (pkgs.lib).optionals (flags.with_uvmeter) [
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
           ];
         libs = ([
-          (pkgs."Xrandr" or (sysDepError "Xrandr"))
-          (pkgs."Xrender" or (sysDepError "Xrender"))
-          ] ++ (pkgs.lib).optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw" or (sysDepError "iw"))) ++ (pkgs.lib).optional (flags.with_xpm || flags.all_extensions) (pkgs."Xpm" or (sysDepError "Xpm"));
+          (pkgs."Xrandr" or ((hsPkgs.pkgs-errors).sysDepError "Xrandr"))
+          (pkgs."Xrender" or ((hsPkgs.pkgs-errors).sysDepError "Xrender"))
+          ] ++ (pkgs.lib).optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw" or ((hsPkgs.pkgs-errors).sysDepError "iw"))) ++ (pkgs.lib).optional (flags.with_xpm || flags.all_extensions) (pkgs."Xpm" or ((hsPkgs.pkgs-errors).sysDepError "Xpm"));
         buildable = true;
         };
       exes = {
         "xmobar" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."xmobar" or (buildDepError "xmobar"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."X11" or ((hsPkgs.pkgs-errors).buildDepError "X11"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."xmobar" or ((hsPkgs.pkgs-errors).buildDepError "xmobar"))
             ];
           buildable = true;
           };
@@ -132,30 +93,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "XmobarTest" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."parsec-numbers" or (buildDepError "parsec-numbers"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."xmobar" or (buildDepError "xmobar"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."regex-compat" or ((hsPkgs.pkgs-errors).buildDepError "regex-compat"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."X11" or ((hsPkgs.pkgs-errors).buildDepError "X11"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."parsec-numbers" or ((hsPkgs.pkgs-errors).buildDepError "parsec-numbers"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."xmobar" or ((hsPkgs.pkgs-errors).buildDepError "xmobar"))
             ] ++ (pkgs.lib).optionals (flags.with_alsa || flags.all_extensions) [
-            (hsPkgs."alsa-mixer" or (buildDepError "alsa-mixer"))
-            (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
-            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."alsa-mixer" or ((hsPkgs.pkgs-errors).buildDepError "alsa-mixer"))
+            (hsPkgs."alsa-core" or ((hsPkgs.pkgs-errors).buildDepError "alsa-core"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
             ];
           buildable = true;
           };

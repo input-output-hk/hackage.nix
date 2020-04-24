@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { static = false; };
     package = {
@@ -57,29 +18,29 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "darcswatch-generate" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."Crypto" or (buildDepError "Crypto"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."xhtml" or (buildDepError "xhtml"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."nano-md5" or (buildDepError "nano-md5"))
-            (hsPkgs."zlib" or (buildDepError "zlib"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."concurrentoutput" or (buildDepError "concurrentoutput"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."mime-string" or (buildDepError "mime-string"))
-            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-            (hsPkgs."cgi" or (buildDepError "cgi"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."Crypto" or ((hsPkgs.pkgs-errors).buildDepError "Crypto"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."xhtml" or ((hsPkgs.pkgs-errors).buildDepError "xhtml"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."nano-md5" or ((hsPkgs.pkgs-errors).buildDepError "nano-md5"))
+            (hsPkgs."zlib" or ((hsPkgs.pkgs-errors).buildDepError "zlib"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."concurrentoutput" or ((hsPkgs.pkgs-errors).buildDepError "concurrentoutput"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."mime-string" or ((hsPkgs.pkgs-errors).buildDepError "mime-string"))
+            (hsPkgs."regex-compat" or ((hsPkgs.pkgs-errors).buildDepError "regex-compat"))
+            (hsPkgs."cgi" or ((hsPkgs.pkgs-errors).buildDepError "cgi"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
             ];
           buildable = true;
           };

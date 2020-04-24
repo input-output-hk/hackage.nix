@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       highlighting = false;
@@ -62,33 +23,33 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."xhtml" or (buildDepError "xhtml"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."xhtml" or ((hsPkgs.pkgs-errors).buildDepError "xhtml"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."zip-archive" or ((hsPkgs.pkgs-errors).buildDepError "zip-archive"))
+          (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+          (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
           ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
           then [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
             ]
           else [
-            (hsPkgs."base" or (buildDepError "base"))
-            ])) ++ (pkgs.lib).optional (flags.highlighting) (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))) ++ (pkgs.lib).optional (flags.citeproc) (hsPkgs."citeproc-hs" or (buildDepError "citeproc-hs"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ])) ++ (pkgs.lib).optional (flags.highlighting) (hsPkgs."highlighting-kate" or ((hsPkgs.pkgs-errors).buildDepError "highlighting-kate"))) ++ (pkgs.lib).optional (flags.citeproc) (hsPkgs."citeproc-hs" or ((hsPkgs.pkgs-errors).buildDepError "citeproc-hs"));
         buildable = if flags.library then true else false;
         };
       exes = {
         "pandoc" = {
-          depends = (pkgs.lib).optional (flags.citeproc) (hsPkgs."citeproc-hs" or (buildDepError "citeproc-hs"));
+          depends = (pkgs.lib).optional (flags.citeproc) (hsPkgs."citeproc-hs" or ((hsPkgs.pkgs-errors).buildDepError "citeproc-hs"));
           buildable = if flags.executable then true else false;
           };
         "hsmarkdown" = { buildable = if flags.wrappers then true else false; };

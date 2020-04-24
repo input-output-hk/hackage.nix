@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,58 +17,58 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."Glob" or (buildDepError "Glob"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."data-has" or (buildDepError "data-has"))
-          (hsPkgs."envy" or (buildDepError "envy"))
-          (hsPkgs."flow" or (buildDepError "flow"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."ip" or (buildDepError "ip"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-          (hsPkgs."rio" or (buildDepError "rio"))
-          (hsPkgs."servant-client" or (buildDepError "servant-client"))
-          (hsPkgs."servant-client-core" or (buildDepError "servant-client-core"))
-          (hsPkgs."servant-multipart" or (buildDepError "servant-multipart"))
-          (hsPkgs."servant-server" or (buildDepError "servant-server"))
-          (hsPkgs."swagger2" or (buildDepError "swagger2"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."Glob" or ((hsPkgs.pkgs-errors).buildDepError "Glob"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."data-has" or ((hsPkgs.pkgs-errors).buildDepError "data-has"))
+          (hsPkgs."envy" or ((hsPkgs.pkgs-errors).buildDepError "envy"))
+          (hsPkgs."flow" or ((hsPkgs.pkgs-errors).buildDepError "flow"))
+          (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+          (hsPkgs."ip" or ((hsPkgs.pkgs-errors).buildDepError "ip"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+          (hsPkgs."regex-compat" or ((hsPkgs.pkgs-errors).buildDepError "regex-compat"))
+          (hsPkgs."rio" or ((hsPkgs.pkgs-errors).buildDepError "rio"))
+          (hsPkgs."servant-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-client"))
+          (hsPkgs."servant-client-core" or ((hsPkgs.pkgs-errors).buildDepError "servant-client-core"))
+          (hsPkgs."servant-multipart" or ((hsPkgs.pkgs-errors).buildDepError "servant-multipart"))
+          (hsPkgs."servant-server" or ((hsPkgs.pkgs-errors).buildDepError "servant-server"))
+          (hsPkgs."swagger2" or ((hsPkgs.pkgs-errors).buildDepError "swagger2"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
           ];
         buildable = true;
         };
       tests = {
         "fission-doctest" = {
           depends = [
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."data-has" or (buildDepError "data-has"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."directory-tree" or (buildDepError "directory-tree"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."envy" or (buildDepError "envy"))
-            (hsPkgs."flow" or (buildDepError "flow"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."ip" or (buildDepError "ip"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-            (hsPkgs."rio" or (buildDepError "rio"))
-            (hsPkgs."servant-client" or (buildDepError "servant-client"))
-            (hsPkgs."servant-client-core" or (buildDepError "servant-client-core"))
-            (hsPkgs."servant-multipart" or (buildDepError "servant-multipart"))
-            (hsPkgs."servant-server" or (buildDepError "servant-server"))
-            (hsPkgs."swagger2" or (buildDepError "swagger2"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."Glob" or ((hsPkgs.pkgs-errors).buildDepError "Glob"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."data-has" or ((hsPkgs.pkgs-errors).buildDepError "data-has"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."directory-tree" or ((hsPkgs.pkgs-errors).buildDepError "directory-tree"))
+            (hsPkgs."doctest" or ((hsPkgs.pkgs-errors).buildDepError "doctest"))
+            (hsPkgs."envy" or ((hsPkgs.pkgs-errors).buildDepError "envy"))
+            (hsPkgs."flow" or ((hsPkgs.pkgs-errors).buildDepError "flow"))
+            (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+            (hsPkgs."ip" or ((hsPkgs.pkgs-errors).buildDepError "ip"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."lens-aeson" or ((hsPkgs.pkgs-errors).buildDepError "lens-aeson"))
+            (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+            (hsPkgs."regex-compat" or ((hsPkgs.pkgs-errors).buildDepError "regex-compat"))
+            (hsPkgs."rio" or ((hsPkgs.pkgs-errors).buildDepError "rio"))
+            (hsPkgs."servant-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-client"))
+            (hsPkgs."servant-client-core" or ((hsPkgs.pkgs-errors).buildDepError "servant-client-core"))
+            (hsPkgs."servant-multipart" or ((hsPkgs.pkgs-errors).buildDepError "servant-multipart"))
+            (hsPkgs."servant-server" or ((hsPkgs.pkgs-errors).buildDepError "servant-server"))
+            (hsPkgs."swagger2" or ((hsPkgs.pkgs-errors).buildDepError "swagger2"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."yaml" or ((hsPkgs.pkgs-errors).buildDepError "yaml"))
             ];
           buildable = true;
           };

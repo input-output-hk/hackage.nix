@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,120 +17,120 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-          (hsPkgs."relude" or (buildDepError "relude"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."atom-conduit" or (buildDepError "atom-conduit"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."dhall" or (buildDepError "dhall"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."microlens" or (buildDepError "microlens"))
-          (hsPkgs."monad-time" or (buildDepError "monad-time"))
-          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-          (hsPkgs."prettyprinter-ansi-terminal" or (buildDepError "prettyprinter-ansi-terminal"))
-          (hsPkgs."refined" or (buildDepError "refined"))
-          (hsPkgs."rss-conduit" or (buildDepError "rss-conduit"))
-          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."timerep" or (buildDepError "timerep"))
-          (hsPkgs."tls" or (buildDepError "tls"))
-          (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
-          (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
-          (hsPkgs."xml-types" or (buildDepError "xml-types"))
+          (hsPkgs."base-noprelude" or ((hsPkgs.pkgs-errors).buildDepError "base-noprelude"))
+          (hsPkgs."relude" or ((hsPkgs.pkgs-errors).buildDepError "relude"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."atom-conduit" or ((hsPkgs.pkgs-errors).buildDepError "atom-conduit"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."dhall" or ((hsPkgs.pkgs-errors).buildDepError "dhall"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."microlens" or ((hsPkgs.pkgs-errors).buildDepError "microlens"))
+          (hsPkgs."monad-time" or ((hsPkgs.pkgs-errors).buildDepError "monad-time"))
+          (hsPkgs."prettyprinter" or ((hsPkgs.pkgs-errors).buildDepError "prettyprinter"))
+          (hsPkgs."prettyprinter-ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "prettyprinter-ansi-terminal"))
+          (hsPkgs."refined" or ((hsPkgs.pkgs-errors).buildDepError "refined"))
+          (hsPkgs."rss-conduit" or ((hsPkgs.pkgs-errors).buildDepError "rss-conduit"))
+          (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."timerep" or ((hsPkgs.pkgs-errors).buildDepError "timerep"))
+          (hsPkgs."tls" or ((hsPkgs.pkgs-errors).buildDepError "tls"))
+          (hsPkgs."uri-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "uri-bytestring"))
+          (hsPkgs."xml-conduit" or ((hsPkgs.pkgs-errors).buildDepError "xml-conduit"))
+          (hsPkgs."xml-types" or ((hsPkgs.pkgs-errors).buildDepError "xml-types"))
           ];
         buildable = true;
         };
       exes = {
         "imm" = {
           depends = [
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."relude" or (buildDepError "relude"))
-            (hsPkgs."imm" or (buildDepError "imm"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."atom-conduit" or (buildDepError "atom-conduit"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."connection" or (buildDepError "connection"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."dhall" or (buildDepError "dhall"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."opml-conduit" or (buildDepError "opml-conduit"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."prettyprinter-ansi-terminal" or (buildDepError "prettyprinter-ansi-terminal"))
-            (hsPkgs."refined" or (buildDepError "refined"))
-            (hsPkgs."rss-conduit" or (buildDepError "rss-conduit"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-            (hsPkgs."streaming-bytestring" or (buildDepError "streaming-bytestring"))
-            (hsPkgs."streaming-with" or (buildDepError "streaming-with"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."typed-process" or (buildDepError "typed-process"))
-            (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
-            (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
-            (hsPkgs."xml-types" or (buildDepError "xml-types"))
+            (hsPkgs."base-noprelude" or ((hsPkgs.pkgs-errors).buildDepError "base-noprelude"))
+            (hsPkgs."relude" or ((hsPkgs.pkgs-errors).buildDepError "relude"))
+            (hsPkgs."imm" or ((hsPkgs.pkgs-errors).buildDepError "imm"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."atom-conduit" or ((hsPkgs.pkgs-errors).buildDepError "atom-conduit"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or ((hsPkgs.pkgs-errors).buildDepError "case-insensitive"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."connection" or ((hsPkgs.pkgs-errors).buildDepError "connection"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."dhall" or ((hsPkgs.pkgs-errors).buildDepError "dhall"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."fast-logger" or ((hsPkgs.pkgs-errors).buildDepError "fast-logger"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or ((hsPkgs.pkgs-errors).buildDepError "http-client-tls"))
+            (hsPkgs."opml-conduit" or ((hsPkgs.pkgs-errors).buildDepError "opml-conduit"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."prettyprinter-ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "prettyprinter-ansi-terminal"))
+            (hsPkgs."refined" or ((hsPkgs.pkgs-errors).buildDepError "refined"))
+            (hsPkgs."rss-conduit" or ((hsPkgs.pkgs-errors).buildDepError "rss-conduit"))
+            (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."stm-chans" or ((hsPkgs.pkgs-errors).buildDepError "stm-chans"))
+            (hsPkgs."streaming-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "streaming-bytestring"))
+            (hsPkgs."streaming-with" or ((hsPkgs.pkgs-errors).buildDepError "streaming-with"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."typed-process" or ((hsPkgs.pkgs-errors).buildDepError "typed-process"))
+            (hsPkgs."uri-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "uri-bytestring"))
+            (hsPkgs."xml-conduit" or ((hsPkgs.pkgs-errors).buildDepError "xml-conduit"))
+            (hsPkgs."xml-types" or ((hsPkgs.pkgs-errors).buildDepError "xml-types"))
             ];
           buildable = true;
           };
         "imm-writefile" = {
           depends = [
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."relude" or (buildDepError "relude"))
-            (hsPkgs."imm" or (buildDepError "imm"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."atom-conduit" or (buildDepError "atom-conduit"))
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-            (hsPkgs."rss-conduit" or (buildDepError "rss-conduit"))
-            (hsPkgs."streaming-bytestring" or (buildDepError "streaming-bytestring"))
-            (hsPkgs."streaming-with" or (buildDepError "streaming-with"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
+            (hsPkgs."base-noprelude" or ((hsPkgs.pkgs-errors).buildDepError "base-noprelude"))
+            (hsPkgs."relude" or ((hsPkgs.pkgs-errors).buildDepError "relude"))
+            (hsPkgs."imm" or ((hsPkgs.pkgs-errors).buildDepError "imm"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."atom-conduit" or ((hsPkgs.pkgs-errors).buildDepError "atom-conduit"))
+            (hsPkgs."blaze-html" or ((hsPkgs.pkgs-errors).buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or ((hsPkgs.pkgs-errors).buildDepError "blaze-markup"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."prettyprinter" or ((hsPkgs.pkgs-errors).buildDepError "prettyprinter"))
+            (hsPkgs."rss-conduit" or ((hsPkgs.pkgs-errors).buildDepError "rss-conduit"))
+            (hsPkgs."streaming-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "streaming-bytestring"))
+            (hsPkgs."streaming-with" or ((hsPkgs.pkgs-errors).buildDepError "streaming-with"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."uri-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "uri-bytestring"))
             ];
           buildable = true;
           };
         "imm-sendmail" = {
           depends = [
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."relude" or (buildDepError "relude"))
-            (hsPkgs."imm" or (buildDepError "imm"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."atom-conduit" or (buildDepError "atom-conduit"))
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."HaskellNet" or (buildDepError "HaskellNet"))
-            (hsPkgs."HaskellNet-SSL" or (buildDepError "HaskellNet-SSL"))
-            (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-            (hsPkgs."refined" or (buildDepError "refined"))
-            (hsPkgs."rss-conduit" or (buildDepError "rss-conduit"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
+            (hsPkgs."base-noprelude" or ((hsPkgs.pkgs-errors).buildDepError "base-noprelude"))
+            (hsPkgs."relude" or ((hsPkgs.pkgs-errors).buildDepError "relude"))
+            (hsPkgs."imm" or ((hsPkgs.pkgs-errors).buildDepError "imm"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."atom-conduit" or ((hsPkgs.pkgs-errors).buildDepError "atom-conduit"))
+            (hsPkgs."blaze-html" or ((hsPkgs.pkgs-errors).buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or ((hsPkgs.pkgs-errors).buildDepError "blaze-markup"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."HaskellNet" or ((hsPkgs.pkgs-errors).buildDepError "HaskellNet"))
+            (hsPkgs."HaskellNet-SSL" or ((hsPkgs.pkgs-errors).buildDepError "HaskellNet-SSL"))
+            (hsPkgs."mime-mail" or ((hsPkgs.pkgs-errors).buildDepError "mime-mail"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."prettyprinter" or ((hsPkgs.pkgs-errors).buildDepError "prettyprinter"))
+            (hsPkgs."refined" or ((hsPkgs.pkgs-errors).buildDepError "refined"))
+            (hsPkgs."rss-conduit" or ((hsPkgs.pkgs-errors).buildDepError "rss-conduit"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."uri-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "uri-bytestring"))
             ];
           buildable = true;
           };

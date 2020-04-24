@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,41 +17,41 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."atomic-primops" or ((hsPkgs.pkgs-errors).buildDepError "atomic-primops"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
           ];
         buildable = true;
         };
       tests = {
         "kazura-queue-doctest" = {
           depends = [
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."kazura-queue" or (buildDepError "kazura-queue"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."atomic-primops" or ((hsPkgs.pkgs-errors).buildDepError "atomic-primops"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."doctest" or ((hsPkgs.pkgs-errors).buildDepError "doctest"))
+            (hsPkgs."kazura-queue" or ((hsPkgs.pkgs-errors).buildDepError "kazura-queue"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
             ];
           buildable = true;
           };
         "kazura-queue-test" = {
           depends = [
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."free" or (buildDepError "free"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
-            (hsPkgs."kazura-queue" or (buildDepError "kazura-queue"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."atomic-primops" or ((hsPkgs.pkgs-errors).buildDepError "atomic-primops"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+            (hsPkgs."free" or ((hsPkgs.pkgs-errors).buildDepError "free"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."hspec-expectations" or ((hsPkgs.pkgs-errors).buildDepError "hspec-expectations"))
+            (hsPkgs."kazura-queue" or ((hsPkgs.pkgs-errors).buildDepError "kazura-queue"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
@@ -98,12 +59,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "kazura-queue-bench" = {
           depends = [
-            (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."kazura-queue" or (buildDepError "kazura-queue"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."atomic-primops" or ((hsPkgs.pkgs-errors).buildDepError "atomic-primops"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."kazura-queue" or ((hsPkgs.pkgs-errors).buildDepError "kazura-queue"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
             ];
           buildable = true;
           };

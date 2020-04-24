@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,54 +17,54 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."charset" or (buildDepError "charset"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."contravariant" or (buildDepError "contravariant"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."parsers" or (buildDepError "parsers"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."readable" or (buildDepError "readable"))
-          (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."trifecta" or (buildDepError "trifecta"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."validation" or (buildDepError "validation"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."void" or (buildDepError "void"))
+          (hsPkgs."ansi-wl-pprint" or ((hsPkgs.pkgs-errors).buildDepError "ansi-wl-pprint"))
+          (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."charset" or ((hsPkgs.pkgs-errors).buildDepError "charset"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."contravariant" or ((hsPkgs.pkgs-errors).buildDepError "contravariant"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."parsers" or ((hsPkgs.pkgs-errors).buildDepError "parsers"))
+          (hsPkgs."profunctors" or ((hsPkgs.pkgs-errors).buildDepError "profunctors"))
+          (hsPkgs."readable" or ((hsPkgs.pkgs-errors).buildDepError "readable"))
+          (hsPkgs."semigroupoids" or ((hsPkgs.pkgs-errors).buildDepError "semigroupoids"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."trifecta" or ((hsPkgs.pkgs-errors).buildDepError "trifecta"))
+          (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+          (hsPkgs."validation" or ((hsPkgs.pkgs-errors).buildDepError "validation"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."void" or ((hsPkgs.pkgs-errors).buildDepError "void"))
           ];
         buildable = true;
         };
       tests = {
         "tasty" = {
           depends = [
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."contravariant" or (buildDepError "contravariant"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."parsers" or (buildDepError "parsers"))
-            (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."sv" or (buildDepError "sv"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."trifecta" or (buildDepError "trifecta"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."validation" or (buildDepError "validation"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."ansi-wl-pprint" or ((hsPkgs.pkgs-errors).buildDepError "ansi-wl-pprint"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."contravariant" or ((hsPkgs.pkgs-errors).buildDepError "contravariant"))
+            (hsPkgs."hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "hedgehog"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."parsers" or ((hsPkgs.pkgs-errors).buildDepError "parsers"))
+            (hsPkgs."semigroupoids" or ((hsPkgs.pkgs-errors).buildDepError "semigroupoids"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."sv" or ((hsPkgs.pkgs-errors).buildDepError "sv"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hedgehog"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."trifecta" or ((hsPkgs.pkgs-errors).buildDepError "trifecta"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."validation" or ((hsPkgs.pkgs-errors).buildDepError "validation"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,101 +17,101 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."extra" or (buildDepError "extra"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."freer-simple" or (buildDepError "freer-simple"))
-          (hsPkgs."ghcid" or (buildDepError "ghcid"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-          (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-          (hsPkgs."hpack" or (buildDepError "hpack"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."polysemy" or (buildDepError "polysemy"))
-          (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
-          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."tasty" or (buildDepError "tasty"))
-          (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
-          (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
-          (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
-          (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
-          (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."typed-process" or (buildDepError "typed-process"))
-          (hsPkgs."uniplate" or (buildDepError "uniplate"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."extra" or ((hsPkgs.pkgs-errors).buildDepError "extra"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."freer-simple" or ((hsPkgs.pkgs-errors).buildDepError "freer-simple"))
+          (hsPkgs."ghcid" or ((hsPkgs.pkgs-errors).buildDepError "ghcid"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."haskell-src-exts" or ((hsPkgs.pkgs-errors).buildDepError "haskell-src-exts"))
+          (hsPkgs."hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "hedgehog"))
+          (hsPkgs."hpack" or ((hsPkgs.pkgs-errors).buildDepError "hpack"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."lens-aeson" or ((hsPkgs.pkgs-errors).buildDepError "lens-aeson"))
+          (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+          (hsPkgs."mono-traversable" or ((hsPkgs.pkgs-errors).buildDepError "mono-traversable"))
+          (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+          (hsPkgs."polysemy" or ((hsPkgs.pkgs-errors).buildDepError "polysemy"))
+          (hsPkgs."polysemy-plugin" or ((hsPkgs.pkgs-errors).buildDepError "polysemy-plugin"))
+          (hsPkgs."prettyprinter" or ((hsPkgs.pkgs-errors).buildDepError "prettyprinter"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."profunctors" or ((hsPkgs.pkgs-errors).buildDepError "profunctors"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+          (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+          (hsPkgs."tasty-discover" or ((hsPkgs.pkgs-errors).buildDepError "tasty-discover"))
+          (hsPkgs."tasty-golden" or ((hsPkgs.pkgs-errors).buildDepError "tasty-golden"))
+          (hsPkgs."tasty-hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hedgehog"))
+          (hsPkgs."tasty-hspec" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hspec"))
+          (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."typed-process" or ((hsPkgs.pkgs-errors).buildDepError "typed-process"))
+          (hsPkgs."uniplate" or ((hsPkgs.pkgs-errors).buildDepError "uniplate"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."yaml" or ((hsPkgs.pkgs-errors).buildDepError "yaml"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.hpack or (pkgs.buildPackages.hpack or (buildToolDepError "hpack")))
-          (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover or (buildToolDepError "tasty-discover")))
+          (hsPkgs.buildPackages.hpack or (pkgs.buildPackages.hpack or ((hsPkgs.pkgs-errors).buildToolDepError "hpack")))
+          (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover or ((hsPkgs.pkgs-errors).buildToolDepError "tasty-discover")))
           ];
         buildable = true;
         };
       exes = {
         "axel" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-            (hsPkgs."axel" or (buildDepError "axel"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."freer-simple" or (buildDepError "freer-simple"))
-            (hsPkgs."ghcid" or (buildDepError "ghcid"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."hpack" or (buildDepError "hpack"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."polysemy" or (buildDepError "polysemy"))
-            (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
-            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."profunctors" or (buildDepError "profunctors"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
-            (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
-            (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
-            (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."typed-process" or (buildDepError "typed-process"))
-            (hsPkgs."uniplate" or (buildDepError "uniplate"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+            (hsPkgs."axel" or ((hsPkgs.pkgs-errors).buildDepError "axel"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."extra" or ((hsPkgs.pkgs-errors).buildDepError "extra"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."freer-simple" or ((hsPkgs.pkgs-errors).buildDepError "freer-simple"))
+            (hsPkgs."ghcid" or ((hsPkgs.pkgs-errors).buildDepError "ghcid"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."haskell-src-exts" or ((hsPkgs.pkgs-errors).buildDepError "haskell-src-exts"))
+            (hsPkgs."hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "hedgehog"))
+            (hsPkgs."hpack" or ((hsPkgs.pkgs-errors).buildDepError "hpack"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."lens-aeson" or ((hsPkgs.pkgs-errors).buildDepError "lens-aeson"))
+            (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+            (hsPkgs."mono-traversable" or ((hsPkgs.pkgs-errors).buildDepError "mono-traversable"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."polysemy" or ((hsPkgs.pkgs-errors).buildDepError "polysemy"))
+            (hsPkgs."polysemy-plugin" or ((hsPkgs.pkgs-errors).buildDepError "polysemy-plugin"))
+            (hsPkgs."prettyprinter" or ((hsPkgs.pkgs-errors).buildDepError "prettyprinter"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."profunctors" or ((hsPkgs.pkgs-errors).buildDepError "profunctors"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-discover" or ((hsPkgs.pkgs-errors).buildDepError "tasty-discover"))
+            (hsPkgs."tasty-golden" or ((hsPkgs.pkgs-errors).buildDepError "tasty-golden"))
+            (hsPkgs."tasty-hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hedgehog"))
+            (hsPkgs."tasty-hspec" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hspec"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."typed-process" or ((hsPkgs.pkgs-errors).buildDepError "typed-process"))
+            (hsPkgs."uniplate" or ((hsPkgs.pkgs-errors).buildDepError "uniplate"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."yaml" or ((hsPkgs.pkgs-errors).buildDepError "yaml"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hpack or (pkgs.buildPackages.hpack or (buildToolDepError "hpack")))
-            (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover or (buildToolDepError "tasty-discover")))
+            (hsPkgs.buildPackages.hpack or (pkgs.buildPackages.hpack or ((hsPkgs.pkgs-errors).buildToolDepError "hpack")))
+            (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover or ((hsPkgs.pkgs-errors).buildToolDepError "tasty-discover")))
             ];
           buildable = true;
           };
@@ -158,51 +119,51 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "axel-test" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-            (hsPkgs."axel" or (buildDepError "axel"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."freer-simple" or (buildDepError "freer-simple"))
-            (hsPkgs."ghcid" or (buildDepError "ghcid"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."hpack" or (buildDepError "hpack"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."polysemy" or (buildDepError "polysemy"))
-            (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
-            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."profunctors" or (buildDepError "profunctors"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
-            (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
-            (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
-            (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."typed-process" or (buildDepError "typed-process"))
-            (hsPkgs."uniplate" or (buildDepError "uniplate"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+            (hsPkgs."axel" or ((hsPkgs.pkgs-errors).buildDepError "axel"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."extra" or ((hsPkgs.pkgs-errors).buildDepError "extra"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."freer-simple" or ((hsPkgs.pkgs-errors).buildDepError "freer-simple"))
+            (hsPkgs."ghcid" or ((hsPkgs.pkgs-errors).buildDepError "ghcid"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."haskell-src-exts" or ((hsPkgs.pkgs-errors).buildDepError "haskell-src-exts"))
+            (hsPkgs."hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "hedgehog"))
+            (hsPkgs."hpack" or ((hsPkgs.pkgs-errors).buildDepError "hpack"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."lens-aeson" or ((hsPkgs.pkgs-errors).buildDepError "lens-aeson"))
+            (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+            (hsPkgs."mono-traversable" or ((hsPkgs.pkgs-errors).buildDepError "mono-traversable"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."polysemy" or ((hsPkgs.pkgs-errors).buildDepError "polysemy"))
+            (hsPkgs."polysemy-plugin" or ((hsPkgs.pkgs-errors).buildDepError "polysemy-plugin"))
+            (hsPkgs."prettyprinter" or ((hsPkgs.pkgs-errors).buildDepError "prettyprinter"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."profunctors" or ((hsPkgs.pkgs-errors).buildDepError "profunctors"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-discover" or ((hsPkgs.pkgs-errors).buildDepError "tasty-discover"))
+            (hsPkgs."tasty-golden" or ((hsPkgs.pkgs-errors).buildDepError "tasty-golden"))
+            (hsPkgs."tasty-hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hedgehog"))
+            (hsPkgs."tasty-hspec" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hspec"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."typed-process" or ((hsPkgs.pkgs-errors).buildDepError "typed-process"))
+            (hsPkgs."uniplate" or ((hsPkgs.pkgs-errors).buildDepError "uniplate"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."yaml" or ((hsPkgs.pkgs-errors).buildDepError "yaml"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hpack or (pkgs.buildPackages.hpack or (buildToolDepError "hpack")))
-            (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover or (buildToolDepError "tasty-discover")))
+            (hsPkgs.buildPackages.hpack or (pkgs.buildPackages.hpack or ((hsPkgs.pkgs-errors).buildToolDepError "hpack")))
+            (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover or ((hsPkgs.pkgs-errors).buildToolDepError "tasty-discover")))
             ];
           buildable = true;
           };

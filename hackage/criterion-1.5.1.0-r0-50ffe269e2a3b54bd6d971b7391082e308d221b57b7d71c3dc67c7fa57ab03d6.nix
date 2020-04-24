@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { fast = false; embed-data-files = false; };
     package = {
@@ -56,95 +17,95 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base-compat-batteries" or (buildDepError "base-compat-batteries"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cassava" or (buildDepError "cassava"))
-          (hsPkgs."code-page" or (buildDepError "code-page"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."criterion-measurement" or (buildDepError "criterion-measurement"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."fail" or (buildDepError "fail"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."Glob" or (buildDepError "Glob"))
-          (hsPkgs."microstache" or (buildDepError "microstache"))
-          (hsPkgs."js-flot" or (buildDepError "js-flot"))
-          (hsPkgs."js-jquery" or (buildDepError "js-jquery"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."statistics" or (buildDepError "statistics"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (pkgs.lib).optionals (flags.embed-data-files) [
-          (hsPkgs."file-embed" or (buildDepError "file-embed"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."ansi-wl-pprint" or ((hsPkgs.pkgs-errors).buildDepError "ansi-wl-pprint"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base-compat-batteries" or ((hsPkgs.pkgs-errors).buildDepError "base-compat-batteries"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."cassava" or ((hsPkgs.pkgs-errors).buildDepError "cassava"))
+          (hsPkgs."code-page" or ((hsPkgs.pkgs-errors).buildDepError "code-page"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."criterion-measurement" or ((hsPkgs.pkgs-errors).buildDepError "criterion-measurement"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+          (hsPkgs."fail" or ((hsPkgs.pkgs-errors).buildDepError "fail"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."Glob" or ((hsPkgs.pkgs-errors).buildDepError "Glob"))
+          (hsPkgs."microstache" or ((hsPkgs.pkgs-errors).buildDepError "microstache"))
+          (hsPkgs."js-flot" or ((hsPkgs.pkgs-errors).buildDepError "js-flot"))
+          (hsPkgs."js-jquery" or ((hsPkgs.pkgs-errors).buildDepError "js-jquery"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."mwc-random" or ((hsPkgs.pkgs-errors).buildDepError "mwc-random"))
+          (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."statistics" or ((hsPkgs.pkgs-errors).buildDepError "statistics"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."transformers-compat" or ((hsPkgs.pkgs-errors).buildDepError "transformers-compat"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."vector-algorithms" or ((hsPkgs.pkgs-errors).buildDepError "vector-algorithms"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))) ++ (pkgs.lib).optionals (flags.embed-data-files) [
+          (hsPkgs."file-embed" or ((hsPkgs.pkgs-errors).buildDepError "file-embed"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
           ];
         buildable = true;
         };
       exes = {
         "criterion-report" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat-batteries" or (buildDepError "base-compat-batteries"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base-compat-batteries" or ((hsPkgs.pkgs-errors).buildDepError "base-compat-batteries"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"));
           buildable = true;
           };
         };
       tests = {
         "sanity" = {
           depends = [
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
             ];
           buildable = true;
           };
         "tests" = {
           depends = [
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat-batteries" or (buildDepError "base-compat-batteries"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."statistics" or (buildDepError "statistics"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base-compat-batteries" or ((hsPkgs.pkgs-errors).buildDepError "base-compat-batteries"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."statistics" or ((hsPkgs.pkgs-errors).buildDepError "statistics"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
             ];
           buildable = true;
           };
         "cleanup" = {
           depends = [
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base-compat" or ((hsPkgs.pkgs-errors).buildDepError "base-compat"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
             ];
           buildable = true;
           };

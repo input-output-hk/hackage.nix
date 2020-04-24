@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
@@ -57,49 +18,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "snus" = {
           depends = [
-            (hsPkgs."haskell98" or (buildDepError "haskell98"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."iconv" or (buildDepError "iconv"))
-            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
-            (hsPkgs."convertible" or (buildDepError "convertible"))
-            (hsPkgs."LibZip" or (buildDepError "LibZip"))
-            (hsPkgs."xml" or (buildDepError "xml"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
+            (hsPkgs."haskell98" or ((hsPkgs.pkgs-errors).buildDepError "haskell98"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."iconv" or ((hsPkgs.pkgs-errors).buildDepError "iconv"))
+            (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+            (hsPkgs."HDBC" or ((hsPkgs.pkgs-errors).buildDepError "HDBC"))
+            (hsPkgs."HDBC-sqlite3" or ((hsPkgs.pkgs-errors).buildDepError "HDBC-sqlite3"))
+            (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+            (hsPkgs."LibZip" or ((hsPkgs.pkgs-errors).buildDepError "LibZip"))
+            (hsPkgs."xml" or ((hsPkgs.pkgs-errors).buildDepError "xml"))
+            (hsPkgs."hslogger" or ((hsPkgs.pkgs-errors).buildDepError "hslogger"))
             ];
-          libs = [ (pkgs."zip" or (sysDepError "zip")) ];
+          libs = [ (pkgs."zip" or ((hsPkgs.pkgs-errors).sysDepError "zip")) ];
           build-tools = [
-            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
+            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or ((hsPkgs.pkgs-errors).buildToolDepError "cpphs")))
             ];
           buildable = true;
           };
         "mumrik" = {
           depends = [
-            (hsPkgs."haskell98" or (buildDepError "haskell98"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."iconv" or (buildDepError "iconv"))
-            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
-            (hsPkgs."convertible" or (buildDepError "convertible"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."LibZip" or (buildDepError "LibZip"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."HFuse" or (buildDepError "HFuse"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
+            (hsPkgs."haskell98" or ((hsPkgs.pkgs-errors).buildDepError "haskell98"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."iconv" or ((hsPkgs.pkgs-errors).buildDepError "iconv"))
+            (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+            (hsPkgs."HDBC" or ((hsPkgs.pkgs-errors).buildDepError "HDBC"))
+            (hsPkgs."HDBC-sqlite3" or ((hsPkgs.pkgs-errors).buildDepError "HDBC-sqlite3"))
+            (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."LibZip" or ((hsPkgs.pkgs-errors).buildDepError "LibZip"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."HFuse" or ((hsPkgs.pkgs-errors).buildDepError "HFuse"))
+            (hsPkgs."hslogger" or ((hsPkgs.pkgs-errors).buildDepError "hslogger"))
             ];
-          libs = [ (pkgs."zip" or (sysDepError "zip")) ];
+          libs = [ (pkgs."zip" or ((hsPkgs.pkgs-errors).sysDepError "zip")) ];
           build-tools = [
-            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
+            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or ((hsPkgs.pkgs-errors).buildToolDepError "cpphs")))
             ];
           buildable = true;
           };

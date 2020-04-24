@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       use-template-haskell = true;
@@ -61,70 +22,72 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."bimap" or (buildDepError "bimap"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."constraints" or (buildDepError "constraints"))
-          (hsPkgs."contravariant" or (buildDepError "contravariant"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-          (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-          (hsPkgs."dependent-sum-template" or (buildDepError "dependent-sum-template"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exception-transformers" or (buildDepError "exception-transformers"))
-          (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom"))
-          (hsPkgs."jsaddle" or (buildDepError "jsaddle"))
-          (hsPkgs."keycode" or (buildDepError "keycode"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-          (hsPkgs."reflex" or (buildDepError "reflex"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."these" or (buildDepError "these"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."zenc" or (buildDepError "zenc"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+          (hsPkgs."bimap" or ((hsPkgs.pkgs-errors).buildDepError "bimap"))
+          (hsPkgs."blaze-builder" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."constraints" or ((hsPkgs.pkgs-errors).buildDepError "constraints"))
+          (hsPkgs."contravariant" or ((hsPkgs.pkgs-errors).buildDepError "contravariant"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."dependent-map" or ((hsPkgs.pkgs-errors).buildDepError "dependent-map"))
+          (hsPkgs."dependent-sum" or ((hsPkgs.pkgs-errors).buildDepError "dependent-sum"))
+          (hsPkgs."dependent-sum-template" or ((hsPkgs.pkgs-errors).buildDepError "dependent-sum-template"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."exception-transformers" or ((hsPkgs.pkgs-errors).buildDepError "exception-transformers"))
+          (hsPkgs."ghcjs-dom" or ((hsPkgs.pkgs-errors).buildDepError "ghcjs-dom"))
+          (hsPkgs."jsaddle" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle"))
+          (hsPkgs."keycode" or ((hsPkgs.pkgs-errors).buildDepError "keycode"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+          (hsPkgs."ref-tf" or ((hsPkgs.pkgs-errors).buildDepError "ref-tf"))
+          (hsPkgs."reflex" or ((hsPkgs.pkgs-errors).buildDepError "reflex"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."these" or ((hsPkgs.pkgs-errors).buildDepError "these"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."network-uri" or ((hsPkgs.pkgs-errors).buildDepError "network-uri"))
+          (hsPkgs."zenc" or ((hsPkgs.pkgs-errors).buildDepError "zenc"))
           ] ++ (if compiler.isGhcjs && true
           then [
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."ghcjs-base" or ((hsPkgs.pkgs-errors).buildDepError "ghcjs-base"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
             ]
-          else (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix")))) ++ (if flags.use-template-haskell
+          else (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix")))) ++ (if flags.use-template-haskell
           then [
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."dependent-sum-template" or (buildDepError "dependent-sum-template"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."dependent-sum" or ((hsPkgs.pkgs-errors).buildDepError "dependent-sum"))
+            (hsPkgs."dependent-sum-template" or ((hsPkgs.pkgs-errors).buildDepError "dependent-sum-template"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
             ]
-          else [ (hsPkgs."dependent-sum" or (buildDepError "dependent-sum")) ]);
+          else [
+            (hsPkgs."dependent-sum" or ((hsPkgs.pkgs-errors).buildDepError "dependent-sum"))
+            ]);
         buildable = true;
         };
       tests = {
         "hlint" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hlint" or (buildDepError "hlint"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hlint" or ((hsPkgs.pkgs-errors).buildDepError "hlint"))
             ];
           buildable = true;
           };
         "gc" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
-            (hsPkgs."reflex-dom-core" or (buildDepError "reflex-dom-core"))
-            (hsPkgs."jsaddle" or (buildDepError "jsaddle"))
-            (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
-            (hsPkgs."linux-namespaces" or (buildDepError "linux-namespaces"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."reflex" or ((hsPkgs.pkgs-errors).buildDepError "reflex"))
+            (hsPkgs."reflex-dom-core" or ((hsPkgs.pkgs-errors).buildDepError "reflex-dom-core"))
+            (hsPkgs."jsaddle" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle"))
+            (hsPkgs."jsaddle-warp" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle-warp"))
+            (hsPkgs."linux-namespaces" or ((hsPkgs.pkgs-errors).buildDepError "linux-namespaces"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
             ];
           buildable = if !system.isLinux || !system.isX86_64
             then false

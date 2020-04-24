@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { onlytestsuite = false; profiling = false; coverage = false; };
     package = {
@@ -56,91 +17,91 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."indentation" or (buildDepError "indentation"))
-          (hsPkgs."pretty-compact" or (buildDepError "pretty-compact"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."lambdacube-ir" or (buildDepError "lambdacube-ir"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."indentation" or ((hsPkgs.pkgs-errors).buildDepError "indentation"))
+          (hsPkgs."pretty-compact" or ((hsPkgs.pkgs-errors).buildDepError "pretty-compact"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."lambdacube-ir" or ((hsPkgs.pkgs-errors).buildDepError "lambdacube-ir"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
           ];
         buildable = true;
         };
       exes = {
         "lambdacube-compiler-unit-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."lambdacube-compiler" or (buildDepError "lambdacube-compiler"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."lambdacube-compiler" or ((hsPkgs.pkgs-errors).buildDepError "lambdacube-compiler"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
             ];
           buildable = if flags.onlytestsuite then false else true;
           };
         "lambdacube-compiler-test-suite" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."lambdacube-compiler" or (buildDepError "lambdacube-compiler"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."indentation" or (buildDepError "indentation"))
-            (hsPkgs."pretty-compact" or (buildDepError "pretty-compact"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."lambdacube-ir" or (buildDepError "lambdacube-ir"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."lambdacube-compiler" or ((hsPkgs.pkgs-errors).buildDepError "lambdacube-compiler"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."indentation" or ((hsPkgs.pkgs-errors).buildDepError "indentation"))
+            (hsPkgs."pretty-compact" or ((hsPkgs.pkgs-errors).buildDepError "pretty-compact"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."lambdacube-ir" or ((hsPkgs.pkgs-errors).buildDepError "lambdacube-ir"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "lc" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."lambdacube-compiler" or (buildDepError "lambdacube-compiler"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."lambdacube-compiler" or ((hsPkgs.pkgs-errors).buildDepError "lambdacube-compiler"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
             ];
           buildable = if flags.onlytestsuite then false else true;
           };
         "lambdacube-compiler-coverage-test-suite" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."lambdacube-ir" or (buildDepError "lambdacube-ir"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."indentation" or (buildDepError "indentation"))
-            (hsPkgs."pretty-compact" or (buildDepError "pretty-compact"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."lambdacube-ir" or ((hsPkgs.pkgs-errors).buildDepError "lambdacube-ir"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."indentation" or ((hsPkgs.pkgs-errors).buildDepError "indentation"))
+            (hsPkgs."pretty-compact" or ((hsPkgs.pkgs-errors).buildDepError "pretty-compact"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = if flags.coverage then true else false;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { roundtrip = false; };
     package = {
@@ -56,15 +17,15 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."ghc" or (buildDepError "ghc"))
-          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."free" or (buildDepError "free"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."ghc" or ((hsPkgs.pkgs-errors).buildDepError "ghc"))
+          (hsPkgs."ghc-paths" or ((hsPkgs.pkgs-errors).buildDepError "ghc-paths"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+          (hsPkgs."free" or ((hsPkgs.pkgs-errors).buildDepError "free"))
           ];
         buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
           then false
@@ -73,17 +34,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "roundtrip" = {
           depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.10.2" && flags.roundtrip) [
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filemanip" or (buildDepError "filemanip"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ghc-exactprint" or (buildDepError "ghc-exactprint"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filemanip" or ((hsPkgs.pkgs-errors).buildDepError "filemanip"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."ghc" or ((hsPkgs.pkgs-errors).buildDepError "ghc"))
+            (hsPkgs."ghc-exactprint" or ((hsPkgs.pkgs-errors).buildDepError "ghc-exactprint"))
+            (hsPkgs."ghc-paths" or ((hsPkgs.pkgs-errors).buildDepError "ghc-paths"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
             ];
           buildable = if compiler.isGhc && (compiler.version).ge "7.10.2" && flags.roundtrip
             then true
@@ -91,10 +52,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "static" = {
           depends = (pkgs.lib).optionals (flags.roundtrip) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."Diff" or (buildDepError "Diff"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."Diff" or ((hsPkgs.pkgs-errors).buildDepError "Diff"))
             ];
           buildable = if flags.roundtrip then true else false;
           };
@@ -102,19 +63,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ghc-exactprint" or (buildDepError "ghc-exactprint"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."silently" or (buildDepError "silently"))
-            (hsPkgs."filemanip" or (buildDepError "filemanip"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."ghc" or ((hsPkgs.pkgs-errors).buildDepError "ghc"))
+            (hsPkgs."ghc-exactprint" or ((hsPkgs.pkgs-errors).buildDepError "ghc-exactprint"))
+            (hsPkgs."ghc-paths" or ((hsPkgs.pkgs-errors).buildDepError "ghc-paths"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."silently" or ((hsPkgs.pkgs-errors).buildDepError "silently"))
+            (hsPkgs."filemanip" or ((hsPkgs.pkgs-errors).buildDepError "filemanip"))
             ];
           buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
             then false

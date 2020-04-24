@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,48 +17,48 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."haskoin-core" or (buildDepError "haskoin-core"))
-          (hsPkgs."hspec" or (buildDepError "hspec"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."nqe" or (buildDepError "nqe"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."rocksdb-haskell" or (buildDepError "rocksdb-haskell"))
-          (hsPkgs."rocksdb-query" or (buildDepError "rocksdb-query"))
-          (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."unique" or (buildDepError "unique"))
-          (hsPkgs."unliftio" or (buildDepError "unliftio"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+          (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or ((hsPkgs.pkgs-errors).buildDepError "conduit-extra"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."haskoin-core" or ((hsPkgs.pkgs-errors).buildDepError "haskoin-core"))
+          (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+          (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+          (hsPkgs."nqe" or ((hsPkgs.pkgs-errors).buildDepError "nqe"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+          (hsPkgs."rocksdb-haskell" or ((hsPkgs.pkgs-errors).buildDepError "rocksdb-haskell"))
+          (hsPkgs."rocksdb-query" or ((hsPkgs.pkgs-errors).buildDepError "rocksdb-query"))
+          (hsPkgs."string-conversions" or ((hsPkgs.pkgs-errors).buildDepError "string-conversions"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."unique" or ((hsPkgs.pkgs-errors).buildDepError "unique"))
+          (hsPkgs."unliftio" or ((hsPkgs.pkgs-errors).buildDepError "unliftio"))
           ];
         buildable = true;
         };
       tests = {
         "haskoin-node-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."haskoin-core" or (buildDepError "haskoin-core"))
-            (hsPkgs."haskoin-node" or (buildDepError "haskoin-node"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."nqe" or (buildDepError "nqe"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."rocksdb-haskell" or (buildDepError "rocksdb-haskell"))
-            (hsPkgs."rocksdb-query" or (buildDepError "rocksdb-query"))
-            (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
-            (hsPkgs."unliftio" or (buildDepError "unliftio"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+            (hsPkgs."haskoin-core" or ((hsPkgs.pkgs-errors).buildDepError "haskoin-core"))
+            (hsPkgs."haskoin-node" or ((hsPkgs.pkgs-errors).buildDepError "haskoin-node"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."nqe" or ((hsPkgs.pkgs-errors).buildDepError "nqe"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."rocksdb-haskell" or ((hsPkgs.pkgs-errors).buildDepError "rocksdb-haskell"))
+            (hsPkgs."rocksdb-query" or ((hsPkgs.pkgs-errors).buildDepError "rocksdb-query"))
+            (hsPkgs."string-conversions" or ((hsPkgs.pkgs-errors).buildDepError "string-conversions"))
+            (hsPkgs."unliftio" or ((hsPkgs.pkgs-errors).buildDepError "unliftio"))
             ];
           buildable = true;
           };

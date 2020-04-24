@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { oldtime = false; terminfo = true; threaded = true; };
     package = {
@@ -56,172 +17,180 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ((([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base-compat" or (buildDepError "base-compat"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."file-embed" or (buildDepError "file-embed"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."temporary" or (buildDepError "temporary"))
-          (hsPkgs."tabular" or (buildDepError "tabular"))
-          (hsPkgs."hledger-lib" or (buildDepError "hledger-lib"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."csv" or (buildDepError "csv"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."haskeline" or (buildDepError "haskeline"))
-          (hsPkgs."HUnit" or (buildDepError "HUnit"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
-          (hsPkgs."old-time" or (buildDepError "old-time"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."wizards" or (buildDepError "wizards"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (if compiler.isGhc && (compiler.version).ge "7.10"
-          then [ (hsPkgs."shakespeare" or (buildDepError "shakespeare")) ]
-          else [
-            (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-            (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
-            ])) ++ (if flags.oldtime
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base-compat" or ((hsPkgs.pkgs-errors).buildDepError "base-compat"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."file-embed" or ((hsPkgs.pkgs-errors).buildDepError "file-embed"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."pretty-show" or ((hsPkgs.pkgs-errors).buildDepError "pretty-show"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+          (hsPkgs."tabular" or ((hsPkgs.pkgs-errors).buildDepError "tabular"))
+          (hsPkgs."hledger-lib" or ((hsPkgs.pkgs-errors).buildDepError "hledger-lib"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+          (hsPkgs."csv" or ((hsPkgs.pkgs-errors).buildDepError "csv"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."haskeline" or ((hsPkgs.pkgs-errors).buildDepError "haskeline"))
+          (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."mtl-compat" or ((hsPkgs.pkgs-errors).buildDepError "mtl-compat"))
+          (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+          (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+          (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+          (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+          (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+          (hsPkgs."wizards" or ((hsPkgs.pkgs-errors).buildDepError "wizards"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))) ++ (if compiler.isGhc && (compiler.version).ge "7.10"
           then [
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."shakespeare" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare"))
             ]
           else [
-            (hsPkgs."time" or (buildDepError "time"))
-            ])) ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (buildDepError "terminfo"));
+            (hsPkgs."shakespeare" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare"))
+            (hsPkgs."shakespeare-text" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare-text"))
+            ])) ++ (if flags.oldtime
+          then [
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            ]
+          else [
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            ])) ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or ((hsPkgs.pkgs-errors).buildDepError "terminfo"));
         buildable = true;
         };
       exes = {
         "hledger" = {
           depends = ((([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."file-embed" or (buildDepError "file-embed"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."tabular" or (buildDepError "tabular"))
-            (hsPkgs."hledger-lib" or (buildDepError "hledger-lib"))
-            (hsPkgs."hledger" or (buildDepError "hledger"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."csv" or (buildDepError "csv"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."haskeline" or (buildDepError "haskeline"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."wizards" or (buildDepError "wizards"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (if compiler.isGhc && (compiler.version).ge "7.10"
-            then [ (hsPkgs."shakespeare" or (buildDepError "shakespeare")) ]
-            else [
-              (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-              (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
-              ])) ++ (if flags.oldtime
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base-compat" or ((hsPkgs.pkgs-errors).buildDepError "base-compat"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."file-embed" or ((hsPkgs.pkgs-errors).buildDepError "file-embed"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."pretty-show" or ((hsPkgs.pkgs-errors).buildDepError "pretty-show"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+            (hsPkgs."tabular" or ((hsPkgs.pkgs-errors).buildDepError "tabular"))
+            (hsPkgs."hledger-lib" or ((hsPkgs.pkgs-errors).buildDepError "hledger-lib"))
+            (hsPkgs."hledger" or ((hsPkgs.pkgs-errors).buildDepError "hledger"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+            (hsPkgs."csv" or ((hsPkgs.pkgs-errors).buildDepError "csv"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."haskeline" or ((hsPkgs.pkgs-errors).buildDepError "haskeline"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."mtl-compat" or ((hsPkgs.pkgs-errors).buildDepError "mtl-compat"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+            (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."wizards" or ((hsPkgs.pkgs-errors).buildDepError "wizards"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))) ++ (if compiler.isGhc && (compiler.version).ge "7.10"
             then [
-              (hsPkgs."time" or (buildDepError "time"))
-              (hsPkgs."old-locale" or (buildDepError "old-locale"))
+              (hsPkgs."shakespeare" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare"))
               ]
             else [
-              (hsPkgs."time" or (buildDepError "time"))
-              ])) ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (buildDepError "terminfo"));
+              (hsPkgs."shakespeare" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare"))
+              (hsPkgs."shakespeare-text" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare-text"))
+              ])) ++ (if flags.oldtime
+            then [
+              (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+              (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+              ]
+            else [
+              (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+              ])) ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or ((hsPkgs.pkgs-errors).buildDepError "terminfo"));
           buildable = true;
           };
         };
       tests = {
         "test" = {
           depends = ((([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."file-embed" or (buildDepError "file-embed"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."tabular" or (buildDepError "tabular"))
-            (hsPkgs."hledger-lib" or (buildDepError "hledger-lib"))
-            (hsPkgs."hledger" or (buildDepError "hledger"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."csv" or (buildDepError "csv"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."haskeline" or (buildDepError "haskeline"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."wizards" or (buildDepError "wizards"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (if compiler.isGhc && (compiler.version).ge "7.10"
-            then [ (hsPkgs."shakespeare" or (buildDepError "shakespeare")) ]
-            else [
-              (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-              (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
-              ])) ++ (if flags.oldtime
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base-compat" or ((hsPkgs.pkgs-errors).buildDepError "base-compat"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."file-embed" or ((hsPkgs.pkgs-errors).buildDepError "file-embed"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."pretty-show" or ((hsPkgs.pkgs-errors).buildDepError "pretty-show"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+            (hsPkgs."tabular" or ((hsPkgs.pkgs-errors).buildDepError "tabular"))
+            (hsPkgs."hledger-lib" or ((hsPkgs.pkgs-errors).buildDepError "hledger-lib"))
+            (hsPkgs."hledger" or ((hsPkgs.pkgs-errors).buildDepError "hledger"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+            (hsPkgs."csv" or ((hsPkgs.pkgs-errors).buildDepError "csv"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."haskeline" or ((hsPkgs.pkgs-errors).buildDepError "haskeline"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."mtl-compat" or ((hsPkgs.pkgs-errors).buildDepError "mtl-compat"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+            (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."wizards" or ((hsPkgs.pkgs-errors).buildDepError "wizards"))
+            (hsPkgs."test-framework" or ((hsPkgs.pkgs-errors).buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-hunit"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))) ++ (if compiler.isGhc && (compiler.version).ge "7.10"
             then [
-              (hsPkgs."time" or (buildDepError "time"))
-              (hsPkgs."old-locale" or (buildDepError "old-locale"))
+              (hsPkgs."shakespeare" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare"))
               ]
             else [
-              (hsPkgs."time" or (buildDepError "time"))
-              ])) ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (buildDepError "terminfo"));
+              (hsPkgs."shakespeare" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare"))
+              (hsPkgs."shakespeare-text" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare-text"))
+              ])) ++ (if flags.oldtime
+            then [
+              (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+              (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+              ]
+            else [
+              (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+              ])) ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or ((hsPkgs.pkgs-errors).buildDepError "terminfo"));
           buildable = true;
           };
         };
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."file-embed" or (buildDepError "file-embed"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."tabular" or (buildDepError "tabular"))
-            (hsPkgs."hledger-lib" or (buildDepError "hledger-lib"))
-            (hsPkgs."hledger" or (buildDepError "hledger"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."html" or (buildDepError "html"))
-            (hsPkgs."timeit" or (buildDepError "timeit"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base-compat" or ((hsPkgs.pkgs-errors).buildDepError "base-compat"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."file-embed" or ((hsPkgs.pkgs-errors).buildDepError "file-embed"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."pretty-show" or ((hsPkgs.pkgs-errors).buildDepError "pretty-show"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+            (hsPkgs."tabular" or ((hsPkgs.pkgs-errors).buildDepError "tabular"))
+            (hsPkgs."hledger-lib" or ((hsPkgs.pkgs-errors).buildDepError "hledger-lib"))
+            (hsPkgs."hledger" or ((hsPkgs.pkgs-errors).buildDepError "hledger"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."html" or ((hsPkgs.pkgs-errors).buildDepError "html"))
+            (hsPkgs."timeit" or ((hsPkgs.pkgs-errors).buildDepError "timeit"))
             ] ++ (if flags.oldtime
             then [
-              (hsPkgs."time" or (buildDepError "time"))
-              (hsPkgs."old-locale" or (buildDepError "old-locale"))
+              (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+              (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
               ]
-            else [ (hsPkgs."time" or (buildDepError "time")) ]);
+            else [
+              (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+              ]);
           buildable = true;
           };
         };

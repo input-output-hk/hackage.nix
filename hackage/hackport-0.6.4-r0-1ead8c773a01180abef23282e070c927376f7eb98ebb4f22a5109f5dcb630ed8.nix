@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -57,45 +18,45 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "hackport" = {
           depends = [
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."MissingH" or (buildDepError "MissingH"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."tar" or (buildDepError "tar"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."zlib" or (buildDepError "zlib"))
-            (hsPkgs."xml" or (buildDepError "xml"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
-            (hsPkgs."ed25519" or (buildDepError "ed25519"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."extensible-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "extensible-exceptions"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."MissingH" or ((hsPkgs.pkgs-errors).buildDepError "MissingH"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."network-uri" or ((hsPkgs.pkgs-errors).buildDepError "network-uri"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."regex-compat" or ((hsPkgs.pkgs-errors).buildDepError "regex-compat"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."tar" or ((hsPkgs.pkgs-errors).buildDepError "tar"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."zlib" or ((hsPkgs.pkgs-errors).buildDepError "zlib"))
+            (hsPkgs."xml" or ((hsPkgs.pkgs-errors).buildDepError "xml"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+            (hsPkgs."base64-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base64-bytestring"))
+            (hsPkgs."cryptohash" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash"))
+            (hsPkgs."ed25519" or ((hsPkgs.pkgs-errors).buildDepError "ed25519"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
             ];
           buildable = true;
           };
@@ -103,71 +64,71 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test-resolve-category" = {
           depends = [
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."xml" or (buildDepError "xml"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."extensible-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "extensible-exceptions"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."xml" or ((hsPkgs.pkgs-errors).buildDepError "xml"))
             ];
           buildable = true;
           };
         "test-print-deps" = {
           depends = [
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."xml" or (buildDepError "xml"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."extensible-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "extensible-exceptions"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."xml" or ((hsPkgs.pkgs-errors).buildDepError "xml"))
             ];
           buildable = true;
           };
         "test-normalize-deps" = {
           depends = [
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."xml" or (buildDepError "xml"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."extensible-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "extensible-exceptions"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."xml" or ((hsPkgs.pkgs-errors).buildDepError "xml"))
             ];
           buildable = true;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,14 +17,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."ghc" or (buildDepError "ghc"))
-          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-          (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
-          (hsPkgs."syb" or (buildDepError "syb"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."ghc" or ((hsPkgs.pkgs-errors).buildDepError "ghc"))
+          (hsPkgs."ghc-paths" or ((hsPkgs.pkgs-errors).buildDepError "ghc-paths"))
+          (hsPkgs."ghc-syb-utils" or ((hsPkgs.pkgs-errors).buildDepError "ghc-syb-utils"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
           ];
         buildable = if compiler.isGhc && (compiler.version).lt "7.8"
           then false
@@ -72,14 +33,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "argon" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."docopt" or (buildDepError "docopt"))
-            (hsPkgs."pathwalk" or (buildDepError "pathwalk"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."argon" or (buildDepError "argon"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."pathwalk" or (buildDepError "pathwalk"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."docopt" or ((hsPkgs.pkgs-errors).buildDepError "docopt"))
+            (hsPkgs."pathwalk" or ((hsPkgs.pkgs-errors).buildDepError "pathwalk"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."argon" or ((hsPkgs.pkgs-errors).buildDepError "argon"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."pathwalk" or ((hsPkgs.pkgs-errors).buildDepError "pathwalk"));
           buildable = if compiler.isGhc && (compiler.version).lt "7.8"
             then false
             else true;
@@ -88,17 +49,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "argon-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."ghc" or ((hsPkgs.pkgs-errors).buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or ((hsPkgs.pkgs-errors).buildDepError "ghc-paths"))
+            (hsPkgs."ghc-syb-utils" or ((hsPkgs.pkgs-errors).buildDepError "ghc-syb-utils"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
             ];
           buildable = if compiler.isGhc && (compiler.version).lt "7.8"
             then false
@@ -106,8 +67,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "style" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hlint" or (buildDepError "hlint"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hlint" or ((hsPkgs.pkgs-errors).buildDepError "hlint"))
             ];
           buildable = true;
           };

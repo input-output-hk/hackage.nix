@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,35 +17,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-          (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."these" or (buildDepError "these"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-          (hsPkgs."exception-transformers" or (buildDepError "exception-transformers"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-          (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-          (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))
-          (hsPkgs."syb" or (buildDepError "syb"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."dependent-sum" or ((hsPkgs.pkgs-errors).buildDepError "dependent-sum"))
+          (hsPkgs."dependent-map" or ((hsPkgs.pkgs-errors).buildDepError "dependent-map"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."these" or ((hsPkgs.pkgs-errors).buildDepError "these"))
+          (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."ref-tf" or ((hsPkgs.pkgs-errors).buildDepError "ref-tf"))
+          (hsPkgs."exception-transformers" or ((hsPkgs.pkgs-errors).buildDepError "exception-transformers"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."transformers-compat" or ((hsPkgs.pkgs-errors).buildDepError "transformers-compat"))
+          (hsPkgs."haskell-src-exts" or ((hsPkgs.pkgs-errors).buildDepError "haskell-src-exts"))
+          (hsPkgs."haskell-src-meta" or ((hsPkgs.pkgs-errors).buildDepError "haskell-src-meta"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
           ];
         buildable = true;
         };
       tests = {
         "cross-impl" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
-            (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-            (hsPkgs."MemoTrie" or (buildDepError "MemoTrie"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."reflex" or ((hsPkgs.pkgs-errors).buildDepError "reflex"))
+            (hsPkgs."ref-tf" or ((hsPkgs.pkgs-errors).buildDepError "ref-tf"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."dependent-map" or ((hsPkgs.pkgs-errors).buildDepError "dependent-map"))
+            (hsPkgs."MemoTrie" or ((hsPkgs.pkgs-errors).buildDepError "MemoTrie"))
             ];
           buildable = true;
           };
@@ -92,16 +53,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "spider-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."dependent-sum" or ((hsPkgs.pkgs-errors).buildDepError "dependent-sum"))
+            (hsPkgs."dependent-map" or ((hsPkgs.pkgs-errors).buildDepError "dependent-map"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."reflex" or ((hsPkgs.pkgs-errors).buildDepError "reflex"))
             ];
           buildable = true;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       s3 = true;
@@ -67,102 +28,102 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "git-annex" = {
           depends = (((((((([
-            (hsPkgs."MissingH" or (buildDepError "MissingH"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."dataenc" or (buildDepError "dataenc"))
-            (hsPkgs."SHA" or (buildDepError "SHA"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."json" or (buildDepError "json"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-            (hsPkgs."IfElse" or (buildDepError "IfElse"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."bloomfilter" or (buildDepError "bloomfilter"))
-            (hsPkgs."edit-distance" or (buildDepError "edit-distance"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
-            ] ++ (pkgs.lib).optional (flags.s3) (hsPkgs."hS3" or (buildDepError "hS3"))) ++ (pkgs.lib).optionals (flags.webdav) [
-            (hsPkgs."DAV" or (buildDepError "DAV"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
-            ]) ++ (pkgs.lib).optional (flags.assistant && !system.isWindows && !system.isSolaris) (hsPkgs."stm" or (buildDepError "stm"))) ++ (pkgs.lib).optional (system.isLinux && flags.inotify) (hsPkgs."hinotify" or (buildDepError "hinotify"))) ++ (pkgs.lib).optional (system.isLinux && flags.dbus) (hsPkgs."dbus" or (buildDepError "dbus"))) ++ (pkgs.lib).optionals (flags.webapp && flags.assistant) [
-            (hsPkgs."yesod" or (buildDepError "yesod"))
-            (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
-            (hsPkgs."hamlet" or (buildDepError "hamlet"))
-            (hsPkgs."clientsession" or (buildDepError "clientsession"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."yesod-default" or (buildDepError "yesod-default"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."MissingH" or ((hsPkgs.pkgs-errors).buildDepError "MissingH"))
+            (hsPkgs."hslogger" or ((hsPkgs.pkgs-errors).buildDepError "hslogger"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."pcre-light" or ((hsPkgs.pkgs-errors).buildDepError "pcre-light"))
+            (hsPkgs."extensible-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "extensible-exceptions"))
+            (hsPkgs."dataenc" or ((hsPkgs.pkgs-errors).buildDepError "dataenc"))
+            (hsPkgs."SHA" or ((hsPkgs.pkgs-errors).buildDepError "SHA"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."json" or ((hsPkgs.pkgs-errors).buildDepError "json"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+            (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
+            (hsPkgs."IfElse" or ((hsPkgs.pkgs-errors).buildDepError "IfElse"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."bloomfilter" or ((hsPkgs.pkgs-errors).buildDepError "bloomfilter"))
+            (hsPkgs."edit-distance" or ((hsPkgs.pkgs-errors).buildDepError "edit-distance"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."SafeSemaphore" or ((hsPkgs.pkgs-errors).buildDepError "SafeSemaphore"))
+            ] ++ (pkgs.lib).optional (flags.s3) (hsPkgs."hS3" or ((hsPkgs.pkgs-errors).buildDepError "hS3"))) ++ (pkgs.lib).optionals (flags.webdav) [
+            (hsPkgs."DAV" or ((hsPkgs.pkgs-errors).buildDepError "DAV"))
+            (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+            (hsPkgs."xml-conduit" or ((hsPkgs.pkgs-errors).buildDepError "xml-conduit"))
+            ]) ++ (pkgs.lib).optional (flags.assistant && !system.isWindows && !system.isSolaris) (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))) ++ (pkgs.lib).optional (system.isLinux && flags.inotify) (hsPkgs."hinotify" or ((hsPkgs.pkgs-errors).buildDepError "hinotify"))) ++ (pkgs.lib).optional (system.isLinux && flags.dbus) (hsPkgs."dbus" or ((hsPkgs.pkgs-errors).buildDepError "dbus"))) ++ (pkgs.lib).optionals (flags.webapp && flags.assistant) [
+            (hsPkgs."yesod" or ((hsPkgs.pkgs-errors).buildDepError "yesod"))
+            (hsPkgs."yesod-static" or ((hsPkgs.pkgs-errors).buildDepError "yesod-static"))
+            (hsPkgs."case-insensitive" or ((hsPkgs.pkgs-errors).buildDepError "case-insensitive"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+            (hsPkgs."wai-logger" or ((hsPkgs.pkgs-errors).buildDepError "wai-logger"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
+            (hsPkgs."blaze-builder" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder"))
+            (hsPkgs."crypto-api" or ((hsPkgs.pkgs-errors).buildDepError "crypto-api"))
+            (hsPkgs."hamlet" or ((hsPkgs.pkgs-errors).buildDepError "hamlet"))
+            (hsPkgs."clientsession" or ((hsPkgs.pkgs-errors).buildDepError "clientsession"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."yesod-default" or ((hsPkgs.pkgs-errors).buildDepError "yesod-default"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
             ]) ++ (pkgs.lib).optionals (flags.pairing && flags.webapp) [
-            (hsPkgs."network-multicast" or (buildDepError "network-multicast"))
-            (hsPkgs."network-info" or (buildDepError "network-info"))
+            (hsPkgs."network-multicast" or ((hsPkgs.pkgs-errors).buildDepError "network-multicast"))
+            (hsPkgs."network-info" or ((hsPkgs.pkgs-errors).buildDepError "network-info"))
             ]) ++ (pkgs.lib).optionals (flags.xmpp && flags.assistant) [
-            (hsPkgs."network-protocol-xmpp" or (buildDepError "network-protocol-xmpp"))
-            (hsPkgs."gnutls" or (buildDepError "gnutls"))
-            (hsPkgs."xml-types" or (buildDepError "xml-types"))
-            ]) ++ (pkgs.lib).optional (flags.xmpp && flags.assistant && flags.dns) (hsPkgs."dns" or (buildDepError "dns"));
+            (hsPkgs."network-protocol-xmpp" or ((hsPkgs.pkgs-errors).buildDepError "network-protocol-xmpp"))
+            (hsPkgs."gnutls" or ((hsPkgs.pkgs-errors).buildDepError "gnutls"))
+            (hsPkgs."xml-types" or ((hsPkgs.pkgs-errors).buildDepError "xml-types"))
+            ]) ++ (pkgs.lib).optional (flags.xmpp && flags.assistant && flags.dns) (hsPkgs."dns" or ((hsPkgs.pkgs-errors).buildDepError "dns"));
           buildable = true;
           };
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."testpack" or (buildDepError "testpack"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."MissingH" or (buildDepError "MissingH"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."dataenc" or (buildDepError "dataenc"))
-            (hsPkgs."SHA" or (buildDepError "SHA"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."json" or (buildDepError "json"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-            (hsPkgs."IfElse" or (buildDepError "IfElse"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."bloomfilter" or (buildDepError "bloomfilter"))
-            (hsPkgs."edit-distance" or (buildDepError "edit-distance"))
-            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."testpack" or ((hsPkgs.pkgs-errors).buildDepError "testpack"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."MissingH" or ((hsPkgs.pkgs-errors).buildDepError "MissingH"))
+            (hsPkgs."hslogger" or ((hsPkgs.pkgs-errors).buildDepError "hslogger"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."pcre-light" or ((hsPkgs.pkgs-errors).buildDepError "pcre-light"))
+            (hsPkgs."extensible-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "extensible-exceptions"))
+            (hsPkgs."dataenc" or ((hsPkgs.pkgs-errors).buildDepError "dataenc"))
+            (hsPkgs."SHA" or ((hsPkgs.pkgs-errors).buildDepError "SHA"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."json" or ((hsPkgs.pkgs-errors).buildDepError "json"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+            (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
+            (hsPkgs."IfElse" or ((hsPkgs.pkgs-errors).buildDepError "IfElse"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."bloomfilter" or ((hsPkgs.pkgs-errors).buildDepError "bloomfilter"))
+            (hsPkgs."edit-distance" or ((hsPkgs.pkgs-errors).buildDepError "edit-distance"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
             ];
           buildable = true;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; base4 = true; };
     package = {
@@ -57,22 +18,24 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = (if flags.splitbase
           then [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."carray" or (buildDepError "carray"))
-            (hsPkgs."storable-complex" or (buildDepError "storable-complex"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."carray" or ((hsPkgs.pkgs-errors).buildDepError "carray"))
+            (hsPkgs."storable-complex" or ((hsPkgs.pkgs-errors).buildDepError "storable-complex"))
             ]
           else [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."carray" or (buildDepError "carray"))
-            (hsPkgs."storable-complex" or (buildDepError "storable-complex"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."carray" or ((hsPkgs.pkgs-errors).buildDepError "carray"))
+            (hsPkgs."storable-complex" or ((hsPkgs.pkgs-errors).buildDepError "storable-complex"))
             ]) ++ (if flags.base4
           then [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
             ]
-          else [ (hsPkgs."base" or (buildDepError "base")) ]);
-        libs = [ (pkgs."fftw3" or (sysDepError "fftw3")) ];
+          else [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ]);
+        libs = [ (pkgs."fftw3" or ((hsPkgs.pkgs-errors).sysDepError "fftw3")) ];
         buildable = true;
         };
       };

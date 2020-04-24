@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,35 +17,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base-orphans" or (buildDepError "base-orphans"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."nats" or (buildDepError "nats"))
-          (hsPkgs."average" or (buildDepError "average"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."comonad" or (buildDepError "comonad"))
-          (hsPkgs."contravariant" or (buildDepError "contravariant"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."distributive" or (buildDepError "distributive"))
-          (hsPkgs."adjunctions" or (buildDepError "adjunctions"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-          (hsPkgs."monadplus" or (buildDepError "monadplus"))
-          (hsPkgs."NumInstances" or (buildDepError "NumInstances"))
-          (hsPkgs."colour" or (buildDepError "colour"))
-          (hsPkgs."HCodecs" or (buildDepError "HCodecs"))
-          (hsPkgs."vector-space" or (buildDepError "vector-space"))
-          (hsPkgs."vector-space-points" or (buildDepError "vector-space-points"))
-          (hsPkgs."musicxml2" or (buildDepError "musicxml2"))
-          (hsPkgs."lilypond" or (buildDepError "lilypond"))
-          (hsPkgs."music-pitch-literal" or (buildDepError "music-pitch-literal"))
-          (hsPkgs."music-dynamics-literal" or (buildDepError "music-dynamics-literal"))
-          (hsPkgs."prettify" or (buildDepError "prettify"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base-orphans" or ((hsPkgs.pkgs-errors).buildDepError "base-orphans"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."nats" or ((hsPkgs.pkgs-errors).buildDepError "nats"))
+          (hsPkgs."average" or ((hsPkgs.pkgs-errors).buildDepError "average"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."comonad" or ((hsPkgs.pkgs-errors).buildDepError "comonad"))
+          (hsPkgs."contravariant" or ((hsPkgs.pkgs-errors).buildDepError "contravariant"))
+          (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+          (hsPkgs."distributive" or ((hsPkgs.pkgs-errors).buildDepError "distributive"))
+          (hsPkgs."adjunctions" or ((hsPkgs.pkgs-errors).buildDepError "adjunctions"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."transformers-compat" or ((hsPkgs.pkgs-errors).buildDepError "transformers-compat"))
+          (hsPkgs."monadplus" or ((hsPkgs.pkgs-errors).buildDepError "monadplus"))
+          (hsPkgs."NumInstances" or ((hsPkgs.pkgs-errors).buildDepError "NumInstances"))
+          (hsPkgs."colour" or ((hsPkgs.pkgs-errors).buildDepError "colour"))
+          (hsPkgs."HCodecs" or ((hsPkgs.pkgs-errors).buildDepError "HCodecs"))
+          (hsPkgs."vector-space" or ((hsPkgs.pkgs-errors).buildDepError "vector-space"))
+          (hsPkgs."vector-space-points" or ((hsPkgs.pkgs-errors).buildDepError "vector-space-points"))
+          (hsPkgs."musicxml2" or ((hsPkgs.pkgs-errors).buildDepError "musicxml2"))
+          (hsPkgs."lilypond" or ((hsPkgs.pkgs-errors).buildDepError "lilypond"))
+          (hsPkgs."music-pitch-literal" or ((hsPkgs.pkgs-errors).buildDepError "music-pitch-literal"))
+          (hsPkgs."music-dynamics-literal" or ((hsPkgs.pkgs-errors).buildDepError "music-dynamics-literal"))
+          (hsPkgs."prettify" or ((hsPkgs.pkgs-errors).buildDepError "prettify"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
           ];
         buildable = true;
         };

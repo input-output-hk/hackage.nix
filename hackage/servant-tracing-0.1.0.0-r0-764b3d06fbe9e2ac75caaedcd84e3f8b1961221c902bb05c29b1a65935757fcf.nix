@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,46 +17,46 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."servant-server" or (buildDepError "servant-server"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."bytestring-lexing" or (buildDepError "bytestring-lexing"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."servant" or ((hsPkgs.pkgs-errors).buildDepError "servant"))
+          (hsPkgs."servant-server" or ((hsPkgs.pkgs-errors).buildDepError "servant-server"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."bytestring-lexing" or ((hsPkgs.pkgs-errors).buildDepError "bytestring-lexing"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+          (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
+          (hsPkgs."http-api-data" or ((hsPkgs.pkgs-errors).buildDepError "http-api-data"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
           ];
         buildable = true;
         };
       exes = {
         "servant-tracing-example" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."servant-tracing" or (buildDepError "servant-tracing"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."servant-server" or (buildDepError "servant-server"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."servant-tracing" or ((hsPkgs.pkgs-errors).buildDepError "servant-tracing"))
+            (hsPkgs."servant" or ((hsPkgs.pkgs-errors).buildDepError "servant"))
+            (hsPkgs."servant-server" or ((hsPkgs.pkgs-errors).buildDepError "servant-server"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
             ];
           buildable = true;
           };
@@ -103,22 +64,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "servant-tracing-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."servant-tracing" or (buildDepError "servant-tracing"))
-            (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."servant-tracing" or ((hsPkgs.pkgs-errors).buildDepError "servant-tracing"))
+            (hsPkgs."http-api-data" or ((hsPkgs.pkgs-errors).buildDepError "http-api-data"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
             ];
           buildable = true;
           };

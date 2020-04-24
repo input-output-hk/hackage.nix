@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildanatool = false; };
     package = {
@@ -56,40 +17,40 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-binary" or (buildDepError "text-binary"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."vector-binary" or (buildDepError "vector-binary"))
-          (hsPkgs."monad-ox" or (buildDepError "monad-ox"))
-          (hsPkgs."sgd" or (buildDepError "sgd"))
-          (hsPkgs."tagset-positional" or (buildDepError "tagset-positional"))
-          (hsPkgs."crf-chain1-constrained" or (buildDepError "crf-chain1-constrained"))
-          (hsPkgs."crf-chain2-tiers" or (buildDepError "crf-chain2-tiers"))
-          (hsPkgs."monad-codec" or (buildDepError "monad-codec"))
-          (hsPkgs."data-lens" or (buildDepError "data-lens"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."comonad" or (buildDepError "comonad"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."zlib" or (buildDepError "zlib"))
-          (hsPkgs."lazy-io" or (buildDepError "lazy-io"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."pedestrian-dag" or (buildDepError "pedestrian-dag"))
-          (hsPkgs."temporary" or (buildDepError "temporary"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."data-memocombinators" or (buildDepError "data-memocombinators"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."text-binary" or ((hsPkgs.pkgs-errors).buildDepError "text-binary"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."vector-binary" or ((hsPkgs.pkgs-errors).buildDepError "vector-binary"))
+          (hsPkgs."monad-ox" or ((hsPkgs.pkgs-errors).buildDepError "monad-ox"))
+          (hsPkgs."sgd" or ((hsPkgs.pkgs-errors).buildDepError "sgd"))
+          (hsPkgs."tagset-positional" or ((hsPkgs.pkgs-errors).buildDepError "tagset-positional"))
+          (hsPkgs."crf-chain1-constrained" or ((hsPkgs.pkgs-errors).buildDepError "crf-chain1-constrained"))
+          (hsPkgs."crf-chain2-tiers" or ((hsPkgs.pkgs-errors).buildDepError "crf-chain2-tiers"))
+          (hsPkgs."monad-codec" or ((hsPkgs.pkgs-errors).buildDepError "monad-codec"))
+          (hsPkgs."data-lens" or ((hsPkgs.pkgs-errors).buildDepError "data-lens"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."comonad" or ((hsPkgs.pkgs-errors).buildDepError "comonad"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."zlib" or ((hsPkgs.pkgs-errors).buildDepError "zlib"))
+          (hsPkgs."lazy-io" or ((hsPkgs.pkgs-errors).buildDepError "lazy-io"))
+          (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+          (hsPkgs."pedestrian-dag" or ((hsPkgs.pkgs-errors).buildDepError "pedestrian-dag"))
+          (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+          (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+          (hsPkgs."data-memocombinators" or ((hsPkgs.pkgs-errors).buildDepError "data-memocombinators"))
           ];
         buildable = true;
         };
       exes = {
         "concraft-analyse-model" = {
           depends = (pkgs.lib).optionals (flags.buildanatool) [
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."logfloat" or (buildDepError "logfloat"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+            (hsPkgs."logfloat" or ((hsPkgs.pkgs-errors).buildDepError "logfloat"))
             ];
           buildable = if flags.buildanatool then true else false;
           };

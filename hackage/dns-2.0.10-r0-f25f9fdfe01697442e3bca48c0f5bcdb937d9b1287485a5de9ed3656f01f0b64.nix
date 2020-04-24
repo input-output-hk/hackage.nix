@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -57,77 +18,77 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       "library" = {
         depends = if compiler.isGhc && (compiler.version).ge "7"
           then [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."iproute" or (buildDepError "iproute"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."bytestring-builder" or ((hsPkgs.pkgs-errors).buildDepError "bytestring-builder"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or ((hsPkgs.pkgs-errors).buildDepError "conduit-extra"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."iproute" or ((hsPkgs.pkgs-errors).buildDepError "iproute"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
             ]
           else [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."iproute" or (buildDepError "iproute"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-bytestring" or (buildDepError "network-bytestring"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."bytestring-builder" or ((hsPkgs.pkgs-errors).buildDepError "bytestring-builder"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or ((hsPkgs.pkgs-errors).buildDepError "conduit-extra"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."iproute" or ((hsPkgs.pkgs-errors).buildDepError "iproute"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."network-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "network-bytestring"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
             ];
         buildable = true;
         };
       tests = {
         "network" = {
           depends = [
-            (hsPkgs."dns" or (buildDepError "dns"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."dns" or ((hsPkgs.pkgs-errors).buildDepError "dns"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."bytestring-builder" or ((hsPkgs.pkgs-errors).buildDepError "bytestring-builder"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
             ];
           buildable = true;
           };
         "spec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."dns" or (buildDepError "dns"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."iproute" or (buildDepError "iproute"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."word8" or (buildDepError "word8"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."bytestring-builder" or ((hsPkgs.pkgs-errors).buildDepError "bytestring-builder"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or ((hsPkgs.pkgs-errors).buildDepError "conduit-extra"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."dns" or ((hsPkgs.pkgs-errors).buildDepError "dns"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."iproute" or ((hsPkgs.pkgs-errors).buildDepError "iproute"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+            (hsPkgs."word8" or ((hsPkgs.pkgs-errors).buildDepError "word8"))
             ];
           buildable = true;
           };
         "doctest" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."doctest" or ((hsPkgs.pkgs-errors).buildDepError "doctest"))
             ];
           buildable = true;
           };

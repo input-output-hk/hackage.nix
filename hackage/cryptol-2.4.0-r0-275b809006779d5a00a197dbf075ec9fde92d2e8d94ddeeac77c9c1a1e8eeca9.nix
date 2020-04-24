@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { static = false; relocatable = true; server = false; };
     package = {
@@ -56,82 +17,82 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base-compat" or (buildDepError "base-compat"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."gitrev" or (buildDepError "gitrev"))
-          (hsPkgs."GraphSCC" or (buildDepError "GraphSCC"))
-          (hsPkgs."heredoc" or (buildDepError "heredoc"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."monadLib" or (buildDepError "monadLib"))
-          (hsPkgs."old-time" or (buildDepError "old-time"))
-          (hsPkgs."presburger" or (buildDepError "presburger"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."sbv" or (buildDepError "sbv"))
-          (hsPkgs."smtLib" or (buildDepError "smtLib"))
-          (hsPkgs."simple-smt" or (buildDepError "simple-smt"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."tf-random" or (buildDepError "tf-random"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base-compat" or ((hsPkgs.pkgs-errors).buildDepError "base-compat"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."gitrev" or ((hsPkgs.pkgs-errors).buildDepError "gitrev"))
+          (hsPkgs."GraphSCC" or ((hsPkgs.pkgs-errors).buildDepError "GraphSCC"))
+          (hsPkgs."heredoc" or ((hsPkgs.pkgs-errors).buildDepError "heredoc"))
+          (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+          (hsPkgs."monadLib" or ((hsPkgs.pkgs-errors).buildDepError "monadLib"))
+          (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+          (hsPkgs."presburger" or ((hsPkgs.pkgs-errors).buildDepError "presburger"))
+          (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."sbv" or ((hsPkgs.pkgs-errors).buildDepError "sbv"))
+          (hsPkgs."smtLib" or ((hsPkgs.pkgs-errors).buildDepError "smtLib"))
+          (hsPkgs."simple-smt" or ((hsPkgs.pkgs-errors).buildDepError "simple-smt"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."tf-random" or ((hsPkgs.pkgs-errors).buildDepError "tf-random"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+          (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
-          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or ((hsPkgs.pkgs-errors).buildToolDepError "alex")))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or ((hsPkgs.pkgs-errors).buildToolDepError "happy")))
           ];
         buildable = true;
         };
       exes = {
         "cryptol" = {
           depends = [
-            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."cryptol" or (buildDepError "cryptol"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."haskeline" or (buildDepError "haskeline"))
-            (hsPkgs."monadLib" or (buildDepError "monadLib"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."sbv" or (buildDepError "sbv"))
-            (hsPkgs."tf-random" or (buildDepError "tf-random"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base-compat" or ((hsPkgs.pkgs-errors).buildDepError "base-compat"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."cryptol" or ((hsPkgs.pkgs-errors).buildDepError "cryptol"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."haskeline" or ((hsPkgs.pkgs-errors).buildDepError "haskeline"))
+            (hsPkgs."monadLib" or ((hsPkgs.pkgs-errors).buildDepError "monadLib"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."sbv" or ((hsPkgs.pkgs-errors).buildDepError "sbv"))
+            (hsPkgs."tf-random" or ((hsPkgs.pkgs-errors).buildDepError "tf-random"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "cryptol-server" = {
           depends = (pkgs.lib).optionals (flags.server) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."cryptol" or (buildDepError "cryptol"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or ((hsPkgs.pkgs-errors).buildDepError "aeson-pretty"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base-compat" or ((hsPkgs.pkgs-errors).buildDepError "base-compat"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."cryptol" or ((hsPkgs.pkgs-errors).buildDepError "cryptol"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."zeromq4-haskell" or ((hsPkgs.pkgs-errors).buildDepError "zeromq4-haskell"))
             ];
           buildable = if flags.server then true else false;
           };
@@ -139,11 +100,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "cryptol-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."cryptol" or (buildDepError "cryptol"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."cryptol" or ((hsPkgs.pkgs-errors).buildDepError "cryptol"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
             ];
           buildable = true;
           };

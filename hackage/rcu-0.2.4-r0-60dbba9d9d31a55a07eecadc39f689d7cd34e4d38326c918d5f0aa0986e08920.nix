@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       test-doctests = true;
@@ -57,46 +18,46 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "Read-Copy-Update for Haskell.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (buildToolDepError "cabal-doctest")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or ((hsPkgs.pkgs-errors).buildToolDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or ((hsPkgs.pkgs-errors).buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or ((hsPkgs.pkgs-errors).buildToolDepError "cabal-doctest")))
         ];
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."fail" or (buildDepError "fail"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.unstable) (hsPkgs."stm" or (buildDepError "stm"));
+          (hsPkgs."atomic-primops" or ((hsPkgs.pkgs-errors).buildDepError "atomic-primops"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."fail" or ((hsPkgs.pkgs-errors).buildDepError "fail"))
+          (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+          (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+          (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          ] ++ (pkgs.lib).optional (flags.unstable) (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"));
         buildable = true;
         };
       exes = {
         "MoveStringSTM" = {
           depends = (pkgs.lib).optionals (!(!flags.unstable)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = if !flags.unstable then false else true;
           };
         "MoveStringQSBR" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "MoveStringGC" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
@@ -104,10 +65,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "doctests" = {
           depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."doctest" or ((hsPkgs.pkgs-errors).buildDepError "doctest"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
             ];
           buildable = if !flags.test-doctests then false else true;
           };
@@ -115,180 +76,180 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "IncCounterExperiment" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "TimeSynchronizeQSBR" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."rdtsc" or (buildDepError "rdtsc"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."rdtsc" or ((hsPkgs.pkgs-errors).buildDepError "rdtsc"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "TimeSynchronizeGC" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."rdtsc" or (buildDepError "rdtsc"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."rdtsc" or ((hsPkgs.pkgs-errors).buildDepError "rdtsc"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "TimeSynchronizeQSBRUnbound" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "TimeSynchronizeGCUnbound" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "TimeSynchronizeQSBRSingleThread" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "TimeSynchronizeGCSingleThread" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "TimeSynchronizeQSBRPinned" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."rdtsc" or (buildDepError "rdtsc"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."rdtsc" or ((hsPkgs.pkgs-errors).buildDepError "rdtsc"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "TimeSynchronizeGCPinned" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."rdtsc" or (buildDepError "rdtsc"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."rdtsc" or ((hsPkgs.pkgs-errors).buildDepError "rdtsc"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "TimeSynchronizeQSBRnoGC" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."rdtsc" or (buildDepError "rdtsc"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."rdtsc" or ((hsPkgs.pkgs-errors).buildDepError "rdtsc"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "TimeSynchronizeGCnoGC" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."rdtsc" or (buildDepError "rdtsc"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."rdtsc" or ((hsPkgs.pkgs-errors).buildDepError "rdtsc"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "TimeSynchronizeQSBRnoGCPinned" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."rdtsc" or (buildDepError "rdtsc"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."rdtsc" or ((hsPkgs.pkgs-errors).buildDepError "rdtsc"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "TimeSynchronizeGCnoGCPinned" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."rcu" or (buildDepError "rcu"))
-            (hsPkgs."rdtsc" or (buildDepError "rdtsc"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."rcu" or ((hsPkgs.pkgs-errors).buildDepError "rcu"))
+            (hsPkgs."rdtsc" or ((hsPkgs.pkgs-errors).buildDepError "rdtsc"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };

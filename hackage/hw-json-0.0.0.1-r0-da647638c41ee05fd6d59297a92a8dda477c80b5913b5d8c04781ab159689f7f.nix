@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,39 +17,39 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
-          (hsPkgs."hw-conduit" or (buildDepError "hw-conduit"))
-          (hsPkgs."hw-parser" or (buildDepError "hw-parser"))
-          (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
-          (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
-          (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."word8" or (buildDepError "word8"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."hw-bits" or ((hsPkgs.pkgs-errors).buildDepError "hw-bits"))
+          (hsPkgs."hw-conduit" or ((hsPkgs.pkgs-errors).buildDepError "hw-conduit"))
+          (hsPkgs."hw-parser" or ((hsPkgs.pkgs-errors).buildDepError "hw-parser"))
+          (hsPkgs."hw-prim" or ((hsPkgs.pkgs-errors).buildDepError "hw-prim"))
+          (hsPkgs."hw-rankselect" or ((hsPkgs.pkgs-errors).buildDepError "hw-rankselect"))
+          (hsPkgs."mono-traversable" or ((hsPkgs.pkgs-errors).buildDepError "mono-traversable"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."word8" or ((hsPkgs.pkgs-errors).buildDepError "word8"))
           ];
         buildable = true;
         };
       exes = {
         "hw-json-example" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
-            (hsPkgs."hw-conduit" or (buildDepError "hw-conduit"))
-            (hsPkgs."hw-diagnostics" or (buildDepError "hw-diagnostics"))
-            (hsPkgs."hw-json" or (buildDepError "hw-json"))
-            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
-            (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
-            (hsPkgs."mmap" or (buildDepError "mmap"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."hw-bits" or ((hsPkgs.pkgs-errors).buildDepError "hw-bits"))
+            (hsPkgs."hw-conduit" or ((hsPkgs.pkgs-errors).buildDepError "hw-conduit"))
+            (hsPkgs."hw-diagnostics" or ((hsPkgs.pkgs-errors).buildDepError "hw-diagnostics"))
+            (hsPkgs."hw-json" or ((hsPkgs.pkgs-errors).buildDepError "hw-json"))
+            (hsPkgs."hw-prim" or ((hsPkgs.pkgs-errors).buildDepError "hw-prim"))
+            (hsPkgs."hw-rankselect" or ((hsPkgs.pkgs-errors).buildDepError "hw-rankselect"))
+            (hsPkgs."mmap" or ((hsPkgs.pkgs-errors).buildDepError "mmap"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
@@ -96,22 +57,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "hw-json-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
-            (hsPkgs."hw-conduit" or (buildDepError "hw-conduit"))
-            (hsPkgs."hw-json" or (buildDepError "hw-json"))
-            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
-            (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
-            (hsPkgs."mmap" or (buildDepError "mmap"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."hw-bits" or ((hsPkgs.pkgs-errors).buildDepError "hw-bits"))
+            (hsPkgs."hw-conduit" or ((hsPkgs.pkgs-errors).buildDepError "hw-conduit"))
+            (hsPkgs."hw-json" or ((hsPkgs.pkgs-errors).buildDepError "hw-json"))
+            (hsPkgs."hw-prim" or ((hsPkgs.pkgs-errors).buildDepError "hw-prim"))
+            (hsPkgs."hw-rankselect" or ((hsPkgs.pkgs-errors).buildDepError "hw-rankselect"))
+            (hsPkgs."mmap" or ((hsPkgs.pkgs-errors).buildDepError "mmap"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
@@ -119,17 +80,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
-            (hsPkgs."hw-json" or (buildDepError "hw-json"))
-            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
-            (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
-            (hsPkgs."mmap" or (buildDepError "mmap"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."hw-bits" or ((hsPkgs.pkgs-errors).buildDepError "hw-bits"))
+            (hsPkgs."hw-json" or ((hsPkgs.pkgs-errors).buildDepError "hw-json"))
+            (hsPkgs."hw-prim" or ((hsPkgs.pkgs-errors).buildDepError "hw-prim"))
+            (hsPkgs."hw-rankselect" or ((hsPkgs.pkgs-errors).buildDepError "hw-rankselect"))
+            (hsPkgs."mmap" or ((hsPkgs.pkgs-errors).buildDepError "mmap"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };

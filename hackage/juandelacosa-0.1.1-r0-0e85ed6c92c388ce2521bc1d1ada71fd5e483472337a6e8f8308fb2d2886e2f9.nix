@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -57,27 +18,27 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "juandelacosa" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."docopt" or (buildDepError "docopt"))
-            (hsPkgs."entropy" or (buildDepError "entropy"))
-            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."interpolatedstring-perl6" or (buildDepError "interpolatedstring-perl6"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."mysql" or (buildDepError "mysql"))
-            (hsPkgs."mysql-simple" or (buildDepError "mysql-simple"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
-            (hsPkgs."scotty" or (buildDepError "scotty"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."wai-middleware-static" or (buildDepError "wai-middleware-static"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base64-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base64-bytestring"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."data-default-class" or ((hsPkgs.pkgs-errors).buildDepError "data-default-class"))
+            (hsPkgs."docopt" or ((hsPkgs.pkgs-errors).buildDepError "docopt"))
+            (hsPkgs."entropy" or ((hsPkgs.pkgs-errors).buildDepError "entropy"))
+            (hsPkgs."fast-logger" or ((hsPkgs.pkgs-errors).buildDepError "fast-logger"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."interpolatedstring-perl6" or ((hsPkgs.pkgs-errors).buildDepError "interpolatedstring-perl6"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."mysql" or ((hsPkgs.pkgs-errors).buildDepError "mysql"))
+            (hsPkgs."mysql-simple" or ((hsPkgs.pkgs-errors).buildDepError "mysql-simple"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."resource-pool" or ((hsPkgs.pkgs-errors).buildDepError "resource-pool"))
+            (hsPkgs."scotty" or ((hsPkgs.pkgs-errors).buildDepError "scotty"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+            (hsPkgs."wai-extra" or ((hsPkgs.pkgs-errors).buildDepError "wai-extra"))
+            (hsPkgs."wai-middleware-static" or ((hsPkgs.pkgs-errors).buildDepError "wai-middleware-static"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
             ];
           buildable = true;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,34 +17,34 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."clay" or (buildDepError "clay"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."foldl" or (buildDepError "foldl"))
-          (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
-          (hsPkgs."lucid" or (buildDepError "lucid"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."mmark" or (buildDepError "mmark"))
-          (hsPkgs."mmark-ext" or (buildDepError "mmark-ext"))
-          (hsPkgs."modern-uri" or (buildDepError "modern-uri"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."pandoc" or (buildDepError "pandoc"))
-          (hsPkgs."pandoc-include-code" or (buildDepError "pandoc-include-code"))
-          (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
-          (hsPkgs."path" or (buildDepError "path"))
-          (hsPkgs."path-io" or (buildDepError "path-io"))
-          (hsPkgs."relude" or (buildDepError "relude"))
-          (hsPkgs."shake" or (buildDepError "shake"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
-          (hsPkgs."warp" or (buildDepError "warp"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."base-noprelude" or ((hsPkgs.pkgs-errors).buildDepError "base-noprelude"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          (hsPkgs."clay" or ((hsPkgs.pkgs-errors).buildDepError "clay"))
+          (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+          (hsPkgs."foldl" or ((hsPkgs.pkgs-errors).buildDepError "foldl"))
+          (hsPkgs."fsnotify" or ((hsPkgs.pkgs-errors).buildDepError "fsnotify"))
+          (hsPkgs."lucid" or ((hsPkgs.pkgs-errors).buildDepError "lucid"))
+          (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+          (hsPkgs."mmark" or ((hsPkgs.pkgs-errors).buildDepError "mmark"))
+          (hsPkgs."mmark-ext" or ((hsPkgs.pkgs-errors).buildDepError "mmark-ext"))
+          (hsPkgs."modern-uri" or ((hsPkgs.pkgs-errors).buildDepError "modern-uri"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."pandoc" or ((hsPkgs.pkgs-errors).buildDepError "pandoc"))
+          (hsPkgs."pandoc-include-code" or ((hsPkgs.pkgs-errors).buildDepError "pandoc-include-code"))
+          (hsPkgs."pandoc-types" or ((hsPkgs.pkgs-errors).buildDepError "pandoc-types"))
+          (hsPkgs."path" or ((hsPkgs.pkgs-errors).buildDepError "path"))
+          (hsPkgs."path-io" or ((hsPkgs.pkgs-errors).buildDepError "path-io"))
+          (hsPkgs."relude" or ((hsPkgs.pkgs-errors).buildDepError "relude"))
+          (hsPkgs."shake" or ((hsPkgs.pkgs-errors).buildDepError "shake"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+          (hsPkgs."wai-app-static" or ((hsPkgs.pkgs-errors).buildDepError "wai-app-static"))
+          (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
           ];
         buildable = true;
         };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm = false; opt = true; };
     package = {
@@ -56,44 +17,44 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."constraints" or (buildDepError "constraints"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."criterion" or (buildDepError "criterion"))
-          (hsPkgs."criterion-measurement" or (buildDepError "criterion-measurement"))
-          (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."monadcryptorandom" or (buildDepError "monadcryptorandom"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
-          (hsPkgs."protocol-buffers" or (buildDepError "protocol-buffers"))
-          (hsPkgs."protocol-buffers-descriptor" or (buildDepError "protocol-buffers-descriptor"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."reflection" or (buildDepError "reflection"))
-          (hsPkgs."singletons" or (buildDepError "singletons"))
-          (hsPkgs."statistics" or (buildDepError "statistics"))
-          (hsPkgs."tagged-transformer" or (buildDepError "tagged-transformer"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."test-framework" or (buildDepError "test-framework"))
-          (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
+          (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+          (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+          (hsPkgs."arithmoi" or ((hsPkgs.pkgs-errors).buildDepError "arithmoi"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."constraints" or ((hsPkgs.pkgs-errors).buildDepError "constraints"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+          (hsPkgs."criterion-measurement" or ((hsPkgs.pkgs-errors).buildDepError "criterion-measurement"))
+          (hsPkgs."crypto-api" or ((hsPkgs.pkgs-errors).buildDepError "crypto-api"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."monadcryptorandom" or ((hsPkgs.pkgs-errors).buildDepError "monadcryptorandom"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."numeric-prelude" or ((hsPkgs.pkgs-errors).buildDepError "numeric-prelude"))
+          (hsPkgs."protocol-buffers" or ((hsPkgs.pkgs-errors).buildDepError "protocol-buffers"))
+          (hsPkgs."protocol-buffers-descriptor" or ((hsPkgs.pkgs-errors).buildDepError "protocol-buffers-descriptor"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."reflection" or ((hsPkgs.pkgs-errors).buildDepError "reflection"))
+          (hsPkgs."singletons" or ((hsPkgs.pkgs-errors).buildDepError "singletons"))
+          (hsPkgs."statistics" or ((hsPkgs.pkgs-errors).buildDepError "statistics"))
+          (hsPkgs."tagged-transformer" or ((hsPkgs.pkgs-errors).buildDepError "tagged-transformer"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."test-framework" or ((hsPkgs.pkgs-errors).buildDepError "test-framework"))
+          (hsPkgs."test-framework-quickcheck2" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-quickcheck2"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."vector-th-unbox" or ((hsPkgs.pkgs-errors).buildDepError "vector-th-unbox"))
           ];
         buildable = true;
         };
       tests = {
         "test-lol" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."lol" or (buildDepError "lol"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."lol" or ((hsPkgs.pkgs-errors).buildDepError "lol"))
+            (hsPkgs."test-framework" or ((hsPkgs.pkgs-errors).buildDepError "test-framework"))
             ];
           buildable = true;
           };

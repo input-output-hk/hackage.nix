@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       splitbase = true;
@@ -62,49 +23,55 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-          (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
-          ] ++ (pkgs.lib).optional (flags.quickcheck) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))) ++ (pkgs.lib).optional (flags.hunit) (hsPkgs."HUnit" or (buildDepError "HUnit"))) ++ (if flags.splitbase
+          (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+          (hsPkgs."ansi-wl-pprint" or ((hsPkgs.pkgs-errors).buildDepError "ansi-wl-pprint"))
+          (hsPkgs."regex-posix" or ((hsPkgs.pkgs-errors).buildDepError "regex-posix"))
+          ] ++ (pkgs.lib).optional (flags.quickcheck) (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))) ++ (pkgs.lib).optional (flags.hunit) (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))) ++ (if flags.splitbase
           then [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
             ]
-          else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          else [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ]);
         buildable = true;
         };
       exes = {
         "test-framework-tests" = {
           depends = [
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-            (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+            (hsPkgs."ansi-wl-pprint" or ((hsPkgs.pkgs-errors).buildDepError "ansi-wl-pprint"))
+            (hsPkgs."regex-posix" or ((hsPkgs.pkgs-errors).buildDepError "regex-posix"))
             ] ++ (if flags.splitbase
             then [
-              (hsPkgs."base" or (buildDepError "base"))
-              (hsPkgs."random" or (buildDepError "random"))
-              (hsPkgs."containers" or (buildDepError "containers"))
+              (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+              (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+              (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
               ]
-            else [ (hsPkgs."base" or (buildDepError "base")) ]);
+            else [
+              (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+              ]);
           buildable = if !flags.tests then false else true;
           };
         "test-framework-example" = {
           depends = [
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-            (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+            (hsPkgs."ansi-wl-pprint" or ((hsPkgs.pkgs-errors).buildDepError "ansi-wl-pprint"))
+            (hsPkgs."regex-posix" or ((hsPkgs.pkgs-errors).buildDepError "regex-posix"))
             ] ++ (if flags.splitbase
             then [
-              (hsPkgs."base" or (buildDepError "base"))
-              (hsPkgs."random" or (buildDepError "random"))
-              (hsPkgs."containers" or (buildDepError "containers"))
+              (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+              (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+              (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
               ]
-            else [ (hsPkgs."base" or (buildDepError "base")) ]);
+            else [
+              (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+              ]);
           buildable = if !flags.example then false else true;
           };
         };

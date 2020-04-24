@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,51 +17,51 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."erf" or (buildDepError "erf"))
-          (hsPkgs."exact-combinatorics" or (buildDepError "exact-combinatorics"))
-          (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-          (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-          (hsPkgs."probability" or (buildDepError "probability"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."random-fu" or (buildDepError "random-fu"))
-          (hsPkgs."rvar" or (buildDepError "rvar"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."erf" or ((hsPkgs.pkgs-errors).buildDepError "erf"))
+          (hsPkgs."exact-combinatorics" or ((hsPkgs.pkgs-errors).buildDepError "exact-combinatorics"))
+          (hsPkgs."hmatrix" or ((hsPkgs.pkgs-errors).buildDepError "hmatrix"))
+          (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+          (hsPkgs."probability" or ((hsPkgs.pkgs-errors).buildDepError "probability"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."random-fu" or ((hsPkgs.pkgs-errors).buildDepError "random-fu"))
+          (hsPkgs."rvar" or ((hsPkgs.pkgs-errors).buildDepError "rvar"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."monad-loops" or ((hsPkgs.pkgs-errors).buildDepError "monad-loops"))
+          (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
           ];
         libs = [
-          (pkgs."MagickWand" or (sysDepError "MagickWand"))
-          (pkgs."MagickCore" or (sysDepError "MagickCore"))
+          (pkgs."MagickWand" or ((hsPkgs.pkgs-errors).sysDepError "MagickWand"))
+          (pkgs."MagickCore" or ((hsPkgs.pkgs-errors).sysDepError "MagickCore"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or ((hsPkgs.pkgs-errors).buildToolDepError "hsc2hs")))
           ];
         buildable = true;
         };
       exes = {
         "experiment" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hopfield" or (buildDepError "hopfield"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hopfield" or ((hsPkgs.pkgs-errors).buildDepError "hopfield"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
             ];
           buildable = true;
           };
         "recognize" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hopfield" or (buildDepError "hopfield"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hopfield" or ((hsPkgs.pkgs-errors).buildDepError "hopfield"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."JuicyPixels" or ((hsPkgs.pkgs-errors).buildDepError "JuicyPixels"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
             ];
           buildable = true;
           };
@@ -108,17 +69,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hopfield" or (buildDepError "hopfield"))
-            (hsPkgs."erf" or (buildDepError "erf"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."exact-combinatorics" or (buildDepError "exact-combinatorics"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hopfield" or ((hsPkgs.pkgs-errors).buildDepError "hopfield"))
+            (hsPkgs."erf" or ((hsPkgs.pkgs-errors).buildDepError "erf"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."exact-combinatorics" or ((hsPkgs.pkgs-errors).buildDepError "exact-combinatorics"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
             ];
           buildable = true;
           };

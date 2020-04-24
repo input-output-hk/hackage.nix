@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,87 +17,87 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."word24" or (buildDepError "word24"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
-          (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
-          (hsPkgs."asn1-types" or (buildDepError "asn1-types"))
-          (hsPkgs."pem" or (buildDepError "pem"))
-          (hsPkgs."x509" or (buildDepError "x509"))
-          (hsPkgs."x509-store" or (buildDepError "x509-store"))
-          (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
-          (hsPkgs."crypto-numbers" or (buildDepError "crypto-numbers"))
-          (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
-          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
-          (hsPkgs."crypto-pubkey" or (buildDepError "crypto-pubkey"))
-          (hsPkgs."crypto-pubkey-types" or (buildDepError "crypto-pubkey-types"))
-          (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
-          (hsPkgs."bytable" or (buildDepError "bytable"))
-          (hsPkgs."handle-like" or (buildDepError "handle-like"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."word24" or ((hsPkgs.pkgs-errors).buildDepError "word24"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."monads-tf" or ((hsPkgs.pkgs-errors).buildDepError "monads-tf"))
+          (hsPkgs."asn1-encoding" or ((hsPkgs.pkgs-errors).buildDepError "asn1-encoding"))
+          (hsPkgs."asn1-types" or ((hsPkgs.pkgs-errors).buildDepError "asn1-types"))
+          (hsPkgs."pem" or ((hsPkgs.pkgs-errors).buildDepError "pem"))
+          (hsPkgs."x509" or ((hsPkgs.pkgs-errors).buildDepError "x509"))
+          (hsPkgs."x509-store" or ((hsPkgs.pkgs-errors).buildDepError "x509-store"))
+          (hsPkgs."x509-validation" or ((hsPkgs.pkgs-errors).buildDepError "x509-validation"))
+          (hsPkgs."crypto-numbers" or ((hsPkgs.pkgs-errors).buildDepError "crypto-numbers"))
+          (hsPkgs."crypto-random" or ((hsPkgs.pkgs-errors).buildDepError "crypto-random"))
+          (hsPkgs."cryptohash" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash"))
+          (hsPkgs."crypto-pubkey" or ((hsPkgs.pkgs-errors).buildDepError "crypto-pubkey"))
+          (hsPkgs."crypto-pubkey-types" or ((hsPkgs.pkgs-errors).buildDepError "crypto-pubkey-types"))
+          (hsPkgs."cipher-aes" or ((hsPkgs.pkgs-errors).buildDepError "cipher-aes"))
+          (hsPkgs."bytable" or ((hsPkgs.pkgs-errors).buildDepError "bytable"))
+          (hsPkgs."handle-like" or ((hsPkgs.pkgs-errors).buildDepError "handle-like"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+          (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
           ];
         buildable = true;
         };
       tests = {
         "stm-test" = {
           depends = [
-            (hsPkgs."peyotls" or (buildDepError "peyotls"))
-            (hsPkgs."handle-like" or (buildDepError "handle-like"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."x509" or (buildDepError "x509"))
-            (hsPkgs."x509-store" or (buildDepError "x509-store"))
-            (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
+            (hsPkgs."peyotls" or ((hsPkgs.pkgs-errors).buildDepError "peyotls"))
+            (hsPkgs."handle-like" or ((hsPkgs.pkgs-errors).buildDepError "handle-like"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."x509" or ((hsPkgs.pkgs-errors).buildDepError "x509"))
+            (hsPkgs."x509-store" or ((hsPkgs.pkgs-errors).buildDepError "x509-store"))
+            (hsPkgs."crypto-random" or ((hsPkgs.pkgs-errors).buildDepError "crypto-random"))
             ];
           buildable = true;
           };
         "debug-test" = {
           depends = [
-            (hsPkgs."peyotls" or (buildDepError "peyotls"))
-            (hsPkgs."handle-like" or (buildDepError "handle-like"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."x509" or (buildDepError "x509"))
-            (hsPkgs."x509-store" or (buildDepError "x509-store"))
-            (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."peyotls" or ((hsPkgs.pkgs-errors).buildDepError "peyotls"))
+            (hsPkgs."handle-like" or ((hsPkgs.pkgs-errors).buildDepError "handle-like"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."x509" or ((hsPkgs.pkgs-errors).buildDepError "x509"))
+            (hsPkgs."x509-store" or ((hsPkgs.pkgs-errors).buildDepError "x509-store"))
+            (hsPkgs."crypto-random" or ((hsPkgs.pkgs-errors).buildDepError "crypto-random"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = true;
           };
         "reneg-test" = {
           depends = [
-            (hsPkgs."peyotls" or (buildDepError "peyotls"))
-            (hsPkgs."handle-like" or (buildDepError "handle-like"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."x509" or (buildDepError "x509"))
-            (hsPkgs."x509-store" or (buildDepError "x509-store"))
-            (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."peyotls" or ((hsPkgs.pkgs-errors).buildDepError "peyotls"))
+            (hsPkgs."handle-like" or ((hsPkgs.pkgs-errors).buildDepError "handle-like"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."x509" or ((hsPkgs.pkgs-errors).buildDepError "x509"))
+            (hsPkgs."x509-store" or ((hsPkgs.pkgs-errors).buildDepError "x509-store"))
+            (hsPkgs."crypto-random" or ((hsPkgs.pkgs-errors).buildDepError "crypto-random"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = true;
           };
         "ci-reneg-test" = {
           depends = [
-            (hsPkgs."peyotls" or (buildDepError "peyotls"))
-            (hsPkgs."handle-like" or (buildDepError "handle-like"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."x509" or (buildDepError "x509"))
-            (hsPkgs."x509-store" or (buildDepError "x509-store"))
-            (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."peyotls" or ((hsPkgs.pkgs-errors).buildDepError "peyotls"))
+            (hsPkgs."handle-like" or ((hsPkgs.pkgs-errors).buildDepError "handle-like"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."x509" or ((hsPkgs.pkgs-errors).buildDepError "x509"))
+            (hsPkgs."x509-store" or ((hsPkgs.pkgs-errors).buildDepError "x509-store"))
+            (hsPkgs."crypto-random" or ((hsPkgs.pkgs-errors).buildDepError "crypto-random"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = true;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,54 +17,54 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
-          (hsPkgs."uniplate" or (buildDepError "uniplate"))
-          (hsPkgs."comonad" or (buildDepError "comonad"))
-          (hsPkgs."fclabels" or (buildDepError "fclabels"))
-          (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
-          (hsPkgs."syz" or (buildDepError "syz"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."matrix" or (buildDepError "matrix"))
-          (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."language-fortran" or (buildDepError "language-fortran"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."generic-deriving" or ((hsPkgs.pkgs-errors).buildDepError "generic-deriving"))
+          (hsPkgs."uniplate" or ((hsPkgs.pkgs-errors).buildDepError "uniplate"))
+          (hsPkgs."comonad" or ((hsPkgs.pkgs-errors).buildDepError "comonad"))
+          (hsPkgs."fclabels" or ((hsPkgs.pkgs-errors).buildDepError "fclabels"))
+          (hsPkgs."haskell-src" or ((hsPkgs.pkgs-errors).buildDepError "haskell-src"))
+          (hsPkgs."syz" or ((hsPkgs.pkgs-errors).buildDepError "syz"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+          (hsPkgs."matrix" or ((hsPkgs.pkgs-errors).buildDepError "matrix"))
+          (hsPkgs."hmatrix" or ((hsPkgs.pkgs-errors).buildDepError "hmatrix"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."language-fortran" or ((hsPkgs.pkgs-errors).buildDepError "language-fortran"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
-          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or ((hsPkgs.pkgs-errors).buildToolDepError "alex")))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or ((hsPkgs.pkgs-errors).buildToolDepError "happy")))
           ];
         buildable = true;
         };
       exes = {
         "camfort" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
-            (hsPkgs."uniplate" or (buildDepError "uniplate"))
-            (hsPkgs."comonad" or (buildDepError "comonad"))
-            (hsPkgs."fclabels" or (buildDepError "fclabels"))
-            (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
-            (hsPkgs."syz" or (buildDepError "syz"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."matrix" or (buildDepError "matrix"))
-            (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."language-fortran" or (buildDepError "language-fortran"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."generic-deriving" or ((hsPkgs.pkgs-errors).buildDepError "generic-deriving"))
+            (hsPkgs."uniplate" or ((hsPkgs.pkgs-errors).buildDepError "uniplate"))
+            (hsPkgs."comonad" or ((hsPkgs.pkgs-errors).buildDepError "comonad"))
+            (hsPkgs."fclabels" or ((hsPkgs.pkgs-errors).buildDepError "fclabels"))
+            (hsPkgs."haskell-src" or ((hsPkgs.pkgs-errors).buildDepError "haskell-src"))
+            (hsPkgs."syz" or ((hsPkgs.pkgs-errors).buildDepError "syz"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."matrix" or ((hsPkgs.pkgs-errors).buildDepError "matrix"))
+            (hsPkgs."hmatrix" or ((hsPkgs.pkgs-errors).buildDepError "hmatrix"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."language-fortran" or ((hsPkgs.pkgs-errors).buildDepError "language-fortran"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };

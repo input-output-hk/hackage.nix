@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,37 +17,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."foreign-store" or (buildDepError "foreign-store"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."ghc" or (buildDepError "ghc"))
-          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."signal" or (buildDepError "signal"))
-          (hsPkgs."text" or (buildDepError "text"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"));
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."foreign-store" or ((hsPkgs.pkgs-errors).buildDepError "foreign-store"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."ghc" or ((hsPkgs.pkgs-errors).buildDepError "ghc"))
+          (hsPkgs."ghc-paths" or ((hsPkgs.pkgs-errors).buildDepError "ghc-paths"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."fsnotify" or ((hsPkgs.pkgs-errors).buildDepError "fsnotify"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."signal" or ((hsPkgs.pkgs-errors).buildDepError "signal"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8") (hsPkgs."ghc-boot" or ((hsPkgs.pkgs-errors).buildDepError "ghc-boot"));
         buildable = true;
         };
       exes = {
         "halive" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."halive" or (buildDepError "halive"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."ghc" or ((hsPkgs.pkgs-errors).buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or ((hsPkgs.pkgs-errors).buildDepError "ghc-paths"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."fsnotify" or ((hsPkgs.pkgs-errors).buildDepError "fsnotify"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."halive" or ((hsPkgs.pkgs-errors).buildDepError "halive"))
             ];
           buildable = true;
           };
@@ -94,64 +55,64 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "unit" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."halive" or (buildDepError "halive"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."halive" or ((hsPkgs.pkgs-errors).buildDepError "halive"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
             ];
           buildable = true;
           };
         "demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gl" or (buildDepError "gl"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
-            (hsPkgs."halive" or (buildDepError "halive"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."foreign-store" or (buildDepError "foreign-store"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."gl" or ((hsPkgs.pkgs-errors).buildDepError "gl"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
+            (hsPkgs."halive" or ((hsPkgs.pkgs-errors).buildDepError "halive"))
+            (hsPkgs."linear" or ((hsPkgs.pkgs-errors).buildDepError "linear"))
+            (hsPkgs."foreign-store" or ((hsPkgs.pkgs-errors).buildDepError "foreign-store"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."pretty-show" or ((hsPkgs.pkgs-errors).buildDepError "pretty-show"))
             ];
           buildable = true;
           };
         "subhalive" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."halive" or (buildDepError "halive"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."halive" or ((hsPkgs.pkgs-errors).buildDepError "halive"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
             ];
           buildable = true;
           };
         "compileexpr" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."halive" or (buildDepError "halive"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."halive" or ((hsPkgs.pkgs-errors).buildDepError "halive"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
             ];
           buildable = true;
           };
         "testghc" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."ghc" or ((hsPkgs.pkgs-errors).buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or ((hsPkgs.pkgs-errors).buildDepError "ghc-paths"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
             ];
           buildable = true;
           };

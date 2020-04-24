@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,44 +17,46 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."semantic-source" or (buildDepError "semantic-source"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."tree-sitter" or (buildDepError "tree-sitter"))
-          (hsPkgs."tree-sitter-ruby-internal" or (buildDepError "tree-sitter-ruby-internal"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."semantic-source" or ((hsPkgs.pkgs-errors).buildDepError "semantic-source"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."tree-sitter" or ((hsPkgs.pkgs-errors).buildDepError "tree-sitter"))
+          (hsPkgs."tree-sitter-ruby-internal" or ((hsPkgs.pkgs-errors).buildDepError "tree-sitter-ruby-internal"))
           ];
         buildable = true;
         };
       sublibs = {
         "tree-sitter-ruby-internal" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tree-sitter" or (buildDepError "tree-sitter"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tree-sitter" or ((hsPkgs.pkgs-errors).buildDepError "tree-sitter"))
             ];
-          libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+          libs = [
+            (pkgs."stdc++" or ((hsPkgs.pkgs-errors).sysDepError "stdc++"))
+            ];
           buildable = true;
           };
         };
       exes = {
         "benchmarks" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."pathtype" or (buildDepError "pathtype"))
-            (hsPkgs."tree-sitter" or (buildDepError "tree-sitter"))
-            (hsPkgs."tree-sitter-ruby" or (buildDepError "tree-sitter-ruby"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."Glob" or ((hsPkgs.pkgs-errors).buildDepError "Glob"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."pathtype" or ((hsPkgs.pkgs-errors).buildDepError "pathtype"))
+            (hsPkgs."tree-sitter" or ((hsPkgs.pkgs-errors).buildDepError "tree-sitter"))
+            (hsPkgs."tree-sitter-ruby" or ((hsPkgs.pkgs-errors).buildDepError "tree-sitter-ruby"))
             ];
           buildable = true;
           };
         "tree-sitter-ruby" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."tree-sitter" or (buildDepError "tree-sitter"))
-            (hsPkgs."tree-sitter-ruby" or (buildDepError "tree-sitter-ruby"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."tree-sitter" or ((hsPkgs.pkgs-errors).buildDepError "tree-sitter"))
+            (hsPkgs."tree-sitter-ruby" or ((hsPkgs.pkgs-errors).buildDepError "tree-sitter-ruby"))
             ];
           buildable = true;
           };
@@ -101,17 +64,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tree-sitter" or (buildDepError "tree-sitter"))
-            (hsPkgs."tree-sitter-ruby" or (buildDepError "tree-sitter-ruby"))
-            (hsPkgs."tree-sitter-test-helpers" or (buildDepError "tree-sitter-test-helpers"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."pathtype" or (buildDepError "pathtype"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tree-sitter" or ((hsPkgs.pkgs-errors).buildDepError "tree-sitter"))
+            (hsPkgs."tree-sitter-ruby" or ((hsPkgs.pkgs-errors).buildDepError "tree-sitter-ruby"))
+            (hsPkgs."tree-sitter-test-helpers" or ((hsPkgs.pkgs-errors).buildDepError "tree-sitter-test-helpers"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "hedgehog"))
+            (hsPkgs."pathtype" or ((hsPkgs.pkgs-errors).buildDepError "pathtype"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hedgehog"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
             ];
           buildable = true;
           };

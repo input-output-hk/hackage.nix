@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildexamples = false; };
     package = {
@@ -56,30 +17,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."lapack-ffi" or (buildDepError "lapack-ffi"))
-          (hsPkgs."blas-ffi" or (buildDepError "blas-ffi"))
-          (hsPkgs."netlib-ffi" or (buildDepError "netlib-ffi"))
-          (hsPkgs."comfort-array" or (buildDepError "comfort-array"))
-          (hsPkgs."guarded-allocation" or (buildDepError "guarded-allocation"))
-          (hsPkgs."boxes" or (buildDepError "boxes"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."lazyio" or (buildDepError "lazyio"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."tfp" or (buildDepError "tfp"))
-          (hsPkgs."fixed-length" or (buildDepError "fixed-length"))
-          (hsPkgs."non-empty" or (buildDepError "non-empty"))
-          (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."lapack-ffi" or ((hsPkgs.pkgs-errors).buildDepError "lapack-ffi"))
+          (hsPkgs."blas-ffi" or ((hsPkgs.pkgs-errors).buildDepError "blas-ffi"))
+          (hsPkgs."netlib-ffi" or ((hsPkgs.pkgs-errors).buildDepError "netlib-ffi"))
+          (hsPkgs."comfort-array" or ((hsPkgs.pkgs-errors).buildDepError "comfort-array"))
+          (hsPkgs."guarded-allocation" or ((hsPkgs.pkgs-errors).buildDepError "guarded-allocation"))
+          (hsPkgs."boxes" or ((hsPkgs.pkgs-errors).buildDepError "boxes"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."lazyio" or ((hsPkgs.pkgs-errors).buildDepError "lazyio"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."tfp" or ((hsPkgs.pkgs-errors).buildDepError "tfp"))
+          (hsPkgs."fixed-length" or ((hsPkgs.pkgs-errors).buildDepError "fixed-length"))
+          (hsPkgs."non-empty" or ((hsPkgs.pkgs-errors).buildDepError "non-empty"))
+          (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
           ];
         buildable = true;
         };
       exes = {
         "lapack-economic" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."lapack" or (buildDepError "lapack"))
-            (hsPkgs."comfort-array" or (buildDepError "comfort-array"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."lapack" or ((hsPkgs.pkgs-errors).buildDepError "lapack"))
+            (hsPkgs."comfort-array" or ((hsPkgs.pkgs-errors).buildDepError "comfort-array"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
@@ -87,17 +48,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "lapack-test" = {
           depends = [
-            (hsPkgs."lapack" or (buildDepError "lapack"))
-            (hsPkgs."netlib-ffi" or (buildDepError "netlib-ffi"))
-            (hsPkgs."tfp" or (buildDepError "tfp"))
-            (hsPkgs."comfort-array" or (buildDepError "comfort-array"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."ChasingBottoms" or (buildDepError "ChasingBottoms"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."non-empty" or (buildDepError "non-empty"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."lapack" or ((hsPkgs.pkgs-errors).buildDepError "lapack"))
+            (hsPkgs."netlib-ffi" or ((hsPkgs.pkgs-errors).buildDepError "netlib-ffi"))
+            (hsPkgs."tfp" or ((hsPkgs.pkgs-errors).buildDepError "tfp"))
+            (hsPkgs."comfort-array" or ((hsPkgs.pkgs-errors).buildDepError "comfort-array"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."ChasingBottoms" or ((hsPkgs.pkgs-errors).buildDepError "ChasingBottoms"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."non-empty" or ((hsPkgs.pkgs-errors).buildDepError "non-empty"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = true;
           };

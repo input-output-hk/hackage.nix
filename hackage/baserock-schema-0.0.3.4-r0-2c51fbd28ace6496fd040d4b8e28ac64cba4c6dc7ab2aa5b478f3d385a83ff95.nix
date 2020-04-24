@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,27 +17,27 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."microlens-platform" or (buildDepError "microlens-platform"))
-          (hsPkgs."rio" or (buildDepError "rio"))
-          (hsPkgs."yaml-pretty-extras" or (buildDepError "yaml-pretty-extras"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."microlens-platform" or ((hsPkgs.pkgs-errors).buildDepError "microlens-platform"))
+          (hsPkgs."rio" or ((hsPkgs.pkgs-errors).buildDepError "rio"))
+          (hsPkgs."yaml-pretty-extras" or ((hsPkgs.pkgs-errors).buildDepError "yaml-pretty-extras"))
           ];
         buildable = true;
         };
       exes = {
         "baserock" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."baserock-schema" or (buildDepError "baserock-schema"))
-            (hsPkgs."etc" or (buildDepError "etc"))
-            (hsPkgs."gitlab-api" or (buildDepError "gitlab-api"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
-            (hsPkgs."microlens-platform" or (buildDepError "microlens-platform"))
-            (hsPkgs."rio" or (buildDepError "rio"))
-            (hsPkgs."yaml-pretty-extras" or (buildDepError "yaml-pretty-extras"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."baserock-schema" or ((hsPkgs.pkgs-errors).buildDepError "baserock-schema"))
+            (hsPkgs."etc" or ((hsPkgs.pkgs-errors).buildDepError "etc"))
+            (hsPkgs."gitlab-api" or ((hsPkgs.pkgs-errors).buildDepError "gitlab-api"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."lens-aeson" or ((hsPkgs.pkgs-errors).buildDepError "lens-aeson"))
+            (hsPkgs."microlens-platform" or ((hsPkgs.pkgs-errors).buildDepError "microlens-platform"))
+            (hsPkgs."rio" or ((hsPkgs.pkgs-errors).buildDepError "rio"))
+            (hsPkgs."yaml-pretty-extras" or ((hsPkgs.pkgs-errors).buildDepError "yaml-pretty-extras"))
             ];
           buildable = true;
           };
@@ -84,14 +45,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "earthquake-test" = {
           depends = [
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."baserock-schema" or (buildDepError "baserock-schema"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."microlens-platform" or (buildDepError "microlens-platform"))
-            (hsPkgs."rio" or (buildDepError "rio"))
-            (hsPkgs."yaml-pretty-extras" or (buildDepError "yaml-pretty-extras"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."baserock-schema" or ((hsPkgs.pkgs-errors).buildDepError "baserock-schema"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."microlens-platform" or ((hsPkgs.pkgs-errors).buildDepError "microlens-platform"))
+            (hsPkgs."rio" or ((hsPkgs.pkgs-errors).buildDepError "rio"))
+            (hsPkgs."yaml-pretty-extras" or ((hsPkgs.pkgs-errors).buildDepError "yaml-pretty-extras"))
             ];
           buildable = true;
           };

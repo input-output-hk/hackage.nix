@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { backups = false; };
     package = {
@@ -57,31 +18,31 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "clckwrks-dot-com-server" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."clckwrks" or (buildDepError "clckwrks"))
-            (hsPkgs."clckwrks-theme-clckwrks" or (buildDepError "clckwrks-theme-clckwrks"))
-            (hsPkgs."clckwrks-plugin-media" or (buildDepError "clckwrks-plugin-media"))
-            (hsPkgs."clckwrks-plugin-page" or (buildDepError "clckwrks-plugin-page"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
-            (hsPkgs."hsp" or (buildDepError "hsp"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."web-plugins" or (buildDepError "web-plugins"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."clckwrks" or ((hsPkgs.pkgs-errors).buildDepError "clckwrks"))
+            (hsPkgs."clckwrks-theme-clckwrks" or ((hsPkgs.pkgs-errors).buildDepError "clckwrks-theme-clckwrks"))
+            (hsPkgs."clckwrks-plugin-media" or ((hsPkgs.pkgs-errors).buildDepError "clckwrks-plugin-media"))
+            (hsPkgs."clckwrks-plugin-page" or ((hsPkgs.pkgs-errors).buildDepError "clckwrks-plugin-page"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."happstack-server" or ((hsPkgs.pkgs-errors).buildDepError "happstack-server"))
+            (hsPkgs."hsp" or ((hsPkgs.pkgs-errors).buildDepError "hsp"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."web-plugins" or ((hsPkgs.pkgs-errors).buildDepError "web-plugins"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hsx2hs or (pkgs.buildPackages.hsx2hs or (buildToolDepError "hsx2hs")))
+            (hsPkgs.buildPackages.hsx2hs or (pkgs.buildPackages.hsx2hs or ((hsPkgs.pkgs-errors).buildToolDepError "hsx2hs")))
             ];
           buildable = true;
           };
         "clckwrks-dot-com-backups" = {
           depends = (pkgs.lib).optionals (flags.backups) [
-            (hsPkgs."archive" or (buildDepError "archive"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Extra" or (buildDepError "Extra"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."cabal-debian" or (buildDepError "cabal-debian"))
+            (hsPkgs."archive" or ((hsPkgs.pkgs-errors).buildDepError "archive"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."Extra" or ((hsPkgs.pkgs-errors).buildDepError "Extra"))
+            (hsPkgs."network-uri" or ((hsPkgs.pkgs-errors).buildDepError "network-uri"))
+            (hsPkgs."cabal-debian" or ((hsPkgs.pkgs-errors).buildDepError "cabal-debian"))
             ];
           buildable = if flags.backups then true else false;
           };

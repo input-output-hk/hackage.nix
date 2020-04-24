@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,26 +17,26 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."Win32" or (buildDepError "Win32"))
-          (hsPkgs."c-storable-deriving" or (buildDepError "c-storable-deriving"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."Win32" or ((hsPkgs.pkgs-errors).buildDepError "Win32"))
+          (hsPkgs."c-storable-deriving" or ((hsPkgs.pkgs-errors).buildDepError "c-storable-deriving"))
           ];
         libs = [
-          (pkgs."d3d11" or (sysDepError "d3d11"))
-          (pkgs."d3dx11" or (sysDepError "d3dx11"))
-          (pkgs."D3DCompiler" or (sysDepError "D3DCompiler"))
-          (pkgs."d3dxof" or (sysDepError "d3dxof"))
-          (pkgs."dxgi" or (sysDepError "dxgi"))
-          (pkgs."dxguid" or (sysDepError "dxguid"))
+          (pkgs."d3d11" or ((hsPkgs.pkgs-errors).sysDepError "d3d11"))
+          (pkgs."d3dx11" or ((hsPkgs.pkgs-errors).sysDepError "d3dx11"))
+          (pkgs."D3DCompiler" or ((hsPkgs.pkgs-errors).sysDepError "D3DCompiler"))
+          (pkgs."d3dxof" or ((hsPkgs.pkgs-errors).sysDepError "d3dxof"))
+          (pkgs."dxgi" or ((hsPkgs.pkgs-errors).sysDepError "dxgi"))
+          (pkgs."dxguid" or ((hsPkgs.pkgs-errors).sysDepError "dxguid"))
           ];
         buildable = true;
         };
       exes = {
         "Triangle" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Win32" or (buildDepError "Win32"))
-            (hsPkgs."d3d11binding" or (buildDepError "d3d11binding"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."Win32" or ((hsPkgs.pkgs-errors).buildDepError "Win32"))
+            (hsPkgs."d3d11binding" or ((hsPkgs.pkgs-errors).buildDepError "d3d11binding"))
             ];
           buildable = true;
           };

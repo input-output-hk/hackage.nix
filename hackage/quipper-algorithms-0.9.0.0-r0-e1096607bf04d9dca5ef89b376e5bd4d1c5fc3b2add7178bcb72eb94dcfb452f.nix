@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -53,80 +14,80 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "This package provides seven algorithms that have been implemented in\nQuipper. They are:\nBF - Boolean formula algorithm,\nBWT - Binary welded tree algorithm,\nCL - Class number algorithm,\nGSE - Ground state estimation algorithm,\nQLS - Quantum linear systems algorithm,\nTF - Triangle finding algorithm,\nUSV - Unique shortest vector algorithm.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
-        (hsPkgs.buildPackages.superdoc or (pkgs.buildPackages.superdoc or (buildToolDepError "superdoc")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.quipper-cabal or (pkgs.buildPackages.quipper-cabal or (buildToolDepError "quipper-cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or ((hsPkgs.pkgs-errors).buildToolDepError "base")))
+        (hsPkgs.buildPackages.superdoc or (pkgs.buildPackages.superdoc or ((hsPkgs.pkgs-errors).buildToolDepError "superdoc")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or ((hsPkgs.pkgs-errors).buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.quipper-cabal or (pkgs.buildPackages.quipper-cabal or ((hsPkgs.pkgs-errors).buildToolDepError "quipper-cabal")))
         ];
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."newsynth" or (buildDepError "newsynth"))
-          (hsPkgs."easyrender" or (buildDepError "easyrender"))
-          (hsPkgs."Lattices" or (buildDepError "Lattices"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."primes" or (buildDepError "primes"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."quipper-utils" or (buildDepError "quipper-utils"))
-          (hsPkgs."quipper-language" or (buildDepError "quipper-language"))
-          (hsPkgs."quipper-libraries" or (buildDepError "quipper-libraries"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."newsynth" or ((hsPkgs.pkgs-errors).buildDepError "newsynth"))
+          (hsPkgs."easyrender" or ((hsPkgs.pkgs-errors).buildDepError "easyrender"))
+          (hsPkgs."Lattices" or ((hsPkgs.pkgs-errors).buildDepError "Lattices"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."primes" or ((hsPkgs.pkgs-errors).buildDepError "primes"))
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."quipper-utils" or ((hsPkgs.pkgs-errors).buildDepError "quipper-utils"))
+          (hsPkgs."quipper-language" or ((hsPkgs.pkgs-errors).buildDepError "quipper-language"))
+          (hsPkgs."quipper-libraries" or ((hsPkgs.pkgs-errors).buildDepError "quipper-libraries"))
           ];
         buildable = true;
         };
       exes = {
         "bf" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."quipper-algorithms" or (buildDepError "quipper-algorithms"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."quipper-algorithms" or ((hsPkgs.pkgs-errors).buildDepError "quipper-algorithms"))
             ];
           buildable = true;
           };
         "bwt" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."quipper-algorithms" or (buildDepError "quipper-algorithms"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."quipper-algorithms" or ((hsPkgs.pkgs-errors).buildDepError "quipper-algorithms"))
             ];
           buildable = true;
           };
         "cl" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."quipper-algorithms" or (buildDepError "quipper-algorithms"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."quipper-algorithms" or ((hsPkgs.pkgs-errors).buildDepError "quipper-algorithms"))
             ];
           buildable = true;
           };
         "gse" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."quipper-algorithms" or (buildDepError "quipper-algorithms"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."quipper-algorithms" or ((hsPkgs.pkgs-errors).buildDepError "quipper-algorithms"))
             ];
           buildable = true;
           };
         "qls" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."quipper-algorithms" or (buildDepError "quipper-algorithms"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."quipper-algorithms" or ((hsPkgs.pkgs-errors).buildDepError "quipper-algorithms"))
             ];
           buildable = true;
           };
         "tf" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."quipper-algorithms" or (buildDepError "quipper-algorithms"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."quipper-algorithms" or ((hsPkgs.pkgs-errors).buildDepError "quipper-algorithms"))
             ];
           buildable = true;
           };
         "usv" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."quipper-algorithms" or (buildDepError "quipper-algorithms"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."quipper-algorithms" or ((hsPkgs.pkgs-errors).buildDepError "quipper-algorithms"))
             ];
           buildable = true;
           };

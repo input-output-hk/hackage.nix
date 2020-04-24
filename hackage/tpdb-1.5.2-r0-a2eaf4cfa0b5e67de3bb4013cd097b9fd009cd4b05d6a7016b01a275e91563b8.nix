@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,30 +17,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."hxt" or (buildDepError "hxt"))
-          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."HaXml" or (buildDepError "HaXml"))
-          (hsPkgs."xml-hamlet" or (buildDepError "xml-hamlet"))
-          (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."transformers" or (buildDepError "transformers"));
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."hxt" or ((hsPkgs.pkgs-errors).buildDepError "hxt"))
+          (hsPkgs."prettyprinter" or ((hsPkgs.pkgs-errors).buildDepError "prettyprinter"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."HaXml" or ((hsPkgs.pkgs-errors).buildDepError "HaXml"))
+          (hsPkgs."xml-hamlet" or ((hsPkgs.pkgs-errors).buildDepError "xml-hamlet"))
+          (hsPkgs."xml-conduit" or ((hsPkgs.pkgs-errors).buildDepError "xml-conduit"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"));
         buildable = true;
         };
       exes = {
         "plain2xtc" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tpdb" or (buildDepError "tpdb"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tpdb" or ((hsPkgs.pkgs-errors).buildDepError "tpdb"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
             ];
           buildable = true;
           };
@@ -87,87 +48,87 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "XML" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tpdb" or (buildDepError "tpdb"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tpdb" or ((hsPkgs.pkgs-errors).buildDepError "tpdb"))
             ];
           buildable = true;
           };
         "TRS" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tpdb" or (buildDepError "tpdb"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tpdb" or ((hsPkgs.pkgs-errors).buildDepError "tpdb"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
             ];
           buildable = true;
           };
         "TRS_02" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tpdb" or (buildDepError "tpdb"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tpdb" or ((hsPkgs.pkgs-errors).buildDepError "tpdb"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
             ];
           buildable = true;
           };
         "SRS" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tpdb" or (buildDepError "tpdb"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tpdb" or ((hsPkgs.pkgs-errors).buildDepError "tpdb"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
             ];
           buildable = true;
           };
         "Speed" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tpdb" or (buildDepError "tpdb"))
-            (hsPkgs."HaXml" or (buildDepError "HaXml"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tpdb" or ((hsPkgs.pkgs-errors).buildDepError "tpdb"))
+            (hsPkgs."HaXml" or ((hsPkgs.pkgs-errors).buildDepError "HaXml"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
             ];
           buildable = true;
           };
         "Attributes" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tpdb" or (buildDepError "tpdb"))
-            (hsPkgs."HaXml" or (buildDepError "HaXml"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tpdb" or ((hsPkgs.pkgs-errors).buildDepError "tpdb"))
+            (hsPkgs."HaXml" or ((hsPkgs.pkgs-errors).buildDepError "HaXml"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
             ];
           buildable = true;
           };
         "XML-Theory" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tpdb" or (buildDepError "tpdb"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tpdb" or ((hsPkgs.pkgs-errors).buildDepError "tpdb"))
             ];
           buildable = true;
           };
         "CPF-AC" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tpdb" or (buildDepError "tpdb"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tpdb" or ((hsPkgs.pkgs-errors).buildDepError "tpdb"))
             ];
           buildable = true;
           };
         "Parse-AC" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tpdb" or (buildDepError "tpdb"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tpdb" or ((hsPkgs.pkgs-errors).buildDepError "tpdb"))
             ];
           buildable = true;
           };
         "read-cpf" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tpdb" or (buildDepError "tpdb"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tpdb" or ((hsPkgs.pkgs-errors).buildDepError "tpdb"))
             ];
           buildable = true;
           };
         "read-complex" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tpdb" or (buildDepError "tpdb"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."tpdb" or ((hsPkgs.pkgs-errors).buildDepError "tpdb"))
             ];
           buildable = true;
           };

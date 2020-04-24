@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,40 +17,40 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-          (hsPkgs."lambdabot-core" or (buildDepError "lambdabot-core"))
-          (hsPkgs."lambdabot-reference-plugins" or (buildDepError "lambdabot-reference-plugins"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."oeis" or (buildDepError "oeis"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."arrows" or (buildDepError "arrows"))
-          (hsPkgs."data-memocombinators" or (buildDepError "data-memocombinators"))
-          (hsPkgs."hoogle" or (buildDepError "hoogle"))
-          (hsPkgs."IOSpec" or (buildDepError "IOSpec"))
-          (hsPkgs."lambdabot-trusted" or (buildDepError "lambdabot-trusted"))
-          (hsPkgs."logict" or (buildDepError "logict"))
-          (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-          (hsPkgs."mueval" or (buildDepError "mueval"))
-          (hsPkgs."numbers" or (buildDepError "numbers"))
-          (hsPkgs."show" or (buildDepError "show"))
-          (hsPkgs."vector-space" or (buildDepError "vector-space"))
-          (hsPkgs."HTTP" or (buildDepError "HTTP"))
-          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."haskell-src-exts" or ((hsPkgs.pkgs-errors).buildDepError "haskell-src-exts"))
+          (hsPkgs."lambdabot-core" or ((hsPkgs.pkgs-errors).buildDepError "lambdabot-core"))
+          (hsPkgs."lambdabot-reference-plugins" or ((hsPkgs.pkgs-errors).buildDepError "lambdabot-reference-plugins"))
+          (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."oeis" or ((hsPkgs.pkgs-errors).buildDepError "oeis"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+          (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+          (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+          (hsPkgs."arrows" or ((hsPkgs.pkgs-errors).buildDepError "arrows"))
+          (hsPkgs."data-memocombinators" or ((hsPkgs.pkgs-errors).buildDepError "data-memocombinators"))
+          (hsPkgs."hoogle" or ((hsPkgs.pkgs-errors).buildDepError "hoogle"))
+          (hsPkgs."IOSpec" or ((hsPkgs.pkgs-errors).buildDepError "IOSpec"))
+          (hsPkgs."lambdabot-trusted" or ((hsPkgs.pkgs-errors).buildDepError "lambdabot-trusted"))
+          (hsPkgs."logict" or ((hsPkgs.pkgs-errors).buildDepError "logict"))
+          (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+          (hsPkgs."mueval" or ((hsPkgs.pkgs-errors).buildDepError "mueval"))
+          (hsPkgs."numbers" or ((hsPkgs.pkgs-errors).buildDepError "numbers"))
+          (hsPkgs."show" or ((hsPkgs.pkgs-errors).buildDepError "show"))
+          (hsPkgs."vector-space" or ((hsPkgs.pkgs-errors).buildDepError "vector-space"))
+          (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+          (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
           ];
         buildable = true;
         };

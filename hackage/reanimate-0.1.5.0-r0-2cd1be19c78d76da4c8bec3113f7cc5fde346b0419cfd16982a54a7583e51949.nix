@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { server = false; };
     package = {
@@ -56,51 +17,51 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."reanimate-svg" or (buildDepError "reanimate-svg"))
-          (hsPkgs."xml" or (buildDepError "xml"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."linear" or (buildDepError "linear"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."matrix" or (buildDepError "matrix"))
-          (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."diagrams" or (buildDepError "diagrams"))
-          (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg"))
-          (hsPkgs."diagrams-core" or (buildDepError "diagrams-core"))
-          (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
-          (hsPkgs."diagrams-contrib" or (buildDepError "diagrams-contrib"))
-          (hsPkgs."svg-builder" or (buildDepError "svg-builder"))
-          (hsPkgs."matrices" or (buildDepError "matrices"))
-          (hsPkgs."cubicbezier" or (buildDepError "cubicbezier"))
-          (hsPkgs."palette" or (buildDepError "palette"))
-          (hsPkgs."websockets" or (buildDepError "websockets"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
-          (hsPkgs."open-browser" or (buildDepError "open-browser"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."reanimate-svg" or ((hsPkgs.pkgs-errors).buildDepError "reanimate-svg"))
+          (hsPkgs."xml" or ((hsPkgs.pkgs-errors).buildDepError "xml"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."linear" or ((hsPkgs.pkgs-errors).buildDepError "linear"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."matrix" or ((hsPkgs.pkgs-errors).buildDepError "matrix"))
+          (hsPkgs."JuicyPixels" or ((hsPkgs.pkgs-errors).buildDepError "JuicyPixels"))
+          (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+          (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+          (hsPkgs."diagrams" or ((hsPkgs.pkgs-errors).buildDepError "diagrams"))
+          (hsPkgs."diagrams-svg" or ((hsPkgs.pkgs-errors).buildDepError "diagrams-svg"))
+          (hsPkgs."diagrams-core" or ((hsPkgs.pkgs-errors).buildDepError "diagrams-core"))
+          (hsPkgs."diagrams-lib" or ((hsPkgs.pkgs-errors).buildDepError "diagrams-lib"))
+          (hsPkgs."diagrams-contrib" or ((hsPkgs.pkgs-errors).buildDepError "diagrams-contrib"))
+          (hsPkgs."svg-builder" or ((hsPkgs.pkgs-errors).buildDepError "svg-builder"))
+          (hsPkgs."matrices" or ((hsPkgs.pkgs-errors).buildDepError "matrices"))
+          (hsPkgs."cubicbezier" or ((hsPkgs.pkgs-errors).buildDepError "cubicbezier"))
+          (hsPkgs."palette" or ((hsPkgs.pkgs-errors).buildDepError "palette"))
+          (hsPkgs."websockets" or ((hsPkgs.pkgs-errors).buildDepError "websockets"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."fsnotify" or ((hsPkgs.pkgs-errors).buildDepError "fsnotify"))
+          (hsPkgs."open-browser" or ((hsPkgs.pkgs-errors).buildDepError "open-browser"))
           ];
         buildable = true;
         };
       exes = {
         "reanimate-server" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."websockets" or ((hsPkgs.pkgs-errors).buildDepError "websockets"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
             ];
           buildable = if flags.server then true else false;
           };

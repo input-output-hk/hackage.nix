@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { plugins = true; };
     package = {
@@ -56,71 +17,71 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."pandoc" or (buildDepError "pandoc"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."pandoc" or ((hsPkgs.pkgs-errors).buildDepError "pandoc"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
           ] ++ (pkgs.lib).optionals (flags.plugins) [
-          (hsPkgs."ghc" or (buildDepError "ghc"))
-          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+          (hsPkgs."ghc" or ((hsPkgs.pkgs-errors).buildDepError "ghc"))
+          (hsPkgs."ghc-paths" or ((hsPkgs.pkgs-errors).buildDepError "ghc-paths"))
           ];
         buildable = true;
         };
       exes = {
         "gitit" = {
           depends = ([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."xhtml" or (buildDepError "xhtml"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."pandoc" or (buildDepError "pandoc"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."cgi" or (buildDepError "cgi"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."SHA" or (buildDepError "SHA"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."HStringTemplate" or (buildDepError "HStringTemplate"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."recaptcha" or (buildDepError "recaptcha"))
-            (hsPkgs."filestore" or (buildDepError "filestore"))
-            (hsPkgs."datetime" or (buildDepError "datetime"))
-            (hsPkgs."zlib" or (buildDepError "zlib"))
-            (hsPkgs."url" or (buildDepError "url"))
-            (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
-            (hsPkgs."happstack-util" or (buildDepError "happstack-util"))
-            (hsPkgs."xml" or (buildDepError "xml"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
-            (hsPkgs."feed" or (buildDepError "feed"))
-            (hsPkgs."cautious-file" or (buildDepError "cautious-file"))
-            (hsPkgs."texmath" or (buildDepError "texmath"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."xhtml" or ((hsPkgs.pkgs-errors).buildDepError "xhtml"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."pandoc" or ((hsPkgs.pkgs-errors).buildDepError "pandoc"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."cgi" or ((hsPkgs.pkgs-errors).buildDepError "cgi"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."highlighting-kate" or ((hsPkgs.pkgs-errors).buildDepError "highlighting-kate"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."SHA" or ((hsPkgs.pkgs-errors).buildDepError "SHA"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."HStringTemplate" or ((hsPkgs.pkgs-errors).buildDepError "HStringTemplate"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."recaptcha" or ((hsPkgs.pkgs-errors).buildDepError "recaptcha"))
+            (hsPkgs."filestore" or ((hsPkgs.pkgs-errors).buildDepError "filestore"))
+            (hsPkgs."datetime" or ((hsPkgs.pkgs-errors).buildDepError "datetime"))
+            (hsPkgs."zlib" or ((hsPkgs.pkgs-errors).buildDepError "zlib"))
+            (hsPkgs."url" or ((hsPkgs.pkgs-errors).buildDepError "url"))
+            (hsPkgs."happstack-server" or ((hsPkgs.pkgs-errors).buildDepError "happstack-server"))
+            (hsPkgs."happstack-util" or ((hsPkgs.pkgs-errors).buildDepError "happstack-util"))
+            (hsPkgs."xml" or ((hsPkgs.pkgs-errors).buildDepError "xml"))
+            (hsPkgs."hslogger" or ((hsPkgs.pkgs-errors).buildDepError "hslogger"))
+            (hsPkgs."ConfigFile" or ((hsPkgs.pkgs-errors).buildDepError "ConfigFile"))
+            (hsPkgs."feed" or ((hsPkgs.pkgs-errors).buildDepError "feed"))
+            (hsPkgs."cautious-file" or ((hsPkgs.pkgs-errors).buildDepError "cautious-file"))
+            (hsPkgs."texmath" or ((hsPkgs.pkgs-errors).buildDepError "texmath"))
             ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "6.10") [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
             ]) ++ (pkgs.lib).optionals (flags.plugins) [
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+            (hsPkgs."ghc" or ((hsPkgs.pkgs-errors).buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or ((hsPkgs.pkgs-errors).buildDepError "ghc-paths"))
             ];
           buildable = true;
           };
         "expireGititCache" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."url" or (buildDepError "url"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."url" or ((hsPkgs.pkgs-errors).buildDepError "url"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
             ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "6.10") [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
             ];
           buildable = true;
           };

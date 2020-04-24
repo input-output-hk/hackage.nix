@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { old-syntactic = false; };
     package = {
@@ -56,44 +17,46 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."constraints" or (buildDepError "constraints"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."exception-transformers" or (buildDepError "exception-transformers"))
-          (hsPkgs."language-c-quote" or (buildDepError "language-c-quote"))
-          (hsPkgs."mainland-pretty" or (buildDepError "mainland-pretty"))
-          (hsPkgs."microlens" or (buildDepError "microlens"))
-          (hsPkgs."microlens-mtl" or (buildDepError "microlens-mtl"))
-          (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."operational-alacarte" or (buildDepError "operational-alacarte"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
-          (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"))
-          (hsPkgs."srcloc" or (buildDepError "srcloc"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."constraints" or ((hsPkgs.pkgs-errors).buildDepError "constraints"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."exception-transformers" or ((hsPkgs.pkgs-errors).buildDepError "exception-transformers"))
+          (hsPkgs."language-c-quote" or ((hsPkgs.pkgs-errors).buildDepError "language-c-quote"))
+          (hsPkgs."mainland-pretty" or ((hsPkgs.pkgs-errors).buildDepError "mainland-pretty"))
+          (hsPkgs."microlens" or ((hsPkgs.pkgs-errors).buildDepError "microlens"))
+          (hsPkgs."microlens-mtl" or ((hsPkgs.pkgs-errors).buildDepError "microlens-mtl"))
+          (hsPkgs."microlens-th" or ((hsPkgs.pkgs-errors).buildDepError "microlens-th"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."operational-alacarte" or ((hsPkgs.pkgs-errors).buildDepError "operational-alacarte"))
+          (hsPkgs."tagged" or ((hsPkgs.pkgs-errors).buildDepError "tagged"))
+          (hsPkgs."BoundedChan" or ((hsPkgs.pkgs-errors).buildDepError "BoundedChan"))
+          (hsPkgs."srcloc" or ((hsPkgs.pkgs-errors).buildDepError "srcloc"))
           ] ++ (if flags.old-syntactic
-          then [ (hsPkgs."syntactic" or (buildDepError "syntactic")) ]
+          then [
+            (hsPkgs."syntactic" or ((hsPkgs.pkgs-errors).buildDepError "syntactic"))
+            ]
           else [
-            (hsPkgs."open-typerep" or (buildDepError "open-typerep"))
-            (hsPkgs."syntactic" or (buildDepError "syntactic"))
+            (hsPkgs."open-typerep" or ((hsPkgs.pkgs-errors).buildDepError "open-typerep"))
+            (hsPkgs."syntactic" or ((hsPkgs.pkgs-errors).buildDepError "syntactic"))
             ]);
         buildable = true;
         };
       tests = {
         "Examples" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."imperative-edsl" or (buildDepError "imperative-edsl"))
-            (hsPkgs."mainland-pretty" or (buildDepError "mainland-pretty"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."imperative-edsl" or ((hsPkgs.pkgs-errors).buildDepError "imperative-edsl"))
+            (hsPkgs."mainland-pretty" or ((hsPkgs.pkgs-errors).buildDepError "mainland-pretty"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
             ];
           buildable = true;
           };
         "Semantics" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."imperative-edsl" or (buildDepError "imperative-edsl"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."imperative-edsl" or ((hsPkgs.pkgs-errors).buildDepError "imperative-edsl"))
             ];
           buildable = true;
           };

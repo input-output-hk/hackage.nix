@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,43 +17,43 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."repa" or (buildDepError "repa"))
-          (hsPkgs."strict" or (buildDepError "strict"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."ADPfusion" or (buildDepError "ADPfusion"))
-          (hsPkgs."BiobaseTurner" or (buildDepError "BiobaseTurner"))
-          (hsPkgs."BiobaseVienna" or (buildDepError "BiobaseVienna"))
-          (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
-          (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+          (hsPkgs."repa" or ((hsPkgs.pkgs-errors).buildDepError "repa"))
+          (hsPkgs."strict" or ((hsPkgs.pkgs-errors).buildDepError "strict"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."ADPfusion" or ((hsPkgs.pkgs-errors).buildDepError "ADPfusion"))
+          (hsPkgs."BiobaseTurner" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseTurner"))
+          (hsPkgs."BiobaseVienna" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseVienna"))
+          (hsPkgs."BiobaseXNA" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseXNA"))
+          (hsPkgs."PrimitiveArray" or ((hsPkgs.pkgs-errors).buildDepError "PrimitiveArray"))
           ];
         buildable = true;
         };
       exes = {
         "RNAFold" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."BiobaseTurner" or (buildDepError "BiobaseTurner"))
-            (hsPkgs."BiobaseVienna" or (buildDepError "BiobaseVienna"))
-            (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
-            (hsPkgs."RNAFold" or (buildDepError "RNAFold"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+            (hsPkgs."BiobaseTurner" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseTurner"))
+            (hsPkgs."BiobaseVienna" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseVienna"))
+            (hsPkgs."BiobaseXNA" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseXNA"))
+            (hsPkgs."RNAFold" or ((hsPkgs.pkgs-errors).buildDepError "RNAFold"))
             ];
           buildable = true;
           };
         "RNAEval" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."BiobaseTurner" or (buildDepError "BiobaseTurner"))
-            (hsPkgs."BiobaseVienna" or (buildDepError "BiobaseVienna"))
-            (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
-            (hsPkgs."RNAFold" or (buildDepError "RNAFold"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+            (hsPkgs."BiobaseTurner" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseTurner"))
+            (hsPkgs."BiobaseVienna" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseVienna"))
+            (hsPkgs."BiobaseXNA" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseXNA"))
+            (hsPkgs."RNAFold" or ((hsPkgs.pkgs-errors).buildDepError "RNAFold"))
             ];
           buildable = true;
           };

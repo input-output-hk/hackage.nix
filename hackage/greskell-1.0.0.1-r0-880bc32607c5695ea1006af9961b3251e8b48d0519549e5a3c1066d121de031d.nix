@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       hint-test = true;
@@ -60,79 +21,79 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."greskell-core" or (buildDepError "greskell-core"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."greskell-core" or ((hsPkgs.pkgs-errors).buildDepError "greskell-core"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
           ];
         buildable = true;
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."greskell" or (buildDepError "greskell"))
-            (hsPkgs."greskell-core" or (buildDepError "greskell-core"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."greskell" or ((hsPkgs.pkgs-errors).buildDepError "greskell"))
+            (hsPkgs."greskell-core" or ((hsPkgs.pkgs-errors).buildDepError "greskell-core"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
             ];
           buildable = true;
           };
         "doctest" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."doctest-discover" or (buildDepError "doctest-discover"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."doctest" or ((hsPkgs.pkgs-errors).buildDepError "doctest"))
+            (hsPkgs."doctest-discover" or ((hsPkgs.pkgs-errors).buildDepError "doctest-discover"))
             ];
           buildable = true;
           };
         "hint-test-suite" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."greskell" or (buildDepError "greskell"))
-            (hsPkgs."hint" or (buildDepError "hint"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."greskell" or ((hsPkgs.pkgs-errors).buildDepError "greskell"))
+            (hsPkgs."hint" or ((hsPkgs.pkgs-errors).buildDepError "hint"))
             ];
           buildable = if !flags.hint-test then false else true;
           };
         "server-test-suite" = {
           depends = (pkgs.lib).optionals (flags.server-test) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."greskell" or (buildDepError "greskell"))
-            (hsPkgs."greskell-core" or (buildDepError "greskell-core"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."greskell-websocket" or (buildDepError "greskell-websocket"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."greskell" or ((hsPkgs.pkgs-errors).buildDepError "greskell"))
+            (hsPkgs."greskell-core" or ((hsPkgs.pkgs-errors).buildDepError "greskell-core"))
+            (hsPkgs."scientific" or ((hsPkgs.pkgs-errors).buildDepError "scientific"))
+            (hsPkgs."greskell-websocket" or ((hsPkgs.pkgs-errors).buildDepError "greskell-websocket"))
+            (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
             ];
           buildable = if flags.server-test then true else false;
           };
         "server-behavior-test-suite" = {
           depends = (pkgs.lib).optionals (flags.server-behavior-test) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."greskell" or (buildDepError "greskell"))
-            (hsPkgs."greskell-core" or (buildDepError "greskell-core"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."greskell-websocket" or (buildDepError "greskell-websocket"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."greskell" or ((hsPkgs.pkgs-errors).buildDepError "greskell"))
+            (hsPkgs."greskell-core" or ((hsPkgs.pkgs-errors).buildDepError "greskell-core"))
+            (hsPkgs."scientific" or ((hsPkgs.pkgs-errors).buildDepError "scientific"))
+            (hsPkgs."greskell-websocket" or ((hsPkgs.pkgs-errors).buildDepError "greskell-websocket"))
+            (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
             ];
           buildable = if flags.server-behavior-test then true else false;
           };

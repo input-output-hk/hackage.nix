@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,43 +17,43 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."connection" or (buildDepError "connection"))
-          (hsPkgs."constraints" or (buildDepError "constraints"))
-          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-          (hsPkgs."extensible" or (buildDepError "extensible"))
-          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."req" or (buildDepError "req"))
-          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."connection" or ((hsPkgs.pkgs-errors).buildDepError "connection"))
+          (hsPkgs."constraints" or ((hsPkgs.pkgs-errors).buildDepError "constraints"))
+          (hsPkgs."data-default-class" or ((hsPkgs.pkgs-errors).buildDepError "data-default-class"))
+          (hsPkgs."extensible" or ((hsPkgs.pkgs-errors).buildDepError "extensible"))
+          (hsPkgs."http-api-data" or ((hsPkgs.pkgs-errors).buildDepError "http-api-data"))
+          (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or ((hsPkgs.pkgs-errors).buildDepError "http-client-tls"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."req" or ((hsPkgs.pkgs-errors).buildDepError "req"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
           ];
         buildable = true;
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."connection" or (buildDepError "connection"))
-            (hsPkgs."constraints" or (buildDepError "constraints"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."extensible" or (buildDepError "extensible"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."req" or (buildDepError "req"))
-            (hsPkgs."servant-server" or (buildDepError "servant-server"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."connection" or ((hsPkgs.pkgs-errors).buildDepError "connection"))
+            (hsPkgs."constraints" or ((hsPkgs.pkgs-errors).buildDepError "constraints"))
+            (hsPkgs."data-default-class" or ((hsPkgs.pkgs-errors).buildDepError "data-default-class"))
+            (hsPkgs."extensible" or ((hsPkgs.pkgs-errors).buildDepError "extensible"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."http-api-data" or ((hsPkgs.pkgs-errors).buildDepError "http-api-data"))
+            (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or ((hsPkgs.pkgs-errors).buildDepError "http-client-tls"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."req" or ((hsPkgs.pkgs-errors).buildDepError "req"))
+            (hsPkgs."servant-server" or ((hsPkgs.pkgs-errors).buildDepError "servant-server"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
             ];
           buildable = true;
           };

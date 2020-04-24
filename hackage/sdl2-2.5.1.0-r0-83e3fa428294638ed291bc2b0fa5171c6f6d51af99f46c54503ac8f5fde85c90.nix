@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; opengl-example = false; no-linear = false; };
     package = {
@@ -56,219 +17,221 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."StateVar" or (buildDepError "StateVar"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (!flags.no-linear) (hsPkgs."linear" or (buildDepError "linear"));
-        libs = [ (pkgs."SDL2" or (sysDepError "SDL2")) ];
-        pkgconfig = [ (pkgconfPkgs."sdl2" or (pkgConfDepError "sdl2")) ];
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+          (hsPkgs."StateVar" or ((hsPkgs.pkgs-errors).buildDepError "StateVar"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          ] ++ (pkgs.lib).optional (!flags.no-linear) (hsPkgs."linear" or ((hsPkgs.pkgs-errors).buildDepError "linear"));
+        libs = [ (pkgs."SDL2" or ((hsPkgs.pkgs-errors).sysDepError "SDL2")) ];
+        pkgconfig = [
+          (pkgconfPkgs."sdl2" or ((hsPkgs.pkgs-errors).pkgConfDepError "sdl2"))
+          ];
         buildable = true;
         };
       exes = {
         "lazyfoo-lesson-01" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-02" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-03" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-04" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-05" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-07" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-08" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-09" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-10" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-11" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-12" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-13" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-14" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-15" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-17" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-18" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-19" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lazyfoo-lesson-20" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = false;
           };
         "lazyfoo-lesson-43" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "twinklebear-lesson-01" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "twinklebear-lesson-02" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "twinklebear-lesson-04" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "twinklebear-lesson-04a" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "twinklebear-lesson-05" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "audio-example" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "eventwatch-example" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "userevent-example" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.examples then true else false;
           };
         "opengl-example" = {
           depends = (pkgs.lib).optionals (flags.opengl-example) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."OpenGL" or ((hsPkgs.pkgs-errors).buildDepError "OpenGL"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
             ];
           buildable = if flags.opengl-example then true else false;
           };
@@ -276,12 +239,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "sdl-space" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."weigh" or (buildDepError "weigh"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."weigh" or ((hsPkgs.pkgs-errors).buildDepError "weigh"))
+            (hsPkgs."linear" or ((hsPkgs.pkgs-errors).buildDepError "linear"))
+            (hsPkgs."sdl2" or ((hsPkgs.pkgs-errors).buildDepError "sdl2"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };

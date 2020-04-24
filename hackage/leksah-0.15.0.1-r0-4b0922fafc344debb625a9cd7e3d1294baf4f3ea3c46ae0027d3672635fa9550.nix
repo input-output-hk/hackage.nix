@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       yi = false;
@@ -63,127 +24,131 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (((((((([
-          (hsPkgs."jsaddle" or (buildDepError "jsaddle"))
-          (hsPkgs."ghcjs-codemirror" or (buildDepError "ghcjs-codemirror"))
-          (hsPkgs."hamlet" or (buildDepError "hamlet"))
-          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."glib" or (buildDepError "glib"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."old-time" or (buildDepError "old-time"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-          (hsPkgs."regex-tdfa-text" or (buildDepError "regex-tdfa-text"))
-          (hsPkgs."regex-base" or (buildDepError "regex-base"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."ltk" or (buildDepError "ltk"))
-          (hsPkgs."binary-shared" or (buildDepError "binary-shared"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."leksah-server" or (buildDepError "leksah-server"))
-          (hsPkgs."ghc" or (buildDepError "ghc"))
-          (hsPkgs."strict" or (buildDepError "strict"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."gio" or (buildDepError "gio"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."executable-path" or (buildDepError "executable-path"))
-          (hsPkgs."vcsgui" or (buildDepError "vcsgui"))
-          (hsPkgs."vcswrapper" or (buildDepError "vcswrapper"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-          (hsPkgs."hlint" or (buildDepError "hlint"))
-          (hsPkgs."vado" or (buildDepError "vado"))
-          (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
+          (hsPkgs."jsaddle" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle"))
+          (hsPkgs."ghcjs-codemirror" or ((hsPkgs.pkgs-errors).buildDepError "ghcjs-codemirror"))
+          (hsPkgs."hamlet" or ((hsPkgs.pkgs-errors).buildDepError "hamlet"))
+          (hsPkgs."blaze-html" or ((hsPkgs.pkgs-errors).buildDepError "blaze-html"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."pretty-show" or ((hsPkgs.pkgs-errors).buildDepError "pretty-show"))
+          (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."glib" or ((hsPkgs.pkgs-errors).buildDepError "glib"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+          (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+          (hsPkgs."regex-tdfa-text" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa-text"))
+          (hsPkgs."regex-base" or ((hsPkgs.pkgs-errors).buildDepError "regex-base"))
+          (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."ltk" or ((hsPkgs.pkgs-errors).buildDepError "ltk"))
+          (hsPkgs."binary-shared" or ((hsPkgs.pkgs-errors).buildDepError "binary-shared"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."hslogger" or ((hsPkgs.pkgs-errors).buildDepError "hslogger"))
+          (hsPkgs."leksah-server" or ((hsPkgs.pkgs-errors).buildDepError "leksah-server"))
+          (hsPkgs."ghc" or ((hsPkgs.pkgs-errors).buildDepError "ghc"))
+          (hsPkgs."strict" or ((hsPkgs.pkgs-errors).buildDepError "strict"))
+          (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."gio" or ((hsPkgs.pkgs-errors).buildDepError "gio"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."executable-path" or ((hsPkgs.pkgs-errors).buildDepError "executable-path"))
+          (hsPkgs."vcsgui" or ((hsPkgs.pkgs-errors).buildDepError "vcsgui"))
+          (hsPkgs."vcswrapper" or ((hsPkgs.pkgs-errors).buildDepError "vcswrapper"))
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+          (hsPkgs."haskell-src-exts" or ((hsPkgs.pkgs-errors).buildDepError "haskell-src-exts"))
+          (hsPkgs."hlint" or ((hsPkgs.pkgs-errors).buildDepError "hlint"))
+          (hsPkgs."vado" or ((hsPkgs.pkgs-errors).buildDepError "vado"))
+          (hsPkgs."shakespeare" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare"))
           ] ++ (if system.isWindows
-          then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
+          then [
+            (hsPkgs."Win32" or ((hsPkgs.pkgs-errors).buildDepError "Win32"))
+            ]
           else [
-            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
             ])) ++ (pkgs.lib).optionals (system.isOsx) (if flags.gtk3
           then [
-            (hsPkgs."gtk3-mac-integration" or (buildDepError "gtk3-mac-integration"))
+            (hsPkgs."gtk3-mac-integration" or ((hsPkgs.pkgs-errors).buildDepError "gtk3-mac-integration"))
             ]
           else [
-            (hsPkgs."gtk-mac-integration" or (buildDepError "gtk-mac-integration"))
+            (hsPkgs."gtk-mac-integration" or ((hsPkgs.pkgs-errors).buildDepError "gtk-mac-integration"))
             ])) ++ (pkgs.lib).optionals (flags.yi) [
-          (hsPkgs."yi" or (buildDepError "yi"))
-          (hsPkgs."yi-language" or (buildDepError "yi-language"))
-          (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
-          ]) ++ (pkgs.lib).optional (flags.yi && flags.dyre) (hsPkgs."dyre" or (buildDepError "dyre"))) ++ (if flags.gtk3
+          (hsPkgs."yi" or ((hsPkgs.pkgs-errors).buildDepError "yi"))
+          (hsPkgs."yi-language" or ((hsPkgs.pkgs-errors).buildDepError "yi-language"))
+          (hsPkgs."yi-rope" or ((hsPkgs.pkgs-errors).buildDepError "yi-rope"))
+          ]) ++ (pkgs.lib).optional (flags.yi && flags.dyre) (hsPkgs."dyre" or ((hsPkgs.pkgs-errors).buildDepError "dyre"))) ++ (if flags.gtk3
           then [
-            (hsPkgs."gtk3" or (buildDepError "gtk3"))
-            (hsPkgs."gtksourceview3" or (buildDepError "gtksourceview3"))
+            (hsPkgs."gtk3" or ((hsPkgs.pkgs-errors).buildDepError "gtk3"))
+            (hsPkgs."gtksourceview3" or ((hsPkgs.pkgs-errors).buildDepError "gtksourceview3"))
             ]
           else [
-            (hsPkgs."gtk" or (buildDepError "gtk"))
-            (hsPkgs."gtksourceview2" or (buildDepError "gtksourceview2"))
+            (hsPkgs."gtk" or ((hsPkgs.pkgs-errors).buildDepError "gtk"))
+            (hsPkgs."gtksourceview2" or ((hsPkgs.pkgs-errors).buildDepError "gtksourceview2"))
             ])) ++ (if flags.gtk3
           then [
-            (hsPkgs."webkitgtk3" or (buildDepError "webkitgtk3"))
-            (hsPkgs."webkitgtk3-javascriptcore" or (buildDepError "webkitgtk3-javascriptcore"))
+            (hsPkgs."webkitgtk3" or ((hsPkgs.pkgs-errors).buildDepError "webkitgtk3"))
+            (hsPkgs."webkitgtk3-javascriptcore" or ((hsPkgs.pkgs-errors).buildDepError "webkitgtk3-javascriptcore"))
             ]
           else [
-            (hsPkgs."webkit" or (buildDepError "webkit"))
-            (hsPkgs."webkit-javascriptcore" or (buildDepError "webkit-javascriptcore"))
+            (hsPkgs."webkit" or ((hsPkgs.pkgs-errors).buildDepError "webkit"))
+            (hsPkgs."webkit-javascriptcore" or ((hsPkgs.pkgs-errors).buildDepError "webkit-javascriptcore"))
             ])) ++ (pkgs.lib).optionals (flags.loc && system.isLinux) [
-          (hsPkgs."hgettext" or (buildDepError "hgettext"))
-          (hsPkgs."setlocale" or (buildDepError "setlocale"))
+          (hsPkgs."hgettext" or ((hsPkgs.pkgs-errors).buildDepError "hgettext"))
+          (hsPkgs."setlocale" or ((hsPkgs.pkgs-errors).buildDepError "setlocale"))
           ]) ++ (if flags.network-uri
           then [
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."network-uri" or ((hsPkgs.pkgs-errors).buildDepError "network-uri"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
             ]
           else [
-            (hsPkgs."network" or (buildDepError "network"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2") (hsPkgs."binary-shared" or (buildDepError "binary-shared"));
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32"));
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2") (hsPkgs."binary-shared" or ((hsPkgs.pkgs-errors).buildDepError "binary-shared"));
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or ((hsPkgs.pkgs-errors).sysDepError "kernel32"));
         buildable = true;
         };
       exes = {
         "leksah" = {
           depends = (([
-            (hsPkgs."leksah" or (buildDepError "leksah"))
-            (hsPkgs."base" or (buildDepError "base"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"))) ++ (if flags.gtk3
-            then [ (hsPkgs."gtk3" or (buildDepError "gtk3")) ]
+            (hsPkgs."leksah" or ((hsPkgs.pkgs-errors).buildDepError "leksah"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or ((hsPkgs.pkgs-errors).buildDepError "Win32"))) ++ (if flags.gtk3
+            then [
+              (hsPkgs."gtk3" or ((hsPkgs.pkgs-errors).buildDepError "gtk3"))
+              ]
             else [
-              (hsPkgs."gtk" or (buildDepError "gtk"))
+              (hsPkgs."gtk" or ((hsPkgs.pkgs-errors).buildDepError "gtk"))
               ])) ++ (pkgs.lib).optionals (system.isLinux && flags.loc) [
-            (hsPkgs."hgettext" or (buildDepError "hgettext"))
-            (hsPkgs."setlocale" or (buildDepError "setlocale"))
+            (hsPkgs."hgettext" or ((hsPkgs.pkgs-errors).buildDepError "hgettext"))
+            (hsPkgs."setlocale" or ((hsPkgs.pkgs-errors).buildDepError "setlocale"))
             ];
-          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32"));
+          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or ((hsPkgs.pkgs-errors).sysDepError "kernel32"));
           buildable = true;
           };
         "bewleksah" = {
           depends = [
-            (hsPkgs."leksah" or (buildDepError "leksah"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."jsaddle" or (buildDepError "jsaddle"))
-            (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom"))
+            (hsPkgs."leksah" or ((hsPkgs.pkgs-errors).buildDepError "leksah"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."jsaddle" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle"))
+            (hsPkgs."ghcjs-dom" or ((hsPkgs.pkgs-errors).buildDepError "ghcjs-dom"))
             ] ++ (if flags.gtk3
             then [
-              (hsPkgs."gtk3" or (buildDepError "gtk3"))
-              (hsPkgs."gtksourceview3" or (buildDepError "gtksourceview3"))
-              (hsPkgs."webkitgtk3" or (buildDepError "webkitgtk3"))
-              (hsPkgs."webkitgtk3-javascriptcore" or (buildDepError "webkitgtk3-javascriptcore"))
+              (hsPkgs."gtk3" or ((hsPkgs.pkgs-errors).buildDepError "gtk3"))
+              (hsPkgs."gtksourceview3" or ((hsPkgs.pkgs-errors).buildDepError "gtksourceview3"))
+              (hsPkgs."webkitgtk3" or ((hsPkgs.pkgs-errors).buildDepError "webkitgtk3"))
+              (hsPkgs."webkitgtk3-javascriptcore" or ((hsPkgs.pkgs-errors).buildDepError "webkitgtk3-javascriptcore"))
               ]
             else [
-              (hsPkgs."gtk" or (buildDepError "gtk"))
-              (hsPkgs."gtksourceview2" or (buildDepError "gtksourceview2"))
-              (hsPkgs."webkit" or (buildDepError "webkit"))
-              (hsPkgs."webkit-javascriptcore" or (buildDepError "webkit-javascriptcore"))
+              (hsPkgs."gtk" or ((hsPkgs.pkgs-errors).buildDepError "gtk"))
+              (hsPkgs."gtksourceview2" or ((hsPkgs.pkgs-errors).buildDepError "gtksourceview2"))
+              (hsPkgs."webkit" or ((hsPkgs.pkgs-errors).buildDepError "webkit"))
+              (hsPkgs."webkit-javascriptcore" or ((hsPkgs.pkgs-errors).buildDepError "webkit-javascriptcore"))
               ]);
           buildable = true;
           };
@@ -191,29 +156,29 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "tests" = {
           depends = ([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."leksah" or (buildDepError "leksah"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."ltk" or (buildDepError "ltk"))
-            (hsPkgs."leksah-server" or (buildDepError "leksah-server"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."glib" or (buildDepError "glib"))
-            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."leksah" or ((hsPkgs.pkgs-errors).buildDepError "leksah"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."ltk" or ((hsPkgs.pkgs-errors).buildDepError "ltk"))
+            (hsPkgs."leksah-server" or ((hsPkgs.pkgs-errors).buildDepError "leksah-server"))
+            (hsPkgs."hslogger" or ((hsPkgs.pkgs-errors).buildDepError "hslogger"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."glib" or ((hsPkgs.pkgs-errors).buildDepError "glib"))
+            (hsPkgs."monad-loops" or ((hsPkgs.pkgs-errors).buildDepError "monad-loops"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
             ] ++ (if flags.gtk3
             then [
-              (hsPkgs."gtk3" or (buildDepError "gtk3"))
-              (hsPkgs."gtksourceview3" or (buildDepError "gtksourceview3"))
-              (hsPkgs."webkitgtk3" or (buildDepError "webkitgtk3"))
+              (hsPkgs."gtk3" or ((hsPkgs.pkgs-errors).buildDepError "gtk3"))
+              (hsPkgs."gtksourceview3" or ((hsPkgs.pkgs-errors).buildDepError "gtksourceview3"))
+              (hsPkgs."webkitgtk3" or ((hsPkgs.pkgs-errors).buildDepError "webkitgtk3"))
               ]
             else [
-              (hsPkgs."gtk" or (buildDepError "gtk"))
-              (hsPkgs."gtksourceview2" or (buildDepError "gtksourceview2"))
-              (hsPkgs."webkit" or (buildDepError "webkit"))
-              ])) ++ (pkgs.lib).optional (flags.yi) (hsPkgs."yi" or (buildDepError "yi"));
+              (hsPkgs."gtk" or ((hsPkgs.pkgs-errors).buildDepError "gtk"))
+              (hsPkgs."gtksourceview2" or ((hsPkgs.pkgs-errors).buildDepError "gtksourceview2"))
+              (hsPkgs."webkit" or ((hsPkgs.pkgs-errors).buildDepError "webkit"))
+              ])) ++ (pkgs.lib).optional (flags.yi) (hsPkgs."yi" or ((hsPkgs.pkgs-errors).buildDepError "yi"));
           buildable = true;
           };
         };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; library-only = true; };
     package = {
@@ -56,58 +17,58 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."yesod" or (buildDepError "yesod"))
-          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
-          (hsPkgs."mangopay" or (buildDepError "mangopay"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."yesod" or ((hsPkgs.pkgs-errors).buildDepError "yesod"))
+          (hsPkgs."yesod-core" or ((hsPkgs.pkgs-errors).buildDepError "yesod-core"))
+          (hsPkgs."mangopay" or ((hsPkgs.pkgs-errors).buildDepError "mangopay"))
+          (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
           ];
         buildable = true;
         };
       exes = {
         "yesod-mangopay" = {
           depends = [
-            (hsPkgs."yesod-mangopay" or (buildDepError "yesod-mangopay"))
-            (hsPkgs."mangopay" or (buildDepError "mangopay"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."yesod" or (buildDepError "yesod"))
-            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
-            (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
-            (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
-            (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
-            (hsPkgs."yesod-persistent" or (buildDepError "yesod-persistent"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."persistent" or (buildDepError "persistent"))
-            (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
-            (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-            (hsPkgs."hamlet" or (buildDepError "hamlet"))
-            (hsPkgs."shakespeare-css" or (buildDepError "shakespeare-css"))
-            (hsPkgs."shakespeare-js" or (buildDepError "shakespeare-js"))
-            (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
-            (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-            (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."yesod-mangopay" or ((hsPkgs.pkgs-errors).buildDepError "yesod-mangopay"))
+            (hsPkgs."mangopay" or ((hsPkgs.pkgs-errors).buildDepError "mangopay"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."yesod" or ((hsPkgs.pkgs-errors).buildDepError "yesod"))
+            (hsPkgs."yesod-core" or ((hsPkgs.pkgs-errors).buildDepError "yesod-core"))
+            (hsPkgs."yesod-auth" or ((hsPkgs.pkgs-errors).buildDepError "yesod-auth"))
+            (hsPkgs."yesod-static" or ((hsPkgs.pkgs-errors).buildDepError "yesod-static"))
+            (hsPkgs."yesod-form" or ((hsPkgs.pkgs-errors).buildDepError "yesod-form"))
+            (hsPkgs."yesod-persistent" or ((hsPkgs.pkgs-errors).buildDepError "yesod-persistent"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."persistent" or ((hsPkgs.pkgs-errors).buildDepError "persistent"))
+            (hsPkgs."persistent-postgresql" or ((hsPkgs.pkgs-errors).buildDepError "persistent-postgresql"))
+            (hsPkgs."persistent-template" or ((hsPkgs.pkgs-errors).buildDepError "persistent-template"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."shakespeare" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare"))
+            (hsPkgs."hamlet" or ((hsPkgs.pkgs-errors).buildDepError "hamlet"))
+            (hsPkgs."shakespeare-css" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare-css"))
+            (hsPkgs."shakespeare-js" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare-js"))
+            (hsPkgs."shakespeare-text" or ((hsPkgs.pkgs-errors).buildDepError "shakespeare-text"))
+            (hsPkgs."hjsmin" or ((hsPkgs.pkgs-errors).buildDepError "hjsmin"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."wai-extra" or ((hsPkgs.pkgs-errors).buildDepError "wai-extra"))
+            (hsPkgs."yaml" or ((hsPkgs.pkgs-errors).buildDepError "yaml"))
+            (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+            (hsPkgs."fast-logger" or ((hsPkgs.pkgs-errors).buildDepError "fast-logger"))
+            (hsPkgs."wai-logger" or ((hsPkgs.pkgs-errors).buildDepError "wai-logger"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
             ];
           buildable = if flags.library-only then false else true;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,30 +17,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."persistent" or (buildDepError "persistent"))
-          (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
-          (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
-          (hsPkgs."scotty" or (buildDepError "scotty"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-          (hsPkgs."warp" or (buildDepError "warp"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+          (hsPkgs."persistent" or ((hsPkgs.pkgs-errors).buildDepError "persistent"))
+          (hsPkgs."persistent-postgresql" or ((hsPkgs.pkgs-errors).buildDepError "persistent-postgresql"))
+          (hsPkgs."persistent-template" or ((hsPkgs.pkgs-errors).buildDepError "persistent-template"))
+          (hsPkgs."scotty" or ((hsPkgs.pkgs-errors).buildDepError "scotty"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+          (hsPkgs."wai-extra" or ((hsPkgs.pkgs-errors).buildDepError "wai-extra"))
+          (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
           ];
         buildable = true;
         };
       exes = {
         "hairy" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hairy" or (buildDepError "hairy"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hairy" or ((hsPkgs.pkgs-errors).buildDepError "hairy"))
             ];
           buildable = true;
           };
@@ -87,16 +48,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "hspec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hairy" or (buildDepError "hairy"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."persistent" or (buildDepError "persistent"))
-            (hsPkgs."scotty" or (buildDepError "scotty"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hairy" or ((hsPkgs.pkgs-errors).buildDepError "hairy"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."persistent" or ((hsPkgs.pkgs-errors).buildDepError "persistent"))
+            (hsPkgs."scotty" or ((hsPkgs.pkgs-errors).buildDepError "scotty"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+            (hsPkgs."wai-extra" or ((hsPkgs.pkgs-errors).buildDepError "wai-extra"))
             ];
           buildable = true;
           };
@@ -104,16 +65,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "criterion" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hairy" or (buildDepError "hairy"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."persistent" or (buildDepError "persistent"))
-            (hsPkgs."scotty" or (buildDepError "scotty"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hairy" or ((hsPkgs.pkgs-errors).buildDepError "hairy"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."persistent" or ((hsPkgs.pkgs-errors).buildDepError "persistent"))
+            (hsPkgs."scotty" or ((hsPkgs.pkgs-errors).buildDepError "scotty"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+            (hsPkgs."wai-extra" or ((hsPkgs.pkgs-errors).buildDepError "wai-extra"))
             ];
           buildable = true;
           };

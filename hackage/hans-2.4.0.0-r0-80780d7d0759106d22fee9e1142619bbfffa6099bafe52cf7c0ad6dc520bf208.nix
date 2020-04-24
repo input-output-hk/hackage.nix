@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       bounded-channels = false;
@@ -62,55 +23,55 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."monadLib" or (buildDepError "monadLib"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."fingertree" or (buildDepError "fingertree"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."monadLib" or ((hsPkgs.pkgs-errors).buildDepError "monadLib"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."fingertree" or ((hsPkgs.pkgs-errors).buildDepError "fingertree"))
           ] ++ (if system.isHalvm
           then [
-            (hsPkgs."XenDevice" or (buildDepError "XenDevice"))
-            (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
+            (hsPkgs."XenDevice" or ((hsPkgs.pkgs-errors).buildDepError "XenDevice"))
+            (hsPkgs."HALVMCore" or ((hsPkgs.pkgs-errors).buildDepError "HALVMCore"))
             ]
           else [
-            (hsPkgs."unix" or (buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (flags.bounded-channels) (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"))) ++ [
-          (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            ])) ++ (pkgs.lib).optional (flags.bounded-channels) (hsPkgs."BoundedChan" or ((hsPkgs.pkgs-errors).buildDepError "BoundedChan"))) ++ [
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
           ];
         buildable = true;
         };
       exes = {
         "test" = {
           depends = ([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."monadLib" or (buildDepError "monadLib"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."hans" or (buildDepError "hans"))
-            ] ++ (pkgs.lib).optional (flags.bounded-channels) (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"))) ++ (pkgs.lib).optionals (system.isHalvm) [
-            (hsPkgs."XenDevice" or (buildDepError "XenDevice"))
-            (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."monadLib" or ((hsPkgs.pkgs-errors).buildDepError "monadLib"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."hans" or ((hsPkgs.pkgs-errors).buildDepError "hans"))
+            ] ++ (pkgs.lib).optional (flags.bounded-channels) (hsPkgs."BoundedChan" or ((hsPkgs.pkgs-errors).buildDepError "BoundedChan"))) ++ (pkgs.lib).optionals (system.isHalvm) [
+            (hsPkgs."XenDevice" or ((hsPkgs.pkgs-errors).buildDepError "XenDevice"))
+            (hsPkgs."HALVMCore" or ((hsPkgs.pkgs-errors).buildDepError "HALVMCore"))
             ];
           buildable = if flags.example then true else false;
           };
         "web-server" = {
           depends = (pkgs.lib).optionals (!system.isHalvm) ((pkgs.lib).optionals (flags.web-server) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."monadLib" or (buildDepError "monadLib"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-            (hsPkgs."hans" or (buildDepError "hans"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."monadLib" or ((hsPkgs.pkgs-errors).buildDepError "monadLib"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."blaze-html" or ((hsPkgs.pkgs-errors).buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or ((hsPkgs.pkgs-errors).buildDepError "blaze-markup"))
+            (hsPkgs."hans" or ((hsPkgs.pkgs-errors).buildDepError "hans"))
             ]);
           buildable = if system.isHalvm
             then false
@@ -118,32 +79,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "tcp-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."monadLib" or (buildDepError "monadLib"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."hans" or (buildDepError "hans"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."monadLib" or ((hsPkgs.pkgs-errors).buildDepError "monadLib"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."hans" or ((hsPkgs.pkgs-errors).buildDepError "hans"))
             ] ++ (pkgs.lib).optionals (system.isHalvm) [
-            (hsPkgs."XenDevice" or (buildDepError "XenDevice"))
-            (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
+            (hsPkgs."XenDevice" or ((hsPkgs.pkgs-errors).buildDepError "XenDevice"))
+            (hsPkgs."HALVMCore" or ((hsPkgs.pkgs-errors).buildDepError "HALVMCore"))
             ];
           buildable = true;
           };
         "test-suite" = {
           depends = (pkgs.lib).optionals (flags.enable-tests) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."hans" or (buildDepError "hans"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."test-framework-quickcheck2" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework" or ((hsPkgs.pkgs-errors).buildDepError "test-framework"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+            (hsPkgs."hans" or ((hsPkgs.pkgs-errors).buildDepError "hans"))
             ];
           buildable = if flags.enable-tests then true else false;
           };

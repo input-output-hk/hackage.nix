@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,52 +17,52 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."cairo" or (buildDepError "cairo"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."fgl" or (buildDepError "fgl"))
-          (hsPkgs."fgl" or (buildDepError "fgl"))
-          (hsPkgs."glade" or (buildDepError "glade"))
-          (hsPkgs."graphviz" or (buildDepError "graphviz"))
-          (hsPkgs."gtk" or (buildDepError "gtk"))
-          (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
-          (hsPkgs."ipprint" or (buildDepError "ipprint"))
-          (hsPkgs."isevaluated" or (buildDepError "isevaluated"))
-          (hsPkgs."lazysmallcheck" or (buildDepError "lazysmallcheck"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
-          (hsPkgs."svgcairo" or (buildDepError "svgcairo"))
-          (hsPkgs."value-supply" or (buildDepError "value-supply"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."cairo" or ((hsPkgs.pkgs-errors).buildDepError "cairo"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."fgl" or ((hsPkgs.pkgs-errors).buildDepError "fgl"))
+          (hsPkgs."fgl" or ((hsPkgs.pkgs-errors).buildDepError "fgl"))
+          (hsPkgs."glade" or ((hsPkgs.pkgs-errors).buildDepError "glade"))
+          (hsPkgs."graphviz" or ((hsPkgs.pkgs-errors).buildDepError "graphviz"))
+          (hsPkgs."gtk" or ((hsPkgs.pkgs-errors).buildDepError "gtk"))
+          (hsPkgs."haskell-src" or ((hsPkgs.pkgs-errors).buildDepError "haskell-src"))
+          (hsPkgs."ipprint" or ((hsPkgs.pkgs-errors).buildDepError "ipprint"))
+          (hsPkgs."isevaluated" or ((hsPkgs.pkgs-errors).buildDepError "isevaluated"))
+          (hsPkgs."lazysmallcheck" or ((hsPkgs.pkgs-errors).buildDepError "lazysmallcheck"))
+          (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+          (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."strict-concurrency" or ((hsPkgs.pkgs-errors).buildDepError "strict-concurrency"))
+          (hsPkgs."svgcairo" or ((hsPkgs.pkgs-errors).buildDepError "svgcairo"))
+          (hsPkgs."value-supply" or ((hsPkgs.pkgs-errors).buildDepError "value-supply"))
           ];
         buildable = true;
         };
       exes = {
         "visual-graphrewrite" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cairo" or (buildDepError "cairo"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."fgl" or (buildDepError "fgl"))
-            (hsPkgs."fgl" or (buildDepError "fgl"))
-            (hsPkgs."glade" or (buildDepError "glade"))
-            (hsPkgs."graphviz" or (buildDepError "graphviz"))
-            (hsPkgs."gtk" or (buildDepError "gtk"))
-            (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
-            (hsPkgs."ipprint" or (buildDepError "ipprint"))
-            (hsPkgs."isevaluated" or (buildDepError "isevaluated"))
-            (hsPkgs."lazysmallcheck" or (buildDepError "lazysmallcheck"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
-            (hsPkgs."svgcairo" or (buildDepError "svgcairo"))
-            (hsPkgs."value-supply" or (buildDepError "value-supply"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."cairo" or ((hsPkgs.pkgs-errors).buildDepError "cairo"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."fgl" or ((hsPkgs.pkgs-errors).buildDepError "fgl"))
+            (hsPkgs."fgl" or ((hsPkgs.pkgs-errors).buildDepError "fgl"))
+            (hsPkgs."glade" or ((hsPkgs.pkgs-errors).buildDepError "glade"))
+            (hsPkgs."graphviz" or ((hsPkgs.pkgs-errors).buildDepError "graphviz"))
+            (hsPkgs."gtk" or ((hsPkgs.pkgs-errors).buildDepError "gtk"))
+            (hsPkgs."haskell-src" or ((hsPkgs.pkgs-errors).buildDepError "haskell-src"))
+            (hsPkgs."ipprint" or ((hsPkgs.pkgs-errors).buildDepError "ipprint"))
+            (hsPkgs."isevaluated" or ((hsPkgs.pkgs-errors).buildDepError "isevaluated"))
+            (hsPkgs."lazysmallcheck" or ((hsPkgs.pkgs-errors).buildDepError "lazysmallcheck"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."strict-concurrency" or ((hsPkgs.pkgs-errors).buildDepError "strict-concurrency"))
+            (hsPkgs."svgcairo" or ((hsPkgs.pkgs-errors).buildDepError "svgcairo"))
+            (hsPkgs."value-supply" or ((hsPkgs.pkgs-errors).buildDepError "value-supply"))
             ];
           buildable = true;
           };

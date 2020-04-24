@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,25 +17,25 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."haskell98" or (buildDepError "haskell98"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."haskell98" or ((hsPkgs.pkgs-errors).buildDepError "haskell98"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
           ];
         libs = [
-          (pkgs."avformat" or (sysDepError "avformat"))
-          (pkgs."avcodec" or (sysDepError "avcodec"))
-          (pkgs."avutil" or (sysDepError "avutil"))
-          (pkgs."avfilter" or (sysDepError "avfilter"))
-          (pkgs."avdevice" or (sysDepError "avdevice"))
-          (pkgs."swscale" or (sysDepError "swscale"))
-          (pkgs."vorbisfile" or (sysDepError "vorbisfile"))
-          (pkgs."vorbis" or (sysDepError "vorbis"))
-          (pkgs."vorbisenc" or (sysDepError "vorbisenc"))
-          (pkgs."theora" or (sysDepError "theora"))
-          (pkgs."mp3lame" or (sysDepError "mp3lame"))
-          (pkgs."faac" or (sysDepError "faac"))
-          (pkgs."z" or (sysDepError "z"))
-          (pkgs."dc1394_control" or (sysDepError "dc1394_control"))
+          (pkgs."avformat" or ((hsPkgs.pkgs-errors).sysDepError "avformat"))
+          (pkgs."avcodec" or ((hsPkgs.pkgs-errors).sysDepError "avcodec"))
+          (pkgs."avutil" or ((hsPkgs.pkgs-errors).sysDepError "avutil"))
+          (pkgs."avfilter" or ((hsPkgs.pkgs-errors).sysDepError "avfilter"))
+          (pkgs."avdevice" or ((hsPkgs.pkgs-errors).sysDepError "avdevice"))
+          (pkgs."swscale" or ((hsPkgs.pkgs-errors).sysDepError "swscale"))
+          (pkgs."vorbisfile" or ((hsPkgs.pkgs-errors).sysDepError "vorbisfile"))
+          (pkgs."vorbis" or ((hsPkgs.pkgs-errors).sysDepError "vorbis"))
+          (pkgs."vorbisenc" or ((hsPkgs.pkgs-errors).sysDepError "vorbisenc"))
+          (pkgs."theora" or ((hsPkgs.pkgs-errors).sysDepError "theora"))
+          (pkgs."mp3lame" or ((hsPkgs.pkgs-errors).sysDepError "mp3lame"))
+          (pkgs."faac" or ((hsPkgs.pkgs-errors).sysDepError "faac"))
+          (pkgs."z" or ((hsPkgs.pkgs-errors).sysDepError "z"))
+          (pkgs."dc1394_control" or ((hsPkgs.pkgs-errors).sysDepError "dc1394_control"))
           ];
         buildable = true;
         };

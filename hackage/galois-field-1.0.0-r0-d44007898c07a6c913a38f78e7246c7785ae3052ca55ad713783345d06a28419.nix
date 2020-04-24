@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,34 +17,34 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."groups" or (buildDepError "groups"))
-          (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
-          (hsPkgs."poly" or (buildDepError "poly"))
-          (hsPkgs."protolude" or (buildDepError "protolude"))
-          (hsPkgs."semirings" or (buildDepError "semirings"))
-          (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
+          (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."groups" or ((hsPkgs.pkgs-errors).buildDepError "groups"))
+          (hsPkgs."integer-gmp" or ((hsPkgs.pkgs-errors).buildDepError "integer-gmp"))
+          (hsPkgs."poly" or ((hsPkgs.pkgs-errors).buildDepError "poly"))
+          (hsPkgs."protolude" or ((hsPkgs.pkgs-errors).buildDepError "protolude"))
+          (hsPkgs."semirings" or ((hsPkgs.pkgs-errors).buildDepError "semirings"))
+          (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."wl-pprint-text" or ((hsPkgs.pkgs-errors).buildDepError "wl-pprint-text"))
           ];
         buildable = true;
         };
       tests = {
         "galois-field-tests" = {
           depends = [
-            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."galois-field" or (buildDepError "galois-field"))
-            (hsPkgs."groups" or (buildDepError "groups"))
-            (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
-            (hsPkgs."poly" or (buildDepError "poly"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."semirings" or (buildDepError "semirings"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
+            (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."galois-field" or ((hsPkgs.pkgs-errors).buildDepError "galois-field"))
+            (hsPkgs."groups" or ((hsPkgs.pkgs-errors).buildDepError "groups"))
+            (hsPkgs."integer-gmp" or ((hsPkgs.pkgs-errors).buildDepError "integer-gmp"))
+            (hsPkgs."poly" or ((hsPkgs.pkgs-errors).buildDepError "poly"))
+            (hsPkgs."protolude" or ((hsPkgs.pkgs-errors).buildDepError "protolude"))
+            (hsPkgs."semirings" or ((hsPkgs.pkgs-errors).buildDepError "semirings"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."wl-pprint-text" or ((hsPkgs.pkgs-errors).buildDepError "wl-pprint-text"))
             ];
           buildable = true;
           };
@@ -91,18 +52,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "galois-field-benchmarks" = {
           depends = [
-            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."galois-field" or (buildDepError "galois-field"))
-            (hsPkgs."groups" or (buildDepError "groups"))
-            (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
-            (hsPkgs."poly" or (buildDepError "poly"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."semirings" or (buildDepError "semirings"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
+            (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."galois-field" or ((hsPkgs.pkgs-errors).buildDepError "galois-field"))
+            (hsPkgs."groups" or ((hsPkgs.pkgs-errors).buildDepError "groups"))
+            (hsPkgs."integer-gmp" or ((hsPkgs.pkgs-errors).buildDepError "integer-gmp"))
+            (hsPkgs."poly" or ((hsPkgs.pkgs-errors).buildDepError "poly"))
+            (hsPkgs."protolude" or ((hsPkgs.pkgs-errors).buildDepError "protolude"))
+            (hsPkgs."semirings" or ((hsPkgs.pkgs-errors).buildDepError "semirings"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."wl-pprint-text" or ((hsPkgs.pkgs-errors).buildDepError "wl-pprint-text"))
             ];
           buildable = true;
           };

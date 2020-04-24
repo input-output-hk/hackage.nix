@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       ghcapi = false;
@@ -62,40 +23,40 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       };
     components = {
       "library" = {
-        depends = (pkgs.lib).optional (flags.vty) (hsPkgs."vty" or (buildDepError "vty"));
+        depends = (pkgs.lib).optional (flags.vty) (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"));
         buildable = true;
         };
       exes = {
         "yi" = {
           depends = (((((([
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."fingertree" or (buildDepError "fingertree"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-            (hsPkgs."regex-base" or (buildDepError "regex-base"))
-            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (flags.vty) (hsPkgs."vty" or (buildDepError "vty"))) ++ (pkgs.lib).optional (flags.gtk) (hsPkgs."gtk" or (buildDepError "gtk"))) ++ (pkgs.lib).optional (flags.pango) (hsPkgs."gtk" or (buildDepError "gtk"))) ++ (pkgs.lib).optionals (flags.cocoa) [
-            (hsPkgs."HOC" or (buildDepError "HOC"))
-            (hsPkgs."HOC-AppKit" or (buildDepError "HOC-AppKit"))
-            (hsPkgs."HOC-Foundation" or (buildDepError "HOC-Foundation"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."fingertree" or ((hsPkgs.pkgs-errors).buildDepError "fingertree"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+            (hsPkgs."regex-base" or ((hsPkgs.pkgs-errors).buildDepError "regex-base"))
+            (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))) ++ (pkgs.lib).optional (flags.vty) (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))) ++ (pkgs.lib).optional (flags.gtk) (hsPkgs."gtk" or ((hsPkgs.pkgs-errors).buildDepError "gtk"))) ++ (pkgs.lib).optional (flags.pango) (hsPkgs."gtk" or ((hsPkgs.pkgs-errors).buildDepError "gtk"))) ++ (pkgs.lib).optionals (flags.cocoa) [
+            (hsPkgs."HOC" or ((hsPkgs.pkgs-errors).buildDepError "HOC"))
+            (hsPkgs."HOC-AppKit" or ((hsPkgs.pkgs-errors).buildDepError "HOC-AppKit"))
+            (hsPkgs."HOC-Foundation" or ((hsPkgs.pkgs-errors).buildDepError "HOC-Foundation"))
             ]) ++ (pkgs.lib).optionals (flags.ghcapi) [
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."haskell98" or (buildDepError "haskell98"))
-            ]) ++ (pkgs.lib).optional (flags.testing) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
+            (hsPkgs."ghc" or ((hsPkgs.pkgs-errors).buildDepError "ghc"))
+            (hsPkgs."haskell98" or ((hsPkgs.pkgs-errors).buildDepError "haskell98"))
+            ]) ++ (pkgs.lib).optional (flags.testing) (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"));
           build-tools = [
-            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or ((hsPkgs.pkgs-errors).buildToolDepError "alex")))
             ];
           buildable = if !(flags.vty || flags.gtk || flags.cocoa)
             then false

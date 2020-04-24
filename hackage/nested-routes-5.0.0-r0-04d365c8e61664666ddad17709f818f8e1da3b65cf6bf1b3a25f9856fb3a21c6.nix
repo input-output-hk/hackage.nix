@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; example-stm = false; };
     package = {
@@ -56,85 +17,85 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."composition-extra" or (buildDepError "composition-extra"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."poly-arity" or (buildDepError "poly-arity"))
-          (hsPkgs."pred-trie" or (buildDepError "pred-trie"))
-          (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."tries" or (buildDepError "tries"))
-          (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
-          (hsPkgs."wai-middleware-content-type" or (buildDepError "wai-middleware-content-type"))
-          (hsPkgs."wai-middleware-verbs" or (buildDepError "wai-middleware-verbs"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."composition-extra" or ((hsPkgs.pkgs-errors).buildDepError "composition-extra"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."poly-arity" or ((hsPkgs.pkgs-errors).buildDepError "poly-arity"))
+          (hsPkgs."pred-trie" or ((hsPkgs.pkgs-errors).buildDepError "pred-trie"))
+          (hsPkgs."regex-compat" or ((hsPkgs.pkgs-errors).buildDepError "regex-compat"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."tries" or ((hsPkgs.pkgs-errors).buildDepError "tries"))
+          (hsPkgs."wai-transformers" or ((hsPkgs.pkgs-errors).buildDepError "wai-transformers"))
+          (hsPkgs."wai-middleware-content-type" or ((hsPkgs.pkgs-errors).buildDepError "wai-middleware-content-type"))
+          (hsPkgs."wai-middleware-verbs" or ((hsPkgs.pkgs-errors).buildDepError "wai-middleware-verbs"))
           ];
         buildable = true;
         };
       exes = {
         "example" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."nested-routes" or (buildDepError "nested-routes"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."composition-extra" or (buildDepError "composition-extra"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."poly-arity" or (buildDepError "poly-arity"))
-            (hsPkgs."pred-trie" or (buildDepError "pred-trie"))
-            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."tries" or (buildDepError "tries"))
-            (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
-            (hsPkgs."wai-middleware-content-type" or (buildDepError "wai-middleware-content-type"))
-            (hsPkgs."wai-middleware-verbs" or (buildDepError "wai-middleware-verbs"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."nested-routes" or ((hsPkgs.pkgs-errors).buildDepError "nested-routes"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."composition-extra" or ((hsPkgs.pkgs-errors).buildDepError "composition-extra"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."poly-arity" or ((hsPkgs.pkgs-errors).buildDepError "poly-arity"))
+            (hsPkgs."pred-trie" or ((hsPkgs.pkgs-errors).buildDepError "pred-trie"))
+            (hsPkgs."regex-compat" or ((hsPkgs.pkgs-errors).buildDepError "regex-compat"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."tries" or ((hsPkgs.pkgs-errors).buildDepError "tries"))
+            (hsPkgs."wai-transformers" or ((hsPkgs.pkgs-errors).buildDepError "wai-transformers"))
+            (hsPkgs."wai-middleware-content-type" or ((hsPkgs.pkgs-errors).buildDepError "wai-middleware-content-type"))
+            (hsPkgs."wai-middleware-verbs" or ((hsPkgs.pkgs-errors).buildDepError "wai-middleware-verbs"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
             ];
           buildable = if flags.example then true else false;
           };
         "example-stm" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."nested-routes" or (buildDepError "nested-routes"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."composition-extra" or (buildDepError "composition-extra"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."cookie" or (buildDepError "cookie"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."errors" or (buildDepError "errors"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."iso8601-time" or (buildDepError "iso8601-time"))
-            (hsPkgs."lucid" or (buildDepError "lucid"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."poly-arity" or (buildDepError "poly-arity"))
-            (hsPkgs."pred-trie" or (buildDepError "pred-trie"))
-            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."tries" or (buildDepError "tries"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."wai-middleware-content-type" or (buildDepError "wai-middleware-content-type"))
-            (hsPkgs."wai-middleware-verbs" or (buildDepError "wai-middleware-verbs"))
-            (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
-            (hsPkgs."wai-session" or (buildDepError "wai-session"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base64-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base64-bytestring"))
+            (hsPkgs."blaze-builder" or ((hsPkgs.pkgs-errors).buildDepError "blaze-builder"))
+            (hsPkgs."nested-routes" or ((hsPkgs.pkgs-errors).buildDepError "nested-routes"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."composition-extra" or ((hsPkgs.pkgs-errors).buildDepError "composition-extra"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."cookie" or ((hsPkgs.pkgs-errors).buildDepError "cookie"))
+            (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."errors" or ((hsPkgs.pkgs-errors).buildDepError "errors"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."iso8601-time" or ((hsPkgs.pkgs-errors).buildDepError "iso8601-time"))
+            (hsPkgs."lucid" or ((hsPkgs.pkgs-errors).buildDepError "lucid"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."poly-arity" or ((hsPkgs.pkgs-errors).buildDepError "poly-arity"))
+            (hsPkgs."pred-trie" or ((hsPkgs.pkgs-errors).buildDepError "pred-trie"))
+            (hsPkgs."regex-compat" or ((hsPkgs.pkgs-errors).buildDepError "regex-compat"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."tries" or ((hsPkgs.pkgs-errors).buildDepError "tries"))
+            (hsPkgs."wai-extra" or ((hsPkgs.pkgs-errors).buildDepError "wai-extra"))
+            (hsPkgs."wai-middleware-content-type" or ((hsPkgs.pkgs-errors).buildDepError "wai-middleware-content-type"))
+            (hsPkgs."wai-middleware-verbs" or ((hsPkgs.pkgs-errors).buildDepError "wai-middleware-verbs"))
+            (hsPkgs."wai-transformers" or ((hsPkgs.pkgs-errors).buildDepError "wai-transformers"))
+            (hsPkgs."wai-session" or ((hsPkgs.pkgs-errors).buildDepError "wai-session"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
             ];
           buildable = if flags.example-stm then true else false;
           };
@@ -142,26 +103,26 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."nested-routes" or (buildDepError "nested-routes"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."composition-extra" or (buildDepError "composition-extra"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."poly-arity" or (buildDepError "poly-arity"))
-            (hsPkgs."pred-trie" or (buildDepError "pred-trie"))
-            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."tries" or (buildDepError "tries"))
-            (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
-            (hsPkgs."wai-middleware-content-type" or (buildDepError "wai-middleware-content-type"))
-            (hsPkgs."wai-middleware-verbs" or (buildDepError "wai-middleware-verbs"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-wai" or (buildDepError "hspec-wai"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."nested-routes" or ((hsPkgs.pkgs-errors).buildDepError "nested-routes"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."composition-extra" or ((hsPkgs.pkgs-errors).buildDepError "composition-extra"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."poly-arity" or ((hsPkgs.pkgs-errors).buildDepError "poly-arity"))
+            (hsPkgs."pred-trie" or ((hsPkgs.pkgs-errors).buildDepError "pred-trie"))
+            (hsPkgs."regex-compat" or ((hsPkgs.pkgs-errors).buildDepError "regex-compat"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."tries" or ((hsPkgs.pkgs-errors).buildDepError "tries"))
+            (hsPkgs."wai-transformers" or ((hsPkgs.pkgs-errors).buildDepError "wai-transformers"))
+            (hsPkgs."wai-middleware-content-type" or ((hsPkgs.pkgs-errors).buildDepError "wai-middleware-content-type"))
+            (hsPkgs."wai-middleware-verbs" or ((hsPkgs.pkgs-errors).buildDepError "wai-middleware-verbs"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."hspec-wai" or ((hsPkgs.pkgs-errors).buildDepError "hspec-wai"))
             ];
           buildable = true;
           };

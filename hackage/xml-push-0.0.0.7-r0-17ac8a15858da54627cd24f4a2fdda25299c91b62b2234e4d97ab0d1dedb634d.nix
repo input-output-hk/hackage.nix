@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,24 +17,24 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."peyotls" or (buildDepError "peyotls"))
-          (hsPkgs."simple-pipe" or (buildDepError "simple-pipe"))
-          (hsPkgs."xml-pipe" or (buildDepError "xml-pipe"))
-          (hsPkgs."handle-like" or (buildDepError "handle-like"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."xmpipe" or (buildDepError "xmpipe"))
-          (hsPkgs."sasl" or (buildDepError "sasl"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
-          (hsPkgs."x509" or (buildDepError "x509"))
-          (hsPkgs."x509-store" or (buildDepError "x509-store"))
-          (hsPkgs."tighttp" or (buildDepError "tighttp"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."peyotls" or ((hsPkgs.pkgs-errors).buildDepError "peyotls"))
+          (hsPkgs."simple-pipe" or ((hsPkgs.pkgs-errors).buildDepError "simple-pipe"))
+          (hsPkgs."xml-pipe" or ((hsPkgs.pkgs-errors).buildDepError "xml-pipe"))
+          (hsPkgs."handle-like" or ((hsPkgs.pkgs-errors).buildDepError "handle-like"))
+          (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+          (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+          (hsPkgs."monads-tf" or ((hsPkgs.pkgs-errors).buildDepError "monads-tf"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."xmpipe" or ((hsPkgs.pkgs-errors).buildDepError "xmpipe"))
+          (hsPkgs."sasl" or ((hsPkgs.pkgs-errors).buildDepError "sasl"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."uuid" or ((hsPkgs.pkgs-errors).buildDepError "uuid"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."crypto-random" or ((hsPkgs.pkgs-errors).buildDepError "crypto-random"))
+          (hsPkgs."x509" or ((hsPkgs.pkgs-errors).buildDepError "x509"))
+          (hsPkgs."x509-store" or ((hsPkgs.pkgs-errors).buildDepError "x509-store"))
+          (hsPkgs."tighttp" or ((hsPkgs.pkgs-errors).buildDepError "tighttp"))
           ];
         buildable = true;
         };

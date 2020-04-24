@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,28 +17,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."constraints" or (buildDepError "constraints"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."comonad" or (buildDepError "comonad"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."monad-skeleton" or (buildDepError "monad-skeleton"))
-          (hsPkgs."StateVar" or (buildDepError "StateVar"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."constraints" or ((hsPkgs.pkgs-errors).buildDepError "constraints"))
+          (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+          (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+          (hsPkgs."profunctors" or ((hsPkgs.pkgs-errors).buildDepError "profunctors"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."comonad" or ((hsPkgs.pkgs-errors).buildDepError "comonad"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."tagged" or ((hsPkgs.pkgs-errors).buildDepError "tagged"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."monad-skeleton" or ((hsPkgs.pkgs-errors).buildDepError "monad-skeleton"))
+          (hsPkgs."StateVar" or ((hsPkgs.pkgs-errors).buildDepError "StateVar"))
           ];
         buildable = true;
         };
       tests = {
         "effects" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."extensible" or (buildDepError "extensible"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."extensible" or ((hsPkgs.pkgs-errors).buildDepError "extensible"))
             ];
           buildable = true;
           };
@@ -85,22 +46,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "records" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."extensible" or (buildDepError "extensible"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."extensible" or ((hsPkgs.pkgs-errors).buildDepError "extensible"))
             ];
           buildable = true;
           };
         "eff-comparison" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."extensible" or (buildDepError "extensible"))
-            (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
-            (hsPkgs."effin" or (buildDepError "effin"))
-            (hsPkgs."freer-effects" or (buildDepError "freer-effects"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."extensible" or ((hsPkgs.pkgs-errors).buildDepError "extensible"))
+            (hsPkgs."extensible-effects" or ((hsPkgs.pkgs-errors).buildDepError "extensible-effects"))
+            (hsPkgs."effin" or ((hsPkgs.pkgs-errors).buildDepError "effin"))
+            (hsPkgs."freer-effects" or ((hsPkgs.pkgs-errors).buildDepError "freer-effects"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
             ];
           buildable = true;
           };

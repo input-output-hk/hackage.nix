@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,128 +17,128 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."Decimal" or (buildDepError "Decimal"))
-          (hsPkgs."Glob" or (buildDepError "Glob"))
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base-compat-batteries" or (buildDepError "base-compat-batteries"))
-          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."call-stack" or (buildDepError "call-stack"))
-          (hsPkgs."cassava" or (buildDepError "cassava"))
-          (hsPkgs."cassava-megaparsec" or (buildDepError "cassava-megaparsec"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."easytest" or (buildDepError "easytest"))
-          (hsPkgs."extra" or (buildDepError "extra"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."hashtables" or (buildDepError "hashtables"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
-          (hsPkgs."old-time" or (buildDepError "old-time"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."parser-combinators" or (buildDepError "parser-combinators"))
-          (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."tabular" or (buildDepError "tabular"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          (hsPkgs."Decimal" or ((hsPkgs.pkgs-errors).buildDepError "Decimal"))
+          (hsPkgs."Glob" or ((hsPkgs.pkgs-errors).buildDepError "Glob"))
+          (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base-compat-batteries" or ((hsPkgs.pkgs-errors).buildDepError "base-compat-batteries"))
+          (hsPkgs."blaze-markup" or ((hsPkgs.pkgs-errors).buildDepError "blaze-markup"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."call-stack" or ((hsPkgs.pkgs-errors).buildDepError "call-stack"))
+          (hsPkgs."cassava" or ((hsPkgs.pkgs-errors).buildDepError "cassava"))
+          (hsPkgs."cassava-megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "cassava-megaparsec"))
+          (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."easytest" or ((hsPkgs.pkgs-errors).buildDepError "easytest"))
+          (hsPkgs."extra" or ((hsPkgs.pkgs-errors).buildDepError "extra"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."hashtables" or ((hsPkgs.pkgs-errors).buildDepError "hashtables"))
+          (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."mtl-compat" or ((hsPkgs.pkgs-errors).buildDepError "mtl-compat"))
+          (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."parser-combinators" or ((hsPkgs.pkgs-errors).buildDepError "parser-combinators"))
+          (hsPkgs."pretty-show" or ((hsPkgs.pkgs-errors).buildDepError "pretty-show"))
+          (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+          (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+          (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+          (hsPkgs."tabular" or ((hsPkgs.pkgs-errors).buildDepError "tabular"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."uglymemo" or ((hsPkgs.pkgs-errors).buildDepError "uglymemo"))
+          (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"));
         buildable = true;
         };
       tests = {
         "doctests" = {
           depends = [
-            (hsPkgs."Decimal" or (buildDepError "Decimal"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat-batteries" or (buildDepError "base-compat-batteries"))
-            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."call-stack" or (buildDepError "call-stack"))
-            (hsPkgs."cassava" or (buildDepError "cassava"))
-            (hsPkgs."cassava-megaparsec" or (buildDepError "cassava-megaparsec"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."easytest" or (buildDepError "easytest"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hashtables" or (buildDepError "hashtables"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."parser-combinators" or (buildDepError "parser-combinators"))
-            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."tabular" or (buildDepError "tabular"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+            (hsPkgs."Decimal" or ((hsPkgs.pkgs-errors).buildDepError "Decimal"))
+            (hsPkgs."Glob" or ((hsPkgs.pkgs-errors).buildDepError "Glob"))
+            (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base-compat-batteries" or ((hsPkgs.pkgs-errors).buildDepError "base-compat-batteries"))
+            (hsPkgs."blaze-markup" or ((hsPkgs.pkgs-errors).buildDepError "blaze-markup"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."call-stack" or ((hsPkgs.pkgs-errors).buildDepError "call-stack"))
+            (hsPkgs."cassava" or ((hsPkgs.pkgs-errors).buildDepError "cassava"))
+            (hsPkgs."cassava-megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "cassava-megaparsec"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."doctest" or ((hsPkgs.pkgs-errors).buildDepError "doctest"))
+            (hsPkgs."easytest" or ((hsPkgs.pkgs-errors).buildDepError "easytest"))
+            (hsPkgs."extra" or ((hsPkgs.pkgs-errors).buildDepError "extra"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."hashtables" or ((hsPkgs.pkgs-errors).buildDepError "hashtables"))
+            (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."mtl-compat" or ((hsPkgs.pkgs-errors).buildDepError "mtl-compat"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."parser-combinators" or ((hsPkgs.pkgs-errors).buildDepError "parser-combinators"))
+            (hsPkgs."pretty-show" or ((hsPkgs.pkgs-errors).buildDepError "pretty-show"))
+            (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+            (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."tabular" or ((hsPkgs.pkgs-errors).buildDepError "tabular"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."uglymemo" or ((hsPkgs.pkgs-errors).buildDepError "uglymemo"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"));
           buildable = true;
           };
         "easytests" = {
           depends = [
-            (hsPkgs."Decimal" or (buildDepError "Decimal"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat-batteries" or (buildDepError "base-compat-batteries"))
-            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."call-stack" or (buildDepError "call-stack"))
-            (hsPkgs."cassava" or (buildDepError "cassava"))
-            (hsPkgs."cassava-megaparsec" or (buildDepError "cassava-megaparsec"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."easytest" or (buildDepError "easytest"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hashtables" or (buildDepError "hashtables"))
-            (hsPkgs."hledger-lib" or (buildDepError "hledger-lib"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."parser-combinators" or (buildDepError "parser-combinators"))
-            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."tabular" or (buildDepError "tabular"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
+            (hsPkgs."Decimal" or ((hsPkgs.pkgs-errors).buildDepError "Decimal"))
+            (hsPkgs."Glob" or ((hsPkgs.pkgs-errors).buildDepError "Glob"))
+            (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base-compat-batteries" or ((hsPkgs.pkgs-errors).buildDepError "base-compat-batteries"))
+            (hsPkgs."blaze-markup" or ((hsPkgs.pkgs-errors).buildDepError "blaze-markup"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."call-stack" or ((hsPkgs.pkgs-errors).buildDepError "call-stack"))
+            (hsPkgs."cassava" or ((hsPkgs.pkgs-errors).buildDepError "cassava"))
+            (hsPkgs."cassava-megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "cassava-megaparsec"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."easytest" or ((hsPkgs.pkgs-errors).buildDepError "easytest"))
+            (hsPkgs."extra" or ((hsPkgs.pkgs-errors).buildDepError "extra"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."hashtables" or ((hsPkgs.pkgs-errors).buildDepError "hashtables"))
+            (hsPkgs."hledger-lib" or ((hsPkgs.pkgs-errors).buildDepError "hledger-lib"))
+            (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."mtl-compat" or ((hsPkgs.pkgs-errors).buildDepError "mtl-compat"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."parser-combinators" or ((hsPkgs.pkgs-errors).buildDepError "parser-combinators"))
+            (hsPkgs."pretty-show" or ((hsPkgs.pkgs-errors).buildDepError "pretty-show"))
+            (hsPkgs."regex-tdfa" or ((hsPkgs.pkgs-errors).buildDepError "regex-tdfa"))
+            (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."tabular" or ((hsPkgs.pkgs-errors).buildDepError "tabular"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."uglymemo" or ((hsPkgs.pkgs-errors).buildDepError "uglymemo"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"));
           buildable = true;
           };
         };

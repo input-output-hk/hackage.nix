@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
@@ -56,46 +17,46 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."clock" or (buildDepError "clock"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."managed" or (buildDepError "managed"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."sorted-list" or (buildDepError "sorted-list"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."clock" or ((hsPkgs.pkgs-errors).buildDepError "clock"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."managed" or ((hsPkgs.pkgs-errors).buildDepError "managed"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."sorted-list" or ((hsPkgs.pkgs-errors).buildDepError "sorted-list"))
           ];
         libs = [
-          (pkgs."grpc" or (sysDepError "grpc"))
-          (pkgs."gpr" or (sysDepError "gpr"))
+          (pkgs."grpc" or ((hsPkgs.pkgs-errors).sysDepError "grpc"))
+          (pkgs."gpr" or ((hsPkgs.pkgs-errors).sysDepError "gpr"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or ((hsPkgs.pkgs-errors).buildToolDepError "c2hs")))
           ];
         buildable = true;
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."grpc-haskell-core" or (buildDepError "grpc-haskell-core"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."managed" or (buildDepError "managed"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."proto3-suite" or (buildDepError "proto3-suite"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."clock" or (buildDepError "clock"))
-            (hsPkgs."turtle" or (buildDepError "turtle"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."grpc-haskell-core" or ((hsPkgs.pkgs-errors).buildDepError "grpc-haskell-core"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."managed" or ((hsPkgs.pkgs-errors).buildDepError "managed"))
+            (hsPkgs."pipes" or ((hsPkgs.pkgs-errors).buildDepError "pipes"))
+            (hsPkgs."proto3-suite" or ((hsPkgs.pkgs-errors).buildDepError "proto3-suite"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+            (hsPkgs."clock" or ((hsPkgs.pkgs-errors).buildDepError "clock"))
+            (hsPkgs."turtle" or ((hsPkgs.pkgs-errors).buildDepError "turtle"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
             ];
           buildable = true;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       pango = false;
@@ -63,60 +24,60 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ((((([
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."dynamic-state" or (buildDepError "dynamic-state"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."dlist" or (buildDepError "dlist"))
-          (hsPkgs."dyre" or (buildDepError "dyre"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."pointedlist" or (buildDepError "pointedlist"))
-          (hsPkgs."text-icu" or (buildDepError "text-icu"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."xdg-basedir" or (buildDepError "xdg-basedir"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."word-trie" or (buildDepError "word-trie"))
-          (hsPkgs."yi-language" or (buildDepError "yi-language"))
-          (hsPkgs."oo-prototypes" or (buildDepError "oo-prototypes"))
-          (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."Hclip" or (buildDepError "Hclip"))
-          ] ++ (pkgs.lib).optional (flags.hint) (hsPkgs."hint" or (buildDepError "hint"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"))) ++ (pkgs.lib).optionals (flags.testing) [
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."dynamic-state" or ((hsPkgs.pkgs-errors).buildDepError "dynamic-state"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."dlist" or ((hsPkgs.pkgs-errors).buildDepError "dlist"))
+          (hsPkgs."dyre" or ((hsPkgs.pkgs-errors).buildDepError "dyre"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."pointedlist" or ((hsPkgs.pkgs-errors).buildDepError "pointedlist"))
+          (hsPkgs."text-icu" or ((hsPkgs.pkgs-errors).buildDepError "text-icu"))
+          (hsPkgs."safe" or ((hsPkgs.pkgs-errors).buildDepError "safe"))
+          (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."unix-compat" or ((hsPkgs.pkgs-errors).buildDepError "unix-compat"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."xdg-basedir" or ((hsPkgs.pkgs-errors).buildDepError "xdg-basedir"))
+          (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."word-trie" or ((hsPkgs.pkgs-errors).buildDepError "word-trie"))
+          (hsPkgs."yi-language" or ((hsPkgs.pkgs-errors).buildDepError "yi-language"))
+          (hsPkgs."oo-prototypes" or ((hsPkgs.pkgs-errors).buildDepError "oo-prototypes"))
+          (hsPkgs."yi-rope" or ((hsPkgs.pkgs-errors).buildDepError "yi-rope"))
+          (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+          (hsPkgs."Hclip" or ((hsPkgs.pkgs-errors).buildDepError "Hclip"))
+          ] ++ (pkgs.lib).optional (flags.hint) (hsPkgs."hint" or ((hsPkgs.pkgs-errors).buildDepError "hint"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or ((hsPkgs.pkgs-errors).buildDepError "Win32"))) ++ (pkgs.lib).optionals (flags.testing) [
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
           ]) ++ (pkgs.lib).optionals (flags.pango) [
-          (hsPkgs."gtk" or (buildDepError "gtk"))
-          (hsPkgs."glib" or (buildDepError "glib"))
-          (hsPkgs."pango" or (buildDepError "pango"))
+          (hsPkgs."gtk" or ((hsPkgs.pkgs-errors).buildDepError "gtk"))
+          (hsPkgs."glib" or ((hsPkgs.pkgs-errors).buildDepError "glib"))
+          (hsPkgs."pango" or ((hsPkgs.pkgs-errors).buildDepError "pango"))
           ]) ++ (pkgs.lib).optionals (flags.vty) [
-          (hsPkgs."vty" or (buildDepError "vty"))
-          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."vty" or ((hsPkgs.pkgs-errors).buildDepError "vty"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
           ];
         buildable = true;
         };
       exes = {
         "yi" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."yi" or (buildDepError "yi"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."yi" or ((hsPkgs.pkgs-errors).buildDepError "yi"))
             ];
           buildable = true;
           };
@@ -124,20 +85,20 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test-suite" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."yi-language" or (buildDepError "yi-language"))
-            (hsPkgs."yi-rope" or (buildDepError "yi-rope"))
-            (hsPkgs."yi" or (buildDepError "yi"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."yi-language" or ((hsPkgs.pkgs-errors).buildDepError "yi-language"))
+            (hsPkgs."yi-rope" or ((hsPkgs.pkgs-errors).buildDepError "yi-rope"))
+            (hsPkgs."yi" or ((hsPkgs.pkgs-errors).buildDepError "yi"))
             ];
           buildable = true;
           };

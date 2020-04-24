@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       hello_hackage_visitor = false;
@@ -82,39 +43,39 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ((((((([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."cpphs" or (buildDepError "cpphs"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."syb" or (buildDepError "syb"))) ++ (pkgs.lib).optionals (flags.use_ww_deepseq) ([
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_sop) (hsPkgs."generics-sop" or (buildDepError "generics-sop")))) ++ (pkgs.lib).optionals (flags.new_improved_pattern_grammar) ((pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optionals (flags.use_attoparsec) [
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          ]))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_seqable) (hsPkgs."parallel" or (buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.parallelism_experiment) (hsPkgs."parallel" or (buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_patnode) (hsPkgs."parallel" or (buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_pseq_patnode) (hsPkgs."parallel" or (buildDepError "parallel")));
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."cpphs" or ((hsPkgs.pkgs-errors).buildDepError "cpphs"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))) ++ (pkgs.lib).optionals (flags.use_ww_deepseq) ([
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."deepseq-generics" or ((hsPkgs.pkgs-errors).buildDepError "deepseq-generics")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_sop) (hsPkgs."generics-sop" or ((hsPkgs.pkgs-errors).buildDepError "generics-sop")))) ++ (pkgs.lib).optionals (flags.new_improved_pattern_grammar) ((pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optionals (flags.use_attoparsec) [
+          (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          ]))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_seqable) (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.parallelism_experiment) (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_patnode) (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_pseq_patnode) (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel")));
         build-tools = [
-          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
+          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or ((hsPkgs.pkgs-errors).buildToolDepError "cpphs")))
           ];
         buildable = true;
         };
       tests = {
         "deepseq-bounded-tests" = {
           depends = ((((((([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cpphs" or (buildDepError "cpphs"))
-            (hsPkgs."deepseq-bounded" or (buildDepError "deepseq-bounded"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."syb" or (buildDepError "syb"))) ++ (pkgs.lib).optionals (flags.use_ww_deepseq) ([
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_sop) (hsPkgs."generics-sop" or (buildDepError "generics-sop")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_seqable) (hsPkgs."parallel" or (buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.parallelism_experiment) (hsPkgs."parallel" or (buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_patnode) (hsPkgs."parallel" or (buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_pseq_patnode) (hsPkgs."parallel" or (buildDepError "parallel")));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."cpphs" or ((hsPkgs.pkgs-errors).buildDepError "cpphs"))
+            (hsPkgs."deepseq-bounded" or ((hsPkgs.pkgs-errors).buildDepError "deepseq-bounded"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))) ++ (pkgs.lib).optionals (flags.use_ww_deepseq) ([
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."deepseq-generics" or ((hsPkgs.pkgs-errors).buildDepError "deepseq-generics")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_sop) (hsPkgs."generics-sop" or ((hsPkgs.pkgs-errors).buildDepError "generics-sop")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_seqable) (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.parallelism_experiment) (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_patnode) (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_pseq_patnode) (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel")));
           build-tools = [
-            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
+            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or ((hsPkgs.pkgs-errors).buildToolDepError "cpphs")))
             ];
           buildable = true;
           };

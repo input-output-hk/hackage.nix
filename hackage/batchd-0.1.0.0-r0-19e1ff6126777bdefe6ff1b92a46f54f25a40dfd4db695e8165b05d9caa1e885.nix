@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -57,129 +18,129 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "batchd" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."persistent" or (buildDepError "persistent"))
-            (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
-            (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
-            (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
-            (hsPkgs."esqueleto" or (buildDepError "esqueleto"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."monad-logger-syslog" or (buildDepError "monad-logger-syslog"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."dates" or (buildDepError "dates"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."wai-cors" or (buildDepError "wai-cors"))
-            (hsPkgs."wai-middleware-static" or (buildDepError "wai-middleware-static"))
-            (hsPkgs."vault" or (buildDepError "vault"))
-            (hsPkgs."scotty" or (buildDepError "scotty"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."template" or (buildDepError "template"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."libssh2" or (buildDepError "libssh2"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."th-lift" or (buildDepError "th-lift"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."persistent" or ((hsPkgs.pkgs-errors).buildDepError "persistent"))
+            (hsPkgs."persistent-sqlite" or ((hsPkgs.pkgs-errors).buildDepError "persistent-sqlite"))
+            (hsPkgs."persistent-postgresql" or ((hsPkgs.pkgs-errors).buildDepError "persistent-postgresql"))
+            (hsPkgs."persistent-template" or ((hsPkgs.pkgs-errors).buildDepError "persistent-template"))
+            (hsPkgs."esqueleto" or ((hsPkgs.pkgs-errors).buildDepError "esqueleto"))
+            (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+            (hsPkgs."monad-logger-syslog" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger-syslog"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."dates" or ((hsPkgs.pkgs-errors).buildDepError "dates"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."Glob" or ((hsPkgs.pkgs-errors).buildDepError "Glob"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+            (hsPkgs."wai-extra" or ((hsPkgs.pkgs-errors).buildDepError "wai-extra"))
+            (hsPkgs."wai-cors" or ((hsPkgs.pkgs-errors).buildDepError "wai-cors"))
+            (hsPkgs."wai-middleware-static" or ((hsPkgs.pkgs-errors).buildDepError "wai-middleware-static"))
+            (hsPkgs."vault" or ((hsPkgs.pkgs-errors).buildDepError "vault"))
+            (hsPkgs."scotty" or ((hsPkgs.pkgs-errors).buildDepError "scotty"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."yaml" or ((hsPkgs.pkgs-errors).buildDepError "yaml"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."template" or ((hsPkgs.pkgs-errors).buildDepError "template"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."libssh2" or ((hsPkgs.pkgs-errors).buildDepError "libssh2"))
+            (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."th-lift" or ((hsPkgs.pkgs-errors).buildDepError "th-lift"))
             ];
           buildable = true;
           };
         "batchd-admin" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."persistent" or (buildDepError "persistent"))
-            (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
-            (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
-            (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
-            (hsPkgs."esqueleto" or (buildDepError "esqueleto"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."monad-logger-syslog" or (buildDepError "monad-logger-syslog"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."dates" or (buildDepError "dates"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."vault" or (buildDepError "vault"))
-            (hsPkgs."scotty" or (buildDepError "scotty"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."template" or (buildDepError "template"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."libssh2" or (buildDepError "libssh2"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."th-lift" or (buildDepError "th-lift"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."persistent" or ((hsPkgs.pkgs-errors).buildDepError "persistent"))
+            (hsPkgs."persistent-sqlite" or ((hsPkgs.pkgs-errors).buildDepError "persistent-sqlite"))
+            (hsPkgs."persistent-postgresql" or ((hsPkgs.pkgs-errors).buildDepError "persistent-postgresql"))
+            (hsPkgs."persistent-template" or ((hsPkgs.pkgs-errors).buildDepError "persistent-template"))
+            (hsPkgs."esqueleto" or ((hsPkgs.pkgs-errors).buildDepError "esqueleto"))
+            (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+            (hsPkgs."monad-logger-syslog" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger-syslog"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."dates" or ((hsPkgs.pkgs-errors).buildDepError "dates"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."Glob" or ((hsPkgs.pkgs-errors).buildDepError "Glob"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+            (hsPkgs."wai-extra" or ((hsPkgs.pkgs-errors).buildDepError "wai-extra"))
+            (hsPkgs."vault" or ((hsPkgs.pkgs-errors).buildDepError "vault"))
+            (hsPkgs."scotty" or ((hsPkgs.pkgs-errors).buildDepError "scotty"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."yaml" or ((hsPkgs.pkgs-errors).buildDepError "yaml"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."template" or ((hsPkgs.pkgs-errors).buildDepError "template"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."libssh2" or ((hsPkgs.pkgs-errors).buildDepError "libssh2"))
+            (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."th-lift" or ((hsPkgs.pkgs-errors).buildDepError "th-lift"))
             ];
           buildable = true;
           };
         "batch" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."dates" or (buildDepError "dates"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."readline" or (buildDepError "readline"))
-            (hsPkgs."x509-store" or (buildDepError "x509-store"))
-            (hsPkgs."tls" or (buildDepError "tls"))
-            (hsPkgs."connection" or (buildDepError "connection"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."persistent" or (buildDepError "persistent"))
-            (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
-            (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
-            (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
-            (hsPkgs."esqueleto" or (buildDepError "esqueleto"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."monad-logger-syslog" or (buildDepError "monad-logger-syslog"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."scotty" or (buildDepError "scotty"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."dates" or ((hsPkgs.pkgs-errors).buildDepError "dates"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+            (hsPkgs."readline" or ((hsPkgs.pkgs-errors).buildDepError "readline"))
+            (hsPkgs."x509-store" or ((hsPkgs.pkgs-errors).buildDepError "x509-store"))
+            (hsPkgs."tls" or ((hsPkgs.pkgs-errors).buildDepError "tls"))
+            (hsPkgs."connection" or ((hsPkgs.pkgs-errors).buildDepError "connection"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or ((hsPkgs.pkgs-errors).buildDepError "http-client-tls"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."yaml" or ((hsPkgs.pkgs-errors).buildDepError "yaml"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."persistent" or ((hsPkgs.pkgs-errors).buildDepError "persistent"))
+            (hsPkgs."persistent-template" or ((hsPkgs.pkgs-errors).buildDepError "persistent-template"))
+            (hsPkgs."persistent-sqlite" or ((hsPkgs.pkgs-errors).buildDepError "persistent-sqlite"))
+            (hsPkgs."persistent-postgresql" or ((hsPkgs.pkgs-errors).buildDepError "persistent-postgresql"))
+            (hsPkgs."esqueleto" or ((hsPkgs.pkgs-errors).buildDepError "esqueleto"))
+            (hsPkgs."monad-logger" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger"))
+            (hsPkgs."monad-logger-syslog" or ((hsPkgs.pkgs-errors).buildDepError "monad-logger-syslog"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."scotty" or ((hsPkgs.pkgs-errors).buildDepError "scotty"))
             ];
           buildable = true;
           };

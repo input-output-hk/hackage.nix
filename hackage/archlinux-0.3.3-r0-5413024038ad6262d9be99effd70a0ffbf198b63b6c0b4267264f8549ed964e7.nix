@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,112 +17,114 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."HTTP" or (buildDepError "HTTP"))
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
-          (hsPkgs."json" or (buildDepError "json"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."xhtml" or (buildDepError "xhtml"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
-          (hsPkgs."old-time" or (buildDepError "old-time"))
-          (hsPkgs."csv" or (buildDepError "csv"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+          (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+          (hsPkgs."json" or ((hsPkgs.pkgs-errors).buildDepError "json"))
+          (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+          (hsPkgs."prettyclass" or ((hsPkgs.pkgs-errors).buildDepError "prettyclass"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."xhtml" or ((hsPkgs.pkgs-errors).buildDepError "xhtml"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."strict-concurrency" or ((hsPkgs.pkgs-errors).buildDepError "strict-concurrency"))
+          (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+          (hsPkgs."csv" or ((hsPkgs.pkgs-errors).buildDepError "csv"))
           ];
         buildable = true;
         };
       exes = {
         "arch-report" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."json" or (buildDepError "json"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."xhtml" or (buildDepError "xhtml"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."csv" or (buildDepError "csv"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."json" or ((hsPkgs.pkgs-errors).buildDepError "json"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."prettyclass" or ((hsPkgs.pkgs-errors).buildDepError "prettyclass"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."xhtml" or ((hsPkgs.pkgs-errors).buildDepError "xhtml"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."strict-concurrency" or ((hsPkgs.pkgs-errors).buildDepError "strict-concurrency"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."csv" or ((hsPkgs.pkgs-errors).buildDepError "csv"))
             ];
           buildable = true;
           };
         "distro-map" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."json" or (buildDepError "json"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."xhtml" or (buildDepError "xhtml"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."csv" or (buildDepError "csv"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."json" or ((hsPkgs.pkgs-errors).buildDepError "json"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."prettyclass" or ((hsPkgs.pkgs-errors).buildDepError "prettyclass"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."xhtml" or ((hsPkgs.pkgs-errors).buildDepError "xhtml"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."strict-concurrency" or ((hsPkgs.pkgs-errors).buildDepError "strict-concurrency"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."csv" or ((hsPkgs.pkgs-errors).buildDepError "csv"))
             ];
           buildable = true;
           };
         "get-arch-url" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."json" or (buildDepError "json"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."xhtml" or (buildDepError "xhtml"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."csv" or (buildDepError "csv"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."json" or ((hsPkgs.pkgs-errors).buildDepError "json"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."prettyclass" or ((hsPkgs.pkgs-errors).buildDepError "prettyclass"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."xhtml" or ((hsPkgs.pkgs-errors).buildDepError "xhtml"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."strict-concurrency" or ((hsPkgs.pkgs-errors).buildDepError "strict-concurrency"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."csv" or ((hsPkgs.pkgs-errors).buildDepError "csv"))
             ];
           buildable = true;
           };
         "arch-haskell-packages" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."json" or (buildDepError "json"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."xhtml" or (buildDepError "xhtml"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."strict-concurrency" or (buildDepError "strict-concurrency"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."csv" or (buildDepError "csv"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."json" or ((hsPkgs.pkgs-errors).buildDepError "json"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."prettyclass" or ((hsPkgs.pkgs-errors).buildDepError "prettyclass"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."xhtml" or ((hsPkgs.pkgs-errors).buildDepError "xhtml"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."strict-concurrency" or ((hsPkgs.pkgs-errors).buildDepError "strict-concurrency"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."csv" or ((hsPkgs.pkgs-errors).buildDepError "csv"))
             ];
           buildable = true;
           };
         "update-aur-log" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         };

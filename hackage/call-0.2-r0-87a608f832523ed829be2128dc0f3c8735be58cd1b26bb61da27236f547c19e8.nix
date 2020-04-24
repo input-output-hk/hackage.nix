@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       buildhelloworld = false;
@@ -60,45 +21,45 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."audiovisual" or (buildDepError "audiovisual"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bindings-portaudio" or (buildDepError "bindings-portaudio"))
-          (hsPkgs."audiovisual" or (buildDepError "audiovisual"))
-          (hsPkgs."boundingboxes" or (buildDepError "boundingboxes"))
-          (hsPkgs."colors" or (buildDepError "colors"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."control-bool" or (buildDepError "control-bool"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."freetype2" or (buildDepError "freetype2"))
-          (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-          (hsPkgs."JuicyPixels-util" or (buildDepError "JuicyPixels-util"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."linear" or (buildDepError "linear"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."objective" or (buildDepError "objective"))
-          (hsPkgs."free" or (buildDepError "free"))
-          (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
-          (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."WAVE" or (buildDepError "WAVE"))
-          (hsPkgs."reflection" or (buildDepError "reflection"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."audiovisual" or ((hsPkgs.pkgs-errors).buildDepError "audiovisual"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bindings-portaudio" or ((hsPkgs.pkgs-errors).buildDepError "bindings-portaudio"))
+          (hsPkgs."audiovisual" or ((hsPkgs.pkgs-errors).buildDepError "audiovisual"))
+          (hsPkgs."boundingboxes" or ((hsPkgs.pkgs-errors).buildDepError "boundingboxes"))
+          (hsPkgs."colors" or ((hsPkgs.pkgs-errors).buildDepError "colors"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."control-bool" or ((hsPkgs.pkgs-errors).buildDepError "control-bool"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."freetype2" or ((hsPkgs.pkgs-errors).buildDepError "freetype2"))
+          (hsPkgs."GLFW-b" or ((hsPkgs.pkgs-errors).buildDepError "GLFW-b"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."JuicyPixels" or ((hsPkgs.pkgs-errors).buildDepError "JuicyPixels"))
+          (hsPkgs."JuicyPixels-util" or ((hsPkgs.pkgs-errors).buildDepError "JuicyPixels-util"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."linear" or ((hsPkgs.pkgs-errors).buildDepError "linear"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."objective" or ((hsPkgs.pkgs-errors).buildDepError "objective"))
+          (hsPkgs."free" or ((hsPkgs.pkgs-errors).buildDepError "free"))
+          (hsPkgs."OpenGL" or ((hsPkgs.pkgs-errors).buildDepError "OpenGL"))
+          (hsPkgs."OpenGLRaw" or ((hsPkgs.pkgs-errors).buildDepError "OpenGLRaw"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."WAVE" or ((hsPkgs.pkgs-errors).buildDepError "WAVE"))
+          (hsPkgs."reflection" or ((hsPkgs.pkgs-errors).buildDepError "reflection"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
           ];
         buildable = true;
         };
       exes = {
         "hello-world" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."call" or (buildDepError "call"))
-            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."call" or ((hsPkgs.pkgs-errors).buildDepError "call"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
             ];
           buildable = if flags.buildhelloworld then true else false;
           };

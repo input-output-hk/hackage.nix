@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,74 +17,74 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
           ] ++ (if compiler.isGhcjs && (compiler.version).ge "0.1"
           then [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."ghcjs-prim" or (buildDepError "ghcjs-prim"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."ghcjs-base" or ((hsPkgs.pkgs-errors).buildDepError "ghcjs-base"))
+            (hsPkgs."ghcjs-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghcjs-prim"))
             ]
           else [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."transient" or (buildDepError "transient"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-info" or (buildDepError "network-info"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."TCache" or (buildDepError "TCache"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."transient" or ((hsPkgs.pkgs-errors).buildDepError "transient"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."network-info" or ((hsPkgs.pkgs-errors).buildDepError "network-info"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."TCache" or ((hsPkgs.pkgs-errors).buildDepError "TCache"))
+            (hsPkgs."websockets" or ((hsPkgs.pkgs-errors).buildDepError "websockets"))
+            (hsPkgs."network-uri" or ((hsPkgs.pkgs-errors).buildDepError "network-uri"))
+            (hsPkgs."case-insensitive" or ((hsPkgs.pkgs-errors).buildDepError "case-insensitive"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
             ]);
         buildable = true;
         };
       tests = {
         "test-transient" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-info" or (buildDepError "network-info"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."TCache" or (buildDepError "TCache"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."network-info" or ((hsPkgs.pkgs-errors).buildDepError "network-info"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."TCache" or ((hsPkgs.pkgs-errors).buildDepError "TCache"))
+            (hsPkgs."websockets" or ((hsPkgs.pkgs-errors).buildDepError "websockets"))
+            (hsPkgs."network-uri" or ((hsPkgs.pkgs-errors).buildDepError "network-uri"))
+            (hsPkgs."case-insensitive" or ((hsPkgs.pkgs-errors).buildDepError "case-insensitive"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
             ];
           buildable = true;
           };

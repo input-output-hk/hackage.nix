@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,41 +17,41 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bits-extra" or (buildDepError "bits-extra"))
-          (hsPkgs."hw-aeson" or (buildDepError "hw-aeson"))
-          (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
-          (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
-          (hsPkgs."hw-conduit" or (buildDepError "hw-conduit"))
-          (hsPkgs."hw-diagnostics" or (buildDepError "hw-diagnostics"))
-          (hsPkgs."hw-dsv" or (buildDepError "hw-dsv"))
-          (hsPkgs."hw-dump" or (buildDepError "hw-dump"))
-          (hsPkgs."hw-eliasfano" or (buildDepError "hw-eliasfano"))
-          (hsPkgs."hw-excess" or (buildDepError "hw-excess"))
-          (hsPkgs."hw-fingertree" or (buildDepError "hw-fingertree"))
-          (hsPkgs."hw-fingertree-strict" or (buildDepError "hw-fingertree-strict"))
-          (hsPkgs."hw-hedgehog" or (buildDepError "hw-hedgehog"))
-          (hsPkgs."hw-hspec-hedgehog" or (buildDepError "hw-hspec-hedgehog"))
-          (hsPkgs."hw-int" or (buildDepError "hw-int"))
-          (hsPkgs."hw-ip" or (buildDepError "hw-ip"))
-          (hsPkgs."hw-json" or (buildDepError "hw-json"))
-          (hsPkgs."hw-json-lens" or (buildDepError "hw-json-lens"))
-          (hsPkgs."hw-json-simd" or (buildDepError "hw-json-simd"))
-          (hsPkgs."hw-json-simple-cursor" or (buildDepError "hw-json-simple-cursor"))
-          (hsPkgs."hw-json-standard-cursor" or (buildDepError "hw-json-standard-cursor"))
-          (hsPkgs."hw-mquery" or (buildDepError "hw-mquery"))
-          (hsPkgs."hw-packed-vector" or (buildDepError "hw-packed-vector"))
-          (hsPkgs."hw-parser" or (buildDepError "hw-parser"))
-          (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
-          (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
-          (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
-          (hsPkgs."hw-simd" or (buildDepError "hw-simd"))
-          (hsPkgs."hw-streams" or (buildDepError "hw-streams"))
-          (hsPkgs."hw-string-parse" or (buildDepError "hw-string-parse"))
-          (hsPkgs."hw-succinct" or (buildDepError "hw-succinct"))
-          (hsPkgs."hw-uri" or (buildDepError "hw-uri"))
-          (hsPkgs."hw-xml" or (buildDepError "hw-xml"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bits-extra" or ((hsPkgs.pkgs-errors).buildDepError "bits-extra"))
+          (hsPkgs."hw-aeson" or ((hsPkgs.pkgs-errors).buildDepError "hw-aeson"))
+          (hsPkgs."hw-balancedparens" or ((hsPkgs.pkgs-errors).buildDepError "hw-balancedparens"))
+          (hsPkgs."hw-bits" or ((hsPkgs.pkgs-errors).buildDepError "hw-bits"))
+          (hsPkgs."hw-conduit" or ((hsPkgs.pkgs-errors).buildDepError "hw-conduit"))
+          (hsPkgs."hw-diagnostics" or ((hsPkgs.pkgs-errors).buildDepError "hw-diagnostics"))
+          (hsPkgs."hw-dsv" or ((hsPkgs.pkgs-errors).buildDepError "hw-dsv"))
+          (hsPkgs."hw-dump" or ((hsPkgs.pkgs-errors).buildDepError "hw-dump"))
+          (hsPkgs."hw-eliasfano" or ((hsPkgs.pkgs-errors).buildDepError "hw-eliasfano"))
+          (hsPkgs."hw-excess" or ((hsPkgs.pkgs-errors).buildDepError "hw-excess"))
+          (hsPkgs."hw-fingertree" or ((hsPkgs.pkgs-errors).buildDepError "hw-fingertree"))
+          (hsPkgs."hw-fingertree-strict" or ((hsPkgs.pkgs-errors).buildDepError "hw-fingertree-strict"))
+          (hsPkgs."hw-hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "hw-hedgehog"))
+          (hsPkgs."hw-hspec-hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "hw-hspec-hedgehog"))
+          (hsPkgs."hw-int" or ((hsPkgs.pkgs-errors).buildDepError "hw-int"))
+          (hsPkgs."hw-ip" or ((hsPkgs.pkgs-errors).buildDepError "hw-ip"))
+          (hsPkgs."hw-json" or ((hsPkgs.pkgs-errors).buildDepError "hw-json"))
+          (hsPkgs."hw-json-lens" or ((hsPkgs.pkgs-errors).buildDepError "hw-json-lens"))
+          (hsPkgs."hw-json-simd" or ((hsPkgs.pkgs-errors).buildDepError "hw-json-simd"))
+          (hsPkgs."hw-json-simple-cursor" or ((hsPkgs.pkgs-errors).buildDepError "hw-json-simple-cursor"))
+          (hsPkgs."hw-json-standard-cursor" or ((hsPkgs.pkgs-errors).buildDepError "hw-json-standard-cursor"))
+          (hsPkgs."hw-mquery" or ((hsPkgs.pkgs-errors).buildDepError "hw-mquery"))
+          (hsPkgs."hw-packed-vector" or ((hsPkgs.pkgs-errors).buildDepError "hw-packed-vector"))
+          (hsPkgs."hw-parser" or ((hsPkgs.pkgs-errors).buildDepError "hw-parser"))
+          (hsPkgs."hw-prim" or ((hsPkgs.pkgs-errors).buildDepError "hw-prim"))
+          (hsPkgs."hw-rankselect" or ((hsPkgs.pkgs-errors).buildDepError "hw-rankselect"))
+          (hsPkgs."hw-rankselect-base" or ((hsPkgs.pkgs-errors).buildDepError "hw-rankselect-base"))
+          (hsPkgs."hw-simd" or ((hsPkgs.pkgs-errors).buildDepError "hw-simd"))
+          (hsPkgs."hw-streams" or ((hsPkgs.pkgs-errors).buildDepError "hw-streams"))
+          (hsPkgs."hw-string-parse" or ((hsPkgs.pkgs-errors).buildDepError "hw-string-parse"))
+          (hsPkgs."hw-succinct" or ((hsPkgs.pkgs-errors).buildDepError "hw-succinct"))
+          (hsPkgs."hw-uri" or ((hsPkgs.pkgs-errors).buildDepError "hw-uri"))
+          (hsPkgs."hw-xml" or ((hsPkgs.pkgs-errors).buildDepError "hw-xml"))
           ];
         buildable = true;
         };

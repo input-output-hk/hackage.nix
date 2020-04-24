@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { hayoosnap4 = true; hashedindex = false; };
     package = {
@@ -57,61 +18,61 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "hayooIndexer" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."bzlib" or (buildDepError "bzlib"))
-            (hsPkgs."enummapset" or (buildDepError "enummapset"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."Holumbus-Searchengine" or (buildDepError "Holumbus-Searchengine"))
-            (hsPkgs."hxt" or (buildDepError "hxt"))
-            (hsPkgs."hxt-cache" or (buildDepError "hxt-cache"))
-            (hsPkgs."hxt-charproperties" or (buildDepError "hxt-charproperties"))
-            (hsPkgs."hxt-curl" or (buildDepError "hxt-curl"))
-            (hsPkgs."hxt-http" or (buildDepError "hxt-http"))
-            (hsPkgs."hxt-regex-xmlschema" or (buildDepError "hxt-regex-xmlschema"))
-            (hsPkgs."hxt-xpath" or (buildDepError "hxt-xpath"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."tar" or (buildDepError "tar"))
-            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."bzlib" or ((hsPkgs.pkgs-errors).buildDepError "bzlib"))
+            (hsPkgs."enummapset" or ((hsPkgs.pkgs-errors).buildDepError "enummapset"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."Holumbus-Searchengine" or ((hsPkgs.pkgs-errors).buildDepError "Holumbus-Searchengine"))
+            (hsPkgs."hxt" or ((hsPkgs.pkgs-errors).buildDepError "hxt"))
+            (hsPkgs."hxt-cache" or ((hsPkgs.pkgs-errors).buildDepError "hxt-cache"))
+            (hsPkgs."hxt-charproperties" or ((hsPkgs.pkgs-errors).buildDepError "hxt-charproperties"))
+            (hsPkgs."hxt-curl" or ((hsPkgs.pkgs-errors).buildDepError "hxt-curl"))
+            (hsPkgs."hxt-http" or ((hsPkgs.pkgs-errors).buildDepError "hxt-http"))
+            (hsPkgs."hxt-regex-xmlschema" or ((hsPkgs.pkgs-errors).buildDepError "hxt-regex-xmlschema"))
+            (hsPkgs."hxt-xpath" or ((hsPkgs.pkgs-errors).buildDepError "hxt-xpath"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."tar" or ((hsPkgs.pkgs-errors).buildDepError "tar"))
+            (hsPkgs."zlib" or ((hsPkgs.pkgs-errors).buildDepError "zlib"))
             ] ++ [
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
             ];
           buildable = true;
           };
         "hayooSnap" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."Holumbus-Searchengine" or (buildDepError "Holumbus-Searchengine"))
-            (hsPkgs."hxt" or (buildDepError "hxt"))
-            (hsPkgs."hxt-unicode" or (buildDepError "hxt-unicode"))
-            (hsPkgs."json" or (buildDepError "json"))
-            (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."xhtml-combinators" or (buildDepError "xhtml-combinators"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."Holumbus-Searchengine" or ((hsPkgs.pkgs-errors).buildDepError "Holumbus-Searchengine"))
+            (hsPkgs."hxt" or ((hsPkgs.pkgs-errors).buildDepError "hxt"))
+            (hsPkgs."hxt-unicode" or ((hsPkgs.pkgs-errors).buildDepError "hxt-unicode"))
+            (hsPkgs."json" or ((hsPkgs.pkgs-errors).buildDepError "json"))
+            (hsPkgs."MonadCatchIO-transformers" or ((hsPkgs.pkgs-errors).buildDepError "MonadCatchIO-transformers"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."xhtml-combinators" or ((hsPkgs.pkgs-errors).buildDepError "xhtml-combinators"))
             ] ++ (if flags.hayoosnap4
             then [
-              (hsPkgs."base" or (buildDepError "base"))
-              (hsPkgs."snap" or (buildDepError "snap"))
-              (hsPkgs."snap-core" or (buildDepError "snap-core"))
-              (hsPkgs."snap-server" or (buildDepError "snap-server"))
+              (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+              (hsPkgs."snap" or ((hsPkgs.pkgs-errors).buildDepError "snap"))
+              (hsPkgs."snap-core" or ((hsPkgs.pkgs-errors).buildDepError "snap-core"))
+              (hsPkgs."snap-server" or ((hsPkgs.pkgs-errors).buildDepError "snap-server"))
               ]
             else [
-              (hsPkgs."containers" or (buildDepError "containers"))
-              (hsPkgs."data-lens" or (buildDepError "data-lens"))
-              (hsPkgs."data-lens-template" or (buildDepError "data-lens-template"))
-              (hsPkgs."filepath" or (buildDepError "filepath"))
-              (hsPkgs."heist" or (buildDepError "heist"))
-              (hsPkgs."snap" or (buildDepError "snap"))
-              (hsPkgs."snap-core" or (buildDepError "snap-core"))
-              (hsPkgs."snap-server" or (buildDepError "snap-server"))
+              (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+              (hsPkgs."data-lens" or ((hsPkgs.pkgs-errors).buildDepError "data-lens"))
+              (hsPkgs."data-lens-template" or ((hsPkgs.pkgs-errors).buildDepError "data-lens-template"))
+              (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+              (hsPkgs."heist" or ((hsPkgs.pkgs-errors).buildDepError "heist"))
+              (hsPkgs."snap" or ((hsPkgs.pkgs-errors).buildDepError "snap"))
+              (hsPkgs."snap-core" or ((hsPkgs.pkgs-errors).buildDepError "snap-core"))
+              (hsPkgs."snap-server" or ((hsPkgs.pkgs-errors).buildDepError "snap-server"))
               ]);
           buildable = true;
           };

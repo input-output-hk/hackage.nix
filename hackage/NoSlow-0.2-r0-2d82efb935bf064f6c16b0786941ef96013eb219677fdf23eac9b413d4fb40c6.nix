@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       dph-prim-seq = true;
@@ -62,22 +23,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "noslow" = {
           depends = ((([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
             ] ++ (pkgs.lib).optionals (flags.dph-prim-seq) [
-            (hsPkgs."dph-prim-seq" or (buildDepError "dph-prim-seq"))
-            (hsPkgs."dph-base" or (buildDepError "dph-base"))
-            ]) ++ (pkgs.lib).optional (flags.vector) (hsPkgs."vector" or (buildDepError "vector"))) ++ (pkgs.lib).optional (flags.uvector) (hsPkgs."uvector" or (buildDepError "uvector"))) ++ (pkgs.lib).optional (flags.storablevector) (hsPkgs."storablevector" or (buildDepError "storablevector"));
+            (hsPkgs."dph-prim-seq" or ((hsPkgs.pkgs-errors).buildDepError "dph-prim-seq"))
+            (hsPkgs."dph-base" or ((hsPkgs.pkgs-errors).buildDepError "dph-base"))
+            ]) ++ (pkgs.lib).optional (flags.vector) (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))) ++ (pkgs.lib).optional (flags.uvector) (hsPkgs."uvector" or ((hsPkgs.pkgs-errors).buildDepError "uvector"))) ++ (pkgs.lib).optional (flags.storablevector) (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"));
           buildable = true;
           };
         "noslow-table" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."statistics" or (buildDepError "statistics"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."statistics" or ((hsPkgs.pkgs-errors).buildDepError "statistics"))
             ];
           buildable = true;
           };

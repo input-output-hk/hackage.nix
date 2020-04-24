@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,76 +17,76 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bulletproofs" or (buildDepError "bulletproofs"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."elliptic-curve" or (buildDepError "elliptic-curve"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."galois-fft" or (buildDepError "galois-fft"))
-          (hsPkgs."galois-field" or (buildDepError "galois-field"))
-          (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-          (hsPkgs."poly" or (buildDepError "poly"))
-          (hsPkgs."process-extras" or (buildDepError "process-extras"))
-          (hsPkgs."protolude" or (buildDepError "protolude"))
-          (hsPkgs."semirings" or (buildDepError "semirings"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bulletproofs" or ((hsPkgs.pkgs-errors).buildDepError "bulletproofs"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."elliptic-curve" or ((hsPkgs.pkgs-errors).buildDepError "elliptic-curve"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."galois-fft" or ((hsPkgs.pkgs-errors).buildDepError "galois-fft"))
+          (hsPkgs."galois-field" or ((hsPkgs.pkgs-errors).buildDepError "galois-field"))
+          (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+          (hsPkgs."poly" or ((hsPkgs.pkgs-errors).buildDepError "poly"))
+          (hsPkgs."process-extras" or ((hsPkgs.pkgs-errors).buildDepError "process-extras"))
+          (hsPkgs."protolude" or ((hsPkgs.pkgs-errors).buildDepError "protolude"))
+          (hsPkgs."semirings" or ((hsPkgs.pkgs-errors).buildDepError "semirings"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."wl-pprint-text" or ((hsPkgs.pkgs-errors).buildDepError "wl-pprint-text"))
           ];
         buildable = true;
         };
       tests = {
         "circuit-tests" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."arithmetic-circuits" or (buildDepError "arithmetic-circuits"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bulletproofs" or (buildDepError "bulletproofs"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."elliptic-curve" or (buildDepError "elliptic-curve"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."galois-fft" or (buildDepError "galois-fft"))
-            (hsPkgs."galois-field" or (buildDepError "galois-field"))
-            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-            (hsPkgs."pairing" or (buildDepError "pairing"))
-            (hsPkgs."poly" or (buildDepError "poly"))
-            (hsPkgs."process-extras" or (buildDepError "process-extras"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."semirings" or (buildDepError "semirings"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."arithmetic-circuits" or ((hsPkgs.pkgs-errors).buildDepError "arithmetic-circuits"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bulletproofs" or ((hsPkgs.pkgs-errors).buildDepError "bulletproofs"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."elliptic-curve" or ((hsPkgs.pkgs-errors).buildDepError "elliptic-curve"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."galois-fft" or ((hsPkgs.pkgs-errors).buildDepError "galois-fft"))
+            (hsPkgs."galois-field" or ((hsPkgs.pkgs-errors).buildDepError "galois-field"))
+            (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+            (hsPkgs."pairing" or ((hsPkgs.pkgs-errors).buildDepError "pairing"))
+            (hsPkgs."poly" or ((hsPkgs.pkgs-errors).buildDepError "poly"))
+            (hsPkgs."process-extras" or ((hsPkgs.pkgs-errors).buildDepError "process-extras"))
+            (hsPkgs."protolude" or ((hsPkgs.pkgs-errors).buildDepError "protolude"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or ((hsPkgs.pkgs-errors).buildDepError "quickcheck-instances"))
+            (hsPkgs."semirings" or ((hsPkgs.pkgs-errors).buildDepError "semirings"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-discover" or ((hsPkgs.pkgs-errors).buildDepError "tasty-discover"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."wl-pprint-text" or ((hsPkgs.pkgs-errors).buildDepError "wl-pprint-text"))
             ];
           buildable = true;
           };
         "readme-test" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."arithmetic-circuits" or (buildDepError "arithmetic-circuits"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bulletproofs" or (buildDepError "bulletproofs"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."elliptic-curve" or (buildDepError "elliptic-curve"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."galois-fft" or (buildDepError "galois-fft"))
-            (hsPkgs."galois-field" or (buildDepError "galois-field"))
-            (hsPkgs."markdown-unlit" or (buildDepError "markdown-unlit"))
-            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-            (hsPkgs."pairing" or (buildDepError "pairing"))
-            (hsPkgs."poly" or (buildDepError "poly"))
-            (hsPkgs."process-extras" or (buildDepError "process-extras"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."semirings" or (buildDepError "semirings"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."arithmetic-circuits" or ((hsPkgs.pkgs-errors).buildDepError "arithmetic-circuits"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bulletproofs" or ((hsPkgs.pkgs-errors).buildDepError "bulletproofs"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."elliptic-curve" or ((hsPkgs.pkgs-errors).buildDepError "elliptic-curve"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."galois-fft" or ((hsPkgs.pkgs-errors).buildDepError "galois-fft"))
+            (hsPkgs."galois-field" or ((hsPkgs.pkgs-errors).buildDepError "galois-field"))
+            (hsPkgs."markdown-unlit" or ((hsPkgs.pkgs-errors).buildDepError "markdown-unlit"))
+            (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+            (hsPkgs."pairing" or ((hsPkgs.pkgs-errors).buildDepError "pairing"))
+            (hsPkgs."poly" or ((hsPkgs.pkgs-errors).buildDepError "poly"))
+            (hsPkgs."process-extras" or ((hsPkgs.pkgs-errors).buildDepError "process-extras"))
+            (hsPkgs."protolude" or ((hsPkgs.pkgs-errors).buildDepError "protolude"))
+            (hsPkgs."semirings" or ((hsPkgs.pkgs-errors).buildDepError "semirings"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."wl-pprint-text" or ((hsPkgs.pkgs-errors).buildDepError "wl-pprint-text"))
             ];
           buildable = true;
           };
@@ -133,25 +94,25 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "circuit-benchmarks" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."arithmetic-circuits" or (buildDepError "arithmetic-circuits"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bulletproofs" or (buildDepError "bulletproofs"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."elliptic-curve" or (buildDepError "elliptic-curve"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."galois-fft" or (buildDepError "galois-fft"))
-            (hsPkgs."galois-field" or (buildDepError "galois-field"))
-            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
-            (hsPkgs."pairing" or (buildDepError "pairing"))
-            (hsPkgs."poly" or (buildDepError "poly"))
-            (hsPkgs."process-extras" or (buildDepError "process-extras"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."semirings" or (buildDepError "semirings"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."arithmetic-circuits" or ((hsPkgs.pkgs-errors).buildDepError "arithmetic-circuits"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bulletproofs" or ((hsPkgs.pkgs-errors).buildDepError "bulletproofs"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."elliptic-curve" or ((hsPkgs.pkgs-errors).buildDepError "elliptic-curve"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."galois-fft" or ((hsPkgs.pkgs-errors).buildDepError "galois-fft"))
+            (hsPkgs."galois-field" or ((hsPkgs.pkgs-errors).buildDepError "galois-field"))
+            (hsPkgs."MonadRandom" or ((hsPkgs.pkgs-errors).buildDepError "MonadRandom"))
+            (hsPkgs."pairing" or ((hsPkgs.pkgs-errors).buildDepError "pairing"))
+            (hsPkgs."poly" or ((hsPkgs.pkgs-errors).buildDepError "poly"))
+            (hsPkgs."process-extras" or ((hsPkgs.pkgs-errors).buildDepError "process-extras"))
+            (hsPkgs."protolude" or ((hsPkgs.pkgs-errors).buildDepError "protolude"))
+            (hsPkgs."semirings" or ((hsPkgs.pkgs-errors).buildDepError "semirings"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."wl-pprint-text" or ((hsPkgs.pkgs-errors).buildDepError "wl-pprint-text"))
             ];
           buildable = true;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,71 +17,71 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."clay" or (buildDepError "clay"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."file-embed" or (buildDepError "file-embed"))
-          (hsPkgs."gitrev" or (buildDepError "gitrev"))
-          (hsPkgs."lucid" or (buildDepError "lucid"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."pandoc" or (buildDepError "pandoc"))
-          (hsPkgs."path" or (buildDepError "path"))
-          (hsPkgs."path-io" or (buildDepError "path-io"))
-          (hsPkgs."relude" or (buildDepError "relude"))
-          (hsPkgs."rib" or (buildDepError "rib"))
-          (hsPkgs."shake" or (buildDepError "shake"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."mmark" or (buildDepError "mmark"))
-          (hsPkgs."mmark-ext" or (buildDepError "mmark-ext"))
-          (hsPkgs."modern-uri" or (buildDepError "modern-uri"))
-          (hsPkgs."foldl" or (buildDepError "foldl"))
-          (hsPkgs."filepattern" or (buildDepError "filepattern"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."algebraic-graphs" or (buildDepError "algebraic-graphs"))
-          (hsPkgs."dhall" or (buildDepError "dhall"))
-          (hsPkgs."which" or (buildDepError "which"))
-          (hsPkgs."unix" or (buildDepError "unix"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."clay" or ((hsPkgs.pkgs-errors).buildDepError "clay"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+          (hsPkgs."file-embed" or ((hsPkgs.pkgs-errors).buildDepError "file-embed"))
+          (hsPkgs."gitrev" or ((hsPkgs.pkgs-errors).buildDepError "gitrev"))
+          (hsPkgs."lucid" or ((hsPkgs.pkgs-errors).buildDepError "lucid"))
+          (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+          (hsPkgs."pandoc" or ((hsPkgs.pkgs-errors).buildDepError "pandoc"))
+          (hsPkgs."path" or ((hsPkgs.pkgs-errors).buildDepError "path"))
+          (hsPkgs."path-io" or ((hsPkgs.pkgs-errors).buildDepError "path-io"))
+          (hsPkgs."relude" or ((hsPkgs.pkgs-errors).buildDepError "relude"))
+          (hsPkgs."rib" or ((hsPkgs.pkgs-errors).buildDepError "rib"))
+          (hsPkgs."shake" or ((hsPkgs.pkgs-errors).buildDepError "shake"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."mmark" or ((hsPkgs.pkgs-errors).buildDepError "mmark"))
+          (hsPkgs."mmark-ext" or ((hsPkgs.pkgs-errors).buildDepError "mmark-ext"))
+          (hsPkgs."modern-uri" or ((hsPkgs.pkgs-errors).buildDepError "modern-uri"))
+          (hsPkgs."foldl" or ((hsPkgs.pkgs-errors).buildDepError "foldl"))
+          (hsPkgs."filepattern" or ((hsPkgs.pkgs-errors).buildDepError "filepattern"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."algebraic-graphs" or ((hsPkgs.pkgs-errors).buildDepError "algebraic-graphs"))
+          (hsPkgs."dhall" or ((hsPkgs.pkgs-errors).buildDepError "dhall"))
+          (hsPkgs."which" or ((hsPkgs.pkgs-errors).buildDepError "which"))
+          (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
           ];
         buildable = true;
         };
       exes = {
         "neuron" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."clay" or (buildDepError "clay"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."file-embed" or (buildDepError "file-embed"))
-            (hsPkgs."gitrev" or (buildDepError "gitrev"))
-            (hsPkgs."lucid" or (buildDepError "lucid"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."pandoc" or (buildDepError "pandoc"))
-            (hsPkgs."path" or (buildDepError "path"))
-            (hsPkgs."path-io" or (buildDepError "path-io"))
-            (hsPkgs."relude" or (buildDepError "relude"))
-            (hsPkgs."rib" or (buildDepError "rib"))
-            (hsPkgs."shake" or (buildDepError "shake"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."mmark" or (buildDepError "mmark"))
-            (hsPkgs."mmark-ext" or (buildDepError "mmark-ext"))
-            (hsPkgs."modern-uri" or (buildDepError "modern-uri"))
-            (hsPkgs."foldl" or (buildDepError "foldl"))
-            (hsPkgs."filepattern" or (buildDepError "filepattern"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."algebraic-graphs" or (buildDepError "algebraic-graphs"))
-            (hsPkgs."dhall" or (buildDepError "dhall"))
-            (hsPkgs."which" or (buildDepError "which"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."rib" or (buildDepError "rib"))
-            (hsPkgs."with-utf8" or (buildDepError "with-utf8"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."clay" or ((hsPkgs.pkgs-errors).buildDepError "clay"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+            (hsPkgs."file-embed" or ((hsPkgs.pkgs-errors).buildDepError "file-embed"))
+            (hsPkgs."gitrev" or ((hsPkgs.pkgs-errors).buildDepError "gitrev"))
+            (hsPkgs."lucid" or ((hsPkgs.pkgs-errors).buildDepError "lucid"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."pandoc" or ((hsPkgs.pkgs-errors).buildDepError "pandoc"))
+            (hsPkgs."path" or ((hsPkgs.pkgs-errors).buildDepError "path"))
+            (hsPkgs."path-io" or ((hsPkgs.pkgs-errors).buildDepError "path-io"))
+            (hsPkgs."relude" or ((hsPkgs.pkgs-errors).buildDepError "relude"))
+            (hsPkgs."rib" or ((hsPkgs.pkgs-errors).buildDepError "rib"))
+            (hsPkgs."shake" or ((hsPkgs.pkgs-errors).buildDepError "shake"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."mmark" or ((hsPkgs.pkgs-errors).buildDepError "mmark"))
+            (hsPkgs."mmark-ext" or ((hsPkgs.pkgs-errors).buildDepError "mmark-ext"))
+            (hsPkgs."modern-uri" or ((hsPkgs.pkgs-errors).buildDepError "modern-uri"))
+            (hsPkgs."foldl" or ((hsPkgs.pkgs-errors).buildDepError "foldl"))
+            (hsPkgs."filepattern" or ((hsPkgs.pkgs-errors).buildDepError "filepattern"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."algebraic-graphs" or ((hsPkgs.pkgs-errors).buildDepError "algebraic-graphs"))
+            (hsPkgs."dhall" or ((hsPkgs.pkgs-errors).buildDepError "dhall"))
+            (hsPkgs."which" or ((hsPkgs.pkgs-errors).buildDepError "which"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."rib" or ((hsPkgs.pkgs-errors).buildDepError "rib"))
+            (hsPkgs."with-utf8" or ((hsPkgs.pkgs-errors).buildDepError "with-utf8"))
             ];
           buildable = true;
           };
@@ -128,37 +89,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "neuron-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."clay" or (buildDepError "clay"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."file-embed" or (buildDepError "file-embed"))
-            (hsPkgs."gitrev" or (buildDepError "gitrev"))
-            (hsPkgs."lucid" or (buildDepError "lucid"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."pandoc" or (buildDepError "pandoc"))
-            (hsPkgs."path" or (buildDepError "path"))
-            (hsPkgs."path-io" or (buildDepError "path-io"))
-            (hsPkgs."relude" or (buildDepError "relude"))
-            (hsPkgs."rib" or (buildDepError "rib"))
-            (hsPkgs."shake" or (buildDepError "shake"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."mmark" or (buildDepError "mmark"))
-            (hsPkgs."mmark-ext" or (buildDepError "mmark-ext"))
-            (hsPkgs."modern-uri" or (buildDepError "modern-uri"))
-            (hsPkgs."foldl" or (buildDepError "foldl"))
-            (hsPkgs."filepattern" or (buildDepError "filepattern"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."algebraic-graphs" or (buildDepError "algebraic-graphs"))
-            (hsPkgs."dhall" or (buildDepError "dhall"))
-            (hsPkgs."which" or (buildDepError "which"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."clay" or ((hsPkgs.pkgs-errors).buildDepError "clay"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+            (hsPkgs."file-embed" or ((hsPkgs.pkgs-errors).buildDepError "file-embed"))
+            (hsPkgs."gitrev" or ((hsPkgs.pkgs-errors).buildDepError "gitrev"))
+            (hsPkgs."lucid" or ((hsPkgs.pkgs-errors).buildDepError "lucid"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."pandoc" or ((hsPkgs.pkgs-errors).buildDepError "pandoc"))
+            (hsPkgs."path" or ((hsPkgs.pkgs-errors).buildDepError "path"))
+            (hsPkgs."path-io" or ((hsPkgs.pkgs-errors).buildDepError "path-io"))
+            (hsPkgs."relude" or ((hsPkgs.pkgs-errors).buildDepError "relude"))
+            (hsPkgs."rib" or ((hsPkgs.pkgs-errors).buildDepError "rib"))
+            (hsPkgs."shake" or ((hsPkgs.pkgs-errors).buildDepError "shake"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."mmark" or ((hsPkgs.pkgs-errors).buildDepError "mmark"))
+            (hsPkgs."mmark-ext" or ((hsPkgs.pkgs-errors).buildDepError "mmark-ext"))
+            (hsPkgs."modern-uri" or ((hsPkgs.pkgs-errors).buildDepError "modern-uri"))
+            (hsPkgs."foldl" or ((hsPkgs.pkgs-errors).buildDepError "foldl"))
+            (hsPkgs."filepattern" or ((hsPkgs.pkgs-errors).buildDepError "filepattern"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."algebraic-graphs" or ((hsPkgs.pkgs-errors).buildDepError "algebraic-graphs"))
+            (hsPkgs."dhall" or ((hsPkgs.pkgs-errors).buildDepError "dhall"))
+            (hsPkgs."which" or ((hsPkgs.pkgs-errors).buildDepError "which"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
             ];
           buildable = true;
           };

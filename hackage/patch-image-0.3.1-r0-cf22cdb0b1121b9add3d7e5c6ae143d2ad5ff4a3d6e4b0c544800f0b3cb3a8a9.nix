@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm = true; cuda = true; builddraft = false; };
     package = {
@@ -57,58 +18,58 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "patch-image-llvm" = {
           depends = (pkgs.lib).optionals (flags.llvm) [
-            (hsPkgs."knead" or (buildDepError "knead"))
-            (hsPkgs."llvm-extra" or (buildDepError "llvm-extra"))
-            (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
-            (hsPkgs."tfp" or (buildDepError "tfp"))
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-            (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."pqueue" or (buildDepError "pqueue"))
-            (hsPkgs."enumset" or (buildDepError "enumset"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."fft" or (buildDepError "fft"))
-            (hsPkgs."storable-tuple" or (buildDepError "storable-tuple"))
-            (hsPkgs."carray" or (buildDepError "carray"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."cassava" or (buildDepError "cassava"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."non-empty" or (buildDepError "non-empty"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."knead" or ((hsPkgs.pkgs-errors).buildDepError "knead"))
+            (hsPkgs."llvm-extra" or ((hsPkgs.pkgs-errors).buildDepError "llvm-extra"))
+            (hsPkgs."llvm-tf" or ((hsPkgs.pkgs-errors).buildDepError "llvm-tf"))
+            (hsPkgs."tfp" or ((hsPkgs.pkgs-errors).buildDepError "tfp"))
+            (hsPkgs."JuicyPixels" or ((hsPkgs.pkgs-errors).buildDepError "JuicyPixels"))
+            (hsPkgs."hmatrix" or ((hsPkgs.pkgs-errors).buildDepError "hmatrix"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."pqueue" or ((hsPkgs.pkgs-errors).buildDepError "pqueue"))
+            (hsPkgs."enumset" or ((hsPkgs.pkgs-errors).buildDepError "enumset"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."fft" or ((hsPkgs.pkgs-errors).buildDepError "fft"))
+            (hsPkgs."storable-tuple" or ((hsPkgs.pkgs-errors).buildDepError "storable-tuple"))
+            (hsPkgs."carray" or ((hsPkgs.pkgs-errors).buildDepError "carray"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."cassava" or ((hsPkgs.pkgs-errors).buildDepError "cassava"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."explicit-exception" or ((hsPkgs.pkgs-errors).buildDepError "explicit-exception"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."non-empty" or ((hsPkgs.pkgs-errors).buildDepError "non-empty"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.llvm then true else false;
           };
         "patch-image-cuda" = {
           depends = (pkgs.lib).optionals (flags.cuda) [
-            (hsPkgs."accelerate-fourier" or (buildDepError "accelerate-fourier"))
-            (hsPkgs."accelerate-arithmetic" or (buildDepError "accelerate-arithmetic"))
-            (hsPkgs."accelerate-utility" or (buildDepError "accelerate-utility"))
-            (hsPkgs."accelerate-cufft" or (buildDepError "accelerate-cufft"))
-            (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"))
-            (hsPkgs."accelerate-io" or (buildDepError "accelerate-io"))
-            (hsPkgs."accelerate" or (buildDepError "accelerate"))
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-            (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-            (hsPkgs."gnuplot" or (buildDepError "gnuplot"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."accelerate-fourier" or ((hsPkgs.pkgs-errors).buildDepError "accelerate-fourier"))
+            (hsPkgs."accelerate-arithmetic" or ((hsPkgs.pkgs-errors).buildDepError "accelerate-arithmetic"))
+            (hsPkgs."accelerate-utility" or ((hsPkgs.pkgs-errors).buildDepError "accelerate-utility"))
+            (hsPkgs."accelerate-cufft" or ((hsPkgs.pkgs-errors).buildDepError "accelerate-cufft"))
+            (hsPkgs."accelerate-cuda" or ((hsPkgs.pkgs-errors).buildDepError "accelerate-cuda"))
+            (hsPkgs."accelerate-io" or ((hsPkgs.pkgs-errors).buildDepError "accelerate-io"))
+            (hsPkgs."accelerate" or ((hsPkgs.pkgs-errors).buildDepError "accelerate"))
+            (hsPkgs."JuicyPixels" or ((hsPkgs.pkgs-errors).buildDepError "JuicyPixels"))
+            (hsPkgs."hmatrix" or ((hsPkgs.pkgs-errors).buildDepError "hmatrix"))
+            (hsPkgs."gnuplot" or ((hsPkgs.pkgs-errors).buildDepError "gnuplot"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.cuda then true else false;
           };
         "patch-image-draft" = {
           depends = (pkgs.lib).optionals (flags.builddraft) [
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-            (hsPkgs."GeomAlgLib" or (buildDepError "GeomAlgLib"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."JuicyPixels" or ((hsPkgs.pkgs-errors).buildDepError "JuicyPixels"))
+            (hsPkgs."GeomAlgLib" or ((hsPkgs.pkgs-errors).buildDepError "GeomAlgLib"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.builddraft then true else false;
           };

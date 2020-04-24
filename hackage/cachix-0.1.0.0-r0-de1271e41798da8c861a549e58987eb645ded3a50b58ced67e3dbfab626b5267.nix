@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,93 +17,93 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cachix-api" or (buildDepError "cachix-api"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
-          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-          (hsPkgs."cookie" or (buildDepError "cookie"))
-          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-          (hsPkgs."dhall" or (buildDepError "dhall"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."ed25519" or (buildDepError "ed25519"))
-          (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
-          (hsPkgs."here" or (buildDepError "here"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."lzma-conduit" or (buildDepError "lzma-conduit"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."mmorph" or (buildDepError "mmorph"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."protolude" or (buildDepError "protolude"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."servant-auth" or (buildDepError "servant-auth"))
-          (hsPkgs."servant-auth-client" or (buildDepError "servant-auth-client"))
-          (hsPkgs."servant-client" or (buildDepError "servant-client"))
-          (hsPkgs."servant-generic" or (buildDepError "servant-generic"))
-          (hsPkgs."servant-streaming-client" or (buildDepError "servant-streaming-client"))
-          (hsPkgs."streaming" or (buildDepError "streaming"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
-          (hsPkgs."versions" or (buildDepError "versions"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+          (hsPkgs."base64-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base64-bytestring"))
+          (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."cachix-api" or ((hsPkgs.pkgs-errors).buildDepError "cachix-api"))
+          (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+          (hsPkgs."conduit-combinators" or ((hsPkgs.pkgs-errors).buildDepError "conduit-combinators"))
+          (hsPkgs."conduit-extra" or ((hsPkgs.pkgs-errors).buildDepError "conduit-extra"))
+          (hsPkgs."cookie" or ((hsPkgs.pkgs-errors).buildDepError "cookie"))
+          (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+          (hsPkgs."dhall" or ((hsPkgs.pkgs-errors).buildDepError "dhall"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."ed25519" or ((hsPkgs.pkgs-errors).buildDepError "ed25519"))
+          (hsPkgs."fsnotify" or ((hsPkgs.pkgs-errors).buildDepError "fsnotify"))
+          (hsPkgs."here" or ((hsPkgs.pkgs-errors).buildDepError "here"))
+          (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or ((hsPkgs.pkgs-errors).buildDepError "http-client-tls"))
+          (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."lzma-conduit" or ((hsPkgs.pkgs-errors).buildDepError "lzma-conduit"))
+          (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+          (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+          (hsPkgs."mmorph" or ((hsPkgs.pkgs-errors).buildDepError "mmorph"))
+          (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."protolude" or ((hsPkgs.pkgs-errors).buildDepError "protolude"))
+          (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+          (hsPkgs."servant" or ((hsPkgs.pkgs-errors).buildDepError "servant"))
+          (hsPkgs."servant-auth" or ((hsPkgs.pkgs-errors).buildDepError "servant-auth"))
+          (hsPkgs."servant-auth-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-auth-client"))
+          (hsPkgs."servant-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-client"))
+          (hsPkgs."servant-generic" or ((hsPkgs.pkgs-errors).buildDepError "servant-generic"))
+          (hsPkgs."servant-streaming-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-streaming-client"))
+          (hsPkgs."streaming" or ((hsPkgs.pkgs-errors).buildDepError "streaming"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+          (hsPkgs."uri-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "uri-bytestring"))
+          (hsPkgs."versions" or ((hsPkgs.pkgs-errors).buildDepError "versions"))
           ];
         buildable = true;
         };
       exes = {
         "cachix" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cachix" or (buildDepError "cachix"))
-            (hsPkgs."cachix-api" or (buildDepError "cachix-api"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."cookie" or (buildDepError "cookie"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."dhall" or (buildDepError "dhall"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."ed25519" or (buildDepError "ed25519"))
-            (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
-            (hsPkgs."here" or (buildDepError "here"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."lzma-conduit" or (buildDepError "lzma-conduit"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."mmorph" or (buildDepError "mmorph"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."servant-auth" or (buildDepError "servant-auth"))
-            (hsPkgs."servant-auth-client" or (buildDepError "servant-auth-client"))
-            (hsPkgs."servant-client" or (buildDepError "servant-client"))
-            (hsPkgs."servant-generic" or (buildDepError "servant-generic"))
-            (hsPkgs."servant-streaming-client" or (buildDepError "servant-streaming-client"))
-            (hsPkgs."streaming" or (buildDepError "streaming"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
-            (hsPkgs."versions" or (buildDepError "versions"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+            (hsPkgs."base64-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base64-bytestring"))
+            (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."cachix" or ((hsPkgs.pkgs-errors).buildDepError "cachix"))
+            (hsPkgs."cachix-api" or ((hsPkgs.pkgs-errors).buildDepError "cachix-api"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."conduit-combinators" or ((hsPkgs.pkgs-errors).buildDepError "conduit-combinators"))
+            (hsPkgs."conduit-extra" or ((hsPkgs.pkgs-errors).buildDepError "conduit-extra"))
+            (hsPkgs."cookie" or ((hsPkgs.pkgs-errors).buildDepError "cookie"))
+            (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+            (hsPkgs."dhall" or ((hsPkgs.pkgs-errors).buildDepError "dhall"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."ed25519" or ((hsPkgs.pkgs-errors).buildDepError "ed25519"))
+            (hsPkgs."fsnotify" or ((hsPkgs.pkgs-errors).buildDepError "fsnotify"))
+            (hsPkgs."here" or ((hsPkgs.pkgs-errors).buildDepError "here"))
+            (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or ((hsPkgs.pkgs-errors).buildDepError "http-client-tls"))
+            (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."lzma-conduit" or ((hsPkgs.pkgs-errors).buildDepError "lzma-conduit"))
+            (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."mmorph" or ((hsPkgs.pkgs-errors).buildDepError "mmorph"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."protolude" or ((hsPkgs.pkgs-errors).buildDepError "protolude"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."servant" or ((hsPkgs.pkgs-errors).buildDepError "servant"))
+            (hsPkgs."servant-auth" or ((hsPkgs.pkgs-errors).buildDepError "servant-auth"))
+            (hsPkgs."servant-auth-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-auth-client"))
+            (hsPkgs."servant-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-client"))
+            (hsPkgs."servant-generic" or ((hsPkgs.pkgs-errors).buildDepError "servant-generic"))
+            (hsPkgs."servant-streaming-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-streaming-client"))
+            (hsPkgs."streaming" or ((hsPkgs.pkgs-errors).buildDepError "streaming"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."uri-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "uri-bytestring"))
+            (hsPkgs."versions" or ((hsPkgs.pkgs-errors).buildDepError "versions"))
             ];
           buildable = true;
           };
@@ -150,48 +111,48 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "cachix-test" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cachix" or (buildDepError "cachix"))
-            (hsPkgs."cachix-api" or (buildDepError "cachix-api"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."cookie" or (buildDepError "cookie"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."dhall" or (buildDepError "dhall"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."ed25519" or (buildDepError "ed25519"))
-            (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
-            (hsPkgs."here" or (buildDepError "here"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."lzma-conduit" or (buildDepError "lzma-conduit"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."mmorph" or (buildDepError "mmorph"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."servant-auth" or (buildDepError "servant-auth"))
-            (hsPkgs."servant-auth-client" or (buildDepError "servant-auth-client"))
-            (hsPkgs."servant-client" or (buildDepError "servant-client"))
-            (hsPkgs."servant-generic" or (buildDepError "servant-generic"))
-            (hsPkgs."servant-streaming-client" or (buildDepError "servant-streaming-client"))
-            (hsPkgs."streaming" or (buildDepError "streaming"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
-            (hsPkgs."versions" or (buildDepError "versions"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+            (hsPkgs."base64-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base64-bytestring"))
+            (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."cachix" or ((hsPkgs.pkgs-errors).buildDepError "cachix"))
+            (hsPkgs."cachix-api" or ((hsPkgs.pkgs-errors).buildDepError "cachix-api"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."conduit-combinators" or ((hsPkgs.pkgs-errors).buildDepError "conduit-combinators"))
+            (hsPkgs."conduit-extra" or ((hsPkgs.pkgs-errors).buildDepError "conduit-extra"))
+            (hsPkgs."cookie" or ((hsPkgs.pkgs-errors).buildDepError "cookie"))
+            (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+            (hsPkgs."dhall" or ((hsPkgs.pkgs-errors).buildDepError "dhall"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."ed25519" or ((hsPkgs.pkgs-errors).buildDepError "ed25519"))
+            (hsPkgs."fsnotify" or ((hsPkgs.pkgs-errors).buildDepError "fsnotify"))
+            (hsPkgs."here" or ((hsPkgs.pkgs-errors).buildDepError "here"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."http-client" or ((hsPkgs.pkgs-errors).buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or ((hsPkgs.pkgs-errors).buildDepError "http-client-tls"))
+            (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+            (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+            (hsPkgs."lzma-conduit" or ((hsPkgs.pkgs-errors).buildDepError "lzma-conduit"))
+            (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."mmorph" or ((hsPkgs.pkgs-errors).buildDepError "mmorph"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."protolude" or ((hsPkgs.pkgs-errors).buildDepError "protolude"))
+            (hsPkgs."resourcet" or ((hsPkgs.pkgs-errors).buildDepError "resourcet"))
+            (hsPkgs."servant" or ((hsPkgs.pkgs-errors).buildDepError "servant"))
+            (hsPkgs."servant-auth" or ((hsPkgs.pkgs-errors).buildDepError "servant-auth"))
+            (hsPkgs."servant-auth-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-auth-client"))
+            (hsPkgs."servant-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-client"))
+            (hsPkgs."servant-generic" or ((hsPkgs.pkgs-errors).buildDepError "servant-generic"))
+            (hsPkgs."servant-streaming-client" or ((hsPkgs.pkgs-errors).buildDepError "servant-streaming-client"))
+            (hsPkgs."streaming" or ((hsPkgs.pkgs-errors).buildDepError "streaming"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."uri-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "uri-bytestring"))
+            (hsPkgs."versions" or ((hsPkgs.pkgs-errors).buildDepError "versions"))
             ];
           buildable = true;
           };

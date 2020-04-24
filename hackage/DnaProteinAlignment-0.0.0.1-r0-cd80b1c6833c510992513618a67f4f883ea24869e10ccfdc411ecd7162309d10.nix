@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,47 +17,47 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."ADPfusion" or (buildDepError "ADPfusion"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."BiobaseBlast" or (buildDepError "BiobaseBlast"))
-          (hsPkgs."BiobaseFasta" or (buildDepError "BiobaseFasta"))
-          (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
-          (hsPkgs."biocore" or (buildDepError "biocore"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."dlist" or (buildDepError "dlist"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
-          (hsPkgs."repa" or (buildDepError "repa"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."ansi-wl-pprint" or ((hsPkgs.pkgs-errors).buildDepError "ansi-wl-pprint"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+          (hsPkgs."ADPfusion" or ((hsPkgs.pkgs-errors).buildDepError "ADPfusion"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."BiobaseBlast" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseBlast"))
+          (hsPkgs."BiobaseFasta" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseFasta"))
+          (hsPkgs."BiobaseXNA" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseXNA"))
+          (hsPkgs."biocore" or ((hsPkgs.pkgs-errors).buildDepError "biocore"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+          (hsPkgs."dlist" or ((hsPkgs.pkgs-errors).buildDepError "dlist"))
+          (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+          (hsPkgs."PrimitiveArray" or ((hsPkgs.pkgs-errors).buildDepError "PrimitiveArray"))
+          (hsPkgs."repa" or ((hsPkgs.pkgs-errors).buildDepError "repa"))
+          (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
           ];
         buildable = true;
         };
       exes = {
         "DnaProteinAlignment" = {
           depends = [
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."ADPfusion" or (buildDepError "ADPfusion"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."BiobaseBlast" or (buildDepError "BiobaseBlast"))
-            (hsPkgs."BiobaseFasta" or (buildDepError "BiobaseFasta"))
-            (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
-            (hsPkgs."biocore" or (buildDepError "biocore"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."dlist" or (buildDepError "dlist"))
-            (hsPkgs."DnaProteinAlignment" or (buildDepError "DnaProteinAlignment"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
-            (hsPkgs."repa" or (buildDepError "repa"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."ansi-wl-pprint" or ((hsPkgs.pkgs-errors).buildDepError "ansi-wl-pprint"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+            (hsPkgs."ADPfusion" or ((hsPkgs.pkgs-errors).buildDepError "ADPfusion"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."BiobaseBlast" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseBlast"))
+            (hsPkgs."BiobaseFasta" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseFasta"))
+            (hsPkgs."BiobaseXNA" or ((hsPkgs.pkgs-errors).buildDepError "BiobaseXNA"))
+            (hsPkgs."biocore" or ((hsPkgs.pkgs-errors).buildDepError "biocore"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."conduit" or ((hsPkgs.pkgs-errors).buildDepError "conduit"))
+            (hsPkgs."dlist" or ((hsPkgs.pkgs-errors).buildDepError "dlist"))
+            (hsPkgs."DnaProteinAlignment" or ((hsPkgs.pkgs-errors).buildDepError "DnaProteinAlignment"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."PrimitiveArray" or ((hsPkgs.pkgs-errors).buildDepError "PrimitiveArray"))
+            (hsPkgs."repa" or ((hsPkgs.pkgs-errors).buildDepError "repa"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };

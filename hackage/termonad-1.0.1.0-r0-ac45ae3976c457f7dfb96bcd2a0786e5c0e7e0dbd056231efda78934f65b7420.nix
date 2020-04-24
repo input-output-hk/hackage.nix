@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildexamples = false; };
     package = {
@@ -53,69 +14,69 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "Please see <https://github.com/cdepillabout/termonad#readme README.md>.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (buildToolDepError "cabal-doctest")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or ((hsPkgs.pkgs-errors).buildToolDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or ((hsPkgs.pkgs-errors).buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or ((hsPkgs.pkgs-errors).buildToolDepError "cabal-doctest")))
         ];
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."adjunctions" or (buildDepError "adjunctions"))
-          (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
-          (hsPkgs."colour" or (buildDepError "colour"))
-          (hsPkgs."constraints" or (buildDepError "constraints"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."distributive" or (buildDepError "distributive"))
-          (hsPkgs."dyre" or (buildDepError "dyre"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."focuslist" or (buildDepError "focuslist"))
-          (hsPkgs."gi-gdk" or (buildDepError "gi-gdk"))
-          (hsPkgs."gi-gio" or (buildDepError "gi-gio"))
-          (hsPkgs."gi-glib" or (buildDepError "gi-glib"))
-          (hsPkgs."gi-gtk" or (buildDepError "gi-gtk"))
-          (hsPkgs."gi-pango" or (buildDepError "gi-pango"))
-          (hsPkgs."gi-vte" or (buildDepError "gi-vte"))
-          (hsPkgs."haskell-gi-base" or (buildDepError "haskell-gi-base"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
-          (hsPkgs."pretty-simple" or (buildDepError "pretty-simple"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."singletons" or (buildDepError "singletons"))
-          (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
-          (hsPkgs."xml-html-qq" or (buildDepError "xml-html-qq"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."adjunctions" or ((hsPkgs.pkgs-errors).buildDepError "adjunctions"))
+          (hsPkgs."classy-prelude" or ((hsPkgs.pkgs-errors).buildDepError "classy-prelude"))
+          (hsPkgs."colour" or ((hsPkgs.pkgs-errors).buildDepError "colour"))
+          (hsPkgs."constraints" or ((hsPkgs.pkgs-errors).buildDepError "constraints"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."distributive" or ((hsPkgs.pkgs-errors).buildDepError "distributive"))
+          (hsPkgs."dyre" or ((hsPkgs.pkgs-errors).buildDepError "dyre"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."focuslist" or ((hsPkgs.pkgs-errors).buildDepError "focuslist"))
+          (hsPkgs."gi-gdk" or ((hsPkgs.pkgs-errors).buildDepError "gi-gdk"))
+          (hsPkgs."gi-gio" or ((hsPkgs.pkgs-errors).buildDepError "gi-gio"))
+          (hsPkgs."gi-glib" or ((hsPkgs.pkgs-errors).buildDepError "gi-glib"))
+          (hsPkgs."gi-gtk" or ((hsPkgs.pkgs-errors).buildDepError "gi-gtk"))
+          (hsPkgs."gi-pango" or ((hsPkgs.pkgs-errors).buildDepError "gi-pango"))
+          (hsPkgs."gi-vte" or ((hsPkgs.pkgs-errors).buildDepError "gi-vte"))
+          (hsPkgs."haskell-gi-base" or ((hsPkgs.pkgs-errors).buildDepError "haskell-gi-base"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."mono-traversable" or ((hsPkgs.pkgs-errors).buildDepError "mono-traversable"))
+          (hsPkgs."pretty-simple" or ((hsPkgs.pkgs-errors).buildDepError "pretty-simple"))
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+          (hsPkgs."singletons" or ((hsPkgs.pkgs-errors).buildDepError "singletons"))
+          (hsPkgs."xml-conduit" or ((hsPkgs.pkgs-errors).buildDepError "xml-conduit"))
+          (hsPkgs."xml-html-qq" or ((hsPkgs.pkgs-errors).buildDepError "xml-html-qq"))
           ];
         pkgconfig = [
-          (pkgconfPkgs."gtk+-3.0" or (pkgConfDepError "gtk+-3.0"))
-          (pkgconfPkgs."vte-2.91" or (pkgConfDepError "vte-2.91"))
+          (pkgconfPkgs."gtk+-3.0" or ((hsPkgs.pkgs-errors).pkgConfDepError "gtk+-3.0"))
+          (pkgconfPkgs."vte-2.91" or ((hsPkgs.pkgs-errors).pkgConfDepError "vte-2.91"))
           ];
         buildable = true;
         };
       exes = {
         "termonad" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."termonad" or (buildDepError "termonad"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."termonad" or ((hsPkgs.pkgs-errors).buildDepError "termonad"))
             ];
           buildable = true;
           };
         "termonad-readme" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."markdown-unlit" or (buildDepError "markdown-unlit"))
-            (hsPkgs."termonad" or (buildDepError "termonad"))
-            (hsPkgs."colour" or (buildDepError "colour"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."markdown-unlit" or ((hsPkgs.pkgs-errors).buildDepError "markdown-unlit"))
+            (hsPkgs."termonad" or ((hsPkgs.pkgs-errors).buildDepError "termonad"))
+            (hsPkgs."colour" or ((hsPkgs.pkgs-errors).buildDepError "colour"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "termonad-example-colour-extension" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."termonad" or (buildDepError "termonad"))
-            (hsPkgs."colour" or (buildDepError "colour"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."termonad" or ((hsPkgs.pkgs-errors).buildDepError "termonad"))
+            (hsPkgs."colour" or ((hsPkgs.pkgs-errors).buildDepError "colour"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
@@ -123,25 +84,25 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "doctests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."doctest" or ((hsPkgs.pkgs-errors).buildDepError "doctest"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
             ];
           buildable = true;
           };
         "termonad-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."genvalidity-containers" or (buildDepError "genvalidity-containers"))
-            (hsPkgs."genvalidity-hspec" or (buildDepError "genvalidity-hspec"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."termonad" or (buildDepError "termonad"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
-            (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."genvalidity-containers" or ((hsPkgs.pkgs-errors).buildDepError "genvalidity-containers"))
+            (hsPkgs."genvalidity-hspec" or ((hsPkgs.pkgs-errors).buildDepError "genvalidity-hspec"))
+            (hsPkgs."hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "hedgehog"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."termonad" or ((hsPkgs.pkgs-errors).buildDepError "termonad"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hedgehog" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hedgehog"))
+            (hsPkgs."tasty-hspec" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hspec"))
             ];
           buildable = true;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { no-integer-gmp = false; development = false; };
     package = {
@@ -56,9 +17,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."composition-prelude" or (buildDepError "composition-prelude"))
-          ] ++ (pkgs.lib).optional (!flags.no-integer-gmp) (hsPkgs."gmpint" or (buildDepError "gmpint"));
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."composition-prelude" or ((hsPkgs.pkgs-errors).buildDepError "composition-prelude"))
+          ] ++ (pkgs.lib).optional (!flags.no-integer-gmp) (hsPkgs."gmpint" or ((hsPkgs.pkgs-errors).buildDepError "gmpint"));
         buildable = (if system.isWindows
           then false
           else true) && (if system.isWindows then false else true);
@@ -66,31 +27,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "fast-arithmetic-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fast-arithmetic" or (buildDepError "fast-arithmetic"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."fast-arithmetic" or ((hsPkgs.pkgs-errors).buildDepError "fast-arithmetic"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."arithmoi" or ((hsPkgs.pkgs-errors).buildDepError "arithmoi"))
             ] ++ (if compiler.isGhc && (compiler.version).ge "8.4"
             then [
-              (hsPkgs."combinat-compat" or (buildDepError "combinat-compat"))
+              (hsPkgs."combinat-compat" or ((hsPkgs.pkgs-errors).buildDepError "combinat-compat"))
               ]
-            else [ (hsPkgs."combinat" or (buildDepError "combinat")) ]);
+            else [
+              (hsPkgs."combinat" or ((hsPkgs.pkgs-errors).buildDepError "combinat"))
+              ]);
           buildable = true;
           };
         };
       benchmarks = {
         "fast-arithmetic-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fast-arithmetic" or (buildDepError "fast-arithmetic"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."fast-arithmetic" or ((hsPkgs.pkgs-errors).buildDepError "fast-arithmetic"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."arithmoi" or ((hsPkgs.pkgs-errors).buildDepError "arithmoi"))
             ] ++ (if compiler.isGhc && (compiler.version).ge "8.4"
             then [
-              (hsPkgs."combinat-compat" or (buildDepError "combinat-compat"))
+              (hsPkgs."combinat-compat" or ((hsPkgs.pkgs-errors).buildDepError "combinat-compat"))
               ]
-            else [ (hsPkgs."combinat" or (buildDepError "combinat")) ]);
+            else [
+              (hsPkgs."combinat" or ((hsPkgs.pkgs-errors).buildDepError "combinat"))
+              ]);
           buildable = true;
           };
         };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,26 +17,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
           ];
         libs = [
-          (pkgs."stdc++" or (sysDepError "stdc++"))
-          (pkgs."casadi_ipopt_interface" or (sysDepError "casadi_ipopt_interface"))
-          (pkgs."casadi_sundials_interface" or (sysDepError "casadi_sundials_interface"))
-          (pkgs."casadi_sundials" or (sysDepError "casadi_sundials"))
-          (pkgs."casadi_csparse_interface" or (sysDepError "casadi_csparse_interface"))
-          (pkgs."casadi_csparse" or (sysDepError "casadi_csparse"))
-          (pkgs."casadi_optimal_control" or (sysDepError "casadi_optimal_control"))
-          (pkgs."casadi_control" or (sysDepError "casadi_control"))
-          (pkgs."casadi_tinyxml" or (sysDepError "casadi_tinyxml"))
-          (pkgs."casadi_integration" or (sysDepError "casadi_integration"))
-          (pkgs."casadi_convex_programming" or (sysDepError "casadi_convex_programming"))
-          (pkgs."casadi_nonlinear_programming" or (sysDepError "casadi_nonlinear_programming"))
-          (pkgs."casadi" or (sysDepError "casadi"))
-          (pkgs."dl" or (sysDepError "dl"))
+          (pkgs."stdc++" or ((hsPkgs.pkgs-errors).sysDepError "stdc++"))
+          (pkgs."casadi_ipopt_interface" or ((hsPkgs.pkgs-errors).sysDepError "casadi_ipopt_interface"))
+          (pkgs."casadi_sundials_interface" or ((hsPkgs.pkgs-errors).sysDepError "casadi_sundials_interface"))
+          (pkgs."casadi_sundials" or ((hsPkgs.pkgs-errors).sysDepError "casadi_sundials"))
+          (pkgs."casadi_csparse_interface" or ((hsPkgs.pkgs-errors).sysDepError "casadi_csparse_interface"))
+          (pkgs."casadi_csparse" or ((hsPkgs.pkgs-errors).sysDepError "casadi_csparse"))
+          (pkgs."casadi_optimal_control" or ((hsPkgs.pkgs-errors).sysDepError "casadi_optimal_control"))
+          (pkgs."casadi_control" or ((hsPkgs.pkgs-errors).sysDepError "casadi_control"))
+          (pkgs."casadi_tinyxml" or ((hsPkgs.pkgs-errors).sysDepError "casadi_tinyxml"))
+          (pkgs."casadi_integration" or ((hsPkgs.pkgs-errors).sysDepError "casadi_integration"))
+          (pkgs."casadi_convex_programming" or ((hsPkgs.pkgs-errors).sysDepError "casadi_convex_programming"))
+          (pkgs."casadi_nonlinear_programming" or ((hsPkgs.pkgs-errors).sysDepError "casadi_nonlinear_programming"))
+          (pkgs."casadi" or ((hsPkgs.pkgs-errors).sysDepError "casadi"))
+          (pkgs."dl" or ((hsPkgs.pkgs-errors).sysDepError "dl"))
           ];
-        pkgconfig = [ (pkgconfPkgs."ipopt" or (pkgConfDepError "ipopt")) ];
+        pkgconfig = [
+          (pkgconfPkgs."ipopt" or ((hsPkgs.pkgs-errors).pkgConfDepError "ipopt"))
+          ];
         buildable = true;
         };
       };

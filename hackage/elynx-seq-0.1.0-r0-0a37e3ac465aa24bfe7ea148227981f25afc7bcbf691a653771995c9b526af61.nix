@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,57 +17,57 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-memocombinators" or (buildDepError "data-memocombinators"))
-          (hsPkgs."elynx-tools" or (buildDepError "elynx-tools"))
-          (hsPkgs."elynx-tree" or (buildDepError "elynx-tree"))
-          (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-          (hsPkgs."integration" or (buildDepError "integration"))
-          (hsPkgs."math-functions" or (buildDepError "math-functions"))
-          (hsPkgs."matrices" or (buildDepError "matrices"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."statistics" or (buildDepError "statistics"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
-          (hsPkgs."word8" or (buildDepError "word8"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."data-memocombinators" or ((hsPkgs.pkgs-errors).buildDepError "data-memocombinators"))
+          (hsPkgs."elynx-tools" or ((hsPkgs.pkgs-errors).buildDepError "elynx-tools"))
+          (hsPkgs."elynx-tree" or ((hsPkgs.pkgs-errors).buildDepError "elynx-tree"))
+          (hsPkgs."hmatrix" or ((hsPkgs.pkgs-errors).buildDepError "hmatrix"))
+          (hsPkgs."integration" or ((hsPkgs.pkgs-errors).buildDepError "integration"))
+          (hsPkgs."math-functions" or ((hsPkgs.pkgs-errors).buildDepError "math-functions"))
+          (hsPkgs."matrices" or ((hsPkgs.pkgs-errors).buildDepError "matrices"))
+          (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+          (hsPkgs."mwc-random" or ((hsPkgs.pkgs-errors).buildDepError "mwc-random"))
+          (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+          (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+          (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+          (hsPkgs."statistics" or ((hsPkgs.pkgs-errors).buildDepError "statistics"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."vector-th-unbox" or ((hsPkgs.pkgs-errors).buildDepError "vector-th-unbox"))
+          (hsPkgs."word8" or ((hsPkgs.pkgs-errors).buildDepError "word8"))
           ];
         buildable = true;
         };
       tests = {
         "seq-test" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-memocombinators" or (buildDepError "data-memocombinators"))
-            (hsPkgs."elynx-seq" or (buildDepError "elynx-seq"))
-            (hsPkgs."elynx-tools" or (buildDepError "elynx-tools"))
-            (hsPkgs."elynx-tree" or (buildDepError "elynx-tree"))
-            (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-megaparsec" or (buildDepError "hspec-megaparsec"))
-            (hsPkgs."integration" or (buildDepError "integration"))
-            (hsPkgs."math-functions" or (buildDepError "math-functions"))
-            (hsPkgs."matrices" or (buildDepError "matrices"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."statistics" or (buildDepError "statistics"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
-            (hsPkgs."word8" or (buildDepError "word8"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."data-memocombinators" or ((hsPkgs.pkgs-errors).buildDepError "data-memocombinators"))
+            (hsPkgs."elynx-seq" or ((hsPkgs.pkgs-errors).buildDepError "elynx-seq"))
+            (hsPkgs."elynx-tools" or ((hsPkgs.pkgs-errors).buildDepError "elynx-tools"))
+            (hsPkgs."elynx-tree" or ((hsPkgs.pkgs-errors).buildDepError "elynx-tree"))
+            (hsPkgs."hmatrix" or ((hsPkgs.pkgs-errors).buildDepError "hmatrix"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."hspec-megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "hspec-megaparsec"))
+            (hsPkgs."integration" or ((hsPkgs.pkgs-errors).buildDepError "integration"))
+            (hsPkgs."math-functions" or ((hsPkgs.pkgs-errors).buildDepError "math-functions"))
+            (hsPkgs."matrices" or ((hsPkgs.pkgs-errors).buildDepError "matrices"))
+            (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+            (hsPkgs."mwc-random" or ((hsPkgs.pkgs-errors).buildDepError "mwc-random"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."statistics" or ((hsPkgs.pkgs-errors).buildDepError "statistics"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."vector-th-unbox" or ((hsPkgs.pkgs-errors).buildDepError "vector-th-unbox"))
+            (hsPkgs."word8" or ((hsPkgs.pkgs-errors).buildDepError "word8"))
             ];
           buildable = true;
           };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -57,68 +18,68 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "sunroof-browser-info" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sunroof-compiler" or (buildDepError "sunroof-compiler"))
-            (hsPkgs."sunroof-server" or (buildDepError "sunroof-server"))
-            (hsPkgs."Boolean" or (buildDepError "Boolean"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sunroof-compiler" or ((hsPkgs.pkgs-errors).buildDepError "sunroof-compiler"))
+            (hsPkgs."sunroof-server" or ((hsPkgs.pkgs-errors).buildDepError "sunroof-server"))
+            (hsPkgs."Boolean" or ((hsPkgs.pkgs-errors).buildDepError "Boolean"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
             ];
           buildable = true;
           };
         "sunroof-canvas" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sunroof-compiler" or (buildDepError "sunroof-compiler"))
-            (hsPkgs."sunroof-server" or (buildDepError "sunroof-server"))
-            (hsPkgs."Boolean" or (buildDepError "Boolean"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sunroof-compiler" or ((hsPkgs.pkgs-errors).buildDepError "sunroof-compiler"))
+            (hsPkgs."sunroof-server" or ((hsPkgs.pkgs-errors).buildDepError "sunroof-server"))
+            (hsPkgs."Boolean" or ((hsPkgs.pkgs-errors).buildDepError "Boolean"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
             ];
           buildable = true;
           };
         "sunroof-clock" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sunroof-compiler" or (buildDepError "sunroof-compiler"))
-            (hsPkgs."Boolean" or (buildDepError "Boolean"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sunroof-compiler" or ((hsPkgs.pkgs-errors).buildDepError "sunroof-compiler"))
+            (hsPkgs."Boolean" or ((hsPkgs.pkgs-errors).buildDepError "Boolean"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
             ];
           buildable = true;
           };
         "sunroof-fib" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sunroof-compiler" or (buildDepError "sunroof-compiler"))
-            (hsPkgs."sunroof-server" or (buildDepError "sunroof-server"))
-            (hsPkgs."Boolean" or (buildDepError "Boolean"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."sunroof-compiler" or ((hsPkgs.pkgs-errors).buildDepError "sunroof-compiler"))
+            (hsPkgs."sunroof-server" or ((hsPkgs.pkgs-errors).buildDepError "sunroof-server"))
+            (hsPkgs."Boolean" or ((hsPkgs.pkgs-errors).buildDepError "Boolean"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
             ];
           buildable = true;
           };
         "sunroof-unit" = {
           depends = [
-            (hsPkgs."sunroof-compiler" or (buildDepError "sunroof-compiler"))
-            (hsPkgs."sunroof-server" or (buildDepError "sunroof-server"))
-            (hsPkgs."Boolean" or (buildDepError "Boolean"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parallel-io" or (buildDepError "parallel-io"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."sunroof-compiler" or ((hsPkgs.pkgs-errors).buildDepError "sunroof-compiler"))
+            (hsPkgs."sunroof-server" or ((hsPkgs.pkgs-errors).buildDepError "sunroof-server"))
+            (hsPkgs."Boolean" or ((hsPkgs.pkgs-errors).buildDepError "Boolean"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."parallel-io" or ((hsPkgs.pkgs-errors).buildDepError "parallel-io"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = true;
           };
         "sunroof-inplace-shaker" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."shake" or (buildDepError "shake"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."shake" or ((hsPkgs.pkgs-errors).buildDepError "shake"))
             ];
           buildable = true;
           };

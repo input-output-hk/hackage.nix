@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildsketch = false; llvm = true; };
     package = {
@@ -57,55 +18,55 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "classify-frog" = {
           depends = [
-            (hsPkgs."hmm-lapack" or (buildDepError "hmm-lapack"))
-            (hsPkgs."lapack" or (buildDepError "lapack"))
-            (hsPkgs."comfort-array" or (buildDepError "comfort-array"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."lazy-csv" or (buildDepError "lazy-csv"))
-            (hsPkgs."tagchup" or (buildDepError "tagchup"))
-            (hsPkgs."xml-basic" or (buildDepError "xml-basic"))
-            (hsPkgs."synthesizer-core" or (buildDepError "synthesizer-core"))
-            (hsPkgs."audacity" or (buildDepError "audacity"))
-            (hsPkgs."soxlib" or (buildDepError "soxlib"))
-            (hsPkgs."gnuplot" or (buildDepError "gnuplot"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."pooled-io" or (buildDepError "pooled-io"))
-            (hsPkgs."concurrent-split" or (buildDepError "concurrent-split"))
-            (hsPkgs."fft" or (buildDepError "fft"))
-            (hsPkgs."carray" or (buildDepError "carray"))
-            (hsPkgs."storablevector-carray" or (buildDepError "storablevector-carray"))
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."storable-record" or (buildDepError "storable-record"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."shell-utility" or (buildDepError "shell-utility"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."filemanip" or (buildDepError "filemanip"))
-            (hsPkgs."pathtype" or (buildDepError "pathtype"))
-            (hsPkgs."non-empty" or (buildDepError "non-empty"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hmm-lapack" or ((hsPkgs.pkgs-errors).buildDepError "hmm-lapack"))
+            (hsPkgs."lapack" or ((hsPkgs.pkgs-errors).buildDepError "lapack"))
+            (hsPkgs."comfort-array" or ((hsPkgs.pkgs-errors).buildDepError "comfort-array"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."lazy-csv" or ((hsPkgs.pkgs-errors).buildDepError "lazy-csv"))
+            (hsPkgs."tagchup" or ((hsPkgs.pkgs-errors).buildDepError "tagchup"))
+            (hsPkgs."xml-basic" or ((hsPkgs.pkgs-errors).buildDepError "xml-basic"))
+            (hsPkgs."synthesizer-core" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-core"))
+            (hsPkgs."audacity" or ((hsPkgs.pkgs-errors).buildDepError "audacity"))
+            (hsPkgs."soxlib" or ((hsPkgs.pkgs-errors).buildDepError "soxlib"))
+            (hsPkgs."gnuplot" or ((hsPkgs.pkgs-errors).buildDepError "gnuplot"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."pooled-io" or ((hsPkgs.pkgs-errors).buildDepError "pooled-io"))
+            (hsPkgs."concurrent-split" or ((hsPkgs.pkgs-errors).buildDepError "concurrent-split"))
+            (hsPkgs."fft" or ((hsPkgs.pkgs-errors).buildDepError "fft"))
+            (hsPkgs."carray" or ((hsPkgs.pkgs-errors).buildDepError "carray"))
+            (hsPkgs."storablevector-carray" or ((hsPkgs.pkgs-errors).buildDepError "storablevector-carray"))
+            (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"))
+            (hsPkgs."storable-record" or ((hsPkgs.pkgs-errors).buildDepError "storable-record"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."shell-utility" or ((hsPkgs.pkgs-errors).buildDepError "shell-utility"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."filemanip" or ((hsPkgs.pkgs-errors).buildDepError "filemanip"))
+            (hsPkgs."pathtype" or ((hsPkgs.pkgs-errors).buildDepError "pathtype"))
+            (hsPkgs."non-empty" or ((hsPkgs.pkgs-errors).buildDepError "non-empty"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."explicit-exception" or ((hsPkgs.pkgs-errors).buildDepError "explicit-exception"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."numeric-prelude" or ((hsPkgs.pkgs-errors).buildDepError "numeric-prelude"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ] ++ (pkgs.lib).optionals (flags.llvm) [
-            (hsPkgs."synthesizer-llvm" or (buildDepError "synthesizer-llvm"))
-            (hsPkgs."llvm-extra" or (buildDepError "llvm-extra"))
-            (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
+            (hsPkgs."synthesizer-llvm" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-llvm"))
+            (hsPkgs."llvm-extra" or ((hsPkgs.pkgs-errors).buildDepError "llvm-extra"))
+            (hsPkgs."llvm-tf" or ((hsPkgs.pkgs-errors).buildDepError "llvm-tf"))
             ];
           buildable = true;
           };
         "spectral-distribution" = {
           depends = (pkgs.lib).optionals (flags.buildsketch) [
-            (hsPkgs."synthesizer-core" or (buildDepError "synthesizer-core"))
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."synthesizer-core" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-core"))
+            (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."numeric-prelude" or ((hsPkgs.pkgs-errors).buildDepError "numeric-prelude"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.buildsketch then true else false;
           };

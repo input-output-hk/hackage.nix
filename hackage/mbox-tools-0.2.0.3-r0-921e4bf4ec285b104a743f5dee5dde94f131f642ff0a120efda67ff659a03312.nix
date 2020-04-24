@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { use_hutt = false; useless = false; };
     package = {
@@ -57,129 +18,129 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "mbox-counting" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."codec-mbox" or (buildDepError "codec-mbox"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."codec-mbox" or ((hsPkgs.pkgs-errors).buildDepError "codec-mbox"))
             ];
           buildable = true;
           };
         "mbox-average-size" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."codec-mbox" or (buildDepError "codec-mbox"))
-            (hsPkgs."fclabels" or (buildDepError "fclabels"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."codec-mbox" or ((hsPkgs.pkgs-errors).buildDepError "codec-mbox"))
+            (hsPkgs."fclabels" or ((hsPkgs.pkgs-errors).buildDepError "fclabels"))
             ];
           buildable = if !flags.useless then false else true;
           };
         "mbox-quoting" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."codec-mbox" or (buildDepError "codec-mbox"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."codec-mbox" or ((hsPkgs.pkgs-errors).buildDepError "codec-mbox"))
             ];
           buildable = if !flags.useless then false else true;
           };
         "redact-mbox" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."codec-mbox" or (buildDepError "codec-mbox"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."codec-mbox" or ((hsPkgs.pkgs-errors).buildDepError "codec-mbox"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = if !flags.useless then false else true;
           };
         "mbox-list" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."codec-mbox" or (buildDepError "codec-mbox"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."hsemail" or (buildDepError "hsemail"))
-            (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-            (hsPkgs."fclabels" or (buildDepError "fclabels"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."codec-mbox" or ((hsPkgs.pkgs-errors).buildDepError "codec-mbox"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."hsemail" or ((hsPkgs.pkgs-errors).buildDepError "hsemail"))
+            (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+            (hsPkgs."fclabels" or ((hsPkgs.pkgs-errors).buildDepError "fclabels"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
             ];
           buildable = true;
           };
         "mbox-pick" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."codec-mbox" or (buildDepError "codec-mbox"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."hsemail" or (buildDepError "hsemail"))
-            (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-            (hsPkgs."fclabels" or (buildDepError "fclabels"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."codec-mbox" or ((hsPkgs.pkgs-errors).buildDepError "codec-mbox"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."hsemail" or ((hsPkgs.pkgs-errors).buildDepError "hsemail"))
+            (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+            (hsPkgs."fclabels" or ((hsPkgs.pkgs-errors).buildDepError "fclabels"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
             ];
           buildable = true;
           };
         "mbox-partition" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."codec-mbox" or (buildDepError "codec-mbox"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."hsemail" or (buildDepError "hsemail"))
-            (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-            (hsPkgs."fclabels" or (buildDepError "fclabels"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."codec-mbox" or ((hsPkgs.pkgs-errors).buildDepError "codec-mbox"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."hsemail" or ((hsPkgs.pkgs-errors).buildDepError "hsemail"))
+            (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+            (hsPkgs."fclabels" or ((hsPkgs.pkgs-errors).buildDepError "fclabels"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
             ];
           buildable = true;
           };
         "mbox-grep" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."codec-mbox" or (buildDepError "codec-mbox"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."hsemail" or (buildDepError "hsemail"))
-            (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-            (hsPkgs."fclabels" or (buildDepError "fclabels"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            ] ++ (pkgs.lib).optional (flags.use_hutt) (hsPkgs."hutt" or (buildDepError "hutt"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."codec-mbox" or ((hsPkgs.pkgs-errors).buildDepError "codec-mbox"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."hsemail" or ((hsPkgs.pkgs-errors).buildDepError "hsemail"))
+            (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+            (hsPkgs."fclabels" or ((hsPkgs.pkgs-errors).buildDepError "fclabels"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            ] ++ (pkgs.lib).optional (flags.use_hutt) (hsPkgs."hutt" or ((hsPkgs.pkgs-errors).buildDepError "hutt"));
           buildable = if flags.use_hutt then true else false;
           };
         "split-mbox" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."codec-mbox" or (buildDepError "codec-mbox"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."hsemail" or (buildDepError "hsemail"))
-            (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-            (hsPkgs."fclabels" or (buildDepError "fclabels"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."codec-mbox" or ((hsPkgs.pkgs-errors).buildDepError "codec-mbox"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."hsemail" or ((hsPkgs.pkgs-errors).buildDepError "hsemail"))
+            (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+            (hsPkgs."fclabels" or ((hsPkgs.pkgs-errors).buildDepError "fclabels"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
             ];
           buildable = true;
           };
         "mbox-iter" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."codec-mbox" or (buildDepError "codec-mbox"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."hsemail" or (buildDepError "hsemail"))
-            (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-            (hsPkgs."fclabels" or (buildDepError "fclabels"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."codec-mbox" or ((hsPkgs.pkgs-errors).buildDepError "codec-mbox"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."hsemail" or ((hsPkgs.pkgs-errors).buildDepError "hsemail"))
+            (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+            (hsPkgs."fclabels" or ((hsPkgs.pkgs-errors).buildDepError "fclabels"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
             ];
           buildable = true;
           };
         "mbox-from-files" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."codec-mbox" or (buildDepError "codec-mbox"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."hsemail" or (buildDepError "hsemail"))
-            (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-            (hsPkgs."fclabels" or (buildDepError "fclabels"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."codec-mbox" or ((hsPkgs.pkgs-errors).buildDepError "codec-mbox"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+            (hsPkgs."hsemail" or ((hsPkgs.pkgs-errors).buildDepError "hsemail"))
+            (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+            (hsPkgs."fclabels" or ((hsPkgs.pkgs-errors).buildDepError "fclabels"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
             ];
           buildable = true;
           };

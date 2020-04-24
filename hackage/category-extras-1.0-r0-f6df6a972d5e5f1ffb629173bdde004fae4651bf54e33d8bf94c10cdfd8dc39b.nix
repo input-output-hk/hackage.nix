@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,32 +17,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."adjunctions" or (buildDepError "adjunctions"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."categories" or (buildDepError "categories"))
-          (hsPkgs."comonad" or (buildDepError "comonad"))
-          (hsPkgs."comonad-extras" or (buildDepError "comonad-extras"))
-          (hsPkgs."comonads-fd" or (buildDepError "comonads-fd"))
-          (hsPkgs."comonad-transformers" or (buildDepError "comonad-transformers"))
-          (hsPkgs."contravariant" or (buildDepError "contravariant"))
-          (hsPkgs."distributive" or (buildDepError "distributive"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."free" or (buildDepError "free"))
-          (hsPkgs."groupoids" or (buildDepError "groupoids"))
-          (hsPkgs."kan-extensions" or (buildDepError "kan-extensions"))
-          (hsPkgs."keys" or (buildDepError "keys"))
-          (hsPkgs."monad-products" or (buildDepError "monad-products"))
-          (hsPkgs."pointed" or (buildDepError "pointed"))
-          (hsPkgs."profunctor-extras" or (buildDepError "profunctor-extras"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."recursion-schemes" or (buildDepError "recursion-schemes"))
-          (hsPkgs."reducers" or (buildDepError "reducers"))
-          (hsPkgs."representable-functors" or (buildDepError "representable-functors"))
-          (hsPkgs."representable-profunctors" or (buildDepError "representable-profunctors"))
-          (hsPkgs."semigroupoid-extras" or (buildDepError "semigroupoid-extras"))
-          (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."void" or (buildDepError "void"))
+          (hsPkgs."adjunctions" or ((hsPkgs.pkgs-errors).buildDepError "adjunctions"))
+          (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+          (hsPkgs."categories" or ((hsPkgs.pkgs-errors).buildDepError "categories"))
+          (hsPkgs."comonad" or ((hsPkgs.pkgs-errors).buildDepError "comonad"))
+          (hsPkgs."comonad-extras" or ((hsPkgs.pkgs-errors).buildDepError "comonad-extras"))
+          (hsPkgs."comonads-fd" or ((hsPkgs.pkgs-errors).buildDepError "comonads-fd"))
+          (hsPkgs."comonad-transformers" or ((hsPkgs.pkgs-errors).buildDepError "comonad-transformers"))
+          (hsPkgs."contravariant" or ((hsPkgs.pkgs-errors).buildDepError "contravariant"))
+          (hsPkgs."distributive" or ((hsPkgs.pkgs-errors).buildDepError "distributive"))
+          (hsPkgs."either" or ((hsPkgs.pkgs-errors).buildDepError "either"))
+          (hsPkgs."free" or ((hsPkgs.pkgs-errors).buildDepError "free"))
+          (hsPkgs."groupoids" or ((hsPkgs.pkgs-errors).buildDepError "groupoids"))
+          (hsPkgs."kan-extensions" or ((hsPkgs.pkgs-errors).buildDepError "kan-extensions"))
+          (hsPkgs."keys" or ((hsPkgs.pkgs-errors).buildDepError "keys"))
+          (hsPkgs."monad-products" or ((hsPkgs.pkgs-errors).buildDepError "monad-products"))
+          (hsPkgs."pointed" or ((hsPkgs.pkgs-errors).buildDepError "pointed"))
+          (hsPkgs."profunctor-extras" or ((hsPkgs.pkgs-errors).buildDepError "profunctor-extras"))
+          (hsPkgs."profunctors" or ((hsPkgs.pkgs-errors).buildDepError "profunctors"))
+          (hsPkgs."recursion-schemes" or ((hsPkgs.pkgs-errors).buildDepError "recursion-schemes"))
+          (hsPkgs."reducers" or ((hsPkgs.pkgs-errors).buildDepError "reducers"))
+          (hsPkgs."representable-functors" or ((hsPkgs.pkgs-errors).buildDepError "representable-functors"))
+          (hsPkgs."representable-profunctors" or ((hsPkgs.pkgs-errors).buildDepError "representable-profunctors"))
+          (hsPkgs."semigroupoid-extras" or ((hsPkgs.pkgs-errors).buildDepError "semigroupoid-extras"))
+          (hsPkgs."semigroupoids" or ((hsPkgs.pkgs-errors).buildDepError "semigroupoids"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."void" or ((hsPkgs.pkgs-errors).buildDepError "void"))
           ];
         buildable = true;
         };

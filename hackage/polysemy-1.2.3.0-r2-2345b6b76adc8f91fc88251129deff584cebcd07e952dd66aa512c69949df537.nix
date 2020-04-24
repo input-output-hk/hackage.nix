@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dump-core = false; error-messages = true; };
     package = {
@@ -53,53 +14,53 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "Please see the README on GitHub at <https://github.com/isovector/polysemy#readme>";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (buildToolDepError "cabal-doctest")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or ((hsPkgs.pkgs-errors).buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or ((hsPkgs.pkgs-errors).buildToolDepError "base")))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or ((hsPkgs.pkgs-errors).buildToolDepError "cabal-doctest")))
         ];
       };
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."first-class-families" or (buildDepError "first-class-families"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."th-abstraction" or (buildDepError "th-abstraction"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."type-errors" or (buildDepError "type-errors"))
-          (hsPkgs."type-errors-pretty" or (buildDepError "type-errors-pretty"))
-          (hsPkgs."unagi-chan" or (buildDepError "unagi-chan"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.7") (hsPkgs."loopbreaker" or (buildDepError "loopbreaker"))) ++ (pkgs.lib).optional (flags.dump-core) (hsPkgs."dump-core" or (buildDepError "dump-core"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2.2") (hsPkgs."unsupported-ghc-version" or (buildDepError "unsupported-ghc-version"));
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."first-class-families" or ((hsPkgs.pkgs-errors).buildDepError "first-class-families"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."th-abstraction" or ((hsPkgs.pkgs-errors).buildDepError "th-abstraction"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."type-errors" or ((hsPkgs.pkgs-errors).buildDepError "type-errors"))
+          (hsPkgs."type-errors-pretty" or ((hsPkgs.pkgs-errors).buildDepError "type-errors-pretty"))
+          (hsPkgs."unagi-chan" or ((hsPkgs.pkgs-errors).buildDepError "unagi-chan"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.7") (hsPkgs."loopbreaker" or ((hsPkgs.pkgs-errors).buildDepError "loopbreaker"))) ++ (pkgs.lib).optional (flags.dump-core) (hsPkgs."dump-core" or ((hsPkgs.pkgs-errors).buildDepError "dump-core"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2.2") (hsPkgs."unsupported-ghc-version" or ((hsPkgs.pkgs-errors).buildDepError "unsupported-ghc-version"));
         buildable = true;
         };
       tests = {
         "polysemy-test" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."first-class-families" or (buildDepError "first-class-families"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."polysemy" or (buildDepError "polysemy"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."th-abstraction" or (buildDepError "th-abstraction"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."type-errors" or (buildDepError "type-errors"))
-            (hsPkgs."type-errors-pretty" or (buildDepError "type-errors-pretty"))
-            (hsPkgs."unagi-chan" or (buildDepError "unagi-chan"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.7") (hsPkgs."loopbreaker" or (buildDepError "loopbreaker"));
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."doctest" or ((hsPkgs.pkgs-errors).buildDepError "doctest"))
+            (hsPkgs."first-class-families" or ((hsPkgs.pkgs-errors).buildDepError "first-class-families"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."inspection-testing" or ((hsPkgs.pkgs-errors).buildDepError "inspection-testing"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."polysemy" or ((hsPkgs.pkgs-errors).buildDepError "polysemy"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."th-abstraction" or ((hsPkgs.pkgs-errors).buildDepError "th-abstraction"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."type-errors" or ((hsPkgs.pkgs-errors).buildDepError "type-errors"))
+            (hsPkgs."type-errors-pretty" or ((hsPkgs.pkgs-errors).buildDepError "type-errors-pretty"))
+            (hsPkgs."unagi-chan" or ((hsPkgs.pkgs-errors).buildDepError "unagi-chan"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.7") (hsPkgs."loopbreaker" or ((hsPkgs.pkgs-errors).buildDepError "loopbreaker"));
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or ((hsPkgs.pkgs-errors).buildToolDepError "hspec-discover")))
             ];
           buildable = true;
           };
@@ -107,24 +68,24 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "polysemy-bench" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."first-class-families" or (buildDepError "first-class-families"))
-            (hsPkgs."free" or (buildDepError "free"))
-            (hsPkgs."freer-simple" or (buildDepError "freer-simple"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."polysemy" or (buildDepError "polysemy"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."th-abstraction" or (buildDepError "th-abstraction"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."type-errors" or (buildDepError "type-errors"))
-            (hsPkgs."type-errors-pretty" or (buildDepError "type-errors-pretty"))
-            (hsPkgs."unagi-chan" or (buildDepError "unagi-chan"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.7") (hsPkgs."loopbreaker" or (buildDepError "loopbreaker"));
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."first-class-families" or ((hsPkgs.pkgs-errors).buildDepError "first-class-families"))
+            (hsPkgs."free" or ((hsPkgs.pkgs-errors).buildDepError "free"))
+            (hsPkgs."freer-simple" or ((hsPkgs.pkgs-errors).buildDepError "freer-simple"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."polysemy" or ((hsPkgs.pkgs-errors).buildDepError "polysemy"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            (hsPkgs."th-abstraction" or ((hsPkgs.pkgs-errors).buildDepError "th-abstraction"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."type-errors" or ((hsPkgs.pkgs-errors).buildDepError "type-errors"))
+            (hsPkgs."type-errors-pretty" or ((hsPkgs.pkgs-errors).buildDepError "type-errors-pretty"))
+            (hsPkgs."unagi-chan" or ((hsPkgs.pkgs-errors).buildDepError "unagi-chan"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.7") (hsPkgs."loopbreaker" or ((hsPkgs.pkgs-errors).buildDepError "loopbreaker"));
           buildable = true;
           };
         };

@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,50 +17,50 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."uniplate" or (buildDepError "uniplate"))
-          (hsPkgs."syz" or (buildDepError "syz"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."matrix" or (buildDepError "matrix"))
-          (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
-          (hsPkgs."fortran-src" or (buildDepError "fortran-src"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."fgl" or (buildDepError "fgl"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."lattices" or (buildDepError "lattices"))
-          (hsPkgs."sbv" or (buildDepError "sbv"))
-          (hsPkgs."partial-order" or (buildDepError "partial-order"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."mmorph" or (buildDepError "mmorph"))
-          (hsPkgs."singletons" or (buildDepError "singletons"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."vinyl" or (buildDepError "vinyl"))
-          (hsPkgs."verifiable-expressions" or (buildDepError "verifiable-expressions"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."uniplate" or ((hsPkgs.pkgs-errors).buildDepError "uniplate"))
+          (hsPkgs."syz" or ((hsPkgs.pkgs-errors).buildDepError "syz"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+          (hsPkgs."matrix" or ((hsPkgs.pkgs-errors).buildDepError "matrix"))
+          (hsPkgs."hmatrix" or ((hsPkgs.pkgs-errors).buildDepError "hmatrix"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."GenericPretty" or ((hsPkgs.pkgs-errors).buildDepError "GenericPretty"))
+          (hsPkgs."fortran-src" or ((hsPkgs.pkgs-errors).buildDepError "fortran-src"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."fgl" or ((hsPkgs.pkgs-errors).buildDepError "fgl"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          (hsPkgs."lattices" or ((hsPkgs.pkgs-errors).buildDepError "lattices"))
+          (hsPkgs."sbv" or ((hsPkgs.pkgs-errors).buildDepError "sbv"))
+          (hsPkgs."partial-order" or ((hsPkgs.pkgs-errors).buildDepError "partial-order"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."mmorph" or ((hsPkgs.pkgs-errors).buildDepError "mmorph"))
+          (hsPkgs."singletons" or ((hsPkgs.pkgs-errors).buildDepError "singletons"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."vinyl" or ((hsPkgs.pkgs-errors).buildDepError "vinyl"))
+          (hsPkgs."verifiable-expressions" or ((hsPkgs.pkgs-errors).buildDepError "verifiable-expressions"))
           ];
-        libs = [ (pkgs."flint" or (sysDepError "flint")) ];
+        libs = [ (pkgs."flint" or ((hsPkgs.pkgs-errors).sysDepError "flint")) ];
         build-tools = [
-          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
-          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or ((hsPkgs.pkgs-errors).buildToolDepError "alex")))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or ((hsPkgs.pkgs-errors).buildToolDepError "happy")))
           ];
         buildable = true;
         };
       exes = {
         "camfort" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."camfort" or (buildDepError "camfort"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."camfort" or ((hsPkgs.pkgs-errors).buildDepError "camfort"))
             ];
           buildable = true;
           };
@@ -107,30 +68,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."fgl" or (buildDepError "fgl"))
-            (hsPkgs."fortran-src" or (buildDepError "fortran-src"))
-            (hsPkgs."uniplate" or (buildDepError "uniplate"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."lattices" or (buildDepError "lattices"))
-            (hsPkgs."sbv" or (buildDepError "sbv"))
-            (hsPkgs."partial-order" or (buildDepError "partial-order"))
-            (hsPkgs."silently" or (buildDepError "silently"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."verifiable-expressions" or (buildDepError "verifiable-expressions"))
-            (hsPkgs."camfort" or (buildDepError "camfort"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."fgl" or ((hsPkgs.pkgs-errors).buildDepError "fgl"))
+            (hsPkgs."fortran-src" or ((hsPkgs.pkgs-errors).buildDepError "fortran-src"))
+            (hsPkgs."uniplate" or ((hsPkgs.pkgs-errors).buildDepError "uniplate"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."hmatrix" or ((hsPkgs.pkgs-errors).buildDepError "hmatrix"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."lattices" or ((hsPkgs.pkgs-errors).buildDepError "lattices"))
+            (hsPkgs."sbv" or ((hsPkgs.pkgs-errors).buildDepError "sbv"))
+            (hsPkgs."partial-order" or ((hsPkgs.pkgs-errors).buildDepError "partial-order"))
+            (hsPkgs."silently" or ((hsPkgs.pkgs-errors).buildDepError "silently"))
+            (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."verifiable-expressions" or ((hsPkgs.pkgs-errors).buildDepError "verifiable-expressions"))
+            (hsPkgs."camfort" or ((hsPkgs.pkgs-errors).buildDepError "camfort"))
             ];
           buildable = true;
           };

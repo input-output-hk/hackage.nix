@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; buildtests = false; };
     package = {
@@ -56,33 +17,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."haskore-realtime" or (buildDepError "haskore-realtime"))
-          (hsPkgs."haskore" or (buildDepError "haskore"))
-          (hsPkgs."hosc" or (buildDepError "hosc"))
-          (hsPkgs."hsc3" or (buildDepError "hsc3"))
-          (hsPkgs."supercollider-ht" or (buildDepError "supercollider-ht"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."non-negative" or (buildDepError "non-negative"))
-          (hsPkgs."event-list" or (buildDepError "event-list"))
-          (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."haskore-realtime" or ((hsPkgs.pkgs-errors).buildDepError "haskore-realtime"))
+          (hsPkgs."haskore" or ((hsPkgs.pkgs-errors).buildDepError "haskore"))
+          (hsPkgs."hosc" or ((hsPkgs.pkgs-errors).buildDepError "hosc"))
+          (hsPkgs."hsc3" or ((hsPkgs.pkgs-errors).buildDepError "hsc3"))
+          (hsPkgs."supercollider-ht" or ((hsPkgs.pkgs-errors).buildDepError "supercollider-ht"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."non-negative" or ((hsPkgs.pkgs-errors).buildDepError "non-negative"))
+          (hsPkgs."event-list" or ((hsPkgs.pkgs-errors).buildDepError "event-list"))
+          (hsPkgs."data-accessor" or ((hsPkgs.pkgs-errors).buildDepError "data-accessor"))
+          (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
           ] ++ (if flags.splitbase
           then [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
             ]
-          else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          else [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ]);
         buildable = true;
         };
       exes = {
         "song-air" = { buildable = true; };
         "test" = {
           depends = [
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
             ];
           buildable = false;
           };

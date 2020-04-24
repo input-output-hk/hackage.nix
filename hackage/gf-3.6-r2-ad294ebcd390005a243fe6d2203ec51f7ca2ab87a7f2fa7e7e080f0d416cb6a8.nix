@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       interrupt = true;
@@ -61,70 +22,72 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."fst" or (buildDepError "fst"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          ] ++ (pkgs.lib).optional (!flags.custom-binary) (hsPkgs."binary" or (buildDepError "binary"));
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."fst" or ((hsPkgs.pkgs-errors).buildDepError "fst"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          ] ++ (pkgs.lib).optional (!flags.custom-binary) (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"));
         libs = (pkgs.lib).optionals (flags.c-runtime) [
-          (pkgs."gu" or (sysDepError "gu"))
-          (pkgs."pgf" or (sysDepError "pgf"))
+          (pkgs."gu" or ((hsPkgs.pkgs-errors).sysDepError "gu"))
+          (pkgs."pgf" or ((hsPkgs.pkgs-errors).sysDepError "pgf"))
           ];
-        build-tools = (pkgs.lib).optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")));
+        build-tools = (pkgs.lib).optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or ((hsPkgs.pkgs-errors).buildToolDepError "hsc2hs")));
         buildable = true;
         };
       exes = {
         "gf" = {
           depends = (([
-            (hsPkgs."gf" or (buildDepError "gf"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."fst" or (buildDepError "fst"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."time-compat" or (buildDepError "time-compat"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."haskeline" or (buildDepError "haskeline"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."gf" or ((hsPkgs.pkgs-errors).buildDepError "gf"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."fst" or ((hsPkgs.pkgs-errors).buildDepError "fst"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."time-compat" or ((hsPkgs.pkgs-errors).buildDepError "time-compat"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."haskeline" or ((hsPkgs.pkgs-errors).buildDepError "haskeline"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
             ] ++ (pkgs.lib).optionals (flags.server) [
-            (hsPkgs."httpd-shed" or (buildDepError "httpd-shed"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."json" or (buildDepError "json"))
-            (hsPkgs."cgi" or (buildDepError "cgi"))
+            (hsPkgs."httpd-shed" or ((hsPkgs.pkgs-errors).buildDepError "httpd-shed"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."json" or ((hsPkgs.pkgs-errors).buildDepError "json"))
+            (hsPkgs."cgi" or ((hsPkgs.pkgs-errors).buildDepError "cgi"))
             ]) ++ (if system.isWindows
-            then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
+            then [
+              (hsPkgs."Win32" or ((hsPkgs.pkgs-errors).buildDepError "Win32"))
+              ]
             else [
-              (hsPkgs."unix" or (buildDepError "unix"))
+              (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
               ])) ++ (pkgs.lib).optionals (!flags.custom-binary) [
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."data-binary-ieee754" or ((hsPkgs.pkgs-errors).buildDepError "data-binary-ieee754"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
-            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or ((hsPkgs.pkgs-errors).buildToolDepError "happy")))
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or ((hsPkgs.pkgs-errors).buildToolDepError "alex")))
             ];
           buildable = true;
           };
         "pgf-shell" = {
           depends = [
-            (hsPkgs."gf" or (buildDepError "gf"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+            (hsPkgs."gf" or ((hsPkgs.pkgs-errors).buildDepError "gf"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."lifted-base" or ((hsPkgs.pkgs-errors).buildDepError "lifted-base"))
             ];
           buildable = if !flags.c-runtime then false else true;
           };
@@ -132,22 +95,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "rgl-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HTF" or (buildDepError "HTF"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."HTF" or ((hsPkgs.pkgs-errors).buildDepError "HTF"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
             ];
           buildable = true;
           };
         "gf-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
             ];
           buildable = true;
           };

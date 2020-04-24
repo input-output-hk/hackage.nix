@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { mpfr = false; };
     package = {
@@ -57,57 +18,57 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "gruff-labels" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."gruff" or (buildDepError "gruff"))
-            (hsPkgs."ruff" or (buildDepError "ruff"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."gruff" or ((hsPkgs.pkgs-errors).buildDepError "gruff"))
+            (hsPkgs."ruff" or ((hsPkgs.pkgs-errors).buildDepError "ruff"))
             ];
           buildable = true;
           };
         "gruff-octopus" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gruff" or (buildDepError "gruff"))
-            (hsPkgs."ruff" or (buildDepError "ruff"))
-            (hsPkgs."qd" or (buildDepError "qd"))
-            (hsPkgs."qd-vec" or (buildDepError "qd-vec"))
-            (hsPkgs."Vec" or (buildDepError "Vec"))
-            ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or (buildDepError "hmpfr"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."gruff" or ((hsPkgs.pkgs-errors).buildDepError "gruff"))
+            (hsPkgs."ruff" or ((hsPkgs.pkgs-errors).buildDepError "ruff"))
+            (hsPkgs."qd" or ((hsPkgs.pkgs-errors).buildDepError "qd"))
+            (hsPkgs."qd-vec" or ((hsPkgs.pkgs-errors).buildDepError "qd-vec"))
+            (hsPkgs."Vec" or ((hsPkgs.pkgs-errors).buildDepError "Vec"))
+            ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or ((hsPkgs.pkgs-errors).buildDepError "hmpfr"));
           buildable = true;
           };
         "gruff-patterns" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gruff" or (buildDepError "gruff"))
-            (hsPkgs."ruff" or (buildDepError "ruff"))
-            (hsPkgs."qd" or (buildDepError "qd"))
-            (hsPkgs."qd-vec" or (buildDepError "qd-vec"))
-            (hsPkgs."Vec" or (buildDepError "Vec"))
-            ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or (buildDepError "hmpfr"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."gruff" or ((hsPkgs.pkgs-errors).buildDepError "gruff"))
+            (hsPkgs."ruff" or ((hsPkgs.pkgs-errors).buildDepError "ruff"))
+            (hsPkgs."qd" or ((hsPkgs.pkgs-errors).buildDepError "qd"))
+            (hsPkgs."qd-vec" or ((hsPkgs.pkgs-errors).buildDepError "qd-vec"))
+            (hsPkgs."Vec" or ((hsPkgs.pkgs-errors).buildDepError "Vec"))
+            ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or ((hsPkgs.pkgs-errors).buildDepError "hmpfr"));
           buildable = true;
           };
         "gruff-randoms" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gruff" or (buildDepError "gruff"))
-            (hsPkgs."ruff" or (buildDepError "ruff"))
-            (hsPkgs."qd" or (buildDepError "qd"))
-            (hsPkgs."qd-vec" or (buildDepError "qd-vec"))
-            (hsPkgs."Vec" or (buildDepError "Vec"))
-            (hsPkgs."random" or (buildDepError "random"))
-            ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or (buildDepError "hmpfr"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."gruff" or ((hsPkgs.pkgs-errors).buildDepError "gruff"))
+            (hsPkgs."ruff" or ((hsPkgs.pkgs-errors).buildDepError "ruff"))
+            (hsPkgs."qd" or ((hsPkgs.pkgs-errors).buildDepError "qd"))
+            (hsPkgs."qd-vec" or ((hsPkgs.pkgs-errors).buildDepError "qd-vec"))
+            (hsPkgs."Vec" or ((hsPkgs.pkgs-errors).buildDepError "Vec"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or ((hsPkgs.pkgs-errors).buildDepError "hmpfr"));
           buildable = true;
           };
         "gruff-whn" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gruff" or (buildDepError "gruff"))
-            (hsPkgs."ruff" or (buildDepError "ruff"))
-            (hsPkgs."qd" or (buildDepError "qd"))
-            (hsPkgs."qd-vec" or (buildDepError "qd-vec"))
-            (hsPkgs."Vec" or (buildDepError "Vec"))
-            (hsPkgs."data-memocombinators" or (buildDepError "data-memocombinators"))
-            ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or (buildDepError "hmpfr"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."gruff" or ((hsPkgs.pkgs-errors).buildDepError "gruff"))
+            (hsPkgs."ruff" or ((hsPkgs.pkgs-errors).buildDepError "ruff"))
+            (hsPkgs."qd" or ((hsPkgs.pkgs-errors).buildDepError "qd"))
+            (hsPkgs."qd-vec" or ((hsPkgs.pkgs-errors).buildDepError "qd-vec"))
+            (hsPkgs."Vec" or ((hsPkgs.pkgs-errors).buildDepError "Vec"))
+            (hsPkgs."data-memocombinators" or ((hsPkgs.pkgs-errors).buildDepError "data-memocombinators"))
+            ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or ((hsPkgs.pkgs-errors).buildDepError "hmpfr"));
           buildable = true;
           };
         };

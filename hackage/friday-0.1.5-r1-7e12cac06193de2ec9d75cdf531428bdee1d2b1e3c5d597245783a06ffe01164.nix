@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
@@ -56,60 +17,60 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."convertible" or (buildDepError "convertible"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."ratio-int" or (buildDepError "ratio-int"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+          (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+          (hsPkgs."ratio-int" or ((hsPkgs.pkgs-errors).buildDepError "ratio-int"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
           ];
-        libs = [ (pkgs."IL" or (sysDepError "IL")) ];
+        libs = [ (pkgs."IL" or ((hsPkgs.pkgs-errors).sysDepError "IL")) ];
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or ((hsPkgs.pkgs-errors).buildToolDepError "hsc2hs")))
           ];
         buildable = true;
         };
       exes = {
         "delayed" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."friday" or (buildDepError "friday"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."friday" or ((hsPkgs.pkgs-errors).buildDepError "friday"))
             ];
           buildable = if !flags.examples then false else true;
           };
         "canny" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."friday" or (buildDepError "friday"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."friday" or ((hsPkgs.pkgs-errors).buildDepError "friday"))
             ];
           buildable = if !flags.examples then false else true;
           };
         "gaussian_blur" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."friday" or (buildDepError "friday"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."friday" or ((hsPkgs.pkgs-errors).buildDepError "friday"))
             ];
           buildable = if !flags.examples then false else true;
           };
         "histogram" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."friday" or (buildDepError "friday"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."friday" or ((hsPkgs.pkgs-errors).buildDepError "friday"))
             ];
           buildable = if !flags.examples then false else true;
           };
         "resize_image" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."friday" or (buildDepError "friday"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."friday" or ((hsPkgs.pkgs-errors).buildDepError "friday"))
             ];
           buildable = if !flags.examples then false else true;
           };
         "threshold" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."friday" or (buildDepError "friday"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."friday" or ((hsPkgs.pkgs-errors).buildDepError "friday"))
             ];
           buildable = if !flags.examples then false else true;
           };
@@ -117,12 +78,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."friday" or (buildDepError "friday"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."friday" or ((hsPkgs.pkgs-errors).buildDepError "friday"))
+            (hsPkgs."test-framework" or ((hsPkgs.pkgs-errors).buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or ((hsPkgs.pkgs-errors).buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
@@ -130,9 +91,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "benchmark" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."friday" or (buildDepError "friday"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."friday" or ((hsPkgs.pkgs-errors).buildDepError "friday"))
             ];
           buildable = true;
           };

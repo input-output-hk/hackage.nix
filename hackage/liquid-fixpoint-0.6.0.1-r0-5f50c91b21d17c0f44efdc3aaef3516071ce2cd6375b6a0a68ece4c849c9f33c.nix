@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { devel = false; };
     package = {
@@ -56,48 +17,48 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filemanip" or (buildDepError "filemanip"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."intern" or (buildDepError "intern"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."boxes" or (buildDepError "boxes"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."text-format" or (buildDepError "text-format"))
-          (hsPkgs."fgl" or (buildDepError "fgl"))
-          (hsPkgs."fgl-visualize" or (buildDepError "fgl-visualize"))
-          (hsPkgs."dotgen" or (buildDepError "dotgen"))
-          (hsPkgs."time" or (buildDepError "time"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10.2") (hsPkgs."located-base" or (buildDepError "located-base"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."ascii-progress" or (buildDepError "ascii-progress"));
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+          (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+          (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+          (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+          (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."filemanip" or ((hsPkgs.pkgs-errors).buildDepError "filemanip"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+          (hsPkgs."intern" or ((hsPkgs.pkgs-errors).buildDepError "intern"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+          (hsPkgs."boxes" or ((hsPkgs.pkgs-errors).buildDepError "boxes"))
+          (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+          (hsPkgs."text-format" or ((hsPkgs.pkgs-errors).buildDepError "text-format"))
+          (hsPkgs."fgl" or ((hsPkgs.pkgs-errors).buildDepError "fgl"))
+          (hsPkgs."fgl-visualize" or ((hsPkgs.pkgs-errors).buildDepError "fgl-visualize"))
+          (hsPkgs."dotgen" or ((hsPkgs.pkgs-errors).buildDepError "dotgen"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10.2") (hsPkgs."located-base" or ((hsPkgs.pkgs-errors).buildDepError "located-base"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."ascii-progress" or ((hsPkgs.pkgs-errors).buildDepError "ascii-progress"));
         buildable = true;
         };
       exes = {
         "fixpoint" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."liquid-fixpoint" or (buildDepError "liquid-fixpoint"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."liquid-fixpoint" or ((hsPkgs.pkgs-errors).buildDepError "liquid-fixpoint"))
             ];
           buildable = true;
           };
@@ -105,64 +66,64 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-rerun" or (buildDepError "tasty-rerun"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-rerun" or ((hsPkgs.pkgs-errors).buildDepError "tasty-rerun"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
             ];
           buildable = true;
           };
         "testparser" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-rerun" or (buildDepError "tasty-rerun"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-rerun" or ((hsPkgs.pkgs-errors).buildDepError "tasty-rerun"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
             ] ++ (if flags.devel
             then [
-              (hsPkgs."array" or (buildDepError "array"))
-              (hsPkgs."async" or (buildDepError "async"))
-              (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-              (hsPkgs."syb" or (buildDepError "syb"))
-              (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-              (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-              (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-              (hsPkgs."binary" or (buildDepError "binary"))
-              (hsPkgs."bytestring" or (buildDepError "bytestring"))
-              (hsPkgs."containers" or (buildDepError "containers"))
-              (hsPkgs."deepseq" or (buildDepError "deepseq"))
-              (hsPkgs."directory" or (buildDepError "directory"))
-              (hsPkgs."filemanip" or (buildDepError "filemanip"))
-              (hsPkgs."filepath" or (buildDepError "filepath"))
-              (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-              (hsPkgs."intern" or (buildDepError "intern"))
-              (hsPkgs."mtl" or (buildDepError "mtl"))
-              (hsPkgs."parsec" or (buildDepError "parsec"))
-              (hsPkgs."pretty" or (buildDepError "pretty"))
-              (hsPkgs."boxes" or (buildDepError "boxes"))
-              (hsPkgs."parallel" or (buildDepError "parallel"))
-              (hsPkgs."process" or (buildDepError "process"))
-              (hsPkgs."syb" or (buildDepError "syb"))
-              (hsPkgs."text" or (buildDepError "text"))
-              (hsPkgs."transformers" or (buildDepError "transformers"))
-              (hsPkgs."hashable" or (buildDepError "hashable"))
-              (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-              (hsPkgs."cereal" or (buildDepError "cereal"))
-              (hsPkgs."text-format" or (buildDepError "text-format"))
-              (hsPkgs."fgl" or (buildDepError "fgl"))
-              (hsPkgs."fgl-visualize" or (buildDepError "fgl-visualize"))
-              (hsPkgs."dotgen" or (buildDepError "dotgen"))
-              (hsPkgs."time" or (buildDepError "time"))
-              ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10.2") (hsPkgs."located-base" or (buildDepError "located-base"))
+              (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+              (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+              (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+              (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+              (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+              (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+              (hsPkgs."bifunctors" or ((hsPkgs.pkgs-errors).buildDepError "bifunctors"))
+              (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+              (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+              (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+              (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+              (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+              (hsPkgs."filemanip" or ((hsPkgs.pkgs-errors).buildDepError "filemanip"))
+              (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+              (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+              (hsPkgs."intern" or ((hsPkgs.pkgs-errors).buildDepError "intern"))
+              (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+              (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+              (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+              (hsPkgs."boxes" or ((hsPkgs.pkgs-errors).buildDepError "boxes"))
+              (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+              (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+              (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+              (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+              (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+              (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+              (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+              (hsPkgs."cereal" or ((hsPkgs.pkgs-errors).buildDepError "cereal"))
+              (hsPkgs."text-format" or ((hsPkgs.pkgs-errors).buildDepError "text-format"))
+              (hsPkgs."fgl" or ((hsPkgs.pkgs-errors).buildDepError "fgl"))
+              (hsPkgs."fgl-visualize" or ((hsPkgs.pkgs-errors).buildDepError "fgl-visualize"))
+              (hsPkgs."dotgen" or ((hsPkgs.pkgs-errors).buildDepError "dotgen"))
+              (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+              ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10.2") (hsPkgs."located-base" or ((hsPkgs.pkgs-errors).buildDepError "located-base"))
             else [
-              (hsPkgs."liquid-fixpoint" or (buildDepError "liquid-fixpoint"))
+              (hsPkgs."liquid-fixpoint" or ((hsPkgs.pkgs-errors).buildDepError "liquid-fixpoint"))
               ]);
           buildable = true;
           };

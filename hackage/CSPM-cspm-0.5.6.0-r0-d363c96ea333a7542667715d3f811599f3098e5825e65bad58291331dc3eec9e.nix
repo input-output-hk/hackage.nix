@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,40 +17,40 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."CSPM-Frontend" or (buildDepError "CSPM-Frontend"))
-          (hsPkgs."CSPM-CoreLanguage" or (buildDepError "CSPM-CoreLanguage"))
-          (hsPkgs."CSPM-FiringRules" or (buildDepError "CSPM-FiringRules"))
-          (hsPkgs."CSPM-Interpreter" or (buildDepError "CSPM-Interpreter"))
-          (hsPkgs."CSPM-ToProlog" or (buildDepError "CSPM-ToProlog"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."xml" or (buildDepError "xml"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."hslua" or (buildDepError "hslua"))
+          (hsPkgs."CSPM-Frontend" or ((hsPkgs.pkgs-errors).buildDepError "CSPM-Frontend"))
+          (hsPkgs."CSPM-CoreLanguage" or ((hsPkgs.pkgs-errors).buildDepError "CSPM-CoreLanguage"))
+          (hsPkgs."CSPM-FiringRules" or ((hsPkgs.pkgs-errors).buildDepError "CSPM-FiringRules"))
+          (hsPkgs."CSPM-Interpreter" or ((hsPkgs.pkgs-errors).buildDepError "CSPM-Interpreter"))
+          (hsPkgs."CSPM-ToProlog" or ((hsPkgs.pkgs-errors).buildDepError "CSPM-ToProlog"))
+          (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+          (hsPkgs."xml" or ((hsPkgs.pkgs-errors).buildDepError "xml"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+          (hsPkgs."hslua" or ((hsPkgs.pkgs-errors).buildDepError "hslua"))
           ];
         buildable = true;
         };
       exes = {
         "cspm" = {
           depends = [
-            (hsPkgs."CSPM-Frontend" or (buildDepError "CSPM-Frontend"))
-            (hsPkgs."CSPM-CoreLanguage" or (buildDepError "CSPM-CoreLanguage"))
-            (hsPkgs."CSPM-FiringRules" or (buildDepError "CSPM-FiringRules"))
-            (hsPkgs."CSPM-Interpreter" or (buildDepError "CSPM-Interpreter"))
-            (hsPkgs."CSPM-ToProlog" or (buildDepError "CSPM-ToProlog"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."xml" or (buildDepError "xml"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."hslua" or (buildDepError "hslua"))
+            (hsPkgs."CSPM-Frontend" or ((hsPkgs.pkgs-errors).buildDepError "CSPM-Frontend"))
+            (hsPkgs."CSPM-CoreLanguage" or ((hsPkgs.pkgs-errors).buildDepError "CSPM-CoreLanguage"))
+            (hsPkgs."CSPM-FiringRules" or ((hsPkgs.pkgs-errors).buildDepError "CSPM-FiringRules"))
+            (hsPkgs."CSPM-Interpreter" or ((hsPkgs.pkgs-errors).buildDepError "CSPM-Interpreter"))
+            (hsPkgs."CSPM-ToProlog" or ((hsPkgs.pkgs-errors).buildDepError "CSPM-ToProlog"))
+            (hsPkgs."cmdargs" or ((hsPkgs.pkgs-errors).buildDepError "cmdargs"))
+            (hsPkgs."xml" or ((hsPkgs.pkgs-errors).buildDepError "xml"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."hslua" or ((hsPkgs.pkgs-errors).buildDepError "hslua"))
             ];
           buildable = true;
           };

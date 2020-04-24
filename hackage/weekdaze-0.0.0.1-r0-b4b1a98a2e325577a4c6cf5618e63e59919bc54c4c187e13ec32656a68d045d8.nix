@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       hdbc-mysql = false;
@@ -66,70 +27,70 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."extra" or (buildDepError "extra"))
-          (hsPkgs."factory" or (buildDepError "factory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."hxt" or (buildDepError "hxt"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."toolshed" or (buildDepError "toolshed"))
-          (hsPkgs."xhtml" or (buildDepError "xhtml"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."cryptohash" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."extra" or ((hsPkgs.pkgs-errors).buildDepError "extra"))
+          (hsPkgs."factory" or ((hsPkgs.pkgs-errors).buildDepError "factory"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."hxt" or ((hsPkgs.pkgs-errors).buildDepError "hxt"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."toolshed" or ((hsPkgs.pkgs-errors).buildDepError "toolshed"))
+          (hsPkgs."xhtml" or ((hsPkgs.pkgs-errors).buildDepError "xhtml"))
           ] ++ (pkgs.lib).optionals (flags.hdbc-odbc || flags.hdbc-mysql) [
-          (hsPkgs."convertible" or (buildDepError "convertible"))
-          (hsPkgs."HDBC" or (buildDepError "HDBC"))
+          (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+          (hsPkgs."HDBC" or ((hsPkgs.pkgs-errors).buildDepError "HDBC"))
           ];
         buildable = true;
         };
       exes = {
         "weekdaze" = {
           depends = ([
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."factory" or (buildDepError "factory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hxt" or (buildDepError "hxt"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."toolshed" or (buildDepError "toolshed"))
-            (hsPkgs."weekdaze" or (buildDepError "weekdaze"))
-            (hsPkgs."xhtml" or (buildDepError "xhtml"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."cryptohash" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."extra" or ((hsPkgs.pkgs-errors).buildDepError "extra"))
+            (hsPkgs."factory" or ((hsPkgs.pkgs-errors).buildDepError "factory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."hxt" or ((hsPkgs.pkgs-errors).buildDepError "hxt"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."toolshed" or ((hsPkgs.pkgs-errors).buildDepError "toolshed"))
+            (hsPkgs."weekdaze" or ((hsPkgs.pkgs-errors).buildDepError "weekdaze"))
+            (hsPkgs."xhtml" or ((hsPkgs.pkgs-errors).buildDepError "xhtml"))
             ] ++ (pkgs.lib).optionals (flags.hdbc-odbc || flags.hdbc-mysql) (([
-            (hsPkgs."byteable" or (buildDepError "byteable"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            ] ++ (pkgs.lib).optional (flags.hdbc-mysql) (hsPkgs."HDBC-mysql" or (buildDepError "HDBC-mysql"))) ++ (pkgs.lib).optional (flags.hdbc-odbc) (hsPkgs."HDBC-odbc" or (buildDepError "HDBC-odbc")))) ++ (pkgs.lib).optional (flags.unix) (hsPkgs."unix" or (buildDepError "unix"));
+            (hsPkgs."byteable" or ((hsPkgs.pkgs-errors).buildDepError "byteable"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."HDBC" or ((hsPkgs.pkgs-errors).buildDepError "HDBC"))
+            ] ++ (pkgs.lib).optional (flags.hdbc-mysql) (hsPkgs."HDBC-mysql" or ((hsPkgs.pkgs-errors).buildDepError "HDBC-mysql"))) ++ (pkgs.lib).optional (flags.hdbc-odbc) (hsPkgs."HDBC-odbc" or ((hsPkgs.pkgs-errors).buildDepError "HDBC-odbc")))) ++ (pkgs.lib).optional (flags.unix) (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"));
           buildable = true;
           };
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."factory" or (buildDepError "factory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."toolshed" or (buildDepError "toolshed"))
-            (hsPkgs."weekdaze" or (buildDepError "weekdaze"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."Cabal" or ((hsPkgs.pkgs-errors).buildDepError "Cabal"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."factory" or ((hsPkgs.pkgs-errors).buildDepError "factory"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."toolshed" or ((hsPkgs.pkgs-errors).buildDepError "toolshed"))
+            (hsPkgs."weekdaze" or ((hsPkgs.pkgs-errors).buildDepError "weekdaze"))
             ];
           buildable = true;
           };

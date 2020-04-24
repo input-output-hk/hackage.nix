@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
@@ -56,20 +17,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."monadiccp" or (buildDepError "monadiccp"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."monadiccp" or ((hsPkgs.pkgs-errors).buildDepError "monadiccp"))
           ];
         libs = [
-          (pkgs."gecodesupport" or (sysDepError "gecodesupport"))
-          (pkgs."gecodeset" or (sysDepError "gecodeset"))
-          (pkgs."gecodeint" or (sysDepError "gecodeint"))
-          (pkgs."gecodekernel" or (sysDepError "gecodekernel"))
-          (pkgs."gecodesearch" or (sysDepError "gecodesearch"))
+          (pkgs."gecodesupport" or ((hsPkgs.pkgs-errors).sysDepError "gecodesupport"))
+          (pkgs."gecodeset" or ((hsPkgs.pkgs-errors).sysDepError "gecodeset"))
+          (pkgs."gecodeint" or ((hsPkgs.pkgs-errors).sysDepError "gecodeint"))
+          (pkgs."gecodekernel" or ((hsPkgs.pkgs-errors).sysDepError "gecodekernel"))
+          (pkgs."gecodesearch" or ((hsPkgs.pkgs-errors).sysDepError "gecodesearch"))
           ];
-        frameworks = [ (pkgs."gecode" or (sysDepError "gecode")) ];
+        frameworks = [
+          (pkgs."gecode" or ((hsPkgs.pkgs-errors).sysDepError "gecode"))
+          ];
         buildable = true;
         };
       };

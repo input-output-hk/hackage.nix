@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       benchmark = false;
@@ -67,60 +28,60 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."heaps" or (buildDepError "heaps"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
-          (hsPkgs."lockfree-queue" or (buildDepError "lockfree-queue"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+          (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."heaps" or ((hsPkgs.pkgs-errors).buildDepError "heaps"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."atomic-primops" or ((hsPkgs.pkgs-errors).buildDepError "atomic-primops"))
+          (hsPkgs."lockfree-queue" or ((hsPkgs.pkgs-errors).buildDepError "lockfree-queue"))
+          (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+          (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
           ] ++ (pkgs.lib).optionals (flags.inspection) [
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
-          ]) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."network" or (buildDepError "network"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."inspection-testing" or ((hsPkgs.pkgs-errors).buildDepError "inspection-testing"))
+          ]) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"));
         buildable = true;
         };
       exes = {
         "nano-bench" = {
           depends = (pkgs.lib).optionals (flags.dev) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."heaps" or (buildDepError "heaps"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
-            (hsPkgs."lockfree-queue" or (buildDepError "lockfree-queue"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."heaps" or ((hsPkgs.pkgs-errors).buildDepError "heaps"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."atomic-primops" or ((hsPkgs.pkgs-errors).buildDepError "atomic-primops"))
+            (hsPkgs."lockfree-queue" or ((hsPkgs.pkgs-errors).buildDepError "lockfree-queue"))
+            (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
             ];
           buildable = if flags.dev then true else false;
           };
         "adaptive" = {
           depends = (pkgs.lib).optionals (flags.dev) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = if flags.dev then true else false;
           };
         "chart" = {
           depends = (pkgs.lib).optionals (flags.dev && !flags.no-charts && !(compiler.isGhcjs && true)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bench-show" or (buildDepError "bench-show"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bench-show" or ((hsPkgs.pkgs-errors).buildDepError "bench-show"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = if flags.dev && !flags.no-charts && !(compiler.isGhcjs && true)
             then true
@@ -128,9 +89,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "SearchQuery" = {
           depends = (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
             ];
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
@@ -138,19 +99,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "ListDir" = {
           depends = (pkgs.lib).optionals (flags.examples || flags.examples-sdl) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers")));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers")));
           buildable = if flags.examples || flags.examples-sdl
             then true
             else false;
           };
         "MergeSort" = {
           depends = (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = if flags.examples || flags.examples-sdl
             then true
@@ -158,12 +119,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "AcidRain" = {
           depends = (pkgs.lib).optionals (flags.examples || flags.examples-sdl) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
             ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8.0") [
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ]);
           buildable = if flags.examples || flags.examples-sdl
             then true
@@ -171,28 +132,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "CirclingSquare" = {
           depends = (pkgs.lib).optionals (flags.examples-sdl) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."SDL" or (buildDepError "SDL"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."SDL" or ((hsPkgs.pkgs-errors).buildDepError "SDL"))
             ];
           buildable = if flags.examples-sdl then true else false;
           };
         "ControlFlow" = {
           depends = (pkgs.lib).optionals (flags.examples || flags.examples-sdl) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (buildDepError "semigroups")));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups")));
           buildable = if flags.examples || flags.examples-sdl
             then true
             else false;
           };
         "HandleIO" = {
           depends = (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.examples || flags.examples-sdl
             then true
@@ -200,8 +161,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "FileIOExamples" = {
           depends = (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.examples || flags.examples-sdl
             then true
@@ -209,28 +170,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "EchoServer" = {
           depends = (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers")));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers")));
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
             else false;
           };
         "FileSinkServer" = {
           depends = (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers")));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers")));
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
             else false;
           };
         "FromFileClient" = {
           depends = (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
@@ -238,10 +199,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "WordClassifier" = {
           depends = (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
             ];
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
@@ -249,9 +210,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "WordCount" = {
           depends = (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
@@ -259,8 +220,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "CamelCase" = {
           depends = (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
@@ -270,89 +231,89 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
             ];
           buildable = true;
           };
         "pure-streams-base" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
             ];
           buildable = true;
           };
         "pure-streams-streamly" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
             ];
           buildable = true;
           };
         "properties" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"));
           buildable = true;
           };
         "array-test" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"));
           buildable = true;
           };
         "string-test" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"));
           buildable = true;
           };
         "maxrate" = {
           depends = (pkgs.lib).optionals (flags.dev) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."clock" or (buildDepError "clock"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."clock" or ((hsPkgs.pkgs-errors).buildDepError "clock"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = if flags.dev then true else false;
           };
         "loops" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = true;
           };
         "nested-loops" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = true;
           };
         "parallel-loops" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = true;
           };
@@ -360,99 +321,99 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "linear" = {
           depends = (pkgs.lib).optionals (flags.benchmark) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers")));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers")));
           buildable = if flags.benchmark then true else false;
           };
         "linear-async" = {
           depends = (pkgs.lib).optionals (flags.benchmark) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers")));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers")));
           buildable = if flags.benchmark then true else false;
           };
         "linear-rate" = {
           depends = (pkgs.lib).optionals (flags.benchmark) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers")));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers")));
           buildable = if flags.benchmark then true else false;
           };
         "nested" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"));
           buildable = true;
           };
         "nestedUnfold" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"));
           buildable = true;
           };
         "array" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"));
           buildable = true;
           };
         "fileio" = {
           depends = (pkgs.lib).optionals (flags.benchmark) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            (hsPkgs."typed-process" or (buildDepError "typed-process"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
+            (hsPkgs."typed-process" or ((hsPkgs.pkgs-errors).buildDepError "typed-process"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
             ];
           buildable = if flags.benchmark then true else false;
           };
         "concurrent" = {
           depends = (pkgs.lib).optionals (flags.dev) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
+            (hsPkgs."streamly" or ((hsPkgs.pkgs-errors).buildDepError "streamly"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
             ];
           buildable = if flags.dev then true else false;
           };
         "base" = {
           depends = (pkgs.lib).optionals (flags.dev) ([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."heaps" or (buildDepError "heaps"))
-            (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
-            (hsPkgs."lockfree-queue" or (buildDepError "lockfree-queue"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (buildDepError "semigroups")));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
+            (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."heaps" or ((hsPkgs.pkgs-errors).buildDepError "heaps"))
+            (hsPkgs."atomic-primops" or ((hsPkgs.pkgs-errors).buildDepError "atomic-primops"))
+            (hsPkgs."lockfree-queue" or ((hsPkgs.pkgs-errors).buildDepError "lockfree-queue"))
+            (hsPkgs."exceptions" or ((hsPkgs.pkgs-errors).buildDepError "exceptions"))
+            (hsPkgs."monad-control" or ((hsPkgs.pkgs-errors).buildDepError "monad-control"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."transformers-base" or ((hsPkgs.pkgs-errors).buildDepError "transformers-base"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups")));
           buildable = if flags.dev then true else false;
           };
         };

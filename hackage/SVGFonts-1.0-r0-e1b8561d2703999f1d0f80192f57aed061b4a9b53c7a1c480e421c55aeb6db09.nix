@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,26 +17,26 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."attoparsec-text" or (buildDepError "attoparsec-text"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."collada-types" or (buildDepError "collada-types"))
-          (hsPkgs."collada-output" or (buildDepError "collada-output"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."GLUT" or (buildDepError "GLUT"))
-          (hsPkgs."haskell98" or (buildDepError "haskell98"))
-          (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."SVGPath" or (buildDepError "SVGPath"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."tga" or (buildDepError "tga"))
-          (hsPkgs."triangulation" or (buildDepError "triangulation"))
-          (hsPkgs."tuple" or (buildDepError "tuple"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."xml" or (buildDepError "xml"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."attoparsec-text" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec-text"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."collada-types" or ((hsPkgs.pkgs-errors).buildDepError "collada-types"))
+          (hsPkgs."collada-output" or ((hsPkgs.pkgs-errors).buildDepError "collada-output"))
+          (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+          (hsPkgs."GLUT" or ((hsPkgs.pkgs-errors).buildDepError "GLUT"))
+          (hsPkgs."haskell98" or ((hsPkgs.pkgs-errors).buildDepError "haskell98"))
+          (hsPkgs."OpenGL" or ((hsPkgs.pkgs-errors).buildDepError "OpenGL"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+          (hsPkgs."SVGPath" or ((hsPkgs.pkgs-errors).buildDepError "SVGPath"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."tga" or ((hsPkgs.pkgs-errors).buildDepError "tga"))
+          (hsPkgs."triangulation" or ((hsPkgs.pkgs-errors).buildDepError "triangulation"))
+          (hsPkgs."tuple" or ((hsPkgs.pkgs-errors).buildDepError "tuple"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."xml" or ((hsPkgs.pkgs-errors).buildDepError "xml"))
           ];
         buildable = true;
         };

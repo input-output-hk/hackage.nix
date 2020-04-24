@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,52 +17,52 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."list-t" or (buildDepError "list-t"))
-          (hsPkgs."focus" or (buildDepError "focus"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+          (hsPkgs."list-t" or ((hsPkgs.pkgs-errors).buildDepError "list-t"))
+          (hsPkgs."focus" or ((hsPkgs.pkgs-errors).buildDepError "focus"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+          (hsPkgs."base-prelude" or ((hsPkgs.pkgs-errors).buildDepError "base-prelude"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
           ];
         buildable = true;
         };
       tests = {
         "word-array-tests" = {
           depends = [
-            (hsPkgs."free" or (buildDepError "free"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HTF" or (buildDepError "HTF"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."list-t" or (buildDepError "list-t"))
-            (hsPkgs."focus" or (buildDepError "focus"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."loch-th" or (buildDepError "loch-th"))
-            (hsPkgs."placeholders" or (buildDepError "placeholders"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."mtl-prelude" or (buildDepError "mtl-prelude"))
-            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."free" or ((hsPkgs.pkgs-errors).buildDepError "free"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."HTF" or ((hsPkgs.pkgs-errors).buildDepError "HTF"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."list-t" or ((hsPkgs.pkgs-errors).buildDepError "list-t"))
+            (hsPkgs."focus" or ((hsPkgs.pkgs-errors).buildDepError "focus"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."loch-th" or ((hsPkgs.pkgs-errors).buildDepError "loch-th"))
+            (hsPkgs."placeholders" or ((hsPkgs.pkgs-errors).buildDepError "placeholders"))
+            (hsPkgs."primitive" or ((hsPkgs.pkgs-errors).buildDepError "primitive"))
+            (hsPkgs."mtl-prelude" or ((hsPkgs.pkgs-errors).buildDepError "mtl-prelude"))
+            (hsPkgs."base-prelude" or ((hsPkgs.pkgs-errors).buildDepError "base-prelude"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = true;
           };
         "api-tests" = {
           depends = [
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HTF" or (buildDepError "HTF"))
-            (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
-            (hsPkgs."loch-th" or (buildDepError "loch-th"))
-            (hsPkgs."placeholders" or (buildDepError "placeholders"))
-            (hsPkgs."list-t" or (buildDepError "list-t"))
-            (hsPkgs."focus" or (buildDepError "focus"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."free" or (buildDepError "free"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."mtl-prelude" or (buildDepError "mtl-prelude"))
-            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."HTF" or ((hsPkgs.pkgs-errors).buildDepError "HTF"))
+            (hsPkgs."stm-containers" or ((hsPkgs.pkgs-errors).buildDepError "stm-containers"))
+            (hsPkgs."loch-th" or ((hsPkgs.pkgs-errors).buildDepError "loch-th"))
+            (hsPkgs."placeholders" or ((hsPkgs.pkgs-errors).buildDepError "placeholders"))
+            (hsPkgs."list-t" or ((hsPkgs.pkgs-errors).buildDepError "list-t"))
+            (hsPkgs."focus" or ((hsPkgs.pkgs-errors).buildDepError "focus"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."free" or ((hsPkgs.pkgs-errors).buildDepError "free"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."mtl-prelude" or ((hsPkgs.pkgs-errors).buildDepError "mtl-prelude"))
+            (hsPkgs."base-prelude" or ((hsPkgs.pkgs-errors).buildDepError "base-prelude"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = true;
           };
@@ -109,64 +70,64 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "insertion-bench" = {
           depends = [
-            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-            (hsPkgs."mwc-random-monad" or (buildDepError "mwc-random-monad"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."list-t" or (buildDepError "list-t"))
-            (hsPkgs."focus" or (buildDepError "focus"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."hashtables" or (buildDepError "hashtables"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
-            (hsPkgs."loch-th" or (buildDepError "loch-th"))
-            (hsPkgs."placeholders" or (buildDepError "placeholders"))
-            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mwc-random" or ((hsPkgs.pkgs-errors).buildDepError "mwc-random"))
+            (hsPkgs."mwc-random-monad" or ((hsPkgs.pkgs-errors).buildDepError "mwc-random-monad"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."list-t" or ((hsPkgs.pkgs-errors).buildDepError "list-t"))
+            (hsPkgs."focus" or ((hsPkgs.pkgs-errors).buildDepError "focus"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."hashtables" or ((hsPkgs.pkgs-errors).buildDepError "hashtables"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."stm-containers" or ((hsPkgs.pkgs-errors).buildDepError "stm-containers"))
+            (hsPkgs."loch-th" or ((hsPkgs.pkgs-errors).buildDepError "loch-th"))
+            (hsPkgs."placeholders" or ((hsPkgs.pkgs-errors).buildDepError "placeholders"))
+            (hsPkgs."base-prelude" or ((hsPkgs.pkgs-errors).buildDepError "base-prelude"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = true;
           };
         "concurrent-insertion-bench" = {
           depends = [
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-            (hsPkgs."mwc-random-monad" or (buildDepError "mwc-random-monad"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."list-t" or (buildDepError "list-t"))
-            (hsPkgs."focus" or (buildDepError "focus"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
-            (hsPkgs."loch-th" or (buildDepError "loch-th"))
-            (hsPkgs."placeholders" or (buildDepError "placeholders"))
-            (hsPkgs."free" or (buildDepError "free"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."mwc-random" or ((hsPkgs.pkgs-errors).buildDepError "mwc-random"))
+            (hsPkgs."mwc-random-monad" or ((hsPkgs.pkgs-errors).buildDepError "mwc-random-monad"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."list-t" or ((hsPkgs.pkgs-errors).buildDepError "list-t"))
+            (hsPkgs."focus" or ((hsPkgs.pkgs-errors).buildDepError "focus"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."stm-containers" or ((hsPkgs.pkgs-errors).buildDepError "stm-containers"))
+            (hsPkgs."loch-th" or ((hsPkgs.pkgs-errors).buildDepError "loch-th"))
+            (hsPkgs."placeholders" or ((hsPkgs.pkgs-errors).buildDepError "placeholders"))
+            (hsPkgs."free" or ((hsPkgs.pkgs-errors).buildDepError "free"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."base-prelude" or ((hsPkgs.pkgs-errors).buildDepError "base-prelude"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = true;
           };
         "concurrent-transactions-bench" = {
           depends = [
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-            (hsPkgs."mwc-random-monad" or (buildDepError "mwc-random-monad"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."list-t" or (buildDepError "list-t"))
-            (hsPkgs."focus" or (buildDepError "focus"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
-            (hsPkgs."loch-th" or (buildDepError "loch-th"))
-            (hsPkgs."placeholders" or (buildDepError "placeholders"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."free" or (buildDepError "free"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."mtl-prelude" or (buildDepError "mtl-prelude"))
-            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
+            (hsPkgs."mwc-random" or ((hsPkgs.pkgs-errors).buildDepError "mwc-random"))
+            (hsPkgs."mwc-random-monad" or ((hsPkgs.pkgs-errors).buildDepError "mwc-random-monad"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."list-t" or ((hsPkgs.pkgs-errors).buildDepError "list-t"))
+            (hsPkgs."focus" or ((hsPkgs.pkgs-errors).buildDepError "focus"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+            (hsPkgs."hashable" or ((hsPkgs.pkgs-errors).buildDepError "hashable"))
+            (hsPkgs."stm-containers" or ((hsPkgs.pkgs-errors).buildDepError "stm-containers"))
+            (hsPkgs."loch-th" or ((hsPkgs.pkgs-errors).buildDepError "loch-th"))
+            (hsPkgs."placeholders" or ((hsPkgs.pkgs-errors).buildDepError "placeholders"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."free" or ((hsPkgs.pkgs-errors).buildDepError "free"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."mtl-prelude" or ((hsPkgs.pkgs-errors).buildDepError "mtl-prelude"))
+            (hsPkgs."base-prelude" or ((hsPkgs.pkgs-errors).buildDepError "base-prelude"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = true;
           };

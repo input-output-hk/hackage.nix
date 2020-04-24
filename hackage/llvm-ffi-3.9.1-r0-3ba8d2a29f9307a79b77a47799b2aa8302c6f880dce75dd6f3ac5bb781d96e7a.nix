@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       developer = false;
@@ -66,61 +27,77 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."enumset" or (buildDepError "enumset"))
-          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."enumset" or ((hsPkgs.pkgs-errors).buildDepError "enumset"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
           ];
         libs = [
-          (pkgs."stdc++" or (sysDepError "stdc++"))
+          (pkgs."stdc++" or ((hsPkgs.pkgs-errors).sysDepError "stdc++"))
           ] ++ (if flags.llvm304
-          then (pkgs.lib).optional (!flags.pkgconfig) (pkgs."LLVM-3.4" or (sysDepError "LLVM-3.4"))
+          then (pkgs.lib).optional (!flags.pkgconfig) (pkgs."LLVM-3.4" or ((hsPkgs.pkgs-errors).sysDepError "LLVM-3.4"))
           else if flags.llvm305
-            then (pkgs.lib).optional (!flags.pkgconfig) (pkgs."LLVM-3.5" or (sysDepError "LLVM-3.5"))
+            then (pkgs.lib).optional (!flags.pkgconfig) (pkgs."LLVM-3.5" or ((hsPkgs.pkgs-errors).sysDepError "LLVM-3.5"))
             else if flags.llvm306
-              then (pkgs.lib).optional (!flags.pkgconfig) (pkgs."LLVM-3.6" or (sysDepError "LLVM-3.6"))
+              then (pkgs.lib).optional (!flags.pkgconfig) (pkgs."LLVM-3.6" or ((hsPkgs.pkgs-errors).sysDepError "LLVM-3.6"))
               else if flags.llvm307
-                then (pkgs.lib).optional (!flags.pkgconfig) (pkgs."LLVM-3.7" or (sysDepError "LLVM-3.7"))
+                then (pkgs.lib).optional (!flags.pkgconfig) (pkgs."LLVM-3.7" or ((hsPkgs.pkgs-errors).sysDepError "LLVM-3.7"))
                 else if flags.llvm308
-                  then (pkgs.lib).optional (!flags.pkgconfig) (pkgs."LLVM-3.8" or (sysDepError "LLVM-3.8"))
-                  else (pkgs.lib).optional (!flags.pkgconfig) (pkgs."LLVM-3.9" or (sysDepError "LLVM-3.9")));
+                  then (pkgs.lib).optional (!flags.pkgconfig) (pkgs."LLVM-3.8" or ((hsPkgs.pkgs-errors).sysDepError "LLVM-3.8"))
+                  else (pkgs.lib).optional (!flags.pkgconfig) (pkgs."LLVM-3.9" or ((hsPkgs.pkgs-errors).sysDepError "LLVM-3.9")));
         pkgconfig = if flags.llvm304
           then (pkgs.lib).optionals (flags.pkgconfig) (if flags.specificpkgconfig
-            then [ (pkgconfPkgs."llvm-3.4" or (pkgConfDepError "llvm-3.4")) ]
-            else [ (pkgconfPkgs."llvm" or (pkgConfDepError "llvm")) ])
+            then [
+              (pkgconfPkgs."llvm-3.4" or ((hsPkgs.pkgs-errors).pkgConfDepError "llvm-3.4"))
+              ]
+            else [
+              (pkgconfPkgs."llvm" or ((hsPkgs.pkgs-errors).pkgConfDepError "llvm"))
+              ])
           else if flags.llvm305
             then (pkgs.lib).optionals (flags.pkgconfig) (if flags.specificpkgconfig
-              then [ (pkgconfPkgs."llvm-3.5" or (pkgConfDepError "llvm-3.5")) ]
-              else [ (pkgconfPkgs."llvm" or (pkgConfDepError "llvm")) ])
+              then [
+                (pkgconfPkgs."llvm-3.5" or ((hsPkgs.pkgs-errors).pkgConfDepError "llvm-3.5"))
+                ]
+              else [
+                (pkgconfPkgs."llvm" or ((hsPkgs.pkgs-errors).pkgConfDepError "llvm"))
+                ])
             else if flags.llvm306
               then (pkgs.lib).optionals (flags.pkgconfig) (if flags.specificpkgconfig
                 then [
-                  (pkgconfPkgs."llvm-3.6" or (pkgConfDepError "llvm-3.6"))
+                  (pkgconfPkgs."llvm-3.6" or ((hsPkgs.pkgs-errors).pkgConfDepError "llvm-3.6"))
                   ]
-                else [ (pkgconfPkgs."llvm" or (pkgConfDepError "llvm")) ])
+                else [
+                  (pkgconfPkgs."llvm" or ((hsPkgs.pkgs-errors).pkgConfDepError "llvm"))
+                  ])
               else if flags.llvm307
                 then (pkgs.lib).optionals (flags.pkgconfig) (if flags.specificpkgconfig
                   then [
-                    (pkgconfPkgs."llvm-3.7" or (pkgConfDepError "llvm-3.7"))
+                    (pkgconfPkgs."llvm-3.7" or ((hsPkgs.pkgs-errors).pkgConfDepError "llvm-3.7"))
                     ]
-                  else [ (pkgconfPkgs."llvm" or (pkgConfDepError "llvm")) ])
+                  else [
+                    (pkgconfPkgs."llvm" or ((hsPkgs.pkgs-errors).pkgConfDepError "llvm"))
+                    ])
                 else if flags.llvm308
                   then (pkgs.lib).optionals (flags.pkgconfig) (if flags.specificpkgconfig
                     then [
-                      (pkgconfPkgs."llvm-3.8" or (pkgConfDepError "llvm-3.8"))
+                      (pkgconfPkgs."llvm-3.8" or ((hsPkgs.pkgs-errors).pkgConfDepError "llvm-3.8"))
                       ]
-                    else [ (pkgconfPkgs."llvm" or (pkgConfDepError "llvm")) ])
+                    else [
+                      (pkgconfPkgs."llvm" or ((hsPkgs.pkgs-errors).pkgConfDepError "llvm"))
+                      ])
                   else (pkgs.lib).optionals (flags.pkgconfig) (if flags.specificpkgconfig
                     then [
-                      (pkgconfPkgs."llvm-3.9" or (pkgConfDepError "llvm-3.9"))
+                      (pkgconfPkgs."llvm-3.9" or ((hsPkgs.pkgs-errors).pkgConfDepError "llvm-3.9"))
                       ]
-                    else [ (pkgconfPkgs."llvm" or (pkgConfDepError "llvm")) ]);
+                    else [
+                      (pkgconfPkgs."llvm" or ((hsPkgs.pkgs-errors).pkgConfDepError "llvm"))
+                      ]);
         buildable = true;
         };
       exes = {
         "llvm-ffi-example" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."llvm-ffi" or (buildDepError "llvm-ffi"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."llvm-ffi" or ((hsPkgs.pkgs-errors).buildDepError "llvm-ffi"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.buildexamples then true else false;
           };

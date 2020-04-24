@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm = false; devil = false; cuda = false; };
     package = {
@@ -57,756 +18,794 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "rpar" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
             ];
           buildable = true;
           };
         "sudoku1" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
             ];
           buildable = true;
           };
         "sudoku2" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
             ];
           buildable = true;
           };
         "sudoku3" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
             ];
           buildable = true;
           };
         "sudoku4" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
             ];
           buildable = true;
           };
         "sudoku5" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
             ];
           buildable = true;
           };
         "strat" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
             ];
           buildable = true;
           };
         "strat2" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
             ];
           buildable = true;
           };
         "strat3" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
             ];
           buildable = true;
           };
         "rsa" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
             ];
           buildable = true;
           };
         "rsa1" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
             ];
           buildable = true;
           };
         "rsa2" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
             ];
           buildable = true;
           };
         "kmeans" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."monad-par" or (buildDepError "monad-par"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."parallel" or ((hsPkgs.pkgs-errors).buildDepError "parallel"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."monad-par" or ((hsPkgs.pkgs-errors).buildDepError "monad-par"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ];
           buildable = true;
           };
         "GenSamples" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."normaldistribution" or (buildDepError "normaldistribution"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."normaldistribution" or ((hsPkgs.pkgs-errors).buildDepError "normaldistribution"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
             ];
           buildable = true;
           };
         "parmonad" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."monad-par" or (buildDepError "monad-par"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."monad-par" or ((hsPkgs.pkgs-errors).buildDepError "monad-par"))
             ];
           buildable = true;
           };
         "rsa-pipeline" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."monad-par" or (buildDepError "monad-par"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."monad-par" or ((hsPkgs.pkgs-errors).buildDepError "monad-par"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
             ];
           buildable = true;
           };
         "fwsparse" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
             ];
           buildable = true;
           };
         "fwsparse1" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."monad-par" or (buildDepError "monad-par"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."monad-par" or ((hsPkgs.pkgs-errors).buildDepError "monad-par"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
             ];
           buildable = true;
           };
         "timetable" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = true;
           };
         "timetable1" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."monad-par" or (buildDepError "monad-par"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."monad-par" or ((hsPkgs.pkgs-errors).buildDepError "monad-par"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = true;
           };
         "timetable2" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."monad-par" or (buildDepError "monad-par"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."monad-par" or ((hsPkgs.pkgs-errors).buildDepError "monad-par"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = true;
           };
         "timetable3" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."monad-par" or (buildDepError "monad-par"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."monad-par" or ((hsPkgs.pkgs-errors).buildDepError "monad-par"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
             ];
           buildable = true;
           };
         "parinfer" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."monad-par" or (buildDepError "monad-par"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."monad-par" or ((hsPkgs.pkgs-errors).buildDepError "monad-par"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
             ];
           buildable = true;
           };
         "fwdense" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."repa" or (buildDepError "repa"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."repa" or ((hsPkgs.pkgs-errors).buildDepError "repa"))
             ];
           buildable = true;
           };
         "fwdense1" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."repa" or (buildDepError "repa"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."repa" or ((hsPkgs.pkgs-errors).buildDepError "repa"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
             ];
           buildable = true;
           };
         "rotateimage" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."repa" or (buildDepError "repa"))
-            ] ++ (pkgs.lib).optional (flags.devil) (hsPkgs."repa-devil" or (buildDepError "repa-devil"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."repa" or ((hsPkgs.pkgs-errors).buildDepError "repa"))
+            ] ++ (pkgs.lib).optional (flags.devil) (hsPkgs."repa-devil" or ((hsPkgs.pkgs-errors).buildDepError "repa-devil"));
           buildable = if flags.devil then true else false;
           };
         "fwaccel" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."accelerate" or (buildDepError "accelerate"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."accelerate" or ((hsPkgs.pkgs-errors).buildDepError "accelerate"))
             ];
           buildable = true;
           };
         "fwaccel-gpu" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."accelerate" or (buildDepError "accelerate"))
-            ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."accelerate" or ((hsPkgs.pkgs-errors).buildDepError "accelerate"))
+            ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or ((hsPkgs.pkgs-errors).buildDepError "accelerate-cuda"));
           buildable = if flags.cuda then true else false;
           };
         "mandel" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."accelerate" or (buildDepError "accelerate"))
-            (hsPkgs."fclabels" or (buildDepError "fclabels"))
-            (hsPkgs."accelerate-io" or (buildDepError "accelerate-io"))
-            ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (buildDepError "accelerate-cuda"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."accelerate" or ((hsPkgs.pkgs-errors).buildDepError "accelerate"))
+            (hsPkgs."fclabels" or ((hsPkgs.pkgs-errors).buildDepError "fclabels"))
+            (hsPkgs."accelerate-io" or ((hsPkgs.pkgs-errors).buildDepError "accelerate-io"))
+            ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or ((hsPkgs.pkgs-errors).buildDepError "accelerate-cuda"));
           buildable = if flags.cuda then true else false;
           };
         "fork" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "reminders" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "reminders2" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "mvar1" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "mvar2" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "mvar3" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "logger" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "phonebook" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
             ];
           buildable = true;
           };
         "chan" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "chan2" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "geturls1" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
             ];
           buildable = true;
           };
         "geturls2" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
             ];
           buildable = true;
           };
         "geturls3" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
             ];
           buildable = true;
           };
         "geturls4" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
             ];
           buildable = true;
           };
         "geturls5" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
             ];
           buildable = true;
           };
         "geturls6" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
             ];
           buildable = true;
           };
         "geturlscancel" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
             ];
           buildable = true;
           };
         "geturlscancel2" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
             ];
           buildable = true;
           };
         "modifytwo" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "chan3" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "timeout" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "catch-mask" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "catch-mask2" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "windowman" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
             ];
           buildable = true;
           };
         "tmvar" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
             ];
           buildable = true;
           };
         "geturlsfirst" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
             ];
           buildable = true;
           };
         "TChan" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
             ];
           buildable = true;
           };
         "TList" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
             ];
           buildable = true;
           };
         "TQueue" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
             ];
           buildable = true;
           };
         "TBQueue" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
             ];
           buildable = true;
           };
         "geturls7" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
             ];
           buildable = true;
           };
         "geturls8" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
             ];
           buildable = true;
           };
         "geturls9" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
             ];
           buildable = true;
           };
         "timeout2" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
             ];
           buildable = true;
           };
         "findseq" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
             ];
           buildable = true;
           };
         "findpar" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
             ];
           buildable = true;
           };
         "findpar2" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
             ];
           buildable = true;
           };
         "findpar3" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
             ];
           buildable = true;
           };
         "findpar4" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."abstract-par" or (buildDepError "abstract-par"))
-            (hsPkgs."monad-par" or (buildDepError "monad-par"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."abstract-par" or ((hsPkgs.pkgs-errors).buildDepError "abstract-par"))
+            (hsPkgs."monad-par" or ((hsPkgs.pkgs-errors).buildDepError "monad-par"))
             ];
           buildable = true;
           };
         "server" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
             ];
           buildable = true;
           };
         "server2" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
             ];
           buildable = true;
           };
         "chat" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
             ];
           buildable = true;
           };
         "ping" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."distributed-process-simplelocalnet" or (buildDepError "distributed-process-simplelocalnet"))
-            (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."distributed-process" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process"))
+            (hsPkgs."distributed-process-simplelocalnet" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process-simplelocalnet"))
+            (hsPkgs."distributed-static" or ((hsPkgs.pkgs-errors).buildDepError "distributed-static"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"));
           buildable = true;
           };
         "ping-multi" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."distributed-process-simplelocalnet" or (buildDepError "distributed-process-simplelocalnet"))
-            (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."distributed-process" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process"))
+            (hsPkgs."distributed-process-simplelocalnet" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process-simplelocalnet"))
+            (hsPkgs."distributed-static" or ((hsPkgs.pkgs-errors).buildDepError "distributed-static"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"));
           buildable = true;
           };
         "ping-tc" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."distributed-process-simplelocalnet" or (buildDepError "distributed-process-simplelocalnet"))
-            (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."distributed-process" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process"))
+            (hsPkgs."distributed-process-simplelocalnet" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process-simplelocalnet"))
+            (hsPkgs."distributed-static" or ((hsPkgs.pkgs-errors).buildDepError "distributed-static"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"));
           buildable = true;
           };
         "ping-tc-merge" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."distributed-process-simplelocalnet" or (buildDepError "distributed-process-simplelocalnet"))
-            (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."distributed-process" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process"))
+            (hsPkgs."distributed-process-simplelocalnet" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process-simplelocalnet"))
+            (hsPkgs."distributed-static" or ((hsPkgs.pkgs-errors).buildDepError "distributed-static"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"));
           buildable = true;
           };
         "ping-tc-notify" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."distributed-process-simplelocalnet" or (buildDepError "distributed-process-simplelocalnet"))
-            (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."distributed-process" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process"))
+            (hsPkgs."distributed-process-simplelocalnet" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process-simplelocalnet"))
+            (hsPkgs."distributed-static" or ((hsPkgs.pkgs-errors).buildDepError "distributed-static"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"));
           buildable = true;
           };
         "ping-fail" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."distributed-process-simplelocalnet" or (buildDepError "distributed-process-simplelocalnet"))
-            (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."distributed-process" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process"))
+            (hsPkgs."distributed-process-simplelocalnet" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process-simplelocalnet"))
+            (hsPkgs."distributed-static" or ((hsPkgs.pkgs-errors).buildDepError "distributed-static"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"));
           buildable = true;
           };
         "distrib-chat" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."distributed-process-simplelocalnet" or (buildDepError "distributed-process-simplelocalnet"))
-            (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."distributed-process" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process"))
+            (hsPkgs."distributed-process-simplelocalnet" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process-simplelocalnet"))
+            (hsPkgs."distributed-static" or ((hsPkgs.pkgs-errors).buildDepError "distributed-static"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"));
           buildable = true;
           };
         "distrib-chat-noslave" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."distributed-process-simplelocalnet" or (buildDepError "distributed-process-simplelocalnet"))
-            (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."distributed-process" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process"))
+            (hsPkgs."distributed-process-simplelocalnet" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process-simplelocalnet"))
+            (hsPkgs."distributed-static" or ((hsPkgs.pkgs-errors).buildDepError "distributed-static"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"));
           buildable = true;
           };
         "distrib-db" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."distributed-process-simplelocalnet" or (buildDepError "distributed-process-simplelocalnet"))
-            (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+            (hsPkgs."distributed-process" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process"))
+            (hsPkgs."distributed-process-simplelocalnet" or ((hsPkgs.pkgs-errors).buildDepError "distributed-process-simplelocalnet"))
+            (hsPkgs."distributed-static" or ((hsPkgs.pkgs-errors).buildDepError "distributed-static"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"));
           buildable = true;
           };
         "mvar4" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "deadlock1" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "deadlock2" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "threadperf1" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "threadperf2" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "bingtranslator" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."xml" or (buildDepError "xml"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."xml" or ((hsPkgs.pkgs-errors).buildDepError "xml"))
             ];
           buildable = true;
           };
         "bingtranslatorconc" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."xml" or (buildDepError "xml"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."xml" or ((hsPkgs.pkgs-errors).buildDepError "xml"))
             ];
           buildable = true;
           };
         "geturlsstm" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."HTTP" or ((hsPkgs.pkgs-errors).buildDepError "HTTP"))
             ];
           buildable = true;
           };
         "Async" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."stm" or ((hsPkgs.pkgs-errors).buildDepError "stm"))
             ];
           buildable = true;
           };

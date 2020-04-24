@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,71 +17,71 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."HUnit" or (buildDepError "HUnit"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-options" or (buildDepError "aeson-options"))
-          (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-          (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-          (hsPkgs."base58-bytestring" or (buildDepError "base58-bytestring"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."constraints" or (buildDepError "constraints"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."first-class-families" or (buildDepError "first-class-families"))
-          (hsPkgs."fmt" or (buildDepError "fmt"))
-          (hsPkgs."formatting" or (buildDepError "formatting"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."gitrev" or (buildDepError "gitrev"))
-          (hsPkgs."hex-text" or (buildDepError "hex-text"))
-          (hsPkgs."hspec" or (buildDepError "hspec"))
-          (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
-          (hsPkgs."interpolate" or (buildDepError "interpolate"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."morley-prelude" or (buildDepError "morley-prelude"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."named" or (buildDepError "named"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."parser-combinators" or (buildDepError "parser-combinators"))
-          (hsPkgs."quickcheck-arbitrary-adt" or (buildDepError "quickcheck-arbitrary-adt"))
-          (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-          (hsPkgs."show-type" or (buildDepError "show-type"))
-          (hsPkgs."singletons" or (buildDepError "singletons"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."tasty" or (buildDepError "tasty"))
-          (hsPkgs."tasty-ant-xml" or (buildDepError "tasty-ant-xml"))
-          (hsPkgs."tasty-hunit-compat" or (buildDepError "tasty-hunit-compat"))
-          (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."tezos-bake-monitor-lib" or (buildDepError "tezos-bake-monitor-lib"))
-          (hsPkgs."th-lift" or (buildDepError "th-lift"))
-          (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."timerep" or (buildDepError "timerep"))
-          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."vinyl" or (buildDepError "vinyl"))
-          (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
+          (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+          (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."aeson-options" or ((hsPkgs.pkgs-errors).buildDepError "aeson-options"))
+          (hsPkgs."aeson-pretty" or ((hsPkgs.pkgs-errors).buildDepError "aeson-pretty"))
+          (hsPkgs."base-noprelude" or ((hsPkgs.pkgs-errors).buildDepError "base-noprelude"))
+          (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+          (hsPkgs."base58-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base58-bytestring"))
+          (hsPkgs."binary" or ((hsPkgs.pkgs-errors).buildDepError "binary"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."constraints" or ((hsPkgs.pkgs-errors).buildDepError "constraints"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."cryptonite" or ((hsPkgs.pkgs-errors).buildDepError "cryptonite"))
+          (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+          (hsPkgs."first-class-families" or ((hsPkgs.pkgs-errors).buildDepError "first-class-families"))
+          (hsPkgs."fmt" or ((hsPkgs.pkgs-errors).buildDepError "fmt"))
+          (hsPkgs."formatting" or ((hsPkgs.pkgs-errors).buildDepError "formatting"))
+          (hsPkgs."ghc-prim" or ((hsPkgs.pkgs-errors).buildDepError "ghc-prim"))
+          (hsPkgs."gitrev" or ((hsPkgs.pkgs-errors).buildDepError "gitrev"))
+          (hsPkgs."hex-text" or ((hsPkgs.pkgs-errors).buildDepError "hex-text"))
+          (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+          (hsPkgs."hspec-expectations" or ((hsPkgs.pkgs-errors).buildDepError "hspec-expectations"))
+          (hsPkgs."interpolate" or ((hsPkgs.pkgs-errors).buildDepError "interpolate"))
+          (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+          (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+          (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+          (hsPkgs."morley-prelude" or ((hsPkgs.pkgs-errors).buildDepError "morley-prelude"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."named" or ((hsPkgs.pkgs-errors).buildDepError "named"))
+          (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+          (hsPkgs."parser-combinators" or ((hsPkgs.pkgs-errors).buildDepError "parser-combinators"))
+          (hsPkgs."quickcheck-arbitrary-adt" or ((hsPkgs.pkgs-errors).buildDepError "quickcheck-arbitrary-adt"))
+          (hsPkgs."quickcheck-instances" or ((hsPkgs.pkgs-errors).buildDepError "quickcheck-instances"))
+          (hsPkgs."show-type" or ((hsPkgs.pkgs-errors).buildDepError "show-type"))
+          (hsPkgs."singletons" or ((hsPkgs.pkgs-errors).buildDepError "singletons"))
+          (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+          (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+          (hsPkgs."tasty-ant-xml" or ((hsPkgs.pkgs-errors).buildDepError "tasty-ant-xml"))
+          (hsPkgs."tasty-hunit-compat" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit-compat"))
+          (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+          (hsPkgs."template-haskell" or ((hsPkgs.pkgs-errors).buildDepError "template-haskell"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."tezos-bake-monitor-lib" or ((hsPkgs.pkgs-errors).buildDepError "tezos-bake-monitor-lib"))
+          (hsPkgs."th-lift" or ((hsPkgs.pkgs-errors).buildDepError "th-lift"))
+          (hsPkgs."th-lift-instances" or ((hsPkgs.pkgs-errors).buildDepError "th-lift-instances"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."timerep" or ((hsPkgs.pkgs-errors).buildDepError "timerep"))
+          (hsPkgs."transformers-compat" or ((hsPkgs.pkgs-errors).buildDepError "transformers-compat"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."vinyl" or ((hsPkgs.pkgs-errors).buildDepError "vinyl"))
+          (hsPkgs."wl-pprint-text" or ((hsPkgs.pkgs-errors).buildDepError "wl-pprint-text"))
           ];
         buildable = true;
         };
       exes = {
         "morley" = {
           depends = [
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."fmt" or (buildDepError "fmt"))
-            (hsPkgs."morley" or (buildDepError "morley"))
-            (hsPkgs."morley-prelude" or (buildDepError "morley-prelude"))
-            (hsPkgs."named" or (buildDepError "named"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."pretty-simple" or (buildDepError "pretty-simple"))
+            (hsPkgs."base-noprelude" or ((hsPkgs.pkgs-errors).buildDepError "base-noprelude"))
+            (hsPkgs."fmt" or ((hsPkgs.pkgs-errors).buildDepError "fmt"))
+            (hsPkgs."morley" or ((hsPkgs.pkgs-errors).buildDepError "morley"))
+            (hsPkgs."morley-prelude" or ((hsPkgs.pkgs-errors).buildDepError "morley-prelude"))
+            (hsPkgs."named" or ((hsPkgs.pkgs-errors).buildDepError "named"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."pretty-simple" or ((hsPkgs.pkgs-errors).buildDepError "pretty-simple"))
             ];
           buildable = true;
           };
@@ -128,37 +89,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "morley-test" = {
           depends = [
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."fmt" or (buildDepError "fmt"))
-            (hsPkgs."formatting" or (buildDepError "formatting"))
-            (hsPkgs."hex-text" or (buildDepError "hex-text"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."morley" or (buildDepError "morley"))
-            (hsPkgs."morley-prelude" or (buildDepError "morley-prelude"))
-            (hsPkgs."quickcheck-arbitrary-adt" or (buildDepError "quickcheck-arbitrary-adt"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."singletons" or (buildDepError "singletons"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
-            (hsPkgs."tasty-hunit-compat" or (buildDepError "tasty-hunit-compat"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."base-noprelude" or ((hsPkgs.pkgs-errors).buildDepError "base-noprelude"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."fmt" or ((hsPkgs.pkgs-errors).buildDepError "fmt"))
+            (hsPkgs."formatting" or ((hsPkgs.pkgs-errors).buildDepError "formatting"))
+            (hsPkgs."hex-text" or ((hsPkgs.pkgs-errors).buildDepError "hex-text"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."hspec-expectations" or ((hsPkgs.pkgs-errors).buildDepError "hspec-expectations"))
+            (hsPkgs."lens" or ((hsPkgs.pkgs-errors).buildDepError "lens"))
+            (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+            (hsPkgs."morley" or ((hsPkgs.pkgs-errors).buildDepError "morley"))
+            (hsPkgs."morley-prelude" or ((hsPkgs.pkgs-errors).buildDepError "morley-prelude"))
+            (hsPkgs."quickcheck-arbitrary-adt" or ((hsPkgs.pkgs-errors).buildDepError "quickcheck-arbitrary-adt"))
+            (hsPkgs."quickcheck-instances" or ((hsPkgs.pkgs-errors).buildDepError "quickcheck-instances"))
+            (hsPkgs."singletons" or ((hsPkgs.pkgs-errors).buildDepError "singletons"))
+            (hsPkgs."syb" or ((hsPkgs.pkgs-errors).buildDepError "syb"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hspec" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hspec"))
+            (hsPkgs."tasty-hunit-compat" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit-compat"))
+            (hsPkgs."tasty-quickcheck" or ((hsPkgs.pkgs-errors).buildDepError "tasty-quickcheck"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover or (buildToolDepError "tasty-discover")))
+            (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover or ((hsPkgs.pkgs-errors).buildToolDepError "tasty-discover")))
             ];
           buildable = true;
           };
@@ -166,12 +127,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "morley-bench" = {
           depends = [
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."morley" or (buildDepError "morley"))
-            (hsPkgs."morley-prelude" or (buildDepError "morley-prelude"))
+            (hsPkgs."base-noprelude" or ((hsPkgs.pkgs-errors).buildDepError "base-noprelude"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."gauge" or ((hsPkgs.pkgs-errors).buildDepError "gauge"))
+            (hsPkgs."megaparsec" or ((hsPkgs.pkgs-errors).buildDepError "megaparsec"))
+            (hsPkgs."morley" or ((hsPkgs.pkgs-errors).buildDepError "morley"))
+            (hsPkgs."morley-prelude" or ((hsPkgs.pkgs-errors).buildDepError "morley-prelude"))
             ];
           buildable = true;
           };

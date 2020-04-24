@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { pure-md5 = false; };
     package = {
@@ -56,178 +17,188 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."HDBC" or (buildDepError "HDBC"))
-          (hsPkgs."Only" or (buildDepError "Only"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."convertible" or (buildDepError "convertible"))
-          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-          (hsPkgs."double-conversion" or (buildDepError "double-conversion"))
-          (hsPkgs."homotuple" or (buildDepError "homotuple"))
-          (hsPkgs."list-tuple" or (buildDepError "list-tuple"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
-          (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
-          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."single-tuple" or (buildDepError "single-tuple"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+          (hsPkgs."HDBC" or ((hsPkgs.pkgs-errors).buildDepError "HDBC"))
+          (hsPkgs."Only" or ((hsPkgs.pkgs-errors).buildDepError "Only"))
+          (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+          (hsPkgs."data-default-class" or ((hsPkgs.pkgs-errors).buildDepError "data-default-class"))
+          (hsPkgs."double-conversion" or ((hsPkgs.pkgs-errors).buildDepError "double-conversion"))
+          (hsPkgs."homotuple" or ((hsPkgs.pkgs-errors).buildDepError "homotuple"))
+          (hsPkgs."list-tuple" or ((hsPkgs.pkgs-errors).buildDepError "list-tuple"))
+          (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+          (hsPkgs."postgresql-binary" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-binary"))
+          (hsPkgs."pretty-hex" or ((hsPkgs.pkgs-errors).buildDepError "pretty-hex"))
+          (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+          (hsPkgs."scientific" or ((hsPkgs.pkgs-errors).buildDepError "scientific"))
+          (hsPkgs."single-tuple" or ((hsPkgs.pkgs-errors).buildDepError "single-tuple"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+          (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
           ] ++ (if flags.pure-md5
-          then [ (hsPkgs."pureMD5" or (buildDepError "pureMD5")) ]
+          then [
+            (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+            ]
           else [
-            (hsPkgs."cryptohash-md5" or (buildDepError "cryptohash-md5"))
+            (hsPkgs."cryptohash-md5" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash-md5"))
             ]);
         buildable = true;
         };
       tests = {
         "doctest" = {
           depends = [
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."Only" or (buildDepError "Only"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."convertible" or (buildDepError "convertible"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."double-conversion" or (buildDepError "double-conversion"))
-            (hsPkgs."homotuple" or (buildDepError "homotuple"))
-            (hsPkgs."list-tuple" or (buildDepError "list-tuple"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
-            (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."single-tuple" or (buildDepError "single-tuple"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."HDBC" or ((hsPkgs.pkgs-errors).buildDepError "HDBC"))
+            (hsPkgs."Only" or ((hsPkgs.pkgs-errors).buildDepError "Only"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+            (hsPkgs."data-default-class" or ((hsPkgs.pkgs-errors).buildDepError "data-default-class"))
+            (hsPkgs."doctest" or ((hsPkgs.pkgs-errors).buildDepError "doctest"))
+            (hsPkgs."double-conversion" or ((hsPkgs.pkgs-errors).buildDepError "double-conversion"))
+            (hsPkgs."homotuple" or ((hsPkgs.pkgs-errors).buildDepError "homotuple"))
+            (hsPkgs."list-tuple" or ((hsPkgs.pkgs-errors).buildDepError "list-tuple"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."postgresql-binary" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-binary"))
+            (hsPkgs."pretty-hex" or ((hsPkgs.pkgs-errors).buildDepError "pretty-hex"))
+            (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+            (hsPkgs."scientific" or ((hsPkgs.pkgs-errors).buildDepError "scientific"))
+            (hsPkgs."single-tuple" or ((hsPkgs.pkgs-errors).buildDepError "single-tuple"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
             ] ++ (if flags.pure-md5
-            then [ (hsPkgs."pureMD5" or (buildDepError "pureMD5")) ]
+            then [
+              (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+              ]
             else [
-              (hsPkgs."cryptohash-md5" or (buildDepError "cryptohash-md5"))
+              (hsPkgs."cryptohash-md5" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash-md5"))
               ]);
           buildable = true;
           };
         "hdbc-postgresql" = {
           depends = [
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."Only" or (buildDepError "Only"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."convertible" or (buildDepError "convertible"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."double-conversion" or (buildDepError "double-conversion"))
-            (hsPkgs."homotuple" or (buildDepError "homotuple"))
-            (hsPkgs."list-tuple" or (buildDepError "list-tuple"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
-            (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."single-tuple" or (buildDepError "single-tuple"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."HDBC" or ((hsPkgs.pkgs-errors).buildDepError "HDBC"))
+            (hsPkgs."HUnit" or ((hsPkgs.pkgs-errors).buildDepError "HUnit"))
+            (hsPkgs."Only" or ((hsPkgs.pkgs-errors).buildDepError "Only"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+            (hsPkgs."data-default-class" or ((hsPkgs.pkgs-errors).buildDepError "data-default-class"))
+            (hsPkgs."double-conversion" or ((hsPkgs.pkgs-errors).buildDepError "double-conversion"))
+            (hsPkgs."homotuple" or ((hsPkgs.pkgs-errors).buildDepError "homotuple"))
+            (hsPkgs."list-tuple" or ((hsPkgs.pkgs-errors).buildDepError "list-tuple"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."old-time" or ((hsPkgs.pkgs-errors).buildDepError "old-time"))
+            (hsPkgs."postgresql-binary" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-binary"))
+            (hsPkgs."pretty-hex" or ((hsPkgs.pkgs-errors).buildDepError "pretty-hex"))
+            (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+            (hsPkgs."scientific" or ((hsPkgs.pkgs-errors).buildDepError "scientific"))
+            (hsPkgs."single-tuple" or ((hsPkgs.pkgs-errors).buildDepError "single-tuple"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
             ] ++ (if flags.pure-md5
-            then [ (hsPkgs."pureMD5" or (buildDepError "pureMD5")) ]
+            then [
+              (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+              ]
             else [
-              (hsPkgs."cryptohash-md5" or (buildDepError "cryptohash-md5"))
+              (hsPkgs."cryptohash-md5" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash-md5"))
               ]);
           buildable = true;
           };
         "original" = {
           depends = [
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."Only" or (buildDepError "Only"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."convertible" or (buildDepError "convertible"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."double-conversion" or (buildDepError "double-conversion"))
-            (hsPkgs."homotuple" or (buildDepError "homotuple"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
-            (hsPkgs."list-tuple" or (buildDepError "list-tuple"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
-            (hsPkgs."postgresql-pure" or (buildDepError "postgresql-pure"))
-            (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."single-tuple" or (buildDepError "single-tuple"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."HDBC" or ((hsPkgs.pkgs-errors).buildDepError "HDBC"))
+            (hsPkgs."Only" or ((hsPkgs.pkgs-errors).buildDepError "Only"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+            (hsPkgs."data-default-class" or ((hsPkgs.pkgs-errors).buildDepError "data-default-class"))
+            (hsPkgs."double-conversion" or ((hsPkgs.pkgs-errors).buildDepError "double-conversion"))
+            (hsPkgs."homotuple" or ((hsPkgs.pkgs-errors).buildDepError "homotuple"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."hspec-core" or ((hsPkgs.pkgs-errors).buildDepError "hspec-core"))
+            (hsPkgs."list-tuple" or ((hsPkgs.pkgs-errors).buildDepError "list-tuple"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."postgresql-binary" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-binary"))
+            (hsPkgs."postgresql-pure" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-pure"))
+            (hsPkgs."pretty-hex" or ((hsPkgs.pkgs-errors).buildDepError "pretty-hex"))
+            (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+            (hsPkgs."scientific" or ((hsPkgs.pkgs-errors).buildDepError "scientific"))
+            (hsPkgs."single-tuple" or ((hsPkgs.pkgs-errors).buildDepError "single-tuple"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
             ] ++ (if flags.pure-md5
-            then [ (hsPkgs."pureMD5" or (buildDepError "pureMD5")) ]
+            then [
+              (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+              ]
             else [
-              (hsPkgs."cryptohash-md5" or (buildDepError "cryptohash-md5"))
+              (hsPkgs."cryptohash-md5" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash-md5"))
               ]);
           buildable = true;
           };
         "relational-record" = {
           depends = [
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
-            (hsPkgs."HDBC-session" or (buildDepError "HDBC-session"))
-            (hsPkgs."Only" or (buildDepError "Only"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."convertible" or (buildDepError "convertible"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."double-conversion" or (buildDepError "double-conversion"))
-            (hsPkgs."homotuple" or (buildDepError "homotuple"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
-            (hsPkgs."list-tuple" or (buildDepError "list-tuple"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."persistable-record" or (buildDepError "persistable-record"))
-            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
-            (hsPkgs."postgresql-pure" or (buildDepError "postgresql-pure"))
-            (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
-            (hsPkgs."relational-query" or (buildDepError "relational-query"))
-            (hsPkgs."relational-query-HDBC" or (buildDepError "relational-query-HDBC"))
-            (hsPkgs."relational-record" or (buildDepError "relational-record"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."single-tuple" or (buildDepError "single-tuple"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."HDBC" or ((hsPkgs.pkgs-errors).buildDepError "HDBC"))
+            (hsPkgs."HDBC-postgresql" or ((hsPkgs.pkgs-errors).buildDepError "HDBC-postgresql"))
+            (hsPkgs."HDBC-session" or ((hsPkgs.pkgs-errors).buildDepError "HDBC-session"))
+            (hsPkgs."Only" or ((hsPkgs.pkgs-errors).buildDepError "Only"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+            (hsPkgs."data-default-class" or ((hsPkgs.pkgs-errors).buildDepError "data-default-class"))
+            (hsPkgs."double-conversion" or ((hsPkgs.pkgs-errors).buildDepError "double-conversion"))
+            (hsPkgs."homotuple" or ((hsPkgs.pkgs-errors).buildDepError "homotuple"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."hspec-core" or ((hsPkgs.pkgs-errors).buildDepError "hspec-core"))
+            (hsPkgs."list-tuple" or ((hsPkgs.pkgs-errors).buildDepError "list-tuple"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."persistable-record" or ((hsPkgs.pkgs-errors).buildDepError "persistable-record"))
+            (hsPkgs."postgresql-binary" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-binary"))
+            (hsPkgs."postgresql-pure" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-pure"))
+            (hsPkgs."pretty-hex" or ((hsPkgs.pkgs-errors).buildDepError "pretty-hex"))
+            (hsPkgs."relational-query" or ((hsPkgs.pkgs-errors).buildDepError "relational-query"))
+            (hsPkgs."relational-query-HDBC" or ((hsPkgs.pkgs-errors).buildDepError "relational-query-HDBC"))
+            (hsPkgs."relational-record" or ((hsPkgs.pkgs-errors).buildDepError "relational-record"))
+            (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+            (hsPkgs."scientific" or ((hsPkgs.pkgs-errors).buildDepError "scientific"))
+            (hsPkgs."single-tuple" or ((hsPkgs.pkgs-errors).buildDepError "single-tuple"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
             ] ++ (if flags.pure-md5
-            then [ (hsPkgs."pureMD5" or (buildDepError "pureMD5")) ]
+            then [
+              (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+              ]
             else [
-              (hsPkgs."cryptohash-md5" or (buildDepError "cryptohash-md5"))
+              (hsPkgs."cryptohash-md5" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash-md5"))
               ]);
           buildable = true;
           };
@@ -235,83 +206,87 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "requests-per-second" = {
           depends = ([
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."Only" or (buildDepError "Only"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."clock" or (buildDepError "clock"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."convertible" or (buildDepError "convertible"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."double-conversion" or (buildDepError "double-conversion"))
-            (hsPkgs."homotuple" or (buildDepError "homotuple"))
-            (hsPkgs."list-tuple" or (buildDepError "list-tuple"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
-            (hsPkgs."postgresql-libpq" or (buildDepError "postgresql-libpq"))
-            (hsPkgs."postgresql-pure" or (buildDepError "postgresql-pure"))
-            (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."single-tuple" or (buildDepError "single-tuple"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."HDBC" or ((hsPkgs.pkgs-errors).buildDepError "HDBC"))
+            (hsPkgs."Only" or ((hsPkgs.pkgs-errors).buildDepError "Only"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."clock" or ((hsPkgs.pkgs-errors).buildDepError "clock"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+            (hsPkgs."data-default-class" or ((hsPkgs.pkgs-errors).buildDepError "data-default-class"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."double-conversion" or ((hsPkgs.pkgs-errors).buildDepError "double-conversion"))
+            (hsPkgs."homotuple" or ((hsPkgs.pkgs-errors).buildDepError "homotuple"))
+            (hsPkgs."list-tuple" or ((hsPkgs.pkgs-errors).buildDepError "list-tuple"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."postgresql-binary" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-binary"))
+            (hsPkgs."postgresql-libpq" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-libpq"))
+            (hsPkgs."postgresql-pure" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-pure"))
+            (hsPkgs."pretty-hex" or ((hsPkgs.pkgs-errors).buildDepError "pretty-hex"))
+            (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+            (hsPkgs."scientific" or ((hsPkgs.pkgs-errors).buildDepError "scientific"))
+            (hsPkgs."single-tuple" or ((hsPkgs.pkgs-errors).buildDepError "single-tuple"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ] ++ (if flags.pure-md5
-            then [ (hsPkgs."pureMD5" or (buildDepError "pureMD5")) ]
+            then [
+              (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+              ]
             else [
-              (hsPkgs."cryptohash-md5" or (buildDepError "cryptohash-md5"))
-              ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."postgres-wire" or (buildDepError "postgres-wire"));
+              (hsPkgs."cryptohash-md5" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash-md5"))
+              ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."postgres-wire" or ((hsPkgs.pkgs-errors).buildDepError "postgres-wire"));
           buildable = true;
           };
         "requests-per-second-constant" = {
           depends = ([
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."Only" or (buildDepError "Only"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cassava" or (buildDepError "cassava"))
-            (hsPkgs."clock" or (buildDepError "clock"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."convertible" or (buildDepError "convertible"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."double-conversion" or (buildDepError "double-conversion"))
-            (hsPkgs."homotuple" or (buildDepError "homotuple"))
-            (hsPkgs."hourglass" or (buildDepError "hourglass"))
-            (hsPkgs."list-tuple" or (buildDepError "list-tuple"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
-            (hsPkgs."postgresql-libpq" or (buildDepError "postgresql-libpq"))
-            (hsPkgs."postgresql-pure" or (buildDepError "postgresql-pure"))
-            (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
-            (hsPkgs."postgresql-typed" or (buildDepError "postgresql-typed"))
-            (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
-            (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."single-tuple" or (buildDepError "single-tuple"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."HDBC" or ((hsPkgs.pkgs-errors).buildDepError "HDBC"))
+            (hsPkgs."Only" or ((hsPkgs.pkgs-errors).buildDepError "Only"))
+            (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."cassava" or ((hsPkgs.pkgs-errors).buildDepError "cassava"))
+            (hsPkgs."clock" or ((hsPkgs.pkgs-errors).buildDepError "clock"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."convertible" or ((hsPkgs.pkgs-errors).buildDepError "convertible"))
+            (hsPkgs."data-default-class" or ((hsPkgs.pkgs-errors).buildDepError "data-default-class"))
+            (hsPkgs."deepseq" or ((hsPkgs.pkgs-errors).buildDepError "deepseq"))
+            (hsPkgs."double-conversion" or ((hsPkgs.pkgs-errors).buildDepError "double-conversion"))
+            (hsPkgs."homotuple" or ((hsPkgs.pkgs-errors).buildDepError "homotuple"))
+            (hsPkgs."hourglass" or ((hsPkgs.pkgs-errors).buildDepError "hourglass"))
+            (hsPkgs."list-tuple" or ((hsPkgs.pkgs-errors).buildDepError "list-tuple"))
+            (hsPkgs."memory" or ((hsPkgs.pkgs-errors).buildDepError "memory"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."network" or ((hsPkgs.pkgs-errors).buildDepError "network"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."postgresql-binary" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-binary"))
+            (hsPkgs."postgresql-libpq" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-libpq"))
+            (hsPkgs."postgresql-pure" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-pure"))
+            (hsPkgs."postgresql-simple" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-simple"))
+            (hsPkgs."postgresql-typed" or ((hsPkgs.pkgs-errors).buildDepError "postgresql-typed"))
+            (hsPkgs."pretty-hex" or ((hsPkgs.pkgs-errors).buildDepError "pretty-hex"))
+            (hsPkgs."random-shuffle" or ((hsPkgs.pkgs-errors).buildDepError "random-shuffle"))
+            (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+            (hsPkgs."scientific" or ((hsPkgs.pkgs-errors).buildDepError "scientific"))
+            (hsPkgs."single-tuple" or ((hsPkgs.pkgs-errors).buildDepError "single-tuple"))
+            (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."utf8-string" or ((hsPkgs.pkgs-errors).buildDepError "utf8-string"))
+            (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
             ] ++ (if flags.pure-md5
-            then [ (hsPkgs."pureMD5" or (buildDepError "pureMD5")) ]
+            then [
+              (hsPkgs."pureMD5" or ((hsPkgs.pkgs-errors).buildDepError "pureMD5"))
+              ]
             else [
-              (hsPkgs."cryptohash-md5" or (buildDepError "cryptohash-md5"))
-              ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."postgres-wire" or (buildDepError "postgres-wire"));
+              (hsPkgs."cryptohash-md5" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash-md5"))
+              ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."postgres-wire" or ((hsPkgs.pkgs-errors).buildDepError "postgres-wire"));
           buildable = true;
           };
         };

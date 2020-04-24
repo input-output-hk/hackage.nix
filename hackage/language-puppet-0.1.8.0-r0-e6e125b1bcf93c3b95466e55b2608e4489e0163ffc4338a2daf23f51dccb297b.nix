@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -56,60 +17,60 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."MissingH" or (buildDepError "MissingH"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."Glob" or (buildDepError "Glob"))
-          (hsPkgs."regexpr" or (buildDepError "regexpr"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
-          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-          (hsPkgs."regex-pcre-builtin" or (buildDepError "regex-pcre-builtin"))
-          (hsPkgs."iconv" or (buildDepError "iconv"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."failure" or (buildDepError "failure"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
+          (hsPkgs."MissingH" or ((hsPkgs.pkgs-errors).buildDepError "MissingH"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."pretty" or ((hsPkgs.pkgs-errors).buildDepError "pretty"))
+          (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+          (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+          (hsPkgs."hslogger" or ((hsPkgs.pkgs-errors).buildDepError "hslogger"))
+          (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+          (hsPkgs."Glob" or ((hsPkgs.pkgs-errors).buildDepError "Glob"))
+          (hsPkgs."regexpr" or ((hsPkgs.pkgs-errors).buildDepError "regexpr"))
+          (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+          (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+          (hsPkgs."cryptohash" or ((hsPkgs.pkgs-errors).buildDepError "cryptohash"))
+          (hsPkgs."base16-bytestring" or ((hsPkgs.pkgs-errors).buildDepError "base16-bytestring"))
+          (hsPkgs."regex-pcre-builtin" or ((hsPkgs.pkgs-errors).buildDepError "regex-pcre-builtin"))
+          (hsPkgs."iconv" or ((hsPkgs.pkgs-errors).buildDepError "iconv"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."unordered-containers" or ((hsPkgs.pkgs-errors).buildDepError "unordered-containers"))
+          (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+          (hsPkgs."vector" or ((hsPkgs.pkgs-errors).buildDepError "vector"))
+          (hsPkgs."http-types" or ((hsPkgs.pkgs-errors).buildDepError "http-types"))
+          (hsPkgs."http-conduit" or ((hsPkgs.pkgs-errors).buildDepError "http-conduit"))
+          (hsPkgs."attoparsec" or ((hsPkgs.pkgs-errors).buildDepError "attoparsec"))
+          (hsPkgs."failure" or ((hsPkgs.pkgs-errors).buildDepError "failure"))
           ];
         buildable = true;
         };
       tests = {
         "test-lexer" = {
           depends = [
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."language-puppet" or ((hsPkgs.pkgs-errors).buildDepError "language-puppet"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."Glob" or ((hsPkgs.pkgs-errors).buildDepError "Glob"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
             ];
           buildable = true;
           };
         "test-expr" = {
           depends = [
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."language-puppet" or ((hsPkgs.pkgs-errors).buildDepError "language-puppet"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
             ];
           buildable = true;
           };
         "test-interpreter" = {
           depends = [
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."language-puppet" or ((hsPkgs.pkgs-errors).buildDepError "language-puppet"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."Glob" or ((hsPkgs.pkgs-errors).buildDepError "Glob"))
+            (hsPkgs."mtl" or ((hsPkgs.pkgs-errors).buildDepError "mtl"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."parsec" or ((hsPkgs.pkgs-errors).buildDepError "parsec"))
             ];
           buildable = true;
           };
@@ -117,8 +78,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench-lexer" = {
           depends = [
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."language-puppet" or ((hsPkgs.pkgs-errors).buildDepError "language-puppet"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = true;
           };

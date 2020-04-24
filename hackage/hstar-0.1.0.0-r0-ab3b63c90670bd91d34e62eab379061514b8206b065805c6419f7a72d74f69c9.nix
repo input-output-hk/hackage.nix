@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { development = false; pure = false; };
     package = {
@@ -57,23 +18,25 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "hstar" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."archive-sig" or (buildDepError "archive-sig"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."lzma" or (buildDepError "lzma"))
-            (hsPkgs."bz2" or (buildDepError "bz2"))
-            (hsPkgs."zlib" or (buildDepError "zlib"))
-            (hsPkgs."zstd" or (buildDepError "zstd"))
-            (hsPkgs."lz4-hs" or (buildDepError "lz4-hs"))
-            (hsPkgs."lzlib" or (buildDepError "lzlib"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."archive-sig" or ((hsPkgs.pkgs-errors).buildDepError "archive-sig"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
+            (hsPkgs."lzma" or ((hsPkgs.pkgs-errors).buildDepError "lzma"))
+            (hsPkgs."bz2" or ((hsPkgs.pkgs-errors).buildDepError "bz2"))
+            (hsPkgs."zlib" or ((hsPkgs.pkgs-errors).buildDepError "zlib"))
+            (hsPkgs."zstd" or ((hsPkgs.pkgs-errors).buildDepError "zstd"))
+            (hsPkgs."lz4-hs" or ((hsPkgs.pkgs-errors).buildDepError "lz4-hs"))
+            (hsPkgs."lzlib" or ((hsPkgs.pkgs-errors).buildDepError "lzlib"))
             ] ++ (if flags.pure
-            then [ (hsPkgs."archive-tar" or (buildDepError "archive-tar")) ]
+            then [
+              (hsPkgs."archive-tar" or ((hsPkgs.pkgs-errors).buildDepError "archive-tar"))
+              ]
             else [
-              (hsPkgs."archive-libarchive" or (buildDepError "archive-libarchive"))
+              (hsPkgs."archive-libarchive" or ((hsPkgs.pkgs-errors).buildDepError "archive-libarchive"))
               ]);
           build-tools = [
-            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
+            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or ((hsPkgs.pkgs-errors).buildToolDepError "cpphs")))
             ];
           buildable = true;
           };

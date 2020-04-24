@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
@@ -56,23 +17,23 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."funflow" or (buildDepError "funflow"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."path" or (buildDepError "path"))
-          (hsPkgs."modern-uri" or (buildDepError "modern-uri"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+          (hsPkgs."funflow" or ((hsPkgs.pkgs-errors).buildDepError "funflow"))
+          (hsPkgs."text" or ((hsPkgs.pkgs-errors).buildDepError "text"))
+          (hsPkgs."path" or ((hsPkgs.pkgs-errors).buildDepError "path"))
+          (hsPkgs."modern-uri" or ((hsPkgs.pkgs-errors).buildDepError "modern-uri"))
           ];
         buildable = true;
         };
       exes = {
         "example" = {
           depends = [
-            (hsPkgs."funflow" or (buildDepError "funflow"))
-            (hsPkgs."funflow-nix" or (buildDepError "funflow-nix"))
-            (hsPkgs."path" or (buildDepError "path"))
-            (hsPkgs."path-io" or (buildDepError "path-io"))
-            (hsPkgs."modern-uri" or (buildDepError "modern-uri"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."funflow" or ((hsPkgs.pkgs-errors).buildDepError "funflow"))
+            (hsPkgs."funflow-nix" or ((hsPkgs.pkgs-errors).buildDepError "funflow-nix"))
+            (hsPkgs."path" or ((hsPkgs.pkgs-errors).buildDepError "path"))
+            (hsPkgs."path-io" or ((hsPkgs.pkgs-errors).buildDepError "path-io"))
+            (hsPkgs."modern-uri" or ((hsPkgs.pkgs-errors).buildDepError "modern-uri"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.example then true else false;
           };
@@ -80,24 +41,24 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "unit-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."funflow" or (buildDepError "funflow"))
-            (hsPkgs."funflow-nix" or (buildDepError "funflow-nix"))
-            (hsPkgs."path" or (buildDepError "path"))
-            (hsPkgs."path-io" or (buildDepError "path-io"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."modern-uri" or (buildDepError "modern-uri"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."async" or ((hsPkgs.pkgs-errors).buildDepError "async"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."data-default" or ((hsPkgs.pkgs-errors).buildDepError "data-default"))
+            (hsPkgs."directory" or ((hsPkgs.pkgs-errors).buildDepError "directory"))
+            (hsPkgs."filepath" or ((hsPkgs.pkgs-errors).buildDepError "filepath"))
+            (hsPkgs."funflow" or ((hsPkgs.pkgs-errors).buildDepError "funflow"))
+            (hsPkgs."funflow-nix" or ((hsPkgs.pkgs-errors).buildDepError "funflow-nix"))
+            (hsPkgs."path" or ((hsPkgs.pkgs-errors).buildDepError "path"))
+            (hsPkgs."path-io" or ((hsPkgs.pkgs-errors).buildDepError "path-io"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."safe-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "safe-exceptions"))
+            (hsPkgs."tasty" or ((hsPkgs.pkgs-errors).buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or ((hsPkgs.pkgs-errors).buildDepError "tasty-hunit"))
+            (hsPkgs."temporary" or ((hsPkgs.pkgs-errors).buildDepError "temporary"))
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            (hsPkgs."modern-uri" or ((hsPkgs.pkgs-errors).buildDepError "modern-uri"))
             ];
           buildable = true;
           };

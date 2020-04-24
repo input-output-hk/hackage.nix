@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { jsaddle = false; ios = false; };
     package = {
@@ -57,17 +18,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "todo-mvc" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle)) (([
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."miso" or (buildDepError "miso"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (flags.jsaddle) (hsPkgs."jsaddle" or (buildDepError "jsaddle"))) ++ (if flags.ios
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."miso" or ((hsPkgs.pkgs-errors).buildDepError "miso"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            ] ++ (pkgs.lib).optional (flags.jsaddle) (hsPkgs."jsaddle" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle"))) ++ (if flags.ios
             then [
-              (hsPkgs."jsaddle-wkwebview" or (buildDepError "jsaddle-wkwebview"))
+              (hsPkgs."jsaddle-wkwebview" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle-wkwebview"))
               ]
             else [
-              (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
+              (hsPkgs."jsaddle-warp" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle-warp"))
               ]));
           buildable = if !(compiler.isGhcjs && true) && !flags.jsaddle
             then false
@@ -75,57 +36,57 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "threejs" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."ghcjs-base" or ((hsPkgs.pkgs-errors).buildDepError "ghcjs-base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."miso" or ((hsPkgs.pkgs-errors).buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "file-reader" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."ghcjs-base" or ((hsPkgs.pkgs-errors).buildDepError "ghcjs-base"))
+            (hsPkgs."miso" or ((hsPkgs.pkgs-errors).buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "xhr" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."ghcjs-base" or ((hsPkgs.pkgs-errors).buildDepError "ghcjs-base"))
+            (hsPkgs."miso" or ((hsPkgs.pkgs-errors).buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "canvas2d" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."ghcjs-base" or ((hsPkgs.pkgs-errors).buildDepError "ghcjs-base"))
+            (hsPkgs."miso" or ((hsPkgs.pkgs-errors).buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "router" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle)) (([
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."miso" or (buildDepError "miso"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (flags.jsaddle) (hsPkgs."jsaddle" or (buildDepError "jsaddle"))) ++ (if flags.ios
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."miso" or ((hsPkgs.pkgs-errors).buildDepError "miso"))
+            (hsPkgs."servant" or ((hsPkgs.pkgs-errors).buildDepError "servant"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            ] ++ (pkgs.lib).optional (flags.jsaddle) (hsPkgs."jsaddle" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle"))) ++ (if flags.ios
             then [
-              (hsPkgs."jsaddle-wkwebview" or (buildDepError "jsaddle-wkwebview"))
+              (hsPkgs."jsaddle-wkwebview" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle-wkwebview"))
               ]
             else [
-              (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
+              (hsPkgs."jsaddle-warp" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle-warp"))
               ]));
           buildable = if !(compiler.isGhcjs && true) && !flags.jsaddle
             then false
@@ -133,17 +94,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "websocket" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle)) (([
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."miso" or (buildDepError "miso"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (flags.jsaddle) (hsPkgs."jsaddle" or (buildDepError "jsaddle"))) ++ (if flags.ios
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."miso" or ((hsPkgs.pkgs-errors).buildDepError "miso"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            ] ++ (pkgs.lib).optional (flags.jsaddle) (hsPkgs."jsaddle" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle"))) ++ (if flags.ios
             then [
-              (hsPkgs."jsaddle-wkwebview" or (buildDepError "jsaddle-wkwebview"))
+              (hsPkgs."jsaddle-wkwebview" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle-wkwebview"))
               ]
             else [
-              (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
+              (hsPkgs."jsaddle-warp" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle-warp"))
               ]));
           buildable = if !(compiler.isGhcjs && true) && !flags.jsaddle
             then false
@@ -151,39 +112,39 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "mario" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle)) (((([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."miso" or (buildDepError "miso"))
-            ] ++ (pkgs.lib).optional (flags.jsaddle) (hsPkgs."jsaddle" or (buildDepError "jsaddle"))) ++ (pkgs.lib).optionals (flags.jsaddle && !(compiler.isGhcjs && true) && !flags.ios) [
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
-            ]) ++ (pkgs.lib).optional (flags.ios && !(compiler.isGhcjs && true)) (hsPkgs."jsaddle-wkwebview" or (buildDepError "jsaddle-wkwebview"))) ++ (pkgs.lib).optional (!flags.ios) (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp")));
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."miso" or ((hsPkgs.pkgs-errors).buildDepError "miso"))
+            ] ++ (pkgs.lib).optional (flags.jsaddle) (hsPkgs."jsaddle" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle"))) ++ (pkgs.lib).optionals (flags.jsaddle && !(compiler.isGhcjs && true) && !flags.ios) [
+            (hsPkgs."wai" or ((hsPkgs.pkgs-errors).buildDepError "wai"))
+            (hsPkgs."wai-app-static" or ((hsPkgs.pkgs-errors).buildDepError "wai-app-static"))
+            (hsPkgs."warp" or ((hsPkgs.pkgs-errors).buildDepError "warp"))
+            (hsPkgs."websockets" or ((hsPkgs.pkgs-errors).buildDepError "websockets"))
+            ]) ++ (pkgs.lib).optional (flags.ios && !(compiler.isGhcjs && true)) (hsPkgs."jsaddle-wkwebview" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle-wkwebview"))) ++ (pkgs.lib).optional (!flags.ios) (hsPkgs."jsaddle-warp" or ((hsPkgs.pkgs-errors).buildDepError "jsaddle-warp")));
           buildable = if !(compiler.isGhcjs && true) && !flags.jsaddle
             then false
             else true;
           };
         "svg" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."aeson" or ((hsPkgs.pkgs-errors).buildDepError "aeson"))
+            (hsPkgs."miso" or ((hsPkgs.pkgs-errors).buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "compose-update" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."miso" or ((hsPkgs.pkgs-errors).buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) then false else true;
           };
         "mathml" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."miso" or ((hsPkgs.pkgs-errors).buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) then false else true;
           };

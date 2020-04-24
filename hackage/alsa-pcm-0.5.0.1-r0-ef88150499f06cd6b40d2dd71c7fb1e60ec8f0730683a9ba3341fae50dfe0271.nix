@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildexamples = false; buildsynthesizer = false; debug = false; };
     package = {
@@ -56,55 +17,57 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
-          (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."alsa-core" or ((hsPkgs.pkgs-errors).buildDepError "alsa-core"))
+          (hsPkgs."sample-frame" or ((hsPkgs.pkgs-errors).buildDepError "sample-frame"))
+          (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
+          (hsPkgs."extensible-exceptions" or ((hsPkgs.pkgs-errors).buildDepError "extensible-exceptions"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
           ];
-        pkgconfig = [ (pkgconfPkgs."alsa" or (pkgConfDepError "alsa")) ];
+        pkgconfig = [
+          (pkgconfPkgs."alsa" or ((hsPkgs.pkgs-errors).pkgConfDepError "alsa"))
+          ];
         buildable = true;
         };
       exes = {
         "alsa-minisynth" = {
           depends = [
-            (hsPkgs."alsa-seq" or (buildDepError "alsa-seq"))
-            (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."alsa-seq" or ((hsPkgs.pkgs-errors).buildDepError "alsa-seq"))
+            (hsPkgs."alsa-core" or ((hsPkgs.pkgs-errors).buildDepError "alsa-core"))
+            (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"))
+            (hsPkgs."sample-frame" or ((hsPkgs.pkgs-errors).buildDepError "sample-frame"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if !flags.buildsynthesizer then false else true;
           };
         "alsa-duplex" = {
           depends = [
-            (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
-            (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."alsa-core" or ((hsPkgs.pkgs-errors).buildDepError "alsa-core"))
+            (hsPkgs."sample-frame" or ((hsPkgs.pkgs-errors).buildDepError "sample-frame"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if !flags.buildexamples then false else true;
           };
         "alsa-play" = {
           depends = [
-            (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
-            (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."alsa-core" or ((hsPkgs.pkgs-errors).buildDepError "alsa-core"))
+            (hsPkgs."sample-frame" or ((hsPkgs.pkgs-errors).buildDepError "sample-frame"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if !flags.buildexamples then false else true;
           };
         "alsa-record" = {
           depends = [
-            (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
-            (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."alsa-core" or ((hsPkgs.pkgs-errors).buildDepError "alsa-core"))
+            (hsPkgs."sample-frame" or ((hsPkgs.pkgs-errors).buildDepError "sample-frame"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if !flags.buildexamples then false else true;
           };
         "alsa-volume-meter" = {
           depends = [
-            (hsPkgs."alsa-core" or (buildDepError "alsa-core"))
-            (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."alsa-core" or ((hsPkgs.pkgs-errors).buildDepError "alsa-core"))
+            (hsPkgs."sample-frame" or ((hsPkgs.pkgs-errors).buildDepError "sample-frame"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if !flags.buildexamples then false else true;
           };

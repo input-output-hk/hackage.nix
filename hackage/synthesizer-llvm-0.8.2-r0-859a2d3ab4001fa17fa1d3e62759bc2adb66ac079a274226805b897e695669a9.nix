@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildexamples = false; alsa = true; jack = false; };
     package = {
@@ -56,196 +17,196 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."llvm-extra" or (buildDepError "llvm-extra"))
-          (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
-          (hsPkgs."tfp" or (buildDepError "tfp"))
-          (hsPkgs."vault" or (buildDepError "vault"))
-          (hsPkgs."synthesizer-core" or (buildDepError "synthesizer-core"))
-          (hsPkgs."synthesizer-midi" or (buildDepError "synthesizer-midi"))
-          (hsPkgs."midi" or (buildDepError "midi"))
-          (hsPkgs."storable-record" or (buildDepError "storable-record"))
-          (hsPkgs."storable-tuple" or (buildDepError "storable-tuple"))
-          (hsPkgs."sox" or (buildDepError "sox"))
-          (hsPkgs."storablevector" or (buildDepError "storablevector"))
-          (hsPkgs."unsafe" or (buildDepError "unsafe"))
-          (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
-          (hsPkgs."non-negative" or (buildDepError "non-negative"))
-          (hsPkgs."non-empty" or (buildDepError "non-empty"))
-          (hsPkgs."event-list" or (buildDepError "event-list"))
-          (hsPkgs."pathtype" or (buildDepError "pathtype"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."llvm-extra" or ((hsPkgs.pkgs-errors).buildDepError "llvm-extra"))
+          (hsPkgs."llvm-tf" or ((hsPkgs.pkgs-errors).buildDepError "llvm-tf"))
+          (hsPkgs."tfp" or ((hsPkgs.pkgs-errors).buildDepError "tfp"))
+          (hsPkgs."vault" or ((hsPkgs.pkgs-errors).buildDepError "vault"))
+          (hsPkgs."synthesizer-core" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-core"))
+          (hsPkgs."synthesizer-midi" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-midi"))
+          (hsPkgs."midi" or ((hsPkgs.pkgs-errors).buildDepError "midi"))
+          (hsPkgs."storable-record" or ((hsPkgs.pkgs-errors).buildDepError "storable-record"))
+          (hsPkgs."storable-tuple" or ((hsPkgs.pkgs-errors).buildDepError "storable-tuple"))
+          (hsPkgs."sox" or ((hsPkgs.pkgs-errors).buildDepError "sox"))
+          (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"))
+          (hsPkgs."unsafe" or ((hsPkgs.pkgs-errors).buildDepError "unsafe"))
+          (hsPkgs."numeric-prelude" or ((hsPkgs.pkgs-errors).buildDepError "numeric-prelude"))
+          (hsPkgs."non-negative" or ((hsPkgs.pkgs-errors).buildDepError "non-negative"))
+          (hsPkgs."non-empty" or ((hsPkgs.pkgs-errors).buildDepError "non-empty"))
+          (hsPkgs."event-list" or ((hsPkgs.pkgs-errors).buildDepError "event-list"))
+          (hsPkgs."pathtype" or ((hsPkgs.pkgs-errors).buildDepError "pathtype"))
+          (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+          (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+          (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+          (hsPkgs."semigroups" or ((hsPkgs.pkgs-errors).buildDepError "semigroups"))
+          (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+          (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
           ];
         buildable = true;
         };
       exes = {
         "synthi-llvm-example" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."synthesizer-llvm" or (buildDepError "synthesizer-llvm"))
-            (hsPkgs."llvm-extra" or (buildDepError "llvm-extra"))
-            (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
-            (hsPkgs."tfp" or (buildDepError "tfp"))
-            (hsPkgs."synthesizer-core" or (buildDepError "synthesizer-core"))
-            (hsPkgs."synthesizer-midi" or (buildDepError "synthesizer-midi"))
-            (hsPkgs."midi" or (buildDepError "midi"))
-            (hsPkgs."storable-record" or (buildDepError "storable-record"))
-            (hsPkgs."storable-tuple" or (buildDepError "storable-tuple"))
-            (hsPkgs."sox" or (buildDepError "sox"))
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
-            (hsPkgs."non-negative" or (buildDepError "non-negative"))
-            (hsPkgs."event-list" or (buildDepError "event-list"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."non-empty" or (buildDepError "non-empty"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."pathtype" or (buildDepError "pathtype"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."synthesizer-llvm" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-llvm"))
+            (hsPkgs."llvm-extra" or ((hsPkgs.pkgs-errors).buildDepError "llvm-extra"))
+            (hsPkgs."llvm-tf" or ((hsPkgs.pkgs-errors).buildDepError "llvm-tf"))
+            (hsPkgs."tfp" or ((hsPkgs.pkgs-errors).buildDepError "tfp"))
+            (hsPkgs."synthesizer-core" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-core"))
+            (hsPkgs."synthesizer-midi" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-midi"))
+            (hsPkgs."midi" or ((hsPkgs.pkgs-errors).buildDepError "midi"))
+            (hsPkgs."storable-record" or ((hsPkgs.pkgs-errors).buildDepError "storable-record"))
+            (hsPkgs."storable-tuple" or ((hsPkgs.pkgs-errors).buildDepError "storable-tuple"))
+            (hsPkgs."sox" or ((hsPkgs.pkgs-errors).buildDepError "sox"))
+            (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"))
+            (hsPkgs."numeric-prelude" or ((hsPkgs.pkgs-errors).buildDepError "numeric-prelude"))
+            (hsPkgs."non-negative" or ((hsPkgs.pkgs-errors).buildDepError "non-negative"))
+            (hsPkgs."event-list" or ((hsPkgs.pkgs-errors).buildDepError "event-list"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."non-empty" or ((hsPkgs.pkgs-errors).buildDepError "non-empty"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."pathtype" or ((hsPkgs.pkgs-errors).buildDepError "pathtype"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "synthi-llvm-lndw" = {
           depends = (pkgs.lib).optionals (flags.buildexamples && flags.alsa) [
-            (hsPkgs."synthesizer-llvm" or (buildDepError "synthesizer-llvm"))
-            (hsPkgs."llvm-extra" or (buildDepError "llvm-extra"))
-            (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
-            (hsPkgs."tfp" or (buildDepError "tfp"))
-            (hsPkgs."synthesizer-core" or (buildDepError "synthesizer-core"))
-            (hsPkgs."synthesizer-midi" or (buildDepError "synthesizer-midi"))
-            (hsPkgs."midi" or (buildDepError "midi"))
-            (hsPkgs."storable-record" or (buildDepError "storable-record"))
-            (hsPkgs."storable-tuple" or (buildDepError "storable-tuple"))
-            (hsPkgs."sox" or (buildDepError "sox"))
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
-            (hsPkgs."non-negative" or (buildDepError "non-negative"))
-            (hsPkgs."event-list" or (buildDepError "event-list"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."non-empty" or (buildDepError "non-empty"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."pathtype" or (buildDepError "pathtype"))
-            (hsPkgs."synthesizer-alsa" or (buildDepError "synthesizer-alsa"))
-            (hsPkgs."alsa-pcm" or (buildDepError "alsa-pcm"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."synthesizer-llvm" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-llvm"))
+            (hsPkgs."llvm-extra" or ((hsPkgs.pkgs-errors).buildDepError "llvm-extra"))
+            (hsPkgs."llvm-tf" or ((hsPkgs.pkgs-errors).buildDepError "llvm-tf"))
+            (hsPkgs."tfp" or ((hsPkgs.pkgs-errors).buildDepError "tfp"))
+            (hsPkgs."synthesizer-core" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-core"))
+            (hsPkgs."synthesizer-midi" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-midi"))
+            (hsPkgs."midi" or ((hsPkgs.pkgs-errors).buildDepError "midi"))
+            (hsPkgs."storable-record" or ((hsPkgs.pkgs-errors).buildDepError "storable-record"))
+            (hsPkgs."storable-tuple" or ((hsPkgs.pkgs-errors).buildDepError "storable-tuple"))
+            (hsPkgs."sox" or ((hsPkgs.pkgs-errors).buildDepError "sox"))
+            (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"))
+            (hsPkgs."numeric-prelude" or ((hsPkgs.pkgs-errors).buildDepError "numeric-prelude"))
+            (hsPkgs."non-negative" or ((hsPkgs.pkgs-errors).buildDepError "non-negative"))
+            (hsPkgs."event-list" or ((hsPkgs.pkgs-errors).buildDepError "event-list"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."non-empty" or ((hsPkgs.pkgs-errors).buildDepError "non-empty"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."pathtype" or ((hsPkgs.pkgs-errors).buildDepError "pathtype"))
+            (hsPkgs."synthesizer-alsa" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-alsa"))
+            (hsPkgs."alsa-pcm" or ((hsPkgs.pkgs-errors).buildDepError "alsa-pcm"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.buildexamples && flags.alsa then true else false;
           };
         "synthi-llvm-alsa" = {
           depends = (pkgs.lib).optionals (flags.buildexamples && flags.alsa) [
-            (hsPkgs."synthesizer-llvm" or (buildDepError "synthesizer-llvm"))
-            (hsPkgs."llvm-extra" or (buildDepError "llvm-extra"))
-            (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
-            (hsPkgs."tfp" or (buildDepError "tfp"))
-            (hsPkgs."synthesizer-core" or (buildDepError "synthesizer-core"))
-            (hsPkgs."synthesizer-midi" or (buildDepError "synthesizer-midi"))
-            (hsPkgs."midi" or (buildDepError "midi"))
-            (hsPkgs."storable-record" or (buildDepError "storable-record"))
-            (hsPkgs."storable-tuple" or (buildDepError "storable-tuple"))
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
-            (hsPkgs."non-negative" or (buildDepError "non-negative"))
-            (hsPkgs."event-list" or (buildDepError "event-list"))
-            (hsPkgs."shell-utility" or (buildDepError "shell-utility"))
-            (hsPkgs."pathtype" or (buildDepError "pathtype"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."synthesizer-alsa" or (buildDepError "synthesizer-alsa"))
-            (hsPkgs."midi-alsa" or (buildDepError "midi-alsa"))
-            (hsPkgs."alsa-seq" or (buildDepError "alsa-seq"))
-            (hsPkgs."alsa-pcm" or (buildDepError "alsa-pcm"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."synthesizer-llvm" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-llvm"))
+            (hsPkgs."llvm-extra" or ((hsPkgs.pkgs-errors).buildDepError "llvm-extra"))
+            (hsPkgs."llvm-tf" or ((hsPkgs.pkgs-errors).buildDepError "llvm-tf"))
+            (hsPkgs."tfp" or ((hsPkgs.pkgs-errors).buildDepError "tfp"))
+            (hsPkgs."synthesizer-core" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-core"))
+            (hsPkgs."synthesizer-midi" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-midi"))
+            (hsPkgs."midi" or ((hsPkgs.pkgs-errors).buildDepError "midi"))
+            (hsPkgs."storable-record" or ((hsPkgs.pkgs-errors).buildDepError "storable-record"))
+            (hsPkgs."storable-tuple" or ((hsPkgs.pkgs-errors).buildDepError "storable-tuple"))
+            (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"))
+            (hsPkgs."numeric-prelude" or ((hsPkgs.pkgs-errors).buildDepError "numeric-prelude"))
+            (hsPkgs."non-negative" or ((hsPkgs.pkgs-errors).buildDepError "non-negative"))
+            (hsPkgs."event-list" or ((hsPkgs.pkgs-errors).buildDepError "event-list"))
+            (hsPkgs."shell-utility" or ((hsPkgs.pkgs-errors).buildDepError "shell-utility"))
+            (hsPkgs."pathtype" or ((hsPkgs.pkgs-errors).buildDepError "pathtype"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."synthesizer-alsa" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-alsa"))
+            (hsPkgs."midi-alsa" or ((hsPkgs.pkgs-errors).buildDepError "midi-alsa"))
+            (hsPkgs."alsa-seq" or ((hsPkgs.pkgs-errors).buildDepError "alsa-seq"))
+            (hsPkgs."alsa-pcm" or ((hsPkgs.pkgs-errors).buildDepError "alsa-pcm"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.buildexamples && flags.alsa then true else false;
           };
         "synthi-llvm-jack" = {
           depends = (pkgs.lib).optionals (flags.buildexamples && flags.jack) [
-            (hsPkgs."synthesizer-llvm" or (buildDepError "synthesizer-llvm"))
-            (hsPkgs."jack" or (buildDepError "jack"))
-            (hsPkgs."llvm-extra" or (buildDepError "llvm-extra"))
-            (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
-            (hsPkgs."tfp" or (buildDepError "tfp"))
-            (hsPkgs."synthesizer-core" or (buildDepError "synthesizer-core"))
-            (hsPkgs."synthesizer-midi" or (buildDepError "synthesizer-midi"))
-            (hsPkgs."midi" or (buildDepError "midi"))
-            (hsPkgs."storable-record" or (buildDepError "storable-record"))
-            (hsPkgs."storable-tuple" or (buildDepError "storable-tuple"))
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
-            (hsPkgs."non-negative" or (buildDepError "non-negative"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
-            (hsPkgs."event-list" or (buildDepError "event-list"))
-            (hsPkgs."shell-utility" or (buildDepError "shell-utility"))
-            (hsPkgs."pathtype" or (buildDepError "pathtype"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."synthesizer-llvm" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-llvm"))
+            (hsPkgs."jack" or ((hsPkgs.pkgs-errors).buildDepError "jack"))
+            (hsPkgs."llvm-extra" or ((hsPkgs.pkgs-errors).buildDepError "llvm-extra"))
+            (hsPkgs."llvm-tf" or ((hsPkgs.pkgs-errors).buildDepError "llvm-tf"))
+            (hsPkgs."tfp" or ((hsPkgs.pkgs-errors).buildDepError "tfp"))
+            (hsPkgs."synthesizer-core" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-core"))
+            (hsPkgs."synthesizer-midi" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-midi"))
+            (hsPkgs."midi" or ((hsPkgs.pkgs-errors).buildDepError "midi"))
+            (hsPkgs."storable-record" or ((hsPkgs.pkgs-errors).buildDepError "storable-record"))
+            (hsPkgs."storable-tuple" or ((hsPkgs.pkgs-errors).buildDepError "storable-tuple"))
+            (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"))
+            (hsPkgs."numeric-prelude" or ((hsPkgs.pkgs-errors).buildDepError "numeric-prelude"))
+            (hsPkgs."non-negative" or ((hsPkgs.pkgs-errors).buildDepError "non-negative"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."explicit-exception" or ((hsPkgs.pkgs-errors).buildDepError "explicit-exception"))
+            (hsPkgs."event-list" or ((hsPkgs.pkgs-errors).buildDepError "event-list"))
+            (hsPkgs."shell-utility" or ((hsPkgs.pkgs-errors).buildDepError "shell-utility"))
+            (hsPkgs."pathtype" or ((hsPkgs.pkgs-errors).buildDepError "pathtype"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.buildexamples && flags.jack then true else false;
           };
         "synthi-llvm-render" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."synthesizer-llvm" or (buildDepError "synthesizer-llvm"))
-            (hsPkgs."llvm-extra" or (buildDepError "llvm-extra"))
-            (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
-            (hsPkgs."tfp" or (buildDepError "tfp"))
-            (hsPkgs."sox" or (buildDepError "sox"))
-            (hsPkgs."synthesizer-core" or (buildDepError "synthesizer-core"))
-            (hsPkgs."synthesizer-midi" or (buildDepError "synthesizer-midi"))
-            (hsPkgs."midi" or (buildDepError "midi"))
-            (hsPkgs."storable-record" or (buildDepError "storable-record"))
-            (hsPkgs."storable-tuple" or (buildDepError "storable-tuple"))
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
-            (hsPkgs."non-negative" or (buildDepError "non-negative"))
-            (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
-            (hsPkgs."event-list" or (buildDepError "event-list"))
-            (hsPkgs."shell-utility" or (buildDepError "shell-utility"))
-            (hsPkgs."pathtype" or (buildDepError "pathtype"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."synthesizer-llvm" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-llvm"))
+            (hsPkgs."llvm-extra" or ((hsPkgs.pkgs-errors).buildDepError "llvm-extra"))
+            (hsPkgs."llvm-tf" or ((hsPkgs.pkgs-errors).buildDepError "llvm-tf"))
+            (hsPkgs."tfp" or ((hsPkgs.pkgs-errors).buildDepError "tfp"))
+            (hsPkgs."sox" or ((hsPkgs.pkgs-errors).buildDepError "sox"))
+            (hsPkgs."synthesizer-core" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-core"))
+            (hsPkgs."synthesizer-midi" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-midi"))
+            (hsPkgs."midi" or ((hsPkgs.pkgs-errors).buildDepError "midi"))
+            (hsPkgs."storable-record" or ((hsPkgs.pkgs-errors).buildDepError "storable-record"))
+            (hsPkgs."storable-tuple" or ((hsPkgs.pkgs-errors).buildDepError "storable-tuple"))
+            (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"))
+            (hsPkgs."numeric-prelude" or ((hsPkgs.pkgs-errors).buildDepError "numeric-prelude"))
+            (hsPkgs."non-negative" or ((hsPkgs.pkgs-errors).buildDepError "non-negative"))
+            (hsPkgs."explicit-exception" or ((hsPkgs.pkgs-errors).buildDepError "explicit-exception"))
+            (hsPkgs."event-list" or ((hsPkgs.pkgs-errors).buildDepError "event-list"))
+            (hsPkgs."shell-utility" or ((hsPkgs.pkgs-errors).buildDepError "shell-utility"))
+            (hsPkgs."pathtype" or ((hsPkgs.pkgs-errors).buildDepError "pathtype"))
+            (hsPkgs."optparse-applicative" or ((hsPkgs.pkgs-errors).buildDepError "optparse-applicative"))
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            (hsPkgs."transformers" or ((hsPkgs.pkgs-errors).buildDepError "transformers"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "synthi-llvm-sample" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."gnuplot" or (buildDepError "gnuplot"))
-            (hsPkgs."synthesizer-llvm" or (buildDepError "synthesizer-llvm"))
-            (hsPkgs."synthesizer-core" or (buildDepError "synthesizer-core"))
-            (hsPkgs."midi" or (buildDepError "midi"))
-            (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."pathtype" or (buildDepError "pathtype"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gnuplot" or ((hsPkgs.pkgs-errors).buildDepError "gnuplot"))
+            (hsPkgs."synthesizer-llvm" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-llvm"))
+            (hsPkgs."synthesizer-core" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-core"))
+            (hsPkgs."midi" or ((hsPkgs.pkgs-errors).buildDepError "midi"))
+            (hsPkgs."numeric-prelude" or ((hsPkgs.pkgs-errors).buildDepError "numeric-prelude"))
+            (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"))
+            (hsPkgs."pathtype" or ((hsPkgs.pkgs-errors).buildDepError "pathtype"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "synthi-llvm-speech" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."gnuplot" or (buildDepError "gnuplot"))
-            (hsPkgs."pathtype" or (buildDepError "pathtype"))
-            (hsPkgs."sox" or (buildDepError "sox"))
-            (hsPkgs."synthesizer-llvm" or (buildDepError "synthesizer-llvm"))
-            (hsPkgs."synthesizer-core" or (buildDepError "synthesizer-core"))
-            (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gnuplot" or ((hsPkgs.pkgs-errors).buildDepError "gnuplot"))
+            (hsPkgs."pathtype" or ((hsPkgs.pkgs-errors).buildDepError "pathtype"))
+            (hsPkgs."sox" or ((hsPkgs.pkgs-errors).buildDepError "sox"))
+            (hsPkgs."synthesizer-llvm" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-llvm"))
+            (hsPkgs."synthesizer-core" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-core"))
+            (hsPkgs."numeric-prelude" or ((hsPkgs.pkgs-errors).buildDepError "numeric-prelude"))
+            (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
@@ -253,17 +214,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "synthi-llvm-test" = {
           depends = [
-            (hsPkgs."synthesizer-llvm" or (buildDepError "synthesizer-llvm"))
-            (hsPkgs."llvm-extra" or (buildDepError "llvm-extra"))
-            (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
-            (hsPkgs."tfp" or (buildDepError "tfp"))
-            (hsPkgs."synthesizer-core" or (buildDepError "synthesizer-core"))
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."numeric-prelude" or (buildDepError "numeric-prelude"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."synthesizer-llvm" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-llvm"))
+            (hsPkgs."llvm-extra" or ((hsPkgs.pkgs-errors).buildDepError "llvm-extra"))
+            (hsPkgs."llvm-tf" or ((hsPkgs.pkgs-errors).buildDepError "llvm-tf"))
+            (hsPkgs."tfp" or ((hsPkgs.pkgs-errors).buildDepError "tfp"))
+            (hsPkgs."synthesizer-core" or ((hsPkgs.pkgs-errors).buildDepError "synthesizer-core"))
+            (hsPkgs."storablevector" or ((hsPkgs.pkgs-errors).buildDepError "storablevector"))
+            (hsPkgs."numeric-prelude" or ((hsPkgs.pkgs-errors).buildDepError "numeric-prelude"))
+            (hsPkgs."random" or ((hsPkgs.pkgs-errors).buildDepError "random"))
+            (hsPkgs."utility-ht" or ((hsPkgs.pkgs-errors).buildDepError "utility-ht"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
             ];
           buildable = true;
           };

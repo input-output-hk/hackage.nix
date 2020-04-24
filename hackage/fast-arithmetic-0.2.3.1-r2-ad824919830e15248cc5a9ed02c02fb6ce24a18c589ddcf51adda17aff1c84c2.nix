@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { development = false; };
     package = {
@@ -53,40 +14,40 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "Fast functions for number theory and combinatorics with a high level of safety guaranteed by [ATS](http://www.ats-lang.org/). This package also provides a\n'Storable' instance for GMP's @mpz@ type.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.http-client or (pkgs.buildPackages.http-client or (buildToolDepError "http-client")))
-        (hsPkgs.buildPackages.http-client-tls or (pkgs.buildPackages.http-client-tls or (buildToolDepError "http-client-tls")))
-        (hsPkgs.buildPackages.tar or (pkgs.buildPackages.tar or (buildToolDepError "tar")))
-        (hsPkgs.buildPackages.zlib or (pkgs.buildPackages.zlib or (buildToolDepError "zlib")))
-        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (buildToolDepError "directory")))
-        (hsPkgs.buildPackages.parallel-io or (pkgs.buildPackages.parallel-io or (buildToolDepError "parallel-io")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or ((hsPkgs.pkgs-errors).buildToolDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or ((hsPkgs.pkgs-errors).buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.http-client or (pkgs.buildPackages.http-client or ((hsPkgs.pkgs-errors).buildToolDepError "http-client")))
+        (hsPkgs.buildPackages.http-client-tls or (pkgs.buildPackages.http-client-tls or ((hsPkgs.pkgs-errors).buildToolDepError "http-client-tls")))
+        (hsPkgs.buildPackages.tar or (pkgs.buildPackages.tar or ((hsPkgs.pkgs-errors).buildToolDepError "tar")))
+        (hsPkgs.buildPackages.zlib or (pkgs.buildPackages.zlib or ((hsPkgs.pkgs-errors).buildToolDepError "zlib")))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or ((hsPkgs.pkgs-errors).buildToolDepError "directory")))
+        (hsPkgs.buildPackages.parallel-io or (pkgs.buildPackages.parallel-io or ((hsPkgs.pkgs-errors).buildToolDepError "parallel-io")))
         ];
       };
     components = {
       "library" = {
         depends = if compiler.isGhc && (compiler.version).lt "7.10"
           then [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."composition-prelude" or (buildDepError "composition-prelude"))
-            (hsPkgs."recursion-schemes" or (buildDepError "recursion-schemes"))
-            (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
-            (hsPkgs."foundation" or (buildDepError "foundation"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."composition-prelude" or ((hsPkgs.pkgs-errors).buildDepError "composition-prelude"))
+            (hsPkgs."recursion-schemes" or ((hsPkgs.pkgs-errors).buildDepError "recursion-schemes"))
+            (hsPkgs."integer-gmp" or ((hsPkgs.pkgs-errors).buildDepError "integer-gmp"))
+            (hsPkgs."foundation" or ((hsPkgs.pkgs-errors).buildDepError "foundation"))
             ]
           else [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."composition-prelude" or (buildDepError "composition-prelude"))
-            (hsPkgs."recursion-schemes" or (buildDepError "recursion-schemes"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."composition-prelude" or ((hsPkgs.pkgs-errors).buildDepError "composition-prelude"))
+            (hsPkgs."recursion-schemes" or ((hsPkgs.pkgs-errors).buildDepError "recursion-schemes"))
             ];
         buildable = true;
         };
       tests = {
         "fast-arithmetic-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fast-arithmetic" or (buildDepError "fast-arithmetic"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."fast-arithmetic" or ((hsPkgs.pkgs-errors).buildDepError "fast-arithmetic"))
+            (hsPkgs."hspec" or ((hsPkgs.pkgs-errors).buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or ((hsPkgs.pkgs-errors).buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
@@ -94,9 +55,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "fast-arithmetic-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fast-arithmetic" or (buildDepError "fast-arithmetic"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."fast-arithmetic" or ((hsPkgs.pkgs-errors).buildDepError "fast-arithmetic"))
+            (hsPkgs."criterion" or ((hsPkgs.pkgs-errors).buildDepError "criterion"))
             ];
           buildable = true;
           };

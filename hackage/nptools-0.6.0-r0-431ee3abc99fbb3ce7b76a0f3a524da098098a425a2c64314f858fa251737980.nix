@@ -1,43 +1,4 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -57,89 +18,115 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "archive" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."HSH" or (buildDepError "HSH"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."HSH" or ((hsPkgs.pkgs-errors).buildDepError "HSH"))
             ];
           buildable = true;
           };
         "events-to-timelog" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."time" or ((hsPkgs.pkgs-errors).buildDepError "time"))
+            (hsPkgs."old-locale" or ((hsPkgs.pkgs-errors).buildDepError "old-locale"))
             ];
           buildable = true;
           };
         "extract-non-ascii" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "git-prompt" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-            (hsPkgs."HSH" or (buildDepError "HSH"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."ansi-terminal" or ((hsPkgs.pkgs-errors).buildDepError "ansi-terminal"))
+            (hsPkgs."HSH" or ((hsPkgs.pkgs-errors).buildDepError "HSH"))
             ];
           buildable = true;
           };
         "label" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HSH" or (buildDepError "HSH"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."HSH" or ((hsPkgs.pkgs-errors).buildDepError "HSH"))
+            (hsPkgs."split" or ((hsPkgs.pkgs-errors).buildDepError "split"))
+            (hsPkgs."process" or ((hsPkgs.pkgs-errors).buildDepError "process"))
+            (hsPkgs."bytestring" or ((hsPkgs.pkgs-errors).buildDepError "bytestring"))
             ];
           buildable = true;
           };
         "mh-gen-message-id-mapping" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "drop-non-ascii" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "show-non-ascii" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "summ" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "mean" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "rot" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "pad" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "myrev" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "loopback" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "what-I-have-done-today" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "x-printable" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            ];
           buildable = true;
           };
         "cp-rescue" = { buildable = true; };
         "timer" = {
-          depends = [ (hsPkgs."unix" or (buildDepError "unix")) ];
+          depends = [
+            (hsPkgs."unix" or ((hsPkgs.pkgs-errors).buildDepError "unix"))
+            ];
           buildable = true;
           };
         "nest" = { buildable = true; };
@@ -147,14 +134,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         "starecho" = { buildable = true; };
         "color-list" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."colour" or (buildDepError "colour"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or ((hsPkgs.pkgs-errors).buildDepError "base"))
+            (hsPkgs."colour" or ((hsPkgs.pkgs-errors).buildDepError "colour"))
+            (hsPkgs."array" or ((hsPkgs.pkgs-errors).buildDepError "array"))
             ];
           buildable = true;
           };
         "lmaptool" = {
-          depends = [ (hsPkgs."containers" or (buildDepError "containers")) ];
+          depends = [
+            (hsPkgs."containers" or ((hsPkgs.pkgs-errors).buildDepError "containers"))
+            ];
           buildable = true;
           };
         };
