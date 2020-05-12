@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { buildexamples = false; };
     package = {
@@ -56,41 +25,41 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-          (hsPkgs."casing" or (buildDepError "casing"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+          (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+          (hsPkgs."casing" or (errorHandler.buildDepError "casing"))
           ];
         buildable = true;
         };
       exes = {
         "parser" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
-            (hsPkgs."profunctors" or (buildDepError "profunctors"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"))
-            (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
+            (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."threepenny-editors" or (errorHandler.buildDepError "threepenny-editors"))
+            (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "person" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
-            (hsPkgs."profunctors" or (buildDepError "profunctors"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
+            (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."threepenny-editors" or (errorHandler.buildDepError "threepenny-editors"))
             ];
           buildable = if flags.buildexamples then true else false;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { demos = false; };
     package = {
@@ -56,206 +25,206 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."vty" or (buildDepError "vty"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."microlens" or (buildDepError "microlens"))
-          (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
-          (hsPkgs."microlens-mtl" or (buildDepError "microlens-mtl"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."contravariant" or (buildDepError "contravariant"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-zipper" or (buildDepError "text-zipper"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+          (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
+          (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-zipper" or (errorHandler.buildDepError "text-zipper"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           ];
         buildable = true;
         };
       exes = {
         "brick-cache-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-visibility-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-viewport-scroll-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-dialog-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-mouse-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
-            (hsPkgs."text-zipper" or (buildDepError "text-zipper"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
+            (hsPkgs."text-zipper" or (errorHandler.buildDepError "text-zipper"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-layer-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-suspend-resume-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-padding-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-attr-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-markup-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-list-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-custom-event-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-hello-world-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-edit-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-border-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             ];
           buildable = if !flags.demos then false else true;
           };
         "brick-progressbar-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."brick" or (buildDepError "brick"))
-            (hsPkgs."vty" or (buildDepError "vty"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
+            (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             ];
           buildable = if !flags.demos then false else true;
           };

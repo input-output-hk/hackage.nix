@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -57,116 +26,116 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "afp2line2pdf" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."line2pdf" or (buildDepError "line2pdf"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."line2pdf" or (errorHandler.buildDepError "line2pdf"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             ];
           buildable = true;
           };
         "afp-olndump" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             ];
           buildable = true;
           };
         "afp-tledump" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             ];
           buildable = true;
           };
         "afp-dump" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."xhtml" or (buildDepError "xhtml"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
             ];
           buildable = true;
           };
         "afp-page" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };
         "afp-replace" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };
         "afp-scanudc" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           buildable = true;
           };
         "afp-split" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };
         "afp-split-scb" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };
         "afp-split-tcb" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = true;
           };
         "afp-type" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };
         "afp-udcfix" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."regex-base" or (buildDepError "regex-base"))
-            (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
+            (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             ];
           buildable = true;
           };
         "afp-validate" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };
         "afp2line" = {
           depends = [
-            (hsPkgs."OpenAFP" or (buildDepError "OpenAFP"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."OpenAFP" or (errorHandler.buildDepError "OpenAFP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,49 +25,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."graphql-parser" or (buildDepError "graphql-parser"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."list-t" or (buildDepError "list-t"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."mu-rpc" or (buildDepError "mu-rpc"))
-          (hsPkgs."mu-schema" or (buildDepError "mu-schema"))
-          (hsPkgs."parsers" or (buildDepError "parsers"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."sop-core" or (buildDepError "sop-core"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-          (hsPkgs."stm-conduit" or (buildDepError "stm-conduit"))
-          (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
-          (hsPkgs."warp" or (buildDepError "warp"))
-          (hsPkgs."warp-tls" or (buildDepError "warp-tls"))
-          (hsPkgs."websockets" or (buildDepError "websockets"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."graphql-parser" or (errorHandler.buildDepError "graphql-parser"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."mu-rpc" or (errorHandler.buildDepError "mu-rpc"))
+          (hsPkgs."mu-schema" or (errorHandler.buildDepError "mu-schema"))
+          (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."sop-core" or (errorHandler.buildDepError "sop-core"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
+          (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
+          (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
+          (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+          (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
+          (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           ];
         buildable = true;
         };
       exes = {
         "library-graphql" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."mu-graphql" or (buildDepError "mu-graphql"))
-            (hsPkgs."mu-rpc" or (buildDepError "mu-rpc"))
-            (hsPkgs."mu-schema" or (buildDepError "mu-schema"))
-            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."mu-graphql" or (errorHandler.buildDepError "mu-graphql"))
+            (hsPkgs."mu-rpc" or (errorHandler.buildDepError "mu-rpc"))
+            (hsPkgs."mu-schema" or (errorHandler.buildDepError "mu-schema"))
+            (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];
           buildable = true;
           };

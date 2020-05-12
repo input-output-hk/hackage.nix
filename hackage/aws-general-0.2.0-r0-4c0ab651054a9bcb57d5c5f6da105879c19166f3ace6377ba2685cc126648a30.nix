@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { normalize-signature-v4-date = true; old-locale = false; };
     package = {
@@ -56,53 +25,53 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."byteable" or (buildDepError "byteable"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."parsers" or (buildDepError "parsers"))
-          (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
+          (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+          (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
+          (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           ] ++ (if flags.old-locale
           then [
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
             ]
-          else [ (hsPkgs."time" or (buildDepError "time")) ]);
+          else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
         buildable = true;
         };
       tests = {
         "signature-v4" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aws" or (buildDepError "aws"))
-            (hsPkgs."aws-general" or (buildDepError "aws-general"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."parsers" or (buildDepError "parsers"))
-            (hsPkgs."charset" or (buildDepError "charset"))
-            (hsPkgs."errors" or (buildDepError "errors"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."tagged" or (buildDepError "tagged"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
+            (hsPkgs."aws-general" or (errorHandler.buildDepError "aws-general"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
+            (hsPkgs."charset" or (errorHandler.buildDepError "charset"))
+            (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             ];
           buildable = true;
           };

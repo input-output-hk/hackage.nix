@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { travis = false; };
     package = {
@@ -56,38 +25,38 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."gsasl" or (buildDepError "gsasl"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."protobuf" or (buildDepError "protobuf"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."socks" or (buildDepError "socks"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."gsasl" or (errorHandler.buildDepError "gsasl"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."protobuf" or (errorHandler.buildDepError "protobuf"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."socks" or (errorHandler.buildDepError "socks"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
           ];
         buildable = true;
         };
       tests = {
         "hdfs-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hadoop-rpc" or (buildDepError "hadoop-rpc"))
-            (hsPkgs."protobuf" or (buildDepError "protobuf"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hadoop-rpc" or (errorHandler.buildDepError "hadoop-rpc"))
+            (hsPkgs."protobuf" or (errorHandler.buildDepError "protobuf"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = if flags.travis then false else true;
           };

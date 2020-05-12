@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,62 +25,62 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."sequence-formats" or (buildDepError "sequence-formats"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."pipes" or (buildDepError "pipes"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."sequence-formats" or (errorHandler.buildDepError "sequence-formats"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           ];
         buildable = true;
         };
       exes = {
         "pileupCaller" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sequenceTools" or (buildDepError "sequenceTools"))
-            (hsPkgs."sequence-formats" or (buildDepError "sequence-formats"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."rio" or (buildDepError "rio"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
-            (hsPkgs."pipes-ordered-zip" or (buildDepError "pipes-ordered-zip"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."sequenceTools" or (errorHandler.buildDepError "sequenceTools"))
+            (hsPkgs."sequence-formats" or (errorHandler.buildDepError "sequence-formats"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
+            (hsPkgs."pipes-ordered-zip" or (errorHandler.buildDepError "pipes-ordered-zip"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             ];
           buildable = true;
           };
         "vcf2eigenstrat" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sequenceTools" or (buildDepError "sequenceTools"))
-            (hsPkgs."pipes-ordered-zip" or (buildDepError "pipes-ordered-zip"))
-            (hsPkgs."sequence-formats" or (buildDepError "sequence-formats"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."sequenceTools" or (errorHandler.buildDepError "sequenceTools"))
+            (hsPkgs."pipes-ordered-zip" or (errorHandler.buildDepError "pipes-ordered-zip"))
+            (hsPkgs."sequence-formats" or (errorHandler.buildDepError "sequence-formats"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
             ];
           buildable = true;
           };
         "genoStats" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sequence-formats" or (buildDepError "sequence-formats"))
-            (hsPkgs."sequenceTools" or (buildDepError "sequenceTools"))
-            (hsPkgs."foldl" or (buildDepError "foldl"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."lens-family" or (buildDepError "lens-family"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."pipes-group" or (buildDepError "pipes-group"))
-            (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."sequence-formats" or (errorHandler.buildDepError "sequence-formats"))
+            (hsPkgs."sequenceTools" or (errorHandler.buildDepError "sequenceTools"))
+            (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."pipes-group" or (errorHandler.buildDepError "pipes-group"))
+            (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
             ];
           buildable = true;
           };
@@ -119,13 +88,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "sequenceToolsTests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."sequenceTools" or (buildDepError "sequenceTools"))
-            (hsPkgs."sequence-formats" or (buildDepError "sequence-formats"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."sequenceTools" or (errorHandler.buildDepError "sequenceTools"))
+            (hsPkgs."sequence-formats" or (errorHandler.buildDepError "sequence-formats"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             ];
           buildable = true;
           };

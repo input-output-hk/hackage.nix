@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,38 +25,38 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           ];
         buildable = true;
         };
       tests = {
         "solga-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."solga" or (buildDepError "solga"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-wai" or (buildDepError "hspec-wai"))
-            (hsPkgs."hspec-wai-json" or (buildDepError "hspec-wai-json"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."solga" or (errorHandler.buildDepError "solga"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hspec-wai" or (errorHandler.buildDepError "hspec-wai"))
+            (hsPkgs."hspec-wai-json" or (errorHandler.buildDepError "hspec-wai-json"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };

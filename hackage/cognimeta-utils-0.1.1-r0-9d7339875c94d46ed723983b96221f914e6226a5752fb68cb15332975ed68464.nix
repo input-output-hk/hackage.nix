@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,38 +25,38 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."collections-api" or (buildDepError "collections-api"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
-          (hsPkgs."data-lens" or (buildDepError "data-lens"))
-          (hsPkgs."data-lens-fd" or (buildDepError "data-lens-fd"))
-          (hsPkgs."data-lens-template" or (buildDepError "data-lens-template"))
-          (hsPkgs."comonad-transformers" or (buildDepError "comonad-transformers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."collections-api" or (errorHandler.buildDepError "collections-api"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+          (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+          (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
+          (hsPkgs."data-lens-fd" or (errorHandler.buildDepError "data-lens-fd"))
+          (hsPkgs."data-lens-template" or (errorHandler.buildDepError "data-lens-template"))
+          (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           ];
         buildable = true;
         };
       exes = {
         "cognimeta-utils" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."cognimeta-utils" or (buildDepError "cognimeta-utils"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."cognimeta-utils" or (errorHandler.buildDepError "cognimeta-utils"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             ];
           buildable = true;
           };

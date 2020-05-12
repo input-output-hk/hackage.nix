@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { debugcomp = false; debuggraph = false; };
     package = {
@@ -56,41 +25,41 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."HDBC" or (buildDepError "HDBC"))
-          (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."kure" or (buildDepError "kure"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-          (hsPkgs."set-monad" or (buildDepError "set-monad"))
-          (hsPkgs."dlist" or (buildDepError "dlist"))
-          (hsPkgs."algebra-dag" or (buildDepError "algebra-dag"))
-          (hsPkgs."algebra-sql" or (buildDepError "algebra-sql"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+          (hsPkgs."HDBC-postgresql" or (errorHandler.buildDepError "HDBC-postgresql"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."kure" or (errorHandler.buildDepError "kure"))
+          (hsPkgs."either" or (errorHandler.buildDepError "either"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+          (hsPkgs."set-monad" or (errorHandler.buildDepError "set-monad"))
+          (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
+          (hsPkgs."algebra-dag" or (errorHandler.buildDepError "algebra-dag"))
+          (hsPkgs."algebra-sql" or (errorHandler.buildDepError "algebra-sql"))
           ];
         buildable = true;
         };
       exes = {
         "vldot" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."algebra-dag" or (buildDepError "algebra-dag"))
-            (hsPkgs."algebra-sql" or (buildDepError "algebra-sql"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."algebra-dag" or (errorHandler.buildDepError "algebra-dag"))
+            (hsPkgs."algebra-sql" or (errorHandler.buildDepError "algebra-sql"))
             ];
           buildable = true;
           };
@@ -98,17 +67,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "Flattening_TA" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."DSH" or (buildDepError "DSH"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."HDBC-postgresql" or (errorHandler.buildDepError "HDBC-postgresql"))
+            (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."DSH" or (errorHandler.buildDepError "DSH"))
             ];
           buildable = true;
           };

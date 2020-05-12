@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,70 +25,70 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-          (hsPkgs."relude" or (buildDepError "relude"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cassava" or (buildDepError "cassava"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-          (hsPkgs."iconv" or (buildDepError "iconv"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."servant-client" or (buildDepError "servant-client"))
-          (hsPkgs."servant-js" or (buildDepError "servant-js"))
-          (hsPkgs."servant-server" or (buildDepError "servant-server"))
-          (hsPkgs."servant-swagger" or (buildDepError "servant-swagger"))
-          (hsPkgs."swagger2" or (buildDepError "swagger2"))
-          (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."warp" or (buildDepError "warp"))
-          (hsPkgs."wreq" or (buildDepError "wreq"))
+          (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+          (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+          (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
+          (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+          (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
+          (hsPkgs."servant-js" or (errorHandler.buildDepError "servant-js"))
+          (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
+          (hsPkgs."servant-swagger" or (errorHandler.buildDepError "servant-swagger"))
+          (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))
+          (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+          (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           ];
         buildable = true;
         };
       exes = {
         "example1" = {
           depends = [
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."rating-chgk-info" or (buildDepError "rating-chgk-info"))
-            (hsPkgs."relude" or (buildDepError "relude"))
-            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+            (hsPkgs."rating-chgk-info" or (errorHandler.buildDepError "rating-chgk-info"))
+            (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
             ];
           buildable = true;
           };
         "example2" = {
           depends = [
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."rating-chgk-info" or (buildDepError "rating-chgk-info"))
-            (hsPkgs."relude" or (buildDepError "relude"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+            (hsPkgs."rating-chgk-info" or (errorHandler.buildDepError "rating-chgk-info"))
+            (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
         "extra-rating-api" = {
           depends = [
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."rating-chgk-info" or (buildDepError "rating-chgk-info"))
-            (hsPkgs."relude" or (buildDepError "relude"))
+            (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+            (hsPkgs."rating-chgk-info" or (errorHandler.buildDepError "rating-chgk-info"))
+            (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             ];
           buildable = true;
           };
         "calendar-rating" = {
           depends = [
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."rating-chgk-info" or (buildDepError "rating-chgk-info"))
-            (hsPkgs."relude" or (buildDepError "relude"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+            (hsPkgs."rating-chgk-info" or (errorHandler.buildDepError "rating-chgk-info"))
+            (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
             ];
           buildable = true;
           };
@@ -127,9 +96,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "rating-chgk-info-test" = {
           depends = [
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."rating-chgk-info" or (buildDepError "rating-chgk-info"))
-            (hsPkgs."relude" or (buildDepError "relude"))
+            (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+            (hsPkgs."rating-chgk-info" or (errorHandler.buildDepError "rating-chgk-info"))
+            (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             ];
           buildable = true;
           };
@@ -137,10 +106,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "rating-chgk-info-benchmark" = {
           depends = [
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            (hsPkgs."rating-chgk-info" or (buildDepError "rating-chgk-info"))
-            (hsPkgs."relude" or (buildDepError "relude"))
+            (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            (hsPkgs."rating-chgk-info" or (errorHandler.buildDepError "rating-chgk-info"))
+            (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             ];
           buildable = true;
           };

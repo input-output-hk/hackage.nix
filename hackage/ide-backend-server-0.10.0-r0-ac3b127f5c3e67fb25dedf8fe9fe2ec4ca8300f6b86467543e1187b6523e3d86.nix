@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -57,40 +26,40 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "ide-backend-server" = {
           depends = (([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
-            (hsPkgs."data-accessor-mtl" or (buildDepError "data-accessor-mtl"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."filemanip" or (buildDepError "filemanip"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."tar" or (buildDepError "tar"))
-            (hsPkgs."zlib" or (buildDepError "zlib"))
-            (hsPkgs."file-embed" or (buildDepError "file-embed"))
-            (hsPkgs."ide-backend-common" or (buildDepError "ide-backend-common"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
+            (hsPkgs."data-accessor-mtl" or (errorHandler.buildDepError "data-accessor-mtl"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
+            (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
+            (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
+            (hsPkgs."ide-backend-common" or (errorHandler.buildDepError "ide-backend-common"))
             ] ++ (pkgs.lib).optionals (compiler.isGhc && false) [
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."haddock" or (buildDepError "haddock"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
+            (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             ]) ++ (pkgs.lib).optionals (compiler.isGhc && false) [
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."haddock-api" or (buildDepError "haddock-api"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
+            (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             ]) ++ (pkgs.lib).optionals (compiler.isGhc && false || compiler.isGhc && false) [
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."haddock-api" or (buildDepError "haddock-api"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
+            (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             ];
           buildable = true;
           };

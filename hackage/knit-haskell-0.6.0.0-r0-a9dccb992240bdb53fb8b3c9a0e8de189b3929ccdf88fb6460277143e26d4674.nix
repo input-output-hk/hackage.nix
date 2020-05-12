@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,118 +25,118 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-          (hsPkgs."blaze-colonnade" or (buildDepError "blaze-colonnade"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."colonnade" or (buildDepError "colonnade"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."constraints" or (buildDepError "constraints"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
-          (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg"))
-          (hsPkgs."Glob" or (buildDepError "Glob"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-          (hsPkgs."hvega" or (buildDepError "hvega"))
-          (hsPkgs."logging-effect" or (buildDepError "logging-effect"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."polysemy" or (buildDepError "polysemy"))
-          (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
-          (hsPkgs."polysemy-zoo" or (buildDepError "polysemy-zoo"))
-          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-          (hsPkgs."lucid" or (buildDepError "lucid"))
-          (hsPkgs."pandoc" or (buildDepError "pandoc"))
-          (hsPkgs."random-fu" or (buildDepError "random-fu"))
-          (hsPkgs."random-source" or (buildDepError "random-source"))
-          (hsPkgs."svg-builder" or (buildDepError "svg-builder"))
+          (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+          (hsPkgs."blaze-colonnade" or (errorHandler.buildDepError "blaze-colonnade"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."colonnade" or (errorHandler.buildDepError "colonnade"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
+          (hsPkgs."diagrams-svg" or (errorHandler.buildDepError "diagrams-svg"))
+          (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+          (hsPkgs."hvega" or (errorHandler.buildDepError "hvega"))
+          (hsPkgs."logging-effect" or (errorHandler.buildDepError "logging-effect"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
+          (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
+          (hsPkgs."polysemy-zoo" or (errorHandler.buildDepError "polysemy-zoo"))
+          (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+          (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
+          (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
+          (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
+          (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
+          (hsPkgs."svg-builder" or (errorHandler.buildDepError "svg-builder"))
           ];
         buildable = true;
         };
       tests = {
         "SimpleExample" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."here" or (buildDepError "here"))
-            (hsPkgs."hvega" or (buildDepError "hvega"))
-            (hsPkgs."knit-haskell" or (buildDepError "knit-haskell"))
-            (hsPkgs."plots" or (buildDepError "plots"))
-            (hsPkgs."polysemy" or (buildDepError "polysemy"))
-            (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."here" or (errorHandler.buildDepError "here"))
+            (hsPkgs."hvega" or (errorHandler.buildDepError "hvega"))
+            (hsPkgs."knit-haskell" or (errorHandler.buildDepError "knit-haskell"))
+            (hsPkgs."plots" or (errorHandler.buildDepError "plots"))
+            (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
+            (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
         "ErrorExample" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."here" or (buildDepError "here"))
-            (hsPkgs."hvega" or (buildDepError "hvega"))
-            (hsPkgs."knit-haskell" or (buildDepError "knit-haskell"))
-            (hsPkgs."polysemy" or (buildDepError "polysemy"))
-            (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."here" or (errorHandler.buildDepError "here"))
+            (hsPkgs."hvega" or (errorHandler.buildDepError "hvega"))
+            (hsPkgs."knit-haskell" or (errorHandler.buildDepError "knit-haskell"))
+            (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
+            (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
         "MultiDocExample" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."here" or (buildDepError "here"))
-            (hsPkgs."hvega" or (buildDepError "hvega"))
-            (hsPkgs."knit-haskell" or (buildDepError "knit-haskell"))
-            (hsPkgs."polysemy" or (buildDepError "polysemy"))
-            (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."here" or (errorHandler.buildDepError "here"))
+            (hsPkgs."hvega" or (errorHandler.buildDepError "hvega"))
+            (hsPkgs."knit-haskell" or (errorHandler.buildDepError "knit-haskell"))
+            (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
+            (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
         "MtlExample" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."here" or (buildDepError "here"))
-            (hsPkgs."hvega" or (buildDepError "hvega"))
-            (hsPkgs."knit-haskell" or (buildDepError "knit-haskell"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."polysemy" or (buildDepError "polysemy"))
-            (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."here" or (errorHandler.buildDepError "here"))
+            (hsPkgs."hvega" or (errorHandler.buildDepError "hvega"))
+            (hsPkgs."knit-haskell" or (errorHandler.buildDepError "knit-haskell"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
+            (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
         "RandomExample" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."colonnade" or (buildDepError "colonnade"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."here" or (buildDepError "here"))
-            (hsPkgs."hvega" or (buildDepError "hvega"))
-            (hsPkgs."knit-haskell" or (buildDepError "knit-haskell"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."polysemy" or (buildDepError "polysemy"))
-            (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
-            (hsPkgs."polysemy-RandomFu" or (buildDepError "polysemy-RandomFu"))
-            (hsPkgs."random-fu" or (buildDepError "random-fu"))
-            (hsPkgs."random-source" or (buildDepError "random-source"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            (hsPkgs."colonnade" or (errorHandler.buildDepError "colonnade"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."here" or (errorHandler.buildDepError "here"))
+            (hsPkgs."hvega" or (errorHandler.buildDepError "hvega"))
+            (hsPkgs."knit-haskell" or (errorHandler.buildDepError "knit-haskell"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
+            (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
+            (hsPkgs."polysemy-RandomFu" or (errorHandler.buildDepError "polysemy-RandomFu"))
+            (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
+            (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };

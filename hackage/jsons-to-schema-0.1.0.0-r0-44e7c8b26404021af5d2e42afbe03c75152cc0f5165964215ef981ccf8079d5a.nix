@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,35 +25,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."hjsonschema" or (buildDepError "hjsonschema"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."protolude" or (buildDepError "protolude"))
-          (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."hjsonschema" or (errorHandler.buildDepError "hjsonschema"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
+          (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           ];
         buildable = true;
         };
       exes = {
         "jsons-to-schema-exe" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."jsons-to-schema" or (buildDepError "jsons-to-schema"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."hjsonschema" or (buildDepError "hjsonschema"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."jsons-to-schema" or (errorHandler.buildDepError "jsons-to-schema"))
+            (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."hjsonschema" or (errorHandler.buildDepError "hjsonschema"))
             ];
           buildable = true;
           };
@@ -92,23 +61,23 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "jsons-to-schema-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."jsons-to-schema" or (buildDepError "jsons-to-schema"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."neat-interpolation" or (buildDepError "neat-interpolation"))
-            (hsPkgs."hjsonschema" or (buildDepError "hjsonschema"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."uniplate" or (buildDepError "uniplate"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."jsons-to-schema" or (errorHandler.buildDepError "jsons-to-schema"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
+            (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
+            (hsPkgs."hjsonschema" or (errorHandler.buildDepError "hjsonschema"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };

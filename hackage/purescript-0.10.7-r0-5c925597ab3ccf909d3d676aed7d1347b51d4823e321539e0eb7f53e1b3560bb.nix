@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,223 +25,223 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-better-errors" or (buildDepError "aeson-better-errors"))
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."base-compat" or (buildDepError "base-compat"))
-          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-          (hsPkgs."bower-json" or (buildDepError "bower-json"))
-          (hsPkgs."boxes" or (buildDepError "boxes"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cheapskate" or (buildDepError "cheapskate"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."clock" or (buildDepError "clock"))
-          (hsPkgs."data-ordlist" or (buildDepError "data-ordlist"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."dlist" or (buildDepError "dlist"))
-          (hsPkgs."edit-distance" or (buildDepError "edit-distance"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
-          (hsPkgs."Glob" or (buildDepError "Glob"))
-          (hsPkgs."haskeline" or (buildDepError "haskeline"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."language-javascript" or (buildDepError "language-javascript"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."pattern-arrows" or (buildDepError "pattern-arrows"))
-          (hsPkgs."pipes" or (buildDepError "pipes"))
-          (hsPkgs."pipes-http" or (buildDepError "pipes-http"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."protolude" or (buildDepError "protolude"))
-          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."sourcemap" or (buildDepError "sourcemap"))
-          (hsPkgs."spdx" or (buildDepError "spdx"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."aeson-better-errors" or (errorHandler.buildDepError "aeson-better-errors"))
+          (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
+          (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
+          (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+          (hsPkgs."bower-json" or (errorHandler.buildDepError "bower-json"))
+          (hsPkgs."boxes" or (errorHandler.buildDepError "boxes"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cheapskate" or (errorHandler.buildDepError "cheapskate"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+          (hsPkgs."data-ordlist" or (errorHandler.buildDepError "data-ordlist"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
+          (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
+          (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+          (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."language-javascript" or (errorHandler.buildDepError "language-javascript"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."pattern-arrows" or (errorHandler.buildDepError "pattern-arrows"))
+          (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+          (hsPkgs."pipes-http" or (errorHandler.buildDepError "pipes-http"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
+          (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."sourcemap" or (errorHandler.buildDepError "sourcemap"))
+          (hsPkgs."spdx" or (errorHandler.buildDepError "spdx"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+          (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         buildable = true;
         };
       exes = {
         "psc" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."purescript" or (buildDepError "purescript"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
+            (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             ];
           buildable = true;
           };
         "psci" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."purescript" or (buildDepError "purescript"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."boxes" or (buildDepError "boxes"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."file-embed" or (buildDepError "file-embed"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."haskeline" or (buildDepError "haskeline"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
+            (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
+            (hsPkgs."boxes" or (errorHandler.buildDepError "boxes"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+            (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             ];
           buildable = true;
           };
         "psc-docs" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."purescript" or (buildDepError "purescript"))
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
+            (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
             ];
           buildable = true;
           };
         "psc-publish" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."purescript" or (buildDepError "purescript"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };
         "psc-package" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."purescript" or (buildDepError "purescript"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."foldl" or (buildDepError "foldl"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."turtle" or (buildDepError "turtle"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             ];
           buildable = true;
           };
         "psc-hierarchy" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."purescript" or (buildDepError "purescript"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
         "psc-bundle" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."purescript" or (buildDepError "purescript"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."sourcemap" or (buildDepError "sourcemap"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."sourcemap" or (errorHandler.buildDepError "sourcemap"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             ];
           buildable = true;
           };
         "psc-ide-server" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."purescript" or (buildDepError "purescript"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };
         "psc-ide-client" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
@@ -280,37 +249,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."purescript" or (buildDepError "purescript"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-better-errors" or (buildDepError "aeson-better-errors"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."bower-json" or (buildDepError "bower-json"))
-            (hsPkgs."boxes" or (buildDepError "boxes"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."haskeline" or (buildDepError "haskeline"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-discover" or (buildDepError "hspec-discover"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."silently" or (buildDepError "silently"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."aeson-better-errors" or (errorHandler.buildDepError "aeson-better-errors"))
+            (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
+            (hsPkgs."bower-json" or (errorHandler.buildDepError "bower-json"))
+            (hsPkgs."boxes" or (errorHandler.buildDepError "boxes"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
+            (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };

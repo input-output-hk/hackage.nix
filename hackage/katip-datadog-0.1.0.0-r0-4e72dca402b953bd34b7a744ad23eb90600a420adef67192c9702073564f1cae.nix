@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { lib-werror = false; };
     package = {
@@ -56,38 +25,38 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."katip" or (buildDepError "katip"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."connection" or (buildDepError "connection"))
-          (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-          (hsPkgs."retry" or (buildDepError "retry"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."katip" or (errorHandler.buildDepError "katip"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
+          (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+          (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
           ];
         buildable = true;
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."katip" or (buildDepError "katip"))
-            (hsPkgs."katip-datadog" or (buildDepError "katip-datadog"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."katip" or (errorHandler.buildDepError "katip"))
+            (hsPkgs."katip-datadog" or (errorHandler.buildDepError "katip-datadog"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };

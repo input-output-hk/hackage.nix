@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,39 +25,39 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."HDBC" or (buildDepError "HDBC"))
-          (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."strict" or (buildDepError "strict"))
-          (hsPkgs."scotty" or (buildDepError "scotty"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."MissingH" or (buildDepError "MissingH"))
-          (hsPkgs."convertible" or (buildDepError "convertible"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+          (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
+          (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
+          (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
           ];
         buildable = true;
         };
       exes = {
         "Villefort" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Villefort" or (buildDepError "Villefort"))
-            (hsPkgs."scotty" or (buildDepError "scotty"))
-            (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Villefort" or (errorHandler.buildDepError "Villefort"))
+            (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
+            (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
+            (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
             ];
           buildable = true;
           };
@@ -96,14 +65,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "Villefort-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Villefort" or (buildDepError "Villefort"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
-            (hsPkgs."webdriver" or (buildDepError "webdriver"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Villefort" or (errorHandler.buildDepError "Villefort"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+            (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
+            (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
             ];
           buildable = true;
           };

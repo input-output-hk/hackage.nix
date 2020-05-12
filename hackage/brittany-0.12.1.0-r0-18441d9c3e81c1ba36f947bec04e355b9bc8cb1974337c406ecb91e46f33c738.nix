@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { brittany-dev-lib = false; brittany-test-perf = false; };
     package = {
@@ -56,74 +25,74 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."ghc" or (buildDepError "ghc"))
-          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-          (hsPkgs."ghc-exactprint" or (buildDepError "ghc-exactprint"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."multistate" or (buildDepError "multistate"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."neat-interpolation" or (buildDepError "neat-interpolation"))
-          (hsPkgs."data-tree-print" or (buildDepError "data-tree-print"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."butcher" or (buildDepError "butcher"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."extra" or (buildDepError "extra"))
-          (hsPkgs."uniplate" or (buildDepError "uniplate"))
-          (hsPkgs."strict" or (buildDepError "strict"))
-          (hsPkgs."monad-memo" or (buildDepError "monad-memo"))
-          (hsPkgs."unsafe" or (buildDepError "unsafe"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."czipwith" or (buildDepError "czipwith"))
-          (hsPkgs."ghc-boot-th" or (buildDepError "ghc-boot-th"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+          (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+          (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."multistate" or (errorHandler.buildDepError "multistate"))
+          (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+          (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
+          (hsPkgs."data-tree-print" or (errorHandler.buildDepError "data-tree-print"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."butcher" or (errorHandler.buildDepError "butcher"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+          (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
+          (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
+          (hsPkgs."monad-memo" or (errorHandler.buildDepError "monad-memo"))
+          (hsPkgs."unsafe" or (errorHandler.buildDepError "unsafe"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+          (hsPkgs."czipwith" or (errorHandler.buildDepError "czipwith"))
+          (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
           ];
         buildable = true;
         };
       exes = {
         "brittany" = {
           depends = [
-            (hsPkgs."brittany" or (buildDepError "brittany"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."ghc-exactprint" or (buildDepError "ghc-exactprint"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."multistate" or (buildDepError "multistate"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."neat-interpolation" or (buildDepError "neat-interpolation"))
-            (hsPkgs."data-tree-print" or (buildDepError "data-tree-print"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."butcher" or (buildDepError "butcher"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."uniplate" or (buildDepError "uniplate"))
-            (hsPkgs."strict" or (buildDepError "strict"))
-            (hsPkgs."monad-memo" or (buildDepError "monad-memo"))
-            (hsPkgs."unsafe" or (buildDepError "unsafe"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."czipwith" or (buildDepError "czipwith"))
-            (hsPkgs."ghc-boot-th" or (buildDepError "ghc-boot-th"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."brittany" or (errorHandler.buildDepError "brittany"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+            (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."multistate" or (errorHandler.buildDepError "multistate"))
+            (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+            (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
+            (hsPkgs."data-tree-print" or (errorHandler.buildDepError "data-tree-print"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."butcher" or (errorHandler.buildDepError "butcher"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+            (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
+            (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
+            (hsPkgs."monad-memo" or (errorHandler.buildDepError "monad-memo"))
+            (hsPkgs."unsafe" or (errorHandler.buildDepError "unsafe"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."czipwith" or (errorHandler.buildDepError "czipwith"))
+            (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = if flags.brittany-dev-lib then false else true;
           };
@@ -131,37 +100,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "unittests" = {
           depends = [
-            (hsPkgs."brittany" or (buildDepError "brittany"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."ghc-exactprint" or (buildDepError "ghc-exactprint"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."multistate" or (buildDepError "multistate"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."neat-interpolation" or (buildDepError "neat-interpolation"))
-            (hsPkgs."data-tree-print" or (buildDepError "data-tree-print"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."butcher" or (buildDepError "butcher"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."uniplate" or (buildDepError "uniplate"))
-            (hsPkgs."strict" or (buildDepError "strict"))
-            (hsPkgs."monad-memo" or (buildDepError "monad-memo"))
-            (hsPkgs."unsafe" or (buildDepError "unsafe"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."czipwith" or (buildDepError "czipwith"))
-            (hsPkgs."ghc-boot-th" or (buildDepError "ghc-boot-th"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."brittany" or (errorHandler.buildDepError "brittany"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+            (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."multistate" or (errorHandler.buildDepError "multistate"))
+            (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+            (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
+            (hsPkgs."data-tree-print" or (errorHandler.buildDepError "data-tree-print"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."butcher" or (errorHandler.buildDepError "butcher"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+            (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
+            (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
+            (hsPkgs."monad-memo" or (errorHandler.buildDepError "monad-memo"))
+            (hsPkgs."unsafe" or (errorHandler.buildDepError "unsafe"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."czipwith" or (errorHandler.buildDepError "czipwith"))
+            (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             ];
           buildable = if flags.brittany-dev-lib || !flags.brittany-test-perf
             then false
@@ -169,49 +138,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "littests" = {
           depends = [
-            (hsPkgs."brittany" or (buildDepError "brittany"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."ghc-exactprint" or (buildDepError "ghc-exactprint"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."multistate" or (buildDepError "multistate"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."neat-interpolation" or (buildDepError "neat-interpolation"))
-            (hsPkgs."data-tree-print" or (buildDepError "data-tree-print"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."butcher" or (buildDepError "butcher"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."uniplate" or (buildDepError "uniplate"))
-            (hsPkgs."strict" or (buildDepError "strict"))
-            (hsPkgs."monad-memo" or (buildDepError "monad-memo"))
-            (hsPkgs."unsafe" or (buildDepError "unsafe"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."czipwith" or (buildDepError "czipwith"))
-            (hsPkgs."ghc-boot-th" or (buildDepError "ghc-boot-th"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."brittany" or (errorHandler.buildDepError "brittany"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+            (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."multistate" or (errorHandler.buildDepError "multistate"))
+            (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+            (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
+            (hsPkgs."data-tree-print" or (errorHandler.buildDepError "data-tree-print"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."butcher" or (errorHandler.buildDepError "butcher"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+            (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
+            (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
+            (hsPkgs."monad-memo" or (errorHandler.buildDepError "monad-memo"))
+            (hsPkgs."unsafe" or (errorHandler.buildDepError "unsafe"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."czipwith" or (errorHandler.buildDepError "czipwith"))
+            (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             ];
           buildable = if flags.brittany-dev-lib then false else true;
           };
         "libinterfacetests" = {
           depends = [
-            (hsPkgs."brittany" or (buildDepError "brittany"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."brittany" or (errorHandler.buildDepError "brittany"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             ];
           buildable = if flags.brittany-dev-lib then false else true;
           };

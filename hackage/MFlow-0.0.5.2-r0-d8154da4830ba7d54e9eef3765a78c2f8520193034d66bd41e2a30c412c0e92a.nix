@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,31 +25,31 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."Workflow" or (buildDepError "Workflow"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-          (hsPkgs."xhtml" or (buildDepError "xhtml"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."hack" or (buildDepError "hack"))
-          (hsPkgs."hack-handler-simpleserver" or (buildDepError "hack-handler-simpleserver"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."RefSerialize" or (buildDepError "RefSerialize"))
-          (hsPkgs."TCache" or (buildDepError "TCache"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."old-time" or (buildDepError "old-time"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."hsp" or (buildDepError "hsp"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."warp" or (buildDepError "warp"))
+          (hsPkgs."Workflow" or (errorHandler.buildDepError "Workflow"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+          (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
+          (hsPkgs."hack-handler-simpleserver" or (errorHandler.buildDepError "hack-handler-simpleserver"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."RefSerialize" or (errorHandler.buildDepError "RefSerialize"))
+          (hsPkgs."TCache" or (errorHandler.buildDepError "TCache"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."hsp" or (errorHandler.buildDepError "hsp"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           ];
         buildable = true;
         };

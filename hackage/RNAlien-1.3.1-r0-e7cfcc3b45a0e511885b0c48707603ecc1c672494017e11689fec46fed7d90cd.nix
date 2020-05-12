@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,104 +25,104 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."ViennaRNAParser" or (buildDepError "ViennaRNAParser"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."blastxml" or (buildDepError "blastxml"))
-          (hsPkgs."biofasta" or (buildDepError "biofasta"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."BlastHTTP" or (buildDepError "BlastHTTP"))
-          (hsPkgs."biocore" or (buildDepError "biocore"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."Taxonomy" or (buildDepError "Taxonomy"))
-          (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."ClustalParser" or (buildDepError "ClustalParser"))
-          (hsPkgs."EntrezHTTP" or (buildDepError "EntrezHTTP"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."edit-distance" or (buildDepError "edit-distance"))
-          (hsPkgs."cassava" or (buildDepError "cassava"))
-          (hsPkgs."matrix" or (buildDepError "matrix"))
-          (hsPkgs."hierarchical-clustering" or (buildDepError "hierarchical-clustering"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."HTTP" or (buildDepError "HTTP"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."hxt" or (buildDepError "hxt"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."text-metrics" or (buildDepError "text-metrics"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+          (hsPkgs."ViennaRNAParser" or (errorHandler.buildDepError "ViennaRNAParser"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."blastxml" or (errorHandler.buildDepError "blastxml"))
+          (hsPkgs."biofasta" or (errorHandler.buildDepError "biofasta"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."BlastHTTP" or (errorHandler.buildDepError "BlastHTTP"))
+          (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."Taxonomy" or (errorHandler.buildDepError "Taxonomy"))
+          (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."ClustalParser" or (errorHandler.buildDepError "ClustalParser"))
+          (hsPkgs."EntrezHTTP" or (errorHandler.buildDepError "EntrezHTTP"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"))
+          (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
+          (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
+          (hsPkgs."hierarchical-clustering" or (errorHandler.buildDepError "hierarchical-clustering"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
+          (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+          (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."text-metrics" or (errorHandler.buildDepError "text-metrics"))
           ];
         buildable = true;
         };
       exes = {
         "RNAlien" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."biofasta" or (buildDepError "biofasta"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."biocore" or (buildDepError "biocore"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."RNAlien" or (buildDepError "RNAlien"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."biofasta" or (errorHandler.buildDepError "biofasta"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."RNAlien" or (errorHandler.buildDepError "RNAlien"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = true;
           };
         "RNAlienStatistics" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."cassava" or (buildDepError "cassava"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
-            (hsPkgs."RNAlien" or (buildDepError "RNAlien"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."biofasta" or (buildDepError "biofasta"))
-            (hsPkgs."biocore" or (buildDepError "biocore"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ViennaRNAParser" or (buildDepError "ViennaRNAParser"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
+            (hsPkgs."RNAlien" or (errorHandler.buildDepError "RNAlien"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."biofasta" or (errorHandler.buildDepError "biofasta"))
+            (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."ViennaRNAParser" or (errorHandler.buildDepError "ViennaRNAParser"))
             ];
           buildable = true;
           };
         "SelectSequences" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
-            (hsPkgs."RNAlien" or (buildDepError "RNAlien"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
+            (hsPkgs."RNAlien" or (errorHandler.buildDepError "RNAlien"))
             ];
           buildable = true;
           };
         "cmsearchToBed" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
-            (hsPkgs."RNAlien" or (buildDepError "RNAlien"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
+            (hsPkgs."RNAlien" or (errorHandler.buildDepError "RNAlien"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
         "RNAcentralHTTPRequest" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
-            (hsPkgs."RNAlien" or (buildDepError "RNAlien"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
+            (hsPkgs."RNAlien" or (errorHandler.buildDepError "RNAlien"))
             ];
           buildable = true;
           };

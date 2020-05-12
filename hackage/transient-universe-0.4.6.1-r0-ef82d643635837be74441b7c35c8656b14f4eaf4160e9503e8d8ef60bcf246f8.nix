@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,77 +25,77 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transient" or (buildDepError "transient"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
           ] ++ (if compiler.isGhcjs && (compiler.version).ge "0.1"
           then [
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."ghcjs-prim" or (buildDepError "ghcjs-prim"))
+            (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
+            (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
             ]
           else [
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."TCache" or (buildDepError "TCache"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."iproute" or (buildDepError "iproute"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-info" or (buildDepError "network-info"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
+            (hsPkgs."TCache" or (errorHandler.buildDepError "TCache"))
+            (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."network-info" or (errorHandler.buildDepError "network-info"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ]);
         buildable = true;
         };
       exes = {
         "monitorService" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && (compiler.version).ge "0.1")) [
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transient" or (buildDepError "transient"))
-            (hsPkgs."transient-universe" or (buildDepError "transient-universe"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
+            (hsPkgs."transient-universe" or (errorHandler.buildDepError "transient-universe"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           buildable = true;
           };
         "test-transient1" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && (compiler.version).ge "0.1")) [
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transient" or (buildDepError "transient"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-info" or (buildDepError "network-info"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."TCache" or (buildDepError "TCache"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."network-info" or (errorHandler.buildDepError "network-info"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."TCache" or (errorHandler.buildDepError "TCache"))
+            (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             ];
           buildable = true;
           };
@@ -134,30 +103,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test-transient" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && (compiler.version).ge "0.1")) [
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transient" or (buildDepError "transient"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-info" or (buildDepError "network-info"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."TCache" or (buildDepError "TCache"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."network-info" or (errorHandler.buildDepError "network-info"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."TCache" or (errorHandler.buildDepError "TCache"))
+            (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             ];
           buildable = true;
           };

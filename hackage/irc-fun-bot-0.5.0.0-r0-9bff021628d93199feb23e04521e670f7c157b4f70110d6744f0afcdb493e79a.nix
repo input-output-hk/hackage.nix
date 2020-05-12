@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,20 +25,20 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."auto-update" or (buildDepError "auto-update"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."clock" or (buildDepError "clock"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-          (hsPkgs."irc-fun-client" or (buildDepError "irc-fun-client"))
-          (hsPkgs."irc-fun-messages" or (buildDepError "irc-fun-messages"))
-          (hsPkgs."json-state" or (buildDepError "json-state"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."time-interval" or (buildDepError "time-interval"))
-          (hsPkgs."time-units" or (buildDepError "time-units"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."auto-update" or (errorHandler.buildDepError "auto-update"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
+          (hsPkgs."irc-fun-client" or (errorHandler.buildDepError "irc-fun-client"))
+          (hsPkgs."irc-fun-messages" or (errorHandler.buildDepError "irc-fun-messages"))
+          (hsPkgs."json-state" or (errorHandler.buildDepError "json-state"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."time-interval" or (errorHandler.buildDepError "time-interval"))
+          (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ];
         buildable = true;
         };

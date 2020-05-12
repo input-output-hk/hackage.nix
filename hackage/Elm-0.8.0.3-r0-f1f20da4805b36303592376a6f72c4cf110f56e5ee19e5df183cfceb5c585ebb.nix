@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,59 +25,59 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."pandoc" or (buildDepError "pandoc"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
-          (hsPkgs."indents" or (buildDepError "indents"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."json" or (buildDepError "json"))
-          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+          (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."hjsmin" or (errorHandler.buildDepError "hjsmin"))
+          (hsPkgs."indents" or (errorHandler.buildDepError "indents"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."json" or (errorHandler.buildDepError "json"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           ];
         buildable = true;
         };
       exes = {
         "elm" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."pandoc" or (buildDepError "pandoc"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
-            (hsPkgs."indents" or (buildDepError "indents"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."json" or (buildDepError "json"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."hjsmin" or (errorHandler.buildDepError "hjsmin"))
+            (hsPkgs."indents" or (errorHandler.buildDepError "indents"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."json" or (errorHandler.buildDepError "json"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           buildable = true;
           };
         "elm-doc" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."pandoc" or (buildDepError "pandoc"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."indents" or (buildDepError "indents"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."indents" or (errorHandler.buildDepError "indents"))
             ];
           buildable = true;
           };

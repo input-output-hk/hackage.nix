@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { tests = true; local-debian = true; pretty-112 = true; };
     package = {
@@ -56,99 +25,99 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."Diff" or (buildDepError "Diff"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."hsemail" or (buildDepError "hsemail"))
-          (hsPkgs."HUnit" or (buildDepError "HUnit"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."memoize" or (buildDepError "memoize"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."newtype-generics" or (buildDepError "newtype-generics"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-          (hsPkgs."set-extra" or (buildDepError "set-extra"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."Unixutils" or (buildDepError "Unixutils"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+          (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."hsemail" or (errorHandler.buildDepError "hsemail"))
+          (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."memoize" or (errorHandler.buildDepError "memoize"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."newtype-generics" or (errorHandler.buildDepError "newtype-generics"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
+          (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
+          (hsPkgs."set-extra" or (errorHandler.buildDepError "set-extra"))
+          (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+          (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+          (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
           ] ++ (if flags.pretty-112
-          then [ (hsPkgs."pretty" or (buildDepError "pretty")) ]
+          then [ (hsPkgs."pretty" or (errorHandler.buildDepError "pretty")) ]
           else [
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
             ])) ++ (if flags.local-debian
           then [
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."bzlib" or (buildDepError "bzlib"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."HaXml" or (buildDepError "HaXml"))
-            (hsPkgs."ListLike" or (buildDepError "ListLike"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."process-extras" or (buildDepError "process-extras"))
-            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
+            (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."process-extras" or (errorHandler.buildDepError "process-extras"))
+            (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             ]
-          else [ (hsPkgs."debian" or (buildDepError "debian")) ]);
+          else [ (hsPkgs."debian" or (errorHandler.buildDepError "debian")) ]);
         buildable = true;
         };
       exes = {
         "cabal-debian" = {
           depends = ([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cabal-debian" or (buildDepError "cabal-debian"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."Unixutils" or (buildDepError "Unixutils"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cabal-debian" or (errorHandler.buildDepError "cabal-debian"))
+            (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
             ] ++ (if flags.pretty-112
-            then [ (hsPkgs."pretty" or (buildDepError "pretty")) ]
+            then [ (hsPkgs."pretty" or (errorHandler.buildDepError "pretty")) ]
             else [
-              (hsPkgs."pretty" or (buildDepError "pretty"))
-              (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
-              ])) ++ (pkgs.lib).optional (!flags.local-debian) (hsPkgs."debian" or (buildDepError "debian"));
+              (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+              (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
+              ])) ++ (pkgs.lib).optional (!flags.local-debian) (hsPkgs."debian" or (errorHandler.buildDepError "debian"));
           buildable = true;
           };
         };
       tests = {
         "cabal-debian-tests" = {
           depends = ([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cabal-debian" or (buildDepError "cabal-debian"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."Diff" or (buildDepError "Diff"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hsemail" or (buildDepError "hsemail"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cabal-debian" or (errorHandler.buildDepError "cabal-debian"))
+            (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hsemail" or (errorHandler.buildDepError "hsemail"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ] ++ (if flags.pretty-112
-            then [ (hsPkgs."pretty" or (buildDepError "pretty")) ]
+            then [ (hsPkgs."pretty" or (errorHandler.buildDepError "pretty")) ]
             else [
-              (hsPkgs."pretty" or (buildDepError "pretty"))
-              (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
-              ])) ++ (pkgs.lib).optional (!flags.local-debian) (hsPkgs."debian" or (buildDepError "debian"));
+              (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+              (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
+              ])) ++ (pkgs.lib).optional (!flags.local-debian) (hsPkgs."debian" or (errorHandler.buildDepError "debian"));
           buildable = if !flags.tests then false else true;
           };
         };

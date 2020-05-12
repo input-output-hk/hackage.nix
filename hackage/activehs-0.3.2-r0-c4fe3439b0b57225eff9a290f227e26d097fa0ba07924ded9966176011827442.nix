@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -57,41 +26,41 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "activehs" = {
           depends = [
-            (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))
-            (hsPkgs."hoogle" or (buildDepError "hoogle"))
-            (hsPkgs."dia-base" or (buildDepError "dia-base"))
-            (hsPkgs."dia-functions" or (buildDepError "dia-functions"))
-            (hsPkgs."activehs-base" or (buildDepError "activehs-base"))
-            (hsPkgs."data-pprint" or (buildDepError "data-pprint"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."snap-core" or (buildDepError "snap-core"))
-            (hsPkgs."snap-server" or (buildDepError "snap-server"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."xhtml" or (buildDepError "xhtml"))
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-            (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."pandoc" or (buildDepError "pandoc"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."hint" or (buildDepError "hint"))
-            (hsPkgs."simple-reflect" or (buildDepError "simple-reflect"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
+            (hsPkgs."hoogle" or (errorHandler.buildDepError "hoogle"))
+            (hsPkgs."dia-base" or (errorHandler.buildDepError "dia-base"))
+            (hsPkgs."dia-functions" or (errorHandler.buildDepError "dia-functions"))
+            (hsPkgs."activehs-base" or (errorHandler.buildDepError "activehs-base"))
+            (hsPkgs."data-pprint" or (errorHandler.buildDepError "data-pprint"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
+            (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
+            (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+            (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
+            (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
+            (hsPkgs."simple-reflect" or (errorHandler.buildDepError "simple-reflect"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             ];
           buildable = true;
           };

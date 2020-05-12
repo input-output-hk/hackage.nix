@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       devel = false;
@@ -60,67 +29,67 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."Diff" or (buildDepError "Diff"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."fingertree" or (buildDepError "fingertree"))
-          (hsPkgs."ghc" or (buildDepError "ghc"))
-          (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"))
-          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."gitrev" or (buildDepError "gitrev"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."hscolour" or (buildDepError "hscolour"))
-          (hsPkgs."liquid-fixpoint" or (buildDepError "liquid-fixpoint"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."optparse-simple" or (buildDepError "optparse-simple"))
-          (hsPkgs."githash" or (buildDepError "githash"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."temporary" or (buildDepError "temporary"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+          (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
+          (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+          (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+          (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
+          (hsPkgs."liquid-fixpoint" or (errorHandler.buildDepError "liquid-fixpoint"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
+          (hsPkgs."githash" or (errorHandler.buildDepError "githash"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         buildable = true;
         };
       exes = {
         "liquid" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."liquidhaskell" or (buildDepError "liquidhaskell"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
             ];
           buildable = true;
           };
         "gradual" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."hscolour" or (buildDepError "hscolour"))
-            (hsPkgs."liquid-fixpoint" or (buildDepError "liquid-fixpoint"))
-            (hsPkgs."liquidhaskell" or (buildDepError "liquidhaskell"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
+            (hsPkgs."liquid-fixpoint" or (errorHandler.buildDepError "liquid-fixpoint"))
+            (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
             ];
           buildable = false;
           };
         "target" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hint" or (buildDepError "hint"))
-            (hsPkgs."liquidhaskell" or (buildDepError "liquidhaskell"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
+            (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
             ];
           buildable = false;
           };
@@ -128,34 +97,34 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."tagged" or (buildDepError "tagged"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-ant-xml" or (buildDepError "tasty-ant-xml"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-rerun" or (buildDepError "tasty-rerun"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-ant-xml" or (errorHandler.buildDepError "tasty-ant-xml"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };
         "liquidhaskell-parser" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."liquid-fixpoint" or (buildDepError "liquid-fixpoint"))
-            (hsPkgs."liquidhaskell" or (buildDepError "liquidhaskell"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-ant-xml" or (buildDepError "tasty-ant-xml"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."liquid-fixpoint" or (errorHandler.buildDepError "liquid-fixpoint"))
+            (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-ant-xml" or (errorHandler.buildDepError "tasty-ant-xml"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             ];
           buildable = true;
           };

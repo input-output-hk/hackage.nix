@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { chart = false; vty = false; web = false; };
     package = {
@@ -56,57 +25,57 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."hledger-lib" or (buildDepError "hledger-lib"))
-          (hsPkgs."HUnit" or (buildDepError "HUnit"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."csv" or (buildDepError "csv"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."old-time" or (buildDepError "old-time"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."regexpr" or (buildDepError "regexpr"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+          (hsPkgs."hledger-lib" or (errorHandler.buildDepError "hledger-lib"))
+          (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+          (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."regexpr" or (errorHandler.buildDepError "regexpr"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           ];
         buildable = true;
         };
       exes = {
         "hledger" = {
           depends = (([
-            (hsPkgs."hledger-lib" or (buildDepError "hledger-lib"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."csv" or (buildDepError "csv"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."regexpr" or (buildDepError "regexpr"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."hledger-lib" or (errorHandler.buildDepError "hledger-lib"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."regexpr" or (errorHandler.buildDepError "regexpr"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             ] ++ (pkgs.lib).optionals (flags.chart) [
-            (hsPkgs."Chart" or (buildDepError "Chart"))
-            (hsPkgs."colour" or (buildDepError "colour"))
-            (hsPkgs."gtk2hs-buildtools" or (buildDepError "gtk2hs-buildtools"))
-            ]) ++ (pkgs.lib).optional (flags.vty) (hsPkgs."vty" or (buildDepError "vty"))) ++ (pkgs.lib).optionals (flags.web) [
-            (hsPkgs."io-storage" or (buildDepError "io-storage"))
-            (hsPkgs."yesod" or (buildDepError "yesod"))
-            (hsPkgs."hamlet" or (buildDepError "hamlet"))
-            (hsPkgs."convertible-text" or (buildDepError "convertible-text"))
-            (hsPkgs."data-object" or (buildDepError "data-object"))
-            (hsPkgs."failure" or (buildDepError "failure"))
+            (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
+            (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
+            (hsPkgs."gtk2hs-buildtools" or (errorHandler.buildDepError "gtk2hs-buildtools"))
+            ]) ++ (pkgs.lib).optional (flags.vty) (hsPkgs."vty" or (errorHandler.buildDepError "vty"))) ++ (pkgs.lib).optionals (flags.web) [
+            (hsPkgs."io-storage" or (errorHandler.buildDepError "io-storage"))
+            (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
+            (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
+            (hsPkgs."convertible-text" or (errorHandler.buildDepError "convertible-text"))
+            (hsPkgs."data-object" or (errorHandler.buildDepError "data-object"))
+            (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
             ];
           buildable = true;
           };

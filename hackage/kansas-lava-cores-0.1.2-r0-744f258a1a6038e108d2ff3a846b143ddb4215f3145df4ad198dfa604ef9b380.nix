@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { all = false; unit = false; spartan3e = false; };
     package = {
@@ -56,14 +25,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."kansas-lava" or (buildDepError "kansas-lava"))
-          (hsPkgs."sized-types" or (buildDepError "sized-types"))
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."kansas-lava" or (errorHandler.buildDepError "kansas-lava"))
+          (hsPkgs."sized-types" or (errorHandler.buildDepError "sized-types"))
+          (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
           ];
         buildable = true;
         };
@@ -71,34 +40,34 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         "spartan3e-demo" = {
           depends = if flags.spartan3e || flags.all
             then [
-              (hsPkgs."base" or (buildDepError "base"))
-              (hsPkgs."kansas-lava" or (buildDepError "kansas-lava"))
-              (hsPkgs."sized-types" or (buildDepError "sized-types"))
-              (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-              (hsPkgs."data-default" or (buildDepError "data-default"))
-              (hsPkgs."directory" or (buildDepError "directory"))
-              (hsPkgs."bytestring" or (buildDepError "bytestring"))
-              (hsPkgs."network" or (buildDepError "network"))
-              (hsPkgs."random" or (buildDepError "random"))
-              (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+              (hsPkgs."base" or (errorHandler.buildDepError "base"))
+              (hsPkgs."kansas-lava" or (errorHandler.buildDepError "kansas-lava"))
+              (hsPkgs."sized-types" or (errorHandler.buildDepError "sized-types"))
+              (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
+              (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+              (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+              (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+              (hsPkgs."network" or (errorHandler.buildDepError "network"))
+              (hsPkgs."random" or (errorHandler.buildDepError "random"))
+              (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
               ]
-            else [ (hsPkgs."base" or (buildDepError "base")) ];
+            else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if flags.spartan3e || flags.all then true else false;
           };
         "kansas-lava-cores-tests" = {
           depends = if flags.unit || flags.all
             then [
-              (hsPkgs."base" or (buildDepError "base"))
-              (hsPkgs."kansas-lava" or (buildDepError "kansas-lava"))
-              (hsPkgs."sized-types" or (buildDepError "sized-types"))
-              (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-              (hsPkgs."data-default" or (buildDepError "data-default"))
-              (hsPkgs."directory" or (buildDepError "directory"))
-              (hsPkgs."bytestring" or (buildDepError "bytestring"))
-              (hsPkgs."network" or (buildDepError "network"))
-              (hsPkgs."random" or (buildDepError "random"))
+              (hsPkgs."base" or (errorHandler.buildDepError "base"))
+              (hsPkgs."kansas-lava" or (errorHandler.buildDepError "kansas-lava"))
+              (hsPkgs."sized-types" or (errorHandler.buildDepError "sized-types"))
+              (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
+              (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+              (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+              (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+              (hsPkgs."network" or (errorHandler.buildDepError "network"))
+              (hsPkgs."random" or (errorHandler.buildDepError "random"))
               ]
-            else [ (hsPkgs."base" or (buildDepError "base")) ];
+            else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if flags.unit || flags.all then true else false;
           };
         };

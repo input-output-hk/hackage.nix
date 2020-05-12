@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { example = false; };
     package = {
@@ -56,39 +25,39 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."api-field-json-th" or (buildDepError "api-field-json-th"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cron" or (buildDepError "cron"))
-          (hsPkgs."file-embed" or (buildDepError "file-embed"))
-          (hsPkgs."hedis" or (buildDepError "hedis"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."yesod" or (buildDepError "yesod"))
-          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
-          (hsPkgs."yesod-persistent" or (buildDepError "yesod-persistent"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."api-field-json-th" or (errorHandler.buildDepError "api-field-json-th"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cron" or (errorHandler.buildDepError "cron"))
+          (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
+          (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+          (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
+          (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
+          (hsPkgs."yesod-persistent" or (errorHandler.buildDepError "yesod-persistent"))
           ];
         buildable = true;
         };
       exes = {
         "yesod-job-queue-example" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."yesod" or (buildDepError "yesod"))
-            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
-            (hsPkgs."yesod-job-queue" or (buildDepError "yesod-job-queue"))
-            (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."classy-prelude-yesod" or (buildDepError "classy-prelude-yesod"))
-            (hsPkgs."hedis" or (buildDepError "hedis"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
+            (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
+            (hsPkgs."yesod-job-queue" or (errorHandler.buildDepError "yesod-job-queue"))
+            (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."classy-prelude-yesod" or (errorHandler.buildDepError "classy-prelude-yesod"))
+            (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
             ];
           buildable = if flags.example then true else false;
           };
@@ -96,8 +65,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "yesod-job-queue-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."yesod-job-queue" or (buildDepError "yesod-job-queue"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."yesod-job-queue" or (errorHandler.buildDepError "yesod-job-queue"))
             ];
           buildable = true;
           };

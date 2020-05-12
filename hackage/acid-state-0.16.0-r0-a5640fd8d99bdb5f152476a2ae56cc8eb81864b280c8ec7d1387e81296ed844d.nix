@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { skip-state-machine-test = false; };
     package = {
@@ -56,32 +25,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."safecopy" or (buildDepError "safecopy"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filelock" or (buildDepError "filelock"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."network-bsd" or (buildDepError "network-bsd"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."th-expand-syns" or (buildDepError "th-expand-syns"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filelock" or (errorHandler.buildDepError "filelock"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."th-expand-syns" or (errorHandler.buildDepError "th-expand-syns"))
           ] ++ (if system.isWindows
-          then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
-          else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+          then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
+          else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
         };
       exes = {
         "acid-state-repair" = {
           depends = [
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           buildable = true;
           };
@@ -89,45 +58,45 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "specs" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-discover" or (buildDepError "hspec-discover"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover")))
             ];
           buildable = true;
           };
         "state-machine" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             ];
           buildable = if flags.skip-state-machine-test then false else true;
           };
         "examples" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
             ];
           buildable = true;
           };
@@ -135,14 +104,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "loading-benchmark" = {
           depends = [
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
-            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
+            (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             ];
           buildable = true;
           };

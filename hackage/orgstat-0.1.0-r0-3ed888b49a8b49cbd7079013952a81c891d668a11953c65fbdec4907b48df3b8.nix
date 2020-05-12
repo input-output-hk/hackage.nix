@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,47 +25,47 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."colour" or (buildDepError "colour"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
-          (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."formatting" or (buildDepError "formatting"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."linear" or (buildDepError "linear"))
-          (hsPkgs."log-warper" or (buildDepError "log-warper"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."optparse-simple" or (buildDepError "optparse-simple"))
-          (hsPkgs."orgmode-parse" or (buildDepError "orgmode-parse"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."turtle" or (buildDepError "turtle"))
-          (hsPkgs."universum" or (buildDepError "universum"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
+          (hsPkgs."diagrams-svg" or (errorHandler.buildDepError "diagrams-svg"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+          (hsPkgs."log-warper" or (errorHandler.buildDepError "log-warper"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
+          (hsPkgs."orgmode-parse" or (errorHandler.buildDepError "orgmode-parse"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
+          (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ];
         buildable = true;
         };
       exes = {
         "orgstat" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."formatting" or (buildDepError "formatting"))
-            (hsPkgs."log-warper" or (buildDepError "log-warper"))
-            (hsPkgs."optparse-simple" or (buildDepError "optparse-simple"))
-            (hsPkgs."orgstat" or (buildDepError "orgstat"))
-            (hsPkgs."universum" or (buildDepError "universum"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
+            (hsPkgs."log-warper" or (errorHandler.buildDepError "log-warper"))
+            (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
+            (hsPkgs."orgstat" or (errorHandler.buildDepError "orgstat"))
+            (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
             ];
           buildable = true;
           };
@@ -104,18 +73,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "orgstat-test" = {
           depends = [
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."colour" or (buildDepError "colour"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."orgstat" or (buildDepError "orgstat"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."quickcheck-text" or (buildDepError "quickcheck-text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."universum" or (buildDepError "universum"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."orgstat" or (errorHandler.buildDepError "orgstat"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
             ];
           buildable = true;
           };

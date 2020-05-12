@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,45 +25,45 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."concurrent-extra" or (buildDepError "concurrent-extra"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."deque" or (buildDepError "deque"))
-          (hsPkgs."df1" or (buildDepError "df1"))
-          (hsPkgs."di-polysemy" or (buildDepError "di-polysemy"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."fmt" or (buildDepError "fmt"))
-          (hsPkgs."focus" or (buildDepError "focus"))
-          (hsPkgs."generic-lens" or (buildDepError "generic-lens"))
-          (hsPkgs."generic-override" or (buildDepError "generic-override"))
-          (hsPkgs."generic-override-aeson" or (buildDepError "generic-override-aeson"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."http-date" or (buildDepError "http-date"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."polysemy" or (buildDepError "polysemy"))
-          (hsPkgs."polysemy-plugin" or (buildDepError "polysemy-plugin"))
-          (hsPkgs."reflection" or (buildDepError "reflection"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-          (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-show" or (buildDepError "text-show"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."typerep-map" or (buildDepError "typerep-map"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."websockets" or (buildDepError "websockets"))
-          (hsPkgs."wreq-patchable" or (buildDepError "wreq-patchable"))
-          (hsPkgs."wuss" or (buildDepError "wuss"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."concurrent-extra" or (errorHandler.buildDepError "concurrent-extra"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."deque" or (errorHandler.buildDepError "deque"))
+          (hsPkgs."df1" or (errorHandler.buildDepError "df1"))
+          (hsPkgs."di-polysemy" or (errorHandler.buildDepError "di-polysemy"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."fmt" or (errorHandler.buildDepError "fmt"))
+          (hsPkgs."focus" or (errorHandler.buildDepError "focus"))
+          (hsPkgs."generic-lens" or (errorHandler.buildDepError "generic-lens"))
+          (hsPkgs."generic-override" or (errorHandler.buildDepError "generic-override"))
+          (hsPkgs."generic-override-aeson" or (errorHandler.buildDepError "generic-override-aeson"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."http-date" or (errorHandler.buildDepError "http-date"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
+          (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
+          (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
+          (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."typerep-map" or (errorHandler.buildDepError "typerep-map"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
+          (hsPkgs."wreq-patchable" or (errorHandler.buildDepError "wreq-patchable"))
+          (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
           ];
         buildable = true;
         };

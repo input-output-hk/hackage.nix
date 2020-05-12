@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { library-only = false; };
     package = {
@@ -56,70 +25,70 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."daemons" or (buildDepError "daemons"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."esqueleto" or (buildDepError "esqueleto"))
-          (hsPkgs."file-embed" or (buildDepError "file-embed"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."haskeline" or (buildDepError "haskeline"))
-          (hsPkgs."haskoin-core" or (buildDepError "haskoin-core"))
-          (hsPkgs."haskoin-node" or (buildDepError "haskoin-node"))
-          (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."persistent" or (buildDepError "persistent"))
-          (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
-          (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-          (hsPkgs."stm-conduit" or (buildDepError "stm-conduit"))
-          (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
-          (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."daemons" or (errorHandler.buildDepError "daemons"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."esqueleto" or (errorHandler.buildDepError "esqueleto"))
+          (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
+          (hsPkgs."haskoin-core" or (errorHandler.buildDepError "haskoin-core"))
+          (hsPkgs."haskoin-node" or (errorHandler.buildDepError "haskoin-node"))
+          (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
+          (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+          (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
+          (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
+          (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
+          (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
+          (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+          (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
           ];
         buildable = true;
         };
       exes = {
         "hw" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."haskoin-wallet" or (buildDepError "haskoin-wallet"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."haskoin-wallet" or (errorHandler.buildDepError "haskoin-wallet"))
             ];
           buildable = if flags.library-only then false else true;
           };
         "example-inproc-wallet-server" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-            (hsPkgs."haskoin-node" or (buildDepError "haskoin-node"))
-            (hsPkgs."haskoin-wallet" or (buildDepError "haskoin-wallet"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
-            (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+            (hsPkgs."haskoin-node" or (errorHandler.buildDepError "haskoin-node"))
+            (hsPkgs."haskoin-wallet" or (errorHandler.buildDepError "haskoin-wallet"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
+            (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             ];
           buildable = if flags.library-only then false else true;
           };
@@ -127,29 +96,29 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test-haskoin-wallet" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."haskoin-core" or (buildDepError "haskoin-core"))
-            (hsPkgs."haskoin-node" or (buildDepError "haskoin-node"))
-            (hsPkgs."haskoin-wallet" or (buildDepError "haskoin-wallet"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."persistent" or (buildDepError "persistent"))
-            (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-            (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."haskoin-core" or (errorHandler.buildDepError "haskoin-core"))
+            (hsPkgs."haskoin-node" or (errorHandler.buildDepError "haskoin-node"))
+            (hsPkgs."haskoin-wallet" or (errorHandler.buildDepError "haskoin-wallet"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
+            (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
+            (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             ];
           buildable = true;
           };

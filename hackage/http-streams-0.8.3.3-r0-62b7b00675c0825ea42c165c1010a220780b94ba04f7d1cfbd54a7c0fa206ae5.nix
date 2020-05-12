@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { network-uri = true; };
     package = {
@@ -56,61 +25,61 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."http-common" or (buildDepError "http-common"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."io-streams" or (buildDepError "io-streams"))
-          (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
-          (hsPkgs."openssl-streams" or (buildDepError "openssl-streams"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."http-common" or (errorHandler.buildDepError "http-common"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+          (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
+          (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
+          (hsPkgs."openssl-streams" or (errorHandler.buildDepError "openssl-streams"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           ] ++ [
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
           ];
         buildable = true;
         };
       tests = {
         "check" = {
           depends = [
-            (hsPkgs."http-common" or (buildDepError "http-common"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
-            (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
-            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
-            (hsPkgs."io-streams" or (buildDepError "io-streams"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."openssl-streams" or (buildDepError "openssl-streams"))
-            (hsPkgs."snap-core" or (buildDepError "snap-core"))
-            (hsPkgs."snap-server" or (buildDepError "snap-server"))
-            (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
-            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."http-common" or (buildDepError "http-common"))
-            (hsPkgs."http-streams" or (buildDepError "http-streams"))
+            (hsPkgs."http-common" or (errorHandler.buildDepError "http-common"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
+            (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"))
+            (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+            (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
+            (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."openssl-streams" or (errorHandler.buildDepError "openssl-streams"))
+            (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
+            (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
+            (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
+            (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."http-common" or (errorHandler.buildDepError "http-common"))
+            (hsPkgs."http-streams" or (errorHandler.buildDepError "http-streams"))
             ];
           buildable = true;
           };

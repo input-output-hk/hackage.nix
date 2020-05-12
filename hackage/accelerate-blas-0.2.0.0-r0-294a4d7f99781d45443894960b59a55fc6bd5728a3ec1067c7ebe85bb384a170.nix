@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { llvm-cpu = true; llvm-ptx = true; };
     package = {
@@ -56,48 +25,48 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."accelerate" or (buildDepError "accelerate"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           ] ++ (pkgs.lib).optionals (flags.llvm-cpu) [
-          (hsPkgs."accelerate-llvm" or (buildDepError "accelerate-llvm"))
-          (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))
-          (hsPkgs."blas-hs" or (buildDepError "blas-hs"))
-          (hsPkgs."llvm-hs-pure" or (buildDepError "llvm-hs-pure"))
+          (hsPkgs."accelerate-llvm" or (errorHandler.buildDepError "accelerate-llvm"))
+          (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))
+          (hsPkgs."blas-hs" or (errorHandler.buildDepError "blas-hs"))
+          (hsPkgs."llvm-hs-pure" or (errorHandler.buildDepError "llvm-hs-pure"))
           ]) ++ (pkgs.lib).optionals (flags.llvm-ptx) [
-          (hsPkgs."accelerate-llvm" or (buildDepError "accelerate-llvm"))
-          (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cublas" or (buildDepError "cublas"))
-          (hsPkgs."cuda" or (buildDepError "cuda"))
-          (hsPkgs."file-embed" or (buildDepError "file-embed"))
-          (hsPkgs."llvm-hs-pure" or (buildDepError "llvm-hs-pure"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."accelerate-llvm" or (errorHandler.buildDepError "accelerate-llvm"))
+          (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."cublas" or (errorHandler.buildDepError "cublas"))
+          (hsPkgs."cuda" or (errorHandler.buildDepError "cuda"))
+          (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
+          (hsPkgs."llvm-hs-pure" or (errorHandler.buildDepError "llvm-hs-pure"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           ];
         buildable = true;
         };
       tests = {
         "test-llvm-native" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."accelerate" or (buildDepError "accelerate"))
-            (hsPkgs."accelerate-blas" or (buildDepError "accelerate-blas"))
-            (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
+            (hsPkgs."accelerate-blas" or (errorHandler.buildDepError "accelerate-blas"))
+            (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))
+            (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             ];
           buildable = if !flags.llvm-cpu then false else true;
           };
         "test-llvm-ptx" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."accelerate" or (buildDepError "accelerate"))
-            (hsPkgs."accelerate-blas" or (buildDepError "accelerate-blas"))
-            (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
+            (hsPkgs."accelerate-blas" or (errorHandler.buildDepError "accelerate-blas"))
+            (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"))
+            (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             ];
           buildable = if !flags.llvm-ptx then false else true;
           };
@@ -105,11 +74,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench-hmatrix" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
             ];
           buildable = if !flags.llvm-cpu && !flags.llvm-ptx
             then false
@@ -117,25 +86,25 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "bench-llvm-native" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."accelerate" or (buildDepError "accelerate"))
-            (hsPkgs."accelerate-blas" or (buildDepError "accelerate-blas"))
-            (hsPkgs."accelerate-llvm-native" or (buildDepError "accelerate-llvm-native"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-            (hsPkgs."mwc-random-accelerate" or (buildDepError "mwc-random-accelerate"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
+            (hsPkgs."accelerate-blas" or (errorHandler.buildDepError "accelerate-blas"))
+            (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
+            (hsPkgs."mwc-random-accelerate" or (errorHandler.buildDepError "mwc-random-accelerate"))
             ];
           buildable = if !flags.llvm-cpu then false else true;
           };
         "bench-llvm-ptx" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."accelerate" or (buildDepError "accelerate"))
-            (hsPkgs."accelerate-blas" or (buildDepError "accelerate-blas"))
-            (hsPkgs."accelerate-llvm-ptx" or (buildDepError "accelerate-llvm-ptx"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-            (hsPkgs."mwc-random-accelerate" or (buildDepError "mwc-random-accelerate"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
+            (hsPkgs."accelerate-blas" or (errorHandler.buildDepError "accelerate-blas"))
+            (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
+            (hsPkgs."mwc-random-accelerate" or (errorHandler.buildDepError "mwc-random-accelerate"))
             ];
           buildable = if !flags.llvm-ptx then false else true;
           };

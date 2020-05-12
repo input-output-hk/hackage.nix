@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { gtk = false; vty = false; curses = false; std = false; };
     package = {
@@ -56,71 +25,73 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."enummapset" or (buildDepError "enummapset"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."keys" or (buildDepError "keys"))
-          (hsPkgs."miniutter" or (buildDepError "miniutter"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."old-time" or (buildDepError "old-time"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."zlib" or (buildDepError "zlib"))
+          (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."enummapset" or (errorHandler.buildDepError "enummapset"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."keys" or (errorHandler.buildDepError "keys"))
+          (hsPkgs."miniutter" or (errorHandler.buildDepError "miniutter"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           ] ++ (if flags.gtk
-          then [ (hsPkgs."gtk" or (buildDepError "gtk")) ]
+          then [ (hsPkgs."gtk" or (errorHandler.buildDepError "gtk")) ]
           else if flags.vty
-            then [ (hsPkgs."vty" or (buildDepError "vty")) ]
+            then [ (hsPkgs."vty" or (errorHandler.buildDepError "vty")) ]
             else if flags.curses
-              then [ (hsPkgs."hscurses" or (buildDepError "hscurses")) ]
-              else (pkgs.lib).optional (!flags.std) (hsPkgs."gtk" or (buildDepError "gtk")));
+              then [
+                (hsPkgs."hscurses" or (errorHandler.buildDepError "hscurses"))
+                ]
+              else (pkgs.lib).optional (!flags.std) (hsPkgs."gtk" or (errorHandler.buildDepError "gtk")));
         buildable = true;
         };
       exes = {
         "LambdaHack" = {
           depends = [
-            (hsPkgs."LambdaHack" or (buildDepError "LambdaHack"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."enummapset" or (buildDepError "enummapset"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."keys" or (buildDepError "keys"))
-            (hsPkgs."miniutter" or (buildDepError "miniutter"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."LambdaHack" or (errorHandler.buildDepError "LambdaHack"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."enummapset" or (errorHandler.buildDepError "enummapset"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."keys" or (errorHandler.buildDepError "keys"))
+            (hsPkgs."miniutter" or (errorHandler.buildDepError "miniutter"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             ];
           buildable = true;
           };
         "DumbBot" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
             ];
           buildable = true;
           };

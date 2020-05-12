@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,54 +25,54 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."Codec-Compression-LZF" or (buildDepError "Codec-Compression-LZF"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bimap" or (buildDepError "bimap"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."binary-conduit" or (buildDepError "binary-conduit"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
-          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."csv-conduit" or (buildDepError "csv-conduit"))
-          (hsPkgs."Decimal" or (buildDepError "Decimal"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."newtype" or (buildDepError "newtype"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."reinterpret-cast" or (buildDepError "reinterpret-cast"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-binary" or (buildDepError "text-binary"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."Codec-Compression-LZF" or (errorHandler.buildDepError "Codec-Compression-LZF"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."binary-conduit" or (errorHandler.buildDepError "binary-conduit"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
+          (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."csv-conduit" or (errorHandler.buildDepError "csv-conduit"))
+          (hsPkgs."Decimal" or (errorHandler.buildDepError "Decimal"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
+          (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+          (hsPkgs."reinterpret-cast" or (errorHandler.buildDepError "reinterpret-cast"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-binary" or (errorHandler.buildDepError "text-binary"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         buildable = true;
         };
       exes = {
         "csv2yxdb" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."yxdb-utils" or (buildDepError "yxdb-utils"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."yxdb-utils" or (errorHandler.buildDepError "yxdb-utils"))
             ];
           buildable = true;
           };
         "yxdb2csv" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."yxdb-utils" or (buildDepError "yxdb-utils"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."yxdb-utils" or (errorHandler.buildDepError "yxdb-utils"))
             ];
           buildable = true;
           };
@@ -111,44 +80,44 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "yxdb-tests" = {
           depends = [
-            (hsPkgs."Codec-Compression-LZF" or (buildDepError "Codec-Compression-LZF"))
-            (hsPkgs."Decimal" or (buildDepError "Decimal"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bimap" or (buildDepError "bimap"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."binary-conduit" or (buildDepError "binary-conduit"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."csv-conduit" or (buildDepError "csv-conduit"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."newtype" or (buildDepError "newtype"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."reinterpret-cast" or (buildDepError "reinterpret-cast"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-binary" or (buildDepError "text-binary"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
+            (hsPkgs."Codec-Compression-LZF" or (errorHandler.buildDepError "Codec-Compression-LZF"))
+            (hsPkgs."Decimal" or (errorHandler.buildDepError "Decimal"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."binary-conduit" or (errorHandler.buildDepError "binary-conduit"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
+            (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."csv-conduit" or (errorHandler.buildDepError "csv-conduit"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."reinterpret-cast" or (errorHandler.buildDepError "reinterpret-cast"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."text-binary" or (errorHandler.buildDepError "text-binary"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             ];
           buildable = true;
           };

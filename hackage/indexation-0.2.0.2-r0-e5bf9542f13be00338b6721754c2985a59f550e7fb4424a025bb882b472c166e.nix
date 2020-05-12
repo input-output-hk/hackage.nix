@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -47,7 +16,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       copyright = "(c) 2018, Metrix.AI";
       maintainer = "Metrix Ninjas <ninjas@metrix.ai>";
       author = "Nikita Volkov <nikita.y.volkov@mail.ru>";
-      homepage = "https://github.com/nikita-volkov/indexation";
+      homepage = "https://github.com/nikita-volkov/indexation ";
       url = "";
       synopsis = "Tools for entity indexation";
       description = "A set of tools for indexing entities";
@@ -56,22 +25,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."deferred-folds" or (buildDepError "deferred-folds"))
-          (hsPkgs."focus" or (buildDepError "focus"))
-          (hsPkgs."foldl" or (buildDepError "foldl"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."list-t" or (buildDepError "list-t"))
-          (hsPkgs."potoki-cereal" or (buildDepError "potoki-cereal"))
-          (hsPkgs."potoki" or (buildDepError "potoki"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."deferred-folds" or (errorHandler.buildDepError "deferred-folds"))
+          (hsPkgs."focus" or (errorHandler.buildDepError "focus"))
+          (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
+          (hsPkgs."potoki-cereal" or (errorHandler.buildDepError "potoki-cereal"))
+          (hsPkgs."potoki" or (errorHandler.buildDepError "potoki"))
+          (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+          (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         buildable = true;
         };

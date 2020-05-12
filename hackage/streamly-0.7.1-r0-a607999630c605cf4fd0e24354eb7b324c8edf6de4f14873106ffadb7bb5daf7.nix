@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       fusion-plugin = false;
@@ -67,184 +36,184 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ((([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."heaps" or (buildDepError "heaps"))
-          (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
-          (hsPkgs."lockfree-queue" or (buildDepError "lockfree-queue"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."fusion-plugin-types" or (buildDepError "fusion-plugin-types"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."network" or (buildDepError "network"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (buildDepError "semigroups"))) ++ (pkgs.lib).optionals (flags.inspection) [
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
-          ]) ++ (pkgs.lib).optional (flags.dev && flags.inspection) (hsPkgs."inspection-and-dev-flags-cannot-be-used-together" or (buildDepError "inspection-and-dev-flags-cannot-be-used-together"));
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."heaps" or (errorHandler.buildDepError "heaps"))
+          (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
+          (hsPkgs."lockfree-queue" or (errorHandler.buildDepError "lockfree-queue"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+          (hsPkgs."fusion-plugin-types" or (errorHandler.buildDepError "fusion-plugin-types"))
+          ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."network" or (errorHandler.buildDepError "network"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optionals (flags.inspection) [
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
+          ]) ++ (pkgs.lib).optional (flags.dev && flags.inspection) (hsPkgs."inspection-and-dev-flags-cannot-be-used-together" or (errorHandler.buildDepError "inspection-and-dev-flags-cannot-be-used-together"));
         buildable = true;
         };
       exes = {
         "nano-bench" = {
           depends = ([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optionals (flags.dev) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optionals (flags.dev) [
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
             ];
           buildable = if flags.dev then true else false;
           };
         "chart" = {
           depends = (pkgs.lib).optionals (flags.dev && !flags.no-charts && !(compiler.isGhcjs && true)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bench-show" or (buildDepError "bench-show"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bench-show" or (errorHandler.buildDepError "bench-show"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = if flags.dev && !flags.no-charts && !(compiler.isGhcjs && true)
             then true
             else false;
           };
         "SearchQuery" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             ];
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
             else false;
           };
         "ListDir" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers")));
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) ([
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers")));
           buildable = if flags.examples || flags.examples-sdl
             then true
             else false;
           };
         "MergeSort" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
             ];
           buildable = if flags.examples || flags.examples-sdl
             then true
             else false;
           };
         "AcidRain" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) ([
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8.0") [
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ]);
           buildable = if flags.examples || flags.examples-sdl
             then true
             else false;
           };
         "CirclingSquare" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples-sdl) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."SDL" or (buildDepError "SDL"))
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples-sdl) [
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             ];
           buildable = if flags.examples-sdl then true else false;
           };
         "ControlFlow" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (buildDepError "semigroups")));
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) ([
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups")));
           buildable = if flags.examples || flags.examples-sdl
             then true
             else false;
           };
         "HandleIO" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.examples || flags.examples-sdl
             then true
             else false;
           };
         "FileIOExamples" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.examples || flags.examples-sdl
             then true
             else false;
           };
         "EchoServer" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers")));
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) ([
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers")));
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
             else false;
           };
         "FileSinkServer" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers")));
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) ([
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers")));
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
             else false;
           };
         "FromFileClient" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
             else false;
           };
         "WordClassifier" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             ];
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
             else false;
           };
         "WordCount" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
             else false;
           };
         "CamelCase" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals ((flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)) [
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if (flags.examples || flags.examples-sdl) && !(compiler.isGhcjs && true)
             then true
@@ -254,322 +223,322 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
           };
         "internal-prelude-test" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
           };
         "pure-streams-base" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
           };
         "pure-streams-streamly" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
           };
         "properties" = {
           depends = ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "array-test" = {
           depends = ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "internal-data-fold-test" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
           };
         "data-array-test" = {
           depends = ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "smallarray-test" = {
           depends = ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "primarray-test" = {
           depends = ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "string-test" = {
           depends = ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "maxrate" = {
-          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.dev) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."clock" or (buildDepError "clock"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."random" or (buildDepError "random"))
+          depends = (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin")) ++ (pkgs.lib).optionals (flags.dev) [
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
             ];
           buildable = if flags.dev then true else false;
           };
         "loops" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
           };
         "nested-loops" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
           };
         "parallel-loops" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
           };
         "version-bounds" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."base" or (buildDepError "base"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
           };
         };
       benchmarks = {
         "linear" = {
           depends = (([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"))) ++ (pkgs.lib).optionals (flags.inspection) [
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))) ++ (pkgs.lib).optionals (flags.inspection) [
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
             ];
           buildable = true;
           };
         "nested" = {
           depends = ([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "nested-unfold" = {
           depends = ([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "unpinned-array" = {
           depends = ([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "prim-array" = {
           depends = ([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "small-array" = {
           depends = ([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "array" = {
           depends = ([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "fileio" = {
           depends = ([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            (hsPkgs."typed-process" or (buildDepError "typed-process"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optionals (flags.inspection) [
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optionals (flags.inspection) [
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
             ];
           buildable = true;
           };
         "linear-async" = {
           depends = (([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"))) ++ (pkgs.lib).optionals (flags.inspection) [
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))) ++ (pkgs.lib).optionals (flags.inspection) [
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
             ];
           buildable = true;
           };
         "nested-concurrent" = {
           depends = ([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         "parallel" = {
           depends = (([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"))) ++ (pkgs.lib).optionals (flags.inspection) [
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))) ++ (pkgs.lib).optionals (flags.inspection) [
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
             ];
           buildable = true;
           };
         "linear-rate" = {
           depends = (([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"))) ++ (pkgs.lib).optionals (flags.inspection) [
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."inspection-testing" or (buildDepError "inspection-testing"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))) ++ (pkgs.lib).optionals (flags.inspection) [
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
             ];
           buildable = true;
           };
         "concurrent" = {
           depends = [
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"));
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
           };
         "base" = {
           depends = [
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"));
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
           };
         "adaptive" = {
           depends = ([
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            (hsPkgs."random" or (buildDepError "random"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhcjs && true) && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         };

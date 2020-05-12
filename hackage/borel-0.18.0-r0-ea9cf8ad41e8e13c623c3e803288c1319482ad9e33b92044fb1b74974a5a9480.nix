@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { network-uri = true; };
     package = {
@@ -56,74 +25,74 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."bimap" or (buildDepError "bimap"))
-          (hsPkgs."cassava" or (buildDepError "cassava"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."configurator" or (buildDepError "configurator"))
-          (hsPkgs."errors" or (buildDepError "errors"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."multiset" or (buildDepError "multiset"))
-          (hsPkgs."pipes" or (buildDepError "pipes"))
-          (hsPkgs."pipes-concurrency" or (buildDepError "pipes-concurrency"))
-          (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
-          (hsPkgs."ceilometer-common" or (buildDepError "ceilometer-common"))
-          (hsPkgs."chevalier-common" or (buildDepError "chevalier-common"))
-          (hsPkgs."marquise" or (buildDepError "marquise"))
-          (hsPkgs."vaultaire-common" or (buildDepError "vaultaire-common"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
+          (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
+          (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
+          (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."multiset" or (errorHandler.buildDepError "multiset"))
+          (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+          (hsPkgs."pipes-concurrency" or (errorHandler.buildDepError "pipes-concurrency"))
+          (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
+          (hsPkgs."ceilometer-common" or (errorHandler.buildDepError "ceilometer-common"))
+          (hsPkgs."chevalier-common" or (errorHandler.buildDepError "chevalier-common"))
+          (hsPkgs."marquise" or (errorHandler.buildDepError "marquise"))
+          (hsPkgs."vaultaire-common" or (errorHandler.buildDepError "vaultaire-common"))
           ] ++ [
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
           ];
         buildable = true;
         };
       tests = {
         "unit" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."lens-properties" or (buildDepError "lens-properties"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."cassava" or (buildDepError "cassava"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."bimap" or (buildDepError "bimap"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."configurator" or (buildDepError "configurator"))
-            (hsPkgs."errors" or (buildDepError "errors"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."multiset" or (buildDepError "multiset"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."pipes-concurrency" or (buildDepError "pipes-concurrency"))
-            (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
-            (hsPkgs."ceilometer-common" or (buildDepError "ceilometer-common"))
-            (hsPkgs."chevalier-common" or (buildDepError "chevalier-common"))
-            (hsPkgs."marquise" or (buildDepError "marquise"))
-            (hsPkgs."vaultaire-common" or (buildDepError "vaultaire-common"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."lens-properties" or (errorHandler.buildDepError "lens-properties"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
+            (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."multiset" or (errorHandler.buildDepError "multiset"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."pipes-concurrency" or (errorHandler.buildDepError "pipes-concurrency"))
+            (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
+            (hsPkgs."ceilometer-common" or (errorHandler.buildDepError "ceilometer-common"))
+            (hsPkgs."chevalier-common" or (errorHandler.buildDepError "chevalier-common"))
+            (hsPkgs."marquise" or (errorHandler.buildDepError "marquise"))
+            (hsPkgs."vaultaire-common" or (errorHandler.buildDepError "vaultaire-common"))
             ] ++ [
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
             ];
           buildable = true;
           };

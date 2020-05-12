@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       tfrandom = true;
@@ -62,80 +31,80 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ((([
-          (hsPkgs."old-time" or (buildDepError "old-time"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."html" or (buildDepError "html"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          ] ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs."tf-random" or (buildDepError "tf-random"))) ++ (pkgs.lib).optionals (flags.ghcapi && !system.isWindows) [
-          (hsPkgs."ghc" or (buildDepError "ghc"))
-          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-          ]) ++ (pkgs.lib).optional (flags.readfile) (hsPkgs."haskell-src" or (buildDepError "haskell-src"))) ++ [
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
+          (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."html" or (errorHandler.buildDepError "html"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          ] ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ (pkgs.lib).optionals (flags.ghcapi && !system.isWindows) [
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+          (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+          ]) ++ (pkgs.lib).optional (flags.readfile) (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))) ++ [
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           ];
         buildable = true;
         };
       exes = {
         "MagicHaskeller" = {
           depends = ((([
-            (hsPkgs."MagicHaskeller" or (buildDepError "MagicHaskeller"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."html" or (buildDepError "html"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."monad-par" or (buildDepError "monad-par"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."abstract-par" or (buildDepError "abstract-par"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs."tf-random" or (buildDepError "tf-random"))) ++ (pkgs.lib).optional (flags.readfile) (hsPkgs."haskell-src" or (buildDepError "haskell-src"))) ++ [
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
+            (hsPkgs."MagicHaskeller" or (errorHandler.buildDepError "MagicHaskeller"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."html" or (errorHandler.buildDepError "html"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."monad-par" or (errorHandler.buildDepError "monad-par"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."abstract-par" or (errorHandler.buildDepError "abstract-par"))
+            (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ (pkgs.lib).optional (flags.readfile) (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))) ++ [
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             ];
           buildable = true;
           };
         "MagicHaskeller.cgi" = {
           depends = (([
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."html" or (buildDepError "html"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."MagicHaskeller" or (buildDepError "MagicHaskeller"))
-            (hsPkgs."cgi" or (buildDepError "cgi"))
-            (hsPkgs."hint" or (buildDepError "hint"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."mueval" or (buildDepError "mueval"))) ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs."tf-random" or (buildDepError "tf-random"))) ++ [
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."html" or (errorHandler.buildDepError "html"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."MagicHaskeller" or (errorHandler.buildDepError "MagicHaskeller"))
+            (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
+            (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+            (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."mueval" or (errorHandler.buildDepError "mueval"))) ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ [
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             ];
           buildable = true;
           };

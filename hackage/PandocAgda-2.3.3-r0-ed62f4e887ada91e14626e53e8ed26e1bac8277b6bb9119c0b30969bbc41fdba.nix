@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,32 +25,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."Agda" or (buildDepError "Agda"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."xhtml" or (buildDepError "xhtml"))
-          (hsPkgs."pandoc" or (buildDepError "pandoc"))
-          (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
-          (hsPkgs."text" or (buildDepError "text"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"))) ++ (if compiler.isGhc && (compiler.version).lt "7.6"
+          (hsPkgs."Agda" or (errorHandler.buildDepError "Agda"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
+          (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
+          (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (if compiler.isGhc && (compiler.version).lt "7.6"
           then [
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ]
           else [
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ]);
         buildable = true;
         };
       exes = {
         "agdapandoc" = {
           depends = [
-            (hsPkgs."PandocAgda" or (buildDepError "PandocAgda"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."PandocAgda" or (errorHandler.buildDepError "PandocAgda"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };

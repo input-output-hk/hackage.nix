@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { buildexamples = false; };
     package = {
@@ -56,30 +25,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."private" or (buildDepError "private"))
-          (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
-          (hsPkgs."tfp" or (buildDepError "tfp"))
-          (hsPkgs."non-empty" or (buildDepError "non-empty"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."enumset" or (buildDepError "enumset"))
-          (hsPkgs."storable-enum" or (buildDepError "storable-enum"))
-          (hsPkgs."bool8" or (buildDepError "bool8"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
-          (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-          (hsPkgs."prelude-compat" or (buildDepError "prelude-compat"))
-          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."private" or (errorHandler.buildDepError "private"))
+          (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
+          (hsPkgs."tfp" or (errorHandler.buildDepError "tfp"))
+          (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."enumset" or (errorHandler.buildDepError "enumset"))
+          (hsPkgs."storable-enum" or (errorHandler.buildDepError "storable-enum"))
+          (hsPkgs."bool8" or (errorHandler.buildDepError "bool8"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+          (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
+          (hsPkgs."prelude-compat" or (errorHandler.buildDepError "prelude-compat"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
           ];
         buildable = true;
         };
       sublibs = {
         "private" = {
           depends = [
-            (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
-            (hsPkgs."tfp" or (buildDepError "tfp"))
-            (hsPkgs."non-empty" or (buildDepError "non-empty"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
+            (hsPkgs."tfp" or (errorHandler.buildDepError "tfp"))
+            (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
+            (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };
@@ -87,14 +56,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "tone-llvm" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."llvm-extra" or (buildDepError "llvm-extra"))
-            (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
-            (hsPkgs."tfp" or (buildDepError "tfp"))
-            (hsPkgs."non-empty" or (buildDepError "non-empty"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."llvm-extra" or (errorHandler.buildDepError "llvm-extra"))
+            (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
+            (hsPkgs."tfp" or (errorHandler.buildDepError "tfp"))
+            (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
@@ -102,13 +71,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "llvm-extra-test" = {
           depends = [
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."private" or (buildDepError "private"))
-            (hsPkgs."llvm-extra" or (buildDepError "llvm-extra"))
-            (hsPkgs."llvm-tf" or (buildDepError "llvm-tf"))
-            (hsPkgs."tfp" or (buildDepError "tfp"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."private" or (errorHandler.buildDepError "private"))
+            (hsPkgs."llvm-extra" or (errorHandler.buildDepError "llvm-extra"))
+            (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
+            (hsPkgs."tfp" or (errorHandler.buildDepError "tfp"))
+            (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { static = false; };
     package = {
@@ -56,32 +25,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."diff-parse" or (buildDepError "diff-parse"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."range" or (buildDepError "range"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."github" or (buildDepError "github"))
-          (hsPkgs."monad-parallel" or (buildDepError "monad-parallel"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."diff-parse" or (errorHandler.buildDepError "diff-parse"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+          (hsPkgs."range" or (errorHandler.buildDepError "range"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."github" or (errorHandler.buildDepError "github"))
+          (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
           ];
         buildable = true;
         };
       exes = {
         "checkmate" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."diff-parse" or (buildDepError "diff-parse"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."range" or (buildDepError "range"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."checkmate" or (buildDepError "checkmate"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."diff-parse" or (errorHandler.buildDepError "diff-parse"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."range" or (errorHandler.buildDepError "range"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."checkmate" or (errorHandler.buildDepError "checkmate"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
             ];
           buildable = true;
           };
@@ -89,35 +58,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "hlint" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."diff-parse" or (buildDepError "diff-parse"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."range" or (buildDepError "range"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."hlint" or (buildDepError "hlint"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."diff-parse" or (errorHandler.buildDepError "diff-parse"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."range" or (errorHandler.buildDepError "range"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             ];
           buildable = true;
           };
         "spec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."diff-parse" or (buildDepError "diff-parse"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."range" or (buildDepError "range"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."checkmate" or (buildDepError "checkmate"))
-            (hsPkgs."file-embed" or (buildDepError "file-embed"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-megaparsec" or (buildDepError "hspec-megaparsec"))
-            (hsPkgs."interpolatedstring-perl6" or (buildDepError "interpolatedstring-perl6"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-text" or (buildDepError "quickcheck-text"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."diff-parse" or (errorHandler.buildDepError "diff-parse"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."range" or (errorHandler.buildDepError "range"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."checkmate" or (errorHandler.buildDepError "checkmate"))
+            (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hspec-megaparsec" or (errorHandler.buildDepError "hspec-megaparsec"))
+            (hsPkgs."interpolatedstring-perl6" or (errorHandler.buildDepError "interpolatedstring-perl6"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             ];
           buildable = true;
           };

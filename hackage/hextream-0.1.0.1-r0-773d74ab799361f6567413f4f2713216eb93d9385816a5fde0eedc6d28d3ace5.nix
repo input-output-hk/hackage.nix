@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -53,65 +22,65 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "Cf README file";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (buildToolDepError "cabal-doctest")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.buildToolDepError "cabal-doctest")))
         ];
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base-compat" or (buildDepError "base-compat"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."parsers" or (buildDepError "parsers"))
-          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
           ];
         buildable = true;
         };
       tests = {
         "doctest" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."hextream" or (buildDepError "hextream"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
+            (hsPkgs."hextream" or (errorHandler.buildDepError "hextream"))
             ];
           buildable = true;
           };
         "golden" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."hextream" or (buildDepError "hextream"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."pretty-simple" or (buildDepError "pretty-simple"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."streaming-attoparsec" or (buildDepError "streaming-attoparsec"))
-            (hsPkgs."streaming-bytestring" or (buildDepError "streaming-bytestring"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
+            (hsPkgs."hextream" or (errorHandler.buildDepError "hextream"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."streaming-attoparsec" or (errorHandler.buildDepError "streaming-attoparsec"))
+            (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
         "unit" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-compat" or (buildDepError "base-compat"))
-            (hsPkgs."hextream" or (buildDepError "hextream"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."parsers" or (buildDepError "parsers"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."streaming-attoparsec" or (buildDepError "streaming-attoparsec"))
-            (hsPkgs."streaming-bytestring" or (buildDepError "streaming-bytestring"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
+            (hsPkgs."hextream" or (errorHandler.buildDepError "hextream"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."streaming-attoparsec" or (errorHandler.buildDepError "streaming-attoparsec"))
+            (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };

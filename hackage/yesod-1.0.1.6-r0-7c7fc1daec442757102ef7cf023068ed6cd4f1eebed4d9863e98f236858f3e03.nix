@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { blaze_html_0_5 = true; };
     package = {
@@ -56,49 +25,51 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
-          (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
-          (hsPkgs."yesod-json" or (buildDepError "yesod-json"))
-          (hsPkgs."yesod-persistent" or (buildDepError "yesod-persistent"))
-          (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-          (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
-          (hsPkgs."hamlet" or (buildDepError "hamlet"))
-          (hsPkgs."shakespeare-js" or (buildDepError "shakespeare-js"))
-          (hsPkgs."shakespeare-css" or (buildDepError "shakespeare-css"))
-          (hsPkgs."warp" or (buildDepError "warp"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
+          (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
+          (hsPkgs."yesod-json" or (errorHandler.buildDepError "yesod-json"))
+          (hsPkgs."yesod-persistent" or (errorHandler.buildDepError "yesod-persistent"))
+          (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+          (hsPkgs."wai-logger" or (errorHandler.buildDepError "wai-logger"))
+          (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
+          (hsPkgs."shakespeare-js" or (errorHandler.buildDepError "shakespeare-js"))
+          (hsPkgs."shakespeare-css" or (errorHandler.buildDepError "shakespeare-css"))
+          (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           ] ++ (if flags.blaze_html_0_5
           then [
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
             ]
-          else [ (hsPkgs."blaze-html" or (buildDepError "blaze-html")) ]);
+          else [
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            ]);
         buildable = true;
         };
       exes = {
         "yesod" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."shakespeare-text" or (errorHandler.buildDepError "shakespeare-text"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+            (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
             ];
           buildable = true;
           };

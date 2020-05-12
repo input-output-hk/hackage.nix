@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,34 +25,34 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."iso639" or (buildDepError "iso639"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wreq" or (buildDepError "wreq"))
-          (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."iso639" or (errorHandler.buildDepError "iso639"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
+          (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           ];
         buildable = true;
         };
       exes = {
         "nicovideo-translator" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."dns" or (buildDepError "dns"))
-            (hsPkgs."iso639" or (buildDepError "iso639"))
-            (hsPkgs."nicovideo-translator" or (buildDepError "nicovideo-translator"))
-            (hsPkgs."setlocale" or (buildDepError "setlocale"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."dns" or (errorHandler.buildDepError "dns"))
+            (hsPkgs."iso639" or (errorHandler.buildDepError "iso639"))
+            (hsPkgs."nicovideo-translator" or (errorHandler.buildDepError "nicovideo-translator"))
+            (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -57,32 +26,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "tpar" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."errors" or (buildDepError "errors"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."friendly-time" or (buildDepError "friendly-time"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
-            (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
-            (hsPkgs."pipes-concurrency" or (buildDepError "pipes-concurrency"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."heaps" or (buildDepError "heaps"))
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-            (hsPkgs."trifecta" or (buildDepError "trifecta"))
-            (hsPkgs."parsers" or (buildDepError "parsers"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."friendly-time" or (errorHandler.buildDepError "friendly-time"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
+            (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
+            (hsPkgs."pipes-concurrency" or (errorHandler.buildDepError "pipes-concurrency"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
+            (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."heaps" or (errorHandler.buildDepError "heaps"))
+            (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+            (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
+            (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             ];
           buildable = true;
           };
@@ -90,16 +59,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."network-transport-inmemory" or (buildDepError "network-transport-inmemory"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
+            (hsPkgs."network-transport-inmemory" or (errorHandler.buildDepError "network-transport-inmemory"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
@@ -107,27 +76,27 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."errors" or (buildDepError "errors"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
-            (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
-            (hsPkgs."pipes-concurrency" or (buildDepError "pipes-concurrency"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."heaps" or (buildDepError "heaps"))
-            (hsPkgs."trifecta" or (buildDepError "trifecta"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
+            (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
+            (hsPkgs."pipes-concurrency" or (errorHandler.buildDepError "pipes-concurrency"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
+            (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."heaps" or (errorHandler.buildDepError "heaps"))
+            (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
             ];
           buildable = true;
           };

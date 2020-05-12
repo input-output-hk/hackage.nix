@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       build-gibberish = false;
@@ -66,79 +35,79 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."anonymous-sums" or (buildDepError "anonymous-sums"))
-          (hsPkgs."matchers" or (buildDepError "matchers"))
-          (hsPkgs."multiarg" or (buildDepError "multiarg"))
-          (hsPkgs."ofx" or (buildDepError "ofx"))
-          (hsPkgs."prednote" or (buildDepError "prednote"))
-          (hsPkgs."rainbow" or (buildDepError "rainbow"))
-          (hsPkgs."rainbox" or (buildDepError "rainbox"))
-          (hsPkgs."action-permutations" or (buildDepError "action-permutations"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."contravariant" or (buildDepError "contravariant"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."anonymous-sums" or (errorHandler.buildDepError "anonymous-sums"))
+          (hsPkgs."matchers" or (errorHandler.buildDepError "matchers"))
+          (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
+          (hsPkgs."ofx" or (errorHandler.buildDepError "ofx"))
+          (hsPkgs."prednote" or (errorHandler.buildDepError "prednote"))
+          (hsPkgs."rainbow" or (errorHandler.buildDepError "rainbow"))
+          (hsPkgs."rainbox" or (errorHandler.buildDepError "rainbox"))
+          (hsPkgs."action-permutations" or (errorHandler.buildDepError "action-permutations"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
+          (hsPkgs."either" or (errorHandler.buildDepError "either"))
+          (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           ];
         buildable = true;
         };
       exes = {
         "penny-gibberish" = {
           depends = (pkgs.lib).optionals (flags.build-gibberish) [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."multiarg" or (buildDepError "multiarg"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = if flags.build-gibberish then true else false;
           };
         "penny" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if !flags.build-penny then false else true;
           };
         "penny-selloff" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if !flags.build-selloff then false else true;
           };
         "penny-diff" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if !flags.build-diff then false else true;
           };
         "penny-reprint" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if !flags.build-reprint then false else true;
           };
         "penny-reconcile" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if !flags.build-reconcile then false else true;
           };
@@ -146,17 +115,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "penny-test" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."multiarg" or (buildDepError "multiarg"))
-            (hsPkgs."anonymous-sums" or (buildDepError "anonymous-sums"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
+            (hsPkgs."anonymous-sums" or (errorHandler.buildDepError "anonymous-sums"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };

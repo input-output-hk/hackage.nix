@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,52 +25,52 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
-          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-          (hsPkgs."syntactic" or (buildDepError "syntactic"))
-          (hsPkgs."plugins-multistage" or (buildDepError "plugins-multistage"))
-          (hsPkgs."feldspar-language" or (buildDepError "feldspar-language"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."plugins" or (buildDepError "plugins"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."storable-tuple" or (buildDepError "storable-tuple"))
-          (hsPkgs."storable-record" or (buildDepError "storable-record"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+          (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+          (hsPkgs."syntactic" or (errorHandler.buildDepError "syntactic"))
+          (hsPkgs."plugins-multistage" or (errorHandler.buildDepError "plugins-multistage"))
+          (hsPkgs."feldspar-language" or (errorHandler.buildDepError "feldspar-language"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."storable-tuple" or (errorHandler.buildDepError "storable-tuple"))
+          (hsPkgs."storable-record" or (errorHandler.buildDepError "storable-record"))
           ];
-        libs = (pkgs.lib).optional (system.isLinux) (pkgs."gcc_s" or (sysDepError "gcc_s"));
+        libs = (pkgs.lib).optional (system.isLinux) (pkgs."gcc_s" or (errorHandler.sysDepError "gcc_s"));
         buildable = true;
         };
       tests = {
         "regression" = {
           depends = [
-            (hsPkgs."feldspar-language" or (buildDepError "feldspar-language"))
-            (hsPkgs."feldspar-compiler" or (buildDepError "feldspar-compiler"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."feldspar-language" or (errorHandler.buildDepError "feldspar-language"))
+            (hsPkgs."feldspar-compiler" or (errorHandler.buildDepError "feldspar-compiler"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
         "callconv" = {
           depends = [
-            (hsPkgs."feldspar-language" or (buildDepError "feldspar-language"))
-            (hsPkgs."feldspar-compiler" or (buildDepError "feldspar-compiler"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."feldspar-language" or (errorHandler.buildDepError "feldspar-language"))
+            (hsPkgs."feldspar-compiler" or (errorHandler.buildDepError "feldspar-compiler"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
@@ -109,12 +78,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "crc" = {
           depends = [
-            (hsPkgs."feldspar-language" or (buildDepError "feldspar-language"))
-            (hsPkgs."feldspar-compiler" or (buildDepError "feldspar-compiler"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."feldspar-language" or (errorHandler.buildDepError "feldspar-language"))
+            (hsPkgs."feldspar-compiler" or (errorHandler.buildDepError "feldspar-compiler"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             ];
           buildable = true;
           };

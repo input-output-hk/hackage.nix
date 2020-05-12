@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -47,7 +16,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
       author = "Nikita Volkov <nikita.y.volkov@mail.ru>";
-      homepage = "https://github.com/nikita-volkov/hasql-postgres";
+      homepage = "https://github.com/nikita-volkov/hasql-postgres ";
       url = "";
       synopsis = "A \"PostgreSQL\" backend for the \"hasql\" library";
       description = "This library provides a \\\"PostgreSQL\\\" driver for\n<http://hackage.haskell.org/package/hasql the \"hasql\" library>.\n\nAccording to the included benchmarks,\nit performs up to 2.5x faster than \\\"postgresql-simple\\\" and\nup to 8x faster than \\\"HDBC\\\".\nYou can read up\n<http://nikita-volkov.github.io/hasql-benchmarks/ a post with analysis of those benchmarks>.";
@@ -56,79 +25,79 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."hasql-backend" or (buildDepError "hasql-backend"))
-          (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
-          (hsPkgs."postgresql-libpq" or (buildDepError "postgresql-libpq"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."hashtables" or (buildDepError "hashtables"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."list-t" or (buildDepError "list-t"))
-          (hsPkgs."loch-th" or (buildDepError "loch-th"))
-          (hsPkgs."placeholders" or (buildDepError "placeholders"))
-          (hsPkgs."mtl-prelude" or (buildDepError "mtl-prelude"))
-          (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."hasql-backend" or (errorHandler.buildDepError "hasql-backend"))
+          (hsPkgs."postgresql-binary" or (errorHandler.buildDepError "postgresql-binary"))
+          (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
+          (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
+          (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
+          (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
+          (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
           ];
         buildable = true;
         };
       tests = {
         "library-tests" = {
           depends = [
-            (hsPkgs."HTF" or (buildDepError "HTF"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."hasql" or (buildDepError "hasql"))
-            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
-            (hsPkgs."postgresql-libpq" or (buildDepError "postgresql-libpq"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."hashtables" or (buildDepError "hashtables"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."list-t" or (buildDepError "list-t"))
-            (hsPkgs."loch-th" or (buildDepError "loch-th"))
-            (hsPkgs."placeholders" or (buildDepError "placeholders"))
-            (hsPkgs."mtl-prelude" or (buildDepError "mtl-prelude"))
-            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."postgresql-binary" or (errorHandler.buildDepError "postgresql-binary"))
+            (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
+            (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
+            (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
+            (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
+            (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };
         "tests" = {
           depends = [
-            (hsPkgs."hasql-postgres" or (buildDepError "hasql-postgres"))
-            (hsPkgs."hasql-backend" or (buildDepError "hasql-backend"))
-            (hsPkgs."hasql" or (buildDepError "hasql"))
-            (hsPkgs."HTF" or (buildDepError "HTF"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
-            (hsPkgs."slave-thread" or (buildDepError "slave-thread"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."list-t" or (buildDepError "list-t"))
-            (hsPkgs."mtl-prelude" or (buildDepError "mtl-prelude"))
-            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hasql-postgres" or (errorHandler.buildDepError "hasql-postgres"))
+            (hsPkgs."hasql-backend" or (errorHandler.buildDepError "hasql-backend"))
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
+            (hsPkgs."slave-thread" or (errorHandler.buildDepError "slave-thread"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
+            (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
+            (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };
@@ -136,44 +105,44 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "competition" = {
           depends = [
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
-            (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
-            (hsPkgs."hasql-postgres" or (buildDepError "hasql-postgres"))
-            (hsPkgs."hasql-backend" or (buildDepError "hasql-backend"))
-            (hsPkgs."hasql" or (buildDepError "hasql"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."criterion-plus" or (buildDepError "criterion-plus"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."list-t" or (buildDepError "list-t"))
-            (hsPkgs."mtl-prelude" or (buildDepError "mtl-prelude"))
-            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+            (hsPkgs."HDBC-postgresql" or (errorHandler.buildDepError "HDBC-postgresql"))
+            (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
+            (hsPkgs."hasql-postgres" or (errorHandler.buildDepError "hasql-postgres"))
+            (hsPkgs."hasql-backend" or (errorHandler.buildDepError "hasql-backend"))
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."criterion-plus" or (errorHandler.buildDepError "criterion-plus"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
+            (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
+            (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };
         "profiling" = {
           depends = [
-            (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
-            (hsPkgs."hasql-postgres" or (buildDepError "hasql-postgres"))
-            (hsPkgs."hasql-backend" or (buildDepError "hasql-backend"))
-            (hsPkgs."hasql" or (buildDepError "hasql"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."list-t" or (buildDepError "list-t"))
-            (hsPkgs."mtl-prelude" or (buildDepError "mtl-prelude"))
-            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
+            (hsPkgs."hasql-postgres" or (errorHandler.buildDepError "hasql-postgres"))
+            (hsPkgs."hasql-backend" or (errorHandler.buildDepError "hasql-backend"))
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
+            (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
+            (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };

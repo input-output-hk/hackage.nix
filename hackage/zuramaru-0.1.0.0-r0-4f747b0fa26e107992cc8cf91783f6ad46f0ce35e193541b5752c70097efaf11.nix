@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,57 +25,57 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."distributive" or (buildDepError "distributive"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."extensible" or (buildDepError "extensible"))
-          (hsPkgs."extra" or (buildDepError "extra"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."readline" or (buildDepError "readline"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-          (hsPkgs."singletons" or (buildDepError "singletons"))
-          (hsPkgs."string-qq" or (buildDepError "string-qq"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-show" or (buildDepError "text-show"))
-          (hsPkgs."throwable-exceptions" or (buildDepError "throwable-exceptions"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
+          (hsPkgs."either" or (errorHandler.buildDepError "either"))
+          (hsPkgs."extensible" or (errorHandler.buildDepError "extensible"))
+          (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+          (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+          (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+          (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
+          (hsPkgs."string-qq" or (errorHandler.buildDepError "string-qq"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
+          (hsPkgs."throwable-exceptions" or (errorHandler.buildDepError "throwable-exceptions"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           ];
         buildable = true;
         };
       exes = {
         "maru" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."distributive" or (buildDepError "distributive"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."extensible" or (buildDepError "extensible"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."profunctors" or (buildDepError "profunctors"))
-            (hsPkgs."readline" or (buildDepError "readline"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."singletons" or (buildDepError "singletons"))
-            (hsPkgs."string-qq" or (buildDepError "string-qq"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-show" or (buildDepError "text-show"))
-            (hsPkgs."throwable-exceptions" or (buildDepError "throwable-exceptions"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."zuramaru" or (buildDepError "zuramaru"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."extensible" or (errorHandler.buildDepError "extensible"))
+            (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+            (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+            (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
+            (hsPkgs."string-qq" or (errorHandler.buildDepError "string-qq"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
+            (hsPkgs."throwable-exceptions" or (errorHandler.buildDepError "throwable-exceptions"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."zuramaru" or (errorHandler.buildDepError "zuramaru"))
             ];
           buildable = true;
           };
@@ -114,60 +83,60 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "integrate-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."distributive" or (buildDepError "distributive"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."extensible" or (buildDepError "extensible"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."profunctors" or (buildDepError "profunctors"))
-            (hsPkgs."readline" or (buildDepError "readline"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."singletons" or (buildDepError "singletons"))
-            (hsPkgs."string-qq" or (buildDepError "string-qq"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-show" or (buildDepError "text-show"))
-            (hsPkgs."throwable-exceptions" or (buildDepError "throwable-exceptions"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."silently" or (buildDepError "silently"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."extensible" or (errorHandler.buildDepError "extensible"))
+            (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+            (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+            (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
+            (hsPkgs."string-qq" or (errorHandler.buildDepError "string-qq"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
+            (hsPkgs."throwable-exceptions" or (errorHandler.buildDepError "throwable-exceptions"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             ];
           buildable = true;
           };
         "unit-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."distributive" or (buildDepError "distributive"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."extensible" or (buildDepError "extensible"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."profunctors" or (buildDepError "profunctors"))
-            (hsPkgs."readline" or (buildDepError "readline"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."singletons" or (buildDepError "singletons"))
-            (hsPkgs."string-qq" or (buildDepError "string-qq"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-show" or (buildDepError "text-show"))
-            (hsPkgs."throwable-exceptions" or (buildDepError "throwable-exceptions"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."extensible" or (errorHandler.buildDepError "extensible"))
+            (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+            (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+            (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
+            (hsPkgs."string-qq" or (errorHandler.buildDepError "string-qq"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
+            (hsPkgs."throwable-exceptions" or (errorHandler.buildDepError "throwable-exceptions"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             ];
           buildable = true;
           };

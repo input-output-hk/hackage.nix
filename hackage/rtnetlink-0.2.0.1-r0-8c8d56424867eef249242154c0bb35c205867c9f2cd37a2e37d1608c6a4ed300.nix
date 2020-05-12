@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { examples = false; };
     package = {
@@ -56,38 +25,38 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bits-bytestring" or (buildDepError "bits-bytestring"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."socket" or (buildDepError "socket"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unix" or (buildDepError "unix"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bits-bytestring" or (errorHandler.buildDepError "bits-bytestring"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."pretty-hex" or (errorHandler.buildDepError "pretty-hex"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."socket" or (errorHandler.buildDepError "socket"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs")))
           ];
         buildable = true;
         };
       exes = {
         "rtnl-link" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."rtnetlink" or (buildDepError "rtnetlink"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."rtnetlink" or (errorHandler.buildDepError "rtnetlink"))
             ];
           buildable = if flags.examples then true else false;
           };
         "rtnl-address" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."socket" or (buildDepError "socket"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."rtnetlink" or (buildDepError "rtnetlink"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."socket" or (errorHandler.buildDepError "socket"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."rtnetlink" or (errorHandler.buildDepError "rtnetlink"))
             ];
           buildable = if flags.examples then true else false;
           };
@@ -95,14 +64,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "rtnetlink-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."socket" or (buildDepError "socket"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."linux-namespaces" or (buildDepError "linux-namespaces"))
-            (hsPkgs."rtnetlink" or (buildDepError "rtnetlink"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."socket" or (errorHandler.buildDepError "socket"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."linux-namespaces" or (errorHandler.buildDepError "linux-namespaces"))
+            (hsPkgs."rtnetlink" or (errorHandler.buildDepError "rtnetlink"))
             ];
           buildable = true;
           };

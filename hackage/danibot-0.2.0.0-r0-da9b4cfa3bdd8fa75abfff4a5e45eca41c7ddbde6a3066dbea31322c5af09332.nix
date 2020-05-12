@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,34 +25,34 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."wreq" or (buildDepError "wreq"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."websockets" or (buildDepError "websockets"))
-          (hsPkgs."wuss" or (buildDepError "wuss"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
-          (hsPkgs."monoid-subclasses" or (buildDepError "monoid-subclasses"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."conceit" or (buildDepError "conceit"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."foldl" or (buildDepError "foldl"))
-          (hsPkgs."streaming" or (buildDepError "streaming"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
+          (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
+          (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."conceit" or (errorHandler.buildDepError "conceit"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
+          (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           ];
         buildable = true;
         };
       exes = {
         "danibot" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."danibot" or (buildDepError "danibot"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."danibot" or (errorHandler.buildDepError "danibot"))
             ];
           buildable = true;
           };

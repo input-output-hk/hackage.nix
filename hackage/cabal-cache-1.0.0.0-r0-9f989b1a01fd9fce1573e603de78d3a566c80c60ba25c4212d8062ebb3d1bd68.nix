@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,45 +25,45 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."amazonka" or (buildDepError "amazonka"))
-          (hsPkgs."amazonka-core" or (buildDepError "amazonka-core"))
-          (hsPkgs."amazonka-s3" or (buildDepError "amazonka-s3"))
-          (hsPkgs."antiope-core" or (buildDepError "antiope-core"))
-          (hsPkgs."antiope-s3" or (buildDepError "antiope-s3"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."generic-lens" or (buildDepError "generic-lens"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."selective" or (buildDepError "selective"))
-          (hsPkgs."stringsearch" or (buildDepError "stringsearch"))
-          (hsPkgs."tar" or (buildDepError "tar"))
-          (hsPkgs."temporary" or (buildDepError "temporary"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."unliftio" or (buildDepError "unliftio"))
-          (hsPkgs."zlib" or (buildDepError "zlib"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."amazonka" or (errorHandler.buildDepError "amazonka"))
+          (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
+          (hsPkgs."amazonka-s3" or (errorHandler.buildDepError "amazonka-s3"))
+          (hsPkgs."antiope-core" or (errorHandler.buildDepError "antiope-core"))
+          (hsPkgs."antiope-s3" or (errorHandler.buildDepError "antiope-s3"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+          (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."generic-lens" or (errorHandler.buildDepError "generic-lens"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."selective" or (errorHandler.buildDepError "selective"))
+          (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
+          (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
+          (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+          (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           ];
         buildable = true;
         };
       exes = {
         "cabal-cache" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."cabal-cache" or (buildDepError "cabal-cache"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."cabal-cache" or (errorHandler.buildDepError "cabal-cache"))
             ];
           buildable = true;
           };
@@ -102,24 +71,24 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "cabal-cache-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."antiope-core" or (buildDepError "antiope-core"))
-            (hsPkgs."antiope-s3" or (buildDepError "antiope-s3"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."generic-lens" or (buildDepError "generic-lens"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hw-hedgehog" or (buildDepError "hw-hedgehog"))
-            (hsPkgs."hw-hspec-hedgehog" or (buildDepError "hw-hspec-hedgehog"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."raw-strings-qq" or (buildDepError "raw-strings-qq"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."cabal-cache" or (buildDepError "cabal-cache"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."antiope-core" or (errorHandler.buildDepError "antiope-core"))
+            (hsPkgs."antiope-s3" or (errorHandler.buildDepError "antiope-s3"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."generic-lens" or (errorHandler.buildDepError "generic-lens"))
+            (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hw-hedgehog" or (errorHandler.buildDepError "hw-hedgehog"))
+            (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."cabal-cache" or (errorHandler.buildDepError "cabal-cache"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover")))
             ];
           buildable = true;
           };

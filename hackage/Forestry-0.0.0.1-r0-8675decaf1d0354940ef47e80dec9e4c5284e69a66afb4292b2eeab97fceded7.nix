@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { rnaforestry = false; };
     package = {
@@ -56,45 +25,45 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."log-domain" or (buildDepError "log-domain"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."ADPfusion" or (buildDepError "ADPfusion"))
-          (hsPkgs."ADPfusionForest" or (buildDepError "ADPfusionForest"))
-          (hsPkgs."BiobaseNewick" or (buildDepError "BiobaseNewick"))
-          (hsPkgs."BiobaseTypes" or (buildDepError "BiobaseTypes"))
-          (hsPkgs."ForestStructures" or (buildDepError "ForestStructures"))
-          (hsPkgs."FormalGrammars" or (buildDepError "FormalGrammars"))
-          (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
-          (hsPkgs."PrimitiveArray-Pretty" or (buildDepError "PrimitiveArray-Pretty"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."ADPfusion" or (errorHandler.buildDepError "ADPfusion"))
+          (hsPkgs."ADPfusionForest" or (errorHandler.buildDepError "ADPfusionForest"))
+          (hsPkgs."BiobaseNewick" or (errorHandler.buildDepError "BiobaseNewick"))
+          (hsPkgs."BiobaseTypes" or (errorHandler.buildDepError "BiobaseTypes"))
+          (hsPkgs."ForestStructures" or (errorHandler.buildDepError "ForestStructures"))
+          (hsPkgs."FormalGrammars" or (errorHandler.buildDepError "FormalGrammars"))
+          (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
+          (hsPkgs."PrimitiveArray-Pretty" or (errorHandler.buildDepError "PrimitiveArray-Pretty"))
           ];
         buildable = true;
         };
       exes = {
         "RNAforestry" = {
           depends = (pkgs.lib).optionals (flags.rnaforestry) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."log-domain" or (buildDepError "log-domain"))
-            (hsPkgs."streaming" or (buildDepError "streaming"))
-            (hsPkgs."streaming-bytestring" or (buildDepError "streaming-bytestring"))
-            (hsPkgs."streaming-utils" or (buildDepError "streaming-utils"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."BiobaseNewick" or (buildDepError "BiobaseNewick"))
-            (hsPkgs."ForestStructures" or (buildDepError "ForestStructures"))
-            (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
-            (hsPkgs."PrimitiveArray-Pretty" or (buildDepError "PrimitiveArray-Pretty"))
-            (hsPkgs."Forestry" or (buildDepError "Forestry"))
-            (hsPkgs."ViennaRNA-extras" or (buildDepError "ViennaRNA-extras"))
-            (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
-            (hsPkgs."BiobaseTypes" or (buildDepError "BiobaseTypes"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
+            (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
+            (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
+            (hsPkgs."streaming-utils" or (errorHandler.buildDepError "streaming-utils"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."BiobaseNewick" or (errorHandler.buildDepError "BiobaseNewick"))
+            (hsPkgs."ForestStructures" or (errorHandler.buildDepError "ForestStructures"))
+            (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
+            (hsPkgs."PrimitiveArray-Pretty" or (errorHandler.buildDepError "PrimitiveArray-Pretty"))
+            (hsPkgs."Forestry" or (errorHandler.buildDepError "Forestry"))
+            (hsPkgs."ViennaRNA-extras" or (errorHandler.buildDepError "ViennaRNA-extras"))
+            (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
+            (hsPkgs."BiobaseTypes" or (errorHandler.buildDepError "BiobaseTypes"))
             ];
           buildable = if flags.rnaforestry then true else false;
           };
@@ -102,12 +71,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "properties" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
-            (hsPkgs."Forestry" or (buildDepError "Forestry"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
+            (hsPkgs."Forestry" or (errorHandler.buildDepError "Forestry"))
             ];
           buildable = true;
           };
@@ -115,9 +84,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "benchmark" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."Forestry" or (buildDepError "Forestry"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."Forestry" or (errorHandler.buildDepError "Forestry"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,27 +25,27 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."deferred-folds" or (buildDepError "deferred-folds"))
-          (hsPkgs."focus" or (buildDepError "focus"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."primitive-extras" or (buildDepError "primitive-extras"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."deferred-folds" or (errorHandler.buildDepError "deferred-folds"))
+          (hsPkgs."focus" or (errorHandler.buildDepError "focus"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+          (hsPkgs."primitive-extras" or (errorHandler.buildDepError "primitive-extras"))
           ];
         buildable = true;
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."deferred-folds" or (buildDepError "deferred-folds"))
-            (hsPkgs."focus" or (buildDepError "focus"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."rerebase" or (buildDepError "rerebase"))
-            (hsPkgs."stm-hamt" or (buildDepError "stm-hamt"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."deferred-folds" or (errorHandler.buildDepError "deferred-folds"))
+            (hsPkgs."focus" or (errorHandler.buildDepError "focus"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
+            (hsPkgs."stm-hamt" or (errorHandler.buildDepError "stm-hamt"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             ];
           buildable = true;
           };
@@ -84,15 +53,15 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "concurrent-insertion-bench" = {
           depends = [
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-            (hsPkgs."mwc-random-monad" or (buildDepError "mwc-random-monad"))
-            (hsPkgs."list-t" or (buildDepError "list-t"))
-            (hsPkgs."focus" or (buildDepError "focus"))
-            (hsPkgs."stm-hamt" or (buildDepError "stm-hamt"))
-            (hsPkgs."free" or (buildDepError "free"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."rebase" or (buildDepError "rebase"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
+            (hsPkgs."mwc-random-monad" or (errorHandler.buildDepError "mwc-random-monad"))
+            (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
+            (hsPkgs."focus" or (errorHandler.buildDepError "focus"))
+            (hsPkgs."stm-hamt" or (errorHandler.buildDepError "stm-hamt"))
+            (hsPkgs."free" or (errorHandler.buildDepError "free"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."rebase" or (errorHandler.buildDepError "rebase"))
             ];
           buildable = true;
           };

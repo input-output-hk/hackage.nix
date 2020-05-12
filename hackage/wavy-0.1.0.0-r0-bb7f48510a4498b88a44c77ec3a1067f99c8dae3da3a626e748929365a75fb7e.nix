@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,50 +25,50 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."riff" or (buildDepError "riff"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."riff" or (errorHandler.buildDepError "riff"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         buildable = true;
         };
       exes = {
         "wave-identity" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-            (hsPkgs."wavy" or (buildDepError "wavy"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
+            (hsPkgs."wavy" or (errorHandler.buildDepError "wavy"))
             ];
           buildable = true;
           };
         "wave-info" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."wavy" or (buildDepError "wavy"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."wavy" or (errorHandler.buildDepError "wavy"))
             ];
           buildable = true;
           };
         "wave-split" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."wavy" or (buildDepError "wavy"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."wavy" or (errorHandler.buildDepError "wavy"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = true;
           };
         "wave-generate-sine" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."wavy" or (buildDepError "wavy"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."wavy" or (errorHandler.buildDepError "wavy"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             ];
           buildable = true;
           };

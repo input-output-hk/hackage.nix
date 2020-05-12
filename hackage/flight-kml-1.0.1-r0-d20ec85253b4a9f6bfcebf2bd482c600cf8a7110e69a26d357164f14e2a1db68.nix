@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,55 +25,55 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."detour-via-sci" or (buildDepError "detour-via-sci"))
-          (hsPkgs."hxt" or (buildDepError "hxt"))
-          (hsPkgs."hxt-xpath" or (buildDepError "hxt-xpath"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."path" or (buildDepError "path"))
-          (hsPkgs."siggy-chardust" or (buildDepError "siggy-chardust"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."detour-via-sci" or (errorHandler.buildDepError "detour-via-sci"))
+          (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
+          (hsPkgs."hxt-xpath" or (errorHandler.buildDepError "hxt-xpath"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."path" or (errorHandler.buildDepError "path"))
+          (hsPkgs."siggy-chardust" or (errorHandler.buildDepError "siggy-chardust"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
           ];
         buildable = true;
         };
       tests = {
         "doctest" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."detour-via-sci" or (buildDepError "detour-via-sci"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."hxt" or (buildDepError "hxt"))
-            (hsPkgs."hxt-xpath" or (buildDepError "hxt-xpath"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."path" or (buildDepError "path"))
-            (hsPkgs."siggy-chardust" or (buildDepError "siggy-chardust"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."detour-via-sci" or (errorHandler.buildDepError "detour-via-sci"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
+            (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
+            (hsPkgs."hxt-xpath" or (errorHandler.buildDepError "hxt-xpath"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."path" or (errorHandler.buildDepError "path"))
+            (hsPkgs."siggy-chardust" or (errorHandler.buildDepError "siggy-chardust"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
             ];
           buildable = true;
           };
         "parse" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."detour-via-sci" or (buildDepError "detour-via-sci"))
-            (hsPkgs."hxt" or (buildDepError "hxt"))
-            (hsPkgs."hxt-xpath" or (buildDepError "hxt-xpath"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."path" or (buildDepError "path"))
-            (hsPkgs."raw-strings-qq" or (buildDepError "raw-strings-qq"))
-            (hsPkgs."siggy-chardust" or (buildDepError "siggy-chardust"))
-            (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
-            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."detour-via-sci" or (errorHandler.buildDepError "detour-via-sci"))
+            (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
+            (hsPkgs."hxt-xpath" or (errorHandler.buildDepError "hxt-xpath"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."path" or (errorHandler.buildDepError "path"))
+            (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
+            (hsPkgs."siggy-chardust" or (errorHandler.buildDepError "siggy-chardust"))
+            (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
             ];
           buildable = true;
           };

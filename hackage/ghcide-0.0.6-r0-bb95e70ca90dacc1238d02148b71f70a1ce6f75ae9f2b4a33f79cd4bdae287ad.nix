@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { ghc-lib = false; };
     package = {
@@ -56,75 +25,75 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."extra" or (buildDepError "extra"))
-          (hsPkgs."fuzzy" or (buildDepError "fuzzy"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."haddock-library" or (buildDepError "haddock-library"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."haskell-lsp-types" or (buildDepError "haskell-lsp-types"))
-          (hsPkgs."haskell-lsp" or (buildDepError "haskell-lsp"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."prettyprinter-ansi-terminal" or (buildDepError "prettyprinter-ansi-terminal"))
-          (hsPkgs."prettyprinter-ansi-terminal" or (buildDepError "prettyprinter-ansi-terminal"))
-          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-          (hsPkgs."rope-utf16-splay" or (buildDepError "rope-utf16-splay"))
-          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-          (hsPkgs."shake" or (buildDepError "shake"))
-          (hsPkgs."sorted-list" or (buildDepError "sorted-list"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+          (hsPkgs."fuzzy" or (errorHandler.buildDepError "fuzzy"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."haskell-lsp-types" or (errorHandler.buildDepError "haskell-lsp-types"))
+          (hsPkgs."haskell-lsp" or (errorHandler.buildDepError "haskell-lsp"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
+          (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
+          (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+          (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
+          (hsPkgs."rope-utf16-splay" or (errorHandler.buildDepError "rope-utf16-splay"))
+          (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+          (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
+          (hsPkgs."sorted-list" or (errorHandler.buildDepError "sorted-list"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+          (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
           ] ++ (if flags.ghc-lib
           then [
-            (hsPkgs."ghc-lib" or (buildDepError "ghc-lib"))
-            (hsPkgs."ghc-lib-parser" or (buildDepError "ghc-lib-parser"))
+            (hsPkgs."ghc-lib" or (errorHandler.buildDepError "ghc-lib"))
+            (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
             ]
           else [
-            (hsPkgs."ghc-boot-th" or (buildDepError "ghc-boot-th"))
-            (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+            (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
+            (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
         };
       exes = {
         "ghcide-test-preprocessor" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
           };
         "ghcide" = {
           depends = [
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."gitrev" or (buildDepError "gitrev"))
-            (hsPkgs."haskell-lsp" or (buildDepError "haskell-lsp"))
-            (hsPkgs."hie-bios" or (buildDepError "hie-bios"))
-            (hsPkgs."ghcide" or (buildDepError "ghcide"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."shake" or (buildDepError "shake"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
+            (hsPkgs."haskell-lsp" or (errorHandler.buildDepError "haskell-lsp"))
+            (hsPkgs."hie-bios" or (errorHandler.buildDepError "hie-bios"))
+            (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = if flags.ghc-lib then false else true;
           };
@@ -132,28 +101,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "ghcide-tests" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."extra" or (buildDepError "extra"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ghcide" or (buildDepError "ghcide"))
-            (hsPkgs."ghc-typelits-knownnat" or (buildDepError "ghc-typelits-knownnat"))
-            (hsPkgs."haskell-lsp-types" or (buildDepError "haskell-lsp-types"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."lsp-test" or (buildDepError "lsp-test"))
-            (hsPkgs."parser-combinators" or (buildDepError "parser-combinators"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-expected-failure" or (buildDepError "tasty-expected-failure"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
+            (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
+            (hsPkgs."haskell-lsp-types" or (errorHandler.buildDepError "haskell-lsp-types"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."lsp-test" or (errorHandler.buildDepError "lsp-test"))
+            (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.ghcide or (pkgs.buildPackages.ghcide or (buildToolDepError "ghcide")))
-            (hsPkgs.buildPackages.ghcide or (pkgs.buildPackages.ghcide or (buildToolDepError "ghcide")))
+            (hsPkgs.buildPackages.ghcide or (pkgs.buildPackages.ghcide or (errorHandler.buildToolDepError "ghcide")))
+            (hsPkgs.buildPackages.ghcide or (pkgs.buildPackages.ghcide or (errorHandler.buildToolDepError "ghcide")))
             ];
           buildable = if flags.ghc-lib then false else true;
           };

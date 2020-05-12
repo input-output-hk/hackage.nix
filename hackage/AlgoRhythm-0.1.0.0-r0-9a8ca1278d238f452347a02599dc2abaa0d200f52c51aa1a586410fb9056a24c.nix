@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,30 +25,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."midi" or (buildDepError "midi"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."Euterpea" or (buildDepError "Euterpea"))
-          (hsPkgs."HCodecs" or (buildDepError "HCodecs"))
-          (hsPkgs."lilypond" or (buildDepError "lilypond"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."prettify" or (buildDepError "prettify"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."derive" or (buildDepError "derive"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."kmeans" or (buildDepError "kmeans"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."midi" or (errorHandler.buildDepError "midi"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."Euterpea" or (errorHandler.buildDepError "Euterpea"))
+          (hsPkgs."HCodecs" or (errorHandler.buildDepError "HCodecs"))
+          (hsPkgs."lilypond" or (errorHandler.buildDepError "lilypond"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."prettify" or (errorHandler.buildDepError "prettify"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."kmeans" or (errorHandler.buildDepError "kmeans"))
           ];
         buildable = true;
         };
       exes = {
         "music-exe" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."AlgoRhythm" or (buildDepError "AlgoRhythm"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."AlgoRhythm" or (errorHandler.buildDepError "AlgoRhythm"))
             ];
           buildable = true;
           };
@@ -87,21 +56,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "music-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."AlgoRhythm" or (buildDepError "AlgoRhythm"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."derive" or (buildDepError "derive"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."lilypond" or (buildDepError "lilypond"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."HCodecs" or (buildDepError "HCodecs"))
-            (hsPkgs."Euterpea" or (buildDepError "Euterpea"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."AlgoRhythm" or (errorHandler.buildDepError "AlgoRhythm"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."lilypond" or (errorHandler.buildDepError "lilypond"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."HCodecs" or (errorHandler.buildDepError "HCodecs"))
+            (hsPkgs."Euterpea" or (errorHandler.buildDepError "Euterpea"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };

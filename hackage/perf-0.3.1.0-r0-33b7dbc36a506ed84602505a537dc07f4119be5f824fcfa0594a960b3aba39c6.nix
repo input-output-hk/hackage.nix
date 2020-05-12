@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,29 +25,29 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."protolude" or (buildDepError "protolude"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."foldl" or (buildDepError "foldl"))
-          (hsPkgs."numhask" or (buildDepError "numhask"))
-          (hsPkgs."rdtsc" or (buildDepError "rdtsc"))
-          (hsPkgs."tdigest" or (buildDepError "tdigest"))
-          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
+          (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
+          (hsPkgs."rdtsc" or (errorHandler.buildDepError "rdtsc"))
+          (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
           ];
         buildable = true;
         };
       exes = {
         "perf-examples" = {
           depends = [
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."formatting" or (buildDepError "formatting"))
-            (hsPkgs."numhask" or (buildDepError "numhask"))
-            (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
-            (hsPkgs."perf" or (buildDepError "perf"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
+            (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
+            (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
+            (hsPkgs."perf" or (errorHandler.buildDepError "perf"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };
@@ -86,10 +55,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."perf" or (buildDepError "perf"))
+            (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
+            (hsPkgs."perf" or (errorHandler.buildDepError "perf"))
             ];
           buildable = true;
           };

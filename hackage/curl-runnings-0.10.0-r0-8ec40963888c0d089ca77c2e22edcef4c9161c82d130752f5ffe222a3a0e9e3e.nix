@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,40 +25,40 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."connection" or (buildDepError "connection"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."hspec" or (buildDepError "hspec"))
-          (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
-          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."pretty-simple" or (buildDepError "pretty-simple"))
-          (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+          (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
+          (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+          (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+          (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
+          (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ];
         buildable = true;
         };
       exes = {
         "curl-runnings" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."curl-runnings" or (buildDepError "curl-runnings"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."tar" or (buildDepError "tar"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."curl-runnings" or (errorHandler.buildDepError "curl-runnings"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+            (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             ];
           buildable = true;
           };
@@ -97,11 +66,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "curl-runnings-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."curl-runnings" or (buildDepError "curl-runnings"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."curl-runnings" or (errorHandler.buildDepError "curl-runnings"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
             ];
           buildable = true;
           };

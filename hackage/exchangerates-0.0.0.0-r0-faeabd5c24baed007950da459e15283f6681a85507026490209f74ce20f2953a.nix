@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,55 +25,55 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."servant-client" or (buildDepError "servant-client"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."validity" or (buildDepError "validity"))
-          (hsPkgs."validity-containers" or (buildDepError "validity-containers"))
-          (hsPkgs."validity-time" or (buildDepError "validity-time"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+          (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
+          (hsPkgs."validity-containers" or (errorHandler.buildDepError "validity-containers"))
+          (hsPkgs."validity-time" or (errorHandler.buildDepError "validity-time"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ];
         buildable = true;
         };
       tests = {
         "exchangerates-test" = {
           depends = [
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."exchangerates" or (buildDepError "exchangerates"))
-            (hsPkgs."genvalidity" or (buildDepError "genvalidity"))
-            (hsPkgs."genvalidity-containers" or (buildDepError "genvalidity-containers"))
-            (hsPkgs."genvalidity-hspec" or (buildDepError "genvalidity-hspec"))
-            (hsPkgs."genvalidity-hspec-aeson" or (buildDepError "genvalidity-hspec-aeson"))
-            (hsPkgs."genvalidity-text" or (buildDepError "genvalidity-text"))
-            (hsPkgs."genvalidity-time" or (buildDepError "genvalidity-time"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."servant-client" or (buildDepError "servant-client"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."validity" or (buildDepError "validity"))
-            (hsPkgs."validity-containers" or (buildDepError "validity-containers"))
-            (hsPkgs."validity-time" or (buildDepError "validity-time"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."exchangerates" or (errorHandler.buildDepError "exchangerates"))
+            (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
+            (hsPkgs."genvalidity-containers" or (errorHandler.buildDepError "genvalidity-containers"))
+            (hsPkgs."genvalidity-hspec" or (errorHandler.buildDepError "genvalidity-hspec"))
+            (hsPkgs."genvalidity-hspec-aeson" or (errorHandler.buildDepError "genvalidity-hspec-aeson"))
+            (hsPkgs."genvalidity-text" or (errorHandler.buildDepError "genvalidity-text"))
+            (hsPkgs."genvalidity-time" or (errorHandler.buildDepError "genvalidity-time"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+            (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
+            (hsPkgs."validity-containers" or (errorHandler.buildDepError "validity-containers"))
+            (hsPkgs."validity-time" or (errorHandler.buildDepError "validity-time"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             ];
           buildable = true;
           };

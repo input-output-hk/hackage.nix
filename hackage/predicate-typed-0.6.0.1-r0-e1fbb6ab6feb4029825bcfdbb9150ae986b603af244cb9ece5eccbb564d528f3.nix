@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,96 +25,96 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."comonad" or (buildDepError "comonad"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."pcre-heavy" or (buildDepError "pcre-heavy"))
-          (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."pretty-terminal" or (buildDepError "pretty-terminal"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."th-lift" or (buildDepError "th-lift"))
-          (hsPkgs."these" or (buildDepError "these"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."tree-view" or (buildDepError "tree-view"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
+          (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."pretty-terminal" or (errorHandler.buildDepError "pretty-terminal"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
+          (hsPkgs."these" or (errorHandler.buildDepError "these"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."tree-view" or (errorHandler.buildDepError "tree-view"))
           ];
         buildable = true;
         };
       tests = {
         "doctests" = {
           depends = [
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."comonad" or (buildDepError "comonad"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."pcre-heavy" or (buildDepError "pcre-heavy"))
-            (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
-            (hsPkgs."predicate-typed" or (buildDepError "predicate-typed"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."pretty-terminal" or (buildDepError "pretty-terminal"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."th-lift" or (buildDepError "th-lift"))
-            (hsPkgs."these" or (buildDepError "these"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."tree-view" or (buildDepError "tree-view"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
+            (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
+            (hsPkgs."predicate-typed" or (errorHandler.buildDepError "predicate-typed"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."pretty-terminal" or (errorHandler.buildDepError "pretty-terminal"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
+            (hsPkgs."these" or (errorHandler.buildDepError "these"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."tree-view" or (errorHandler.buildDepError "tree-view"))
             ];
           buildable = true;
           };
         "predicate-typed-test" = {
           depends = [
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."comonad" or (buildDepError "comonad"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."pcre-heavy" or (buildDepError "pcre-heavy"))
-            (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
-            (hsPkgs."predicate-typed" or (buildDepError "predicate-typed"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."pretty-terminal" or (buildDepError "pretty-terminal"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."th-lift" or (buildDepError "th-lift"))
-            (hsPkgs."these" or (buildDepError "these"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."tree-view" or (buildDepError "tree-view"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
+            (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
+            (hsPkgs."predicate-typed" or (errorHandler.buildDepError "predicate-typed"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."pretty-terminal" or (errorHandler.buildDepError "pretty-terminal"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
+            (hsPkgs."these" or (errorHandler.buildDepError "these"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."tree-view" or (errorHandler.buildDepError "tree-view"))
             ];
           buildable = true;
           };

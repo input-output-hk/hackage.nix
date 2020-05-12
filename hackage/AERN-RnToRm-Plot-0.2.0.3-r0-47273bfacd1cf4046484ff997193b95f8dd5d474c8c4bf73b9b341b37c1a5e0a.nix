@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,29 +25,29 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
-          (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
-          (hsPkgs."AERN-RnToRm" or (buildDepError "AERN-RnToRm"))
-          (hsPkgs."AERN-RnToRm" or (buildDepError "AERN-RnToRm"))
-          (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
-          (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
-          (hsPkgs."gtk" or (buildDepError "gtk"))
-          (hsPkgs."gtkglext" or (buildDepError "gtkglext"))
-          (hsPkgs."glib" or (buildDepError "glib"))
-          (hsPkgs."glade" or (buildDepError "glade"))
-          (hsPkgs."gtk" or (buildDepError "gtk"))
-          (hsPkgs."gtkglext" or (buildDepError "gtkglext"))
-          (hsPkgs."glib" or (buildDepError "glib"))
-          (hsPkgs."glade" or (buildDepError "glade"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."AERN-Real" or (errorHandler.buildDepError "AERN-Real"))
+          (hsPkgs."AERN-Real" or (errorHandler.buildDepError "AERN-Real"))
+          (hsPkgs."AERN-RnToRm" or (errorHandler.buildDepError "AERN-RnToRm"))
+          (hsPkgs."AERN-RnToRm" or (errorHandler.buildDepError "AERN-RnToRm"))
+          (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
+          (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
+          (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
+          (hsPkgs."gtkglext" or (errorHandler.buildDepError "gtkglext"))
+          (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
+          (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
+          (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
+          (hsPkgs."gtkglext" or (errorHandler.buildDepError "gtkglext"))
+          (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
+          (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
           ];
         buildable = true;
         };

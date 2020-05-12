@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,33 +25,33 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."opentelemetry" or (buildDepError "opentelemetry"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."http2-client" or (buildDepError "http2-client"))
-          (hsPkgs."http2" or (buildDepError "http2"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."http2-client" or (buildDepError "http2-client"))
-          (hsPkgs."http2-client-grpc" or (buildDepError "http2-client-grpc"))
-          (hsPkgs."http2-grpc-proto-lens" or (buildDepError "http2-grpc-proto-lens"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
-          (hsPkgs."proto-lens-protobuf-types" or (buildDepError "proto-lens-protobuf-types"))
-          (hsPkgs."proto-lens-runtime" or (buildDepError "proto-lens-runtime"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."opentelemetry" or (errorHandler.buildDepError "opentelemetry"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."http2-client" or (errorHandler.buildDepError "http2-client"))
+          (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."http2-client" or (errorHandler.buildDepError "http2-client"))
+          (hsPkgs."http2-client-grpc" or (errorHandler.buildDepError "http2-client-grpc"))
+          (hsPkgs."http2-grpc-proto-lens" or (errorHandler.buildDepError "http2-grpc-proto-lens"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
+          (hsPkgs."proto-lens-protobuf-types" or (errorHandler.buildDepError "proto-lens-protobuf-types"))
+          (hsPkgs."proto-lens-runtime" or (errorHandler.buildDepError "proto-lens-runtime"))
           ];
         buildable = true;
         };
       tests = {
         "just-some-usage-code-that-must-compile" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."opentelemetry" or (buildDepError "opentelemetry"))
-            (hsPkgs."opentelemetry-lightstep" or (buildDepError "opentelemetry-lightstep"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."opentelemetry" or (errorHandler.buildDepError "opentelemetry"))
+            (hsPkgs."opentelemetry-lightstep" or (errorHandler.buildDepError "opentelemetry-lightstep"))
             ];
           buildable = true;
           };

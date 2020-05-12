@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,28 +25,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
-          (hsPkgs."path" or (buildDepError "path"))
-          (hsPkgs."path-io" or (buildDepError "path-io"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."safe-exceptions-checked" or (buildDepError "safe-exceptions-checked"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
+          (hsPkgs."path" or (errorHandler.buildDepError "path"))
+          (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."safe-exceptions-checked" or (errorHandler.buildDepError "safe-exceptions-checked"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           ];
         buildable = true;
         };
       exes = {
         "bootstrap" = {
           depends = [
-            (hsPkgs."aws-lambda-haskell-runtime" or (buildDepError "aws-lambda-haskell-runtime"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."aws-lambda-haskell-runtime" or (errorHandler.buildDepError "aws-lambda-haskell-runtime"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             ];
           buildable = true;
           };
@@ -85,8 +54,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "aws-lambda-haskell-runtime-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             ];
           buildable = true;
           };

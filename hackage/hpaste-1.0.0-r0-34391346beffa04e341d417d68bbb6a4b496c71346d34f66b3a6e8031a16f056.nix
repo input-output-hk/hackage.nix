@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -57,40 +26,40 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "hpaste" = {
           depends = [
-            (hsPkgs."Diff" or (buildDepError "Diff"))
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."css" or (buildDepError "css"))
-            (hsPkgs."named-formlet" or (buildDepError "named-formlet"))
-            (hsPkgs."snap-app" or (buildDepError "snap-app"))
-            (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
-            (hsPkgs."HJScript" or (buildDepError "HJScript"))
-            (hsPkgs."MissingH" or (buildDepError "MissingH"))
-            (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."download-curl" or (buildDepError "download-curl"))
-            (hsPkgs."feed" or (buildDepError "feed"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-            (hsPkgs."hlint" or (buildDepError "hlint"))
-            (hsPkgs."hscolour" or (buildDepError "hscolour"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."snap-core" or (buildDepError "snap-core"))
-            (hsPkgs."snap-server" or (buildDepError "snap-server"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
-            (hsPkgs."cgi" or (buildDepError "cgi"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
+            (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."css" or (errorHandler.buildDepError "css"))
+            (hsPkgs."named-formlet" or (errorHandler.buildDepError "named-formlet"))
+            (hsPkgs."snap-app" or (errorHandler.buildDepError "snap-app"))
+            (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
+            (hsPkgs."HJScript" or (errorHandler.buildDepError "HJScript"))
+            (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
+            (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"))
+            (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."download-curl" or (errorHandler.buildDepError "download-curl"))
+            (hsPkgs."feed" or (errorHandler.buildDepError "feed"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
+            (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
+            (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
+            (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."mime-mail" or (errorHandler.buildDepError "mime-mail"))
+            (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             ];
           buildable = true;
           };

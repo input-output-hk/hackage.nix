@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,63 +25,63 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."storable-tuple" or (buildDepError "storable-tuple"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."repa" or (buildDepError "repa"))
-          (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-          (hsPkgs."JuicyPixels-repa" or (buildDepError "JuicyPixels-repa"))
-          (hsPkgs."JuicyPixels-extra" or (buildDepError "JuicyPixels-extra"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."store" or (buildDepError "store"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."random-fu" or (buildDepError "random-fu"))
-          (hsPkgs."fei-base" or (buildDepError "fei-base"))
-          (hsPkgs."fei-dataiter" or (buildDepError "fei-dataiter"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."storable-tuple" or (errorHandler.buildDepError "storable-tuple"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
+          (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
+          (hsPkgs."JuicyPixels-repa" or (errorHandler.buildDepError "JuicyPixels-repa"))
+          (hsPkgs."JuicyPixels-extra" or (errorHandler.buildDepError "JuicyPixels-extra"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."store" or (errorHandler.buildDepError "store"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
+          (hsPkgs."fei-base" or (errorHandler.buildDepError "fei-base"))
+          (hsPkgs."fei-dataiter" or (errorHandler.buildDepError "fei-dataiter"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs")))
           ];
         buildable = true;
         };
       exes = {
         "mask" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fei-cocoapi" or (buildDepError "fei-cocoapi"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-            (hsPkgs."JuicyPixels-repa" or (buildDepError "JuicyPixels-repa"))
-            (hsPkgs."repa" or (buildDepError "repa"))
-            (hsPkgs."store" or (buildDepError "store"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fei-cocoapi" or (errorHandler.buildDepError "fei-cocoapi"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
+            (hsPkgs."JuicyPixels-repa" or (errorHandler.buildDepError "JuicyPixels-repa"))
+            (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
+            (hsPkgs."store" or (errorHandler.buildDepError "store"))
             ];
           buildable = true;
           };
         "profiling" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fei-cocoapi" or (buildDepError "fei-cocoapi"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."store" or (buildDepError "store"))
-            (hsPkgs."repa" or (buildDepError "repa"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fei-cocoapi" or (errorHandler.buildDepError "fei-cocoapi"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."store" or (errorHandler.buildDepError "store"))
+            (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             ];
           buildable = true;
           };

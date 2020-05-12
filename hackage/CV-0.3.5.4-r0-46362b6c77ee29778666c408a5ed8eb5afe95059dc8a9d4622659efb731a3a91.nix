@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { opencv23 = true; opencv24 = false; };
     package = {
@@ -56,41 +25,41 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."carray" or (buildDepError "carray"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."storable-complex" or (buildDepError "storable-complex"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."bindings-DSL" or (buildDepError "bindings-DSL"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."lazysmallcheck" or (buildDepError "lazysmallcheck"))
-          (hsPkgs."parallel-io" or (buildDepError "parallel-io"))
-          (hsPkgs."storable-tuple" or (buildDepError "storable-tuple"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."carray" or (errorHandler.buildDepError "carray"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."lazysmallcheck" or (errorHandler.buildDepError "lazysmallcheck"))
+          (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
+          (hsPkgs."storable-tuple" or (errorHandler.buildDepError "storable-tuple"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           ];
         libs = [
-          (pkgs."opencv_calib3d" or (sysDepError "opencv_calib3d"))
-          (pkgs."opencv_contrib" or (sysDepError "opencv_contrib"))
-          (pkgs."opencv_core" or (sysDepError "opencv_core"))
-          (pkgs."opencv_features2d" or (sysDepError "opencv_features2d"))
-          (pkgs."opencv_flann" or (sysDepError "opencv_flann"))
-          (pkgs."opencv_gpu" or (sysDepError "opencv_gpu"))
-          (pkgs."opencv_highgui" or (sysDepError "opencv_highgui"))
-          (pkgs."opencv_imgproc" or (sysDepError "opencv_imgproc"))
-          (pkgs."opencv_legacy" or (sysDepError "opencv_legacy"))
-          (pkgs."opencv_ml" or (sysDepError "opencv_ml"))
-          (pkgs."opencv_objdetect" or (sysDepError "opencv_objdetect"))
-          (pkgs."opencv_video" or (sysDepError "opencv_video"))
+          (pkgs."opencv_calib3d" or (errorHandler.sysDepError "opencv_calib3d"))
+          (pkgs."opencv_contrib" or (errorHandler.sysDepError "opencv_contrib"))
+          (pkgs."opencv_core" or (errorHandler.sysDepError "opencv_core"))
+          (pkgs."opencv_features2d" or (errorHandler.sysDepError "opencv_features2d"))
+          (pkgs."opencv_flann" or (errorHandler.sysDepError "opencv_flann"))
+          (pkgs."opencv_gpu" or (errorHandler.sysDepError "opencv_gpu"))
+          (pkgs."opencv_highgui" or (errorHandler.sysDepError "opencv_highgui"))
+          (pkgs."opencv_imgproc" or (errorHandler.sysDepError "opencv_imgproc"))
+          (pkgs."opencv_legacy" or (errorHandler.sysDepError "opencv_legacy"))
+          (pkgs."opencv_ml" or (errorHandler.sysDepError "opencv_ml"))
+          (pkgs."opencv_objdetect" or (errorHandler.sysDepError "opencv_objdetect"))
+          (pkgs."opencv_video" or (errorHandler.sysDepError "opencv_video"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs")))
           ];
         buildable = true;
         };

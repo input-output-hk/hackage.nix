@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       dev = false;
@@ -61,45 +30,45 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."lockfree-queue" or (buildDepError "lockfree-queue"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (buildDepError "semigroups"))) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."path-io" or (buildDepError "path-io"))
-          (hsPkgs."random" or (buildDepError "random"))
-          ]) ++ (pkgs.lib).optional (flags.examples-sdl) (hsPkgs."SDL" or (buildDepError "SDL"));
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+          (hsPkgs."lockfree-queue" or (errorHandler.buildDepError "lockfree-queue"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optionals (flags.examples || flags.examples-sdl) [
+          (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+          (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          ]) ++ (pkgs.lib).optional (flags.examples-sdl) (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"));
         buildable = true;
         };
       exes = {
         "loops" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.examples then true else false;
           };
         "nested-loops" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
             ];
           buildable = if flags.examples then true else false;
           };
         "parallel-loops" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
             ];
           buildable = if flags.examples then true else false;
           };
@@ -107,28 +76,28 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
           };
         };
       benchmarks = {
         "bench" = {
           depends = ([
-            (hsPkgs."streamly" or (buildDepError "streamly"))
-            (hsPkgs."atomic-primops" or (buildDepError "atomic-primops"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"))) ++ (pkgs.lib).optionals (flags.extra-benchmarks) [
-            (hsPkgs."list-t" or (buildDepError "list-t"))
-            (hsPkgs."logict" or (buildDepError "logict"))
-            (hsPkgs."machines" or (buildDepError "machines"))
-            (hsPkgs."simple-conduit" or (buildDepError "simple-conduit"))
-            (hsPkgs."transient" or (buildDepError "transient"))
+            (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
+            (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))) ++ (pkgs.lib).optionals (flags.extra-benchmarks) [
+            (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
+            (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
+            (hsPkgs."machines" or (errorHandler.buildDepError "machines"))
+            (hsPkgs."simple-conduit" or (errorHandler.buildDepError "simple-conduit"))
+            (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
             ];
           buildable = true;
           };

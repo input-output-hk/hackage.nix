@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { network-uri = true; };
     package = {
@@ -53,95 +22,95 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "github-backup is a simple tool you run in a git repository you cloned from\nGithub. It backs up everything Github knows about the repository, including\nother forks, issues, comments, milestones, pull requests, and watchers.\nAlso includes gitriddance, which can be used to close all open issues and\npull requests.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
-        (hsPkgs.buildPackages.hslogger or (pkgs.buildPackages.hslogger or (buildToolDepError "hslogger")))
-        (hsPkgs.buildPackages.MissingH or (pkgs.buildPackages.MissingH or (buildToolDepError "MissingH")))
-        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (buildToolDepError "directory")))
-        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (buildToolDepError "process")))
-        (hsPkgs.buildPackages.unix-compat or (pkgs.buildPackages.unix-compat or (buildToolDepError "unix-compat")))
-        (hsPkgs.buildPackages.unix or (pkgs.buildPackages.unix or (buildToolDepError "unix")))
-        (hsPkgs.buildPackages.exceptions or (pkgs.buildPackages.exceptions or (buildToolDepError "exceptions")))
-        (hsPkgs.buildPackages.bytestring or (pkgs.buildPackages.bytestring or (buildToolDepError "bytestring")))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (buildToolDepError "filepath")))
-        (hsPkgs.buildPackages.IfElse or (pkgs.buildPackages.IfElse or (buildToolDepError "IfElse")))
-        (hsPkgs.buildPackages.mtl or (pkgs.buildPackages.mtl or (buildToolDepError "mtl")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
+        (hsPkgs.buildPackages.hslogger or (pkgs.buildPackages.hslogger or (errorHandler.buildToolDepError "hslogger")))
+        (hsPkgs.buildPackages.MissingH or (pkgs.buildPackages.MissingH or (errorHandler.buildToolDepError "MissingH")))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.buildToolDepError "directory")))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.buildToolDepError "process")))
+        (hsPkgs.buildPackages.unix-compat or (pkgs.buildPackages.unix-compat or (errorHandler.buildToolDepError "unix-compat")))
+        (hsPkgs.buildPackages.unix or (pkgs.buildPackages.unix or (errorHandler.buildToolDepError "unix")))
+        (hsPkgs.buildPackages.exceptions or (pkgs.buildPackages.exceptions or (errorHandler.buildToolDepError "exceptions")))
+        (hsPkgs.buildPackages.bytestring or (pkgs.buildPackages.bytestring or (errorHandler.buildToolDepError "bytestring")))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.buildToolDepError "filepath")))
+        (hsPkgs.buildPackages.IfElse or (pkgs.buildPackages.IfElse or (errorHandler.buildToolDepError "IfElse")))
+        (hsPkgs.buildPackages.mtl or (pkgs.buildPackages.mtl or (errorHandler.buildToolDepError "mtl")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
         ];
       };
     components = {
       exes = {
         "github-backup" = {
           depends = ([
-            (hsPkgs."MissingH" or (buildDepError "MissingH"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."IfElse" or (buildDepError "IfElse"))
-            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."github" or (buildDepError "github"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."IfElse" or (errorHandler.buildDepError "IfElse"))
+            (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."github" or (errorHandler.buildDepError "github"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ] ++ (if !system.isWindows
-            then [ (hsPkgs."unix" or (buildDepError "unix")) ]
+            then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
             else [
-              (hsPkgs."Win32" or (buildDepError "Win32"))
-              (hsPkgs."setenv" or (buildDepError "setenv"))
+              (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
+              (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
               ])) ++ (if flags.network-uri
             then [
-              (hsPkgs."network-uri" or (buildDepError "network-uri"))
-              (hsPkgs."network" or (buildDepError "network"))
+              (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+              (hsPkgs."network" or (errorHandler.buildDepError "network"))
               ]
             else [
-              (hsPkgs."network" or (buildDepError "network"))
-              (hsPkgs."network" or (buildDepError "network"))
+              (hsPkgs."network" or (errorHandler.buildDepError "network"))
+              (hsPkgs."network" or (errorHandler.buildDepError "network"))
               ]);
           buildable = true;
           };
         "gitriddance" = {
           depends = ([
-            (hsPkgs."github" or (buildDepError "github"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."MissingH" or (buildDepError "MissingH"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
-            (hsPkgs."IfElse" or (buildDepError "IfElse"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."github" or (errorHandler.buildDepError "github"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
+            (hsPkgs."IfElse" or (errorHandler.buildDepError "IfElse"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             ] ++ (if !system.isWindows
-            then [ (hsPkgs."unix" or (buildDepError "unix")) ]
+            then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
             else [
-              (hsPkgs."Win32" or (buildDepError "Win32"))
-              (hsPkgs."setenv" or (buildDepError "setenv"))
+              (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
+              (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
               ])) ++ (if flags.network-uri
             then [
-              (hsPkgs."network-uri" or (buildDepError "network-uri"))
-              (hsPkgs."network" or (buildDepError "network"))
+              (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+              (hsPkgs."network" or (errorHandler.buildDepError "network"))
               ]
             else [
-              (hsPkgs."network" or (buildDepError "network"))
-              (hsPkgs."network" or (buildDepError "network"))
+              (hsPkgs."network" or (errorHandler.buildDepError "network"))
+              (hsPkgs."network" or (errorHandler.buildDepError "network"))
               ]);
           buildable = true;
           };

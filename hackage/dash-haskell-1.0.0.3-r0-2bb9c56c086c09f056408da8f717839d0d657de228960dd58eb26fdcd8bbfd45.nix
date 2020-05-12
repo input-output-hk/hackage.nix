@@ -1,50 +1,19 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
       identifier = { name = "dash-haskell"; version = "1.0.0.3"; };
       license = "LGPL-3.0-only";
-      copyright = "(c) 2014 John P. Feltz";
+      copyright = "(c) 2014 John P. Feltz ";
       maintainer = "jfeltz@gmail.com";
       author = "John P. Feltz";
       homepage = "http://www.github.com/jfeltz/dash-haskell";
@@ -57,26 +26,26 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "dash-haskell" = {
           depends = [
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."direct-sqlite" or (buildDepError "direct-sqlite"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."sqlite-simple" or (buildDepError "sqlite-simple"))
-            (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
-            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
-            (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."haddock-api" or (buildDepError "haddock-api"))
+            (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."direct-sqlite" or (errorHandler.buildDepError "direct-sqlite"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
+            (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
+            (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
+            (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -49,30 +18,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       author = "Alexander Krupenkin";
       homepage = "https://github.com/RoboticsHS/rospkg#readme";
       url = "";
-      synopsis = "ROS package system information";
+      synopsis = "ROS package system information ";
       description = "Please see README.md";
       buildType = "Simple";
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."fast-tagsoup" or (buildDepError "fast-tagsoup"));
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."fast-tagsoup" or (errorHandler.buildDepError "fast-tagsoup"));
         buildable = true;
         };
       exes = {
         "rospkg" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."rospkg" or (buildDepError "rospkg"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."rospkg" or (errorHandler.buildDepError "rospkg"))
             ];
           buildable = true;
           };
@@ -80,8 +49,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "rospkg-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."rospkg" or (buildDepError "rospkg"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."rospkg" or (errorHandler.buildDepError "rospkg"))
             ];
           buildable = true;
           };

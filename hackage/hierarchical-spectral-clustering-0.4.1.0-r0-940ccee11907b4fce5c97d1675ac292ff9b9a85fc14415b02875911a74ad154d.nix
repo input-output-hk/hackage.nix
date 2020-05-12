@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -59,50 +28,50 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."cassava" or (buildDepError "cassava"))
-          (hsPkgs."clustering" or (buildDepError "clustering"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."eigen" or (buildDepError "eigen"))
-          (hsPkgs."hierarchical-clustering" or (buildDepError "hierarchical-clustering"))
-          (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-          (hsPkgs."fgl" or (buildDepError "fgl"))
-          (hsPkgs."managed" or (buildDepError "managed"))
-          (hsPkgs."modularity" or (buildDepError "modularity"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."sparse-linear-algebra" or (buildDepError "sparse-linear-algebra"))
-          (hsPkgs."spectral-clustering" or (buildDepError "spectral-clustering"))
-          (hsPkgs."streaming" or (buildDepError "streaming"))
-          (hsPkgs."streaming-bytestring" or (buildDepError "streaming-bytestring"))
-          (hsPkgs."streaming-cassava" or (buildDepError "streaming-cassava"))
-          (hsPkgs."streaming-with" or (buildDepError "streaming-with"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."tree-fun" or (buildDepError "tree-fun"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
+          (hsPkgs."clustering" or (errorHandler.buildDepError "clustering"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."eigen" or (errorHandler.buildDepError "eigen"))
+          (hsPkgs."hierarchical-clustering" or (errorHandler.buildDepError "hierarchical-clustering"))
+          (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
+          (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
+          (hsPkgs."managed" or (errorHandler.buildDepError "managed"))
+          (hsPkgs."modularity" or (errorHandler.buildDepError "modularity"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."sparse-linear-algebra" or (errorHandler.buildDepError "sparse-linear-algebra"))
+          (hsPkgs."spectral-clustering" or (errorHandler.buildDepError "spectral-clustering"))
+          (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
+          (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
+          (hsPkgs."streaming-cassava" or (errorHandler.buildDepError "streaming-cassava"))
+          (hsPkgs."streaming-with" or (errorHandler.buildDepError "streaming-with"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."tree-fun" or (errorHandler.buildDepError "tree-fun"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         buildable = true;
         };
       exes = {
         "cluster-tree" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hierarchical-spectral-clustering" or (buildDepError "hierarchical-spectral-clustering"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cassava" or (buildDepError "cassava"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-show" or (buildDepError "text-show"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hierarchical-spectral-clustering" or (errorHandler.buildDepError "hierarchical-spectral-clustering"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,52 +25,52 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."hostname" or (buildDepError "hostname"))
-          (hsPkgs."lens-family" or (buildDepError "lens-family"))
-          (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-          (hsPkgs."stm-conduit" or (buildDepError "stm-conduit"))
-          (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
-          (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
-          (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
-          (hsPkgs."tensorflow-proto" or (buildDepError "tensorflow-proto"))
-          (hsPkgs."tensorflow-records-conduit" or (buildDepError "tensorflow-records-conduit"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
+          (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
+          (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
+          (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
+          (hsPkgs."tensorflow" or (errorHandler.buildDepError "tensorflow"))
+          (hsPkgs."tensorflow-core-ops" or (errorHandler.buildDepError "tensorflow-core-ops"))
+          (hsPkgs."tensorflow-ops" or (errorHandler.buildDepError "tensorflow-ops"))
+          (hsPkgs."tensorflow-proto" or (errorHandler.buildDepError "tensorflow-proto"))
+          (hsPkgs."tensorflow-records-conduit" or (errorHandler.buildDepError "tensorflow-records-conduit"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           ];
         buildable = true;
         };
       tests = {
         "LoggingTest" = {
           depends = [
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."lens-family" or (buildDepError "lens-family"))
-            (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
-            (hsPkgs."tensorflow-logging" or (buildDepError "tensorflow-logging"))
-            (hsPkgs."tensorflow-proto" or (buildDepError "tensorflow-proto"))
-            (hsPkgs."tensorflow-records-conduit" or (buildDepError "tensorflow-records-conduit"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
+            (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."tensorflow" or (errorHandler.buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-logging" or (errorHandler.buildDepError "tensorflow-logging"))
+            (hsPkgs."tensorflow-proto" or (errorHandler.buildDepError "tensorflow-proto"))
+            (hsPkgs."tensorflow-records-conduit" or (errorHandler.buildDepError "tensorflow-records-conduit"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };

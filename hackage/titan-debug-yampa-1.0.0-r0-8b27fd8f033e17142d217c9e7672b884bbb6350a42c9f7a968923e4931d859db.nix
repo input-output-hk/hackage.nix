@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { examples = false; };
     package = {
@@ -56,24 +25,24 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."IfElse" or (buildDepError "IfElse"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."network-bsd" or (buildDepError "network-bsd"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."Yampa" or (buildDepError "Yampa"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."IfElse" or (errorHandler.buildDepError "IfElse"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
           ];
         buildable = true;
         };
       exes = {
         "titan-debug-yampa-example-bouncing-ball" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."SDL" or (buildDepError "SDL"))
-            (hsPkgs."SDL-gfx" or (buildDepError "SDL-gfx"))
-            (hsPkgs."Yampa" or (buildDepError "Yampa"))
-            (hsPkgs."titan-debug-yampa" or (buildDepError "titan-debug-yampa"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
+            (hsPkgs."SDL-gfx" or (errorHandler.buildDepError "SDL-gfx"))
+            (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
+            (hsPkgs."titan-debug-yampa" or (errorHandler.buildDepError "titan-debug-yampa"))
             ];
           buildable = if !flags.examples then false else true;
           };

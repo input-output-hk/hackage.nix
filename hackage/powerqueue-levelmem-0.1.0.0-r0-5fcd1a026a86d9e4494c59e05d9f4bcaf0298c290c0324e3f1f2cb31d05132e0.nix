@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,37 +25,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."powerqueue" or (buildDepError "powerqueue"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
-          (hsPkgs."unagi-chan" or (buildDepError "unagi-chan"))
-          (hsPkgs."focus" or (buildDepError "focus"))
-          (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."dlist" or (buildDepError "dlist"))
-          (hsPkgs."list-t" or (buildDepError "list-t"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."powerqueue" or (errorHandler.buildDepError "powerqueue"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
+          (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
+          (hsPkgs."focus" or (errorHandler.buildDepError "focus"))
+          (hsPkgs."leveldb-haskell" or (errorHandler.buildDepError "leveldb-haskell"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
+          (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           ];
         buildable = true;
         };
       tests = {
         "powerqueue-levelmem-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."powerqueue-levelmem" or (buildDepError "powerqueue-levelmem"))
-            (hsPkgs."powerqueue" or (buildDepError "powerqueue"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."powerqueue-levelmem" or (errorHandler.buildDepError "powerqueue-levelmem"))
+            (hsPkgs."powerqueue" or (errorHandler.buildDepError "powerqueue"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             ];
           libs = [
-            (pkgs."stdc++" or (sysDepError "stdc++"))
-            (pkgs."leveldb" or (sysDepError "leveldb"))
-            (pkgs."snappy" or (sysDepError "snappy"))
+            (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
+            (pkgs."leveldb" or (errorHandler.sysDepError "leveldb"))
+            (pkgs."snappy" or (errorHandler.sysDepError "snappy"))
             ];
           buildable = true;
           };
@@ -94,17 +63,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "powerqueue-levelmem-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."powerqueue" or (buildDepError "powerqueue"))
-            (hsPkgs."powerqueue-levelmem" or (buildDepError "powerqueue-levelmem"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."powerqueue" or (errorHandler.buildDepError "powerqueue"))
+            (hsPkgs."powerqueue-levelmem" or (errorHandler.buildDepError "powerqueue-levelmem"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             ];
           libs = [
-            (pkgs."stdc++" or (sysDepError "stdc++"))
-            (pkgs."leveldb" or (sysDepError "leveldb"))
-            (pkgs."snappy" or (sysDepError "snappy"))
+            (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
+            (pkgs."leveldb" or (errorHandler.sysDepError "leveldb"))
+            (pkgs."snappy" or (errorHandler.sysDepError "snappy"))
             ];
           buildable = true;
           };

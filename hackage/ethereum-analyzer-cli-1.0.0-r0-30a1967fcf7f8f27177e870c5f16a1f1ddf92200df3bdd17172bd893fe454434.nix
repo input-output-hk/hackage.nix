@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,60 +25,60 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."bimap" or (buildDepError "bimap"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
-          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."ethereum-analyzer-deps" or (buildDepError "ethereum-analyzer-deps"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."extra" or (buildDepError "extra"))
-          (hsPkgs."fgl" or (buildDepError "fgl"))
-          (hsPkgs."graphviz" or (buildDepError "graphviz"))
-          (hsPkgs."hexstring" or (buildDepError "hexstring"))
-          (hsPkgs."hflags" or (buildDepError "hflags"))
-          (hsPkgs."hoopl" or (buildDepError "hoopl"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."http-media" or (buildDepError "http-media"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."json-rpc" or (buildDepError "json-rpc"))
-          (hsPkgs."logging-effect" or (buildDepError "logging-effect"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."neat-interpolation" or (buildDepError "neat-interpolation"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."prometheus-client" or (buildDepError "prometheus-client"))
-          (hsPkgs."prometheus-metrics-ghc" or (buildDepError "prometheus-metrics-ghc"))
-          (hsPkgs."protolude" or (buildDepError "protolude"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."servant-server" or (buildDepError "servant-server"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-          (hsPkgs."wai-middleware-prometheus" or (buildDepError "wai-middleware-prometheus"))
-          (hsPkgs."warp" or (buildDepError "warp"))
-          (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
+          (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."ethereum-analyzer-deps" or (errorHandler.buildDepError "ethereum-analyzer-deps"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+          (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
+          (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
+          (hsPkgs."hexstring" or (errorHandler.buildDepError "hexstring"))
+          (hsPkgs."hflags" or (errorHandler.buildDepError "hflags"))
+          (hsPkgs."hoopl" or (errorHandler.buildDepError "hoopl"))
+          (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+          (hsPkgs."http-media" or (errorHandler.buildDepError "http-media"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."json-rpc" or (errorHandler.buildDepError "json-rpc"))
+          (hsPkgs."logging-effect" or (errorHandler.buildDepError "logging-effect"))
+          (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+          (hsPkgs."prometheus-client" or (errorHandler.buildDepError "prometheus-client"))
+          (hsPkgs."prometheus-metrics-ghc" or (errorHandler.buildDepError "prometheus-metrics-ghc"))
+          (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
+          (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+          (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+          (hsPkgs."wai-middleware-prometheus" or (errorHandler.buildDepError "wai-middleware-prometheus"))
+          (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+          (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
           ];
         buildable = true;
         };
       exes = {
         "ea-dump-contract" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."ethereum-analyzer" or (buildDepError "ethereum-analyzer"))
-            (hsPkgs."ethereum-analyzer-cli" or (buildDepError "ethereum-analyzer-cli"))
-            (hsPkgs."ethereum-analyzer-deps" or (buildDepError "ethereum-analyzer-deps"))
-            (hsPkgs."hflags" or (buildDepError "hflags"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."ethereum-analyzer" or (errorHandler.buildDepError "ethereum-analyzer"))
+            (hsPkgs."ethereum-analyzer-cli" or (errorHandler.buildDepError "ethereum-analyzer-cli"))
+            (hsPkgs."ethereum-analyzer-deps" or (errorHandler.buildDepError "ethereum-analyzer-deps"))
+            (hsPkgs."hflags" or (errorHandler.buildDepError "hflags"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,43 +25,43 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."HUnit" or (buildDepError "HUnit"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."Diff" or (buildDepError "Diff"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-          (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."old-time" or (buildDepError "old-time"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."xmlgen" or (buildDepError "xmlgen"))
-          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."time" or (buildDepError "time"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+          (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
+          (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."xmlgen" or (errorHandler.buildDepError "xmlgen"))
+          (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
         };
       exes = {
         "htfpp" = {
           depends = [
-            (hsPkgs."cpphs" or (buildDepError "cpphs"))
-            (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
+            (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
@@ -100,37 +69,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "TestHTF" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."HTF" or (buildDepError "HTF"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             ];
           buildable = true;
           };
         "TestThreadPools" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."HTF" or (buildDepError "HTF"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             ];
           buildable = true;
           };
         "MiscTests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."HTF" or (buildDepError "HTF"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             ];
           buildable = true;
           };

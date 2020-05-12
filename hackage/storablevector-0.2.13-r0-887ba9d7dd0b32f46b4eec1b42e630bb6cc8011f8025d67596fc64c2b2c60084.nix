@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { splitbase = true; separatesyb = true; };
     package = {
@@ -56,60 +25,60 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."non-negative" or (buildDepError "non-negative"))
-          (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."unsafe" or (buildDepError "unsafe"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."non-negative" or (errorHandler.buildDepError "non-negative"))
+          (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."unsafe" or (errorHandler.buildDepError "unsafe"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           ] ++ (if compiler.isJhc && true
           then [
-            (hsPkgs."statethread" or (buildDepError "statethread"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."statethread" or (errorHandler.buildDepError "statethread"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ]
           else if flags.splitbase
             then if flags.separatesyb
               then [
-                (hsPkgs."base" or (buildDepError "base"))
-                (hsPkgs."syb" or (buildDepError "syb"))
+                (hsPkgs."base" or (errorHandler.buildDepError "base"))
+                (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
                 ]
-              else [ (hsPkgs."base" or (buildDepError "base")) ]
-            else [ (hsPkgs."base" or (buildDepError "base")) ]);
+              else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
+            else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ] ++ (if flags.splitbase
             then [
-              (hsPkgs."random" or (buildDepError "random"))
-              (hsPkgs."base" or (buildDepError "base"))
+              (hsPkgs."random" or (errorHandler.buildDepError "random"))
+              (hsPkgs."base" or (errorHandler.buildDepError "base"))
               ]
-            else [ (hsPkgs."base" or (buildDepError "base")) ]);
+            else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
           };
         };
       benchmarks = {
         "speedtest" = {
           depends = [
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            (hsPkgs."sample-frame" or (buildDepError "sample-frame"))
-            (hsPkgs."unsafe" or (buildDepError "unsafe"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+            (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
+            (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
+            (hsPkgs."sample-frame" or (errorHandler.buildDepError "sample-frame"))
+            (hsPkgs."unsafe" or (errorHandler.buildDepError "unsafe"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
           };
         "speedpointer" = {
           depends = [
-            (hsPkgs."storablevector" or (buildDepError "storablevector"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
-            ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+            (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
+            (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
+            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
           };
         };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       build-penny = true;
@@ -65,104 +34,104 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."action-permutations" or (buildDepError "action-permutations"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."matchers" or (buildDepError "matchers"))
-          (hsPkgs."multiarg" or (buildDepError "multiarg"))
-          (hsPkgs."ofx" or (buildDepError "ofx"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."prednote" or (buildDepError "prednote"))
-          (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-          (hsPkgs."rainbow" or (buildDepError "rainbow"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."action-permutations" or (errorHandler.buildDepError "action-permutations"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."matchers" or (errorHandler.buildDepError "matchers"))
+          (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
+          (hsPkgs."ofx" or (errorHandler.buildDepError "ofx"))
+          (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."prednote" or (errorHandler.buildDepError "prednote"))
+          (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
+          (hsPkgs."rainbow" or (errorHandler.buildDepError "rainbow"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           ];
         buildable = true;
         };
       exes = {
         "penny" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if !flags.build-penny then false else true;
           };
         "penny-selloff" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."multiarg" or (buildDepError "multiarg"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = if !flags.build-selloff then false else true;
           };
         "penny-diff" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."multiarg" or (buildDepError "multiarg"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
             ];
           buildable = if !flags.build-diff then false else true;
           };
         "penny-reprint" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."multiarg" or (buildDepError "multiarg"))
-            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
+            (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = if !flags.build-reprint then false else true;
           };
         "penny-reconcile" = {
           depends = [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."multiarg" or (buildDepError "multiarg"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
             ];
           buildable = if !flags.build-reconcile then false else true;
           };
         "penny-test" = {
           depends = (pkgs.lib).optionals (flags.test) [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."multiarg" or (buildDepError "multiarg"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = if flags.test then true else false;
           };
         "penny-gibberish" = {
           depends = (pkgs.lib).optionals (flags.test) [
-            (hsPkgs."penny" or (buildDepError "penny"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."multiarg" or (buildDepError "multiarg"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."penny" or (errorHandler.buildDepError "penny"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = if flags.test then true else false;
           };

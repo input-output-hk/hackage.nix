@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,76 +25,76 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."direct-daemonize" or (buildDepError "direct-daemonize"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."friendly-time" or (buildDepError "friendly-time"))
-          (hsPkgs."hostname" or (buildDepError "hostname"))
-          (hsPkgs."lucid" or (buildDepError "lucid"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
-          (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."servant-lucid" or (buildDepError "servant-lucid"))
-          (hsPkgs."servant-server" or (buildDepError "servant-server"))
-          (hsPkgs."string-conv" or (buildDepError "string-conv"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-conversions" or (buildDepError "text-conversions"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."timing-convenience" or (buildDepError "timing-convenience"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."unliftio" or (buildDepError "unliftio"))
-          (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."warp" or (buildDepError "warp"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."direct-daemonize" or (errorHandler.buildDepError "direct-daemonize"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."either" or (errorHandler.buildDepError "either"))
+          (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."friendly-time" or (errorHandler.buildDepError "friendly-time"))
+          (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
+          (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+          (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
+          (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+          (hsPkgs."servant-lucid" or (errorHandler.buildDepError "servant-lucid"))
+          (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
+          (hsPkgs."string-conv" or (errorHandler.buildDepError "string-conv"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."timing-convenience" or (errorHandler.buildDepError "timing-convenience"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+          (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           ];
         buildable = true;
         };
       exes = {
         "devel" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."direct-daemonize" or (buildDepError "direct-daemonize"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."foreign-store" or (buildDepError "foreign-store"))
-            (hsPkgs."friendly-time" or (buildDepError "friendly-time"))
-            (hsPkgs."hostname" or (buildDepError "hostname"))
-            (hsPkgs."lucid" or (buildDepError "lucid"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."odd-jobs" or (buildDepError "odd-jobs"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
-            (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."servant-lucid" or (buildDepError "servant-lucid"))
-            (hsPkgs."servant-server" or (buildDepError "servant-server"))
-            (hsPkgs."string-conv" or (buildDepError "string-conv"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-conversions" or (buildDepError "text-conversions"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."timing-convenience" or (buildDepError "timing-convenience"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."unliftio" or (buildDepError "unliftio"))
-            (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."direct-daemonize" or (errorHandler.buildDepError "direct-daemonize"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."foreign-store" or (errorHandler.buildDepError "foreign-store"))
+            (hsPkgs."friendly-time" or (errorHandler.buildDepError "friendly-time"))
+            (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
+            (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
+            (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."odd-jobs" or (errorHandler.buildDepError "odd-jobs"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
+            (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+            (hsPkgs."servant-lucid" or (errorHandler.buildDepError "servant-lucid"))
+            (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
+            (hsPkgs."string-conv" or (errorHandler.buildDepError "string-conv"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."timing-convenience" or (errorHandler.buildDepError "timing-convenience"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+            (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];
           buildable = true;
           };
@@ -133,48 +102,48 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "jobrunner" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."direct-daemonize" or (buildDepError "direct-daemonize"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."friendly-time" or (buildDepError "friendly-time"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."hostname" or (buildDepError "hostname"))
-            (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
-            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-            (hsPkgs."lucid" or (buildDepError "lucid"))
-            (hsPkgs."mmorph" or (buildDepError "mmorph"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."odd-jobs" or (buildDepError "odd-jobs"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."servant-lucid" or (buildDepError "servant-lucid"))
-            (hsPkgs."servant-server" or (buildDepError "servant-server"))
-            (hsPkgs."string-conv" or (buildDepError "string-conv"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
-            (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-conversions" or (buildDepError "text-conversions"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."timing-convenience" or (buildDepError "timing-convenience"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."unliftio" or (buildDepError "unliftio"))
-            (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."direct-daemonize" or (errorHandler.buildDepError "direct-daemonize"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."friendly-time" or (errorHandler.buildDepError "friendly-time"))
+            (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
+            (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
+            (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
+            (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+            (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
+            (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
+            (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."odd-jobs" or (errorHandler.buildDepError "odd-jobs"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+            (hsPkgs."servant-lucid" or (errorHandler.buildDepError "servant-lucid"))
+            (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
+            (hsPkgs."string-conv" or (errorHandler.buildDepError "string-conv"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
+            (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."timing-convenience" or (errorHandler.buildDepError "timing-convenience"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+            (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];
           buildable = true;
           };

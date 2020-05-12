@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,49 +25,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."acid-state" or (buildDepError "acid-state"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."happstack-authenticate" or (buildDepError "happstack-authenticate"))
-          (hsPkgs."happstack-hsp" or (buildDepError "happstack-hsp"))
-          (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
-          (hsPkgs."happstack-server-tls" or (buildDepError "happstack-server-tls"))
-          (hsPkgs."hsp" or (buildDepError "hsp"))
-          (hsPkgs."hsx-jmacro" or (buildDepError "hsx-jmacro"))
-          (hsPkgs."ixset" or (buildDepError "ixset"))
-          (hsPkgs."jmacro" or (buildDepError "jmacro"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."reform" or (buildDepError "reform"))
-          (hsPkgs."reform-happstack" or (buildDepError "reform-happstack"))
-          (hsPkgs."reform-hsp" or (buildDepError "reform-hsp"))
-          (hsPkgs."safecopy" or (buildDepError "safecopy"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."web-plugins" or (buildDepError "web-plugins"))
-          (hsPkgs."web-routes" or (buildDepError "web-routes"))
-          (hsPkgs."web-routes-happstack" or (buildDepError "web-routes-happstack"))
-          (hsPkgs."web-routes-hsp" or (buildDepError "web-routes-hsp"))
-          (hsPkgs."web-routes-th" or (buildDepError "web-routes-th"))
-          (hsPkgs."xss-sanitize" or (buildDepError "xss-sanitize"))
+          (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."happstack-authenticate" or (errorHandler.buildDepError "happstack-authenticate"))
+          (hsPkgs."happstack-hsp" or (errorHandler.buildDepError "happstack-hsp"))
+          (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
+          (hsPkgs."happstack-server-tls" or (errorHandler.buildDepError "happstack-server-tls"))
+          (hsPkgs."hsp" or (errorHandler.buildDepError "hsp"))
+          (hsPkgs."hsx-jmacro" or (errorHandler.buildDepError "hsx-jmacro"))
+          (hsPkgs."ixset" or (errorHandler.buildDepError "ixset"))
+          (hsPkgs."jmacro" or (errorHandler.buildDepError "jmacro"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."reform" or (errorHandler.buildDepError "reform"))
+          (hsPkgs."reform-happstack" or (errorHandler.buildDepError "reform-happstack"))
+          (hsPkgs."reform-hsp" or (errorHandler.buildDepError "reform-hsp"))
+          (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."web-plugins" or (errorHandler.buildDepError "web-plugins"))
+          (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
+          (hsPkgs."web-routes-happstack" or (errorHandler.buildDepError "web-routes-happstack"))
+          (hsPkgs."web-routes-hsp" or (errorHandler.buildDepError "web-routes-hsp"))
+          (hsPkgs."web-routes-th" or (errorHandler.buildDepError "web-routes-th"))
+          (hsPkgs."xss-sanitize" or (errorHandler.buildDepError "xss-sanitize"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.trhsx or (pkgs.buildPackages.trhsx or (buildToolDepError "trhsx")))
+          (hsPkgs.buildPackages.trhsx or (pkgs.buildPackages.trhsx or (errorHandler.buildToolDepError "trhsx")))
           ];
         buildable = true;
         };

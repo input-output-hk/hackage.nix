@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,34 +25,34 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."manatee-core" or (buildDepError "manatee-core"))
-          (hsPkgs."dbus-client" or (buildDepError "dbus-client"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."gtk" or (buildDepError "gtk"))
-          (hsPkgs."derive" or (buildDepError "derive"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."dbus-core" or (buildDepError "dbus-core"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."gtksourceview2" or (buildDepError "gtksourceview2"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."groom" or (buildDepError "groom"))
-          (hsPkgs."fastirc" or (buildDepError "fastirc"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."nano-md5" or (buildDepError "nano-md5"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."GoogleTranslate" or (buildDepError "GoogleTranslate"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
-          (hsPkgs."MorseCode" or (buildDepError "MorseCode"))
-          (hsPkgs."ghc" or (buildDepError "ghc"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."manatee-core" or (errorHandler.buildDepError "manatee-core"))
+          (hsPkgs."dbus-client" or (errorHandler.buildDepError "dbus-client"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
+          (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."dbus-core" or (errorHandler.buildDepError "dbus-core"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."gtksourceview2" or (errorHandler.buildDepError "gtksourceview2"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
+          (hsPkgs."fastirc" or (errorHandler.buildDepError "fastirc"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."nano-md5" or (errorHandler.buildDepError "nano-md5"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."GoogleTranslate" or (errorHandler.buildDepError "GoogleTranslate"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+          (hsPkgs."MorseCode" or (errorHandler.buildDepError "MorseCode"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           ];
         buildable = true;
         };

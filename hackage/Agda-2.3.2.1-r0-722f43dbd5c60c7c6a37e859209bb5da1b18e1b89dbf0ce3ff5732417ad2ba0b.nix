@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { epic = false; };
     package = {
@@ -56,56 +25,56 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."zlib" or (buildDepError "zlib"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."haskeline" or (buildDepError "haskeline"))
-          (hsPkgs."xhtml" or (buildDepError "xhtml"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."hashtables" or (buildDepError "hashtables"))
-          (hsPkgs."geniplate" or (buildDepError "geniplate"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."text" or (buildDepError "text"))
-          ] ++ (pkgs.lib).optional (flags.epic) (hsPkgs."epic" or (buildDepError "epic"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"))) ++ (if compiler.isGhc && (compiler.version).lt "7.6"
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
+          (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
+          (hsPkgs."geniplate" or (errorHandler.buildDepError "geniplate"))
+          (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          ] ++ (pkgs.lib).optional (flags.epic) (hsPkgs."epic" or (errorHandler.buildDepError "epic"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (if compiler.isGhc && (compiler.version).lt "7.6"
           then [
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ]
           else [
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ]);
         build-tools = [
-          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
-          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy")))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex")))
           ];
         buildable = true;
         };
       exes = {
         "agda" = {
           depends = [
-            (hsPkgs."Agda" or (buildDepError "Agda"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Agda" or (errorHandler.buildDepError "Agda"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };
         "agda-mode" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,37 +25,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."extensible" or (buildDepError "extensible"))
-          (hsPkgs."feed" or (buildDepError "feed"))
-          (hsPkgs."req" or (buildDepError "req"))
-          (hsPkgs."rio" or (buildDepError "rio"))
-          (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
-          (hsPkgs."xml-types" or (buildDepError "xml-types"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."extensible" or (errorHandler.buildDepError "extensible"))
+          (hsPkgs."feed" or (errorHandler.buildDepError "feed"))
+          (hsPkgs."req" or (errorHandler.buildDepError "req"))
+          (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
+          (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
+          (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ];
         buildable = true;
         };
       exes = {
         "scrapbook" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."drinkery" or (buildDepError "drinkery"))
-            (hsPkgs."extensible" or (buildDepError "extensible"))
-            (hsPkgs."feed" or (buildDepError "feed"))
-            (hsPkgs."gitrev" or (buildDepError "gitrev"))
-            (hsPkgs."req" or (buildDepError "req"))
-            (hsPkgs."rio" or (buildDepError "rio"))
-            (hsPkgs."scrapbook" or (buildDepError "scrapbook"))
-            (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
-            (hsPkgs."xml-types" or (buildDepError "xml-types"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."drinkery" or (errorHandler.buildDepError "drinkery"))
+            (hsPkgs."extensible" or (errorHandler.buildDepError "extensible"))
+            (hsPkgs."feed" or (errorHandler.buildDepError "feed"))
+            (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
+            (hsPkgs."req" or (errorHandler.buildDepError "req"))
+            (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
+            (hsPkgs."scrapbook" or (errorHandler.buildDepError "scrapbook"))
+            (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
+            (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             ];
           buildable = true;
           };
@@ -94,20 +63,20 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "scrapbook-test" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."extensible" or (buildDepError "extensible"))
-            (hsPkgs."feed" or (buildDepError "feed"))
-            (hsPkgs."req" or (buildDepError "req"))
-            (hsPkgs."rio" or (buildDepError "rio"))
-            (hsPkgs."scrapbook" or (buildDepError "scrapbook"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
-            (hsPkgs."xml-types" or (buildDepError "xml-types"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."extensible" or (errorHandler.buildDepError "extensible"))
+            (hsPkgs."feed" or (errorHandler.buildDepError "feed"))
+            (hsPkgs."req" or (errorHandler.buildDepError "req"))
+            (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
+            (hsPkgs."scrapbook" or (errorHandler.buildDepError "scrapbook"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
+            (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             ];
           buildable = true;
           };

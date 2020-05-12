@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,61 +25,61 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."dual-tree" or (buildDepError "dual-tree"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."monoid-extras" or (buildDepError "monoid-extras"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."ghc" or (buildDepError "ghc"))
-          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
-          (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."old-time" or (buildDepError "old-time"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."rosezipper" or (buildDepError "rosezipper"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."Strafunski-StrategyLib" or (buildDepError "Strafunski-StrategyLib"))
-          (hsPkgs."syz" or (buildDepError "syz"))
-          (hsPkgs."haskell-token-utils" or (buildDepError "haskell-token-utils"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."dual-tree" or (errorHandler.buildDepError "dual-tree"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."monoid-extras" or (errorHandler.buildDepError "monoid-extras"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+          (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+          (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+          (hsPkgs."ghc-syb-utils" or (errorHandler.buildDepError "ghc-syb-utils"))
+          (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."rosezipper" or (errorHandler.buildDepError "rosezipper"))
+          (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+          (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."Strafunski-StrategyLib" or (errorHandler.buildDepError "Strafunski-StrategyLib"))
+          (hsPkgs."syz" or (errorHandler.buildDepError "syz"))
+          (hsPkgs."haskell-token-utils" or (errorHandler.buildDepError "haskell-token-utils"))
           ];
         buildable = true;
         };
       exes = {
         "ghc-hare" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."dual-tree" or (buildDepError "dual-tree"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."monoid-extras" or (buildDepError "monoid-extras"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
-            (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."rosezipper" or (buildDepError "rosezipper"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."Strafunski-StrategyLib" or (buildDepError "Strafunski-StrategyLib"))
-            (hsPkgs."syz" or (buildDepError "syz"))
-            (hsPkgs."haskell-token-utils" or (buildDepError "haskell-token-utils"))
-            (hsPkgs."HaRe" or (buildDepError "HaRe"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."dual-tree" or (errorHandler.buildDepError "dual-tree"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."monoid-extras" or (errorHandler.buildDepError "monoid-extras"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."ghc-syb-utils" or (errorHandler.buildDepError "ghc-syb-utils"))
+            (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."rosezipper" or (errorHandler.buildDepError "rosezipper"))
+            (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."Strafunski-StrategyLib" or (errorHandler.buildDepError "Strafunski-StrategyLib"))
+            (hsPkgs."syz" or (errorHandler.buildDepError "syz"))
+            (hsPkgs."haskell-token-utils" or (errorHandler.buildDepError "haskell-token-utils"))
+            (hsPkgs."HaRe" or (errorHandler.buildDepError "HaRe"))
             ];
           buildable = true;
           };
@@ -118,37 +87,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Diff" or (buildDepError "Diff"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."dual-tree" or (buildDepError "dual-tree"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."monoid-extras" or (buildDepError "monoid-extras"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
-            (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."silently" or (buildDepError "silently"))
-            (hsPkgs."stringbuilder" or (buildDepError "stringbuilder"))
-            (hsPkgs."rosezipper" or (buildDepError "rosezipper"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."Strafunski-StrategyLib" or (buildDepError "Strafunski-StrategyLib"))
-            (hsPkgs."syz" or (buildDepError "syz"))
-            (hsPkgs."haskell-token-utils" or (buildDepError "haskell-token-utils"))
-            (hsPkgs."HaRe" or (buildDepError "HaRe"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."dual-tree" or (errorHandler.buildDepError "dual-tree"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."monoid-extras" or (errorHandler.buildDepError "monoid-extras"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."ghc-syb-utils" or (errorHandler.buildDepError "ghc-syb-utils"))
+            (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
+            (hsPkgs."stringbuilder" or (errorHandler.buildDepError "stringbuilder"))
+            (hsPkgs."rosezipper" or (errorHandler.buildDepError "rosezipper"))
+            (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."Strafunski-StrategyLib" or (errorHandler.buildDepError "Strafunski-StrategyLib"))
+            (hsPkgs."syz" or (errorHandler.buildDepError "syz"))
+            (hsPkgs."haskell-token-utils" or (errorHandler.buildDepError "haskell-token-utils"))
+            (hsPkgs."HaRe" or (errorHandler.buildDepError "HaRe"))
             ];
           buildable = true;
           };

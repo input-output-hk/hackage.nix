@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { network-uri = true; omit-serialize = false; };
     package = {
@@ -56,52 +25,56 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."bzlib" or (buildDepError "bzlib"))
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."Diff" or (buildDepError "Diff"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."fgl" or (buildDepError "fgl"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."generic-data" or (buildDepError "generic-data"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."ListLike" or (buildDepError "ListLike"))
-          (hsPkgs."mmorph" or (buildDepError "mmorph"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."safecopy" or (buildDepError "safecopy"))
-          (hsPkgs."show-combinators" or (buildDepError "show-combinators"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."th-lift" or (buildDepError "th-lift"))
-          (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
-          (hsPkgs."th-orphans" or (buildDepError "th-orphans"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."Unixutils" or (buildDepError "Unixutils"))
-          (hsPkgs."userid" or (buildDepError "userid"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."uuid-orphans" or (buildDepError "uuid-orphans"))
-          (hsPkgs."uuid-types" or (buildDepError "uuid-types"))
-          (hsPkgs."zlib" or (buildDepError "zlib"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
+          (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."generic-data" or (errorHandler.buildDepError "generic-data"))
+          (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
+          (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+          (hsPkgs."show-combinators" or (errorHandler.buildDepError "show-combinators"))
+          (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
+          (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
+          (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
+          (hsPkgs."userid" or (errorHandler.buildDepError "userid"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+          (hsPkgs."uuid-orphans" or (errorHandler.buildDepError "uuid-orphans"))
+          (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
+          (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
-          (hsPkgs."show-please" or (buildDepError "show-please"))
-          (hsPkgs."filemanip" or (buildDepError "filemanip"))
-          (hsPkgs."HUnit" or (buildDepError "HUnit"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."process-extras" or (buildDepError "process-extras"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."show-please" or (errorHandler.buildDepError "show-please"))
+          (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
+          (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."process-extras" or (errorHandler.buildDepError "process-extras"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           ]) ++ (if flags.network-uri
-          then [ (hsPkgs."network-uri" or (buildDepError "network-uri")) ]
-          else [ (hsPkgs."network" or (buildDepError "network")) ])) ++ [
-          (hsPkgs."cereal" or (buildDepError "cereal"))
+          then [
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            ]
+          else [
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            ])) ++ [
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           ];
         buildable = true;
         };

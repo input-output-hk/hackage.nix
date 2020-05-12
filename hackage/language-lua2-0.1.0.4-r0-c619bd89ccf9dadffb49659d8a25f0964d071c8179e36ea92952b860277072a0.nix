@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { exes = false; };
     package = {
@@ -56,39 +25,39 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."Earley" or (buildDepError "Earley"))
-          (hsPkgs."lexer-applicative" or (buildDepError "lexer-applicative"))
-          (hsPkgs."microlens" or (buildDepError "microlens"))
-          (hsPkgs."regex-applicative" or (buildDepError "regex-applicative"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."srcloc" or (buildDepError "srcloc"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."Earley" or (errorHandler.buildDepError "Earley"))
+          (hsPkgs."lexer-applicative" or (errorHandler.buildDepError "lexer-applicative"))
+          (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+          (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
           ];
         buildable = true;
         };
       exes = {
         "parse" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Earley" or (buildDepError "Earley"))
-            (hsPkgs."lexer-applicative" or (buildDepError "lexer-applicative"))
-            (hsPkgs."language-lua2" or (buildDepError "language-lua2"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."srcloc" or (buildDepError "srcloc"))
-            (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Earley" or (errorHandler.buildDepError "Earley"))
+            (hsPkgs."lexer-applicative" or (errorHandler.buildDepError "lexer-applicative"))
+            (hsPkgs."language-lua2" or (errorHandler.buildDepError "language-lua2"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
+            (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
             ];
           buildable = if !flags.exes then false else true;
           };
         "lex" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."lexer-applicative" or (buildDepError "lexer-applicative"))
-            (hsPkgs."language-lua2" or (buildDepError "language-lua2"))
-            (hsPkgs."srcloc" or (buildDepError "srcloc"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."lexer-applicative" or (errorHandler.buildDepError "lexer-applicative"))
+            (hsPkgs."language-lua2" or (errorHandler.buildDepError "language-lua2"))
+            (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
             ];
           buildable = if !flags.exes then false else true;
           };
@@ -96,17 +65,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "language-lua2-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."lexer-applicative" or (buildDepError "lexer-applicative"))
-            (hsPkgs."language-lua2" or (buildDepError "language-lua2"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."srcloc" or (buildDepError "srcloc"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."lexer-applicative" or (errorHandler.buildDepError "lexer-applicative"))
+            (hsPkgs."language-lua2" or (errorHandler.buildDepError "language-lua2"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             ];
           buildable = true;
           };

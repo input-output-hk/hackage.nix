@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,25 +25,25 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."alternators" or (buildDepError "alternators"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-diverse" or (buildDepError "data-diverse"))
-          (hsPkgs."data-diverse-lens" or (buildDepError "data-diverse-lens"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."dlist" or (buildDepError "dlist"))
-          (hsPkgs."glazier" or (buildDepError "glazier"))
-          (hsPkgs."javascript-extras" or (buildDepError "javascript-extras"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."lens-misc" or (buildDepError "lens-misc"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."newtype-generics" or (buildDepError "newtype-generics"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unliftio" or (buildDepError "unliftio"))
-          (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
-          ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."ghcjs-base-stub" or (buildDepError "ghcjs-base-stub"));
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."alternators" or (errorHandler.buildDepError "alternators"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."data-diverse" or (errorHandler.buildDepError "data-diverse"))
+          (hsPkgs."data-diverse-lens" or (errorHandler.buildDepError "data-diverse-lens"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
+          (hsPkgs."glazier" or (errorHandler.buildDepError "glazier"))
+          (hsPkgs."javascript-extras" or (errorHandler.buildDepError "javascript-extras"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."lens-misc" or (errorHandler.buildDepError "lens-misc"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."newtype-generics" or (errorHandler.buildDepError "newtype-generics"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+          (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+          ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."ghcjs-base-stub" or (errorHandler.buildDepError "ghcjs-base-stub"));
         buildable = true;
         };
       };

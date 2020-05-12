@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { simd = true; llvm = true; };
     package = {
@@ -56,64 +25,64 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."loop" or (buildDepError "loop"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."gitrev" or (buildDepError "gitrev"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."loop" or (errorHandler.buildDepError "loop"))
+          (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+          (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
           ];
-        libs = (pkgs.lib).optional (flags.simd) (pkgs."reedsolomon" or (sysDepError "reedsolomon"));
+        libs = (pkgs.lib).optional (flags.simd) (pkgs."reedsolomon" or (errorHandler.sysDepError "reedsolomon"));
         buildable = true;
         };
       exes = {
         "reedsolomon-simple-encoder" = {
           depends = (pkgs.lib).optionals (!system.isWindows) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."bytestring-mmap" or (buildDepError "bytestring-mmap"))
-            (hsPkgs."reedsolomon" or (buildDepError "reedsolomon"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."bytestring-mmap" or (errorHandler.buildDepError "bytestring-mmap"))
+            (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
             ];
           buildable = if !system.isWindows then true else false;
           };
         "reedsolomon-simple-decoder" = {
           depends = (pkgs.lib).optionals (!system.isWindows) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."bytestring-mmap" or (buildDepError "bytestring-mmap"))
-            (hsPkgs."reedsolomon" or (buildDepError "reedsolomon"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."bytestring-mmap" or (errorHandler.buildDepError "bytestring-mmap"))
+            (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
             ];
           buildable = if !system.isWindows then true else false;
           };
         "reedsolomon-simple-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."statistics" or (buildDepError "statistics"))
-            (hsPkgs."reedsolomon" or (buildDepError "reedsolomon"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
+            (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
             ];
           buildable = true;
           };
         "reedsolomon-profiling" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."clock" or (buildDepError "clock"))
-            (hsPkgs."reedsolomon" or (buildDepError "reedsolomon"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+            (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
             ];
           buildable = true;
           };
@@ -121,22 +90,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "reedsolomon-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."loop" or (buildDepError "loop"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."profunctors" or (buildDepError "profunctors"))
-            (hsPkgs."cpu" or (buildDepError "cpu"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."tasty-ant-xml" or (buildDepError "tasty-ant-xml"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."reedsolomon" or (buildDepError "reedsolomon"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."loop" or (errorHandler.buildDepError "loop"))
+            (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+            (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-ant-xml" or (errorHandler.buildDepError "tasty-ant-xml"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
             ];
           buildable = true;
           };
@@ -144,13 +113,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "reedsolomon-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."loop" or (buildDepError "loop"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."cpu" or (buildDepError "cpu"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."reedsolomon" or (buildDepError "reedsolomon"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."loop" or (errorHandler.buildDepError "loop"))
+            (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+            (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
             ];
           buildable = true;
           };

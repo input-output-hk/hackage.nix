@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,75 +25,75 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."ieee-utils" or (buildDepError "ieee-utils"))
-          (hsPkgs."test-framework" or (buildDepError "test-framework"))
-          (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-          (hsPkgs."AERN-Basics" or (buildDepError "AERN-Basics"))
-          (hsPkgs."AERN-Real-Interval" or (buildDepError "AERN-Real-Interval"))
-          (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."ieee-utils" or (errorHandler.buildDepError "ieee-utils"))
+          (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+          (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+          (hsPkgs."AERN-Basics" or (errorHandler.buildDepError "AERN-Basics"))
+          (hsPkgs."AERN-Real-Interval" or (errorHandler.buildDepError "AERN-Real-Interval"))
+          (hsPkgs."AERN-Real" or (errorHandler.buildDepError "AERN-Real"))
           ];
         buildable = true;
         };
       exes = {
         "testAERN-Real-Double" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ieee-utils" or (buildDepError "ieee-utils"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."AERN-Basics" or (buildDepError "AERN-Basics"))
-            (hsPkgs."AERN-Real-Interval" or (buildDepError "AERN-Real-Interval"))
-            (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ieee-utils" or (errorHandler.buildDepError "ieee-utils"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."AERN-Basics" or (errorHandler.buildDepError "AERN-Basics"))
+            (hsPkgs."AERN-Real-Interval" or (errorHandler.buildDepError "AERN-Real-Interval"))
+            (hsPkgs."AERN-Real" or (errorHandler.buildDepError "AERN-Real"))
             ];
           buildable = true;
           };
         "benchAERN-Real-Double" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."ieee-utils" or (buildDepError "ieee-utils"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."AERN-Basics" or (buildDepError "AERN-Basics"))
-            (hsPkgs."AERN-Real-Interval" or (buildDepError "AERN-Real-Interval"))
-            (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."ieee-utils" or (errorHandler.buildDepError "ieee-utils"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."AERN-Basics" or (errorHandler.buildDepError "AERN-Basics"))
+            (hsPkgs."AERN-Real-Interval" or (errorHandler.buildDepError "AERN-Real-Interval"))
+            (hsPkgs."AERN-Real" or (errorHandler.buildDepError "AERN-Real"))
             ];
           buildable = true;
           };
         "demoAERN-Real-Double-Quadratic" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."ieee-utils" or (buildDepError "ieee-utils"))
-            (hsPkgs."AERN-Basics" or (buildDepError "AERN-Basics"))
-            (hsPkgs."AERN-Real-Interval" or (buildDepError "AERN-Real-Interval"))
-            (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."ieee-utils" or (errorHandler.buildDepError "ieee-utils"))
+            (hsPkgs."AERN-Basics" or (errorHandler.buildDepError "AERN-Basics"))
+            (hsPkgs."AERN-Real-Interval" or (errorHandler.buildDepError "AERN-Real-Interval"))
+            (hsPkgs."AERN-Real" or (errorHandler.buildDepError "AERN-Real"))
             ];
           buildable = true;
           };
         "demoAERN-Real-Double-Riemann" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."ieee-utils" or (buildDepError "ieee-utils"))
-            (hsPkgs."AERN-Basics" or (buildDepError "AERN-Basics"))
-            (hsPkgs."AERN-Real-Interval" or (buildDepError "AERN-Real-Interval"))
-            (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."ieee-utils" or (errorHandler.buildDepError "ieee-utils"))
+            (hsPkgs."AERN-Basics" or (errorHandler.buildDepError "AERN-Basics"))
+            (hsPkgs."AERN-Real-Interval" or (errorHandler.buildDepError "AERN-Real-Interval"))
+            (hsPkgs."AERN-Real" or (errorHandler.buildDepError "AERN-Real"))
             ];
           buildable = true;
           };
         "demoAERN-Real-Double-Zero" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."ieee-utils" or (buildDepError "ieee-utils"))
-            (hsPkgs."AERN-Basics" or (buildDepError "AERN-Basics"))
-            (hsPkgs."AERN-Real-Interval" or (buildDepError "AERN-Real-Interval"))
-            (hsPkgs."AERN-Real" or (buildDepError "AERN-Real"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."ieee-utils" or (errorHandler.buildDepError "ieee-utils"))
+            (hsPkgs."AERN-Basics" or (errorHandler.buildDepError "AERN-Basics"))
+            (hsPkgs."AERN-Real-Interval" or (errorHandler.buildDepError "AERN-Real-Interval"))
+            (hsPkgs."AERN-Real" or (errorHandler.buildDepError "AERN-Real"))
             ];
           buildable = true;
           };

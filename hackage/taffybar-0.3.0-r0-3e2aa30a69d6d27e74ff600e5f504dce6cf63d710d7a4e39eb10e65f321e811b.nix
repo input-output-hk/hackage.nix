@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,48 +25,48 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."HTTP" or (buildDepError "HTTP"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."cairo" or (buildDepError "cairo"))
-          (hsPkgs."dbus" or (buildDepError "dbus"))
-          (hsPkgs."gtk" or (buildDepError "gtk"))
-          (hsPkgs."dyre" or (buildDepError "dyre"))
-          (hsPkgs."HStringTemplate" or (buildDepError "HStringTemplate"))
-          (hsPkgs."gtk-traymanager" or (buildDepError "gtk-traymanager"))
-          (hsPkgs."xmonad-contrib" or (buildDepError "xmonad-contrib"))
-          (hsPkgs."xmonad" or (buildDepError "xmonad"))
-          (hsPkgs."xdg-basedir" or (buildDepError "xdg-basedir"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."X11" or (buildDepError "X11"))
-          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
+          (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
+          (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
+          (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
+          (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
+          (hsPkgs."gtk-traymanager" or (errorHandler.buildDepError "gtk-traymanager"))
+          (hsPkgs."xmonad-contrib" or (errorHandler.buildDepError "xmonad-contrib"))
+          (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
+          (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
           ];
         pkgconfig = [
-          (pkgconfPkgs."gtk+-2.0" or (pkgConfDepError "gtk+-2.0"))
+          (pkgconfPkgs."gtk+-2.0" or (errorHandler.pkgConfDepError "gtk+-2.0"))
           ];
         buildable = true;
         };
       exes = {
         "taffybar" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."dyre" or (buildDepError "dyre"))
-            (hsPkgs."gtk" or (buildDepError "gtk"))
-            (hsPkgs."xdg-basedir" or (buildDepError "xdg-basedir"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
+            (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
+            (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           pkgconfig = [
-            (pkgconfPkgs."gtk+-2.0" or (pkgConfDepError "gtk+-2.0"))
+            (pkgconfPkgs."gtk+-2.0" or (errorHandler.pkgConfDepError "gtk+-2.0"))
             ];
           buildable = true;
           };

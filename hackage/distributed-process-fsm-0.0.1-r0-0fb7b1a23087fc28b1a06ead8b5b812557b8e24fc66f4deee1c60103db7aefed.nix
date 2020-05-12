@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,54 +25,54 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-          (hsPkgs."distributed-process-extras" or (buildDepError "distributed-process-extras"))
-          (hsPkgs."distributed-process-client-server" or (buildDepError "distributed-process-client-server"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
+          (hsPkgs."distributed-process-extras" or (errorHandler.buildDepError "distributed-process-extras"))
+          (hsPkgs."distributed-process-client-server" or (errorHandler.buildDepError "distributed-process-client-server"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           ];
         buildable = true;
         };
       tests = {
         "FsmTests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-transport" or (buildDepError "network-transport"))
-            (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."distributed-process-fsm" or (buildDepError "distributed-process-fsm"))
-            (hsPkgs."distributed-process-extras" or (buildDepError "distributed-process-extras"))
-            (hsPkgs."distributed-process-systest" or (buildDepError "distributed-process-systest"))
-            (hsPkgs."distributed-static" or (buildDepError "distributed-static"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."fingertree" or (buildDepError "fingertree"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."rematch" or (buildDepError "rematch"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
+            (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
+            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
+            (hsPkgs."distributed-process-fsm" or (errorHandler.buildDepError "distributed-process-fsm"))
+            (hsPkgs."distributed-process-extras" or (errorHandler.buildDepError "distributed-process-extras"))
+            (hsPkgs."distributed-process-systest" or (errorHandler.buildDepError "distributed-process-systest"))
+            (hsPkgs."distributed-static" or (errorHandler.buildDepError "distributed-static"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             ];
           buildable = true;
           };

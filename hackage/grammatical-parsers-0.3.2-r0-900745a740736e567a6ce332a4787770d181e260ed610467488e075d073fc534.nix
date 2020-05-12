@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,24 +25,24 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."monoid-subclasses" or (buildDepError "monoid-subclasses"))
-          (hsPkgs."parsers" or (buildDepError "parsers"))
-          (hsPkgs."rank2classes" or (buildDepError "rank2classes"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
+          (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
+          (hsPkgs."rank2classes" or (errorHandler.buildDepError "rank2classes"))
           ];
         buildable = true;
         };
       exes = {
         "arithmetic" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."parsers" or (buildDepError "parsers"))
-            (hsPkgs."rank2classes" or (buildDepError "rank2classes"))
-            (hsPkgs."grammatical-parsers" or (buildDepError "grammatical-parsers"))
-            (hsPkgs."monoid-subclasses" or (buildDepError "monoid-subclasses"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
+            (hsPkgs."rank2classes" or (errorHandler.buildDepError "rank2classes"))
+            (hsPkgs."grammatical-parsers" or (errorHandler.buildDepError "grammatical-parsers"))
+            (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
             ];
           buildable = true;
           };
@@ -81,26 +50,26 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "quicktests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."monoid-subclasses" or (buildDepError "monoid-subclasses"))
-            (hsPkgs."parsers" or (buildDepError "parsers"))
-            (hsPkgs."rank2classes" or (buildDepError "rank2classes"))
-            (hsPkgs."grammatical-parsers" or (buildDepError "grammatical-parsers"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."checkers" or (buildDepError "checkers"))
-            (hsPkgs."size-based" or (buildDepError "size-based"))
-            (hsPkgs."testing-feat" or (buildDepError "testing-feat"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
+            (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
+            (hsPkgs."rank2classes" or (errorHandler.buildDepError "rank2classes"))
+            (hsPkgs."grammatical-parsers" or (errorHandler.buildDepError "grammatical-parsers"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
+            (hsPkgs."size-based" or (errorHandler.buildDepError "size-based"))
+            (hsPkgs."testing-feat" or (errorHandler.buildDepError "testing-feat"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             ];
           buildable = true;
           };
         "doctests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."rank2classes" or (buildDepError "rank2classes"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."rank2classes" or (errorHandler.buildDepError "rank2classes"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             ];
           buildable = true;
           };
@@ -108,15 +77,15 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "benchmarks" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."rank2classes" or (buildDepError "rank2classes"))
-            (hsPkgs."grammatical-parsers" or (buildDepError "grammatical-parsers"))
-            (hsPkgs."monoid-subclasses" or (buildDepError "monoid-subclasses"))
-            (hsPkgs."parsers" or (buildDepError "parsers"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."rank2classes" or (errorHandler.buildDepError "rank2classes"))
+            (hsPkgs."grammatical-parsers" or (errorHandler.buildDepError "grammatical-parsers"))
+            (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
+            (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };

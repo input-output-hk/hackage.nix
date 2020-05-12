@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,53 +25,53 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
-          (hsPkgs."aws" or (buildDepError "aws"))
-          (hsPkgs."aws-general" or (buildDepError "aws-general"))
-          (hsPkgs."aws-kinesis" or (buildDepError "aws-kinesis"))
-          (hsPkgs."aws-sdk" or (buildDepError "aws-sdk"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."hoist-error" or (buildDepError "hoist-error"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."lens-action" or (buildDepError "lens-action"))
-          (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
+          (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
+          (hsPkgs."aws-general" or (errorHandler.buildDepError "aws-general"))
+          (hsPkgs."aws-kinesis" or (errorHandler.buildDepError "aws-kinesis"))
+          (hsPkgs."aws-sdk" or (errorHandler.buildDepError "aws-sdk"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."hoist-error" or (errorHandler.buildDepError "hoist-error"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."lens-action" or (errorHandler.buildDepError "lens-action"))
+          (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
+          (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           ];
         buildable = true;
         };
       exes = {
         "kinesis-reshard" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
-            (hsPkgs."aws" or (buildDepError "aws"))
-            (hsPkgs."aws-general" or (buildDepError "aws-general"))
-            (hsPkgs."aws-sdk" or (buildDepError "aws-sdk"))
-            (hsPkgs."aws-kinesis" or (buildDepError "aws-kinesis"))
-            (hsPkgs."aws-kinesis-reshard" or (buildDepError "aws-kinesis-reshard"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."hoist-error" or (buildDepError "hoist-error"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."lens-action" or (buildDepError "lens-action"))
-            (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
-            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
+            (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
+            (hsPkgs."aws-general" or (errorHandler.buildDepError "aws-general"))
+            (hsPkgs."aws-sdk" or (errorHandler.buildDepError "aws-sdk"))
+            (hsPkgs."aws-kinesis" or (errorHandler.buildDepError "aws-kinesis"))
+            (hsPkgs."aws-kinesis-reshard" or (errorHandler.buildDepError "aws-kinesis-reshard"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."hoist-error" or (errorHandler.buildDepError "hoist-error"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."lens-action" or (errorHandler.buildDepError "lens-action"))
+            (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
+            (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+            (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };

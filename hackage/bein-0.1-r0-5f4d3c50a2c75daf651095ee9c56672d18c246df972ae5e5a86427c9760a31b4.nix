@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -57,93 +26,93 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "beinctl" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
-            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+            (hsPkgs."HDBC-postgresql" or (errorHandler.buildDepError "HDBC-postgresql"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
             ];
           libs = [
-            (pkgs."pgport" or (sysDepError "pgport"))
-            (pkgs."xslt" or (sysDepError "xslt"))
-            (pkgs."xml2" or (sysDepError "xml2"))
-            (pkgs."pam" or (sysDepError "pam"))
-            (pkgs."ssl" or (sysDepError "ssl"))
-            (pkgs."crypto" or (sysDepError "crypto"))
-            (pkgs."krb5" or (sysDepError "krb5"))
-            (pkgs."com_err" or (sysDepError "com_err"))
-            (pkgs."gssapi_krb5" or (sysDepError "gssapi_krb5"))
-            (pkgs."z" or (sysDepError "z"))
-            (pkgs."readline" or (sysDepError "readline"))
-            (pkgs."crypt" or (sysDepError "crypt"))
-            (pkgs."dl" or (sysDepError "dl"))
-            (pkgs."m" or (sysDepError "m"))
+            (pkgs."pgport" or (errorHandler.sysDepError "pgport"))
+            (pkgs."xslt" or (errorHandler.sysDepError "xslt"))
+            (pkgs."xml2" or (errorHandler.sysDepError "xml2"))
+            (pkgs."pam" or (errorHandler.sysDepError "pam"))
+            (pkgs."ssl" or (errorHandler.sysDepError "ssl"))
+            (pkgs."crypto" or (errorHandler.sysDepError "crypto"))
+            (pkgs."krb5" or (errorHandler.sysDepError "krb5"))
+            (pkgs."com_err" or (errorHandler.sysDepError "com_err"))
+            (pkgs."gssapi_krb5" or (errorHandler.sysDepError "gssapi_krb5"))
+            (pkgs."z" or (errorHandler.sysDepError "z"))
+            (pkgs."readline" or (errorHandler.sysDepError "readline"))
+            (pkgs."crypt" or (errorHandler.sysDepError "crypt"))
+            (pkgs."dl" or (errorHandler.sysDepError "dl"))
+            (pkgs."m" or (errorHandler.sysDepError "m"))
             ];
           buildable = true;
           };
         "beind" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."hdaemonize" or (buildDepError "hdaemonize"))
-            (hsPkgs."hsyslog" or (buildDepError "hsyslog"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."convertible" or (buildDepError "convertible"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+            (hsPkgs."HDBC-postgresql" or (errorHandler.buildDepError "HDBC-postgresql"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."hdaemonize" or (errorHandler.buildDepError "hdaemonize"))
+            (hsPkgs."hsyslog" or (errorHandler.buildDepError "hsyslog"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = true;
           };
         "beinclient" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
             ];
           buildable = true;
           };
         "beinminion" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."hsyslog" or (buildDepError "hsyslog"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."hsyslog" or (errorHandler.buildDepError "hsyslog"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+            (hsPkgs."HDBC-postgresql" or (errorHandler.buildDepError "HDBC-postgresql"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           buildable = true;
           };
         "beinhttpd" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HDBC-postgresql" or (buildDepError "HDBC-postgresql"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."hsyslog" or (buildDepError "hsyslog"))
-            (hsPkgs."hdaemonize" or (buildDepError "hdaemonize"))
-            (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
-            (hsPkgs."Crypto" or (buildDepError "Crypto"))
-            (hsPkgs."happstack-util" or (buildDepError "happstack-util"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."xhtml" or (buildDepError "xhtml"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+            (hsPkgs."HDBC-postgresql" or (errorHandler.buildDepError "HDBC-postgresql"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."hsyslog" or (errorHandler.buildDepError "hsyslog"))
+            (hsPkgs."hdaemonize" or (errorHandler.buildDepError "hdaemonize"))
+            (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
+            (hsPkgs."Crypto" or (errorHandler.buildDepError "Crypto"))
+            (hsPkgs."happstack-util" or (errorHandler.buildDepError "happstack-util"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             ];
           buildable = true;
           };

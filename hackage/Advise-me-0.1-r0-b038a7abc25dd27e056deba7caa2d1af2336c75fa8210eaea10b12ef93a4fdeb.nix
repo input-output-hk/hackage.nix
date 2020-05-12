@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { xlsx = true; };
     package = {
@@ -56,102 +25,102 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."ideas" or (buildDepError "ideas"))
-          (hsPkgs."ideas-math-types" or (buildDepError "ideas-math-types"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
-          (hsPkgs."uniplate" or (buildDepError "uniplate"))
-          (hsPkgs."convertible" or (buildDepError "convertible"))
-          (hsPkgs."HDBC" or (buildDepError "HDBC"))
-          (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."sqlite-simple" or (buildDepError "sqlite-simple"))
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."ideas" or (errorHandler.buildDepError "ideas"))
+          (hsPkgs."ideas-math-types" or (errorHandler.buildDepError "ideas-math-types"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
+          (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
+          (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
+          (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+          (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
+          (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           ] ++ (pkgs.lib).optionals (flags.xlsx) [
-          (hsPkgs."xlsx" or (buildDepError "xlsx"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."xlsx" or (errorHandler.buildDepError "xlsx"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           ];
         buildable = true;
         };
       exes = {
         "advise-me.cgi" = {
           depends = [
-            (hsPkgs."Advise-me" or (buildDepError "Advise-me"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ideas" or (buildDepError "ideas"))
-            (hsPkgs."ideas-math-types" or (buildDepError "ideas-math-types"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
-            (hsPkgs."convertible" or (buildDepError "convertible"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
-            (hsPkgs."uniplate" or (buildDepError "uniplate"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."sqlite-simple" or (buildDepError "sqlite-simple"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."Advise-me" or (errorHandler.buildDepError "Advise-me"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ideas" or (errorHandler.buildDepError "ideas"))
+            (hsPkgs."ideas-math-types" or (errorHandler.buildDepError "ideas-math-types"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+            (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
+            (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
+            (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             ];
           buildable = true;
           };
         "advise-me-admin.cgi" = {
           depends = [
-            (hsPkgs."Advise-me" or (buildDepError "Advise-me"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."ideas" or (buildDepError "ideas"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
-            (hsPkgs."convertible" or (buildDepError "convertible"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."Advise-me" or (errorHandler.buildDepError "Advise-me"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."ideas" or (errorHandler.buildDepError "ideas"))
+            (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+            (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
+            (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             ];
           buildable = true;
           };
         "database-builder.exe" = {
           depends = [
-            (hsPkgs."Advise-me" or (buildDepError "Advise-me"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ideas" or (buildDepError "ideas"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."HDBC" or (buildDepError "HDBC"))
-            (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."Advise-me" or (errorHandler.buildDepError "Advise-me"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."ideas" or (errorHandler.buildDepError "ideas"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
+            (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             ];
           buildable = true;
           };
         "report.exe" = {
           depends = [
-            (hsPkgs."Advise-me" or (buildDepError "Advise-me"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HDBC-sqlite3" or (buildDepError "HDBC-sqlite3"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."Advise-me" or (errorHandler.buildDepError "Advise-me"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = if flags.xlsx then true else false;
           };

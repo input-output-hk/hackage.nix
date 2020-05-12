@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,47 +25,47 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."bimaps" or (buildDepError "bimaps"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."cereal-text" or (buildDepError "cereal-text"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."file-embed" or (buildDepError "file-embed"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."intern" or (buildDepError "intern"))
-          (hsPkgs."LinguisticsTypes" or (buildDepError "LinguisticsTypes"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."stringable" or (buildDepError "stringable"))
-          (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-binary" or (buildDepError "text-binary"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."bimaps" or (errorHandler.buildDepError "bimaps"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."cereal-text" or (errorHandler.buildDepError "cereal-text"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."intern" or (errorHandler.buildDepError "intern"))
+          (hsPkgs."LinguisticsTypes" or (errorHandler.buildDepError "LinguisticsTypes"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."stringable" or (errorHandler.buildDepError "stringable"))
+          (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-binary" or (errorHandler.buildDepError "text-binary"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
           ];
         buildable = true;
         };
       tests = {
         "properties" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."LinguisticsTypes" or (buildDepError "LinguisticsTypes"))
-            (hsPkgs."NaturalLanguageAlphabets" or (buildDepError "NaturalLanguageAlphabets"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."stringable" or (buildDepError "stringable"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."LinguisticsTypes" or (errorHandler.buildDepError "LinguisticsTypes"))
+            (hsPkgs."NaturalLanguageAlphabets" or (errorHandler.buildDepError "NaturalLanguageAlphabets"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."stringable" or (errorHandler.buildDepError "stringable"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             ];
           buildable = true;
           };
@@ -104,17 +73,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "BenchmarkNLA" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."hashtables" or (buildDepError "hashtables"))
-            (hsPkgs."LinguisticsTypes" or (buildDepError "LinguisticsTypes"))
-            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-            (hsPkgs."NaturalLanguageAlphabets" or (buildDepError "NaturalLanguageAlphabets"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
+            (hsPkgs."LinguisticsTypes" or (errorHandler.buildDepError "LinguisticsTypes"))
+            (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
+            (hsPkgs."NaturalLanguageAlphabets" or (errorHandler.buildDepError "NaturalLanguageAlphabets"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };

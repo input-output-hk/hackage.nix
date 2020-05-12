@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,40 +25,40 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."hpqtypes" or (buildDepError "hpqtypes"))
-          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."fields-json" or (buildDepError "fields-json"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."text-show" or (buildDepError "text-show"))
-          (hsPkgs."log-base" or (buildDepError "log-base"))
-          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."hpqtypes" or (errorHandler.buildDepError "hpqtypes"))
+          (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."fields-json" or (errorHandler.buildDepError "fields-json"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
+          (hsPkgs."log-base" or (errorHandler.buildDepError "log-base"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           ];
         buildable = true;
         };
       tests = {
         "hpqtypes-extras-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."hpqtypes" or (buildDepError "hpqtypes"))
-            (hsPkgs."hpqtypes-extras" or (buildDepError "hpqtypes-extras"))
-            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-            (hsPkgs."log-base" or (buildDepError "log-base"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."uuid-types" or (buildDepError "uuid-types"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."hpqtypes" or (errorHandler.buildDepError "hpqtypes"))
+            (hsPkgs."hpqtypes-extras" or (errorHandler.buildDepError "hpqtypes-extras"))
+            (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+            (hsPkgs."log-base" or (errorHandler.buildDepError "log-base"))
+            (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
             ];
           buildable = true;
           };

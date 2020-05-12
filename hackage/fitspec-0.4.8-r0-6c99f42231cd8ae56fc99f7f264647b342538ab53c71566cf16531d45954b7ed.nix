@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,43 +25,43 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."leancheck" or (buildDepError "leancheck"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
+          (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           ];
         buildable = true;
         };
       tests = {
         "mutate" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."leancheck" or (buildDepError "leancheck"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "showmutable" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."leancheck" or (buildDepError "leancheck"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "derive" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."leancheck" or (buildDepError "leancheck"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "utils" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."leancheck" or (buildDepError "leancheck"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
@@ -100,93 +69,93 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "avltrees" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "bools" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "digraphs" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "heaps" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "id" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "list" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "mergeheaps" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "pretty" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             ];
           buildable = true;
           };
         "sets" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "setsofsets" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "sieve" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "sorting" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };
         "spring" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."fitspec" or (buildDepError "fitspec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."fitspec" or (errorHandler.buildDepError "fitspec"))
             ];
           buildable = true;
           };

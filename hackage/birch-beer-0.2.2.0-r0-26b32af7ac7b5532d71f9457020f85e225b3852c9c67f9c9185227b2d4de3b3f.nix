@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,66 +25,66 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."SVGFonts" or (buildDepError "SVGFonts"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cassava" or (buildDepError "cassava"))
-          (hsPkgs."colour" or (buildDepError "colour"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."diagrams" or (buildDepError "diagrams"))
-          (hsPkgs."diagrams-cairo" or (buildDepError "diagrams-cairo"))
-          (hsPkgs."diagrams-graphviz" or (buildDepError "diagrams-graphviz"))
-          (hsPkgs."diagrams-gtk" or (buildDepError "diagrams-gtk"))
-          (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
-          (hsPkgs."diversity" or (buildDepError "diversity"))
-          (hsPkgs."fgl" or (buildDepError "fgl"))
-          (hsPkgs."foldl" or (buildDepError "foldl"))
-          (hsPkgs."graphviz" or (buildDepError "graphviz"))
-          (hsPkgs."gtk" or (buildDepError "gtk"))
-          (hsPkgs."hierarchical-clustering" or (buildDepError "hierarchical-clustering"))
-          (hsPkgs."hierarchical-spectral-clustering" or (buildDepError "hierarchical-spectral-clustering"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."matrix-market-attoparsec" or (buildDepError "matrix-market-attoparsec"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
-          (hsPkgs."palette" or (buildDepError "palette"))
-          (hsPkgs."plots" or (buildDepError "plots"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."sparse-linear-algebra" or (buildDepError "sparse-linear-algebra"))
-          (hsPkgs."spectral-clustering" or (buildDepError "spectral-clustering"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."statistics" or (buildDepError "statistics"))
-          (hsPkgs."temporary" or (buildDepError "temporary"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-show" or (buildDepError "text-show"))
-          (hsPkgs."typed-spreadsheet" or (buildDepError "typed-spreadsheet"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."SVGFonts" or (errorHandler.buildDepError "SVGFonts"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
+          (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."diagrams" or (errorHandler.buildDepError "diagrams"))
+          (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
+          (hsPkgs."diagrams-graphviz" or (errorHandler.buildDepError "diagrams-graphviz"))
+          (hsPkgs."diagrams-gtk" or (errorHandler.buildDepError "diagrams-gtk"))
+          (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
+          (hsPkgs."diversity" or (errorHandler.buildDepError "diversity"))
+          (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
+          (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
+          (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
+          (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
+          (hsPkgs."hierarchical-clustering" or (errorHandler.buildDepError "hierarchical-clustering"))
+          (hsPkgs."hierarchical-spectral-clustering" or (errorHandler.buildDepError "hierarchical-spectral-clustering"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."matrix-market-attoparsec" or (errorHandler.buildDepError "matrix-market-attoparsec"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
+          (hsPkgs."palette" or (errorHandler.buildDepError "palette"))
+          (hsPkgs."plots" or (errorHandler.buildDepError "plots"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."sparse-linear-algebra" or (errorHandler.buildDepError "sparse-linear-algebra"))
+          (hsPkgs."spectral-clustering" or (errorHandler.buildDepError "spectral-clustering"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
+          (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
+          (hsPkgs."typed-spreadsheet" or (errorHandler.buildDepError "typed-spreadsheet"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         buildable = true;
         };
       exes = {
         "birch-beer" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."birch-beer" or (buildDepError "birch-beer"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cassava" or (buildDepError "cassava"))
-            (hsPkgs."colour" or (buildDepError "colour"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."diagrams" or (buildDepError "diagrams"))
-            (hsPkgs."diagrams-cairo" or (buildDepError "diagrams-cairo"))
-            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
-            (hsPkgs."hierarchical-spectral-clustering" or (buildDepError "hierarchical-spectral-clustering"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
-            (hsPkgs."sparse-linear-algebra" or (buildDepError "sparse-linear-algebra"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-show" or (buildDepError "text-show"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."birch-beer" or (errorHandler.buildDepError "birch-beer"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
+            (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."diagrams" or (errorHandler.buildDepError "diagrams"))
+            (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
+            (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
+            (hsPkgs."hierarchical-spectral-clustering" or (errorHandler.buildDepError "hierarchical-spectral-clustering"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
+            (hsPkgs."sparse-linear-algebra" or (errorHandler.buildDepError "sparse-linear-algebra"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };

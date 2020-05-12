@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,110 +25,110 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."casa-client" or (buildDepError "casa-client"))
-          (hsPkgs."casa-types" or (buildDepError "casa-types"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-          (hsPkgs."cryptonite-conduit" or (buildDepError "cryptonite-conduit"))
-          (hsPkgs."digest" or (buildDepError "digest"))
-          (hsPkgs."filelock" or (buildDepError "filelock"))
-          (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
-          (hsPkgs."hackage-security" or (buildDepError "hackage-security"))
-          (hsPkgs."hpack" or (buildDepError "hpack"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."http-download" or (buildDepError "http-download"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."path" or (buildDepError "path"))
-          (hsPkgs."path-io" or (buildDepError "path-io"))
-          (hsPkgs."persistent" or (buildDepError "persistent"))
-          (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
-          (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."rio" or (buildDepError "rio"))
-          (hsPkgs."rio-orphans" or (buildDepError "rio-orphans"))
-          (hsPkgs."rio-prettyprint" or (buildDepError "rio-prettyprint"))
-          (hsPkgs."tar-conduit" or (buildDepError "tar-conduit"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-metrics" or (buildDepError "text-metrics"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
-          (hsPkgs."unliftio" or (buildDepError "unliftio"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
-          (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
+          (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."casa-client" or (errorHandler.buildDepError "casa-client"))
+          (hsPkgs."casa-types" or (errorHandler.buildDepError "casa-types"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+          (hsPkgs."cryptonite-conduit" or (errorHandler.buildDepError "cryptonite-conduit"))
+          (hsPkgs."digest" or (errorHandler.buildDepError "digest"))
+          (hsPkgs."filelock" or (errorHandler.buildDepError "filelock"))
+          (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
+          (hsPkgs."hackage-security" or (errorHandler.buildDepError "hackage-security"))
+          (hsPkgs."hpack" or (errorHandler.buildDepError "hpack"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+          (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+          (hsPkgs."http-download" or (errorHandler.buildDepError "http-download"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."path" or (errorHandler.buildDepError "path"))
+          (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
+          (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
+          (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
+          (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
+          (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
+          (hsPkgs."rio-orphans" or (errorHandler.buildDepError "rio-orphans"))
+          (hsPkgs."rio-prettyprint" or (errorHandler.buildDepError "rio-prettyprint"))
+          (hsPkgs."tar-conduit" or (errorHandler.buildDepError "tar-conduit"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-metrics" or (errorHandler.buildDepError "text-metrics"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
+          (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+          (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
           ];
         buildable = true;
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."casa-client" or (buildDepError "casa-client"))
-            (hsPkgs."casa-types" or (buildDepError "casa-types"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."cryptonite-conduit" or (buildDepError "cryptonite-conduit"))
-            (hsPkgs."digest" or (buildDepError "digest"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."filelock" or (buildDepError "filelock"))
-            (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
-            (hsPkgs."hackage-security" or (buildDepError "hackage-security"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."hpack" or (buildDepError "hpack"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."http-download" or (buildDepError "http-download"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."pantry" or (buildDepError "pantry"))
-            (hsPkgs."path" or (buildDepError "path"))
-            (hsPkgs."path-io" or (buildDepError "path-io"))
-            (hsPkgs."persistent" or (buildDepError "persistent"))
-            (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
-            (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."raw-strings-qq" or (buildDepError "raw-strings-qq"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."rio" or (buildDepError "rio"))
-            (hsPkgs."rio-orphans" or (buildDepError "rio-orphans"))
-            (hsPkgs."rio-prettyprint" or (buildDepError "rio-prettyprint"))
-            (hsPkgs."tar-conduit" or (buildDepError "tar-conduit"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-metrics" or (buildDepError "text-metrics"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
-            (hsPkgs."unliftio" or (buildDepError "unliftio"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
+            (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."casa-client" or (errorHandler.buildDepError "casa-client"))
+            (hsPkgs."casa-types" or (errorHandler.buildDepError "casa-types"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+            (hsPkgs."cryptonite-conduit" or (errorHandler.buildDepError "cryptonite-conduit"))
+            (hsPkgs."digest" or (errorHandler.buildDepError "digest"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."filelock" or (errorHandler.buildDepError "filelock"))
+            (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
+            (hsPkgs."hackage-security" or (errorHandler.buildDepError "hackage-security"))
+            (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
+            (hsPkgs."hpack" or (errorHandler.buildDepError "hpack"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+            (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+            (hsPkgs."http-download" or (errorHandler.buildDepError "http-download"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."pantry" or (errorHandler.buildDepError "pantry"))
+            (hsPkgs."path" or (errorHandler.buildDepError "path"))
+            (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
+            (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
+            (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
+            (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
+            (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+            (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
+            (hsPkgs."rio-orphans" or (errorHandler.buildDepError "rio-orphans"))
+            (hsPkgs."rio-prettyprint" or (errorHandler.buildDepError "rio-prettyprint"))
+            (hsPkgs."tar-conduit" or (errorHandler.buildDepError "tar-conduit"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."text-metrics" or (errorHandler.buildDepError "text-metrics"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
+            (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+            (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -53,81 +22,81 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       description = "Wrapper library for libxkbcommon, which is the new alternative for the X11 XKB.h keyboard input\nAPI. Specifically, it finds keymap files from disk based on Rule\\/Model\\/Layout\\/Variant\\/Option\nspecifications, and compiles them into a 'Keymap'. From this 'Keymap', a 'KeyboardState' can be\nconstructed which represents the states of various physical buttons such as the shift/alt/ctrl\nkeys, and can give the correct key symbol based on keyboard events. E.g., pressing the @\\<h\\>@ key\nwhile @\\<shift\\>@ is pressed produces the @H@ symbol in the common QWERTY keymaps, but in e.g.\nthe Dvorak keymap, it produces the D symbol.\n\nAfter keymap creation, which libxkbcommon can do based on locale preferences and enviroment\nvariables, this is all handled by routing keyboard events through libxkbcommon.\n\nAt this stage, these haskell bindings do not make libxkbcommon look much like a haskell library.\nFor example, in principle the entire libxkbcommon library is just a stateful processor, and has\nnothing to do with the IO monad.\nHowever, because I am not yet a very good haskell programmer, and because\nin most realistic use cases input data comes from the IO monad anyway, the stateful operations\nare encoded in the IO monad anyway.\n\nNote that these bindings load the keysym constants from the libxkbcommon C header files at\ncompile time using TH, and similarly keycodes from the Linux header files.\nThese should be present for correct compilation.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
-        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (buildToolDepError "directory")))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (buildToolDepError "filepath")))
-        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (buildToolDepError "process")))
-        (hsPkgs.buildPackages.template-haskell or (pkgs.buildPackages.template-haskell or (buildToolDepError "template-haskell")))
-        (hsPkgs.buildPackages.text or (pkgs.buildPackages.text or (buildToolDepError "text")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.buildToolDepError "directory")))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.buildToolDepError "filepath")))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.buildToolDepError "process")))
+        (hsPkgs.buildPackages.template-haskell or (pkgs.buildPackages.template-haskell or (errorHandler.buildToolDepError "template-haskell")))
+        (hsPkgs.buildPackages.text or (pkgs.buildPackages.text or (errorHandler.buildToolDepError "text")))
         ];
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."storable-record" or (buildDepError "storable-record"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."cpphs" or (buildDepError "cpphs"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."data-flags" or (buildDepError "data-flags"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."storable-record" or (errorHandler.buildDepError "storable-record"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."data-flags" or (errorHandler.buildDepError "data-flags"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           ];
-        libs = [ (pkgs."xkbcommon" or (sysDepError "xkbcommon")) ];
+        libs = [ (pkgs."xkbcommon" or (errorHandler.sysDepError "xkbcommon")) ];
         buildable = true;
         };
       tests = {
         "context" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
             ];
           buildable = true;
           };
         "filecomp" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
             ];
           buildable = true;
           };
         "keyseq" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
             ];
           buildable = true;
           };
         "keysym" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
             ];
           buildable = true;
           };
         "rulescomp" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
-            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             ];
           buildable = true;
           };
         "state" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
             ];
           buildable = true;
           };
         "stringcomp" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
             ];
           buildable = true;
           };
@@ -135,11 +104,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench-key-proc" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."xkbcommon" or (buildDepError "xkbcommon"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,95 +25,95 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."amazonka" or (buildDepError "amazonka"))
-          (hsPkgs."amazonka-core" or (buildDepError "amazonka-core"))
-          (hsPkgs."amazonka-s3" or (buildDepError "amazonka-s3"))
-          (hsPkgs."amazonka-swf" or (buildDepError "amazonka-swf"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."basic-prelude" or (buildDepError "basic-prelude"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-          (hsPkgs."formatting" or (buildDepError "formatting"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."amazonka" or (errorHandler.buildDepError "amazonka"))
+          (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
+          (hsPkgs."amazonka-s3" or (errorHandler.buildDepError "amazonka-s3"))
+          (hsPkgs."amazonka-swf" or (errorHandler.buildDepError "amazonka-swf"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
+          (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
+          (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."mtl-compat" or (errorHandler.buildDepError "mtl-compat"))
+          (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ];
         buildable = true;
         };
       exes = {
         "wolf-register" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."basic-prelude" or (buildDepError "basic-prelude"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."wolf" or (buildDepError "wolf"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."wolf" or (errorHandler.buildDepError "wolf"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             ];
           buildable = true;
           };
         "wolf-execute" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."basic-prelude" or (buildDepError "basic-prelude"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."wolf" or (buildDepError "wolf"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."wolf" or (errorHandler.buildDepError "wolf"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             ];
           buildable = true;
           };
         "wolf-decide" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."basic-prelude" or (buildDepError "basic-prelude"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."wolf" or (buildDepError "wolf"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."wolf" or (errorHandler.buildDepError "wolf"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             ];
           buildable = true;
           };
         "wolf-act" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."amazonka-core" or (buildDepError "amazonka-core"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."basic-prelude" or (buildDepError "basic-prelude"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."shelly" or (buildDepError "shelly"))
-            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."wolf" or (buildDepError "wolf"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
+            (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."wolf" or (errorHandler.buildDepError "wolf"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+            (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             ];
           buildable = true;
           };
@@ -152,11 +121,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."basic-prelude" or (buildDepError "basic-prelude"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."wolf" or (buildDepError "wolf"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."wolf" or (errorHandler.buildDepError "wolf"))
             ];
           buildable = true;
           };

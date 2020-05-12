@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       threaded = true;
@@ -61,106 +30,110 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."yesod" or (buildDepError "yesod"))
-          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
-          (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
-          (hsPkgs."yesod-default" or (buildDepError "yesod-default"))
-          (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
-          (hsPkgs."clientsession" or (buildDepError "clientsession"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."hamlet" or (buildDepError "hamlet"))
-          (hsPkgs."shakespeare-css" or (buildDepError "shakespeare-css"))
-          (hsPkgs."shakespeare-js" or (buildDepError "shakespeare-js"))
-          (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
-          (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."warp" or (buildDepError "warp"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."hledger" or (buildDepError "hledger"))
-          (hsPkgs."hledger-lib" or (buildDepError "hledger-lib"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."HUnit" or (buildDepError "HUnit"))
-          (hsPkgs."io-storage" or (buildDepError "io-storage"))
-          (hsPkgs."network-conduit" or (buildDepError "network-conduit"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."regexpr" or (buildDepError "regexpr"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-          (hsPkgs."warp" or (buildDepError "warp"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
+          (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
+          (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
+          (hsPkgs."yesod-default" or (errorHandler.buildDepError "yesod-default"))
+          (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
+          (hsPkgs."clientsession" or (errorHandler.buildDepError "clientsession"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
+          (hsPkgs."shakespeare-css" or (errorHandler.buildDepError "shakespeare-css"))
+          (hsPkgs."shakespeare-js" or (errorHandler.buildDepError "shakespeare-js"))
+          (hsPkgs."shakespeare-text" or (errorHandler.buildDepError "shakespeare-text"))
+          (hsPkgs."hjsmin" or (errorHandler.buildDepError "hjsmin"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+          (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."hledger" or (errorHandler.buildDepError "hledger"))
+          (hsPkgs."hledger-lib" or (errorHandler.buildDepError "hledger-lib"))
+          (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+          (hsPkgs."io-storage" or (errorHandler.buildDepError "io-storage"))
+          (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
+          (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."regexpr" or (errorHandler.buildDepError "regexpr"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+          (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ] ++ (if flags.blaze_html_0_5
           then [
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
             ]
-          else [ (hsPkgs."blaze-html" or (buildDepError "blaze-html")) ]);
+          else [
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            ]);
         buildable = true;
         };
       exes = {
         "hledger-web" = {
           depends = [
-            (hsPkgs."hledger-web" or (buildDepError "hledger-web"))
-            (hsPkgs."hledger" or (buildDepError "hledger"))
-            (hsPkgs."hledger-lib" or (buildDepError "hledger-lib"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."io-storage" or (buildDepError "io-storage"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."regexpr" or (buildDepError "regexpr"))
-            (hsPkgs."safe" or (buildDepError "safe"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."yesod" or (buildDepError "yesod"))
-            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
-            (hsPkgs."yesod-default" or (buildDepError "yesod-default"))
-            (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
-            (hsPkgs."clientsession" or (buildDepError "clientsession"))
-            (hsPkgs."hamlet" or (buildDepError "hamlet"))
-            (hsPkgs."network-conduit" or (buildDepError "network-conduit"))
-            (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."hledger-web" or (errorHandler.buildDepError "hledger-web"))
+            (hsPkgs."hledger" or (errorHandler.buildDepError "hledger"))
+            (hsPkgs."hledger-lib" or (errorHandler.buildDepError "hledger-lib"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."io-storage" or (errorHandler.buildDepError "io-storage"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."regexpr" or (errorHandler.buildDepError "regexpr"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
+            (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
+            (hsPkgs."yesod-default" or (errorHandler.buildDepError "yesod-default"))
+            (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
+            (hsPkgs."clientsession" or (errorHandler.buildDepError "clientsession"))
+            (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
+            (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
+            (hsPkgs."shakespeare-text" or (errorHandler.buildDepError "shakespeare-text"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+            (hsPkgs."hjsmin" or (errorHandler.buildDepError "hjsmin"))
+            (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             ] ++ (if flags.blaze_html_0_5
             then [
-              (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-              (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+              (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+              (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
               ]
-            else [ (hsPkgs."blaze-html" or (buildDepError "blaze-html")) ]);
+            else [
+              (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+              ]);
           buildable = if flags.library-only then false else true;
           };
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hledger-web" or (buildDepError "hledger-web"))
-            (hsPkgs."yesod-test" or (buildDepError "yesod-test"))
-            (hsPkgs."yesod-default" or (buildDepError "yesod-default"))
-            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hledger-web" or (errorHandler.buildDepError "hledger-web"))
+            (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
+            (hsPkgs."yesod-default" or (errorHandler.buildDepError "yesod-default"))
+            (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             ];
           buildable = true;
           };

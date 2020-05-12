@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,46 +25,46 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."byteable" or (buildDepError "byteable"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."fgl" or (buildDepError "fgl"))
-          (hsPkgs."file-embed" or (buildDepError "file-embed"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."hasql" or (buildDepError "hasql"))
-          (hsPkgs."hasql-pool" or (buildDepError "hasql-pool"))
-          (hsPkgs."hasql-transaction" or (buildDepError "hasql-transaction"))
-          (hsPkgs."Interpolation" or (buildDepError "Interpolation"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."path" or (buildDepError "path"))
-          (hsPkgs."path-io" or (buildDepError "path-io"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
+          (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+          (hsPkgs."hasql-pool" or (errorHandler.buildDepError "hasql-pool"))
+          (hsPkgs."hasql-transaction" or (errorHandler.buildDepError "hasql-transaction"))
+          (hsPkgs."Interpolation" or (errorHandler.buildDepError "Interpolation"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."path" or (errorHandler.buildDepError "path"))
+          (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ];
         buildable = true;
         };
       exes = {
         "mallard" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mallard" or (buildDepError "mallard"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."fgl" or (buildDepError "fgl"))
-            (hsPkgs."hasql" or (buildDepError "hasql"))
-            (hsPkgs."hasql-optparse-applicative" or (buildDepError "hasql-optparse-applicative"))
-            (hsPkgs."hasql-pool" or (buildDepError "hasql-pool"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."optparse-text" or (buildDepError "optparse-text"))
-            (hsPkgs."path" or (buildDepError "path"))
-            (hsPkgs."path-io" or (buildDepError "path-io"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."mallard" or (errorHandler.buildDepError "mallard"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."hasql-optparse-applicative" or (errorHandler.buildDepError "hasql-optparse-applicative"))
+            (hsPkgs."hasql-pool" or (errorHandler.buildDepError "hasql-pool"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."optparse-text" or (errorHandler.buildDepError "optparse-text"))
+            (hsPkgs."path" or (errorHandler.buildDepError "path"))
+            (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             ];
           buildable = true;
           };

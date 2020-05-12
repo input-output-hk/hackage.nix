@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,39 +25,39 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."DRBG" or (buildDepError "DRBG"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."haskell98" or (buildDepError "haskell98"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."DRBG" or (buildDepError "DRBG"))
-          (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."DRBG" or (errorHandler.buildDepError "DRBG"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."DRBG" or (errorHandler.buildDepError "DRBG"))
+          (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           ];
-        libs = [ (pkgs."intel_aes" or (sysDepError "intel_aes")) ];
+        libs = [ (pkgs."intel_aes" or (errorHandler.sysDepError "intel_aes")) ];
         buildable = true;
         };
       exes = {
         "benchmark-intel-aes-rng" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."rdtsc" or (buildDepError "rdtsc"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
-            (hsPkgs."DRBG" or (buildDepError "DRBG"))
-            (hsPkgs."tagged" or (buildDepError "tagged"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."haskell98" or (buildDepError "haskell98"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."intel-aes" or (buildDepError "intel-aes"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."rdtsc" or (errorHandler.buildDepError "rdtsc"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
+            (hsPkgs."DRBG" or (errorHandler.buildDepError "DRBG"))
+            (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."intel-aes" or (errorHandler.buildDepError "intel-aes"))
             ];
           buildable = true;
           };

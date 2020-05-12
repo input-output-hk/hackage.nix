@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       hpc = false;
@@ -62,44 +31,44 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "lhc" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."digest" or (buildDepError "digest"))
-            (hsPkgs."bytestring-trie" or (buildDepError "bytestring-trie"))
-            (hsPkgs."core" or (buildDepError "core"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."derive" or (buildDepError "derive"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."libffi" or (buildDepError "libffi"))
-            (hsPkgs."xhtml" or (buildDepError "xhtml"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."digest" or (errorHandler.buildDepError "digest"))
+            (hsPkgs."bytestring-trie" or (errorHandler.buildDepError "bytestring-trie"))
+            (hsPkgs."core" or (errorHandler.buildDepError "core"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."libffi" or (errorHandler.buildDepError "libffi"))
+            (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             ];
           buildable = true;
           };
         "lhc-regress" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
             ];
           buildable = if flags.lhc-regress then true else false;
           };
         "lhc-pkg" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."haskell98" or (buildDepError "haskell98"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
           };
         };

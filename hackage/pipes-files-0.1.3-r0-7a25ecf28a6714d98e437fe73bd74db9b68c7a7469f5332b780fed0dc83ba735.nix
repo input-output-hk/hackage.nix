@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { leafopt = true; };
     package = {
@@ -56,75 +25,75 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."mmorph" or (buildDepError "mmorph"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."free" or (buildDepError "free"))
-          (hsPkgs."pipes" or (buildDepError "pipes"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."hierarchy" or (buildDepError "hierarchy"))
-          (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
-          (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."posix-paths" or (buildDepError "posix-paths"))
-          (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
-          (hsPkgs."logict" or (buildDepError "logict"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+          (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."free" or (errorHandler.buildDepError "free"))
+          (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."hierarchy" or (errorHandler.buildDepError "hierarchy"))
+          (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
+          (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."posix-paths" or (errorHandler.buildDepError "posix-paths"))
+          (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
+          (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
           ];
         buildable = true;
         };
       tests = {
         "doctests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hierarchy" or (buildDepError "hierarchy"))
-            (hsPkgs."pipes-files" or (buildDepError "pipes-files"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
-            (hsPkgs."logict" or (buildDepError "logict"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hierarchy" or (errorHandler.buildDepError "hierarchy"))
+            (hsPkgs."pipes-files" or (errorHandler.buildDepError "pipes-files"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
+            (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
             ];
           buildable = true;
           };
         "find-hs" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
-            (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
-            (hsPkgs."pipes-files" or (buildDepError "pipes-files"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
+            (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
+            (hsPkgs."pipes-files" or (errorHandler.buildDepError "pipes-files"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             ];
           buildable = true;
           };

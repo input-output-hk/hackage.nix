@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,53 +25,53 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-options" or (buildDepError "aeson-options"))
-          (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-          (hsPkgs."base58-bytestring" or (buildDepError "base58-bytestring"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."fmt" or (buildDepError "fmt"))
-          (hsPkgs."formatting" or (buildDepError "formatting"))
-          (hsPkgs."hspec" or (buildDepError "hspec"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."morley-prelude" or (buildDepError "morley-prelude"))
-          (hsPkgs."named" or (buildDepError "named"))
-          (hsPkgs."natural-numbers" or (buildDepError "natural-numbers"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."timerep" or (buildDepError "timerep"))
-          (hsPkgs."parser-combinators" or (buildDepError "parser-combinators"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."singletons" or (buildDepError "singletons"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."vinyl" or (buildDepError "vinyl"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."aeson-options" or (errorHandler.buildDepError "aeson-options"))
+          (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+          (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
+          (hsPkgs."base58-bytestring" or (errorHandler.buildDepError "base58-bytestring"))
+          (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."fmt" or (errorHandler.buildDepError "fmt"))
+          (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
+          (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+          (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+          (hsPkgs."morley-prelude" or (errorHandler.buildDepError "morley-prelude"))
+          (hsPkgs."named" or (errorHandler.buildDepError "named"))
+          (hsPkgs."natural-numbers" or (errorHandler.buildDepError "natural-numbers"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."timerep" or (errorHandler.buildDepError "timerep"))
+          (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
+          (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.autoexporter or (pkgs.buildPackages.autoexporter or (buildToolDepError "autoexporter")))
+          (hsPkgs.buildPackages.autoexporter or (pkgs.buildPackages.autoexporter or (errorHandler.buildToolDepError "autoexporter")))
           ];
         buildable = true;
         };
       exes = {
         "morley" = {
           depends = [
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."fmt" or (buildDepError "fmt"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."morley" or (buildDepError "morley"))
-            (hsPkgs."morley-prelude" or (buildDepError "morley-prelude"))
-            (hsPkgs."named" or (buildDepError "named"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."pretty-simple" or (buildDepError "pretty-simple"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+            (hsPkgs."fmt" or (errorHandler.buildDepError "fmt"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."morley" or (errorHandler.buildDepError "morley"))
+            (hsPkgs."morley-prelude" or (errorHandler.buildDepError "morley-prelude"))
+            (hsPkgs."named" or (errorHandler.buildDepError "named"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
@@ -110,27 +79,27 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "morley-test" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."fmt" or (buildDepError "fmt"))
-            (hsPkgs."formatting" or (buildDepError "formatting"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-golden-aeson" or (buildDepError "hspec-golden-aeson"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."morley" or (buildDepError "morley"))
-            (hsPkgs."morley-prelude" or (buildDepError "morley-prelude"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-arbitrary-adt" or (buildDepError "quickcheck-arbitrary-adt"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."universum" or (buildDepError "universum"))
-            (hsPkgs."vinyl" or (buildDepError "vinyl"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."fmt" or (errorHandler.buildDepError "fmt"))
+            (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hspec-golden-aeson" or (errorHandler.buildDepError "hspec-golden-aeson"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."morley" or (errorHandler.buildDepError "morley"))
+            (hsPkgs."morley-prelude" or (errorHandler.buildDepError "morley-prelude"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-arbitrary-adt" or (errorHandler.buildDepError "quickcheck-arbitrary-adt"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
+            (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             ];
           buildable = true;
           };

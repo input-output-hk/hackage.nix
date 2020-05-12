@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { build-toys = false; fix-opengl21 = false; };
     package = {
@@ -56,65 +25,65 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."linear" or (buildDepError "linear"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."gl" or (buildDepError "gl"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."gl" or (errorHandler.buildDepError "gl"))
           ];
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."OpenGL" or (sysDepError "OpenGL"));
+        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."OpenGL" or (errorHandler.sysDepError "OpenGL"));
         buildable = true;
         };
       exes = {
         "smoke-test" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."caramia" or (buildDepError "caramia"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."caramia" or (errorHandler.buildDepError "caramia"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = if flags.build-toys then true else false;
           };
         "memory-info" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."caramia" or (buildDepError "caramia"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."caramia" or (errorHandler.buildDepError "caramia"))
+            (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             ];
           buildable = if flags.build-toys then true else false;
           };
         "gl-info" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
-            (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
+            (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
             ];
           buildable = if flags.build-toys then true else false;
           };
         "query-objects" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."caramia" or (buildDepError "caramia"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."caramia" or (errorHandler.buildDepError "caramia"))
+            (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = if flags.build-toys then true else false;
           };
         "textures" = {
           depends = (pkgs.lib).optionals (flags.build-toys) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."caramia" or (buildDepError "caramia"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."caramia" or (errorHandler.buildDepError "caramia"))
+            (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             ];
           buildable = if flags.build-toys then true else false;
           };
@@ -122,50 +91,50 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "buffer" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."caramia" or (buildDepError "caramia"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."caramia" or (errorHandler.buildDepError "caramia"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             ];
           buildable = true;
           };
         "shader" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."caramia" or (buildDepError "caramia"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."caramia" or (errorHandler.buildDepError "caramia"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             ];
           buildable = true;
           };
         "texture" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."caramia" or (buildDepError "caramia"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."sdl2" or (buildDepError "sdl2"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."caramia" or (errorHandler.buildDepError "caramia"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };
         "color" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."caramia" or (buildDepError "caramia"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."caramia" or (errorHandler.buildDepError "caramia"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,34 +25,34 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."clay" or (buildDepError "clay"))
-          (hsPkgs."flow" or (buildDepError "flow"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."jmacro" or (buildDepError "jmacro"))
-          (hsPkgs."lucid" or (buildDepError "lucid"))
-          (hsPkgs."pointful" or (buildDepError "pointful"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-          (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
-          (hsPkgs."warp" or (buildDepError "warp"))
-          (hsPkgs."websockets" or (buildDepError "websockets"))
-          (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."clay" or (errorHandler.buildDepError "clay"))
+          (hsPkgs."flow" or (errorHandler.buildDepError "flow"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."jmacro" or (errorHandler.buildDepError "jmacro"))
+          (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
+          (hsPkgs."pointful" or (errorHandler.buildDepError "pointful"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+          (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
+          (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+          (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
+          (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           ];
         buildable = true;
         };
       exes = {
         "blunt" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."blunt" or (buildDepError "blunt"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."blunt" or (errorHandler.buildDepError "blunt"))
             ];
           buildable = true;
           };

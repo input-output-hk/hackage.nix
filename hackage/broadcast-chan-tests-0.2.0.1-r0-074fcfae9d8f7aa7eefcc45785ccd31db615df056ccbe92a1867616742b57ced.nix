@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,53 +25,53 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."broadcast-chan" or (buildDepError "broadcast-chan"))
-          (hsPkgs."clock" or (buildDepError "clock"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."paramtree" or (buildDepError "paramtree"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
-          (hsPkgs."tasty" or (buildDepError "tasty"))
-          (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
-          (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-          (hsPkgs."tasty-travis" or (buildDepError "tasty-travis"))
-          (hsPkgs."temporary" or (buildDepError "temporary"))
-          (hsPkgs."text" or (buildDepError "text"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."bifunctors" or (buildDepError "bifunctors"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (buildDepError "transformers"));
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."broadcast-chan" or (errorHandler.buildDepError "broadcast-chan"))
+          (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+          (hsPkgs."paramtree" or (errorHandler.buildDepError "paramtree"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+          (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+          (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
+          (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+          (hsPkgs."tasty-travis" or (errorHandler.buildDepError "tasty-travis"))
+          (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
         buildable = true;
         };
       tests = {
         "basic" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."broadcast-chan" or (buildDepError "broadcast-chan"))
-            (hsPkgs."broadcast-chan-tests" or (buildDepError "broadcast-chan-tests"))
-            (hsPkgs."foldl" or (buildDepError "foldl"))
-            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."broadcast-chan" or (errorHandler.buildDepError "broadcast-chan"))
+            (hsPkgs."broadcast-chan-tests" or (errorHandler.buildDepError "broadcast-chan-tests"))
+            (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
+            (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
             ];
           buildable = true;
           };
         "basic-unthreaded" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."broadcast-chan" or (buildDepError "broadcast-chan"))
-            (hsPkgs."broadcast-chan-tests" or (buildDepError "broadcast-chan-tests"))
-            (hsPkgs."foldl" or (buildDepError "foldl"))
-            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."broadcast-chan" or (errorHandler.buildDepError "broadcast-chan"))
+            (hsPkgs."broadcast-chan-tests" or (errorHandler.buildDepError "broadcast-chan-tests"))
+            (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
+            (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
             ];
           buildable = true;
           };
         "parallel-io" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."broadcast-chan" or (buildDepError "broadcast-chan"))
-            (hsPkgs."broadcast-chan-tests" or (buildDepError "broadcast-chan-tests"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."broadcast-chan" or (errorHandler.buildDepError "broadcast-chan"))
+            (hsPkgs."broadcast-chan-tests" or (errorHandler.buildDepError "broadcast-chan-tests"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             ];
           buildable = true;
           };

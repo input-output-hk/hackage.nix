@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { test = false; };
     package = {
@@ -49,21 +18,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       author = "Radoslav Dorcik <radoslav.dorcik@gmail.com>";
       homepage = "http://rampa.sk/static/ldif.html";
       url = "";
-      synopsis = "The LDAP Data Interchange Format (LDIF) parser";
+      synopsis = "The LDAP Data Interchange Format (LDIF) parser ";
       description = "LDIF files parser implementation using Parsec and based\non RFC 2849 - The LDAP Data Interchange Format (LDIF).\n\nCurrent implementation is unfinished and need to be enhanced\nfor base64 encoded values and various DN escaping.\n\nIt includes following tool:\n\n- diffLDIF command generates change LDIF between two\ncontent LDIF files.\n\n- ldif2html command generates hypertext HTML browsable\nLDIF file.\n\n- ldifmodify commmand apply change LDIF on contenct LDIF\n";
       buildType = "Simple";
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."ghc" or (buildDepError "ghc"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           ];
         buildable = true;
         };
@@ -74,8 +43,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
         "ldifparse" = { buildable = true; };
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             ];
           buildable = if !flags.test then false else true;
           };

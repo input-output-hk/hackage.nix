@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { transformers-3 = false; wai-1 = false; wai-2 = false; };
     package = {
@@ -56,63 +25,63 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ((([
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           ] ++ (pkgs.lib).optionals (flags.wai-1 && !flags.wai-2) [
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          ]) ++ (pkgs.lib).optional (flags.wai-2) (hsPkgs."wai" or (buildDepError "wai"))) ++ (pkgs.lib).optional (!flags.wai-1 && !flags.wai-2) (hsPkgs."wai" or (buildDepError "wai"))) ++ (if flags.transformers-3
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          ]) ++ (pkgs.lib).optional (flags.wai-2) (hsPkgs."wai" or (errorHandler.buildDepError "wai"))) ++ (pkgs.lib).optional (!flags.wai-1 && !flags.wai-2) (hsPkgs."wai" or (errorHandler.buildDepError "wai"))) ++ (if flags.transformers-3
           then [
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
             ]
           else [
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             ]);
         buildable = true;
         };
       tests = {
         "phantomjs" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."wai-cors" or (buildDepError "wai-cors"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."wai-cors" or (errorHandler.buildDepError "wai-cors"))
             ] ++ (pkgs.lib).optionals (!(flags.wai-1 || flags.wai-2)) [
-            (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
+            (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             ];
           buildable = if flags.wai-1 || flags.wai-2 then false else true;
           };
         "unit-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."wai-cors" or (buildDepError "wai-cors"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."wai-cors" or (errorHandler.buildDepError "wai-cors"))
             ] ++ (pkgs.lib).optionals (!(flags.wai-1 || flags.wai-2)) [
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
+            (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+            (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             ];
           buildable = if flags.wai-1 || flags.wai-2 then false else true;
           };

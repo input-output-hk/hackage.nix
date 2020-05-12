@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,71 +25,73 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."yesod" or (buildDepError "yesod"))
-          (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
-          (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
-          (hsPkgs."js-jquery" or (buildDepError "js-jquery"))
-          (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-          (hsPkgs."numbered-semigroups" or (buildDepError "numbered-semigroups"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."TeX-my-math" or (buildDepError "TeX-my-math"))
-          (hsPkgs."dumb-cas" or (buildDepError "dumb-cas"))
-          (hsPkgs."HaTeX" or (buildDepError "HaTeX"))
-          (hsPkgs."texmath" or (buildDepError "texmath"))
-          (hsPkgs."xml" or (buildDepError "xml"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."microlens" or (buildDepError "microlens"))
-          (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
-          (hsPkgs."these" or (buildDepError "these"))
-          (hsPkgs."these-lens" or (buildDepError "these-lens"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-          (hsPkgs."flat" or (buildDepError "flat"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."zlib" or (buildDepError "zlib"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."temporary" or (buildDepError "temporary"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
+          (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
+          (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
+          (hsPkgs."js-jquery" or (errorHandler.buildDepError "js-jquery"))
+          (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
+          (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+          (hsPkgs."numbered-semigroups" or (errorHandler.buildDepError "numbered-semigroups"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."TeX-my-math" or (errorHandler.buildDepError "TeX-my-math"))
+          (hsPkgs."dumb-cas" or (errorHandler.buildDepError "dumb-cas"))
+          (hsPkgs."HaTeX" or (errorHandler.buildDepError "HaTeX"))
+          (hsPkgs."texmath" or (errorHandler.buildDepError "texmath"))
+          (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+          (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
+          (hsPkgs."these" or (errorHandler.buildDepError "these"))
+          (hsPkgs."these-lens" or (errorHandler.buildDepError "these-lens"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+          (hsPkgs."flat" or (errorHandler.buildDepError "flat"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ] ++ (if system.isWindows
-          then [ (hsPkgs."directory" or (buildDepError "directory")) ]
+          then [
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            ]
           else [
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             ]);
         buildable = true;
         };
       exes = {
         "test-presentation" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."yeamer" or (buildDepError "yeamer"))
-            (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-            (hsPkgs."TeX-my-math" or (buildDepError "TeX-my-math"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."numbered-semigroups" or (buildDepError "numbered-semigroups"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
-            (hsPkgs."diagrams-cairo" or (buildDepError "diagrams-cairo"))
-            (hsPkgs."flat" or (buildDepError "flat"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."yeamer" or (errorHandler.buildDepError "yeamer"))
+            (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
+            (hsPkgs."TeX-my-math" or (errorHandler.buildDepError "TeX-my-math"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."numbered-semigroups" or (errorHandler.buildDepError "numbered-semigroups"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
+            (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
+            (hsPkgs."flat" or (errorHandler.buildDepError "flat"))
             ];
           buildable = true;
           };
         "yeamer-demo" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."yeamer" or (buildDepError "yeamer"))
-            (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-            (hsPkgs."TeX-my-math" or (buildDepError "TeX-my-math"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."numbered-semigroups" or (buildDepError "numbered-semigroups"))
-            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
-            (hsPkgs."diagrams-cairo" or (buildDepError "diagrams-cairo"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."yeamer" or (errorHandler.buildDepError "yeamer"))
+            (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
+            (hsPkgs."TeX-my-math" or (errorHandler.buildDepError "TeX-my-math"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."numbered-semigroups" or (errorHandler.buildDepError "numbered-semigroups"))
+            (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
+            (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
             ];
           buildable = true;
           };
@@ -128,13 +99,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."yeamer" or (buildDepError "yeamer"))
-            (hsPkgs."numbered-semigroups" or (buildDepError "numbered-semigroups"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."yeamer" or (errorHandler.buildDepError "yeamer"))
+            (hsPkgs."numbered-semigroups" or (errorHandler.buildDepError "numbered-semigroups"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             ];
           buildable = true;
           };

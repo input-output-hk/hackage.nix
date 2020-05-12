@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { examples = false; };
     package = {
@@ -56,190 +25,190 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."jacobi-roots" or (buildDepError "jacobi-roots"))
-          (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."casadi-bindings-internal" or (buildDepError "casadi-bindings-internal"))
-          (hsPkgs."casadi-bindings-core" or (buildDepError "casadi-bindings-core"))
-          (hsPkgs."casadi-bindings" or (buildDepError "casadi-bindings"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."linear" or (buildDepError "linear"))
-          (hsPkgs."spatial-math" or (buildDepError "spatial-math"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
-          (hsPkgs."reflection" or (buildDepError "reflection"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."glib" or (buildDepError "glib"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."gtk" or (buildDepError "gtk"))
-          (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"))
-          (hsPkgs."cairo" or (buildDepError "cairo"))
-          (hsPkgs."Chart" or (buildDepError "Chart"))
-          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-          (hsPkgs."distributive" or (buildDepError "distributive"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."jacobi-roots" or (errorHandler.buildDepError "jacobi-roots"))
+          (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."casadi-bindings-internal" or (errorHandler.buildDepError "casadi-bindings-internal"))
+          (hsPkgs."casadi-bindings-core" or (errorHandler.buildDepError "casadi-bindings-core"))
+          (hsPkgs."casadi-bindings" or (errorHandler.buildDepError "casadi-bindings"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+          (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+          (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+          (hsPkgs."spatial-math" or (errorHandler.buildDepError "spatial-math"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+          (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
+          (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
+          (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
+          (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
+          (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+          (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
           ];
         buildable = true;
         };
       exes = {
         "multiple_shooting" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."Chart" or (buildDepError "Chart"))
-            (hsPkgs."Chart-gtk" or (buildDepError "Chart-gtk"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."colour" or (buildDepError "colour"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
+            (hsPkgs."Chart-gtk" or (errorHandler.buildDepError "Chart-gtk"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
+            (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             ];
           buildable = if flags.examples then true else false;
           };
         "plotSofa" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."not-gloss" or (buildDepError "not-gloss"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."not-gloss" or (errorHandler.buildDepError "not-gloss"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = if flags.examples then true else false;
           };
         "sofaTime" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."casadi-bindings-core" or (buildDepError "casadi-bindings-core"))
-            (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."casadi-bindings-core" or (errorHandler.buildDepError "casadi-bindings-core"))
+            (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.examples then true else false;
           };
         "homotopy" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.examples then true else false;
           };
         "vec" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.examples then true else false;
           };
         "ocpMonad" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             ];
           buildable = if flags.examples then true else false;
           };
         "rocket" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             ];
           buildable = if flags.examples then true else false;
           };
         "staticExample" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.examples then true else false;
           };
         "basic" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.examples then true else false;
           };
         "basicJ" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.examples then true else false;
           };
         "daeColl" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = if flags.examples then true else false;
           };
         "glider" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             ];
           buildable = if flags.examples then true else false;
           };
         "sailboat" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             ];
           buildable = if flags.examples then true else false;
           };
         "dynoplot" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             ];
           buildable = if flags.examples then true else false;
           };
@@ -247,17 +216,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "unit-tests" = {
           depends = [
-            (hsPkgs."dynobud" or (buildDepError "dynobud"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."casadi-bindings" or (buildDepError "casadi-bindings"))
-            (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."casadi-bindings" or (errorHandler.buildDepError "casadi-bindings"))
+            (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };

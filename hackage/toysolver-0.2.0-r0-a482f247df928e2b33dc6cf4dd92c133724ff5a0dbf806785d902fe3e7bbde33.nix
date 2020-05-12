@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       forcechar8 = false;
@@ -64,174 +33,174 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."primes" or (buildDepError "primes"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."parse-dimacs" or (buildDepError "parse-dimacs"))
-          (hsPkgs."queue" or (buildDepError "queue"))
-          (hsPkgs."heaps" or (buildDepError "heaps"))
-          (hsPkgs."unbounded-delays" or (buildDepError "unbounded-delays"))
-          (hsPkgs."vector-space" or (buildDepError "vector-space"))
-          (hsPkgs."multiset" or (buildDepError "multiset"))
-          (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
-          (hsPkgs."type-level-numbers" or (buildDepError "type-level-numbers"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."intern" or (buildDepError "intern"))
-          (hsPkgs."loop" or (buildDepError "loop"))
-          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-          (hsPkgs."OptDir" or (buildDepError "OptDir"))
-          (hsPkgs."extended-reals" or (buildDepError "extended-reals"))
-          (hsPkgs."data-interval" or (buildDepError "data-interval"))
-          (hsPkgs."finite-field" or (buildDepError "finite-field"))
-          (hsPkgs."sign" or (buildDepError "sign"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
+          (hsPkgs."queue" or (errorHandler.buildDepError "queue"))
+          (hsPkgs."heaps" or (errorHandler.buildDepError "heaps"))
+          (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
+          (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
+          (hsPkgs."multiset" or (errorHandler.buildDepError "multiset"))
+          (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
+          (hsPkgs."type-level-numbers" or (errorHandler.buildDepError "type-level-numbers"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."intern" or (errorHandler.buildDepError "intern"))
+          (hsPkgs."loop" or (errorHandler.buildDepError "loop"))
+          (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+          (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
+          (hsPkgs."extended-reals" or (errorHandler.buildDepError "extended-reals"))
+          (hsPkgs."data-interval" or (errorHandler.buildDepError "data-interval"))
+          (hsPkgs."finite-field" or (errorHandler.buildDepError "finite-field"))
+          (hsPkgs."sign" or (errorHandler.buildDepError "sign"))
           ] ++ [
-          (hsPkgs."temporary" or (buildDepError "temporary"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           ]) ++ (if flags.random1013
           then [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
             ]
           else [
-            (hsPkgs."random" or (buildDepError "random"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            ])) ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
         };
       exes = {
         "toysolver" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."OptDir" or (buildDepError "OptDir"))
-            (hsPkgs."parse-dimacs" or (buildDepError "parse-dimacs"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
+            (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             ];
           buildable = true;
           };
         "toysat" = {
           depends = ([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."parse-dimacs" or (buildDepError "parse-dimacs"))
-            (hsPkgs."unbounded-delays" or (buildDepError "unbounded-delays"))
-            (hsPkgs."vector-space" or (buildDepError "vector-space"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
+            (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
+            (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             ] ++ (if flags.time15
-            then [ (hsPkgs."time" or (buildDepError "time")) ]
+            then [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]
             else [
-              (hsPkgs."time" or (buildDepError "time"))
-              (hsPkgs."old-locale" or (buildDepError "old-locale"))
-              ])) ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs."base" or (buildDepError "base"));
+              (hsPkgs."time" or (errorHandler.buildDepError "time"))
+              (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+              ])) ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           buildable = true;
           };
         "toyfmf" = {
           depends = (pkgs.lib).optionals (flags.buildtoyfmf) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."logic-TPTP" or (buildDepError "logic-TPTP"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."logic-TPTP" or (errorHandler.buildDepError "logic-TPTP"))
             ];
           buildable = if !flags.buildtoyfmf then false else true;
           };
         "lpconvert" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."parse-dimacs" or (buildDepError "parse-dimacs"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             ];
           buildable = true;
           };
         "pbconvert" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."parse-dimacs" or (buildDepError "parse-dimacs"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             ];
           buildable = true;
           };
         "sudoku" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             ];
           buildable = if !flags.buildsampleprograms then false else true;
           };
         "nqueens" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             ];
           buildable = if !flags.buildsampleprograms then false else true;
           };
         "knapsack" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             ];
           buildable = if !flags.buildsampleprograms then false else true;
           };
         "htc" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             ];
           buildable = if !flags.buildsampleprograms then false else true;
           };
         "pigeonhole" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             ];
           buildable = if !flags.buildmiscprograms then false else true;
           };
         "maxsatverify" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             ];
           buildable = if !flags.buildmiscprograms then false else true;
           };
         "pbverify" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             ];
           buildable = true;
           };
@@ -239,204 +208,204 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "TestSAT" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
         "TestSimplex" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             ];
           buildable = true;
           };
         "TestSimplex2" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."vector-space" or (buildDepError "vector-space"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             ];
           buildable = true;
           };
         "TestMIPSolver2" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."vector-space" or (buildDepError "vector-space"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."OptDir" or (buildDepError "OptDir"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             ];
           buildable = true;
           };
         "TestPolynomial" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."data-interval" or (buildDepError "data-interval"))
-            (hsPkgs."finite-field" or (buildDepError "finite-field"))
-            (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."data-interval" or (errorHandler.buildDepError "data-interval"))
+            (hsPkgs."finite-field" or (errorHandler.buildDepError "finite-field"))
+            (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
             ];
           buildable = true;
           };
         "TestAReal" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."data-interval" or (buildDepError "data-interval"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."data-interval" or (errorHandler.buildDepError "data-interval"))
             ];
           buildable = true;
           };
         "TestArith" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."vector-space" or (buildDepError "vector-space"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."data-interval" or (buildDepError "data-interval"))
-            (hsPkgs."OptDir" or (buildDepError "OptDir"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."data-interval" or (errorHandler.buildDepError "data-interval"))
+            (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
         "TestContiTraverso" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."vector-space" or (buildDepError "vector-space"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."OptDir" or (buildDepError "OptDir"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
         "TestCongruenceClosure" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
         "TestLPFile" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
         "TestMPSFile" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
         "TestPBFile" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
         "TestSDPFile" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
         "TestUtil" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };
@@ -444,13 +413,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "BenchmarkSATLIB" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."parse-dimacs" or (buildDepError "parse-dimacs"))
-            (hsPkgs."toysolver" or (buildDepError "toysolver"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
+            (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             ];
           buildable = true;
           };

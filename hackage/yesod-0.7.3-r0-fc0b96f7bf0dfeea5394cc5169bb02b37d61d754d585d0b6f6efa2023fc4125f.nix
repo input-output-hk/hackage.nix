@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { ghc7 = true; };
     package = {
@@ -56,33 +25,33 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
-          (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
-          (hsPkgs."yesod-json" or (buildDepError "yesod-json"))
-          (hsPkgs."yesod-persistent" or (buildDepError "yesod-persistent"))
-          (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
-          (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
-          (hsPkgs."monad-peel" or (buildDepError "monad-peel"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-          (hsPkgs."hamlet" or (buildDepError "hamlet"))
-          (hsPkgs."warp" or (buildDepError "warp"))
-          (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
-          (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
-          ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+          (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
+          (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
+          (hsPkgs."yesod-json" or (errorHandler.buildDepError "yesod-json"))
+          (hsPkgs."yesod-persistent" or (errorHandler.buildDepError "yesod-persistent"))
+          (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
+          (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
+          (hsPkgs."monad-peel" or (errorHandler.buildDepError "monad-peel"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+          (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
+          (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+          (hsPkgs."mime-mail" or (errorHandler.buildDepError "mime-mail"))
+          (hsPkgs."hjsmin" or (errorHandler.buildDepError "hjsmin"))
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
         };
       exes = {
         "yesod" = {
           depends = [
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            ] ++ [ (hsPkgs."base" or (buildDepError "base")) ];
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
           };
         };

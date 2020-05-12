@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,69 +25,69 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."lio" or (buildDepError "lio"))
-          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-          (hsPkgs."bson" or (buildDepError "bson"))
-          (hsPkgs."mongoDB" or (buildDepError "mongoDB"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
-          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."authenticate" or (buildDepError "authenticate"))
-          (hsPkgs."cookie" or (buildDepError "cookie"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."failure" or (buildDepError "failure"))
-          (hsPkgs."SHA" or (buildDepError "SHA"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."lio" or (errorHandler.buildDepError "lio"))
+          (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+          (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
+          (hsPkgs."mongoDB" or (errorHandler.buildDepError "mongoDB"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
+          (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."authenticate" or (errorHandler.buildDepError "authenticate"))
+          (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
+          (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+          (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
+          (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
           ];
         buildable = true;
         };
       exes = {
         "hails" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."lio" or (buildDepError "lio"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."bson" or (buildDepError "bson"))
-            (hsPkgs."mongoDB" or (buildDepError "mongoDB"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."authenticate" or (buildDepError "authenticate"))
-            (hsPkgs."cookie" or (buildDepError "cookie"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
-            (hsPkgs."SHA" or (buildDepError "SHA"))
-            (hsPkgs."hails" or (buildDepError "hails"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."lio" or (errorHandler.buildDepError "lio"))
+            (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+            (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
+            (hsPkgs."mongoDB" or (errorHandler.buildDepError "mongoDB"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+            (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."authenticate" or (errorHandler.buildDepError "authenticate"))
+            (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
+            (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
+            (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
+            (hsPkgs."hails" or (errorHandler.buildDepError "hails"))
             ];
           buildable = true;
           };
@@ -126,25 +95,25 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs."hails" or (buildDepError "hails"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."lio" or (buildDepError "lio"))
-            (hsPkgs."quickcheck-lio-instances" or (buildDepError "quickcheck-lio-instances"))
-            (hsPkgs."bson" or (buildDepError "bson"))
-            (hsPkgs."mongoDB" or (buildDepError "mongoDB"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-test" or (buildDepError "wai-test"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."hails" or (errorHandler.buildDepError "hails"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."lio" or (errorHandler.buildDepError "lio"))
+            (hsPkgs."quickcheck-lio-instances" or (errorHandler.buildDepError "quickcheck-lio-instances"))
+            (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
+            (hsPkgs."mongoDB" or (errorHandler.buildDepError "mongoDB"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."wai-test" or (errorHandler.buildDepError "wai-test"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             ];
           buildable = true;
           };

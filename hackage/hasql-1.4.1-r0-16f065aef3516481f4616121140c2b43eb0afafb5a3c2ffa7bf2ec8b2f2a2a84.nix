@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,54 +25,54 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."bytestring-strict-builder" or (buildDepError "bytestring-strict-builder"))
-          (hsPkgs."contravariant" or (buildDepError "contravariant"))
-          (hsPkgs."contravariant-extras" or (buildDepError "contravariant-extras"))
-          (hsPkgs."dlist" or (buildDepError "dlist"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."hashtables" or (buildDepError "hashtables"))
-          (hsPkgs."loch-th" or (buildDepError "loch-th"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."placeholders" or (buildDepError "placeholders"))
-          (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
-          (hsPkgs."postgresql-libpq" or (buildDepError "postgresql-libpq"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-builder" or (buildDepError "text-builder"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."bytestring-strict-builder" or (errorHandler.buildDepError "bytestring-strict-builder"))
+          (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
+          (hsPkgs."contravariant-extras" or (errorHandler.buildDepError "contravariant-extras"))
+          (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
+          (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
+          (hsPkgs."postgresql-binary" or (errorHandler.buildDepError "postgresql-binary"))
+          (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
+          (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         buildable = true;
         };
       tests = {
         "tasty" = {
           depends = [
-            (hsPkgs."hasql" or (buildDepError "hasql"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."rerebase" or (buildDepError "rerebase"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             ];
           buildable = true;
           };
         "threads-test" = {
           depends = [
-            (hsPkgs."hasql" or (buildDepError "hasql"))
-            (hsPkgs."rebase" or (buildDepError "rebase"))
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."rebase" or (errorHandler.buildDepError "rebase"))
             ];
           buildable = true;
           };
         "profiling" = {
           depends = [
-            (hsPkgs."bug" or (buildDepError "bug"))
-            (hsPkgs."hasql" or (buildDepError "hasql"))
-            (hsPkgs."rerebase" or (buildDepError "rerebase"))
+            (hsPkgs."bug" or (errorHandler.buildDepError "bug"))
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
             ];
           buildable = true;
           };
@@ -111,10 +80,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "benchmarks" = {
           depends = [
-            (hsPkgs."bug" or (buildDepError "bug"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."hasql" or (buildDepError "hasql"))
-            (hsPkgs."rerebase" or (buildDepError "rerebase"))
+            (hsPkgs."bug" or (errorHandler.buildDepError "bug"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
             ];
           buildable = true;
           };

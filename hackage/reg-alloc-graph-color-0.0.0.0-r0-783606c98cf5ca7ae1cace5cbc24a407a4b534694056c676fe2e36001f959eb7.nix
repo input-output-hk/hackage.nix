@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -55,24 +24,26 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       };
     components = {
       "library" = {
-        depends = [ (hsPkgs."private" or (buildDepError "private")) ];
+        depends = [
+          (hsPkgs."private" or (errorHandler.buildDepError "private"))
+          ];
         buildable = true;
         };
       sublibs = {
         "private" = {
           depends = [
-            (hsPkgs."Map" or (buildDepError "Map"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."lenz" or (buildDepError "lenz"))
-            (hsPkgs."lenz-mtl" or (buildDepError "lenz-mtl"))
-            (hsPkgs."lenz-template" or (buildDepError "lenz-template"))
-            (hsPkgs."microlens-mtl" or (buildDepError "microlens-mtl"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."peano" or (buildDepError "peano"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."util" or (buildDepError "util"))
+            (hsPkgs."Map" or (errorHandler.buildDepError "Map"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."lenz" or (errorHandler.buildDepError "lenz"))
+            (hsPkgs."lenz-mtl" or (errorHandler.buildDepError "lenz-mtl"))
+            (hsPkgs."lenz-template" or (errorHandler.buildDepError "lenz-template"))
+            (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."peano" or (errorHandler.buildDepError "peano"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."util" or (errorHandler.buildDepError "util"))
             ];
           buildable = true;
           };
@@ -80,16 +51,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."logict" or (buildDepError "logict"))
-            (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."util" or (buildDepError "util"))
-            (hsPkgs."private" or (buildDepError "private"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
+            (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."util" or (errorHandler.buildDepError "util"))
+            (hsPkgs."private" or (errorHandler.buildDepError "private"))
             ];
           buildable = true;
           };
@@ -97,9 +68,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."reg-alloc-graph-color" or (buildDepError "reg-alloc-graph-color"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."reg-alloc-graph-color" or (errorHandler.buildDepError "reg-alloc-graph-color"))
             ];
           buildable = true;
           };

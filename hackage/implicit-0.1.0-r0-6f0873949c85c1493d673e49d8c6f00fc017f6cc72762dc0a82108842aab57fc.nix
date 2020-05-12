@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,94 +25,94 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."download" or (buildDepError "download"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."vector-space" or (buildDepError "vector-space"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-          (hsPkgs."blaze-svg" or (buildDepError "blaze-svg"))
-          (hsPkgs."storable-endian" or (buildDepError "storable-endian"))
-          (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-          (hsPkgs."NumInstances" or (buildDepError "NumInstances"))
-          (hsPkgs."criterion" or (buildDepError "criterion"))
-          (hsPkgs."snap-core" or (buildDepError "snap-core"))
-          (hsPkgs."snap-server" or (buildDepError "snap-server"))
-          (hsPkgs."silently" or (buildDepError "silently"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."download" or (errorHandler.buildDepError "download"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+          (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
+          (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
+          (hsPkgs."storable-endian" or (errorHandler.buildDepError "storable-endian"))
+          (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
+          (hsPkgs."NumInstances" or (errorHandler.buildDepError "NumInstances"))
+          (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+          (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
+          (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
+          (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           ];
         buildable = true;
         };
       exes = {
         "extopenscad" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."vector-space" or (buildDepError "vector-space"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."implicit" or (buildDepError "implicit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
             ];
           buildable = true;
           };
         "implicitsnap" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."vector-space" or (buildDepError "vector-space"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."blaze-svg" or (buildDepError "blaze-svg"))
-            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."vector-space" or (buildDepError "vector-space"))
-            (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."storable-endian" or (buildDepError "storable-endian"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."snap-core" or (buildDepError "snap-core"))
-            (hsPkgs."snap-server" or (buildDepError "snap-server"))
-            (hsPkgs."silently" or (buildDepError "silently"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."implicit" or (buildDepError "implicit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
+            (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+            (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
+            (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
+            (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
+            (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."storable-endian" or (errorHandler.buildDepError "storable-endian"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
+            (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
+            (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
             ];
           buildable = true;
           };
         "Benchmark" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-            (hsPkgs."blaze-svg" or (buildDepError "blaze-svg"))
-            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."vector-space" or (buildDepError "vector-space"))
-            (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."storable-endian" or (buildDepError "storable-endian"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."implicit" or (buildDepError "implicit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
+            (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
+            (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
+            (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
+            (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
+            (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."storable-endian" or (errorHandler.buildDepError "storable-endian"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
             ];
           buildable = true;
           };
@@ -151,12 +120,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test-implicit" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."implicit" or (buildDepError "implicit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
             ];
           buildable = true;
           };
@@ -164,11 +133,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "parser-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."implicit" or (buildDepError "implicit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
             ];
           buildable = true;
           };

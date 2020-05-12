@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,56 +25,56 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."clientsession" or (buildDepError "clientsession"))
-          (hsPkgs."email-validate" or (buildDepError "email-validate"))
-          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."machines" or (buildDepError "machines"))
-          (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."psqueues" or (buildDepError "psqueues"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."servant-blaze" or (buildDepError "servant-blaze"))
-          (hsPkgs."servant-server" or (buildDepError "servant-server"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."clientsession" or (errorHandler.buildDepError "clientsession"))
+          (hsPkgs."email-validate" or (errorHandler.buildDepError "email-validate"))
+          (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."machines" or (errorHandler.buildDepError "machines"))
+          (hsPkgs."mime-mail" or (errorHandler.buildDepError "mime-mail"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."psqueues" or (errorHandler.buildDepError "psqueues"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+          (hsPkgs."servant-blaze" or (errorHandler.buildDepError "servant-blaze"))
+          (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ];
         buildable = true;
         };
       exes = {
         "newsletter-server" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."clientsession" or (buildDepError "clientsession"))
-            (hsPkgs."email-validate" or (buildDepError "email-validate"))
-            (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."machines" or (buildDepError "machines"))
-            (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."psqueues" or (buildDepError "psqueues"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."servant-blaze" or (buildDepError "servant-blaze"))
-            (hsPkgs."servant-server" or (buildDepError "servant-server"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."newsletter" or (buildDepError "newsletter"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."clientsession" or (errorHandler.buildDepError "clientsession"))
+            (hsPkgs."email-validate" or (errorHandler.buildDepError "email-validate"))
+            (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."machines" or (errorHandler.buildDepError "machines"))
+            (hsPkgs."mime-mail" or (errorHandler.buildDepError "mime-mail"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."psqueues" or (errorHandler.buildDepError "psqueues"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+            (hsPkgs."servant-blaze" or (errorHandler.buildDepError "servant-blaze"))
+            (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."newsletter" or (errorHandler.buildDepError "newsletter"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { new-http-conduit = true; };
     package = {
@@ -56,56 +25,58 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."cookie" or (buildDepError "cookie"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."socks" or (buildDepError "socks"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."failure" or (buildDepError "failure"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          ] ++ [ (hsPkgs."http-conduit" or (buildDepError "http-conduit")) ];
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."socks" or (errorHandler.buildDepError "socks"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          ] ++ [
+          (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+          ];
         buildable = true;
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."network-conduit" or (buildDepError "network-conduit"))
-            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."cookie" or (buildDepError "cookie"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."socks" or (buildDepError "socks"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."failure" or (buildDepError "failure"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+            (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
+            (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+            (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."socks" or (errorHandler.buildDepError "socks"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
+            (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       curl = true;
@@ -68,82 +37,82 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (((((([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."html" or (buildDepError "html"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."haskeline" or (buildDepError "haskeline"))
-          (hsPkgs."hashed-storage" or (buildDepError "hashed-storage"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."old-time" or (buildDepError "old-time"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."random" or (buildDepError "random"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optionals (flags.http) [
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."HTTP" or (buildDepError "HTTP"))
-          ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.zlib) (hsPkgs."zlib" or (buildDepError "zlib"))) ++ (pkgs.lib).optional (flags.utf8-string) (hsPkgs."utf8-string" or (buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo"));
-        libs = (pkgs.lib).optional (flags.curl) (pkgs."curl" or (sysDepError "curl")) ++ (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (sysDepError "z"));
-        pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl" or (pkgConfDepError "libcurl"))));
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."html" or (errorHandler.buildDepError "html"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
+          (hsPkgs."hashed-storage" or (errorHandler.buildDepError "hashed-storage"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optionals (flags.http) [
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
+          ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.zlib) (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))) ++ (pkgs.lib).optional (flags.utf8-string) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
+        libs = (pkgs.lib).optional (flags.curl) (pkgs."curl" or (errorHandler.sysDepError "curl")) ++ (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (errorHandler.sysDepError "z"));
+        pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl" or (errorHandler.pkgConfDepError "libcurl"))));
         buildable = if !flags.curl && !flags.http then false else true;
         };
       exes = {
         "witnesses" = {
-          libs = (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (sysDepError "z"));
+          libs = (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (errorHandler.sysDepError "z"));
           buildable = if !flags.type-witnesses then false else true;
           };
         "darcs" = {
           depends = (((((([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."html" or (buildDepError "html"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."haskeline" or (buildDepError "haskeline"))
-            (hsPkgs."hashed-storage" or (buildDepError "hashed-storage"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."random" or (buildDepError "random"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optionals (flags.http) [
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."HTTP" or (buildDepError "HTTP"))
-            ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.zlib) (hsPkgs."zlib" or (buildDepError "zlib"))) ++ (pkgs.lib).optional (flags.utf8-string) (hsPkgs."utf8-string" or (buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo"));
-          libs = ((pkgs.lib).optional (!flags.zlib) (pkgs."z" or (sysDepError "z")) ++ (pkgs.lib).optional (flags.curl) (pkgs."curl" or (sysDepError "curl"))) ++ (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (sysDepError "z"));
-          pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl" or (pkgConfDepError "libcurl"))));
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."html" or (errorHandler.buildDepError "html"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
+            (hsPkgs."hashed-storage" or (errorHandler.buildDepError "hashed-storage"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optionals (flags.http) [
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
+            ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.zlib) (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))) ++ (pkgs.lib).optional (flags.utf8-string) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
+          libs = ((pkgs.lib).optional (!flags.zlib) (pkgs."z" or (errorHandler.sysDepError "z")) ++ (pkgs.lib).optional (flags.curl) (pkgs."curl" or (errorHandler.sysDepError "curl"))) ++ (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (errorHandler.sysDepError "z"));
+          pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl" or (errorHandler.pkgConfDepError "libcurl"))));
           buildable = if !flags.curl && !flags.http then false else true;
           };
         "unit" = {
           depends = ((((([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."old-time" or (buildDepError "old-time"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
             ] ++ (pkgs.lib).optionals (!(!flags.test)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."html" or (buildDepError "html"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.zlib) (hsPkgs."zlib" or (buildDepError "zlib"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (buildDepError "terminfo"));
-          libs = (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (sysDepError "z")) ++ (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (sysDepError "z"));
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."html" or (errorHandler.buildDepError "html"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.zlib) (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
+          libs = (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (errorHandler.sysDepError "z")) ++ (pkgs.lib).optional (!flags.zlib) (pkgs."z" or (errorHandler.sysDepError "z"));
           buildable = if !flags.test then false else true;
           };
         };

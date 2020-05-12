@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { network-uri = true; };
     package = {
@@ -56,98 +25,100 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."bzlib" or (buildDepError "bzlib"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."binary-conduit" or (buildDepError "binary-conduit"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-          (hsPkgs."crypto-cipher-types" or (buildDepError "crypto-cipher-types"))
-          (hsPkgs."errors" or (buildDepError "errors"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."incremental-parser" or (buildDepError "incremental-parser"))
-          (hsPkgs."ixset-typed" or (buildDepError "ixset-typed"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-          (hsPkgs."nettle" or (buildDepError "nettle"))
-          (hsPkgs."newtype" or (buildDepError "newtype"))
-          (hsPkgs."openpgp-asciiarmor" or (buildDepError "openpgp-asciiarmor"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."wl-pprint-extras" or (buildDepError "wl-pprint-extras"))
-          (hsPkgs."zlib" or (buildDepError "zlib"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
+          (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+          (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."binary-conduit" or (errorHandler.buildDepError "binary-conduit"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+          (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
+          (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."incremental-parser" or (errorHandler.buildDepError "incremental-parser"))
+          (hsPkgs."ixset-typed" or (errorHandler.buildDepError "ixset-typed"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+          (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+          (hsPkgs."nettle" or (errorHandler.buildDepError "nettle"))
+          (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
+          (hsPkgs."openpgp-asciiarmor" or (errorHandler.buildDepError "openpgp-asciiarmor"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."wl-pprint-extras" or (errorHandler.buildDepError "wl-pprint-extras"))
+          (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           ] ++ (if flags.network-uri
-          then [ (hsPkgs."network-uri" or (buildDepError "network-uri")) ]
+          then [
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            ]
           else [
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
             ]);
         buildable = true;
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs."hOpenPGP" or (buildDepError "hOpenPGP"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."bzlib" or (buildDepError "bzlib"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."binary-conduit" or (buildDepError "binary-conduit"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."crypto-cipher-types" or (buildDepError "crypto-cipher-types"))
-            (hsPkgs."errors" or (buildDepError "errors"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."incremental-parser" or (buildDepError "incremental-parser"))
-            (hsPkgs."ixset-typed" or (buildDepError "ixset-typed"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-            (hsPkgs."nettle" or (buildDepError "nettle"))
-            (hsPkgs."newtype" or (buildDepError "newtype"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."wl-pprint-extras" or (buildDepError "wl-pprint-extras"))
-            (hsPkgs."zlib" or (buildDepError "zlib"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."hOpenPGP" or (errorHandler.buildDepError "hOpenPGP"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
+            (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."binary-conduit" or (errorHandler.buildDepError "binary-conduit"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+            (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
+            (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."incremental-parser" or (errorHandler.buildDepError "incremental-parser"))
+            (hsPkgs."ixset-typed" or (errorHandler.buildDepError "ixset-typed"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+            (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+            (hsPkgs."nettle" or (errorHandler.buildDepError "nettle"))
+            (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."wl-pprint-extras" or (errorHandler.buildDepError "wl-pprint-extras"))
+            (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             ] ++ [
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
             ];
           buildable = true;
           };
@@ -155,46 +126,46 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "benchmark" = {
           depends = [
-            (hsPkgs."hOpenPGP" or (buildDepError "hOpenPGP"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."bzlib" or (buildDepError "bzlib"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."binary-conduit" or (buildDepError "binary-conduit"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."crypto-cipher-types" or (buildDepError "crypto-cipher-types"))
-            (hsPkgs."errors" or (buildDepError "errors"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."incremental-parser" or (buildDepError "incremental-parser"))
-            (hsPkgs."ixset-typed" or (buildDepError "ixset-typed"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-            (hsPkgs."nettle" or (buildDepError "nettle"))
-            (hsPkgs."newtype" or (buildDepError "newtype"))
-            (hsPkgs."openpgp-asciiarmor" or (buildDepError "openpgp-asciiarmor"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."wl-pprint-extras" or (buildDepError "wl-pprint-extras"))
-            (hsPkgs."zlib" or (buildDepError "zlib"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."hOpenPGP" or (errorHandler.buildDepError "hOpenPGP"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
+            (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+            (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."binary-conduit" or (errorHandler.buildDepError "binary-conduit"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+            (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
+            (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."incremental-parser" or (errorHandler.buildDepError "incremental-parser"))
+            (hsPkgs."ixset-typed" or (errorHandler.buildDepError "ixset-typed"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+            (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+            (hsPkgs."nettle" or (errorHandler.buildDepError "nettle"))
+            (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
+            (hsPkgs."openpgp-asciiarmor" or (errorHandler.buildDepError "openpgp-asciiarmor"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."wl-pprint-extras" or (errorHandler.buildDepError "wl-pprint-extras"))
+            (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             ] ++ [
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
             ];
           buildable = true;
           };

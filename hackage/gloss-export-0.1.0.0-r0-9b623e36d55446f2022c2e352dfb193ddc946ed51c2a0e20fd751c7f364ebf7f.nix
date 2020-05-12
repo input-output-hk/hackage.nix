@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,22 +25,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."gloss-rendering" or (buildDepError "gloss-rendering"))
-          (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
-          (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
-          (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."GLUT" or (buildDepError "GLUT"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."gloss-rendering" or (errorHandler.buildDepError "gloss-rendering"))
+          (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
+          (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
+          (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
           ];
         buildable = true;
         };
       exes = {
         "gloss-export-exe" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gloss" or (buildDepError "gloss"))
-            (hsPkgs."gloss-export" or (buildDepError "gloss-export"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
+            (hsPkgs."gloss-export" or (errorHandler.buildDepError "gloss-export"))
             ];
           buildable = true;
           };
@@ -79,8 +48,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "gloss-export-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gloss-export" or (buildDepError "gloss-export"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."gloss-export" or (errorHandler.buildDepError "gloss-export"))
             ];
           buildable = true;
           };

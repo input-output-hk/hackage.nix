@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,35 +25,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."Glob" or (buildDepError "Glob"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-          (hsPkgs."air" or (buildDepError "air"))
-          (hsPkgs."air-extra" or (buildDepError "air-extra"))
-          (hsPkgs."air-spec" or (buildDepError "air-spec"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."curl" or (buildDepError "curl"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
-          (hsPkgs."hack2" or (buildDepError "hack2"))
-          (hsPkgs."hack2-contrib" or (buildDepError "hack2-contrib"))
-          (hsPkgs."hspec" or (buildDepError "hspec"))
-          (hsPkgs."miku" or (buildDepError "miku"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-icu" or (buildDepError "text-icu"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+          (hsPkgs."air" or (errorHandler.buildDepError "air"))
+          (hsPkgs."air-extra" or (errorHandler.buildDepError "air-extra"))
+          (hsPkgs."air-spec" or (errorHandler.buildDepError "air-spec"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
+          (hsPkgs."hack2" or (errorHandler.buildDepError "hack2"))
+          (hsPkgs."hack2-contrib" or (errorHandler.buildDepError "hack2-contrib"))
+          (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+          (hsPkgs."miku" or (errorHandler.buildDepError "miku"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           ];
         buildable = true;
         };

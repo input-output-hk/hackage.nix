@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,107 +25,107 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."filecache" or (buildDepError "filecache"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."formatting" or (buildDepError "formatting"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."hruby" or (buildDepError "hruby"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."hspec" or (buildDepError "hspec"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."operational" or (buildDepError "operational"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."pcre-utils" or (buildDepError "pcre-utils"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."protolude" or (buildDepError "protolude"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."regex-pcre-builtin" or (buildDepError "regex-pcre-builtin"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."servant-client" or (buildDepError "servant-client"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."strict-base-types" or (buildDepError "strict-base-types"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."filecache" or (errorHandler.buildDepError "filecache"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."hruby" or (errorHandler.buildDepError "hruby"))
+          (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+          (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
+          (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+          (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."pcre-utils" or (errorHandler.buildDepError "pcre-utils"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."regex-pcre-builtin" or (errorHandler.buildDepError "regex-pcre-builtin"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+          (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ];
         buildable = true;
         };
       exes = {
         "puppetresources" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."parallel-io" or (buildDepError "parallel-io"))
-            (hsPkgs."regex-pcre-builtin" or (buildDepError "regex-pcre-builtin"))
-            (hsPkgs."strict-base-types" or (buildDepError "strict-base-types"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
+            (hsPkgs."regex-pcre-builtin" or (errorHandler.buildDepError "regex-pcre-builtin"))
+            (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };
         "yera" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."strict-base-types" or (buildDepError "strict-base-types"))
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
+            (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             ];
           buildable = true;
           };
         "pdbquery" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."strict-base-types" or (buildDepError "strict-base-types"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             ];
           buildable = true;
           };
@@ -164,101 +133,101 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test-evals" = {
           depends = [
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };
         "test-lexer" = {
           depends = [
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             ];
           buildable = true;
           };
         "test-expr" = {
           depends = [
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-            (hsPkgs."strict-base-types" or (buildDepError "strict-base-types"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-megaparsec" or (buildDepError "hspec-megaparsec"))
+            (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+            (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hspec-megaparsec" or (errorHandler.buildDepError "hspec-megaparsec"))
             ];
           buildable = true;
           };
         "test-hiera" = {
           depends = [
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."strict-base-types" or (buildDepError "strict-base-types"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."neat-interpolation" or (buildDepError "neat-interpolation"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
+            (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             ];
           buildable = true;
           };
         "test-puppetdb" = {
           depends = [
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."strict-base-types" or (buildDepError "strict-base-types"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             ];
           buildable = true;
           };
         "erbparser" = {
           depends = [
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."strict-base-types" or (buildDepError "strict-base-types"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
         "spec" = {
           depends = [
-            (hsPkgs."language-puppet" or (buildDepError "language-puppet"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."strict-base-types" or (buildDepError "strict-base-types"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."hspec-megaparsec" or (buildDepError "hspec-megaparsec"))
-            (hsPkgs."protolude" or (buildDepError "protolude"))
+            (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."hspec-megaparsec" or (errorHandler.buildDepError "hspec-megaparsec"))
+            (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             ];
           buildable = true;
           };

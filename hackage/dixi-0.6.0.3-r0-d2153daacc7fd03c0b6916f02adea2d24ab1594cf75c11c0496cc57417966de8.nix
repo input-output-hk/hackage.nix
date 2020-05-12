@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { old-base = false; };
     package = {
@@ -56,86 +25,86 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."composition-tree" or (buildDepError "composition-tree"))
-          (hsPkgs."patches-vector" or (buildDepError "patches-vector"))
-          (hsPkgs."pandoc" or (buildDepError "pandoc"))
-          (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."servant-server" or (buildDepError "servant-server"))
-          (hsPkgs."acid-state" or (buildDepError "acid-state"))
-          (hsPkgs."safecopy" or (buildDepError "safecopy"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-          (hsPkgs."servant-blaze" or (buildDepError "servant-blaze"))
-          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-          (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."timezone-olson" or (buildDepError "timezone-olson"))
-          (hsPkgs."timezone-series" or (buildDepError "timezone-series"))
-          (hsPkgs."heredoc" or (buildDepError "heredoc"))
+          (hsPkgs."composition-tree" or (errorHandler.buildDepError "composition-tree"))
+          (hsPkgs."patches-vector" or (errorHandler.buildDepError "patches-vector"))
+          (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
+          (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
+          (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+          (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
+          (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+          (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+          (hsPkgs."servant-blaze" or (errorHandler.buildDepError "servant-blaze"))
+          (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
+          (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."either" or (errorHandler.buildDepError "either"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."timezone-olson" or (errorHandler.buildDepError "timezone-olson"))
+          (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
+          (hsPkgs."heredoc" or (errorHandler.buildDepError "heredoc"))
           ] ++ (if flags.old-base
           then [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-orphans" or (buildDepError "base-orphans"))
-            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))
+            (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
             ]
-          else [ (hsPkgs."base" or (buildDepError "base")) ]);
+          else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
         };
       exes = {
         "dixi" = {
           depends = [
-            (hsPkgs."dixi" or (buildDepError "dixi"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."servant-server" or (buildDepError "servant-server"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."dixi" or (errorHandler.buildDepError "dixi"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+            (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ] ++ (if flags.old-base
             then [
-              (hsPkgs."base" or (buildDepError "base"))
-              (hsPkgs."base-orphans" or (buildDepError "base-orphans"))
+              (hsPkgs."base" or (errorHandler.buildDepError "base"))
+              (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))
               ]
-            else [ (hsPkgs."base" or (buildDepError "base")) ]);
+            else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
           };
         };
       tests = {
         "api-docs" = {
           depends = [
-            (hsPkgs."dixi" or (buildDepError "dixi"))
-            (hsPkgs."servant-docs" or (buildDepError "servant-docs"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."patches-vector" or (buildDepError "patches-vector"))
-            (hsPkgs."servant-blaze" or (buildDepError "servant-blaze"))
+            (hsPkgs."dixi" or (errorHandler.buildDepError "dixi"))
+            (hsPkgs."servant-docs" or (errorHandler.buildDepError "servant-docs"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."patches-vector" or (errorHandler.buildDepError "patches-vector"))
+            (hsPkgs."servant-blaze" or (errorHandler.buildDepError "servant-blaze"))
             ] ++ (if flags.old-base
             then [
-              (hsPkgs."base" or (buildDepError "base"))
-              (hsPkgs."base-orphans" or (buildDepError "base-orphans"))
+              (hsPkgs."base" or (errorHandler.buildDepError "base"))
+              (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))
               ]
-            else [ (hsPkgs."base" or (buildDepError "base")) ]);
+            else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
           };
         };

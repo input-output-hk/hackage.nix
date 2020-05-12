@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -59,48 +28,48 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."enclosed-exceptions" or (buildDepError "enclosed-exceptions"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."logging-effect" or (buildDepError "logging-effect"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."enclosed-exceptions" or (errorHandler.buildDepError "enclosed-exceptions"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."logging-effect" or (errorHandler.buildDepError "logging-effect"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           ];
         buildable = true;
         };
       exes = {
         "extensible-effects-concurrent-example-1" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."extensible-effects-concurrent" or (buildDepError "extensible-effects-concurrent"))
-            (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
-            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."extensible-effects-concurrent" or (errorHandler.buildDepError "extensible-effects-concurrent"))
+            (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             ];
           buildable = true;
           };
         "extensible-effects-concurrent-example-2" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."extensible-effects-concurrent" or (buildDepError "extensible-effects-concurrent"))
-            (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
-            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."extensible-effects-concurrent" or (errorHandler.buildDepError "extensible-effects-concurrent"))
+            (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             ];
           buildable = true;
           };
@@ -108,19 +77,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "extensible-effects-concurrent-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."extensible-effects-concurrent" or (buildDepError "extensible-effects-concurrent"))
-            (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."extensible-effects-concurrent" or (errorHandler.buildDepError "extensible-effects-concurrent"))
+            (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,50 +25,50 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."amazonka-dynamodb" or (buildDepError "amazonka-dynamodb"))
-          (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."double-conversion" or (buildDepError "double-conversion"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."monad-supply" or (buildDepError "monad-supply"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."amazonka" or (buildDepError "amazonka"))
-          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."amazonka-core" or (buildDepError "amazonka-core"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."amazonka-dynamodb" or (errorHandler.buildDepError "amazonka-dynamodb"))
+          (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."double-conversion" or (errorHandler.buildDepError "double-conversion"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."monad-supply" or (errorHandler.buildDepError "monad-supply"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."amazonka" or (errorHandler.buildDepError "amazonka"))
+          (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           ];
         buildable = true;
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."dynamodb-simple" or (buildDepError "dynamodb-simple"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-            (hsPkgs."amazonka-dynamodb" or (buildDepError "amazonka-dynamodb"))
-            (hsPkgs."amazonka" or (buildDepError "amazonka"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."tagged" or (buildDepError "tagged"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."dynamodb-simple" or (errorHandler.buildDepError "dynamodb-simple"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+            (hsPkgs."amazonka-dynamodb" or (errorHandler.buildDepError "amazonka-dynamodb"))
+            (hsPkgs."amazonka" or (errorHandler.buildDepError "amazonka"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             ];
           buildable = true;
           };

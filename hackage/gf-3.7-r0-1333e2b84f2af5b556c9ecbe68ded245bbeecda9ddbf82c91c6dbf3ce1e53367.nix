@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       interrupt = true;
@@ -62,69 +31,69 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."time-compat" or (buildDepError "time-compat"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."haskeline" or (buildDepError "haskeline"))
-          (hsPkgs."parallel" or (buildDepError "parallel"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."time-compat" or (errorHandler.buildDepError "time-compat"))
+          (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
+          (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           ] ++ (pkgs.lib).optionals (!flags.custom-binary) [
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
           ]) ++ (pkgs.lib).optionals (flags.server) ([
-          (hsPkgs."httpd-shed" or (buildDepError "httpd-shed"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."json" or (buildDepError "json"))
-          (hsPkgs."cgi" or (buildDepError "cgi"))
+          (hsPkgs."httpd-shed" or (errorHandler.buildDepError "httpd-shed"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."json" or (errorHandler.buildDepError "json"))
+          (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
           ] ++ (if flags.network-uri
           then [
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
             ]
           else [
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
             ]))) ++ (if system.isWindows
-          then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
+          then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."terminfo" or (buildDepError "terminfo"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
             ]);
         libs = (pkgs.lib).optionals (flags.c-runtime) [
-          (pkgs."gu" or (sysDepError "gu"))
-          (pkgs."pgf" or (sysDepError "pgf"))
+          (pkgs."gu" or (errorHandler.sysDepError "gu"))
+          (pkgs."pgf" or (errorHandler.sysDepError "pgf"))
           ];
-        build-tools = (pkgs.lib).optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs"))) ++ [
-          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
-          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
+        build-tools = (pkgs.lib).optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs"))) ++ [
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy")))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex")))
           ];
         buildable = true;
         };
       exes = {
         "gf" = {
           depends = [
-            (hsPkgs."gf" or (buildDepError "gf"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gf" or (errorHandler.buildDepError "gf"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
           };
         "pgf-shell" = {
           depends = [
-            (hsPkgs."gf" or (buildDepError "gf"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+            (hsPkgs."gf" or (errorHandler.buildDepError "gf"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
             ];
           buildable = if !flags.c-runtime then false else true;
           };
@@ -132,22 +101,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "rgl-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HTF" or (buildDepError "HTF"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           buildable = true;
           };
         "gf-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
             ];
           buildable = true;
           };

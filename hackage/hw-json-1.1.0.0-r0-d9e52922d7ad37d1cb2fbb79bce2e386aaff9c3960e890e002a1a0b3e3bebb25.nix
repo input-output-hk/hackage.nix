@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { bmi2 = false; sse42 = false; };
     package = {
@@ -56,70 +25,70 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."bits-extra" or (buildDepError "bits-extra"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."dlist" or (buildDepError "dlist"))
-          (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
-          (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
-          (hsPkgs."hw-mquery" or (buildDepError "hw-mquery"))
-          (hsPkgs."hw-parser" or (buildDepError "hw-parser"))
-          (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
-          (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
-          (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
-          (hsPkgs."hw-simd" or (buildDepError "hw-simd"))
-          (hsPkgs."mmap" or (buildDepError "mmap"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."word8" or (buildDepError "word8"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (buildDepError "semigroups"));
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."bits-extra" or (errorHandler.buildDepError "bits-extra"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
+          (hsPkgs."hw-balancedparens" or (errorHandler.buildDepError "hw-balancedparens"))
+          (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
+          (hsPkgs."hw-mquery" or (errorHandler.buildDepError "hw-mquery"))
+          (hsPkgs."hw-parser" or (errorHandler.buildDepError "hw-parser"))
+          (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
+          (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
+          (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
+          (hsPkgs."hw-simd" or (errorHandler.buildDepError "hw-simd"))
+          (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
         };
       exes = {
         "hw-json" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."dlist" or (buildDepError "dlist"))
-            (hsPkgs."generic-lens" or (buildDepError "generic-lens"))
-            (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
-            (hsPkgs."hw-json-simd" or (buildDepError "hw-json-simd"))
-            (hsPkgs."hw-mquery" or (buildDepError "hw-mquery"))
-            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
-            (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
-            (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."mmap" or (buildDepError "mmap"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."hw-json" or (buildDepError "hw-json"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (buildDepError "semigroups"));
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
+            (hsPkgs."generic-lens" or (errorHandler.buildDepError "generic-lens"))
+            (hsPkgs."hw-balancedparens" or (errorHandler.buildDepError "hw-balancedparens"))
+            (hsPkgs."hw-json-simd" or (errorHandler.buildDepError "hw-json-simd"))
+            (hsPkgs."hw-mquery" or (errorHandler.buildDepError "hw-mquery"))
+            (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
+            (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
+            (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."hw-json" or (errorHandler.buildDepError "hw-json"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
           };
         };
       tests = {
         "hw-json-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
-            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
-            (hsPkgs."hw-hspec-hedgehog" or (buildDepError "hw-hspec-hedgehog"))
-            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
-            (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
-            (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."hw-json" or (buildDepError "hw-json"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hw-balancedparens" or (errorHandler.buildDepError "hw-balancedparens"))
+            (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
+            (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
+            (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
+            (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
+            (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."hw-json" or (errorHandler.buildDepError "hw-json"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover")))
             ];
           buildable = true;
           };
@@ -127,13 +96,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mmap" or (buildDepError "mmap"))
-            (hsPkgs."hw-json" or (buildDepError "hw-json"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (buildDepError "semigroups"));
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
+            (hsPkgs."hw-json" or (errorHandler.buildDepError "hw-json"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
           };
         };

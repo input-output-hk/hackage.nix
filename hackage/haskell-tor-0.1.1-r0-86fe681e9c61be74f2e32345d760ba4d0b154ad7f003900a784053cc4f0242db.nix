@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { network = true; hans = true; };
     package = {
@@ -56,49 +25,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
-          (hsPkgs."asn1-types" or (buildDepError "asn1-types"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-          (hsPkgs."fingertree" or (buildDepError "fingertree"))
-          (hsPkgs."hourglass" or (buildDepError "hourglass"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."monadLib" or (buildDepError "monadLib"))
-          (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
-          (hsPkgs."pure-zlib" or (buildDepError "pure-zlib"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."tls" or (buildDepError "tls"))
-          (hsPkgs."x509" or (buildDepError "x509"))
-          (hsPkgs."x509-store" or (buildDepError "x509-store"))
-          ] ++ (pkgs.lib).optional (flags.network && !system.isHalvm) (hsPkgs."network" or (buildDepError "network"))) ++ (pkgs.lib).optional (flags.hans) (hsPkgs."hans" or (buildDepError "hans"));
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
+          (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+          (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
+          (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
+          (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+          (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
+          (hsPkgs."pretty-hex" or (errorHandler.buildDepError "pretty-hex"))
+          (hsPkgs."pure-zlib" or (errorHandler.buildDepError "pure-zlib"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
+          (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
+          (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
+          ] ++ (pkgs.lib).optional (flags.network && !system.isHalvm) (hsPkgs."network" or (errorHandler.buildDepError "network"))) ++ (pkgs.lib).optional (flags.hans) (hsPkgs."hans" or (errorHandler.buildDepError "hans"));
         buildable = true;
         };
       exes = {
         "haskell-tor" = {
           depends = (([
-            (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
-            (hsPkgs."asn1-types" or (buildDepError "asn1-types"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."haskell-tor" or (buildDepError "haskell-tor"))
-            (hsPkgs."hourglass" or (buildDepError "hourglass"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."tls" or (buildDepError "tls"))
-            (hsPkgs."x509" or (buildDepError "x509"))
-            ] ++ (pkgs.lib).optional (flags.hans) (hsPkgs."hans" or (buildDepError "hans"))) ++ (pkgs.lib).optional (flags.network && !system.isHalvm) (hsPkgs."network" or (buildDepError "network"))) ++ (pkgs.lib).optionals (system.isHalvm) [
-            (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
-            (hsPkgs."XenDevice" or (buildDepError "XenDevice"))
+            (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
+            (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+            (hsPkgs."haskell-tor" or (errorHandler.buildDepError "haskell-tor"))
+            (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
+            (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
+            (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
+            ] ++ (pkgs.lib).optional (flags.hans) (hsPkgs."hans" or (errorHandler.buildDepError "hans"))) ++ (pkgs.lib).optional (flags.network && !system.isHalvm) (hsPkgs."network" or (errorHandler.buildDepError "network"))) ++ (pkgs.lib).optionals (system.isHalvm) [
+            (hsPkgs."HALVMCore" or (errorHandler.buildDepError "HALVMCore"))
+            (hsPkgs."XenDevice" or (errorHandler.buildDepError "XenDevice"))
             ];
           buildable = if !flags.hans && !flags.network || !flags.hans && system.isHalvm
             then false
@@ -108,22 +77,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test-tor" = {
           depends = [
-            (hsPkgs."asn1-types" or (buildDepError "asn1-types"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."haskell-tor" or (buildDepError "haskell-tor"))
-            (hsPkgs."hourglass" or (buildDepError "hourglass"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."pretty-hex" or (buildDepError "pretty-hex"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."x509" or (buildDepError "x509"))
+            (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+            (hsPkgs."haskell-tor" or (errorHandler.buildDepError "haskell-tor"))
+            (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+            (hsPkgs."pretty-hex" or (errorHandler.buildDepError "pretty-hex"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             ];
           buildable = true;
           };

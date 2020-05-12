@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { production = false; };
     package = {
@@ -56,29 +25,29 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."amazonka" or (buildDepError "amazonka"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."markdown" or (buildDepError "markdown"))
-          (hsPkgs."natural-transformation" or (buildDepError "natural-transformation"))
-          (hsPkgs."rfc-http-client" or (buildDepError "rfc-http-client"))
-          (hsPkgs."rfc-prelude" or (buildDepError "rfc-prelude"))
-          (hsPkgs."rfc-psql" or (buildDepError "rfc-psql"))
-          (hsPkgs."rfc-redis" or (buildDepError "rfc-redis"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."servant-blaze" or (buildDepError "servant-blaze"))
-          (hsPkgs."servant-docs" or (buildDepError "servant-docs"))
-          (hsPkgs."servant-server" or (buildDepError "servant-server"))
-          (hsPkgs."servant-swagger" or (buildDepError "servant-swagger"))
-          (hsPkgs."servant-swagger-ui" or (buildDepError "servant-swagger-ui"))
-          (hsPkgs."swagger2" or (buildDepError "swagger2"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wreq" or (buildDepError "wreq"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."amazonka" or (errorHandler.buildDepError "amazonka"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."markdown" or (errorHandler.buildDepError "markdown"))
+          (hsPkgs."natural-transformation" or (errorHandler.buildDepError "natural-transformation"))
+          (hsPkgs."rfc-http-client" or (errorHandler.buildDepError "rfc-http-client"))
+          (hsPkgs."rfc-prelude" or (errorHandler.buildDepError "rfc-prelude"))
+          (hsPkgs."rfc-psql" or (errorHandler.buildDepError "rfc-psql"))
+          (hsPkgs."rfc-redis" or (errorHandler.buildDepError "rfc-redis"))
+          (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+          (hsPkgs."servant-blaze" or (errorHandler.buildDepError "servant-blaze"))
+          (hsPkgs."servant-docs" or (errorHandler.buildDepError "servant-docs"))
+          (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
+          (hsPkgs."servant-swagger" or (errorHandler.buildDepError "servant-swagger"))
+          (hsPkgs."servant-swagger-ui" or (errorHandler.buildDepError "servant-swagger-ui"))
+          (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           ];
         buildable = true;
         };

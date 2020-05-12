@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { debug = false; };
     package = {
@@ -56,78 +25,78 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."hashtables" or (buildDepError "hashtables"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."http2" or (buildDepError "http2"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."clock" or (buildDepError "clock"))
-          (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
-          (hsPkgs."pqueue" or (buildDepError "pqueue"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
+          (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+          (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
+          (hsPkgs."pqueue" or (errorHandler.buildDepError "pqueue"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
           ];
         libs = [
-          (pkgs."ssl" or (sysDepError "ssl"))
-          (pkgs."crypto" or (sysDepError "crypto"))
+          (pkgs."ssl" or (errorHandler.sysDepError "ssl"))
+          (pkgs."crypto" or (errorHandler.sysDepError "crypto"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
+          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")))
           ];
         buildable = true;
         };
       tests = {
         "compiling-ok" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."second-transfer" or (buildDepError "second-transfer"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."second-transfer" or (errorHandler.buildDepError "second-transfer"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             ];
           buildable = true;
           };
         "hunit-tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."http2" or (buildDepError "http2"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."hashtables" or (buildDepError "hashtables"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
-            (hsPkgs."pqueue" or (buildDepError "pqueue"))
-            (hsPkgs."clock" or (buildDepError "clock"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
+            (hsPkgs."pqueue" or (errorHandler.buildDepError "pqueue"))
+            (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
+            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")))
             ];
           buildable = true;
           };

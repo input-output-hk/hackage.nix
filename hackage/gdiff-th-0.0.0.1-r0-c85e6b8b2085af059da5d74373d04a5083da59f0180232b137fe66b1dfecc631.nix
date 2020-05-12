@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -50,44 +19,44 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       homepage = "";
       url = "";
       synopsis = "Generate gdiff GADTs and Instances.";
-      description = "Generate gdiff GADTs and Instances. Very Alpha. Does not yet support GADTs among other this I'm sure.";
+      description = "Generate gdiff GADTs and Instances. Very Alpha. Does not yet support GADTs among other this I'm sure.       ";
       buildType = "Simple";
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."uniplate" or (buildDepError "uniplate"))
-          (hsPkgs."tuple" or (buildDepError "tuple"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."specialize-th" or (buildDepError "specialize-th"))
-          (hsPkgs."universe-th" or (buildDepError "universe-th"))
-          (hsPkgs."type-sub-th" or (buildDepError "type-sub-th"))
-          (hsPkgs."gdiff" or (buildDepError "gdiff"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
+          (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."specialize-th" or (errorHandler.buildDepError "specialize-th"))
+          (hsPkgs."universe-th" or (errorHandler.buildDepError "universe-th"))
+          (hsPkgs."type-sub-th" or (errorHandler.buildDepError "type-sub-th"))
+          (hsPkgs."gdiff" or (errorHandler.buildDepError "gdiff"))
           ];
         buildable = true;
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."DebugTraceHelpers" or (buildDepError "DebugTraceHelpers"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."uniplate" or (buildDepError "uniplate"))
-            (hsPkgs."checkers" or (buildDepError "checkers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."th-instances" or (buildDepError "th-instances"))
-            (hsPkgs."specialize-th" or (buildDepError "specialize-th"))
-            (hsPkgs."universe-th" or (buildDepError "universe-th"))
-            (hsPkgs."type-sub-th" or (buildDepError "type-sub-th"))
-            (hsPkgs."gdiff" or (buildDepError "gdiff"))
-            (hsPkgs."tuple" or (buildDepError "tuple"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."DebugTraceHelpers" or (errorHandler.buildDepError "DebugTraceHelpers"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
+            (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."th-instances" or (errorHandler.buildDepError "th-instances"))
+            (hsPkgs."specialize-th" or (errorHandler.buildDepError "specialize-th"))
+            (hsPkgs."universe-th" or (errorHandler.buildDepError "universe-th"))
+            (hsPkgs."type-sub-th" or (errorHandler.buildDepError "type-sub-th"))
+            (hsPkgs."gdiff" or (errorHandler.buildDepError "gdiff"))
+            (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
             ];
           buildable = true;
           };

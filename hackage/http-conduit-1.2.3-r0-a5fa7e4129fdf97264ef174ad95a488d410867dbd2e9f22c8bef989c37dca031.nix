@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { network-bytestring = false; };
     package = {
@@ -56,77 +25,79 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."failure" or (buildDepError "failure"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."zlib-conduit" or (buildDepError "zlib-conduit"))
-          (hsPkgs."blaze-builder-conduit" or (buildDepError "blaze-builder-conduit"))
-          (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
-          (hsPkgs."tls" or (buildDepError "tls"))
-          (hsPkgs."tls-extra" or (buildDepError "tls-extra"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."certificate" or (buildDepError "certificate"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-          (hsPkgs."asn1-data" or (buildDepError "asn1-data"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."socks" or (buildDepError "socks"))
-          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."zlib-conduit" or (errorHandler.buildDepError "zlib-conduit"))
+          (hsPkgs."blaze-builder-conduit" or (errorHandler.buildDepError "blaze-builder-conduit"))
+          (hsPkgs."attoparsec-conduit" or (errorHandler.buildDepError "attoparsec-conduit"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+          (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."cprng-aes" or (errorHandler.buildDepError "cprng-aes"))
+          (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
+          (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+          (hsPkgs."asn1-data" or (errorHandler.buildDepError "asn1-data"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+          (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+          (hsPkgs."socks" or (errorHandler.buildDepError "socks"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
           ] ++ (if flags.network-bytestring
           then [
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-bytestring" or (buildDepError "network-bytestring"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
             ]
-          else [ (hsPkgs."network" or (buildDepError "network")) ]);
+          else [
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            ]);
         buildable = true;
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."failure" or (buildDepError "failure"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."zlib-conduit" or (buildDepError "zlib-conduit"))
-            (hsPkgs."blaze-builder-conduit" or (buildDepError "blaze-builder-conduit"))
-            (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
-            (hsPkgs."tls" or (buildDepError "tls"))
-            (hsPkgs."tls-extra" or (buildDepError "tls-extra"))
-            (hsPkgs."monad-control" or (buildDepError "monad-control"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."certificate" or (buildDepError "certificate"))
-            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."asn1-data" or (buildDepError "asn1-data"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."socks" or (buildDepError "socks"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."zlib-conduit" or (errorHandler.buildDepError "zlib-conduit"))
+            (hsPkgs."blaze-builder-conduit" or (errorHandler.buildDepError "blaze-builder-conduit"))
+            (hsPkgs."attoparsec-conduit" or (errorHandler.buildDepError "attoparsec-conduit"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."cprng-aes" or (errorHandler.buildDepError "cprng-aes"))
+            (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
+            (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
+            (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
+            (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+            (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+            (hsPkgs."asn1-data" or (errorHandler.buildDepError "asn1-data"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+            (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+            (hsPkgs."socks" or (errorHandler.buildDepError "socks"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             ];
           buildable = true;
           };

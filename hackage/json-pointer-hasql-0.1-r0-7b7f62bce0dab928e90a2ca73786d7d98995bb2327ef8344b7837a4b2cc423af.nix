@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -47,7 +16,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       copyright = "(c) 2016, Sannsyn AS";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
       author = "Nikita Volkov <nikita.y.volkov@mail.ru>";
-      homepage = "https://github.com/sannsyn/json-pointer-hasql";
+      homepage = "https://github.com/sannsyn/json-pointer-hasql ";
       url = "";
       synopsis = "JSON Pointer extensions for Hasql";
       description = "";
@@ -56,23 +25,23 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."hasql" or (buildDepError "hasql"))
-          (hsPkgs."json-pointer" or (buildDepError "json-pointer"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
+          (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+          (hsPkgs."json-pointer" or (errorHandler.buildDepError "json-pointer"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           ];
         buildable = true;
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."hasql" or (buildDepError "hasql"))
-            (hsPkgs."json-pointer" or (buildDepError "json-pointer"))
-            (hsPkgs."json-pointer-hasql" or (buildDepError "json-pointer-hasql"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."rebase" or (buildDepError "rebase"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."json-pointer" or (errorHandler.buildDepError "json-pointer"))
+            (hsPkgs."json-pointer-hasql" or (errorHandler.buildDepError "json-pointer-hasql"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."rebase" or (errorHandler.buildDepError "rebase"))
             ];
           buildable = true;
           };

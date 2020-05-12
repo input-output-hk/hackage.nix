@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       use-template-haskell = true;
@@ -61,98 +30,100 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."bimap" or (buildDepError "bimap"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."constraints" or (buildDepError "constraints"))
-          (hsPkgs."contravariant" or (buildDepError "contravariant"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-          (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-          (hsPkgs."dependent-sum-template" or (buildDepError "dependent-sum-template"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exception-transformers" or (buildDepError "exception-transformers"))
-          (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom"))
-          (hsPkgs."jsaddle" or (buildDepError "jsaddle"))
-          (hsPkgs."keycode" or (buildDepError "keycode"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-          (hsPkgs."reflex" or (buildDepError "reflex"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."these" or (buildDepError "these"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."zenc" or (buildDepError "zenc"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+          (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
+          (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
+          (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
+          (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+          (hsPkgs."dependent-sum-template" or (errorHandler.buildDepError "dependent-sum-template"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."exception-transformers" or (errorHandler.buildDepError "exception-transformers"))
+          (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
+          (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
+          (hsPkgs."keycode" or (errorHandler.buildDepError "keycode"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
+          (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."these" or (errorHandler.buildDepError "these"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."zenc" or (errorHandler.buildDepError "zenc"))
           ] ++ (if compiler.isGhcjs && true
           then [
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             ]
-          else (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix")))) ++ (if flags.use-template-haskell
+          else (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix")))) ++ (if flags.use-template-haskell
           then [
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."dependent-sum-template" or (buildDepError "dependent-sum-template"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."dependent-sum-template" or (errorHandler.buildDepError "dependent-sum-template"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             ]
-          else [ (hsPkgs."dependent-sum" or (buildDepError "dependent-sum")) ]);
+          else [
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            ]);
         buildable = true;
         };
       tests = {
         "hlint" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hlint" or (buildDepError "hlint"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             ];
           buildable = true;
           };
         "hydration" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."chrome-test-utils" or (buildDepError "chrome-test-utils"))
-            (hsPkgs."constraints" or (buildDepError "constraints"))
-            (hsPkgs."constraints-extras" or (buildDepError "constraints-extras"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."dependent-sum-template" or (buildDepError "dependent-sum-template"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-webdriver" or (buildDepError "hspec-webdriver"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."jsaddle" or (buildDepError "jsaddle"))
-            (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
-            (hsPkgs."reflex-dom-core" or (buildDepError "reflex-dom-core"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."silently" or (buildDepError "silently"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."webdriver" or (buildDepError "webdriver"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."chrome-test-utils" or (errorHandler.buildDepError "chrome-test-utils"))
+            (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
+            (hsPkgs."constraints-extras" or (errorHandler.buildDepError "constraints-extras"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."dependent-sum-template" or (errorHandler.buildDepError "dependent-sum-template"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hspec-webdriver" or (errorHandler.buildDepError "hspec-webdriver"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
+            (hsPkgs."jsaddle-warp" or (errorHandler.buildDepError "jsaddle-warp"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
+            (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
+            (hsPkgs."reflex-dom-core" or (errorHandler.buildDepError "reflex-dom-core"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+            (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
+            (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             ];
           buildable = if !system.isLinux || !system.isX86_64 || flags.profile-reflex
             then false
@@ -160,14 +131,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "gc" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."chrome-test-utils" or (buildDepError "chrome-test-utils"))
-            (hsPkgs."jsaddle" or (buildDepError "jsaddle"))
-            (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
-            (hsPkgs."reflex-dom-core" or (buildDepError "reflex-dom-core"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."chrome-test-utils" or (errorHandler.buildDepError "chrome-test-utils"))
+            (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
+            (hsPkgs."jsaddle-warp" or (errorHandler.buildDepError "jsaddle-warp"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
+            (hsPkgs."reflex-dom-core" or (errorHandler.buildDepError "reflex-dom-core"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = if !system.isLinux || !system.isX86_64
             then false

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { dev = false; };
     package = {
@@ -56,33 +25,33 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."free" or (buildDepError "free"))
-          (hsPkgs."ieee754" or (buildDepError "ieee754"))
-          (hsPkgs."log-domain" or (buildDepError "log-domain"))
-          (hsPkgs."math-functions" or (buildDepError "math-functions"))
-          (hsPkgs."monad-coroutine" or (buildDepError "monad-coroutine"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."statistics" or (buildDepError "statistics"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."free" or (errorHandler.buildDepError "free"))
+          (hsPkgs."ieee754" or (errorHandler.buildDepError "ieee754"))
+          (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
+          (hsPkgs."math-functions" or (errorHandler.buildDepError "math-functions"))
+          (hsPkgs."monad-coroutine" or (errorHandler.buildDepError "monad-coroutine"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         buildable = true;
         };
       exes = {
         "example" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."log-domain" or (buildDepError "log-domain"))
-            (hsPkgs."monad-bayes" or (buildDepError "monad-bayes"))
-            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
+            (hsPkgs."monad-bayes" or (errorHandler.buildDepError "monad-bayes"))
+            (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };
@@ -90,16 +59,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "monad-bayes-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."ieee754" or (buildDepError "ieee754"))
-            (hsPkgs."log-domain" or (buildDepError "log-domain"))
-            (hsPkgs."math-functions" or (buildDepError "math-functions"))
-            (hsPkgs."monad-bayes" or (buildDepError "monad-bayes"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."ieee754" or (errorHandler.buildDepError "ieee754"))
+            (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
+            (hsPkgs."math-functions" or (errorHandler.buildDepError "math-functions"))
+            (hsPkgs."monad-bayes" or (errorHandler.buildDepError "monad-bayes"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };
@@ -107,22 +76,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "ssm-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."monad-bayes" or (buildDepError "monad-bayes"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."monad-bayes" or (errorHandler.buildDepError "monad-bayes"))
             ];
           buildable = true;
           };
         "speed-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."abstract-par" or (buildDepError "abstract-par"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."log-domain" or (buildDepError "log-domain"))
-            (hsPkgs."monad-bayes" or (buildDepError "monad-bayes"))
-            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."abstract-par" or (errorHandler.buildDepError "abstract-par"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
+            (hsPkgs."monad-bayes" or (errorHandler.buildDepError "monad-bayes"))
+            (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -47,7 +16,7 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       copyright = "(c) 2017, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
       author = "Nikita Volkov <nikita.y.volkov@mail.ru>";
-      homepage = "https://github.com/nikita-volkov/concurrent-buffer";
+      homepage = "https://github.com/nikita-volkov/concurrent-buffer ";
       url = "";
       synopsis = "Concurrent expanding buffer";
       description = "";
@@ -56,23 +25,23 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."bug" or (buildDepError "bug"))
-          (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."bug" or (errorHandler.buildDepError "bug"))
+          (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
           ];
         buildable = true;
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs."concurrent-buffer" or (buildDepError "concurrent-buffer"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."bug" or (buildDepError "bug"))
-            (hsPkgs."rerebase" or (buildDepError "rerebase"))
+            (hsPkgs."concurrent-buffer" or (errorHandler.buildDepError "concurrent-buffer"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."bug" or (errorHandler.buildDepError "bug"))
+            (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
             ];
           buildable = true;
           };
@@ -80,10 +49,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "benchmarks" = {
           depends = [
-            (hsPkgs."concurrent-buffer" or (buildDepError "concurrent-buffer"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."bug" or (buildDepError "bug"))
-            (hsPkgs."rerebase" or (buildDepError "rerebase"))
+            (hsPkgs."concurrent-buffer" or (errorHandler.buildDepError "concurrent-buffer"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."bug" or (errorHandler.buildDepError "bug"))
+            (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
             ];
           buildable = true;
           };

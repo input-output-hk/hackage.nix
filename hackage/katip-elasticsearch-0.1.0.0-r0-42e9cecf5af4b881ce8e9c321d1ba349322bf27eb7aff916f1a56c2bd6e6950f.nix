@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { lib-werror = false; };
     package = {
@@ -56,52 +25,52 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."katip" or (buildDepError "katip"))
-          (hsPkgs."bloodhound" or (buildDepError "bloodhound"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."enclosed-exceptions" or (buildDepError "enclosed-exceptions"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."retry" or (buildDepError "retry"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."katip" or (errorHandler.buildDepError "katip"))
+          (hsPkgs."bloodhound" or (errorHandler.buildDepError "bloodhound"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."enclosed-exceptions" or (errorHandler.buildDepError "enclosed-exceptions"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
           ];
         buildable = true;
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."katip-elasticsearch" or (buildDepError "katip-elasticsearch"))
-            (hsPkgs."katip" or (buildDepError "katip"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."bloodhound" or (buildDepError "bloodhound"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."katip-elasticsearch" or (errorHandler.buildDepError "katip-elasticsearch"))
+            (hsPkgs."katip" or (errorHandler.buildDepError "katip"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."bloodhound" or (errorHandler.buildDepError "bloodhound"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             ];
           buildable = true;
           };
@@ -109,16 +78,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."katip-elasticsearch" or (buildDepError "katip-elasticsearch"))
-            (hsPkgs."bloodhound" or (buildDepError "bloodhound"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."rng-utils" or (buildDepError "rng-utils"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."katip-elasticsearch" or (errorHandler.buildDepError "katip-elasticsearch"))
+            (hsPkgs."bloodhound" or (errorHandler.buildDepError "bloodhound"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."rng-utils" or (errorHandler.buildDepError "rng-utils"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,37 +25,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-          (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"))
-          (hsPkgs."Chart-diagrams" or (buildDepError "Chart-diagrams"))
-          (hsPkgs."Chart" or (buildDepError "Chart"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
-          (hsPkgs."statistics" or (buildDepError "statistics"))
-          (hsPkgs."colour" or (buildDepError "colour"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."pretty-display" or (buildDepError "pretty-display"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+          (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
+          (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"))
+          (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
+          (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
+          (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."either" or (errorHandler.buildDepError "either"))
+          (hsPkgs."pretty-display" or (errorHandler.buildDepError "pretty-display"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
           ];
         buildable = true;
         };
       tests = {
         "amby-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."amby" or (buildDepError "amby"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."amby" or (errorHandler.buildDepError "amby"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };

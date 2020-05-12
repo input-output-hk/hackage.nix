@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { debug = false; };
     package = {
@@ -56,110 +25,110 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."safecopy" or (buildDepError "safecopy"))
-          (hsPkgs."acid-state" or (buildDepError "acid-state"))
-          (hsPkgs."concurrent-extra" or (buildDepError "concurrent-extra"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."zeromq4-haskell" or (buildDepError "zeromq4-haskell"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+          (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+          (hsPkgs."concurrent-extra" or (errorHandler.buildDepError "concurrent-extra"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           ];
         buildable = true;
         };
       tests = {
         "Simple" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
             ];
           buildable = true;
           };
         "SlaveUpdates" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
             ];
           buildable = true;
           };
         "CRCFail" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
             ];
           buildable = true;
           };
         "CheckpointSync" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
             ];
           buildable = true;
           };
         "OrderingRandom" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
             ];
           buildable = true;
           };
         "NReplication" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
             ];
           buildable = true;
           };
         "UpdateError" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
             ];
           buildable = true;
           };
         "SyncTimeout" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
             ];
           buildable = true;
           };
@@ -167,48 +136,48 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "Local" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             ];
           buildable = true;
           };
         "MasterOnly" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
             ];
           buildable = true;
           };
         "MasterSlave" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
             ];
           buildable = true;
           };
         "Slave" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."safecopy" or (buildDepError "safecopy"))
-            (hsPkgs."acid-state" or (buildDepError "acid-state"))
-            (hsPkgs."acid-state-dist" or (buildDepError "acid-state-dist"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
+            (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
+            (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
             ];
           buildable = true;
           };

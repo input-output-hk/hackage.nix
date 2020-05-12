@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,54 +25,54 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."connection" or (buildDepError "connection"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."word8" or (buildDepError "word8"))
-          (hsPkgs."rolling-queue" or (buildDepError "rolling-queue"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."list-t" or (buildDepError "list-t"))
-          (hsPkgs."monadIO" or (buildDepError "monadIO"))
-          (hsPkgs."derive" or (buildDepError "derive"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."stm-delay" or (buildDepError "stm-delay"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
+          (hsPkgs."rolling-queue" or (errorHandler.buildDepError "rolling-queue"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."either" or (errorHandler.buildDepError "either"))
+          (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
+          (hsPkgs."monadIO" or (errorHandler.buildDepError "monadIO"))
+          (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."stm-delay" or (errorHandler.buildDepError "stm-delay"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           ];
         buildable = true;
         };
       tests = {
         "imap-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."connection" or (buildDepError "connection"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."word8" or (buildDepError "word8"))
-            (hsPkgs."rolling-queue" or (buildDepError "rolling-queue"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."list-t" or (buildDepError "list-t"))
-            (hsPkgs."monadIO" or (buildDepError "monadIO"))
-            (hsPkgs."derive" or (buildDepError "derive"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."stm-delay" or (buildDepError "stm-delay"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
+            (hsPkgs."rolling-queue" or (errorHandler.buildDepError "rolling-queue"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
+            (hsPkgs."monadIO" or (errorHandler.buildDepError "monadIO"))
+            (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."stm-delay" or (errorHandler.buildDepError "stm-delay"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             ];
           buildable = true;
           };

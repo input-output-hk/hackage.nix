@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { curl = false; libcurl = false; threaded = true; };
     package = {
@@ -56,117 +25,135 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ((([
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."binary-shared" or (buildDepError "binary-shared"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."ghc" or (buildDepError "ghc"))
-          (hsPkgs."ltk" or (buildDepError "ltk"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."enumerator" or (buildDepError "enumerator"))
-          (hsPkgs."attoparsec-enumerator" or (buildDepError "attoparsec-enumerator"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."strict" or (buildDepError "strict"))
+          (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."binary-shared" or (errorHandler.buildDepError "binary-shared"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+          (hsPkgs."ltk" or (errorHandler.buildDepError "ltk"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
+          (hsPkgs."attoparsec-enumerator" or (errorHandler.buildDepError "attoparsec-enumerator"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           ] ++ (if compiler.isGhc && (compiler.version).ge "7.4"
-          then [ (hsPkgs."haddock" or (buildDepError "haddock")) ]
+          then [ (hsPkgs."haddock" or (errorHandler.buildDepError "haddock")) ]
           else if compiler.isGhc && (compiler.version).ge "7.2"
-            then [ (hsPkgs."haddock" or (buildDepError "haddock")) ]
+            then [
+              (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
+              ]
             else if compiler.isGhc && (compiler.version).ge "7.0"
-              then [ (hsPkgs."haddock" or (buildDepError "haddock")) ]
+              then [
+                (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
+                ]
               else if compiler.isGhc && (compiler.version).ge "6.12"
-                then [ (hsPkgs."haddock" or (buildDepError "haddock")) ]
+                then [
+                  (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
+                  ]
                 else [
-                  (hsPkgs."haddock-leksah" or (buildDepError "haddock-leksah"))
+                  (hsPkgs."haddock-leksah" or (errorHandler.buildDepError "haddock-leksah"))
                   ])) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
-          then [ (hsPkgs."process" or (buildDepError "process")) ]
+          then [ (hsPkgs."process" or (errorHandler.buildDepError "process")) ]
           else [
-            (hsPkgs."process-leksah" or (buildDepError "process-leksah"))
+            (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
             ])) ++ (if system.isWindows
-          then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
+          then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
-            (hsPkgs."unix" or (buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (flags.libcurl) (hsPkgs."curl" or (buildDepError "curl"));
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            ])) ++ (pkgs.lib).optional (flags.libcurl) (hsPkgs."curl" or (errorHandler.buildDepError "curl"));
         libs = (pkgs.lib).optionals (system.isWindows) [
-          (pkgs."kernel32" or (sysDepError "kernel32"))
-          (pkgs."pango-1.0" or (sysDepError "pango-1.0"))
-          (pkgs."glib-2.0" or (sysDepError "glib-2.0"))
+          (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"))
+          (pkgs."pango-1.0" or (errorHandler.sysDepError "pango-1.0"))
+          (pkgs."glib-2.0" or (errorHandler.sysDepError "glib-2.0"))
           ];
         buildable = true;
         };
       exes = {
         "leksah-server" = {
           depends = ((([
-            (hsPkgs."Cabal" or (buildDepError "Cabal"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."binary-shared" or (buildDepError "binary-shared"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."ghc" or (buildDepError "ghc"))
-            (hsPkgs."ltk" or (buildDepError "ltk"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."pretty" or (buildDepError "pretty"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."enumerator" or (buildDepError "enumerator"))
-            (hsPkgs."attoparsec-enumerator" or (buildDepError "attoparsec-enumerator"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."strict" or (buildDepError "strict"))
+            (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."binary-shared" or (errorHandler.buildDepError "binary-shared"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            (hsPkgs."ltk" or (errorHandler.buildDepError "ltk"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
+            (hsPkgs."attoparsec-enumerator" or (errorHandler.buildDepError "attoparsec-enumerator"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             ] ++ (if compiler.isGhc && (compiler.version).ge "7.4"
-            then [ (hsPkgs."haddock" or (buildDepError "haddock")) ]
+            then [
+              (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
+              ]
             else if compiler.isGhc && (compiler.version).ge "7.2"
-              then [ (hsPkgs."haddock" or (buildDepError "haddock")) ]
+              then [
+                (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
+                ]
               else if compiler.isGhc && (compiler.version).ge "7.0"
-                then [ (hsPkgs."haddock" or (buildDepError "haddock")) ]
+                then [
+                  (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
+                  ]
                 else if compiler.isGhc && (compiler.version).ge "6.12"
-                  then [ (hsPkgs."haddock" or (buildDepError "haddock")) ]
+                  then [
+                    (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
+                    ]
                   else [
-                    (hsPkgs."haddock-leksah" or (buildDepError "haddock-leksah"))
+                    (hsPkgs."haddock-leksah" or (errorHandler.buildDepError "haddock-leksah"))
                     ])) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
-            then [ (hsPkgs."process" or (buildDepError "process")) ]
+            then [
+              (hsPkgs."process" or (errorHandler.buildDepError "process"))
+              ]
             else [
-              (hsPkgs."process-leksah" or (buildDepError "process-leksah"))
+              (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
               ])) ++ (if system.isWindows
-            then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
+            then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [
-              (hsPkgs."unix" or (buildDepError "unix"))
-              ])) ++ (pkgs.lib).optional (flags.libcurl) (hsPkgs."curl" or (buildDepError "curl"));
+              (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+              ])) ++ (pkgs.lib).optional (flags.libcurl) (hsPkgs."curl" or (errorHandler.buildDepError "curl"));
           libs = (pkgs.lib).optionals (system.isWindows) [
-            (pkgs."kernel32" or (sysDepError "kernel32"))
-            (pkgs."pango-1.0" or (sysDepError "pango-1.0"))
-            (pkgs."glib-2.0" or (sysDepError "glib-2.0"))
+            (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"))
+            (pkgs."pango-1.0" or (errorHandler.sysDepError "pango-1.0"))
+            (pkgs."glib-2.0" or (errorHandler.sysDepError "glib-2.0"))
             ];
           buildable = true;
           };
         "leksahecho" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."enumerator" or (buildDepError "enumerator"))
-            (hsPkgs."attoparsec-enumerator" or (buildDepError "attoparsec-enumerator"))
-            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
+            (hsPkgs."attoparsec-enumerator" or (errorHandler.buildDepError "attoparsec-enumerator"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
-            then [ (hsPkgs."process" or (buildDepError "process")) ]
+            then [
+              (hsPkgs."process" or (errorHandler.buildDepError "process"))
+              ]
             else [
-              (hsPkgs."process-leksah" or (buildDepError "process-leksah"))
+              (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
               ]);
           buildable = true;
           };
@@ -174,16 +161,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test-tool" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."leksah-server" or (buildDepError "leksah-server"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."enumerator" or (buildDepError "enumerator"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."leksah-server" or (errorHandler.buildDepError "leksah-server"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
             ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
-            then [ (hsPkgs."process" or (buildDepError "process")) ]
+            then [
+              (hsPkgs."process" or (errorHandler.buildDepError "process"))
+              ]
             else [
-              (hsPkgs."process-leksah" or (buildDepError "process-leksah"))
+              (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
               ]);
           buildable = true;
           };

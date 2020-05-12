@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       data-dword-inst = true;
@@ -61,32 +30,32 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bits" or (buildDepError "bits"))
-          (hsPkgs."bytes" or (buildDepError "bytes"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bits" or (errorHandler.buildDepError "bits"))
+          (hsPkgs."bytes" or (errorHandler.buildDepError "bytes"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           ] ++ (pkgs.lib).optionals (flags.network-ip-inst) [
-          (hsPkgs."network-ip" or (buildDepError "network-ip"))
-          (hsPkgs."data-dword" or (buildDepError "data-dword"))
-          ]) ++ (pkgs.lib).optional (flags.data-dword-inst) (hsPkgs."data-dword" or (buildDepError "data-dword"))) ++ (pkgs.lib).optionals (flags.cryptonite-inst) [
-          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-          (hsPkgs."memory" or (buildDepError "memory"))
+          (hsPkgs."network-ip" or (errorHandler.buildDepError "network-ip"))
+          (hsPkgs."data-dword" or (errorHandler.buildDepError "data-dword"))
+          ]) ++ (pkgs.lib).optional (flags.data-dword-inst) (hsPkgs."data-dword" or (errorHandler.buildDepError "data-dword"))) ++ (pkgs.lib).optionals (flags.cryptonite-inst) [
+          (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+          (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           ];
         buildable = true;
         };
       exes = {
         "membits" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."memorable-bits" or (buildDepError "memorable-bits"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."memorable-bits" or (errorHandler.buildDepError "memorable-bits"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             ];
           buildable = if !flags.exes then false else true;
           };
@@ -94,14 +63,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test-memorable-bits" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."memorable-bits" or (buildDepError "memorable-bits"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."memorable-bits" or (errorHandler.buildDepError "memorable-bits"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             ];
           buildable = true;
           };
@@ -109,11 +78,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench-memorable-bits" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."memorable-bits" or (buildDepError "memorable-bits"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."memorable-bits" or (errorHandler.buildDepError "memorable-bits"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { test-hlint = true; mock-example = true; gpio-example = true; };
     package = {
@@ -56,50 +25,50 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."lucid" or (buildDepError "lucid"))
-          (hsPkgs."mellon-core" or (buildDepError "mellon-core"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."servant-client" or (buildDepError "servant-client"))
-          (hsPkgs."servant-docs" or (buildDepError "servant-docs"))
-          (hsPkgs."servant-lucid" or (buildDepError "servant-lucid"))
-          (hsPkgs."servant-server" or (buildDepError "servant-server"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."warp" or (buildDepError "warp"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
+          (hsPkgs."mellon-core" or (errorHandler.buildDepError "mellon-core"))
+          (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+          (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
+          (hsPkgs."servant-docs" or (errorHandler.buildDepError "servant-docs"))
+          (hsPkgs."servant-lucid" or (errorHandler.buildDepError "servant-lucid"))
+          (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           ];
         buildable = true;
         };
       exes = {
         "mock-mellon-server" = {
           depends = (pkgs.lib).optionals (!(!flags.mock-example)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mellon-core" or (buildDepError "mellon-core"))
-            (hsPkgs."mellon-web" or (buildDepError "mellon-web"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."mellon-core" or (errorHandler.buildDepError "mellon-core"))
+            (hsPkgs."mellon-web" or (errorHandler.buildDepError "mellon-web"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];
           buildable = if !flags.mock-example then false else true;
           };
         "gpio-mellon-server" = {
           depends = (pkgs.lib).optionals (!(!flags.gpio-example)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."hpio" or (buildDepError "hpio"))
-            (hsPkgs."mellon-core" or (buildDepError "mellon-core"))
-            (hsPkgs."mellon-gpio" or (buildDepError "mellon-gpio"))
-            (hsPkgs."mellon-web" or (buildDepError "mellon-web"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."hpio" or (errorHandler.buildDepError "hpio"))
+            (hsPkgs."mellon-core" or (errorHandler.buildDepError "mellon-core"))
+            (hsPkgs."mellon-gpio" or (errorHandler.buildDepError "mellon-gpio"))
+            (hsPkgs."mellon-web" or (errorHandler.buildDepError "mellon-web"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];
           buildable = if !flags.gpio-example then false else true;
           };
@@ -107,34 +76,34 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "hlint" = {
           depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hlint" or (buildDepError "hlint"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             ];
           buildable = if !flags.test-hlint then false else true;
           };
         "spec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hspec-wai" or (buildDepError "hspec-wai"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."lucid" or (buildDepError "lucid"))
-            (hsPkgs."mellon-core" or (buildDepError "mellon-core"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."servant-client" or (buildDepError "servant-client"))
-            (hsPkgs."servant-docs" or (buildDepError "servant-docs"))
-            (hsPkgs."servant-lucid" or (buildDepError "servant-lucid"))
-            (hsPkgs."servant-server" or (buildDepError "servant-server"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hspec-wai" or (errorHandler.buildDepError "hspec-wai"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
+            (hsPkgs."mellon-core" or (errorHandler.buildDepError "mellon-core"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+            (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
+            (hsPkgs."servant-docs" or (errorHandler.buildDepError "servant-docs"))
+            (hsPkgs."servant-lucid" or (errorHandler.buildDepError "servant-lucid"))
+            (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];
           buildable = true;
           };

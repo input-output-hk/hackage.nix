@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { lib-werror = false; };
     package = {
@@ -56,47 +25,47 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."katip" or (buildDepError "katip"))
-          (hsPkgs."wai-middleware-metrics" or (buildDepError "wai-middleware-metrics"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."ekg-core" or (buildDepError "ekg-core"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."shelly" or (buildDepError "shelly"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."prometheus" or (buildDepError "prometheus"))
-          (hsPkgs."raw-strings-qq" or (buildDepError "raw-strings-qq"))
-          (hsPkgs."microlens" or (buildDepError "microlens"))
-          (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."ekg-prometheus-adapter" or (buildDepError "ekg-prometheus-adapter"))
-          (hsPkgs."inline-c" or (buildDepError "inline-c"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."unix" or (buildDepError "unix"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."katip" or (errorHandler.buildDepError "katip"))
+          (hsPkgs."wai-middleware-metrics" or (errorHandler.buildDepError "wai-middleware-metrics"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."prometheus" or (errorHandler.buildDepError "prometheus"))
+          (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
+          (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+          (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."ekg-prometheus-adapter" or (errorHandler.buildDepError "ekg-prometheus-adapter"))
+          (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           ];
         buildable = true;
         };
       tests = {
         "ridley-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."ridley" or (buildDepError "ridley"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."ekg-core" or (buildDepError "ekg-core"))
-            (hsPkgs."prometheus" or (buildDepError "prometheus"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."ekg-prometheus-adapter" or (buildDepError "ekg-prometheus-adapter"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."string-conv" or (buildDepError "string-conv"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."ridley" or (errorHandler.buildDepError "ridley"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
+            (hsPkgs."prometheus" or (errorHandler.buildDepError "prometheus"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."ekg-prometheus-adapter" or (errorHandler.buildDepError "ekg-prometheus-adapter"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."string-conv" or (errorHandler.buildDepError "string-conv"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             ];
           buildable = true;
           };

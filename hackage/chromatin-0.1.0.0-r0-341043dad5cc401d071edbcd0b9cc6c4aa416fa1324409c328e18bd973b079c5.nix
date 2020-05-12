@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,59 +25,59 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."Glob" or (buildDepError "Glob"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."messagepack" or (buildDepError "messagepack"))
-          (hsPkgs."nvim-hs" or (buildDepError "nvim-hs"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."ribosome" or (buildDepError "ribosome"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-          (hsPkgs."stm-conduit" or (buildDepError "stm-conduit"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."typed-process" or (buildDepError "typed-process"))
-          (hsPkgs."unliftio" or (buildDepError "unliftio"))
+          (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."messagepack" or (errorHandler.buildDepError "messagepack"))
+          (hsPkgs."nvim-hs" or (errorHandler.buildDepError "nvim-hs"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."ribosome" or (errorHandler.buildDepError "ribosome"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
+          (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
+          (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           ];
         buildable = true;
         };
       exes = {
         "chromatin" = {
           depends = [
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."chromatin" or (buildDepError "chromatin"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."messagepack" or (buildDepError "messagepack"))
-            (hsPkgs."nvim-hs" or (buildDepError "nvim-hs"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."ribosome" or (buildDepError "ribosome"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-            (hsPkgs."stm-conduit" or (buildDepError "stm-conduit"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."typed-process" or (buildDepError "typed-process"))
-            (hsPkgs."unliftio" or (buildDepError "unliftio"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."chromatin" or (errorHandler.buildDepError "chromatin"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."messagepack" or (errorHandler.buildDepError "messagepack"))
+            (hsPkgs."nvim-hs" or (errorHandler.buildDepError "nvim-hs"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."ribosome" or (errorHandler.buildDepError "ribosome"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
+            (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
+            (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             ];
           buildable = true;
           };
@@ -116,61 +85,61 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "chromatin-functional" = {
           depends = [
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."HTF" or (buildDepError "HTF"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."chromatin" or (buildDepError "chromatin"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."messagepack" or (buildDepError "messagepack"))
-            (hsPkgs."nvim-hs" or (buildDepError "nvim-hs"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."ribosome" or (buildDepError "ribosome"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-            (hsPkgs."stm-conduit" or (buildDepError "stm-conduit"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."typed-process" or (buildDepError "typed-process"))
-            (hsPkgs."unliftio" or (buildDepError "unliftio"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."chromatin" or (errorHandler.buildDepError "chromatin"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."messagepack" or (errorHandler.buildDepError "messagepack"))
+            (hsPkgs."nvim-hs" or (errorHandler.buildDepError "nvim-hs"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."ribosome" or (errorHandler.buildDepError "ribosome"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
+            (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
+            (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             ];
           buildable = true;
           };
         "chromatin-unit" = {
           depends = [
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."HTF" or (buildDepError "HTF"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."chromatin" or (buildDepError "chromatin"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."messagepack" or (buildDepError "messagepack"))
-            (hsPkgs."nvim-hs" or (buildDepError "nvim-hs"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."ribosome" or (buildDepError "ribosome"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-            (hsPkgs."stm-conduit" or (buildDepError "stm-conduit"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."typed-process" or (buildDepError "typed-process"))
-            (hsPkgs."unliftio" or (buildDepError "unliftio"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."chromatin" or (errorHandler.buildDepError "chromatin"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."messagepack" or (errorHandler.buildDepError "messagepack"))
+            (hsPkgs."nvim-hs" or (errorHandler.buildDepError "nvim-hs"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."ribosome" or (errorHandler.buildDepError "ribosome"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
+            (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
+            (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             ];
           buildable = true;
           };

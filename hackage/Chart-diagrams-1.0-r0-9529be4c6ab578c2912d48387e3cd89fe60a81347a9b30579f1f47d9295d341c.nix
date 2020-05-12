@@ -1,0 +1,48 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.6";
+      identifier = { name = "Chart-diagrams"; version = "1.0"; };
+      license = "BSD-3-Clause";
+      copyright = "Jan Bracker, 2006-2010";
+      maintainer = "Jan Bracker <jan.bracker@googlemail.com>";
+      author = "Jan Bracker <jan.bracker@googlemail.com>";
+      homepage = "https://github.com/timbod7/haskell-chart/wiki";
+      url = "";
+      synopsis = "Diagrams backend for Charts.";
+      description = "Diagrams backend for Charts.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."diagrams-core" or (errorHandler.buildDepError "diagrams-core"))
+          (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
+          (hsPkgs."diagrams-svg" or (errorHandler.buildDepError "diagrams-svg"))
+          (hsPkgs."diagrams-postscript" or (errorHandler.buildDepError "diagrams-postscript"))
+          (hsPkgs."SVGFonts" or (errorHandler.buildDepError "SVGFonts"))
+          (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
+          (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+          (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
+          ];
+        buildable = true;
+        };
+      };
+    }

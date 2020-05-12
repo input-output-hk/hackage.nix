@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { examples = false; tests = false; };
     package = {
@@ -56,39 +25,39 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."servant" or (buildDepError "servant"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           ] ++ (if compiler.isGhcjs && true
           then [
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ]
           else [
-            (hsPkgs."lucid" or (buildDepError "lucid"))
-            (hsPkgs."servant-lucid" or (buildDepError "servant-lucid"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
+            (hsPkgs."servant-lucid" or (errorHandler.buildDepError "servant-lucid"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ]);
         buildable = true;
         };
       exes = {
         "todo-mvc" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
@@ -96,11 +65,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "threejs" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
@@ -108,11 +77,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "file-reader" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
@@ -120,11 +89,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "xhr" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
@@ -132,10 +101,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "canvas2d" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
@@ -143,11 +112,11 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "router" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."miso" or (buildDepError "miso"))
-            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
+            (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
@@ -155,10 +124,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "websocket" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
@@ -166,9 +135,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "mario" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
@@ -176,10 +145,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "svg" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
@@ -187,8 +156,8 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "compose-update" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
@@ -196,10 +165,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "simple" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
@@ -207,23 +176,23 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "tests" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.tests)) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."miso" or (buildDepError "miso"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."network-uri" or (buildDepError "network-uri"))
-            (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."servant" or (buildDepError "servant"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = if !(compiler.isGhcjs && true) || !flags.tests
             then false

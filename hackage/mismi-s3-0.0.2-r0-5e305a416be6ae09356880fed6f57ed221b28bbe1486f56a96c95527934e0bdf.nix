@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,128 +25,128 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."mismi-core" or (buildDepError "mismi-core"))
-          (hsPkgs."mismi-s3-core" or (buildDepError "mismi-s3-core"))
-          (hsPkgs."mismi-p" or (buildDepError "mismi-p"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."amazonka" or (buildDepError "amazonka"))
-          (hsPkgs."amazonka-core" or (buildDepError "amazonka-core"))
-          (hsPkgs."amazonka-s3" or (buildDepError "amazonka-s3"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."extra" or (buildDepError "extra"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-bifunctors" or (buildDepError "transformers-bifunctors"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."retry" or (buildDepError "retry"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."unix-bytestring" or (buildDepError "unix-bytestring"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."uuid" or (buildDepError "uuid"))
-          (hsPkgs."unliftio" or (buildDepError "unliftio"))
-          (hsPkgs."mmorph" or (buildDepError "mmorph"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."mismi-core" or (errorHandler.buildDepError "mismi-core"))
+          (hsPkgs."mismi-s3-core" or (errorHandler.buildDepError "mismi-s3-core"))
+          (hsPkgs."mismi-p" or (errorHandler.buildDepError "mismi-p"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."amazonka" or (errorHandler.buildDepError "amazonka"))
+          (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
+          (hsPkgs."amazonka-s3" or (errorHandler.buildDepError "amazonka-s3"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."transformers-bifunctors" or (errorHandler.buildDepError "transformers-bifunctors"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."unix-bytestring" or (errorHandler.buildDepError "unix-bytestring"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+          (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+          (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
+          (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           ];
         buildable = true;
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."amazonka" or (buildDepError "amazonka"))
-            (hsPkgs."amazonka-core" or (buildDepError "amazonka-core"))
-            (hsPkgs."amazonka-s3" or (buildDepError "amazonka-s3"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."mismi-core" or (buildDepError "mismi-core"))
-            (hsPkgs."mismi-core-test" or (buildDepError "mismi-core-test"))
-            (hsPkgs."mismi-s3" or (buildDepError "mismi-s3"))
-            (hsPkgs."mismi-s3-core" or (buildDepError "mismi-s3-core"))
-            (hsPkgs."mismi-s3-core-test" or (buildDepError "mismi-s3-core-test"))
-            (hsPkgs."mismi-p" or (buildDepError "mismi-p"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transformers-bifunctors" or (buildDepError "transformers-bifunctors"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."amazonka" or (errorHandler.buildDepError "amazonka"))
+            (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
+            (hsPkgs."amazonka-s3" or (errorHandler.buildDepError "amazonka-s3"))
+            (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
+            (hsPkgs."mismi-core" or (errorHandler.buildDepError "mismi-core"))
+            (hsPkgs."mismi-core-test" or (errorHandler.buildDepError "mismi-core-test"))
+            (hsPkgs."mismi-s3" or (errorHandler.buildDepError "mismi-s3"))
+            (hsPkgs."mismi-s3-core" or (errorHandler.buildDepError "mismi-s3-core"))
+            (hsPkgs."mismi-s3-core-test" or (errorHandler.buildDepError "mismi-s3-core-test"))
+            (hsPkgs."mismi-p" or (errorHandler.buildDepError "mismi-p"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."transformers-bifunctors" or (errorHandler.buildDepError "transformers-bifunctors"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             ];
           buildable = true;
           };
         "test-io" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mismi-core" or (buildDepError "mismi-core"))
-            (hsPkgs."mismi-core-test" or (buildDepError "mismi-core-test"))
-            (hsPkgs."mismi-s3" or (buildDepError "mismi-s3"))
-            (hsPkgs."mismi-s3-core" or (buildDepError "mismi-s3-core"))
-            (hsPkgs."mismi-s3-core-test" or (buildDepError "mismi-s3-core-test"))
-            (hsPkgs."mismi-p" or (buildDepError "mismi-p"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."mismi-core" or (errorHandler.buildDepError "mismi-core"))
+            (hsPkgs."mismi-core-test" or (errorHandler.buildDepError "mismi-core-test"))
+            (hsPkgs."mismi-s3" or (errorHandler.buildDepError "mismi-s3"))
+            (hsPkgs."mismi-s3-core" or (errorHandler.buildDepError "mismi-s3-core"))
+            (hsPkgs."mismi-s3-core-test" or (errorHandler.buildDepError "mismi-s3-core-test"))
+            (hsPkgs."mismi-p" or (errorHandler.buildDepError "mismi-p"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             ];
           buildable = true;
           };
         "test-reliability" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mismi-core" or (buildDepError "mismi-core"))
-            (hsPkgs."mismi-core-test" or (buildDepError "mismi-core-test"))
-            (hsPkgs."mismi-s3" or (buildDepError "mismi-s3"))
-            (hsPkgs."mismi-p" or (buildDepError "mismi-p"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."mismi-core" or (errorHandler.buildDepError "mismi-core"))
+            (hsPkgs."mismi-core-test" or (errorHandler.buildDepError "mismi-core-test"))
+            (hsPkgs."mismi-s3" or (errorHandler.buildDepError "mismi-s3"))
+            (hsPkgs."mismi-p" or (errorHandler.buildDepError "mismi-p"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             ];
           buildable = true;
           };
@@ -185,25 +154,25 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."mismi-core" or (buildDepError "mismi-core"))
-            (hsPkgs."mismi-core-test" or (buildDepError "mismi-core-test"))
-            (hsPkgs."mismi-s3" or (buildDepError "mismi-s3"))
-            (hsPkgs."mismi-p" or (buildDepError "mismi-p"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."mismi-core" or (errorHandler.buildDepError "mismi-core"))
+            (hsPkgs."mismi-core-test" or (errorHandler.buildDepError "mismi-core-test"))
+            (hsPkgs."mismi-s3" or (errorHandler.buildDepError "mismi-s3"))
+            (hsPkgs."mismi-p" or (errorHandler.buildDepError "mismi-p"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { warp = true; webkitgtk = true; webkit2gtk = true; };
     package = {
@@ -56,37 +25,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           ];
         buildable = true;
         };
       exes = {
         "ghcjs-dom-hello" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) (if system.isOsx || system.isIos
             then [
-              (hsPkgs."jsaddle-wkwebview" or (buildDepError "jsaddle-wkwebview"))
+              (hsPkgs."jsaddle-wkwebview" or (errorHandler.buildDepError "jsaddle-wkwebview"))
               ]
             else if flags.webkit2gtk
               then [
-                (hsPkgs."jsaddle-webkit2gtk" or (buildDepError "jsaddle-webkit2gtk"))
+                (hsPkgs."jsaddle-webkit2gtk" or (errorHandler.buildDepError "jsaddle-webkit2gtk"))
                 ]
               else [
-                (hsPkgs."jsaddle-webkitgtk" or (buildDepError "jsaddle-webkitgtk"))
+                (hsPkgs."jsaddle-webkitgtk" or (errorHandler.buildDepError "jsaddle-webkitgtk"))
                 ]);
           buildable = true;
           };
         "ghcjs-dom-hello-warp" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom"))
-            (hsPkgs."jsaddle-warp" or (buildDepError "jsaddle-warp"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
+            (hsPkgs."jsaddle-warp" or (errorHandler.buildDepError "jsaddle-warp"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             ];
           buildable = if !flags.warp || compiler.isGhcjs && true || system.isIos
             then false
@@ -94,15 +63,15 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "ghcjs-dom-hello-webkitgtk" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             ] ++ (if flags.webkit2gtk
             then [
-              (hsPkgs."jsaddle-webkit2gtk" or (buildDepError "jsaddle-webkit2gtk"))
+              (hsPkgs."jsaddle-webkit2gtk" or (errorHandler.buildDepError "jsaddle-webkit2gtk"))
               ]
             else [
-              (hsPkgs."jsaddle-webkitgtk" or (buildDepError "jsaddle-webkitgtk"))
+              (hsPkgs."jsaddle-webkitgtk" or (errorHandler.buildDepError "jsaddle-webkitgtk"))
               ]);
           buildable = if !flags.webkitgtk || compiler.isGhcjs && true || system.isIos
             then false
@@ -110,10 +79,10 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
           };
         "ghcjs-dom-hello-wkwebview" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom"))
-            (hsPkgs."jsaddle-wkwebview" or (buildDepError "jsaddle-wkwebview"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
+            (hsPkgs."jsaddle-wkwebview" or (errorHandler.buildDepError "jsaddle-wkwebview"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             ];
           buildable = if !system.isOsx || compiler.isGhcjs && true
             then false

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -57,26 +26,26 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "htsn-import" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."configurator" or (buildDepError "configurator"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."htsn-common" or (buildDepError "htsn-common"))
-            (hsPkgs."hxt" or (buildDepError "hxt"))
-            (hsPkgs."groundhog" or (buildDepError "groundhog"))
-            (hsPkgs."groundhog-postgresql" or (buildDepError "groundhog-postgresql"))
-            (hsPkgs."groundhog-sqlite" or (buildDepError "groundhog-sqlite"))
-            (hsPkgs."groundhog-th" or (buildDepError "groundhog-th"))
-            (hsPkgs."MissingH" or (buildDepError "MissingH"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."tuple" or (buildDepError "tuple"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."htsn-common" or (errorHandler.buildDepError "htsn-common"))
+            (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
+            (hsPkgs."groundhog" or (errorHandler.buildDepError "groundhog"))
+            (hsPkgs."groundhog-postgresql" or (errorHandler.buildDepError "groundhog-postgresql"))
+            (hsPkgs."groundhog-sqlite" or (errorHandler.buildDepError "groundhog-sqlite"))
+            (hsPkgs."groundhog-th" or (errorHandler.buildDepError "groundhog-th"))
+            (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
             ];
           buildable = true;
           };
@@ -84,59 +53,59 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "testsuite" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."configurator" or (buildDepError "configurator"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."htsn-common" or (buildDepError "htsn-common"))
-            (hsPkgs."hxt" or (buildDepError "hxt"))
-            (hsPkgs."groundhog" or (buildDepError "groundhog"))
-            (hsPkgs."groundhog-postgresql" or (buildDepError "groundhog-postgresql"))
-            (hsPkgs."groundhog-sqlite" or (buildDepError "groundhog-sqlite"))
-            (hsPkgs."groundhog-th" or (buildDepError "groundhog-th"))
-            (hsPkgs."MissingH" or (buildDepError "MissingH"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."tuple" or (buildDepError "tuple"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."htsn-common" or (errorHandler.buildDepError "htsn-common"))
+            (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
+            (hsPkgs."groundhog" or (errorHandler.buildDepError "groundhog"))
+            (hsPkgs."groundhog-postgresql" or (errorHandler.buildDepError "groundhog-postgresql"))
+            (hsPkgs."groundhog-sqlite" or (errorHandler.buildDepError "groundhog-sqlite"))
+            (hsPkgs."groundhog-th" or (errorHandler.buildDepError "groundhog-th"))
+            (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
             ];
           buildable = true;
           };
         "doctests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             ];
           buildable = true;
           };
         "shelltests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
-            (hsPkgs."configurator" or (buildDepError "configurator"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."htsn-common" or (buildDepError "htsn-common"))
-            (hsPkgs."hxt" or (buildDepError "hxt"))
-            (hsPkgs."groundhog" or (buildDepError "groundhog"))
-            (hsPkgs."groundhog-postgresql" or (buildDepError "groundhog-postgresql"))
-            (hsPkgs."groundhog-sqlite" or (buildDepError "groundhog-sqlite"))
-            (hsPkgs."groundhog-th" or (buildDepError "groundhog-th"))
-            (hsPkgs."MissingH" or (buildDepError "MissingH"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."tuple" or (buildDepError "tuple"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."htsn-common" or (errorHandler.buildDepError "htsn-common"))
+            (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
+            (hsPkgs."groundhog" or (errorHandler.buildDepError "groundhog"))
+            (hsPkgs."groundhog-postgresql" or (errorHandler.buildDepError "groundhog-postgresql"))
+            (hsPkgs."groundhog-sqlite" or (errorHandler.buildDepError "groundhog-sqlite"))
+            (hsPkgs."groundhog-th" or (errorHandler.buildDepError "groundhog-th"))
+            (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
             ];
           buildable = true;
           };

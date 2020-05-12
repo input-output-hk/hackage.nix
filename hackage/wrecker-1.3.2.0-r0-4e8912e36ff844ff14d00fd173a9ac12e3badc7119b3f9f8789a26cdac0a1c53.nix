@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,71 +25,71 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."ansigraph" or (buildDepError "ansigraph"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."authenticate-oauth" or (buildDepError "authenticate-oauth"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."clock" or (buildDepError "clock"))
-          (hsPkgs."clock-extras" or (buildDepError "clock-extras"))
-          (hsPkgs."connection" or (buildDepError "connection"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."cookie" or (buildDepError "cookie"))
-          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."immortal" or (buildDepError "immortal"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."mime-types" or (buildDepError "mime-types"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."next-ref" or (buildDepError "next-ref"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."statistics" or (buildDepError "statistics"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
-          (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
-          (hsPkgs."tabular" or (buildDepError "tabular"))
-          (hsPkgs."tdigest" or (buildDepError "tdigest"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."threads" or (buildDepError "threads"))
-          (hsPkgs."threads-extras" or (buildDepError "threads-extras"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."tls" or (buildDepError "tls"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."vty" or (buildDepError "vty"))
-          (hsPkgs."wreq" or (buildDepError "wreq"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
+          (hsPkgs."ansigraph" or (errorHandler.buildDepError "ansigraph"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."authenticate-oauth" or (errorHandler.buildDepError "authenticate-oauth"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+          (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+          (hsPkgs."clock-extras" or (errorHandler.buildDepError "clock-extras"))
+          (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
+          (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."immortal" or (errorHandler.buildDepError "immortal"))
+          (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+          (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."next-ref" or (errorHandler.buildDepError "next-ref"))
+          (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
+          (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
+          (hsPkgs."tabular" or (errorHandler.buildDepError "tabular"))
+          (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."threads" or (errorHandler.buildDepError "threads"))
+          (hsPkgs."threads-extras" or (errorHandler.buildDepError "threads-extras"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
+          (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           ];
         buildable = true;
         };
       exes = {
         "wreck" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."markdown-unlit" or (buildDepError "markdown-unlit"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."wrecker" or (buildDepError "wrecker"))
-            (hsPkgs."wreq" or (buildDepError "wreq"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."wrecker" or (errorHandler.buildDepError "wrecker"))
+            (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
             ];
           buildable = true;
           };

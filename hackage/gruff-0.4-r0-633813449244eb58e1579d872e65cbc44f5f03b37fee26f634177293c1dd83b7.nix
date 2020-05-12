@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { mpfr = false; };
     package = {
@@ -56,35 +25,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."ruff" or (buildDepError "ruff"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."ruff" or (errorHandler.buildDepError "ruff"))
           ];
         buildable = true;
         };
       exes = {
         "gruff" = {
           depends = [
-            (hsPkgs."gruff" or (buildDepError "gruff"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."FTGL" or (buildDepError "FTGL"))
-            (hsPkgs."gtk" or (buildDepError "gtk"))
-            (hsPkgs."gtkglext" or (buildDepError "gtkglext"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
-            (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
-            (hsPkgs."parallel" or (buildDepError "parallel"))
-            (hsPkgs."qd" or (buildDepError "qd"))
-            (hsPkgs."qd-vec" or (buildDepError "qd-vec"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."Vec" or (buildDepError "Vec"))
-            (hsPkgs."ruff" or (buildDepError "ruff"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or (buildDepError "hmpfr"));
-          libs = [ (pkgs."stdc++" or (sysDepError "stdc++")) ];
+            (hsPkgs."gruff" or (errorHandler.buildDepError "gruff"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."FTGL" or (errorHandler.buildDepError "FTGL"))
+            (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
+            (hsPkgs."gtkglext" or (errorHandler.buildDepError "gtkglext"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
+            (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
+            (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
+            (hsPkgs."qd" or (errorHandler.buildDepError "qd"))
+            (hsPkgs."qd-vec" or (errorHandler.buildDepError "qd-vec"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."Vec" or (errorHandler.buildDepError "Vec"))
+            (hsPkgs."ruff" or (errorHandler.buildDepError "ruff"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            ] ++ (pkgs.lib).optional (flags.mpfr) (hsPkgs."hmpfr" or (errorHandler.buildDepError "hmpfr"));
+          libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
           buildable = true;
           };
         };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       warnings = false;
@@ -61,201 +30,201 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."AbortT-transformers" or (buildDepError "AbortT-transformers"))
-          (hsPkgs."AbortT-mtl" or (buildDepError "AbortT-mtl"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
-          (hsPkgs."composition" or (buildDepError "composition"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-ivar" or (buildDepError "data-ivar"))
-          (hsPkgs."derive" or (buildDepError "derive"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."hslogger-template" or (buildDepError "hslogger-template"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
-          (hsPkgs."monoid-statistics" or (buildDepError "monoid-statistics"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."multiset" or (buildDepError "multiset"))
-          (hsPkgs."operational" or (buildDepError "operational"))
-          (hsPkgs."prefix-units" or (buildDepError "prefix-units"))
-          (hsPkgs."pretty" or (buildDepError "pretty"))
-          (hsPkgs."PSQueue" or (buildDepError "PSQueue"))
-          (hsPkgs."sequential-index" or (buildDepError "sequential-index"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."void" or (buildDepError "void"))
-          (hsPkgs."yjtools" or (buildDepError "yjtools"))
+          (hsPkgs."AbortT-transformers" or (errorHandler.buildDepError "AbortT-transformers"))
+          (hsPkgs."AbortT-mtl" or (errorHandler.buildDepError "AbortT-mtl"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
+          (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."data-ivar" or (errorHandler.buildDepError "data-ivar"))
+          (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+          (hsPkgs."hslogger-template" or (errorHandler.buildDepError "hslogger-template"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"))
+          (hsPkgs."monoid-statistics" or (errorHandler.buildDepError "monoid-statistics"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."multiset" or (errorHandler.buildDepError "multiset"))
+          (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
+          (hsPkgs."prefix-units" or (errorHandler.buildDepError "prefix-units"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."PSQueue" or (errorHandler.buildDepError "PSQueue"))
+          (hsPkgs."sequential-index" or (errorHandler.buildDepError "sequential-index"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."void" or (errorHandler.buildDepError "void"))
+          (hsPkgs."yjtools" or (errorHandler.buildDepError "yjtools"))
           ];
         buildable = true;
         };
       exes = {
         "readme-simple" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             ];
           buildable = if flags.examples then true else false;
           };
         "readme-full" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             ];
           buildable = if flags.examples then true else false;
           };
         "count-all-nqueens-solutions" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
             ];
           buildable = if flags.examples then true else false;
           };
         "print-all-nqueens-solutions" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             ];
           buildable = if flags.examples then true else false;
           };
         "print-an-nqueens-solution" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             ];
           buildable = if flags.examples then true else false;
           };
         "print-some-nqueens-solutions-using-pull" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             ];
           buildable = if flags.examples then true else false;
           };
         "print-some-nqueens-solutions-using-push" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             ];
           buildable = if flags.examples then true else false;
           };
         "count-all-trivial-tree-leaves" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
             ];
           buildable = if flags.examples then true else false;
           };
         "tutorial-1" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.tutorial then true else false;
           };
         "tutorial-2" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             ];
           buildable = if flags.tutorial then true else false;
           };
         "tutorial-3" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.tutorial then true else false;
           };
         "tutorial-4" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.tutorial then true else false;
           };
         "tutorial-5" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.tutorial then true else false;
           };
         "tutorial-6" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.tutorial then true else false;
           };
         "tutorial-7" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = if flags.tutorial then true else false;
           };
         "tutorial-8" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = if flags.tutorial then true else false;
           };
         "tutorial-9" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.tutorial then true else false;
           };
         "tutorial-10" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.tutorial then true else false;
           };
         "tutorial-11" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = if flags.tutorial then true else false;
           };
         "tutorial-12" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
             ];
           buildable = if flags.tutorial then true else false;
           };
         "tutorial-13" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
             ];
           buildable = if flags.tutorial then true else false;
           };
@@ -263,45 +232,45 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."composition" or (buildDepError "composition"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-ivar" or (buildDepError "data-ivar"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."hslogger-template" or (buildDepError "hslogger-template"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."operational" or (buildDepError "operational"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."test-framework-smallcheck" or (buildDepError "test-framework-smallcheck"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."uuid" or (buildDepError "uuid"))
-            (hsPkgs."void" or (buildDepError "void"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."data-ivar" or (errorHandler.buildDepError "data-ivar"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."hslogger-template" or (errorHandler.buildDepError "hslogger-template"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework-smallcheck" or (errorHandler.buildDepError "test-framework-smallcheck"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+            (hsPkgs."void" or (errorHandler.buildDepError "void"))
             ];
           buildable = true;
           };
         "test-nqueens" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."HUnit" or (buildDepError "HUnit"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."test-framework" or (buildDepError "test-framework"))
-            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
-            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };
@@ -309,17 +278,17 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "tree-versus-list-trivial-tree" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             ];
           buildable = true;
           };
         "tree-versus-list-nqueens" = {
           depends = [
-            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             ];
           buildable = true;
           };

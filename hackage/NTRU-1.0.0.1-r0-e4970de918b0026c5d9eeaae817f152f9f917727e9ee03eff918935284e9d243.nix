@@ -1,70 +1,39 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
       identifier = { name = "NTRU"; version = "1.0.0.1"; };
       license = "LicenseRef-GPL";
-      copyright = "2014, CyberPoint International, LLC";
+      copyright = "2014, CyberPoint International, LLC       ";
       maintainer = "opensource@cyberpointllc.com";
-      author = "Theo Levine, Tom Cornelius, Elizabeth Hughes, CyberPoint International LLC.";
+      author = "Theo Levine, Tom Cornelius, Elizabeth Hughes, CyberPoint International LLC. ";
       homepage = "";
       url = "";
-      synopsis = "NTRU Cryptography";
+      synopsis = "NTRU Cryptography         ";
       description = "A Haskell implementation of the NTRU cryptographic system, following the IEEE Standard Specification for Public Key Crpytographic Techniques Based on Hard Problems over Lattices (IEEE Std 1363.1-2008)";
       buildType = "Simple";
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."SHA" or (buildDepError "SHA"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."polynomial" or (buildDepError "polynomial"))
-          (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."polynomial" or (errorHandler.buildDepError "polynomial"))
+          (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           ];
         buildable = true;
         };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { with-http = true; cross = false; };
     package = {
@@ -56,74 +25,74 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."atomic-write" or (buildDepError "atomic-write"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."cborg" or (buildDepError "cborg"))
-          (hsPkgs."cborg-json" or (buildDepError "cborg-json"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."contravariant" or (buildDepError "contravariant"))
-          (hsPkgs."data-fix" or (buildDepError "data-fix"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."Diff" or (buildDepError "Diff"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."dotgen" or (buildDepError "dotgen"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."haskeline" or (buildDepError "haskeline"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."parsers" or (buildDepError "parsers"))
-          (hsPkgs."parser-combinators" or (buildDepError "parser-combinators"))
-          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-          (hsPkgs."prettyprinter-ansi-terminal" or (buildDepError "prettyprinter-ansi-terminal"))
-          (hsPkgs."pretty-simple" or (buildDepError "pretty-simple"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."repline" or (buildDepError "repline"))
-          (hsPkgs."serialise" or (buildDepError "serialise"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-manipulate" or (buildDepError "text-manipulate"))
-          (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."uri-encode" or (buildDepError "uri-encode"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+          (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
+          (hsPkgs."atomic-write" or (errorHandler.buildDepError "atomic-write"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."cborg" or (errorHandler.buildDepError "cborg"))
+          (hsPkgs."cborg-json" or (errorHandler.buildDepError "cborg-json"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
+          (hsPkgs."data-fix" or (errorHandler.buildDepError "data-fix"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."dotgen" or (errorHandler.buildDepError "dotgen"))
+          (hsPkgs."either" or (errorHandler.buildDepError "either"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
+          (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+          (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+          (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
+          (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
+          (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+          (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
+          (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
+          (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+          (hsPkgs."repline" or (errorHandler.buildDepError "repline"))
+          (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-manipulate" or (errorHandler.buildDepError "text-manipulate"))
+          (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0") && !(compiler.isEta && (compiler.version).ge "0.8.4")) [
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."fail" or (buildDepError "fail"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
           ]) ++ (if compiler.isGhcjs && true
           then [
-            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
-            (hsPkgs."ghcjs-xhr" or (buildDepError "ghcjs-xhr"))
+            (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
+            (hsPkgs."ghcjs-xhr" or (errorHandler.buildDepError "ghcjs-xhr"))
             ]
           else [
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+            (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             ] ++ (pkgs.lib).optionals (flags.with-http) [
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             ]);
         buildable = true;
         };
       exes = {
         "dhall" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."dhall" or (buildDepError "dhall"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
             ];
           buildable = true;
           };
@@ -131,48 +100,48 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "tasty" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cborg" or (buildDepError "cborg"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-fix" or (buildDepError "data-fix"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."dhall" or (buildDepError "dhall"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."either" or (buildDepError "either"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."foldl" or (buildDepError "foldl"))
-            (hsPkgs."generic-random" or (buildDepError "generic-random"))
-            (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."serialise" or (buildDepError "serialise"))
-            (hsPkgs."special-values" or (buildDepError "special-values"))
-            (hsPkgs."spoon" or (buildDepError "spoon"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-expected-failure" or (buildDepError "tasty-expected-failure"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."turtle" or (buildDepError "turtle"))
-            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cborg" or (errorHandler.buildDepError "cborg"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."data-fix" or (errorHandler.buildDepError "data-fix"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."either" or (errorHandler.buildDepError "either"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
+            (hsPkgs."generic-random" or (errorHandler.buildDepError "generic-random"))
+            (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
+            (hsPkgs."special-values" or (errorHandler.buildDepError "special-values"))
+            (hsPkgs."spoon" or (errorHandler.buildDepError "spoon"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };
         "doctest" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."mockery" or (buildDepError "mockery"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."mockery" or (errorHandler.buildDepError "mockery"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             ];
           buildable = if compiler.isGhc && (compiler.version).lt "8.0"
             then false
@@ -182,23 +151,23 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "dhall-parser" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."dhall" or (buildDepError "dhall"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
-            (hsPkgs."serialise" or (buildDepError "serialise"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
         "deep-nested-large-record" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."dhall" or (buildDepError "dhall"))
-            (hsPkgs."gauge" or (buildDepError "gauge"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             ];
           buildable = true;
           };

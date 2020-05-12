@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       buildexamples = false;
@@ -62,559 +31,559 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."libgraph" or (buildDepError "libgraph"))
-          (hsPkgs."RBTree" or (buildDepError "RBTree"))
-          (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."FPretty" or (buildDepError "FPretty"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."libgraph" or (errorHandler.buildDepError "libgraph"))
+          (hsPkgs."RBTree" or (errorHandler.buildDepError "RBTree"))
+          (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."FPretty" or (errorHandler.buildDepError "FPretty"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           ];
         buildable = true;
         };
       exes = {
         "hoed-examples-FPretty_indents_too_much" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-FPretty_indents_too_much__CC" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Queens__with_properties" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Rot13" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Salary" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-ZLang_Defect-1" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."indents" or (buildDepError "indents"))
-            (hsPkgs."adjunctions" or (buildDepError "adjunctions"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."indents" or (errorHandler.buildDepError "indents"))
+            (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-ZLang_Defect-2" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."indents" or (buildDepError "indents"))
-            (hsPkgs."adjunctions" or (buildDepError "adjunctions"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."indents" or (errorHandler.buildDepError "indents"))
+            (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-ZLang_Defect-3" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."indents" or (buildDepError "indents"))
-            (hsPkgs."adjunctions" or (buildDepError "adjunctions"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."indents" or (errorHandler.buildDepError "indents"))
+            (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Nub-defective-sort__with_properties" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Insertion_Sort_elements_disappear" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-XMonad_changing_focus_duplicates_windows" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-XMonad_changing_focus_duplicates_windows__CC" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-XMonad_changing_focus_duplicates_windows__with_properties" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-SummerSchool_compiler_does_not_terminate" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-SummerSchool_compiler_does_not_terminate__with_properties" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-CNF_unsound_de_Morgan__with_properties" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Digraph_not_data_invariant__with_properties" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."lazysmallcheck" or (buildDepError "lazysmallcheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."lazysmallcheck" or (errorHandler.buildDepError "lazysmallcheck"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Simple_higher-order_function" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Parity_test" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Expression_simplifier" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-examples-Expression_simplifier__with_properties" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
             ];
           buildable = if flags.buildexamples then true else false;
           };
         "hoed-tests-Prop-t0" = {
           depends = (pkgs.lib).optionals (flags.validateprop) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validateprop then true else false;
           };
         "hoed-tests-Prop-t1" = {
           depends = (pkgs.lib).optionals (flags.validateprop) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validateprop then true else false;
           };
         "hoed-tests-Prop-t2" = {
           depends = (pkgs.lib).optionals (flags.validateprop) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."lazysmallcheck" or (buildDepError "lazysmallcheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."lazysmallcheck" or (errorHandler.buildDepError "lazysmallcheck"))
             ];
           buildable = if flags.validateprop then true else false;
           };
         "hoed-tests-Prop-t3" = {
           depends = (pkgs.lib).optionals (flags.validateprop) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           buildable = if flags.validateprop then true else false;
           };
         "hoed-tests-Prop-t4" = {
           depends = (pkgs.lib).optionals (flags.validateprop) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."X11" or (buildDepError "X11"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           buildable = if flags.validateprop then true else false;
           };
         "hoed-tests-ParEq" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."libgraph" or (buildDepError "libgraph"))
-            (hsPkgs."RBTree" or (buildDepError "RBTree"))
-            (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."FPretty" or (buildDepError "FPretty"))
-            (hsPkgs."cereal" or (buildDepError "cereal"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."libgraph" or (errorHandler.buildDepError "libgraph"))
+            (hsPkgs."RBTree" or (errorHandler.buildDepError "RBTree"))
+            (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."FPretty" or (errorHandler.buildDepError "FPretty"))
+            (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             ];
           buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-r0" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-t0" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-r1" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-t1" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-r2" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-t2" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-r3" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Generic-t3" = {
           depends = (pkgs.lib).optionals (flags.validategeneric) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validategeneric then true else false;
           };
         "hoed-tests-Pure-t1" = {
           depends = (pkgs.lib).optionals (flags.validatepure) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validatepure then true else false;
           };
         "hoed-tests-Pure-t2" = {
           depends = (pkgs.lib).optionals (flags.validatepure) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validatepure then true else false;
           };
         "hoed-tests-Pure-t3" = {
           depends = (pkgs.lib).optionals (flags.validatepure) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validatepure then true else false;
           };
         "hoed-tests-Pure-t4" = {
           depends = (pkgs.lib).optionals (flags.validatepure) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validatepure then true else false;
           };
         "hoed-tests-Pure-t5" = {
           depends = (pkgs.lib).optionals (flags.validatepure) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validatepure then true else false;
           };
         "hoed-tests-Pure-t6" = {
           depends = (pkgs.lib).optionals (flags.validatepure) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validatepure then true else false;
           };
         "hoed-tests-Pure-t7" = {
           depends = (pkgs.lib).optionals (flags.validatepure) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             ];
           buildable = if flags.validatepure then true else false;
           };
         "hoed-tests-Stk-DoublingServer" = {
           depends = (pkgs.lib).optionals (flags.validatestk) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
             ];
           buildable = if flags.validatestk then true else false;
           };
         "hoed-tests-Stk-Insort2" = {
           depends = (pkgs.lib).optionals (flags.validatestk) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = if flags.validatestk then true else false;
           };
         "hoed-tests-Stk-Example1" = {
           depends = (pkgs.lib).optionals (flags.validatestk) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = if flags.validatestk then true else false;
           };
         "hoed-tests-Stk-Example3" = {
           depends = (pkgs.lib).optionals (flags.validatestk) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = if flags.validatestk then true else false;
           };
         "hoed-tests-Stk-Example4" = {
           depends = (pkgs.lib).optionals (flags.validatestk) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = if flags.validatestk then true else false;
           };
         "hoed-tests-Stk-IndirectRecursion" = {
           depends = (pkgs.lib).optionals (flags.validatestk) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."Hoed" or (buildDepError "Hoed"))
-            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
+            (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           buildable = if flags.validatestk then true else false;
           };

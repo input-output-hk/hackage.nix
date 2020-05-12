@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { hlint = true; build-examples = false; llvm = false; };
     package = {
@@ -56,52 +25,52 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cacophony" or (buildDepError "cacophony"))
-          (hsPkgs."pipes" or (buildDepError "pipes"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cacophony" or (errorHandler.buildDepError "cacophony"))
+          (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           ];
         buildable = true;
         };
       exes = {
         "echo-server" = {
           depends = (pkgs.lib).optionals (flags.build-examples) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."auto-update" or (buildDepError "auto-update"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cacophony" or (buildDepError "cacophony"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."pipes-aeson" or (buildDepError "pipes-aeson"))
-            (hsPkgs."pipes-cacophony" or (buildDepError "pipes-cacophony"))
-            (hsPkgs."pipes-network" or (buildDepError "pipes-network"))
-            (hsPkgs."pipes-parse" or (buildDepError "pipes-parse"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."unix-time" or (buildDepError "unix-time"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."auto-update" or (errorHandler.buildDepError "auto-update"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cacophony" or (errorHandler.buildDepError "cacophony"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."pipes-aeson" or (errorHandler.buildDepError "pipes-aeson"))
+            (hsPkgs."pipes-cacophony" or (errorHandler.buildDepError "pipes-cacophony"))
+            (hsPkgs."pipes-network" or (errorHandler.buildDepError "pipes-network"))
+            (hsPkgs."pipes-parse" or (errorHandler.buildDepError "pipes-parse"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
             ];
           buildable = if flags.build-examples then true else false;
           };
         "echo-client" = {
           depends = (pkgs.lib).optionals (flags.build-examples) [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cacophony" or (buildDepError "cacophony"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."pipes-aeson" or (buildDepError "pipes-aeson"))
-            (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
-            (hsPkgs."pipes-cacophony" or (buildDepError "pipes-cacophony"))
-            (hsPkgs."pipes-network" or (buildDepError "pipes-network"))
-            (hsPkgs."pipes-parse" or (buildDepError "pipes-parse"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cacophony" or (errorHandler.buildDepError "cacophony"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."pipes-aeson" or (errorHandler.buildDepError "pipes-aeson"))
+            (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
+            (hsPkgs."pipes-cacophony" or (errorHandler.buildDepError "pipes-cacophony"))
+            (hsPkgs."pipes-network" or (errorHandler.buildDepError "pipes-network"))
+            (hsPkgs."pipes-parse" or (errorHandler.buildDepError "pipes-parse"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = if flags.build-examples then true else false;
           };
@@ -109,23 +78,23 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test-pipes-cacophony" = {
           depends = [
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cacophony" or (buildDepError "cacophony"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."pipes" or (buildDepError "pipes"))
-            (hsPkgs."pipes-cacophony" or (buildDepError "pipes-cacophony"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cacophony" or (errorHandler.buildDepError "cacophony"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."pipes-cacophony" or (errorHandler.buildDepError "pipes-cacophony"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             ];
           buildable = true;
           };
         "hlint" = {
           depends = (pkgs.lib).optionals (!(!flags.hlint)) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hlint" or (buildDepError "hlint"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             ];
           buildable = if !flags.hlint then false else true;
           };

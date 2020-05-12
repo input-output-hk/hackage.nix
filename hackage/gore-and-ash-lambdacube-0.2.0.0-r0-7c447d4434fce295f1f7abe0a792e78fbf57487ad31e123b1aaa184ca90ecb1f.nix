@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { examples = false; };
     package = {
@@ -56,104 +25,104 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."gore-and-ash" or (buildDepError "gore-and-ash"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."lambdacube-compiler" or (buildDepError "lambdacube-compiler"))
-          (hsPkgs."lambdacube-gl" or (buildDepError "lambdacube-gl"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."gore-and-ash" or (errorHandler.buildDepError "gore-and-ash"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."lambdacube-compiler" or (errorHandler.buildDepError "lambdacube-compiler"))
+          (hsPkgs."lambdacube-gl" or (errorHandler.buildDepError "lambdacube-gl"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ];
         buildable = true;
         };
       exes = {
         "gore-and-ash-lambdacube-example01" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
-            (hsPkgs."gore-and-ash" or (buildDepError "gore-and-ash"))
-            (hsPkgs."gore-and-ash-glfw" or (buildDepError "gore-and-ash-glfw"))
-            (hsPkgs."gore-and-ash-lambdacube" or (buildDepError "gore-and-ash-lambdacube"))
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-            (hsPkgs."lambdacube-compiler" or (buildDepError "lambdacube-compiler"))
-            (hsPkgs."lambdacube-gl" or (buildDepError "lambdacube-gl"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
+            (hsPkgs."gore-and-ash" or (errorHandler.buildDepError "gore-and-ash"))
+            (hsPkgs."gore-and-ash-glfw" or (errorHandler.buildDepError "gore-and-ash-glfw"))
+            (hsPkgs."gore-and-ash-lambdacube" or (errorHandler.buildDepError "gore-and-ash-lambdacube"))
+            (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
+            (hsPkgs."lambdacube-compiler" or (errorHandler.buildDepError "lambdacube-compiler"))
+            (hsPkgs."lambdacube-gl" or (errorHandler.buildDepError "lambdacube-gl"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = if flags.examples then true else false;
           };
         "gore-and-ash-lambdacube-example02" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
-            (hsPkgs."gore-and-ash" or (buildDepError "gore-and-ash"))
-            (hsPkgs."gore-and-ash-glfw" or (buildDepError "gore-and-ash-glfw"))
-            (hsPkgs."gore-and-ash-lambdacube" or (buildDepError "gore-and-ash-lambdacube"))
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-            (hsPkgs."lambdacube-compiler" or (buildDepError "lambdacube-compiler"))
-            (hsPkgs."lambdacube-gl" or (buildDepError "lambdacube-gl"))
-            (hsPkgs."lambdacube-ir" or (buildDepError "lambdacube-ir"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."linear" or (buildDepError "linear"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
+            (hsPkgs."gore-and-ash" or (errorHandler.buildDepError "gore-and-ash"))
+            (hsPkgs."gore-and-ash-glfw" or (errorHandler.buildDepError "gore-and-ash-glfw"))
+            (hsPkgs."gore-and-ash-lambdacube" or (errorHandler.buildDepError "gore-and-ash-lambdacube"))
+            (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
+            (hsPkgs."lambdacube-compiler" or (errorHandler.buildDepError "lambdacube-compiler"))
+            (hsPkgs."lambdacube-gl" or (errorHandler.buildDepError "lambdacube-gl"))
+            (hsPkgs."lambdacube-ir" or (errorHandler.buildDepError "lambdacube-ir"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             ];
           buildable = if flags.examples then true else false;
           };
         "gore-and-ash-lambdacube-example03" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
-            (hsPkgs."gore-and-ash" or (buildDepError "gore-and-ash"))
-            (hsPkgs."gore-and-ash-glfw" or (buildDepError "gore-and-ash-glfw"))
-            (hsPkgs."gore-and-ash-lambdacube" or (buildDepError "gore-and-ash-lambdacube"))
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-            (hsPkgs."lambdacube-compiler" or (buildDepError "lambdacube-compiler"))
-            (hsPkgs."lambdacube-gl" or (buildDepError "lambdacube-gl"))
-            (hsPkgs."lambdacube-ir" or (buildDepError "lambdacube-ir"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."linear" or (buildDepError "linear"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
+            (hsPkgs."gore-and-ash" or (errorHandler.buildDepError "gore-and-ash"))
+            (hsPkgs."gore-and-ash-glfw" or (errorHandler.buildDepError "gore-and-ash-glfw"))
+            (hsPkgs."gore-and-ash-lambdacube" or (errorHandler.buildDepError "gore-and-ash-lambdacube"))
+            (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
+            (hsPkgs."lambdacube-compiler" or (errorHandler.buildDepError "lambdacube-compiler"))
+            (hsPkgs."lambdacube-gl" or (errorHandler.buildDepError "lambdacube-gl"))
+            (hsPkgs."lambdacube-ir" or (errorHandler.buildDepError "lambdacube-ir"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             ];
           buildable = if flags.examples then true else false;
           };
         "gore-and-ash-lambdacube-example04" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."exceptions" or (buildDepError "exceptions"))
-            (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
-            (hsPkgs."gore-and-ash" or (buildDepError "gore-and-ash"))
-            (hsPkgs."gore-and-ash-glfw" or (buildDepError "gore-and-ash-glfw"))
-            (hsPkgs."gore-and-ash-lambdacube" or (buildDepError "gore-and-ash-lambdacube"))
-            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
-            (hsPkgs."lambdacube-compiler" or (buildDepError "lambdacube-compiler"))
-            (hsPkgs."lambdacube-gl" or (buildDepError "lambdacube-gl"))
-            (hsPkgs."lambdacube-ir" or (buildDepError "lambdacube-ir"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."linear" or (buildDepError "linear"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+            (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
+            (hsPkgs."gore-and-ash" or (errorHandler.buildDepError "gore-and-ash"))
+            (hsPkgs."gore-and-ash-glfw" or (errorHandler.buildDepError "gore-and-ash-glfw"))
+            (hsPkgs."gore-and-ash-lambdacube" or (errorHandler.buildDepError "gore-and-ash-lambdacube"))
+            (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
+            (hsPkgs."lambdacube-compiler" or (errorHandler.buildDepError "lambdacube-compiler"))
+            (hsPkgs."lambdacube-gl" or (errorHandler.buildDepError "lambdacube-gl"))
+            (hsPkgs."lambdacube-ir" or (errorHandler.buildDepError "lambdacube-ir"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             ];
           buildable = if flags.examples then true else false;
           };

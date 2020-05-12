@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       debug = false;
@@ -64,51 +33,51 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "penny" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."penny-lib" or (buildDepError "penny-lib"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."penny-lib" or (errorHandler.buildDepError "penny-lib"))
             ];
           buildable = if !flags.build-penny then false else true;
           };
         "penny-selloff" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."penny-lib" or (buildDepError "penny-lib"))
-            (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."parsec" or (buildDepError "parsec"))
-            (hsPkgs."multiarg" or (buildDepError "multiarg"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."penny-lib" or (errorHandler.buildDepError "penny-lib"))
+            (hsPkgs."explicit-exception" or (errorHandler.buildDepError "explicit-exception"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+            (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = if !flags.build-selloff then false else true;
           };
         "penny-diff" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."penny-lib" or (buildDepError "penny-lib"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."multiarg" or (buildDepError "multiarg"))
-            (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."penny-lib" or (errorHandler.buildDepError "penny-lib"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
+            (hsPkgs."explicit-exception" or (errorHandler.buildDepError "explicit-exception"))
             ];
           buildable = if !flags.build-diff then false else true;
           };
         "penny-reprint" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."penny-lib" or (buildDepError "penny-lib"))
-            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."penny-lib" or (errorHandler.buildDepError "penny-lib"))
+            (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = if !flags.build-reprint then false else true;
           };
         "penny-reconcile" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."penny-lib" or (buildDepError "penny-lib"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."multiarg" or (buildDepError "multiarg"))
-            (hsPkgs."explicit-exception" or (buildDepError "explicit-exception"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."penny-lib" or (errorHandler.buildDepError "penny-lib"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
+            (hsPkgs."explicit-exception" or (errorHandler.buildDepError "explicit-exception"))
             ];
           buildable = if !flags.build-reconcile then false else true;
           };

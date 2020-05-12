@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { mwc-random = false; pcg-random = false; };
     package = {
@@ -56,41 +25,45 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."random-internal" or (buildDepError "random-internal"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."memory" or (buildDepError "memory"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."random-internal" or (errorHandler.buildDepError "random-internal"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+          (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         buildable = true;
         };
       sublibs = {
         "random-internal" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             ] ++ (if flags.pcg-random
-            then [ (hsPkgs."pcg-random" or (buildDepError "pcg-random")) ]
+            then [
+              (hsPkgs."pcg-random" or (errorHandler.buildDepError "pcg-random"))
+              ]
             else if flags.mwc-random
               then [
-                (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-                (hsPkgs."vector" or (buildDepError "vector"))
+                (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
+                (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
                 ]
-              else [ (hsPkgs."random" or (buildDepError "random")) ]);
+              else [
+                (hsPkgs."random" or (errorHandler.buildDepError "random"))
+                ]);
           buildable = true;
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs."cuckoo" or (buildDepError "cuckoo"))
-            (hsPkgs."random-internal" or (buildDepError "random-internal"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
-            (hsPkgs."hashable" or (buildDepError "hashable"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."stopwatch" or (buildDepError "stopwatch"))
+            (hsPkgs."cuckoo" or (errorHandler.buildDepError "cuckoo"))
+            (hsPkgs."random-internal" or (errorHandler.buildDepError "random-internal"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
+            (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+            (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+            (hsPkgs."stopwatch" or (errorHandler.buildDepError "stopwatch"))
             ];
           buildable = true;
           };
@@ -98,20 +71,20 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "spellchecker" = {
           depends = [
-            (hsPkgs."cuckoo" or (buildDepError "cuckoo"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."memory" or (buildDepError "memory"))
-            (hsPkgs."stopwatch" or (buildDepError "stopwatch"))
+            (hsPkgs."cuckoo" or (errorHandler.buildDepError "cuckoo"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
+            (hsPkgs."stopwatch" or (errorHandler.buildDepError "stopwatch"))
             ];
           buildable = true;
           };
         "internal-benchmarks" = {
           depends = [
-            (hsPkgs."cuckoo" or (buildDepError "cuckoo"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."cuckoo" or (errorHandler.buildDepError "cuckoo"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             ];
           buildable = true;
           };

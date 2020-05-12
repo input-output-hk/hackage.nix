@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { examples = false; };
     package = {
@@ -56,68 +25,68 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."chronos" or (buildDepError "chronos"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."http2-client" or (buildDepError "http2-client"))
-          (hsPkgs."http2-client-grpc" or (buildDepError "http2-client-grpc"))
-          (hsPkgs."http2-grpc-proto-lens" or (buildDepError "http2-grpc-proto-lens"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
-          (hsPkgs."proto-lens-protobuf-types" or (buildDepError "proto-lens-protobuf-types"))
-          (hsPkgs."proto-lens-runtime" or (buildDepError "proto-lens-runtime"))
-          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."wai" or (buildDepError "wai"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."chronos" or (errorHandler.buildDepError "chronos"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."http2-client" or (errorHandler.buildDepError "http2-client"))
+          (hsPkgs."http2-client-grpc" or (errorHandler.buildDepError "http2-client-grpc"))
+          (hsPkgs."http2-grpc-proto-lens" or (errorHandler.buildDepError "http2-grpc-proto-lens"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
+          (hsPkgs."proto-lens-protobuf-types" or (errorHandler.buildDepError "proto-lens-protobuf-types"))
+          (hsPkgs."proto-lens-runtime" or (errorHandler.buildDepError "proto-lens-runtime"))
+          (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           ];
         buildable = true;
         };
       exes = {
         "lightstep-haskell-example" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."http2-client" or (buildDepError "http2-client"))
-            (hsPkgs."lightstep-haskell" or (buildDepError "lightstep-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."http2-client" or (errorHandler.buildDepError "http2-client"))
+            (hsPkgs."lightstep-haskell" or (errorHandler.buildDepError "lightstep-haskell"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lightstep-haskell-wai-example" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."lightstep-haskell" or (buildDepError "lightstep-haskell"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."warp" or (buildDepError "warp"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."lightstep-haskell" or (errorHandler.buildDepError "lightstep-haskell"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lightstep-haskell-req-example" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."lightstep-haskell" or (buildDepError "lightstep-haskell"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."req" or (buildDepError "req"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."lightstep-haskell" or (errorHandler.buildDepError "lightstep-haskell"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."req" or (errorHandler.buildDepError "req"))
             ];
           buildable = if flags.examples then true else false;
           };
         "lightstep-haskell-stress-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."lightstep-haskell" or (buildDepError "lightstep-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."lightstep-haskell" or (errorHandler.buildDepError "lightstep-haskell"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
             ];
           buildable = true;
           };

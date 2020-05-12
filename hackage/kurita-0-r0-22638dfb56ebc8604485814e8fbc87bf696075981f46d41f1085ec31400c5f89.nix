@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,105 +25,105 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."approximate" or (buildDepError "approximate"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."atomic-write" or (buildDepError "atomic-write"))
-          (hsPkgs."broadcast-chan" or (buildDepError "broadcast-chan"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."delay" or (buildDepError "delay"))
-          (hsPkgs."double-metaphone" or (buildDepError "double-metaphone"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."hyperloglog" or (buildDepError "hyperloglog"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."linklater" or (buildDepError "linklater"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."parser-combinators" or (buildDepError "parser-combinators"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."reflection" or (buildDepError "reflection"))
-          (hsPkgs."sorted-list" or (buildDepError "sorted-list"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
-          (hsPkgs."websockets" or (buildDepError "websockets"))
-          (hsPkgs."wreq" or (buildDepError "wreq"))
-          (hsPkgs."wuss" or (buildDepError "wuss"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."approximate" or (errorHandler.buildDepError "approximate"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."atomic-write" or (errorHandler.buildDepError "atomic-write"))
+          (hsPkgs."broadcast-chan" or (errorHandler.buildDepError "broadcast-chan"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."delay" or (errorHandler.buildDepError "delay"))
+          (hsPkgs."double-metaphone" or (errorHandler.buildDepError "double-metaphone"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."hyperloglog" or (errorHandler.buildDepError "hyperloglog"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."linklater" or (errorHandler.buildDepError "linklater"))
+          (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+          (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
+          (hsPkgs."sorted-list" or (errorHandler.buildDepError "sorted-list"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
+          (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
+          (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
+          (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
           ];
         buildable = true;
         };
       exes = {
         "kurita" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bits" or (buildDepError "bits"))
-            (hsPkgs."bytes" or (buildDepError "bytes"))
-            (hsPkgs."delay" or (buildDepError "delay"))
-            (hsPkgs."kurita" or (buildDepError "kurita"))
-            (hsPkgs."siphash" or (buildDepError "siphash"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bits" or (errorHandler.buildDepError "bits"))
+            (hsPkgs."bytes" or (errorHandler.buildDepError "bytes"))
+            (hsPkgs."delay" or (errorHandler.buildDepError "delay"))
+            (hsPkgs."kurita" or (errorHandler.buildDepError "kurita"))
+            (hsPkgs."siphash" or (errorHandler.buildDepError "siphash"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];
           buildable = true;
           };
         "kurita-central" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."delay" or (buildDepError "delay"))
-            (hsPkgs."kurita" or (buildDepError "kurita"))
-            (hsPkgs."linklater" or (buildDepError "linklater"))
-            (hsPkgs."siphash" or (buildDepError "siphash"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."delay" or (errorHandler.buildDepError "delay"))
+            (hsPkgs."kurita" or (errorHandler.buildDepError "kurita"))
+            (hsPkgs."linklater" or (errorHandler.buildDepError "linklater"))
+            (hsPkgs."siphash" or (errorHandler.buildDepError "siphash"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];
           buildable = true;
           };
         "kurita-relay" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bits" or (buildDepError "bits"))
-            (hsPkgs."bytes" or (buildDepError "bytes"))
-            (hsPkgs."kurita" or (buildDepError "kurita"))
-            (hsPkgs."siphash" or (buildDepError "siphash"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bits" or (errorHandler.buildDepError "bits"))
+            (hsPkgs."bytes" or (errorHandler.buildDepError "bytes"))
+            (hsPkgs."kurita" or (errorHandler.buildDepError "kurita"))
+            (hsPkgs."siphash" or (errorHandler.buildDepError "siphash"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];
           buildable = true;
           };
         "kurita-client" = {
           depends = [
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."kurita" or (buildDepError "kurita"))
-            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."websockets" or (buildDepError "websockets"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."kurita" or (errorHandler.buildDepError "kurita"))
+            (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             ];
           buildable = true;
           };
         };
       tests = {
         "kurita-test" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
           };
         };

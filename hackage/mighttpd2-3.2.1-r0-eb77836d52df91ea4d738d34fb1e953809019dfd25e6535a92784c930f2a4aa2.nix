@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { tls = false; };
     package = {
@@ -56,75 +25,75 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."auto-update" or (buildDepError "auto-update"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."byteorder" or (buildDepError "byteorder"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."http-date" or (buildDepError "http-date"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."io-choice" or (buildDepError "io-choice"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."unix-time" or (buildDepError "unix-time"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."wai" or (buildDepError "wai"))
-          (hsPkgs."wai-app-file-cgi" or (buildDepError "wai-app-file-cgi"))
-          (hsPkgs."warp" or (buildDepError "warp"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."auto-update" or (errorHandler.buildDepError "auto-update"))
+          (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+          (hsPkgs."byteorder" or (errorHandler.buildDepError "byteorder"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."http-date" or (errorHandler.buildDepError "http-date"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."io-choice" or (errorHandler.buildDepError "io-choice"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+          (hsPkgs."wai-app-file-cgi" or (errorHandler.buildDepError "wai-app-file-cgi"))
+          (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           ];
         buildable = true;
         };
       exes = {
         "mighty" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-date" or (buildDepError "http-date"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."mighttpd2" or (buildDepError "mighttpd2"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
-            (hsPkgs."wai" or (buildDepError "wai"))
-            (hsPkgs."wai-app-file-cgi" or (buildDepError "wai-app-file-cgi"))
-            (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
-            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."http-date" or (errorHandler.buildDepError "http-date"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."mighttpd2" or (errorHandler.buildDepError "mighttpd2"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
+            (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
+            (hsPkgs."wai-app-file-cgi" or (errorHandler.buildDepError "wai-app-file-cgi"))
+            (hsPkgs."wai-logger" or (errorHandler.buildDepError "wai-logger"))
+            (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ] ++ (pkgs.lib).optionals (flags.tls) [
-            (hsPkgs."tls" or (buildDepError "tls"))
-            (hsPkgs."warp-tls" or (buildDepError "warp-tls"))
+            (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
+            (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
             ];
           buildable = true;
           };
         "mighty-mkindex" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."old-locale" or (buildDepError "old-locale"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             ];
           buildable = true;
           };
         "mightyctl" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."mighttpd2" or (buildDepError "mighttpd2"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."mighttpd2" or (errorHandler.buildDepError "mighttpd2"))
             ];
           buildable = true;
           };
@@ -132,13 +101,13 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."mighttpd2" or (buildDepError "mighttpd2"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."mighttpd2" or (errorHandler.buildDepError "mighttpd2"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             ] ++ (pkgs.lib).optionals (flags.tls) [
-            (hsPkgs."tls" or (buildDepError "tls"))
-            (hsPkgs."warp-tls" or (buildDepError "warp-tls"))
+            (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
+            (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
             ];
           buildable = true;
           };

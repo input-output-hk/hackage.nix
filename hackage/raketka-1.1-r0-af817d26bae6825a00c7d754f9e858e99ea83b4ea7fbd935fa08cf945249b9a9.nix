@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -50,49 +19,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       homepage = "https://github.com/ciez/raketka";
       url = "";
       synopsis = "basic distributed-process node with configurable peers";
-      description = "start multiple nodes, let them communicate.";
+      description = "start multiple nodes, let them communicate. ";
       buildType = "Simple";
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-          (hsPkgs."distributed-process-simplelocalnet" or (buildDepError "distributed-process-simplelocalnet"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."network-transport" or (buildDepError "network-transport"))
-          (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."conf-json" or (buildDepError "conf-json"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
+          (hsPkgs."distributed-process-simplelocalnet" or (errorHandler.buildDepError "distributed-process-simplelocalnet"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
+          (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."conf-json" or (errorHandler.buildDepError "conf-json"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           ];
         buildable = true;
         };
       exes = {
         "raketka" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."tagged" or (buildDepError "tagged"))
-            (hsPkgs."distributed-process" or (buildDepError "distributed-process"))
-            (hsPkgs."distributed-process-simplelocalnet" or (buildDepError "distributed-process-simplelocalnet"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."network" or (buildDepError "network"))
-            (hsPkgs."network-transport" or (buildDepError "network-transport"))
-            (hsPkgs."network-transport-tcp" or (buildDepError "network-transport-tcp"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."conf-json" or (buildDepError "conf-json"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
+            (hsPkgs."distributed-process-simplelocalnet" or (errorHandler.buildDepError "distributed-process-simplelocalnet"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
+            (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."conf-json" or (errorHandler.buildDepError "conf-json"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             ];
           buildable = true;
           };
@@ -100,9 +69,9 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };

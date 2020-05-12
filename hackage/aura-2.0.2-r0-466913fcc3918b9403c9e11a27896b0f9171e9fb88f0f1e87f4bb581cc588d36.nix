@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,68 +25,68 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."microlens" or (buildDepError "microlens"))
-          (hsPkgs."paths" or (buildDepError "paths"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."versions" or (buildDepError "versions"))
-          (hsPkgs."errors" or (buildDepError "errors"))
-          (hsPkgs."fused-effects" or (buildDepError "fused-effects"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."nonempty-containers" or (buildDepError "nonempty-containers"))
-          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-          (hsPkgs."prettyprinter-ansi-terminal" or (buildDepError "prettyprinter-ansi-terminal"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."typed-process" or (buildDepError "typed-process"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
-          (hsPkgs."algebraic-graphs" or (buildDepError "algebraic-graphs"))
-          (hsPkgs."aur" or (buildDepError "aur"))
-          (hsPkgs."compactable" or (buildDepError "compactable"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."generic-lens" or (buildDepError "generic-lens"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."language-bash" or (buildDepError "language-bash"))
-          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-          (hsPkgs."microlens-ghc" or (buildDepError "microlens-ghc"))
-          (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
-          (hsPkgs."network-uri" or (buildDepError "network-uri"))
-          (hsPkgs."scheduler" or (buildDepError "scheduler"))
-          (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."these" or (buildDepError "these"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."unliftio" or (buildDepError "unliftio"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+          (hsPkgs."paths" or (errorHandler.buildDepError "paths"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
+          (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
+          (hsPkgs."fused-effects" or (errorHandler.buildDepError "fused-effects"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."nonempty-containers" or (errorHandler.buildDepError "nonempty-containers"))
+          (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+          (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
+          (hsPkgs."algebraic-graphs" or (errorHandler.buildDepError "algebraic-graphs"))
+          (hsPkgs."aur" or (errorHandler.buildDepError "aur"))
+          (hsPkgs."compactable" or (errorHandler.buildDepError "compactable"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."generic-lens" or (errorHandler.buildDepError "generic-lens"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."language-bash" or (errorHandler.buildDepError "language-bash"))
+          (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+          (hsPkgs."microlens-ghc" or (errorHandler.buildDepError "microlens-ghc"))
+          (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."scheduler" or (errorHandler.buildDepError "scheduler"))
+          (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."these" or (errorHandler.buildDepError "these"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           ];
         buildable = true;
         };
       exes = {
         "aura" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."paths" or (buildDepError "paths"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."versions" or (buildDepError "versions"))
-            (hsPkgs."errors" or (buildDepError "errors"))
-            (hsPkgs."fused-effects" or (buildDepError "fused-effects"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."nonempty-containers" or (buildDepError "nonempty-containers"))
-            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
-            (hsPkgs."prettyprinter-ansi-terminal" or (buildDepError "prettyprinter-ansi-terminal"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."typed-process" or (buildDepError "typed-process"))
-            (hsPkgs."aura" or (buildDepError "aura"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."pretty-simple" or (buildDepError "pretty-simple"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."paths" or (errorHandler.buildDepError "paths"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
+            (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
+            (hsPkgs."fused-effects" or (errorHandler.buildDepError "fused-effects"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."nonempty-containers" or (errorHandler.buildDepError "nonempty-containers"))
+            (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+            (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
+            (hsPkgs."aura" or (errorHandler.buildDepError "aura"))
+            (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
             ];
           buildable = true;
           };
@@ -125,18 +94,18 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "aura-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."paths" or (buildDepError "paths"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."versions" or (buildDepError "versions"))
-            (hsPkgs."aura" or (buildDepError "aura"))
-            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."paths" or (errorHandler.buildDepError "paths"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
+            (hsPkgs."aura" or (errorHandler.buildDepError "aura"))
+            (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -57,59 +26,59 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "bluetile" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."xmonad" or (buildDepError "xmonad"))
-            (hsPkgs."xmonad-contrib" or (buildDepError "xmonad-contrib"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
+            (hsPkgs."xmonad-contrib" or (errorHandler.buildDepError "xmonad-contrib"))
             ];
           buildable = true;
           };
         "gnome-bluetile-session" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             ];
           buildable = true;
           };
         "bluetiledock" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."unix" or (buildDepError "unix"))
-            (hsPkgs."glade" or (buildDepError "glade"))
-            (hsPkgs."gtk" or (buildDepError "gtk"))
-            (hsPkgs."X11" or (buildDepError "X11"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
+            (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
+            (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
             ];
           buildable = true;
           };
         "bluetilemockwin" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."gtk" or (buildDepError "gtk"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             ];
           buildable = true;
           };
         "bluetilegreet" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."glade" or (buildDepError "glade"))
-            (hsPkgs."gtk" or (buildDepError "gtk"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
+            (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             ];
           buildable = true;
           };

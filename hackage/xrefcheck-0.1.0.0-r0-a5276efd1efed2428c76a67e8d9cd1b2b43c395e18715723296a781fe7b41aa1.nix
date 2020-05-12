@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,79 +25,79 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."Glob" or (buildDepError "Glob"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-options" or (buildDepError "aeson-options"))
-          (hsPkgs."async" or (buildDepError "async"))
-          (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."cmark-gfm" or (buildDepError "cmark-gfm"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."directory-tree" or (buildDepError "directory-tree"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."fmt" or (buildDepError "fmt"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."loot-prelude" or (buildDepError "loot-prelude"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."o-clock" or (buildDepError "o-clock"))
-          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-          (hsPkgs."pretty-terminal" or (buildDepError "pretty-terminal"))
-          (hsPkgs."req" or (buildDepError "req"))
-          (hsPkgs."roman-numerals" or (buildDepError "roman-numerals"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."text-metrics" or (buildDepError "text-metrics"))
-          (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
-          (hsPkgs."th-utilities" or (buildDepError "th-utilities"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."aeson-options" or (errorHandler.buildDepError "aeson-options"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cmark-gfm" or (errorHandler.buildDepError "cmark-gfm"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."directory-tree" or (errorHandler.buildDepError "directory-tree"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."fmt" or (errorHandler.buildDepError "fmt"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."loot-prelude" or (errorHandler.buildDepError "loot-prelude"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."o-clock" or (errorHandler.buildDepError "o-clock"))
+          (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+          (hsPkgs."pretty-terminal" or (errorHandler.buildDepError "pretty-terminal"))
+          (hsPkgs."req" or (errorHandler.buildDepError "req"))
+          (hsPkgs."roman-numerals" or (errorHandler.buildDepError "roman-numerals"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-metrics" or (errorHandler.buildDepError "text-metrics"))
+          (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
+          (hsPkgs."th-utilities" or (errorHandler.buildDepError "th-utilities"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.autoexporter or (pkgs.buildPackages.autoexporter or (buildToolDepError "autoexporter")))
+          (hsPkgs.buildPackages.autoexporter or (pkgs.buildPackages.autoexporter or (errorHandler.buildToolDepError "autoexporter")))
           ];
         buildable = true;
         };
       exes = {
         "xrefcheck" = {
           depends = [
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-options" or (buildDepError "aeson-options"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cmark-gfm" or (buildDepError "cmark-gfm"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."directory-tree" or (buildDepError "directory-tree"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."fmt" or (buildDepError "fmt"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."loot-prelude" or (buildDepError "loot-prelude"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."o-clock" or (buildDepError "o-clock"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."pretty-terminal" or (buildDepError "pretty-terminal"))
-            (hsPkgs."req" or (buildDepError "req"))
-            (hsPkgs."roman-numerals" or (buildDepError "roman-numerals"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-metrics" or (buildDepError "text-metrics"))
-            (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
-            (hsPkgs."th-utilities" or (buildDepError "th-utilities"))
-            (hsPkgs."xrefcheck" or (buildDepError "xrefcheck"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."aeson-options" or (errorHandler.buildDepError "aeson-options"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cmark-gfm" or (errorHandler.buildDepError "cmark-gfm"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."directory-tree" or (errorHandler.buildDepError "directory-tree"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."fmt" or (errorHandler.buildDepError "fmt"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."loot-prelude" or (errorHandler.buildDepError "loot-prelude"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."o-clock" or (errorHandler.buildDepError "o-clock"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."pretty-terminal" or (errorHandler.buildDepError "pretty-terminal"))
+            (hsPkgs."req" or (errorHandler.buildDepError "req"))
+            (hsPkgs."roman-numerals" or (errorHandler.buildDepError "roman-numerals"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."text-metrics" or (errorHandler.buildDepError "text-metrics"))
+            (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
+            (hsPkgs."th-utilities" or (errorHandler.buildDepError "th-utilities"))
+            (hsPkgs."xrefcheck" or (errorHandler.buildDepError "xrefcheck"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.autoexporter or (pkgs.buildPackages.autoexporter or (buildToolDepError "autoexporter")))
+            (hsPkgs.buildPackages.autoexporter or (pkgs.buildPackages.autoexporter or (errorHandler.buildToolDepError "autoexporter")))
             ];
           buildable = true;
           };
@@ -136,43 +105,43 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "xrefcheck-tests" = {
           depends = [
-            (hsPkgs."Glob" or (buildDepError "Glob"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."aeson" or (buildDepError "aeson"))
-            (hsPkgs."aeson-options" or (buildDepError "aeson-options"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."cmark-gfm" or (buildDepError "cmark-gfm"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."directory-tree" or (buildDepError "directory-tree"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."fmt" or (buildDepError "fmt"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-types" or (buildDepError "http-types"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."loot-prelude" or (buildDepError "loot-prelude"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."o-clock" or (buildDepError "o-clock"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."pretty-terminal" or (buildDepError "pretty-terminal"))
-            (hsPkgs."req" or (buildDepError "req"))
-            (hsPkgs."roman-numerals" or (buildDepError "roman-numerals"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-metrics" or (buildDepError "text-metrics"))
-            (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
-            (hsPkgs."th-utilities" or (buildDepError "th-utilities"))
-            (hsPkgs."xrefcheck" or (buildDepError "xrefcheck"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."aeson-options" or (errorHandler.buildDepError "aeson-options"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."cmark-gfm" or (errorHandler.buildDepError "cmark-gfm"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."directory-tree" or (errorHandler.buildDepError "directory-tree"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."fmt" or (errorHandler.buildDepError "fmt"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."loot-prelude" or (errorHandler.buildDepError "loot-prelude"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."o-clock" or (errorHandler.buildDepError "o-clock"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."pretty-terminal" or (errorHandler.buildDepError "pretty-terminal"))
+            (hsPkgs."req" or (errorHandler.buildDepError "req"))
+            (hsPkgs."roman-numerals" or (errorHandler.buildDepError "roman-numerals"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."text-metrics" or (errorHandler.buildDepError "text-metrics"))
+            (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
+            (hsPkgs."th-utilities" or (errorHandler.buildDepError "th-utilities"))
+            (hsPkgs."xrefcheck" or (errorHandler.buildDepError "xrefcheck"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.autoexporter or (pkgs.buildPackages.autoexporter or (buildToolDepError "autoexporter")))
-            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
+            (hsPkgs.buildPackages.autoexporter or (pkgs.buildPackages.autoexporter or (errorHandler.buildToolDepError "autoexporter")))
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover")))
             ];
           buildable = true;
           };
