@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       mmsg = false;
@@ -62,150 +31,156 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."byteslice" or (buildDepError "byteslice"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."error-codes" or (buildDepError "error-codes"))
-          (hsPkgs."ip" or (buildDepError "ip"))
-          (hsPkgs."posix-api" or (buildDepError "posix-api"))
-          (hsPkgs."primitive-addr" or (buildDepError "primitive-addr"))
-          (hsPkgs."primitive-offset" or (buildDepError "primitive-offset"))
-          (hsPkgs."primitive-unlifted" or (buildDepError "primitive-unlifted"))
-          (hsPkgs."sockets-datagram-receive" or (buildDepError "sockets-datagram-receive"))
-          (hsPkgs."sockets-datagram-receive-many" or (buildDepError "sockets-datagram-receive-many"))
-          (hsPkgs."sockets-datagram-send" or (buildDepError "sockets-datagram-send"))
-          (hsPkgs."sockets-internal" or (buildDepError "sockets-internal"))
-          (hsPkgs."sockets-stream-bidirectional" or (buildDepError "sockets-stream-bidirectional"))
-          (hsPkgs."sockets-stream-send" or (buildDepError "sockets-stream-send"))
-          (hsPkgs."sockets-stream-send-two" or (buildDepError "sockets-stream-send-two"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
+          (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
+          (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
+          (hsPkgs."primitive-addr" or (errorHandler.buildDepError "primitive-addr"))
+          (hsPkgs."primitive-offset" or (errorHandler.buildDepError "primitive-offset"))
+          (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
+          (hsPkgs."sockets-datagram-receive" or (errorHandler.buildDepError "sockets-datagram-receive"))
+          (hsPkgs."sockets-datagram-receive-many" or (errorHandler.buildDepError "sockets-datagram-receive-many"))
+          (hsPkgs."sockets-datagram-send" or (errorHandler.buildDepError "sockets-datagram-send"))
+          (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
+          (hsPkgs."sockets-stream-bidirectional" or (errorHandler.buildDepError "sockets-stream-bidirectional"))
+          (hsPkgs."sockets-stream-send" or (errorHandler.buildDepError "sockets-stream-send"))
+          (hsPkgs."sockets-stream-send-two" or (errorHandler.buildDepError "sockets-stream-send-two"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
           ] ++ (if flags.checked
           then [
-            (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
+            (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
             ]
-          else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]);
+          else [
+            (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+            ]);
         buildable = true;
         };
       sublibs = {
         "sockets-internal" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."ip" or (buildDepError "ip"))
-            (hsPkgs."posix-api" or (buildDepError "posix-api"))
-            (hsPkgs."primitive-offset" or (buildDepError "primitive-offset"))
-            (hsPkgs."primitive-unlifted" or (buildDepError "primitive-unlifted"))
-            (hsPkgs."primitive-addr" or (buildDepError "primitive-addr"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."byteslice" or (buildDepError "byteslice"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
+            (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
+            (hsPkgs."primitive-offset" or (errorHandler.buildDepError "primitive-offset"))
+            (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
+            (hsPkgs."primitive-addr" or (errorHandler.buildDepError "primitive-addr"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
             ] ++ (if flags.checked
             then [
-              (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
+              (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
               ]
-            else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]);
+            else [
+              (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+              ]);
           buildable = true;
           };
         "sockets-interrupt" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."error-codes" or (buildDepError "error-codes"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."sockets-internal" or (buildDepError "sockets-internal"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
             ];
           buildable = true;
           };
         "sockets-buffer" = {
-          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
           };
         "sockets-datagram-send" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."error-codes" or (buildDepError "error-codes"))
-            (hsPkgs."posix-api" or (buildDepError "posix-api"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."sockets-internal" or (buildDepError "sockets-internal"))
-            (hsPkgs."sockets-buffer" or (buildDepError "sockets-buffer"))
-            (hsPkgs."sockets-interrupt" or (buildDepError "sockets-interrupt"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
+            (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
+            (hsPkgs."sockets-buffer" or (errorHandler.buildDepError "sockets-buffer"))
+            (hsPkgs."sockets-interrupt" or (errorHandler.buildDepError "sockets-interrupt"))
             ];
           buildable = true;
           };
         "sockets-datagram-receive" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."error-codes" or (buildDepError "error-codes"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."posix-api" or (buildDepError "posix-api"))
-            (hsPkgs."primitive-offset" or (buildDepError "primitive-offset"))
-            (hsPkgs."sockets-internal" or (buildDepError "sockets-internal"))
-            (hsPkgs."sockets-buffer" or (buildDepError "sockets-buffer"))
-            (hsPkgs."sockets-interrupt" or (buildDepError "sockets-interrupt"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
+            (hsPkgs."primitive-offset" or (errorHandler.buildDepError "primitive-offset"))
+            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
+            (hsPkgs."sockets-buffer" or (errorHandler.buildDepError "sockets-buffer"))
+            (hsPkgs."sockets-interrupt" or (errorHandler.buildDepError "sockets-interrupt"))
             ];
           buildable = true;
           };
         "sockets-datagram-receive-many" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."error-codes" or (buildDepError "error-codes"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."posix-api" or (buildDepError "posix-api"))
-            (hsPkgs."primitive-unlifted" or (buildDepError "primitive-unlifted"))
-            (hsPkgs."byteslice" or (buildDepError "byteslice"))
-            (hsPkgs."sockets-datagram-receive" or (buildDepError "sockets-datagram-receive"))
-            (hsPkgs."sockets-internal" or (buildDepError "sockets-internal"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
+            (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
+            (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
+            (hsPkgs."sockets-datagram-receive" or (errorHandler.buildDepError "sockets-datagram-receive"))
+            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
             ] ++ (if flags.checked
             then [
-              (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
+              (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
               ]
-            else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]);
+            else [
+              (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+              ]);
           buildable = true;
           };
         "sockets-stream-send" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."error-codes" or (buildDepError "error-codes"))
-            (hsPkgs."posix-api" or (buildDepError "posix-api"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."sockets-internal" or (buildDepError "sockets-internal"))
-            (hsPkgs."sockets-buffer" or (buildDepError "sockets-buffer"))
-            (hsPkgs."sockets-interrupt" or (buildDepError "sockets-interrupt"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
+            (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
+            (hsPkgs."sockets-buffer" or (errorHandler.buildDepError "sockets-buffer"))
+            (hsPkgs."sockets-interrupt" or (errorHandler.buildDepError "sockets-interrupt"))
             ];
           buildable = true;
           };
         "sockets-stream-receive" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."error-codes" or (buildDepError "error-codes"))
-            (hsPkgs."posix-api" or (buildDepError "posix-api"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."sockets-internal" or (buildDepError "sockets-internal"))
-            (hsPkgs."sockets-buffer" or (buildDepError "sockets-buffer"))
-            (hsPkgs."sockets-interrupt" or (buildDepError "sockets-interrupt"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
+            (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
+            (hsPkgs."sockets-buffer" or (errorHandler.buildDepError "sockets-buffer"))
+            (hsPkgs."sockets-interrupt" or (errorHandler.buildDepError "sockets-interrupt"))
             ];
           buildable = true;
           };
         "sockets-stream-send-two" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."error-codes" or (buildDepError "error-codes"))
-            (hsPkgs."posix-api" or (buildDepError "posix-api"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."sockets-internal" or (buildDepError "sockets-internal"))
-            (hsPkgs."sockets-interrupt" or (buildDepError "sockets-interrupt"))
-            (hsPkgs."sockets-stream-send" or (buildDepError "sockets-stream-send"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
+            (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
+            (hsPkgs."sockets-interrupt" or (errorHandler.buildDepError "sockets-interrupt"))
+            (hsPkgs."sockets-stream-send" or (errorHandler.buildDepError "sockets-stream-send"))
             ];
           buildable = true;
           };
         "sockets-stream-bidirectional" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."error-codes" or (buildDepError "error-codes"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."sockets-internal" or (buildDepError "sockets-internal"))
-            (hsPkgs."sockets-stream-send" or (buildDepError "sockets-stream-send"))
-            (hsPkgs."sockets-stream-receive" or (buildDepError "sockets-stream-receive"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
+            (hsPkgs."sockets-stream-send" or (errorHandler.buildDepError "sockets-stream-send"))
+            (hsPkgs."sockets-stream-receive" or (errorHandler.buildDepError "sockets-stream-receive"))
             ];
           buildable = true;
           };
@@ -213,69 +188,77 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "sockets-example" = {
           depends = (pkgs.lib).optionals (flags.example) ([
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."byteslice" or (buildDepError "byteslice"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-            (hsPkgs."ip" or (buildDepError "ip"))
-            (hsPkgs."sockets" or (buildDepError "sockets"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
+            (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
+            (hsPkgs."sockets" or (errorHandler.buildDepError "sockets"))
             ] ++ (if flags.checked
             then [
-              (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
+              (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
               ]
-            else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]));
+            else [
+              (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+              ]));
           buildable = if flags.example then true else false;
           };
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sockets" or (buildDepError "sockets"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
-            (hsPkgs."ip" or (buildDepError "ip"))
-            (hsPkgs."async" or (buildDepError "async"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."byteslice" or (buildDepError "byteslice"))
-            (hsPkgs."primitive-unlifted" or (buildDepError "primitive-unlifted"))
-            (hsPkgs."primitive-addr" or (buildDepError "primitive-addr"))
-            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."sockets" or (errorHandler.buildDepError "sockets"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
+            (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
+            (hsPkgs."primitive-addr" or (errorHandler.buildDepError "primitive-addr"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             ] ++ (if flags.checked
             then [
-              (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
+              (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
               ]
-            else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]);
+            else [
+              (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+              ]);
           buildable = true;
           };
         };
       benchmarks = {
         "macro" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sockets" or (buildDepError "sockets"))
-            (hsPkgs."ip" or (buildDepError "ip"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."entropy" or (buildDepError "entropy"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."sockets" or (errorHandler.buildDepError "sockets"))
+            (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
             ] ++ (if flags.checked
             then [
-              (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
+              (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
               ]
-            else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]);
+            else [
+              (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+              ]);
           buildable = true;
           };
         "http" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."sockets" or (buildDepError "sockets"))
-            (hsPkgs."ip" or (buildDepError "ip"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."byteslice" or (buildDepError "byteslice"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."sockets" or (errorHandler.buildDepError "sockets"))
+            (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
             ] ++ (if flags.checked
             then [
-              (hsPkgs."primitive-checked" or (buildDepError "primitive-checked"))
+              (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
               ]
-            else [ (hsPkgs."primitive" or (buildDepError "primitive")) ]);
+            else [
+              (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+              ]);
           buildable = true;
           };
         };

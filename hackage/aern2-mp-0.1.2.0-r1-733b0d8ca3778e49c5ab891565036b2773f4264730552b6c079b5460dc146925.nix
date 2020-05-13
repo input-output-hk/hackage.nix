@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { mpfr = true; mpfrrounded = false; };
     package = {
@@ -56,35 +25,37 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."integer-logarithms" or (buildDepError "integer-logarithms"))
-          (hsPkgs."convertible" or (buildDepError "convertible"))
-          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
-          (hsPkgs."hspec" or (buildDepError "hspec"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."mixed-types-num" or (buildDepError "mixed-types-num"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."integer-logarithms" or (errorHandler.buildDepError "integer-logarithms"))
+          (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
+          (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
+          (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."mixed-types-num" or (errorHandler.buildDepError "mixed-types-num"))
           ] ++ (pkgs.lib).optionals (flags.mpfr) (if compiler.isGhc && (compiler.version).ge "7.10"
           then if flags.mpfrrounded
-            then [ (hsPkgs."rounded" or (buildDepError "rounded")) ]
+            then [
+              (hsPkgs."rounded" or (errorHandler.buildDepError "rounded"))
+              ]
             else [
-              (hsPkgs."hmpfr" or (buildDepError "hmpfr"))
-              (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
+              (hsPkgs."hmpfr" or (errorHandler.buildDepError "hmpfr"))
+              (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
               ]
           else [
-            (hsPkgs."haskell-mpfr" or (buildDepError "haskell-mpfr"))
-            (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
+            (hsPkgs."haskell-mpfr" or (errorHandler.buildDepError "haskell-mpfr"))
+            (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
             ]);
         buildable = true;
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."aern2-mp" or (buildDepError "aern2-mp"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."aern2-mp" or (errorHandler.buildDepError "aern2-mp"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = true;
           };

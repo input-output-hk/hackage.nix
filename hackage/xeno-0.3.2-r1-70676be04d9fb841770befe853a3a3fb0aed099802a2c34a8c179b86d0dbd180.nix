@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { libxml2 = false; };
     package = {
@@ -50,30 +19,30 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       homepage = "https://github.com/ocramz/xeno";
       url = "";
       synopsis = "A fast event-based XML parser in pure Haskell";
-      description = "Please see README.md";
+      description = "Please see README.md          ";
       buildType = "Simple";
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."mutable-containers" or (buildDepError "mutable-containers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."mutable-containers" or (errorHandler.buildDepError "mutable-containers"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           ];
         buildable = true;
         };
       tests = {
         "xeno-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."xeno" or (buildDepError "xeno"))
-            (hsPkgs."hexml" or (buildDepError "hexml"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."xeno" or (errorHandler.buildDepError "xeno"))
+            (hsPkgs."hexml" or (errorHandler.buildDepError "hexml"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             ];
           buildable = true;
           };
@@ -81,26 +50,26 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "xeno-speed-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."xeno" or (buildDepError "xeno"))
-            (hsPkgs."hexml" or (buildDepError "hexml"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."xml" or (buildDepError "xml"))
-            (hsPkgs."hexpat" or (buildDepError "hexpat"))
-            ] ++ (pkgs.lib).optional (flags.libxml2) (hsPkgs."libxml" or (buildDepError "libxml"));
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."xeno" or (errorHandler.buildDepError "xeno"))
+            (hsPkgs."hexml" or (errorHandler.buildDepError "hexml"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
+            (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
+            ] ++ (pkgs.lib).optional (flags.libxml2) (hsPkgs."libxml" or (errorHandler.buildDepError "libxml"));
           buildable = true;
           };
         "xeno-memory-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."xeno" or (buildDepError "xeno"))
-            (hsPkgs."weigh" or (buildDepError "weigh"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."hexml" or (buildDepError "hexml"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."xeno" or (errorHandler.buildDepError "xeno"))
+            (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."hexml" or (errorHandler.buildDepError "hexml"))
             ];
           buildable = true;
           };

@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,22 +25,22 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
-          (hsPkgs."hw-excess" or (buildDepError "hw-excess"))
-          (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
-          (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
-          (hsPkgs."hw-string-parse" or (buildDepError "hw-string-parse"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
+          (hsPkgs."hw-excess" or (errorHandler.buildDepError "hw-excess"))
+          (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
+          (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
+          (hsPkgs."hw-string-parse" or (errorHandler.buildDepError "hw-string-parse"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         buildable = true;
         };
       exes = {
         "hw-balancedparens-example" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hw-balancedparens" or (errorHandler.buildDepError "hw-balancedparens"))
             ];
           buildable = true;
           };
@@ -79,14 +48,14 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "hw-balancedparens-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
-            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
-            (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
-            (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
+            (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
+            (hsPkgs."hw-balancedparens" or (errorHandler.buildDepError "hw-balancedparens"))
+            (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };
@@ -94,16 +63,16 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."conduit" or (buildDepError "conduit"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
-            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
-            (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
-            (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
-            (hsPkgs."mmap" or (buildDepError "mmap"))
-            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
+            (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
+            (hsPkgs."hw-balancedparens" or (errorHandler.buildDepError "hw-balancedparens"))
+            (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
+            (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           buildable = true;
           };

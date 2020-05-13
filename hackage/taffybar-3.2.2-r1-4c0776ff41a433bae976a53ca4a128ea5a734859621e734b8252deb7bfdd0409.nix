@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,82 +25,82 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
-          (hsPkgs."HStringTemplate" or (buildDepError "HStringTemplate"))
-          (hsPkgs."X11" or (buildDepError "X11"))
-          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
-          (hsPkgs."broadcast-chan" or (buildDepError "broadcast-chan"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."dbus" or (buildDepError "dbus"))
-          (hsPkgs."dbus-hslogger" or (buildDepError "dbus-hslogger"))
-          (hsPkgs."directory" or (buildDepError "directory"))
-          (hsPkgs."dyre" or (buildDepError "dyre"))
-          (hsPkgs."either" or (buildDepError "either"))
-          (hsPkgs."enclosed-exceptions" or (buildDepError "enclosed-exceptions"))
-          (hsPkgs."filepath" or (buildDepError "filepath"))
-          (hsPkgs."gi-cairo" or (buildDepError "gi-cairo"))
-          (hsPkgs."gi-cairo-connector" or (buildDepError "gi-cairo-connector"))
-          (hsPkgs."gi-cairo-render" or (buildDepError "gi-cairo-render"))
-          (hsPkgs."gi-gdk" or (buildDepError "gi-gdk"))
-          (hsPkgs."gi-gdkpixbuf" or (buildDepError "gi-gdkpixbuf"))
-          (hsPkgs."gi-gdkx11" or (buildDepError "gi-gdkx11"))
-          (hsPkgs."gi-glib" or (buildDepError "gi-glib"))
-          (hsPkgs."gi-gtk" or (buildDepError "gi-gtk"))
-          (hsPkgs."gi-gtk-hs" or (buildDepError "gi-gtk-hs"))
-          (hsPkgs."gi-pango" or (buildDepError "gi-pango"))
-          (hsPkgs."gtk-sni-tray" or (buildDepError "gtk-sni-tray"))
-          (hsPkgs."gtk-strut" or (buildDepError "gtk-strut"))
-          (hsPkgs."haskell-gi" or (buildDepError "haskell-gi"))
-          (hsPkgs."haskell-gi-base" or (buildDepError "haskell-gi-base"))
-          (hsPkgs."hslogger" or (buildDepError "hslogger"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-          (hsPkgs."http-types" or (buildDepError "http-types"))
-          (hsPkgs."multimap" or (buildDepError "multimap"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."rate-limit" or (buildDepError "rate-limit"))
-          (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
-          (hsPkgs."safe" or (buildDepError "safe"))
-          (hsPkgs."scotty" or (buildDepError "scotty"))
-          (hsPkgs."split" or (buildDepError "split"))
-          (hsPkgs."status-notifier-item" or (buildDepError "status-notifier-item"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
-          (hsPkgs."time-units" or (buildDepError "time-units"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."tuple" or (buildDepError "tuple"))
-          (hsPkgs."unix" or (buildDepError "unix"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."xdg-desktop-entry" or (buildDepError "xdg-desktop-entry"))
-          (hsPkgs."xdg-basedir" or (buildDepError "xdg-basedir"))
-          (hsPkgs."xml" or (buildDepError "xml"))
-          (hsPkgs."xml-helpers" or (buildDepError "xml-helpers"))
-          (hsPkgs."xmonad" or (buildDepError "xmonad"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
+          (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
+          (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
+          (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
+          (hsPkgs."broadcast-chan" or (errorHandler.buildDepError "broadcast-chan"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
+          (hsPkgs."dbus-hslogger" or (errorHandler.buildDepError "dbus-hslogger"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
+          (hsPkgs."either" or (errorHandler.buildDepError "either"))
+          (hsPkgs."enclosed-exceptions" or (errorHandler.buildDepError "enclosed-exceptions"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."gi-cairo" or (errorHandler.buildDepError "gi-cairo"))
+          (hsPkgs."gi-cairo-connector" or (errorHandler.buildDepError "gi-cairo-connector"))
+          (hsPkgs."gi-cairo-render" or (errorHandler.buildDepError "gi-cairo-render"))
+          (hsPkgs."gi-gdk" or (errorHandler.buildDepError "gi-gdk"))
+          (hsPkgs."gi-gdkpixbuf" or (errorHandler.buildDepError "gi-gdkpixbuf"))
+          (hsPkgs."gi-gdkx11" or (errorHandler.buildDepError "gi-gdkx11"))
+          (hsPkgs."gi-glib" or (errorHandler.buildDepError "gi-glib"))
+          (hsPkgs."gi-gtk" or (errorHandler.buildDepError "gi-gtk"))
+          (hsPkgs."gi-gtk-hs" or (errorHandler.buildDepError "gi-gtk-hs"))
+          (hsPkgs."gi-pango" or (errorHandler.buildDepError "gi-pango"))
+          (hsPkgs."gtk-sni-tray" or (errorHandler.buildDepError "gtk-sni-tray"))
+          (hsPkgs."gtk-strut" or (errorHandler.buildDepError "gtk-strut"))
+          (hsPkgs."haskell-gi" or (errorHandler.buildDepError "haskell-gi"))
+          (hsPkgs."haskell-gi-base" or (errorHandler.buildDepError "haskell-gi-base"))
+          (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."multimap" or (errorHandler.buildDepError "multimap"))
+          (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."rate-limit" or (errorHandler.buildDepError "rate-limit"))
+          (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."status-notifier-item" or (errorHandler.buildDepError "status-notifier-item"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
+          (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+          (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
+          (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+          (hsPkgs."xdg-desktop-entry" or (errorHandler.buildDepError "xdg-desktop-entry"))
+          (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
+          (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
+          (hsPkgs."xml-helpers" or (errorHandler.buildDepError "xml-helpers"))
+          (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
           ];
         pkgconfig = [
-          (pkgconfPkgs."gtk+-3.0" or (pkgConfDepError "gtk+-3.0"))
+          (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"))
           ];
         buildable = true;
         };
       exes = {
         "taffybar" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."hslogger" or (buildDepError "hslogger"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."taffybar" or (buildDepError "taffybar"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."taffybar" or (errorHandler.buildDepError "taffybar"))
             ];
           pkgconfig = [
-            (pkgconfPkgs."gtk+-3.0" or (pkgConfDepError "gtk+-3.0"))
+            (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"))
             ];
           buildable = true;
           };

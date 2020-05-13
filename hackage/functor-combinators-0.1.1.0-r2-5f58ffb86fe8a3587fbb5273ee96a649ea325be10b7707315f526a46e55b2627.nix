@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,45 +25,45 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."comonad" or (buildDepError "comonad"))
-          (hsPkgs."constraints" or (buildDepError "constraints"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."deriving-compat" or (buildDepError "deriving-compat"))
-          (hsPkgs."free" or (buildDepError "free"))
-          (hsPkgs."kan-extensions" or (buildDepError "kan-extensions"))
-          (hsPkgs."mmorph" or (buildDepError "mmorph"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."natural-transformation" or (buildDepError "natural-transformation"))
-          (hsPkgs."nonempty-containers" or (buildDepError "nonempty-containers"))
-          (hsPkgs."pointed" or (buildDepError "pointed"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."recursion-schemes" or (buildDepError "recursion-schemes"))
-          (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
-          (hsPkgs."these" or (buildDepError "these"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."trivial-constraint" or (buildDepError "trivial-constraint"))
-          (hsPkgs."vinyl" or (buildDepError "vinyl"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+          (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
+          (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."deriving-compat" or (errorHandler.buildDepError "deriving-compat"))
+          (hsPkgs."free" or (errorHandler.buildDepError "free"))
+          (hsPkgs."kan-extensions" or (errorHandler.buildDepError "kan-extensions"))
+          (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."natural-transformation" or (errorHandler.buildDepError "natural-transformation"))
+          (hsPkgs."nonempty-containers" or (errorHandler.buildDepError "nonempty-containers"))
+          (hsPkgs."pointed" or (errorHandler.buildDepError "pointed"))
+          (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+          (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
+          (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+          (hsPkgs."these" or (errorHandler.buildDepError "these"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."trivial-constraint" or (errorHandler.buildDepError "trivial-constraint"))
+          (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           ];
         buildable = true;
         };
       tests = {
         "functor-combinators-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."free" or (buildDepError "free"))
-            (hsPkgs."functor-combinators" or (buildDepError "functor-combinators"))
-            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
-            (hsPkgs."nonempty-containers" or (buildDepError "nonempty-containers"))
-            (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
-            (hsPkgs."tagged" or (buildDepError "tagged"))
-            (hsPkgs."tasty" or (buildDepError "tasty"))
-            (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."free" or (errorHandler.buildDepError "free"))
+            (hsPkgs."functor-combinators" or (errorHandler.buildDepError "functor-combinators"))
+            (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
+            (hsPkgs."nonempty-containers" or (errorHandler.buildDepError "nonempty-containers"))
+            (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
+            (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };

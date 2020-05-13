@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {};
     package = {
@@ -56,36 +25,36 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."pandoc" or (buildDepError "pandoc"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
-          (hsPkgs."data-accessor-template" or (buildDepError "data-accessor-template"))
-          (hsPkgs."data-accessor-transformers" or (buildDepError "data-accessor-transformers"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."roman-numerals" or (buildDepError "roman-numerals"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
+          (hsPkgs."data-accessor-template" or (errorHandler.buildDepError "data-accessor-template"))
+          (hsPkgs."data-accessor-transformers" or (errorHandler.buildDepError "data-accessor-transformers"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."roman-numerals" or (errorHandler.buildDepError "roman-numerals"))
+          (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+          (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           ];
         buildable = true;
         };
       exes = {
         "pandoc-crossref" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."pandoc" or (buildDepError "pandoc"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."pandoc-crossref" or (buildDepError "pandoc-crossref"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."pandoc-crossref" or (errorHandler.buildDepError "pandoc-crossref"))
             ];
           buildable = true;
           };
@@ -93,35 +62,35 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "test-pandoc-crossref" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."pandoc" or (buildDepError "pandoc"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
-            (hsPkgs."data-default" or (buildDepError "data-default"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."data-accessor" or (buildDepError "data-accessor"))
-            (hsPkgs."data-accessor-template" or (buildDepError "data-accessor-template"))
-            (hsPkgs."data-accessor-transformers" or (buildDepError "data-accessor-transformers"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."roman-numerals" or (buildDepError "roman-numerals"))
-            (hsPkgs."syb" or (buildDepError "syb"))
-            (hsPkgs."pandoc-crossref" or (buildDepError "pandoc-crossref"))
-            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
+            (hsPkgs."data-accessor-template" or (errorHandler.buildDepError "data-accessor-template"))
+            (hsPkgs."data-accessor-transformers" or (errorHandler.buildDepError "data-accessor-transformers"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."roman-numerals" or (errorHandler.buildDepError "roman-numerals"))
+            (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+            (hsPkgs."pandoc-crossref" or (errorHandler.buildDepError "pandoc-crossref"))
+            (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             ];
           buildable = true;
           };
         "test-integrative" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."pandoc" or (buildDepError "pandoc"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."pandoc-crossref" or (buildDepError "pandoc-crossref"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."pandoc-crossref" or (errorHandler.buildDepError "pandoc-crossref"))
             ];
           buildable = true;
           };

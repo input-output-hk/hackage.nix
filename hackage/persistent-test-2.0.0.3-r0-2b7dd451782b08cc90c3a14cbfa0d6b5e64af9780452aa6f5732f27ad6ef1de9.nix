@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       sqlite = false;
@@ -64,86 +33,86 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (((([
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."persistent" or (buildDepError "persistent"))
-          (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
-          (hsPkgs."HUnit" or (buildDepError "HUnit"))
-          (hsPkgs."hspec" or (buildDepError "hspec"))
-          (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."aeson-compat" or (buildDepError "aeson-compat"))
-          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
-          (hsPkgs."network" or (buildDepError "network"))
-          (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
-          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
-          (hsPkgs."unliftio" or (buildDepError "unliftio"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
-          (hsPkgs."conduit" or (buildDepError "conduit"))
-          (hsPkgs."resourcet" or (buildDepError "resourcet"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
-          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
-          (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
-          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
-          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."silently" or (buildDepError "silently"))
-          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."scientific" or (buildDepError "scientific"))
-          (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
-          (hsPkgs."exceptions" or (buildDepError "exceptions"))
-          (hsPkgs."tagged" or (buildDepError "tagged"))
-          (hsPkgs."old-locale" or (buildDepError "old-locale"))
-          ] ++ (pkgs.lib).optional (!flags.postgresql && !flags.mysql && !flags.mongodb && !flags.zookeeper) (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))) ++ (pkgs.lib).optionals (flags.postgresql) [
-          (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
-          (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
-          (hsPkgs."postgresql-libpq" or (buildDepError "postgresql-libpq"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
+          (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
+          (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+          (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+          (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."aeson-compat" or (errorHandler.buildDepError "aeson-compat"))
+          (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
+          (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+          (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
+          (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
+          (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+          (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
+          (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+          (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
+          ] ++ (pkgs.lib).optional (!flags.postgresql && !flags.mysql && !flags.mongodb && !flags.zookeeper) (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))) ++ (pkgs.lib).optionals (flags.postgresql) [
+          (hsPkgs."persistent-postgresql" or (errorHandler.buildDepError "persistent-postgresql"))
+          (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
+          (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
           ]) ++ (pkgs.lib).optionals (flags.mysql) [
-          (hsPkgs."persistent-mysql" or (buildDepError "persistent-mysql"))
-          (hsPkgs."mysql-simple" or (buildDepError "mysql-simple"))
-          (hsPkgs."mysql" or (buildDepError "mysql"))
+          (hsPkgs."persistent-mysql" or (errorHandler.buildDepError "persistent-mysql"))
+          (hsPkgs."mysql-simple" or (errorHandler.buildDepError "mysql-simple"))
+          (hsPkgs."mysql" or (errorHandler.buildDepError "mysql"))
           ]) ++ (pkgs.lib).optionals (flags.mongodb) [
-          (hsPkgs."persistent-mongoDB" or (buildDepError "persistent-mongoDB"))
-          (hsPkgs."mongoDB" or (buildDepError "mongoDB"))
-          (hsPkgs."cereal" or (buildDepError "cereal"))
-          (hsPkgs."bson" or (buildDepError "bson"))
-          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."persistent-mongoDB" or (errorHandler.buildDepError "persistent-mongoDB"))
+          (hsPkgs."mongoDB" or (errorHandler.buildDepError "mongoDB"))
+          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
+          (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
           ]) ++ (pkgs.lib).optionals (flags.zookeeper) [
-          (hsPkgs."persistent-zookeeper" or (buildDepError "persistent-zookeeper"))
-          (hsPkgs."hzk" or (buildDepError "hzk"))
-          (hsPkgs."binary" or (buildDepError "binary"))
-          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
-          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."persistent-zookeeper" or (errorHandler.buildDepError "persistent-zookeeper"))
+          (hsPkgs."hzk" or (errorHandler.buildDepError "hzk"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
           ];
         buildable = true;
         };
       exes = {
         "persistent-test" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."persistent-test" or (buildDepError "persistent-test"))
-            (hsPkgs."persistent" or (buildDepError "persistent"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
-            (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
-            (hsPkgs."resourcet" or (buildDepError "resourcet"))
-            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."persistent-test" or (errorHandler.buildDepError "persistent-test"))
+            (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
+            (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
+            (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+            (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             ];
           buildable = true;
           };

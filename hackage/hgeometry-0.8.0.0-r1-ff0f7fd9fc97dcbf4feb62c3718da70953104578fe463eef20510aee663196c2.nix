@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { examples = false; with-quickcheck = true; interactive = false; };
     package = {
@@ -56,88 +25,88 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."dlist" or (buildDepError "dlist"))
-          (hsPkgs."contravariant" or (buildDepError "contravariant"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."linear" or (buildDepError "linear"))
-          (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."singletons" or (buildDepError "singletons"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."vinyl" or (buildDepError "vinyl"))
-          (hsPkgs."deepseq" or (buildDepError "deepseq"))
-          (hsPkgs."fingertree" or (buildDepError "fingertree"))
-          (hsPkgs."colour" or (buildDepError "colour"))
-          (hsPkgs."reflection" or (buildDepError "reflection"))
-          (hsPkgs."parsec" or (buildDepError "parsec"))
-          (hsPkgs."vector" or (buildDepError "vector"))
-          (hsPkgs."fixed-vector" or (buildDepError "fixed-vector"))
-          (hsPkgs."data-clist" or (buildDepError "data-clist"))
-          (hsPkgs."hexpat" or (buildDepError "hexpat"))
-          (hsPkgs."aeson" or (buildDepError "aeson"))
-          (hsPkgs."yaml" or (buildDepError "yaml"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
+          (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
+          (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+          (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
+          (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
+          (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
+          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."fixed-vector" or (errorHandler.buildDepError "fixed-vector"))
+          (hsPkgs."data-clist" or (errorHandler.buildDepError "data-clist"))
+          (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           ] ++ (pkgs.lib).optionals (flags.with-quickcheck) [
-          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-          (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
           ];
         buildable = true;
         };
       exes = {
         "hgeometry-viewer" = {
           depends = (pkgs.lib).optionals (flags.interactive) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hgeometry" or (buildDepError "hgeometry"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."vinyl" or (buildDepError "vinyl"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."hexpat" or (buildDepError "hexpat"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."colour" or (buildDepError "colour"))
-            (hsPkgs."cairo-canvas" or (buildDepError "cairo-canvas"))
-            (hsPkgs."gi-gtk" or (buildDepError "gi-gtk"))
-            (hsPkgs."reactive-banana-gi-gtk" or (buildDepError "reactive-banana-gi-gtk"))
-            (hsPkgs."cairo" or (buildDepError "cairo"))
-            (hsPkgs."gi-cairo" or (buildDepError "gi-cairo"))
-            (hsPkgs."gi-gdk" or (buildDepError "gi-gdk"))
-            (hsPkgs."gi-gtk" or (buildDepError "gi-gtk"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."haskell-gi-base" or (buildDepError "haskell-gi-base"))
-            (hsPkgs."reactive-banana" or (buildDepError "reactive-banana"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hgeometry" or (errorHandler.buildDepError "hgeometry"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
+            (hsPkgs."cairo-canvas" or (errorHandler.buildDepError "cairo-canvas"))
+            (hsPkgs."gi-gtk" or (errorHandler.buildDepError "gi-gtk"))
+            (hsPkgs."reactive-banana-gi-gtk" or (errorHandler.buildDepError "reactive-banana-gi-gtk"))
+            (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
+            (hsPkgs."gi-cairo" or (errorHandler.buildDepError "gi-cairo"))
+            (hsPkgs."gi-gdk" or (errorHandler.buildDepError "gi-gdk"))
+            (hsPkgs."gi-gtk" or (errorHandler.buildDepError "gi-gtk"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."haskell-gi-base" or (errorHandler.buildDepError "haskell-gi-base"))
+            (hsPkgs."reactive-banana" or (errorHandler.buildDepError "reactive-banana"))
             ];
           buildable = if !flags.interactive then false else true;
           };
         "hgeometry-examples" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hgeometry" or (buildDepError "hgeometry"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."vinyl" or (buildDepError "vinyl"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."hexpat" or (buildDepError "hexpat"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hgeometry" or (errorHandler.buildDepError "hgeometry"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];
           buildable = if !flags.examples then false else true;
           };
@@ -145,49 +114,49 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       tests = {
         "doctests" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             ];
           buildable = true;
           };
         "hspec" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."approximate-equality" or (buildDepError "approximate-equality"))
-            (hsPkgs."hgeometry" or (buildDepError "hgeometry"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."data-clist" or (buildDepError "data-clist"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."vinyl" or (buildDepError "vinyl"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."vector" or (buildDepError "vector"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."random" or (buildDepError "random"))
-            (hsPkgs."singletons" or (buildDepError "singletons"))
-            (hsPkgs."colour" or (buildDepError "colour"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."approximate-equality" or (errorHandler.buildDepError "approximate-equality"))
+            (hsPkgs."hgeometry" or (errorHandler.buildDepError "hgeometry"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."data-clist" or (errorHandler.buildDepError "data-clist"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
+            (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
+            (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover")))
             ];
           buildable = true;
           };
         "bapc_examples" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."doctest" or (buildDepError "doctest"))
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."hgeometry" or (buildDepError "hgeometry"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."data-clist" or (buildDepError "data-clist"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."hgeometry" or (errorHandler.buildDepError "hgeometry"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."data-clist" or (errorHandler.buildDepError "data-clist"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             ];
           buildable = true;
           };
@@ -195,19 +164,19 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "benchmarks" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."fixed-vector" or (buildDepError "fixed-vector"))
-            (hsPkgs."linear" or (buildDepError "linear"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
-            (hsPkgs."hgeometry" or (buildDepError "hgeometry"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."fixed-vector" or (errorHandler.buildDepError "fixed-vector"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."deepseq-generics" or (errorHandler.buildDepError "deepseq-generics"))
+            (hsPkgs."hgeometry" or (errorHandler.buildDepError "hgeometry"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             ];
           buildable = true;
           };

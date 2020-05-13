@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = { profile = false; eventlog = false; development = false; };
     package = {
@@ -56,57 +25,57 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = [
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."http-client" or (buildDepError "http-client"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."file-embed" or (buildDepError "file-embed"))
-          (hsPkgs."shake" or (buildDepError "shake"))
-          (hsPkgs."bzlib" or (buildDepError "bzlib"))
-          (hsPkgs."Cabal" or (buildDepError "Cabal"))
-          (hsPkgs."lzma" or (buildDepError "lzma"))
-          (hsPkgs."tar" or (buildDepError "tar"))
-          (hsPkgs."zlib" or (buildDepError "zlib"))
-          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."process" or (buildDepError "process"))
-          (hsPkgs."hashable" or (buildDepError "hashable"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."parallel-io" or (buildDepError "parallel-io"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."dhall" or (buildDepError "dhall"))
-          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-          (hsPkgs."shake-ats" or (buildDepError "shake-ats"))
-          (hsPkgs."shake-ext" or (buildDepError "shake-ext"))
-          (hsPkgs."shake-c" or (buildDepError "shake-c"))
-          (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
-          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-          (hsPkgs."dependency" or (buildDepError "dependency"))
-          (hsPkgs."filemanip" or (buildDepError "filemanip"))
-          (hsPkgs."quaalude" or (buildDepError "quaalude"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
+          (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
+          (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
+          (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
+          (hsPkgs."lzma" or (errorHandler.buildDepError "lzma"))
+          (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
+          (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
+          (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
+          (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+          (hsPkgs."shake-ats" or (errorHandler.buildDepError "shake-ats"))
+          (hsPkgs."shake-ext" or (errorHandler.buildDepError "shake-ext"))
+          (hsPkgs."shake-c" or (errorHandler.buildDepError "shake-c"))
+          (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
+          (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+          (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
+          (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
+          (hsPkgs."quaalude" or (errorHandler.buildDepError "quaalude"))
           ];
         buildable = true;
         };
       sublibs = {
         "quaalude" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."http-client" or (buildDepError "http-client"))
-            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."dhall" or (buildDepError "dhall"))
-            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
-            (hsPkgs."shake" or (buildDepError "shake"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."composition-prelude" or (buildDepError "composition-prelude"))
-            (hsPkgs."binary" or (buildDepError "binary"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
+            (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
+            (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           build-tools = [
-            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
+            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")))
             ];
           buildable = true;
           };
@@ -114,21 +83,21 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       exes = {
         "atspkg" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."ats-pkg" or (buildDepError "ats-pkg"))
-            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
-            (hsPkgs."shake-ats" or (buildDepError "shake-ats"))
-            (hsPkgs."microlens" or (buildDepError "microlens"))
-            (hsPkgs."temporary" or (buildDepError "temporary"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."composition-prelude" or (buildDepError "composition-prelude"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."parallel-io" or (buildDepError "parallel-io"))
-            (hsPkgs."quaalude" or (buildDepError "quaalude"))
-            (hsPkgs."dependency" or (buildDepError "dependency"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."shake" or (buildDepError "shake"))
-            (hsPkgs."cli-setup" or (buildDepError "cli-setup"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ats-pkg" or (errorHandler.buildDepError "ats-pkg"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."shake-ats" or (errorHandler.buildDepError "shake-ats"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
+            (hsPkgs."quaalude" or (errorHandler.buildDepError "quaalude"))
+            (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
+            (hsPkgs."cli-setup" or (errorHandler.buildDepError "cli-setup"))
             ];
           buildable = true;
           };

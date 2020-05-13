@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       use-reflex-optimizer = false;
@@ -61,163 +30,163 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = ((([
-          (hsPkgs."MemoTrie" or (buildDepError "MemoTrie"))
-          (hsPkgs."base" or (buildDepError "base"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."comonad" or (buildDepError "comonad"))
-          (hsPkgs."constraints-extras" or (buildDepError "constraints-extras"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."data-default" or (buildDepError "data-default"))
-          (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-          (hsPkgs."exception-transformers" or (buildDepError "exception-transformers"))
-          (hsPkgs."profunctors" or (buildDepError "profunctors"))
-          (hsPkgs."lens" or (buildDepError "lens"))
-          (hsPkgs."monad-control" or (buildDepError "monad-control"))
-          (hsPkgs."monoidal-containers" or (buildDepError "monoidal-containers"))
-          (hsPkgs."mtl" or (buildDepError "mtl"))
-          (hsPkgs."prim-uniq" or (buildDepError "prim-uniq"))
-          (hsPkgs."primitive" or (buildDepError "primitive"))
-          (hsPkgs."random" or (buildDepError "random"))
-          (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-          (hsPkgs."reflection" or (buildDepError "reflection"))
-          (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
-          (hsPkgs."semigroups" or (buildDepError "semigroups"))
-          (hsPkgs."stm" or (buildDepError "stm"))
-          (hsPkgs."syb" or (buildDepError "syb"))
-          (hsPkgs."these" or (buildDepError "these"))
-          (hsPkgs."time" or (buildDepError "time"))
-          (hsPkgs."transformers" or (buildDepError "transformers"))
-          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-          (hsPkgs."unbounded-delays" or (buildDepError "unbounded-delays"))
-          (hsPkgs."witherable" or (buildDepError "witherable"))
-          ] ++ (pkgs.lib).optional (flags.debug-trace-events) (hsPkgs."bytestring" or (buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.use-reflex-optimizer) (hsPkgs."ghc" or (buildDepError "ghc"))) ++ (if flags.use-template-haskell
+          (hsPkgs."MemoTrie" or (errorHandler.buildDepError "MemoTrie"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+          (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
+          (hsPkgs."constraints-extras" or (errorHandler.buildDepError "constraints-extras"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
+          (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
+          (hsPkgs."exception-transformers" or (errorHandler.buildDepError "exception-transformers"))
+          (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."monoidal-containers" or (errorHandler.buildDepError "monoidal-containers"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."prim-uniq" or (errorHandler.buildDepError "prim-uniq"))
+          (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
+          (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
+          (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
+          (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
+          (hsPkgs."these" or (errorHandler.buildDepError "these"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
+          (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
+          (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
+          ] ++ (pkgs.lib).optional (flags.debug-trace-events) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.use-reflex-optimizer) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))) ++ (if flags.use-template-haskell
           then [
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
-            (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
+            (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             ]
           else [
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"));
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            ])) ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"));
         buildable = true;
         };
       tests = {
         "semantics" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
+            (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };
         "CrossImpl" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
+            (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             ];
           buildable = true;
           };
         "hlint" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."directory" or (buildDepError "directory"))
-            (hsPkgs."filepath" or (buildDepError "filepath"))
-            (hsPkgs."filemanip" or (buildDepError "filemanip"))
-            (hsPkgs."hlint" or (buildDepError "hlint"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
+            (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             ];
           buildable = if compiler.isGhcjs && true then false else true;
           };
         "EventWriterT" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."these" or (buildDepError "these"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
-            (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."these" or (errorHandler.buildDepError "these"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
+            (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
             ];
           buildable = true;
           };
         "RequesterT" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."these" or (buildDepError "these"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
-            (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."these" or (errorHandler.buildDepError "these"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
+            (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
             ];
           buildable = true;
           };
         "QueryT" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."lens" or (buildDepError "lens"))
-            (hsPkgs."monoidal-containers" or (buildDepError "monoidal-containers"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
-            (hsPkgs."semigroups" or (buildDepError "semigroups"))
-            (hsPkgs."these" or (buildDepError "these"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."monoidal-containers" or (errorHandler.buildDepError "monoidal-containers"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
+            (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
+            (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
+            (hsPkgs."these" or (errorHandler.buildDepError "these"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };
         "GC-Semantics" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."these" or (buildDepError "these"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
-            (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (buildDepError "semigroups"));
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."these" or (errorHandler.buildDepError "these"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
+            (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
           };
         "rootCleanup" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
-            (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-            (hsPkgs."these" or (buildDepError "these"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
+            (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
+            (hsPkgs."these" or (errorHandler.buildDepError "these"))
             ];
           buildable = true;
           };
@@ -225,40 +194,40 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "spider-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+            (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };
         "saulzar-bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."containers" or (buildDepError "containers"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."dependent-map" or (buildDepError "dependent-map"))
-            (hsPkgs."dependent-sum" or (buildDepError "dependent-sum"))
-            (hsPkgs."loch-th" or (buildDepError "loch-th"))
-            (hsPkgs."mtl" or (buildDepError "mtl"))
-            (hsPkgs."primitive" or (buildDepError "primitive"))
-            (hsPkgs."process" or (buildDepError "process"))
-            (hsPkgs."ref-tf" or (buildDepError "ref-tf"))
-            (hsPkgs."reflex" or (buildDepError "reflex"))
-            (hsPkgs."split" or (buildDepError "split"))
-            (hsPkgs."stm" or (buildDepError "stm"))
-            (hsPkgs."time" or (buildDepError "time"))
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
+            (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
+            (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
+            (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
+            (hsPkgs."split" or (errorHandler.buildDepError "split"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           buildable = true;
           };

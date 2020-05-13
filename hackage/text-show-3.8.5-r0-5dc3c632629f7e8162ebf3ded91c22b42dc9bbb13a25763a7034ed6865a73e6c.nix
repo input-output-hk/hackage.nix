@@ -1,43 +1,12 @@
-let
-  buildDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (build dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  sysDepError = pkg:
-    builtins.throw ''
-      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
-      
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      '';
-  pkgConfDepError = pkg:
-    builtins.throw ''
-      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
-      
-      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
-      '';
-  exeDepError = pkg:
-    builtins.throw ''
-      The local executable components do not include the component: ${pkg} (executable dependency).
-      '';
-  legacyExeDepError = pkg:
-    builtins.throw ''
-      The Haskell package set does not contain the package: ${pkg} (executable dependency).
-      
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-  buildToolDepError = pkg:
-    builtins.throw ''
-      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
-      
-      If this is a system dependency:
-      You may need to augment the system package mapping in haskell.nix so that it can be found.
-      
-      If this is a Haskell dependency:
-      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
-      '';
-in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
   {
     flags = {
       base-4-9 = true;
@@ -60,58 +29,62 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."array" or (buildDepError "array"))
-          (hsPkgs."base-compat-batteries" or (buildDepError "base-compat-batteries"))
-          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
-          (hsPkgs."bytestring" or (buildDepError "bytestring"))
-          (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
-          (hsPkgs."containers" or (buildDepError "containers"))
-          (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
-          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-          (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
-          (hsPkgs."text" or (buildDepError "text"))
-          (hsPkgs."th-abstraction" or (buildDepError "th-abstraction"))
-          (hsPkgs."th-lift" or (buildDepError "th-lift"))
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."base-compat-batteries" or (errorHandler.buildDepError "base-compat-batteries"))
+          (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
+          (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+          (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
+          (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           ] ++ [
-          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
           ]) ++ (if flags.template-haskell-2-11
           then [
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."ghc-boot-th" or (buildDepError "ghc-boot-th"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
             ]
           else [
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             ])) ++ (if flags.new-functor-classes
           then [
-            (hsPkgs."transformers" or (buildDepError "transformers"))
-            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
             ]
-          else [ (hsPkgs."transformers" or (buildDepError "transformers")) ]);
+          else [
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            ]);
         buildable = true;
         };
       tests = {
         "spec" = {
           depends = ([
-            (hsPkgs."array" or (buildDepError "array"))
-            (hsPkgs."base-compat-batteries" or (buildDepError "base-compat-batteries"))
-            (hsPkgs."base-orphans" or (buildDepError "base-orphans"))
-            (hsPkgs."bytestring" or (buildDepError "bytestring"))
-            (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
-            (hsPkgs."deriving-compat" or (buildDepError "deriving-compat"))
-            (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."hspec" or (buildDepError "hspec"))
-            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
-            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
-            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
-            (hsPkgs."text" or (buildDepError "text"))
-            (hsPkgs."text-show" or (buildDepError "text-show"))
-            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
-            ] ++ [ (hsPkgs."base" or (buildDepError "base")) ]) ++ [
-            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."base-compat-batteries" or (errorHandler.buildDepError "base-compat-batteries"))
+            (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))
+            (hsPkgs."deriving-compat" or (errorHandler.buildDepError "deriving-compat"))
+            (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
+            (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
+            ] ++ [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            ]) ++ [
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover")))
             ];
           buildable = true;
           };
@@ -119,12 +92,12 @@ in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs."base" or (buildDepError "base"))
-            (hsPkgs."criterion" or (buildDepError "criterion"))
-            (hsPkgs."deepseq" or (buildDepError "deepseq"))
-            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
-            (hsPkgs."text-show" or (buildDepError "text-show"))
-            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
           };
