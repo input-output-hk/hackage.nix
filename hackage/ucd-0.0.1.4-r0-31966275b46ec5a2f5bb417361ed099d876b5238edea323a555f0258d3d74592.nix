@@ -1,0 +1,58 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "3.0";
+      identifier = { name = "ucd"; version = "0.0.1.4"; };
+      license = "BSD-3-Clause";
+      copyright = "2019 M Farkas-Dyck";
+      maintainer = "strake888@gmail.com";
+      author = "M Farkas-Dyck";
+      homepage = "https://github.com/strake/ucd.hs";
+      url = "";
+      synopsis = "Unicode Character Database — Predicates on characters specified by Unicode";
+      description = "";
+      buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
+        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers or (errorHandler.buildToolDepError "containers")))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.buildToolDepError "directory")))
+        (hsPkgs.buildPackages.regex-applicative or (pkgs.buildPackages.regex-applicative or (errorHandler.buildToolDepError "regex-applicative")))
+        (hsPkgs.buildPackages.util or (pkgs.buildPackages.util or (errorHandler.buildToolDepError "util")))
+        ];
+      };
+    components = {
+      "library" = {
+        depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        buildable = true;
+        };
+      tests = {
+        "test" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."ucd" or (errorHandler.buildDepError "ucd"))
+            ];
+          buildable = true;
+          };
+        };
+      benchmarks = {
+        "bench" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
+            (hsPkgs."ucd" or (errorHandler.buildDepError "ucd"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }
