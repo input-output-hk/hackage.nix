@@ -1,0 +1,46 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.12";
+      identifier = { name = "interval-algebra"; version = "0.1.2"; };
+      license = "BSD-3-Clause";
+      copyright = "2020 NoviSci";
+      maintainer = "bsaul@novisci.com";
+      author = "Bradley Saul";
+      homepage = "https://github.com/novisci/interval-algebra#readme";
+      url = "";
+      synopsis = "An implementation of Allen's interval algebra for temporal logic";
+      description = "Please see the README on GitHub at <https://github.com/novisci/interval-algebra>";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          ];
+        buildable = true;
+        };
+      tests = {
+        "interval-algebra-test" = {
+          depends = [
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."interval-algebra" or (errorHandler.buildDepError "interval-algebra"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }
