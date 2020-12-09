@@ -1,0 +1,53 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "monad-logger-prefix"; version = "0.1.12"; };
+      license = "LicenseRef-Apache";
+      copyright = "2016-2018 Seller Labs, 2018 Matthew Parsons";
+      maintainer = "Matthew Parsons";
+      author = "Matthew Parsons";
+      homepage = "https://github.com/parsonsmatt/monad-logger-prefix#readme";
+      url = "";
+      synopsis = "Add prefixes to your monad-logger output";
+      description = "Add prefixes to your monad-logger output. See README for more info.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
+          (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+          ];
+        buildable = true;
+        };
+      benchmarks = {
+        "monad-logger-prefix-benchmarks" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."monad-logger-prefix" or (errorHandler.buildDepError "monad-logger-prefix"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }
