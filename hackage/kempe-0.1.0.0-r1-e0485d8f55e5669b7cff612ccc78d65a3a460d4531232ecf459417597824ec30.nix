@@ -1,0 +1,103 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = { cross = false; };
+    package = {
+      specVersion = "3.0";
+      identifier = { name = "kempe"; version = "0.1.0.0"; };
+      license = "BSD-3-Clause";
+      copyright = "Copyright: (c) 2020 Vanessa McHale";
+      maintainer = "vamchale@gmail.com";
+      author = "Vanessa McHale";
+      homepage = "";
+      url = "";
+      synopsis = "Kempe compiler";
+      description = "Kempe is a stack-based language";
+      buildType = "Simple";
+      };
+    components = {
+      sublibs = {
+        "kempe-modules" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."array" or (errorHandler.buildDepError "array"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+            (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+            (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
+            (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            ];
+          build-tools = (pkgs.lib).optionals (!flags.cross) [
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex")))
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy")))
+            ];
+          buildable = true;
+          };
+        };
+      exes = {
+        "kc" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."kempe-modules" or (errorHandler.buildDepError "kempe-modules"))
+            ];
+          buildable = true;
+          };
+        };
+      tests = {
+        "kempe-test" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."kempe-modules" or (errorHandler.buildDepError "kempe-modules"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+            (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+            ];
+          buildable = true;
+          };
+        "kempe-golden" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."kempe-modules" or (errorHandler.buildDepError "kempe-modules"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
+            ];
+          buildable = true;
+          };
+        };
+      benchmarks = {
+        "kempe-bench" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."kempe-modules" or (errorHandler.buildDepError "kempe-modules"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }
