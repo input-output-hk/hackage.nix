@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "2";
+      specVersion = "2.0";
       identifier = { name = "streaming-bracketed"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";

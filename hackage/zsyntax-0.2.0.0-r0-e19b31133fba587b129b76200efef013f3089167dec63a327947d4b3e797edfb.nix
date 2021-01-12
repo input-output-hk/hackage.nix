@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "2";
+      specVersion = "2.0";
       identifier = { name = "zsyntax"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Filippo Sestini";

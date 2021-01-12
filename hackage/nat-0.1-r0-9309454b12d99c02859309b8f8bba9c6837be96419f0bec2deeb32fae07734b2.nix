@@ -15,7 +15,7 @@
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jan Christiansen <jac@informatik.uni-kiel.de>";
-      author = "Andres L�h, Frank Huch, Jan Christiansen    ";
+      author = "Andres Löh, Frank Huch, Jan Christiansen    ";
       homepage = "";
       url = "";
       synopsis = "Lazy binary natural numbers";
