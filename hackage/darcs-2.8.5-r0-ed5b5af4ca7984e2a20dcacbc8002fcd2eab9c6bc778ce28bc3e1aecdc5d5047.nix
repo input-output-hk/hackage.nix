@@ -83,7 +83,7 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             ]))) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo")));
         libs = (pkgs.lib).optionals (!(!flags.library)) ((pkgs.lib).optional (flags.curl) (pkgs."curl" or (errorHandler.sysDepError "curl")));
-        build-tools = (pkgs.lib).optional (!(!flags.library)) (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc")));
+        build-tools = (pkgs.lib).optional (!(!flags.library)) (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")));
         buildable = if !flags.library
           then false
           else if !flags.curl && !flags.http then false else true;
@@ -133,7 +133,7 @@
               ]))) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
           libs = (pkgs.lib).optional (flags.curl) (pkgs."curl" or (errorHandler.sysDepError "curl"));
           build-tools = [
-            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc")))
+            (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
             ];
           buildable = (if !flags.executable
             then false
@@ -191,7 +191,7 @@
               ])));
           libs = (pkgs.lib).optionals (!(!flags.test)) ((pkgs.lib).optional (flags.curl) (pkgs."curl" or (errorHandler.sysDepError "curl")));
           build-tools = [
-            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc")))
+            (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
             ];
           buildable = if !flags.test then false else true;
           };

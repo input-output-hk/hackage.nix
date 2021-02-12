@@ -22,9 +22,9 @@
       description = "A library and executable that implement a modified, extended version of Markdown designed for writing blog posts.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.MissingH or (pkgs.buildPackages.MissingH or (errorHandler.buildToolDepError "MissingH")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.MissingH or (pkgs.buildPackages.MissingH or (errorHandler.setupDepError "MissingH")))
         ];
       };
     components = {

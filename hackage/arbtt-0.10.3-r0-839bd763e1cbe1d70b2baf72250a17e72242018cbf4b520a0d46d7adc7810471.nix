@@ -178,10 +178,10 @@
               ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           build-tools = [
-            (hsPkgs.buildPackages.arbtt or (pkgs.buildPackages.arbtt or (errorHandler.buildToolDepError "arbtt")))
-            (hsPkgs.buildPackages.arbtt or (pkgs.buildPackages.arbtt or (errorHandler.buildToolDepError "arbtt")))
-            (hsPkgs.buildPackages.arbtt or (pkgs.buildPackages.arbtt or (errorHandler.buildToolDepError "arbtt")))
-            (hsPkgs.buildPackages.arbtt or (pkgs.buildPackages.arbtt or (errorHandler.buildToolDepError "arbtt")))
+            (hsPkgs.buildPackages.arbtt.components.exes.arbtt-stats or (pkgs.buildPackages.arbtt-stats or (errorHandler.buildToolDepError "arbtt:arbtt-stats")))
+            (hsPkgs.buildPackages.arbtt.components.exes.arbtt-dump or (pkgs.buildPackages.arbtt-dump or (errorHandler.buildToolDepError "arbtt:arbtt-dump")))
+            (hsPkgs.buildPackages.arbtt.components.exes.arbtt-import or (pkgs.buildPackages.arbtt-import or (errorHandler.buildToolDepError "arbtt:arbtt-import")))
+            (hsPkgs.buildPackages.arbtt.components.exes.arbtt-recover or (pkgs.buildPackages.arbtt-recover or (errorHandler.buildToolDepError "arbtt:arbtt-recover")))
             ];
           buildable = true;
           };

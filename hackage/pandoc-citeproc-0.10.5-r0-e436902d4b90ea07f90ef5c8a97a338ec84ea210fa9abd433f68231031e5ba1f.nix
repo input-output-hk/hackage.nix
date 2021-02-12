@@ -64,7 +64,7 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
-        build-tools = (pkgs.lib).optionals (flags.embed_data_files) ((pkgs.lib).optional (system.isOsx) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs"))));
+        build-tools = (pkgs.lib).optionals (flags.embed_data_files) ((pkgs.lib).optional (system.isOsx) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs"))));
         buildable = true;
         };
       exes = {

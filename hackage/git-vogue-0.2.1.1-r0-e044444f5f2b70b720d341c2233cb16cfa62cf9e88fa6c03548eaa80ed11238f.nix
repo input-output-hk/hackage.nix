@@ -102,7 +102,7 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.git or (pkgs.buildPackages.git or (errorHandler.buildToolDepError "git")))
+            (hsPkgs.buildPackages.git.components.exes.git or (pkgs.buildPackages.git or (errorHandler.buildToolDepError "git:git")))
             ];
           buildable = true;
           };

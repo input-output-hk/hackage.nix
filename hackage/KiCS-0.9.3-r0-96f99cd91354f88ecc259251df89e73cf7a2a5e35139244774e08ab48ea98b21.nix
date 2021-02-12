@@ -38,7 +38,7 @@
           (hsPkgs."curry-frontend" or (errorHandler.buildDepError "curry-frontend"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.kics or (pkgs.buildPackages.kics or (errorHandler.buildToolDepError "kics")))
+          (hsPkgs.buildPackages.kics.components.exes.kics or (pkgs.buildPackages.kics or (errorHandler.buildToolDepError "kics:kics")))
           ];
         buildable = true;
         };

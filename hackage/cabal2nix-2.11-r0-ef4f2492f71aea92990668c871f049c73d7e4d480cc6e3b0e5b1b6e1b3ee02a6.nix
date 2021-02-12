@@ -99,7 +99,7 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.cabal2nix or (pkgs.buildPackages.cabal2nix or (errorHandler.buildToolDepError "cabal2nix")))
+            (hsPkgs.buildPackages.cabal2nix.components.exes.cabal2nix or (pkgs.buildPackages.cabal2nix or (errorHandler.buildToolDepError "cabal2nix:cabal2nix")))
             ];
           buildable = true;
           };

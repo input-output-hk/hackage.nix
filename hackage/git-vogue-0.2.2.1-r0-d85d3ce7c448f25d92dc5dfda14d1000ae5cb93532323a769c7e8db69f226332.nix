@@ -22,9 +22,9 @@
       description = "Make your Haskell git repositories fashionable.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.buildToolDepError "filepath")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         ];
       };
     components = {
@@ -116,7 +116,7 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.git or (pkgs.buildPackages.git or (errorHandler.buildToolDepError "git")))
+            (hsPkgs.buildPackages.git.components.exes.git or (pkgs.buildPackages.git or (errorHandler.buildToolDepError "git:git")))
             ];
           buildable = true;
           };

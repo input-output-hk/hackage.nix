@@ -30,7 +30,7 @@
           ];
         libs = [ (pkgs."gfortran" or (errorHandler.sysDepError "gfortran")) ];
         build-tools = [
-          (hsPkgs.buildPackages.gfortran or (pkgs.buildPackages.gfortran or (errorHandler.buildToolDepError "gfortran")))
+          (hsPkgs.buildPackages.gfortran.components.exes.gfortran or (pkgs.buildPackages.gfortran or (errorHandler.buildToolDepError "gfortran:gfortran")))
           ];
         buildable = true;
         };

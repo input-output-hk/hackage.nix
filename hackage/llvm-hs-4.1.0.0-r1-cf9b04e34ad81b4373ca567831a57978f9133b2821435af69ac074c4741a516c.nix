@@ -22,9 +22,9 @@
       description = "llvm-hs is a set of Haskell bindings for LLVM <http://llvm.org/>. Unlike other current Haskell bindings,\nit uses an ADT to represent LLVM IR (<http://llvm.org/docs/LangRef.html>), and so offers two advantages: it\nhandles almost all of the stateful complexities of using the LLVM API to build IR; and it supports moving IR not\nonly from Haskell into LLVM C++ objects, but the other direction - from LLVM C++ into Haskell.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers or (errorHandler.buildToolDepError "containers")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers or (errorHandler.setupDepError "containers")))
         ];
       };
     components = {
@@ -48,7 +48,7 @@
             ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         build-tools = [
-          (hsPkgs.buildPackages.llvm-config or (pkgs.buildPackages.llvm-config or (errorHandler.buildToolDepError "llvm-config")))
+          (hsPkgs.buildPackages.llvm-config.components.exes.llvm-config or (pkgs.buildPackages.llvm-config or (errorHandler.buildToolDepError "llvm-config:llvm-config")))
           ];
         buildable = true;
         };

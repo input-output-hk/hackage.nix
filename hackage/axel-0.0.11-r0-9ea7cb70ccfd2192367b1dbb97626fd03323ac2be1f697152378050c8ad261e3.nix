@@ -67,8 +67,8 @@
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.hpack or (pkgs.buildPackages.hpack or (errorHandler.buildToolDepError "hpack")))
-          (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover")))
+          (hsPkgs.buildPackages.hpack.components.exes.hpack or (pkgs.buildPackages.hpack or (errorHandler.buildToolDepError "hpack:hpack")))
+          (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
           ];
         buildable = true;
         };
@@ -118,8 +118,8 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hpack or (pkgs.buildPackages.hpack or (errorHandler.buildToolDepError "hpack")))
-            (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover")))
+            (hsPkgs.buildPackages.hpack.components.exes.hpack or (pkgs.buildPackages.hpack or (errorHandler.buildToolDepError "hpack:hpack")))
+            (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
             ];
           buildable = true;
           };
@@ -170,8 +170,8 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hpack or (pkgs.buildPackages.hpack or (errorHandler.buildToolDepError "hpack")))
-            (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover")))
+            (hsPkgs.buildPackages.hpack.components.exes.hpack or (pkgs.buildPackages.hpack or (errorHandler.buildToolDepError "hpack:hpack")))
+            (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
             ];
           buildable = true;
           };

@@ -57,7 +57,7 @@
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
           ] ++ [ (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq")) ];
-        build-tools = (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")));
+        build-tools = (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
         buildable = true;
         };
       exes = {
@@ -68,7 +68,7 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             ];
-          build-tools = (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")));
+          build-tools = (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
           buildable = if !flags.examples then false else true;
           };
         };
@@ -79,7 +79,7 @@
             (hsPkgs."spiros" or (errorHandler.buildDepError "spiros"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             ];
-          build-tools = (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")));
+          build-tools = (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
           buildable = if compiler.isGhcjs && true then false else true;
           };
         };

@@ -34,7 +34,7 @@
           (hsPkgs."packedstring" or (errorHandler.buildDepError "packedstring"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc")))
+          (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
           ];
         buildable = true;
         };

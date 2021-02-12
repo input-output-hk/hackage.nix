@@ -22,9 +22,9 @@
       description = "Haskell bindings for [libarchive](https://www.libarchive.org/). Provides the ability to unpack archives, including the ability to unpack archives lazily.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.chs-cabal or (pkgs.buildPackages.chs-cabal or (errorHandler.buildToolDepError "chs-cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.chs-cabal or (pkgs.buildPackages.chs-cabal or (errorHandler.setupDepError "chs-cabal")))
         ];
       };
     components = {
@@ -42,7 +42,7 @@
         pkgconfig = [
           (pkgconfPkgs."libarchive" or (errorHandler.pkgConfDepError "libarchive"))
           ];
-        build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs")));
+        build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")));
         buildable = true;
         };
       tests = {

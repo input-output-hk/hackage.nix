@@ -51,7 +51,7 @@
           (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc")))
+          (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
           ];
         buildable = true;
         };
@@ -85,7 +85,7 @@
             (hsPkgs."clafer" or (errorHandler.buildDepError "clafer"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc")))
+            (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
             ];
           buildable = true;
           };
@@ -120,7 +120,7 @@
             (hsPkgs."clafer" or (errorHandler.buildDepError "clafer"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc")))
+            (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
             ];
           buildable = true;
           };

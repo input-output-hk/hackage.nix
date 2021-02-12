@@ -38,7 +38,7 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         build-tools = [
-          (hsPkgs.buildPackages.cabal-helper or (pkgs.buildPackages.cabal-helper or (errorHandler.buildToolDepError "cabal-helper")))
+          (hsPkgs.buildPackages.cabal-helper.components.exes.cabal-helper-wrapper or (pkgs.buildPackages.cabal-helper-wrapper or (errorHandler.buildToolDepError "cabal-helper:cabal-helper-wrapper")))
           ];
         buildable = true;
         };
@@ -63,8 +63,8 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           build-tools = [
-            (hsPkgs.buildPackages.cabal-install or (pkgs.buildPackages.cabal-install or (errorHandler.buildToolDepError "cabal-install")))
-            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal")))
+            (hsPkgs.buildPackages.cabal-install.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal-install:cabal")))
+            (hsPkgs.buildPackages.cabal.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
             ];
           buildable = true;
           };
@@ -102,9 +102,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           build-tools = [
-            (hsPkgs.buildPackages.cabal-install or (pkgs.buildPackages.cabal-install or (errorHandler.buildToolDepError "cabal-install")))
-            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal")))
-            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal")))
+            (hsPkgs.buildPackages.cabal-install.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal-install:cabal")))
+            (hsPkgs.buildPackages.cabal.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
+            (hsPkgs.buildPackages.cabal.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
             ];
           buildable = true;
           };
@@ -132,8 +132,8 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           build-tools = [
-            (hsPkgs.buildPackages.cabal-install or (pkgs.buildPackages.cabal-install or (errorHandler.buildToolDepError "cabal-install")))
-            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal")))
+            (hsPkgs.buildPackages.cabal-install.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal-install:cabal")))
+            (hsPkgs.buildPackages.cabal.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
             ];
           buildable = true;
           };

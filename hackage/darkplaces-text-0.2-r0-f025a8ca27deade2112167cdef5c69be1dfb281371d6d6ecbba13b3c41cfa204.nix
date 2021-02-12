@@ -34,7 +34,7 @@
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex")))
+          (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           ];
         buildable = true;
         };

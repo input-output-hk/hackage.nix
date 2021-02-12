@@ -40,7 +40,7 @@
             (hsPkgs."constraints-extras" or (errorHandler.buildDepError "constraints-extras"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit")))
+            (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
             ];
           buildable = if compiler.isGhcjs && true then false else true;
           };

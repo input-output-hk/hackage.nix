@@ -35,7 +35,7 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy")))
+            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             ];
           buildable = true;
           };

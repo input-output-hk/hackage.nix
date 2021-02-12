@@ -22,9 +22,9 @@
       description = "Debugging a problem over email/irc/BTS is slow, tedious, and hard. The developer\nneeds to see your problem to understand it. Debug-me aims to make debugging\nfast, fun, and easy, by letting the developer access your computer remotely,\nso they can immediately see and interact with the problem. Making your\nproblem their problem gets it fixed fast.\n\nA debug-me session is logged and signed with the developer's GnuPG\nkey, producing a chain of evidence of what they saw and what they did.\nSo the developer's good reputation is leveraged to make debug-me secure.\nIf you trust a developer to ship software to your computer,\nyou can trust them to debug-me.\n\nWhen you start debug-me without any options, it will connect to a debug-me\nserver, and print out an url that you can give to the developer to get\nthem connected to you. Then debug-me will show you their GnuPG key and who\nhas signed it, and will let you know if they are a known developer\nof software on your computer. If the developer has a good reputation,\nyou can proceed to let them type into your console in a debug-me session.\nOnce the session is done, the debug-me server will email you the signed\nevidence of what the developer did in the session.\n\nIf the developer did do something bad, you'd have proof that they cannot\nbe trusted, which you can share with the world. Knowing that is the case\nwill keep most developers honest.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.buildToolDepError "filepath")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         ];
       };
     components = {

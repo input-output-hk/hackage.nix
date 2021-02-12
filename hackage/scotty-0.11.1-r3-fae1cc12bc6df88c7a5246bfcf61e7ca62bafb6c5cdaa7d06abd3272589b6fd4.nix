@@ -67,8 +67,8 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             ] ++ (pkgs.lib).optional (flags.hpc-coveralls) (hsPkgs."hpc-coveralls" or (errorHandler.buildDepError "hpc-coveralls"));
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover")))
-            ] ++ (pkgs.lib).optional (flags.hpc-coveralls) (hsPkgs.buildPackages.hpc-coveralls or (pkgs.buildPackages.hpc-coveralls or (errorHandler.buildToolDepError "hpc-coveralls")));
+            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+            ] ++ (pkgs.lib).optional (flags.hpc-coveralls) (hsPkgs.buildPackages.hpc-coveralls.components.exes.hpc-coveralls or (pkgs.buildPackages.hpc-coveralls or (errorHandler.buildToolDepError "hpc-coveralls:hpc-coveralls")));
           buildable = true;
           };
         };

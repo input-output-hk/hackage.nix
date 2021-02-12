@@ -22,8 +22,8 @@
       description = "ATTENTION Use `stack build` as this package requires a developement version of `hledger`!\nAutomatic import and deduplication (from CSV\\/FinTS\\/HBCI\\/OFX), bayesian account matching, and efficient manual entry of <http://plaintextaccounting.org/ ledger> transactions.\n\nSee <https://github.com/johannesgerer/buchhaltung Readme> on Github.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         ];
       };
     components = {

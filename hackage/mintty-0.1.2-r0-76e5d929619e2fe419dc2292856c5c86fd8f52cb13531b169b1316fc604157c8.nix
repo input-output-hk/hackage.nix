@@ -32,7 +32,7 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
             ]);
-        build-tools = (pkgs.lib).optionals (system.isWindows) ((pkgs.lib).optional (!flags.win32-2-5-3) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs"))));
+        build-tools = (pkgs.lib).optionals (system.isWindows) ((pkgs.lib).optional (!flags.win32-2-5-3) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs"))));
         buildable = true;
         };
       };

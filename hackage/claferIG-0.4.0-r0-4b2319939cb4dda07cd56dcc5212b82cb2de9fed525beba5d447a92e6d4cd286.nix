@@ -42,7 +42,7 @@
           (hsPkgs."clafer" or (errorHandler.buildDepError "clafer"))
           ] ++ [ (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml")) ];
         build-tools = [
-          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc")))
+          (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
           ];
         buildable = true;
         };
@@ -62,7 +62,7 @@
             (hsPkgs."claferIG" or (errorHandler.buildDepError "claferIG"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc")))
+            (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
             ];
           buildable = true;
           };

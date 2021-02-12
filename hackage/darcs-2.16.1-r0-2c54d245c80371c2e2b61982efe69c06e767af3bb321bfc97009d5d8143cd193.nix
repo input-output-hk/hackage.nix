@@ -31,11 +31,11 @@
       description = "Darcs is a free, open source revision control\nsystem. It is:\n\n* Distributed: Darcs was one of the first revision control\nsystems in which every user has access to the full command\nset, removing boundaries between server and client or\ncommitter and non-committers.\n\n* Interactive: Darcs is easy to learn and efficient to use\nbecause it asks you questions in response to simple\ncommands, giving you choices in your work flow. You can\nchoose to record one change in a file, while ignoring\nanother. As you update from upstream, you can review each\npatch, picking and choosing which patches are appropriate.\n\n* Smart: Darcs is different from most revision control\nsystems in that it is based on the notion of change (or\npatch), rather than version. An underlying algebra of\npatches determines whether changes can be re-ordered. The\nlaws of this algebra guarantee that the result of merging\ndepends only on the final set of patches applied in a\nrepository and not on their order.\n\n* Simple: As a consequence, Darcs offers a conceptually\nsimpler view of the state of a repository: it is given by\nthe set of patches it contains. Pulling and pushing\npatches merely transfers them from one set to another. So\ncalled \"cherry-picking\" is the default mode of operation,\nand it fully preserves the identity of patches.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.buildToolDepError "process")))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.buildToolDepError "filepath")))
-        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.buildToolDepError "directory")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         ];
       };
     components = {
@@ -130,7 +130,7 @@
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
           build-tools = [
-            (hsPkgs.buildPackages.darcs or (pkgs.buildPackages.darcs or (errorHandler.buildToolDepError "darcs")))
+            (hsPkgs.buildPackages.darcs.components.exes.darcs or (pkgs.buildPackages.darcs or (errorHandler.buildToolDepError "darcs:darcs")))
             ];
           buildable = true;
           };

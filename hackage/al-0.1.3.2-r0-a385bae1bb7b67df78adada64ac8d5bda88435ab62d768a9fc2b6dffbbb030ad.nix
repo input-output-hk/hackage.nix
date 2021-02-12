@@ -31,7 +31,7 @@
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."OpenAL32" or (errorHandler.sysDepError "OpenAL32"));
         pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."openal" or (errorHandler.pkgConfDepError "openal"));
         build-tools = [
-          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs")))
+          (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
           ];
         buildable = true;
         };

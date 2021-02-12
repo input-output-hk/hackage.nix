@@ -38,7 +38,7 @@
           (hsPkgs."uglymemo" or (errorHandler.buildDepError "uglymemo"))
           ] ++ (pkgs.lib).optional (flags.minisat) (hsPkgs."minisat" or (errorHandler.buildDepError "minisat"));
         build-tools = [
-          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex")))
+          (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           ];
         buildable = true;
         };

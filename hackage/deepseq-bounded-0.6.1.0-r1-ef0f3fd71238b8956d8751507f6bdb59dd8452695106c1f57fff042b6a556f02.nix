@@ -63,7 +63,7 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           ]))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_seqable) (hsPkgs."parallel" or (errorHandler.buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.parallelism_experiment) (hsPkgs."parallel" or (errorHandler.buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_patnode) (hsPkgs."parallel" or (errorHandler.buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_pseq_patnode) (hsPkgs."parallel" or (errorHandler.buildDepError "parallel")));
-        build-tools = (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")));
+        build-tools = (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
         buildable = true;
         };
       tests = {
@@ -78,7 +78,7 @@
             ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."syb" or (errorHandler.buildDepError "syb"))) ++ (pkgs.lib).optionals (flags.use_ww_deepseq) ([
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs."deepseq-generics" or (errorHandler.buildDepError "deepseq-generics")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_sop) (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_seqable) (hsPkgs."parallel" or (errorHandler.buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.parallelism_experiment) (hsPkgs."parallel" or (errorHandler.buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_patnode) (hsPkgs."parallel" or (errorHandler.buildDepError "parallel")))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_pseq_patnode) (hsPkgs."parallel" or (errorHandler.buildDepError "parallel")));
-          build-tools = (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")));
+          build-tools = (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
           buildable = true;
           };
         };

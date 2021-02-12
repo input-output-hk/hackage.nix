@@ -46,9 +46,9 @@
             (hsPkgs."shh" or (errorHandler.buildDepError "shh"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.coreutils or (pkgs.buildPackages.coreutils or (errorHandler.buildToolDepError "coreutils")))
-            (hsPkgs.buildPackages.vault or (pkgs.buildPackages.vault or (errorHandler.buildToolDepError "vault")))
-            (hsPkgs.buildPackages.vim or (pkgs.buildPackages.vim or (errorHandler.buildToolDepError "vim")))
+            (hsPkgs.buildPackages.coreutils.components.exes.coreutils or (pkgs.buildPackages.coreutils or (errorHandler.buildToolDepError "coreutils:coreutils")))
+            (hsPkgs.buildPackages.vault.components.exes.vault or (pkgs.buildPackages.vault or (errorHandler.buildToolDepError "vault:vault")))
+            (hsPkgs.buildPackages.vim.components.exes.vim or (pkgs.buildPackages.vim or (errorHandler.buildToolDepError "vim:vim")))
             ];
           buildable = true;
           };
@@ -63,8 +63,8 @@
             (hsPkgs."shh" or (errorHandler.buildDepError "shh"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.perl or (pkgs.buildPackages.perl or (errorHandler.buildToolDepError "perl")))
-            (hsPkgs.buildPackages.vim or (pkgs.buildPackages.vim or (errorHandler.buildToolDepError "vim")))
+            (hsPkgs.buildPackages.perl.components.exes.perl or (pkgs.buildPackages.perl or (errorHandler.buildToolDepError "perl:perl")))
+            (hsPkgs.buildPackages.vim.components.exes.vim or (pkgs.buildPackages.vim or (errorHandler.buildToolDepError "vim:vim")))
             ];
           buildable = true;
           };

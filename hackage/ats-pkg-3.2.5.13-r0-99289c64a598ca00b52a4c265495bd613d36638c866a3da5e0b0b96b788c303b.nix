@@ -53,7 +53,7 @@
           (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")))
+          (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
           ];
         buildable = true;
         };

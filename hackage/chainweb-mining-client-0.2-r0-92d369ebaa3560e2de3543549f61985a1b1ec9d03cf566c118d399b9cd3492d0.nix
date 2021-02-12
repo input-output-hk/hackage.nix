@@ -22,9 +22,9 @@
       description = "A mining client for Kadena Chainweb. It supports\n\n* multi threaded CPU mining,\n* external mining workers (e.g. a GPU),\n* simulated mining for testing.\n\nCompetitive mining on the Kadena Chainweb Mainnet requires special mining\nhardware, which usually comes with its own mining client and mining pool\nsupport implementations. This generic mining client is intended mostly for\ntesting.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.configuration-tools or (pkgs.buildPackages.configuration-tools or (errorHandler.buildToolDepError "configuration-tools")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.configuration-tools or (pkgs.buildPackages.configuration-tools or (errorHandler.setupDepError "configuration-tools")))
         ];
       };
     components = {

@@ -44,7 +44,7 @@
           (pkgs."gu" or (errorHandler.sysDepError "gu"))
           (pkgs."pgf" or (errorHandler.sysDepError "pgf"))
           ];
-        build-tools = (pkgs.lib).optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs")));
+        build-tools = (pkgs.lib).optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
         };
       exes = {
@@ -82,8 +82,8 @@
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy")))
-            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex")))
+            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+            (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             ];
           buildable = true;
           };

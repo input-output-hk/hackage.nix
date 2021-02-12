@@ -81,7 +81,7 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy")))
+          (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
           ];
         buildable = true;
         };
@@ -153,7 +153,7 @@
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             ] ++ (pkgs.lib).optional (!flags.release) (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"));
           build-tools = [
-            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy")))
+            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             ];
           buildable = true;
           };
@@ -225,7 +225,7 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy")))
+            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             ];
           buildable = true;
           };

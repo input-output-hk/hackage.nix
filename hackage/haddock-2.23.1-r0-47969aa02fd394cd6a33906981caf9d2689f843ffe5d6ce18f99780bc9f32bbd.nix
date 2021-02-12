@@ -56,7 +56,7 @@
             (hsPkgs."haddock-test" or (errorHandler.buildDepError "haddock-test"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock or (errorHandler.buildToolDepError "haddock")))
+            (hsPkgs.buildPackages.haddock.components.exes.haddock or (pkgs.buildPackages.haddock or (errorHandler.buildToolDepError "haddock:haddock")))
             ];
           buildable = true;
           };
@@ -67,7 +67,7 @@
             (hsPkgs."haddock-test" or (errorHandler.buildDepError "haddock-test"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock or (errorHandler.buildToolDepError "haddock")))
+            (hsPkgs.buildPackages.haddock.components.exes.haddock or (pkgs.buildPackages.haddock or (errorHandler.buildToolDepError "haddock:haddock")))
             ];
           buildable = true;
           };
@@ -78,7 +78,7 @@
             (hsPkgs."haddock-test" or (errorHandler.buildDepError "haddock-test"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock or (errorHandler.buildToolDepError "haddock")))
+            (hsPkgs.buildPackages.haddock.components.exes.haddock or (pkgs.buildPackages.haddock or (errorHandler.buildToolDepError "haddock:haddock")))
             ];
           buildable = true;
           };
@@ -89,7 +89,7 @@
             (hsPkgs."haddock-test" or (errorHandler.buildDepError "haddock-test"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock or (errorHandler.buildToolDepError "haddock")))
+            (hsPkgs.buildPackages.haddock.components.exes.haddock or (pkgs.buildPackages.haddock or (errorHandler.buildToolDepError "haddock:haddock")))
             ];
           buildable = true;
           };

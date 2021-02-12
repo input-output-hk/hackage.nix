@@ -36,7 +36,7 @@
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
             ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           build-tools = [
-            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy")))
+            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             ];
           buildable = true;
           };

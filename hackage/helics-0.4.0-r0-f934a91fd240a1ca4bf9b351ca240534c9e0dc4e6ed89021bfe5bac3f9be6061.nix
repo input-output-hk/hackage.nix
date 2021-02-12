@@ -38,7 +38,7 @@
           (pkgs."newrelic-transaction" or (errorHandler.sysDepError "newrelic-transaction"))
           (pkgs."newrelic-common" or (errorHandler.sysDepError "newrelic-common"))
           ];
-        build-tools = (pkgs.lib).optional (!(flags.dummy && !system.isLinux)) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs")));
+        build-tools = (pkgs.lib).optional (!(flags.dummy && !system.isLinux)) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
         };
       exes = {

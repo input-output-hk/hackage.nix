@@ -22,9 +22,9 @@
       description = "Please see the\n<https://github.com/spinda/liquidhaskell-cabal-demo/blob/0.2.0.0/README.md README>\non GitHub for more information.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.liquidhaskell-cabal or (pkgs.buildPackages.liquidhaskell-cabal or (errorHandler.buildToolDepError "liquidhaskell-cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.liquidhaskell-cabal or (pkgs.buildPackages.liquidhaskell-cabal or (errorHandler.setupDepError "liquidhaskell-cabal")))
         ];
       };
     components = {

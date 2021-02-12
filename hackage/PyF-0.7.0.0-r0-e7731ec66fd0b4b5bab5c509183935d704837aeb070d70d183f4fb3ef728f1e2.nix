@@ -46,7 +46,7 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.python3 or (pkgs.buildPackages.python3 or (errorHandler.buildToolDepError "python3")))
+            (hsPkgs.buildPackages.python3.components.exes.python3 or (pkgs.buildPackages.python3 or (errorHandler.buildToolDepError "python3:python3")))
             ];
           buildable = true;
           };

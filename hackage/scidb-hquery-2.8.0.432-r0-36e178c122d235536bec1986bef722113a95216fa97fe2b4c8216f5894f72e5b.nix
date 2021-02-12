@@ -22,9 +22,9 @@
       description = "The command @hquery@ with no operands and no options will begin an\ninteracitve session with a SciDB server using SciDB's shim\nprotocol at host localhost and port 8080.  See\nhttps:\\/\\/github.com\\/mdgabriel\\/scidb-hquery.git,\n@hquery -m@, and\nhttp:\\/\\/www.paradigm4.com\nfor more infomation.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.buildToolDepError "filepath")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         ];
       };
     components = {
@@ -57,9 +57,9 @@
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.BNFC or (pkgs.buildPackages.BNFC or (errorHandler.buildToolDepError "BNFC")))
-          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex")))
-          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy")))
+          (hsPkgs.buildPackages.BNFC.components.exes.bnfc or (pkgs.buildPackages.bnfc or (errorHandler.buildToolDepError "BNFC:bnfc")))
+          (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
+          (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
           ];
         buildable = true;
         };

@@ -22,10 +22,10 @@
       description = "This package provides the standard libraries for Quipper, the\nembedded functional programming language for quantum computing.\nThis includes libraries for quantum integer and fixed-point\narithmetic, decomposition into standard gate sets, the quantum\nFourier transform, simulation, among other things.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.superdoc or (pkgs.buildPackages.superdoc or (errorHandler.buildToolDepError "superdoc")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.quipper-cabal or (pkgs.buildPackages.quipper-cabal or (errorHandler.buildToolDepError "quipper-cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.superdoc or (pkgs.buildPackages.superdoc or (errorHandler.setupDepError "superdoc")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.quipper-cabal or (pkgs.buildPackages.quipper-cabal or (errorHandler.setupDepError "quipper-cabal")))
         ];
       };
     components = {

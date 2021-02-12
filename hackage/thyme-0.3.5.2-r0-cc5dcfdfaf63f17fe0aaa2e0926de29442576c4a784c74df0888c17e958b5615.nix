@@ -51,7 +51,7 @@
           else [
             (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
             ]);
-        build-tools = (pkgs.lib).optional (system.isOsx) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")));
+        build-tools = (pkgs.lib).optional (system.isOsx) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
         buildable = true;
         };
       tests = {

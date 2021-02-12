@@ -47,8 +47,8 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ] ++ (pkgs.lib).optional (flags.dev) (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"));
           build-tools = [
-            (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs")))
-            (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs")))
+            (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
+            (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
             ];
           buildable = true;
           };

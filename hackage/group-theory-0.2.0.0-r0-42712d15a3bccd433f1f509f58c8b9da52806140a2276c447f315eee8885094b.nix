@@ -22,9 +22,9 @@
       description = "This package includes definitions for Groups (Monoids with invertibility), including order calculations\nas well as finite, free, cyclic, and permutation groups. Additionally, we add the concept\nof 'Cancellative' functors, building upon 'Alternative' applicative functors.\n\nThere are other group theory related packages on Hackage:\n\n* [groups](https://hackage.haskell.org/package/groups): A minimal, low-footprint definition\n\n* [magmas](https://hackage.haskell.org/package/magmas): A pedagogical hierarchy of algebras, starting from Magmas, including Loops, and Inverse Semigroups.\n\n* [arithmoi](https://hackage.haskell.org/package/arithmoi): Number theory, typelevel modular arithmetic, and cyclic groups.\n\nThis package, @group-theory@, tries to combine the best parts, while focusing on usability and intuitiveness.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.buildToolDepError "cabal-doctest")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
         ];
       };
     components = {

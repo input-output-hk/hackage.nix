@@ -44,7 +44,7 @@
             (hsPkgs."aeson-gadt-th" or (errorHandler.buildDepError "aeson-gadt-th"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit")))
+            (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
             ];
           buildable = true;
           };

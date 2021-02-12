@@ -29,7 +29,7 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           ];
-        build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex")));
+        build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")));
         buildable = true;
         };
       tests = {

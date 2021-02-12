@@ -63,7 +63,7 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.haskeline or (pkgs.buildPackages.haskeline or (errorHandler.buildToolDepError "haskeline")))
+            (hsPkgs.buildPackages.haskeline.components.exes.haskeline-examples-Test or (pkgs.buildPackages.haskeline-examples-Test or (errorHandler.buildToolDepError "haskeline:haskeline-examples-Test")))
             ];
           buildable = (if system.isWindows
             then false

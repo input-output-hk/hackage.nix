@@ -64,7 +64,7 @@
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           build-tools = [
-            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy")))
+            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             ];
           buildable = true;
           };

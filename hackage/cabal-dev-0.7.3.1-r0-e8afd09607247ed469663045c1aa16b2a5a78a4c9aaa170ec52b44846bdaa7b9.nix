@@ -66,7 +66,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ]) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
           build-tools = [
-            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal")))
+            (hsPkgs.buildPackages.cabal.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
             ];
           buildable = if flags.no-cabal-dev then false else true;
           };

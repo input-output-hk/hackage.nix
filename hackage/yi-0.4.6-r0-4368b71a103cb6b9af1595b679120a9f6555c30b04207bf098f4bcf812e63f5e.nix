@@ -66,7 +66,7 @@
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             ]) ++ (pkgs.lib).optional (flags.testing) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
           build-tools = [
-            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex")))
+            (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             ];
           buildable = if !(flags.vty || flags.gtk || flags.cocoa)
             then false

@@ -31,9 +31,9 @@
         libs = [ (pkgs."OgreMain" or (errorHandler.sysDepError "OgreMain")) ];
         pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."OGRE" or (errorHandler.pkgConfDepError "OGRE"));
         build-tools = [
-          (hsPkgs.buildPackages.cgen or (pkgs.buildPackages.cgen or (errorHandler.buildToolDepError "cgen")))
-          (hsPkgs.buildPackages.grgen or (pkgs.buildPackages.grgen or (errorHandler.buildToolDepError "grgen")))
-          (hsPkgs.buildPackages.cgen-hs or (pkgs.buildPackages.cgen-hs or (errorHandler.buildToolDepError "cgen-hs")))
+          (hsPkgs.buildPackages.cgen.components.exes.cgen or (pkgs.buildPackages.cgen or (errorHandler.buildToolDepError "cgen:cgen")))
+          (hsPkgs.buildPackages.grgen.components.exes.grgen or (pkgs.buildPackages.grgen or (errorHandler.buildToolDepError "grgen:grgen")))
+          (hsPkgs.buildPackages.cgen-hs.components.exes.cgen-hs or (pkgs.buildPackages.cgen-hs or (errorHandler.buildToolDepError "cgen-hs:cgen-hs")))
           ];
         buildable = true;
         };

@@ -32,7 +32,7 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hasktags or (pkgs.buildPackages.hasktags or (errorHandler.buildToolDepError "hasktags")))
+            (hsPkgs.buildPackages.hasktags.components.exes.hasktags or (pkgs.buildPackages.hasktags or (errorHandler.buildToolDepError "hasktags:hasktags")))
             ];
           buildable = true;
           };

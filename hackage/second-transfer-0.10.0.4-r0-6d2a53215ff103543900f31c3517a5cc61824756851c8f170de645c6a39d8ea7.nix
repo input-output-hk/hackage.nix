@@ -55,7 +55,7 @@
           ];
         libs = ((pkgs.lib).optionals (system.isOsx) ((pkgs.lib).optional (flags.enable-botan) (pkgs."second_transfer__enable_tls" or (errorHandler.sysDepError "second_transfer__enable_tls"))) ++ (pkgs.lib).optional (system.isLinux) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))) ++ (pkgs.lib).optionals (flags.enable-botan) ((pkgs.lib).optional (system.isLinux) (pkgs."botan-1.11" or (errorHandler.sysDepError "botan-1.11")));
         build-tools = [
-          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")))
+          (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
           ];
         buildable = true;
         };
@@ -80,7 +80,7 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")))
+            (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
             ];
           buildable = true;
           };

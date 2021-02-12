@@ -22,10 +22,10 @@
       description = "See https://www.stackage.org/package/sparkle.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.inline-java or (pkgs.buildPackages.inline-java or (errorHandler.buildToolDepError "inline-java")))
-        (hsPkgs.buildPackages.jvm-streaming or (pkgs.buildPackages.jvm-streaming or (errorHandler.buildToolDepError "jvm-streaming")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.inline-java or (pkgs.buildPackages.inline-java or (errorHandler.setupDepError "inline-java")))
+        (hsPkgs.buildPackages.jvm-streaming or (pkgs.buildPackages.jvm-streaming or (errorHandler.setupDepError "jvm-streaming")))
         ];
       };
     components = {

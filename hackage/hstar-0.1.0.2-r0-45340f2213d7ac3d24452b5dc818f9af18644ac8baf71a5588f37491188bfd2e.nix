@@ -43,7 +43,7 @@
             (hsPkgs."lzlib" or (errorHandler.buildDepError "lzlib"))
             ] ++ (pkgs.lib).optional (flags.with-brotli) (hsPkgs."brotli" or (errorHandler.buildDepError "brotli"))) ++ (pkgs.lib).optional (flags.pure) (hsPkgs."archive-tar" or (errorHandler.buildDepError "archive-tar"))) ++ (pkgs.lib).optional (flags.tar-bytestring) (hsPkgs."archive-tar-bytestring" or (errorHandler.buildDepError "archive-tar-bytestring"))) ++ (pkgs.lib).optional (!flags.pure && !flags.tar-bytestring) (hsPkgs."archive-libarchive" or (errorHandler.buildDepError "archive-libarchive"));
           build-tools = [
-            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")))
+            (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
             ];
           buildable = true;
           };

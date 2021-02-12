@@ -57,7 +57,7 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ]) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"));
-        build-tools = (pkgs.lib).optional (system.isOsx) (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs"))) ++ (pkgs.lib).optional (system.isLinux) (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs")));
+        build-tools = (pkgs.lib).optional (system.isOsx) (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs"))) ++ (pkgs.lib).optional (system.isLinux) (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")));
         buildable = true;
         };
       tests = {

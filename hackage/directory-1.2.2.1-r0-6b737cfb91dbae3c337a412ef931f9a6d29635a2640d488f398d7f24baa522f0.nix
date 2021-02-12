@@ -40,8 +40,8 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.python or (pkgs.buildPackages.python or (errorHandler.buildToolDepError "python")))
-            (hsPkgs.buildPackages.which or (pkgs.buildPackages.which or (errorHandler.buildToolDepError "which")))
+            (hsPkgs.buildPackages.python.components.exes.python or (pkgs.buildPackages.python or (errorHandler.buildToolDepError "python:python")))
+            (hsPkgs.buildPackages.which.components.exes.which or (pkgs.buildPackages.which or (errorHandler.buildToolDepError "which:which")))
             ];
           buildable = true;
           };

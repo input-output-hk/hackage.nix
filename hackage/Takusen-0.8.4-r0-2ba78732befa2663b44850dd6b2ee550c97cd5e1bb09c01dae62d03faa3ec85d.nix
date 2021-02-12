@@ -49,7 +49,7 @@
             (pkgs."clntsh" or (errorHandler.sysDepError "clntsh"))
             ])) ++ (pkgs.lib).optional (flags.postgres) (pkgs."pq" or (errorHandler.sysDepError "pq"))) ++ (pkgs.lib).optional (flags.sqlite) (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3"));
         pkgconfig = (pkgs.lib).optionals (flags.sqlite) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."sqlite3" or (errorHandler.pkgConfDepError "sqlite3")));
-        build-tools = ((pkgs.lib).optional (flags.oracle) (hsPkgs.buildPackages.sqlplus or (pkgs.buildPackages.sqlplus or (errorHandler.buildToolDepError "sqlplus"))) ++ (pkgs.lib).optional (flags.postgres) (hsPkgs.buildPackages.pg_config or (pkgs.buildPackages.pg_config or (errorHandler.buildToolDepError "pg_config")))) ++ (pkgs.lib).optional (flags.sqlite) (hsPkgs.buildPackages.sqlite3 or (pkgs.buildPackages.sqlite3 or (errorHandler.buildToolDepError "sqlite3")));
+        build-tools = ((pkgs.lib).optional (flags.oracle) (hsPkgs.buildPackages.sqlplus.components.exes.sqlplus or (pkgs.buildPackages.sqlplus or (errorHandler.buildToolDepError "sqlplus:sqlplus"))) ++ (pkgs.lib).optional (flags.postgres) (hsPkgs.buildPackages.pg_config.components.exes.pg_config or (pkgs.buildPackages.pg_config or (errorHandler.buildToolDepError "pg_config:pg_config")))) ++ (pkgs.lib).optional (flags.sqlite) (hsPkgs.buildPackages.sqlite3.components.exes.sqlite3 or (pkgs.buildPackages.sqlite3 or (errorHandler.buildToolDepError "sqlite3:sqlite3")));
         buildable = if flags.buildtests then false else true;
         };
       exes = {

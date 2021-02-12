@@ -41,7 +41,7 @@
           (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.llvm-config or (pkgs.buildPackages.llvm-config or (errorHandler.buildToolDepError "llvm-config")))
+          (hsPkgs.buildPackages.llvm-config.components.exes.llvm-config or (pkgs.buildPackages.llvm-config or (errorHandler.buildToolDepError "llvm-config:llvm-config")))
           ];
         buildable = true;
         };

@@ -32,7 +32,7 @@
         frameworks = (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (system.isOsx) (pkgs."OpenAL" or (errorHandler.sysDepError "OpenAL")));
         pkgconfig = (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (!system.isOsx) (pkgconfPkgs."openal" or (errorHandler.pkgConfDepError "openal")));
         build-tools = [
-          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs")))
+          (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
           ];
         buildable = true;
         };

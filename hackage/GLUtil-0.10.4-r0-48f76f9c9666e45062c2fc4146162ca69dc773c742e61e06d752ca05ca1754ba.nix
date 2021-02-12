@@ -40,10 +40,10 @@
           ];
         build-tools = if compiler.isGhc && (compiler.version).ge "7.10.1" && !system.isWindows
           then [
-            (hsPkgs.buildPackages.hpp or (pkgs.buildPackages.hpp or (errorHandler.buildToolDepError "hpp")))
+            (hsPkgs.buildPackages.hpp.components.exes.hpp or (pkgs.buildPackages.hpp or (errorHandler.buildToolDepError "hpp:hpp")))
             ]
           else [
-            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs")))
+            (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
             ];
         buildable = true;
         };

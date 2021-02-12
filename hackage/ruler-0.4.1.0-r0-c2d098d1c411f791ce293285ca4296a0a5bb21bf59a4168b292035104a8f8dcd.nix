@@ -22,11 +22,11 @@
       description = "Ruler tool used by UHC (Utrecht Haskell Compiler)";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.uuagc-cabal or (pkgs.buildPackages.uuagc-cabal or (errorHandler.buildToolDepError "uuagc-cabal")))
-        (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc or (errorHandler.buildToolDepError "uuagc")))
-        (hsPkgs.buildPackages.shuffle or (pkgs.buildPackages.shuffle or (errorHandler.buildToolDepError "shuffle")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.uuagc-cabal or (pkgs.buildPackages.uuagc-cabal or (errorHandler.setupDepError "uuagc-cabal")))
+        (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc or (errorHandler.setupDepError "uuagc")))
+        (hsPkgs.buildPackages.shuffle or (pkgs.buildPackages.shuffle or (errorHandler.setupDepError "shuffle")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         ];
       };
     components = {

@@ -98,7 +98,7 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hie-core or (pkgs.buildPackages.hie-core or (errorHandler.buildToolDepError "hie-core")))
+            (hsPkgs.buildPackages.hie-core.components.exes.hie-core or (pkgs.buildPackages.hie-core or (errorHandler.buildToolDepError "hie-core:hie-core")))
             ];
           buildable = true;
           };

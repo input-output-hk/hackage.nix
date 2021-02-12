@@ -36,7 +36,7 @@
             (hsPkgs."hw-diagnostics" or (errorHandler.buildDepError "hw-diagnostics"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.doctest-discover or (pkgs.buildPackages.doctest-discover or (errorHandler.buildToolDepError "doctest-discover")))
+            (hsPkgs.buildPackages.doctest-discover.components.exes.doctest-discover or (pkgs.buildPackages.doctest-discover or (errorHandler.buildToolDepError "doctest-discover:doctest-discover")))
             ];
           buildable = true;
           };

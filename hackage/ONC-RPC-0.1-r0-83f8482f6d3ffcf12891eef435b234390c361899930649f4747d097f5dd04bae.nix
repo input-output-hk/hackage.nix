@@ -22,15 +22,15 @@
       description = "Tools and library for writing ONC (Sun) RPC clients and servers.  Provides equivalent functionality to rpcgen and librpcsvc, except in pure Haskell.  The hsrpcgen tool (and Cabal preprocessor library) allows .x XDR files to generate Haskell protocol descriptors.  The library provides a client interface to use these descriptions to make RPC calls.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.bytestring or (pkgs.buildPackages.bytestring or (errorHandler.buildToolDepError "bytestring")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.cereal or (pkgs.buildPackages.cereal or (errorHandler.buildToolDepError "cereal")))
-        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers or (errorHandler.buildToolDepError "containers")))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.buildToolDepError "filepath")))
-        (hsPkgs.buildPackages.haskell-src-exts or (pkgs.buildPackages.haskell-src-exts or (errorHandler.buildToolDepError "haskell-src-exts")))
-        (hsPkgs.buildPackages.parsec or (pkgs.buildPackages.parsec or (errorHandler.buildToolDepError "parsec")))
-        (hsPkgs.buildPackages.vector or (pkgs.buildPackages.vector or (errorHandler.buildToolDepError "vector")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.bytestring or (pkgs.buildPackages.bytestring or (errorHandler.setupDepError "bytestring")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.cereal or (pkgs.buildPackages.cereal or (errorHandler.setupDepError "cereal")))
+        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers or (errorHandler.setupDepError "containers")))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
+        (hsPkgs.buildPackages.haskell-src-exts or (pkgs.buildPackages.haskell-src-exts or (errorHandler.setupDepError "haskell-src-exts")))
+        (hsPkgs.buildPackages.parsec or (pkgs.buildPackages.parsec or (errorHandler.setupDepError "parsec")))
+        (hsPkgs.buildPackages.vector or (pkgs.buildPackages.vector or (errorHandler.setupDepError "vector")))
         ];
       };
     components = {

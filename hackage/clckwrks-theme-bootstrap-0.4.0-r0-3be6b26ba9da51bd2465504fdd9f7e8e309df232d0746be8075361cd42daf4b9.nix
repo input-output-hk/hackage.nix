@@ -37,7 +37,7 @@
           (hsPkgs."web-plugins" or (errorHandler.buildDepError "web-plugins"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.hsx2hs or (pkgs.buildPackages.hsx2hs or (errorHandler.buildToolDepError "hsx2hs")))
+          (hsPkgs.buildPackages.hsx2hs.components.exes.hsx2hs or (pkgs.buildPackages.hsx2hs or (errorHandler.buildToolDepError "hsx2hs:hsx2hs")))
           ];
         buildable = true;
         };

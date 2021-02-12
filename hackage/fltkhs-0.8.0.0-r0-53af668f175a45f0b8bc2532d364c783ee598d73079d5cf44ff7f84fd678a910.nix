@@ -22,10 +22,10 @@
       description = "Low level bindings for the FLTK GUI toolkit. For installation and quick start instruction please scroll all the way down to the README.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.buildToolDepError "filepath")))
-        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.buildToolDepError "directory")))
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         ];
       };
     components = {
@@ -37,8 +37,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs")))
-          ] ++ (pkgs.lib).optional (!system.isOsx && !system.isWindows) (hsPkgs.buildPackages.pkg-config or (pkgs.buildPackages.pkg-config or (errorHandler.buildToolDepError "pkg-config")));
+          (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
+          ] ++ (pkgs.lib).optional (!system.isOsx && !system.isWindows) (hsPkgs.buildPackages.pkg-config.components.exes.pkg-config or (pkgs.buildPackages.pkg-config or (errorHandler.buildToolDepError "pkg-config:pkg-config")));
         buildable = true;
         };
       exes = {

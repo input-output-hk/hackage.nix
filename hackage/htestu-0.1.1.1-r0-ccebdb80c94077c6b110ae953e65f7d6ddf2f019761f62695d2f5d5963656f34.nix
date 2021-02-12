@@ -29,8 +29,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.gcc or (pkgs.buildPackages.gcc or (errorHandler.buildToolDepError "gcc")))
-          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs")))
+          (hsPkgs.buildPackages.gcc.components.exes.gcc or (pkgs.buildPackages.gcc or (errorHandler.buildToolDepError "gcc:gcc")))
+          (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
           ];
         buildable = true;
         };

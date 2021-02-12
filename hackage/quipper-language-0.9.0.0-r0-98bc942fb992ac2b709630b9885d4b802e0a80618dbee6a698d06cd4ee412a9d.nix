@@ -22,8 +22,8 @@
       description = "Quipper is an embedded functional programming language for quantum\ncomputation. The quipper-language package provides the Quipper\nlanguage. You might also want quipper-libraries to get the Quipper\nlibraries, quipper-tools to get some standalone tools, and\nquipper-algorithms to get a collection of pre-implemented quantum\nalgorithms.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.superdoc or (pkgs.buildPackages.superdoc or (errorHandler.buildToolDepError "superdoc")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.superdoc or (pkgs.buildPackages.superdoc or (errorHandler.setupDepError "superdoc")))
         ];
       };
     components = {

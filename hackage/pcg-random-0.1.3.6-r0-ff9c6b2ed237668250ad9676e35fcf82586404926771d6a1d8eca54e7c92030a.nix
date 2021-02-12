@@ -22,9 +22,9 @@
       description = "PCG is a family of simple fast space-efficient statistically good\nalgorithms for random number generation. Unlike many general-purpose\nRNGs, they are also hard to predict.\n\nThis library implements bindings to the standard C implementation.\nThis includes the standard, unique, fast and single variants in the\npcg family. There is a pure implementation that can be used as a\ngenerator with the random package as well as a faster primitive api\nthat includes functions for generating common types.\n\nThe generators in this module are suitable for use in parallel but\nmake sure threads don't share the same generator or things will go\nhorribly wrong.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.buildToolDepError "cabal-doctest")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
         ];
       };
     components = {

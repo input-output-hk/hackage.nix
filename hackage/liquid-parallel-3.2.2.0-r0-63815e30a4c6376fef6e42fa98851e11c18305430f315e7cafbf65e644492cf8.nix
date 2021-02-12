@@ -22,9 +22,9 @@
       description = "LiquidHaskell specs for the parallel package.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.liquidhaskell or (pkgs.buildPackages.liquidhaskell or (errorHandler.buildToolDepError "liquidhaskell")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.liquidhaskell or (pkgs.buildPackages.liquidhaskell or (errorHandler.setupDepError "liquidhaskell")))
         ];
       };
     components = {

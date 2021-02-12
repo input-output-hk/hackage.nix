@@ -40,7 +40,7 @@
           ];
         libs = ((((pkgs.lib).optional (flags.openmpi-debian) (pkgs."mpi" or (errorHandler.sysDepError "mpi")) ++ (pkgs.lib).optional (flags.openmpi-macports) (pkgs."mpi" or (errorHandler.sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.openmpi-ubuntu) (pkgs."mpi" or (errorHandler.sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-macports) (pkgs."mpi" or (errorHandler.sysDepError "mpi"))) ++ (pkgs.lib).optional (flags.mpich-ubuntu) (pkgs."mpich" or (errorHandler.sysDepError "mpich"));
         build-tools = [
-          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs")))
+          (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
           ];
         buildable = true;
         };

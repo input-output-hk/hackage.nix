@@ -22,10 +22,10 @@
       description = "Please see README.md.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.inline-java or (pkgs.buildPackages.inline-java or (errorHandler.buildToolDepError "inline-java")))
-        (hsPkgs.buildPackages.jvm-batching or (pkgs.buildPackages.jvm-batching or (errorHandler.buildToolDepError "jvm-batching")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.inline-java or (pkgs.buildPackages.inline-java or (errorHandler.setupDepError "inline-java")))
+        (hsPkgs.buildPackages.jvm-batching or (pkgs.buildPackages.jvm-batching or (errorHandler.setupDepError "jvm-batching")))
         ];
       };
     components = {

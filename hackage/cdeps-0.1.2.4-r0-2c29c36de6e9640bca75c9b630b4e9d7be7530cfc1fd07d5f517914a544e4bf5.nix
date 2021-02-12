@@ -32,7 +32,7 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           ];
-        build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex")));
+        build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")));
         buildable = true;
         };
       exes = {

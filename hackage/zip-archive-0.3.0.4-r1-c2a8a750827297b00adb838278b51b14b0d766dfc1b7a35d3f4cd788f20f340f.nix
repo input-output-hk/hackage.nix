@@ -73,7 +73,7 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           build-tools = [
-            (hsPkgs.buildPackages.zip or (pkgs.buildPackages.zip or (errorHandler.buildToolDepError "zip")))
+            (hsPkgs.buildPackages.zip.components.exes.zip or (pkgs.buildPackages.zip or (errorHandler.buildToolDepError "zip:zip")))
             ];
           buildable = true;
           };

@@ -66,7 +66,7 @@
       exes = {
         "demo" = {
           build-tools = [
-            (hsPkgs.buildPackages.trhsx or (pkgs.buildPackages.trhsx or (errorHandler.buildToolDepError "trhsx")))
+            (hsPkgs.buildPackages.trhsx.components.exes.trhsx or (pkgs.buildPackages.trhsx or (errorHandler.buildToolDepError "trhsx:trhsx")))
             ];
           buildable = false;
           };

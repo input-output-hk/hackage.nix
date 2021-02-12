@@ -22,11 +22,11 @@
       description = "A Haskell implementation of the EWE programming language originally created and developed by Kent D. Lee. EWE is an extension of the RAM programming language. RAM was created by Sethi. This is use for academic purpose only.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.uuagc-cabal or (pkgs.buildPackages.uuagc-cabal or (errorHandler.buildToolDepError "uuagc-cabal")))
-        (hsPkgs.buildPackages.uulib or (pkgs.buildPackages.uulib or (errorHandler.buildToolDepError "uulib")))
-        (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc or (errorHandler.buildToolDepError "uuagc")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.uuagc-cabal or (pkgs.buildPackages.uuagc-cabal or (errorHandler.setupDepError "uuagc-cabal")))
+        (hsPkgs.buildPackages.uulib or (pkgs.buildPackages.uulib or (errorHandler.setupDepError "uulib")))
+        (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc or (errorHandler.setupDepError "uuagc")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         ];
       };
     components = {
@@ -42,9 +42,9 @@
             (hsPkgs."uuagc-cabal" or (errorHandler.buildDepError "uuagc-cabal"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex")))
-            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy")))
-            (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc or (errorHandler.buildToolDepError "uuagc")))
+            (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
+            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+            (hsPkgs.buildPackages.uuagc.components.exes.uuagc or (pkgs.buildPackages.uuagc or (errorHandler.buildToolDepError "uuagc:uuagc")))
             ];
           buildable = true;
           };

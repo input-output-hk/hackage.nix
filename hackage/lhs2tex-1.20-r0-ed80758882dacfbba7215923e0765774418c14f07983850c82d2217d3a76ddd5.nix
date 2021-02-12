@@ -22,11 +22,11 @@
       description = "This tool is primarily intended for people who want to write articles\nor books using LaTeX that contain some Haskell code. It works on literate\nHaskell documents where the non-Haskell parts form essentially a valid\nLaTeX document, then processes the Haskell code in the document and\nreplaces it with formatted LaTeX output. It is not fully automatic in\nthe sense that it will turn an arbitrary literate Haskell document into\na LaTeX document without further work.\n\nNearly all aspects about the output and formatting are configurable.\nOutput of code can be made using proportional fonts in such a way that\neven complex horizontal alignment is preserved. The preprocessor can also\nbe invoked in another mode to just extract the Haskell code.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.buildToolDepError "directory")))
-        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.buildToolDepError "process")))
-        (hsPkgs.buildPackages.regex-compat or (pkgs.buildPackages.regex-compat or (errorHandler.buildToolDepError "regex-compat")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
+        (hsPkgs.buildPackages.regex-compat or (pkgs.buildPackages.regex-compat or (errorHandler.setupDepError "regex-compat")))
         ];
       };
     components = {

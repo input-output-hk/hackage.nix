@@ -22,9 +22,9 @@
       description = "This module provides efficient functions for rendering vector\ngraphics to a number of formats, including EPS, PostScript, and\nPDF. It provides an abstraction for multi-page documents, as well\nas a set of graphics primitives for page descriptions.\n\nThe graphics model is similar to that of the PostScript and PDF\nlanguages, but we only implement a subset of their functionality.\nCare has been taken that graphics rendering is done efficiently and\nas lazily as possible; documents are rendered \\\"on the fly\\\",\nwithout the need to store the whole document in memory.\n\nThe provided document description model consists of two separate\nlayers of abstraction:\n\n* /drawing/ is concerned with placing marks on a fixed surface, and\ntakes place in the 'Draw' monad;\n\n* /document structure/ is concerned with a sequence of pages, their\nbounding boxes, and other meta-data. It takes place in the\n'Document' monad.\n\nIn principle, the functionality provided by EasyRender is similar to\na subset of Cairo; however, EasyRender is lightweight and at least\nan order of magnitude faster.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.buildToolDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.buildToolDepError "Cabal")))
-        (hsPkgs.buildPackages.superdoc or (pkgs.buildPackages.superdoc or (errorHandler.buildToolDepError "superdoc")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.buildPackages.superdoc or (pkgs.buildPackages.superdoc or (errorHandler.setupDepError "superdoc")))
         ];
       };
     components = {

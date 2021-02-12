@@ -75,7 +75,7 @@
             (hsPkgs."cabal-helper" or (errorHandler.buildDepError "cabal-helper"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal")))
+            (hsPkgs.buildPackages.cabal.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
             ];
           buildable = true;
           };

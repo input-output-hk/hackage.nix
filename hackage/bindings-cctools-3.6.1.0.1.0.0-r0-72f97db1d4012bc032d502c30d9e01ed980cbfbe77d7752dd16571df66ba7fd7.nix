@@ -29,7 +29,7 @@
           ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."base" or (errorHandler.buildDepError "base"));
         libs = [ (pkgs."dttools" or (errorHandler.sysDepError "dttools")) ];
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs")))
+          (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
           ];
         buildable = true;
         };
