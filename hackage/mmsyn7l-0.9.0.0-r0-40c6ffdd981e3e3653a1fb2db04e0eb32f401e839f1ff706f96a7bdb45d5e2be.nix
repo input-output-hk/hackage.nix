@@ -1,0 +1,51 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "mmsyn7l"; version = "0.9.0.0"; };
+      license = "MIT";
+      copyright = "";
+      maintainer = "olexandr543@yahoo.com";
+      author = "(c) OleksandrZhabenko 2020-2021";
+      homepage = "https://hackage.haskell.org/package/mmsyn7l";
+      url = "";
+      synopsis = "Modifies the amplitudes of the Ukrainian sounds representations created by mmsyn7ukr package.";
+      description = "A program and a library to modify the amplitudes of the Ukrainian sounds representations created by mmsyn7ukr package or somehow otherwise.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."mmsyn7ukr-common" or (errorHandler.buildDepError "mmsyn7ukr-common"))
+          (hsPkgs."mmsyn2-array" or (errorHandler.buildDepError "mmsyn2-array"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
+          ];
+        buildable = true;
+        };
+      exes = {
+        "mmsyn7l" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."mmsyn7ukr-common" or (errorHandler.buildDepError "mmsyn7ukr-common"))
+            (hsPkgs."mmsyn2-array" or (errorHandler.buildDepError "mmsyn2-array"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }
