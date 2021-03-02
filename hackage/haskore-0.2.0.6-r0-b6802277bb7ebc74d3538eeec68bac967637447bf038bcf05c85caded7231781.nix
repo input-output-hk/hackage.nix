@@ -10,7 +10,7 @@
   {
     flags = { splitbase = true; buildexamples = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "haskore"; version = "0.2.0.6"; };
       license = "LicenseRef-GPL";
       copyright = "";

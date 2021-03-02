@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "aws-kinesis"; version = "0.1.3"; };
       license = "Apache-2.0";
       copyright = "Copyright (c) 2013-2014 PivotCloud, Inc.";

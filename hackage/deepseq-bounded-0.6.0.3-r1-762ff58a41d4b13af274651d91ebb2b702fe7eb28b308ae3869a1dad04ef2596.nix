@@ -35,7 +35,7 @@
       nfdata_instance_pattern = true;
       };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "deepseq-bounded"; version = "0.6.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";

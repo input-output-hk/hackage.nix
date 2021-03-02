@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "errors"; version = "2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2012, 2013 Gabriel Gonzalez";

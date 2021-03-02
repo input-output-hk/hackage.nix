@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "hpath"; version = "0.7.5"; };
       license = "BSD-3-Clause";
       copyright = "Julian Ospald 2016";

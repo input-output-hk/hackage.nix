@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "himerge"; version = "0.20"; };
       license = "LicenseRef-GPL";
       copyright = "";

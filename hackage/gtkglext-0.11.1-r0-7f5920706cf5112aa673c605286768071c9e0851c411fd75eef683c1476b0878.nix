@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "gtkglext"; version = "0.11.1"; };
       license = "LGPL-2.1-only";
       copyright = "(c) 2001-2010 The Gtk2Hs Team";

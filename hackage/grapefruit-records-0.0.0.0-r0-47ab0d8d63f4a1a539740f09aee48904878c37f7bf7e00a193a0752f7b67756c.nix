@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "grapefruit-records"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2007–2009 Brandenburgische Technische Universität Cottbus";

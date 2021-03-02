@@ -10,7 +10,7 @@
   {
     flags = { typefamilies = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "eq"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2010-2011 Edward A. Kmett";

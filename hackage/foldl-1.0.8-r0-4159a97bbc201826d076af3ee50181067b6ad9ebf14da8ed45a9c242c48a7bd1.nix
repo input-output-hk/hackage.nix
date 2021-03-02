@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "foldl"; version = "1.0.8"; };
       license = "BSD-3-Clause";
       copyright = "2013 Gabriel Gonzalez";

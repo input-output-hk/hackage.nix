@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "mongoDB"; version = "0.9"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2010-2010 10gen Inc. & Scott Parish";

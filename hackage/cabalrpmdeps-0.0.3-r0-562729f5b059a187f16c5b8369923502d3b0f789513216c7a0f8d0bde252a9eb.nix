@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "cabalrpmdeps"; version = "0.0.3"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2007 Olivier Thauvin";

@@ -36,7 +36,7 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.7") (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"));
+            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.6" && (compiler.version).lt "7.7")) (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.7") (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"));
           buildable = true;
           };
         };

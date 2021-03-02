@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "unix-io-extra"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Taru Karttunen <taruti@taruti.net>";

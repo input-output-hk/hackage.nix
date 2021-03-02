@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.7";
+      specVersion = "1.8";
       identifier = { name = "Foster"; version = "1.1.2"; };
       license = "MIT";
       copyright = "";

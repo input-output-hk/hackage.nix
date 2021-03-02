@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hsc2hs"; version = "0.67.20061107"; };
       license = "BSD-3-Clause";
       copyright = "2000, Marcin Kowalczyk";

@@ -26,8 +26,8 @@
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          (hsPkgs."wordn-indef" or (errorHandler.buildDepError "wordn-indef"))
-          (hsPkgs."wordn-impl" or (errorHandler.buildDepError "wordn-impl"))
+          (hsPkgs."wordn".components.sublibs.wordn-indef or (errorHandler.buildDepError "wordn:wordn-indef"))
+          (hsPkgs."wordn".components.sublibs.wordn-impl or (errorHandler.buildDepError "wordn:wordn-impl"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           ];
         buildable = true;

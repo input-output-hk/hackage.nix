@@ -10,7 +10,7 @@
   {
     flags = { small-base = true; };
     package = {
-      specVersion = "1.2.3.0";
+      specVersion = "1.2";
       identifier = { name = "bimap"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Stuart Cook 2008";

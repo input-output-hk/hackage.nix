@@ -10,7 +10,7 @@
   {
     flags = { buildtests = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "ConfigFile"; version = "1.1.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2004-2014 John Goerzen";

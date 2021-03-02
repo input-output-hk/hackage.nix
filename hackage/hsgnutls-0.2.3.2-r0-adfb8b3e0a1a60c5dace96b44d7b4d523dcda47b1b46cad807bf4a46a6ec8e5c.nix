@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hsgnutls"; version = "0.2.3.2"; };
       license = "LicenseRef-LGPL";
       copyright = "";

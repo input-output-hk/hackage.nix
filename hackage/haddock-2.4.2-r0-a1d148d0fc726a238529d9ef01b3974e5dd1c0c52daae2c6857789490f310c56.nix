@@ -10,7 +10,7 @@
   {
     flags = { in-ghc-tree = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "haddock"; version = "2.4.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Simon Marlow, David Waern";

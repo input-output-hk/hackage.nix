@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "svgcairo"; version = "0.11.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2001-2010 The Gtk2Hs Team";

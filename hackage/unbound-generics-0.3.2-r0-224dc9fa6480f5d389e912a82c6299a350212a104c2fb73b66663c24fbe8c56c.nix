@@ -60,7 +60,7 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."unbound-generics" or (errorHandler.buildDepError "unbound-generics"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if compiler.isGhc && false || compiler.isGhc && false
+            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.6" && (compiler.version).lt "7.7")) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if compiler.isGhc && ((compiler.version).ge "7.6" && (compiler.version).lt "7.7") || compiler.isGhc && ((compiler.version).ge "7.8" && (compiler.version).lt "7.9")
             then [
               (hsPkgs."deepseq-generics" or (errorHandler.buildDepError "deepseq-generics"))
               ]

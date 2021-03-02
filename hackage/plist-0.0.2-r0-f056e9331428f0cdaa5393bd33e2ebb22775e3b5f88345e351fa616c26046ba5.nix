@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "plist"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009, Yuras Shumovich";

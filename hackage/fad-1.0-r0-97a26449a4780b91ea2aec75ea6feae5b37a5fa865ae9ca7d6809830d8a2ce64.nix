@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "fad"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "Barak A. Pearlmutter and Jeffrey Mark Siskind 2008-2009";

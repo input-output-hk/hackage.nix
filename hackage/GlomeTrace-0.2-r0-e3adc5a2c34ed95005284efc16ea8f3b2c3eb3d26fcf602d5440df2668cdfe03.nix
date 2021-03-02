@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "GlomeTrace"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright 2008,2009 Jim Snow";

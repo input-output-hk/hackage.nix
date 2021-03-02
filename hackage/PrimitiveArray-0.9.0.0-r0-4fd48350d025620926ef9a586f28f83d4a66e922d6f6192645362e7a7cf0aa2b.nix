@@ -10,7 +10,7 @@
   {
     flags = { debug = false; debugoutput = false; };
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "PrimitiveArray"; version = "0.9.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2011-2018";

@@ -26,7 +26,7 @@
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          (hsPkgs."yahoo-prices-utils" or (errorHandler.buildDepError "yahoo-prices-utils"))
+          (hsPkgs."yahoo-prices".components.sublibs.yahoo-prices-utils or (errorHandler.buildDepError "yahoo-prices:yahoo-prices-utils"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
@@ -54,7 +54,7 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."yahoo-prices" or (errorHandler.buildDepError "yahoo-prices"))
-            (hsPkgs."yahoo-prices-utils" or (errorHandler.buildDepError "yahoo-prices-utils"))
+            (hsPkgs."yahoo-prices".components.sublibs.yahoo-prices-utils or (errorHandler.buildDepError "yahoo-prices:yahoo-prices-utils"))
             ];
           buildable = true;
           };

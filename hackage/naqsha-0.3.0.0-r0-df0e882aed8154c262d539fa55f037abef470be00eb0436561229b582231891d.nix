@@ -45,7 +45,7 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
-            (hsPkgs."geospatial" or (errorHandler.buildDepError "geospatial"))
+            (hsPkgs."naqsha".components.sublibs.geospatial or (errorHandler.buildDepError "naqsha:geospatial"))
             ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))

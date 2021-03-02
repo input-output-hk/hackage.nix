@@ -10,7 +10,7 @@
   {
     flags = { bench = false; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "csv-conduit"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";

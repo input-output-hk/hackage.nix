@@ -10,7 +10,7 @@
   {
     flags = { th24 = true; };
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "regular"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Universiteit Utrecht";

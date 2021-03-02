@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "templatepg"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2010, 2011 Chris Forno";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "ghc-syb"; version = "0.1.2.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Claus Reinke 2008";

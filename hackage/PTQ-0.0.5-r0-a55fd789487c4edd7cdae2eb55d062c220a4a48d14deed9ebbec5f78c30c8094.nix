@@ -10,7 +10,7 @@
   {
     flags = { utf8terminal = false; utf8cgi = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "PTQ"; version = "0.0.5"; };
       license = "LicenseRef-LGPL";
       copyright = "";

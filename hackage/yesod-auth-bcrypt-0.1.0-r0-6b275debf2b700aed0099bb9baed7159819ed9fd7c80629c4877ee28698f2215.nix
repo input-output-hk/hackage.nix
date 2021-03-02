@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "yesod-auth-bcrypt"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";

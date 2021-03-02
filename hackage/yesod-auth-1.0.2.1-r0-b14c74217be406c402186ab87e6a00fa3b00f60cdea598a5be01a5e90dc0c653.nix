@@ -10,7 +10,7 @@
   {
     flags = { blaze_html_0_5 = true; };
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "yesod-auth"; version = "1.0.2.1"; };
       license = "MIT";
       copyright = "";

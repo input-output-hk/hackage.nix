@@ -33,7 +33,7 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          (hsPkgs."hgis-readshp" or (errorHandler.buildDepError "hgis-readshp"))
+          (hsPkgs."hgis".components.sublibs.hgis-readshp or (errorHandler.buildDepError "hgis:hgis-readshp"))
           ] ++ (pkgs.lib).optional (flags.cairo) (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))) ++ (pkgs.lib).optional (flags.diagrams) (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"));
         buildable = true;
         };

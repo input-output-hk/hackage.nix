@@ -10,7 +10,7 @@
   {
     flags = { normalize-signature-v4-date = true; old-locale = false; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "aws-general"; version = "0.2.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2014 AlephCloud, Inc.";

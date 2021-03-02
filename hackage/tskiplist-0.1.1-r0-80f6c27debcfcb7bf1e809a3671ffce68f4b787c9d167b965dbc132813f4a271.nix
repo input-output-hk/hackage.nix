@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "tskiplist"; version = "0.1.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = { split-base = true; };
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "scgi"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "NewBinary"; version = "0.2.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";

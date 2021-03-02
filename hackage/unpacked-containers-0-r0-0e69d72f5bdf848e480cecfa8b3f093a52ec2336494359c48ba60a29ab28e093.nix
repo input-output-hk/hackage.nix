@@ -28,7 +28,7 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          (hsPkgs."utils" or (errorHandler.buildDepError "utils"))
+          (hsPkgs."unpacked-containers".components.sublibs.utils or (errorHandler.buildDepError "unpacked-containers:utils"))
           ];
         buildable = true;
         };
@@ -51,7 +51,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unpacked-containers" or (errorHandler.buildDepError "unpacked-containers"))
-            (hsPkgs."example" or (errorHandler.buildDepError "example"))
+            (hsPkgs."unpacked-containers".components.sublibs.example or (errorHandler.buildDepError "unpacked-containers:example"))
             ];
           buildable = true;
           };

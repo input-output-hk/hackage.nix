@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.2";
+      specVersion = "1.2";
       identifier = {
         name = "free-v-bucks-generator-ps4-no-survey";
         version = "0.2";

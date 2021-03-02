@@ -34,7 +34,7 @@
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-          (hsPkgs."tasty-sugar-internal" or (errorHandler.buildDepError "tasty-sugar-internal"))
+          (hsPkgs."tasty-sugar".components.sublibs.tasty-sugar-internal or (errorHandler.buildDepError "tasty-sugar:tasty-sugar-internal"))
           ];
         buildable = true;
         };
@@ -92,7 +92,7 @@
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            (hsPkgs."tasty-sugar-internal" or (errorHandler.buildDepError "tasty-sugar-internal"))
+            (hsPkgs."tasty-sugar".components.sublibs.tasty-sugar-internal or (errorHandler.buildDepError "tasty-sugar:tasty-sugar-internal"))
             ];
           buildable = true;
           };

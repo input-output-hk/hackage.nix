@@ -10,7 +10,7 @@
   {
     flags = { pkgconfig = true; jackfree = true; buildexamples = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "jack"; version = "0.7.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";

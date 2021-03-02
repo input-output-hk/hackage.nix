@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "cspmchecker"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Thomas Gibson-Robinson";

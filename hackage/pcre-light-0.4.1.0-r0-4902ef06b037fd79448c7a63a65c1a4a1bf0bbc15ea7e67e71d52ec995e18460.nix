@@ -10,7 +10,7 @@
   {
     flags = { old_base = false; use-pkg-config = false; };
     package = {
-      specVersion = "1.8.0";
+      specVersion = "1.8";
       identifier = { name = "pcre-light"; version = "0.4.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2007-2010. Don Stewart <dons@galois.com>";

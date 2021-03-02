@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.24.0.0";
+      specVersion = "1.24";
       identifier = { name = "rts-loader"; version = "0.0.0.2"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) 2016  Daniel Gröber";

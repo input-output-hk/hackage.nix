@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "hssqlppp"; version = "0.0.7"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2009 Jake Wheat";

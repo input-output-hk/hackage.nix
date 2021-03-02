@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hybrid"; version = "2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) David Waern, Rickard Nilsson";

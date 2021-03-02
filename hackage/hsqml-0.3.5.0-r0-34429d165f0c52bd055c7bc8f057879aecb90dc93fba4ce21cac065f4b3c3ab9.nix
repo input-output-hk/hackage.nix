@@ -16,7 +16,7 @@
       enableqmldebugging = false;
       };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "hsqml"; version = "0.3.5.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010-2017 Robin KAY";

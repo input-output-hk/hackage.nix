@@ -25,7 +25,7 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs."random-internal" or (errorHandler.buildDepError "random-internal"))
+          (hsPkgs."cuckoo".components.sublibs.random-internal or (errorHandler.buildDepError "cuckoo:random-internal"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
@@ -57,7 +57,7 @@
         "tests" = {
           depends = [
             (hsPkgs."cuckoo" or (errorHandler.buildDepError "cuckoo"))
-            (hsPkgs."random-internal" or (errorHandler.buildDepError "random-internal"))
+            (hsPkgs."cuckoo".components.sublibs.random-internal or (errorHandler.buildDepError "cuckoo:random-internal"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))

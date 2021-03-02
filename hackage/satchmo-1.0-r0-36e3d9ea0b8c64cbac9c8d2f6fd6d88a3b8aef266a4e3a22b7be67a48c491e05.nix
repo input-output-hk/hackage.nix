@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "satchmo"; version = "1.0"; };
       license = "LicenseRef-GPL";
       copyright = "";

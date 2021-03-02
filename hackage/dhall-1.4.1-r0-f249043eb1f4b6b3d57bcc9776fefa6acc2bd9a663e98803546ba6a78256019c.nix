@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "dhall"; version = "1.4.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Gabriel Gonzalez";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.23";
+      specVersion = "1.24";
       identifier = { name = "smcdel"; version = "1.0.0"; };
       license = "GPL-2.0-only";
       copyright = "";

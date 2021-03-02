@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "MagicHaskeller"; version = "0.8.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2009 Susumu Katayama";

@@ -10,7 +10,7 @@
   {
     flags = { exe = false; };
     package = {
-      specVersion = "1.21";
+      specVersion = "1.22";
       identifier = { name = "base-compat-migrate"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2018 Adam Bergmark";

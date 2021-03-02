@@ -16,7 +16,7 @@
       split-these = true;
       };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "reflex"; version = "0.6.3"; };
       license = "BSD-3-Clause";
       copyright = "";

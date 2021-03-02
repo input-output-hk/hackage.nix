@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "haxr-th"; version = "3000.0.0"; };
       license = "BSD-4-Clause";
       copyright = "Bjorn Bringert, 2003-2006";

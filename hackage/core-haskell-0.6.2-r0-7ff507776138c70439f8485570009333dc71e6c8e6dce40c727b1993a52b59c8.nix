@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "core-haskell"; version = "0.6.2"; };
       license = "BSD-3-Clause";
       copyright = "";

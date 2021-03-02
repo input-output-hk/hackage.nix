@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "c2hs"; version = "0.15.0"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) [1999..2007] Manuel M T Chakravarty";

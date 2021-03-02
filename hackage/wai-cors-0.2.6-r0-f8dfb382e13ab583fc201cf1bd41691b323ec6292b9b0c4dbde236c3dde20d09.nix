@@ -10,7 +10,7 @@
   {
     flags = { transformers-3 = false; wai-1 = false; wai-2 = false; };
     package = {
-      specVersion = "1.14.0";
+      specVersion = "1.12";
       identifier = { name = "wai-cors"; version = "0.2.6"; };
       license = "MIT";
       copyright = "(c) 2015-2017 Lars Kuhtz <lakuhtz@gmail.com>,\n(c) 2014 AlephCloud Systems, Inc.";

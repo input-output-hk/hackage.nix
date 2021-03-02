@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "text-latin1"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2013 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";

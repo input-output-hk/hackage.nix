@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "RxHaskell"; version = "0.1"; };
       license = "MIT";
       copyright = "Copyright (c) 2013 Justin Spahr-Summers";

@@ -10,7 +10,7 @@
   {
     flags = { splitbase = true; buildtests = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "HDBC"; version = "2.0.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2005-2009 John Goerzen";

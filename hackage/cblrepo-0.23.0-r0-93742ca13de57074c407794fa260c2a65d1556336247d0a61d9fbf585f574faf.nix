@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.23";
+      specVersion = "1.24";
       identifier = { name = "cblrepo"; version = "0.23.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2011 Magnus Therning";

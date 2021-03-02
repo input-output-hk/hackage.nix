@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "logict"; version = "0.6"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2007-2013, Dan Doel,\nCopyright (c) 2011-2013, Edward Kmett";

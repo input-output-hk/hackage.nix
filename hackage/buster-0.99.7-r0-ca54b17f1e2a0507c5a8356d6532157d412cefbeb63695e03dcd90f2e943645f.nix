@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "buster"; version = "0.99.7"; };
       license = "BSD-3-Clause";
       copyright = "2009 Renaissance Computing Institute";

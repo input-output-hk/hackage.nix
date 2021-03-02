@@ -41,16 +41,16 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && false) [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "8.0" && (compiler.version).lt "8.1")) [
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
-          ]) ++ (pkgs.lib).optionals (compiler.isGhc && false) [
+          ]) ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "7.10" && (compiler.version).lt "7.11")) [
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
           ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).eq "7.8.4") [
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "7.8.3") (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))) ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))) ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.8.4") (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"));
+          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "7.8.3") (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.6" && (compiler.version).lt "7.7")) (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.8.4") (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"));
         buildable = true;
         };
       exes = {

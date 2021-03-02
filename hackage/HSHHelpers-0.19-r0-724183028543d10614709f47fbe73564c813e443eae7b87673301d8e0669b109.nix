@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "HSHHelpers"; version = "0.19"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2008 Thomas Hartman";

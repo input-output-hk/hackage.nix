@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0.3";
+      specVersion = "1.6";
       identifier = { name = "hsgsom"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";

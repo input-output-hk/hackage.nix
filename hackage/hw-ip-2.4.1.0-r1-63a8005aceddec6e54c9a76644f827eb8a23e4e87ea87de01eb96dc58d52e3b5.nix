@@ -74,7 +74,7 @@
             (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
             (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
             (hsPkgs."hw-ip" or (errorHandler.buildDepError "hw-ip"))
-            (hsPkgs."hw-ip-gen" or (errorHandler.buildDepError "hw-ip-gen"))
+            (hsPkgs."hw-ip".components.sublibs.hw-ip-gen or (errorHandler.buildDepError "hw-ip:hw-ip-gen"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           build-tools = [

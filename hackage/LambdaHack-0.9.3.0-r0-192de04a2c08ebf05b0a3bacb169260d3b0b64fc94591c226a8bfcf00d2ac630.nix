@@ -34,7 +34,7 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs."definition" or (errorHandler.buildDepError "definition"))
+          (hsPkgs."LambdaHack".components.sublibs.definition or (errorHandler.buildDepError "LambdaHack:definition"))
           (hsPkgs."assert-failure" or (errorHandler.buildDepError "assert-failure"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -106,7 +106,7 @@
           };
         "this-game-content" = {
           depends = [
-            (hsPkgs."definition" or (errorHandler.buildDepError "definition"))
+            (hsPkgs."LambdaHack".components.sublibs.definition or (errorHandler.buildDepError "LambdaHack:definition"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
@@ -117,7 +117,7 @@
         "this-game-src" = {
           depends = [
             (hsPkgs."LambdaHack" or (errorHandler.buildDepError "LambdaHack"))
-            (hsPkgs."this-game-content" or (errorHandler.buildDepError "this-game-content"))
+            (hsPkgs."LambdaHack".components.sublibs.this-game-content or (errorHandler.buildDepError "LambdaHack:this-game-content"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."enummapset" or (errorHandler.buildDepError "enummapset"))
@@ -137,7 +137,7 @@
         "LambdaHack" = {
           depends = [
             (hsPkgs."LambdaHack" or (errorHandler.buildDepError "LambdaHack"))
-            (hsPkgs."this-game-src" or (errorHandler.buildDepError "this-game-src"))
+            (hsPkgs."LambdaHack".components.sublibs.this-game-src or (errorHandler.buildDepError "LambdaHack:this-game-src"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
@@ -150,7 +150,7 @@
         "test" = {
           depends = [
             (hsPkgs."LambdaHack" or (errorHandler.buildDepError "LambdaHack"))
-            (hsPkgs."this-game-src" or (errorHandler.buildDepError "this-game-src"))
+            (hsPkgs."LambdaHack".components.sublibs.this-game-src or (errorHandler.buildDepError "LambdaHack:this-game-src"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))

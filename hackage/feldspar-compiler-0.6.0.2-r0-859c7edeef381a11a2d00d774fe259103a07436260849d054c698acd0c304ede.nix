@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "feldspar-compiler"; version = "0.6.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012 Emil Axelsson, Gergely Dévai,\nAnders Persson, Josef Svenningsson\nCopyright (c) 2009-2011, ERICSSON AB";

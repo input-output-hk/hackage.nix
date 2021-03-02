@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "sessions"; version = "2007.6.17"; };
       license = "LicenseRef-LGPL";
       copyright = "Matthew Sackman";

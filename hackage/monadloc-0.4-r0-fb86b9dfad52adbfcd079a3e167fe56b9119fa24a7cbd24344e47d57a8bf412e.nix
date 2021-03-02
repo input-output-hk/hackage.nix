@@ -10,7 +10,7 @@
   {
     flags = { syb-in-base = false; mtl = true; transformers = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "monadloc"; version = "0.4"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";

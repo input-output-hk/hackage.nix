@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0.1";
+      specVersion = "1.6";
       identifier = { name = "cqrs-sqlite3"; version = "0.8.0"; };
       license = "MIT";
       copyright = "";

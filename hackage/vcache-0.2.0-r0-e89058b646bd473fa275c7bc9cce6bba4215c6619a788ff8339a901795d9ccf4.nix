@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16.0.3";
+      specVersion = "1.12";
       identifier = { name = "vcache"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 by David Barbour";

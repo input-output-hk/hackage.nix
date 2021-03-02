@@ -10,7 +10,7 @@
   {
     flags = { base4 = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "regex-tdfa"; version = "1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2007, Christopher Kuklewicz";

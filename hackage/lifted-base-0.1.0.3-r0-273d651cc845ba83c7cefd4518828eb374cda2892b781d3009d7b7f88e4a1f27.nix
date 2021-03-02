@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "lifted-base"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Bas van Dijk, Anders Kaseorg";

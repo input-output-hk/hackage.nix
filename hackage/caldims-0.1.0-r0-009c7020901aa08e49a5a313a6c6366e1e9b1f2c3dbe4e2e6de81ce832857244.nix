@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "caldims"; version = "0.1.0"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2007 Marcel Manthe";

@@ -10,7 +10,7 @@
   {
     flags = { mosaic = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "rainbox"; version = "0.8.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2014 Omari Norman";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "dimensional"; version = "0.10.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Buckwalter 2006-2011";

@@ -26,7 +26,7 @@
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          (hsPkgs."libbinaryen" or (errorHandler.buildDepError "libbinaryen"))
+          (hsPkgs."binaryen".components.sublibs.libbinaryen or (errorHandler.buildDepError "binaryen:libbinaryen"))
           ];
         buildable = true;
         };

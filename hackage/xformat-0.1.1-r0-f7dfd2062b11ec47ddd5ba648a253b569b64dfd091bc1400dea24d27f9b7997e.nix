@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "xformat"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Sean Leather";

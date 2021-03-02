@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "geni-gui"; version = "0.24.1"; };
       license = "LicenseRef-GPL";
       copyright = "";

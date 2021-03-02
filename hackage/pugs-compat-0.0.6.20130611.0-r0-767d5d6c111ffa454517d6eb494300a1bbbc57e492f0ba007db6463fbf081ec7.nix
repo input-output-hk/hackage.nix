@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "pugs-compat"; version = "0.0.6.20130611.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";

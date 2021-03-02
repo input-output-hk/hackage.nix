@@ -10,7 +10,7 @@
   {
     flags = { mysql = false; library-only = false; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "haskoin-wallet"; version = "0.2.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";

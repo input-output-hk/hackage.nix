@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9";
+      specVersion = "1.10";
       identifier = { name = "eccrypto"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Marcel Fourné, 2009-2019";

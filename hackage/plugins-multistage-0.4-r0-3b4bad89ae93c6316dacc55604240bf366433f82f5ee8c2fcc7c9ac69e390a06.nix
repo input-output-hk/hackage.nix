@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "plugins-multistage"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012-2014, Anders Persson";

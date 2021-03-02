@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "ihaskell-plot"; version = "0.3.0.1"; };
       license = "MIT";
       copyright = "";

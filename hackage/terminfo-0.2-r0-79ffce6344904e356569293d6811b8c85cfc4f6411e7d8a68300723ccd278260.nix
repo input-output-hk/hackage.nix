@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.1.4";
+      specVersion = "1.2";
       identifier = { name = "terminfo"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Judah Jacobson";

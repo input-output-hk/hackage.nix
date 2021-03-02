@@ -10,7 +10,7 @@
   {
     flags = { splitbase = true; buildtests = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "HDBC-sqlite3"; version = "2.3.1.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2005-2010 John Goerzen";

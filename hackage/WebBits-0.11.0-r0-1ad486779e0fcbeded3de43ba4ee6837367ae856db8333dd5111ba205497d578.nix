@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "WebBits"; version = "0.11.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2007-2008 Arjun Guha and Spiridon Eliopoulos";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "libmpd"; version = "0.1.3"; };
       license = "LicenseRef-LGPL";
       copyright = "Ben Sinclair 2005-2007";

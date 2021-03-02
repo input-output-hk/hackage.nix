@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "minst-idx"; version = "0.1.2.2"; };
       license = "GPL-3.0-only";
       copyright = "";

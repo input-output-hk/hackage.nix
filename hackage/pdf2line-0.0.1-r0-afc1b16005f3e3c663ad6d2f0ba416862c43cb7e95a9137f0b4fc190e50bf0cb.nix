@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "pdf2line"; version = "0.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "2008 Audrey Tang; distributed with parts of \"xpdf\" by Glyph & Cog, LLC.";

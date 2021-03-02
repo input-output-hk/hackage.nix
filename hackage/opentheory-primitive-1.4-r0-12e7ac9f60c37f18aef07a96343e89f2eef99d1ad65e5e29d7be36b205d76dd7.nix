@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "opentheory-primitive"; version = "1.4"; };
       license = "MIT";
       copyright = "";

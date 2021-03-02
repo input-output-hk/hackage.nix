@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "Ranged-sets"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Paul Johnson, 2005, 2006, 2007, 2008";

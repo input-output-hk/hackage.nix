@@ -10,7 +10,7 @@
   {
     flags = { explicittext = true; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "hydrogen-prelude"; version = "0.20"; };
       license = "MIT";
       copyright = "";

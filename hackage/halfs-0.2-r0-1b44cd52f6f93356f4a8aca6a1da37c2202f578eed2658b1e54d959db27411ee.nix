@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "halfs"; version = "0.2"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2005 Galois Connections, Inc.";

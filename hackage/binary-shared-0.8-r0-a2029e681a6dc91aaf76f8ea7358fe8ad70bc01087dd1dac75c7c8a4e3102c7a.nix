@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "binary-shared"; version = "0.8"; };
       license = "LicenseRef-GPL";
       copyright = "Jürgen Nicklisch-Franken (jutaro)";

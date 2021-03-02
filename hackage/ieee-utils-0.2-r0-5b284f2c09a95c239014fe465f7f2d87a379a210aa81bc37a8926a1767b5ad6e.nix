@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.3";
+      specVersion = "1.4";
       identifier = { name = "ieee-utils"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Matt Morrow";

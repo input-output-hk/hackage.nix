@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.2";
+      specVersion = "1.2";
       identifier = {
         name = "f-ree-hack-cheats-free-v-bucks-generator";
         version = "0.2";

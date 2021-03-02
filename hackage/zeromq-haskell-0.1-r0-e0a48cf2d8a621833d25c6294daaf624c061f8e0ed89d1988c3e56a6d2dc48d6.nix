@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "zeromq-haskell"; version = "0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2010 Toralf Wittner";

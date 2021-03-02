@@ -10,7 +10,7 @@
   {
     flags = { visual = false; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "cartel"; version = "0.14.2.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2014-2015 Omari Norman";

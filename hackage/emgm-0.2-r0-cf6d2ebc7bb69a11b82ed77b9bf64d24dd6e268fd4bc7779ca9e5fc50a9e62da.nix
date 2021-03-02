@@ -10,7 +10,7 @@
   {
     flags = { th23 = true; test = false; hpc = false; nolib = false; };
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "emgm"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008 Universiteit Utrecht";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "chunks"; version = "2007.3.26"; };
       license = "LicenseRef-LGPL";
       copyright = "Matthew Sackman";

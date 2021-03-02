@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hascat-lib"; version = "0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Björn Teegen 2006, Florian Micheler 2010";

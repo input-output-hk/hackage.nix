@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "mime-string"; version = "0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Ian Lynagh, 2005, 2007";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "CC-delcont"; version = "0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2005--2008, R. Kent Dybvig, Simon Peyton Jones,\nAmr Sabry, Oleg Kiselyov, Chung-chieh Shan";

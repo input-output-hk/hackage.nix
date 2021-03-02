@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "BiobaseInfernal"; version = "0.8.1.0"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2011 - 2017";

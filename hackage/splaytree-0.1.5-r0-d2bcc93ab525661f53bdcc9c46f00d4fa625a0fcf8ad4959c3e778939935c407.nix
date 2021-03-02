@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "splaytree"; version = "0.1.5"; };
       license = "BSD-3-Clause";
       copyright = "";

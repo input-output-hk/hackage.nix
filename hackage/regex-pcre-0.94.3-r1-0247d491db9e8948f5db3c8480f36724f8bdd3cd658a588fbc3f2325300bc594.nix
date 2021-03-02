@@ -10,7 +10,7 @@
   {
     flags = { newbase = true; splitbase = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "regex-pcre"; version = "0.94.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2006, Christopher Kuklewicz";

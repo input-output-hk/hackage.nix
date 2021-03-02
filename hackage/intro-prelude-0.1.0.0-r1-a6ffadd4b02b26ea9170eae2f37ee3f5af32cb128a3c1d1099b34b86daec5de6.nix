@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.21";
+      specVersion = "1.22";
       identifier = { name = "intro-prelude"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016 Daniel Mendler";

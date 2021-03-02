@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "soegtk"; version = "0.9.12.2"; };
       license = "LicenseRef-LGPL";
       copyright = "";

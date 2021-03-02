@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = {
         name = "free-theorems-counterexamples";
         version = "0.3.1.0";

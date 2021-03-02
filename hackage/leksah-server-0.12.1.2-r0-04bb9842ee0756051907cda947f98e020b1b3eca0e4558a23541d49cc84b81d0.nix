@@ -10,7 +10,7 @@
   {
     flags = { curl = false; libcurl = false; threaded = true; };
     package = {
-      specVersion = "1.10.2";
+      specVersion = "1.10";
       identifier = { name = "leksah-server"; version = "0.12.1.2"; };
       license = "LicenseRef-GPL";
       copyright = "2007-2011 Juergen Nicklisch-Franken, Hamish Mackenzie";

@@ -10,7 +10,7 @@
   {
     flags = { splitbase = true; bytestringinbase = false; base4 = true; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "carray"; version = "0.1.6.3"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -48,7 +48,7 @@
         "nix-freeze-tree" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."nix-freeze-tree-internal" or (errorHandler.buildDepError "nix-freeze-tree-internal"))
+            (hsPkgs."nix-freeze-tree".components.sublibs.nix-freeze-tree-internal or (errorHandler.buildDepError "nix-freeze-tree:nix-freeze-tree-internal"))
             ];
           buildable = true;
           };
@@ -58,7 +58,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            (hsPkgs."nix-freeze-tree-internal" or (errorHandler.buildDepError "nix-freeze-tree-internal"))
+            (hsPkgs."nix-freeze-tree".components.sublibs.nix-freeze-tree-internal or (errorHandler.buildDepError "nix-freeze-tree:nix-freeze-tree-internal"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))

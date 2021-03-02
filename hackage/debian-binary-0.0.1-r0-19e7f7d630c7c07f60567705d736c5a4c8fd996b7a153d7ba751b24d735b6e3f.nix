@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3.0";
+      specVersion = "1.2";
       identifier = { name = "debian-binary"; version = "0.0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "(c) 2008 Marco Túlio Gontijo e Silva <marcot@riseup.net>";

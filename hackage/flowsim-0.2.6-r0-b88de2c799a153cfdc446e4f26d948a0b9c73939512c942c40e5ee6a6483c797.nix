@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "flowsim"; version = "0.2.6"; };
       license = "LicenseRef-GPL";
       copyright = "";

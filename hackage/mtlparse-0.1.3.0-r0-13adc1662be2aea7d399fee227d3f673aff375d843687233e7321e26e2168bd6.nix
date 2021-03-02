@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "mtlparse"; version = "0.1.3.0"; };
       license = "LicenseRef-LGPL";
       copyright = "";

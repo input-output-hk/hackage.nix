@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "lambdabot"; version = "4.0"; };
       license = "LicenseRef-GPL";
       copyright = "";

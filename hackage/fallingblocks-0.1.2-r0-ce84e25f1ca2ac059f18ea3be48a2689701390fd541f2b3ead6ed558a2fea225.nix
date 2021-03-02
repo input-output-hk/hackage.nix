@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "fallingblocks"; version = "0.1.2"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2009 by Ben Sanders";

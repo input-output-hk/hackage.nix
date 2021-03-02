@@ -25,7 +25,7 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs."private" or (errorHandler.buildDepError "private"))
+          (hsPkgs."reg-alloc-graph-color".components.sublibs.private or (errorHandler.buildDepError "reg-alloc-graph-color:private"))
           ];
         buildable = true;
         };
@@ -60,7 +60,7 @@
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."util" or (errorHandler.buildDepError "util"))
-            (hsPkgs."private" or (errorHandler.buildDepError "private"))
+            (hsPkgs."reg-alloc-graph-color".components.sublibs.private or (errorHandler.buildDepError "reg-alloc-graph-color:private"))
             ];
           buildable = true;
           };

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "aeson-quick"; version = "0.1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014-2017 Scott Sadler";

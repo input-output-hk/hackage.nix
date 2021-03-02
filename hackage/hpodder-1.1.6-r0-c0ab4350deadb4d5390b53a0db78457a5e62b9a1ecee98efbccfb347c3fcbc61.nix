@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hpodder"; version = "1.1.6"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2006-2011 John Goerzen";

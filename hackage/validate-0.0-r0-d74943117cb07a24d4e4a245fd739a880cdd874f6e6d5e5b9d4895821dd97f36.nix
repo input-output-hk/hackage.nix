@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.3";
+      specVersion = "1.4";
       identifier = { name = "validate"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Matt Morrow, Chris Done";

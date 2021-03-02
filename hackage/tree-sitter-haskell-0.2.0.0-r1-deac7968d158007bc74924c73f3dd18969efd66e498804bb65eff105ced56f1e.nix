@@ -28,7 +28,7 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          (hsPkgs."tree-sitter-haskell-internal" or (errorHandler.buildDepError "tree-sitter-haskell-internal"))
+          (hsPkgs."tree-sitter-haskell".components.sublibs.tree-sitter-haskell-internal or (errorHandler.buildDepError "tree-sitter-haskell:tree-sitter-haskell-internal"))
           ];
         buildable = true;
         };

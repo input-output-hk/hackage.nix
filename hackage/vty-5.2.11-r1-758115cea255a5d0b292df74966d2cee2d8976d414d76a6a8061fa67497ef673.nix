@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.18.0";
+      specVersion = "1.18";
       identifier = { name = "vty"; version = "5.2.11"; };
       license = "BSD-3-Clause";
       copyright = "";

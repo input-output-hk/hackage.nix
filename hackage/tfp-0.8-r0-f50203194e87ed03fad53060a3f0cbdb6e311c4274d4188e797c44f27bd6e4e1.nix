@@ -10,7 +10,7 @@
   {
     flags = { build-test = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "tfp"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013 Henning Thielemann, 2008 Peter Gavin";

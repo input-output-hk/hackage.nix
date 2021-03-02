@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "grammar-combinators"; version = "0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";

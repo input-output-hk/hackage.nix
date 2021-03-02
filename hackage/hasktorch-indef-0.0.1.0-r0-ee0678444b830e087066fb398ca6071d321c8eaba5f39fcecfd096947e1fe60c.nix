@@ -66,7 +66,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
             (hsPkgs."ghc-typelits-natnormalise" or (errorHandler.buildDepError "ghc-typelits-natnormalise"))
-            (hsPkgs."hasktorch-indef-floating" or (errorHandler.buildDepError "hasktorch-indef-floating"))
+            (hsPkgs."hasktorch-indef".components.sublibs.hasktorch-indef-floating or (errorHandler.buildDepError "hasktorch-indef:hasktorch-indef-floating"))
             (hsPkgs."hasktorch-ffi-th" or (errorHandler.buildDepError "hasktorch-ffi-th"))
             (hsPkgs."hasktorch-types-th" or (errorHandler.buildDepError "hasktorch-types-th"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))

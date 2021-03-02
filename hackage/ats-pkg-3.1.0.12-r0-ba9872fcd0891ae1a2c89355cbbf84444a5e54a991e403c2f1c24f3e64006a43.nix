@@ -51,7 +51,7 @@
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
           (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
           (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
-          (hsPkgs."quaalude" or (errorHandler.buildDepError "quaalude"))
+          (hsPkgs."ats-pkg".components.sublibs.quaalude or (errorHandler.buildDepError "ats-pkg:quaalude"))
           ];
         buildable = true;
         };
@@ -92,12 +92,12 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
-            (hsPkgs."quaalude" or (errorHandler.buildDepError "quaalude"))
+            (hsPkgs."ats-pkg".components.sublibs.quaalude or (errorHandler.buildDepError "ats-pkg:quaalude"))
             (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
             (hsPkgs."cli-setup" or (errorHandler.buildDepError "cli-setup"))
-            (hsPkgs."quaalude" or (errorHandler.buildDepError "quaalude"))
+            (hsPkgs."ats-pkg".components.sublibs.quaalude or (errorHandler.buildDepError "ats-pkg:quaalude"))
             ];
           buildable = true;
           };

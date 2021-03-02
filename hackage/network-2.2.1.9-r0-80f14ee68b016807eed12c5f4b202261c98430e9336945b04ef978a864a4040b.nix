@@ -10,7 +10,7 @@
   {
     flags = { base4 = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "network"; version = "2.2.1.9"; };
       license = "BSD-3-Clause";
       copyright = "";

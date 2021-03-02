@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "binary-literal-qq"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2012 Mathieu Boespflug";

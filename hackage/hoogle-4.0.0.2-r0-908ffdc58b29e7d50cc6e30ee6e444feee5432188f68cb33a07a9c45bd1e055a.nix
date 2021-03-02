@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.1.4";
+      specVersion = "1.2";
       identifier = { name = "hoogle"; version = "4.0.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "Neil Mitchell 2004-2008";

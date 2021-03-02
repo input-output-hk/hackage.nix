@@ -52,7 +52,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elm-street" or (errorHandler.buildDepError "elm-street"))
-            (hsPkgs."types" or (errorHandler.buildDepError "types"))
+            (hsPkgs."elm-street".components.sublibs.types or (errorHandler.buildDepError "elm-street:types"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
@@ -64,7 +64,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
-            (hsPkgs."types" or (errorHandler.buildDepError "types"))
+            (hsPkgs."elm-street".components.sublibs.types or (errorHandler.buildDepError "elm-street:types"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];
@@ -76,7 +76,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elm-street" or (errorHandler.buildDepError "elm-street"))
-            (hsPkgs."types" or (errorHandler.buildDepError "types"))
+            (hsPkgs."elm-street".components.sublibs.types or (errorHandler.buildDepError "elm-street:types"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))

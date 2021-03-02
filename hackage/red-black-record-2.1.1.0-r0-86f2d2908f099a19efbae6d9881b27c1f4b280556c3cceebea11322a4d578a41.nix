@@ -61,7 +61,7 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."red-black-record" or (errorHandler.buildDepError "red-black-record"))
-            (hsPkgs."demoted" or (errorHandler.buildDepError "demoted"))
+            (hsPkgs."red-black-record".components.sublibs.demoted or (errorHandler.buildDepError "red-black-record:demoted"))
             ];
           buildable = true;
           };

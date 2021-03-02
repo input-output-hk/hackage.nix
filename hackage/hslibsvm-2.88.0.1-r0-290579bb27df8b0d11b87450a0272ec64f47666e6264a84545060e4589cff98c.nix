@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0.1";
+      specVersion = "1.6";
       identifier = { name = "hslibsvm"; version = "2.88.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";

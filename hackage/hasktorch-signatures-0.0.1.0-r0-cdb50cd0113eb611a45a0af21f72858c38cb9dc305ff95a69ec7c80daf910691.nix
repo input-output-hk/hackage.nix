@@ -67,7 +67,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch-ffi-th" or (errorHandler.buildDepError "hasktorch-ffi-th"))
             (hsPkgs."hasktorch-types-th" or (errorHandler.buildDepError "hasktorch-types-th"))
-            (hsPkgs."hasktorch-partial-unsigned" or (errorHandler.buildDepError "hasktorch-partial-unsigned"))
+            (hsPkgs."hasktorch-signatures".components.sublibs.hasktorch-partial-unsigned or (errorHandler.buildDepError "hasktorch-signatures:hasktorch-partial-unsigned"))
             ];
           buildable = true;
           };
@@ -76,7 +76,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch-ffi-thc" or (errorHandler.buildDepError "hasktorch-ffi-thc"))
             (hsPkgs."hasktorch-types-thc" or (errorHandler.buildDepError "hasktorch-types-thc"))
-            (hsPkgs."hasktorch-partial-unsigned" or (errorHandler.buildDepError "hasktorch-partial-unsigned"))
+            (hsPkgs."hasktorch-signatures".components.sublibs.hasktorch-partial-unsigned or (errorHandler.buildDepError "hasktorch-signatures:hasktorch-partial-unsigned"))
             ];
           buildable = true;
           };
@@ -85,7 +85,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch-ffi-th" or (errorHandler.buildDepError "hasktorch-ffi-th"))
             (hsPkgs."hasktorch-types-th" or (errorHandler.buildDepError "hasktorch-types-th"))
-            (hsPkgs."hasktorch-partial-signed" or (errorHandler.buildDepError "hasktorch-partial-signed"))
+            (hsPkgs."hasktorch-signatures".components.sublibs.hasktorch-partial-signed or (errorHandler.buildDepError "hasktorch-signatures:hasktorch-partial-signed"))
             ];
           buildable = true;
           };
@@ -94,7 +94,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch-ffi-thc" or (errorHandler.buildDepError "hasktorch-ffi-thc"))
             (hsPkgs."hasktorch-types-thc" or (errorHandler.buildDepError "hasktorch-types-thc"))
-            (hsPkgs."hasktorch-partial-signed" or (errorHandler.buildDepError "hasktorch-partial-signed"))
+            (hsPkgs."hasktorch-signatures".components.sublibs.hasktorch-partial-signed or (errorHandler.buildDepError "hasktorch-signatures:hasktorch-partial-signed"))
             ];
           buildable = true;
           };
@@ -103,7 +103,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch-ffi-th" or (errorHandler.buildDepError "hasktorch-ffi-th"))
             (hsPkgs."hasktorch-types-th" or (errorHandler.buildDepError "hasktorch-types-th"))
-            (hsPkgs."hasktorch-partial-floating" or (errorHandler.buildDepError "hasktorch-partial-floating"))
+            (hsPkgs."hasktorch-signatures".components.sublibs.hasktorch-partial-floating or (errorHandler.buildDepError "hasktorch-signatures:hasktorch-partial-floating"))
             ];
           buildable = true;
           };
@@ -112,7 +112,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch-ffi-thc" or (errorHandler.buildDepError "hasktorch-ffi-thc"))
             (hsPkgs."hasktorch-types-thc" or (errorHandler.buildDepError "hasktorch-types-thc"))
-            (hsPkgs."hasktorch-partial-floating" or (errorHandler.buildDepError "hasktorch-partial-floating"))
+            (hsPkgs."hasktorch-signatures".components.sublibs.hasktorch-partial-floating or (errorHandler.buildDepError "hasktorch-signatures:hasktorch-partial-floating"))
             ];
           buildable = true;
           };

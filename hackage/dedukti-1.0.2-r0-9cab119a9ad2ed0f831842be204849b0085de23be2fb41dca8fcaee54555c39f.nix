@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "dedukti"; version = "1.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "© 2009 CNRS - École Polytechnique - INRIA";

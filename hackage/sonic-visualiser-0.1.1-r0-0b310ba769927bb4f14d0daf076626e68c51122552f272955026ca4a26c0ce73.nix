@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "sonic-visualiser"; version = "0.1.1"; };
       license = "LicenseRef-GPL";
       copyright = "Stefan Kersten, 2007-2008";

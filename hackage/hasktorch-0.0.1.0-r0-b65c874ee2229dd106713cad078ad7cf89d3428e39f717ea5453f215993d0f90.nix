@@ -30,10 +30,10 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          (hsPkgs."hasktorch-cpu" or (errorHandler.buildDepError "hasktorch-cpu"))
+          (hsPkgs."hasktorch".components.sublibs.hasktorch-cpu or (errorHandler.buildDepError "hasktorch:hasktorch-cpu"))
           (hsPkgs."hasktorch-ffi-th" or (errorHandler.buildDepError "hasktorch-ffi-th"))
           (hsPkgs."hasktorch-types-th" or (errorHandler.buildDepError "hasktorch-types-th"))
-          ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."hasktorch-gpu" or (errorHandler.buildDepError "hasktorch-gpu"));
+          ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."hasktorch".components.sublibs.hasktorch-gpu or (errorHandler.buildDepError "hasktorch:hasktorch-gpu"));
         buildable = true;
         };
       sublibs = {
@@ -47,9 +47,9 @@
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            (hsPkgs."hasktorch-indef-floating" or (errorHandler.buildDepError "hasktorch-indef-floating"))
-            (hsPkgs."hasktorch-indef-signed" or (errorHandler.buildDepError "hasktorch-indef-signed"))
-            ] ++ (pkgs.lib).optional (!flags.lite) (hsPkgs."hasktorch-indef-unsigned" or (errorHandler.buildDepError "hasktorch-indef-unsigned"));
+            (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-floating or (errorHandler.buildDepError "hasktorch:hasktorch-indef-floating"))
+            (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-signed or (errorHandler.buildDepError "hasktorch:hasktorch-indef-signed"))
+            ] ++ (pkgs.lib).optional (!flags.lite) (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-unsigned or (errorHandler.buildDepError "hasktorch:hasktorch-indef-unsigned"));
           buildable = true;
           };
         "hasktorch-gpu" = {
@@ -62,11 +62,11 @@
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            (hsPkgs."hasktorch-indef-floating" or (errorHandler.buildDepError "hasktorch-indef-floating"))
-            (hsPkgs."hasktorch-indef-signed" or (errorHandler.buildDepError "hasktorch-indef-signed"))
+            (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-floating or (errorHandler.buildDepError "hasktorch:hasktorch-indef-floating"))
+            (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-signed or (errorHandler.buildDepError "hasktorch:hasktorch-indef-signed"))
             (hsPkgs."hasktorch-ffi-thc" or (errorHandler.buildDepError "hasktorch-ffi-thc"))
             (hsPkgs."hasktorch-types-thc" or (errorHandler.buildDepError "hasktorch-types-thc"))
-            ] ++ (pkgs.lib).optional (!flags.lite) (hsPkgs."hasktorch-indef-unsigned" or (errorHandler.buildDepError "hasktorch-indef-unsigned"));
+            ] ++ (pkgs.lib).optional (!flags.lite) (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-unsigned or (errorHandler.buildDepError "hasktorch:hasktorch-indef-unsigned"));
           buildable = true;
           };
         "hasktorch-indef-unsigned" = {
@@ -98,14 +98,14 @@
         "isdefinite-cpu" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."hasktorch-cpu" or (errorHandler.buildDepError "hasktorch-cpu"))
+            (hsPkgs."hasktorch".components.sublibs.hasktorch-cpu or (errorHandler.buildDepError "hasktorch:hasktorch-cpu"))
             ];
           buildable = true;
           };
         "isdefinite-gpu" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."hasktorch-gpu" or (errorHandler.buildDepError "hasktorch-gpu"))
+            (hsPkgs."hasktorch".components.sublibs.hasktorch-gpu or (errorHandler.buildDepError "hasktorch:hasktorch-gpu"))
             ];
           buildable = true;
           };

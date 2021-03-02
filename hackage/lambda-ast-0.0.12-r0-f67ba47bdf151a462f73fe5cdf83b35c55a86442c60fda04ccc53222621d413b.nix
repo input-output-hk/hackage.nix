@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.1.0";
+      specVersion = "1.10";
       identifier = { name = "lambda-ast"; version = "0.0.12"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Jonathan Fischoff ";

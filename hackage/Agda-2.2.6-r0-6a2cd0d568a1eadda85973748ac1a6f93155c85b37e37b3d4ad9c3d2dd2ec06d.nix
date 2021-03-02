@@ -10,7 +10,7 @@
   {
     flags = { use-locale = true; };
     package = {
-      specVersion = "1.6.0.3";
+      specVersion = "1.6";
       identifier = { name = "Agda"; version = "2.2.6"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";

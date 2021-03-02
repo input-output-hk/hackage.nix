@@ -10,7 +10,7 @@
   {
     flags = { unsafe-operations = true; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "parameterized-utils"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";

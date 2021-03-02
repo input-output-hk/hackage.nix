@@ -10,7 +10,7 @@
   {
     flags = { integer-simple = false; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "numerals"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "2009–2014 Roel van Dijk, Bas van Dijk";

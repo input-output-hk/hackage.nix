@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "ghc-parser"; version = "0.1.6.0"; };
       license = "MIT";
       copyright = "";

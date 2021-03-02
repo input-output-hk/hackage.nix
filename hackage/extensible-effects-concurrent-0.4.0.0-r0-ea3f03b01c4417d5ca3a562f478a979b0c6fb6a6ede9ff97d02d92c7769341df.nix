@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.19";
+      specVersion = "1.20";
       identifier = {
         name = "extensible-effects-concurrent";
         version = "0.4.0.0";

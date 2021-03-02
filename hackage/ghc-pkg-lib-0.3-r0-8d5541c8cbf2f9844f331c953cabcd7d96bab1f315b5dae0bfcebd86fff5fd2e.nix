@@ -10,7 +10,7 @@
   {
     flags = { lib-werror = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "ghc-pkg-lib"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) Thiago Arrais 2009";

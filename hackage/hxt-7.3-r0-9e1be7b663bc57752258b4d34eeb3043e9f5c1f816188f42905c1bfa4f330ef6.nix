@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hxt"; version = "7.3"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2005 Uwe Schmidt";

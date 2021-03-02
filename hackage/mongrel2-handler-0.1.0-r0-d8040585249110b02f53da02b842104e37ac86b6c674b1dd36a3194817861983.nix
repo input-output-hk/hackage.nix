@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0.1";
+      specVersion = "1.6";
       identifier = { name = "mongrel2-handler"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";

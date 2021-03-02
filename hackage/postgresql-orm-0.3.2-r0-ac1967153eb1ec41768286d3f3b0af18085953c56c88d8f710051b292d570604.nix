@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "postgresql-orm"; version = "0.3.2"; };
       license = "LicenseRef-GPL";
       copyright = "";

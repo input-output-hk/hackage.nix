@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "Crypto"; version = "3.0.3"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Dominic Steinitz 2003 - 2006";

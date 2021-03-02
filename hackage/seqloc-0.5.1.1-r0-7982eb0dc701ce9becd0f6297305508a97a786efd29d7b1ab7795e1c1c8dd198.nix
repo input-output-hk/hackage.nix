@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "seqloc"; version = "0.5.1.1"; };
       license = "MIT";
       copyright = "";

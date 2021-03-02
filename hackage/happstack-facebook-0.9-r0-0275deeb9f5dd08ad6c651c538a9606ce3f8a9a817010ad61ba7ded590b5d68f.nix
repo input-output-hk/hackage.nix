@@ -10,7 +10,7 @@
   {
     flags = { base4 = true; formlets = false; };
     package = {
-      specVersion = "1.4.0.0";
+      specVersion = "1.4";
       identifier = { name = "happstack-facebook"; version = "0.9"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = { splitbase = true; test = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "language-asn1"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "LICENSE";

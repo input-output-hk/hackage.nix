@@ -10,7 +10,7 @@
   {
     flags = { exe = false; };
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "BenchmarkHistory"; version = "0.0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2015";

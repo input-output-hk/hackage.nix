@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "MissingM"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Dylan Just";

@@ -53,7 +53,7 @@
         "buffet" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."buffet-internal" or (errorHandler.buildDepError "buffet-internal"))
+            (hsPkgs."buffet".components.sublibs.buffet-internal or (errorHandler.buildDepError "buffet:buffet-internal"))
             ];
           buildable = true;
           };
@@ -63,7 +63,7 @@
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."buffet-internal" or (errorHandler.buildDepError "buffet-internal"))
+            (hsPkgs."buffet".components.sublibs.buffet-internal or (errorHandler.buildDepError "buffet:buffet-internal"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))

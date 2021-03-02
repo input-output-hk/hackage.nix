@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0.3";
+      specVersion = "1.6";
       identifier = { name = "KiCS"; version = "0.9.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";

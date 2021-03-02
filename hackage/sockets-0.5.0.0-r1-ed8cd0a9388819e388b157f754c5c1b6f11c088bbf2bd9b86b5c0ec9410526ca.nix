@@ -40,13 +40,13 @@
           (hsPkgs."primitive-addr" or (errorHandler.buildDepError "primitive-addr"))
           (hsPkgs."primitive-offset" or (errorHandler.buildDepError "primitive-offset"))
           (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
-          (hsPkgs."sockets-datagram-receive" or (errorHandler.buildDepError "sockets-datagram-receive"))
-          (hsPkgs."sockets-datagram-receive-many" or (errorHandler.buildDepError "sockets-datagram-receive-many"))
-          (hsPkgs."sockets-datagram-send" or (errorHandler.buildDepError "sockets-datagram-send"))
-          (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
-          (hsPkgs."sockets-stream-bidirectional" or (errorHandler.buildDepError "sockets-stream-bidirectional"))
-          (hsPkgs."sockets-stream-send" or (errorHandler.buildDepError "sockets-stream-send"))
-          (hsPkgs."sockets-stream-send-two" or (errorHandler.buildDepError "sockets-stream-send-two"))
+          (hsPkgs."sockets".components.sublibs.sockets-datagram-receive or (errorHandler.buildDepError "sockets:sockets-datagram-receive"))
+          (hsPkgs."sockets".components.sublibs.sockets-datagram-receive-many or (errorHandler.buildDepError "sockets:sockets-datagram-receive-many"))
+          (hsPkgs."sockets".components.sublibs.sockets-datagram-send or (errorHandler.buildDepError "sockets:sockets-datagram-send"))
+          (hsPkgs."sockets".components.sublibs.sockets-internal or (errorHandler.buildDepError "sockets:sockets-internal"))
+          (hsPkgs."sockets".components.sublibs.sockets-stream-bidirectional or (errorHandler.buildDepError "sockets:sockets-stream-bidirectional"))
+          (hsPkgs."sockets".components.sublibs.sockets-stream-send or (errorHandler.buildDepError "sockets:sockets-stream-send"))
+          (hsPkgs."sockets".components.sublibs.sockets-stream-send-two or (errorHandler.buildDepError "sockets:sockets-stream-send-two"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           ] ++ (if flags.checked
@@ -85,7 +85,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
+            (hsPkgs."sockets".components.sublibs.sockets-internal or (errorHandler.buildDepError "sockets:sockets-internal"))
             ];
           buildable = true;
           };
@@ -99,9 +99,9 @@
             (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
             (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
-            (hsPkgs."sockets-buffer" or (errorHandler.buildDepError "sockets-buffer"))
-            (hsPkgs."sockets-interrupt" or (errorHandler.buildDepError "sockets-interrupt"))
+            (hsPkgs."sockets".components.sublibs.sockets-internal or (errorHandler.buildDepError "sockets:sockets-internal"))
+            (hsPkgs."sockets".components.sublibs.sockets-buffer or (errorHandler.buildDepError "sockets:sockets-buffer"))
+            (hsPkgs."sockets".components.sublibs.sockets-interrupt or (errorHandler.buildDepError "sockets:sockets-interrupt"))
             ];
           buildable = true;
           };
@@ -112,9 +112,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
             (hsPkgs."primitive-offset" or (errorHandler.buildDepError "primitive-offset"))
-            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
-            (hsPkgs."sockets-buffer" or (errorHandler.buildDepError "sockets-buffer"))
-            (hsPkgs."sockets-interrupt" or (errorHandler.buildDepError "sockets-interrupt"))
+            (hsPkgs."sockets".components.sublibs.sockets-internal or (errorHandler.buildDepError "sockets:sockets-internal"))
+            (hsPkgs."sockets".components.sublibs.sockets-buffer or (errorHandler.buildDepError "sockets:sockets-buffer"))
+            (hsPkgs."sockets".components.sublibs.sockets-interrupt or (errorHandler.buildDepError "sockets:sockets-interrupt"))
             ];
           buildable = true;
           };
@@ -126,8 +126,8 @@
             (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
             (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
             (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
-            (hsPkgs."sockets-datagram-receive" or (errorHandler.buildDepError "sockets-datagram-receive"))
-            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
+            (hsPkgs."sockets".components.sublibs.sockets-datagram-receive or (errorHandler.buildDepError "sockets:sockets-datagram-receive"))
+            (hsPkgs."sockets".components.sublibs.sockets-internal or (errorHandler.buildDepError "sockets:sockets-internal"))
             ] ++ (if flags.checked
             then [
               (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
@@ -143,9 +143,9 @@
             (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
             (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
-            (hsPkgs."sockets-buffer" or (errorHandler.buildDepError "sockets-buffer"))
-            (hsPkgs."sockets-interrupt" or (errorHandler.buildDepError "sockets-interrupt"))
+            (hsPkgs."sockets".components.sublibs.sockets-internal or (errorHandler.buildDepError "sockets:sockets-internal"))
+            (hsPkgs."sockets".components.sublibs.sockets-buffer or (errorHandler.buildDepError "sockets:sockets-buffer"))
+            (hsPkgs."sockets".components.sublibs.sockets-interrupt or (errorHandler.buildDepError "sockets:sockets-interrupt"))
             ];
           buildable = true;
           };
@@ -155,9 +155,9 @@
             (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
             (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
-            (hsPkgs."sockets-buffer" or (errorHandler.buildDepError "sockets-buffer"))
-            (hsPkgs."sockets-interrupt" or (errorHandler.buildDepError "sockets-interrupt"))
+            (hsPkgs."sockets".components.sublibs.sockets-internal or (errorHandler.buildDepError "sockets:sockets-internal"))
+            (hsPkgs."sockets".components.sublibs.sockets-buffer or (errorHandler.buildDepError "sockets:sockets-buffer"))
+            (hsPkgs."sockets".components.sublibs.sockets-interrupt or (errorHandler.buildDepError "sockets:sockets-interrupt"))
             ];
           buildable = true;
           };
@@ -167,9 +167,9 @@
             (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
             (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
-            (hsPkgs."sockets-interrupt" or (errorHandler.buildDepError "sockets-interrupt"))
-            (hsPkgs."sockets-stream-send" or (errorHandler.buildDepError "sockets-stream-send"))
+            (hsPkgs."sockets".components.sublibs.sockets-internal or (errorHandler.buildDepError "sockets:sockets-internal"))
+            (hsPkgs."sockets".components.sublibs.sockets-interrupt or (errorHandler.buildDepError "sockets:sockets-interrupt"))
+            (hsPkgs."sockets".components.sublibs.sockets-stream-send or (errorHandler.buildDepError "sockets:sockets-stream-send"))
             ];
           buildable = true;
           };
@@ -178,9 +178,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            (hsPkgs."sockets-internal" or (errorHandler.buildDepError "sockets-internal"))
-            (hsPkgs."sockets-stream-send" or (errorHandler.buildDepError "sockets-stream-send"))
-            (hsPkgs."sockets-stream-receive" or (errorHandler.buildDepError "sockets-stream-receive"))
+            (hsPkgs."sockets".components.sublibs.sockets-internal or (errorHandler.buildDepError "sockets:sockets-internal"))
+            (hsPkgs."sockets".components.sublibs.sockets-stream-send or (errorHandler.buildDepError "sockets:sockets-stream-send"))
+            (hsPkgs."sockets".components.sublibs.sockets-stream-receive or (errorHandler.buildDepError "sockets:sockets-stream-receive"))
             ];
           buildable = true;
           };

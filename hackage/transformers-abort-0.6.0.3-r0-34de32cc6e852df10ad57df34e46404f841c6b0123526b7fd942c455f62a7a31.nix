@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "transformers-abort"; version = "0.6.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2011-2016 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";

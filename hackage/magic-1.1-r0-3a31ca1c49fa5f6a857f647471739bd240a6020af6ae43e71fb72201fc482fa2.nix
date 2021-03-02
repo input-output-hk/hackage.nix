@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "magic"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2005-2009 John Goerzen";

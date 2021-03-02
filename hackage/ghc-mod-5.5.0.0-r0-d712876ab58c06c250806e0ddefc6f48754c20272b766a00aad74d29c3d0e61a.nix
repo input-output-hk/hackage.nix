@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "ghc-mod"; version = "5.5.0.0"; };
       license = "AGPL-3.0-only";
       copyright = "";
@@ -101,12 +101,14 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             ];
-          buildable = if compiler.isGhc && false then false else true;
+          buildable = if compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")
+            then false
+            else true;
           };
         "spec" = {
           depends = [
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"));
+            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"));
           buildable = true;
           };
         };

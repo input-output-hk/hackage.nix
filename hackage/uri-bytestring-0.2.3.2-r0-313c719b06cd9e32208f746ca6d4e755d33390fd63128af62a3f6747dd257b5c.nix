@@ -10,7 +10,7 @@
   {
     flags = { lib-werror = false; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "uri-bytestring"; version = "0.2.3.2"; };
       license = "BSD-3-Clause";
       copyright = "Soostone Inc.";

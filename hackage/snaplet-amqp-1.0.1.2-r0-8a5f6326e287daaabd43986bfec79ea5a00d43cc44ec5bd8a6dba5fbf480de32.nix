@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14.0";
+      specVersion = "1.12";
       identifier = { name = "snaplet-amqp"; version = "1.0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Parnell Springmeyer";

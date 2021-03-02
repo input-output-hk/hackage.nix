@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "tagchup"; version = "0.3.1"; };
       license = "LicenseRef-GPL";
       copyright = "";

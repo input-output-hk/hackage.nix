@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "debian"; version = "3.17.1"; };
       license = "BSD-3-Clause";
       copyright = "";

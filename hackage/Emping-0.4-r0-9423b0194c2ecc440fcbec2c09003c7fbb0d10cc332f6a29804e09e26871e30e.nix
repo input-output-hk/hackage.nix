@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "Emping"; version = "0.4"; };
       license = "LicenseRef-GPL";
       copyright = "Hans van Thiel 2006 - 2008";

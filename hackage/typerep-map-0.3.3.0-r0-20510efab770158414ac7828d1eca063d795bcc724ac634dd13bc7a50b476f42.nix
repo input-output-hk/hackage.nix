@@ -53,7 +53,7 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-hedgehog" or (errorHandler.buildDepError "hspec-hedgehog"))
             (hsPkgs."typerep-map" or (errorHandler.buildDepError "typerep-map"))
-            (hsPkgs."typerep-extra-impls" or (errorHandler.buildDepError "typerep-extra-impls"))
+            (hsPkgs."typerep-map".components.sublibs.typerep-extra-impls or (errorHandler.buildDepError "typerep-map:typerep-extra-impls"))
             ];
           buildable = true;
           };
@@ -68,7 +68,7 @@
             (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
             (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
             (hsPkgs."typerep-map" or (errorHandler.buildDepError "typerep-map"))
-            (hsPkgs."typerep-extra-impls" or (errorHandler.buildDepError "typerep-extra-impls"))
+            (hsPkgs."typerep-map".components.sublibs.typerep-extra-impls or (errorHandler.buildDepError "typerep-map:typerep-extra-impls"))
             ];
           buildable = true;
           };

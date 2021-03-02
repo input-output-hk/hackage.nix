@@ -22,7 +22,7 @@
       optimize = false;
       };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "monoids"; version = "0.1.36"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Edward A. Kmett";

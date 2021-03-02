@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hg-buildpackage"; version = "1.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2003 - 2007 John Goerzen";

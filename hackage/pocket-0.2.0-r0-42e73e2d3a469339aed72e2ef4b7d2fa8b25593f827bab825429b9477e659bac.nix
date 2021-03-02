@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.21";
+      specVersion = "1.22";
       identifier = { name = "pocket"; version = "0.2.0"; };
       license = "MIT";
       copyright = "2017 Juan Pedro Villa Isaza";

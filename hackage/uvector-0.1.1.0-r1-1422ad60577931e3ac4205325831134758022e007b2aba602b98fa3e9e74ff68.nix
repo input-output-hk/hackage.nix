@@ -10,7 +10,7 @@
   {
     flags = { safe = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "uvector"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";

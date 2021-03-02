@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.1";
+      specVersion = "1.10";
       identifier = { name = "pipes"; version = "1.0"; };
       license = "LicenseRef-GPL";
       copyright = "2012 Gabriel Gonzalez";

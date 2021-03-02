@@ -27,7 +27,7 @@
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-          (hsPkgs."fast-digits-internal" or (errorHandler.buildDepError "fast-digits-internal"))
+          (hsPkgs."fast-digits".components.sublibs.fast-digits-internal or (errorHandler.buildDepError "fast-digits:fast-digits-internal"))
           ];
         buildable = true;
         };
@@ -51,7 +51,7 @@
             (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
             (hsPkgs."digits" or (errorHandler.buildDepError "digits"))
             (hsPkgs."fast-digits" or (errorHandler.buildDepError "fast-digits"))
-            (hsPkgs."fast-digits-internal" or (errorHandler.buildDepError "fast-digits-internal"))
+            (hsPkgs."fast-digits".components.sublibs.fast-digits-internal or (errorHandler.buildDepError "fast-digits:fast-digits-internal"))
             ];
           buildable = true;
           };

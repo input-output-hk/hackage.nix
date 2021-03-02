@@ -32,7 +32,7 @@
       exes = {
         "kparams" = {
           depends = [
-            (hsPkgs."internal" or (errorHandler.buildDepError "internal"))
+            (hsPkgs."kparams".components.sublibs.internal or (errorHandler.buildDepError "kparams:internal"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             ];
           buildable = true;
@@ -43,7 +43,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            (hsPkgs."internal" or (errorHandler.buildDepError "internal"))
+            (hsPkgs."kparams".components.sublibs.internal or (errorHandler.buildDepError "kparams:internal"))
             ];
           buildable = true;
           };

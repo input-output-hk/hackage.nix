@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "HStringTemplateHelpers"; version = "0.0.7"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2006-2008 Thomas Hartman";

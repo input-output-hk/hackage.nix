@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hsndfile"; version = "0.2.0"; };
       license = "LicenseRef-GPL";
       copyright = "Stefan Kersten, 2007-2008";

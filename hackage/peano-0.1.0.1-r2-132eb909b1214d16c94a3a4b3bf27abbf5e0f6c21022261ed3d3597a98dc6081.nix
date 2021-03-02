@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "peano"; version = "0.1.0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";

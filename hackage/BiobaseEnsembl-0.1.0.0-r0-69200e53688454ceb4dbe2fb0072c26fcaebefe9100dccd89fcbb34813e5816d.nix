@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "BiobaseEnsembl"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Florian Eggenhofer, 2018";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.1.0";
+      specVersion = "1.10";
       identifier = { name = "lvmlib"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012";

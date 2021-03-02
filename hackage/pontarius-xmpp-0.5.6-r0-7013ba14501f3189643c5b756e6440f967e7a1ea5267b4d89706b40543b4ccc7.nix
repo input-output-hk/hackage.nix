@@ -10,7 +10,7 @@
   {
     flags = { with-th = true; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "pontarius-xmpp"; version = "0.5.6"; };
       license = "BSD-3-Clause";
       copyright = "Dmitry Astapov, Pierre Kovalev, Mahdi Abdinejadi, Jon Kristensen,\nIETF Trust, Philipp Balzarek";

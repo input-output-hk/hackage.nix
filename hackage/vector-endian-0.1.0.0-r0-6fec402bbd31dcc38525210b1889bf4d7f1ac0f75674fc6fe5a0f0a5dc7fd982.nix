@@ -30,9 +30,9 @@
           (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          (hsPkgs."endian-common" or (errorHandler.buildDepError "endian-common"))
-          (hsPkgs."vector-endian-big" or (errorHandler.buildDepError "vector-endian-big"))
-          (hsPkgs."vector-endian-little" or (errorHandler.buildDepError "vector-endian-little"))
+          (hsPkgs."vector-endian".components.sublibs.endian-common or (errorHandler.buildDepError "vector-endian:endian-common"))
+          (hsPkgs."vector-endian".components.sublibs.vector-endian-big or (errorHandler.buildDepError "vector-endian:vector-endian-big"))
+          (hsPkgs."vector-endian".components.sublibs.vector-endian-little or (errorHandler.buildDepError "vector-endian:vector-endian-little"))
           ];
         buildable = true;
         };
@@ -54,7 +54,7 @@
             (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            (hsPkgs."endian-common" or (errorHandler.buildDepError "endian-common"))
+            (hsPkgs."vector-endian".components.sublibs.endian-common or (errorHandler.buildDepError "vector-endian:endian-common"))
             ];
           buildable = true;
           };
@@ -65,7 +65,7 @@
             (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            (hsPkgs."endian-common" or (errorHandler.buildDepError "endian-common"))
+            (hsPkgs."vector-endian".components.sublibs.endian-common or (errorHandler.buildDepError "vector-endian:endian-common"))
             ];
           buildable = true;
           };
@@ -76,7 +76,7 @@
             (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            (hsPkgs."endian-common" or (errorHandler.buildDepError "endian-common"))
+            (hsPkgs."vector-endian".components.sublibs.endian-common or (errorHandler.buildDepError "vector-endian:endian-common"))
             ];
           buildable = true;
           };
@@ -87,8 +87,8 @@
             (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            (hsPkgs."vector-endian-indef" or (errorHandler.buildDepError "vector-endian-indef"))
-            (hsPkgs."little-endian" or (errorHandler.buildDepError "little-endian"))
+            (hsPkgs."vector-endian".components.sublibs.vector-endian-indef or (errorHandler.buildDepError "vector-endian:vector-endian-indef"))
+            (hsPkgs."vector-endian".components.sublibs.little-endian or (errorHandler.buildDepError "vector-endian:little-endian"))
             ];
           buildable = true;
           };
@@ -99,8 +99,8 @@
             (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            (hsPkgs."vector-endian-indef" or (errorHandler.buildDepError "vector-endian-indef"))
-            (hsPkgs."big-endian" or (errorHandler.buildDepError "big-endian"))
+            (hsPkgs."vector-endian".components.sublibs.vector-endian-indef or (errorHandler.buildDepError "vector-endian:vector-endian-indef"))
+            (hsPkgs."vector-endian".components.sublibs.big-endian or (errorHandler.buildDepError "vector-endian:big-endian"))
             ];
           buildable = true;
           };

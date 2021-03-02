@@ -54,7 +54,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            (hsPkgs."kempe-modules" or (errorHandler.buildDepError "kempe-modules"))
+            (hsPkgs."kempe".components.sublibs.kempe-modules or (errorHandler.buildDepError "kempe:kempe-modules"))
             ];
           buildable = true;
           };
@@ -63,7 +63,7 @@
         "kempe-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."kempe-modules" or (errorHandler.buildDepError "kempe-modules"))
+            (hsPkgs."kempe".components.sublibs.kempe-modules or (errorHandler.buildDepError "kempe:kempe-modules"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -75,7 +75,7 @@
         "kempe-golden" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."kempe-modules" or (errorHandler.buildDepError "kempe-modules"))
+            (hsPkgs."kempe".components.sublibs.kempe-modules or (errorHandler.buildDepError "kempe:kempe-modules"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
@@ -90,7 +90,7 @@
         "kempe-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."kempe-modules" or (errorHandler.buildDepError "kempe-modules"))
+            (hsPkgs."kempe".components.sublibs.kempe-modules or (errorHandler.buildDepError "kempe:kempe-modules"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))

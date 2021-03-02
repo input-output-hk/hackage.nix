@@ -10,7 +10,7 @@
   {
     flags = { gpl = true; ghc-mod = true; };
     package = {
-      specVersion = "1.23";
+      specVersion = "1.24";
       identifier = { name = "git-vogue"; version = "0.2.2.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017 Christian Marie, Anchor Systems, Pty Ltd and Others";

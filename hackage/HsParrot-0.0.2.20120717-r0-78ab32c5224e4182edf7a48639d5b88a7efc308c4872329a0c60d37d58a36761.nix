@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "HsParrot"; version = "0.0.2.20120717"; };
       license = "BSD-3-Clause";
       copyright = "Audrey Tang, 2008";

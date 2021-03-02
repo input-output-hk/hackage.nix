@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "jupyter"; version = "0.9.0"; };
       license = "MIT";
       copyright = "";

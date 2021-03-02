@@ -10,7 +10,7 @@
   {
     flags = { split-base = true; parsec = true; pretty = true; };
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "json"; version = "0.3.6"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2007-2008 Galois Inc.";

@@ -10,7 +10,7 @@
   {
     flags = { mmap = false; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "JuicyPixels"; version = "3.1.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";

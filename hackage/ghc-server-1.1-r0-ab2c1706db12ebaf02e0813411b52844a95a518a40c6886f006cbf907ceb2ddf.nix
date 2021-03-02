@@ -24,7 +24,7 @@
       };
     components = {
       "library" = {
-        depends = (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.4") [
+        depends = (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.2" && (compiler.version).lt "7.3")) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.4") [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))

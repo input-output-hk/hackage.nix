@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.1.3";
+      specVersion = "1.2";
       identifier = { name = "kbq-gu"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "copyleft, share whatever you modify and any derivatives as well, including modules, additions and everything else.";

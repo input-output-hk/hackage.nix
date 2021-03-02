@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16.0.3";
+      specVersion = "1.12";
       identifier = { name = "lmdb"; version = "0.2.4"; };
       license = "BSD-2-Clause";
       copyright = "(c) 2014 by David Barbour";

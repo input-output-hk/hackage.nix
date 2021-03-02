@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "dsp"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "Matt Donadio, 2003";

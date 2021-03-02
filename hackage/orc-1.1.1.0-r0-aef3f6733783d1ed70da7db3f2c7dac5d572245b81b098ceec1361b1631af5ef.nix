@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "orc"; version = "1.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008-2010, Galois, Inc.";

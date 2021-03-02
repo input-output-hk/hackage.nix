@@ -17,7 +17,7 @@
       execonly = false;
       };
     package = {
-      specVersion = "1.8.1";
+      specVersion = "1.8";
       identifier = { name = "idris"; version = "0.99"; };
       license = "BSD-3-Clause";
       copyright = "";

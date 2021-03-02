@@ -10,7 +10,7 @@
   {
     flags = { network-uri = true; pretty-new = true; };
     package = {
-      specVersion = "1.9";
+      specVersion = "1.10";
       identifier = { name = "debian"; version = "3.92"; };
       license = "BSD-3-Clause";
       copyright = "";

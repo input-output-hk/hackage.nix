@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.21";
+      specVersion = "1.22";
       identifier = { name = "proto-lens-protoc"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Google Inc.";

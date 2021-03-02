@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "pipes-safe"; version = "2.2.5"; };
       license = "BSD-3-Clause";
       copyright = "2013, 2014 Gabriel Gonzalez";

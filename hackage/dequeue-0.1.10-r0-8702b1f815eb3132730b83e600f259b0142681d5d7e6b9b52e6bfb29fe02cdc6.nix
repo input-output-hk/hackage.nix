@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "dequeue"; version = "0.1.10"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009-2015 Henry Bucklow";

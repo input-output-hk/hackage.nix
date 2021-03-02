@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0";
+      specVersion = "1.8";
       identifier = { name = "yesod-auth-hashdb"; version = "1.5"; };
       license = "MIT";
       copyright = "";

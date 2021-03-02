@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "monad-abort-fd"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "2011 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";

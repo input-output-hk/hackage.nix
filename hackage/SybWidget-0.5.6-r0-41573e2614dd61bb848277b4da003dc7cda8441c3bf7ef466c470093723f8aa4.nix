@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "SybWidget"; version = "0.5.6"; };
       license = "LicenseRef-LGPL";
       copyright = "Mads Lindstrøm <mads.lindstroem@gmail.com>";

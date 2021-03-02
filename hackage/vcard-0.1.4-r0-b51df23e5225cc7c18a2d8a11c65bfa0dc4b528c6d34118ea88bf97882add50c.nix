@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "vcard"; version = "0.1.4"; };
       license = "LicenseRef-LGPL";
       copyright = "(c) 2008. Mathieu Boespflug <mboes - at - tweag.net>";

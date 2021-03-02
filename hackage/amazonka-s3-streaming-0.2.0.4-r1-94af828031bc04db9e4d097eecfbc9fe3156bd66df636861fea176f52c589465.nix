@@ -44,7 +44,7 @@
           ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.11") [
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"));
+          ]) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.8" && (compiler.version).lt "7.9")) (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"));
         buildable = true;
         };
       exes = {

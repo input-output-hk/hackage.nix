@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "mdo"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2008 Audrey Tang";

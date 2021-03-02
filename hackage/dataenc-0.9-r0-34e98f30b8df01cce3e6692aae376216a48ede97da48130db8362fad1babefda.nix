@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "dataenc"; version = "0.9"; };
       license = "LicenseRef-LGPL";
       copyright = "Magnus Therning, 2007";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "JsContracts"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008-2009 Arjun Guha and Spiridon Eliopoulos";

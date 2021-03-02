@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.4";
+      specVersion = "1.8";
       identifier = { name = "mwc-random"; version = "0.13.5.0"; };
       license = "BSD-3-Clause";
       copyright = "2009, 2010, 2011 Bryan O'Sullivan";

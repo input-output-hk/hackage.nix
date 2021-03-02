@@ -10,7 +10,7 @@
   {
     flags = { newbase = true; splitbase = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "regex-pcre-builtin"; version = "0.95.0.8.8.35"; };
       license = "BSD-3-Clause";
       copyright = "See LICENSE file";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.1";
+      specVersion = "1.10";
       identifier = { name = "pipes"; version = "1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2012 Gabriel Gonzalez";

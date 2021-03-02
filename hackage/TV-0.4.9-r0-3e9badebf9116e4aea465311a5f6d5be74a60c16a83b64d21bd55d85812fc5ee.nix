@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "TV"; version = "0.4.9"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2006-2012 by Conal Elliott";

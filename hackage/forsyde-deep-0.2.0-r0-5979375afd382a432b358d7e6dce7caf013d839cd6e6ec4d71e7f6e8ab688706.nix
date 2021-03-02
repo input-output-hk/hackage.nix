@@ -10,7 +10,7 @@
   {
     flags = { developer = false; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "forsyde-deep"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2003-2018 ForSyDe Group, KTH/EECS/ES";

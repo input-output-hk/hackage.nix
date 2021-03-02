@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9";
+      specVersion = "1.10";
       identifier = { name = "atp-haskell"; version = "1.13"; };
       license = "BSD-3-Clause";
       copyright = "";

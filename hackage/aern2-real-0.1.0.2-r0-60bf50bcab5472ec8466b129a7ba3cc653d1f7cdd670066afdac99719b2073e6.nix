@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "aern2-real"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015-2017 Michal Konecny";

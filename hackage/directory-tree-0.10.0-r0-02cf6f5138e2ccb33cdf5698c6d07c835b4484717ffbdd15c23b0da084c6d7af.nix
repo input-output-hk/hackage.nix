@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "directory-tree"; version = "0.10.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011, Brandon Simmons <brandon.m.simmons@gmail.com>";

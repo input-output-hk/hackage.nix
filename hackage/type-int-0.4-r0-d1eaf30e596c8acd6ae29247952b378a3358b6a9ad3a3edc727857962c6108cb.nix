@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "type-int"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2006 Edward Kmett. All Rights Reserved";

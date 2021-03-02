@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "biohazard"; version = "0.6.6.1"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2010-2016 Udo Stenzel";

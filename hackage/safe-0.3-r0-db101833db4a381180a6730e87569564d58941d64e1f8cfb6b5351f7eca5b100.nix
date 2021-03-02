@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "safe"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "2007-2010, Neil Mitchell";

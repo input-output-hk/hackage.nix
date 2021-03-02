@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "ieee"; version = "0.6"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009. Patrick Perry <patperry@gmail.com>";

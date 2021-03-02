@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "HDBC-odbc"; version = "1.1.6.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2005-2008 John Goerzen";

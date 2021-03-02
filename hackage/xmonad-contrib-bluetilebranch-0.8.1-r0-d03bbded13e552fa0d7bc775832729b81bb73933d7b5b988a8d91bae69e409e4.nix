@@ -10,7 +10,7 @@
   {
     flags = { small_base = true; use_xft = true; testing = false; };
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = {
         name = "xmonad-contrib-bluetilebranch";
         version = "0.8.1";

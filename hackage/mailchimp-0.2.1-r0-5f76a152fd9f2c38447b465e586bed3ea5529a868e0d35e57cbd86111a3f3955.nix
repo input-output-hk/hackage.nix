@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.21";
+      specVersion = "1.22";
       identifier = { name = "mailchimp"; version = "0.2.1"; };
       license = "MIT";
       copyright = "2016 Juan Pedro Villa Isaza";

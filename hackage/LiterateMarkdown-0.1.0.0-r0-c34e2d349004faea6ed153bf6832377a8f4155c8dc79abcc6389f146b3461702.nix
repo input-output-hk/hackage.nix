@@ -33,7 +33,7 @@
         "lhsc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."converter" or (errorHandler.buildDepError "converter"))
+            (hsPkgs."LiterateMarkdown".components.sublibs.converter or (errorHandler.buildDepError "LiterateMarkdown:converter"))
             ];
           buildable = true;
           };
@@ -42,7 +42,7 @@
         "test-foo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."converter" or (errorHandler.buildDepError "converter"))
+            (hsPkgs."LiterateMarkdown".components.sublibs.converter or (errorHandler.buildDepError "LiterateMarkdown:converter"))
             ];
           buildable = true;
           };

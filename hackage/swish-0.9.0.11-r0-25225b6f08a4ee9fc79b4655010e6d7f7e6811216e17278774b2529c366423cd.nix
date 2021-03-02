@@ -10,7 +10,7 @@
   {
     flags = { developer = false; w3ctests = false; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "swish"; version = "0.9.0.11"; };
       license = "LicenseRef-LGPL";
       copyright = "(c) 2003, 2004 G. Klyne; 2009 Vasili I Galchin; 2011, 2012, 2013 Doug Burke; All rights reserved.";

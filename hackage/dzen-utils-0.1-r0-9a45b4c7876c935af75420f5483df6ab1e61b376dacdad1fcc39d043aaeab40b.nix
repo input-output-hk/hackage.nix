@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "dzen-utils"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2009 Felipe A. Lessa";

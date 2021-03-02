@@ -10,7 +10,7 @@
   {
     flags = { network-uri = true; };
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "yesod-auth"; version = "1.6.7"; };
       license = "MIT";
       copyright = "";

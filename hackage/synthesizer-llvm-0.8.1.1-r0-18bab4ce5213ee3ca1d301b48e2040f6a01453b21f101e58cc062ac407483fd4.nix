@@ -10,7 +10,7 @@
   {
     flags = { buildexamples = false; alsa = true; jack = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "synthesizer-llvm"; version = "0.8.1.1"; };
       license = "LicenseRef-GPL";
       copyright = "";

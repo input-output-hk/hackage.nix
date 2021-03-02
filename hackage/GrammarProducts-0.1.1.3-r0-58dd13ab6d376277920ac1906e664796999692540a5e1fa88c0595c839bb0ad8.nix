@@ -10,7 +10,7 @@
   {
     flags = { examples = false; };
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "GrammarProducts"; version = "0.1.1.3"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2013-2017";

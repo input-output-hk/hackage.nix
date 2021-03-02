@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "HsSyck"; version = "0.44"; };
       license = "BSD-3-Clause";
       copyright = "Audrey Tang, Gaal Yahas, 2005, 2006, 2007, 2008";

@@ -17,7 +17,7 @@
       threadscope = false;
       };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "hermes"; version = "1.3.4.3"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";

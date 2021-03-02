@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "aivika-experiment-chart"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012. David Sorokin <david.sorokin@gmail.com>";

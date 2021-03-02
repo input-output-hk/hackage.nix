@@ -32,7 +32,7 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."semantic-source" or (errorHandler.buildDepError "semantic-source"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          (hsPkgs."tree-sitter-python-internal" or (errorHandler.buildDepError "tree-sitter-python-internal"))
+          (hsPkgs."tree-sitter-python".components.sublibs.tree-sitter-python-internal or (errorHandler.buildDepError "tree-sitter-python:tree-sitter-python-internal"))
           ];
         buildable = true;
         };

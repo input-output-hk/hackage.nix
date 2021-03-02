@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "haslo"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011 Bartosz Wojcik";

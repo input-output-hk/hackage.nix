@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "ListLike"; version = "2.0.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2007-2008 John Goerzen";

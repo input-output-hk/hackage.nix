@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "PBKDF2"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008 Thomas Hartman";

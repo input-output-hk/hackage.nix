@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "twidge"; version = "0.99.0"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2006-2008 John Goerzen";

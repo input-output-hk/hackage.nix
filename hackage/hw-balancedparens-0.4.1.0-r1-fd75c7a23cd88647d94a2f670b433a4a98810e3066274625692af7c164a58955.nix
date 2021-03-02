@@ -76,7 +76,7 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hw-balancedparens" or (errorHandler.buildDepError "hw-balancedparens"))
-            (hsPkgs."hw-balancedparens-gen" or (errorHandler.buildDepError "hw-balancedparens-gen"))
+            (hsPkgs."hw-balancedparens".components.sublibs.hw-balancedparens-gen or (errorHandler.buildDepError "hw-balancedparens:hw-balancedparens-gen"))
             (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
             (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
             (hsPkgs."hw-int" or (errorHandler.buildDepError "hw-int"))

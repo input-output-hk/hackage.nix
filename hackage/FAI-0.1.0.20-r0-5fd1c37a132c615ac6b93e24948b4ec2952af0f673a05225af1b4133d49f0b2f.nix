@@ -10,7 +10,7 @@
   {
     flags = { enable-cuda = false; };
     package = {
-      specVersion = "1.21";
+      specVersion = "1.22";
       identifier = { name = "FAI"; version = "0.1.0.20"; };
       license = "LGPL-3.0-only";
       copyright = "(C) 2018 Johann Lee <me@qinka.pro>";

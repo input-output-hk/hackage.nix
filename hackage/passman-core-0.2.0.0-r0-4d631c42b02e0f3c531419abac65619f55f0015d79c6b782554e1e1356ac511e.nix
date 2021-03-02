@@ -25,7 +25,7 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs."passman-core-internal" or (errorHandler.buildDepError "passman-core-internal"))
+          (hsPkgs."passman-core".components.sublibs.passman-core-internal or (errorHandler.buildDepError "passman-core:passman-core-internal"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."bcrypt" or (errorHandler.buildDepError "bcrypt"))
@@ -72,7 +72,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."passman-core" or (errorHandler.buildDepError "passman-core"))
-            (hsPkgs."passman-core-internal" or (errorHandler.buildDepError "passman-core-internal"))
+            (hsPkgs."passman-core".components.sublibs.passman-core-internal or (errorHandler.buildDepError "passman-core:passman-core-internal"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))

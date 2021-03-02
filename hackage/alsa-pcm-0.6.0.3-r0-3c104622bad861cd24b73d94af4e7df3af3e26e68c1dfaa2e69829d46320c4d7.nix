@@ -10,7 +10,7 @@
   {
     flags = { buildexamples = false; buildsynthesizer = false; debug = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "alsa-pcm"; version = "0.6.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert, Iavor S. Diatchki, Henning Thielemann";

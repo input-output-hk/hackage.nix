@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "cpphs"; version = "1.6"; };
       license = "LicenseRef-LGPL";
       copyright = "2004-8, Malcolm Wallace";

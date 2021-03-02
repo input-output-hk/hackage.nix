@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "ports"; version = "0.4.3.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";

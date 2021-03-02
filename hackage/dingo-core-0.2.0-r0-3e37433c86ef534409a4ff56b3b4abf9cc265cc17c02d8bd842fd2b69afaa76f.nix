@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0.1";
+      specVersion = "1.6";
       identifier = { name = "dingo-core"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";

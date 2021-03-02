@@ -37,7 +37,7 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.7") (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.9") [
+            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.6" && (compiler.version).lt "7.7")) (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.7") (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.9") [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."bin-package-db" or (errorHandler.buildDepError "bin-package-db"))
             ];

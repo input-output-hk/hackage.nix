@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "adhoc-network"; version = "1.0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = {
         name = "accelerate-fourier-benchmark";
         version = "0.0.0.1";

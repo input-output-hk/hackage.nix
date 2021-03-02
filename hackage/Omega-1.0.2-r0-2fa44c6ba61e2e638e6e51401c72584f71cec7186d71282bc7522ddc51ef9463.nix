@@ -10,7 +10,7 @@
   {
     flags = { useinstalledomega = false; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "Omega"; version = "1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";

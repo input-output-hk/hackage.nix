@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "hack-handler-epoll"; version = "0.1.3"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2010 Toralf Wittner";

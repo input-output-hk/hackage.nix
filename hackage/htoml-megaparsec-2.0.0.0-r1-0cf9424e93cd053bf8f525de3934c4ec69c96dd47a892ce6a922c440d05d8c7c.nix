@@ -28,7 +28,7 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-          (hsPkgs."htoml-internal" or (errorHandler.buildDepError "htoml-internal"))
+          (hsPkgs."htoml-megaparsec".components.sublibs.htoml-internal or (errorHandler.buildDepError "htoml-megaparsec:htoml-internal"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
@@ -69,7 +69,7 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."htoml-megaparsec" or (errorHandler.buildDepError "htoml-megaparsec"))
-            (hsPkgs."htoml-internal" or (errorHandler.buildDepError "htoml-internal"))
+            (hsPkgs."htoml-megaparsec".components.sublibs.htoml-internal or (errorHandler.buildDepError "htoml-megaparsec:htoml-internal"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
@@ -84,7 +84,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."htoml-megaparsec" or (errorHandler.buildDepError "htoml-megaparsec"))
-            (hsPkgs."htoml-internal" or (errorHandler.buildDepError "htoml-internal"))
+            (hsPkgs."htoml-megaparsec".components.sublibs.htoml-internal or (errorHandler.buildDepError "htoml-megaparsec:htoml-internal"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];

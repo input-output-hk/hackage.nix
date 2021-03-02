@@ -10,7 +10,7 @@
   {
     flags = { developer = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "text"; version = "0.7.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2008-2009 Tom Harper, 2009 Bryan O'Sullivan";

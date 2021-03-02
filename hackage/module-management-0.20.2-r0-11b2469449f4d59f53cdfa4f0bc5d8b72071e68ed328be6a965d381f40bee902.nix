@@ -10,7 +10,7 @@
   {
     flags = { build-tests = true; };
     package = {
-      specVersion = "1.9";
+      specVersion = "1.10";
       identifier = { name = "module-management"; version = "0.20.2"; };
       license = "BSD-3-Clause";
       copyright = "";

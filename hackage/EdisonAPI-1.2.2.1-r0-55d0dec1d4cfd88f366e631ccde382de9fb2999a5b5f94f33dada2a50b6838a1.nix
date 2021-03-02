@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "EdisonAPI"; version = "1.2.2.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";

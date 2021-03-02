@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.6";
+      specVersion = "1.8";
       identifier = { name = "opentheory-char"; version = "1.41"; };
       license = "MIT";
       copyright = "";

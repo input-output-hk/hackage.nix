@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "HAppS-Util"; version = "0.9.2"; };
       license = "BSD-3-Clause";
       copyright = "2007 HAppS LLC";

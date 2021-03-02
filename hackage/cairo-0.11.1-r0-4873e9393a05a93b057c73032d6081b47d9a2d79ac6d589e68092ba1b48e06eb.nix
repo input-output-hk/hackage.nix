@@ -10,7 +10,7 @@
   {
     flags = { cairo_pdf = true; cairo_ps = true; cairo_svg = true; };
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "cairo"; version = "0.11.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2001-2010 The Gtk2Hs Team, (c) Paolo Martini 2005, (c) Abraham Egnor 2003, 2004, (c) Aetion Technologies LLC 2004";

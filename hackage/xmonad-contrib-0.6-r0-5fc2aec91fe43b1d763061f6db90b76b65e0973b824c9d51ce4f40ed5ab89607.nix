@@ -10,7 +10,7 @@
   {
     flags = { small_base = true; use_xft = true; testing = false; };
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "xmonad-contrib"; version = "0.6"; };
       license = "BSD-3-Clause";
       copyright = "";

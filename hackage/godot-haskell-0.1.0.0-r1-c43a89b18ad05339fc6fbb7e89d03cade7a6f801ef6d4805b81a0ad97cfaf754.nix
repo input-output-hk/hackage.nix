@@ -31,7 +31,7 @@
           (hsPkgs."casing" or (errorHandler.buildDepError "casing"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          (hsPkgs."generate" or (errorHandler.buildDepError "generate"))
+          (hsPkgs."godot-haskell".components.sublibs.generate or (errorHandler.buildDepError "godot-haskell:generate"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))

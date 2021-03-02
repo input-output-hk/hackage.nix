@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "GeoIp"; version = "0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";

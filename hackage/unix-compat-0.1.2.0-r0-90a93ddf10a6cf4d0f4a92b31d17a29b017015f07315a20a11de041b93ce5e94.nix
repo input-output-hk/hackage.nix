@@ -10,7 +10,7 @@
   {
     flags = { split-base = true; };
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "unix-compat"; version = "0.1.2.0"; };
       license = "BSD-4-Clause";
       copyright = "";

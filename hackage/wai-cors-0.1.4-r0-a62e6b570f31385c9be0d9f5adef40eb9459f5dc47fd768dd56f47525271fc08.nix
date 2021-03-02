@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14.0";
+      specVersion = "1.12";
       identifier = { name = "wai-cors"; version = "0.1.4"; };
       license = "MIT";
       copyright = "Copyright (c) 2014 AlephCloud Systems, Inc.";

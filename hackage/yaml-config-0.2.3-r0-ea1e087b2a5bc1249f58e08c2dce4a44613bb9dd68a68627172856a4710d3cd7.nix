@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "yaml-config"; version = "0.2.3"; };
       license = "MIT";
       copyright = "Selectel";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.1.0";
+      specVersion = "1.10";
       identifier = { name = "helium"; version = "1.8"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2014";

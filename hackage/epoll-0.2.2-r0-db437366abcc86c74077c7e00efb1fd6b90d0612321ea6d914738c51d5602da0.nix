@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "epoll"; version = "0.2.2"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2009 Toralf Wittner";

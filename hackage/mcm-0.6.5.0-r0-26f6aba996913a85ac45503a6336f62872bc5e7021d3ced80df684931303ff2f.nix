@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "mcm"; version = "0.6.5.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2013-2017 Anthony Doggett";

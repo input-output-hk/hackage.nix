@@ -19,7 +19,7 @@
       testing = false;
       };
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "xmonad-extras"; version = "0.15.2"; };
       license = "BSD-3-Clause";
       copyright = "";

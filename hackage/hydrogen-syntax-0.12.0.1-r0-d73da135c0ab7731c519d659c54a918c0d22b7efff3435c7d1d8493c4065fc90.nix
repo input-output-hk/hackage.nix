@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "hydrogen-syntax"; version = "0.12.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";

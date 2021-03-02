@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.4.0";
+      specVersion = "1.4";
       identifier = { name = "RNAdraw"; version = "0.2.0.1"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2011-2014";

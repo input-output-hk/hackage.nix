@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "Win32-junction-point"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011-2013, Michael Steele. Copyright (c) 2000, Mikael Nordell";

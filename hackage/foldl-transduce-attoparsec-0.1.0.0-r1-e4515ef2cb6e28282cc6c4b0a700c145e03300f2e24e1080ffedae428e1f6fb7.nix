@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = {
         name = "foldl-transduce-attoparsec";
         version = "0.1.0.0";

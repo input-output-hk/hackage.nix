@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "computations"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2012–2015 Wolfgang Jeltsch";

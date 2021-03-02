@@ -10,7 +10,7 @@
   {
     flags = { transformers = true; extensibleexceptions = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "control-monad-exception"; version = "0.4"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";

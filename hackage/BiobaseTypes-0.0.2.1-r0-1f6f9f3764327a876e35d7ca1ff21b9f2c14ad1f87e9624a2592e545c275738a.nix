@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.4.0";
+      specVersion = "1.4";
       identifier = { name = "BiobaseTypes"; version = "0.0.2.1"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2010";

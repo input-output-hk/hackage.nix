@@ -29,7 +29,7 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          (hsPkgs."generics-eot" or (errorHandler.buildDepError "generics-eot"))
+          (hsPkgs."knit".components.sublibs.generics-eot or (errorHandler.buildDepError "knit:generics-eot"))
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];

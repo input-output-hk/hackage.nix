@@ -10,7 +10,7 @@
   {
     flags = { buildexamples = false; modifyfilter = true; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "alsa-seq"; version = "0.6.0.7"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert, Iavor S. Diatchki, Dylan Simon, Henning Thielemann";

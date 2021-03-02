@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "phone-push"; version = "0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 David Fendrich";

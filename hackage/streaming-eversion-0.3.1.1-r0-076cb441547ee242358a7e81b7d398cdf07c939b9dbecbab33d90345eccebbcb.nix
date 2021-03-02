@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "streaming-eversion"; version = "0.3.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Daniel Diaz";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "ContArrow"; version = "0.0.3"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2007, 2008 Evgeny Jukov";

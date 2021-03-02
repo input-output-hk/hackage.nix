@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "ASN1"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Dominic Steinitz 2003 - 2007";

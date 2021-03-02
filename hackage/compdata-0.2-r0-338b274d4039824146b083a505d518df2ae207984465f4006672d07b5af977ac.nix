@@ -10,7 +10,7 @@
   {
     flags = { test = false; benchmark = false; };
     package = {
-      specVersion = "1.8.0.6";
+      specVersion = "1.8";
       identifier = { name = "compdata"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";

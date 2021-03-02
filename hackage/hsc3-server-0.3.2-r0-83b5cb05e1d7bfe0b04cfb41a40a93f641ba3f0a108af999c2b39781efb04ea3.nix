@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "hsc3-server"; version = "0.3.2"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) Stefan Kersten 2008-2012";

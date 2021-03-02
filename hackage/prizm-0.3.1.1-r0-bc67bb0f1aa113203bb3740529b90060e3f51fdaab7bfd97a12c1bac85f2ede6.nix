@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14.0";
+      specVersion = "1.12";
       identifier = { name = "prizm"; version = "0.3.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 Parnell Springmeyer";

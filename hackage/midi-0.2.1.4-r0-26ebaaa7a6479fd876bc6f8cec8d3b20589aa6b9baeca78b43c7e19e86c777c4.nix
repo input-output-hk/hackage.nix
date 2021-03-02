@@ -10,7 +10,7 @@
   {
     flags = { splitbase = true; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "midi"; version = "0.2.1.4"; };
       license = "LicenseRef-GPL";
       copyright = "";

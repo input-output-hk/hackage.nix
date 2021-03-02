@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "rangemin"; version = "1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";

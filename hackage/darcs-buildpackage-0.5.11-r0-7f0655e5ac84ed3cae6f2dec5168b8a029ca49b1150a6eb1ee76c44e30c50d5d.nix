@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "darcs-buildpackage"; version = "0.5.11"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2003 - 2007 John Goerzen";

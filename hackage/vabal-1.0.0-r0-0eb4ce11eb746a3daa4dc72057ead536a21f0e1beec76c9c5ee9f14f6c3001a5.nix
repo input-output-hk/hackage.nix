@@ -51,7 +51,7 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            (hsPkgs."vabal-internal" or (errorHandler.buildDepError "vabal-internal"))
+            (hsPkgs."vabal".components.sublibs.vabal-internal or (errorHandler.buildDepError "vabal:vabal-internal"))
             ];
           buildable = true;
           };
@@ -67,7 +67,7 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            (hsPkgs."vabal-internal" or (errorHandler.buildDepError "vabal-internal"))
+            (hsPkgs."vabal".components.sublibs.vabal-internal or (errorHandler.buildDepError "vabal:vabal-internal"))
             ];
           buildable = true;
           };
@@ -75,7 +75,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            (hsPkgs."vabal-internal" or (errorHandler.buildDepError "vabal-internal"))
+            (hsPkgs."vabal".components.sublibs.vabal-internal or (errorHandler.buildDepError "vabal:vabal-internal"))
             ];
           buildable = true;
           };

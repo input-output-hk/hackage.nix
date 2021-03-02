@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.1.6";
+      specVersion = "1.2";
       identifier = { name = "frisby"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "John Meacham (2006)";

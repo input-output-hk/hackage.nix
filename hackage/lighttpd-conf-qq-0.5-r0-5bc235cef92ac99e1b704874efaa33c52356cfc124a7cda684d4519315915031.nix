@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.3";
+      specVersion = "1.4";
       identifier = { name = "lighttpd-conf-qq"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) Matt Morrow";

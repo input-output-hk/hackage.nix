@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "thrist"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008 Gabor Greif";

@@ -10,7 +10,7 @@
   {
     flags = { static = false; };
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "HTab"; version = "1.5.5"; };
       license = "LicenseRef-GPL";
       copyright = "";

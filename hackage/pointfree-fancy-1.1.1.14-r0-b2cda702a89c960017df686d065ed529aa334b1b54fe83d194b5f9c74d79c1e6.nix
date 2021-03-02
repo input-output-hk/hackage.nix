@@ -26,7 +26,7 @@
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          (hsPkgs."pointfree-internal" or (errorHandler.buildDepError "pointfree-internal"))
+          (hsPkgs."pointfree-fancy".components.sublibs.pointfree-internal or (errorHandler.buildDepError "pointfree-fancy:pointfree-internal"))
           ];
         buildable = true;
         };
@@ -46,7 +46,7 @@
         "pointfree" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."pointfree-internal" or (errorHandler.buildDepError "pointfree-internal"))
+            (hsPkgs."pointfree-fancy".components.sublibs.pointfree-internal or (errorHandler.buildDepError "pointfree-fancy:pointfree-internal"))
             ];
           buildable = true;
           };
@@ -55,7 +55,7 @@
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."pointfree-internal" or (errorHandler.buildDepError "pointfree-internal"))
+            (hsPkgs."pointfree-fancy".components.sublibs.pointfree-internal or (errorHandler.buildDepError "pointfree-fancy:pointfree-internal"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ];

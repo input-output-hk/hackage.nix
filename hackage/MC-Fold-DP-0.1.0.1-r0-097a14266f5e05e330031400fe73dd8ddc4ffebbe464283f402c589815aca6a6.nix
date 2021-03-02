@@ -10,7 +10,7 @@
   {
     flags = { fastbuild = false; };
     package = {
-      specVersion = "1.4.0";
+      specVersion = "1.4";
       identifier = { name = "MC-Fold-DP"; version = "0.1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2010-2011";

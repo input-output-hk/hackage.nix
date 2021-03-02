@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "unicode-names"; version = "3.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";

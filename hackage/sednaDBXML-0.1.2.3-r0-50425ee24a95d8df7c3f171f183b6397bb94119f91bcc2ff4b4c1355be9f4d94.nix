@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "sednaDBXML"; version = "0.1.2.3"; };
       license = "GPL-3.0-only";
       copyright = "";

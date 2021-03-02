@@ -10,7 +10,7 @@
   {
     flags = { splitbase = true; buildexamples = false; buildtests = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "synthesizer-midi"; version = "0.6"; };
       license = "LicenseRef-GPL";
       copyright = "";

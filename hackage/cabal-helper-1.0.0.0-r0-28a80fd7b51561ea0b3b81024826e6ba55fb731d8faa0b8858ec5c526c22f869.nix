@@ -45,7 +45,7 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-          (hsPkgs."c-h-internal" or (errorHandler.buildDepError "c-h-internal"))
+          (hsPkgs."cabal-helper".components.sublibs.c-h-internal or (errorHandler.buildDepError "cabal-helper:c-h-internal"))
           ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
@@ -117,7 +117,7 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            (hsPkgs."c-h-internal" or (errorHandler.buildDepError "c-h-internal"))
+            (hsPkgs."cabal-helper".components.sublibs.c-h-internal or (errorHandler.buildDepError "cabal-helper:c-h-internal"))
             ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
@@ -145,7 +145,7 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            (hsPkgs."c-h-internal" or (errorHandler.buildDepError "c-h-internal"))
+            (hsPkgs."cabal-helper".components.sublibs.c-h-internal or (errorHandler.buildDepError "cabal-helper:c-h-internal"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
@@ -178,7 +178,7 @@
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."cabal-helper" or (errorHandler.buildDepError "cabal-helper"))
-            (hsPkgs."c-h-internal" or (errorHandler.buildDepError "c-h-internal"))
+            (hsPkgs."cabal-helper".components.sublibs.c-h-internal or (errorHandler.buildDepError "cabal-helper:c-h-internal"))
             ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);

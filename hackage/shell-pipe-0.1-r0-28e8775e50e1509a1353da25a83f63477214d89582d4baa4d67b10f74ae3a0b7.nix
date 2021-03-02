@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "shell-pipe"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";

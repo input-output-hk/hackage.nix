@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "Encode"; version = "1.3.6"; };
       license = "LicenseRef-GPL";
       copyright = "2013";

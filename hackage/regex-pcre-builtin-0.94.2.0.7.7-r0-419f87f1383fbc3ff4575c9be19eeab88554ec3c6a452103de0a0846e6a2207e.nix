@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "regex-pcre-builtin"; version = "0.94.2.0.7.7"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2006, Christopher Kuklewicz";

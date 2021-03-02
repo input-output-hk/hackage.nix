@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "HDBC-mysql"; version = "0.6.2"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2009-2010 Chris Waterson";

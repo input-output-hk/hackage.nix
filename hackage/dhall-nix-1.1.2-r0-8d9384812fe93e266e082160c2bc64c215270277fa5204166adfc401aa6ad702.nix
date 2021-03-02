@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "dhall-nix"; version = "1.1.2"; };
       license = "BSD-3-Clause";
       copyright = "2017 Gabriel Gonzalez";

@@ -54,7 +54,7 @@
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))
-            (hsPkgs."accelerate-test" or (errorHandler.buildDepError "accelerate-test"))
+            (hsPkgs."accelerate-kullback-liebler".components.sublibs.accelerate-test or (errorHandler.buildDepError "accelerate-kullback-liebler:accelerate-test"))
             (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
             ] ++ (pkgs.lib).optional (flags.gpu) (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"));
           buildable = true;
@@ -65,7 +65,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."accelerate-kullback-liebler" or (errorHandler.buildDepError "accelerate-kullback-liebler"))
-            (hsPkgs."accelerate-test" or (errorHandler.buildDepError "accelerate-test"))
+            (hsPkgs."accelerate-kullback-liebler".components.sublibs.accelerate-test or (errorHandler.buildDepError "accelerate-kullback-liebler:accelerate-test"))
             (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))
             (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))

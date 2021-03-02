@@ -10,7 +10,7 @@
   {
     flags = { base4 = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "hsx"; version = "0.7.0"; };
       license = "BSD-3-Clause";
       copyright = "";

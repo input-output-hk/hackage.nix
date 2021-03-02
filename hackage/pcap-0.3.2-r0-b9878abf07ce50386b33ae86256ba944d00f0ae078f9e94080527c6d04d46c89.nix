@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "pcap"; version = "0.3.2"; };
       license = "BSD-4-Clause";
       copyright = "";

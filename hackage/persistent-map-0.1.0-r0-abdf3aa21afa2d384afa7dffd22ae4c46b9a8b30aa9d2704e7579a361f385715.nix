@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "persistent-map"; version = "0.1.0"; };
       license = "LicenseRef-LGPL";
       copyright = "";

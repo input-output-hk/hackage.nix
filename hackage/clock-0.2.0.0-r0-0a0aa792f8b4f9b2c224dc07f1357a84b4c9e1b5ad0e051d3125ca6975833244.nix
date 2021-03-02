@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "clock"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Cetin Sert 2009-2010, (c) Eugene Kirpichov 2010";

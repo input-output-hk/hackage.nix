@@ -10,7 +10,7 @@
   {
     flags = { optimize = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "categories"; version = "0.59"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2008-2010, Edward A. Kmett";

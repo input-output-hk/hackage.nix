@@ -10,7 +10,7 @@
   {
     flags = { programs = false; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "multiarg"; version = "0.30.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2011-2015 Omari Norman";

@@ -10,7 +10,7 @@
   {
     flags = { prim-supports-any = false; ghc_7_7 = true; ghc_8_0 = true; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "ghc-heap-view"; version = "0.5.9"; };
       license = "BSD-3-Clause";
       copyright = "2012-2014 Joachim Breitner";

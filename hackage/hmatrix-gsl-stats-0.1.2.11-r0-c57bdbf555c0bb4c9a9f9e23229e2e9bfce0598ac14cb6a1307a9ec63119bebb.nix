@@ -10,7 +10,7 @@
   {
     flags = { mkl = false; };
     package = {
-      specVersion = "1.10.1.0";
+      specVersion = "1.10";
       identifier = { name = "hmatrix-gsl-stats"; version = "0.1.2.11"; };
       license = "LicenseRef-GPL";
       copyright = "(c) A.V.H. McPhail 2010, 2011";

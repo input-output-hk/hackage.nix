@@ -10,7 +10,7 @@
   {
     flags = { exportcapi = true; };
     package = {
-      specVersion = "1.23";
+      specVersion = "1.24";
       identifier = { name = "glirc"; version = "2.22"; };
       license = "ISC";
       copyright = "2016,2017 Eric Mertens";

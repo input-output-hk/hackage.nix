@@ -28,7 +28,7 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          (hsPkgs."tree-sitter-php-internal" or (errorHandler.buildDepError "tree-sitter-php-internal"))
+          (hsPkgs."tree-sitter-php".components.sublibs.tree-sitter-php-internal or (errorHandler.buildDepError "tree-sitter-php:tree-sitter-php-internal"))
           ];
         buildable = true;
         };

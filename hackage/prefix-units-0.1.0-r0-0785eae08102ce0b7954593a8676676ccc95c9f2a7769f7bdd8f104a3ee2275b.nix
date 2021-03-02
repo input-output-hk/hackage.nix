@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "prefix-units"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Google Inc.";

@@ -10,7 +10,7 @@
   {
     flags = { base4 = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "regex-deriv"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2010-2013, Kenny Zhuo Ming Lu and Martin Sulzmann";

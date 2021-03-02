@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "txt2rtf"; version = "1.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2005 John Goerzen";

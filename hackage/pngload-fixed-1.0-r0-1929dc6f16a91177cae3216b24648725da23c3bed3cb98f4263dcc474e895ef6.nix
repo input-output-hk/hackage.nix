@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "pngload-fixed"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008 Marko Lauronen";

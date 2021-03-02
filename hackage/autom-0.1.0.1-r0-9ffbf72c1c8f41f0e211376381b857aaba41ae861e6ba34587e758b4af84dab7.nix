@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.20.0.2";
+      specVersion = "1.20";
       identifier = { name = "autom"; version = "0.1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";

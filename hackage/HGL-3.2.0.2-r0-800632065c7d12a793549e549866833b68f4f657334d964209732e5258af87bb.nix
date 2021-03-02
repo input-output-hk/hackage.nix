@@ -10,7 +10,7 @@
   {
     flags = { split-base = true; };
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "HGL"; version = "3.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.5";
+      specVersion = "1.6";
       identifier = { name = "c-io"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Matt Morrow";

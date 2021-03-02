@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.23";
+      specVersion = "1.24";
       identifier = { name = "eternal"; version = "0.1.7"; };
       license = "BSD-3-Clause";
       copyright = "";

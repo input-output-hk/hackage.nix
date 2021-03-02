@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "ClustalParser"; version = "1.3.0"; };
       license = "GPL-3.0-only";
       copyright = "";

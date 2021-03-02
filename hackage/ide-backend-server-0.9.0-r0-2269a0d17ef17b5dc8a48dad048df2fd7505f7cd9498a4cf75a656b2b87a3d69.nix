@@ -45,15 +45,15 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."ide-backend-common" or (errorHandler.buildDepError "ide-backend-common"))
-            ] ++ (pkgs.lib).optionals (compiler.isGhc && false) [
+            ] ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "7.4.2" && (compiler.version).lt "7.4.3")) [
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ]) ++ (pkgs.lib).optionals (compiler.isGhc && false) [
+            ]) ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "7.8" && (compiler.version).lt "7.9")) [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ]) ++ (pkgs.lib).optionals (compiler.isGhc && false) [
+            ]) ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "7.10" && (compiler.version).lt "7.11")) [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))

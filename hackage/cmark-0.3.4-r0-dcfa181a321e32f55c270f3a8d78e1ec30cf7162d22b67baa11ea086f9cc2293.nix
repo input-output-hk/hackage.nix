@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "cmark"; version = "0.3.4"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2015 John MacFarlane";

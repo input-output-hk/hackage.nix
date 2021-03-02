@@ -61,7 +61,7 @@
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            (hsPkgs."technique-internal" or (errorHandler.buildDepError "technique-internal"))
+            (hsPkgs."technique".components.sublibs.technique-internal or (errorHandler.buildDepError "technique:technique-internal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
@@ -85,7 +85,7 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            (hsPkgs."technique-internal" or (errorHandler.buildDepError "technique-internal"))
+            (hsPkgs."technique".components.sublibs.technique-internal or (errorHandler.buildDepError "technique:technique-internal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))

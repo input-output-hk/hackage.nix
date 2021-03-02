@@ -10,7 +10,7 @@
   {
     flags = { debug = false; };
     package = {
-      specVersion = "1.18.0";
+      specVersion = "1.18";
       identifier = { name = "geos"; version = "0.2.1"; };
       license = "MIT";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "srcinst"; version = "0.8.10"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2005-2008 John Goerzen";

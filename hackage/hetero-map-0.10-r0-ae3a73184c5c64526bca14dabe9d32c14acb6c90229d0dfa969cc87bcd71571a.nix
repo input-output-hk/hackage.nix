@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hetero-map"; version = "0.10"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "ChasingBottoms"; version = "1.3.1.6"; };
       license = "MIT";
       copyright = "Copyright (c) Nils Anders Danielsson 2004-2019.";

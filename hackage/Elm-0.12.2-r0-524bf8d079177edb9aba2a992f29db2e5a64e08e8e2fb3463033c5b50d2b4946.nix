@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9";
+      specVersion = "1.10";
       identifier = { name = "Elm"; version = "0.12.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2011-2014 Evan Czaplicki";

@@ -10,7 +10,7 @@
   {
     flags = { test-authentication = false; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "liblastfm"; version = "0.0.3.4"; };
       license = "MIT";
       copyright = "";

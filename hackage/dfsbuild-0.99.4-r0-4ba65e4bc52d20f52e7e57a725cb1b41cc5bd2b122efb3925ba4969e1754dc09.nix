@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "dfsbuild"; version = "0.99.4"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2006 John Goerzen";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "opentheory-fibonacci"; version = "1.72"; };
       license = "MIT";
       copyright = "";

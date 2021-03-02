@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "tensor"; version = "0.3.0.1"; };
       license = "GPL-3.0-only";
       copyright = "© 2012-2013 Nicola Squartini";

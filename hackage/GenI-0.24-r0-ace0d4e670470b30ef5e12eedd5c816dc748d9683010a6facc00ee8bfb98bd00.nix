@@ -10,7 +10,7 @@
   {
     flags = { static = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "GenI"; version = "0.24"; };
       license = "LicenseRef-GPL";
       copyright = "";

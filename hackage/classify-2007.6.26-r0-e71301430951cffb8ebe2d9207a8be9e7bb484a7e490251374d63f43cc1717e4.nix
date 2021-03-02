@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "classify"; version = "2007.6.26"; };
       license = "BSD-3-Clause";
       copyright = "2004-2007, Lemmih";

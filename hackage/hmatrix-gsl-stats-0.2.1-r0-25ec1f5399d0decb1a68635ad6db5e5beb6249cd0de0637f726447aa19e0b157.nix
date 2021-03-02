@@ -10,7 +10,7 @@
   {
     flags = { openblas = false; };
     package = {
-      specVersion = "1.10.1.0";
+      specVersion = "1.10";
       identifier = { name = "hmatrix-gsl-stats"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) A.V.H. McPhail 2010, 2011, 2013, 2015";

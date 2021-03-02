@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "gnome-desktop"; version = "1.0.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "2009 Colin Adams";

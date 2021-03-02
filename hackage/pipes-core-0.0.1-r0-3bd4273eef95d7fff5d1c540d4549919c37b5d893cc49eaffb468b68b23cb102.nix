@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.1";
+      specVersion = "1.10";
       identifier = { name = "pipes-core"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2012 Gabriel Gonzalez, 2012 Paolo Capriotti";

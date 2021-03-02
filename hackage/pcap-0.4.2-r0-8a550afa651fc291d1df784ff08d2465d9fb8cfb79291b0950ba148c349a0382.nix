@@ -10,7 +10,7 @@
   {
     flags = { bytestring-in-base = true; };
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "pcap"; version = "0.4.2"; };
       license = "BSD-4-Clause";
       copyright = "";

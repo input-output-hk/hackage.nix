@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "zeromq-haskell"; version = "0.7.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2011 zeromq-haskell authors";

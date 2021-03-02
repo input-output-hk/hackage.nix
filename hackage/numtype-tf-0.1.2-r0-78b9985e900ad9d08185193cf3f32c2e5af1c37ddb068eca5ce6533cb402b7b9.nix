@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "numtype-tf"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Buckwalter 2012-2014";

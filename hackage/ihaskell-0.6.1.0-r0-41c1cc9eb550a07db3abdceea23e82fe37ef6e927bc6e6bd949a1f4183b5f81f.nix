@@ -10,7 +10,7 @@
   {
     flags = { binpkgdb = true; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "ihaskell"; version = "0.6.1.0"; };
       license = "MIT";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "ihaskell"; version = "0.5.0.0"; };
       license = "MIT";
       copyright = "";

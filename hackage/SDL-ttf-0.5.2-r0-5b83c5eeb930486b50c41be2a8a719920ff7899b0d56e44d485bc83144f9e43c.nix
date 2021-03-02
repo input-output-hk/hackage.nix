@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "SDL-ttf"; version = "0.5.2"; };
       license = "BSD-3-Clause";
       copyright = "2004-2005, Lemmih";

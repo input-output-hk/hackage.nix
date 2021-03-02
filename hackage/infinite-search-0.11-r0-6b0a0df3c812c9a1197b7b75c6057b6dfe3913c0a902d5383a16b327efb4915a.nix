@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "infinite-search"; version = "0.11"; };
       license = "BSD-3-Clause";
       copyright = "";

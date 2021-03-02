@@ -10,7 +10,7 @@
   {
     flags = { benchmark = false; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "network-address"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";

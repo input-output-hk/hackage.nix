@@ -26,7 +26,7 @@
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          (hsPkgs."WEditor-internal" or (errorHandler.buildDepError "WEditor-internal"))
+          (hsPkgs."WEditor".components.sublibs.WEditor-internal or (errorHandler.buildDepError "WEditor:WEditor-internal"))
           ];
         buildable = true;
         };
@@ -42,7 +42,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            (hsPkgs."WEditor-internal" or (errorHandler.buildDepError "WEditor-internal"))
+            (hsPkgs."WEditor".components.sublibs.WEditor-internal or (errorHandler.buildDepError "WEditor:WEditor-internal"))
             ];
           buildable = true;
           };

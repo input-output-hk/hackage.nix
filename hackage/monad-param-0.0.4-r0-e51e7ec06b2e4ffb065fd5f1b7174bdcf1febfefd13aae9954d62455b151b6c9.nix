@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "monad-param"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2006-2011, Edward Kmett, Dominique Devriese";

@@ -10,7 +10,7 @@
   {
     flags = { exe = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "HsYAML"; version = "0.1.1.3"; };
       license = "GPL-2.0-only";
       copyright = "2015-2018 Herbert Valerio Riedel\n, 2007-2008 Oren Ben-Kiki";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "system-gpio"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013, Kenny Zhuo Ming Lu ";

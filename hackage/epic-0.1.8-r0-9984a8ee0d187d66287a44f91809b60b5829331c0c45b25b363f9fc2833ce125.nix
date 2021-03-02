@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.4";
+      specVersion = "1.8";
       identifier = { name = "epic"; version = "0.1.8"; };
       license = "BSD-3-Clause";
       copyright = "";

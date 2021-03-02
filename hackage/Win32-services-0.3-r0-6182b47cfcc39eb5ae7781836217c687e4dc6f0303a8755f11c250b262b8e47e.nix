@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "Win32-services"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2011-2015 Michael Steele";

@@ -49,7 +49,7 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-            (hsPkgs."pure-haskell" or (errorHandler.buildDepError "pure-haskell"))
+            (hsPkgs."fast-arithmetic".components.sublibs.pure-haskell or (errorHandler.buildDepError "fast-arithmetic:pure-haskell"))
             ];
           buildable = true;
           };
@@ -63,7 +63,7 @@
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
             (hsPkgs."exact-combinatorics" or (errorHandler.buildDepError "exact-combinatorics"))
-            (hsPkgs."pure-haskell" or (errorHandler.buildDepError "pure-haskell"))
+            (hsPkgs."fast-arithmetic".components.sublibs.pure-haskell or (errorHandler.buildDepError "fast-arithmetic:pure-haskell"))
             ];
           buildable = true;
           };

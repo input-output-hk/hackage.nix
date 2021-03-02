@@ -10,7 +10,7 @@
   {
     flags = { oldtemplatehaskell = false; executables = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "pinchot"; version = "0.18.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015-2016 Omari Norman";

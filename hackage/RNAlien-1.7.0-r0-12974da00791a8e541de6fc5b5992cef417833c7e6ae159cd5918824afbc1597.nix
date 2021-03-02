@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "RNAlien"; version = "1.7.0"; };
       license = "GPL-3.0-only";
       copyright = "Florian Eggenhofer";

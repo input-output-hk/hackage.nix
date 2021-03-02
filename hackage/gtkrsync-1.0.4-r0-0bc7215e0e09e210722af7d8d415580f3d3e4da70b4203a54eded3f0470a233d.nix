@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "gtkrsync"; version = "1.0.4"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2007-2010 John Goerzen";

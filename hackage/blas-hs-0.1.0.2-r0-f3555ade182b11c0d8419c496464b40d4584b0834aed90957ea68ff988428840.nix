@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "blas-hs"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "";

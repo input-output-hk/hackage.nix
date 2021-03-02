@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "FormalGrammars"; version = "0.0.0.2"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2013";

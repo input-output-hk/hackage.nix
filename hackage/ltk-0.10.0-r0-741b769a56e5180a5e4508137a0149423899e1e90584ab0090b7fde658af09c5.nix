@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "ltk"; version = "0.10.0"; };
       license = "LicenseRef-GPL";
       copyright = "Juergen \"jutaro\" Nicklisch-Franken";

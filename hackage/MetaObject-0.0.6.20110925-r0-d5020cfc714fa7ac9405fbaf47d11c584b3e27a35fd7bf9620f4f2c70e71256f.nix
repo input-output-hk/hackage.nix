@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "MetaObject"; version = "0.0.6.20110925"; };
       license = "BSD-3-Clause";
       copyright = "2006 Caio Marcelo, 2008 Audrey Tang";

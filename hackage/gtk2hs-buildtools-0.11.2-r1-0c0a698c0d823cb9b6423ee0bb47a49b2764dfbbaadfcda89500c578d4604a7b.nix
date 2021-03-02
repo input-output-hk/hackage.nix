@@ -10,7 +10,7 @@
   {
     flags = { closuresignals = true; };
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "gtk2hs-buildtools"; version = "0.11.2"; };
       license = "GPL-2.0-only";
       copyright = "(c) 2001-2010 The Gtk2Hs Team";

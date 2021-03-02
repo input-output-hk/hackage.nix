@@ -32,7 +32,7 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."sql-words" or (errorHandler.buildDepError "sql-words"))
           (hsPkgs."relational-query" or (errorHandler.buildDepError "relational-query"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
         };
       };

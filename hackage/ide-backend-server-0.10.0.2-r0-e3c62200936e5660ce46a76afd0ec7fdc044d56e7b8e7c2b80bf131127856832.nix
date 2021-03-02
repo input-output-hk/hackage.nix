@@ -48,15 +48,15 @@
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."ide-backend-common" or (errorHandler.buildDepError "ide-backend-common"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optionals (compiler.isGhc && false) [
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "7.4.2" && (compiler.version).lt "7.4.3")) [
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ]) ++ (pkgs.lib).optionals (compiler.isGhc && false) [
+            ]) ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "7.8" && (compiler.version).lt "7.9")) [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ]) ++ (pkgs.lib).optionals (compiler.isGhc && false || compiler.isGhc && false) [
+            ]) ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "7.10" && (compiler.version).lt "7.11") || compiler.isGhc && ((compiler.version).ge "7.11" && (compiler.version).lt "7.12")) [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))

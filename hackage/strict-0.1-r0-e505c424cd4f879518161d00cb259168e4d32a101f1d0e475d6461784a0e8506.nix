@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "strict"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2006-2007 by Roman Leshchinskiy";

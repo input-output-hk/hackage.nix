@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "mime-directory"; version = "0.5.2"; };
       license = "LicenseRef-LGPL";
       copyright = "(c) 2008. Mathieu Boespflug <mboes - at - tweag.net>";

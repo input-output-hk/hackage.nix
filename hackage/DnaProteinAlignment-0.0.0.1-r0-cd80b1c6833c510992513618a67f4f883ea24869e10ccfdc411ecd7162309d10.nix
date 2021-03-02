@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0";
+      specVersion = "1.8";
       identifier = { name = "DnaProteinAlignment"; version = "0.0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2013";

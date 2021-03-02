@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "instant-generics"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Universiteit Utrecht";

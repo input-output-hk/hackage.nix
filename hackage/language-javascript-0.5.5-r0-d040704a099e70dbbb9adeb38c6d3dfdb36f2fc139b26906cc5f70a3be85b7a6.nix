@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "language-javascript"; version = "0.5.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010,2011,2012 Alan Zimmerman";

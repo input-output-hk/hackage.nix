@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "wraxml"; version = "0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";

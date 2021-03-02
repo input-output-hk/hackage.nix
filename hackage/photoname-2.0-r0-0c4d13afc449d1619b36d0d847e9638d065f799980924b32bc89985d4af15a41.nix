@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "photoname"; version = "2.0"; };
       license = "BSD-3-Clause";
       copyright = "2007, 2008 Dino Morelli ";

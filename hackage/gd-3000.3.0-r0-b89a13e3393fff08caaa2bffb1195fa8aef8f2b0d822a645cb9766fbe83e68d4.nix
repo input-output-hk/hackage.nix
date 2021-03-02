@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "gd"; version = "3000.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "djinn"; version = "2008.1.18"; };
       license = "BSD-3-Clause";
       copyright = "";

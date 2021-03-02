@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.5";
+      specVersion = "1.6";
       identifier = { name = "LslPlus"; version = "0.3.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Robert Greayer 2008.";

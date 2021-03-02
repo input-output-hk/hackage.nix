@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "chp"; version = "2.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008--2010, University of Kent";

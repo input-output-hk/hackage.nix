@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "SDL-gfx"; version = "0.4.0"; };
       license = "NONE";
       copyright = "2004-2005, Lemmih";

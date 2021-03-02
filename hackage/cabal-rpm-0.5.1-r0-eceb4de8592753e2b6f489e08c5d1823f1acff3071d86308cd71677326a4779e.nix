@@ -10,7 +10,7 @@
   {
     flags = { splitbase = true; };
     package = {
-      specVersion = "1.2.3.0";
+      specVersion = "1.2";
       identifier = { name = "cabal-rpm"; version = "0.5.1"; };
       license = "LicenseRef-GPL";
       copyright = "2007, 2008 Bryan O'Sullivan <bos@serpentine.com>";

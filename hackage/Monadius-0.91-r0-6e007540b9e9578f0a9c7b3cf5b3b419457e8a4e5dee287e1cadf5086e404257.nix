@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "Monadius"; version = "0.91"; };
       license = "LicenseRef-GPL";
       copyright = "";

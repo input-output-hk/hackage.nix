@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.13";
+      specVersion = "1.12";
       identifier = { name = "gray-extended"; version = "1.5.7"; };
       license = "BSD-3-Clause";
       copyright = "2010-2019 Amy de Buitléir";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "ftphs"; version = "1.0.3"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2004-2006 John Goerzen";

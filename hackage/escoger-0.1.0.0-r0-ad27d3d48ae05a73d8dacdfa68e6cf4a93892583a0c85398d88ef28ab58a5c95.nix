@@ -41,7 +41,7 @@
         "escoger" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."escoger-lib" or (errorHandler.buildDepError "escoger-lib"))
+            (hsPkgs."escoger".components.sublibs.escoger-lib or (errorHandler.buildDepError "escoger:escoger-lib"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -55,7 +55,7 @@
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."escoger-lib" or (errorHandler.buildDepError "escoger-lib"))
+            (hsPkgs."escoger".components.sublibs.escoger-lib or (errorHandler.buildDepError "escoger:escoger-lib"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
@@ -68,7 +68,7 @@
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."escoger-lib" or (errorHandler.buildDepError "escoger-lib"))
+            (hsPkgs."escoger".components.sublibs.escoger-lib or (errorHandler.buildDepError "escoger:escoger-lib"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))

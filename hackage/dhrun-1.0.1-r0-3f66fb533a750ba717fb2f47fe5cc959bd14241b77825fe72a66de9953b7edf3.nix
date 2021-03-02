@@ -82,7 +82,7 @@
             (hsPkgs."generic-random" or (errorHandler.buildDepError "generic-random"))
             (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            (hsPkgs."dhrun-lib" or (errorHandler.buildDepError "dhrun-lib"))
+            (hsPkgs."dhrun".components.sublibs.dhrun-lib or (errorHandler.buildDepError "dhrun:dhrun-lib"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             ];
           buildable = true;

@@ -10,7 +10,7 @@
   {
     flags = { network-uri = true; };
     package = {
-      specVersion = "1.23";
+      specVersion = "1.24";
       identifier = { name = "shuffle"; version = "0.1.4.0"; };
       license = "BSD-3-Clause";
       copyright = "Utrecht University, Department of Information and Computing Sciences, Software Technology group";

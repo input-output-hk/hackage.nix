@@ -10,7 +10,7 @@
   {
     flags = { small_base = false; };
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "mersenne-random-pure64"; version = "0.2.0.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008. Don Stewart <dons00@gmail.com>";

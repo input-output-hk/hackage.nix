@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "AutoForms"; version = "0.4.2"; };
       license = "LicenseRef-LGPL";
       copyright = "Mads Lindstrøm <mads_lindstroem@yahoo.dk>";

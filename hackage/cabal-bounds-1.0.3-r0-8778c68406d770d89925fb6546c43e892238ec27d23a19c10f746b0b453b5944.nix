@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "cabal-bounds"; version = "1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "LinguisticsTypes"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2015";

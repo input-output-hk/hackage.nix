@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0";
+      specVersion = "1.8";
       identifier = { name = "gtk3-mac-integration"; version = "0.2.0.4"; };
       license = "LGPL-2.1-only";
       copyright = "(c) 2001-2010 The Gtk2Hs Team";

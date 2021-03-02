@@ -10,7 +10,7 @@
   {
     flags = { usecinternal = false; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "bytestring-trie"; version = "0.2.4.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008--2019 wren gayle romano";

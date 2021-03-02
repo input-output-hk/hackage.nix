@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "truelevel"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2006-2008 Bart Massey";

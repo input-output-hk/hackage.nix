@@ -10,7 +10,7 @@
   {
     flags = { integer-simple = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "bytestring-show"; version = "0.3.5.2"; };
       license = "BSD-3-Clause";
       copyright = "";

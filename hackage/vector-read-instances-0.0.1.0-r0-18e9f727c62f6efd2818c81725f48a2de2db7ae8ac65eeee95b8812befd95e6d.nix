@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.4.0";
+      specVersion = "1.4";
       identifier = { name = "vector-read-instances"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2011";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "alloy"; version = "1.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2008-2009, 2012 University of Kent";

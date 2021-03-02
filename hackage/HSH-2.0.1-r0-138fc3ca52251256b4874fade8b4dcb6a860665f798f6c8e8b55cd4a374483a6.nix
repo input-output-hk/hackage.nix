@@ -10,7 +10,7 @@
   {
     flags = { buildtests = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "HSH"; version = "2.0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2006-2009 John Goerzen";

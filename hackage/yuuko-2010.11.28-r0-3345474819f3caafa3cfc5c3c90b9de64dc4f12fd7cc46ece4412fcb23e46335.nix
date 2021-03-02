@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "yuuko"; version = "2010.11.28"; };
       license = "BSD-3-Clause";
       copyright = "";

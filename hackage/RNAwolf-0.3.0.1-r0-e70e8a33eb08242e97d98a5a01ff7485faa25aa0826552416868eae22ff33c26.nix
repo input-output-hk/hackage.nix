@@ -10,7 +10,7 @@
   {
     flags = { llvm = false; };
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "RNAwolf"; version = "0.3.0.1"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2010-2011";

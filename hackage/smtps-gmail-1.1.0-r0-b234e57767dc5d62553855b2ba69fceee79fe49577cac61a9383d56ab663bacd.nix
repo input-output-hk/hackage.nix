@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16.0";
+      specVersion = "1.12";
       identifier = { name = "smtps-gmail"; version = "1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014, Enzo Haussecker. All rights reserved.";

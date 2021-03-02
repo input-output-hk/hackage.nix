@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9";
+      specVersion = "1.10";
       identifier = { name = "PropLogic"; version = "0.9.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";

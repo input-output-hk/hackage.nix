@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "bytestring"; version = "0.9.1.10"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Don Stewart   2005-2009,\n(c) Duncan Coutts 2006-2009,\n(c) David Roundy  2003-2005.";

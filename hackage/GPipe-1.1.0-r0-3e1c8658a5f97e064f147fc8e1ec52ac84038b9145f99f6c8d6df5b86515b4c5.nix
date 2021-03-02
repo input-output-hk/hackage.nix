@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "GPipe"; version = "1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Tobias Bexelius";

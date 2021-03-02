@@ -16,7 +16,7 @@
       properties = true;
       };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "vector-algorithms"; version = "0.6.0.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008,2009,2010,2011,2012,2013,2014 Dan Doel";

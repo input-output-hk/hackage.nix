@@ -26,7 +26,7 @@
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          (hsPkgs."dickinson" or (errorHandler.buildDepError "dickinson"))
+          (hsPkgs."language-dickinson".components.sublibs.dickinson or (errorHandler.buildDepError "language-dickinson:dickinson"))
           ] ++ (pkgs.lib).optionals (!flags.cross) [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
@@ -65,7 +65,7 @@
         "emd" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."dickinson" or (errorHandler.buildDepError "dickinson"))
+            (hsPkgs."language-dickinson".components.sublibs.dickinson or (errorHandler.buildDepError "language-dickinson:dickinson"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
@@ -89,7 +89,7 @@
         "dickinson-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."dickinson" or (errorHandler.buildDepError "dickinson"))
+            (hsPkgs."language-dickinson".components.sublibs.dickinson or (errorHandler.buildDepError "language-dickinson:dickinson"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -107,7 +107,7 @@
         "dickinson-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."dickinson" or (errorHandler.buildDepError "dickinson"))
+            (hsPkgs."language-dickinson".components.sublibs.dickinson or (errorHandler.buildDepError "language-dickinson:dickinson"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))

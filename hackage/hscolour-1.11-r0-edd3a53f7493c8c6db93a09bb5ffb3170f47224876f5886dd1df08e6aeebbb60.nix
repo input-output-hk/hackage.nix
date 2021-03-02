@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hscolour"; version = "1.11"; };
       license = "LicenseRef-GPL";
       copyright = "2003-2009 Malcolm Wallace, University of York; 2006 Bjorn Bringert";

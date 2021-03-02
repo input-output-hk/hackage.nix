@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "fgl"; version = "5.4.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -76,7 +76,7 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            (hsPkgs."library-internal" or (errorHandler.buildDepError "library-internal"))
+            (hsPkgs."hsimport".components.sublibs.library-internal or (errorHandler.buildDepError "hsimport:library-internal"))
             ];
           buildable = true;
           };

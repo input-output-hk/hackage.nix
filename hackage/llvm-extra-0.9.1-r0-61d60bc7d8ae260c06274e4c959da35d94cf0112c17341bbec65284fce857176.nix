@@ -25,7 +25,7 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs."private" or (errorHandler.buildDepError "private"))
+          (hsPkgs."llvm-extra".components.sublibs.private or (errorHandler.buildDepError "llvm-extra:private"))
           (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
           (hsPkgs."tfp" or (errorHandler.buildDepError "tfp"))
           (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
@@ -72,7 +72,7 @@
         "llvm-extra-test" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            (hsPkgs."private" or (errorHandler.buildDepError "private"))
+            (hsPkgs."llvm-extra".components.sublibs.private or (errorHandler.buildDepError "llvm-extra:private"))
             (hsPkgs."llvm-extra" or (errorHandler.buildDepError "llvm-extra"))
             (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
             (hsPkgs."tfp" or (errorHandler.buildDepError "tfp"))

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.4.0";
+      specVersion = "1.4";
       identifier = { name = "BiobaseFR3D"; version = "0.2.2.0"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2011";

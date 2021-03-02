@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "type-hint"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2014 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";

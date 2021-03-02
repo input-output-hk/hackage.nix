@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "regex-posix"; version = "0.72"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2006, Christopher Kuklewicz";

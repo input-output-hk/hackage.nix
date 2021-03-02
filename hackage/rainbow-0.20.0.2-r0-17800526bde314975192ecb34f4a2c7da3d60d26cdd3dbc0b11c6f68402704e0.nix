@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "rainbow"; version = "0.20.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2013 - 2014 Omari Norman";

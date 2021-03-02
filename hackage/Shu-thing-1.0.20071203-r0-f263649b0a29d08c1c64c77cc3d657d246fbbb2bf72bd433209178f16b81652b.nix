@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "Shu-thing"; version = "1.0.20071203"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.22.1.1";
+      specVersion = "1.22";
       identifier = { name = "crypto-enigma"; version = "0.0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";

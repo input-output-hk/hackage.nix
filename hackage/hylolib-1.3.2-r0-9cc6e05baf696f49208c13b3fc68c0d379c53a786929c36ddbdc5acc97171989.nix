@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "hylolib"; version = "1.3.2"; };
       license = "LicenseRef-GPL";
       copyright = "";

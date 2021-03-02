@@ -10,7 +10,7 @@
   {
     flags = { nopkgconfig = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "bindings-libzip"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";

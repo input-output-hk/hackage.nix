@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "feed-cli"; version = "2009.7.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) Isaac Potoczny-Jones, 2008-2009";

@@ -15,7 +15,7 @@
       big_endian64 = false;
       };
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "mersenne-random"; version = "1.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008-2011. Don Stewart <dons00@gmail.com>";

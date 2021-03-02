@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "stm-io-hooks"; version = "0.5.4"; };
       license = "BSD-3-Clause";
       copyright = "";

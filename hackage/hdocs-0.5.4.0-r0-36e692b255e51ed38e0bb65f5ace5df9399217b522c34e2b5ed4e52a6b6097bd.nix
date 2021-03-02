@@ -36,11 +36,11 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && false) [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "8.8" && (compiler.version).lt "8.9")) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
-          ]) ++ (pkgs.lib).optionals (compiler.isGhc && false) [
+          ]) ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "8.6" && (compiler.version).lt "8.7")) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))

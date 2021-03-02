@@ -10,7 +10,7 @@
   {
     flags = { with-chart = false; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "aws-performance-tests"; version = "0.1.1"; };
       license = "MIT";
       copyright = "(c) 2014 AlephCloud, Inc.";

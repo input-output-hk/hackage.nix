@@ -52,7 +52,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elm-street" or (errorHandler.buildDepError "elm-street"))
-            (hsPkgs."types" or (errorHandler.buildDepError "types"))
+            (hsPkgs."elm-street".components.sublibs.types or (errorHandler.buildDepError "elm-street:types"))
             ];
           buildable = true;
           };
@@ -61,7 +61,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
-            (hsPkgs."types" or (errorHandler.buildDepError "types"))
+            (hsPkgs."elm-street".components.sublibs.types or (errorHandler.buildDepError "elm-street:types"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             ];

@@ -14,7 +14,7 @@
       internalchecks = false;
       };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "vector"; version = "0.6.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Roman Leshchinskiy 2008-2010";

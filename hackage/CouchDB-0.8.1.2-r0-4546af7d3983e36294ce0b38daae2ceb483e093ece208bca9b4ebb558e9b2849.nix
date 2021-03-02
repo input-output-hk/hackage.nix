@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.4";
+      specVersion = "1.2";
       identifier = { name = "CouchDB"; version = "0.8.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008 Arjun Guha and Brendan Hickey";

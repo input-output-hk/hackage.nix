@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "free-theorems"; version = "0.3.1.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";

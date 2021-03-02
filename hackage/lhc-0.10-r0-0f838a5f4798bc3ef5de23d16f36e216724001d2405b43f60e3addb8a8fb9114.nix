@@ -50,7 +50,7 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             ];
-          buildable = if compiler.isGhc && false && system.isX86_64
+          buildable = if compiler.isGhc && ((compiler.version).ge "6.12" && (compiler.version).lt "6.13") && system.isX86_64
             then true
             else false;
           };
@@ -65,7 +65,7 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck" or (errorHandler.buildDepError "test-framework-quickcheck"))
             ];
-          buildable = if flags.lhc-regress && (compiler.isGhc && false) && system.isX86_64
+          buildable = if flags.lhc-regress && (compiler.isGhc && ((compiler.version).ge "6.12" && (compiler.version).lt "6.13")) && system.isX86_64
             then true
             else false;
           };
@@ -79,7 +79,7 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
-          buildable = if flags.lhc-pkg && (compiler.isGhc && false) && system.isX86_64
+          buildable = if flags.lhc-pkg && (compiler.isGhc && ((compiler.version).ge "6.12" && (compiler.version).lt "6.13")) && system.isX86_64
             then true
             else false;
           };

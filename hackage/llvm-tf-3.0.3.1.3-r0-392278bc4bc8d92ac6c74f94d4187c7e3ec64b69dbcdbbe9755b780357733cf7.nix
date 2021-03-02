@@ -10,7 +10,7 @@
   {
     flags = { developer = false; buildexamples = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "llvm-tf"; version = "3.0.3.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";

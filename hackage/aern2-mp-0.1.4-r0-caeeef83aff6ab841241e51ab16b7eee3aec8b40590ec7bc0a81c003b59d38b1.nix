@@ -10,7 +10,7 @@
   {
     flags = { usecdar = false; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "aern2-mp"; version = "0.1.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015-2019 Michal Konecny";

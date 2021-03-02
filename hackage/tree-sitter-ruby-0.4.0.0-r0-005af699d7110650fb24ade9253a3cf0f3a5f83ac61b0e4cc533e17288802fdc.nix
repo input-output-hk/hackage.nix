@@ -29,7 +29,7 @@
           (hsPkgs."semantic-source" or (errorHandler.buildDepError "semantic-source"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
-          (hsPkgs."tree-sitter-ruby-internal" or (errorHandler.buildDepError "tree-sitter-ruby-internal"))
+          (hsPkgs."tree-sitter-ruby".components.sublibs.tree-sitter-ruby-internal or (errorHandler.buildDepError "tree-sitter-ruby:tree-sitter-ruby-internal"))
           ];
         buildable = true;
         };

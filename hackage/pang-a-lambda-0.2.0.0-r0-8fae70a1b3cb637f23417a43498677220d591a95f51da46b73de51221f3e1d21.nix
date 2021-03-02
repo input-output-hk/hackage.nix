@@ -10,7 +10,7 @@
   {
     flags = { experiments = false; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "pang-a-lambda"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";

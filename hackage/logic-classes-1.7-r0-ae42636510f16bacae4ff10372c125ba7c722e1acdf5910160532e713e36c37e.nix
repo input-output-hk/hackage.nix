@@ -10,7 +10,7 @@
   {
     flags = { local-atp-haskell = true; };
     package = {
-      specVersion = "1.9";
+      specVersion = "1.10";
       identifier = { name = "logic-classes"; version = "1.7"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.3";
+      specVersion = "1.4";
       identifier = { name = "music-dynamics-literal"; version = "1.2"; };
       license = "BSD-3-Clause";
       copyright = "";

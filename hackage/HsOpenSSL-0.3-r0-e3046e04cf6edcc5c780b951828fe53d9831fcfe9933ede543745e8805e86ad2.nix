@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "HsOpenSSL"; version = "0.3"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";

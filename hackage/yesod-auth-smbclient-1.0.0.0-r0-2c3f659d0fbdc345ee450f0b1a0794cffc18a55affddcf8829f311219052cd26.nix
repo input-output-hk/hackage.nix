@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "yesod-auth-smbclient"; version = "1.0.0.0"; };
       license = "MIT";
       copyright = "(c) 2013 Kazuo Koga <obiwanko@me.com>";

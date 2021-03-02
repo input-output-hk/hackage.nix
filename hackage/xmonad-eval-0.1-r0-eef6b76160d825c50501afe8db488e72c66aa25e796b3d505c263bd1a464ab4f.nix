@@ -10,7 +10,7 @@
   {
     flags = { small_base = true; };
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "xmonad-eval"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";

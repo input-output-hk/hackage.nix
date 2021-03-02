@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "ad"; version = "0.44.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Edward Kmett 2010,\n(c) Barak Pearlmutter and Jeffrey Mark Siskind 2008-2009";

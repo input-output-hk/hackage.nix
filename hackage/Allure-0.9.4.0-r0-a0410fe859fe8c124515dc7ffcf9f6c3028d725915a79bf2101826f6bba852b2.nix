@@ -37,7 +37,7 @@
         "this-game-src" = {
           depends = [
             (hsPkgs."LambdaHack" or (errorHandler.buildDepError "LambdaHack"))
-            (hsPkgs."this-game-content" or (errorHandler.buildDepError "this-game-content"))
+            (hsPkgs."Allure".components.sublibs.this-game-content or (errorHandler.buildDepError "Allure:this-game-content"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."enummapset" or (errorHandler.buildDepError "enummapset"))
@@ -57,7 +57,7 @@
         "Allure" = {
           depends = [
             (hsPkgs."LambdaHack" or (errorHandler.buildDepError "LambdaHack"))
-            (hsPkgs."this-game-src" or (errorHandler.buildDepError "this-game-src"))
+            (hsPkgs."Allure".components.sublibs.this-game-src or (errorHandler.buildDepError "Allure:this-game-src"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
@@ -70,7 +70,7 @@
         "test" = {
           depends = [
             (hsPkgs."LambdaHack" or (errorHandler.buildDepError "LambdaHack"))
-            (hsPkgs."this-game-src" or (errorHandler.buildDepError "this-game-src"))
+            (hsPkgs."Allure".components.sublibs.this-game-src or (errorHandler.buildDepError "Allure:this-game-src"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))

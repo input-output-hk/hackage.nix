@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "sphinx"; version = "0.3.6"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008 Tupil";

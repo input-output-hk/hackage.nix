@@ -10,7 +10,7 @@
   {
     flags = { warn-as-error = false; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "hpg"; version = "0.7"; };
       license = "ISC";
       copyright = "";

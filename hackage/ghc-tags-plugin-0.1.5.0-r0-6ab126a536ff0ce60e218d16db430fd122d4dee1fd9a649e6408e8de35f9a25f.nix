@@ -32,7 +32,7 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          (hsPkgs."ghc-tags-library" or (errorHandler.buildDepError "ghc-tags-library"))
+          (hsPkgs."ghc-tags-plugin".components.sublibs.ghc-tags-library or (errorHandler.buildDepError "ghc-tags-plugin:ghc-tags-library"))
           ];
         buildable = true;
         };
@@ -62,7 +62,7 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            (hsPkgs."ghc-tags-library" or (errorHandler.buildDepError "ghc-tags-library"))
+            (hsPkgs."ghc-tags-plugin".components.sublibs.ghc-tags-library or (errorHandler.buildDepError "ghc-tags-plugin:ghc-tags-library"))
             ];
           buildable = true;
           };

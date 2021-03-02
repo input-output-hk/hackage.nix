@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.4.0";
+      specVersion = "1.4";
       identifier = { name = "HsTools"; version = "0.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2010";

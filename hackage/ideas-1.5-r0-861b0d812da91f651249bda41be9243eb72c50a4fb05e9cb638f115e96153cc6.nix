@@ -10,7 +10,7 @@
   {
     flags = { logging = false; };
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "ideas"; version = "1.5"; };
       license = "Apache-2.0";
       copyright = "(c) 2016";

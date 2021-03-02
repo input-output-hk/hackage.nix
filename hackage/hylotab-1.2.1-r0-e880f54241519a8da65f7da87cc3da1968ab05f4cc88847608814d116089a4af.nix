@@ -10,7 +10,7 @@
   {
     flags = { static = false; };
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "hylotab"; version = "1.2.1"; };
       license = "LicenseRef-GPL";
       copyright = "";

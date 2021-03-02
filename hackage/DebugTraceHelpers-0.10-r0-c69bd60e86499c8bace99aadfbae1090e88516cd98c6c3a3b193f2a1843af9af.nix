@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "DebugTraceHelpers"; version = "0.10"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2008 Thomas Hartman";

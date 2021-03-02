@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "decode-utf8"; version = "1.2"; };
       license = "MIT";
       copyright = "";

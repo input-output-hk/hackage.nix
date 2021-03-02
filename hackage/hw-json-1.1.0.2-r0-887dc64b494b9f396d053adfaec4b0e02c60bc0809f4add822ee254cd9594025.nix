@@ -44,7 +44,7 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          (hsPkgs."hw-json-cursor" or (errorHandler.buildDepError "hw-json-cursor"))
+          (hsPkgs."hw-json".components.sublibs.hw-json-cursor or (errorHandler.buildDepError "hw-json:hw-json-cursor"))
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
         };

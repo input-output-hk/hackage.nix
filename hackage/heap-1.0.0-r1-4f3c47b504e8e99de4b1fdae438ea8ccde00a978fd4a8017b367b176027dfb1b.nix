@@ -10,7 +10,7 @@
   {
     flags = { test = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "heap"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008-2009, Stephan Friedrichs";

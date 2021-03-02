@@ -10,7 +10,7 @@
   {
     flags = { internal-documentation = false; };
     package = {
-      specVersion = "1.23";
+      specVersion = "1.24";
       identifier = { name = "opencv-extra"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";

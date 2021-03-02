@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "bencode"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "2005-2009, Lemmih";

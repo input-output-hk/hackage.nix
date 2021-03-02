@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "bencode"; version = "0.5.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2005-2009, David Himmelstrup\n2006 Lemmih <lemmih@gmail.com>\n2005 Jesper Louis Andersen <jlouis@mongers.org>";

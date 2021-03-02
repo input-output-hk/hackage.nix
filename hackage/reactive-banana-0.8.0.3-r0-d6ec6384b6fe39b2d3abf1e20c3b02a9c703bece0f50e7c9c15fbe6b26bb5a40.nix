@@ -10,7 +10,7 @@
   {
     flags = { useextensions = true; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "reactive-banana"; version = "0.8.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";

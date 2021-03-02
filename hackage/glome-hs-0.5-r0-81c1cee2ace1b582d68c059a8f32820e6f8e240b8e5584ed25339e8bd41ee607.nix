@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "glome-hs"; version = "0.5"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright 2008 Jim Snow";

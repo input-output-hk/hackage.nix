@@ -10,7 +10,7 @@
   {
     flags = { build-lucu-implant-file = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "Lucu"; version = "0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";

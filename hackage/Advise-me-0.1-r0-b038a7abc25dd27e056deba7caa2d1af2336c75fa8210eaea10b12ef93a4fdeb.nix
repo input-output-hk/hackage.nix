@@ -10,7 +10,7 @@
   {
     flags = { xlsx = true; };
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "Advise-me"; version = "0.1"; };
       license = "Apache-2.0";
       copyright = "(c) 2019";

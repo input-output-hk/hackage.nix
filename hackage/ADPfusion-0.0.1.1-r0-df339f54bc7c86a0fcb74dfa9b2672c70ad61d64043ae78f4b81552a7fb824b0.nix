@@ -10,7 +10,7 @@
   {
     flags = { llvm = true; };
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "ADPfusion"; version = "0.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2011-2012";

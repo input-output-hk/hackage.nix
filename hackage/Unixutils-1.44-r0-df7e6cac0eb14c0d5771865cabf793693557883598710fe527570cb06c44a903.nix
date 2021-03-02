@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "Unixutils"; version = "1.44"; };
       license = "BSD-3-Clause";
       copyright = "";

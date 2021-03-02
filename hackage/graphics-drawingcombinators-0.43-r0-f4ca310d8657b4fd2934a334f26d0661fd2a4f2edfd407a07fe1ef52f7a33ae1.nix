@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "graphics-drawingcombinators"; version = "0.43"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "torrent"; version = "2007.10.27"; };
       license = "BSD-3-Clause";
       copyright = "2005-2007, Lemmih";

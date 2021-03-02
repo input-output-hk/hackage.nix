@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "liblastfm"; version = "0.1.1.2"; };
       license = "MIT";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "OpenGL"; version = "2.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";

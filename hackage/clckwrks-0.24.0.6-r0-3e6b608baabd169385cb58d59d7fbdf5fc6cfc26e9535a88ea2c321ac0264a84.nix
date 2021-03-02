@@ -10,7 +10,7 @@
   {
     flags = { network-uri = true; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "clckwrks"; version = "0.24.0.6"; };
       license = "BSD-3-Clause";
       copyright = "2012-2015 SeeReason Partners LLC, Jeremy Shaw";

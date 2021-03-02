@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "ta"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Leonel Fonseca, 2010";

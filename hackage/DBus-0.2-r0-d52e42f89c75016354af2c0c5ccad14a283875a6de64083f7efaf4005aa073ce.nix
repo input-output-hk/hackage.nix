@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "DBus"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2006 Evan Martin <martine@danga.com>\n2008 David Himmelstrup <lemmih@gmail.com>";

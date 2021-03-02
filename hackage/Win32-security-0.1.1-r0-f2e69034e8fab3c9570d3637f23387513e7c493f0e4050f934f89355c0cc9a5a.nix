@@ -10,7 +10,7 @@
   {
     flags = { build-tests = false; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "Win32-security"; version = "0.1.1"; };
       license = "MIT";
       copyright = "Anton Dessiatov, 2015";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "data-serializer"; version = "0.3.4"; };
       license = "BSD-3-Clause";
       copyright = "2016 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";

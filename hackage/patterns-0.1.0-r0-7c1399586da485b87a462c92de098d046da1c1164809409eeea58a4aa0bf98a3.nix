@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14.0";
+      specVersion = "1.12";
       identifier = { name = "patterns"; version = "0.1.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) Tobias Schoofs, 2011 - 2013";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "mime"; version = "0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2006-2009 Galois Inc.";

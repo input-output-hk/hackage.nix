@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "monte-carlo"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "atl"; version = "15409.2"; };
       license = "LicenseRef-LGPL";
       copyright = "";

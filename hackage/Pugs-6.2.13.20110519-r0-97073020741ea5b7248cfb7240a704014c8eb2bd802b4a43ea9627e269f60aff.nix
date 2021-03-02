@@ -10,7 +10,7 @@
   {
     flags = { perl5 = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "Pugs"; version = "6.2.13.20110519"; };
       license = "BSD-3-Clause";
       copyright = "2005-2008, The Pugs Contributors";

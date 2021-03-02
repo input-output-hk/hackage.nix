@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "anydbm"; version = "1.0.5"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2004-2008 John Goerzen";

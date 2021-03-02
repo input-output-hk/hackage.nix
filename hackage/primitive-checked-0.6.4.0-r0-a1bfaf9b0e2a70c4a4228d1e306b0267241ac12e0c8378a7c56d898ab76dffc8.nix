@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.21";
+      specVersion = "1.22";
       identifier = { name = "primitive-checked"; version = "0.6.4.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Andrew Martin";

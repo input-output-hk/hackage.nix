@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "aivika"; version = "0.5.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009-2013. David Sorokin <david.sorokin@gmail.com>";

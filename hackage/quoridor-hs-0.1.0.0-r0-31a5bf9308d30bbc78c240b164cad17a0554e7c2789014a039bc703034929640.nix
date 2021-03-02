@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.19";
+      specVersion = "1.20";
       identifier = { name = "quoridor-hs"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";

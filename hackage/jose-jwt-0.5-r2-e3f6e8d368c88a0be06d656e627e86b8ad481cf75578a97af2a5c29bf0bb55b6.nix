@@ -10,7 +10,7 @@
   {
     flags = { doctest = true; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "jose-jwt"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "linearEqSolver"; version = "2.3"; };
       license = "BSD-3-Clause";
       copyright = "Levent Erkok, 2012-2020";

@@ -10,7 +10,7 @@
   {
     flags = { examples = false; debug = false; };
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "ADPfusion"; version = "0.4.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2011-2015";

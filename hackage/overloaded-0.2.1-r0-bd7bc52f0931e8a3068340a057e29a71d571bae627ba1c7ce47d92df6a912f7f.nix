@@ -128,7 +128,7 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."fin" or (errorHandler.buildDepError "fin"))
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
-            (hsPkgs."optics-hasfield" or (errorHandler.buildDepError "optics-hasfield"))
+            (hsPkgs."overloaded".components.sublibs.optics-hasfield or (errorHandler.buildDepError "overloaded:optics-hasfield"))
             (hsPkgs."overloaded" or (errorHandler.buildDepError "overloaded"))
             (hsPkgs."ral" or (errorHandler.buildDepError "ral"))
             (hsPkgs."record-hasfield" or (errorHandler.buildDepError "record-hasfield"))

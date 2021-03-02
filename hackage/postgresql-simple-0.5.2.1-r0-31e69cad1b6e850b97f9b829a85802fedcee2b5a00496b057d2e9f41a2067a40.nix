@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "postgresql-simple"; version = "0.5.2.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 MailRank, Inc.\n(c) 2011-2015 Leon P Smith";

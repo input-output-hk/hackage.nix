@@ -10,7 +10,7 @@
   {
     flags = { build-example = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "tasty-golden"; version = "2.3.4"; };
       license = "MIT";
       copyright = "";

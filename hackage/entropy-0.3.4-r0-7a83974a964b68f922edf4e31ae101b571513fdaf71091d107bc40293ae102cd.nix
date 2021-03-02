@@ -10,7 +10,7 @@
   {
     flags = { halvm = false; };
     package = {
-      specVersion = "1.17";
+      specVersion = "1.18";
       identifier = { name = "entropy"; version = "0.3.4"; };
       license = "BSD-3-Clause";
       copyright = "Thomas DuBuisson <thomas.dubuisson@gmail.com>";

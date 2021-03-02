@@ -10,7 +10,7 @@
   {
     flags = { buildtests = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "HDBC-odbc"; version = "2.3.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2005-2011 John Goerzen";

@@ -10,7 +10,7 @@
   {
     flags = { base4 = true; base3 = true; };
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "Cabal"; version = "1.8.0.6"; };
       license = "BSD-3-Clause";
       copyright = "2003-2006, Isaac Jones\n2005-2009, Duncan Coutts";

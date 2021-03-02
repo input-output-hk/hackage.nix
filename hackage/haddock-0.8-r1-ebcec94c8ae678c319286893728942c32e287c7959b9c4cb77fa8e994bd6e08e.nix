@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.1.4";
+      specVersion = "1.2";
       identifier = { name = "haddock"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "(c) Simon Marlow";

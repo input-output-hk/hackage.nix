@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "portaudio"; version = "0.2.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "(c) 2008 John Van Enk";

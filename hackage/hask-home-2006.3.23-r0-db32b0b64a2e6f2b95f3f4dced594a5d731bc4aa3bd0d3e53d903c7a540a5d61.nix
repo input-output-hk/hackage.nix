@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hask-home"; version = "2006.3.23"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert 2006";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "category-extras"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2004--2008 Dave Menendez";

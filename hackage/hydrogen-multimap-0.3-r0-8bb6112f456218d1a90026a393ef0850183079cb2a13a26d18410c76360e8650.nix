@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "hydrogen-multimap"; version = "0.3"; };
       license = "MIT";
       copyright = "";

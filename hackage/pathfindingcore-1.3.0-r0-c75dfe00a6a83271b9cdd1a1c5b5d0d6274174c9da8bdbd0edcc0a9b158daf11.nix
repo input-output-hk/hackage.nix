@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.24.0";
+      specVersion = "1.24";
       identifier = { name = "pathfindingcore"; version = "1.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";

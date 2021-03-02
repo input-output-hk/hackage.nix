@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "happindicator"; version = "0.0.4"; };
       license = "LGPL-2.1-only";
       copyright = "(c) 2011 the authors";

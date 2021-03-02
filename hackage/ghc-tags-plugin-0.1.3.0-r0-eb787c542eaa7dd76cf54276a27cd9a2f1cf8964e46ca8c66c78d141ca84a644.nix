@@ -31,7 +31,7 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          (hsPkgs."ghc-tags-library" or (errorHandler.buildDepError "ghc-tags-library"))
+          (hsPkgs."ghc-tags-plugin".components.sublibs.ghc-tags-library or (errorHandler.buildDepError "ghc-tags-plugin:ghc-tags-library"))
           ];
         buildable = true;
         };
@@ -61,7 +61,7 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            (hsPkgs."ghc-tags-library" or (errorHandler.buildDepError "ghc-tags-library"))
+            (hsPkgs."ghc-tags-plugin".components.sublibs.ghc-tags-library or (errorHandler.buildDepError "ghc-tags-plugin:ghc-tags-library"))
             ];
           buildable = true;
           };

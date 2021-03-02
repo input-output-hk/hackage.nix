@@ -15,7 +15,7 @@
       jack = true;
       };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "synthesizer-llvm"; version = "0.5.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";

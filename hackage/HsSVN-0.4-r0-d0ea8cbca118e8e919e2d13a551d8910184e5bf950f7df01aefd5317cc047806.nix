@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "HsSVN"; version = "0.4"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";

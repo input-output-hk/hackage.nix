@@ -41,7 +41,7 @@
           (hsPkgs."sql-words" or (errorHandler.buildDepError "sql-words"))
           (hsPkgs."names-th" or (errorHandler.buildDepError "names-th"))
           (hsPkgs."persistable-record" or (errorHandler.buildDepError "persistable-record"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
         };
       tests = {
@@ -53,7 +53,7 @@
             (hsPkgs."relational-query" or (errorHandler.buildDepError "relational-query"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
           buildable = true;
           };
         "sqlsArrow" = {
@@ -64,7 +64,7 @@
             (hsPkgs."relational-query" or (errorHandler.buildDepError "relational-query"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
           buildable = true;
           };
         };

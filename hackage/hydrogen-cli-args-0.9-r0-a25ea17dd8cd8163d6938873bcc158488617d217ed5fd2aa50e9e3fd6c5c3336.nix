@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "hydrogen-cli-args"; version = "0.9"; };
       license = "MIT";
       copyright = "";

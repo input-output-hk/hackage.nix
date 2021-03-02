@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "regexpr"; version = "0.2.1"; };
       license = "LicenseRef-GPL";
       copyright = "";

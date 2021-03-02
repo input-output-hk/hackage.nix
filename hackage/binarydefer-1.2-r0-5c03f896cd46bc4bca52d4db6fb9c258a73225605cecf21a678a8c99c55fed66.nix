@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "binarydefer"; version = "1.2"; };
       license = "BSD-3-Clause";
       copyright = "";

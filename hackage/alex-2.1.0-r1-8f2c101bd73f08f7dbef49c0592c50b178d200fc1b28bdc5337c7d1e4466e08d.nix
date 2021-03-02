@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "alex"; version = "2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Chis Dornan, Simon Marlow";

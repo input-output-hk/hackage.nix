@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "xml"; version = "1.3.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2007-2008 Galois Inc.";

@@ -10,7 +10,7 @@
   {
     flags = { base4 = true; tests = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "happstack-state"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";

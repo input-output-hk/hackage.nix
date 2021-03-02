@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hgeometric"; version = "0.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (C) 2007, 2008 Marco Túlio Gontijo e Silva\nCopyright (C) 2007 Rafael Cunha de Almeida";

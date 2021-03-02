@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.7";
+      specVersion = "1.8";
       identifier = { name = "codo-notation"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "";

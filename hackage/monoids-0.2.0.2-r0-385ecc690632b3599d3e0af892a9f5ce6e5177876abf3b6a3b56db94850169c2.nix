@@ -10,7 +10,7 @@
   {
     flags = { optimize = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "monoids"; version = "0.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Edward A. Kmett";

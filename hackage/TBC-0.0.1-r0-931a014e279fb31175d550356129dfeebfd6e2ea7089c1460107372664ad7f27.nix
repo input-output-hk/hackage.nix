@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.7";
+      specVersion = "1.8";
       identifier = { name = "TBC"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Peter Gammie, Mark Wotton";

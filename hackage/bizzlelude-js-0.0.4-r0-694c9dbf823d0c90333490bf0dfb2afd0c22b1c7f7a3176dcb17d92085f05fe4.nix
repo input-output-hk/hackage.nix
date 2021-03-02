@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.22.0";
+      specVersion = "1.22";
       identifier = { name = "bizzlelude-js"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";

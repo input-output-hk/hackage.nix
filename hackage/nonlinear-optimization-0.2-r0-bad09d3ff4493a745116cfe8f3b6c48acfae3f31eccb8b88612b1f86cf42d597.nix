@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "nonlinear-optimization"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2010 Felipe A. Lessa and William W. Hager";

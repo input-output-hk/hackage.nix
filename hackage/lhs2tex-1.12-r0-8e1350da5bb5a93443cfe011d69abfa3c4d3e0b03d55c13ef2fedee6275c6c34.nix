@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.1.6";
+      specVersion = "1.2";
       identifier = { name = "lhs2tex"; version = "1.12"; };
       license = "LicenseRef-GPL";
       copyright = "";

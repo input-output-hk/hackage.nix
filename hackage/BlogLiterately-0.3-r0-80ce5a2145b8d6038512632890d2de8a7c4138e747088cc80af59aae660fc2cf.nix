@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.5";
+      specVersion = "1.6";
       identifier = { name = "BlogLiterately"; version = "0.3"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) Robert Greayer 2008.";

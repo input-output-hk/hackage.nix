@@ -10,7 +10,7 @@
   {
     flags = { buildtests = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "LDAP"; version = "0.6.7"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2005-2010 John Goerzen";

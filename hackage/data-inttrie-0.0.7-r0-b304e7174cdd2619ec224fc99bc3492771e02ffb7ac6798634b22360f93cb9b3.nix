@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "data-inttrie"; version = "0.0.7"; };
       license = "BSD-3-Clause";
       copyright = "";

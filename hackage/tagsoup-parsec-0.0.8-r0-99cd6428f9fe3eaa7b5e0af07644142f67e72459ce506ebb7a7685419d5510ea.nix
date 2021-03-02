@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "tagsoup-parsec"; version = "0.0.8"; };
       license = "BSD-3-Clause";
       copyright = "";

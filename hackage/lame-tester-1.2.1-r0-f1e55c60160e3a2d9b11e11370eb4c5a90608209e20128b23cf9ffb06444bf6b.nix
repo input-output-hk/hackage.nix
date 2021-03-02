@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16.0";
+      specVersion = "1.12";
       identifier = { name = "lame-tester"; version = "1.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";

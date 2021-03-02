@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hexdump"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";

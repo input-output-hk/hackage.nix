@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "nix-delegate"; version = "1.0.0"; };
       license = "Apache-2.0";
       copyright = "2017 Awake Networks";

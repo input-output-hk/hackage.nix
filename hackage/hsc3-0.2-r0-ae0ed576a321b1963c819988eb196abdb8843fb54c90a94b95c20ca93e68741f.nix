@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hsc3"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "Rohan Drape, 2006-2008";

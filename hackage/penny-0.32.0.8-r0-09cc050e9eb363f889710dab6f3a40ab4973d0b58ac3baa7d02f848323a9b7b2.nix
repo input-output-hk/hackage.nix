@@ -20,7 +20,7 @@
       incabal = true;
       };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "penny"; version = "0.32.0.8"; };
       license = "BSD-3-Clause";
       copyright = "2012-2014 Omari Norman.";

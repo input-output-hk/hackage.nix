@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "text-trie"; version = "0.2.5.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008--2019 wren gayle romano, 2019 michael j. klein";

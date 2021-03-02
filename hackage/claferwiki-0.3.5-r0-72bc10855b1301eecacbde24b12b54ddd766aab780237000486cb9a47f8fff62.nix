@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "claferwiki"; version = "0.3.5"; };
       license = "MIT";
       copyright = "Michal Antkiewicz, Chris Walker, Luke Michael Brown";

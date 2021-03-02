@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "Hashell"; version = "0.15"; };
       license = "LicenseRef-GPL";
       copyright = "";

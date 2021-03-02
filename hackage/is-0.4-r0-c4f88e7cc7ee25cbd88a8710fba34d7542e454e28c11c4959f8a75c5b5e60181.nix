@@ -26,7 +26,7 @@
       "library" = {
         depends = (([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))) ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))) ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.0" && (compiler.version).lt "8.1")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.10" && (compiler.version).lt "7.11")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.8" && (compiler.version).lt "7.9")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
         buildable = true;
         };
       tests = {

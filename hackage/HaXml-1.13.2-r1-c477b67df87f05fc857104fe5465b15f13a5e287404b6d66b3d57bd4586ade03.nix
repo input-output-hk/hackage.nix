@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "HaXml"; version = "1.13.2"; };
       license = "LicenseRef-LGPL";
       copyright = "";

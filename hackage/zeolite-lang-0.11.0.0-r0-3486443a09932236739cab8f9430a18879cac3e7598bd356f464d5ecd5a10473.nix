@@ -50,7 +50,7 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            (hsPkgs."zeolite-internal" or (errorHandler.buildDepError "zeolite-internal"))
+            (hsPkgs."zeolite-lang".components.sublibs.zeolite-internal or (errorHandler.buildDepError "zeolite-lang:zeolite-internal"))
             ];
           buildable = true;
           };
@@ -59,7 +59,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            (hsPkgs."zeolite-internal" or (errorHandler.buildDepError "zeolite-internal"))
+            (hsPkgs."zeolite-lang".components.sublibs.zeolite-internal or (errorHandler.buildDepError "zeolite-lang:zeolite-internal"))
             ];
           buildable = true;
           };
@@ -70,7 +70,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            (hsPkgs."zeolite-internal" or (errorHandler.buildDepError "zeolite-internal"))
+            (hsPkgs."zeolite-lang".components.sublibs.zeolite-internal or (errorHandler.buildDepError "zeolite-lang:zeolite-internal"))
             ];
           buildable = true;
           };

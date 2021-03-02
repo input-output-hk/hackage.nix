@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "perf"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Tony Day";

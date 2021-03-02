@@ -10,7 +10,7 @@
   {
     flags = { split-base = true; cli = false; };
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "wcwidth"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";

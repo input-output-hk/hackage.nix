@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "api-opentheory-unicode"; version = "1.1"; };
       license = "MIT";
       copyright = "";

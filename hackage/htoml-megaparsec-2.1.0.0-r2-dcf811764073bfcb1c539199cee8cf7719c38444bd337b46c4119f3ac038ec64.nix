@@ -27,7 +27,7 @@
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-          (hsPkgs."htoml-internal" or (errorHandler.buildDepError "htoml-internal"))
+          (hsPkgs."htoml-megaparsec".components.sublibs.htoml-internal or (errorHandler.buildDepError "htoml-megaparsec:htoml-internal"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
@@ -62,7 +62,7 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."htoml-megaparsec" or (errorHandler.buildDepError "htoml-megaparsec"))
-            (hsPkgs."htoml-internal" or (errorHandler.buildDepError "htoml-internal"))
+            (hsPkgs."htoml-megaparsec".components.sublibs.htoml-internal or (errorHandler.buildDepError "htoml-megaparsec:htoml-internal"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
@@ -77,7 +77,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."htoml-megaparsec" or (errorHandler.buildDepError "htoml-megaparsec"))
-            (hsPkgs."htoml-internal" or (errorHandler.buildDepError "htoml-internal"))
+            (hsPkgs."htoml-megaparsec".components.sublibs.htoml-internal or (errorHandler.buildDepError "htoml-megaparsec:htoml-internal"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];

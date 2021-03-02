@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "X11-xdamage"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Ewan Higgs, 2011, libraries@haskell.org 2011";

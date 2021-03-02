@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "lambdaFeed"; version = "0.3.1"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2006 Manuel M T Chakravarty";

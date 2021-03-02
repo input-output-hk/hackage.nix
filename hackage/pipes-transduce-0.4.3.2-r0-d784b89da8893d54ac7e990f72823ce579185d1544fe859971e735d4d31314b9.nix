@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "pipes-transduce"; version = "0.4.3.2"; };
       license = "BSD-3-Clause";
       copyright = "2015 Daniel Diaz";

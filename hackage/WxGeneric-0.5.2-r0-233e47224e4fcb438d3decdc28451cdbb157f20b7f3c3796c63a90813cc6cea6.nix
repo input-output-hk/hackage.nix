@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "WxGeneric"; version = "0.5.2"; };
       license = "LicenseRef-LGPL";
       copyright = "Mads Lindstrøm <mads_lindstroem@yahoo.dk>";

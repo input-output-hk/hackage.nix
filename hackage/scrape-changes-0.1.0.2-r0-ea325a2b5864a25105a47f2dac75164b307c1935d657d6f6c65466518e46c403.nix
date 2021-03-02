@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "scrape-changes"; version = "0.1.0.2"; };
       license = "GPL-3.0-only";
       copyright = "";

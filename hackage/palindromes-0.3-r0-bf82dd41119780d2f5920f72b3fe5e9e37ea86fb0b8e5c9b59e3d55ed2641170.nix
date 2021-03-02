@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "palindromes"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2007 - 2012 Johan Jeuring";

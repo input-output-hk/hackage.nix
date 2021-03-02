@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "silently"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Trystan Spangler 2011";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "murmur3"; version = "1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";

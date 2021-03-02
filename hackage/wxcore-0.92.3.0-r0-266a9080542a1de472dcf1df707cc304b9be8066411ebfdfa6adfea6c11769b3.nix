@@ -10,7 +10,7 @@
   {
     flags = { splitbase = true; };
     package = {
-      specVersion = "1.23";
+      specVersion = "1.24";
       identifier = { name = "wxcore"; version = "0.92.3.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";

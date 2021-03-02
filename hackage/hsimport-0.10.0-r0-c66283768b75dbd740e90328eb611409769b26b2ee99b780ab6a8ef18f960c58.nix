@@ -74,7 +74,7 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            (hsPkgs."library-internal" or (errorHandler.buildDepError "library-internal"))
+            (hsPkgs."hsimport".components.sublibs.library-internal or (errorHandler.buildDepError "hsimport:library-internal"))
             ];
           buildable = true;
           };

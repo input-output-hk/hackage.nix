@@ -10,7 +10,7 @@
   {
     flags = { small_base = true; };
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "fastcgi"; version = "3001.0.2.4"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert, Lemmih";

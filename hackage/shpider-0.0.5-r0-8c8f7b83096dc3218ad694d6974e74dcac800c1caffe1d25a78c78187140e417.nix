@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "shpider"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";

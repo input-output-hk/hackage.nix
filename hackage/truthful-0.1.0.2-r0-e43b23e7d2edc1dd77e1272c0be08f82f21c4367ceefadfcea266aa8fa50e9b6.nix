@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "truthful"; version = "0.1.0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "Copyright (C) 2015 David Farrell";

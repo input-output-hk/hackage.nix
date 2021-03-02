@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "largeword"; version = "1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Dominic Steinitz <dominic@steinitz.org>";

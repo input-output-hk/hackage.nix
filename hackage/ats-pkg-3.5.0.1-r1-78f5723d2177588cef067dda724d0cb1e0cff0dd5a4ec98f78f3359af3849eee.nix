@@ -47,7 +47,7 @@
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
           (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
-          (hsPkgs."quaalude" or (errorHandler.buildDepError "quaalude"))
+          (hsPkgs."ats-pkg".components.sublibs.quaalude or (errorHandler.buildDepError "ats-pkg:quaalude"))
           (hsPkgs."archive-sig" or (errorHandler.buildDepError "archive-sig"))
           (hsPkgs."archive-libarchive" or (errorHandler.buildDepError "archive-libarchive"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
@@ -94,12 +94,12 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
-            (hsPkgs."quaalude" or (errorHandler.buildDepError "quaalude"))
+            (hsPkgs."ats-pkg".components.sublibs.quaalude or (errorHandler.buildDepError "ats-pkg:quaalude"))
             (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
             (hsPkgs."cli-setup" or (errorHandler.buildDepError "cli-setup"))
-            (hsPkgs."quaalude" or (errorHandler.buildDepError "quaalude"))
+            (hsPkgs."ats-pkg".components.sublibs.quaalude or (errorHandler.buildDepError "ats-pkg:quaalude"))
             (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
             ];
           buildable = true;

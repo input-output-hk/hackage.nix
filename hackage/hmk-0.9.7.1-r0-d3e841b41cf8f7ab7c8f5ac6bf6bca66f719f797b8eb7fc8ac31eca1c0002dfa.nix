@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "hmk"; version = "0.9.7.1"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2008-2009. Mathieu Boespflug <mboes@tweag.net>";

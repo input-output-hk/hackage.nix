@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "HSvm"; version = "0.1.0.2.89"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Paolo Losi";

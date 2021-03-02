@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "typed-spreadsheet"; version = "1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 Gabriel Gonzalez";

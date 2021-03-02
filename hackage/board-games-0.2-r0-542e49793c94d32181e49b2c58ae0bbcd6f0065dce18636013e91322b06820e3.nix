@@ -10,7 +10,7 @@
   {
     flags = { buildexamples = true; splitbase = true; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "board-games"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";

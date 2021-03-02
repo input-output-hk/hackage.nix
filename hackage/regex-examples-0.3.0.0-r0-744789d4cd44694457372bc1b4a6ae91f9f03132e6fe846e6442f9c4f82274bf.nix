@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "regex-examples"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Chris Dornan 2016-2017";

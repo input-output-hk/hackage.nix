@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "yi-gtk"; version = "0.2.1"; };
       license = "LicenseRef-GPL";
       copyright = "";

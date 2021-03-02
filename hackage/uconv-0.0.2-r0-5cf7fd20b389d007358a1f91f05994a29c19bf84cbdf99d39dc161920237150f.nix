@@ -10,7 +10,7 @@
   {
     flags = { bytestring_in_base = true; };
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "uconv"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2008 Audrey Tang";

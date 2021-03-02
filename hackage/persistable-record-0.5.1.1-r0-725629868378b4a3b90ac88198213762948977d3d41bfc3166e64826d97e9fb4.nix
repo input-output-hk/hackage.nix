@@ -33,7 +33,7 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."names-th" or (errorHandler.buildDepError "names-th"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
         };
       tests = {
@@ -42,7 +42,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quickcheck-simple" or (errorHandler.buildDepError "quickcheck-simple"))
             (hsPkgs."persistable-record" or (errorHandler.buildDepError "persistable-record"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
           buildable = true;
           };
         };

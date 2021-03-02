@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "unicoder"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright © 2013, 2014, Okuno Zankoku";

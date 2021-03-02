@@ -75,7 +75,7 @@
       exes = {
         "synthi-llvm-example" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."synthesizer-llvm-server" or (errorHandler.buildDepError "synthesizer-llvm-server"))
+            (hsPkgs."synthesizer-llvm".components.sublibs.synthesizer-llvm-server or (errorHandler.buildDepError "synthesizer-llvm:synthesizer-llvm-server"))
             (hsPkgs."synthesizer-llvm" or (errorHandler.buildDepError "synthesizer-llvm"))
             (hsPkgs."llvm-extra" or (errorHandler.buildDepError "llvm-extra"))
             (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
@@ -124,7 +124,7 @@
           };
         "synthi-llvm-alsa" = {
           depends = (pkgs.lib).optionals (flags.buildexamples && flags.alsa) [
-            (hsPkgs."synthesizer-llvm-server" or (errorHandler.buildDepError "synthesizer-llvm-server"))
+            (hsPkgs."synthesizer-llvm".components.sublibs.synthesizer-llvm-server or (errorHandler.buildDepError "synthesizer-llvm:synthesizer-llvm-server"))
             (hsPkgs."synthesizer-llvm" or (errorHandler.buildDepError "synthesizer-llvm"))
             (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
             (hsPkgs."synthesizer-core" or (errorHandler.buildDepError "synthesizer-core"))
@@ -149,7 +149,7 @@
           };
         "synthi-llvm-jack" = {
           depends = (pkgs.lib).optionals (flags.buildexamples && flags.jack) [
-            (hsPkgs."synthesizer-llvm-server" or (errorHandler.buildDepError "synthesizer-llvm-server"))
+            (hsPkgs."synthesizer-llvm".components.sublibs.synthesizer-llvm-server or (errorHandler.buildDepError "synthesizer-llvm:synthesizer-llvm-server"))
             (hsPkgs."synthesizer-llvm" or (errorHandler.buildDepError "synthesizer-llvm"))
             (hsPkgs."jack" or (errorHandler.buildDepError "jack"))
             (hsPkgs."synthesizer-core" or (errorHandler.buildDepError "synthesizer-core"))
@@ -169,7 +169,7 @@
           };
         "synthi-llvm-render" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."synthesizer-llvm-server" or (errorHandler.buildDepError "synthesizer-llvm-server"))
+            (hsPkgs."synthesizer-llvm".components.sublibs.synthesizer-llvm-server or (errorHandler.buildDepError "synthesizer-llvm:synthesizer-llvm-server"))
             (hsPkgs."synthesizer-llvm" or (errorHandler.buildDepError "synthesizer-llvm"))
             (hsPkgs."sox" or (errorHandler.buildDepError "sox"))
             (hsPkgs."synthesizer-core" or (errorHandler.buildDepError "synthesizer-core"))
@@ -187,7 +187,7 @@
         "synthi-llvm-sample" = {
           depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs."gnuplot" or (errorHandler.buildDepError "gnuplot"))
-            (hsPkgs."synthesizer-llvm-server" or (errorHandler.buildDepError "synthesizer-llvm-server"))
+            (hsPkgs."synthesizer-llvm".components.sublibs.synthesizer-llvm-server or (errorHandler.buildDepError "synthesizer-llvm:synthesizer-llvm-server"))
             (hsPkgs."synthesizer-llvm" or (errorHandler.buildDepError "synthesizer-llvm"))
             (hsPkgs."synthesizer-core" or (errorHandler.buildDepError "synthesizer-core"))
             (hsPkgs."midi" or (errorHandler.buildDepError "midi"))

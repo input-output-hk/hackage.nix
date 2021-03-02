@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "pointfree"; version = "1.0.3"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "fquery"; version = "0.2.1.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2006 David Wang, 2009 Sergei Trofimovich";

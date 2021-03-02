@@ -10,7 +10,7 @@
   {
     flags = { test = false; };
     package = {
-      specVersion = "1.8.0.4";
+      specVersion = "1.8";
       identifier = { name = "network-info"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = { th = true; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "syntactic"; version = "3.8"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011-2015, Emil Axelsson";
@@ -33,7 +33,7 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."tree-view" or (errorHandler.buildDepError "tree-view"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))) ++ (pkgs.lib).optional (flags.th) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.2" && (compiler.version).lt "8.3")) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))) ++ (pkgs.lib).optional (flags.th) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
         buildable = true;
         };
       tests = {

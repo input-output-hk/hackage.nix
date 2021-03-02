@@ -63,7 +63,7 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-balancedparens" or (errorHandler.buildDepError "hw-balancedparens"))
-            (hsPkgs."hw-balancedparens-gen" or (errorHandler.buildDepError "hw-balancedparens-gen"))
+            (hsPkgs."hw-balancedparens".components.sublibs.hw-balancedparens-gen or (errorHandler.buildDepError "hw-balancedparens:hw-balancedparens-gen"))
             ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
@@ -81,7 +81,7 @@
             (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-balancedparens" or (errorHandler.buildDepError "hw-balancedparens"))
-            (hsPkgs."hw-balancedparens-gen" or (errorHandler.buildDepError "hw-balancedparens-gen"))
+            (hsPkgs."hw-balancedparens".components.sublibs.hw-balancedparens-gen or (errorHandler.buildDepError "hw-balancedparens:hw-balancedparens-gen"))
             ];
           buildable = true;
           };

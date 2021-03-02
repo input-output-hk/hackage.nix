@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0";
+      specVersion = "1.8";
       identifier = { name = "haskell-src-exts-qq"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";

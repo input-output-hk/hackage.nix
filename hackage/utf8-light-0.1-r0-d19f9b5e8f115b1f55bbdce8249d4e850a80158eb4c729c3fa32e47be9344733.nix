@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.3";
+      specVersion = "1.4";
       identifier = { name = "utf8-light"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Matt Morrow";

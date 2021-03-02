@@ -37,7 +37,7 @@
           (hsPkgs."relational-query-HDBC" or (errorHandler.buildDepError "relational-query-HDBC"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."relational-schemas" or (errorHandler.buildDepError "relational-schemas"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
         };
       exes = {
@@ -49,7 +49,7 @@
             (hsPkgs."relational-record-examples" or (errorHandler.buildDepError "relational-record-examples"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
           buildable = if flags.binary then true else false;
           };
         };

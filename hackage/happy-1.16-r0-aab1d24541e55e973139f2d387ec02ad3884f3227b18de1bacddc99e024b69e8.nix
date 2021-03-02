@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "happy"; version = "1.16"; };
       license = "BSD-3-Clause";
       copyright = "(c) Andy Gill, Simon Marlow";

@@ -10,7 +10,7 @@
   {
     flags = { manualtests = false; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "language-c-inline"; version = "0.7.7.0"; };
       license = "BSD-3-Clause";
       copyright = "";

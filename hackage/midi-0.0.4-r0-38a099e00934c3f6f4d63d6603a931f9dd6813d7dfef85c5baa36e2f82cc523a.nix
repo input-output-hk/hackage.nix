@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "midi"; version = "0.0.4"; };
       license = "LicenseRef-GPL";
       copyright = "";

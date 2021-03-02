@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "NaturalLanguageAlphabets"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2014";

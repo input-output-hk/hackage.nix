@@ -41,7 +41,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
-            (hsPkgs."git-brunch-lib" or (errorHandler.buildDepError "git-brunch-lib"))
+            (hsPkgs."git-brunch".components.sublibs.git-brunch-lib or (errorHandler.buildDepError "git-brunch:git-brunch-lib"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
@@ -55,7 +55,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
-            (hsPkgs."git-brunch-lib" or (errorHandler.buildDepError "git-brunch-lib"))
+            (hsPkgs."git-brunch".components.sublibs.git-brunch-lib or (errorHandler.buildDepError "git-brunch:git-brunch-lib"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.0.0";
+      specVersion = "1.2";
       identifier = { name = "only"; version = "0.0.6.0"; };
       license = "LicenseRef-GPL";
       copyright = "2008 Andrew Robbins";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.2.0";
+      specVersion = "1.10";
       identifier = { name = "Pup-Events-Client"; version = "1.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2012 Daniel Wilson";

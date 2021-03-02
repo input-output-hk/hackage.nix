@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "MonadRandom"; version = "0.1.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";

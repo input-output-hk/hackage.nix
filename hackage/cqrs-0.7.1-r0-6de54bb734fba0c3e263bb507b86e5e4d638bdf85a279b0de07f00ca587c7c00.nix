@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0.1";
+      specVersion = "1.6";
       identifier = { name = "cqrs"; version = "0.7.1"; };
       license = "MIT";
       copyright = "";

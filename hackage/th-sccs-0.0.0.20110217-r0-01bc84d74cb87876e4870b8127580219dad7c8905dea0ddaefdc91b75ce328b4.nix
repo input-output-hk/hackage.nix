@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0.1";
+      specVersion = "1.6";
       identifier = { name = "th-sccs"; version = "0.0.0.20110217"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 The University of Kansas";

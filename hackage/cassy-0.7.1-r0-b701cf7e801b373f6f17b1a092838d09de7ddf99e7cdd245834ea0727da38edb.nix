@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "cassy"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "";

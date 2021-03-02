@@ -10,7 +10,7 @@
   {
     flags = { optimize = true; };
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "hquantlib"; version = "0.0.2.4"; };
       license = "LicenseRef-LGPL";
       copyright = "";

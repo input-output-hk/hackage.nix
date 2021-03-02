@@ -38,7 +38,7 @@
           (hsPkgs."prelude-edsl" or (errorHandler.buildDepError "prelude-edsl"))
           (hsPkgs."syntactic" or (errorHandler.buildDepError "syntactic"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."language-c-quote" or (errorHandler.buildDepError "language-c-quote"));
+          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.0" && (compiler.version).lt "8.1")) (hsPkgs."language-c-quote" or (errorHandler.buildDepError "language-c-quote"));
         buildable = true;
         };
       tests = {

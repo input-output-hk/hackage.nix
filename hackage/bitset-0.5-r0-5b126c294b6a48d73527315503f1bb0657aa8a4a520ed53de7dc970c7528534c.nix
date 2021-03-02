@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "bitset"; version = "0.5"; };
       license = "LicenseRef-LGPL";
       copyright = "";

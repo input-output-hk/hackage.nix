@@ -10,7 +10,7 @@
   {
     flags = { base4 = true; base3 = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "test-framework-quickcheck"; version = "0.2.6"; };
       license = "BSD-3-Clause";
       copyright = "";

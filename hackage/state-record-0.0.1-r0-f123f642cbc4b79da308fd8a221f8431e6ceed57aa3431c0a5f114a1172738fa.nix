@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "state-record"; version = "0.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2011 Karl Voelker";

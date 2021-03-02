@@ -10,7 +10,7 @@
   {
     flags = { mtl = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "control-monad-failure"; version = "0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";

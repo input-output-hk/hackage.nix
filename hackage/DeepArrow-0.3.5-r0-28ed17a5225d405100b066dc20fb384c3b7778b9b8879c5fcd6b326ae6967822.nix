@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "DeepArrow"; version = "0.3.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2007-2012 by Conal Elliott";

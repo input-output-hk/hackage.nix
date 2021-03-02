@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "data-dword"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "2011, 2012 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.4";
+      specVersion = "1.8";
       identifier = { name = "antlrc"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Mark Wright 2010-2011. All rights reserved.";

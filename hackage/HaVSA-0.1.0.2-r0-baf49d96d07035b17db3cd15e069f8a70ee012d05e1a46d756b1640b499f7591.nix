@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.6";
+      specVersion = "1.8";
       identifier = { name = "HaVSA"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "MissingH"; version = "0.18.6"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2004-2007 John Goerzen";

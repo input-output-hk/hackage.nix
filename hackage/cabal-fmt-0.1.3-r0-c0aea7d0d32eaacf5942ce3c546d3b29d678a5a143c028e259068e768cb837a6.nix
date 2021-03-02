@@ -44,7 +44,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            (hsPkgs."cabal-fmt-internal" or (errorHandler.buildDepError "cabal-fmt-internal"))
+            (hsPkgs."cabal-fmt".components.sublibs.cabal-fmt-internal or (errorHandler.buildDepError "cabal-fmt:cabal-fmt-internal"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
@@ -58,7 +58,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            (hsPkgs."cabal-fmt-internal" or (errorHandler.buildDepError "cabal-fmt-internal"))
+            (hsPkgs."cabal-fmt".components.sublibs.cabal-fmt-internal or (errorHandler.buildDepError "cabal-fmt:cabal-fmt-internal"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))

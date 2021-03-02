@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "gc"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 Edward A. Kmett";

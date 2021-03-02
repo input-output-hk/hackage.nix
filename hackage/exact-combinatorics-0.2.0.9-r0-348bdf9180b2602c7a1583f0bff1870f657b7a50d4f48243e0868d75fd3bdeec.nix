@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "exact-combinatorics"; version = "0.2.0.9"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011--2019 wren gayle romano";

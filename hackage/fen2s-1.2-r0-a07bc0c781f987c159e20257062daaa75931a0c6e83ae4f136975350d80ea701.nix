@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "fen2s"; version = "1.2"; };
       license = "MIT";
       copyright = "";

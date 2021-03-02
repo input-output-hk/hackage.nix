@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "tasty-silver"; version = "3.2"; };
       license = "MIT";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "DSTM"; version = "0.1.2"; };
       license = "LicenseRef-LGPL";
       copyright = "(c) 2010, Frank Kupke";

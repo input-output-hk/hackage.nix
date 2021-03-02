@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "dx9d3d"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";

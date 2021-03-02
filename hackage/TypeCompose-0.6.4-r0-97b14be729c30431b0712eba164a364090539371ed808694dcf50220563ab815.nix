@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "TypeCompose"; version = "0.6.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2007 by Conal Elliott";

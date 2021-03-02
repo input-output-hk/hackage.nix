@@ -10,7 +10,7 @@
   {
     flags = { test = false; };
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "hgom"; version = "0.5.3"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Paul Brauner 2009\n(c) Emilie Balland 2009\n(c) INRIA 2009";

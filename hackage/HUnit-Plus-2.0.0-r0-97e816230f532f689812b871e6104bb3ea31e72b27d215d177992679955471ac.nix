@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "HUnit-Plus"; version = "2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014 Eric McCorkle.  All rights reserved.";

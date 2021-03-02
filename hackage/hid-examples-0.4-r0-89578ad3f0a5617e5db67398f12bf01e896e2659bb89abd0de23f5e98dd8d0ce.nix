@@ -28,7 +28,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            (hsPkgs."iplookup-lib" or (errorHandler.buildDepError "iplookup-lib"))
+            (hsPkgs."hid-examples".components.sublibs.iplookup-lib or (errorHandler.buildDepError "hid-examples:iplookup-lib"))
             ];
           buildable = true;
           };
@@ -92,7 +92,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            (hsPkgs."ipgen-lib" or (errorHandler.buildDepError "ipgen-lib"))
+            (hsPkgs."hid-examples".components.sublibs.ipgen-lib or (errorHandler.buildDepError "hid-examples:ipgen-lib"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             ];
@@ -101,7 +101,7 @@
         "iplookup" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."iplookup-lib" or (errorHandler.buildDepError "iplookup-lib"))
+            (hsPkgs."hid-examples".components.sublibs.iplookup-lib or (errorHandler.buildDepError "hid-examples:iplookup-lib"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             ];
@@ -229,8 +229,8 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            (hsPkgs."ipgen-lib" or (errorHandler.buildDepError "ipgen-lib"))
-            (hsPkgs."iplookup-lib" or (errorHandler.buildDepError "iplookup-lib"))
+            (hsPkgs."hid-examples".components.sublibs.ipgen-lib or (errorHandler.buildDepError "hid-examples:ipgen-lib"))
+            (hsPkgs."hid-examples".components.sublibs.iplookup-lib or (errorHandler.buildDepError "hid-examples:iplookup-lib"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))

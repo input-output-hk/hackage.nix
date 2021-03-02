@@ -52,7 +52,7 @@
         "cabal-plan" = {
           depends = (pkgs.lib).optionals (flags.exe) (([
             (hsPkgs."cabal-plan" or (errorHandler.buildDepError "cabal-plan"))
-            (hsPkgs."topograph" or (errorHandler.buildDepError "topograph"))
+            (hsPkgs."cabal-plan".components.sublibs.topograph or (errorHandler.buildDepError "cabal-plan:topograph"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))

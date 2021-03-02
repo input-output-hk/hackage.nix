@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.24.0.0";
+      specVersion = "1.24";
       identifier = { name = "tar-conduit"; version = "0.2.3.1"; };
       license = "MIT";
       copyright = "";

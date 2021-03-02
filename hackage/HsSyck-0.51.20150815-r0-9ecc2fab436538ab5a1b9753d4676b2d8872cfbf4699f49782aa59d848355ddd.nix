@@ -10,7 +10,7 @@
   {
     flags = { sybinbase = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "HsSyck"; version = "0.51.20150815"; };
       license = "BSD-3-Clause";
       copyright = "Audrey Tang, Gaal Yahas, 2005-2015";

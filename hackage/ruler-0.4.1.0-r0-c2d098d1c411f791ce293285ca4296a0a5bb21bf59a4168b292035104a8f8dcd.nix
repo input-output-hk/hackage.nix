@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.23";
+      specVersion = "1.24";
       identifier = { name = "ruler"; version = "0.4.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Utrecht University, Department of Information and Computing Sciences, Software Technology group, Atze Dijkstra";

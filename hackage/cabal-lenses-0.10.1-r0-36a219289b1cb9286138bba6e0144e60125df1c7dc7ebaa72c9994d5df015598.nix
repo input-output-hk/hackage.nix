@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "cabal-lenses"; version = "0.10.1"; };
       license = "BSD-3-Clause";
       copyright = "";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.23";
+      specVersion = "1.24";
       identifier = { name = "hs-bibutils"; version = "6.2"; };
       license = "LicenseRef-GPL";
       copyright = "";

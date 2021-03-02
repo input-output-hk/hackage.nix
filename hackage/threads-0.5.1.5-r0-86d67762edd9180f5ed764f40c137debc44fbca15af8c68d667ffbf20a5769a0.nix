@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "threads"; version = "0.5.1.5"; };
       license = "BSD-3-Clause";
       copyright = "2010–2012 Bas van Dijk & Roel van Dijk";

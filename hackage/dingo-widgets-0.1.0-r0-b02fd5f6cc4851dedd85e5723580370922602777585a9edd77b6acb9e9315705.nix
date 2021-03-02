@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0.1";
+      specVersion = "1.6";
       identifier = { name = "dingo-widgets"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";

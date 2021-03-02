@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hscurses"; version = "1.3.0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "Stefan Wehr 2004, 2005\nDon Stewart 2004\nTuomo Valkonen 2004\nJohn Meacham 2002-2004";

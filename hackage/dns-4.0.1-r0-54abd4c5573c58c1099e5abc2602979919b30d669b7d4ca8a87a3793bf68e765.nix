@@ -25,7 +25,7 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs."dns-internal" or (errorHandler.buildDepError "dns-internal"))
+          (hsPkgs."dns".components.sublibs.dns-internal or (errorHandler.buildDepError "dns:dns-internal"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -71,7 +71,7 @@
         "network-tests" = {
           depends = [
             (hsPkgs."dns" or (errorHandler.buildDepError "dns"))
-            (hsPkgs."dns-internal" or (errorHandler.buildDepError "dns-internal"))
+            (hsPkgs."dns".components.sublibs.dns-internal or (errorHandler.buildDepError "dns:dns-internal"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
@@ -81,7 +81,7 @@
         "spec-tests" = {
           depends = [
             (hsPkgs."dns" or (errorHandler.buildDepError "dns"))
-            (hsPkgs."dns-internal" or (errorHandler.buildDepError "dns-internal"))
+            (hsPkgs."dns".components.sublibs.dns-internal or (errorHandler.buildDepError "dns:dns-internal"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))

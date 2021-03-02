@@ -31,7 +31,7 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
-          (hsPkgs."ghc-tags-library" or (errorHandler.buildDepError "ghc-tags-library"))
+          (hsPkgs."ghc-tags-plugin".components.sublibs.ghc-tags-library or (errorHandler.buildDepError "ghc-tags-plugin:ghc-tags-library"))
           ];
         buildable = true;
         };

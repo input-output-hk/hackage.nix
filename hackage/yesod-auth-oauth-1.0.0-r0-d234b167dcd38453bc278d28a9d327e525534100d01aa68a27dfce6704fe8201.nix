@@ -10,7 +10,7 @@
   {
     flags = { ghc7 = true; };
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "yesod-auth-oauth"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";

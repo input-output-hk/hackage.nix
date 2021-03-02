@@ -10,7 +10,7 @@
   {
     flags = { gui = true; splitbase = true; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "GenI"; version = "0.17.3"; };
       license = "LicenseRef-GPL";
       copyright = "";

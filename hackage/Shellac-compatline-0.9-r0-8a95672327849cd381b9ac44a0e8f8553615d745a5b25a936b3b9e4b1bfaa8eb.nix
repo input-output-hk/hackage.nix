@@ -10,7 +10,7 @@
   {
     flags = { useeditline = true; usereadline = false; };
     package = {
-      specVersion = "1.2.2";
+      specVersion = "1.2";
       identifier = { name = "Shellac-compatline"; version = "0.9"; };
       license = "BSD-3-Clause";
       copyright = "";

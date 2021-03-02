@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0";
+      specVersion = "1.8";
       identifier = { name = "RNAFold"; version = "1.99.3.4"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2010-2013";

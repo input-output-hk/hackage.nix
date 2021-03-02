@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "flow2dot"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";

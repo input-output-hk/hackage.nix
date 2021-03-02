@@ -167,7 +167,7 @@
             (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
             ] ++ (pkgs.lib).optionals (!flags.ghcid) [
             (hsPkgs."neuron" or (errorHandler.buildDepError "neuron"))
-            (hsPkgs."neuron-app-lib" or (errorHandler.buildDepError "neuron-app-lib"))
+            (hsPkgs."neuron".components.sublibs.neuron-app-lib or (errorHandler.buildDepError "neuron:neuron-app-lib"))
             ];
           buildable = true;
           };
@@ -228,7 +228,7 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             ] ++ (pkgs.lib).optionals (!flags.ghcid) [
             (hsPkgs."neuron" or (errorHandler.buildDepError "neuron"))
-            (hsPkgs."neuron-app-lib" or (errorHandler.buildDepError "neuron-app-lib"))
+            (hsPkgs."neuron".components.sublibs.neuron-app-lib or (errorHandler.buildDepError "neuron:neuron-app-lib"))
             ];
           buildable = true;
           };

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "happy-meta"; version = "0.2.0.8"; };
       license = "BSD-3-Clause";
       copyright = "";

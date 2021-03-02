@@ -26,7 +26,7 @@
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          (hsPkgs."cql-io-lib" or (errorHandler.buildDepError "cql-io-lib"))
+          (hsPkgs."cql-io".components.sublibs.cql-io-lib or (errorHandler.buildDepError "cql-io:cql-io-lib"))
           (hsPkgs."cql" or (errorHandler.buildDepError "cql"))
           ];
         buildable = true;
@@ -72,7 +72,7 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."cql" or (errorHandler.buildDepError "cql"))
             (hsPkgs."cql-io" or (errorHandler.buildDepError "cql-io"))
-            (hsPkgs."cql-io-lib" or (errorHandler.buildDepError "cql-io-lib"))
+            (hsPkgs."cql-io".components.sublibs.cql-io-lib or (errorHandler.buildDepError "cql-io:cql-io-lib"))
             (hsPkgs."Decimal" or (errorHandler.buildDepError "Decimal"))
             (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))

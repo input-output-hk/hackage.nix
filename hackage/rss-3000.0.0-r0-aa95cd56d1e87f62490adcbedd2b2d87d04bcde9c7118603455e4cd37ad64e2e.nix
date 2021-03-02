@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "rss"; version = "3000.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "Jeremy Shaw 2004, Bjorn Bringert 2004-2006";

@@ -10,7 +10,7 @@
   {
     flags = { developer = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "critbit"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2013-2014 Bryan O'Sullivan and others";

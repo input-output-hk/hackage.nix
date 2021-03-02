@@ -58,7 +58,7 @@
       tests = {
         "test-simple" = {
           depends = [
-            (hsPkgs."internal" or (errorHandler.buildDepError "internal"))
+            (hsPkgs."s3-signer".components.sublibs.internal or (errorHandler.buildDepError "s3-signer:internal"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.2";
+      specVersion = "1.2";
       identifier = { name = "Oslo-Vectize"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";

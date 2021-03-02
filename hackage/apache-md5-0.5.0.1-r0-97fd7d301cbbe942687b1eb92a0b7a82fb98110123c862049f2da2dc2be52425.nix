@@ -10,7 +10,7 @@
   {
     flags = { pedantic = false; };
     package = {
-      specVersion = "1.9.1";
+      specVersion = "1.10";
       identifier = { name = "apache-md5"; version = "0.5.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009, 2010, 2012, 2013 Peter Trško";

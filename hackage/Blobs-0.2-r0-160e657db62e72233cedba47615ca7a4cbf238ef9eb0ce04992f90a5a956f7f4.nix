@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "Blobs"; version = "0.2"; };
       license = "LicenseRef-LGPL";
       copyright = "";

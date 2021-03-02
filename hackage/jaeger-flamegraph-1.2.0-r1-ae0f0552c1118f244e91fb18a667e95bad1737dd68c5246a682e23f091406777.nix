@@ -36,7 +36,7 @@
         "jaeger-flamegraph" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."jaeger-flamegraph-lib" or (errorHandler.buildDepError "jaeger-flamegraph-lib"))
+            (hsPkgs."jaeger-flamegraph".components.sublibs.jaeger-flamegraph-lib or (errorHandler.buildDepError "jaeger-flamegraph:jaeger-flamegraph-lib"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
@@ -51,7 +51,7 @@
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."jaeger-flamegraph-lib" or (errorHandler.buildDepError "jaeger-flamegraph-lib"))
+            (hsPkgs."jaeger-flamegraph".components.sublibs.jaeger-flamegraph-lib or (errorHandler.buildDepError "jaeger-flamegraph:jaeger-flamegraph-lib"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))

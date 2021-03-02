@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "LambdaShell"; version = "0.9"; };
       license = "LicenseRef-GPL";
       copyright = "";

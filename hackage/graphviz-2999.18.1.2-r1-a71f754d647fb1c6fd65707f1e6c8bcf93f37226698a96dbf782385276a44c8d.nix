@@ -10,7 +10,7 @@
   {
     flags = { test-parsing = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "graphviz"; version = "2999.18.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Matthew Sackman, Ivan Lazar Miljenovic";

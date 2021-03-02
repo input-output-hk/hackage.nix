@@ -10,7 +10,7 @@
   {
     flags = { tests = false; };
     package = {
-      specVersion = "1.8.0.6";
+      specVersion = "1.8";
       identifier = { name = "newt"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";

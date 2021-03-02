@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "bio"; version = "0.4.7"; };
       license = "LicenseRef-LGPL";
       copyright = "";

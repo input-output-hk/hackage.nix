@@ -27,7 +27,7 @@
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."sop-core" or (errorHandler.buildDepError "sop-core"))
-          (hsPkgs."red-black-record-internal" or (errorHandler.buildDepError "red-black-record-internal"))
+          (hsPkgs."red-black-record".components.sublibs.red-black-record-internal or (errorHandler.buildDepError "red-black-record:red-black-record-internal"))
           ];
         buildable = true;
         };
@@ -43,7 +43,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sop-core" or (errorHandler.buildDepError "sop-core"))
-            (hsPkgs."red-black-record-internal" or (errorHandler.buildDepError "red-black-record-internal"))
+            (hsPkgs."red-black-record".components.sublibs.red-black-record-internal or (errorHandler.buildDepError "red-black-record:red-black-record-internal"))
             ];
           buildable = true;
           };
@@ -69,7 +69,7 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."red-black-record" or (errorHandler.buildDepError "red-black-record"))
-            (hsPkgs."demoted" or (errorHandler.buildDepError "demoted"))
+            (hsPkgs."red-black-record".components.sublibs.demoted or (errorHandler.buildDepError "red-black-record:demoted"))
             ];
           buildable = true;
           };

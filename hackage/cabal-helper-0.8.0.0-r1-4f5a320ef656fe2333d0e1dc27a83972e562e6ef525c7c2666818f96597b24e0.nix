@@ -10,7 +10,7 @@
   {
     flags = { dev = false; };
     package = {
-      specVersion = "1.14";
+      specVersion = "1.12";
       identifier = { name = "cabal-helper"; version = "0.8.0.0"; };
       license = "AGPL-3.0-only";
       copyright = "";

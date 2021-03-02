@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "tar"; version = "0.1"; };
       license = "BSD-4-Clause";
       copyright = "2007 Bjorn Bringert <bjorn@bringert.net>";

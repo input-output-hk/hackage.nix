@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.3";
+      specVersion = "1.4";
       identifier = { name = "th-lift"; version = "0.3.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Ian Lynagh, 2006";

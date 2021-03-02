@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "monadIO"; version = "0.11.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008-2018, Galois, Inc.";

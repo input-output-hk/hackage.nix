@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "Saturnin"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2015 Jan Matějka <yac@blesmrt.net>";

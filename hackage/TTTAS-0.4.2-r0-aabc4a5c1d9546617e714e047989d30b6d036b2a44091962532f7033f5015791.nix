@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "TTTAS"; version = "0.4.2"; };
       license = "LicenseRef-LGPL";
       copyright = "Universiteit Utrecht";

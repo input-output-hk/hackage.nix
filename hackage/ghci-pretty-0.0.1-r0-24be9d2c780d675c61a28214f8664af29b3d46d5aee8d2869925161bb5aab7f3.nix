@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "ghci-pretty"; version = "0.0.1"; };
       license = "MIT";
       copyright = "Copyright (c) 2014 Lars Kuhtz <lakuhtz@gmail.com>";

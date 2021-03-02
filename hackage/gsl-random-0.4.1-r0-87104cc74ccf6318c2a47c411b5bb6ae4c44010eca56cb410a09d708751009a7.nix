@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0";
+      specVersion = "1.8";
       identifier = { name = "gsl-random"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "Patrick Perry,\nTracy Wadleigh";

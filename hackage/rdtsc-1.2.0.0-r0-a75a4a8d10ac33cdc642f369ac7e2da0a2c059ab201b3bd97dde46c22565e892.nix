@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "rdtsc"; version = "1.2.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "";

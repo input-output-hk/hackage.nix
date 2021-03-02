@@ -10,7 +10,7 @@
   {
     flags = { enable-hedgehog = true; };
     package = {
-      specVersion = "1.21";
+      specVersion = "1.22";
       identifier = { name = "partial-semigroup-test"; version = "0.3.0.1"; };
       license = "Apache-2.0";
       copyright = "";

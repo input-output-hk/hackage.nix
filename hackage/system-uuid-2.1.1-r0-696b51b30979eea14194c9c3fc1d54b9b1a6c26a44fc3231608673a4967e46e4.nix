@@ -10,7 +10,7 @@
   {
     flags = { split-base = true; cli = false; };
     package = {
-      specVersion = "1.8.0.6";
+      specVersion = "1.8";
       identifier = { name = "system-uuid"; version = "2.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";

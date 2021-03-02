@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.10.0";
+      specVersion = "1.10";
       identifier = { name = "text-printer"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "2013 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";

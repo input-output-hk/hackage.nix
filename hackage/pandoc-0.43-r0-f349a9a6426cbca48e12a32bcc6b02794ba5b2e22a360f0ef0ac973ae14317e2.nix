@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "pandoc"; version = "0.43"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2006-2007 John MacFarlane";

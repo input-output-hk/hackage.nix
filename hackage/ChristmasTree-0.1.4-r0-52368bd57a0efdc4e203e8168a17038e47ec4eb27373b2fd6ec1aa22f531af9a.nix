@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "ChristmasTree"; version = "0.1.4"; };
       license = "LicenseRef-LGPL";
       copyright = "Universiteit Utrecht";

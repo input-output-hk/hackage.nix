@@ -10,7 +10,7 @@
   {
     flags = { yaml-pre-0_11 = false; };
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "dhall-json"; version = "1.4.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Gabriel Gonzalez";

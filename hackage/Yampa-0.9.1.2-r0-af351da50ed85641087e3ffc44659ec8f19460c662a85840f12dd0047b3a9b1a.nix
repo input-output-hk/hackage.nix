@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "Yampa"; version = "0.9.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Henrik Nilsson, Antony Courtney and Yale University, (c) 2003";

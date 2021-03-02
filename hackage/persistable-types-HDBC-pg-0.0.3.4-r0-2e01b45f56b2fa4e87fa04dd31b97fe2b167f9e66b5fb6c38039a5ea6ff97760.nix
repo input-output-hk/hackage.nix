@@ -45,7 +45,7 @@
             (hsPkgs."relational-query-HDBC" or (errorHandler.buildDepError "relational-query-HDBC"))
             (hsPkgs."text-postgresql" or (errorHandler.buildDepError "text-postgresql"))
             (hsPkgs."persistable-types-HDBC-pg" or (errorHandler.buildDepError "persistable-types-HDBC-pg"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
           buildable = true;
           };
         };

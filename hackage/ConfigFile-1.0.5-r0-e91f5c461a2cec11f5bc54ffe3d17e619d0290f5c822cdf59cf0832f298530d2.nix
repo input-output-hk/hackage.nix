@@ -10,7 +10,7 @@
   {
     flags = { buildtests = false; };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "ConfigFile"; version = "1.0.5"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2004-2008 John Goerzen";

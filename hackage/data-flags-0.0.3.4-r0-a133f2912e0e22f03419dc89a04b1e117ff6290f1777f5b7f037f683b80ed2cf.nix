@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.6.0";
+      specVersion = "1.6";
       identifier = { name = "data-flags"; version = "0.0.3.4"; };
       license = "BSD-3-Clause";
       copyright = "2010 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";

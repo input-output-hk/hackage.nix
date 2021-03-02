@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "xml2x"; version = "0.4.1"; };
       license = "LicenseRef-GPL";
       copyright = "";

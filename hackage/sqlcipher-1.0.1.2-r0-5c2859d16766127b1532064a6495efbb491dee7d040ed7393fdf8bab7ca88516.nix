@@ -10,7 +10,7 @@
   {
     flags = { builtin-sqlcipher = true; };
     package = {
-      specVersion = "1.23";
+      specVersion = "1.24";
       identifier = { name = "sqlcipher"; version = "1.0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2007-8, Galois Inc\nCopyright (c) 2016, figo GmbH";

@@ -10,7 +10,7 @@
   {
     flags = { useffi = true; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "logfloat"; version = "0.13.3.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2007--2015 wren gayle romano";

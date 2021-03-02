@@ -43,7 +43,7 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
+          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.2" && (compiler.version).lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
         pkgconfig = [
           (pkgconfPkgs."webkit2gtk-web-extension-4.0" or (errorHandler.pkgConfDepError "webkit2gtk-web-extension-4.0"))
           ];

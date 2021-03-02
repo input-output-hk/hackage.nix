@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = {
         name = "type-level-natural-number-operations";
         version = "1.0";

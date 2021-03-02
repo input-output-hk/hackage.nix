@@ -58,7 +58,7 @@
         "haskell-ci" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."haskell-ci-internal" or (errorHandler.buildDepError "haskell-ci-internal"))
+            (hsPkgs."haskell-ci".components.sublibs.haskell-ci-internal or (errorHandler.buildDepError "haskell-ci:haskell-ci-internal"))
             ];
           buildable = true;
           };
@@ -73,7 +73,7 @@
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            (hsPkgs."haskell-ci-internal" or (errorHandler.buildDepError "haskell-ci-internal"))
+            (hsPkgs."haskell-ci".components.sublibs.haskell-ci-internal or (errorHandler.buildDepError "haskell-ci:haskell-ci-internal"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))

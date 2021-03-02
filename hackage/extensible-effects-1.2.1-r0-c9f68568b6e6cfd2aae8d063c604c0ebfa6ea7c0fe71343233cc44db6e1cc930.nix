@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "extensible-effects"; version = "1.2.1"; };
       license = "MIT";
       copyright = "";

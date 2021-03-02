@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "bindings-common"; version = "1.3.3"; };
       license = "BSD-3-Clause";
       copyright = "";

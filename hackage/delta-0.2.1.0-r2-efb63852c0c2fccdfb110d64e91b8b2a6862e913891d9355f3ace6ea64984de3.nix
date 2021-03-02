@@ -10,7 +10,7 @@
   {
     flags = { build_fs_events = true; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "delta"; version = "0.2.1.0"; };
       license = "LGPL-3.0-only";
       copyright = "";

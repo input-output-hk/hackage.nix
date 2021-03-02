@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "gofer-prelude"; version = "2.30.1"; };
       license = "BSD-3-Clause";
       copyright = "";

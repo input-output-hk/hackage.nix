@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "formlets"; version = "0.4.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) Jeremy Yallop / Tupil";

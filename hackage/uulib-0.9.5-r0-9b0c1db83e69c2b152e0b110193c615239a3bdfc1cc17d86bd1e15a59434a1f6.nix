@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.1";
+      specVersion = "1.2";
       identifier = { name = "uulib"; version = "0.9.5"; };
       license = "LicenseRef-LGPL";
       copyright = "Universiteit Utrecht";

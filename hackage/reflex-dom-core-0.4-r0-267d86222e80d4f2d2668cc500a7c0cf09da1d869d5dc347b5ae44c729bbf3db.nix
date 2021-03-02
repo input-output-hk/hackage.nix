@@ -15,7 +15,7 @@
       profile-reflex = false;
       };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "reflex-dom-core"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";

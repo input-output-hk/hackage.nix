@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "hpylos"; version = "1.0"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2008 Bartosz Wójcik";

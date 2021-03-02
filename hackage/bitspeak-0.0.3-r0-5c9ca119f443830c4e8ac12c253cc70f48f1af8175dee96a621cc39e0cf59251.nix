@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "bitspeak"; version = "0.0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";

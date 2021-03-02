@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "Win32"; version = "2.1"; };
       license = "BSD-3-Clause";
       copyright = "Alastair Reid, 1999-2003";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "HPDF"; version = "0.3"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2006, alpha";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.20.0";
+      specVersion = "1.20";
       identifier = { name = "pell"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "(c) 2015 by Dr. Lars Brünjes ";

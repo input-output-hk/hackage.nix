@@ -14,7 +14,7 @@
       optimize = false;
       };
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "category-extras"; version = "0.53.5.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2008 Edward A. Kmett,\nCopyright (C) 2004--2008 Dave Menendez,\nCopyright (C) 2007 Iavor Diatchki";

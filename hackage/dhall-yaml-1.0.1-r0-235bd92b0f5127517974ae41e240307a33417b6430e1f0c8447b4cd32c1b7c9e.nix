@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.8.0.2";
+      specVersion = "1.8";
       identifier = { name = "dhall-yaml"; version = "1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "2019 Gabriel Gonzalez";

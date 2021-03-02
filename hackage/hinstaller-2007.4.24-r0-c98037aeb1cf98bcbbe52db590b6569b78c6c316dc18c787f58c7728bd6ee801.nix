@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "hinstaller"; version = "2007.4.24"; };
       license = "LicenseRef-LGPL";
       copyright = "Matthew Sackman";

@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.3";
+      specVersion = "1.2";
       identifier = { name = "Vec"; version = "0.9.7"; };
       license = "BSD-3-Clause";
       copyright = "";

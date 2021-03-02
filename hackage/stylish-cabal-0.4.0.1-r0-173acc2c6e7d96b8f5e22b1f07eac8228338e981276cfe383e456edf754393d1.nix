@@ -95,7 +95,7 @@
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            (hsPkgs."test-utils" or (errorHandler.buildDepError "test-utils"))
+            (hsPkgs."stylish-cabal".components.sublibs.test-utils or (errorHandler.buildDepError "stylish-cabal:test-utils"))
             ];
           buildable = true;
           };
@@ -109,7 +109,7 @@
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
-            (hsPkgs."test-utils" or (errorHandler.buildDepError "test-utils"))
+            (hsPkgs."stylish-cabal".components.sublibs.test-utils or (errorHandler.buildDepError "stylish-cabal:test-utils"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))

@@ -10,7 +10,7 @@
   {
     flags = { bytestring-in-base = true; };
     package = {
-      specVersion = "1.2.1";
+      specVersion = "1.2";
       identifier = { name = "digest"; version = "0.0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008 Eugene Kirpichov";

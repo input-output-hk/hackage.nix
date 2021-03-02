@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "bert"; version = "1.2.2.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009-2011 marius a. eriksen; (c) 2013 Roman Cheplyaka";

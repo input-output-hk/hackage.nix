@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0.2";
+      specVersion = "1.0";
       identifier = { name = "barrie"; version = "0.4.1"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2009 Fraser Wilson";

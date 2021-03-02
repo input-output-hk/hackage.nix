@@ -10,7 +10,7 @@
   {
     flags = { network-uri = true; };
     package = {
-      specVersion = "1.9.2";
+      specVersion = "1.10";
       identifier = { name = "alfred"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "";

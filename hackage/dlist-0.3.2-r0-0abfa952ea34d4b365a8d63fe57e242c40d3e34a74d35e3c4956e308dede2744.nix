@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "0";
+      specVersion = "1.0";
       identifier = { name = "dlist"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "2006-7 Don Stewart";

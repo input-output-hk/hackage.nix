@@ -10,7 +10,7 @@
   {
     flags = {};
     package = {
-      specVersion = "1.2.0";
+      specVersion = "1.2";
       identifier = { name = "fitsio"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";

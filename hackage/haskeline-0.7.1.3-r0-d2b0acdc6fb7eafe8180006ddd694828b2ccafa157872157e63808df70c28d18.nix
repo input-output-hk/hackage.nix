@@ -10,7 +10,7 @@
   {
     flags = { terminfo = true; libiconv = false; legacy-encoding = false; };
     package = {
-      specVersion = "1.16";
+      specVersion = "1.12";
       identifier = { name = "haskeline"; version = "0.7.1.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) Judah Jacobson";
