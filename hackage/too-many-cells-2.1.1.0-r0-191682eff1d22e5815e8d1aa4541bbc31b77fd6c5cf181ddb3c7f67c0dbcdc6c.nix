@@ -1,0 +1,109 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "too-many-cells"; version = "2.1.1.0"; };
+      license = "GPL-3.0-only";
+      copyright = "2020 Gregory W. Schwartz";
+      maintainer = "gsch@pennmedicine.upenn.edu";
+      author = "Gregory W. Schwartz";
+      homepage = "http://github.com/GregorySchwartz/too-many-cells#readme";
+      url = "";
+      synopsis = "Cluster single cells and analyze cell clade relationships.";
+      description = "Different methods to cluster and analyze single cell data with diversity indices and differential expression.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."IntervalMap" or (errorHandler.buildDepError "IntervalMap"))
+          (hsPkgs."SVGFonts" or (errorHandler.buildDepError "SVGFonts"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."async-pool" or (errorHandler.buildDepError "async-pool"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."birch-beer" or (errorHandler.buildDepError "birch-beer"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
+          (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."diagrams" or (errorHandler.buildDepError "diagrams"))
+          (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
+          (hsPkgs."diagrams-graphviz" or (errorHandler.buildDepError "diagrams-graphviz"))
+          (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
+          (hsPkgs."differential" or (errorHandler.buildDepError "differential"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."diversity" or (errorHandler.buildDepError "diversity"))
+          (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."find-clumpiness" or (errorHandler.buildDepError "find-clumpiness"))
+          (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
+          (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."hierarchical-clustering" or (errorHandler.buildDepError "hierarchical-clustering"))
+          (hsPkgs."hierarchical-spectral-clustering" or (errorHandler.buildDepError "hierarchical-spectral-clustering"))
+          (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
+          (hsPkgs."hmatrix-svdlibc" or (errorHandler.buildDepError "hmatrix-svdlibc"))
+          (hsPkgs."inline-r" or (errorHandler.buildDepError "inline-r"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."managed" or (errorHandler.buildDepError "managed"))
+          (hsPkgs."matrix-market-attoparsec" or (errorHandler.buildDepError "matrix-market-attoparsec"))
+          (hsPkgs."modularity" or (errorHandler.buildDepError "modularity"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
+          (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
+          (hsPkgs."palette" or (errorHandler.buildDepError "palette"))
+          (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
+          (hsPkgs."plots" or (errorHandler.buildDepError "plots"))
+          (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."sparse-linear-algebra" or (errorHandler.buildDepError "sparse-linear-algebra"))
+          (hsPkgs."spectral-clustering" or (errorHandler.buildDepError "spectral-clustering"))
+          (hsPkgs."split" or (errorHandler.buildDepError "split"))
+          (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
+          (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
+          (hsPkgs."streaming-cassava" or (errorHandler.buildDepError "streaming-cassava"))
+          (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
+          (hsPkgs."streaming-utils" or (errorHandler.buildDepError "streaming-utils"))
+          (hsPkgs."streaming-with" or (errorHandler.buildDepError "streaming-with"))
+          (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
+          (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
+          (hsPkgs."terminal-progress-bar" or (errorHandler.buildDepError "terminal-progress-bar"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
+          (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
+          ];
+        buildable = true;
+        };
+      exes = {
+        "too-many-cells" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."too-many-cells" or (errorHandler.buildDepError "too-many-cells"))
+            (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }
