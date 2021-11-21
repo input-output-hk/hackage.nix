@@ -1,0 +1,53 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.12";
+      identifier = { name = "genvalidity-hspec-binary"; version = "1.0.0.0"; };
+      license = "MIT";
+      copyright = "Copyright: (c) 2016-2021 Tom Sydney Kerckhove";
+      maintainer = "syd@cs-syd.eu";
+      author = "Nick Van den Broeck";
+      homepage = "https://github.com/NorfairKing/validity#readme";
+      url = "";
+      synopsis = "Standard spec's for binary-related Instances";
+      description = "Standard spec's for cereal-related Instances, see https://hackage.haskell.org/package/binary.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
+          (hsPkgs."genvalidity-hspec" or (errorHandler.buildDepError "genvalidity-hspec"))
+          (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+          ];
+        buildable = true;
+        };
+      tests = {
+        "genvalidity-hspec-binary-test" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
+            (hsPkgs."genvalidity-hspec-binary" or (errorHandler.buildDepError "genvalidity-hspec-binary"))
+            (hsPkgs."genvalidity-property" or (errorHandler.buildDepError "genvalidity-property"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }
