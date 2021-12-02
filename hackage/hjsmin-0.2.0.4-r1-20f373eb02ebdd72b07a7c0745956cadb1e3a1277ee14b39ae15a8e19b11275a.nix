@@ -1,0 +1,61 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "hjsmin"; version = "0.2.0.4"; };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Erik de Castro Lopo <erikd@mega-nerd.com>";
+      author = "Alan Zimmerman <alan.zimm@gmail.com>";
+      homepage = "http://github.com/erikd/hjsmin";
+      url = "";
+      synopsis = "Haskell implementation of a javascript minifier";
+      description = "Reduces size of javascript files by stripping out extraneous whitespace and\nother syntactic elements, without changing the semantics.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."language-javascript" or (errorHandler.buildDepError "language-javascript"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          ];
+        buildable = true;
+        };
+      exes = {
+        "hjsmin" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."language-javascript" or (errorHandler.buildDepError "language-javascript"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            ];
+          buildable = true;
+          };
+        };
+      tests = {
+        "test-cli" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+            (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }
