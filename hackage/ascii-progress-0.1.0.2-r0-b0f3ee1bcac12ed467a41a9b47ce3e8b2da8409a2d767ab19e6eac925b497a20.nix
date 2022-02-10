@@ -19,7 +19,7 @@
       homepage = "https://github.com/yamadapc/haskell-ascii-progress";
       url = "";
       synopsis = "A simple progress bar for the console.";
-      description = "A simple Haskell progress bar for the console. Heavily borrows from TJ\nHolowaychuk's Node.JS project <https://github.com/tj/node-progress progress>\n@@@\nimport Control.Concurrent (threadDelay)\nimport Control.Monad (unless)\nimport System.Console.AsciiProgress (Options(..), isComplete, def,\nnewProgressBar, tick)\nmain :: IO ()\nmain = do\npg <- newProgressBar def { pgWidth = 50 }\nloop pg\nwhere\nloop pg = do\nb <- isComplete pg\nunless b \$ do\nthreadDelay \$ 200 * 1000\ntick pg\nloop pg\n@@@\n<https://github.com/yamadapc/haskell-ascii-progress github>";
+      description = "A simple Haskell progress bar for the console. Heavily borrows from TJ\nHolowaychuk's Node.JS project <https://github.com/tj/node-progress progress>\n@@@\nimport Control.Concurrent (threadDelay)\nimport Control.Monad (unless)\nimport System.Console.AsciiProgress (Options(..), isComplete, def,\nnewProgressBar, tick)\nmain :: IO ()\nmain = do\npg <- newProgressBar def { pgWidth = 50 }\nloop pg\nwhere\nloop pg = do\nb <- isComplete pg\nunless b $ do\nthreadDelay $ 200 * 1000\ntick pg\nloop pg\n@@@\n<https://github.com/yamadapc/haskell-ascii-progress github>";
       buildType = "Simple";
       };
     components = {

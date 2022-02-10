@@ -19,7 +19,7 @@
       homepage = "https://github.com/ku-fpg/natural-transformation";
       url = "";
       synopsis = "A natural transformation package.";
-      description = "A natural transformation transforms a container @f a@ into another\ncontainer @g a@. Natural transformations act as functor morphisms\nin category theory.\n\nThe naming of '~>', ':~>' and '\$\$' were taken,\nwith permission, from Edward Kmett's @indexed@ package.";
+      description = "A natural transformation transforms a container @f a@ into another\ncontainer @g a@. Natural transformations act as functor morphisms\nin category theory.\n\nThe naming of '~>', ':~>' and '$$' were taken,\nwith permission, from Edward Kmett's @indexed@ package.";
       buildType = "Simple";
       };
     components = {

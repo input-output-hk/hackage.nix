@@ -14,7 +14,7 @@
       identifier = { name = "dynamic-plot"; version = "0.4.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
-      maintainer = "(@) jsagemue \$ uni-koeln.de";
+      maintainer = "(@) jsagemue $ uni-koeln.de";
       author = "Justus Sagemüller";
       homepage = "https://github.com/leftaroundabout/dynamic-plot";
       url = "";

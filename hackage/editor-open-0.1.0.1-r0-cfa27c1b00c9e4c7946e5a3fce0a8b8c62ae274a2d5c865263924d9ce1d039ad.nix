@@ -18,8 +18,8 @@
       author = "Peter Harpending";
       homepage = "https://notabug.org/pharpend/editor-open";
       url = "";
-      synopsis = "Open the user's \$EDITOR for text input.";
-      description = "You know when you run @git commit@, and an editor pops open so you can enter a\ncommit message? This is a Haskell library that does that.\n\nThis library isn't very portable. It relies on the @\$EDITOR@ environment\nvariable. The concept only exists on *nix systems.";
+      synopsis = "Open the user's $EDITOR for text input.";
+      description = "You know when you run @git commit@, and an editor pops open so you can enter a\ncommit message? This is a Haskell library that does that.\n\nThis library isn't very portable. It relies on the @$EDITOR@ environment\nvariable. The concept only exists on *nix systems.";
       buildType = "Simple";
       };
     components = {

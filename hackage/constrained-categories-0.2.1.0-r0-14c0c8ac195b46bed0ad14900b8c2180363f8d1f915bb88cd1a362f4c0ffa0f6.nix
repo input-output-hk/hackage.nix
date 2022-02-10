@@ -14,7 +14,7 @@
       identifier = { name = "constrained-categories"; version = "0.2.1.0"; };
       license = "GPL-3.0-only";
       copyright = "";
-      maintainer = "(@) sagemueller \$ geo.uni-koeln.de";
+      maintainer = "(@) sagemueller $ geo.uni-koeln.de";
       author = "Justus Sagemüller";
       homepage = "https://github.com/leftaroundabout/constrained-categories";
       url = "";

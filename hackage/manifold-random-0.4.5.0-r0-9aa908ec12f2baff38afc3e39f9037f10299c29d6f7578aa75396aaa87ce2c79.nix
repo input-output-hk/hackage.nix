@@ -14,7 +14,7 @@
       identifier = { name = "manifold-random"; version = "0.4.5.0"; };
       license = "GPL-3.0-only";
       copyright = "";
-      maintainer = "(@) sagemueller \$ geo.uni-koeln.de";
+      maintainer = "(@) sagemueller $ geo.uni-koeln.de";
       author = "Justus Sagemüller";
       homepage = "https://github.com/leftaroundabout/manifolds";
       url = "";

@@ -19,7 +19,7 @@
       homepage = "http://code.haskell.org/~dons/code/lscabal";
       url = "";
       synopsis = "List exported modules from a set of .cabal files";
-      description = "List exported modules from a set of .cabal files\n\n> \$ lscabal http://code.haskell.org/xmonad/xmonad.cabal\n> XMonad\n> XMonad.Main\n> XMonad.Core\n> XMonad.Config\n> XMonad.Layout\n> XMonad.ManageHook\n> XMonad.Operations\n> XMonad.StackSet\n";
+      description = "List exported modules from a set of .cabal files\n\n> $ lscabal http://code.haskell.org/xmonad/xmonad.cabal\n> XMonad\n> XMonad.Main\n> XMonad.Core\n> XMonad.Config\n> XMonad.Layout\n> XMonad.ManageHook\n> XMonad.Operations\n> XMonad.StackSet\n";
       buildType = "Simple";
       };
     components = {

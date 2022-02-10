@@ -17,7 +17,7 @@
       maintainer = "Brian W Bush <code@functionally.io>";
       author = "Brian W Bush <code@functionally.io>";
       homepage = "https://bitbucket.org/functionally/kafka-device-vrpn";
-      url = "https://bitbucket.org/functionally/kafka-device-vrpn/downloads/kafka-device-vrpn-\$version.tar.gz";
+      url = "https://bitbucket.org/functionally/kafka-device-vrpn/downloads/kafka-device-vrpn-$version.tar.gz";
       synopsis = "VRPN events via a Kafka message broker";
       description = "This package contains functions for passing VRPN \\<<https://github.com/vrpn/vrpn/wiki>\\> events to topics on a Kafka message broker \\<<https://kafka.apache.org/>\\>.  Also see \\<<https://hackage.haskell.org/package/kafka-device/>\\>.";
       buildType = "Simple";

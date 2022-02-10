@@ -19,7 +19,7 @@
       homepage = "";
       url = "";
       synopsis = "Reflex interface to `wai`";
-      description = "Reflex interface to `wai`.\n\nA minimal example:\n\n> {-# LANGUAGE OverloadedStrings #-}\n> module Main where\n>\n> import Network.Wai (responseLBS)\n> import Network.HTTP.Types.Status (status200)\n>\n> import Reflex.Backend.Warp (runAppForever)\n>\n> main :: IO ()\n> main =\n>   runAppForever 8080 \$ \\eReq -> do\n>     let eRes = responseLBS status200 [] \"Hi\" <\$ eReq\n>     pure eRes";
+      description = "Reflex interface to `wai`.\n\nA minimal example:\n\n> {-# LANGUAGE OverloadedStrings #-}\n> module Main where\n>\n> import Network.Wai (responseLBS)\n> import Network.HTTP.Types.Status (status200)\n>\n> import Reflex.Backend.Warp (runAppForever)\n>\n> main :: IO ()\n> main =\n>   runAppForever 8080 $ \\eReq -> do\n>     let eRes = responseLBS status200 [] \"Hi\" <$ eReq\n>     pure eRes";
       buildType = "Simple";
       };
     components = {

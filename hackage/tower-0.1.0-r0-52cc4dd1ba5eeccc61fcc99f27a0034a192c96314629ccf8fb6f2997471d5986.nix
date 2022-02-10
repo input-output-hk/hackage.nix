@@ -19,7 +19,7 @@
       homepage = "https://github.com/tonyday567/tower";
       url = "";
       synopsis = "A numeric tower";
-      description = "A heirarchy of classes for numbers and algebras that combine them: a numeric tower.\n\nPerformance testing, notes and examples can be found in <https://github.com/tonyday567/tower-dev tower-dev>.\n\nThe tower looks something like:\n\n<<https://tonyday567.github.io/other/field-tower.svg>>\n\nTo use the library:\n\n> import Tower.Prelude\n> print \$ 1 + 1";
+      description = "A heirarchy of classes for numbers and algebras that combine them: a numeric tower.\n\nPerformance testing, notes and examples can be found in <https://github.com/tonyday567/tower-dev tower-dev>.\n\nThe tower looks something like:\n\n<<https://tonyday567.github.io/other/field-tower.svg>>\n\nTo use the library:\n\n> import Tower.Prelude\n> print $ 1 + 1";
       buildType = "Simple";
       };
     components = {

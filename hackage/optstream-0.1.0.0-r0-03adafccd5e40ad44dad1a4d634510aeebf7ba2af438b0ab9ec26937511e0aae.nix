@@ -19,7 +19,7 @@
       homepage = "https://github.com/danshved/optstream";
       url = "";
       synopsis = "Command line option parsing library with a twice applicative interface";
-      description = "Provides tools to create command line parsers. The library has a simple\ninterface to create atomic parsers and combine them into more complex\nstructures. The interface has a low-level feel but still lets you solve\ncommon use-cases with minimal work.\n\nHas support for:\n\n* Generating a help screen.\n* Multi-argument options.\n* Short flags with bundling.\n* Subcommands via '<|>'.\n* Parsing \"in sequence\" via '<*>' and \"in parallel\" via '<#>'.\n* Options with custom types via '<\$?>'.\n* Monadic bind if you need it.";
+      description = "Provides tools to create command line parsers. The library has a simple\ninterface to create atomic parsers and combine them into more complex\nstructures. The interface has a low-level feel but still lets you solve\ncommon use-cases with minimal work.\n\nHas support for:\n\n* Generating a help screen.\n* Multi-argument options.\n* Short flags with bundling.\n* Subcommands via '<|>'.\n* Parsing \"in sequence\" via '<*>' and \"in parallel\" via '<#>'.\n* Options with custom types via '<$?>'.\n* Monadic bind if you need it.";
       buildType = "Simple";
       };
     components = {

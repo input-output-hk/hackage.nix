@@ -19,7 +19,7 @@
       homepage = "https://github.com/Shou/type-operators#readme";
       url = "";
       synopsis = "Various type-level operators";
-      description = "A set of type-level operators meant to be helpful, e.g. (\$), a\ntightly binding (->), and the multi-constraint operator (Show <+> [a, b]).";
+      description = "A set of type-level operators meant to be helpful, e.g. ($), a\ntightly binding (->), and the multi-constraint operator (Show <+> [a, b]).";
       buildType = "Simple";
       };
     components = {

@@ -19,7 +19,7 @@
       homepage = "";
       url = "";
       synopsis = "Randomly set a picture as the GNOME desktop background";
-      description = "gnome-desktop is a program for displaying random pictures on your GNOME desktop background.\nIt reads a sub-directory of \$HOME (by default: Pictures) every n\nminutes (default: 1440 = once/per day) and every s seconds (default:\n50) picks a random file and sets the gconf key\n/desktop/gnome/background/picture_filename to the absolute path to\nthat file.";
+      description = "gnome-desktop is a program for displaying random pictures on your GNOME desktop background.\nIt reads a sub-directory of $HOME (by default: Pictures) every n\nminutes (default: 1440 = once/per day) and every s seconds (default:\n50) picks a random file and sets the gconf key\n/desktop/gnome/background/picture_filename to the absolute path to\nthat file.";
       buildType = "Simple";
       };
     components = {

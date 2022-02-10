@@ -19,7 +19,7 @@
       homepage = "";
       url = "";
       synopsis = "Provide proof witnesses for closed type family evaluation";
-      description = "Template Haskell routine for generating from type family \$Foo\$\n\n[@FooRefl@]: a GADT capturing the equalities of each type family clause\n[@reify_Foo@]: a function that analyses 'TypeRep's and reifies the matching clause as a 'FooRefl'\n\nNote that 'Type.Reflection' is new with GHC v8.2!";
+      description = "Template Haskell routine for generating from type family $Foo$\n\n[@FooRefl@]: a GADT capturing the equalities of each type family clause\n[@reify_Foo@]: a function that analyses 'TypeRep's and reifies the matching clause as a 'FooRefl'\n\nNote that 'Type.Reflection' is new with GHC v8.2!";
       buildType = "Simple";
       };
     components = {

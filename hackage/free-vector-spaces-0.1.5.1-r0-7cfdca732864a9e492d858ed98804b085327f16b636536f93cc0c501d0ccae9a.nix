@@ -14,7 +14,7 @@
       identifier = { name = "free-vector-spaces"; version = "0.1.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
-      maintainer = "(@) jsag \$ hvl.no";
+      maintainer = "(@) jsag $ hvl.no";
       author = "Justus Sagemüller";
       homepage = "https://github.com/leftaroundabout/free-vector-spaces";
       url = "";

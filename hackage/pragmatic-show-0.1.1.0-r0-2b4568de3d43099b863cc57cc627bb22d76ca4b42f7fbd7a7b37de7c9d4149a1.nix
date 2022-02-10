@@ -14,7 +14,7 @@
       identifier = { name = "pragmatic-show"; version = "0.1.1.0"; };
       license = "GPL-3.0-only";
       copyright = "";
-      maintainer = "(@) jsagemue \$ uni-koeln.de";
+      maintainer = "(@) jsagemue $ uni-koeln.de";
       author = "Justus Sagemüller";
       homepage = "https://github.com/leftaroundabout/pragmatic-show";
       url = "";

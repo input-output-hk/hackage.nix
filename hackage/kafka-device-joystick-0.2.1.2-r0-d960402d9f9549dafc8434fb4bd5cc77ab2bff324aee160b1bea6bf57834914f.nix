@@ -17,7 +17,7 @@
       maintainer = "Brian W Bush <consult@brianwbush.info>";
       author = "Brian W Bush <consult@brianwbush.info>";
       homepage = "https://bitbucket.org/functionally/kafka-device-joystick";
-      url = "https://bitbucket.org/functionally/kafka-device-joystick/downloads/kafka-device-joystick-\$version.tar.gz";
+      url = "https://bitbucket.org/functionally/kafka-device-joystick/downloads/kafka-device-joystick-$version.tar.gz";
       synopsis = "Linux joystick events via a Kafka message broker";
       description = "This package contains functions for passing Linux joystick events to topics on a Kafka message broker \\<<https://kafka.apache.org/>\\>.  The joystick's driver must conform to the Linux Joystick API \\<<https://www.kernel.org/doc/Documentation/input/joystick-api.txt>\\>.  Also see \\<<https://hackage.haskell.org/package/kafka-device/>\\>.";
       buildType = "Simple";

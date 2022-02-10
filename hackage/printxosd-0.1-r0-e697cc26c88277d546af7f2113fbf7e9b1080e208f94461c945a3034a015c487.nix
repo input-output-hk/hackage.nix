@@ -19,7 +19,7 @@
       homepage = "http://code.haskell.org/~dons/code/printxosd";
       url = "";
       synopsis = "Simple tool to display some text on an on-screen display";
-      description = "Simple tool to display some text on an on-screen display\n\n\$ printxosd \"this is some text\"\n";
+      description = "Simple tool to display some text on an on-screen display\n\n$ printxosd \"this is some text\"\n";
       buildType = "Simple";
       };
     components = {

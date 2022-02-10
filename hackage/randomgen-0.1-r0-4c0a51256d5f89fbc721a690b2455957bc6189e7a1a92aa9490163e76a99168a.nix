@@ -19,7 +19,7 @@
       homepage = "http://galois.com";
       url = "";
       synopsis = "A fast, SMP parallel random data generator";
-      description = "A fast, SMP parallel random data generator\n\nTo generate 10G of high quality pseudorandom\ndata, using 4 processors to fill the file:\n\n\$ randomgen \"data\" 10 +RTS -N4\n";
+      description = "A fast, SMP parallel random data generator\n\nTo generate 10G of high quality pseudorandom\ndata, using 4 processors to fill the file:\n\n$ randomgen \"data\" 10 +RTS -N4\n";
       buildType = "Simple";
       };
     components = {

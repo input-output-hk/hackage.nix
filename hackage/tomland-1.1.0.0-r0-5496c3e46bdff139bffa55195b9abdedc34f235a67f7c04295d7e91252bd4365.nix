@@ -19,7 +19,7 @@
       homepage = "https://github.com/kowainik/tomland";
       url = "";
       synopsis = "Bidirectional TOML serialization";
-      description = "Implementation of bidirectional TOML serialization. Simple codecs look like this:\n\n@\n__data__ User = User\n\\    { userName :: Text\n\\    , userAge  :: Int\n\\    }\n\\\n\\userCodec :: TomlCodec User\n\\userCodec = User\n\\    \\<\$\\> Toml.text \"name\" .= userName\n\\    \\<*\\> Toml.int  \"age\"  .= userAge\n@\n\nThe following blog post has more details about library design:\n\n* [tomland: Bidirectional TOML serialization](https://kowainik.github.io/posts/2019-01-14-tomland)";
+      description = "Implementation of bidirectional TOML serialization. Simple codecs look like this:\n\n@\n__data__ User = User\n\\    { userName :: Text\n\\    , userAge  :: Int\n\\    }\n\\\n\\userCodec :: TomlCodec User\n\\userCodec = User\n\\    \\<$\\> Toml.text \"name\" .= userName\n\\    \\<*\\> Toml.int  \"age\"  .= userAge\n@\n\nThe following blog post has more details about library design:\n\n* [tomland: Bidirectional TOML serialization](https://kowainik.github.io/posts/2019-01-14-tomland)";
       buildType = "Simple";
       };
     components = {

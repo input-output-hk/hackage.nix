@@ -14,7 +14,7 @@
       identifier = { name = "TeX-my-math"; version = "0.202.2.0"; };
       license = "GPL-3.0-only";
       copyright = "";
-      maintainer = "(@) jsag \$ hvl.no";
+      maintainer = "(@) jsag $ hvl.no";
       author = "Justus Sagemüller";
       homepage = "http://github.com/leftaroundabout/Symbolic-math-HaTeX";
       url = "";

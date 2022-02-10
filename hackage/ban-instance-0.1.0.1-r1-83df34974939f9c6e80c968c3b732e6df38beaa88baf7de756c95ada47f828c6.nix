@@ -19,7 +19,7 @@
       homepage = "https://github.com/qfpl/ban-instance#readme";
       url = "";
       synopsis = "For when a type should never be an instance of a class";
-      description = "<<https://raw.githubusercontent.com/qfpl/assets/master/data61-transparent-bg.png>>\n\nBanning an instance allows the programmer to actively declare that\nan instance should never be defined, and provide a reason why:\n\n@\ndata Foo = -- ...\n\$(banInstance [t|ToJSON Foo|] \"why ToJSON Foo should never be defined\")\n@";
+      description = "<<https://raw.githubusercontent.com/qfpl/assets/master/data61-transparent-bg.png>>\n\nBanning an instance allows the programmer to actively declare that\nan instance should never be defined, and provide a reason why:\n\n@\ndata Foo = -- ...\n$(banInstance [t|ToJSON Foo|] \"why ToJSON Foo should never be defined\")\n@";
       buildType = "Simple";
       };
     components = {

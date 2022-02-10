@@ -19,7 +19,7 @@
       homepage = "http://taylor.fausak.me/flow/";
       url = "";
       synopsis = "Write more understandable Haskell.";
-      description = "Flow provides operators for writing more understandable Haskell. It is an\nalternative to some common idioms like (@\$@) for function application and\n(@.@) for function composition.";
+      description = "Flow provides operators for writing more understandable Haskell. It is an\nalternative to some common idioms like (@$@) for function application and\n(@.@) for function composition.";
       buildType = "Simple";
       };
     components = {

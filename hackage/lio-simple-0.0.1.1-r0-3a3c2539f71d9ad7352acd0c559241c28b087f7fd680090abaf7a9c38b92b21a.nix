@@ -19,7 +19,7 @@
       homepage = "http://simple.cx";
       url = "";
       synopsis = "LIO support for the Simple web framework";
-      description = "\\lio-simple\\ adds LIO support for the \\Simple\\ \\\"framework-less\\\"\nweb framework.  \\Simple\\ is minimalist, providing a lightweight base\n- the most basic \\Simple\\ app is little more than a WAI\n`Application` with some routing logic. Everything else (e.g.\nauthentication, controllers, persistence, caching etc\\') is provided\nin composable units, so you can include only the ones you need in\nyour app, and easily replace with your own components.\nLIO is an information flow control library that lets you enforce\nvarious security policies, including mandatory and discretionary\naccess control.\n\nTo get started, create an app skeleton with the `lio-simple` utility:\n\n@\n\$ cabal install lio-simple\n\$ lio-simple my_app_name\n\$ cd my_app_name\n\$ cabal run\n@";
+      description = "\\lio-simple\\ adds LIO support for the \\Simple\\ \\\"framework-less\\\"\nweb framework.  \\Simple\\ is minimalist, providing a lightweight base\n- the most basic \\Simple\\ app is little more than a WAI\n`Application` with some routing logic. Everything else (e.g.\nauthentication, controllers, persistence, caching etc\\') is provided\nin composable units, so you can include only the ones you need in\nyour app, and easily replace with your own components.\nLIO is an information flow control library that lets you enforce\nvarious security policies, including mandatory and discretionary\naccess control.\n\nTo get started, create an app skeleton with the `lio-simple` utility:\n\n@\n$ cabal install lio-simple\n$ lio-simple my_app_name\n$ cd my_app_name\n$ cabal run\n@";
       buildType = "Simple";
       };
     components = {

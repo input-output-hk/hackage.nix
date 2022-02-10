@@ -19,7 +19,7 @@
       homepage = "https://github.com/jfischoff/generic-maybe";
       url = "";
       synopsis = "A generic version of Data.Maybe";
-      description = "This module is a drop in replacement for 'Data.Maybe.Maybe'. It generalizes\nthe functions to any types that share the same \\\"sum of products\\\" view\nof 'Data.Maybe.Maybe'.\n\nTo use the module for you type, enable GHC's DeriveGeneric extension and\nderive a Generic instance for your type.\n\n> import GHC.Generics\n>\n> data Result a = Success a | Fail\n>    deriving (Show, Generic)\n\nAfter which you can use the functions, like your type was 'Data.Maybe.Maybe'\n\n>> fromMaybe 'a' Fail\n>Success 'a'\n\n>> fromMaybe 'a' \$ Success 'b'\n>Success 'b'";
+      description = "This module is a drop in replacement for 'Data.Maybe.Maybe'. It generalizes\nthe functions to any types that share the same \\\"sum of products\\\" view\nof 'Data.Maybe.Maybe'.\n\nTo use the module for you type, enable GHC's DeriveGeneric extension and\nderive a Generic instance for your type.\n\n> import GHC.Generics\n>\n> data Result a = Success a | Fail\n>    deriving (Show, Generic)\n\nAfter which you can use the functions, like your type was 'Data.Maybe.Maybe'\n\n>> fromMaybe 'a' Fail\n>Success 'a'\n\n>> fromMaybe 'a' $ Success 'b'\n>Success 'b'";
       buildType = "Custom";
       };
     components = {

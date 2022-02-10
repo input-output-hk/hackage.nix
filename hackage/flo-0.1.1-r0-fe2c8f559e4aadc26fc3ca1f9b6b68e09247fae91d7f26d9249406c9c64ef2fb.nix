@@ -19,7 +19,7 @@
       homepage = "";
       url = "";
       synopsis = "Generate flow charts from your code base.";
-      description = "See \"Development.Flo\" for syntax and examples. Example commandline usage:\n@\nfind . | grep '\\.js\$' | xargs flo '-js=\\/\\/\\/ ' | dot -Tpng > flow.png\n@";
+      description = "See \"Development.Flo\" for syntax and examples. Example commandline usage:\n@\nfind . | grep '\\.js$' | xargs flo '-js=\\/\\/\\/ ' | dot -Tpng > flow.png\n@";
       buildType = "Simple";
       };
     components = {

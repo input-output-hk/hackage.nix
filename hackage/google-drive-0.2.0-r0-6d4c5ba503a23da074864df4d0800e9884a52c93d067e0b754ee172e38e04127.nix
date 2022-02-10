@@ -19,7 +19,7 @@
       homepage = "";
       url = "";
       synopsis = "Google Drive API access";
-      description = "Interacting with the Google Drive API\n\nExample usage:\n\n> import Control.Monad (void)\n> import Data.Conduit ((\$\$+-))\n>\n> import Network.Google.Drive\n>\n> main :: IO ()\n> main = void \$ runApi token \$ do\n>     root <- getFile \"root\"\n>     items <- listFiles \$ ParentEq (fileId root) `And` Untrashed\n>\n>     mapM_ download items\n>\n>   where\n>     download :: File -> Api ()\n>     download file = do\n>         let fd = fileData file\n>\n>         case fileDownloadUrl \$ fd of\n>             Nothing -> return ()\n>             Just url -> getSource (T.unpack url) [] \$ \\source ->\n>                 source \$\$+- sinkFile (fileTitle fd)\n";
+      description = "Interacting with the Google Drive API\n\nExample usage:\n\n> import Control.Monad (void)\n> import Data.Conduit (($$+-))\n>\n> import Network.Google.Drive\n>\n> main :: IO ()\n> main = void $ runApi token $ do\n>     root <- getFile \"root\"\n>     items <- listFiles $ ParentEq (fileId root) `And` Untrashed\n>\n>     mapM_ download items\n>\n>   where\n>     download :: File -> Api ()\n>     download file = do\n>         let fd = fileData file\n>\n>         case fileDownloadUrl $ fd of\n>             Nothing -> return ()\n>             Just url -> getSource (T.unpack url) [] $ \\source ->\n>                 source $$+- sinkFile (fileTitle fd)\n";
       buildType = "Simple";
       };
     components = {

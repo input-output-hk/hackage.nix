@@ -19,7 +19,7 @@
       homepage = "http://fay-lang.org/";
       url = "";
       synopsis = "A compiler for Fay, a Haskell subset that compiles to JavaScript.";
-      description = "Fay is a proper subset of Haskell which is type-checked\nwith GHC, and compiled to JavaScript. It is lazy, pure, has a Fay monad,\nan FFI, tail-recursion optimization (experimental), and support for cabal packages.\n\n/Documentation/\n\nSee documentation at <http://fay-lang.org/> or build your own documentation with:\n\n> \$ cabal unpack fay\n> \$ cd fay-*\n> \$ cabal install\n> \$ cabal install fay-base\n\n\n/Examples/\n\nSee <http://fay-lang.org/#examples>.\n\n/Release Notes/\n0.14.4.0:\n\n* Fix record updates on IE <= 8.\n\n* Import tweaks, will make compilation a lot faster (4x reported) when there are a lot of imports.\n\n* Parse hs sources with base fixities.\n\nSee full history at: <https://github.com/faylang/fay/commits>";
+      description = "Fay is a proper subset of Haskell which is type-checked\nwith GHC, and compiled to JavaScript. It is lazy, pure, has a Fay monad,\nan FFI, tail-recursion optimization (experimental), and support for cabal packages.\n\n/Documentation/\n\nSee documentation at <http://fay-lang.org/> or build your own documentation with:\n\n> $ cabal unpack fay\n> $ cd fay-*\n> $ cabal install\n> $ cabal install fay-base\n\n\n/Examples/\n\nSee <http://fay-lang.org/#examples>.\n\n/Release Notes/\n0.14.4.0:\n\n* Fix record updates on IE <= 8.\n\n* Import tweaks, will make compilation a lot faster (4x reported) when there are a lot of imports.\n\n* Parse hs sources with base fixities.\n\nSee full history at: <https://github.com/faylang/fay/commits>";
       buildType = "Custom";
       };
     components = {

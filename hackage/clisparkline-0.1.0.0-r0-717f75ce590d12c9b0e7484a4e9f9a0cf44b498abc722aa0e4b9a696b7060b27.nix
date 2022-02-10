@@ -19,7 +19,7 @@
       homepage = "";
       url = "";
       synopsis = "Tiny library to pretty print sparklines onto the CLI";
-      description = "Print sparklines into the CLI. Example usage:\n> import System.Console.Sparkline\n> main = putStrLn . series2spark \$ [0, 1, 2, 3, 2, 1]\noutput is:\n> _▂▅█▅▂";
+      description = "Print sparklines into the CLI. Example usage:\n> import System.Console.Sparkline\n> main = putStrLn . series2spark $ [0, 1, 2, 3, 2, 1]\noutput is:\n> _▂▅█▅▂";
       buildType = "Simple";
       };
     components = {

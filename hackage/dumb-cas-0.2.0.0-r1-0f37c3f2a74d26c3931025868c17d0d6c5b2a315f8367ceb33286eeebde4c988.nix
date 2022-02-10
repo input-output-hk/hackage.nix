@@ -14,7 +14,7 @@
       identifier = { name = "dumb-cas"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
-      maintainer = "(@) jsag \$ hvl.no";
+      maintainer = "(@) jsag $ hvl.no";
       author = "Justus Sagemüller";
       homepage = "https://github.com/leftaroundabout/dumb-cas";
       url = "";

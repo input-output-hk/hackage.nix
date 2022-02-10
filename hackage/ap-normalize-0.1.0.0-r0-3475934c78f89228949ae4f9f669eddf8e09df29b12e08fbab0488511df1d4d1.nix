@@ -19,7 +19,7 @@
       homepage = "";
       url = "";
       synopsis = "Self-normalizing applicative expressions";
-      description = "An applicative functor transformer to normalize expressions using @(\\<\$>)@,\n@(\\<*>)@, and @pure@ into a linear list of actions.\nSee \"ApNormalize\" to get started.";
+      description = "An applicative functor transformer to normalize expressions using @(\\<$>)@,\n@(\\<*>)@, and @pure@ into a linear list of actions.\nSee \"ApNormalize\" to get started.";
       buildType = "Simple";
       };
     components = {

@@ -19,7 +19,7 @@
       homepage = "https://github.com/kfish/const-math-ghc-plugin";
       url = "";
       synopsis = "Compiler plugin for constant math elimination";
-      description = "This plugin evaluates constant math expressions at compile-time.\n\nFor details and full usage information, see;\n\n<https://github.com/kfish/const-math-ghc-plugin>\n\nTo use it to compile /foo.hs/:\n\n@\n\$ cabal install const-math-ghc-plugin\n\$ ghc -fplugin ConstMath.Plugin foo.hs\n@\n\nTo use it to build a cabal package /packagename/:\n\n@\n\$ cabal install --ghc-options=\"-package const-math-ghc-plugin -fplugin ConstMath.Plugin\" packagename\n@\n\nMath should run faster.\n";
+      description = "This plugin evaluates constant math expressions at compile-time.\n\nFor details and full usage information, see;\n\n<https://github.com/kfish/const-math-ghc-plugin>\n\nTo use it to compile /foo.hs/:\n\n@\n$ cabal install const-math-ghc-plugin\n$ ghc -fplugin ConstMath.Plugin foo.hs\n@\n\nTo use it to build a cabal package /packagename/:\n\n@\n$ cabal install --ghc-options=\"-package const-math-ghc-plugin -fplugin ConstMath.Plugin\" packagename\n@\n\nMath should run faster.\n";
       buildType = "Simple";
       };
     components = {

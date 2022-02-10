@@ -19,7 +19,7 @@
       homepage = "http://github.com/bgamari/hoogle-index";
       url = "";
       synopsis = "Easily generate Hoogle indices for installed packages";
-      description = "'hoogle-index' is a small utility for generating indicies for local\nHoogle installations.\n\n> \$ cabal install hoogle hoogle-index\n> \$ hoogle-index    # this will take a while\n\nYour Hoogle index now covers all of the packages locally installed.";
+      description = "'hoogle-index' is a small utility for generating indicies for local\nHoogle installations.\n\n> $ cabal install hoogle hoogle-index\n> $ hoogle-index    # this will take a while\n\nYour Hoogle index now covers all of the packages locally installed.";
       buildType = "Simple";
       };
     components = {

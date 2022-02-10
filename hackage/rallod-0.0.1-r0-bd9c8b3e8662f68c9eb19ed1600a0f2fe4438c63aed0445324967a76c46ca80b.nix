@@ -18,8 +18,8 @@
       author = "Parker, Matt";
       homepage = "http://github.com/moonmaster9000/rallod";
       url = "";
-      synopsis = "'\$' in reverse. ";
-      description = "A Simple package that exports '==>', which operates in the opposite direction of '\$'.";
+      synopsis = "'$' in reverse. ";
+      description = "A Simple package that exports '==>', which operates in the opposite direction of '$'.";
       buildType = "Simple";
       };
     components = {

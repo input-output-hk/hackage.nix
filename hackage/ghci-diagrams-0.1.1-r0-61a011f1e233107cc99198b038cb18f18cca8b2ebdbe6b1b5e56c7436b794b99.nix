@@ -19,7 +19,7 @@
       homepage = "";
       url = "";
       synopsis = "Display simple diagrams from ghci";
-      description = "This library provides a simple 2D graphics environment which is used\nin our beginner's Haskell course at ELTE University in Budapest.\n\nExample> draw \$ circle 10 `fill` lightblue\n\nChanges since version 0.1: resizeable diagram, easier exit";
+      description = "This library provides a simple 2D graphics environment which is used\nin our beginner's Haskell course at ELTE University in Budapest.\n\nExample> draw $ circle 10 `fill` lightblue\n\nChanges since version 0.1: resizeable diagram, easier exit";
       buildType = "Simple";
       };
     components = {

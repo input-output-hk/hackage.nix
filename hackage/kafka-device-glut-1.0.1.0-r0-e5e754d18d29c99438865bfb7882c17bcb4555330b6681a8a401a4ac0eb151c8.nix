@@ -17,7 +17,7 @@
       maintainer = "Brian W Bush <code@functionally.io>";
       author = "Brian W Bush <code@functionally.io>";
       homepage = "https://bitbucket.org/functionally/kafka-device-glut";
-      url = "https://bitbucket.org/functionally/kafka-device-glut/downloads/kafka-device-glut-\$version.tar.gz";
+      url = "https://bitbucket.org/functionally/kafka-device-glut/downloads/kafka-device-glut-$version.tar.gz";
       synopsis = "GLUT events via a Kafka message broker";
       description = "This package contains functions for passing GLUT events to topics on a Kafka message broker \\<<https://kafka.apache.org/>\\>.  Also see \\<<https://hackage.haskell.org/package/kafka-device/>\\>.";
       buildType = "Simple";

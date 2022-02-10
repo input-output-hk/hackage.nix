@@ -19,7 +19,7 @@
       homepage = "http://taylor.fausak.me/flow/";
       url = "";
       synopsis = "Write more understandable Haskell.";
-      description = "Flow is a package that provides functions and operators for writing more\nunderstandable Haskell. It's an alternative to some common idioms like\nfunction application with @(\$)@ and function composition with @(.)@.\n\nFor more information, please visit\n<http://taylor.fausak.me/flow/ its official site>.";
+      description = "Flow is a package that provides functions and operators for writing more\nunderstandable Haskell. It's an alternative to some common idioms like\nfunction application with @($)@ and function composition with @(.)@.\n\nFor more information, please visit\n<http://taylor.fausak.me/flow/ its official site>.";
       buildType = "Simple";
       };
     components = {

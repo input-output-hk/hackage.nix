@@ -19,7 +19,7 @@
       homepage = "https://gitorious.org/hsv4l2";
       url = "";
       synopsis = "video for linux two examples";
-      description = "This package contains examples using the v4l2 package:\n\n* v4l2-capture - dumps PPM frames from a video device to stdout:\n\n@\$ v4l2-capture /dev/video0 > out.ppm@\n\n* v4l2-histogram - shows RGB histogram overlaid on mirror image, using OpenGL/GLUT for display.\n\n@\$ v4l2-histogram /dev/video0@";
+      description = "This package contains examples using the v4l2 package:\n\n* v4l2-capture - dumps PPM frames from a video device to stdout:\n\n@$ v4l2-capture /dev/video0 > out.ppm@\n\n* v4l2-histogram - shows RGB histogram overlaid on mirror image, using OpenGL/GLUT for display.\n\n@$ v4l2-histogram /dev/video0@";
       buildType = "Simple";
       };
     components = {

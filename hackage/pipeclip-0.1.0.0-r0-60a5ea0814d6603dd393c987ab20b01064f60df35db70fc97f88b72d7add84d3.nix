@@ -19,7 +19,7 @@
       homepage = "https://github.com/pharpend/pipeclip";
       url = "";
       synopsis = "Open your editor, pipe the output to the system clipboard";
-      description = "This opens up your @\$EDITOR@ or @\$VISUAL@ using the\n<https://hackage.haskell.org/package/editor-open @editor-open@ library.> It\nthen takes the edited text and sends it to the X11 clipboard.\n\nAs such, this will only work if you have X11. Translated, this is limited to\nLinux and BSD.";
+      description = "This opens up your @$EDITOR@ or @$VISUAL@ using the\n<https://hackage.haskell.org/package/editor-open @editor-open@ library.> It\nthen takes the edited text and sends it to the X11 clipboard.\n\nAs such, this will only work if you have X11. Translated, this is limited to\nLinux and BSD.";
       buildType = "Simple";
       };
     components = {

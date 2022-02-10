@@ -19,7 +19,7 @@
       homepage = "";
       url = "";
       synopsis = "Simple string substitution";
-      description = "Simple string substitution library that supports \\\"\$\\\"-based\nsubstitution.  Meant to be used when Text.Printf or string\nconcatenation would lead to code that is hard to read but when a\nfull blown templating system is overkill.";
+      description = "Simple string substitution library that supports \\\"$\\\"-based\nsubstitution.  Meant to be used when Text.Printf or string\nconcatenation would lead to code that is hard to read but when a\nfull blown templating system is overkill.";
       buildType = "Simple";
       };
     components = {

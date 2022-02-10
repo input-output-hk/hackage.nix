@@ -19,7 +19,7 @@
       homepage = "http://code.haskell.org/~thielema/split-record/";
       url = "";
       synopsis = "Split a big audio file into pieces at positions of silence";
-      description = "Split a big audio file into pieces at positions of silence.\nYou can use this to split a recording of multiple songs into single songs.\n\n> \$ split-record recording.wav \"part%03d.wav\"\n\nYou can also calculate split positions only. They are computed lazily.\nThey can be loaded into Audacity for further fine tuning\nand to perform the actual split.\nFor generating only labels, run:\n\n> \$ split-record recording.wav > labels.txt";
+      description = "Split a big audio file into pieces at positions of silence.\nYou can use this to split a recording of multiple songs into single songs.\n\n> $ split-record recording.wav \"part%03d.wav\"\n\nYou can also calculate split positions only. They are computed lazily.\nThey can be loaded into Audacity for further fine tuning\nand to perform the actual split.\nFor generating only labels, run:\n\n> $ split-record recording.wav > labels.txt";
       buildType = "Simple";
       };
     components = {

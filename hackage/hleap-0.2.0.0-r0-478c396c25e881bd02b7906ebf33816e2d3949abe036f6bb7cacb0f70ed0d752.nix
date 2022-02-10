@@ -17,7 +17,7 @@
       maintainer = "Brian W Bush <code@functionally.io>";
       author = "Brian W Bush <code@functionally.io>";
       homepage = "https://bitbucket.org/functionally/hleap";
-      url = "https://bitbucket.org/functionally/hleap/downloads/hleap-\$version.tar.gz";
+      url = "https://bitbucket.org/functionally/hleap/downloads/hleap-$version.tar.gz";
       synopsis = "Web Socket interface to Leap Motion controller";
       description = "This Haskell package contains functions for interfacing with Leap Motion controllers, \\<<https://www.leapmotion.com/product/desktop>\\>.  It is based on the WebSocket API \\<<https://developer.leapmotion.com/documentation/javascript/supplements/Leap_JSON.html>\\> and inspired by \\<<https://bitbucket.org/turion/jedinight/>\\>.";
       buildType = "Simple";

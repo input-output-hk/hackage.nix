@@ -17,7 +17,7 @@
       maintainer = "Brian W Bush <code@functionally.io>";
       author = "Brian W Bush <code@functionally.io>";
       homepage = "https://bitbucket.org/functionally/kafka-device";
-      url = "https://bitbucket.org/functionally/kafka-device/downloads/kafka-device-\$version.tar.gz";
+      url = "https://bitbucket.org/functionally/kafka-device/downloads/kafka-device-$version.tar.gz";
       synopsis = "UI device events via a Kafka message broker";
       description = "This package contains functions for passing UI device events to topics on a Kafka message broker \\<<https://kafka.apache.org/>\\>.  Also see \\<<https://hackage.haskell.org/package/kafka-device-joystick/>\\>, \\<<https://hackage.haskell.org/package/kafka-device-glut/>\\>, \\<<https://hackage.haskell.org/package/kafka-device-spacenav/>\\>, \\<<https://hackage.haskell.org/package/kafka-device-leap/>\\>.";
       buildType = "Simple";

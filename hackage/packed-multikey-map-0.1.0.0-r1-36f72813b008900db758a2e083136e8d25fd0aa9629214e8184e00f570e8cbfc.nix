@@ -14,7 +14,7 @@
       identifier = { name = "packed-multikey-map"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
-      maintainer = "(@) jsag \$ hvl.no";
+      maintainer = "(@) jsag $ hvl.no";
       author = "Justus Sagemüller";
       homepage = "https://github.com/leftaroundabout/packed-multikey-map";
       url = "";

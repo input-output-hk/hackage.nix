@@ -17,7 +17,7 @@
       maintainer = "Brian W Bush <code@functionally.io>";
       author = "Brian W Bush <code@functionally.io>";
       homepage = "https://bitbucket.org/functionally/vrpn";
-      url = "https://bitbucket.org/functionally/vrpn/vrp-\$version.tar.gz";
+      url = "https://bitbucket.org/functionally/vrpn/vrp-$version.tar.gz";
       synopsis = "Bindings to VRPN.";
       description = "See \\<<https://github.com/vrpn/vrpn/wiki>\\> for information on VRPN.  This has been tested using VRPN 07.30 on Linux.\n\nIf the VRPN libraries are static and this package is used from Template Haskell, then the package needs to be configured with the QuatStatic flag.";
       buildType = "Simple";

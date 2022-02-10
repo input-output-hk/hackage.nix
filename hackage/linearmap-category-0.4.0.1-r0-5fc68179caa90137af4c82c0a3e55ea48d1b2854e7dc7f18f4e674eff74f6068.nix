@@ -14,7 +14,7 @@
       identifier = { name = "linearmap-category"; version = "0.4.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
-      maintainer = "(@) jsag \$ hvl.no";
+      maintainer = "(@) jsag $ hvl.no";
       author = "Justus Sagemüller";
       homepage = "https://github.com/leftaroundabout/linearmap-family";
       url = "";

@@ -19,7 +19,7 @@
       homepage = "http://code.haskell.org/~dons/code/cabalgraph";
       url = "";
       synopsis = "Generate pretty graphs of module trees from cabal files";
-      description = "Generate pretty graphs of module trees from cabal files\n\nGraph exposed modules from .cabal files in some directories:\n\n>   \$ cabalgraph a b c d | dot -Tpng | xv -\n\nResults in a graph like: <http://code.haskell.org/~dons/images/dot.png>\n\nGraph exposed modules from a url:\n\n>   \$ cabalgraph http://code.haskell.org/xmonad/xmonad.cabal | circo -Tpng | xv -\n\nResults in a graph like: <http://code.haskell.org/~dons/images/xmonad-dot.png>";
+      description = "Generate pretty graphs of module trees from cabal files\n\nGraph exposed modules from .cabal files in some directories:\n\n>   $ cabalgraph a b c d | dot -Tpng | xv -\n\nResults in a graph like: <http://code.haskell.org/~dons/images/dot.png>\n\nGraph exposed modules from a url:\n\n>   $ cabalgraph http://code.haskell.org/xmonad/xmonad.cabal | circo -Tpng | xv -\n\nResults in a graph like: <http://code.haskell.org/~dons/images/xmonad-dot.png>";
       buildType = "Simple";
       };
     components = {

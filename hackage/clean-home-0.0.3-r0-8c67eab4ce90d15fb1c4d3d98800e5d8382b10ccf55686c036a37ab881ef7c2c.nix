@@ -19,7 +19,7 @@
       homepage = "https://github.com/ivanperez-keera/clean-home";
       url = "";
       synopsis = "Keep your home dir clean by finding old conf files";
-      description = "clean-home searches for config files in your \$HOME\nthat no installed package/program will need.";
+      description = "clean-home searches for config files in your $HOME\nthat no installed package/program will need.";
       buildType = "Simple";
       };
     components = {

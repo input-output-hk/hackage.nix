@@ -19,7 +19,7 @@
       homepage = "http://code.haskell.org/~dons/code/testpattern";
       url = "";
       synopsis = "Display a monitor test pattern";
-      description = "Display a monitor test pattern.\nUseful for callibrating projectors before giving talks.\n\nTo display the test pattern:\n\n\$ testpattern\n\nYou should see something like this:\n\n<http://code.haskell.org/~dons/images/test-pattern-1024x768-thumb.png>\n\nTo close the window, type 'q'.";
+      description = "Display a monitor test pattern.\nUseful for callibrating projectors before giving talks.\n\nTo display the test pattern:\n\n$ testpattern\n\nYou should see something like this:\n\n<http://code.haskell.org/~dons/images/test-pattern-1024x768-thumb.png>\n\nTo close the window, type 'q'.";
       buildType = "Simple";
       };
     components = {

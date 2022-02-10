@@ -19,7 +19,7 @@
       homepage = "https://github.com/knupfer/test-invariant";
       url = "";
       synopsis = "Provide common invariants to be checked with QuickCheck";
-      description = "test-invariant is a library for providing common invariants of\nfunctions as higher order polymorphic functions.  This reduces for a\nlot of cases the need for writing prop_ functions for QuickCheck.\n\n>>> quickCheck \$ idempotent (abs :: Int -> Int)\n>>> quickCheck \$ involutory not\n>>> quickCheck \$ not . involutory (+ (2 :: Int))";
+      description = "test-invariant is a library for providing common invariants of\nfunctions as higher order polymorphic functions.  This reduces for a\nlot of cases the need for writing prop_ functions for QuickCheck.\n\n>>> quickCheck $ idempotent (abs :: Int -> Int)\n>>> quickCheck $ involutory not\n>>> quickCheck $ not . involutory (+ (2 :: Int))";
       buildType = "Simple";
       };
     components = {

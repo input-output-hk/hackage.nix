@@ -14,7 +14,7 @@
       identifier = { name = "numbered-semigroups"; version = "0.1.0.0"; };
       license = "LGPL-3.0-only";
       copyright = "";
-      maintainer = "(@) jsag \$ hvl.no";
+      maintainer = "(@) jsag $ hvl.no";
       author = "Justus Sagemüller";
       homepage = "https://github.com/leftaroundabout/numbered-semigroups";
       url = "";

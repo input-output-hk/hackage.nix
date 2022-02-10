@@ -17,7 +17,7 @@
       maintainer = "Brian W Bush <consult@brianwbush.info>";
       author = "Brian W Bush <consult@brianwbush.info>";
       homepage = "https://bitbucket.org/functionally/kafka-device-spacenav";
-      url = "https://bitbucket.org/functionally/kafka-device-spacenav/downloads/kafka-device-spacenav-\$version.tar.gz";
+      url = "https://bitbucket.org/functionally/kafka-device-spacenav/downloads/kafka-device-spacenav-$version.tar.gz";
       synopsis = "Linux SpaceNavigator events via a Kafka message broker";
       description = "This package contains functions for passing Linux device events from a SpaceNavigator \\<<http://www.3dconnexion.com/products/spacemouse/spacenavigator.html>\\> to topics on a Kafka message broker \\<<https://kafka.apache.org/>\\>.  Also see \\<<https://hackage.haskell.org/package/kafka-device/>\\>.";
       buildType = "Simple";

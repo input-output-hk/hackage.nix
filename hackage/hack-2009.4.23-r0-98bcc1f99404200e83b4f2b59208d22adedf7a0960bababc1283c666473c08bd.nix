@@ -19,7 +19,7 @@
       homepage = "http://github.com/nfjinjing/hack/tree/master";
       url = "";
       synopsis = "a sexy Haskell Webserver Interface";
-      description = "Hack: a sexy Haskell Webserver Interface\n========================================\nHack is a brain-dead port of the brilliant Ruby Rack <http://rack.rubyforge.org/> webserver interface.\nWhat does a Hack app look like\nmodule Main where\nimport Hack\nimport Hack.Handler.Kibro\nhello :: Application\nhello = \\env -> return \$ Response\n{ status  = 200\n, headers = [ (\"Content-Type\", \"text/plain\") ]\n, body    = \"Hello World\"\n}\nmain = run hello";
+      description = "Hack: a sexy Haskell Webserver Interface\n========================================\nHack is a brain-dead port of the brilliant Ruby Rack <http://rack.rubyforge.org/> webserver interface.\nWhat does a Hack app look like\nmodule Main where\nimport Hack\nimport Hack.Handler.Kibro\nhello :: Application\nhello = \\env -> return $ Response\n{ status  = 200\n, headers = [ (\"Content-Type\", \"text/plain\") ]\n, body    = \"Hello World\"\n}\nmain = run hello";
       buildType = "Simple";
       };
     components = {

@@ -19,7 +19,7 @@
       homepage = "http://haskell.org/haskellwiki/Lambdabot";
       url = "";
       synopsis = "Novelty plugins for Lambdabot";
-      description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nProvided plugins:\n\n[bf] Run Brainf*ck code.\n\n[dice] Roll some dice.\n\n[elite] zPEak Gib8erI\$|-|.\n\n[filter] More gibberish.\n\n[numberwang] Sorry, that's not Numberwang.\n\n[quote] Parrot profound wisdom.\n\n[slap] Delegate punishment.\n\n[unlambda] Run Unlambda code.\n\n[vixen] Let's chat, honey.";
+      description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nProvided plugins:\n\n[bf] Run Brainf*ck code.\n\n[dice] Roll some dice.\n\n[elite] zPEak Gib8erI$|-|.\n\n[filter] More gibberish.\n\n[numberwang] Sorry, that's not Numberwang.\n\n[quote] Parrot profound wisdom.\n\n[slap] Delegate punishment.\n\n[unlambda] Run Unlambda code.\n\n[vixen] Let's chat, honey.";
       buildType = "Simple";
       };
     components = {

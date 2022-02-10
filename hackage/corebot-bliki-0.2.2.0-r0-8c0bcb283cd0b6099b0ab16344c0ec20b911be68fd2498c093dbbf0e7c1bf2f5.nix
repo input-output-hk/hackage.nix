@@ -19,7 +19,7 @@
       homepage = "http://github.com/coreyoconnor/corebot-bliki";
       url = "";
       synopsis = "A bliki written using yesod. Uses pandoc to process files stored in git.";
-      description = "Also provides a sample use of the library that uses \$HOME/bliki for data and serves\nto port 8080.\nSee http://www.corebotllc.com for public site built using this library.";
+      description = "Also provides a sample use of the library that uses $HOME/bliki for data and serves\nto port 8080.\nSee http://www.corebotllc.com for public site built using this library.";
       buildType = "Simple";
       };
     components = {

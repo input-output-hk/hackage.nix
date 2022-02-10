@@ -19,7 +19,7 @@
       homepage = "";
       url = "";
       synopsis = "Serialize Aeson values with Data.BufferBuilder";
-      description = "A very fast BufferBuilder-based JSON encoder for Aeson.\n\nThe whole library is a a single orphan instance for Aeson.Value.\n\n> import Data.Aeson (object, (.=), Value (..))\n> import Data.BufferBuilder.Json (encodeJson)\n> import Data.BufferBuilder.Aeson ()\n> import qualified Data.ByteString as BS\n>\n> stuff :: Value\n> stuff = Array\n>     [ object\n>         [ \"name\" .= (\"eggs\" :: String)\n>         , \"price\" .= (3.141592 :: Double)\n>         ]\n>     , object\n>         [ \"name\" .= (\"cheese\" :: String)\n>         , \"price\" .= (0.57721 :: Double)\n>         ]\n>     ]\n>\n> main :: IO ()\n> main = do\n>     BS.putStrLn \$ encodeJson stuff";
+      description = "A very fast BufferBuilder-based JSON encoder for Aeson.\n\nThe whole library is a a single orphan instance for Aeson.Value.\n\n> import Data.Aeson (object, (.=), Value (..))\n> import Data.BufferBuilder.Json (encodeJson)\n> import Data.BufferBuilder.Aeson ()\n> import qualified Data.ByteString as BS\n>\n> stuff :: Value\n> stuff = Array\n>     [ object\n>         [ \"name\" .= (\"eggs\" :: String)\n>         , \"price\" .= (3.141592 :: Double)\n>         ]\n>     , object\n>         [ \"name\" .= (\"cheese\" :: String)\n>         , \"price\" .= (0.57721 :: Double)\n>         ]\n>     ]\n>\n> main :: IO ()\n> main = do\n>     BS.putStrLn $ encodeJson stuff";
       buildType = "Simple";
       };
     components = {

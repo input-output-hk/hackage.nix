@@ -19,7 +19,7 @@
       homepage = "http://github.com/sgraf812/feed-gipeda#readme";
       url = "";
       synopsis = "CI service around gipeda";
-      description = "A service for easy handling of multiple repositories with\n<https://hackage.haskell.org/package/gipeda gipeda>.\n\nSee @--help@ for usage. Example invocation for benchmarking the whole of the\n@Pipes@ library:\n\n@\n\$ cat > feed-gipeda.yaml\nrepositories:\n- https:\\/\\/github.com\\/Gabriel439\\/Haskell-Pipes-Library\n^D\n\$ feed-gipeda --config=.\\/feed-gipeda.yaml --deploy-to=.\\/website\n@";
+      description = "A service for easy handling of multiple repositories with\n<https://hackage.haskell.org/package/gipeda gipeda>.\n\nSee @--help@ for usage. Example invocation for benchmarking the whole of the\n@Pipes@ library:\n\n@\n$ cat > feed-gipeda.yaml\nrepositories:\n- https:\\/\\/github.com\\/Gabriel439\\/Haskell-Pipes-Library\n^D\n$ feed-gipeda --config=.\\/feed-gipeda.yaml --deploy-to=.\\/website\n@";
       buildType = "Simple";
       };
     components = {

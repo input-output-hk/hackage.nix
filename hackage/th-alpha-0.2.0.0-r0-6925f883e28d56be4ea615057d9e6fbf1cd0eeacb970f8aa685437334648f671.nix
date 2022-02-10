@@ -19,7 +19,7 @@
       homepage = "https://github.com/jkarni/th-alpha";
       url = "";
       synopsis = "Alpha equivalence for TH Exp";
-      description = "Compare TH expressions (or clauses, patterns, etc.) for alpha equivalence.\nThat is, compare for equality modulo the renaming of bound variables.\n\n> areExpAEq [| \\x -> x |] [| \\y -> y |]\n> -- True\n\n> do\n>    let x = mkName \"x\"\n>    let y = mkName \"y\"\n>    runQ \$ (LamE [VarP x] (VarE x)) @= (LamE [VarP y] (VarE y))\n> -- True\n\nThis can be useful when for instance testing libraries that use Template\nHaskell - usually correctness is only defined up to alpha equivalence.";
+      description = "Compare TH expressions (or clauses, patterns, etc.) for alpha equivalence.\nThat is, compare for equality modulo the renaming of bound variables.\n\n> areExpAEq [| \\x -> x |] [| \\y -> y |]\n> -- True\n\n> do\n>    let x = mkName \"x\"\n>    let y = mkName \"y\"\n>    runQ $ (LamE [VarP x] (VarE x)) @= (LamE [VarP y] (VarE y))\n> -- True\n\nThis can be useful when for instance testing libraries that use Template\nHaskell - usually correctness is only defined up to alpha equivalence.";
       buildType = "Simple";
       };
     components = {

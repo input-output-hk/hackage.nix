@@ -19,7 +19,7 @@
       homepage = "https://github.com/Shou/type-operators#readme";
       url = "";
       synopsis = "Various type-level operators";
-      description = "A set of type-level operators meant to be helpful, e.g. (\$) and a\ntightly binding (->).";
+      description = "A set of type-level operators meant to be helpful, e.g. ($) and a\ntightly binding (->).";
       buildType = "Simple";
       };
     components = {

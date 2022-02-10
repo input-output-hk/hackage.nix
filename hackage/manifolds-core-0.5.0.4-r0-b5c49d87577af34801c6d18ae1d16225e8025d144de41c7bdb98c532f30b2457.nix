@@ -14,7 +14,7 @@
       identifier = { name = "manifolds-core"; version = "0.5.0.4"; };
       license = "GPL-3.0-only";
       copyright = "";
-      maintainer = "(@) jsag \$ hvl.no";
+      maintainer = "(@) jsag $ hvl.no";
       author = "Justus Sagemüller";
       homepage = "https://github.com/leftaroundabout/manifolds";
       url = "";
