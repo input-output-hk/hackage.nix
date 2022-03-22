@@ -1,0 +1,31 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "srcloc"; version = "0.6.0.1"; };
+      license = "BSD-3-Clause";
+      copyright = "(c) 2006-2011 Harvard University\n(c) 2011-2018 Geoffrey Mainland";
+      maintainer = "Geoffrey Mainland <mainland@drexel.edu>";
+      author = "Geoffrey Mainland <mainland@drexel.edu>";
+      homepage = "https://github.com/mainland/srcloc";
+      url = "";
+      synopsis = "Data types for managing source code locations.";
+      description = "Data types for tracking, combining, and printing source code locations.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        buildable = true;
+        };
+      };
+    }
