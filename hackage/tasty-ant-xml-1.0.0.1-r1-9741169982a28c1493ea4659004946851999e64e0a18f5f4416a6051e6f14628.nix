@@ -1,0 +1,42 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "tasty-ant-xml"; version = "1.0.0.1"; };
+      license = "BSD-3-Clause";
+      copyright = "Oliver Charles 2013";
+      maintainer = "ollie@ocharles.org.uk";
+      author = "Oliver Charles";
+      homepage = "http://github.com/ocharles/tasty-ant-xml";
+      url = "";
+      synopsis = "A tasty ingredient to output test results in XML, using the Ant schema. This XML can be consumed by the Jenkins continuous integration framework.";
+      description = "";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."reducers" or (errorHandler.buildDepError "reducers"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+          (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
+          ];
+        buildable = true;
+        };
+      };
+    }
