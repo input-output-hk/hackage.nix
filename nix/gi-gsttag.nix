@@ -3,7 +3,7 @@
     sha256 = "02ce7ca07a945362a87d3ace1e766afb9d1d0b1af56afda6e208fc97b652c4f6";
     revisions = {
       r0 = {
-        outPath = "gi-gsttag-1.0.12-r0-7a878b812142989e7fb068b4815ef772ed62b2cec1cae6a890a0e490c56fba32.nix";
+        nix = import ../hackage/gi-gsttag-1.0.12-r0-7a878b812142989e7fb068b4815ef772ed62b2cec1cae6a890a0e490c56fba32.nix;
         revNum = 0;
         sha256 = "7a878b812142989e7fb068b4815ef772ed62b2cec1cae6a890a0e490c56fba32";
         };
@@ -14,7 +14,7 @@
     sha256 = "056949bd4fcc154ae8d50f043f813d9b6a510a20fcfa4852a10e8fac17bd22ad";
     revisions = {
       r0 = {
-        outPath = "gi-gsttag-1.0.13-r0-9400e2a0f44c6959b9cfe9e0ba695413e4d3d7aa0d17fad0d83549b128daf117.nix";
+        nix = import ../hackage/gi-gsttag-1.0.13-r0-9400e2a0f44c6959b9cfe9e0ba695413e4d3d7aa0d17fad0d83549b128daf117.nix;
         revNum = 0;
         sha256 = "9400e2a0f44c6959b9cfe9e0ba695413e4d3d7aa0d17fad0d83549b128daf117";
         };
@@ -25,7 +25,7 @@
     sha256 = "4828d0d0e120c902e3a04c73e81f7285637ca75e8a540eba986fe826e75cdc14";
     revisions = {
       r0 = {
-        outPath = "gi-gsttag-1.0.14-r0-77e1a2e81dc657d87ba71e04f8c9d266e1d1ab8a60cf7c5faca47ca5a513cba9.nix";
+        nix = import ../hackage/gi-gsttag-1.0.14-r0-77e1a2e81dc657d87ba71e04f8c9d266e1d1ab8a60cf7c5faca47ca5a513cba9.nix;
         revNum = 0;
         sha256 = "77e1a2e81dc657d87ba71e04f8c9d266e1d1ab8a60cf7c5faca47ca5a513cba9";
         };
@@ -36,7 +36,7 @@
     sha256 = "5950fb63302f815e0b76abcb3ac093f6ad56b9794e3a4fd2d64ff91b61c6bcc4";
     revisions = {
       r0 = {
-        outPath = "gi-gsttag-1.0.15-r0-ea4352d9c96b18fbc76186bddcda86ad7b62124e70ca84ebfe7f6d4057145ac9.nix";
+        nix = import ../hackage/gi-gsttag-1.0.15-r0-ea4352d9c96b18fbc76186bddcda86ad7b62124e70ca84ebfe7f6d4057145ac9.nix;
         revNum = 0;
         sha256 = "ea4352d9c96b18fbc76186bddcda86ad7b62124e70ca84ebfe7f6d4057145ac9";
         };
@@ -47,7 +47,7 @@
     sha256 = "35c8d14f2b749c7810a8c9b2e4a4d1c5642a3db8fccd47ceb60e532804333b1b";
     revisions = {
       r0 = {
-        outPath = "gi-gsttag-1.0.17-r0-8e2a2076ab1c492bf5d039421170f02b860a6915564148ed080e007d3d3de80f.nix";
+        nix = import ../hackage/gi-gsttag-1.0.17-r0-8e2a2076ab1c492bf5d039421170f02b860a6915564148ed080e007d3d3de80f.nix;
         revNum = 0;
         sha256 = "8e2a2076ab1c492bf5d039421170f02b860a6915564148ed080e007d3d3de80f";
         };
@@ -58,7 +58,7 @@
     sha256 = "b7c3acc68298eb2845f50aba8b1cc5fd02224a2dd7748a255b4faf9a7c6c79ba";
     revisions = {
       r0 = {
-        outPath = "gi-gsttag-1.0.18-r0-441a849014fe7529ef787883390cefd1b3779d3e1129fe4c705ea8283c8c20ec.nix";
+        nix = import ../hackage/gi-gsttag-1.0.18-r0-441a849014fe7529ef787883390cefd1b3779d3e1129fe4c705ea8283c8c20ec.nix;
         revNum = 0;
         sha256 = "441a849014fe7529ef787883390cefd1b3779d3e1129fe4c705ea8283c8c20ec";
         };
@@ -69,7 +69,7 @@
     sha256 = "61e83abdfed6a67e224770b60960f8a9233ddac64599fe988044be21eec56369";
     revisions = {
       r0 = {
-        outPath = "gi-gsttag-1.0.19-r0-eeeb4f8296718e7f13d92b328c3fdde591b926007b180e6cdbc1ceb618f752a4.nix";
+        nix = import ../hackage/gi-gsttag-1.0.19-r0-eeeb4f8296718e7f13d92b328c3fdde591b926007b180e6cdbc1ceb618f752a4.nix;
         revNum = 0;
         sha256 = "eeeb4f8296718e7f13d92b328c3fdde591b926007b180e6cdbc1ceb618f752a4";
         };
@@ -80,7 +80,7 @@
     sha256 = "70c090f3cac8d9b6fdacd1fd68bf402e64dce2b9a213a96a3a4a7807a5f014ca";
     revisions = {
       r0 = {
-        outPath = "gi-gsttag-1.0.20-r0-b76000a9523d0e4b2ee0e06cc3e35c2486297d974f38b43562a2250a38915398.nix";
+        nix = import ../hackage/gi-gsttag-1.0.20-r0-b76000a9523d0e4b2ee0e06cc3e35c2486297d974f38b43562a2250a38915398.nix;
         revNum = 0;
         sha256 = "b76000a9523d0e4b2ee0e06cc3e35c2486297d974f38b43562a2250a38915398";
         };
@@ -91,7 +91,7 @@
     sha256 = "519e3bfd4e60bf490a6f888ac31cffc58222953e6cb16a9ef7ef06d2f7f03d18";
     revisions = {
       r0 = {
-        outPath = "gi-gsttag-1.0.21-r0-c9f322d77277e85878d0cb8bbc860b9540977e2434ea60d0629cb69cb4794143.nix";
+        nix = import ../hackage/gi-gsttag-1.0.21-r0-c9f322d77277e85878d0cb8bbc860b9540977e2434ea60d0629cb69cb4794143.nix;
         revNum = 0;
         sha256 = "c9f322d77277e85878d0cb8bbc860b9540977e2434ea60d0629cb69cb4794143";
         };
@@ -102,7 +102,7 @@
     sha256 = "c66dbd9469249a48fef373793ac10ee3fd64cd944c559bd7864abcf76691f84a";
     revisions = {
       r0 = {
-        outPath = "gi-gsttag-1.0.22-r0-289c9e69e5b8f8bc4cac1f26f33d329083c178679f2578c43367b1cfeae2c67a.nix";
+        nix = import ../hackage/gi-gsttag-1.0.22-r0-289c9e69e5b8f8bc4cac1f26f33d329083c178679f2578c43367b1cfeae2c67a.nix;
         revNum = 0;
         sha256 = "289c9e69e5b8f8bc4cac1f26f33d329083c178679f2578c43367b1cfeae2c67a";
         };
@@ -113,7 +113,7 @@
     sha256 = "f16934640b7bb1ba94e6e151aa15cdeca07f85af5e38bef41df44d546c8cdc9e";
     revisions = {
       r0 = {
-        outPath = "gi-gsttag-1.0.23-r0-307f8561f1d103d46d0bc38bf822f7a96c25e3086bb21ba5847c5dea2991075e.nix";
+        nix = import ../hackage/gi-gsttag-1.0.23-r0-307f8561f1d103d46d0bc38bf822f7a96c25e3086bb21ba5847c5dea2991075e.nix;
         revNum = 0;
         sha256 = "307f8561f1d103d46d0bc38bf822f7a96c25e3086bb21ba5847c5dea2991075e";
         };
@@ -124,7 +124,7 @@
     sha256 = "53f7871a9bcd5ed86bcc169302084f2cee00e96d711d8c43a4c8ea814516f050";
     revisions = {
       r0 = {
-        outPath = "gi-gsttag-1.0.24-r0-eb3954a0ae926182f8e5586358671552fed8e10181a72bbc63918373a04d29bc.nix";
+        nix = import ../hackage/gi-gsttag-1.0.24-r0-eb3954a0ae926182f8e5586358671552fed8e10181a72bbc63918373a04d29bc.nix;
         revNum = 0;
         sha256 = "eb3954a0ae926182f8e5586358671552fed8e10181a72bbc63918373a04d29bc";
         };

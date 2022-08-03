@@ -3,7 +3,7 @@
     sha256 = "b82ae42ce7d3eb8961149af4f7bbf8675ecfddaebb8cdd271911e489283c2a6d";
     revisions = {
       r0 = {
-        outPath = "hasql-cursor-transaction-0.5-r0-8e8e89e91765ce17d64e40bea270634c0ce0696c2557196a7b433cc35a8e0b41.nix";
+        nix = import ../hackage/hasql-cursor-transaction-0.5-r0-8e8e89e91765ce17d64e40bea270634c0ce0696c2557196a7b433cc35a8e0b41.nix;
         revNum = 0;
         sha256 = "8e8e89e91765ce17d64e40bea270634c0ce0696c2557196a7b433cc35a8e0b41";
         };
@@ -14,7 +14,7 @@
     sha256 = "6e4a064b2d108ba5d94250045faa347f07b9337849438c09b2f8cb5466ac5465";
     revisions = {
       r0 = {
-        outPath = "hasql-cursor-transaction-0.5.0.1-r0-921e5aa641486be944067880234838036e0690dfbb9718fdf62047287a66591c.nix";
+        nix = import ../hackage/hasql-cursor-transaction-0.5.0.1-r0-921e5aa641486be944067880234838036e0690dfbb9718fdf62047287a66591c.nix;
         revNum = 0;
         sha256 = "921e5aa641486be944067880234838036e0690dfbb9718fdf62047287a66591c";
         };
@@ -25,7 +25,7 @@
     sha256 = "07b991914a5664378ab358536ba36ea9c54f7771c41c7eed6688053fa289c2f6";
     revisions = {
       r0 = {
-        outPath = "hasql-cursor-transaction-0.6-r0-033b5f5f573909c24a33d347dc902b08f818ed4999d791c3fc58126c81bd13ed.nix";
+        nix = import ../hackage/hasql-cursor-transaction-0.6-r0-033b5f5f573909c24a33d347dc902b08f818ed4999d791c3fc58126c81bd13ed.nix;
         revNum = 0;
         sha256 = "033b5f5f573909c24a33d347dc902b08f818ed4999d791c3fc58126c81bd13ed";
         };
@@ -36,7 +36,7 @@
     sha256 = "4f68d7f004212712cbde02e037a4f539410ff77070112be2d268402c9e6b85bf";
     revisions = {
       r0 = {
-        outPath = "hasql-cursor-transaction-0.6.1-r0-162e1fcd432100c92f3bd01479387a89a63cd0957253b56aa304e870a5b1baee.nix";
+        nix = import ../hackage/hasql-cursor-transaction-0.6.1-r0-162e1fcd432100c92f3bd01479387a89a63cd0957253b56aa304e870a5b1baee.nix;
         revNum = 0;
         sha256 = "162e1fcd432100c92f3bd01479387a89a63cd0957253b56aa304e870a5b1baee";
         };
@@ -47,7 +47,7 @@
     sha256 = "e68c34a8df41f5fc5abe16adcd19f38f6ba20a59f1c2ac965166b7bedef9241d";
     revisions = {
       r0 = {
-        outPath = "hasql-cursor-transaction-0.6.2-r0-4ff440585499e2e84fb97b8b5c82295bcc61aec494c30d7119192ce3dcffce52.nix";
+        nix = import ../hackage/hasql-cursor-transaction-0.6.2-r0-4ff440585499e2e84fb97b8b5c82295bcc61aec494c30d7119192ce3dcffce52.nix;
         revNum = 0;
         sha256 = "4ff440585499e2e84fb97b8b5c82295bcc61aec494c30d7119192ce3dcffce52";
         };
@@ -58,7 +58,7 @@
     sha256 = "e7395032825e0ded1d8b877107b2d0aa56bf145e72d0b4c2205909d8e69c6e84";
     revisions = {
       r0 = {
-        outPath = "hasql-cursor-transaction-0.6.2.1-r0-6c2efec0e7492fa983ab91754b31e50a562175011b6f445c9a446713a28d3dc5.nix";
+        nix = import ../hackage/hasql-cursor-transaction-0.6.2.1-r0-6c2efec0e7492fa983ab91754b31e50a562175011b6f445c9a446713a28d3dc5.nix;
         revNum = 0;
         sha256 = "6c2efec0e7492fa983ab91754b31e50a562175011b6f445c9a446713a28d3dc5";
         };
@@ -69,7 +69,7 @@
     sha256 = "526d24754de3237719cab6c471c6c82ffa7340fbc0587203f9ff824cbc9a7f8b";
     revisions = {
       r0 = {
-        outPath = "hasql-cursor-transaction-0.6.3-r0-2ce2f5d054a3956adad056b599381ce2484fd69cea017fefdda82871c4ec0ff6.nix";
+        nix = import ../hackage/hasql-cursor-transaction-0.6.3-r0-2ce2f5d054a3956adad056b599381ce2484fd69cea017fefdda82871c4ec0ff6.nix;
         revNum = 0;
         sha256 = "2ce2f5d054a3956adad056b599381ce2484fd69cea017fefdda82871c4ec0ff6";
         };
@@ -80,7 +80,7 @@
     sha256 = "16068b85d245dab8af51c49b6ca00bad5310fdd23ff28de665393d75d60ba015";
     revisions = {
       r0 = {
-        outPath = "hasql-cursor-transaction-0.6.3.1-r0-cefde1082166d7d80ee03184ab70d13ffd542bff954e0eab27d7d27a5c54487f.nix";
+        nix = import ../hackage/hasql-cursor-transaction-0.6.3.1-r0-cefde1082166d7d80ee03184ab70d13ffd542bff954e0eab27d7d27a5c54487f.nix;
         revNum = 0;
         sha256 = "cefde1082166d7d80ee03184ab70d13ffd542bff954e0eab27d7d27a5c54487f";
         };
@@ -91,7 +91,7 @@
     sha256 = "f971246c83dec25436fb69b9f6f75549f71d0364ea467f1aa22b44456c31e301";
     revisions = {
       r0 = {
-        outPath = "hasql-cursor-transaction-0.6.4-r0-0f74f98751c1ce2cce0b0e1859fde2045b40b1244ac8ab0603535312dd426bd7.nix";
+        nix = import ../hackage/hasql-cursor-transaction-0.6.4-r0-0f74f98751c1ce2cce0b0e1859fde2045b40b1244ac8ab0603535312dd426bd7.nix;
         revNum = 0;
         sha256 = "0f74f98751c1ce2cce0b0e1859fde2045b40b1244ac8ab0603535312dd426bd7";
         };

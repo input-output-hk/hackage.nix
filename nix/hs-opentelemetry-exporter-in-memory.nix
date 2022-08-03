@@ -3,7 +3,7 @@
     sha256 = "39251e4f1e688cb79e20f330ffa751d47f226164741296f6decffbf859bba741";
     revisions = {
       r0 = {
-        outPath = "hs-opentelemetry-exporter-in-memory-0.0.1.0-r0-bee6f359c44552c44545c63aa04c019fd1a79df885e04c358cf58ac5c2334967.nix";
+        nix = import ../hackage/hs-opentelemetry-exporter-in-memory-0.0.1.0-r0-bee6f359c44552c44545c63aa04c019fd1a79df885e04c358cf58ac5c2334967.nix;
         revNum = 0;
         sha256 = "bee6f359c44552c44545c63aa04c019fd1a79df885e04c358cf58ac5c2334967";
         };
@@ -14,7 +14,7 @@
     sha256 = "678711b7be35a8fcae3b75a31597d1cfd9a2ad2552df0b5c3fca70207273d36d";
     revisions = {
       r0 = {
-        outPath = "hs-opentelemetry-exporter-in-memory-0.0.1.1-r0-dc52b395d61bbab847bffd888e70b91b1535dc2cded2d6db4c2f4c8369eb330b.nix";
+        nix = import ../hackage/hs-opentelemetry-exporter-in-memory-0.0.1.1-r0-dc52b395d61bbab847bffd888e70b91b1535dc2cded2d6db4c2f4c8369eb330b.nix;
         revNum = 0;
         sha256 = "dc52b395d61bbab847bffd888e70b91b1535dc2cded2d6db4c2f4c8369eb330b";
         };
@@ -25,7 +25,7 @@
     sha256 = "c32dd5f4f878121b5035bf46321a8728fa1d2851427d5277b87ed1dcc2e6c0a1";
     revisions = {
       r0 = {
-        outPath = "hs-opentelemetry-exporter-in-memory-0.0.1.2-r0-4afe224b6ab317101b6658cc660d6062268d19a4802fd66414d82f90d8500393.nix";
+        nix = import ../hackage/hs-opentelemetry-exporter-in-memory-0.0.1.2-r0-4afe224b6ab317101b6658cc660d6062268d19a4802fd66414d82f90d8500393.nix;
         revNum = 0;
         sha256 = "4afe224b6ab317101b6658cc660d6062268d19a4802fd66414d82f90d8500393";
         };

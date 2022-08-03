@@ -3,7 +3,7 @@
     sha256 = "bfa1851b9d52535ab8127fdc985e8d7c0a60025f3cdc63790fd69522e5618886";
     revisions = {
       r0 = {
-        outPath = "ribosome-test-0.3.0.0-r0-4a1e03db0eb0f1ca8e3bbe9b8f0c1e5ffc1c44a4586f57c2a09dea7f753db5b8.nix";
+        nix = import ../hackage/ribosome-test-0.3.0.0-r0-4a1e03db0eb0f1ca8e3bbe9b8f0c1e5ffc1c44a4586f57c2a09dea7f753db5b8.nix;
         revNum = 0;
         sha256 = "4a1e03db0eb0f1ca8e3bbe9b8f0c1e5ffc1c44a4586f57c2a09dea7f753db5b8";
         };
@@ -14,7 +14,7 @@
     sha256 = "400cdb31544b1781ce65606264bf8817fb81375dfbe35d7c12530db19a59f5a2";
     revisions = {
       r0 = {
-        outPath = "ribosome-test-0.3.0.1-r0-74d5e8e5d1648c526670eb904873923aafbfaee07a7b923e28b8a403914f238c.nix";
+        nix = import ../hackage/ribosome-test-0.3.0.1-r0-74d5e8e5d1648c526670eb904873923aafbfaee07a7b923e28b8a403914f238c.nix;
         revNum = 0;
         sha256 = "74d5e8e5d1648c526670eb904873923aafbfaee07a7b923e28b8a403914f238c";
         };
@@ -25,7 +25,7 @@
     sha256 = "3660c7b461bad3f8c76e736db9a59636b24fd872ed9cf0fa3154bd8d090c5ace";
     revisions = {
       r0 = {
-        outPath = "ribosome-test-0.4.0.0-r0-bf7b89c68c6fe8bf52c77ac296e37f352c544cc4dd1e6c610ca8da96f460cf2b.nix";
+        nix = import ../hackage/ribosome-test-0.4.0.0-r0-bf7b89c68c6fe8bf52c77ac296e37f352c544cc4dd1e6c610ca8da96f460cf2b.nix;
         revNum = 0;
         sha256 = "bf7b89c68c6fe8bf52c77ac296e37f352c544cc4dd1e6c610ca8da96f460cf2b";
         };

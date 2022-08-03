@@ -3,12 +3,12 @@
     sha256 = "87a132e00e071c271967b36839f901b50083a5f33f21425fcfac0e5e51e2ff04";
     revisions = {
       r0 = {
-        outPath = "lambdabot-reference-plugins-5.0-r0-9a4295ca86864d8c4a34ff51175214676ae472020d98d9a32a8b765ebf9560ed.nix";
+        nix = import ../hackage/lambdabot-reference-plugins-5.0-r0-9a4295ca86864d8c4a34ff51175214676ae472020d98d9a32a8b765ebf9560ed.nix;
         revNum = 0;
         sha256 = "9a4295ca86864d8c4a34ff51175214676ae472020d98d9a32a8b765ebf9560ed";
         };
       r1 = {
-        outPath = "lambdabot-reference-plugins-5.0-r1-ad6ad8d64e11f223d2f00bdf16f12d779b92cdd9563cc9199564ca73a9080236.nix";
+        nix = import ../hackage/lambdabot-reference-plugins-5.0-r1-ad6ad8d64e11f223d2f00bdf16f12d779b92cdd9563cc9199564ca73a9080236.nix;
         revNum = 1;
         sha256 = "ad6ad8d64e11f223d2f00bdf16f12d779b92cdd9563cc9199564ca73a9080236";
         };
@@ -19,7 +19,7 @@
     sha256 = "4a74e085f6f31137c8c13d50cc6277820f62446127454da071ab4db496961486";
     revisions = {
       r0 = {
-        outPath = "lambdabot-reference-plugins-5.0.1-r0-abc4aa1bb68dd9bb02df4ac53096640d20cfc8ec5a447a5d93abe06b3e6b4421.nix";
+        nix = import ../hackage/lambdabot-reference-plugins-5.0.1-r0-abc4aa1bb68dd9bb02df4ac53096640d20cfc8ec5a447a5d93abe06b3e6b4421.nix;
         revNum = 0;
         sha256 = "abc4aa1bb68dd9bb02df4ac53096640d20cfc8ec5a447a5d93abe06b3e6b4421";
         };
@@ -30,7 +30,7 @@
     sha256 = "4c8ed35297eb40dfc3c9614651e4a6301aa30cc85b7780544fc7400053564264";
     revisions = {
       r0 = {
-        outPath = "lambdabot-reference-plugins-5.0.2-r0-ee20136f47b041342b93fb75ff2e7bac6f6c0b762e074ae4001df1308b76a7df.nix";
+        nix = import ../hackage/lambdabot-reference-plugins-5.0.2-r0-ee20136f47b041342b93fb75ff2e7bac6f6c0b762e074ae4001df1308b76a7df.nix;
         revNum = 0;
         sha256 = "ee20136f47b041342b93fb75ff2e7bac6f6c0b762e074ae4001df1308b76a7df";
         };
@@ -41,7 +41,7 @@
     sha256 = "6ca208fa2bb631a59b772c0da91159bc936160054ed3f151f574008b4a05e775";
     revisions = {
       r0 = {
-        outPath = "lambdabot-reference-plugins-5.0.2.1-r0-da7a02245f9346e7422553d3880de8d375f68121e3ba44c88ba20fc70fb0d6ee.nix";
+        nix = import ../hackage/lambdabot-reference-plugins-5.0.2.1-r0-da7a02245f9346e7422553d3880de8d375f68121e3ba44c88ba20fc70fb0d6ee.nix;
         revNum = 0;
         sha256 = "da7a02245f9346e7422553d3880de8d375f68121e3ba44c88ba20fc70fb0d6ee";
         };
@@ -52,7 +52,7 @@
     sha256 = "ff873c348657d8781c88f21f37cfd8aa18846aafec3f470516d5474225a081fb";
     revisions = {
       r0 = {
-        outPath = "lambdabot-reference-plugins-5.0.3-r0-22144f86d319cc8d812b05faacb7f2b7a943a74d637f990badb3429807504560.nix";
+        nix = import ../hackage/lambdabot-reference-plugins-5.0.3-r0-22144f86d319cc8d812b05faacb7f2b7a943a74d637f990badb3429807504560.nix;
         revNum = 0;
         sha256 = "22144f86d319cc8d812b05faacb7f2b7a943a74d637f990badb3429807504560";
         };
@@ -63,7 +63,7 @@
     sha256 = "441a94ddd6dc686c1d0fe991ee898922eb06b4caafb97dfdd1852612a321129c";
     revisions = {
       r0 = {
-        outPath = "lambdabot-reference-plugins-5.1-r0-e03df1f3fcd4c910850dd3308cb1db00f7490301a975da569b2a388258b38f1a.nix";
+        nix = import ../hackage/lambdabot-reference-plugins-5.1-r0-e03df1f3fcd4c910850dd3308cb1db00f7490301a975da569b2a388258b38f1a.nix;
         revNum = 0;
         sha256 = "e03df1f3fcd4c910850dd3308cb1db00f7490301a975da569b2a388258b38f1a";
         };
@@ -74,7 +74,7 @@
     sha256 = "9713547bd30e5a84ebc9f672aa09ea4f677277a4a42412bdf2ff06aae110a968";
     revisions = {
       r0 = {
-        outPath = "lambdabot-reference-plugins-5.1.0.1-r0-1829570b3a9f702a3ce3be713eae03758fc76adc94f443deca8654d1f5b3f82f.nix";
+        nix = import ../hackage/lambdabot-reference-plugins-5.1.0.1-r0-1829570b3a9f702a3ce3be713eae03758fc76adc94f443deca8654d1f5b3f82f.nix;
         revNum = 0;
         sha256 = "1829570b3a9f702a3ce3be713eae03758fc76adc94f443deca8654d1f5b3f82f";
         };
@@ -85,7 +85,7 @@
     sha256 = "3cd42dbf236255ef357a972445ecff8a75995b0cf34148af580d974bd0b95b61";
     revisions = {
       r0 = {
-        outPath = "lambdabot-reference-plugins-5.1.0.4-r0-ef4069d101a9aae9687ec67075cec0b4c65dca31bfcc27f09b9b0049c08cd91f.nix";
+        nix = import ../hackage/lambdabot-reference-plugins-5.1.0.4-r0-ef4069d101a9aae9687ec67075cec0b4c65dca31bfcc27f09b9b0049c08cd91f.nix;
         revNum = 0;
         sha256 = "ef4069d101a9aae9687ec67075cec0b4c65dca31bfcc27f09b9b0049c08cd91f";
         };
@@ -96,7 +96,7 @@
     sha256 = "c3b1f24979e2511b122b6487f888551e87fa9f682b8f9ea966c51f69a7e8907c";
     revisions = {
       r0 = {
-        outPath = "lambdabot-reference-plugins-5.2-r0-f07b700f5f2b95413110e0f8c492a25686f65e32c851951a5971969de7e15866.nix";
+        nix = import ../hackage/lambdabot-reference-plugins-5.2-r0-f07b700f5f2b95413110e0f8c492a25686f65e32c851951a5971969de7e15866.nix;
         revNum = 0;
         sha256 = "f07b700f5f2b95413110e0f8c492a25686f65e32c851951a5971969de7e15866";
         };
@@ -107,7 +107,7 @@
     sha256 = "eb9d668df53f23c62d2d8d6ab46483f04601c885b962e1cb5001b422da65e875";
     revisions = {
       r0 = {
-        outPath = "lambdabot-reference-plugins-5.3-r0-dae09557152d36714b6bfafd5d915fe33c1173d040308010cf623a2e27d64b73.nix";
+        nix = import ../hackage/lambdabot-reference-plugins-5.3-r0-dae09557152d36714b6bfafd5d915fe33c1173d040308010cf623a2e27d64b73.nix;
         revNum = 0;
         sha256 = "dae09557152d36714b6bfafd5d915fe33c1173d040308010cf623a2e27d64b73";
         };
@@ -118,7 +118,7 @@
     sha256 = "b48baf5518eb9dcc2004f28628714af71d359d5af60d94ad68aa525a5f1239d9";
     revisions = {
       r0 = {
-        outPath = "lambdabot-reference-plugins-5.3.0.2-r0-01e1d99aa7f2ba30fe4a5abc54baf37379ede10c29eaf1decf4c76894914e6e8.nix";
+        nix = import ../hackage/lambdabot-reference-plugins-5.3.0.2-r0-01e1d99aa7f2ba30fe4a5abc54baf37379ede10c29eaf1decf4c76894914e6e8.nix;
         revNum = 0;
         sha256 = "01e1d99aa7f2ba30fe4a5abc54baf37379ede10c29eaf1decf4c76894914e6e8";
         };

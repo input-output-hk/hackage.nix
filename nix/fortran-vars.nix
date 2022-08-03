@@ -3,7 +3,7 @@
     sha256 = "46083e67a7b44c27ec8434ba763d5ad9b8bf090cd49d36d1e0e605c5d42533c8";
     revisions = {
       r0 = {
-        outPath = "fortran-vars-0.1.0-r0-088f8a1beed4e7dee7b8a23cb00e9e1a05ff8b801acc61db928920a85cde40ad.nix";
+        nix = import ../hackage/fortran-vars-0.1.0-r0-088f8a1beed4e7dee7b8a23cb00e9e1a05ff8b801acc61db928920a85cde40ad.nix;
         revNum = 0;
         sha256 = "088f8a1beed4e7dee7b8a23cb00e9e1a05ff8b801acc61db928920a85cde40ad";
         };
@@ -14,7 +14,7 @@
     sha256 = "51162842a513e6eedbd2ec16ec72138d069ad128876344c6ae22ea9b988b2501";
     revisions = {
       r0 = {
-        outPath = "fortran-vars-0.3.0-r0-811e1c8866bf0098b6d800b69483b78d977c32c19bff454f07b34d7a2cb44319.nix";
+        nix = import ../hackage/fortran-vars-0.3.0-r0-811e1c8866bf0098b6d800b69483b78d977c32c19bff454f07b34d7a2cb44319.nix;
         revNum = 0;
         sha256 = "811e1c8866bf0098b6d800b69483b78d977c32c19bff454f07b34d7a2cb44319";
         };
