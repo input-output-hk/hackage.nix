@@ -1,0 +1,57 @@
+{
+  "0.1.0.0" = {
+    sha256 = "cde0072912b0852f2c980f42e3a5c3e1a3df5e3a85f278f4c3c9d91caacac83a";
+    revisions = {
+      r0 = {
+        outPath = "openai-servant-0.1.0.0-r0-4feb9d1033b23eaf0d3ce037aad6919353ffd7ed3e29805ff7ac986c9ee7cc19.nix";
+        revNum = 0;
+        sha256 = "4feb9d1033b23eaf0d3ce037aad6919353ffd7ed3e29805ff7ac986c9ee7cc19";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.0.0" = {
+    sha256 = "4df53e26595ada40c29915f26cf1a6ad0709f4356a7ff39ba66654dcd7952323";
+    revisions = {
+      r0 = {
+        outPath = "openai-servant-0.2.0.0-r0-fe894bce5ddf7e62078c783eac8ede5c7567a82b2dff315cf31daebdcff88d5d.nix";
+        revNum = 0;
+        sha256 = "fe894bce5ddf7e62078c783eac8ede5c7567a82b2dff315cf31daebdcff88d5d";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.1.0" = {
+    sha256 = "88abbc8cf3293b75bde18082990e343ef9571502adbca2caed83b5197e459933";
+    revisions = {
+      r0 = {
+        outPath = "openai-servant-0.2.1.0-r0-edba3ae4a6b65f505212d7d2dfb8618eb114419ebf5305080f39b34d5f4b224d.nix";
+        revNum = 0;
+        sha256 = "edba3ae4a6b65f505212d7d2dfb8618eb114419ebf5305080f39b34d5f4b224d";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.2.0" = {
+    sha256 = "f8afd43f446f33805bf43aa09f8d7f6dba820b448bb6813885828431953e2fc1";
+    revisions = {
+      r0 = {
+        outPath = "openai-servant-0.2.2.0-r0-2cc03ac3d244f942a0d7218e3a172a58bd1dbfcb68f947deba86ab81509abb73.nix";
+        revNum = 0;
+        sha256 = "2cc03ac3d244f942a0d7218e3a172a58bd1dbfcb68f947deba86ab81509abb73";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.3.0" = {
+    sha256 = "f1e8632e2b9f20361397b22f528c009af8ea8673ccb240545245efb6304e02a4";
+    revisions = {
+      r0 = {
+        outPath = "openai-servant-0.2.3.0-r0-b992ac6deb00249548a75b5176b24f3c51bde81c279330f607bd997da37df0be.nix";
+        revNum = 0;
+        sha256 = "b992ac6deb00249548a75b5176b24f3c51bde81c279330f607bd997da37df0be";
+        };
+      default = "r0";
+      };
+    };
+  }

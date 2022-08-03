@@ -1,0 +1,304 @@
+{
+  "0.1" = {
+    sha256 = "232324486c3104fca6789160fc973f2c6dcc145b84935ccb42c5c30853440c0f";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-0.1-r0-5920971e3a41f1222165d13901aedf95705a62d76bfb0e16d5bcc903a872290e.nix";
+        revNum = 0;
+        sha256 = "5920971e3a41f1222165d13901aedf95705a62d76bfb0e16d5bcc903a872290e";
+        };
+      default = "r0";
+      };
+    };
+  "0.2" = {
+    sha256 = "1ec08383a86cbf79eafba1fcfdd9961ba3099ea781d0ea7112bc9951de206c09";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-0.2-r0-58162fc2f68b55ced670727769266d1e0daef52b1761f9f1d3d30e1428a679c2.nix";
+        revNum = 0;
+        sha256 = "58162fc2f68b55ced670727769266d1e0daef52b1761f9f1d3d30e1428a679c2";
+        };
+      default = "r0";
+      };
+    };
+  "0.3" = {
+    sha256 = "5a5c1eac34ebf17a6139bc7fff6282aca98517bf8a2790efbcf2c8d49f975ecc";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-0.3-r0-8909d2a7ec86fa574a1d3481c1ea1056e6f4de40b3dfe138931a5fd24107a14e.nix";
+        revNum = 0;
+        sha256 = "8909d2a7ec86fa574a1d3481c1ea1056e6f4de40b3dfe138931a5fd24107a14e";
+        };
+      default = "r0";
+      };
+    };
+  "0.4" = {
+    sha256 = "237e6d15ec95e2a554577594d1950451cb238f3ac829c4b74ebad84dae418385";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-0.4-r0-d5903e652e720edfa609e6371b99c7a21d1fa6cf76357c4f6519b2758033235d.nix";
+        revNum = 0;
+        sha256 = "d5903e652e720edfa609e6371b99c7a21d1fa6cf76357c4f6519b2758033235d";
+        };
+      default = "r0";
+      };
+    };
+  "0.5" = {
+    sha256 = "7494a446e8a2bebce625a4a5af96402d507d335d1e3c4e43f4d3ae8f10c09d25";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-0.5-r0-6f21ac3ded7ec028462fd1c63430b0b3ddaf00dc7883f2e5a24c0224bbaa4ea1.nix";
+        revNum = 0;
+        sha256 = "6f21ac3ded7ec028462fd1c63430b0b3ddaf00dc7883f2e5a24c0224bbaa4ea1";
+        };
+      default = "r0";
+      };
+    };
+  "0.6" = {
+    sha256 = "3986b2b37cb8e8c72f5c9db62b64939526f83b233bbebbee8b627f81fd8ed4ee";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-0.6-r0-d148f5941d02e6cc651a6d02736cd7a0d44e069442fa369d3eb2d84fcf89340d.nix";
+        revNum = 0;
+        sha256 = "d148f5941d02e6cc651a6d02736cd7a0d44e069442fa369d3eb2d84fcf89340d";
+        };
+      default = "r0";
+      };
+    };
+  "0.7" = {
+    sha256 = "1d55afb0ede0451a6efc07d02819847d4b746553fdfef837b03ec1e89b5c14c2";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-0.7-r0-1baa3b0d62c14dd9966befbaaeadffe70fa5f80bfb107d0c4274619948038863.nix";
+        revNum = 0;
+        sha256 = "1baa3b0d62c14dd9966befbaaeadffe70fa5f80bfb107d0c4274619948038863";
+        };
+      default = "r0";
+      };
+    };
+  "0.8" = {
+    sha256 = "3757534d00957ac54309435a67ca04815bd9fa138befb1123d14d117646c3ae2";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-0.8-r0-24383a9ecd76f28b6bfa1db70f7553f25f644fd5ecf2de45036a8a4b519d6e40.nix";
+        revNum = 0;
+        sha256 = "24383a9ecd76f28b6bfa1db70f7553f25f644fd5ecf2de45036a8a4b519d6e40";
+        };
+      default = "r0";
+      };
+    };
+  "0.9" = {
+    sha256 = "7d43bae5b93a16d6b8bfcd96c5edbaa48251e168c5ad08a1c282f51adc40899b";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-0.9-r0-5e98d6555bf5cec527dd87f6dbcb0de53dace2d1e7b9c75968f79783f1b89a61.nix";
+        revNum = 0;
+        sha256 = "5e98d6555bf5cec527dd87f6dbcb0de53dace2d1e7b9c75968f79783f1b89a61";
+        };
+      default = "r0";
+      };
+    };
+  "0.9.1" = {
+    sha256 = "0d6553d98d759b549e479ee86692c1b1c66f7958cf3dcb61832ff3dc19da5d39";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-0.9.1-r0-2606f2068c23f37f2cfafb0d387a9b1d2a93886b54ebcfc0b083b2b558ed14b3.nix";
+        revNum = 0;
+        sha256 = "2606f2068c23f37f2cfafb0d387a9b1d2a93886b54ebcfc0b083b2b558ed14b3";
+        };
+      default = "r0";
+      };
+    };
+  "2.1.1" = {
+    sha256 = "134fa7e98b5bd11b9bfa80dd6fd42af508438cda6c6e395ea898c4e3b802ba89";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-2.1.1-r0-021a17ec29403d32d4a75d88627f41e4fb1f504e90e2594a413d80b2f629ec3d.nix";
+        revNum = 0;
+        sha256 = "021a17ec29403d32d4a75d88627f41e4fb1f504e90e2594a413d80b2f629ec3d";
+        };
+      default = "r0";
+      };
+    };
+  "2.1.2" = {
+    sha256 = "632e33afb0a45515512b9ef9d7ade103a11a1ccffa932f80b2996c33a1e12981";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-2.1.2-r0-3d6bb6af3b0b304d2e3aec3d801c82b073ba970c3a50b1b861e7332bf2094e30.nix";
+        revNum = 0;
+        sha256 = "3d6bb6af3b0b304d2e3aec3d801c82b073ba970c3a50b1b861e7332bf2094e30";
+        };
+      default = "r0";
+      };
+    };
+  "2.2.0" = {
+    sha256 = "35bbc98550819f06978a73f5d19e15f93463b4b0a8cc6eae33cef45f30bf127c";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-2.2.0-r0-847cc2c03143edff211b41eca69d7dd47ea59682f995df4a1e3c07e02554fa92.nix";
+        revNum = 0;
+        sha256 = "847cc2c03143edff211b41eca69d7dd47ea59682f995df4a1e3c07e02554fa92";
+        };
+      r1 = {
+        outPath = "copilot-language-2.2.0-r1-7ab61bdf2be4f514ad0b5241d32dd28ab67ecfcc865883f6d6811a9b4e7050af.nix";
+        revNum = 1;
+        sha256 = "7ab61bdf2be4f514ad0b5241d32dd28ab67ecfcc865883f6d6811a9b4e7050af";
+        };
+      default = "r1";
+      };
+    };
+  "2.2.1" = {
+    sha256 = "681b6cbcc9720a371b0889619716b24308ae87a0a22a83bb217c7bf6792465df";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-2.2.1-r0-79635c72a42c5edf38713262fafcd773d41ef25db153405bce2cd60820934185.nix";
+        revNum = 0;
+        sha256 = "79635c72a42c5edf38713262fafcd773d41ef25db153405bce2cd60820934185";
+        };
+      default = "r0";
+      };
+    };
+  "3.0" = {
+    sha256 = "696ad8b2b19d56bdb1e0823d75bc5dd7e88a228e9ada6fffd4d57d0d5e769e24";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.0-r0-1daa68447df64589cdd34af18635b699f30c3276d1a920e8215294fa83d9a857.nix";
+        revNum = 0;
+        sha256 = "1daa68447df64589cdd34af18635b699f30c3276d1a920e8215294fa83d9a857";
+        };
+      default = "r0";
+      };
+    };
+  "3.0.1" = {
+    sha256 = "c68550b5c1ebb535578c68ae851df505c92d7b5a9795fd47d3ab6dd9b629a6ef";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.0.1-r0-581c6cc1205b8e5022e1afee54149de0c84a4c31f9e8412aab947d1a979075db.nix";
+        revNum = 0;
+        sha256 = "581c6cc1205b8e5022e1afee54149de0c84a4c31f9e8412aab947d1a979075db";
+        };
+      default = "r0";
+      };
+    };
+  "3.1" = {
+    sha256 = "973e6cc64b511b6349582689b7af9dc8be5211fc8bb0b369fa1b0c8a0241b341";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.1-r0-3ec5d98e2579e692930a47d77c30070906523f9cf9028728812633734ff9c80e.nix";
+        revNum = 0;
+        sha256 = "3ec5d98e2579e692930a47d77c30070906523f9cf9028728812633734ff9c80e";
+        };
+      default = "r0";
+      };
+    };
+  "3.10" = {
+    sha256 = "180778e0e36fdf47d0d9e69221d84e2de819101c401e6985eb94b3f674210218";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.10-r0-e799871eaaacf5946b06ab4558de820d628a71fdca29297eb536e63eb4b1166c.nix";
+        revNum = 0;
+        sha256 = "e799871eaaacf5946b06ab4558de820d628a71fdca29297eb536e63eb4b1166c";
+        };
+      default = "r0";
+      };
+    };
+  "3.2" = {
+    sha256 = "eadacae3ec0ac1793350ce8b52c6634dd4b8c4b45c1441df590cde668188a2ef";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.2-r0-0e752ffaed9c1b5689e6d7f92269331e5d3b3784738e7278dcc2704218078434.nix";
+        revNum = 0;
+        sha256 = "0e752ffaed9c1b5689e6d7f92269331e5d3b3784738e7278dcc2704218078434";
+        };
+      default = "r0";
+      };
+    };
+  "3.2.1" = {
+    sha256 = "14712d3f9d6dac087568260ac6c6969fba50c6c174aa1ad8943f1311c704250f";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.2.1-r0-6c79661b16671a27e836a91e05d49d35d913a5cc7adb12a3d06979b9764bc021.nix";
+        revNum = 0;
+        sha256 = "6c79661b16671a27e836a91e05d49d35d913a5cc7adb12a3d06979b9764bc021";
+        };
+      default = "r0";
+      };
+    };
+  "3.3" = {
+    sha256 = "22fb1741e8985ff914ee3a0bded90340a26e8522c2a2b874f3354981ac9769f4";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.3-r0-244b82374ede671d62b05f51e1adcf1bdbd65ebd7aa6519ea285c3ba45531d9d.nix";
+        revNum = 0;
+        sha256 = "244b82374ede671d62b05f51e1adcf1bdbd65ebd7aa6519ea285c3ba45531d9d";
+        };
+      default = "r0";
+      };
+    };
+  "3.4" = {
+    sha256 = "a63b73246881cb71a39d0a62c24ea32397a3ff637b8b6d2155f847796b527044";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.4-r0-bcc78bc71068f26f40988673d77edb97bd7f2c9d6d474392fbabe10e63f56b39.nix";
+        revNum = 0;
+        sha256 = "bcc78bc71068f26f40988673d77edb97bd7f2c9d6d474392fbabe10e63f56b39";
+        };
+      default = "r0";
+      };
+    };
+  "3.5" = {
+    sha256 = "4b68f6da31bb9670d8a857ad5686b84f59150648a7d3ec18e56d5da428b13e68";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.5-r0-3c14e5504181f071bd5c22195671c052454c081821e0303a66d5073c4d7578d9.nix";
+        revNum = 0;
+        sha256 = "3c14e5504181f071bd5c22195671c052454c081821e0303a66d5073c4d7578d9";
+        };
+      default = "r0";
+      };
+    };
+  "3.6" = {
+    sha256 = "935a0495b7542d74dafcd4465b4a95fd0f0813e9dad67a00e896145e36a12c2c";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.6-r0-42abbfba8d879a0fed864b1f02c4d8f71a704b3cf442617f2017553d7a42c29b.nix";
+        revNum = 0;
+        sha256 = "42abbfba8d879a0fed864b1f02c4d8f71a704b3cf442617f2017553d7a42c29b";
+        };
+      default = "r0";
+      };
+    };
+  "3.7" = {
+    sha256 = "e475f02b6cc1270c5f2f2b5287bde68227971597571d07b585eff1ed233b34dc";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.7-r0-a4508d77704708c71e9dc4d4c2eec1c271949fad4f98a1c36865a4a9766a7fdf.nix";
+        revNum = 0;
+        sha256 = "a4508d77704708c71e9dc4d4c2eec1c271949fad4f98a1c36865a4a9766a7fdf";
+        };
+      default = "r0";
+      };
+    };
+  "3.8" = {
+    sha256 = "462ec5789abbf361981bb5546455ba918b2cded2f98bbace3dad53f5663fdbf2";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.8-r0-eb09eb97948abe4661f1b6777776ceb118d026a487f255e3c8e3e1f86b6fba7b.nix";
+        revNum = 0;
+        sha256 = "eb09eb97948abe4661f1b6777776ceb118d026a487f255e3c8e3e1f86b6fba7b";
+        };
+      default = "r0";
+      };
+    };
+  "3.9" = {
+    sha256 = "e8658526cfaaded4b96278f89329ab1aa36c353de93acb32e5c77dc448ad8180";
+    revisions = {
+      r0 = {
+        outPath = "copilot-language-3.9-r0-9e0067e6f8feeef1ae7f1963571bdc4125120b1aa51bb1dbdef29b9521dbc44f.nix";
+        revNum = 0;
+        sha256 = "9e0067e6f8feeef1ae7f1963571bdc4125120b1aa51bb1dbdef29b9521dbc44f";
+        };
+      default = "r0";
+      };
+    };
+  }

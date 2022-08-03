@@ -1,0 +1,40 @@
+{
+  "0.1.0.0" = {
+    sha256 = "11e04219b0d0cd0d5762ade3fd002b77f5eee51e83a3830ba1c8b1551de8f1a2";
+    revisions = {
+      r0 = {
+        outPath = "hasql-notifications-0.1.0.0-r0-7455f3ba46dc2c73dc0cd70ef5388614784741769f66b0f74dc6cdb89c8da255.nix";
+        revNum = 0;
+        sha256 = "7455f3ba46dc2c73dc0cd70ef5388614784741769f66b0f74dc6cdb89c8da255";
+        };
+      r1 = {
+        outPath = "hasql-notifications-0.1.0.0-r1-9ab112d2bb5da0d55abd65f0d27a7bb1dc4aeb792518d9a2ea8a16e243e19985.nix";
+        revNum = 1;
+        sha256 = "9ab112d2bb5da0d55abd65f0d27a7bb1dc4aeb792518d9a2ea8a16e243e19985";
+        };
+      default = "r1";
+      };
+    };
+  "0.2.0.0" = {
+    sha256 = "b133e38b7a27e66385332791bb03c4a3cf4f85994412318d08cd820577db3ffe";
+    revisions = {
+      r0 = {
+        outPath = "hasql-notifications-0.2.0.0-r0-1c0a82492dd6163f8f1d0d1b38843aebd5e95663356f9b24915181176767dc1f.nix";
+        revNum = 0;
+        sha256 = "1c0a82492dd6163f8f1d0d1b38843aebd5e95663356f9b24915181176767dc1f";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.0.1" = {
+    sha256 = "7b5e2eab841d7f2d07869039b8674cd119408817794e884785b30417754825a4";
+    revisions = {
+      r0 = {
+        outPath = "hasql-notifications-0.2.0.1-r0-c102b07c57f87dc3c398e7eab4af3482dbe1a88522c983e1c07e68f4d1d15375.nix";
+        revNum = 0;
+        sha256 = "c102b07c57f87dc3c398e7eab4af3482dbe1a88522c983e1c07e68f4d1d15375";
+        };
+      default = "r0";
+      };
+    };
+  }

@@ -1,0 +1,112 @@
+{
+  "1.0.0" = {
+    sha256 = "79e66b92abdb36181886c551098cd972acd2efb2311dc65eaefcc0a48481c65f";
+    revisions = {
+      r0 = {
+        outPath = "aeson-match-qq-1.0.0-r0-b7d5815f862eb35d73227b46da87c79fe93a8e7e87814b55b0831a2fc7a1b600.nix";
+        revNum = 0;
+        sha256 = "b7d5815f862eb35d73227b46da87c79fe93a8e7e87814b55b0831a2fc7a1b600";
+        };
+      default = "r0";
+      };
+    };
+  "1.1.0" = {
+    sha256 = "3dcdd6edc0a3af6a1c306dac22c44eff533a2d4ed96fe05fe69fce02161a7262";
+    revisions = {
+      r0 = {
+        outPath = "aeson-match-qq-1.1.0-r0-a91302001ed59a033a0128b841423c2930dd0399d7c663b7132a738ee805c358.nix";
+        revNum = 0;
+        sha256 = "a91302001ed59a033a0128b841423c2930dd0399d7c663b7132a738ee805c358";
+        };
+      default = "r0";
+      };
+    };
+  "1.2.0" = {
+    sha256 = "42bf67ad33e48c60edb96c35f2e0a5674e7f64b34651bf4986cb17dd8bb20d00";
+    revisions = {
+      r0 = {
+        outPath = "aeson-match-qq-1.2.0-r0-4f63f86600e32214a5f486e6799a3fc039be6203aef84e262bad9a7fa923143f.nix";
+        revNum = 0;
+        sha256 = "4f63f86600e32214a5f486e6799a3fc039be6203aef84e262bad9a7fa923143f";
+        };
+      default = "r0";
+      };
+    };
+  "1.2.1" = {
+    sha256 = "a17eb21220e9567aa9f2f4252579b24131145127634466f5ba27377c39eb0a36";
+    revisions = {
+      r0 = {
+        outPath = "aeson-match-qq-1.2.1-r0-86fa53c0c8cdeedb0c951d4e75187ce7486102005656f1e7517041e10d79b79d.nix";
+        revNum = 0;
+        sha256 = "86fa53c0c8cdeedb0c951d4e75187ce7486102005656f1e7517041e10d79b79d";
+        };
+      default = "r0";
+      };
+    };
+  "1.2.2" = {
+    sha256 = "b111498461bc1f522d4f204f613803850cf5e60ff79a605ec50e68ad862ad694";
+    revisions = {
+      r0 = {
+        outPath = "aeson-match-qq-1.2.2-r0-bf3bd4b23d8cd0d0fa162ffe0b7cc1624904eef1d784fd377741ef21c75e364d.nix";
+        revNum = 0;
+        sha256 = "bf3bd4b23d8cd0d0fa162ffe0b7cc1624904eef1d784fd377741ef21c75e364d";
+        };
+      default = "r0";
+      };
+    };
+  "1.3.0" = {
+    sha256 = "10870f3dd93365fd47301d570a24a75b1d7c678476369ae00809488d5e2ebccb";
+    revisions = {
+      r0 = {
+        outPath = "aeson-match-qq-1.3.0-r0-cca7a4fb445b33855081abee710924c8ed86c67288b130db583791513b7c07ad.nix";
+        revNum = 0;
+        sha256 = "cca7a4fb445b33855081abee710924c8ed86c67288b130db583791513b7c07ad";
+        };
+      default = "r0";
+      };
+    };
+  "1.3.1" = {
+    sha256 = "9a24a99e6a67d48ea1feed8f73be63326698d0b489f2c8fd8a1ef4e25c35216a";
+    revisions = {
+      r0 = {
+        outPath = "aeson-match-qq-1.3.1-r0-fbe1904a2baa6214d610e3a6a4df4f4c6f8472d14575133a48c424a000e0a79c.nix";
+        revNum = 0;
+        sha256 = "fbe1904a2baa6214d610e3a6a4df4f4c6f8472d14575133a48c424a000e0a79c";
+        };
+      default = "r0";
+      };
+    };
+  "1.4.0" = {
+    sha256 = "665bab0eb9667030a12f9714170cffca2868d2048c1993f52f1306ce11cf6f3d";
+    revisions = {
+      r0 = {
+        outPath = "aeson-match-qq-1.4.0-r0-ce12e427606501afc76a1ec0f88f585c81b825511687e9f0e2c775fb8fcb2410.nix";
+        revNum = 0;
+        sha256 = "ce12e427606501afc76a1ec0f88f585c81b825511687e9f0e2c775fb8fcb2410";
+        };
+      default = "r0";
+      };
+    };
+  "1.4.1" = {
+    sha256 = "cf154ecdd2a0a0f31a0e7adeda3ffc2f466d7fac5a445b5b7e669a8e21103d51";
+    revisions = {
+      r0 = {
+        outPath = "aeson-match-qq-1.4.1-r0-2dfdbab1823588e50fd4306c3b42961e59ac8ea89154e7c4b5f8064e3f89d909.nix";
+        revNum = 0;
+        sha256 = "2dfdbab1823588e50fd4306c3b42961e59ac8ea89154e7c4b5f8064e3f89d909";
+        };
+      default = "r0";
+      };
+    };
+  "1.4.2" = {
+    sha256 = "545866b28ea1df685ffbda75976eb2553a26a7e1af8057bfccd631ecbf7352b5";
+    revisions = {
+      r0 = {
+        outPath = "aeson-match-qq-1.4.2-r0-3a826724a7fdf8676f1e19a0ba5665d350dfc21afb9d014f5af0ed0c89be7ecc.nix";
+        revNum = 0;
+        sha256 = "3a826724a7fdf8676f1e19a0ba5665d350dfc21afb9d014f5af0ed0c89be7ecc";
+        };
+      default = "r0";
+      };
+    };
+  }
