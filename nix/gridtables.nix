@@ -1,0 +1,24 @@
+{
+  "0.0.1.0" = {
+    sha256 = "ea296b1a40d45423f931105f25098e4e4c2d513fa90ce88e650a3d8c2cc22940";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gridtables-0.0.1.0-r0-6ed9840499e0bd950523e6f6c9c05d3f6719f791671a771b053ea1f81f35bb72.nix;
+        revNum = 0;
+        sha256 = "6ed9840499e0bd950523e6f6c9c05d3f6719f791671a771b053ea1f81f35bb72";
+        };
+      default = "r0";
+      };
+    };
+  "0.0.2.0" = {
+    sha256 = "6ddc13ac44336f92ad7d677afb9d8f35a404b73955f1c6e5d7a9aa78710c162f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gridtables-0.0.2.0-r0-3c6563f97ee7ff2e44e5b6f24a9581d619ac6b62c8e8672ab0380d8b78f16146.nix;
+        revNum = 0;
+        sha256 = "3c6563f97ee7ff2e44e5b6f24a9581d619ac6b62c8e8672ab0380d8b78f16146";
+        };
+      default = "r0";
+      };
+    };
+  }
