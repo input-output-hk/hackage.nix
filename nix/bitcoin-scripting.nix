@@ -26,4 +26,15 @@
       default = "r0";
       };
     };
+  "0.3.0" = {
+    sha256 = "5aada8a143640cb69482cb8d55b0545b58063ff99fb70d500c9ed28fd090d7c7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bitcoin-scripting-0.3.0-r0-cca05553fe6a7d60252143ec751de828686b21205102027b685a96869984aed0.nix;
+        revNum = 0;
+        sha256 = "cca05553fe6a7d60252143ec751de828686b21205102027b685a96869984aed0";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "f0af9484030661856ee2910343a61738d356bbff7682fe49b0fdaab7b6046508";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cli-nix-0.2.0.0-r0-00aa1abd7bdc589362a5615390694c206adc0d5688e71c35bdc9e75119992950.nix;
+        revNum = 0;
+        sha256 = "00aa1abd7bdc589362a5615390694c206adc0d5688e71c35bdc9e75119992950";
+        };
+      default = "r0";
+      };
+    };
   }

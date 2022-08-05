@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "77ca920f1b2b0d7f17a93f41cc993a2271cd4385197e32065545677279b1bbdf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-stdin-0.1.1.0-r0-5cb8730b12692d8cd764bbcae72b81b0d1bcc6a4aab0a619641c788a15aa3aa2.nix;
+        revNum = 0;
+        sha256 = "5cb8730b12692d8cd764bbcae72b81b0d1bcc6a4aab0a619641c788a15aa3aa2";
+        };
+      default = "r0";
+      };
+    };
   }
