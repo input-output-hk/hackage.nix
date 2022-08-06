@@ -5251,6 +5251,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "file-embed" = import ./nix/file-embed.nix;
   "file-embed-lzma" = import ./nix/file-embed-lzma.nix;
   "file-embed-poly" = import ./nix/file-embed-poly.nix;
+  "file-io" = import ./nix/file-io.nix;
   "file-location" = import ./nix/file-location.nix;
   "file-modules" = import ./nix/file-modules.nix;
   "file-path-th" = import ./nix/file-path-th.nix;
@@ -7099,6 +7100,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hburg" = import ./nix/hburg.nix;
   "hcad" = import ./nix/hcad.nix;
   "hcc" = import ./nix/hcc.nix;
+  "hcdt" = import ./nix/hcdt.nix;
   "hcg-minus" = import ./nix/hcg-minus.nix;
   "hcg-minus-cairo" = import ./nix/hcg-minus-cairo.nix;
   "hcheat" = import ./nix/hcheat.nix;
@@ -10246,6 +10248,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mpi-hs-cereal" = import ./nix/mpi-hs-cereal.nix;
   "mpi-hs-store" = import ./nix/mpi-hs-store.nix;
   "mplayer-spot" = import ./nix/mplayer-spot.nix;
+  "mpolynomials" = import ./nix/mpolynomials.nix;
   "mpppc" = import ./nix/mpppc.nix;
   "mprelude" = import ./nix/mprelude.nix;
   "mpretty" = import ./nix/mpretty.nix;
