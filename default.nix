@@ -8227,6 +8227,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hyper-haskell-server" = import ./nix/hyper-haskell-server.nix;
   "hyperdrive" = import ./nix/hyperdrive.nix;
   "hyperfunctions" = import ./nix/hyperfunctions.nix;
+  "hypergeomatrix" = import ./nix/hypergeomatrix.nix;
   "hypergeometric" = import ./nix/hypergeometric.nix;
   "hyperion" = import ./nix/hyperion.nix;
   "hyperloglog" = import ./nix/hyperloglog.nix;
@@ -13101,6 +13102,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "scroll-list" = import ./nix/scroll-list.nix;
   "scrypt" = import ./nix/scrypt.nix;
   "scrz" = import ./nix/scrz.nix;
+  "scubature" = import ./nix/scubature.nix;
   "scuttlebutt-types" = import ./nix/scuttlebutt-types.nix;
   "scythe" = import ./nix/scythe.nix;
   "scyther-proof" = import ./nix/scyther-proof.nix;

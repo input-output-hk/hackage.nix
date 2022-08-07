@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.4.0" = {
+    sha256 = "e1c1c7c520f974f73e7b18bdb81e23c83403c6ec3adb456715956d703285472c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/climb-0.4.0-r0-77c2c6fa11fb118fe950672d4b3715bb4773b0dd7884d2aaba492d48dc589c43.nix;
+        revNum = 0;
+        sha256 = "77c2c6fa11fb118fe950672d4b3715bb4773b0dd7884d2aaba492d48dc589c43";
+        };
+      default = "r0";
+      };
+    };
   }

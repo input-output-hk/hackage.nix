@@ -204,7 +204,12 @@
         revNum = 1;
         sha256 = "c84daecaaf12697b4dc67b6b56f20da537f4ccfcbb2202987c5e3bd607b1b074";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/set-cover-0.1.1-r2-efcfa2ee6dda98176cbd1571ae3ec3657fa1ec9e9d7ecd9d4946cd7ec8d77116.nix;
+        revNum = 2;
+        sha256 = "efcfa2ee6dda98176cbd1571ae3ec3657fa1ec9e9d7ecd9d4946cd7ec8d77116";
+        };
+      default = "r2";
       };
     };
   }
