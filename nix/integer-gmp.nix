@@ -80,4 +80,15 @@
       default = "r0";
       };
     };
+  "1.1" = {
+    sha256 = "934f9547d82990d1da9e0950264e3b236d637bbe5cd788c2fb8a1abe51236339";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/integer-gmp-1.1-r0-a68cd9b27bca999f6be3fe6315c9d554002a67f822c3a4815864b75b4498e986.nix;
+        revNum = 0;
+        sha256 = "a68cd9b27bca999f6be3fe6315c9d554002a67f822c3a4815864b75b4498e986";
+        };
+      default = "r0";
+      };
+    };
   }

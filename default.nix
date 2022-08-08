@@ -5967,6 +5967,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gi-gdk" = import ./nix/gi-gdk.nix;
   "gi-gdkpixbuf" = import ./nix/gi-gdkpixbuf.nix;
   "gi-gdkx11" = import ./nix/gi-gdkx11.nix;
+  "gi-ges" = import ./nix/gi-ges.nix;
   "gi-ggit" = import ./nix/gi-ggit.nix;
   "gi-gio" = import ./nix/gi-gio.nix;
   "gi-gio-hs-list-model" = import ./nix/gi-gio-hs-list-model.nix;
@@ -7086,6 +7087,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haxy" = import ./nix/haxy.nix;
   "hayland" = import ./nix/hayland.nix;
   "hayoo-cli" = import ./nix/hayoo-cli.nix;
+  "hb3sum" = import ./nix/hb3sum.nix;
   "hback" = import ./nix/hback.nix;
   "hbayes" = import ./nix/hbayes.nix;
   "hbb" = import ./nix/hbb.nix;

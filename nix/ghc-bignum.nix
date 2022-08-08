@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "1.3" = {
+    sha256 = "bf404b93040d47d30fd032f854f68eeb6c72c912fb4a20c41534611522d59061";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-bignum-1.3-r0-bd2040ad43b139bd966bf764e240a4b3f435b79dfc11d0342decd61932818142.nix;
+        revNum = 0;
+        sha256 = "bd2040ad43b139bd966bf764e240a4b3f435b79dfc11d0342decd61932818142";
+        };
+      default = "r0";
+      };
+    };
   }

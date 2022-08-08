@@ -988,4 +988,15 @@
       default = "r0";
       };
     };
+  "9.4.0.0" = {
+    sha256 = "ce3ff339a0a259a18ae921c547b35732eaca1a567a33fba1a7c65c16c973191b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-lib-parser-ex-9.4.0.0-r0-a55b192642e1efd3fd3a358aff416e88b6b04f33572bd1d7be9e9008648f2523.nix;
+        revNum = 0;
+        sha256 = "a55b192642e1efd3fd3a358aff416e88b6b04f33572bd1d7be9e9008648f2523";
+        };
+      default = "r0";
+      };
+    };
   }
