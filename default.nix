@@ -8562,6 +8562,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ireal" = import ./nix/ireal.nix;
   "iri" = import ./nix/iri.nix;
   "iridium" = import ./nix/iridium.nix;
+  "iris" = import ./nix/iris.nix;
   "iron-mq" = import ./nix/iron-mq.nix;
   "ironforge" = import ./nix/ironforge.nix;
   "irt" = import ./nix/irt.nix;
@@ -8638,6 +8639,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "jack" = import ./nix/jack.nix;
   "jack-bindings" = import ./nix/jack-bindings.nix;
   "jackminimix" = import ./nix/jackminimix.nix;
+  "jackpolynomials" = import ./nix/jackpolynomials.nix;
   "jacobi-roots" = import ./nix/jacobi-roots.nix;
   "jaeger-flamegraph" = import ./nix/jaeger-flamegraph.nix;
   "jail" = import ./nix/jail.nix;

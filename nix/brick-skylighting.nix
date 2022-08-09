@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "1.0" = {
+    sha256 = "795689d5898cdc4a9c7d923242917d7d1d14087400ed84eaf49b4a607fea82db";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brick-skylighting-1.0-r0-64764b6be36c05261959f68ed38b9cb37e1acb6180a3bde5dd98255f62ea7e3b.nix;
+        revNum = 0;
+        sha256 = "64764b6be36c05261959f68ed38b9cb37e1acb6180a3bde5dd98255f62ea7e3b";
+        };
+      default = "r0";
+      };
+    };
   }

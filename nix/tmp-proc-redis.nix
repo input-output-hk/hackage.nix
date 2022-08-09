@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.5.1.0" = {
+    sha256 = "146d5067f30a85cca4f4c18588efd9a79cb499de03b9128d8face73179d52e6b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tmp-proc-redis-0.5.1.0-r0-513df416886f3e2c898071c0aa9c7755b26bbd3036d7b5d72b6191015f871177.nix;
+        revNum = 0;
+        sha256 = "513df416886f3e2c898071c0aa9c7755b26bbd3036d7b5d72b6191015f871177";
+        };
+      default = "r0";
+      };
+    };
   }

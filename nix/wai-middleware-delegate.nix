@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "f9b7888a68276499e40edc2622ba758a48f5cc6ef276440dadb4fd6b958e239f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wai-middleware-delegate-0.1.3.0-r0-b3f75320eab34e20feee042ec683550d90322e5b19d94da3f1afcf437a71a3d5.nix;
+        revNum = 0;
+        sha256 = "b3f75320eab34e20feee042ec683550d90322e5b19d94da3f1afcf437a71a3d5";
+        };
+      default = "r0";
+      };
+    };
   }

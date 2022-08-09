@@ -1856,4 +1856,15 @@
       default = "r1";
       };
     };
+  "1.0" = {
+    sha256 = "73812075c1c211761bad65478dc7e18bf81e1703b98583133af96f0f18d52003";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brick-1.0-r0-99242c47aa2fd08424445de9c4437405098dcda5ae74d558648eadd6b069062c.nix;
+        revNum = 0;
+        sha256 = "99242c47aa2fd08424445de9c4437405098dcda5ae74d558648eadd6b069062c";
+        };
+      default = "r0";
+      };
+    };
   }
