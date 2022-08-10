@@ -283,7 +283,17 @@
         revNum = 1;
         sha256 = "96837c9205660006ddf515c5f92bab825cf2e59fc80b7d61b269de72abac92cf";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/vector-th-unbox-0.2.2-r2-6018195b01ce793330073b9aae1f74756738d974e45002f2f1a936dc3a420521.nix;
+        revNum = 2;
+        sha256 = "6018195b01ce793330073b9aae1f74756738d974e45002f2f1a936dc3a420521";
+        };
+      r3 = {
+        nix = import ../hackage/vector-th-unbox-0.2.2-r3-ca32d92683d27f316b9bda2e813120dceef66511d49aa1bd9b17e11ef518214e.nix;
+        revNum = 3;
+        sha256 = "ca32d92683d27f316b9bda2e813120dceef66511d49aa1bd9b17e11ef518214e";
+        };
+      default = "r3";
       };
     };
   }

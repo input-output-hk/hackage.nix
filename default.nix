@@ -2844,6 +2844,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cabal-install-ghc72" = import ./nix/cabal-install-ghc72.nix;
   "cabal-install-ghc74" = import ./nix/cabal-install-ghc74.nix;
   "cabal-install-parsers" = import ./nix/cabal-install-parsers.nix;
+  "cabal-install-solver" = import ./nix/cabal-install-solver.nix;
   "cabal-lenses" = import ./nix/cabal-lenses.nix;
   "cabal-macosx" = import ./nix/cabal-macosx.nix;
   "cabal-meta" = import ./nix/cabal-meta.nix;

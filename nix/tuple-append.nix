@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "3227e8f1b917904471b6685c124e2ee45b174a82f06c5d73e09fdee2d12e383a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tuple-append-0.1.2.0-r0-fc69fa54ace9b0cb2d2709b33e96677f18861dbab0ded68a6eee0e60daa0885a.nix;
+        revNum = 0;
+        sha256 = "fc69fa54ace9b0cb2d2709b33e96677f18861dbab0ded68a6eee0e60daa0885a";
+        };
+      default = "r0";
+      };
+    };
   }

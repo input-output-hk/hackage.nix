@@ -458,4 +458,15 @@
       default = "r1";
       };
     };
+  "0.5.8.3" = {
+    sha256 = "99905220661b26e5bd91130bd9772554938608a5b1d717240a6eb331121e0f6a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cereal-0.5.8.3-r0-87a227c7b510217ea059db3dd59d9665edd8f0d1d3d8de39458e371a1d9402fb.nix;
+        revNum = 0;
+        sha256 = "87a227c7b510217ea059db3dd59d9665edd8f0d1d3d8de39458e371a1d9402fb";
+        };
+      default = "r0";
+      };
+    };
   }

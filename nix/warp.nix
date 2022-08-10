@@ -3461,6 +3461,17 @@
       default = "r0";
       };
     };
+  "3.3.22" = {
+    sha256 = "ea26386fa12f86bc8d04446cc551ccc5c918debe4ad947f6c6bf514da3f04f3e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/warp-3.3.22-r0-63d6df1767fdcb2c9e42809f0f8c58029c59fabfdbb66f162612c25f170f4ca6.nix;
+        revNum = 0;
+        sha256 = "63d6df1767fdcb2c9e42809f0f8c58029c59fabfdbb66f162612c25f170f4ca6";
+        };
+      default = "r0";
+      };
+    };
   "3.3.3" = {
     sha256 = "3d0588c02488719cbc7628855b5eedb88498ffb1d45f2e84bb11852283fc0168";
     revisions = {

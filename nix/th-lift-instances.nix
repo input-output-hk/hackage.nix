@@ -55,7 +55,12 @@
         revNum = 2;
         sha256 = "123e66a7f7433cd9296a13ccd3cced74f8d537e0ca77b70acf63065631ec2ece";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/th-lift-instances-0.1.11-r3-42b5eb35a5f632ec8cc0ddbe58e545cd46dc6ed60abd9013d8ceb0ac8a096c92.nix;
+        revNum = 3;
+        sha256 = "42b5eb35a5f632ec8cc0ddbe58e545cd46dc6ed60abd9013d8ceb0ac8a096c92";
+        };
+      default = "r3";
       };
     };
   "0.1.12" = {
@@ -76,7 +81,12 @@
         revNum = 2;
         sha256 = "661eb4cf3605e0ed994053f65aae206934238923f64e50c6fb1a763fa700cae2";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/th-lift-instances-0.1.12-r3-0fd72c604044719797c32440bb3e5311ab7ed6c6c6fd09218629bce5e1151f6c.nix;
+        revNum = 3;
+        sha256 = "0fd72c604044719797c32440bb3e5311ab7ed6c6c6fd09218629bce5e1151f6c";
+        };
+      default = "r3";
       };
     };
   "0.1.13" = {
@@ -97,7 +107,12 @@
         revNum = 2;
         sha256 = "b4d7ee5676656f3c84711ad89a54f6557943d15e77af0deb5a1743461e743a5d";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/th-lift-instances-0.1.13-r3-2b9ef56bd8ab2c7e7d28f4445d51fbe80706f5eef8e74437696deee54a3bb834.nix;
+        revNum = 3;
+        sha256 = "2b9ef56bd8ab2c7e7d28f4445d51fbe80706f5eef8e74437696deee54a3bb834";
+        };
+      default = "r3";
       };
     };
   "0.1.14" = {
@@ -118,7 +133,12 @@
         revNum = 2;
         sha256 = "c3f566f2661505671993bedac21d65872e9739839950b81cc7a0e4aaa9ae66f9";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/th-lift-instances-0.1.14-r3-4d695bbf16b05c254253d88ca8dd6d9f175c5f803bf471d7ce5480a2eeac8529.nix;
+        revNum = 3;
+        sha256 = "4d695bbf16b05c254253d88ca8dd6d9f175c5f803bf471d7ce5480a2eeac8529";
+        };
+      default = "r3";
       };
     };
   "0.1.15" = {
@@ -134,7 +154,12 @@
         revNum = 1;
         sha256 = "17761fa411f34df60ef8183ba96b9dec4f7dfcf76c3968188315f726a9636eef";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/th-lift-instances-0.1.15-r2-96ca45e8f9f0ce01e372f449a30d0b2e36153855827636b4db3a5e60329e88f4.nix;
+        revNum = 2;
+        sha256 = "96ca45e8f9f0ce01e372f449a30d0b2e36153855827636b4db3a5e60329e88f4";
+        };
+      default = "r2";
       };
     };
   "0.1.16" = {
@@ -150,7 +175,12 @@
         revNum = 1;
         sha256 = "5b769900054e2502f8e6ec3ecc483b7037ebc8e1f1b8ae72fa552e87faa3355c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/th-lift-instances-0.1.16-r2-08ac5d2e766a2a1229177f66565bbbe41bbe66c2700d4520a1b836b24951bc35.nix;
+        revNum = 2;
+        sha256 = "08ac5d2e766a2a1229177f66565bbbe41bbe66c2700d4520a1b836b24951bc35";
+        };
+      default = "r2";
       };
     };
   "0.1.17" = {
@@ -166,7 +196,12 @@
         revNum = 1;
         sha256 = "3e0d77eb08c36d792cf04659f526094b921c1a74b4beab619ad99476a6d72b9b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/th-lift-instances-0.1.17-r2-536368674728abcb89438eeeb4a33d00ee5fcc747cabb8c20a8aef3b79e18ce0.nix;
+        revNum = 2;
+        sha256 = "536368674728abcb89438eeeb4a33d00ee5fcc747cabb8c20a8aef3b79e18ce0";
+        };
+      default = "r2";
       };
     };
   "0.1.18" = {
@@ -182,7 +217,12 @@
         revNum = 1;
         sha256 = "8d072543d51a80c8416c304ef303f1022134f7bf143ccad67e0681cb69e9556d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/th-lift-instances-0.1.18-r2-ad7670b5a7c648aa4e1e20d82ac7937a249c1e5df3ef0a8fcd1f3c834d651d1c.nix;
+        revNum = 2;
+        sha256 = "ad7670b5a7c648aa4e1e20d82ac7937a249c1e5df3ef0a8fcd1f3c834d651d1c";
+        };
+      default = "r2";
       };
     };
   "0.1.19" = {
@@ -193,7 +233,12 @@
         revNum = 0;
         sha256 = "38900532d68993cba8e2e84984755a0d9e94df0f84b4e9d23819e0dc495c22d1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/th-lift-instances-0.1.19-r1-b21e5930285616289209a54f1f692441e30cb00101f02342d0129295b5e46da2.nix;
+        revNum = 1;
+        sha256 = "b21e5930285616289209a54f1f692441e30cb00101f02342d0129295b5e46da2";
+        };
+      default = "r1";
       };
     };
   "0.1.2" = {
