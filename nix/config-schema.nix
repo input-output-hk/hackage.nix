@@ -213,4 +213,15 @@
       default = "r3";
       };
     };
+  "1.3.0.0" = {
+    sha256 = "3c89c55bcf5128f62462eafa0c7bc6c441ccfd8a8d2af27c972a144d7ccaabc8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/config-schema-1.3.0.0-r0-8383896aa17b9cc7e920fdbcf9c253cc95d4ccb6b80799c0b4c9bc8bad9a804f.nix;
+        revNum = 0;
+        sha256 = "8383896aa17b9cc7e920fdbcf9c253cc95d4ccb6b80799c0b4c9bc8bad9a804f";
+        };
+      default = "r0";
+      };
+    };
   }

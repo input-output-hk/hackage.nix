@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "856a51e58f2fe4a35d15b765df517adc934919599ccf2e4ea2c25d7aa567220c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/apecs-stm-0.1.5-r1-2bb62c24321060f9d264d3701da36bce620665002c5d6cc54da0af6434e63007.nix;
+        revNum = 1;
+        sha256 = "2bb62c24321060f9d264d3701da36bce620665002c5d6cc54da0af6434e63007";
+        };
+      default = "r1";
       };
     };
   }

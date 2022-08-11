@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "0.1.2.6" = {
+    sha256 = "835dd379a16a39841debbe49d32222ffc0fd7ea794729168b55f9c57a5cf84f9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-trace-events-0.1.2.6-r0-96029dd7ee4815e8c09ca619ef62603fdee9ed163a64adc571fb2d0f16e4fa68.nix;
+        revNum = 0;
+        sha256 = "96029dd7ee4815e8c09ca619ef62603fdee9ed163a64adc571fb2d0f16e4fa68";
+        };
+      default = "r0";
+      };
+    };
   }

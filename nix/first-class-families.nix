@@ -146,7 +146,12 @@
         revNum = 1;
         sha256 = "8be412593297ec4d9e0138499307e1da90e0f7b3923ff11a8f95d36298bbd0d8";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/first-class-families-0.8.0.1-r2-d7a60485a2f392818808d4decbc6af7c20281713ec1d81948747f1c9c8c2b145.nix;
+        revNum = 2;
+        sha256 = "d7a60485a2f392818808d4decbc6af7c20281713ec1d81948747f1c9c8c2b145";
+        };
+      default = "r2";
       };
     };
   }

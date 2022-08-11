@@ -48,4 +48,15 @@
       default = "r0";
       };
     };
+  "0.0.9" = {
+    sha256 = "75edf473f97e2f7981c8c1162f5422aa0ae053f82760b6f79f864416fdaed357";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fix-whitespace-0.0.9-r0-2c2dd2e4bb45266dc9335caac98f4fdb3f0221a09f057e5eab20abf8b05e6013.nix;
+        revNum = 0;
+        sha256 = "2c2dd2e4bb45266dc9335caac98f4fdb3f0221a09f057e5eab20abf8b05e6013";
+        };
+      default = "r0";
+      };
+    };
   }
