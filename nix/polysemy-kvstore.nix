@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "8d88fddae6477be9e36cb34d4cdbf226cc548207ef761b83a3513feb780ccbf0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polysemy-kvstore-0.1.3.0-r0-562a17cbdac8eb97263a8ae5ad53c9261f6341cef7d8c4e0412a9b3a63c95b30.nix;
+        revNum = 0;
+        sha256 = "562a17cbdac8eb97263a8ae5ad53c9261f6341cef7d8c4e0412a9b3a63c95b30";
+        };
+      default = "r0";
+      };
+    };
   }

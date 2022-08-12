@@ -323,4 +323,15 @@
       default = "r1";
       };
     };
+  "1.0.3" = {
+    sha256 = "e2e554823ce6758cbbfb64acb8b5905d3c226eab18b5fcaf5d7c79252114602c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/binary-orphans-1.0.3-r0-0a84acf16708f40e8e99eebd8e12323f037a0ee4ed6145323ce9300927b2a01b.nix;
+        revNum = 0;
+        sha256 = "0a84acf16708f40e8e99eebd8e12323f037a0ee4ed6145323ce9300927b2a01b";
+        };
+      default = "r0";
+      };
+    };
   }

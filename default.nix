@@ -5196,6 +5196,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "feature-flipper" = import ./nix/feature-flipper.nix;
   "feature-flipper-postgres" = import ./nix/feature-flipper-postgres.nix;
   "fec" = import ./nix/fec.nix;
+  "fedora-composes" = import ./nix/fedora-composes.nix;
   "fedora-dists" = import ./nix/fedora-dists.nix;
   "fedora-haskell-tools" = import ./nix/fedora-haskell-tools.nix;
   "fedora-img-dl" = import ./nix/fedora-img-dl.nix;
