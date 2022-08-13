@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "e0cf8812147b6e578ec9043bbda4fa6ba93f994d0ebd6b73a7576b3eb78deecb";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/crypto-rng-effectful-1.0.0.0-r3-bff78615b403c543a6655ffd25ab6ef3b38fdabd483042c73ebbc85c876b07b3.nix;
+        revNum = 3;
+        sha256 = "bff78615b403c543a6655ffd25ab6ef3b38fdabd483042c73ebbc85c876b07b3";
+        };
+      default = "r3";
       };
     };
   }

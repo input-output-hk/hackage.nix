@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "7d1904a6b17f381cf086fc3527f49928734b3ac675e7c782f8aef908ab5682b5";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/effectful-plugin-1.0.0.0-r3-c8144044d4533da578ecacb0678625a978c615876398aa323509df01b786f788.nix;
+        revNum = 3;
+        sha256 = "c8144044d4533da578ecacb0678625a978c615876398aa323509df01b786f788";
+        };
+      default = "r3";
       };
     };
   }

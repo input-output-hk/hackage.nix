@@ -50,7 +50,12 @@
         revNum = 2;
         sha256 = "fbc3a02cce0900262f8ae5967bedc3515a2085abf69d9e54a7c5b0b66674b972";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/generic-functor-0.2.0.0-r3-6d246b2ddcf718ff94b4fc2cca2c3762a31d9ae2d4fde2d77ce27e0ef1f024ac.nix;
+        revNum = 3;
+        sha256 = "6d246b2ddcf718ff94b4fc2cca2c3762a31d9ae2d4fde2d77ce27e0ef1f024ac";
+        };
+      default = "r3";
       };
     };
   }

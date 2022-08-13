@@ -552,7 +552,12 @@
         revNum = 0;
         sha256 = "3440f7362961e134238a714d54dc6b6815b42115551d1953df2adb2aad3d34df";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/acid-state-0.16.1.1-r1-05f02d50283cb18ee4f647fca95841cd01f7b7a6535de57a0dc01b9facdecb22.nix;
+        revNum = 1;
+        sha256 = "05f02d50283cb18ee4f647fca95841cd01f7b7a6535de57a0dc01b9facdecb22";
+        };
+      default = "r1";
       };
     };
   "0.2" = {

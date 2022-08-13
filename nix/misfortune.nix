@@ -58,4 +58,15 @@
       default = "r0";
       };
     };
+  "0.1.2.1" = {
+    sha256 = "e185ec78aedb5ebe0b4152b8f667907bbdb900a0da95b2c2f8d992ef11c31f6a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/misfortune-0.1.2.1-r0-e9235f160eb1c7fa9e0d0a71cfa9b2fb2e81e26724fcaca0a8671a7ea2a868d9.nix;
+        revNum = 0;
+        sha256 = "e9235f160eb1c7fa9e0d0a71cfa9b2fb2e81e26724fcaca0a8671a7ea2a868d9";
+        };
+      default = "r0";
+      };
+    };
   }

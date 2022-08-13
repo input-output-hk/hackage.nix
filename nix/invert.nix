@@ -49,7 +49,12 @@
         revNum = 1;
         sha256 = "fa6b2ca1c18ed04d8f539409f626e371df84e95a846fca862e0b8cc6fdf20a07";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/invert-1.0.0.2-r2-e9048f262389fe71e5ccd5c69cee0aa907e62f1d82b76b9836790fcfb9b388cd.nix;
+        revNum = 2;
+        sha256 = "e9048f262389fe71e5ccd5c69cee0aa907e62f1d82b76b9836790fcfb9b388cd";
+        };
+      default = "r2";
       };
     };
   }

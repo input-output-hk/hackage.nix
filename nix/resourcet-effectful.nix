@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "74e3f8858f84bea9613fc1d58c4af91f6382286fbdd975b28dce3270995802ec";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/resourcet-effectful-1.0.0.0-r3-e357cf5753da34fdb99a2538088e2d3d02b12f31a98d734436000fa9848c7ff0.nix;
+        revNum = 3;
+        sha256 = "e357cf5753da34fdb99a2538088e2d3d02b12f31a98d734436000fa9848c7ff0";
+        };
+      default = "r3";
       };
     };
   }

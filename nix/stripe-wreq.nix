@@ -56,7 +56,12 @@
         revNum = 1;
         sha256 = "c43078edfbbb30e7ec37bb74bbbe53e5ad0347644c6a883e72b2870a64aedace";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/stripe-wreq-1.0.1.14-r2-3b5a2fa095ba25b2527756876281e93781d83bf0e87c36c396c2c6d2d6d55ac6.nix;
+        revNum = 2;
+        sha256 = "3b5a2fa095ba25b2527756876281e93781d83bf0e87c36c396c2c6d2d6d55ac6";
+        };
+      default = "r2";
       };
     };
   "1.0.1.2" = {

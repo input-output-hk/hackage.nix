@@ -10982,6 +10982,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "options" = import ./nix/options.nix;
   "options-time" = import ./nix/options-time.nix;
   "optparse-applicative" = import ./nix/optparse-applicative.nix;
+  "optparse-applicative-cmdline-util" = import ./nix/optparse-applicative-cmdline-util.nix;
   "optparse-applicative-simple" = import ./nix/optparse-applicative-simple.nix;
   "optparse-declarative" = import ./nix/optparse-declarative.nix;
   "optparse-enum" = import ./nix/optparse-enum.nix;
