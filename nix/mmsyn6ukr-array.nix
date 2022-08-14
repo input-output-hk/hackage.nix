@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.3.2.0" = {
+    sha256 = "7ee6063a91cb60e923c21f419b0b4206d213da21450318917aa29f57aec5984f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mmsyn6ukr-array-0.3.2.0-r0-d3dcd78d58da035ff5e788ce0e8ce779d00cdf7c078320424920a44650f0583f.nix;
+        revNum = 0;
+        sha256 = "d3dcd78d58da035ff5e788ce0e8ce779d00cdf7c078320424920a44650f0583f";
+        };
+      default = "r0";
+      };
+    };
   }

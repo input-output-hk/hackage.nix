@@ -1306,6 +1306,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "Zora" = import ./nix/_Zora.nix;
   "Zwaluw" = import ./nix/_Zwaluw.nix;
   "a50" = import ./nix/a50.nix;
+  "aasam" = import ./nix/aasam.nix;
   "abacate" = import ./nix/abacate.nix;
   "abc-puzzle" = import ./nix/abc-puzzle.nix;
   "abcBridge" = import ./nix/abc_Bridge.nix;

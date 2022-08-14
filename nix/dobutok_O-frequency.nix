@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "6c0f1c09bc8253fcf51411258634c866e9a377a0f3c421c393592234ce06b298";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dobutokO-frequency-0.1.2.0-r0-4852c7b8b06666b6099280305deab54643de56c985cf712e1ca634ae25c882c8.nix;
+        revNum = 0;
+        sha256 = "4852c7b8b06666b6099280305deab54643de56c985cf712e1ca634ae25c882c8";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -95,7 +95,12 @@
         revNum = 0;
         sha256 = "9443bcad927de56d222f5f44d5f99270079f03f5deeb42485a7bba5b61184ba1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/doclayout-0.4-r1-e98428855c12ca41233a0b6e9238b0f654d26ecf53e1e0236074a996ed595c36.nix;
+        revNum = 1;
+        sha256 = "e98428855c12ca41233a0b6e9238b0f654d26ecf53e1e0236074a996ed595c36";
+        };
+      default = "r1";
       };
     };
   }
