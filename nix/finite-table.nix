@@ -43,7 +43,12 @@
         revNum = 3;
         sha256 = "8a3143be639c0bca6e94782398aa74aa46e50c091a3bbcb750a4b3ab561de42e";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/finite-table-0.1.0.1-r4-a0e5f71ad0fc770f214a52425c00a7bb8567ec4086dedc9d3b734f865c4ef842.nix;
+        revNum = 4;
+        sha256 = "a0e5f71ad0fc770f214a52425c00a7bb8567ec4086dedc9d3b734f865c4ef842";
+        };
+      default = "r4";
       };
     };
   }

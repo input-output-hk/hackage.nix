@@ -59,7 +59,12 @@
         revNum = 1;
         sha256 = "dde2f91eb4f34febcd880029f1880802932eaf076fe3952d2eab07cf9d8be099";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/universe-reverse-instances-1.1.1-r2-bda5c74a274d06bb7d7d0682f7a2c0755d4b4285e6cdd20d632d9f318410e9d6.nix;
+        revNum = 2;
+        sha256 = "bda5c74a274d06bb7d7d0682f7a2c0755d4b4285e6cdd20d632d9f318410e9d6";
+        };
+      default = "r2";
       };
     };
   }

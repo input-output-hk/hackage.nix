@@ -49,7 +49,12 @@
         revNum = 0;
         sha256 = "7f0d60ef2936269241392d0a8fe3e14872e7a7e5d7e2d402118cf4d6594ee476";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dependent-literals-plugin-0.1.0.2-r1-d25088f9eb5e020f7b112ad0bbe9c24b98ea4f66d72c823aaa59f16ed52c6290.nix;
+        revNum = 1;
+        sha256 = "d25088f9eb5e020f7b112ad0bbe9c24b98ea4f66d72c823aaa59f16ed52c6290";
+        };
+      default = "r1";
       };
     };
   }

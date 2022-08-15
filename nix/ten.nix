@@ -54,7 +54,12 @@
         revNum = 2;
         sha256 = "9fdb424de09f2903c21b5b5fd664999ca47b8c88905edeab900bbc5776a149df";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/ten-0.1.0.2-r3-e345d4675e933aaa6f3366d72553a8e3e40e469c0f3a4b4cb693791a59433782.nix;
+        revNum = 3;
+        sha256 = "e345d4675e933aaa6f3366d72553a8e3e40e469c0f3a4b4cb693791a59433782";
+        };
+      default = "r3";
       };
     };
   }

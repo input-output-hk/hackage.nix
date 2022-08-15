@@ -144,4 +144,15 @@
       default = "r0";
       };
     };
+  "2.1.3" = {
+    sha256 = "b60219fe8144c5d61b140b4607432b24fb93e947c504a8e2f89517175ba6a56a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sdl2-ttf-2.1.3-r0-46b4769918ee2e579d0e378ede559729293d1b9dfb5301d29efcf0470b553aa6.nix;
+        revNum = 0;
+        sha256 = "46b4769918ee2e579d0e378ede559729293d1b9dfb5301d29efcf0470b553aa6";
+        };
+      default = "r0";
+      };
+    };
   }

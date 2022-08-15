@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "1.0.0.1" = {
+    sha256 = "8b58ac9d6140285d9c37feefced6e6013cfbaf00ae410e1e56219d88c533cad9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ki-unlifted-1.0.0.1-r0-83df34df6175b8453e8598db3d8df704c131e71c6c89286ea8c901facf2f7387.nix;
+        revNum = 0;
+        sha256 = "83df34df6175b8453e8598db3d8df704c131e71c6c89286ea8c901facf2f7387";
+        };
+      default = "r0";
+      };
+    };
   }

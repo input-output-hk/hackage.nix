@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "b5995823daa78c71165af0fe58cba3604f3679df0120a387c04f4295cea1f1f4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tomato-rubato-openal-0.1.0.4-r1-de46773acfb214e436c11ab60dbcfaba22d5d2565d86ee674484f418301e4d19.nix;
+        revNum = 1;
+        sha256 = "de46773acfb214e436c11ab60dbcfaba22d5d2565d86ee674484f418301e4d19";
+        };
+      default = "r1";
       };
     };
   }

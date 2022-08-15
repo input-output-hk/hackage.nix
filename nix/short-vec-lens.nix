@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "45edb430951acc4197c3e252568090be276eb1a752823793f1897ab6f7142ca2";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/short-vec-lens-0.1.0.0-r3-bdd3ceb2790e691b515bbe3d986f6bcec9d97b3af2709e40db37ae33e1b7696e.nix;
+        revNum = 3;
+        sha256 = "bdd3ceb2790e691b515bbe3d986f6bcec9d97b3af2709e40db37ae33e1b7696e";
+        };
+      default = "r3";
       };
     };
   }

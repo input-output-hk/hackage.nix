@@ -49,7 +49,12 @@
         revNum = 2;
         sha256 = "b9c8c808797dc9e501a7859067b688ca894bbcad8706334e620d3e0279bdcd91";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/portray-0.2.0-r3-ffddb1a3b7ad96aa6713b6a38c9c706b02b198f93b179e4b583c14975a875f7f.nix;
+        revNum = 3;
+        sha256 = "ffddb1a3b7ad96aa6713b6a38c9c706b02b198f93b179e4b583c14975a875f7f";
+        };
+      default = "r3";
       };
     };
   }

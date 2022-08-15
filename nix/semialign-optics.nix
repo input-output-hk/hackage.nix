@@ -33,7 +33,12 @@
         revNum = 1;
         sha256 = "755fc08f8b33cd493724b76b66071a003bfd1926a51f1fdb3d24a99c2f3574b3";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/semialign-optics-1.2-r2-41dab24bee63d2d93b8f08deb75a2dcca5a1fd92c9af54dea2837adcb1e9f880.nix;
+        revNum = 2;
+        sha256 = "41dab24bee63d2d93b8f08deb75a2dcca5a1fd92c9af54dea2837adcb1e9f880";
+        };
+      default = "r2";
       };
     };
   }

@@ -50,7 +50,12 @@
         revNum = 0;
         sha256 = "15f2fe20a39bd0517a96a2eeffb08d88abbe395fa46a62af18da3f6bdfeabcf8";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ten-unordered-containers-0.1.0.3-r1-d9fce6d6b16a53ef2b247ddaeb9b00d1b019efd66c2c2458b2de9b35f32c3c14.nix;
+        revNum = 1;
+        sha256 = "d9fce6d6b16a53ef2b247ddaeb9b00d1b019efd66c2c2458b2de9b35f32c3c14";
+        };
+      default = "r1";
       };
     };
   }

@@ -37,7 +37,12 @@
         revNum = 6;
         sha256 = "a19249218f52837dc9983bc2c2404d53a32df853a6e2fc8add20a0fdbe08718d";
         };
-      default = "r6";
+      r7 = {
+        nix = import ../hackage/short-vec-0.1.0.0-r7-034ac175043cb7f335adb400c0fd45464486c38aaa827c5c1b76b624448bcc0b.nix;
+        revNum = 7;
+        sha256 = "034ac175043cb7f335adb400c0fd45464486c38aaa827c5c1b76b624448bcc0b";
+        };
+      default = "r7";
       };
     };
   }

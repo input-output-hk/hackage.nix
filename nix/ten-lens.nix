@@ -33,7 +33,12 @@
         revNum = 1;
         sha256 = "436142e7c483dbcfc48ebc35f24364978e2c028fe9e9deab2e725980ee9b60c1";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/ten-lens-0.1.0.1-r2-7956610ae7b2f5d8a256b4b1fdf6addbfc414e6cec6313840fbaa3ceb4235315.nix;
+        revNum = 2;
+        sha256 = "7956610ae7b2f5d8a256b4b1fdf6addbfc414e6cec6313840fbaa3ceb4235315";
+        };
+      default = "r2";
       };
     };
   }

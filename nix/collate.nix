@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "1b48135cbdd12315616a002711b4cde1e67f1c2840bda734709f56871bb9a690";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/collate-0.1.0.0-r2-3df49d6a8ec2af9acf8512512dc0ff93a838b35ff6a662216349d6a0795d5f22.nix;
+        revNum = 2;
+        sha256 = "3df49d6a8ec2af9acf8512512dc0ff93a838b35ff6a662216349d6a0795d5f22";
+        };
+      default = "r2";
       };
     };
   }
