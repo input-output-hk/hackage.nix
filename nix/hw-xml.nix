@@ -234,7 +234,12 @@
         revNum = 0;
         sha256 = "578335ed49c77ea348a8c24119ca905c8733b7aa1c0abafb1a3ae4486270a08c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hw-xml-0.5.1.1-r1-b8bd03a0fad9282eb24cbb8e9bd9ef7eb7c236a875153652c441509bfe02b0e0.nix;
+        revNum = 1;
+        sha256 = "b8bd03a0fad9282eb24cbb8e9bd9ef7eb7c236a875153652c441509bfe02b0e0";
+        };
+      default = "r1";
       };
     };
   }

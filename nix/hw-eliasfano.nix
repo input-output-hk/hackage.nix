@@ -113,7 +113,12 @@
         revNum = 0;
         sha256 = "1f9b1340806982094b6e0e435de4027d34a3004d493ad7e0f182138f25793061";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hw-eliasfano-0.1.2.1-r1-65a5e72b715f6f2729a4f57a2b7e4fefd22568dca8f3db340e24d010168c124f.nix;
+        revNum = 1;
+        sha256 = "65a5e72b715f6f2729a4f57a2b7e4fefd22568dca8f3db340e24d010168c124f";
+        };
+      default = "r1";
       };
     };
   }

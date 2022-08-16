@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "5e211e33208054343da7b4b468eb9ccec916e5e9ff58eb4daf2311ed610ff134";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mmsyn7ukr-common-0.2.0.0-r0-52009ed319fe7fd7f62df31f5c88b68be78814d744df4c051f4f0df535118a79.nix;
+        revNum = 0;
+        sha256 = "52009ed319fe7fd7f62df31f5c88b68be78814d744df4c051f4f0df535118a79";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -89,4 +89,15 @@
       default = "r2";
       };
     };
+  "0.1.1.3" = {
+    sha256 = "d440c1219755ab1804887a524db3dd22b1a179e7ad4cbfb2e37fd63ee20b088f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hackage-repo-tool-0.1.1.3-r0-789c75768c33bcdf445a9ed6a210261d4ab4b7a56d7115b037617d0e9e2d8df5.nix;
+        revNum = 0;
+        sha256 = "789c75768c33bcdf445a9ed6a210261d4ab4b7a56d7115b037617d0e9e2d8df5";
+        };
+      default = "r0";
+      };
+    };
   }

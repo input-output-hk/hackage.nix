@@ -146,7 +146,12 @@
         revNum = 0;
         sha256 = "5f342b88eac337878a80ca484e9f92b878b5a45347cf99c6b5edb86f83be0ed7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hw-fingertree-strict-0.1.2.1-r1-cf6a56a78defb9965051b6628b01b0c8c91e21512bd7b78a61aa260d943c2662.nix;
+        revNum = 1;
+        sha256 = "cf6a56a78defb9965051b6628b01b0c8c91e21512bd7b78a61aa260d943c2662";
+        };
+      default = "r1";
       };
     };
   }

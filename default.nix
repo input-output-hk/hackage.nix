@@ -5832,6 +5832,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "getflag" = import ./nix/getflag.nix;
   "getopt-generics" = import ./nix/getopt-generics.nix;
   "getopt-simple" = import ./nix/getopt-simple.nix;
+  "gettext-th" = import ./nix/gettext-th.nix;
   "gf" = import ./nix/gf.nix;
   "ggtsTC" = import ./nix/ggts_T_C.nix;
   "gh-labeler" = import ./nix/gh-labeler.nix;
@@ -10034,6 +10035,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mmsyn7l" = import ./nix/mmsyn7l.nix;
   "mmsyn7s" = import ./nix/mmsyn7s.nix;
   "mmsyn7ukr" = import ./nix/mmsyn7ukr.nix;
+  "mmsyn7ukr-array" = import ./nix/mmsyn7ukr-array.nix;
   "mmsyn7ukr-common" = import ./nix/mmsyn7ukr-common.nix;
   "mmtf" = import ./nix/mmtf.nix;
   "mmtl" = import ./nix/mmtl.nix;
@@ -14302,6 +14304,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "stylish-cabal" = import ./nix/stylish-cabal.nix;
   "stylish-haskell" = import ./nix/stylish-haskell.nix;
   "stylist" = import ./nix/stylist.nix;
+  "stylist-traits" = import ./nix/stylist-traits.nix;
   "stylized" = import ./nix/stylized.nix;
   "styx" = import ./nix/styx.nix;
   "suavemente" = import ./nix/suavemente.nix;

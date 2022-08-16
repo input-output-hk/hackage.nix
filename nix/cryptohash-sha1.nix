@@ -59,7 +59,12 @@
         revNum = 0;
         sha256 = "ac71ed9565b732eb685e618801482c5c807f7456b7273fa0afcfe3d2285aa0d3";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cryptohash-sha1-0.11.101.0-r1-ab8868780b49b7954efe54f4ff5a1f3be712bdaeac53500bb13c8a75a8cbe92f.nix;
+        revNum = 1;
+        sha256 = "ab8868780b49b7954efe54f4ff5a1f3be712bdaeac53500bb13c8a75a8cbe92f";
+        };
+      default = "r1";
       };
     };
   "0.11.7.1" = {

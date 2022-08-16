@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "4ca462649f2128f61256c8afec7daa75ad47c0801355c320137af84994a00cb7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.11.0.0-r1-6d36fd5a14303da932751dd701cce07e0bb030ff4cdf19a6ae737fc8eb5d2f24.nix;
+        revNum = 1;
+        sha256 = "6d36fd5a14303da932751dd701cce07e0bb030ff4cdf19a6ae737fc8eb5d2f24";
+        };
+      default = "r1";
       };
     };
   "0.5.0.0" = {

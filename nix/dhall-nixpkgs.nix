@@ -153,4 +153,15 @@
       default = "r1";
       };
     };
+  "1.0.9" = {
+    sha256 = "a31c656973f30ddf4d750db75fa351d89a38e7a3937743a8f8f0d71f211611c8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhall-nixpkgs-1.0.9-r0-a5f159848217c282d1a3f1588cb79b65bd666ad48dc7879f0e964b71a55a8251.nix;
+        revNum = 0;
+        sha256 = "a5f159848217c282d1a3f1588cb79b65bd666ad48dc7879f0e964b71a55a8251";
+        };
+      default = "r0";
+      };
+    };
   }

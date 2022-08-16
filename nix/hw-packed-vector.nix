@@ -119,7 +119,12 @@
         revNum = 0;
         sha256 = "ed9edaea94001c05f39839b123524649711aee9d080bc501e8d34cd9e18e563c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hw-packed-vector-0.2.1.1-r1-adf39e54eb1e9c11e3c45e4ecdb804e4be156be2c2c45c7dbf34613cec2b2264.nix;
+        revNum = 1;
+        sha256 = "adf39e54eb1e9c11e3c45e4ecdb804e4be156be2c2c45c7dbf34613cec2b2264";
+        };
+      default = "r1";
       };
     };
   }

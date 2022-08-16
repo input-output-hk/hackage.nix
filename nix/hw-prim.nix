@@ -1226,7 +1226,12 @@
         revNum = 1;
         sha256 = "15b076599f62e84cd023f3a5804b7d11cc4d7c0d4b215851fc35e41bc6f232b6";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hw-prim-0.6.3.1-r2-cd4c7093ee9ff2846423ee401f0accb9c637e9b551ac1a8f98f30c7cfe0fec05.nix;
+        revNum = 2;
+        sha256 = "cd4c7093ee9ff2846423ee401f0accb9c637e9b551ac1a8f98f30c7cfe0fec05";
+        };
+      default = "r2";
       };
     };
   }

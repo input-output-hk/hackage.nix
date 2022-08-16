@@ -228,7 +228,12 @@
         revNum = 1;
         sha256 = "33253e08b2ae267a4e9173ccd50dd50f9607576ab9179cbb34acf666872460c6";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hw-hspec-hedgehog-0.1.1.1-r2-56a793a46c075362c086418bfed2c3ac4e6e5bc3e571132d7c044d40ef732064.nix;
+        revNum = 2;
+        sha256 = "56a793a46c075362c086418bfed2c3ac4e6e5bc3e571132d7c044d40ef732064";
+        };
+      default = "r2";
       };
     };
   }

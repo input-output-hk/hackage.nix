@@ -488,7 +488,12 @@
         revNum = 2;
         sha256 = "38d7a3840163aeaff8194d8a3af354a8c4c4db833f172b88f8bfb7d23dd59f1c";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/blaze-markup-0.8.2.8-r3-8a47373003f472e851afbc3332bb9e0bf1b539a0dfad631bceb704332749c6c2.nix;
+        revNum = 3;
+        sha256 = "8a47373003f472e851afbc3332bb9e0bf1b539a0dfad631bceb704332749c6c2";
+        };
+      default = "r3";
       };
     };
   }

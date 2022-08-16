@@ -107,4 +107,15 @@
       default = "r2";
       };
     };
+  "3.0.0.0" = {
+    sha256 = "3929372d816794b2d193e84edca7d28bb2d2b8a4747889291621d123bb78daf0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xml-conduit-stylist-3.0.0.0-r0-4f1552392d57256f042a1a8195208b51712ddcb3b1a171cafd321a2d9f1f4468.nix;
+        revNum = 0;
+        sha256 = "4f1552392d57256f042a1a8195208b51712ddcb3b1a171cafd321a2d9f1f4468";
+        };
+      default = "r0";
+      };
+    };
   }
