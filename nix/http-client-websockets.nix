@@ -48,4 +48,15 @@
       default = "r0";
       };
     };
+  "0.1.1.3" = {
+    sha256 = "ae842a1a17f2d9d34fe989ad26def5da850128555614337d44e5834be0ae2bbd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http-client-websockets-0.1.1.3-r0-5421c2279fa144bfdcf04cbbbc05aeec57d361d2ee220da3f177dfeeaa3ffb30.nix;
+        revNum = 0;
+        sha256 = "5421c2279fa144bfdcf04cbbbc05aeec57d361d2ee220da3f177dfeeaa3ffb30";
+        };
+      default = "r0";
+      };
+    };
   }

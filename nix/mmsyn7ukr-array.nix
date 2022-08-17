@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "ff6a52a99d5497064c5df1ee0b0e35aff5c0ddff9364b2ff0276f21a48500072";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mmsyn7ukr-array-0.2.0.0-r0-7601231bdbac45685248dfa7ef50e800ac9fccf4d2efd7481290051a62771f06.nix;
+        revNum = 0;
+        sha256 = "7601231bdbac45685248dfa7ef50e800ac9fccf4d2efd7481290051a62771f06";
+        };
+      default = "r0";
+      };
+    };
   }

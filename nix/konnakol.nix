@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "625a7909b0d0e31e1cb62be3ae4d4454e97c15eeb155ac9f1347a70692b85eee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/konnakol-0.3.0.0-r0-8fdb8d6b99c2b2e8fa587af93129c4a8a4ca8059f9cd80e873089b1cfff85a3c.nix;
+        revNum = 0;
+        sha256 = "8fdb8d6b99c2b2e8fa587af93129c4a8a4ca8059f9cd80e873089b1cfff85a3c";
+        };
+      default = "r0";
+      };
+    };
   }

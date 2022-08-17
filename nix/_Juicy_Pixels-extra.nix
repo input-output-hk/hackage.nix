@@ -142,7 +142,12 @@
         revNum = 0;
         sha256 = "093a3a76d5f969b0a24686a4e3948960d0f2131b1eac33a33a6ae760760f6d7f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/JuicyPixels-extra-0.5.2-r1-6c04692e4f54161e65aebec4e1dfce9d516c5de6eed25f9e158aaf361787b8e6.nix;
+        revNum = 1;
+        sha256 = "6c04692e4f54161e65aebec4e1dfce9d516c5de6eed25f9e158aaf361787b8e6";
+        };
+      default = "r1";
       };
     };
   }

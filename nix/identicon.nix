@@ -60,7 +60,12 @@
         revNum = 4;
         sha256 = "eb603b38f3d1051e405d7832610490af2686b3a809535b1fb45968cbd8b195d6";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/identicon-0.2.2-r5-4811e058ec4f51b7d88f461489584b5054979e617888a10ba5c111c55f8a5c2b.nix;
+        revNum = 5;
+        sha256 = "4811e058ec4f51b7d88f461489584b5054979e617888a10ba5c111c55f8a5c2b";
+        };
+      default = "r5";
       };
     };
   }
