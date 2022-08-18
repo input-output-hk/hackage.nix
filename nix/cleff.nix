@@ -84,7 +84,12 @@
         revNum = 0;
         sha256 = "245473c06ed7aa5f70af26bf3dbd0c25b8c4ffbe86aa018977d3c2f7831c29b2";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cleff-0.3.3.0-r1-b89a5bf610ab0bb36603a1c254a25dd837486acd85967c3355ecbc1ca00e7ebc.nix;
+        revNum = 1;
+        sha256 = "b89a5bf610ab0bb36603a1c254a25dd837486acd85967c3355ecbc1ca00e7ebc";
+        };
+      default = "r1";
       };
     };
   }

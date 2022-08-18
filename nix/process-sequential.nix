@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "1cf3580a1fa640fd472528cc9a3867ecca9598ddd1d62dd80bec433378e957df";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/process-sequential-0.1.2.0-r0-37f72dca2d30e72756d587d03ef3c1a217357b56e37adce22ce62f17ff4daf5e.nix;
+        revNum = 0;
+        sha256 = "37f72dca2d30e72756d587d03ef3c1a217357b56e37adce22ce62f17ff4daf5e";
+        };
+      default = "r0";
+      };
+    };
   }

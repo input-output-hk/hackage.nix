@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "0.6.0.0" = {
+    sha256 = "5e2fb4744d72b6156f2ed6c49d23b7021fd7bdac24ddc9340c6e0173f4fbea5a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/algorithmic-composition-basic-0.6.0.0-r0-c741e1e018156c0ea70a5372f6fc0607daa4b072611d3031c46c634ca8dfca4e.nix;
+        revNum = 0;
+        sha256 = "c741e1e018156c0ea70a5372f6fc0607daa4b072611d3031c46c634ca8dfca4e";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -353,7 +353,12 @@
         revNum = 0;
         sha256 = "8b8fec4342c5e57d2d238fed44e8890f09a759fc05f13b980ae32f940b35cad0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/authenticate-oauth-1.7-r1-af2b03698756b2bbb42b8d30236b4d012e31db2b7ce63753158f63d5b0a81da5.nix;
+        revNum = 1;
+        sha256 = "af2b03698756b2bbb42b8d30236b4d012e31db2b7ce63753158f63d5b0a81da5";
+        };
+      default = "r1";
       };
     };
   }
