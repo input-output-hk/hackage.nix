@@ -9022,6 +9022,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lambdiff" = import ./nix/lambdiff.nix;
   "lame" = import ./nix/lame.nix;
   "lame-tester" = import ./nix/lame-tester.nix;
+  "landlock" = import ./nix/landlock.nix;
   "lang" = import ./nix/lang.nix;
   "language-Modula2" = import ./nix/language-_Modula2.nix;
   "language-asn" = import ./nix/language-asn.nix;
@@ -12221,6 +12222,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quickcheck-classes" = import ./nix/quickcheck-classes.nix;
   "quickcheck-classes-base" = import ./nix/quickcheck-classes-base.nix;
   "quickcheck-combinators" = import ./nix/quickcheck-combinators.nix;
+  "quickcheck-dynamic" = import ./nix/quickcheck-dynamic.nix;
   "quickcheck-enum-instances" = import ./nix/quickcheck-enum-instances.nix;
   "quickcheck-higherorder" = import ./nix/quickcheck-higherorder.nix;
   "quickcheck-instances" = import ./nix/quickcheck-instances.nix;

@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.2" = {
+    sha256 = "721182d97898dfaca63de206d2be173bc8da07b7075f039aaa5f8bdbb213d0f8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dns-patterns-0.1.2-r0-c2c2250d582d9b67464ca9368d41f7b9f7563222a48d2425422df6480adde78d.nix;
+        revNum = 0;
+        sha256 = "c2c2250d582d9b67464ca9368d41f7b9f7563222a48d2425422df6480adde78d";
+        };
+      default = "r0";
+      };
+    };
   }

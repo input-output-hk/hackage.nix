@@ -367,7 +367,12 @@
         revNum = 1;
         sha256 = "48cb6efcb89c1ba4c84c62c9aa09ac6965c37d8fa5712972cda01e9d9a796cc6";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/modern-uri-0.3.4.4-r2-64d76d8718bcfd492257853583770f3d9fce60023eccf15e11ffef0ce48bfd47.nix;
+        revNum = 2;
+        sha256 = "64d76d8718bcfd492257853583770f3d9fce60023eccf15e11ffef0ce48bfd47";
+        };
+      default = "r2";
       };
     };
   }

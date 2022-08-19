@@ -111,4 +111,31 @@
       default = "r0";
       };
     };
+  "0.1.5.0" = {
+    sha256 = "faa17a11c1dd69ebfc37f401025a98871bc320e6fe2cd907f76142c5654fd2f4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/finite-typelits-0.1.5.0-r0-9f3c7470e1231e1a52d0759a67c05f37d63e01d1289e1b9bcc847aebc51e770d.nix;
+        revNum = 0;
+        sha256 = "9f3c7470e1231e1a52d0759a67c05f37d63e01d1289e1b9bcc847aebc51e770d";
+        };
+      r1 = {
+        nix = import ../hackage/finite-typelits-0.1.5.0-r1-51a604d2a1750911fca6c2127f4a8a8b481f1940af6fe3e0c06ee21eee5ced2f.nix;
+        revNum = 1;
+        sha256 = "51a604d2a1750911fca6c2127f4a8a8b481f1940af6fe3e0c06ee21eee5ced2f";
+        };
+      default = "r1";
+      };
+    };
+  "0.1.6.0" = {
+    sha256 = "3046456b3b3b7a202da7dc61f909e5925f9eaa57d5e03ce81d3f76ca7d3b0438";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/finite-typelits-0.1.6.0-r0-57abe6696b4b392c054ac1b3a87afc4c54b3531f19c839dab220b5d3632307ab.nix;
+        revNum = 0;
+        sha256 = "57abe6696b4b392c054ac1b3a87afc4c54b3531f19c839dab220b5d3632307ab";
+        };
+      default = "r0";
+      };
+    };
   }

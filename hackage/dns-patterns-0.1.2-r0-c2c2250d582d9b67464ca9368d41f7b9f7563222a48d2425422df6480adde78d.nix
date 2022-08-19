@@ -1,0 +1,50 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "3.0";
+      identifier = { name = "dns-patterns"; version = "0.1.2"; };
+      license = "BSD-3-Clause";
+      copyright = "(c) 2022 Wobcom GmbH";
+      maintainer = "Victor Nawothnig (dminuoso@icloud.com)";
+      author = "Victor Nawothnig";
+      homepage = "";
+      url = "";
+      synopsis = "DNS name parsing and pattern matching utilities";
+      description = "See the main module \"Network.DNS.Pattern\" for full documentation";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
+          ];
+        buildable = true;
+        };
+      tests = {
+        "tests" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."dns-patterns" or (errorHandler.buildDepError "dns-patterns"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }
