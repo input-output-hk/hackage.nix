@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.20220819" = {
+    sha256 = "36fb89804140a92b44c8b79a688c64de18dc180adf48ac9bf4db61cf85b7f99f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-clean-0.2.20220819-r0-735ea19f1cbb0c28ecbcec9c8914c259d13bc05a38321b33eb1365c27b1c29fc.nix;
+        revNum = 0;
+        sha256 = "735ea19f1cbb0c28ecbcec9c8914c259d13bc05a38321b33eb1365c27b1c29fc";
+        };
+      default = "r0";
+      };
+    };
   }

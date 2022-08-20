@@ -6126,6 +6126,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "glpk-hs" = import ./nix/glpk-hs.nix;
   "glsl" = import ./nix/glsl.nix;
   "gltf-codec" = import ./nix/gltf-codec.nix;
+  "gltf-loader" = import ./nix/gltf-loader.nix;
   "glue" = import ./nix/glue.nix;
   "glue-common" = import ./nix/glue-common.nix;
   "glue-core" = import ./nix/glue-core.nix;
@@ -10649,6 +10650,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ngrams-loader" = import ./nix/ngrams-loader.nix;
   "ngx-export" = import ./nix/ngx-export.nix;
   "ngx-export-distribution" = import ./nix/ngx-export-distribution.nix;
+  "ngx-export-healthcheck" = import ./nix/ngx-export-healthcheck.nix;
+  "ngx-export-log" = import ./nix/ngx-export-log.nix;
   "ngx-export-tools" = import ./nix/ngx-export-tools.nix;
   "ngx-export-tools-extra" = import ./nix/ngx-export-tools-extra.nix;
   "niagra" = import ./nix/niagra.nix;

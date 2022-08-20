@@ -197,4 +197,15 @@
       default = "r0";
       };
     };
+  "0.2.9.2" = {
+    sha256 = "889170aa37c8072a35ae3a1856d1e6f77dd9b5c50b3c3a400779ef68d82e4c34";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aern2-real-0.2.9.2-r0-4662c00b7ca3615921900a4691ef5eb5ad00dddfd41f9c4844f9ea69a99bfe51.nix;
+        revNum = 0;
+        sha256 = "4662c00b7ca3615921900a4691ef5eb5ad00dddfd41f9c4844f9ea69a99bfe51";
+        };
+      default = "r0";
+      };
+    };
   }

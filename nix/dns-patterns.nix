@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.3" = {
+    sha256 = "6e1fece5f945b95b7fbb609f028144105b4e5bda163017edef46a790fa1e6704";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dns-patterns-0.1.3-r0-1fe275b3d65cb5eb8b53c2222ae2e70196ea67231e8d857eac57085b4960bf0c.nix;
+        revNum = 0;
+        sha256 = "1fe275b3d65cb5eb8b53c2222ae2e70196ea67231e8d857eac57085b4960bf0c";
+        };
+      default = "r0";
+      };
+    };
   }
