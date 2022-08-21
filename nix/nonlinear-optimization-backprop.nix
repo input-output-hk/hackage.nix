@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "2c489c5c8b0ace0d3ac408863e463e93a58df1b39dc734c411dcda4959445540";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/nonlinear-optimization-backprop-0.2.4-r1-ac14a0dd442ebd98a2743b5c744248bbcc84ac86af8020df1bbf1f86012603d8.nix;
+        revNum = 1;
+        sha256 = "ac14a0dd442ebd98a2743b5c744248bbcc84ac86af8020df1bbf1f86012603d8";
+        };
+      default = "r1";
       };
     };
   }

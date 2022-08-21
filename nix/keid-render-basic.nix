@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "0.1.7.0" = {
+    sha256 = "a683c79c2fc5e8ede1c7cf6fdd0f713837c158ffa5f2000a08999490fe38bb2a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keid-render-basic-0.1.7.0-r0-c76318086944c6f25bd3ceb0d8bea2ebfadb2ae39f3e5bb26d2d4263448359d8.nix;
+        revNum = 0;
+        sha256 = "c76318086944c6f25bd3ceb0d8bea2ebfadb2ae39f3e5bb26d2d4263448359d8";
+        };
+      default = "r0";
+      };
+    };
   }

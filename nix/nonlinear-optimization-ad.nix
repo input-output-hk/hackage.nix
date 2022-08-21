@@ -87,7 +87,12 @@
         revNum = 2;
         sha256 = "88bf416e2d52ccdcfabf4e2fcf36d61c96c465c8085e544dec2de8ae36610427";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/nonlinear-optimization-ad-0.2.4-r3-90f8db5e24779ce467411d50db5b147894274d23dd9dfa6a447c567090666258.nix;
+        revNum = 3;
+        sha256 = "90f8db5e24779ce467411d50db5b147894274d23dd9dfa6a447c567090666258";
+        };
+      default = "r3";
       };
     };
   }

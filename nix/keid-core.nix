@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.1.7.0" = {
+    sha256 = "07d86505c6a79d519d4eaac207f99a53814e619c9d96ce3f46af46f516d23379";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keid-core-0.1.7.0-r0-ac44774a220d5185fa299f2cd6411a3b13ce104a3b3ec69b4b9cdacdd66f8fe1.nix;
+        revNum = 0;
+        sha256 = "ac44774a220d5185fa299f2cd6411a3b13ce104a3b3ec69b4b9cdacdd66f8fe1";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -2653,6 +2653,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "brainheck" = import ./nix/brainheck.nix;
   "break" = import ./nix/break.nix;
   "breakout" = import ./nix/breakout.nix;
+  "breakpoint" = import ./nix/breakpoint.nix;
   "breve" = import ./nix/breve.nix;
   "brians-brain" = import ./nix/brians-brain.nix;
   "brick" = import ./nix/brick.nix;
@@ -5743,6 +5744,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "generic-lens-core" = import ./nix/generic-lens-core.nix;
   "generic-lens-labels" = import ./nix/generic-lens-labels.nix;
   "generic-lens-lite" = import ./nix/generic-lens-lite.nix;
+  "generic-lexicographic-order" = import ./nix/generic-lexicographic-order.nix;
   "generic-lucid-scaffold" = import ./nix/generic-lucid-scaffold.nix;
   "generic-match" = import ./nix/generic-match.nix;
   "generic-maybe" = import ./nix/generic-maybe.nix;
@@ -13424,6 +13426,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sgrep" = import ./nix/sgrep.nix;
   "sh2md" = import ./nix/sh2md.nix;
   "sha-streams" = import ./nix/sha-streams.nix;
+  "sha-validation" = import ./nix/sha-validation.nix;
   "sha1" = import ./nix/sha1.nix;
   "shade" = import ./nix/shade.nix;
   "shadower" = import ./nix/shadower.nix;
