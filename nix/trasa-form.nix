@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.4.1" = {
+    sha256 = "de36c2361356d1d208ee7e5a1ff538e26a1dd07d56440549602b4e7a3010e9f3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/trasa-form-0.4.1-r0-d0ff5f4410f2e1107a9c3959956e73773db480c1dc71162a9964fcdcde99c339.nix;
+        revNum = 0;
+        sha256 = "d0ff5f4410f2e1107a9c3959956e73773db480c1dc71162a9964fcdcde99c339";
+        };
+      default = "r0";
+      };
+    };
   }

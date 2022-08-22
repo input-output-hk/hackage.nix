@@ -273,6 +273,17 @@
       default = "r0";
       };
     };
+  "0.9.12" = {
+    sha256 = "72e6aaa23ada8ec9b7e64250bd6aef5ba7e9435d68561255646d80bc269d9797";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/leancheck-0.9.12-r0-3c40cb10baa92f63502f22f674357755ef8816ced56383033c35d54334a28b7b.nix;
+        revNum = 0;
+        sha256 = "3c40cb10baa92f63502f22f674357755ef8816ced56383033c35d54334a28b7b";
+        };
+      default = "r0";
+      };
+    };
   "0.9.2" = {
     sha256 = "a141e7f71b28cf84da57e6be7d4ff5b03e8c4ee5d152bcd49a1c9dc185ea2f3f";
     revisions = {

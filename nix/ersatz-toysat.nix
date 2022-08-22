@@ -34,7 +34,12 @@
         revNum = 0;
         sha256 = "993c04fc9cfbabdb5b75cf4950bd3a1a74ecbbcf14396c221d1f4b2859cca858";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ersatz-toysat-0.2.2.0-r1-7325f17c18db04e37591e4f6d94fbf44c829544840d5c7c598985ee6ed998022.nix;
+        revNum = 1;
+        sha256 = "7325f17c18db04e37591e4f6d94fbf44c829544840d5c7c598985ee6ed998022";
+        };
+      default = "r1";
       };
     };
   }

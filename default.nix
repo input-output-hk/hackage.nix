@@ -2036,6 +2036,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "atp" = import ./nix/atp.nix;
   "atp-haskell" = import ./nix/atp-haskell.nix;
   "atrans" = import ./nix/atrans.nix;
+  "atrophy" = import ./nix/atrophy.nix;
   "ats-format" = import ./nix/ats-format.nix;
   "ats-pkg" = import ./nix/ats-pkg.nix;
   "ats-setup" = import ./nix/ats-setup.nix;
@@ -12479,6 +12480,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "recursive-line-count" = import ./nix/recursive-line-count.nix;
   "recursive-zipper" = import ./nix/recursive-zipper.nix;
   "recursors" = import ./nix/recursors.nix;
+  "recv" = import ./nix/recv.nix;
   "red-black-record" = import ./nix/red-black-record.nix;
   "red-black-tree" = import ./nix/red-black-tree.nix;
   "redHandlers" = import ./nix/red_Handlers.nix;
@@ -13657,6 +13659,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sized-grid" = import ./nix/sized-grid.nix;
   "sized-types" = import ./nix/sized-types.nix;
   "sized-vector" = import ./nix/sized-vector.nix;
+  "sized-wrapper" = import ./nix/sized-wrapper.nix;
+  "sized-wrapper-aeson" = import ./nix/sized-wrapper-aeson.nix;
+  "sized-wrapper-quickcheck" = import ./nix/sized-wrapper-quickcheck.nix;
+  "sized-wrapper-text" = import ./nix/sized-wrapper-text.nix;
   "sizes" = import ./nix/sizes.nix;
   "sjsp" = import ./nix/sjsp.nix;
   "skein" = import ./nix/skein.nix;
@@ -16166,6 +16172,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wolf" = import ./nix/wolf.nix;
   "woot" = import ./nix/woot.nix;
   "word" = import ./nix/word.nix;
+  "word-array" = import ./nix/word-array.nix;
   "word-compat" = import ./nix/word-compat.nix;
   "word-trie" = import ./nix/word-trie.nix;
   "word-vector" = import ./nix/word-vector.nix;

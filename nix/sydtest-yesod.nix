@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.3.0.1" = {
+    sha256 = "a1b871070ed3a409a02a2e82a7bd542fde4bded5257d48c4859fe1222c0ad8e9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sydtest-yesod-0.3.0.1-r0-381c107dde9f793f55d21280c901bff3a56db24a2afb3cc79d3a7b1d36d35182.nix;
+        revNum = 0;
+        sha256 = "381c107dde9f793f55d21280c901bff3a56db24a2afb3cc79d3a7b1d36d35182";
+        };
+      default = "r0";
+      };
+    };
   }
