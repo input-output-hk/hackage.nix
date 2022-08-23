@@ -299,7 +299,12 @@
         revNum = 0;
         sha256 = "bdb43bc4ba0f93259152defb3580e58c471f691b9fca3e8381bd433f8b7994e1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/generics-sop-0.5.1.2-r1-e877ccb04be39d5fbd37c1c62f7b4b7e518c14aa41079f240b1ecbec8be80be9.nix;
+        revNum = 1;
+        sha256 = "e877ccb04be39d5fbd37c1c62f7b4b7e518c14aa41079f240b1ecbec8be80be9";
+        };
+      default = "r1";
       };
     };
   }

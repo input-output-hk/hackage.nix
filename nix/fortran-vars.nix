@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.3.1" = {
+    sha256 = "c10d49cf233b0738f4f04b16c0c7f9da26a50a3f1bdd34c29f7a093ca0706199";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fortran-vars-0.3.1-r0-b7ccb5880df994fff9c11d0865e82b1c83222e677fa0c90afb3939e610ff3cab.nix;
+        revNum = 0;
+        sha256 = "b7ccb5880df994fff9c11d0865e82b1c83222e677fa0c90afb3939e610ff3cab";
+        };
+      default = "r0";
+      };
+    };
   }

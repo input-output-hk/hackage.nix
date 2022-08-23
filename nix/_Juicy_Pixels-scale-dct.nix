@@ -116,7 +116,12 @@
         revNum = 8;
         sha256 = "6ecd09feb7728f841b8af88b4849594845464afd294bf2e3161ad7eb9116d523";
         };
-      default = "r8";
+      r9 = {
+        nix = import ../hackage/JuicyPixels-scale-dct-0.1.2-r9-71199d430016809c8a17f6cbb9eab88ab1ab282e6b029ca6830dec7343361a8c.nix;
+        revNum = 9;
+        sha256 = "71199d430016809c8a17f6cbb9eab88ab1ab282e6b029ca6830dec7343361a8c";
+        };
+      default = "r9";
       };
     };
   }
