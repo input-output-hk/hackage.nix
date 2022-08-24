@@ -60,7 +60,12 @@
         revNum = 0;
         sha256 = "ed954ce1766a2ca3ad71afd03626fda9f4e13c9807c20c79811600594523b214";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PSQueue-1.1.1-r1-6a047401f39a437c6cf4f866fb9b8f4b53b465bc12ae78c91e5026a653794509.nix;
+        revNum = 1;
+        sha256 = "6a047401f39a437c6cf4f866fb9b8f4b53b465bc12ae78c91e5026a653794509";
+        };
+      default = "r1";
       };
     };
   }

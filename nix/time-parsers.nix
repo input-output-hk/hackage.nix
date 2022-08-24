@@ -95,7 +95,12 @@
         revNum = 4;
         sha256 = "33c930d3f1fab4498d9bf62da40a63a596d20953fc171fafeac98239b3200c12";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/time-parsers-0.1.2.1-r5-80cf465e7305ca356247e4925e4a219dc8ce6829da052891c406549420c57835.nix;
+        revNum = 5;
+        sha256 = "80cf465e7305ca356247e4925e4a219dc8ce6829da052891c406549420c57835";
+        };
+      default = "r5";
       };
     };
   }

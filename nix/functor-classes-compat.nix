@@ -91,7 +91,12 @@
         revNum = 0;
         sha256 = "5155ec68a46f41a309f9c046d2ab70ac70aaca132478f716ecf6e33ba8b07a30";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/functor-classes-compat-2.0.0.2-r1-e83fe5f23a8f5da45ea56787bf5f7b9b82116a8029a30d575b4d6ddf35473cfa.nix;
+        revNum = 1;
+        sha256 = "e83fe5f23a8f5da45ea56787bf5f7b9b82116a8029a30d575b4d6ddf35473cfa";
+        };
+      default = "r1";
       };
     };
   }

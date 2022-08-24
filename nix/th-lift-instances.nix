@@ -252,6 +252,17 @@
       default = "r0";
       };
     };
+  "0.1.20" = {
+    sha256 = "f533c3f95addcca461a0ccd1aafef75dd801bfa6599c0d1184d54bfffb61d870";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/th-lift-instances-0.1.20-r0-c7886eb39760825b8861c68e48b2b5efb5eff8d2cb76201fdd0fb04bcbeff78e.nix;
+        revNum = 0;
+        sha256 = "c7886eb39760825b8861c68e48b2b5efb5eff8d2cb76201fdd0fb04bcbeff78e";
+        };
+      default = "r0";
+      };
+    };
   "0.1.3" = {
     sha256 = "7d363ca037ace53b4b2256bb994e2fcef24a10ee43a621b8ce9b4f3d1b7bd86a";
     revisions = {
