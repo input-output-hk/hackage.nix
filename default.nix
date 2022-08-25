@@ -7719,6 +7719,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-opentelemetry-exporter-otlp" = import ./nix/hs-opentelemetry-exporter-otlp.nix;
   "hs-opentelemetry-instrumentation-cloudflare" = import ./nix/hs-opentelemetry-instrumentation-cloudflare.nix;
   "hs-opentelemetry-instrumentation-conduit" = import ./nix/hs-opentelemetry-instrumentation-conduit.nix;
+  "hs-opentelemetry-instrumentation-hspec" = import ./nix/hs-opentelemetry-instrumentation-hspec.nix;
   "hs-opentelemetry-instrumentation-http-client" = import ./nix/hs-opentelemetry-instrumentation-http-client.nix;
   "hs-opentelemetry-instrumentation-persistent" = import ./nix/hs-opentelemetry-instrumentation-persistent.nix;
   "hs-opentelemetry-instrumentation-postgresql-simple" = import ./nix/hs-opentelemetry-instrumentation-postgresql-simple.nix;
@@ -7727,6 +7728,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-opentelemetry-otlp" = import ./nix/hs-opentelemetry-otlp.nix;
   "hs-opentelemetry-propagator-w3c" = import ./nix/hs-opentelemetry-propagator-w3c.nix;
   "hs-opentelemetry-sdk" = import ./nix/hs-opentelemetry-sdk.nix;
+  "hs-opentelemetry-utils-exceptions" = import ./nix/hs-opentelemetry-utils-exceptions.nix;
   "hs-pattrans" = import ./nix/hs-pattrans.nix;
   "hs-pgms" = import ./nix/hs-pgms.nix;
   "hs-php-session" = import ./nix/hs-php-session.nix;
@@ -12095,6 +12097,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "psql-utils" = import ./nix/psql-utils.nix;
   "psqueues" = import ./nix/psqueues.nix;
   "pstemmer" = import ./nix/pstemmer.nix;
+  "psx" = import ./nix/psx.nix;
   "ptera" = import ./nix/ptera.nix;
   "ptera-core" = import ./nix/ptera-core.nix;
   "ptera-th" = import ./nix/ptera-th.nix;

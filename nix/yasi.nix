@@ -120,7 +120,12 @@
         revNum = 0;
         sha256 = "2524d7f465ea316427354bfb9cbc5f843bf38d678a6818d9c68ba32e8c4d2fc0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yasi-0.2.0.1-r1-86e8679e90c1f8ca9332d552f00f5626e9bd55caf636597ae80131b136180198.nix;
+        revNum = 1;
+        sha256 = "86e8679e90c1f8ca9332d552f00f5626e9bd55caf636597ae80131b136180198";
+        };
+      default = "r1";
       };
     };
   }

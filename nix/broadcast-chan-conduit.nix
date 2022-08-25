@@ -72,7 +72,12 @@
         revNum = 0;
         sha256 = "f4cb89e083fae43c274b0ee4dc59b215374f606e23aebfabf16a29a07df6fb3a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/broadcast-chan-conduit-0.2.1.2-r1-3aa66391680fbf61cf50bfb79178307a83253e3a412052fd554fd6d264b91d5c.nix;
+        revNum = 1;
+        sha256 = "3aa66391680fbf61cf50bfb79178307a83253e3a412052fd554fd6d264b91d5c";
+        };
+      default = "r1";
       };
     };
   }
