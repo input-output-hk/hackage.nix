@@ -223,4 +223,15 @@
       default = "r0";
       };
     };
+  "0.4.9" = {
+    sha256 = "384ce42fe5923f3ba07ce5211f7e6d21afd0d39b9fee6a84070300329e9094b9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rpmbuild-order-0.4.9-r0-a57bfc3d99fc4a80c65451d95e84f1e870c7f85c603f8152bd89d85497484997.nix;
+        revNum = 0;
+        sha256 = "a57bfc3d99fc4a80c65451d95e84f1e870c7f85c603f8152bd89d85497484997";
+        };
+      default = "r0";
+      };
+    };
   }

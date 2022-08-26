@@ -7198,6 +7198,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hedn" = import ./nix/hedn.nix;
   "hedn-functor" = import ./nix/hedn-functor.nix;
   "hedra" = import ./nix/hedra.nix;
+  "hegg" = import ./nix/hegg.nix;
   "heidi" = import ./nix/heidi.nix;
   "hein" = import ./nix/hein.nix;
   "heist" = import ./nix/heist.nix;

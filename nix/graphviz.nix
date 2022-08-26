@@ -538,7 +538,12 @@
         revNum = 0;
         sha256 = "fac315d1a260d1625a938e5164362b080c9110f02aa0a71b7b77b25173cf7e77";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/graphviz-2999.20.1.0-r1-3cb6aa35e826adace5c4f6175b797d1b0717f810acc68ec6db05ab88f4f60ac4.nix;
+        revNum = 1;
+        sha256 = "3cb6aa35e826adace5c4f6175b797d1b0717f810acc68ec6db05ab88f4f60ac4";
+        };
+      default = "r1";
       };
     };
   "2999.5.0.0" = {
