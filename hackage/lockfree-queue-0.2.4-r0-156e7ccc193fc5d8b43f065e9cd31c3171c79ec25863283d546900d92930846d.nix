@@ -1,0 +1,53 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.18";
+      identifier = { name = "lockfree-queue"; version = "0.2.4"; };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "rrnewton@gmail.com";
+      author = "Ryan R. Newton";
+      homepage = "https://github.com/rrnewton/haskell-lockfree/wiki";
+      url = "";
+      synopsis = "Michael and Scott lock-free queues.";
+      description = "Michael and Scott queues are described in their PODC 1996 paper:\n\n<http://dl.acm.org/citation.cfm?id=248052.248106>\n\nThese are single-ended concurrent queues based on a singlly linked\nlist and using atomic CAS instructions to swap the tail pointers.\nAs a well-known efficient algorithm they became the basis for Java's\n@ConcurrentLinkedQueue@.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+          (hsPkgs."abstract-deque" or (errorHandler.buildDepError "abstract-deque"))
+          (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
+          ];
+        buildable = true;
+        };
+      tests = {
+        "test-lockfree-queue" = {
+          depends = [
+            (hsPkgs."lockfree-queue" or (errorHandler.buildDepError "lockfree-queue"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."abstract-deque" or (errorHandler.buildDepError "abstract-deque"))
+            (hsPkgs."abstract-deque-tests" or (errorHandler.buildDepError "abstract-deque-tests"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
+            (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+            (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }

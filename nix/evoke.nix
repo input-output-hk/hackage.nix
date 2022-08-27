@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.2022.8.26" = {
+    sha256 = "12890bb588d6bc2a039a6a214c3d64cacd1ad1bee1dc721fe18cacdac2545e16";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/evoke-0.2022.8.26-r0-724e44caeefccc352d1b7151cc86404f996b51f4eafb1cae52751c3161c98f2f.nix;
+        revNum = 0;
+        sha256 = "724e44caeefccc352d1b7151cc86404f996b51f4eafb1cae52751c3161c98f2f";
+        };
+      default = "r0";
+      };
+    };
   }

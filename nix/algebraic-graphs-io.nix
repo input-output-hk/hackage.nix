@@ -103,4 +103,26 @@
       default = "r1";
       };
     };
+  "0.5" = {
+    sha256 = "ad8b00478ef522b6a91c0e165855a8b78bac77b6eab29e6757dee9c8bd06d04d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/algebraic-graphs-io-0.5-r0-6a8f7b47ee9a97d69bcd61354c7a800db4792638798443bfb5e47ac09e078162.nix;
+        revNum = 0;
+        sha256 = "6a8f7b47ee9a97d69bcd61354c7a800db4792638798443bfb5e47ac09e078162";
+        };
+      default = "r0";
+      };
+    };
+  "0.5.0.1" = {
+    sha256 = "8c884d11aba4f2b38b08df6ac611587c23b81040bb9a2b5acd4b4e24d242711f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/algebraic-graphs-io-0.5.0.1-r0-71561ab0a6f5e3ed6a1f4cbdbdf6bd208b49c97d2ab1ace4de6b68bc466c4d6b.nix;
+        revNum = 0;
+        sha256 = "71561ab0a6f5e3ed6a1f4cbdbdf6bd208b49c97d2ab1ace4de6b68bc466c4d6b";
+        };
+      default = "r0";
+      };
+    };
   }

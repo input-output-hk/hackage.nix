@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.2.4" = {
+    sha256 = "a0f6770cdcbe0c4f86ba2a498af06933db615d83ff5457a1750f733f6ef399ee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lockfree-queue-0.2.4-r0-156e7ccc193fc5d8b43f065e9cd31c3171c79ec25863283d546900d92930846d.nix;
+        revNum = 0;
+        sha256 = "156e7ccc193fc5d8b43f065e9cd31c3171c79ec25863283d546900d92930846d";
+        };
+      default = "r0";
+      };
+    };
   }
