@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "2.0.0.3" = {
+    sha256 = "b604c5b159e9e8a7a4706b0ddaa8a4df2642ca352031cdfdf3c128edf649c2bc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rampart-2.0.0.3-r0-432962113b0f207f24f25bfce4359113f7782e3a5591668267bdbca6e72c9e19.nix;
+        revNum = 0;
+        sha256 = "432962113b0f207f24f25bfce4359113f7782e3a5591668267bdbca6e72c9e19";
+        };
+      default = "r0";
+      };
+    };
   }

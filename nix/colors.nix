@@ -78,7 +78,12 @@
         revNum = 1;
         sha256 = "b49946d81e0089d4d80191523839f934802975ede3b9fd9521ead9e591142560";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/colors-0.3.0.2-r2-d2e5d3aaaf5ee562acc949ba37cb9348060c631c3a03377757d0048f803115fe.nix;
+        revNum = 2;
+        sha256 = "d2e5d3aaaf5ee562acc949ba37cb9348060c631c3a03377757d0048f803115fe";
+        };
+      default = "r2";
       };
     };
   }

@@ -115,7 +115,12 @@
         revNum = 3;
         sha256 = "04e9fe9806ee246f9a8f61cfbf9dad03913b0a1f4860ecc9f195db7a8b6936d5";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/palette-0.3.0.2-r4-94a751d542b7ad35dc3db41c7252d63a98aea261d892580094a5baaa61fad21f.nix;
+        revNum = 4;
+        sha256 = "94a751d542b7ad35dc3db41c7252d63a98aea261d892580094a5baaa61fad21f";
+        };
+      default = "r4";
       };
     };
   }

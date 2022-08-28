@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "4da3a9f7ac9760cfe97045e7dd458c2c7a92aed255a2014f43d64dc302ac7ebd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/boundingboxes-0.2.3-r1-c60ed66454e352ea8746073608bd3b25a609944e8137c1f0470bae12995de163.nix;
+        revNum = 1;
+        sha256 = "c60ed66454e352ea8746073608bd3b25a609944e8137c1f0470bae12995de163";
+        };
+      default = "r1";
       };
     };
   }

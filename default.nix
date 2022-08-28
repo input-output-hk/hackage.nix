@@ -1453,6 +1453,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aeson-compat" = import ./nix/aeson-compat.nix;
   "aeson-decode" = import ./nix/aeson-decode.nix;
   "aeson-default" = import ./nix/aeson-default.nix;
+  "aeson-dependent-sum" = import ./nix/aeson-dependent-sum.nix;
   "aeson-deriving" = import ./nix/aeson-deriving.nix;
   "aeson-diff" = import ./nix/aeson-diff.nix;
   "aeson-diff-generic" = import ./nix/aeson-diff-generic.nix;
