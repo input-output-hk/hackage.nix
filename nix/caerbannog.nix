@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "1.0.0.2" = {
+    sha256 = "11553df2e890d16beb125eede0132eb0a807a5ba72c33ff9075230744f903327";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/caerbannog-1.0.0.2-r0-5d3c52d50c9fb10b65851f36232921f6e5f3bf4f4410194328e1a96880b88d0b.nix;
+        revNum = 0;
+        sha256 = "5d3c52d50c9fb10b65851f36232921f6e5f3bf4f4410194328e1a96880b88d0b";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "d64880e7d6c7a2d635d7e79552888f415a417379ee637a29321abf08187e9635";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/data-bword-0.1.0.2-r0-9f681df2f06b5e8f53887ae2d3a723b2113a8d1a1f9010fd2fa6d14658a21653.nix;
+        revNum = 0;
+        sha256 = "9f681df2f06b5e8f53887ae2d3a723b2113a8d1a1f9010fd2fa6d14658a21653";
+        };
+      default = "r0";
+      };
+    };
   }

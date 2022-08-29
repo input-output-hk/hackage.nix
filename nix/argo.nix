@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.2022.8.28" = {
+    sha256 = "9368527ae11557e282f596b6a2497f939eb12db37c568bf3081ddfe017913842";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/argo-0.2022.8.28-r0-b7856c8539986ffa824f02de1d2a5640e08b4e60bedfeb3decc411ce26e230bb.nix;
+        revNum = 0;
+        sha256 = "b7856c8539986ffa824f02de1d2a5640e08b4e60bedfeb3decc411ce26e230bb";
+        };
+      default = "r0";
+      };
+    };
   }

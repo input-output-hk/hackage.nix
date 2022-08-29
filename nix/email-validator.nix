@@ -48,4 +48,15 @@
       default = "r1";
       };
     };
+  "1.0.1" = {
+    sha256 = "3a004048614d15b46f38161ccb0bfc8e99d5e428c210be677a3fed1668a6c15a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/email-validator-1.0.1-r0-8a428bfd7d4cf10af1950f80d8617d81a2f0a096a311d5b00488ffa823ea7282.nix;
+        revNum = 0;
+        sha256 = "8a428bfd7d4cf10af1950f80d8617d81a2f0a096a311d5b00488ffa823ea7282";
+        };
+      default = "r0";
+      };
+    };
   }

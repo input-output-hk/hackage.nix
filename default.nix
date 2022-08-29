@@ -8006,6 +8006,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "html-kure" = import ./nix/html-kure.nix;
   "html-minimalist" = import ./nix/html-minimalist.nix;
   "html-parse" = import ./nix/html-parse.nix;
+  "html-parse-util" = import ./nix/html-parse-util.nix;
   "html-presentation-text" = import ./nix/html-presentation-text.nix;
   "html-rules" = import ./nix/html-rules.nix;
   "html-tokenizer" = import ./nix/html-tokenizer.nix;

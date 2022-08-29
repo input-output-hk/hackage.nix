@@ -120,4 +120,15 @@
       default = "r0";
       };
     };
+  "0.5.3" = {
+    sha256 = "f04b718590e23654fd3a257ff1d2c6cec010ec28cf58814ddb42468ff99bf282";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haeredes-0.5.3-r0-893da7a9000720d42fc50ffb456c4f1416577d7e0a706f0df7cfd24937cf992e.nix;
+        revNum = 0;
+        sha256 = "893da7a9000720d42fc50ffb456c4f1416577d7e0a706f0df7cfd24937cf992e";
+        };
+      default = "r0";
+      };
+    };
   }

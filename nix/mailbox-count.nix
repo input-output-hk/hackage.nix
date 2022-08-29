@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.0.6" = {
+    sha256 = "3374d22904b0eeb468a1adb872ed508de948363cb84f6875292c7e3e0c0d5e5e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mailbox-count-0.0.6-r0-ea4e847123be22f5f067c65a5e83124e42298470ca3d24c0c792480e32c7629b.nix;
+        revNum = 0;
+        sha256 = "ea4e847123be22f5f067c65a5e83124e42298470ca3d24c0c792480e32c7629b";
+        };
+      default = "r0";
+      };
+    };
   }

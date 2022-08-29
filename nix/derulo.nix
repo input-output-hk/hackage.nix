@@ -175,4 +175,15 @@
       default = "r0";
       };
     };
+  "2.0.0.3" = {
+    sha256 = "6bd23a14d03d6fa1ec0565e2b54302f50a8d1cd5e04481563cd114610c5d402f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/derulo-2.0.0.3-r0-e3b2a2300f3438d922b14c0323b06f740a3a489601090a93759ac20208931a68.nix;
+        revNum = 0;
+        sha256 = "e3b2a2300f3438d922b14c0323b06f740a3a489601090a93759ac20208931a68";
+        };
+      default = "r0";
+      };
+    };
   }
