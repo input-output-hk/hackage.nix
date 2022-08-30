@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.9.9.9" = {
+    sha256 = "4e6a084a149840f51bdcfc729521fddb27f1f23f1900b6b4b00c3643ed6da656";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ribosome-test-0.9.9.9-r0-67eac317a2fb6e3fa27d5e067d3113daee3395f5432aefa1192530ff39a0763e.nix;
+        revNum = 0;
+        sha256 = "67eac317a2fb6e3fa27d5e067d3113daee3395f5432aefa1192530ff39a0763e";
+        };
+      default = "r0";
+      };
+    };
   }

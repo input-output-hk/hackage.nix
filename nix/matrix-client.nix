@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.1.4.3" = {
+    sha256 = "44d38abba774b944289b9e4872301d3f40cfd6c435755cbc5de34c039a12c386";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/matrix-client-0.1.4.3-r0-4ec858aeb36460333d026a37ae4518642ba82b610ee2500a6abea4fd712b05c4.nix;
+        revNum = 0;
+        sha256 = "4ec858aeb36460333d026a37ae4518642ba82b610ee2500a6abea4fd712b05c4";
+        };
+      default = "r0";
+      };
+    };
   }

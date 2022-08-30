@@ -472,4 +472,15 @@
       default = "r0";
       };
     };
+  "1.2" = {
+    sha256 = "e9b8fca89378706b064a5525563fc35624d2fc5df1267d8283d343bce34bb4fd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/free-game-1.2-r0-58a0b2d146aae348cebe3187c9c6b385c9d390c4de499e4b57c53c9e01165f39.nix;
+        revNum = 0;
+        sha256 = "58a0b2d146aae348cebe3187c9c6b385c9d390c4de499e4b57c53c9e01165f39";
+        };
+      default = "r0";
+      };
+    };
   }

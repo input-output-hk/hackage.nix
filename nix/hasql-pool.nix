@@ -263,4 +263,26 @@
       default = "r0";
       };
     };
+  "0.8" = {
+    sha256 = "d048cf270d175feb5323f96136db2d15a7defea687928f73d6a64a54b0cf4945";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-pool-0.8-r0-bcb816cc14198b219fe5e7722817ace4cd1d5764e18d4f281d0615a92a50a486.nix;
+        revNum = 0;
+        sha256 = "bcb816cc14198b219fe5e7722817ace4cd1d5764e18d4f281d0615a92a50a486";
+        };
+      default = "r0";
+      };
+    };
+  "0.8.0.1" = {
+    sha256 = "a3e490acb8906b9018a7ae9fa594e109caa4a0c0a14a93e77531cb3401dddb8f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-pool-0.8.0.1-r0-472bf80e11e8cdc9bb1ee6dc32be9af5031ed1f9ff78297b4ecd09d3f696f8e0.nix;
+        revNum = 0;
+        sha256 = "472bf80e11e8cdc9bb1ee6dc32be9af5031ed1f9ff78297b4ecd09d3f696f8e0";
+        };
+      default = "r0";
+      };
+    };
   }

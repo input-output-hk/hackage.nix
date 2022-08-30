@@ -428,4 +428,15 @@
       default = "r0";
       };
     };
+  "2.1.2" = {
+    sha256 = "0e18d0145675f9e24344d46d28092717f57ef807ad4e893fdf1bf653fa458c84";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/interval-algebra-2.1.2-r0-dae78cbd57e17086e88176fa4763fb56d45a88c34d01fd1212aaab272c8b82b3.nix;
+        revNum = 0;
+        sha256 = "dae78cbd57e17086e88176fa4763fb56d45a88c34d01fd1212aaab272c8b82b3";
+        };
+      default = "r0";
+      };
+    };
   }

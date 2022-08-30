@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.3.3" = {
+    sha256 = "96266d8189361a03628e7620be2bc704609c7616180eb375ab026ef979cbb9e4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/procex-0.3.3-r0-453b43d6053e6064683f58835c30785a53f6f48801eb51c43fc4f74282d54db2.nix;
+        revNum = 0;
+        sha256 = "453b43d6053e6064683f58835c30785a53f6f48801eb51c43fc4f74282d54db2";
+        };
+      default = "r0";
+      };
+    };
   }

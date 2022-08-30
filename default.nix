@@ -12801,6 +12801,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rib-core" = import ./nix/rib-core.nix;
   "ribbit" = import ./nix/ribbit.nix;
   "ribosome" = import ./nix/ribosome.nix;
+  "ribosome-app" = import ./nix/ribosome-app.nix;
+  "ribosome-host" = import ./nix/ribosome-host.nix;
+  "ribosome-host-test" = import ./nix/ribosome-host-test.nix;
   "ribosome-root" = import ./nix/ribosome-root.nix;
   "ribosome-test" = import ./nix/ribosome-test.nix;
   "richreports" = import ./nix/richreports.nix;
