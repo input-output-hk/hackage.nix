@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "1.0.0.1" = {
+    sha256 = "b3348b59221f8c39ce5e6e5b4e390216304dae6c43bee9339424efd5f075d696";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/genvalidity-uuid-1.0.0.1-r0-fd5c365a0deedf11c6e3be379f883cb098d2edb3e3233def8592f1a4508b5a8a.nix;
+        revNum = 0;
+        sha256 = "fd5c365a0deedf11c6e3be379f883cb098d2edb3e3233def8592f1a4508b5a8a";
+        };
+      default = "r0";
+      };
+    };
   }

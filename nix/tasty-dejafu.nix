@@ -428,4 +428,15 @@
       default = "r0";
       };
     };
+  "2.0.0.9" = {
+    sha256 = "ea7dd33a158b9be6c35bf21af9024ef028805e233989508bf0c2291815421533";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-dejafu-2.0.0.9-r0-405118435bef0a2ab0666e9c3c5f17141e91f7b25a6dd5d1681fcbcb70eaccd6.nix;
+        revNum = 0;
+        sha256 = "405118435bef0a2ab0666e9c3c5f17141e91f7b25a6dd5d1681fcbcb70eaccd6";
+        };
+      default = "r0";
+      };
+    };
   }

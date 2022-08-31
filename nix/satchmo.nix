@@ -274,4 +274,15 @@
       default = "r0";
       };
     };
+  "2.9.9.4" = {
+    sha256 = "321116a4758f59c0853f4f1470036b9528482e2e2688b4ff95da3e391596fc2c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/satchmo-2.9.9.4-r0-32c1109a2535aaadc35f237a770d2358cc171cfd9315345c74f96f1a87d328eb.nix;
+        revNum = 0;
+        sha256 = "32c1109a2535aaadc35f237a770d2358cc171cfd9315345c74f96f1a87d328eb";
+        };
+      default = "r0";
+      };
+    };
   }

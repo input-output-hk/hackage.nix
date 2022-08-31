@@ -147,4 +147,15 @@
       default = "r0";
       };
     };
+  "1.0.0.1" = {
+    sha256 = "867c5a77aa2750e6b574f63b5bc23e037d8e0e393d627df49df46497d9346c94";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/genvalidity-time-1.0.0.1-r0-7e71ce1ee43bf989d24cb62207fd097271d54dcde71e67dfd80c136cd8719d80.nix;
+        revNum = 0;
+        sha256 = "7e71ce1ee43bf989d24cb62207fd097271d54dcde71e67dfd80c136cd8719d80";
+        };
+      default = "r0";
+      };
+    };
   }

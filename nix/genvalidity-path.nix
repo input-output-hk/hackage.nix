@@ -130,4 +130,15 @@
       default = "r0";
       };
     };
+  "1.0.0.1" = {
+    sha256 = "3fb4081a0f578a5cf00564bab49013784f8b4395ef2c4e005960772475924ee5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/genvalidity-path-1.0.0.1-r0-011b875a98c7c05c61bbf60505e8d8ff4333ccc65ca6cb9ec3669d775c98959e.nix;
+        revNum = 0;
+        sha256 = "011b875a98c7c05c61bbf60505e8d8ff4333ccc65ca6cb9ec3669d775c98959e";
+        };
+      default = "r0";
+      };
+    };
   }

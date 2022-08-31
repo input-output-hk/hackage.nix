@@ -395,4 +395,15 @@
       default = "r0";
       };
     };
+  "2.0.0.6" = {
+    sha256 = "e7e4330bb7adadef4b5b2211019623f2f6b3f159ece5505445514477906983b0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hunit-dejafu-2.0.0.6-r0-c75f933e6c5a86241e1a5942bb8ab6a86122f27275027aeb97ba874c65e8aadf.nix;
+        revNum = 0;
+        sha256 = "c75f933e6c5a86241e1a5942bb8ab6a86122f27275027aeb97ba874c65e8aadf";
+        };
+      default = "r0";
+      };
+    };
   }

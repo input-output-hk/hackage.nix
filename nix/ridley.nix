@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.3.4.0" = {
+    sha256 = "0649915042a544d5827928e5bdcc88c46af9e5ef34360ca695c67efd2c838656";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ridley-0.3.4.0-r0-d092ee820cb01dcdf93eacb870b0f2abeba25a5f6cf6a70239e65c48e5eed786.nix;
+        revNum = 0;
+        sha256 = "d092ee820cb01dcdf93eacb870b0f2abeba25a5f6cf6a70239e65c48e5eed786";
+        };
+      default = "r0";
+      };
+    };
   }
