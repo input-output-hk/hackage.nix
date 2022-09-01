@@ -658,7 +658,12 @@
         revNum = 1;
         sha256 = "ef7814bc430898a8e5470dc80104bdbed92d809da929e0be681cb67ef99e9c25";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hw-bits-0.7.2.2-r2-554c1434cf95424060d65cc393a64fe278cfc58e356ec707be9b393d3cbb61e3.nix;
+        revNum = 2;
+        sha256 = "554c1434cf95424060d65cc393a64fe278cfc58e356ec707be9b393d3cbb61e3";
+        };
+      default = "r2";
       };
     };
   }

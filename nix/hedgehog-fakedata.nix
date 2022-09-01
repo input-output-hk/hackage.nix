@@ -67,7 +67,12 @@
         revNum = 0;
         sha256 = "0252fc9d050da6e759a5365a0b365f7beb4d2a5006bb74f6acc4acaa7db93b45";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hedgehog-fakedata-0.0.1.5-r1-d8059e4ef9b7b4112bef9791300118f3a2d776bb191e50b41635a411af609428.nix;
+        revNum = 1;
+        sha256 = "d8059e4ef9b7b4112bef9791300118f3a2d776bb191e50b41635a411af609428";
+        };
+      default = "r1";
       };
     };
   }

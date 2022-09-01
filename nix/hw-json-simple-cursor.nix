@@ -96,7 +96,12 @@
         revNum = 1;
         sha256 = "e17ac4841ca6addfd8c1aa648468b6448a3437f0024f909def99f1f5f2a03539";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hw-json-simple-cursor-0.1.1.1-r2-18879cfe3d6376be39eee8e0adc1f73264060e9b141be072f58a18294883487f.nix;
+        revNum = 2;
+        sha256 = "18879cfe3d6376be39eee8e0adc1f73264060e9b141be072f58a18294883487f";
+        };
+      default = "r2";
       };
     };
   }

@@ -135,7 +135,12 @@
         revNum = 0;
         sha256 = "5700d126cb6ebee844d7266d3ad12e73ffac1a8102dc83644b256c7fbd749e7a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hw-mquery-0.2.1.1-r1-acd5ead7f8866a296be724add4db6009a34a4871898ee1768157525a52160399.nix;
+        revNum = 1;
+        sha256 = "acd5ead7f8866a296be724add4db6009a34a4871898ee1768157525a52160399";
+        };
+      default = "r1";
       };
     };
   }

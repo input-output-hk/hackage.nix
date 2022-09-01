@@ -246,7 +246,12 @@
         revNum = 1;
         sha256 = "4af1d2c4534471455841c867f23d2c2bf5656f9200f0f70e2c4e317f451b47b3";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hw-dsv-0.4.1.1-r2-d0fd6e006d4e056cebed29f72c1eb1c7c8a494153486d4bf306b368e59e33da5.nix;
+        revNum = 2;
+        sha256 = "d0fd6e006d4e056cebed29f72c1eb1c7c8a494153486d4bf306b368e59e33da5";
+        };
+      default = "r2";
       };
     };
   }
