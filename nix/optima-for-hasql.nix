@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2" = {
+    sha256 = "f887cfc3a20d71200425688d5f0fc057388040f774a712f068a798c9b5950d21";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/optima-for-hasql-0.2-r0-078ddf6e4d98284ebea99efc4c1e9b4d42cd05c7c67b09ed3d34a86aef7cc44c.nix;
+        revNum = 0;
+        sha256 = "078ddf6e4d98284ebea99efc4c1e9b4d42cd05c7c67b09ed3d34a86aef7cc44c";
+        };
+      default = "r0";
+      };
+    };
   }

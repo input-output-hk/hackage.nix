@@ -12499,6 +12499,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "redis-io" = import ./nix/redis-io.nix;
   "redis-job-queue" = import ./nix/redis-job-queue.nix;
   "redis-resp" = import ./nix/redis-resp.nix;
+  "redis-schema" = import ./nix/redis-schema.nix;
   "redis-simple" = import ./nix/redis-simple.nix;
   "rediscaching-haxl" = import ./nix/rediscaching-haxl.nix;
   "redland" = import ./nix/redland.nix;
@@ -14425,6 +14426,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sydtest" = import ./nix/sydtest.nix;
   "sydtest-aeson" = import ./nix/sydtest-aeson.nix;
   "sydtest-amqp" = import ./nix/sydtest-amqp.nix;
+  "sydtest-autodocodec" = import ./nix/sydtest-autodocodec.nix;
   "sydtest-discover" = import ./nix/sydtest-discover.nix;
   "sydtest-hedgehog" = import ./nix/sydtest-hedgehog.nix;
   "sydtest-hedis" = import ./nix/sydtest-hedis.nix;
@@ -16032,6 +16034,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "weak" = import ./nix/weak.nix;
   "weak-bag" = import ./nix/weak-bag.nix;
   "weather-api" = import ./nix/weather-api.nix;
+  "weatherhs" = import ./nix/weatherhs.nix;
   "web-browser-in-haskell" = import ./nix/web-browser-in-haskell.nix;
   "web-css" = import ./nix/web-css.nix;
   "web-encodings" = import ./nix/web-encodings.nix;

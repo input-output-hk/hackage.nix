@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "9f772b22ce731083b10c58d15a7e7cde8c11baf19d4f0bc41e6b3e47f1841e51";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ascii-numbers-1.1.0.0-r1-e962bbdaff99970fbe902114d597e1c59cd2d773cbea672e5c2607ffb1348317.nix;
+        revNum = 1;
+        sha256 = "e962bbdaff99970fbe902114d597e1c59cd2d773cbea672e5c2607ffb1348317";
+        };
+      default = "r1";
       };
     };
   }

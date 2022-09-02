@@ -95,4 +95,15 @@
       default = "r1";
       };
     };
+  "0.1.0.6" = {
+    sha256 = "091b1cb8f80b664e19e061e5dec6dca5accb55bb1db2f4440a820497a5df98dc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/persistent-discover-0.1.0.6-r0-4ed45dd312905def096944407173983db8d086224530076247c633f8aaaaae71.nix;
+        revNum = 0;
+        sha256 = "4ed45dd312905def096944407173983db8d086224530076247c633f8aaaaae71";
+        };
+      default = "r0";
+      };
+    };
   }

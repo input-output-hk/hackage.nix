@@ -208,4 +208,15 @@
       default = "r0";
       };
     };
+  "0.5" = {
+    sha256 = "48fc3dd0078957bcb7237d8afe5ee6e14aa3afc21702f797a4084fc3ecdc87ad";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-optparse-applicative-0.5-r0-e1bc46dde683979e99b1980cd3b339e4280c7ad3c5651a23a5673b1a87acde51.nix;
+        revNum = 0;
+        sha256 = "e1bc46dde683979e99b1980cd3b339e4280c7ad3c5651a23a5673b1a87acde51";
+        };
+      default = "r0";
+      };
+    };
   }

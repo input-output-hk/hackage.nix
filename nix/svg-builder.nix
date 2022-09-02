@@ -75,7 +75,12 @@
         revNum = 5;
         sha256 = "825ebc18c4e457efa1bc6ca5f90f5abc80566992e8ffdab6ccb782407a46db32";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/svg-builder-0.1.1-r6-5f44fc6623bf28b6067a5d619dbb9a78825d453266b6f02f69b1e5a03caaf9b2.nix;
+        revNum = 6;
+        sha256 = "5f44fc6623bf28b6067a5d619dbb9a78825d453266b6f02f69b1e5a03caaf9b2";
+        };
+      default = "r6";
       };
     };
   }

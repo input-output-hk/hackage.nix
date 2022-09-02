@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "0.2.0.9" = {
+    sha256 = "400566bcd055e0775985bf55180afebc5fe0f7929092a2f35ca02f50a37b99e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libssh2-0.2.0.9-r0-083e59a99f889d3394c6cbcde37cc93b29aa5f750b33176edd6a1a8f82351e59.nix;
+        revNum = 0;
+        sha256 = "083e59a99f889d3394c6cbcde37cc93b29aa5f750b33176edd6a1a8f82351e59";
+        };
+      default = "r0";
+      };
+    };
   }

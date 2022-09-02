@@ -162,7 +162,12 @@
         revNum = 3;
         sha256 = "d173d096bb7de6a42bcfa01d2c5247b6faa3d0cad7e21b84e0ac59b2b0d3796d";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/aws-cloudfront-signed-cookies-0.2.0.11-r4-7203709ac13037fdefeb2e58f58f5806d88128dad2817ff2f5974f03c9517ce6.nix;
+        revNum = 4;
+        sha256 = "7203709ac13037fdefeb2e58f58f5806d88128dad2817ff2f5974f03c9517ce6";
+        };
+      default = "r4";
       };
     };
   "0.2.0.2" = {
