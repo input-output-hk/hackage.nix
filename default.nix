@@ -13044,6 +13044,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "satchmo-minisat" = import ./nix/satchmo-minisat.nix;
   "satchmo-toysat" = import ./nix/satchmo-toysat.nix;
   "satyros" = import ./nix/satyros.nix;
+  "sauron" = import ./nix/sauron.nix;
   "savage" = import ./nix/savage.nix;
   "sax" = import ./nix/sax.nix;
   "say" = import ./nix/say.nix;

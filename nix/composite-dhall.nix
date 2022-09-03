@@ -91,4 +91,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "aa6c8a8a05c5aa5cc7c76440f57f9459f7f3aa07b1f4b290549a17c196c2eb34";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/composite-dhall-0.1.0.1-r0-2a455d68f41eccc7da2df5a742fc47f3e64712a8a04d8833e3340978ea909764.nix;
+        revNum = 0;
+        sha256 = "2a455d68f41eccc7da2df5a742fc47f3e64712a8a04d8833e3340978ea909764";
+        };
+      default = "r0";
+      };
+    };
   }
