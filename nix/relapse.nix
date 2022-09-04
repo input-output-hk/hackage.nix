@@ -106,4 +106,15 @@
       default = "r0";
       };
     };
+  "1.0.0.1" = {
+    sha256 = "d955e53226a246fa5d0350ce915f952a55766e2f34e8a0283366f236c9b3a5f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/relapse-1.0.0.1-r0-e4802c31ab5afe7d62a96d6a2f12392d9a5b80a24813efc6495b4f3d0c11723b.nix;
+        revNum = 0;
+        sha256 = "e4802c31ab5afe7d62a96d6a2f12392d9a5b80a24813efc6495b4f3d0c11723b";
+        };
+      default = "r0";
+      };
+    };
   }

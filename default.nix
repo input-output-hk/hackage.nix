@@ -10784,6 +10784,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "number" = import ./nix/number.nix;
   "number-length" = import ./nix/number-length.nix;
   "number-show" = import ./nix/number-show.nix;
+  "number-wall" = import ./nix/number-wall.nix;
   "numbered-semigroups" = import ./nix/numbered-semigroups.nix;
   "numbering" = import ./nix/numbering.nix;
   "numbers" = import ./nix/numbers.nix;
@@ -12461,6 +12462,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "reasonable-operational" = import ./nix/reasonable-operational.nix;
   "rebase" = import ./nix/rebase.nix;
   "rebindable" = import ./nix/rebindable.nix;
+  "rec-def" = import ./nix/rec-def.nix;
   "rec-smallarray" = import ./nix/rec-smallarray.nix;
   "recaptcha" = import ./nix/recaptcha.nix;
   "recommender-als" = import ./nix/recommender-als.nix;
@@ -16394,6 +16396,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "xsha1" = import ./nix/xsha1.nix;
   "xslt" = import ./nix/xslt.nix;
   "xss-sanitize" = import ./nix/xss-sanitize.nix;
+  "xstatic" = import ./nix/xstatic.nix;
   "xtc" = import ./nix/xtc.nix;
   "xtest" = import ./nix/xtest.nix;
   "xturtle" = import ./nix/xturtle.nix;
