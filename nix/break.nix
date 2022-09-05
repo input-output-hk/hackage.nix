@@ -34,7 +34,12 @@
         revNum = 1;
         sha256 = "a5e1bcf765dc62b0265bd0b28b99802597f66efcc77fc974a84de13f671d8c53";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/break-1.0.2-r2-f70116f5c80fe3dcb92693f4f1f3df7777a985e1c8c4d5e42711e0c381ee874e.nix;
+        revNum = 2;
+        sha256 = "f70116f5c80fe3dcb92693f4f1f3df7777a985e1c8c4d5e42711e0c381ee874e";
+        };
+      default = "r2";
       };
     };
   }

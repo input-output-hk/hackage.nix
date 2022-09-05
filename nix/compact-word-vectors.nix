@@ -34,7 +34,12 @@
         revNum = 1;
         sha256 = "6661516de84dfbd041edb9a49bcc4e2f38755f3638bf8c42102dd4439bfe8795";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/compact-word-vectors-0.2.0.1-r2-91e0bcdb6727d0bfeddad35ce5c718f2c32dfc7748daed44873178daed9fcac6.nix;
+        revNum = 2;
+        sha256 = "91e0bcdb6727d0bfeddad35ce5c718f2c32dfc7748daed44873178daed9fcac6";
+        };
+      default = "r2";
       };
     };
   "0.2.0.2" = {
@@ -45,7 +50,12 @@
         revNum = 0;
         sha256 = "e46c7c3186dafe1ae22434556ddec91af022f2360c57c30a46397758938f3acc";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/compact-word-vectors-0.2.0.2-r1-49cf00f224000f149306e7043c228fa33e3dba87f10589e8326388c3278ba594.nix;
+        revNum = 1;
+        sha256 = "49cf00f224000f149306e7043c228fa33e3dba87f10589e8326388c3278ba594";
+        };
+      default = "r1";
       };
     };
   }

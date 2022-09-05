@@ -328,7 +328,12 @@
         revNum = 0;
         sha256 = "e4ae6e92af41abe5e89aea412928400c07727e590e3bb352800562ed3ad8c77e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dhall-lsp-server-1.1.2-r1-4735e02dadd026fdec36bfbef11e77f8b1bbaab94dcee55ca306fc07169e6c4d.nix;
+        revNum = 1;
+        sha256 = "4735e02dadd026fdec36bfbef11e77f8b1bbaab94dcee55ca306fc07169e6c4d";
+        };
+      default = "r1";
       };
     };
   }

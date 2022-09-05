@@ -414,7 +414,12 @@
         revNum = 0;
         sha256 = "3cef9578b0e40b2bc4eefcf1fdc8bba81322a708d25ff9e41fb9ec3a7bccab9c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/morte-1.7.2-r1-2db5da61ee8a2422f40de339eeb4bfe59aa6868a9ede177507790c20f46562d6.nix;
+        revNum = 1;
+        sha256 = "2db5da61ee8a2422f40de339eeb4bfe59aa6868a9ede177507790c20f46562d6";
+        };
+      default = "r1";
       };
     };
   }

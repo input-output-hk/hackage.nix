@@ -1,0 +1,38 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.8";
+      identifier = { name = "dhall-text"; version = "1.0.18"; };
+      license = "BSD-3-Clause";
+      copyright = "2017 Gabriella Gonzalez";
+      maintainer = "GenuineGabriella@gmail.com";
+      author = "Gabriella Gonzalez";
+      homepage = "";
+      url = "";
+      synopsis = "Template text using Dhall";
+      description = "This package provides a @dhall-to-text@ executable that templates text using\nthe Dhall configuration language\n\nThis package is now superseded by the @dhall text@ command from the @dhall@\npackage";
+      buildType = "Simple";
+      };
+    components = {
+      exes = {
+        "dhall-to-text" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
+            (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }

@@ -2324,6 +2324,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bibtex" = import ./nix/bibtex.nix;
   "bidi-icu" = import ./nix/bidi-icu.nix;
   "bidirectional" = import ./nix/bidirectional.nix;
+  "bidirectional-instances" = import ./nix/bidirectional-instances.nix;
   "bidirectionalization-combined" = import ./nix/bidirectionalization-combined.nix;
   "bidispec" = import ./nix/bidispec.nix;
   "bidispec-extras" = import ./nix/bidispec-extras.nix;
@@ -5910,6 +5911,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-stdin" = import ./nix/ghc-stdin.nix;
   "ghc-syb" = import ./nix/ghc-syb.nix;
   "ghc-syb-utils" = import ./nix/ghc-syb-utils.nix;
+  "ghc-symbol" = import ./nix/ghc-symbol.nix;
   "ghc-syntax-highlighter" = import ./nix/ghc-syntax-highlighter.nix;
   "ghc-tags" = import ./nix/ghc-tags.nix;
   "ghc-tags-core" = import ./nix/ghc-tags-core.nix;
@@ -13964,6 +13966,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "spine" = import ./nix/spine.nix;
   "spir-v" = import ./nix/spir-v.nix;
   "spiros" = import ./nix/spiros.nix;
+  "spirv-reflect-ffi" = import ./nix/spirv-reflect-ffi.nix;
   "spirv-reflect-types" = import ./nix/spirv-reflect-types.nix;
   "spirv-reflect-yaml" = import ./nix/spirv-reflect-yaml.nix;
   "splay" = import ./nix/splay.nix;
@@ -16453,6 +16456,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yaop" = import ./nix/yaop.nix;
   "yap" = import ./nix/yap.nix;
   "yapb" = import ./nix/yapb.nix;
+  "yarl" = import ./nix/yarl.nix;
   "yarn-lock" = import ./nix/yarn-lock.nix;
   "yarn2nix" = import ./nix/yarn2nix.nix;
   "yarr" = import ./nix/yarr.nix;

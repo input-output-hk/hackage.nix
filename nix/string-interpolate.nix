@@ -250,7 +250,12 @@
         revNum = 0;
         sha256 = "047c4fd2c618032f47a1d4649d59015b993cd457bfea75a6a669c203816332f8";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/string-interpolate-0.3.1.2-r1-4d0987f453c66040aa8e482fe28a7d3cdc9d8df01b698bc92f42a592cfb337db.nix;
+        revNum = 1;
+        sha256 = "4d0987f453c66040aa8e482fe28a7d3cdc9d8df01b698bc92f42a592cfb337db";
+        };
+      default = "r1";
       };
     };
   }

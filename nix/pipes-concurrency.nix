@@ -147,7 +147,12 @@
         revNum = 0;
         sha256 = "ada76788be032ad9ea795faadd62aac6533799824b32c10bc16c141b06f9da8f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pipes-concurrency-2.0.14-r1-e160966618873eca2211fbd8b265832ab1cc5871c8fcfc7820b23bf4485afb21.nix;
+        revNum = 1;
+        sha256 = "e160966618873eca2211fbd8b265832ab1cc5871c8fcfc7820b23bf4485afb21";
+        };
+      default = "r1";
       };
     };
   "2.0.2" = {

@@ -155,7 +155,12 @@
         revNum = 0;
         sha256 = "4244b00a366f39786adfe43c6ac0e12ee90f1b781f2c2ffa3d8dc2bdef4c20c1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pipes-parse-3.0.9-r1-593b4098fb53881e3458c8f9ce0ba561dcd806b0f5a2c223ebd2786be685e7dd.nix;
+        revNum = 1;
+        sha256 = "593b4098fb53881e3458c8f9ce0ba561dcd806b0f5a2c223ebd2786be685e7dd";
+        };
+      default = "r1";
       };
     };
   }

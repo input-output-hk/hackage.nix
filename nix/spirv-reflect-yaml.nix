@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2" = {
+    sha256 = "2ba5706ea400ea7790732e47ee0e18cd5cb90d3cc61b70d42c88b8ce5d05f97d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/spirv-reflect-yaml-0.2-r0-f73c9ddf8941191cf10dac07353e45ee0badb1a94e451f7f2bcce2744cb3dd90.nix;
+        revNum = 0;
+        sha256 = "f73c9ddf8941191cf10dac07353e45ee0badb1a94e451f7f2bcce2744cb3dd90";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.2.1" = {
+    sha256 = "2259bf3cfea325fb505c8463312f314aaef454622ed3285b52170f1eba5e8dea";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/clashilator-0.1.2.1-r0-7d1d45ce8c396f85b254b5113df59ff332d0a3c9a60b79e257777c82b261b971.nix;
+        revNum = 0;
+        sha256 = "7d1d45ce8c396f85b254b5113df59ff332d0a3c9a60b79e257777c82b261b971";
+        };
+      default = "r0";
+      };
+    };
   }

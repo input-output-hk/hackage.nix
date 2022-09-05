@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "7e0a66f7da1032179e64b9561d6ae17b5b2648efe89d1d86fab79b6b4c70c715";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/mvc-updates-1.2.0-r1-8a88cd187711d58e16075e48281f479e69095d95a714c97d012ee78a820fd7e6.nix;
+        revNum = 1;
+        sha256 = "8a88cd187711d58e16075e48281f479e69095d95a714c97d012ee78a820fd7e6";
+        };
+      default = "r1";
       };
     };
   }

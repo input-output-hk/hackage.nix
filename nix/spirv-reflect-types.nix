@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2" = {
+    sha256 = "eaa0bfe93dcccb4ae6a2b806f0ba2387d2756648e31ebcff5663be19c0150048";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/spirv-reflect-types-0.2-r0-2e372f07bc1d89c23559404b1bde6d392c0ac388d261b0a7044ee9d10880fee2.nix;
+        revNum = 0;
+        sha256 = "2e372f07bc1d89c23559404b1bde6d392c0ac388d261b0a7044ee9d10880fee2";
+        };
+      default = "r0";
+      };
+    };
   }

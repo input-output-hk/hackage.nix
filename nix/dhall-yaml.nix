@@ -125,7 +125,12 @@
         revNum = 0;
         sha256 = "c7e54c0cbf25732b1deadf8c9491d650c04d86f3327c438a2923c90b9331c173";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dhall-yaml-1.2.11-r1-5900cb1205b6ccd6214ff93b35086c95e14fa47c4269a7067cae5937fafaee40.nix;
+        revNum = 1;
+        sha256 = "5900cb1205b6ccd6214ff93b35086c95e14fa47c4269a7067cae5937fafaee40";
+        };
+      default = "r1";
       };
     };
   "1.2.2" = {

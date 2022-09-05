@@ -137,7 +137,12 @@
         revNum = 2;
         sha256 = "10fa95af284435e485d5d290cadd376ca433d021f8e149efe253ff2d6e06ed5f";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/dhall-text-1.0.18-r3-563045508a435d998be284396cb666557609ab4c207534b365ca5a2649592c90.nix;
+        revNum = 3;
+        sha256 = "563045508a435d998be284396cb666557609ab4c207534b365ca5a2649592c90";
+        };
+      default = "r3";
       };
     };
   "1.0.2" = {

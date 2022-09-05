@@ -163,4 +163,15 @@
       default = "r2";
       };
     };
+  "0.2.2.0" = {
+    sha256 = "4adedfd60b1590b265fb8ec15e636ec7521f668a1042f96adc6a1083075a1009";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polysemy-methodology-0.2.2.0-r0-987fc0272f866ac0b025424ae7d19471919f4c8ad1a88c6ddb79ad66a8ff3ba1.nix;
+        revNum = 0;
+        sha256 = "987fc0272f866ac0b025424ae7d19471919f4c8ad1a88c6ddb79ad66a8ff3ba1";
+        };
+      default = "r0";
+      };
+    };
   }

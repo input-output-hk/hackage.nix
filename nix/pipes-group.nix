@@ -76,7 +76,12 @@
         revNum = 5;
         sha256 = "b08c110611571260990306ceae5369e9252168fa3ec3ef901a68eb6089367042";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/pipes-group-1.0.12-r6-d27b352d1b6e4912a149f47311bb61ce76c79980452fafb114dd6eb4797ddfa7.nix;
+        revNum = 6;
+        sha256 = "d27b352d1b6e4912a149f47311bb61ce76c79980452fafb114dd6eb4797ddfa7";
+        };
+      default = "r6";
       };
     };
   "1.0.2" = {

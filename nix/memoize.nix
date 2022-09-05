@@ -126,7 +126,12 @@
         revNum = 0;
         sha256 = "ebbc558641ff95324a156850f4f158aa79f9b2ef66eb0b9b91392947c109b3da";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/memoize-1.1.0-r1-142ea2039ce949dfaedd331c620c80666f243bfa6bdfcc4193deb15f8ae6cf6f.nix;
+        revNum = 1;
+        sha256 = "142ea2039ce949dfaedd331c620c80666f243bfa6bdfcc4193deb15f8ae6cf6f";
+        };
+      default = "r1";
       };
     };
   "1.1.1" = {
@@ -137,7 +142,12 @@
         revNum = 0;
         sha256 = "a4c636df010564307ce1fe6e69379192de0c756f7766e61224da8a896ffd5fe1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/memoize-1.1.1-r1-d902fc631020d04689aa66e804e13480c0b5ad01a29c12d31a22e2bdb767aba4.nix;
+        revNum = 1;
+        sha256 = "d902fc631020d04689aa66e804e13480c0b5ad01a29c12d31a22e2bdb767aba4";
+        };
+      default = "r1";
       };
     };
   }
