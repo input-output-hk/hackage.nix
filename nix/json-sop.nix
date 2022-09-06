@@ -138,7 +138,12 @@
         revNum = 0;
         sha256 = "f18c2ecb9f714047b84e70ccf1a083aedfb3d7315064664c6da1b50b6d6d353a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/json-sop-0.2.1-r1-ebec2139ae8f4b5310e4edc7d06b7ccc8264dd1a163388b818d74224fa02b913.nix;
+        revNum = 1;
+        sha256 = "ebec2139ae8f4b5310e4edc7d06b7ccc8264dd1a163388b818d74224fa02b913";
+        };
+      default = "r1";
       };
     };
   }

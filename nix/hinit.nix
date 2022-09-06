@@ -45,7 +45,12 @@
         revNum = 0;
         sha256 = "9ec134d918c679a85b64278ddbfc17f18edf56c5ef6b9b12e18b4abd2b27be18";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hinit-0.2.2-r1-4a630657e60d119afee52223e3169fae874bf5681fad42ad7bd383ed9a5e5985.nix;
+        revNum = 1;
+        sha256 = "4a630657e60d119afee52223e3169fae874bf5681fad42ad7bd383ed9a5e5985";
+        };
+      default = "r1";
       };
     };
   }

@@ -49,7 +49,12 @@
         revNum = 4;
         sha256 = "fd67a3f946afa3c23179b1fce0ee43b3348f9ee134109996a526429331226d8f";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/texrunner-0.0.1.2-r5-a4426616d50c838d8aaf7af4aca0c9d8160cfefe20c365bae6c95911116215a7.nix;
+        revNum = 5;
+        sha256 = "a4426616d50c838d8aaf7af4aca0c9d8160cfefe20c365bae6c95911116215a7";
+        };
+      default = "r5";
       };
     };
   }

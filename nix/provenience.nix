@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.1.2.4" = {
+    sha256 = "577cd8bde5a4cd4813b2cc45c838ecb59ecbaaff76f1afee9b487c87b89cde75";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/provenience-0.1.2.4-r0-1da1a04a86669589e2da94d95d4e8591c20b24b67e7c095a99fb9299dca70d56.nix;
+        revNum = 0;
+        sha256 = "1da1a04a86669589e2da94d95d4e8591c20b24b67e7c095a99fb9299dca70d56";
+        };
+      default = "r0";
+      };
+    };
   }
