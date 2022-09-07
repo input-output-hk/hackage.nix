@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "1.1.0.4" = {
+    sha256 = "eb33085dee8aae0d4c8c7f6600db3f523b49514093dc3d81d538a29e43bc1ee9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/isbn-1.1.0.4-r0-1f59d4375be49a10261858f5e41c06c0d4eb18e90562021eb8256f702b24fb82.nix;
+        revNum = 0;
+        sha256 = "1f59d4375be49a10261858f5e41c06c0d4eb18e90562021eb8256f702b24fb82";
+        };
+      default = "r0";
+      };
+    };
   }

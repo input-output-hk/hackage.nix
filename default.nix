@@ -3529,6 +3529,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "concurrent-utilities" = import ./nix/concurrent-utilities.nix;
   "concurrentoutput" = import ./nix/concurrentoutput.nix;
   "cond" = import ./nix/cond.nix;
+  "conditional-restriction-parser" = import ./nix/conditional-restriction-parser.nix;
   "condor" = import ./nix/condor.nix;
   "condorcet" = import ./nix/condorcet.nix;
   "conductive-base" = import ./nix/conductive-base.nix;
@@ -4741,6 +4742,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "effectful" = import ./nix/effectful.nix;
   "effectful-core" = import ./nix/effectful-core.nix;
   "effectful-plugin" = import ./nix/effectful-plugin.nix;
+  "effectful-st" = import ./nix/effectful-st.nix;
   "effectful-th" = import ./nix/effectful-th.nix;
   "effective-aspects" = import ./nix/effective-aspects.nix;
   "effective-aspects-mzv" = import ./nix/effective-aspects-mzv.nix;
@@ -11129,6 +11131,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pandoc-vimhl" = import ./nix/pandoc-vimhl.nix;
   "pandora" = import ./nix/pandora.nix;
   "pandora-io" = import ./nix/pandora-io.nix;
+  "panfiguration" = import ./nix/panfiguration.nix;
   "pang-a-lambda" = import ./nix/pang-a-lambda.nix;
   "pango" = import ./nix/pango.nix;
   "pangraph" = import ./nix/pangraph.nix;

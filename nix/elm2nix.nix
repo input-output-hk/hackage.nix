@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.3.0" = {
+    sha256 = "2dc09824c51e14c2d7c95508df807b49902f552645631872f2847b103b753df6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/elm2nix-0.3.0-r0-660021d5a0bdaed1e46a95ca92f14c807126dcf95d6356a2ee50b434df757587.nix;
+        revNum = 0;
+        sha256 = "660021d5a0bdaed1e46a95ca92f14c807126dcf95d6356a2ee50b434df757587";
+        };
+      default = "r0";
+      };
+    };
   }

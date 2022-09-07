@@ -61,7 +61,17 @@
         revNum = 2;
         sha256 = "3fc1fa6f72151343930046c302fad775731f23274a205bba7fca11151f982fd3";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/happy-meta-0.2.0.11-r3-0af2667c5da4ce04e91cdbcba982b9f7abeb27dc1946f328e5bb23337981a885.nix;
+        revNum = 3;
+        sha256 = "0af2667c5da4ce04e91cdbcba982b9f7abeb27dc1946f328e5bb23337981a885";
+        };
+      r4 = {
+        nix = import ../hackage/happy-meta-0.2.0.11-r4-2cd75fe618c77029bb7250ba934ecd021c7cabd391a98e2bf6115068baefa0dc.nix;
+        revNum = 4;
+        sha256 = "2cd75fe618c77029bb7250ba934ecd021c7cabd391a98e2bf6115068baefa0dc";
+        };
+      default = "r4";
       };
     };
   "0.2.0.2" = {
