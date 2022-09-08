@@ -172,6 +172,17 @@
       default = "r0";
       };
     };
+  "3.11" = {
+    sha256 = "ddaabcb32987b1397c645bee76edb73af288824fcb0d50e1c563880d880a0206";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/copilot-core-3.11-r0-3cb073e25baced9dcaa2cb148ca278be488e776a69c82b3fca519ee43ef1a3e4.nix;
+        revNum = 0;
+        sha256 = "3cb073e25baced9dcaa2cb148ca278be488e776a69c82b3fca519ee43ef1a3e4";
+        };
+      default = "r0";
+      };
+    };
   "3.2" = {
     sha256 = "ea091f0b290ce434f36f60b6cb29da988681e26f2082e4e37429dac83cfe2350";
     revisions = {

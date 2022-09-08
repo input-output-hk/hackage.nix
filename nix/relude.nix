@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "cc686fa544fde30f5a4771fcb1664d6b202dbafe69ecf3e7aefb34784152d9b9";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/relude-0.1.0-r2-90a793499faff8a328cc101fb631bdfd3999eb949445f12ae556f23b087b7b19.nix;
+        revNum = 2;
+        sha256 = "90a793499faff8a328cc101fb631bdfd3999eb949445f12ae556f23b087b7b19";
+        };
+      default = "r2";
       };
     };
   "0.1.1" = {
@@ -28,7 +33,12 @@
         revNum = 1;
         sha256 = "ccf3bfa67bb6579a9812eab07fafa2f056aca977ed975c3c70f777a4b8a071a3";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/relude-0.1.1-r2-6850ad4ffa95837b899ead88cecb8c1ef22c4e114a500bd7dab8f5da3994d236.nix;
+        revNum = 2;
+        sha256 = "6850ad4ffa95837b899ead88cecb8c1ef22c4e114a500bd7dab8f5da3994d236";
+        };
+      default = "r2";
       };
     };
   "0.2.0" = {
@@ -44,7 +54,12 @@
         revNum = 1;
         sha256 = "009a991b0d0afbdb44c8b99d1217bfff6805c5202c01f054a1069f092482f883";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/relude-0.2.0-r2-0687b4828fbbd9e9fe59731d225abdf8db1687cf5954fef3a9fc0b2b1b0066e9.nix;
+        revNum = 2;
+        sha256 = "0687b4828fbbd9e9fe59731d225abdf8db1687cf5954fef3a9fc0b2b1b0066e9";
+        };
+      default = "r2";
       };
     };
   "0.3.0" = {

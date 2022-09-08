@@ -3707,6 +3707,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "copilot-cbmc" = import ./nix/copilot-cbmc.nix;
   "copilot-core" = import ./nix/copilot-core.nix;
   "copilot-frp-sketch" = import ./nix/copilot-frp-sketch.nix;
+  "copilot-interpreter" = import ./nix/copilot-interpreter.nix;
   "copilot-language" = import ./nix/copilot-language.nix;
   "copilot-libraries" = import ./nix/copilot-libraries.nix;
   "copilot-sbv" = import ./nix/copilot-sbv.nix;
