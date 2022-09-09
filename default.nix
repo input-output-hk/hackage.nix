@@ -3161,6 +3161,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "church-maybe" = import ./nix/church-maybe.nix;
   "church-pair" = import ./nix/church-pair.nix;
   "churros" = import ./nix/churros.nix;
+  "cicero-api" = import ./nix/cicero-api.nix;
   "cielo" = import ./nix/cielo.nix;
   "cil" = import ./nix/cil.nix;
   "cimple" = import ./nix/cimple.nix;
@@ -9120,6 +9121,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "large-hashable" = import ./nix/large-hashable.nix;
   "large-records" = import ./nix/large-records.nix;
   "largeword" = import ./nix/largeword.nix;
+  "lasercutter" = import ./nix/lasercutter.nix;
   "lat" = import ./nix/lat.nix;
   "latest-npm-version" = import ./nix/latest-npm-version.nix;
   "latex" = import ./nix/latex.nix;

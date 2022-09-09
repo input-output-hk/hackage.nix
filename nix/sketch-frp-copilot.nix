@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.0.4" = {
+    sha256 = "6a0d92bf81becbc64b1f1c7649f3935798d8813b887c8ebe80a0c32315d83837";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sketch-frp-copilot-1.0.4-r0-09bd88b1bc32304c06ecb73e330433aa6b94e674f2eb62a9178ae3e0b1d3a2e9.nix;
+        revNum = 0;
+        sha256 = "09bd88b1bc32304c06ecb73e330433aa6b94e674f2eb62a9178ae3e0b1d3a2e9";
+        };
+      default = "r0";
+      };
+    };
   }

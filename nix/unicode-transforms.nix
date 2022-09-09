@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "6240987b46d22884498fded990fa005d55c195ace2467b13214800cc2a87023f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/unicode-transforms-0.1.0.1-r1-1c78ece48f15f7c471063c0cb6386e565105adf4c70008867143556719d579de.nix;
+        revNum = 1;
+        sha256 = "1c78ece48f15f7c471063c0cb6386e565105adf4c70008867143556719d579de";
+        };
+      default = "r1";
       };
     };
   "0.2.0" = {
