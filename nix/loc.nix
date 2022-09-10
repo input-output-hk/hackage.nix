@@ -226,7 +226,12 @@
         revNum = 0;
         sha256 = "0d8d590f8ce2445da3d3c48a314c77747cbfc1f3303773d9e64c9295dcd714a6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/loc-0.1.4.0-r1-50fb3351a4914dd3b2216a8a4495339030525362d9db308e9a589584138fbc04.nix;
+        revNum = 1;
+        sha256 = "50fb3351a4914dd3b2216a8a4495339030525362d9db308e9a589584138fbc04";
+        };
+      default = "r1";
       };
     };
   }

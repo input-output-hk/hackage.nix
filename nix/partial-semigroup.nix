@@ -241,7 +241,12 @@
         revNum = 0;
         sha256 = "4a826ca5c9718eb0a76c978117bf2bb525bd22472031c454b18f6fcf91eb9667";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/partial-semigroup-0.6.0.0-r1-80a34716b4ed1e92299a2f2cd61cf06bf6688052cad825bd6130eb2a00678a3e.nix;
+        revNum = 1;
+        sha256 = "80a34716b4ed1e92299a2f2cd61cf06bf6688052cad825bd6130eb2a00678a3e";
+        };
+      default = "r1";
       };
     };
   }

@@ -427,7 +427,12 @@
         revNum = 2;
         sha256 = "7653a95150f5a6b0c0b8d839975f9f06839851d5ec5b861ea8037e9d3f915ae4";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/haxr-3000.11.4.1-r3-17de8c43a1aad0310b08b8e3a6e644ddf74a3736844ebad05e7785f36b1e7b70.nix;
+        revNum = 3;
+        sha256 = "17de8c43a1aad0310b08b8e3a6e644ddf74a3736844ebad05e7785f36b1e7b70";
+        };
+      default = "r3";
       };
     };
   "3000.2.0" = {

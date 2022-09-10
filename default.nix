@@ -9618,6 +9618,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lucid-htmx" = import ./nix/lucid-htmx.nix;
   "lucid-hyperscript" = import ./nix/lucid-hyperscript.nix;
   "lucid-svg" = import ./nix/lucid-svg.nix;
+  "lucid-xstatic" = import ./nix/lucid-xstatic.nix;
   "lucid2" = import ./nix/lucid2.nix;
   "lucienne" = import ./nix/lucienne.nix;
   "luhn" = import ./nix/luhn.nix;
@@ -13397,6 +13398,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-wasm" = import ./nix/servant-wasm.nix;
   "servant-websockets" = import ./nix/servant-websockets.nix;
   "servant-xml" = import ./nix/servant-xml.nix;
+  "servant-xstatic" = import ./nix/servant-xstatic.nix;
   "servant-yaml" = import ./nix/servant-yaml.nix;
   "servant-zeppelin" = import ./nix/servant-zeppelin.nix;
   "servant-zeppelin-client" = import ./nix/servant-zeppelin-client.nix;
@@ -14326,6 +14328,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "strongswan-sql" = import ./nix/strongswan-sql.nix;
   "strongweak" = import ./nix/strongweak.nix;
   "strptime" = import ./nix/strptime.nix;
+  "struct-inspector" = import ./nix/struct-inspector.nix;
   "structs" = import ./nix/structs.nix;
   "structural-induction" = import ./nix/structural-induction.nix;
   "structural-traversal" = import ./nix/structural-traversal.nix;
@@ -16407,6 +16410,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "xslt" = import ./nix/xslt.nix;
   "xss-sanitize" = import ./nix/xss-sanitize.nix;
   "xstatic" = import ./nix/xstatic.nix;
+  "xstatic-th" = import ./nix/xstatic-th.nix;
   "xtc" = import ./nix/xtc.nix;
   "xtest" = import ./nix/xtest.nix;
   "xturtle" = import ./nix/xturtle.nix;

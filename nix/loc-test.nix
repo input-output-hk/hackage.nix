@@ -86,6 +86,17 @@
       default = "r2";
       };
     };
+  "0.1.3.12" = {
+    sha256 = "6f7d6fcd6ebafea6cddf2913f4c37ab1381169d9e839fd480114a4fbead8f477";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/loc-test-0.1.3.12-r0-b1534c00483f575060d64b41d8106cf0a2c9377005333a34a666ad68c73efc95.nix;
+        revNum = 0;
+        sha256 = "b1534c00483f575060d64b41d8106cf0a2c9377005333a34a666ad68c73efc95";
+        };
+      default = "r0";
+      };
+    };
   "0.1.3.2" = {
     sha256 = "01d855a074f7527a44438067c053810606c37acb0a0995659f9b9dd97d65cc1b";
     revisions = {

@@ -100,7 +100,12 @@
         revNum = 0;
         sha256 = "ece1a64f42b5b1c389d8394e51004333fddb0ae28c3c3e28dd1f8d6694f9a306";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/partial-semigroup-hedgehog-0.6.0.12-r1-bbe82654dbf195e68017dbcd26ed1f2bb7a03515bce45c9491a11dc352406a8d.nix;
+        revNum = 1;
+        sha256 = "bbe82654dbf195e68017dbcd26ed1f2bb7a03515bce45c9491a11dc352406a8d";
+        };
+      default = "r1";
       };
     };
   "0.6.0.4" = {
