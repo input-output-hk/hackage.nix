@@ -212,4 +212,15 @@
       default = "r0";
       };
     };
+  "0.8.0.1" = {
+    sha256 = "26e7f8253fcbf67577f5e5deafdaf0a70e475ba4647212a91e6971787e92068b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskintex-0.8.0.1-r0-d7ce0861dbc805027c0d1501f52ff861b7e0e8f46caede97ec665e700660614e.nix;
+        revNum = 0;
+        sha256 = "d7ce0861dbc805027c0d1501f52ff861b7e0e8f46caede97ec665e700660614e";
+        };
+      default = "r0";
+      };
+    };
   }

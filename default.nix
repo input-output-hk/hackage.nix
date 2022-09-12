@@ -12638,6 +12638,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "registry-hedgehog" = import ./nix/registry-hedgehog.nix;
   "registry-hedgehog-aeson" = import ./nix/registry-hedgehog-aeson.nix;
   "registry-messagepack" = import ./nix/registry-messagepack.nix;
+  "registry-options" = import ./nix/registry-options.nix;
   "regress" = import ./nix/regress.nix;
   "regression-simple" = import ./nix/regression-simple.nix;
   "regular" = import ./nix/regular.nix;

@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.3.3" = {
+    sha256 = "57315ba247fce96e8f5463e40380d57ed0856589254020016c9b948f66106291";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/seonbi-0.3.3-r0-fa0169c2c76d74acbbefde64058aff49b7020652db0fc1a48ccdc261ab6a4d0d.nix;
+        revNum = 0;
+        sha256 = "fa0169c2c76d74acbbefde64058aff49b7020652db0fc1a48ccdc261ab6a4d0d";
+        };
+      default = "r0";
+      };
+    };
   }
