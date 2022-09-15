@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.4.0" = {
+    sha256 = "93260d707bbbe2da48be8a7d2b92be4bf0180d47d1e2e6058e2b524ba12aaeae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/driving-classes-plugin-0.1.4.0-r0-68bea882e7236d2d3c8351fb0499b9997e0d60d214a60aab8bde9ebf4d1db840.nix;
+        revNum = 0;
+        sha256 = "68bea882e7236d2d3c8351fb0499b9997e0d60d214a60aab8bde9ebf4d1db840";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.5.0" = {
+    sha256 = "b1fa4633063ede11c9b0f96e12fdd78078445b7fb085300a6523a77c69f6925e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/NGLess-1.5.0-r0-c5225f410b6aa7417599a44564dbeb62323d5fac84ffe3261672079d21e722aa.nix;
+        revNum = 0;
+        sha256 = "c5225f410b6aa7417599a44564dbeb62323d5fac84ffe3261672079d21e722aa";
+        };
+      default = "r0";
+      };
+    };
   }

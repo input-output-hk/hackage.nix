@@ -417,6 +417,17 @@
       default = "r0";
       };
     };
+  "0.21.0.0" = {
+    sha256 = "4cb82d877c1d279aa27db0ed8d64b9fc24b52bb616c578d8bb608059aea59656";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-simplified-examples-array-0.21.0.0-r0-37ee038bd7cbe3f118afe5df8ca795476732add04893dbf18a830f1ae6a896f4.nix;
+        revNum = 0;
+        sha256 = "37ee038bd7cbe3f118afe5df8ca795476732add04893dbf18a830f1ae6a896f4";
+        };
+      default = "r0";
+      };
+    };
   "0.3.0.0" = {
     sha256 = "c43548504f3f4ce2a676ef493f5fd4d80eb00c402ac0c422b115c94ccab3539d";
     revisions = {

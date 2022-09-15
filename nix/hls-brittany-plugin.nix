@@ -80,4 +80,15 @@
       default = "r0";
       };
     };
+  "1.0.2.2" = {
+    sha256 = "5e4182267431839f48bfd5280ca7a62030dc4abce932133256e04d892b3ef96a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-brittany-plugin-1.0.2.2-r0-d5d9e4acb8b35f3aac652d0faba08c14a1fbe82512d1155f6da2254ea48a8fa0.nix;
+        revNum = 0;
+        sha256 = "d5d9e4acb8b35f3aac652d0faba08c14a1fbe82512d1155f6da2254ea48a8fa0";
+        };
+      default = "r0";
+      };
+    };
   }

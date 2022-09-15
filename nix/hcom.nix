@@ -69,4 +69,15 @@
       default = "r0";
       };
     };
+  "0.0.0.6" = {
+    sha256 = "02066bbebcad0624feeeb73a809c9dd6e284350f70ef6571f336789ba5e5239d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hcom-0.0.0.6-r0-264418fd5201dd1939c4e42d8034ed6204d4cab0556b16c33075abd93ee8c109.nix;
+        revNum = 0;
+        sha256 = "264418fd5201dd1939c4e42d8034ed6204d4cab0556b16c33075abd93ee8c109";
+        };
+      default = "r0";
+      };
+    };
   }

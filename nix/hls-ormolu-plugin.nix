@@ -91,4 +91,15 @@
       default = "r0";
       };
     };
+  "1.0.2.2" = {
+    sha256 = "4b6306729ab716d238b9a372e49a60fc40c0475d2e1ecc998756e6590df27a18";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-ormolu-plugin-1.0.2.2-r0-78cae3591e18f03ee9c6fd393d9bb3dbb7cd7f3970fa55a32087e9c0a9a8f282.nix;
+        revNum = 0;
+        sha256 = "78cae3591e18f03ee9c6fd393d9bb3dbb7cd7f3970fa55a32087e9c0a9a8f282";
+        };
+      default = "r0";
+      };
+    };
   }

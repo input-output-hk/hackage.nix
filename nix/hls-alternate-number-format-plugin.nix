@@ -26,4 +26,15 @@
       default = "r0";
       };
     };
+  "1.2.0.0" = {
+    sha256 = "409eb360ec40362c9dcdf256cf9875fb0fab9c3ee320ec11a8f8616e2d118be7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-alternate-number-format-plugin-1.2.0.0-r0-0b1c7f878bccd5914eb3236786886ff4dcdfc331ead07601490017592871a0f7.nix;
+        revNum = 0;
+        sha256 = "0b1c7f878bccd5914eb3236786886ff4dcdfc331ead07601490017592871a0f7";
+        };
+      default = "r0";
+      };
+    };
   }

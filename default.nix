@@ -4716,6 +4716,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ecma262" = import ./nix/ecma262.nix;
   "ecstasy" = import ./nix/ecstasy.nix;
   "ecta" = import ./nix/ecta.nix;
+  "ecta-plugin" = import ./nix/ecta-plugin.nix;
   "ecu" = import ./nix/ecu.nix;
   "ed25519" = import ./nix/ed25519.nix;
   "ed25519-donna" = import ./nix/ed25519-donna.nix;
@@ -5944,6 +5945,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghci-websockets" = import ./nix/ghci-websockets.nix;
   "ghcid" = import ./nix/ghcid.nix;
   "ghcide" = import ./nix/ghcide.nix;
+  "ghcide-bench" = import ./nix/ghcide-bench.nix;
+  "ghcide-test-utils" = import ./nix/ghcide-test-utils.nix;
   "ghcjs-ajax" = import ./nix/ghcjs-ajax.nix;
   "ghcjs-base" = import ./nix/ghcjs-base.nix;
   "ghcjs-base-stub" = import ./nix/ghcjs-base-stub.nix;
@@ -7401,6 +7404,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hipsql-client" = import ./nix/hipsql-client.nix;
   "hipsql-monad" = import ./nix/hipsql-monad.nix;
   "hipsql-server" = import ./nix/hipsql-server.nix;
+  "hipsql-tx-simple" = import ./nix/hipsql-tx-simple.nix;
   "hircules" = import ./nix/hircules.nix;
   "hirt" = import ./nix/hirt.nix;
   "hissmetrics" = import ./nix/hissmetrics.nix;
@@ -7476,11 +7480,14 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hls-call-hierarchy-plugin" = import ./nix/hls-call-hierarchy-plugin.nix;
   "hls-change-type-signature-plugin" = import ./nix/hls-change-type-signature-plugin.nix;
   "hls-class-plugin" = import ./nix/hls-class-plugin.nix;
+  "hls-code-range-plugin" = import ./nix/hls-code-range-plugin.nix;
   "hls-eval-plugin" = import ./nix/hls-eval-plugin.nix;
   "hls-exactprint-utils" = import ./nix/hls-exactprint-utils.nix;
+  "hls-explicit-fixity-plugin" = import ./nix/hls-explicit-fixity-plugin.nix;
   "hls-explicit-imports-plugin" = import ./nix/hls-explicit-imports-plugin.nix;
   "hls-floskell-plugin" = import ./nix/hls-floskell-plugin.nix;
   "hls-fourmolu-plugin" = import ./nix/hls-fourmolu-plugin.nix;
+  "hls-gadt-plugin" = import ./nix/hls-gadt-plugin.nix;
   "hls-graph" = import ./nix/hls-graph.nix;
   "hls-haddock-comments-plugin" = import ./nix/hls-haddock-comments-plugin.nix;
   "hls-hlint-plugin" = import ./nix/hls-hlint-plugin.nix;
@@ -7489,11 +7496,13 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hls-plugin-api" = import ./nix/hls-plugin-api.nix;
   "hls-pragmas-plugin" = import ./nix/hls-pragmas-plugin.nix;
   "hls-qualify-imported-names-plugin" = import ./nix/hls-qualify-imported-names-plugin.nix;
+  "hls-refactor-plugin" = import ./nix/hls-refactor-plugin.nix;
   "hls-refine-imports-plugin" = import ./nix/hls-refine-imports-plugin.nix;
   "hls-rename-plugin" = import ./nix/hls-rename-plugin.nix;
   "hls-retrie-plugin" = import ./nix/hls-retrie-plugin.nix;
   "hls-selection-range-plugin" = import ./nix/hls-selection-range-plugin.nix;
   "hls-splice-plugin" = import ./nix/hls-splice-plugin.nix;
+  "hls-stan-plugin" = import ./nix/hls-stan-plugin.nix;
   "hls-stylish-haskell-plugin" = import ./nix/hls-stylish-haskell-plugin.nix;
   "hls-tactics-plugin" = import ./nix/hls-tactics-plugin.nix;
   "hls-test-utils" = import ./nix/hls-test-utils.nix;
@@ -8131,6 +8140,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hup" = import ./nix/hup.nix;
   "hurdle" = import ./nix/hurdle.nix;
   "hurl" = import ./nix/hurl.nix;
+  "hurl-xml" = import ./nix/hurl-xml.nix;
   "hurriyet" = import ./nix/hurriyet.nix;
   "husk-scheme" = import ./nix/husk-scheme.nix;
   "husk-scheme-libs" = import ./nix/husk-scheme-libs.nix;
@@ -10186,6 +10196,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monadloc-pp" = import ./nix/monadloc-pp.nix;
   "monadlog" = import ./nix/monadlog.nix;
   "monadoid" = import ./nix/monadoid.nix;
+  "monadology" = import ./nix/monadology.nix;
   "monadplus" = import ./nix/monadplus.nix;
   "monads-fd" = import ./nix/monads-fd.nix;
   "monads-tf" = import ./nix/monads-tf.nix;
@@ -12217,6 +12228,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quantfin" = import ./nix/quantfin.nix;
   "quantification" = import ./nix/quantification.nix;
   "quantities" = import ./nix/quantities.nix;
+  "quantizer" = import ./nix/quantizer.nix;
   "quantum-arrow" = import ./nix/quantum-arrow.nix;
   "quantum-random" = import ./nix/quantum-random.nix;
   "quarantimer" = import ./nix/quarantimer.nix;
@@ -13781,6 +13793,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "smtp-mail" = import ./nix/smtp-mail.nix;
   "smtp-mail-ng" = import ./nix/smtp-mail-ng.nix;
   "smtp2mta" = import ./nix/smtp2mta.nix;
+  "smtpbz" = import ./nix/smtpbz.nix;
   "smtps-gmail" = import ./nix/smtps-gmail.nix;
   "smuggler" = import ./nix/smuggler.nix;
   "smuggler2" = import ./nix/smuggler2.nix;
@@ -15392,6 +15405,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "type-ord" = import ./nix/type-ord.nix;
   "type-ord-spine-cereal" = import ./nix/type-ord-spine-cereal.nix;
   "type-prelude" = import ./nix/type-prelude.nix;
+  "type-rig" = import ./nix/type-rig.nix;
   "type-safe-avl" = import ./nix/type-safe-avl.nix;
   "type-sets" = import ./nix/type-sets.nix;
   "type-settheory" = import ./nix/type-settheory.nix;
@@ -15444,6 +15458,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tyro" = import ./nix/tyro.nix;
   "tz" = import ./nix/tz.nix;
   "tzdata" = import ./nix/tzdata.nix;
+  "tztime" = import ./nix/tztime.nix;
   "u2f" = import ./nix/u2f.nix;
   "uAgda" = import ./nix/u_Agda.nix;
   "ua-parser" = import ./nix/ua-parser.nix;

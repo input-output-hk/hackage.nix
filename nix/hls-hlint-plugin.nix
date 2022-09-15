@@ -119,4 +119,15 @@
       default = "r0";
       };
     };
+  "1.1.0.0" = {
+    sha256 = "d1be9d5dbbc5707f5c7e24d8f20ff251bba3e7a35fa1d606355e8426bf5726f7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-hlint-plugin-1.1.0.0-r0-fca6823c4bfbd25fd286b97bab1847c6a28f0d6c8beaa22868a9b3be0f07177e.nix;
+        revNum = 0;
+        sha256 = "fca6823c4bfbd25fd286b97bab1847c6a28f0d6c8beaa22868a9b3be0f07177e";
+        };
+      default = "r0";
+      };
+    };
   }
