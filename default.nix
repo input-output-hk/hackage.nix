@@ -5451,6 +5451,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "force-layout" = import ./nix/force-layout.nix;
   "fordo" = import ./nix/fordo.nix;
   "forecast-io" = import ./nix/forecast-io.nix;
+  "foreign" = import ./nix/foreign.nix;
   "foreign-storable-asymmetric" = import ./nix/foreign-storable-asymmetric.nix;
   "foreign-store" = import ./nix/foreign-store.nix;
   "foreign-var" = import ./nix/foreign-var.nix;
@@ -11968,6 +11969,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "primitive-indexed" = import ./nix/primitive-indexed.nix;
   "primitive-maybe" = import ./nix/primitive-maybe.nix;
   "primitive-offset" = import ./nix/primitive-offset.nix;
+  "primitive-primvar" = import ./nix/primitive-primvar.nix;
   "primitive-simd" = import ./nix/primitive-simd.nix;
   "primitive-sort" = import ./nix/primitive-sort.nix;
   "primitive-stablename" = import ./nix/primitive-stablename.nix;
@@ -16145,6 +16147,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "weighted" = import ./nix/weighted.nix;
   "weighted-regexp" = import ./nix/weighted-regexp.nix;
   "weighted-search" = import ./nix/weighted-search.nix;
+  "welford-online-mean-variance" = import ./nix/welford-online-mean-variance.nix;
   "welshy" = import ./nix/welshy.nix;
   "wembley" = import ./nix/wembley.nix;
   "werewolf" = import ./nix/werewolf.nix;
@@ -16334,6 +16337,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "xine" = import ./nix/xine.nix;
   "xing-api" = import ./nix/xing-api.nix;
   "xinput-conduit" = import ./nix/xinput-conduit.nix;
+  "xinu" = import ./nix/xinu.nix;
+  "xinu-ffi" = import ./nix/xinu-ffi.nix;
   "xkbcommon" = import ./nix/xkbcommon.nix;
   "xkcd" = import ./nix/xkcd.nix;
   "xleb" = import ./nix/xleb.nix;

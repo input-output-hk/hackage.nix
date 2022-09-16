@@ -152,4 +152,15 @@
       default = "r0";
       };
     };
+  "2.4.2" = {
+    sha256 = "c6066a7b74858de25788815d54a4ebf06b6b1f51dc74aa7a157e59a26c77d7d4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/twee-2.4.2-r0-3b936947a5ce486a9704576497b9f570460bc4990dd8355bdfd30417c1316e08.nix;
+        revNum = 0;
+        sha256 = "3b936947a5ce486a9704576497b9f570460bc4990dd8355bdfd30417c1316e08";
+        };
+      default = "r0";
+      };
+    };
   }

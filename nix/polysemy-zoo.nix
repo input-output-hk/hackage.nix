@@ -185,4 +185,15 @@
       default = "r0";
       };
     };
+  "0.8.1.0" = {
+    sha256 = "2d786f3e178f49a17d7d0e21b58a763da1a032ef8136b492700f3856ef94145d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polysemy-zoo-0.8.1.0-r0-ee62dc3fa39f6e5f248a45dde1f74bf3af6d321ccdefca346e952521c81ece96.nix;
+        revNum = 0;
+        sha256 = "ee62dc3fa39f6e5f248a45dde1f74bf3af6d321ccdefca346e952521c81ece96";
+        };
+      default = "r0";
+      };
+    };
   }

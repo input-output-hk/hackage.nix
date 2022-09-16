@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.1.3" = {
+    sha256 = "8cb8aa1cbae4a1bad3ebdf96995053695c89835f4858b8f840e59d09c02470e6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ecta-plugin-0.1.1.3-r0-a77631007cc2ec393022047be2a25be4bc1045ee0ceff033ca5aa8d0c7a42c84.nix;
+        revNum = 0;
+        sha256 = "a77631007cc2ec393022047be2a25be4bc1045ee0ceff033ca5aa8d0c7a42c84";
+        };
+      default = "r0";
+      };
+    };
   }
