@@ -135,7 +135,12 @@
         revNum = 2;
         sha256 = "ee6eb143ec18b45a7b8e5c5c0ee3e430d6f0aa15b67e31b9471f375ec46485ed";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/tidal-midi-0.9.10-r3-af6d587923c65e9fa1f9e340c10c47e9ec7875036e223450804652906db1d054.nix;
+        revNum = 3;
+        sha256 = "af6d587923c65e9fa1f9e340c10c47e9ec7875036e223450804652906db1d054";
+        };
+      default = "r3";
       };
     };
   "0.9.2" = {

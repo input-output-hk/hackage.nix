@@ -51,4 +51,15 @@
       default = "r5";
       };
     };
+  "0.2.1.4" = {
+    sha256 = "1a208648901a320650da06d4bde50caf95560721fd9c7aae005cc647d57b195d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/postgresql-migration-0.2.1.4-r0-31f115d203373ab454c3b1a686586dd38f869061c7061a808bd6c12f35664ec6.nix;
+        revNum = 0;
+        sha256 = "31f115d203373ab454c3b1a686586dd38f869061c7061a808bd6c12f35664ec6";
+        };
+      default = "r0";
+      };
+    };
   }

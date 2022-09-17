@@ -150,4 +150,15 @@
       default = "r1";
       };
     };
+  "1.1.2" = {
+    sha256 = "342d3a4066af455e910ab996039ccede32c79fc294ec729d5dd1e03f1bdfa16a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/memoize-1.1.2-r0-d7701b55ed63434d1e8b507d0a76bb58f2fe31b7ce329132e1ca808c7001da49.nix;
+        revNum = 0;
+        sha256 = "d7701b55ed63434d1e8b507d0a76bb58f2fe31b7ce329132e1ca808c7001da49";
+        };
+      default = "r0";
+      };
+    };
   }
