@@ -131,4 +131,26 @@
       default = "r0";
       };
     };
+  "1.5.0" = {
+    sha256 = "0fddfab73ede92ba94028d00ba56ea445c6a3637df0899bb31cbc7cbec13c46d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-match-qq-1.5.0-r0-23aec598bca59052e97efc76ea32bc3fa6b376e442fbcdeaefcbcaf2070d14a4.nix;
+        revNum = 0;
+        sha256 = "23aec598bca59052e97efc76ea32bc3fa6b376e442fbcdeaefcbcaf2070d14a4";
+        };
+      default = "r0";
+      };
+    };
+  "1.5.1" = {
+    sha256 = "5cedbb21582a9e5a3a9b92d6859993738f841625203d4ba91817c4c010cf4bd4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-match-qq-1.5.1-r0-2ed515f6aea5b04abaf3a3385f9d4c1bc43416aab188c0020882292e1499a41a.nix;
+        revNum = 0;
+        sha256 = "2ed515f6aea5b04abaf3a3385f9d4c1bc43416aab188c0020882292e1499a41a";
+        };
+      default = "r0";
+      };
+    };
   }

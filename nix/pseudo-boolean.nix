@@ -50,7 +50,12 @@
         revNum = 2;
         sha256 = "c6a8b6c23c84cce8cecb37683755bde54db80b1ca817ce72de772c98d31dae44";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/pseudo-boolean-0.1.10.0-r3-50b8b5b4403c282d00d9951216106b64738767b154b43fa1633db58972dac732.nix;
+        revNum = 3;
+        sha256 = "50b8b5b4403c282d00d9951216106b64738767b154b43fa1633db58972dac732";
+        };
+      default = "r3";
       };
     };
   "0.1.2.0" = {

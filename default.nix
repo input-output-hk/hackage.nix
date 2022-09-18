@@ -1139,6 +1139,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "StrictCheck" = import ./nix/_Strict_Check.nix;
   "StringUtils" = import ./nix/_String_Utils.nix;
   "SuffixStructures" = import ./nix/_Suffix_Structures.nix;
+  "SvgIcons" = import ./nix/_Svg_Icons.nix;
   "SybWidget" = import ./nix/_Syb_Widget.nix;
   "SyntaxMacros" = import ./nix/_Syntax_Macros.nix;
   "Sysmon" = import ./nix/_Sysmon.nix;
@@ -14425,6 +14426,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "svfactor" = import ./nix/svfactor.nix;
   "svg-builder" = import ./nix/svg-builder.nix;
   "svg-builder-fork" = import ./nix/svg-builder-fork.nix;
+  "svg-icons" = import ./nix/svg-icons.nix;
   "svg-tree" = import ./nix/svg-tree.nix;
   "svg2q" = import ./nix/svg2q.nix;
   "svgcairo" = import ./nix/svgcairo.nix;

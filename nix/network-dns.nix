@@ -101,4 +101,15 @@
       default = "r0";
       };
     };
+  "1.1.0.2" = {
+    sha256 = "7428446929efb8f16d047983cf9341e75e9ee94385ec701333bcb1a5457febac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-dns-1.1.0.2-r0-eafaa0c9118ff5c3450c3c63414e93319a8a2071a58d85df0604d389c8556f33.nix;
+        revNum = 0;
+        sha256 = "eafaa0c9118ff5c3450c3c63414e93319a8a2071a58d85df0604d389c8556f33";
+        };
+      default = "r0";
+      };
+    };
   }

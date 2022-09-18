@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "f0046cefa51fd0359efa9c1dcd90aadec98c7fa93d905f1c93925ec7f6554c2e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/text-lips-0.1.0.2-r0-b9740e8fcf5869d3a5a3caea3c1e3e95c8b39056c9a430ba3469805a3426c59c.nix;
+        revNum = 0;
+        sha256 = "b9740e8fcf5869d3a5a3caea3c1e3e95c8b39056c9a430ba3469805a3426c59c";
+        };
+      default = "r0";
+      };
+    };
   }
