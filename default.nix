@@ -7560,6 +7560,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ho-rewriting" = import ./nix/ho-rewriting.nix;
   "hoauth" = import ./nix/hoauth.nix;
   "hoauth2" = import ./nix/hoauth2.nix;
+  "hoauth2-tutorial" = import ./nix/hoauth2-tutorial.nix;
   "hob" = import ./nix/hob.nix;
   "hobbes" = import ./nix/hobbes.nix;
   "hobbits" = import ./nix/hobbits.nix;

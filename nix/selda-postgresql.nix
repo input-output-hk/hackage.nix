@@ -215,4 +215,15 @@
       default = "r1";
       };
     };
+  "0.1.8.2" = {
+    sha256 = "4f1455165817009917502fbecb61d24224f11f8f040ee9d3bf310abbad2fc7e6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/selda-postgresql-0.1.8.2-r0-54270759b5824f1ff5382d7c56c7e6b3800fd05180490f298a50af63271ef16e.nix;
+        revNum = 0;
+        sha256 = "54270759b5824f1ff5382d7c56c7e6b3800fd05180490f298a50af63271ef16e";
+        };
+      default = "r0";
+      };
+    };
   }

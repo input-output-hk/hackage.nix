@@ -451,4 +451,15 @@
       default = "r1";
       };
     };
+  "0.5.2.0" = {
+    sha256 = "f34d3826b413dab810a218c62933f1ce1671c5f30f346a0b1ee82705509b1fd8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/selda-0.5.2.0-r0-9685a946db19b75d2d3ca141a6f139457672abecd0bb963ab4d4ae01454fec86.nix;
+        revNum = 0;
+        sha256 = "9685a946db19b75d2d3ca141a6f139457672abecd0bb963ab4d4ae01454fec86";
+        };
+      default = "r0";
+      };
+    };
   }
