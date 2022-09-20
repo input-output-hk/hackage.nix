@@ -15126,6 +15126,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "toml" = import ./nix/toml.nix;
   "toml-parser" = import ./nix/toml-parser.nix;
   "toml-reader" = import ./nix/toml-reader.nix;
+  "toml-reader-parse" = import ./nix/toml-reader-parse.nix;
   "tomland" = import ./nix/tomland.nix;
   "tomlcheck" = import ./nix/tomlcheck.nix;
   "tonalude" = import ./nix/tonalude.nix;
