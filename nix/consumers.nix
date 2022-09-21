@@ -222,7 +222,12 @@
         revNum = 0;
         sha256 = "02fe445e6473f403fe091e82899dd64e231c9e19b16d620a004d78deff0234ac";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/consumers-2.3.0.0-r1-99ad31e649f258c69e2af3083420bb1b0bd7a1af9a87ef573ab414ef44d28243.nix;
+        revNum = 1;
+        sha256 = "99ad31e649f258c69e2af3083420bb1b0bd7a1af9a87ef573ab414ef44d28243";
+        };
+      default = "r1";
       };
     };
   }

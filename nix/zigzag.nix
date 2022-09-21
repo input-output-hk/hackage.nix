@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "a995158dad3dfe0347cfc8f8a9327cc3f51832600553169ba5b1e08c45b45405";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/zigzag-0.0.1.0-r1-ac2f78aa02457ac12d17621c692d29ad30bae205b5be858fbf0e400ac9a9c412.nix;
+        revNum = 1;
+        sha256 = "ac2f78aa02457ac12d17621c692d29ad30bae205b5be858fbf0e400ac9a9c412";
+        };
+      default = "r1";
       };
     };
   }

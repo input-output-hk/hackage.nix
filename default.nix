@@ -15116,6 +15116,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "token-search" = import ./nix/token-search.nix;
   "tokenify" = import ./nix/tokenify.nix;
   "tokenize" = import ./nix/tokenize.nix;
+  "tokenizer" = import ./nix/tokenizer.nix;
   "tokenizer-monad" = import ./nix/tokenizer-monad.nix;
   "tokenizer-streaming" = import ./nix/tokenizer-streaming.nix;
   "tokstyle" = import ./nix/tokstyle.nix;
