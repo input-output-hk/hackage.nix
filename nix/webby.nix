@@ -147,4 +147,15 @@
       default = "r0";
       };
     };
+  "1.1.0" = {
+    sha256 = "b2577adb9e6bd27ada7c7cd04cacc25ed1cf0c5ee628f9721bfbd74f172033db";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/webby-1.1.0-r0-cc4277366c5d61c3cd60e6f78e6bcb4711d143c28e8866554c04602b89fc5a86.nix;
+        revNum = 0;
+        sha256 = "cc4277366c5d61c3cd60e6f78e6bcb4711d143c28e8866554c04602b89fc5a86";
+        };
+      default = "r0";
+      };
+    };
   }

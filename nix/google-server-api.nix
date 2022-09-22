@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "0.4.1.0" = {
+    sha256 = "10e965f3941c8b353b3419cc2baf90bfd7e7eccec613d5c94a0a04f1917c0cd0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/google-server-api-0.4.1.0-r0-346a904c9f5d4f888f3c50ccf901d056f9682f0d5639b8692934e7d61e46a51a.nix;
+        revNum = 0;
+        sha256 = "346a904c9f5d4f888f3c50ccf901d056f9682f0d5639b8692934e7d61e46a51a";
+        };
+      default = "r0";
+      };
+    };
   }

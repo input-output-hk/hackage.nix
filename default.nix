@@ -9633,6 +9633,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lucid-svg" = import ./nix/lucid-svg.nix;
   "lucid-xstatic" = import ./nix/lucid-xstatic.nix;
   "lucid2" = import ./nix/lucid2.nix;
+  "lucid2-htmx" = import ./nix/lucid2-htmx.nix;
   "lucienne" = import ./nix/lucienne.nix;
   "luhn" = import ./nix/luhn.nix;
   "lui" = import ./nix/lui.nix;

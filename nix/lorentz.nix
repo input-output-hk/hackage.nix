@@ -120,6 +120,17 @@
       default = "r0";
       };
     };
+  "0.14.1" = {
+    sha256 = "70ac99fdabbc9312900986d4ff35375998e1853bdf7abd6b565cda0ac11a6f63";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lorentz-0.14.1-r0-81a5e53ec97e8b09531fe4ee474e9938d0369b4e0c72d27dfecef21f6da9a783.nix;
+        revNum = 0;
+        sha256 = "81a5e53ec97e8b09531fe4ee474e9938d0369b4e0c72d27dfecef21f6da9a783";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0" = {
     sha256 = "488c3350e4abfce5e77f8718c6442b8d7bba3302282c0a9ec8bbd7b622bce5ab";
     revisions = {
