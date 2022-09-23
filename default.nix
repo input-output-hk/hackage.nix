@@ -2655,6 +2655,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "brainfuck-monad" = import ./nix/brainfuck-monad.nix;
   "brainfuck-tut" = import ./nix/brainfuck-tut.nix;
   "brainheck" = import ./nix/brainheck.nix;
+  "brassica" = import ./nix/brassica.nix;
   "break" = import ./nix/break.nix;
   "breakout" = import ./nix/breakout.nix;
   "breakpoint" = import ./nix/breakpoint.nix;

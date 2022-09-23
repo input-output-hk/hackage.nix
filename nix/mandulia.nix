@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.8.0.1" = {
+    sha256 = "b623fadbb5a1ef205613c4afc8d036fcee3d691ac23fcb966f50798d1bc476c6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mandulia-0.8.0.1-r0-f0e4f653451867582160e542d7b93d53134befc5f397c7fa1f0b77deb2a1830c.nix;
+        revNum = 0;
+        sha256 = "f0e4f653451867582160e542d7b93d53134befc5f397c7fa1f0b77deb2a1830c";
+        };
+      default = "r0";
+      };
+    };
   }
