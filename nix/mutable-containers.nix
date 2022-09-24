@@ -213,4 +213,15 @@
       default = "r0";
       };
     };
+  "0.3.4.1" = {
+    sha256 = "79429ec69c94ad08946bd1de1fe1c261d017b47258c99fe97ca0238d5a6c36cf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mutable-containers-0.3.4.1-r0-9fb65a0d702e00b4c29a80a924b08db28aef77674ffae47486d92504166815e1.nix;
+        revNum = 0;
+        sha256 = "9fb65a0d702e00b4c29a80a924b08db28aef77674ffae47486d92504166815e1";
+        };
+      default = "r0";
+      };
+    };
   }

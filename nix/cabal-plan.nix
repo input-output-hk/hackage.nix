@@ -190,6 +190,22 @@
         revNum = 0;
         sha256 = "e5eb5e084a346096c11ca5b127f7a510c2ae5aea0a4ac130923c9eaa01da25a3";
         };
+      r1 = {
+        nix = import ../hackage/cabal-plan-0.7.2.2-r1-9fc456c7b8b65521fd88031e102a7ca24eda6cbab528445e9389d8c3ab3f7d34.nix;
+        revNum = 1;
+        sha256 = "9fc456c7b8b65521fd88031e102a7ca24eda6cbab528445e9389d8c3ab3f7d34";
+        };
+      default = "r1";
+      };
+    };
+  "0.7.2.3" = {
+    sha256 = "6282014e55b690e4d73ffcef9ac36e66fc9fb5512c6c3be89913c813150c337f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-plan-0.7.2.3-r0-4061243d54d69a0fcbb268316335c8c3a1606f4da072676288d1728b30e578f5.nix;
+        revNum = 0;
+        sha256 = "4061243d54d69a0fcbb268316335c8c3a1606f4da072676288d1728b30e578f5";
+        };
       default = "r0";
       };
     };

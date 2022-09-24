@@ -7874,6 +7874,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hslua" = import ./nix/hslua.nix;
   "hslua-aeson" = import ./nix/hslua-aeson.nix;
   "hslua-classes" = import ./nix/hslua-classes.nix;
+  "hslua-cli" = import ./nix/hslua-cli.nix;
   "hslua-core" = import ./nix/hslua-core.nix;
   "hslua-examples" = import ./nix/hslua-examples.nix;
   "hslua-marshalling" = import ./nix/hslua-marshalling.nix;
@@ -10707,6 +10708,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nix-graph" = import ./nix/nix-graph.nix;
   "nix-narinfo" = import ./nix/nix-narinfo.nix;
   "nix-paths" = import ./nix/nix-paths.nix;
+  "nix-serve-ng" = import ./nix/nix-serve-ng.nix;
   "nix-thunk" = import ./nix/nix-thunk.nix;
   "nix-tools" = import ./nix/nix-tools.nix;
   "nix-tree" = import ./nix/nix-tree.nix;
