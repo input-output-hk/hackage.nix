@@ -45,7 +45,12 @@
         revNum = 1;
         sha256 = "a37e52b43eb806c9a2ee94806f69c9df8cacafe24eecf061b108b59c35d0f880";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/commutative-semigroups-0.1.0.0-r2-7f23c6134c9b8b68018c5721d8c71d1d99f68020afbbc3dd42c3b1ed14cf455d.nix;
+        revNum = 2;
+        sha256 = "7f23c6134c9b8b68018c5721d8c71d1d99f68020afbbc3dd42c3b1ed14cf455d";
+        };
+      default = "r2";
       };
     };
   }

@@ -4741,6 +4741,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "editline" = import ./nix/editline.nix;
   "editor-open" = import ./nix/editor-open.nix;
   "editpipe" = import ./nix/editpipe.nix;
+  "edits" = import ./nix/edits.nix;
   "effect-handlers" = import ./nix/effect-handlers.nix;
   "effect-monad" = import ./nix/effect-monad.nix;
   "effect-stack" = import ./nix/effect-stack.nix;
@@ -7218,6 +7219,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "heist-aeson" = import ./nix/heist-aeson.nix;
   "heist-async" = import ./nix/heist-async.nix;
   "heist-emanote" = import ./nix/heist-emanote.nix;
+  "heist-extra" = import ./nix/heist-extra.nix;
   "helf" = import ./nix/helf.nix;
   "helic" = import ./nix/helic.nix;
   "helics" = import ./nix/helics.nix;

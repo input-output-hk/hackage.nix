@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.1" = {
+    sha256 = "76ae195f738d72bb75a34be0bbb7ab5fd097d50fb05aaf2a252e88d265d53af1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libffi-0.2.1-r0-72b41cefb799f3d3509c6cec8ecbf5023cf442c53a601aaaacee5872c722908b.nix;
+        revNum = 0;
+        sha256 = "72b41cefb799f3d3509c6cec8ecbf5023cf442c53a601aaaacee5872c722908b";
+        };
+      default = "r0";
+      };
+    };
   }

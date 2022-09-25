@@ -415,4 +415,15 @@
       default = "r0";
       };
     };
+  "0.4.0.1" = {
+    sha256 = "e8fc48b1eff9b3c1ac37b69923a2177c8b9678c73bdf77b1cd6415fd3a5ff609";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fsnotify-0.4.0.1-r0-2e11485b74ef7cef36e1f47493fade685272487345a326cc58d174499e748ce2.nix;
+        revNum = 0;
+        sha256 = "2e11485b74ef7cef36e1f47493fade685272487345a326cc58d174499e748ce2";
+        };
+      default = "r0";
+      };
+    };
   }

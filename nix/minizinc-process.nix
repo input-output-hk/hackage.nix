@@ -73,7 +73,12 @@
         revNum = 0;
         sha256 = "91c61c57ef25dc766aaa46182c0e4021df207c8ccd28fb892059a30ec59a29b2";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/minizinc-process-0.1.4.1-r1-b204a5d58b8c03c363173941493965cca1a37fc7b103743cfacdc16f5a5e0026.nix;
+        revNum = 1;
+        sha256 = "b204a5d58b8c03c363173941493965cca1a37fc7b103743cfacdc16f5a5e0026";
+        };
+      default = "r1";
       };
     };
   }

@@ -42,4 +42,15 @@
       default = "r0";
       };
     };
+  "0.2.2.0" = {
+    sha256 = "4fa8a7b6692cbea1fc14e9ffaeb307cc985ee6114918d56c51bf9da0668dd09b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/binary-serialise-cbor-0.2.2.0-r0-b0afcd35869080432b668c818f8a1ccfc420f3abf6446b7744e9b630a37830bb.nix;
+        revNum = 0;
+        sha256 = "b0afcd35869080432b668c818f8a1ccfc420f3abf6446b7744e9b630a37830bb";
+        };
+      default = "r0";
+      };
+    };
   }

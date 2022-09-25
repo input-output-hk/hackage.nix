@@ -78,4 +78,15 @@
       default = "r1";
       };
     };
+  "0.1.2.1" = {
+    sha256 = "c681633d3e47d7eabd1cd43028a0e8f2e279a9c60c7701d0dc060145bd598023";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hgmp-0.1.2.1-r0-e41a4e5b8464e948403539e641007022203c8d76c65332fc8bef8d54c373bec6.nix;
+        revNum = 0;
+        sha256 = "e41a4e5b8464e948403539e641007022203c8d76c65332fc8bef8d54c373bec6";
+        };
+      default = "r0";
+      };
+    };
   }

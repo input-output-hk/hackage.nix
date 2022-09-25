@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.6.1.0" = {
+    sha256 = "88919a370f9463c10a1d76915fa35e600ef4a731933c8388d74fdbd0dbc10061";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/h-gpgme-0.6.1.0-r0-e36c1797cc6da632f3726f6a7aff2f272fb4e453f6050e467db8e0afce3e18b7.nix;
+        revNum = 0;
+        sha256 = "e36c1797cc6da632f3726f6a7aff2f272fb4e453f6050e467db8e0afce3e18b7";
+        };
+      default = "r0";
+      };
+    };
   }
