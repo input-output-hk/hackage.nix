@@ -219,4 +219,15 @@
       default = "r0";
       };
     };
+  "0.5.9" = {
+    sha256 = "06dce01691f1bbd507a23a12e0b62d046d7b60c41d1bd4debfa6a1120de89384";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vulkan-utils-0.5.9-r0-3119d2410fa22e01fc682bd566cbf10787686897ad0ba12fe25dc72625d1e37e.nix;
+        revNum = 0;
+        sha256 = "3119d2410fa22e01fc682bd566cbf10787686897ad0ba12fe25dc72625d1e37e";
+        };
+      default = "r0";
+      };
+    };
   }

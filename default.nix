@@ -4444,6 +4444,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "disjoint-set" = import ./nix/disjoint-set.nix;
   "disjoint-set-stateful" = import ./nix/disjoint-set-stateful.nix;
   "disjoint-sets-st" = import ./nix/disjoint-sets-st.nix;
+  "disk-bytes" = import ./nix/disk-bytes.nix;
   "disk-free-space" = import ./nix/disk-free-space.nix;
   "diskhash" = import ./nix/diskhash.nix;
   "display" = import ./nix/display.nix;

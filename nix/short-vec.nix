@@ -42,7 +42,12 @@
         revNum = 7;
         sha256 = "034ac175043cb7f335adb400c0fd45464486c38aaa827c5c1b76b624448bcc0b";
         };
-      default = "r7";
+      r8 = {
+        nix = import ../hackage/short-vec-0.1.0.0-r8-d261679070c62d0bc6283ef1f4cbda861f9f1de48f6eb0b3c23d7a61b66a6ff3.nix;
+        revNum = 8;
+        sha256 = "d261679070c62d0bc6283ef1f4cbda861f9f1de48f6eb0b3c23d7a61b66a6ff3";
+        };
+      default = "r8";
       };
     };
   }

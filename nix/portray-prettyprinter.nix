@@ -46,4 +46,15 @@
       default = "r3";
       };
     };
+  "0.2.1" = {
+    sha256 = "eb2cd7cd9b91199d4b54a92088071c055fd2297c3aee68dcd2c7e06e76fef037";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/portray-prettyprinter-0.2.1-r0-3f1873820860d9b80695df1472520c759fb6d50820d83572f78a81d434481907.nix;
+        revNum = 0;
+        sha256 = "3f1873820860d9b80695df1472520c759fb6d50820d83572f78a81d434481907";
+        };
+      default = "r0";
+      };
+    };
   }

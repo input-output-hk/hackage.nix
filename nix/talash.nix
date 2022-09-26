@@ -68,4 +68,15 @@
       default = "r1";
       };
     };
+  "0.3.0" = {
+    sha256 = "1e2362d1dbf84d75e1bc26d95a70dd9f8dd5db0290e36293cb52d3124d8cba2e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/talash-0.3.0-r0-37ccd1ad13fc03891026de0e7f6e12c85cd296641393b4fb9552ed63d9de2b09.nix;
+        revNum = 0;
+        sha256 = "37ccd1ad13fc03891026de0e7f6e12c85cd296641393b4fb9552ed63d9de2b09";
+        };
+      default = "r0";
+      };
+    };
   }
