@@ -7152,6 +7152,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hdbi-tests" = import ./nix/hdbi-tests.nix;
   "hdevtools" = import ./nix/hdevtools.nix;
   "hdf" = import ./nix/hdf.nix;
+  "hdf5" = import ./nix/hdf5.nix;
   "hdf5-lite" = import ./nix/hdf5-lite.nix;
   "hdiff" = import ./nix/hdiff.nix;
   "hdigest" = import ./nix/hdigest.nix;
@@ -15363,6 +15364,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "twirp" = import ./nix/twirp.nix;
   "twisty" = import ./nix/twisty.nix;
   "twitch" = import ./nix/twitch.nix;
+  "twitchapi" = import ./nix/twitchapi.nix;
   "twitter" = import ./nix/twitter.nix;
   "twitter-conduit" = import ./nix/twitter-conduit.nix;
   "twitter-enumerator" = import ./nix/twitter-enumerator.nix;

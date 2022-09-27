@@ -112,7 +112,12 @@
         revNum = 2;
         sha256 = "3c80c0d3e81829423500171f16aec269d9990bd7f13a2a9071a36842f5618d61";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/invertible-grammar-0.1.3.2-r3-3d124f4ab34c45b8517a1eeb799a4b8d9dee7f6539b446b2ef2eb79d8916e335.nix;
+        revNum = 3;
+        sha256 = "3d124f4ab34c45b8517a1eeb799a4b8d9dee7f6539b446b2ef2eb79d8916e335";
+        };
+      default = "r3";
       };
     };
   }

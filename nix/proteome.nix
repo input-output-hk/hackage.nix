@@ -230,4 +230,26 @@
       default = "r0";
       };
     };
+  "0.9.10" = {
+    sha256 = "8d510b0dce1f393ab9c4afcc4b87fae5218151218258fb207b4045c896723d8e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/proteome-0.9.10-r0-567b8cecde1cfc8a78fcc5cd10d34ad1f643a8bc647420b8ae7ced91abf61d9e.nix;
+        revNum = 0;
+        sha256 = "567b8cecde1cfc8a78fcc5cd10d34ad1f643a8bc647420b8ae7ced91abf61d9e";
+        };
+      default = "r0";
+      };
+    };
+  "0.9.9.9" = {
+    sha256 = "a37eb782d6165d97cd8976011c79558994ddbc6a6491fff93660c452b69f24c3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/proteome-0.9.9.9-r0-fad21dd5880f8399f2bd3f7a5a1d5c5a6bb1ce509c86bdc759cd754b743bce38.nix;
+        revNum = 0;
+        sha256 = "fad21dd5880f8399f2bd3f7a5a1d5c5a6bb1ce509c86bdc759cd754b743bce38";
+        };
+      default = "r0";
+      };
+    };
   }

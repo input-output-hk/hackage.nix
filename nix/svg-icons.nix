@@ -120,4 +120,37 @@
       default = "r0";
       };
     };
+  "2.0.2.0" = {
+    sha256 = "4a5450a472aab6f15332fcb6b160b8e3eae16d935de5a7d7f71b0d6d469792bc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/svg-icons-2.0.2.0-r0-cd0c632efcbe27af96874e6d8352f81c362ccf68898ade519c1326b83ee2dbf2.nix;
+        revNum = 0;
+        sha256 = "cd0c632efcbe27af96874e6d8352f81c362ccf68898ade519c1326b83ee2dbf2";
+        };
+      default = "r0";
+      };
+    };
+  "2.1.0.0" = {
+    sha256 = "b25979b1eed49b231ba34afde29f78cd2f8e1e1a3bf0800c00a8d0c968bc98ad";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/svg-icons-2.1.0.0-r0-b3c5f55b9c14d3abd6c8e8a65d4ff9f1ca5780601cba6e3312c7adec59c7bde2.nix;
+        revNum = 0;
+        sha256 = "b3c5f55b9c14d3abd6c8e8a65d4ff9f1ca5780601cba6e3312c7adec59c7bde2";
+        };
+      default = "r0";
+      };
+    };
+  "2.1.0.1" = {
+    sha256 = "742e01830894a4cd8ce16af9174c7ab57d56775f5983fce1cd0c1f53b8bf49f5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/svg-icons-2.1.0.1-r0-cb9acfb27041993ab57a859ae9eda4ec2cf3175e504fd57d495afb197da3563c.nix;
+        revNum = 0;
+        sha256 = "cb9acfb27041993ab57a859ae9eda4ec2cf3175e504fd57d495afb197da3563c";
+        };
+      default = "r0";
+      };
+    };
   }
