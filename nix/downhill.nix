@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "14f0d7cc90036fbfe3e80cdd71a636c1e2137d6560309e32ddf48f04f66c91f8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/downhill-0.3.0.0-r0-59c457feebac6c8ba26fb08ffd650fb39959d1236928169b2471c0400ce97a80.nix;
+        revNum = 0;
+        sha256 = "59c457feebac6c8ba26fb08ffd650fb39959d1236928169b2471c0400ce97a80";
+        };
+      default = "r0";
+      };
+    };
   }

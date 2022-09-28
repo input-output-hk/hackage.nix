@@ -212,7 +212,12 @@
         revNum = 0;
         sha256 = "846c4aa412def81e03d6647af508a7bb0cbb516d1136674f997b417124a0b346";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lucid-2.11.1-r1-2d59c84586abddc07010d17e7b8c74740ad632404716bc28ea0068d607ac3772.nix;
+        revNum = 1;
+        sha256 = "2d59c84586abddc07010d17e7b8c74740ad632404716bc28ea0068d607ac3772";
+        };
+      default = "r1";
       };
     };
   "2.2" = {

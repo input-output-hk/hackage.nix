@@ -155,7 +155,12 @@
         revNum = 1;
         sha256 = "b48758927142b73e7cb885f5583320ccb0c8fabfa254e52cdbc6b0d54e475f9a";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/aeson-yaml-1.1.0.1-r2-9c9fdd8a61a2fa86b3eeee020db2a443a62e38302f7623fd59e307b9def2d4df.nix;
+        revNum = 2;
+        sha256 = "9c9fdd8a61a2fa86b3eeee020db2a443a62e38302f7623fd59e307b9def2d4df";
+        };
+      default = "r2";
       };
     };
   }

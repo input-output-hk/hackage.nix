@@ -12052,6 +12052,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "progression" = import ./nix/progression.nix;
   "progressive" = import ./nix/progressive.nix;
   "proj4-hs-bindings" = import ./nix/proj4-hs-bindings.nix;
+  "project-forge" = import ./nix/project-forge.nix;
   "project-m36" = import ./nix/project-m36.nix;
   "project-template" = import ./nix/project-template.nix;
   "projectile" = import ./nix/projectile.nix;
@@ -12985,6 +12986,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "runmany" = import ./nix/runmany.nix;
   "runmemo" = import ./nix/runmemo.nix;
   "runtime-arbitrary" = import ./nix/runtime-arbitrary.nix;
+  "runtime-instances" = import ./nix/runtime-instances.nix;
   "rustls" = import ./nix/rustls.nix;
   "rv" = import ./nix/rv.nix;
   "rvar" = import ./nix/rvar.nix;
@@ -15421,6 +15423,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "type-ord" = import ./nix/type-ord.nix;
   "type-ord-spine-cereal" = import ./nix/type-ord-spine-cereal.nix;
   "type-prelude" = import ./nix/type-prelude.nix;
+  "type-reflection" = import ./nix/type-reflection.nix;
   "type-rig" = import ./nix/type-rig.nix;
   "type-safe-avl" = import ./nix/type-safe-avl.nix;
   "type-sets" = import ./nix/type-sets.nix;

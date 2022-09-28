@@ -120,4 +120,15 @@
       default = "r3";
       };
     };
+  "0.1.3.3" = {
+    sha256 = "54a9ac4af6f8040502bd9246f43fa603231019f27dabaa7fa14c3c4e2c69588a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/invertible-grammar-0.1.3.3-r0-c64aaa5052870e1efac9fcb3d8b247ff7ffe340e7de01a567b9e60719ca1f23c.nix;
+        revNum = 0;
+        sha256 = "c64aaa5052870e1efac9fcb3d8b247ff7ffe340e7de01a567b9e60719ca1f23c";
+        };
+      default = "r0";
+      };
+    };
   }

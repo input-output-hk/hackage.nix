@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.0.4" = {
+    sha256 = "be4721e42d0bac953d8ae474d353b48e8aa7f0eb2874b0ec02f720ccffff4921";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-tmux-0.1.0.4-r0-23b32de6941159416c70d272b7e70410d59b5f7cda5bf9c900abecf5932447f4.nix;
+        revNum = 0;
+        sha256 = "23b32de6941159416c70d272b7e70410d59b5f7cda5bf9c900abecf5932447f4";
+        };
+      default = "r0";
+      };
+    };
   }

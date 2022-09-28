@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "59410eed9b9ddbd115760a59c7170927320d8612e414701d323a0c8985c97523";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/env-guard-0.2-r1-feaecb437c597537dbef656300068c50a97e28ae83a8b63426ee14a1413207f5.nix;
+        revNum = 1;
+        sha256 = "feaecb437c597537dbef656300068c50a97e28ae83a8b63426ee14a1413207f5";
+        };
+      default = "r1";
       };
     };
   }

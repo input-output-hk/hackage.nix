@@ -345,4 +345,15 @@
       default = "r2";
       };
     };
+  "2.3.4.0" = {
+    sha256 = "a71eac1c63630aad880c54e941c35a804a13b21249f1f0878a744c12ce6a8dbd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sexp-grammar-2.3.4.0-r0-23a32f1a74146e2ee98462c67f8d2b8be641fd63fa4011d80410e70983888c6f.nix;
+        revNum = 0;
+        sha256 = "23a32f1a74146e2ee98462c67f8d2b8be641fd63fa4011d80410e70983888c6f";
+        };
+      default = "r0";
+      };
+    };
   }
