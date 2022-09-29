@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.0.6" = {
+    sha256 = "305c2a9f9aab68cd5a8c9babaa9bc845d296ec5697b7e4ac4a2b368243fb278a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/word-compat-0.0.6-r0-d732734492d91a0a2007154339ed8ed02d2c094340cee4af53db265d593f3fb2.nix;
+        revNum = 0;
+        sha256 = "d732734492d91a0a2007154339ed8ed02d2c094340cee4af53db265d593f3fb2";
+        };
+      default = "r0";
+      };
+    };
   }

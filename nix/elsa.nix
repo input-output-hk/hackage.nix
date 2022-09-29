@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.2.2.0" = {
+    sha256 = "95ca53c7af96f7f3b5b4aa923fc3d41893dad4d69e728f8280944f59a279090d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/elsa-0.2.2.0-r0-94932425d58089c65df1e598f55a9905723b668ce27b978e2b9c676400193aa1.nix;
+        revNum = 0;
+        sha256 = "94932425d58089c65df1e598f55a9905723b668ce27b978e2b9c676400193aa1";
+        };
+      default = "r0";
+      };
+    };
   }

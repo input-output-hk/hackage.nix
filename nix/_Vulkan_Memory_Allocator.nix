@@ -43,6 +43,17 @@
       default = "r0";
       };
     };
+  "0.10.3.1" = {
+    sha256 = "7138111d17f78ae6ffa96b635eeecdae8cc8f9895d013bfd43f176d684cd92d9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/VulkanMemoryAllocator-0.10.3.1-r0-815a33262a5d2ec917dab5297a0a892272726a1a931e29bc35b6bb3cc6e4c767.nix;
+        revNum = 0;
+        sha256 = "815a33262a5d2ec917dab5297a0a892272726a1a931e29bc35b6bb3cc6e4c767";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "cd044c84436975b5ec300b4d342de2c423c139db5270a1796f9f99a0fdb6a293";
     revisions = {

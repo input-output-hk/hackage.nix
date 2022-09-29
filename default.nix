@@ -5015,6 +5015,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "eventsourcing" = import ./nix/eventsourcing.nix;
   "eventsourcing-postgresql" = import ./nix/eventsourcing-postgresql.nix;
   "eventstore" = import ./nix/eventstore.nix;
+  "eventuo11y" = import ./nix/eventuo11y.nix;
+  "eventuo11y-batteries" = import ./nix/eventuo11y-batteries.nix;
   "every" = import ./nix/every.nix;
   "every-bit-counts" = import ./nix/every-bit-counts.nix;
   "evm-opcodes" = import ./nix/evm-opcodes.nix;
@@ -11904,6 +11906,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "prefix-units" = import ./nix/prefix-units.nix;
   "prefork" = import ./nix/prefork.nix;
   "pregame" = import ./nix/pregame.nix;
+  "prelate" = import ./nix/prelate.nix;
   "preliminaries" = import ./nix/preliminaries.nix;
   "prelude-compat" = import ./nix/prelude-compat.nix;
   "prelude-edsl" = import ./nix/prelude-edsl.nix;
@@ -14328,6 +14331,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "string-similarity" = import ./nix/string-similarity.nix;
   "string-transform" = import ./nix/string-transform.nix;
   "string-typelits" = import ./nix/string-typelits.nix;
+  "string-variants" = import ./nix/string-variants.nix;
   "stringable" = import ./nix/stringable.nix;
   "stringbuilder" = import ./nix/stringbuilder.nix;
   "stringlike" = import ./nix/stringlike.nix;
@@ -15548,6 +15552,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "unicode-collation" = import ./nix/unicode-collation.nix;
   "unicode-data" = import ./nix/unicode-data.nix;
   "unicode-data-names" = import ./nix/unicode-data-names.nix;
+  "unicode-data-scripts" = import ./nix/unicode-data-scripts.nix;
+  "unicode-data-security" = import ./nix/unicode-data-security.nix;
   "unicode-general-category" = import ./nix/unicode-general-category.nix;
   "unicode-names" = import ./nix/unicode-names.nix;
   "unicode-normalization" = import ./nix/unicode-normalization.nix;
