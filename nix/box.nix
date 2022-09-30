@@ -175,4 +175,15 @@
       default = "r0";
       };
     };
+  "0.9.0" = {
+    sha256 = "24f09c398070c04affa08f3d467ff6c7e923f023d760a2ab4ee15e209f5a94ac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/box-0.9.0-r0-d40ffbd8c4478a6080a04e2cef889b1851ccb1815f3a0b330d0269640982db8d.nix;
+        revNum = 0;
+        sha256 = "d40ffbd8c4478a6080a04e2cef889b1851ccb1815f3a0b330d0269640982db8d";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -5167,6 +5167,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fast-tagsoup-utf8-only" = import ./nix/fast-tagsoup-utf8-only.nix;
   "fasta" = import ./nix/fasta.nix;
   "fastbayes" = import ./nix/fastbayes.nix;
+  "fastcdc" = import ./nix/fastcdc.nix;
   "fastcgi" = import ./nix/fastcgi.nix;
   "fastedit" = import ./nix/fastedit.nix;
   "fastirc" = import ./nix/fastirc.nix;
@@ -5714,6 +5715,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gdo" = import ./nix/gdo.nix;
   "gdp" = import ./nix/gdp.nix;
   "gearbox" = import ./nix/gearbox.nix;
+  "gearhash" = import ./nix/gearhash.nix;
   "gedcom" = import ./nix/gedcom.nix;
   "geek" = import ./nix/geek.nix;
   "geek-server" = import ./nix/geek-server.nix;
@@ -15080,6 +15082,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tinyMesh" = import ./nix/tiny_Mesh.nix;
   "tinyXml" = import ./nix/tiny_Xml.nix;
   "tinyfiledialogs" = import ./nix/tinyfiledialogs.nix;
+  "tinyid" = import ./nix/tinyid.nix;
   "tinylog" = import ./nix/tinylog.nix;
   "tinytemplate" = import ./nix/tinytemplate.nix;
   "tip-haskell-frontend" = import ./nix/tip-haskell-frontend.nix;

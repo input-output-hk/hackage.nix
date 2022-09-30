@@ -153,4 +153,26 @@
       default = "r0";
       };
     };
+  "2.1.0.2" = {
+    sha256 = "6d48fcac74a8372023871496030bc1e98ae8d221c4035e11538116978decce54";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/svg-icons-2.1.0.2-r0-0fb56915043e27cecd0b939b708fc4715fbc7e1d52080e27add34107d4835f3e.nix;
+        revNum = 0;
+        sha256 = "0fb56915043e27cecd0b939b708fc4715fbc7e1d52080e27add34107d4835f3e";
+        };
+      default = "r0";
+      };
+    };
+  "2.1.0.3" = {
+    sha256 = "893f695aa91865f4a599402e2f492344911028703bc07841dad8695d888502c8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/svg-icons-2.1.0.3-r0-6b31bec9b7ea008f00f9ddc957b7d6c53c08ab06350d9a65b07f244ed2887d1c.nix;
+        revNum = 0;
+        sha256 = "6b31bec9b7ea008f00f9ddc957b7d6c53c08ab06350d9a65b07f244ed2887d1c";
+        };
+      default = "r0";
+      };
+    };
   }

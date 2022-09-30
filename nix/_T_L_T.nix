@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "a5d2a71e8d762075cea874a0fe9e1f85d8b8da33b4c1c2485c2a0f4c655bb4e4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/TLT-0.4.0.0-r0-60b925d8d9ab11cb5ad9595f8e4aa6dfcbfebe655aa23822cf7b5a7f06ebad31.nix;
+        revNum = 0;
+        sha256 = "60b925d8d9ab11cb5ad9595f8e4aa6dfcbfebe655aa23822cf7b5a7f06ebad31";
+        };
+      default = "r0";
+      };
+    };
   }

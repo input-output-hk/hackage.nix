@@ -263,4 +263,15 @@
       default = "r0";
       };
     };
+  "0.6.5.2" = {
+    sha256 = "38d7e2131d73bfaddc7d94b96cec1b6c1e013f31c0f44d36b93bb1e5f5e3af73";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gopro-plus-0.6.5.2-r0-f7eb56d58f203e2dd8c50e0a4a43a6e43ae3592dacb97834f0d9a01fd82c6a07.nix;
+        revNum = 0;
+        sha256 = "f7eb56d58f203e2dd8c50e0a4a43a6e43ae3592dacb97834f0d9a01fd82c6a07";
+        };
+      default = "r0";
+      };
+    };
   }

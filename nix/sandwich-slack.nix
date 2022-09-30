@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "8bc1ec3befe53e6d60baf956d84ec1dad2e1d1cb437521b800347be73a9edbb9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sandwich-slack-0.1.1.0-r0-dd988e98ba52d94f2da8aa9a7c03d7e927490338d060cea4ab49db5f80675df5.nix;
+        revNum = 0;
+        sha256 = "dd988e98ba52d94f2da8aa9a7c03d7e927490338d060cea4ab49db5f80675df5";
+        };
+      default = "r0";
+      };
+    };
   }
