@@ -188,7 +188,12 @@
         revNum = 1;
         sha256 = "dd86edcd864162ff1f588d6b0ecf431623f5d59dbfea989984762ff03b5bdaad";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/mmark-ext-0.2.1.5-r2-55aba20a443411138fe2f940358b39a4b14bd4e109d5a28ce7a4c99c131ae04f.nix;
+        revNum = 2;
+        sha256 = "55aba20a443411138fe2f940358b39a4b14bd4e109d5a28ce7a4c99c131ae04f";
+        };
+      default = "r2";
       };
     };
   }

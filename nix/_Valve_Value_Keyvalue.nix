@@ -34,7 +34,12 @@
         revNum = 0;
         sha256 = "b2f5ffba21e1a113708a4bf419a4a19d7350eaaee9c88e53ebb476194783a2f6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ValveValueKeyvalue-1.1.0.0-r1-7310ca3ac2a8073be955aa5ec06aab29cb24f42198fc7c71a65dd356a0b5f57d.nix;
+        revNum = 1;
+        sha256 = "7310ca3ac2a8073be955aa5ec06aab29cb24f42198fc7c71a65dd356a0b5f57d";
+        };
+      default = "r1";
       };
     };
   }
