@@ -11795,6 +11795,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "posable" = import ./nix/posable.nix;
   "poseidon" = import ./nix/poseidon.nix;
   "poseidon-postgis" = import ./nix/poseidon-postgis.nix;
+  "posit" = import ./nix/posit.nix;
   "positive" = import ./nix/positive.nix;
   "positron" = import ./nix/positron.nix;
   "posix-acl" = import ./nix/posix-acl.nix;
