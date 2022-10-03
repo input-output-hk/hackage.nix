@@ -59,6 +59,17 @@
       default = "r0";
       };
     };
+  "0.0.14" = {
+    sha256 = "281cc038ae57e69741bd5fb33e18487aab3c25c352cb643d62d75faf8c36129f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vado-0.0.14-r0-f7094823246d4149cc6398110df86c3949f68cdce413718fe687cebc18235b53.nix;
+        revNum = 0;
+        sha256 = "f7094823246d4149cc6398110df86c3949f68cdce413718fe687cebc18235b53";
+        };
+      default = "r0";
+      };
+    };
   "0.0.2" = {
     sha256 = "203afe36f11349576249d9326528649dc0878f2604377a21790114dfeec36d96";
     revisions = {

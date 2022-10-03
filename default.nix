@@ -11958,6 +11958,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "prettyprinter-compat-wl-pprint" = import ./nix/prettyprinter-compat-wl-pprint.nix;
   "prettyprinter-convert-ansi-wl-pprint" = import ./nix/prettyprinter-convert-ansi-wl-pprint.nix;
   "prettyprinter-graphviz" = import ./nix/prettyprinter-graphviz.nix;
+  "prettyprinter-interp" = import ./nix/prettyprinter-interp.nix;
   "prettyprinter-lucid" = import ./nix/prettyprinter-lucid.nix;
   "prettyprinter-vty" = import ./nix/prettyprinter-vty.nix;
   "preview" = import ./nix/preview.nix;
