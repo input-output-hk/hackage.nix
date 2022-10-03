@@ -77,7 +77,12 @@
         revNum = 2;
         sha256 = "f9530ab907ae50cfffab2715865b306854fb491308969944707942a56910af33";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/diagrams-graphviz-1.4.1.1-r3-0721b4d1782a5ceae811ccf766a0bfc0f447914512f3ae3308e836b06fcfe3e6.nix;
+        revNum = 3;
+        sha256 = "0721b4d1782a5ceae811ccf766a0bfc0f447914512f3ae3308e836b06fcfe3e6";
+        };
+      default = "r3";
       };
     };
   }

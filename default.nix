@@ -11088,6 +11088,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "otp-authenticator" = import ./nix/otp-authenticator.nix;
   "ottparse-pretty" = import ./nix/ottparse-pretty.nix;
   "outsort" = import ./nix/outsort.nix;
+  "overeasy" = import ./nix/overeasy.nix;
   "overhang" = import ./nix/overhang.nix;
   "overload" = import ./nix/overload.nix;
   "overloaded" = import ./nix/overloaded.nix;
@@ -12082,6 +12083,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "prompt" = import ./nix/prompt.nix;
   "pronounce" = import ./nix/pronounce.nix;
   "proof-combinators" = import ./nix/proof-combinators.nix;
+  "prop-unit" = import ./nix/prop-unit.nix;
   "propane" = import ./nix/propane.nix;
   "propeller" = import ./nix/propeller.nix;
   "propellor" = import ./nix/propellor.nix;
@@ -15546,6 +15548,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "unfoldable" = import ./nix/unfoldable.nix;
   "unfoldable-restricted" = import ./nix/unfoldable-restricted.nix;
   "unfork" = import ./nix/unfork.nix;
+  "unfree" = import ./nix/unfree.nix;
   "ungadtagger" = import ./nix/ungadtagger.nix;
   "uni-events" = import ./nix/uni-events.nix;
   "uni-graphs" = import ./nix/uni-graphs.nix;
