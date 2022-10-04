@@ -3839,4 +3839,15 @@
       default = "r0";
       };
     };
+  "3.5.0.3" = {
+    sha256 = "5afb6cbf18d962e7da4854eff225fd08273e2d30f5be2ed302266a2e4950ca36";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ats-pkg-3.5.0.3-r0-933893a7a82df09491a169bf912ecbc7a548e510f8488127d588342d1465947a.nix;
+        revNum = 0;
+        sha256 = "933893a7a82df09491a169bf912ecbc7a548e510f8488127d588342d1465947a";
+        };
+      default = "r0";
+      };
+    };
   }
