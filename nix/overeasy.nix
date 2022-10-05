@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0" = {
+    sha256 = "7c5cbdbe132ce9ec047896cb8ae388013d121b4507559eccc9614997683ad0fb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/overeasy-0.2.0-r0-b62b412ad5845f24a1d49e0cf30bd868448051cdb5b48262c1a633efbce37744.nix;
+        revNum = 0;
+        sha256 = "b62b412ad5845f24a1d49e0cf30bd868448051cdb5b48262c1a633efbce37744";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -54,4 +54,37 @@
       default = "r0";
       };
     };
+  "0.3.1.0" = {
+    sha256 = "18db8dd052e82630b546ae571ccf42da53071e49d7f09108b8b19be88ae68c2a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventuo11y-0.3.1.0-r0-1ad8accf1c99430d7007e6d10ca4e1e53f5467db6980526b81f64235ce5c039d.nix;
+        revNum = 0;
+        sha256 = "1ad8accf1c99430d7007e6d10ca4e1e53f5467db6980526b81f64235ce5c039d";
+        };
+      default = "r0";
+      };
+    };
+  "0.3.2.0" = {
+    sha256 = "488bcc34e963c4426b4b0e3a5cd2f586d897185ad5ae43893b7957bf12c0a6b7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventuo11y-0.3.2.0-r0-21607fc3d1df294a06a572e380d8f6a5ca3236efaef29a3fcb8a964768d27aee.nix;
+        revNum = 0;
+        sha256 = "21607fc3d1df294a06a572e380d8f6a5ca3236efaef29a3fcb8a964768d27aee";
+        };
+      default = "r0";
+      };
+    };
+  "0.4.0.0" = {
+    sha256 = "5e8c7dd7b78e53d8098b27c5624c9ef5f188e57434342eb08e69c1f4cdde0102";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventuo11y-0.4.0.0-r0-0b93bc014303b79730d558a91ba90eaa809ffd63bee528c727e400979a1a8509.nix;
+        revNum = 0;
+        sha256 = "0b93bc014303b79730d558a91ba90eaa809ffd63bee528c727e400979a1a8509";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "e962bbdaff99970fbe902114d597e1c59cd2d773cbea672e5c2607ffb1348317";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/ascii-numbers-1.1.0.0-r2-17a98657aaf954bcb00f1bc662171794e49255ab349213097da3502c888f865b.nix;
+        revNum = 2;
+        sha256 = "17a98657aaf954bcb00f1bc662171794e49255ab349213097da3502c888f865b";
+        };
+      default = "r2";
       };
     };
   }

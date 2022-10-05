@@ -78,7 +78,12 @@
         revNum = 0;
         sha256 = "1df20771fcd1b5dd3dbdc4e3a7e9ce40eebf7785ddec885de16d19baaab93cb4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/gnuidn-0.2.2-r1-4dd20cfcc22972c4752ab7bd3e9d52c80df1dbbd7de13d4e14813647ce245885.nix;
+        revNum = 1;
+        sha256 = "4dd20cfcc22972c4752ab7bd3e9d52c80df1dbbd7de13d4e14813647ce245885";
+        };
+      default = "r1";
       };
     };
   }

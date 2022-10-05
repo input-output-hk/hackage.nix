@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "a520b26d51f349b9a796550bc6f6f6676c4498854b24f162042725a21431f15e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/project-forge-0.3.0.0-r0-5a5f7728aa3f4cab44ae66ee0c95fc12fd49a1d25080545d2af05057f6cf5d54.nix;
+        revNum = 0;
+        sha256 = "5a5f7728aa3f4cab44ae66ee0c95fc12fd49a1d25080545d2af05057f6cf5d54";
+        };
+      default = "r0";
+      };
+    };
   }
