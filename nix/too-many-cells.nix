@@ -307,4 +307,15 @@
       default = "r0";
       };
     };
+  "3.0.1.0" = {
+    sha256 = "1364bdc5ccda62d4e25f184be9a4ec2443ccf6f142fbf27ee4ee4aff781d549b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/too-many-cells-3.0.1.0-r0-c7f737bab760ad8f4ea0c8ea2b223425c05677aa1c78c100509cec527752b934.nix;
+        revNum = 0;
+        sha256 = "c7f737bab760ad8f4ea0c8ea2b223425c05677aa1c78c100509cec527752b934";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -1882,4 +1882,15 @@
       default = "r0";
       };
     };
+  "1.3.4.3" = {
+    sha256 = "aca2a086a6ee065a5d1f1efc0632bccf52a8f961e4134a4fb60447765987907d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/conduit-1.3.4.3-r0-c32a5f3ee2daff364de2807afeec45996e5633f9a5010c8504472a930ac7153e.nix;
+        revNum = 0;
+        sha256 = "c32a5f3ee2daff364de2807afeec45996e5633f9a5010c8504472a930ac7153e";
+        };
+      default = "r0";
+      };
+    };
   }

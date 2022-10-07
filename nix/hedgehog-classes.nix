@@ -190,7 +190,12 @@
         revNum = 2;
         sha256 = "65f08d71b1f6386590c372e5a2f6044797e4f478709712b9c96ab7bc898d7b70";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/hedgehog-classes-0.2.5.3-r3-45d24d6c1f1a7e8e837d09d92e26b4ac3efa8c0a3c94051511f213d16f5a7026.nix;
+        revNum = 3;
+        sha256 = "45d24d6c1f1a7e8e837d09d92e26b4ac3efa8c0a3c94051511f213d16f5a7026";
+        };
+      default = "r3";
       };
     };
   }

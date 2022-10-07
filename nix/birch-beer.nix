@@ -263,4 +263,15 @@
       default = "r0";
       };
     };
+  "0.4.2.1" = {
+    sha256 = "efa5732ec8b257fb853c28a9d51ce620ba2e59847052e1c40bb76946652621a7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/birch-beer-0.4.2.1-r0-0191eedd008ca522808244197bfbca7d65e951edb2295f4e92198c96f5c68622.nix;
+        revNum = 0;
+        sha256 = "0191eedd008ca522808244197bfbca7d65e951edb2295f4e92198c96f5c68622";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -316,4 +316,15 @@
       default = "r0";
       };
     };
+  "0.8.0.2" = {
+    sha256 = "fc4b30ca58d8e312d4114ddfd6dcfaa19a5693765d3cfd006907d6f7da364ae6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/citeproc-0.8.0.2-r0-ab62cf549d7e8b733489ee3b12d24379d7e3979df9396f3a511328c64b34e1c0.nix;
+        revNum = 0;
+        sha256 = "ab62cf549d7e8b733489ee3b12d24379d7e3979df9396f3a511328c64b34e1c0";
+        };
+      default = "r0";
+      };
+    };
   }

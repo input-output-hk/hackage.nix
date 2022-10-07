@@ -2090,6 +2090,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "autodocodec" = import ./nix/autodocodec.nix;
   "autodocodec-openapi3" = import ./nix/autodocodec-openapi3.nix;
   "autodocodec-schema" = import ./nix/autodocodec-schema.nix;
+  "autodocodec-servant-multipart" = import ./nix/autodocodec-servant-multipart.nix;
   "autodocodec-swagger2" = import ./nix/autodocodec-swagger2.nix;
   "autodocodec-yaml" = import ./nix/autodocodec-yaml.nix;
   "autoexporter" = import ./nix/autoexporter.nix;
@@ -2664,6 +2665,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "brick" = import ./nix/brick.nix;
   "brick-dropdownmenu" = import ./nix/brick-dropdownmenu.nix;
   "brick-filetree" = import ./nix/brick-filetree.nix;
+  "brick-panes" = import ./nix/brick-panes.nix;
   "brick-skylighting" = import ./nix/brick-skylighting.nix;
   "bricks" = import ./nix/bricks.nix;
   "bricks-internal" = import ./nix/bricks-internal.nix;
@@ -7569,6 +7571,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ho-rewriting" = import ./nix/ho-rewriting.nix;
   "hoauth" = import ./nix/hoauth.nix;
   "hoauth2" = import ./nix/hoauth2.nix;
+  "hoauth2-providers" = import ./nix/hoauth2-providers.nix;
+  "hoauth2-providers-tutorial" = import ./nix/hoauth2-providers-tutorial.nix;
   "hoauth2-tutorial" = import ./nix/hoauth2-tutorial.nix;
   "hob" = import ./nix/hob.nix;
   "hobbes" = import ./nix/hobbes.nix;
@@ -10475,6 +10479,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mysql-simple-typed" = import ./nix/mysql-simple-typed.nix;
   "mystem" = import ./nix/mystem.nix;
   "mywatch" = import ./nix/mywatch.nix;
+  "mywork" = import ./nix/mywork.nix;
   "myxine-client" = import ./nix/myxine-client.nix;
   "mzv" = import ./nix/mzv.nix;
   "n-ary-functor" = import ./nix/n-ary-functor.nix;
@@ -14464,6 +14469,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "swagger-test" = import ./nix/swagger-test.nix;
   "swagger2" = import ./nix/swagger2.nix;
   "swapper" = import ./nix/swapper.nix;
+  "swarm" = import ./nix/swarm.nix;
   "swearjure" = import ./nix/swearjure.nix;
   "sweet-egison" = import ./nix/sweet-egison.nix;
   "swf" = import ./nix/swf.nix;
