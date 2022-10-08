@@ -86,4 +86,15 @@
       default = "r0";
       };
     };
+  "0.1.5.2" = {
+    sha256 = "c84fe009482cd42c6ece6f1fcefffe1a9096b636b136ad5bed56606813315a97";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/strict-tuple-0.1.5.2-r0-9c80d27ccbbe7906c3011cb958e38e937df65febbdc30f9c846b7ae02c35ed27.nix;
+        revNum = 0;
+        sha256 = "9c80d27ccbbe7906c3011cb958e38e937df65febbdc30f9c846b7ae02c35ed27";
+        };
+      default = "r0";
+      };
+    };
   }

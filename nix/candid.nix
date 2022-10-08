@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.3.2" = {
+    sha256 = "cd9f0f67f105ed102ac8f467c0dbe4f6f48a21958bc1129e289d423feaec8e5c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/candid-0.3.2-r0-0ea015aa1e08b0cd403473271a5ca65cb2a520d3a2e59f0a62f0fc5dc691f5bf.nix;
+        revNum = 0;
+        sha256 = "0ea015aa1e08b0cd403473271a5ca65cb2a520d3a2e59f0a62f0fc5dc691f5bf";
+        };
+      default = "r0";
+      };
+    };
   }

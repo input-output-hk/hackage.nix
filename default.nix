@@ -3980,6 +3980,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "data-accessor-mtl" = import ./nix/data-accessor-mtl.nix;
   "data-accessor-template" = import ./nix/data-accessor-template.nix;
   "data-accessor-transformers" = import ./nix/data-accessor-transformers.nix;
+  "data-array-byte" = import ./nix/data-array-byte.nix;
   "data-as" = import ./nix/data-as.nix;
   "data-ascii" = import ./nix/data-ascii.nix;
   "data-aviary" = import ./nix/data-aviary.nix;
