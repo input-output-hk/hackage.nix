@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "c5431f9c74e1813b502bf2bb37d0b77687d853a188fe4d6e4cb16177f5f93c02";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/bitvec-0.1-r3-740916e63e04a81d6e52708c934cee76d383f711ec032ffac835fde6fdcac616.nix;
+        revNum = 3;
+        sha256 = "740916e63e04a81d6e52708c934cee76d383f711ec032ffac835fde6fdcac616";
+        };
+      default = "r3";
       };
     };
   "0.1.0.1" = {
@@ -28,7 +33,12 @@
         revNum = 0;
         sha256 = "671e79f4ffa6c6397da84f9194aeb6bf96cc604b12ff882a59c1dbb4e1d295a7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bitvec-0.1.0.1-r1-f1fb7dafbb27d1317abbf4f675c22bcbc2dc41995b7ebb44c54bca0aa53a461e.nix;
+        revNum = 1;
+        sha256 = "f1fb7dafbb27d1317abbf4f675c22bcbc2dc41995b7ebb44c54bca0aa53a461e";
+        };
+      default = "r1";
       };
     };
   "0.1.0.2" = {
@@ -39,7 +49,12 @@
         revNum = 0;
         sha256 = "418fca7f2c7fae2deb3b3b64f6535fad181e8953f75969357a8d876550979048";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bitvec-0.1.0.2-r1-ab34e916c3241427b12103b8e53d648602dabee414a762be34d0d8ca65f28293.nix;
+        revNum = 1;
+        sha256 = "ab34e916c3241427b12103b8e53d648602dabee414a762be34d0d8ca65f28293";
+        };
+      default = "r1";
       };
     };
   "0.1.1.0" = {
@@ -55,7 +70,12 @@
         revNum = 1;
         sha256 = "55d61be5d597dccaef9d8389abdf9c82f472340462258c2be015f6fdeacec60b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/bitvec-0.1.1.0-r2-cf756f1c83c9029d23ff9c3be484b932146bbbd194840935541561cadcc835e9.nix;
+        revNum = 2;
+        sha256 = "cf756f1c83c9029d23ff9c3be484b932146bbbd194840935541561cadcc835e9";
+        };
+      default = "r2";
       };
     };
   "0.2.0.0" = {
@@ -66,7 +86,12 @@
         revNum = 0;
         sha256 = "b01419b2923cefa18aa6c289367e1ac892a4bcd0be726539f205d8341224281b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bitvec-0.2.0.0-r1-d0ccc6c4dbca1073adf33732d02000cffa23d2fb462b78eb291db1665b7dc9e6.nix;
+        revNum = 1;
+        sha256 = "d0ccc6c4dbca1073adf33732d02000cffa23d2fb462b78eb291db1665b7dc9e6";
+        };
+      default = "r1";
       };
     };
   "0.2.0.1" = {
@@ -77,7 +102,12 @@
         revNum = 0;
         sha256 = "bcf3d069954aed79e87506b0dbc52e17e61e06fa91c9e6ec1d286ae9c80bd8a7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bitvec-0.2.0.1-r1-837b3ba0f1e07df18af71913846dcccca7f2725b401636b5cba4c7b1b227f4c2.nix;
+        revNum = 1;
+        sha256 = "837b3ba0f1e07df18af71913846dcccca7f2725b401636b5cba4c7b1b227f4c2";
+        };
+      default = "r1";
       };
     };
   "1.0.0.0" = {
