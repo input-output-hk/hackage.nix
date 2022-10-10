@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "cf77560435f1567c2c8cc650f50a14c850138789fe17cb4253dcd0fc3f42ddc8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uom-plugin-0.4.0.0-r0-1530b5c0e86e945ecfe9f07dccfc3952da306adf4876301c3119e61c7eace78a.nix;
+        revNum = 0;
+        sha256 = "1530b5c0e86e945ecfe9f07dccfc3952da306adf4876301c3119e61c7eace78a";
+        };
+      default = "r0";
+      };
+    };
   }

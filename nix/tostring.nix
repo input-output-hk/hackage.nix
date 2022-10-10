@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "694c5ccbeedb2f6d0404a9bdc8d97eb80f8f6eddaaaab0c918ea55c06c08835f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tostring-0.2.1.1-r1-e05b0f2648800e4bc5c99ce01627d874dd68813ee6d6aef51abab3da9f6d6cc0.nix;
+        revNum = 1;
+        sha256 = "e05b0f2648800e4bc5c99ce01627d874dd68813ee6d6aef51abab3da9f6d6cc0";
+        };
+      default = "r1";
       };
     };
   }

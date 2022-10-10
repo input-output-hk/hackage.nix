@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "1.8.0.0" = {
+    sha256 = "040ed289ea24201c917970aa952fb54dcca43ac8432251cdd8febebd8d331a59";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crdt-event-fold-1.8.0.0-r0-cbb4bd42861e61dc24c27900aa137a0b3af4687ac5883dc891079bfd957bac02.nix;
+        revNum = 0;
+        sha256 = "cbb4bd42861e61dc24c27900aa137a0b3af4687ac5883dc891079bfd957bac02";
+        };
+      default = "r0";
+      };
+    };
   }

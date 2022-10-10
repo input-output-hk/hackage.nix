@@ -208,4 +208,15 @@
       default = "r0";
       };
     };
+  "0.2.8.1" = {
+    sha256 = "767b2f3dddcc1a6d733ac9e0502b5c5c16de08158f624977c3c19bf176971c70";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Monadoro-0.2.8.1-r0-abb2ac7737c3a5e36934d48265571ae9ec0258a107540ff484ed306ea3c02485.nix;
+        revNum = 0;
+        sha256 = "abb2ac7737c3a5e36934d48265571ae9ec0258a107540ff484ed306ea3c02485";
+        };
+      default = "r0";
+      };
+    };
   }

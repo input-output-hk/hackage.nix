@@ -70,4 +70,15 @@
       default = "r1";
       };
     };
+  "0.3.0" = {
+    sha256 = "84d83906f33076a6bded92d1cc9d2b567c0fa87cade767ef36d07403090f77eb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zip-conduit-0.3.0-r0-90f34f7a623f118ea4188fece3f99a053233e37b9a336cdf61b899e7f375461f.nix;
+        revNum = 0;
+        sha256 = "90f34f7a623f118ea4188fece3f99a053233e37b9a336cdf61b899e7f375461f";
+        };
+      default = "r0";
+      };
+    };
   }

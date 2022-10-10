@@ -208,4 +208,15 @@
       default = "r0";
       };
     };
+  "0.4.8.1" = {
+    sha256 = "27a1b0d6b63bcdfe48631195db07fd23f4b45c7edf96badddcb590402fefe222";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/homplexity-0.4.8.1-r0-83c610fd3492395c7d5cb26ff5a3753a854387c32637a4aed86ae98ab3be1aba.nix;
+        revNum = 0;
+        sha256 = "83c610fd3492395c7d5cb26ff5a3753a854387c32637a4aed86ae98ab3be1aba";
+        };
+      default = "r0";
+      };
+    };
   }

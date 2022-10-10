@@ -34,7 +34,12 @@
         revNum = 1;
         sha256 = "cfc1a4e5061b60923e01e2a42398125d6cad4114f7c6ca8c68b946420c57276f";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/strict-lens-0.4.0.2-r2-9dfb662ca6bbd175488669503e80a2c8390bd34234bc4a330fb5fee804adb8e9.nix;
+        revNum = 2;
+        sha256 = "9dfb662ca6bbd175488669503e80a2c8390bd34234bc4a330fb5fee804adb8e9";
+        };
+      default = "r2";
       };
     };
   }
