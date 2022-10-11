@@ -163,6 +163,17 @@
       default = "r0";
       };
     };
+  "2.13.4.0" = {
+    sha256 = "514630b74e501917c2b9db8af79f6ef0957904066f6525a25dcdb2924ab7a8da";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Win32-2.13.4.0-r0-9b8a82743985f8a95c03b2bc64be33ad1cd603e2493cb8b48d3cb923556dbb61.nix;
+        revNum = 0;
+        sha256 = "9b8a82743985f8a95c03b2bc64be33ad1cd603e2493cb8b48d3cb923556dbb61";
+        };
+      default = "r0";
+      };
+    };
   "2.2.0.0" = {
     sha256 = "f0596468944701a4ce70a45c62926a2a33484fff13e234176bfa383da22428ec";
     revisions = {

@@ -394,4 +394,15 @@
       default = "r1";
       };
     };
+  "0.7.7" = {
+    sha256 = "90ea374a1d58c1cd6cd3fb156f99873aae90bfb419279ca178372f2287d7175f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-typelits-natnormalise-0.7.7-r0-0359e27c4b652f3e198bcb9b787530d3010e09eb840112964512997c12a56576.nix;
+        revNum = 0;
+        sha256 = "0359e27c4b652f3e198bcb9b787530d3010e09eb840112964512997c12a56576";
+        };
+      default = "r0";
+      };
+    };
   }

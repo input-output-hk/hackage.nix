@@ -113,7 +113,12 @@
         revNum = 0;
         sha256 = "d2d19d72785c4c1ce8c998abac9dc6aa07235cb56094b6a9769678e03f1bf996";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ruby-marshal-0.2.1-r1-e975f85c790c3eed9ca4e4fa5d990ffe91c017a053c5cfd55b5504c50a6e7238.nix;
+        revNum = 1;
+        sha256 = "e975f85c790c3eed9ca4e4fa5d990ffe91c017a053c5cfd55b5504c50a6e7238";
+        };
+      default = "r1";
       };
     };
   }

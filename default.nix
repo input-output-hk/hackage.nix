@@ -3952,6 +3952,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "daemonize-doublefork" = import ./nix/daemonize-doublefork.nix;
   "daemons" = import ./nix/daemons.nix;
   "dag" = import ./nix/dag.nix;
+  "dahdit" = import ./nix/dahdit.nix;
   "damnpacket" = import ./nix/damnpacket.nix;
   "danibot" = import ./nix/danibot.nix;
   "dao" = import ./nix/dao.nix;
@@ -7890,6 +7891,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hslua-cli" = import ./nix/hslua-cli.nix;
   "hslua-core" = import ./nix/hslua-core.nix;
   "hslua-examples" = import ./nix/hslua-examples.nix;
+  "hslua-list" = import ./nix/hslua-list.nix;
   "hslua-marshalling" = import ./nix/hslua-marshalling.nix;
   "hslua-module-doclayout" = import ./nix/hslua-module-doclayout.nix;
   "hslua-module-path" = import ./nix/hslua-module-path.nix;
@@ -9546,6 +9548,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "log-domain" = import ./nix/log-domain.nix;
   "log-effect" = import ./nix/log-effect.nix;
   "log-effect-syslog" = import ./nix/log-effect-syslog.nix;
+  "log-effectful" = import ./nix/log-effectful.nix;
   "log-elasticsearch" = import ./nix/log-elasticsearch.nix;
   "log-postgres" = import ./nix/log-postgres.nix;
   "log-utils" = import ./nix/log-utils.nix;

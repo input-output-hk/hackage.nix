@@ -154,7 +154,12 @@
         revNum = 0;
         sha256 = "c25cb1de26fcb02b498151b76a0dc070e54ff61589082ddba927fc2e815aaac7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/distribution-nixpkgs-1.7.0-r1-dd22b4daef18143ac5568fcf3edb23295ddd47c8a25929e5202c29eae681f977.nix;
+        revNum = 1;
+        sha256 = "dd22b4daef18143ac5568fcf3edb23295ddd47c8a25929e5202c29eae681f977";
+        };
+      default = "r1";
       };
     };
   }
