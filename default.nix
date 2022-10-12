@@ -6572,6 +6572,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gym-http-api" = import ./nix/gym-http-api.nix;
   "h-booru" = import ./nix/h-booru.nix;
   "h-gpgme" = import ./nix/h-gpgme.nix;
+  "h-raylib" = import ./nix/h-raylib.nix;
   "h-reversi" = import ./nix/h-reversi.nix;
   "h2048" = import ./nix/h2048.nix;
   "h2c" = import ./nix/h2c.nix;
@@ -10500,6 +10501,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nakadi-client" = import ./nix/nakadi-client.nix;
   "namecoin-update" = import ./nix/namecoin-update.nix;
   "named" = import ./nix/named.nix;
+  "named-binary-tag" = import ./nix/named-binary-tag.nix;
   "named-formlet" = import ./nix/named-formlet.nix;
   "named-lock" = import ./nix/named-lock.nix;
   "named-records" = import ./nix/named-records.nix;
@@ -10919,7 +10921,15 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "om-doh" = import ./nix/om-doh.nix;
   "om-elm" = import ./nix/om-elm.nix;
   "om-fail" = import ./nix/om-fail.nix;
+  "om-fork" = import ./nix/om-fork.nix;
+  "om-http" = import ./nix/om-http.nix;
   "om-http-logging" = import ./nix/om-http-logging.nix;
+  "om-kubernetes" = import ./nix/om-kubernetes.nix;
+  "om-legion" = import ./nix/om-legion.nix;
+  "om-logging" = import ./nix/om-logging.nix;
+  "om-show" = import ./nix/om-show.nix;
+  "om-socket" = import ./nix/om-socket.nix;
+  "om-time" = import ./nix/om-time.nix;
   "omaketex" = import ./nix/omaketex.nix;
   "ombra" = import ./nix/ombra.nix;
   "omega" = import ./nix/omega.nix;
@@ -12292,6 +12302,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quickcheck-higherorder" = import ./nix/quickcheck-higherorder.nix;
   "quickcheck-instances" = import ./nix/quickcheck-instances.nix;
   "quickcheck-io" = import ./nix/quickcheck-io.nix;
+  "quickcheck-lockstep" = import ./nix/quickcheck-lockstep.nix;
   "quickcheck-poly" = import ./nix/quickcheck-poly.nix;
   "quickcheck-properties" = import ./nix/quickcheck-properties.nix;
   "quickcheck-property-comb" = import ./nix/quickcheck-property-comb.nix;
@@ -14962,6 +14973,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "th-typegraph" = import ./nix/th-typegraph.nix;
   "th-utilities" = import ./nix/th-utilities.nix;
   "thank-you-stars" = import ./nix/thank-you-stars.nix;
+  "the-snip" = import ./nix/the-snip.nix;
   "theatre" = import ./nix/theatre.nix;
   "themoviedb" = import ./nix/themoviedb.nix;
   "themplate" = import ./nix/themplate.nix;

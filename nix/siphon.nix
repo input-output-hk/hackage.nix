@@ -112,4 +112,15 @@
       default = "r0";
       };
     };
+  "0.8.2.0" = {
+    sha256 = "d161dbb6765884bb33c613e363bd7ebaa8ddf68484cedea835e279785c6288db";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/siphon-0.8.2.0-r0-336467b97ef6dfc81bae372aa07d25590e2af4cccfc041617c9a61814da54826.nix;
+        revNum = 0;
+        sha256 = "336467b97ef6dfc81bae372aa07d25590e2af4cccfc041617c9a61814da54826";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.0.5" = {
+    sha256 = "d860de3560591c58d6af466b56fe54c9fa78b014dd6e865dd966b41d4f7e2d84";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/leancheck-instances-0.0.5-r0-2a7e1ab491df4b0fbf4bc216c20ae368a3d346b0a642b1b2a4df779d0a3f72f7.nix;
+        revNum = 0;
+        sha256 = "2a7e1ab491df4b0fbf4bc216c20ae368a3d346b0a642b1b2a4df779d0a3f72f7";
+        };
+      default = "r0";
+      };
+    };
   }

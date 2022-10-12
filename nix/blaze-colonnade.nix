@@ -98,7 +98,12 @@
         revNum = 2;
         sha256 = "b27601f0366b006e86ee33297a722fe33c94ac058e61d4eace387d132e656a21";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/blaze-colonnade-1.2.2.1-r3-4cb6fbf6889b91b20f2f30b2479814f99f042cf6e7c6b88ae6df2358f8e0405f.nix;
+        revNum = 3;
+        sha256 = "4cb6fbf6889b91b20f2f30b2479814f99f042cf6e7c6b88ae6df2358f8e0405f";
+        };
+      default = "r3";
       };
     };
   }

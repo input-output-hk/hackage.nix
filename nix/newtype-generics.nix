@@ -191,7 +191,12 @@
         revNum = 0;
         sha256 = "1e6a6480bfd742fd9bd0d18e27c6457ae014ef36f60c6a8fee73463fb6141e1a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/newtype-generics-0.6.2-r1-ce6b681a347a320bd3ce3cf4321fa9471e62616e72c6c5df8a78dca0bb3eec75.nix;
+        revNum = 1;
+        sha256 = "ce6b681a347a320bd3ce3cf4321fa9471e62616e72c6c5df8a78dca0bb3eec75";
+        };
+      default = "r1";
       };
     };
   }

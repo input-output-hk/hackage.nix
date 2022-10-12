@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.7.0" = {
+    sha256 = "f254fade467d42bc7761ab7cec0ad2f42f1b3167dce4bd088d8d5483360089a2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/topaz-0.7.0-r0-7161d123ebc77be05a7eec6abb5eead869021b0fa484672fe0e597d6e61210a7.nix;
+        revNum = 0;
+        sha256 = "7161d123ebc77be05a7eec6abb5eead869021b0fa484672fe0e597d6e61210a7";
+        };
+      default = "r0";
+      };
+    };
   }

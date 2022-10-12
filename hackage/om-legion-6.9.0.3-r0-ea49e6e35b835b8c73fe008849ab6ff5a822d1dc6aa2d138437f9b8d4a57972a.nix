@@ -1,0 +1,325 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "3.0";
+      identifier = { name = "om-legion"; version = "6.9.0.3"; };
+      license = "MIT";
+      copyright = "2022 Owens Murray, LLC.";
+      maintainer = "rick@owensmurray.com";
+      author = "Rick Owens";
+      homepage = "https://github.com/owensmurray/om-legion";
+      url = "";
+      synopsis = "Legion Framework.";
+      description = "Framework for managing shared, replicated state across a\nnumber of homogeneous nodes.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+          (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."crdt-event-fold" or (errorHandler.buildDepError "crdt-event-fold"))
+          (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+          (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+          (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."om-fork" or (errorHandler.buildDepError "om-fork"))
+          (hsPkgs."om-logging" or (errorHandler.buildDepError "om-logging"))
+          (hsPkgs."om-show" or (errorHandler.buildDepError "om-show"))
+          (hsPkgs."om-socket" or (errorHandler.buildDepError "om-socket"))
+          (hsPkgs."om-time" or (errorHandler.buildDepError "om-time"))
+          (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
+          (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+          ];
+        buildable = true;
+        };
+      exes = {
+        "om-legion-test-node" = {
+          depends = [
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."crdt-event-fold" or (errorHandler.buildDepError "crdt-event-fold"))
+            (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+            (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."om-fork" or (errorHandler.buildDepError "om-fork"))
+            (hsPkgs."om-logging" or (errorHandler.buildDepError "om-logging"))
+            (hsPkgs."om-show" or (errorHandler.buildDepError "om-show"))
+            (hsPkgs."om-socket" or (errorHandler.buildDepError "om-socket"))
+            (hsPkgs."om-time" or (errorHandler.buildDepError "om-time"))
+            (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
+            (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+            (hsPkgs."om-legion" or (errorHandler.buildDepError "om-legion"))
+            (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
+            (hsPkgs."mustache" or (errorHandler.buildDepError "mustache"))
+            (hsPkgs."om-kubernetes" or (errorHandler.buildDepError "om-kubernetes"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            ];
+          buildable = true;
+          };
+        "om-legion-test-driver" = {
+          depends = [
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."crdt-event-fold" or (errorHandler.buildDepError "crdt-event-fold"))
+            (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+            (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."om-fork" or (errorHandler.buildDepError "om-fork"))
+            (hsPkgs."om-logging" or (errorHandler.buildDepError "om-logging"))
+            (hsPkgs."om-show" or (errorHandler.buildDepError "om-show"))
+            (hsPkgs."om-socket" or (errorHandler.buildDepError "om-socket"))
+            (hsPkgs."om-time" or (errorHandler.buildDepError "om-time"))
+            (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
+            (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+            (hsPkgs."om-legion" or (errorHandler.buildDepError "om-legion"))
+            (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
+            (hsPkgs."mustache" or (errorHandler.buildDepError "mustache"))
+            (hsPkgs."om-kubernetes" or (errorHandler.buildDepError "om-kubernetes"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            ];
+          buildable = true;
+          };
+        "om-legion-test-run" = {
+          depends = [
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."crdt-event-fold" or (errorHandler.buildDepError "crdt-event-fold"))
+            (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+            (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."om-fork" or (errorHandler.buildDepError "om-fork"))
+            (hsPkgs."om-logging" or (errorHandler.buildDepError "om-logging"))
+            (hsPkgs."om-show" or (errorHandler.buildDepError "om-show"))
+            (hsPkgs."om-socket" or (errorHandler.buildDepError "om-socket"))
+            (hsPkgs."om-time" or (errorHandler.buildDepError "om-time"))
+            (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
+            (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+            (hsPkgs."om-legion" or (errorHandler.buildDepError "om-legion"))
+            (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
+            (hsPkgs."mustache" or (errorHandler.buildDepError "mustache"))
+            (hsPkgs."om-kubernetes" or (errorHandler.buildDepError "om-kubernetes"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            ];
+          buildable = true;
+          };
+        "om-legion-test-inc" = {
+          depends = [
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."crdt-event-fold" or (errorHandler.buildDepError "crdt-event-fold"))
+            (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+            (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."om-fork" or (errorHandler.buildDepError "om-fork"))
+            (hsPkgs."om-logging" or (errorHandler.buildDepError "om-logging"))
+            (hsPkgs."om-show" or (errorHandler.buildDepError "om-show"))
+            (hsPkgs."om-socket" or (errorHandler.buildDepError "om-socket"))
+            (hsPkgs."om-time" or (errorHandler.buildDepError "om-time"))
+            (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
+            (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+            (hsPkgs."om-legion" or (errorHandler.buildDepError "om-legion"))
+            (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
+            (hsPkgs."mustache" or (errorHandler.buildDepError "mustache"))
+            (hsPkgs."om-kubernetes" or (errorHandler.buildDepError "om-kubernetes"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            ];
+          buildable = true;
+          };
+        "om-legion-test-stable" = {
+          depends = [
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."crdt-event-fold" or (errorHandler.buildDepError "crdt-event-fold"))
+            (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+            (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."om-fork" or (errorHandler.buildDepError "om-fork"))
+            (hsPkgs."om-logging" or (errorHandler.buildDepError "om-logging"))
+            (hsPkgs."om-show" or (errorHandler.buildDepError "om-show"))
+            (hsPkgs."om-socket" or (errorHandler.buildDepError "om-socket"))
+            (hsPkgs."om-time" or (errorHandler.buildDepError "om-time"))
+            (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
+            (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+            (hsPkgs."om-legion" or (errorHandler.buildDepError "om-legion"))
+            (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
+            (hsPkgs."mustache" or (errorHandler.buildDepError "mustache"))
+            (hsPkgs."om-kubernetes" or (errorHandler.buildDepError "om-kubernetes"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            ];
+          buildable = true;
+          };
+        "om-legion-test-profile" = {
+          depends = [
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."async" or (errorHandler.buildDepError "async"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
+            (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."crdt-event-fold" or (errorHandler.buildDepError "crdt-event-fold"))
+            (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
+            (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
+            (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+            (hsPkgs."network" or (errorHandler.buildDepError "network"))
+            (hsPkgs."om-fork" or (errorHandler.buildDepError "om-fork"))
+            (hsPkgs."om-logging" or (errorHandler.buildDepError "om-logging"))
+            (hsPkgs."om-show" or (errorHandler.buildDepError "om-show"))
+            (hsPkgs."om-socket" or (errorHandler.buildDepError "om-socket"))
+            (hsPkgs."om-time" or (errorHandler.buildDepError "om-time"))
+            (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
+            (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
+            (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+            (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
+            (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+            (hsPkgs."om-legion" or (errorHandler.buildDepError "om-legion"))
+            (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
+            (hsPkgs."mustache" or (errorHandler.buildDepError "mustache"))
+            (hsPkgs."om-kubernetes" or (errorHandler.buildDepError "om-kubernetes"))
+            (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }

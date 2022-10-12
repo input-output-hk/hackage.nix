@@ -126,7 +126,12 @@
         revNum = 7;
         sha256 = "c8f6a1099bb2d3c22d52aa7c3eb0286f1f95ba037142c34883aaddd8c40e95f5";
         };
-      default = "r7";
+      r8 = {
+        nix = import ../hackage/union-0.1.2-r8-856669b7084f992ab7c369e64fefe3833814b35409ff67f1aad4657548b5a466.nix;
+        revNum = 8;
+        sha256 = "856669b7084f992ab7c369e64fefe3833814b35409ff67f1aad4657548b5a466";
+        };
+      default = "r8";
       };
     };
   }

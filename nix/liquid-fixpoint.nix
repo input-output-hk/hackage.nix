@@ -275,7 +275,12 @@
         revNum = 0;
         sha256 = "dee303753cf1adc8b071aa314179e26e784f3832d17b8317b114a0ac07818800";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/liquid-fixpoint-0.8.10.7-r1-88a75e1856ce12f5c5a850e1e8dc2ecc5a947852282bd9d885513e558b454527.nix;
+        revNum = 1;
+        sha256 = "88a75e1856ce12f5c5a850e1e8dc2ecc5a947852282bd9d885513e558b454527";
+        };
+      default = "r1";
       };
     };
   "8.10.7" = {
@@ -286,7 +291,12 @@
         revNum = 0;
         sha256 = "99e014d939f23d5ffe7bead770acf37f8592d9b2cc45dee9b1447be91591f178";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/liquid-fixpoint-8.10.7-r1-c4a9a62c2af8806928dffdd8e39203f88f2224f32c7919b8ab1c46e742cfb835.nix;
+        revNum = 1;
+        sha256 = "c4a9a62c2af8806928dffdd8e39203f88f2224f32c7919b8ab1c46e742cfb835";
+        };
+      default = "r1";
       };
     };
   }
