@@ -197,4 +197,15 @@
       default = "r0";
       };
     };
+  "1.2.0" = {
+    sha256 = "c8d61182cd02b9d4601f40408f7d8f4eb0895e16a37ee85e624075fa89d25ac4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/camfort-1.2.0-r0-d870c5475812789ea5b3ab23015f0045e044cd51fa3b89192fbe864521f0e2f4.nix;
+        revNum = 0;
+        sha256 = "d870c5475812789ea5b3ab23015f0045e044cd51fa3b89192fbe864521f0e2f4";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -10279,7 +10279,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "morpheus-graphql-cli" = import ./nix/morpheus-graphql-cli.nix;
   "morpheus-graphql-client" = import ./nix/morpheus-graphql-client.nix;
   "morpheus-graphql-code-gen" = import ./nix/morpheus-graphql-code-gen.nix;
+  "morpheus-graphql-code-gen-utils" = import ./nix/morpheus-graphql-code-gen-utils.nix;
   "morpheus-graphql-core" = import ./nix/morpheus-graphql-core.nix;
+  "morpheus-graphql-server" = import ./nix/morpheus-graphql-server.nix;
   "morpheus-graphql-subscriptions" = import ./nix/morpheus-graphql-subscriptions.nix;
   "morpheus-graphql-tests" = import ./nix/morpheus-graphql-tests.nix;
   "morphisms" = import ./nix/morphisms.nix;

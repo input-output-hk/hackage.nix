@@ -103,4 +103,15 @@
       default = "r1";
       };
     };
+  "0.3.1" = {
+    sha256 = "43a409a9434ba188924fcadfd0ecdd8f5650f85bf0053e8a5c6e9387e20fa955";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-transport-tests-0.3.1-r0-6e00020fced1021a47d7201cedeacf3a1f1440c788dcaee4009fb6770c5c629d.nix;
+        revNum = 0;
+        sha256 = "6e00020fced1021a47d7201cedeacf3a1f1440c788dcaee4009fb6770c5c629d";
+        };
+      default = "r0";
+      };
+    };
   }
