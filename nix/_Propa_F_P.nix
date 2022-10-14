@@ -10,4 +10,20 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "bed1a2f879401d1f47ac7482a632c729f47db04171ec938d07e4e05862eac964";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/PropaFP-0.1.1.0-r0-3ce605ff52efae77970de3afc0ff669b9ef83abd0f1f1fab2adc82b0c55b5719.nix;
+        revNum = 0;
+        sha256 = "3ce605ff52efae77970de3afc0ff669b9ef83abd0f1f1fab2adc82b0c55b5719";
+        };
+      r1 = {
+        nix = import ../hackage/PropaFP-0.1.1.0-r1-814491e589d92a87b89f1af0c582fbd11101c921d5035bcd6552899e510aa76b.nix;
+        revNum = 1;
+        sha256 = "814491e589d92a87b89f1af0c582fbd11101c921d5035bcd6552899e510aa76b";
+        };
+      default = "r1";
+      };
+    };
   }

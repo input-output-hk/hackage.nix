@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2" = {
+    sha256 = "7c28630a4d347dede665cc1f93e13aa75acbbf107f7be3da70cefa42035fbaf3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/simple-affine-space-0.2-r0-2ade7aab00a384d0763bed219318bdabbc94f859931fbad3cb3984a84b384ab6.nix;
+        revNum = 0;
+        sha256 = "2ade7aab00a384d0763bed219318bdabbc94f859931fbad3cb3984a84b384ab6";
+        };
+      default = "r0";
+      };
+    };
   }
