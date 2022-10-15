@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "e00d106743a61f826607be249beece657bf1a1049642d68526d2056ee8ef48d5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.10.0.1-r1-1e0c0894697208b7f94d72b51d5a07440ec8ac2d641663340286be0c8edfc361.nix;
+        revNum = 1;
+        sha256 = "1e0c0894697208b7f94d72b51d5a07440ec8ac2d641663340286be0c8edfc361";
+        };
+      default = "r1";
       };
     };
   "0.10.1.0" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "b3b72fba54ed68233664210499e258f7247600d7dfbbdd6f26ea4e7a273d7b21";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.10.1.0-r1-0f8b0e6c1bb285e547e218bbc0111859a26402046dbe2966582dbc7fc2ed1ff8.nix;
+        revNum = 1;
+        sha256 = "0f8b0e6c1bb285e547e218bbc0111859a26402046dbe2966582dbc7fc2ed1ff8";
+        };
+      default = "r1";
       };
     };
   "0.10.2.0" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "443b25c7d39ea5b00e9d666409ee0343a237c3946cdb68ff2fcf4b5dcbb7722e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.10.2.0-r1-72effb2f21b2644fc59ecdc9a43da39551b3c27ef57ed57f217ca1668a5d3642.nix;
+        revNum = 1;
+        sha256 = "72effb2f21b2644fc59ecdc9a43da39551b3c27ef57ed57f217ca1668a5d3642";
+        };
+      default = "r1";
       };
     };
   "0.11.0.0" = {
@@ -133,7 +148,12 @@
         revNum = 0;
         sha256 = "e7731ec66fd0b4b5bab5c509183935d704837aeb070d70d183f4fb3ef728f1e2";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.7.0.0-r1-5607ba9a5f70a58eaec1047aaa851f4aa1d5ac8c9e69ef6c989c4203ed6bfd69.nix;
+        revNum = 1;
+        sha256 = "5607ba9a5f70a58eaec1047aaa851f4aa1d5ac8c9e69ef6c989c4203ed6bfd69";
+        };
+      default = "r1";
       };
     };
   "0.7.1.0" = {
@@ -144,7 +164,12 @@
         revNum = 0;
         sha256 = "521046a5408e475320aa6dfa05e10adddc5645fd4b391a71ac842f1448b3f7bd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.7.1.0-r1-12042665cc7bbccd9d5d9c0ccc42a4eb96783fa65eb22d02399fcca45bc76a9f.nix;
+        revNum = 1;
+        sha256 = "12042665cc7bbccd9d5d9c0ccc42a4eb96783fa65eb22d02399fcca45bc76a9f";
+        };
+      default = "r1";
       };
     };
   "0.7.2.0" = {
@@ -155,7 +180,12 @@
         revNum = 0;
         sha256 = "4b5459a180b43e264d3caf042dfc501b3351a715141070d36128106e8122e417";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.7.2.0-r1-fd3ba889c658c474edb14a213a34dee4f6e9466816b0ec8f66174abc9d6bf540.nix;
+        revNum = 1;
+        sha256 = "fd3ba889c658c474edb14a213a34dee4f6e9466816b0ec8f66174abc9d6bf540";
+        };
+      default = "r1";
       };
     };
   "0.7.3.0" = {
@@ -166,7 +196,12 @@
         revNum = 0;
         sha256 = "f7d8a8334a27862e98a4ce38e7bd1e54a89d98b50fb151cd6aa16afb73014100";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.7.3.0-r1-61b06349ecf51e36685d9c21a42a63c77b5b13bc9f097c3d265a48a3a63f16ba.nix;
+        revNum = 1;
+        sha256 = "61b06349ecf51e36685d9c21a42a63c77b5b13bc9f097c3d265a48a3a63f16ba";
+        };
+      default = "r1";
       };
     };
   "0.8.0.0" = {
@@ -177,7 +212,12 @@
         revNum = 0;
         sha256 = "cc0d30a2da418b93cdc129ebfdc464916b850ba64f249e37da142fe2ede2abe2";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.8.0.0-r1-0c2f3251a7077a1642a6f5d0867dc7a8c4dde4d1e355121ede18d763a5646541.nix;
+        revNum = 1;
+        sha256 = "0c2f3251a7077a1642a6f5d0867dc7a8c4dde4d1e355121ede18d763a5646541";
+        };
+      default = "r1";
       };
     };
   "0.8.0.1" = {
@@ -188,7 +228,12 @@
         revNum = 0;
         sha256 = "455b81bc872d6bfa60650221083304878d53b947aaae627c91d935dd4d69b4d9";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.8.0.1-r1-e45789cc61ed2a1af0119d26ee790844be29bd549622784eb593cbffda24063d.nix;
+        revNum = 1;
+        sha256 = "e45789cc61ed2a1af0119d26ee790844be29bd549622784eb593cbffda24063d";
+        };
+      default = "r1";
       };
     };
   "0.8.0.2" = {
@@ -199,7 +244,12 @@
         revNum = 0;
         sha256 = "a27e9443e848ec256eb3a595377d6cb337c8b7ac3cf851818643fc7ea41dedb7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.8.0.2-r1-60f504e3c55370d29b7a661807abc0fdce7afce0bd147316eeb6265956cdc2e9.nix;
+        revNum = 1;
+        sha256 = "60f504e3c55370d29b7a661807abc0fdce7afce0bd147316eeb6265956cdc2e9";
+        };
+      default = "r1";
       };
     };
   "0.8.1.0" = {
@@ -210,7 +260,12 @@
         revNum = 0;
         sha256 = "cb72119b04d81817cb901f449a0745590c14c466b894d848e07ba145ccc6aa0c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.8.1.0-r1-0777588f971b205f183e7c5b57d628bcb8f46554b3d09e41b321a6e5227fe0f6.nix;
+        revNum = 1;
+        sha256 = "0777588f971b205f183e7c5b57d628bcb8f46554b3d09e41b321a6e5227fe0f6";
+        };
+      default = "r1";
       };
     };
   "0.8.1.1" = {
@@ -221,7 +276,12 @@
         revNum = 0;
         sha256 = "bd9369c55968b3b6be251c66e513b77af22ccc9fa60b6343ab6ff7d851cf28cd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.8.1.1-r1-c9f9ca040e56f6b1021d3fd36d25d686cd8ab4fd69df7a35788db7d2b4a17707.nix;
+        revNum = 1;
+        sha256 = "c9f9ca040e56f6b1021d3fd36d25d686cd8ab4fd69df7a35788db7d2b4a17707";
+        };
+      default = "r1";
       };
     };
   "0.8.1.2" = {
@@ -254,7 +314,12 @@
         revNum = 0;
         sha256 = "fbcbaa5aefa66e52edb387d5d2cfdd83591fe9daa5bc38791856d7daf8ccd7d4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.9.0.1-r1-ed2c34dca23c26c94db6cbbcf7bbe2521533075162912df40629895c70c1e294.nix;
+        revNum = 1;
+        sha256 = "ed2c34dca23c26c94db6cbbcf7bbe2521533075162912df40629895c70c1e294";
+        };
+      default = "r1";
       };
     };
   "0.9.0.2" = {
@@ -265,7 +330,12 @@
         revNum = 0;
         sha256 = "94d79249ff8086f0304f1d29e223c1f1a5dea7ddddd000a23a71a3421c9fcd16";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.9.0.2-r1-1e209657ada68c9014b019af17fdc380db293fd80e2d4a40961c09b66a67f5bc.nix;
+        revNum = 1;
+        sha256 = "1e209657ada68c9014b019af17fdc380db293fd80e2d4a40961c09b66a67f5bc";
+        };
+      default = "r1";
       };
     };
   "0.9.0.3" = {
@@ -276,7 +346,12 @@
         revNum = 0;
         sha256 = "176dc70d691457f86f5e6997bb2b8de3f6659723432ea7fcd00421aeee18f9fb";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/PyF-0.9.0.3-r1-851d6d4fcdfebb869463001c1750bb6b0e20786c9a8536e83937c1312e0f8485.nix;
+        revNum = 1;
+        sha256 = "851d6d4fcdfebb869463001c1750bb6b0e20786c9a8536e83937c1312e0f8485";
+        };
+      default = "r1";
       };
     };
   }

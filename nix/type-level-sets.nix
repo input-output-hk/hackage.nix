@@ -130,7 +130,12 @@
         revNum = 1;
         sha256 = "e29f4045b68e46e0f88153c63f48fb026917eeacafd9b81fc059417a85e68031";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/type-level-sets-0.8.9.0-r2-37845591544072196cf8c2f9eb8b64a9e6b3e13d3a8e432a7fd99defe9a2a7dd.nix;
+        revNum = 2;
+        sha256 = "37845591544072196cf8c2f9eb8b64a9e6b3e13d3a8e432a7fd99defe9a2a7dd";
+        };
+      default = "r2";
       };
     };
   }
