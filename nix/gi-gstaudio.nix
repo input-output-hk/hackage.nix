@@ -186,6 +186,17 @@
       default = "r0";
       };
     };
+  "1.0.25" = {
+    sha256 = "0681c46dcc14f5323e5ddb879c17b73eb96b3eed7505ebc9f4704195e98539af";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-gstaudio-1.0.25-r0-cbcfdf211801865c4d069e3e0dd65e1895c818432bf37776eb73309a42c6ce9e.nix;
+        revNum = 0;
+        sha256 = "cbcfdf211801865c4d069e3e0dd65e1895c818432bf37776eb73309a42c6ce9e";
+        };
+      default = "r0";
+      };
+    };
   "1.0.3" = {
     sha256 = "e7a63a66a6edd8871deef7f2c0659aa455821c4c7157c128ac135b6d157ccd49";
     revisions = {

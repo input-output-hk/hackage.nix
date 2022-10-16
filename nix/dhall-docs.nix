@@ -50,7 +50,12 @@
         revNum = 1;
         sha256 = "17596025f4214b604a6310f8921bda7b31b484ddc4472681f157e38f5945e718";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/dhall-docs-1.0.10-r2-a1a674c50c176bff0eeb38845fb6e082b4a21d89dbd32c7a81401aa7ec3aa0fe.nix;
+        revNum = 2;
+        sha256 = "a1a674c50c176bff0eeb38845fb6e082b4a21d89dbd32c7a81401aa7ec3aa0fe";
+        };
+      default = "r2";
       };
     };
   "1.0.2" = {

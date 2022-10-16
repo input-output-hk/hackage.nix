@@ -37,4 +37,15 @@
       default = "r0";
       };
     };
+  "0.1.2" = {
+    sha256 = "cc798a704ef2a785bd1370ef314fbef2f6ae5f790d992dfa99109bf5179a031e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-cairo-render-0.1.2-r0-1e3d78ba659200ad22e4cb014c7d972347f0343316e68dbcc9c431d4ae2e0a1c.nix;
+        revNum = 0;
+        sha256 = "1e3d78ba659200ad22e4cb014c7d972347f0343316e68dbcc9c431d4ae2e0a1c";
+        };
+      default = "r0";
+      };
+    };
   }

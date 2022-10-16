@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.0.7" = {
+    sha256 = "dd495dc089afc3b535494d336cd6727693be425902610ea45a720d1ed6108117";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-harfbuzz-0.0.7-r0-21826e16df71f41fc59f1ab0675e9e0c18fe4c3852d38019fd275f588bef24c5.nix;
+        revNum = 0;
+        sha256 = "21826e16df71f41fc59f1ab0675e9e0c18fe4c3852d38019fd275f588bef24c5";
+        };
+      default = "r0";
+      };
+    };
   }

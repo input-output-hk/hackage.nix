@@ -1293,6 +1293,28 @@
       default = "r0";
       };
     };
+  "5.14" = {
+    sha256 = "d7b98e6acf7f199e7dac83ee51d0eb134d09960da3bc2f08563755c0dee0da14";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/propellor-5.14-r0-2c7b2110ba1b834e891c9bae2ca293153e13560fe5c7024dd3c41b8576459e50.nix;
+        revNum = 0;
+        sha256 = "2c7b2110ba1b834e891c9bae2ca293153e13560fe5c7024dd3c41b8576459e50";
+        };
+      default = "r0";
+      };
+    };
+  "5.14.1" = {
+    sha256 = "4d34c0770aa85d5d626fe723bd6abad6fec449105c6276050d5356242b6978d1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/propellor-5.14.1-r0-88b217d5da3fffbb1e314b687cdeb25a3e462ae8ce628c70391e019649627184.nix;
+        revNum = 0;
+        sha256 = "88b217d5da3fffbb1e314b687cdeb25a3e462ae8ce628c70391e019649627184";
+        };
+      default = "r0";
+      };
+    };
   "5.2.0" = {
     sha256 = "30af0485416ed9e75bb0bc6cd04bb02eec8b3ab93b82c5e275cb45d167c0011a";
     revisions = {

@@ -219,6 +219,17 @@
       default = "r0";
       };
     };
+  "1.0.27" = {
+    sha256 = "5c27a8022cd11b753255a2bcd4978866f534f352212208ee5256ef69589e6eb8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-pangocairo-1.0.27-r0-93295e38b5281efbf75080d695206d6c92baa1d0a6be495221ffd27b38c9ca13.nix;
+        revNum = 0;
+        sha256 = "93295e38b5281efbf75080d695206d6c92baa1d0a6be495221ffd27b38c9ca13";
+        };
+      default = "r0";
+      };
+    };
   "1.0.3" = {
     sha256 = "799e4ed0cc657132f7ef88f829fc5eee7390a8855c4f564a55c8066549462604";
     revisions = {

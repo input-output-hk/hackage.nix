@@ -10252,6 +10252,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monoidplus" = import ./nix/monoidplus.nix;
   "monoids" = import ./nix/monoids.nix;
   "monomer" = import ./nix/monomer.nix;
+  "monomer-hagrid" = import ./nix/monomer-hagrid.nix;
   "monomorphic" = import ./nix/monomorphic.nix;
   "monopati" = import ./nix/monopati.nix;
   "montage" = import ./nix/montage.nix;

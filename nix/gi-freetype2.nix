@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "2.0.2" = {
+    sha256 = "f7ea995a02f36be655237ac54742c390ffe0df727077791f68d2fdbfb4bfdd18";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-freetype2-2.0.2-r0-3ceda91744fbec02b0f5972822e43f633807929ca0c719bbc1fb3d7598c96f0b.nix;
+        revNum = 0;
+        sha256 = "3ceda91744fbec02b0f5972822e43f633807929ca0c719bbc1fb3d7598c96f0b";
+        };
+      default = "r0";
+      };
+    };
   }

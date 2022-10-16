@@ -197,6 +197,17 @@
       default = "r0";
       };
     };
+  "1.0.26" = {
+    sha256 = "754871125c278ea3b0553eda3417d6fbcfe3d4e9264c3020f516065781fb9a58";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-gstbase-1.0.26-r0-73dfe542182552c0726de9405f1d297b5d4b618868de500e6a1f3ec12171fb96.nix;
+        revNum = 0;
+        sha256 = "73dfe542182552c0726de9405f1d297b5d4b618868de500e6a1f3ec12171fb96";
+        };
+      default = "r0";
+      };
+    };
   "1.0.3" = {
     sha256 = "3efcc31f79c6da853ca710dfcb2468bade41bc7b5cfa642503ae2cec75bedf67";
     revisions = {

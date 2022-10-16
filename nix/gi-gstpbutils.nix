@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "1.0.25" = {
+    sha256 = "147d2a6536a681aee60e665c29635c87c0e6e0aad69b4579c3581c4e2246b5fa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-gstpbutils-1.0.25-r0-c3122cbed2c42e21bef29c7ef24fbc26c91ceed27d6aa4ff42e47dbc577573f5.nix;
+        revNum = 0;
+        sha256 = "c3122cbed2c42e21bef29c7ef24fbc26c91ceed27d6aa4ff42e47dbc577573f5";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -219,4 +219,15 @@
       default = "r0";
       };
     };
+  "0.7.1.0" = {
+    sha256 = "0f4d450a91dc991ff2c24f5b9293d775016628e87891e247d589a246dc17b1a1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/registry-hedgehog-0.7.1.0-r0-e4bd285a82c8ff4b5c2631604190a82a535c8440182283b747f4ec37059b417c.nix;
+        revNum = 0;
+        sha256 = "e4bd285a82c8ff4b5c2631604190a82a535c8440182283b747f4ec37059b417c";
+        };
+      default = "r0";
+      };
+    };
   }

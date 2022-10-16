@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "1.0.25" = {
+    sha256 = "0ef6305ff807e24be87e12e88e6b174bf219ce090e4625868fc2a3ab5ae3cecc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-gsttag-1.0.25-r0-95658c4cf7e5d7ebe27d0633081e393edf673b0d669d992875953e58ea1bb6f9.nix;
+        revNum = 0;
+        sha256 = "95658c4cf7e5d7ebe27d0633081e393edf673b0d669d992875953e58ea1bb6f9";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.5.5" = {
+    sha256 = "bb9e94790344653fd14ddcdcca08f7504938dbd2060ba31e9778895f25bf1732";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-ibus-1.5.5-r0-678a8d31420f5e3b1d869b1d56137ec7514a6fce5218874eee8f728030077121.nix;
+        revNum = 0;
+        sha256 = "678a8d31420f5e3b1d869b1d56137ec7514a6fce5218874eee8f728030077121";
+        };
+      default = "r0";
+      };
+    };
   }

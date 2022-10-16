@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "8.0.3" = {
+    sha256 = "7bcc6ca9d54055aae1f79c19a01c7f28e307ece3af9a3bf754ddebe862b5f9ef";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-vips-8.0.3-r0-1bbe624ac7ea38120889a5b5ea4e42b06cace93c998a5dd85b20c4cb7ee2f80f.nix;
+        revNum = 0;
+        sha256 = "1bbe624ac7ea38120889a5b5ea4e42b06cace93c998a5dd85b20c4cb7ee2f80f";
+        };
+      default = "r0";
+      };
+    };
   }
