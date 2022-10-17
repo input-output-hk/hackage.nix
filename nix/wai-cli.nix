@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "8867ba887f628cd7861b73814dc38eb8616f17cf9192659d07b1998099f491a0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/wai-cli-0.1.0-r1-749ba5880c7202bcb76d43884a39aaae58460909dbed8686d9176bf7fb1c754d.nix;
+        revNum = 1;
+        sha256 = "749ba5880c7202bcb76d43884a39aaae58460909dbed8686d9176bf7fb1c754d";
+        };
+      default = "r1";
       };
     };
   "0.1.1" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "a7c6961052026b5fad8e836576f89ad3eec85325a865f2e813ece09f977f0c9c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/wai-cli-0.1.1-r1-df15d1b11af4af378d7b290f215e8c1e5c93bb5ebc07686f5d8a5e77f42dcf19.nix;
+        revNum = 1;
+        sha256 = "df15d1b11af4af378d7b290f215e8c1e5c93bb5ebc07686f5d8a5e77f42dcf19";
+        };
+      default = "r1";
       };
     };
   "0.2.0" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "16c864bc829f4572fa3ea72a1a1d9aae23fe0b076069c1e58a42e4224f819ce9";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/wai-cli-0.2.0-r1-4ce973fc04101d255df56b0489e31f87ad1fd19266b3d5f1362f8b2d2e934805.nix;
+        revNum = 1;
+        sha256 = "4ce973fc04101d255df56b0489e31f87ad1fd19266b3d5f1362f8b2d2e934805";
+        };
+      default = "r1";
       };
     };
   "0.2.1" = {
@@ -45,7 +60,12 @@
         revNum = 1;
         sha256 = "15e10b1d53c8c57bbac5fa1abbfd550609406a733eba7cd5efa0b60f32ba11c0";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/wai-cli-0.2.1-r2-8e3eff60e0bb2e3e0c409e72989bc7ab4b34df8d9e9833a1920ff2cf89b2e8e8.nix;
+        revNum = 2;
+        sha256 = "8e3eff60e0bb2e3e0c409e72989bc7ab4b34df8d9e9833a1920ff2cf89b2e8e8";
+        };
+      default = "r2";
       };
     };
   "0.2.3" = {
@@ -61,7 +81,12 @@
         revNum = 1;
         sha256 = "92c5bd1bcf9e7d66cd15d64bc46915eedd60de1927967e4fcfb46be6427d8313";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/wai-cli-0.2.3-r2-896e617ca43122e63b4fe9520151b515b7e6287cfd75adc738ef4a9ddda666b7.nix;
+        revNum = 2;
+        sha256 = "896e617ca43122e63b4fe9520151b515b7e6287cfd75adc738ef4a9ddda666b7";
+        };
+      default = "r2";
       };
     };
   }

@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "0.1.6.0" = {
+    sha256 = "ff7e7af978e3312c0241fb4d20368c8718d1ac2782a6fb1b480c453366e3524f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/churros-0.1.6.0-r0-ad92e7b8ce2b959d92b41bf159cc9b6e3e60f3792ce3228a4f572f7060f7807a.nix;
+        revNum = 0;
+        sha256 = "ad92e7b8ce2b959d92b41bf159cc9b6e3e60f3792ce3228a4f572f7060f7807a";
+        };
+      default = "r0";
+      };
+    };
   }

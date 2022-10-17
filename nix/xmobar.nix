@@ -615,6 +615,17 @@
       default = "r0";
       };
     };
+  "0.45" = {
+    sha256 = "06597f414842fedd203f01651588ee460cc20c6b6dbf438443634c5a46f9c45c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xmobar-0.45-r0-8845b68837ef59323deacda8a27a363e17e99c42019b348eeff94a4f2d9a909d.nix;
+        revNum = 0;
+        sha256 = "8845b68837ef59323deacda8a27a363e17e99c42019b348eeff94a4f2d9a909d";
+        };
+      default = "r0";
+      };
+    };
   "0.5" = {
     sha256 = "46fa1b46e70e6e51a0572d3c99c3e3c7e14cb5724a627254c4748e7b1b4582fe";
     revisions = {
