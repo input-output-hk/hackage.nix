@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.7.0" = {
+    sha256 = "6ad22c2af1c50cad1e8549e6fe1767be26f3ebf2b88bc61673bb637b1b677549";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/infernal-0.7.0-r0-eb39a1c8776cd88163ee79fa1b227b18d492d3ef4d33d58daf6a4d476f985db0.nix;
+        revNum = 0;
+        sha256 = "eb39a1c8776cd88163ee79fa1b227b18d492d3ef4d33d58daf6a4d476f985db0";
+        };
+      default = "r0";
+      };
+    };
   }

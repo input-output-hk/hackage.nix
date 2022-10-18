@@ -218,4 +218,15 @@
       default = "r4";
       };
     };
+  "0.8.0" = {
+    sha256 = "3b9749e874a8112d2688517f8d6a3f5542b076b293bd0b2a67e2dd67dfe05145";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/codeworld-api-0.8.0-r0-eb1209e3da645c690971adcdd440d8a7c13824af7133b4624318853644cb5a8d.nix;
+        revNum = 0;
+        sha256 = "eb1209e3da645c690971adcdd440d8a7c13824af7133b4624318853644cb5a8d";
+        };
+      default = "r0";
+      };
+    };
   }

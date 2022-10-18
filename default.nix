@@ -3130,6 +3130,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "chevalier-common" = import ./nix/chevalier-common.nix;
   "chez-grater" = import ./nix/chez-grater.nix;
   "chiasma" = import ./nix/chiasma.nix;
+  "chiasma-test" = import ./nix/chiasma-test.nix;
   "chimera" = import ./nix/chimera.nix;
   "chiphunk" = import ./nix/chiphunk.nix;
   "chitauri" = import ./nix/chitauri.nix;
