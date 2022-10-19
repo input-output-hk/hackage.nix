@@ -351,4 +351,15 @@
       default = "r0";
       };
     };
+  "0.4.3.0" = {
+    sha256 = "c78c2749705e1efb15916161979eacddf511abaa789ec527c84528a13f48642f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mega-sdist-0.4.3.0-r0-f9d53750e509e609e4e15bd97d7ebac1998206e7acc817b6d5de478fb3a20f49.nix;
+        revNum = 0;
+        sha256 = "f9d53750e509e609e4e15bd97d7ebac1998206e7acc817b6d5de478fb3a20f49";
+        };
+      default = "r0";
+      };
+    };
   }

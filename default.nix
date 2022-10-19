@@ -13626,6 +13626,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "signable" = import ./nix/signable.nix;
   "signable-haskell-protoc" = import ./nix/signable-haskell-protoc.nix;
   "signal" = import ./nix/signal.nix;
+  "signal-messaging-dbus" = import ./nix/signal-messaging-dbus.nix;
   "signals" = import ./nix/signals.nix;
   "signature" = import ./nix/signature.nix;
   "signed-multiset" = import ./nix/signed-multiset.nix;
@@ -16123,6 +16124,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wavesurfer" = import ./nix/wavesurfer.nix;
   "wavy" = import ./nix/wavy.nix;
   "wcwidth" = import ./nix/wcwidth.nix;
+  "wd" = import ./nix/wd.nix;
   "weak" = import ./nix/weak.nix;
   "weak-bag" = import ./nix/weak-bag.nix;
   "weather-api" = import ./nix/weather-api.nix;

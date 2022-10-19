@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.1" = {
+    sha256 = "af1c5bb0a263798e207ed7210f40573bdf0185aa5a3b991f399b793c67271096";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/indieweb-algorithms-0.1.1-r0-e1c256ea0af2ad6bcaaac3ed70b868172cd0d04cfb544daa7715804e085c2d42.nix;
+        revNum = 0;
+        sha256 = "e1c256ea0af2ad6bcaaac3ed70b868172cd0d04cfb544daa7715804e085c2d42";
+        };
+      default = "r0";
+      };
+    };
   }
