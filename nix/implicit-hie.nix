@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "c33e9241bd52a2a709e6f5f0093ddeb6b8edffee6c1799587701fd705f025068";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/implicit-hie-0.1.3.0-r0-86ab5aff3c3d29c484097c6b8b37eac9b45b7365450430c51912047fa4f621e0.nix;
+        revNum = 0;
+        sha256 = "86ab5aff3c3d29c484097c6b8b37eac9b45b7365450430c51912047fa4f621e0";
+        };
+      default = "r0";
+      };
+    };
   }
