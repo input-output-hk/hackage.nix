@@ -7900,6 +7900,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hslua-module-system" = import ./nix/hslua-module-system.nix;
   "hslua-module-text" = import ./nix/hslua-module-text.nix;
   "hslua-module-version" = import ./nix/hslua-module-version.nix;
+  "hslua-module-zip" = import ./nix/hslua-module-zip.nix;
   "hslua-objectorientation" = import ./nix/hslua-objectorientation.nix;
   "hslua-packaging" = import ./nix/hslua-packaging.nix;
   "hsluv-haskell" = import ./nix/hsluv-haskell.nix;

@@ -54,6 +54,17 @@
       default = "r0";
       };
     };
+  "0.15.1.1" = {
+    sha256 = "236fa83dbe762a6ae6afcdbbe179e92c04984b6019bf4ba69c27658a65c9bed1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hanabi-dealer-0.15.1.1-r0-deca93ca1739968288999d63a42282a9b8aac342fb6ffc219a3abd0df66b21c9.nix;
+        revNum = 0;
+        sha256 = "deca93ca1739968288999d63a42282a9b8aac342fb6ffc219a3abd0df66b21c9";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "3061f2b14845fab03f9e8e60394f8fa44247be881dd77a9261ffaa69e9ddd520";
     revisions = {

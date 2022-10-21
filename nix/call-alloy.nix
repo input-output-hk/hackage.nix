@@ -179,4 +179,15 @@
       default = "r0";
       };
     };
+  "0.4" = {
+    sha256 = "ac3d17c9bee24fee81c3f8004f832ad2747f0398945362b9626dcc68a351c4a9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/call-alloy-0.4-r0-5737b696f695825ed5263336198340920ca6a8c365e9f48dbdd33eeb29355b49.nix;
+        revNum = 0;
+        sha256 = "5737b696f695825ed5263336198340920ca6a8c365e9f48dbdd33eeb29355b49";
+        };
+      default = "r0";
+      };
+    };
   }
