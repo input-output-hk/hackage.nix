@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "4d54deede668ff5442963cde1b87ec9d999c9df3179f0b8308a8b654f509e1e3";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dbmonitor-0.1.0-r1-cfe12d8beaa6b2be11d7a5ca05bc890711ab7aad0542a21af19b1a7220d3444f.nix;
+        revNum = 1;
+        sha256 = "cfe12d8beaa6b2be11d7a5ca05bc890711ab7aad0542a21af19b1a7220d3444f";
+        };
+      default = "r1";
       };
     };
   }
