@@ -186,4 +186,15 @@
       default = "r0";
       };
     };
+  "0.9.1" = {
+    sha256 = "72a1981c578201e855c376eb252ba8121d338c5cf8e55e0242272bdc935e2f4f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dunai-0.9.1-r0-9a438fd23da86121ea4b32ef59b2540b39b62e333798728adedb20c4cb00310d.nix;
+        revNum = 0;
+        sha256 = "9a438fd23da86121ea4b32ef59b2540b39b62e333798728adedb20c4cb00310d";
+        };
+      default = "r0";
+      };
+    };
   }

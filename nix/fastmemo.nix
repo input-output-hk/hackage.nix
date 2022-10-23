@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.1" = {
+    sha256 = "da147203ca5ed8b9ff9f67abfbab6f6088b6f612a461d84c28bf05d754735a4a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fastmemo-0.1.1-r0-92cf58860a1b91075d2dc9bf3e8bdbfb75a5b47409281a2656950f4f4f5fee81.nix;
+        revNum = 0;
+        sha256 = "92cf58860a1b91075d2dc9bf3e8bdbfb75a5b47409281a2656950f4f4f5fee81";
+        };
+      default = "r0";
+      };
+    };
   }
