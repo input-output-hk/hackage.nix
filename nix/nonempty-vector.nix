@@ -93,7 +93,12 @@
         revNum = 0;
         sha256 = "af9d2f7fa2eaa8e9f66e42b6dc056f24da1ca0d95d5cd4fc8fc8d2991ee3cada";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/nonempty-vector-0.2.1.0-r1-c3b2e14809efc813cf7d29312174a564bc0a0f7771f177840aa7c7a6913b85a3.nix;
+        revNum = 1;
+        sha256 = "c3b2e14809efc813cf7d29312174a564bc0a0f7771f177840aa7c7a6913b85a3";
+        };
+      default = "r1";
       };
     };
   }

@@ -114,7 +114,12 @@
         revNum = 0;
         sha256 = "1bdf04e355824dd0f74b26e37fbf9b8d01e4ddbcd33357b3295b072c5607c156";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/serialise-0.2.6.0-r1-c98de52c5758da4dc5141d44bd2195dcd3232ca3aee8ebc4542d348125899a66.nix;
+        revNum = 1;
+        sha256 = "c98de52c5758da4dc5141d44bd2195dcd3232ca3aee8ebc4542d348125899a66";
+        };
+      default = "r1";
       };
     };
   }

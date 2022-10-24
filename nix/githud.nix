@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "3.3.0" = {
+    sha256 = "5fe9c8196bbf230f7e28cb3692c7f2b1fc7d499c605613aca27b8e390f82925f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/githud-3.3.0-r0-d69aa5cb42c0e5f73e2cf5bac14a1d9c017732d086384c004a4b8446575b4258.nix;
+        revNum = 0;
+        sha256 = "d69aa5cb42c0e5f73e2cf5bac14a1d9c017732d086384c004a4b8446575b4258";
+        };
+      default = "r0";
+      };
+    };
   }

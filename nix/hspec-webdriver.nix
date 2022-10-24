@@ -150,7 +150,12 @@
         revNum = 0;
         sha256 = "eec2c4e435dc562f0d51ddf5d3aeea45aa703a03372b911b4cbeffa016d8a946";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hspec-webdriver-1.2.0-r1-565bff1ef635391fa6c97922ca8089a0097d689e29103eca952475c48e723b24.nix;
+        revNum = 1;
+        sha256 = "565bff1ef635391fa6c97922ca8089a0097d689e29103eca952475c48e723b24";
+        };
+      default = "r1";
       };
     };
   "1.2.1" = {

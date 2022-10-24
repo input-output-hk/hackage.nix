@@ -185,4 +185,15 @@
       default = "r0";
       };
     };
+  "0.7" = {
+    sha256 = "3002f50f09dd2d4b2a68aa22937845e665d702a8fb5973743878953f42ae0215";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/grammatical-parsers-0.7-r0-5e65970877d84012b4fff4d82e68e8224589f3303fed68094636a0a03ba64676.nix;
+        revNum = 0;
+        sha256 = "5e65970877d84012b4fff4d82e68e8224589f3303fed68094636a0a03ba64676";
+        };
+      default = "r0";
+      };
+    };
   }

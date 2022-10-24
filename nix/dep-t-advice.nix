@@ -169,4 +169,15 @@
       default = "r1";
       };
     };
+  "0.6.2.0" = {
+    sha256 = "bc7e3de7cd49a30a161beff267803c299d25547d1f5b2d3e6df02273dd98f94f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dep-t-advice-0.6.2.0-r0-a2d9d86211bc46b3d51089a002b36241b2a6d1d308b51bee232e593da757ee62.nix;
+        revNum = 0;
+        sha256 = "a2d9d86211bc46b3d51089a002b36241b2a6d1d308b51bee232e593da757ee62";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -5022,6 +5022,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "eventstore" = import ./nix/eventstore.nix;
   "eventuo11y" = import ./nix/eventuo11y.nix;
   "eventuo11y-batteries" = import ./nix/eventuo11y-batteries.nix;
+  "eventuo11y-dsl" = import ./nix/eventuo11y-dsl.nix;
+  "eventuo11y-json" = import ./nix/eventuo11y-json.nix;
   "every" = import ./nix/every.nix;
   "every-bit-counts" = import ./nix/every-bit-counts.nix;
   "evm-opcodes" = import ./nix/evm-opcodes.nix;
