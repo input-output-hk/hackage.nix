@@ -1890,7 +1890,12 @@
         revNum = 0;
         sha256 = "c32a5f3ee2daff364de2807afeec45996e5633f9a5010c8504472a930ac7153e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/conduit-1.3.4.3-r1-50f2eea690e053c77acc2e66ab403ace55282932f419078e432db5873ab55b3b.nix;
+        revNum = 1;
+        sha256 = "50f2eea690e053c77acc2e66ab403ace55282932f419078e432db5873ab55b3b";
+        };
+      default = "r1";
       };
     };
   }

@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "7f14f69ceb14659699974e8e47e1ea6f226ea21ff42a802db03e721c319d201d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/libyaml-0.1.2-r1-7fb663b11fcdb86503c14aa81763106ea79b1048fc29a1fe44ec346d9ecac101.nix;
+        revNum = 1;
+        sha256 = "7fb663b11fcdb86503c14aa81763106ea79b1048fc29a1fe44ec346d9ecac101";
+        };
+      default = "r1";
       };
     };
   }

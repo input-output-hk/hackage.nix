@@ -7697,6 +7697,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hpodder" = import ./nix/hpodder.nix;
   "hpp" = import ./nix/hpp.nix;
   "hpqtypes" = import ./nix/hpqtypes.nix;
+  "hpqtypes-effectful" = import ./nix/hpqtypes-effectful.nix;
   "hpqtypes-extras" = import ./nix/hpqtypes-extras.nix;
   "hprotoc" = import ./nix/hprotoc.nix;
   "hprotoc-fork" = import ./nix/hprotoc-fork.nix;

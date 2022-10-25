@@ -2462,7 +2462,12 @@
         revNum = 0;
         sha256 = "b1e9e5eccb4a51b77bb8c9aafd6840e918047ffd6048eb538ef34b61a9d2fe8d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/wai-extra-3.1.12.1-r1-50527bad1b63b3f1c4e29e4415b773fa080d620f6d9981d28f4293e154aa6997.nix;
+        revNum = 1;
+        sha256 = "50527bad1b63b3f1c4e29e4415b773fa080d620f6d9981d28f4293e154aa6997";
+        };
+      default = "r1";
       };
     };
   "3.1.2" = {

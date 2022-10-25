@@ -91,7 +91,12 @@
         revNum = 7;
         sha256 = "2f529146ecd61c2d0e8e65a5a1fa3abc53efdd45d31877e6954b4d0f86c35ac7";
         };
-      default = "r7";
+      r8 = {
+        nix = import ../hackage/deepseq-generics-0.2.0.0-r8-20398af4f6bbad29939ee97b06ffa4069cfa02c53345762553be9327dc249b35.nix;
+        revNum = 8;
+        sha256 = "20398af4f6bbad29939ee97b06ffa4069cfa02c53345762553be9327dc249b35";
+        };
+      default = "r8";
       };
     };
   }

@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "2.2.0.0" = {
+    sha256 = "0f4b12ba4d04dac54661292b47882dd3317dfb3d795e7277484f5735b15e9e44";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/effectful-core-2.2.0.0-r0-103ef3681ee5c92c88f5be77066361cfaf302a3657278b2ba7ee4f428a46b5a4.nix;
+        revNum = 0;
+        sha256 = "103ef3681ee5c92c88f5be77066361cfaf302a3657278b2ba7ee4f428a46b5a4";
+        };
+      default = "r0";
+      };
+    };
   }

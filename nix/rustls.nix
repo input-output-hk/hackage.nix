@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "7f68d3a4e6bff6c7e428c4ef52c2f8e3fae6aecd529d73ba49fc1c04d2480d10";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/rustls-0.0.0.0-r1-82597b89ad79241d858965c6fc179504e38b07728800e34595b847bf340050a2.nix;
+        revNum = 1;
+        sha256 = "82597b89ad79241d858965c6fc179504e38b07728800e34595b847bf340050a2";
+        };
+      default = "r1";
       };
     };
   }

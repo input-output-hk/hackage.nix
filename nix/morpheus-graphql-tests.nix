@@ -142,4 +142,26 @@
       default = "r0";
       };
     };
+  "0.24.2" = {
+    sha256 = "59d82f534f39fe6c4a7e0b319d033621e687ea893ab14e4cb5ca0f8a93b1af95";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/morpheus-graphql-tests-0.24.2-r0-e6d9140646bf0cd0f6aa836df1a7a388990d7de2ba8e04f179b062cebb943c19.nix;
+        revNum = 0;
+        sha256 = "e6d9140646bf0cd0f6aa836df1a7a388990d7de2ba8e04f179b062cebb943c19";
+        };
+      default = "r0";
+      };
+    };
+  "0.24.3" = {
+    sha256 = "70a3f4138a8b14ef5d18d4dc8a85bc5a08b92f4033fd2b94cb8464099ee4ff4d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/morpheus-graphql-tests-0.24.3-r0-821566cd286a40530e40d9629ef1656b83d89ea2b838b22e94242c02d2548a86.nix;
+        revNum = 0;
+        sha256 = "821566cd286a40530e40d9629ef1656b83d89ea2b838b22e94242c02d2548a86";
+        };
+      default = "r0";
+      };
+    };
   }

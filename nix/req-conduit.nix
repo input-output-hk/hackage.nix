@@ -116,7 +116,12 @@
         revNum = 0;
         sha256 = "2a8e5b5b721097acb86ef90762cea48af8a2d54d9f1c9335dedba02b986508cb";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/req-conduit-1.0.1-r1-81c5907e068abac1fe350db4e482b84553a4ce3825d8afaa8debd05a120b753d.nix;
+        revNum = 1;
+        sha256 = "81c5907e068abac1fe350db4e482b84553a4ce3825d8afaa8debd05a120b753d";
+        };
+      default = "r1";
       };
     };
   }
