@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.4.0.2" = {
+    sha256 = "599d3959245c176cada14e60705b5e2d1711a739ba696d49ec4c8aa4ca086287";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sitepipe-0.4.0.2-r0-8ddcda190134541ae0de47634f8b2b4d9c61e4756f4e314983de220b10e5bd9f.nix;
+        revNum = 0;
+        sha256 = "8ddcda190134541ae0de47634f8b2b4d9c61e4756f4e314983de220b10e5bd9f";
+        };
+      default = "r0";
+      };
+    };
   }

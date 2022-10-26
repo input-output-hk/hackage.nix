@@ -14817,6 +14817,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "termbox" = import ./nix/termbox.nix;
   "termbox-banana" = import ./nix/termbox-banana.nix;
   "termbox-bindings" = import ./nix/termbox-bindings.nix;
+  "termbox-bindings-c" = import ./nix/termbox-bindings-c.nix;
+  "termbox-bindings-hs" = import ./nix/termbox-bindings-hs.nix;
   "termcolor" = import ./nix/termcolor.nix;
   "terminal" = import ./nix/terminal.nix;
   "terminal-progress-bar" = import ./nix/terminal-progress-bar.nix;

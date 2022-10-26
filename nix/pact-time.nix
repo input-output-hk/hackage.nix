@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "c0f33ff0956b62ebdcde52a9ee47075940e20ae3df4bffb5097966761c5fa5cc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pact-time-0.2.0.1-r0-8298215d8bee21011fe5eb106f824732a19e13ec39b662a8bb8e1b65c1fa1d76.nix;
+        revNum = 0;
+        sha256 = "8298215d8bee21011fe5eb106f824732a19e13ec39b662a8bb8e1b65c1fa1d76";
+        };
+      default = "r0";
+      };
+    };
   }
