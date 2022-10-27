@@ -147,7 +147,12 @@
         revNum = 0;
         sha256 = "3ec528f052176ab1e1619d7b41611b4c98fa67cb53e0eadd8b0a1b65cfbe4d60";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/o-clock-1.3.0-r1-c3fd59629aafc2cb6e69889c755530026cf9d04182c9f8aafddb9f0c1a2a3aba.nix;
+        revNum = 1;
+        sha256 = "c3fd59629aafc2cb6e69889c755530026cf9d04182c9f8aafddb9f0c1a2a3aba";
+        };
+      default = "r1";
       };
     };
   }

@@ -21,6 +21,17 @@
       default = "r0";
       };
     };
+  "11" = {
+    sha256 = "fd6bd54d6b72b42d9a2837a4bb61d41b935a303f7951f60b2c3fa3c6af16bb5c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mit-3qvpPyAi6mH-11-r0-16ae3cf9947b1a20b12376d6549637d9ee5eb6fb494b24fed152406206e0fe38.nix;
+        revNum = 0;
+        sha256 = "16ae3cf9947b1a20b12376d6549637d9ee5eb6fb494b24fed152406206e0fe38";
+        };
+      default = "r0";
+      };
+    };
   "2" = {
     sha256 = "0050f2b2f50b13ecb2a12c861cd905a11861cf4a6184fd7594675f2935e9aab1";
     revisions = {

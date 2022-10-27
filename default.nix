@@ -705,6 +705,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "LC3" = import ./nix/_L_C3.nix;
   "LDAP" = import ./nix/_L_D_A_P.nix;
   "LDAPv3" = import ./nix/_L_D_A_Pv3.nix;
+  "LPPaver" = import ./nix/_L_P_Paver.nix;
   "LParse" = import ./nix/_L_Parse.nix;
   "LRU" = import ./nix/_L_R_U.nix;
   "LTS" = import ./nix/_L_T_S.nix;
