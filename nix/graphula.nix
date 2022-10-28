@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "2.0.2.2" = {
+    sha256 = "7b3ce2584dc04715082c39402019d411955bc9cfcbd3a78d409474618465d418";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graphula-2.0.2.2-r0-82d760118e38a45aa507c1c1fcf25113e3118ddd5ac134473c5680c170dfdbce.nix;
+        revNum = 0;
+        sha256 = "82d760118e38a45aa507c1c1fcf25113e3118ddd5ac134473c5680c170dfdbce";
+        };
+      default = "r0";
+      };
+    };
   }

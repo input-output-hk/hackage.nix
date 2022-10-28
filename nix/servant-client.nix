@@ -277,7 +277,12 @@
         revNum = 3;
         sha256 = "a8b540cedf2e75f80dad2e99f2b8c7e4a4a050976858e075b45b122eaaa64399";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/servant-client-0.19-r4-eade47ffa1dd72475529660e1ba8b56b7c72cc506f1bd51404c8c189b71b5148.nix;
+        revNum = 4;
+        sha256 = "eade47ffa1dd72475529660e1ba8b56b7c72cc506f1bd51404c8c189b71b5148";
+        };
+      default = "r4";
       };
     };
   "0.2" = {

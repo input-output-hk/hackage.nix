@@ -81,4 +81,15 @@
       default = "r0";
       };
     };
+  "0.6.0" = {
+    sha256 = "2ee8d4bc4eb47d3a8fd25500b37dce73588e28cc2c54773604a943c1c0deedd8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pkgtreediff-0.6.0-r0-fa8d129a21630aaa45a770c5b50f25eb4d705d1b6784a43ccb3b75b2a5f6d71d.nix;
+        revNum = 0;
+        sha256 = "fa8d129a21630aaa45a770c5b50f25eb4d705d1b6784a43ccb3b75b2a5f6d71d";
+        };
+      default = "r0";
+      };
+    };
   }

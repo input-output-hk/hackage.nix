@@ -16386,6 +16386,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "xcp" = import ./nix/xcp.nix;
   "xdcc" = import ./nix/xdcc.nix;
   "xdg-basedir" = import ./nix/xdg-basedir.nix;
+  "xdg-basedir-compliant" = import ./nix/xdg-basedir-compliant.nix;
   "xdg-desktop-entry" = import ./nix/xdg-desktop-entry.nix;
   "xdg-userdirs" = import ./nix/xdg-userdirs.nix;
   "xdot" = import ./nix/xdot.nix;

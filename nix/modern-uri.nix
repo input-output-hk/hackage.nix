@@ -386,4 +386,15 @@
       default = "r0";
       };
     };
+  "0.3.6.0" = {
+    sha256 = "cf3c5b2cbbab9b8f3c171488ff8056dd1c37de011301090345689fc7138d43d2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/modern-uri-0.3.6.0-r0-23bab35651b0b3456370ef014b569b34f95c43f1a9dd7c3c8ca61995423494b2.nix;
+        revNum = 0;
+        sha256 = "23bab35651b0b3456370ef014b569b34f95c43f1a9dd7c3c8ca61995423494b2";
+        };
+      default = "r0";
+      };
+    };
   }
