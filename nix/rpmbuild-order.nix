@@ -76,6 +76,17 @@
       default = "r0";
       };
     };
+  "0.4.10" = {
+    sha256 = "6029196f27a9a8c0bc1ddd5a3293636fc9d4c0886ffab7829828968ce03ff4b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rpmbuild-order-0.4.10-r0-3e2083f3e0c7713fc0477bdfae45e681d48efc5c2e4d0854dc7078cc0e3d7b64.nix;
+        revNum = 0;
+        sha256 = "3e2083f3e0c7713fc0477bdfae45e681d48efc5c2e4d0854dc7078cc0e3d7b64";
+        };
+      default = "r0";
+      };
+    };
   "0.4.2" = {
     sha256 = "4757b9072fed2752021c965c338ad361dfdc4e071bb144fc847ce8a41e1f5ea1";
     revisions = {

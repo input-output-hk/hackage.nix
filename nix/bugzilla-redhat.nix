@@ -71,7 +71,17 @@
         revNum = 3;
         sha256 = "8ac819b11d5facf997c69b3a3dc907688276f2e843ecf1b827019e3cb55bb5b8";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/bugzilla-redhat-1.0.0-r4-e7fbc494e96df24588a15ab9270bad75ce5abdd0d62781bee269c566484bff9f.nix;
+        revNum = 4;
+        sha256 = "e7fbc494e96df24588a15ab9270bad75ce5abdd0d62781bee269c566484bff9f";
+        };
+      r5 = {
+        nix = import ../hackage/bugzilla-redhat-1.0.0-r5-f6de68492a8697138f7907479e2938c75da7a6f7bb968c618150bc27b7d5d58d.nix;
+        revNum = 5;
+        sha256 = "f6de68492a8697138f7907479e2938c75da7a6f7bb968c618150bc27b7d5d58d";
+        };
+      default = "r5";
       };
     };
   }

@@ -317,7 +317,12 @@
         revNum = 2;
         sha256 = "163a3ee9ecfc52e9d027d42d9856953d48d41df794c8f992eb80b5c9d92fc512";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/soap-0.2.3.6-r3-5edc19db71d82b630ae69494baba977b9c8ac32d4741786a39d6144bbbf764dc.nix;
+        revNum = 3;
+        sha256 = "5edc19db71d82b630ae69494baba977b9c8ac32d4741786a39d6144bbbf764dc";
+        };
+      default = "r3";
       };
     };
   }
