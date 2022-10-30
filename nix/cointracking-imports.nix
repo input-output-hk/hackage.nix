@@ -26,4 +26,15 @@
       default = "r1";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "5936fec6b8b3cc1b92c77dec8b0969fff41f24672096ba6417f9e1f79f2bc9c9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cointracking-imports-0.1.0.2-r0-dd7ce0da232bf4074536fee920373f35fd44e12642eee15f3891fd7292d6cfdb.nix;
+        revNum = 0;
+        sha256 = "dd7ce0da232bf4074536fee920373f35fd44e12642eee15f3891fd7292d6cfdb";
+        };
+      default = "r0";
+      };
+    };
   }

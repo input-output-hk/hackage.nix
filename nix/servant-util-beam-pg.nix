@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.4" = {
+    sha256 = "a9182569c553b01d99c92abe65020c4eaa22e6deb7e2b7003b215bc7dddba918";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-util-beam-pg-0.4-r0-2ac4006bfe82f5e6537a8d20d57eccb8b3ee14db6fa56d71f209a42593d987d1.nix;
+        revNum = 0;
+        sha256 = "2ac4006bfe82f5e6537a8d20d57eccb8b3ee14db6fa56d71f209a42593d987d1";
+        };
+      default = "r0";
+      };
+    };
   }
