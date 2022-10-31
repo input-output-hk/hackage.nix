@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "1.1" = {
+    sha256 = "6067a4d48137f0a4f0b537f698ca6177e1f4440a06565f2fb6498d68be55d3fc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/purenix-1.1-r0-b636c38540b12d49c968810a4fb9b80b376d9aedc8827dc12c56a978bdfa7147.nix;
+        revNum = 0;
+        sha256 = "b636c38540b12d49c968810a4fb9b80b376d9aedc8827dc12c56a978bdfa7147";
+        };
+      default = "r0";
+      };
+    };
   }

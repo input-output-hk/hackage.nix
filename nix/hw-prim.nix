@@ -1239,4 +1239,15 @@
       default = "r3";
       };
     };
+  "0.6.3.2" = {
+    sha256 = "1fa05fdc46c72ed4b28aabcee69695ce810d451bbd263fbe75f94b179e20441d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hw-prim-0.6.3.2-r0-742a41199bbe258946bc9353931a54bb6a5c4086c5493e5d388c637740691939.nix;
+        revNum = 0;
+        sha256 = "742a41199bbe258946bc9353931a54bb6a5c4086c5493e5d388c637740691939";
+        };
+      default = "r0";
+      };
+    };
   }

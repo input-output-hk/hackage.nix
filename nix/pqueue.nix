@@ -216,4 +216,15 @@
       default = "r0";
       };
     };
+  "1.4.3.0" = {
+    sha256 = "784bb4171a79fddc1a130621ae7deee1e850e966e31eae3db1e077c02502864e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqueue-1.4.3.0-r0-e75134245c2c0f76b1b0c84a6fae98b2cec83bcd270c32589c7b0ecff2d1841b.nix;
+        revNum = 0;
+        sha256 = "e75134245c2c0f76b1b0c84a6fae98b2cec83bcd270c32589c7b0ecff2d1841b";
+        };
+      default = "r0";
+      };
+    };
   }

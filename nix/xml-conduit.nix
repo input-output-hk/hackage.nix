@@ -1087,7 +1087,12 @@
         revNum = 1;
         sha256 = "fb43f1fb0811af3d3116420d18480b19ed40b72f1b43e1baedd7515312d09174";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/xml-conduit-1.9.1.1-r2-c6cbafaea0d0348d83dc44a6c04328f0a2dbb7f4d7f90ddb50e8f79eae9dda54.nix;
+        revNum = 2;
+        sha256 = "c6cbafaea0d0348d83dc44a6c04328f0a2dbb7f4d7f90ddb50e8f79eae9dda54";
+        };
+      default = "r2";
       };
     };
   }

@@ -33,7 +33,12 @@
         revNum = 1;
         sha256 = "78e2d99cb083607b2ba4010af576ed364cc296c6722ca95e46519bbd6c56ae9d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/generic-monoid-0.1.0.1-r2-a3987d6bdc9397f85f57a6c39128e3833056701ebe1235e25bb3586c589a705c.nix;
+        revNum = 2;
+        sha256 = "a3987d6bdc9397f85f57a6c39128e3833056701ebe1235e25bb3586c589a705c";
+        };
+      default = "r2";
       };
     };
   }
