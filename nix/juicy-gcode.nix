@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.2.0.2" = {
+    sha256 = "cb986cd43ab79236783f5ca2db582ec4bd13ce270e9c91b2cbb50814444b25cf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/juicy-gcode-0.2.0.2-r0-85d9022e49c92c1786032b7bdfc958eca5a3d1233c8b4429bdafff69943fb59c.nix;
+        revNum = 0;
+        sha256 = "85d9022e49c92c1786032b7bdfc958eca5a3d1233c8b4429bdafff69943fb59c";
+        };
+      default = "r0";
+      };
+    };
   }

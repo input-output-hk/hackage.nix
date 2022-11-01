@@ -498,7 +498,12 @@
         revNum = 0;
         sha256 = "c8809b0b3026193c813a88c1f626758c923fae7e0b0d6b96b91c6ce5e14173ec";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/memory-0.17.0-r1-ebbd89ead51a2d80176ed2f842d4f7d8d7ac41843783aa429527fc69c471cbbf.nix;
+        revNum = 1;
+        sha256 = "ebbd89ead51a2d80176ed2f842d4f7d8d7ac41843783aa429527fc69c471cbbf";
+        };
+      default = "r1";
       };
     };
   "0.18.0" = {

@@ -55,7 +55,12 @@
         revNum = 0;
         sha256 = "44d96828926c592d61a5a7977e95ef158c317cd48cd2dbb684271ee70603badf";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pem-0.2.0-r1-3e79441931df677cb5c2b043152e68c4d297f660c00cc4cac0c268b3ed514402.nix;
+        revNum = 1;
+        sha256 = "3e79441931df677cb5c2b043152e68c4d297f660c00cc4cac0c268b3ed514402";
+        };
+      default = "r1";
       };
     };
   "0.2.1" = {

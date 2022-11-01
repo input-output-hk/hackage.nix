@@ -175,4 +175,15 @@
       default = "r0";
       };
     };
+  "2.3.0.0" = {
+    sha256 = "d1ac9aef2f07138730f86c463a0569528940a02fdc54196268e3d611e554afce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hurl-2.3.0.0-r0-effceed404819b6f95237ad5659ccd6b18d8fe6855b47ba8649701f748faf054.nix;
+        revNum = 0;
+        sha256 = "effceed404819b6f95237ad5659ccd6b18d8fe6855b47ba8649701f748faf054";
+        };
+      default = "r0";
+      };
+    };
   }

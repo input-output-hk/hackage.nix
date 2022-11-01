@@ -953,7 +953,12 @@
         revNum = 0;
         sha256 = "936f28014b9bea19c4cf74e85fa534ba19250ef1511e0ad51c086d968fdcb701";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/fast-logger-3.0.3-r1-3c20ddc2e108a7d77bb38cea68ee063c552ad77a2ebebd553de9f51d8b614a68.nix;
+        revNum = 1;
+        sha256 = "3c20ddc2e108a7d77bb38cea68ee063c552ad77a2ebebd553de9f51d8b614a68";
+        };
+      default = "r1";
       };
     };
   "3.0.4" = {

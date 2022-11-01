@@ -1,4 +1,15 @@
 {
+  "0.2.0.0" = {
+    sha256 = "a0c4e8da2e1112b4f1fc917c5c76dca4ab5ce6591f4fa739784f989644afc69a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/type-level-kv-list-0.2.0.0-r0-7c3fb6379a56a48b2651299b4c84ec5dd367a513f55e883c8010102aa4597b81.nix;
+        revNum = 0;
+        sha256 = "7c3fb6379a56a48b2651299b4c84ec5dd367a513f55e883c8010102aa4597b81";
+        };
+      default = "r0";
+      };
+    };
   "1.0.0" = {
     sha256 = "d5866f014fe5b050a22b81502454b21e9ac0d15b45750990782f4a08b69c5228";
     revisions = {
@@ -17,6 +28,17 @@
         nix = import ../hackage/type-level-kv-list-1.1.0-r0-c29c9bdc4cb59dbb5b4b31dad3a40a62547d0f05199c4733e0d11ac1922c791b.nix;
         revNum = 0;
         sha256 = "c29c9bdc4cb59dbb5b4b31dad3a40a62547d0f05199c4733e0d11ac1922c791b";
+        };
+      default = "r0";
+      };
+    };
+  "2.0.0" = {
+    sha256 = "7d06baeac5f40224ec84709f2219d629d7c340cb228b383313c51c365bf33054";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/type-level-kv-list-2.0.0-r0-7b56aa26617451ffb32630ddd257972b0aebde02e23e039314162de47a2265ef.nix;
+        revNum = 0;
+        sha256 = "7b56aa26617451ffb32630ddd257972b0aebde02e23e039314162de47a2265ef";
         };
       default = "r0";
       };

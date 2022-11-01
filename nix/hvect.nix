@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "eca528eb0c9f0a65eeee6ed82a4a11329108dceac965cf9bf77a959971a6ba51";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hvect-0.1.0.0-r1-9c6eb351fabcd8f8e6843f2a084a0640780dc17fa1440167c0569ef5d6facef2.nix;
+        revNum = 1;
+        sha256 = "9c6eb351fabcd8f8e6843f2a084a0640780dc17fa1440167c0569ef5d6facef2";
+        };
+      default = "r1";
       };
     };
   "0.2.0.0" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "ae940ce39a67e93a03f7c0f1afc2f55adbbcd169734b9c5e24f14d5b60eab4f5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hvect-0.2.0.0-r1-739a353e5cb3d657776861808e53fa7d78e8582025d9f36f4f8121d372781a5c.nix;
+        revNum = 1;
+        sha256 = "739a353e5cb3d657776861808e53fa7d78e8582025d9f36f4f8121d372781a5c";
+        };
+      default = "r1";
       };
     };
   "0.3.0.0" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "b0dc77bc8b48f18a3d9ff1074827b24987345097fbcb6c5c3ff26182a67cdb80";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hvect-0.3.0.0-r1-25ade53d10c8fb8c77d53530ea75080d464c984176a5655a78ea47f87fce8d38.nix;
+        revNum = 1;
+        sha256 = "25ade53d10c8fb8c77d53530ea75080d464c984176a5655a78ea47f87fce8d38";
+        };
+      default = "r1";
       };
     };
   "0.3.1.0" = {
@@ -40,7 +55,12 @@
         revNum = 0;
         sha256 = "23d75dc6bb06242b68b404e5637cf3facf790b2aec83ad6fa5b378318e232805";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hvect-0.3.1.0-r1-cc490903a667644d99f2011b0efcce413b307255a83b7072c249121d18a5fbe0.nix;
+        revNum = 1;
+        sha256 = "cc490903a667644d99f2011b0efcce413b307255a83b7072c249121d18a5fbe0";
+        };
+      default = "r1";
       };
     };
   "0.4.0.0" = {
@@ -51,7 +71,12 @@
         revNum = 0;
         sha256 = "64247f03544bca3e492f9dc049855e414bfd289eb213fa389d92471b4ef40f6e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hvect-0.4.0.0-r1-2438d77422a3bd7d2e113a007493192672a2092d3e9d90c91101295d69f4003c.nix;
+        revNum = 1;
+        sha256 = "2438d77422a3bd7d2e113a007493192672a2092d3e9d90c91101295d69f4003c";
+        };
+      default = "r1";
       };
     };
   "0.4.0.1" = {

@@ -156,4 +156,15 @@
       default = "r0";
       };
     };
+  "0.2.3.6" = {
+    sha256 = "3850e22e83c3043ae2f16fecf863c212e65282f746d9f8fb71545dd90d34a3f7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/derive-storable-plugin-0.2.3.6-r0-376685d24a279443cb33668836b7243a2e03b5c06465efff03d6d65dadbf2175.nix;
+        revNum = 0;
+        sha256 = "376685d24a279443cb33668836b7243a2e03b5c06465efff03d6d65dadbf2175";
+        };
+      default = "r0";
+      };
+    };
   }

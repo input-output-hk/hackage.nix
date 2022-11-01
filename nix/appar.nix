@@ -39,7 +39,12 @@
         revNum = 0;
         sha256 = "ba68da03d709dbfc24e999cc39bf87e8835c9b4b6ecac556a660084280b6e195";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/appar-0.1.3-r1-8849a9673ef00bb4028517d26fbc81953093298ff711f6b76c41eb269e8cbb21.nix;
+        revNum = 1;
+        sha256 = "8849a9673ef00bb4028517d26fbc81953093298ff711f6b76c41eb269e8cbb21";
+        };
+      default = "r1";
       };
     };
   "0.1.4" = {
@@ -50,7 +55,12 @@
         revNum = 0;
         sha256 = "181580173130837a8274c8c192e042ef14dcddeb424972d57746d44a628ee217";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/appar-0.1.4-r1-03f0b6d4e564b506989b3ff988a6368f0c3d2dc7e5233ef95a1fb4dba7ad8eec.nix;
+        revNum = 1;
+        sha256 = "03f0b6d4e564b506989b3ff988a6368f0c3d2dc7e5233ef95a1fb4dba7ad8eec";
+        };
+      default = "r1";
       };
     };
   "0.1.5" = {
@@ -66,7 +76,12 @@
         revNum = 1;
         sha256 = "37493b81383c9dce9d9240d7c523230eda5cae913c2dd4f68c16b346e5a9b029";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/appar-0.1.5-r2-fecfe443148f0bb5bf05cf6d7ff59f53152610d1e4250f29020aa6323a3ead63.nix;
+        revNum = 2;
+        sha256 = "fecfe443148f0bb5bf05cf6d7ff59f53152610d1e4250f29020aa6323a3ead63";
+        };
+      default = "r2";
       };
     };
   "0.1.6" = {
@@ -82,7 +97,12 @@
         revNum = 1;
         sha256 = "9b4920b1c6405af6fa0075427016039369af98fe97792fc45ed53453f3c58031";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/appar-0.1.6-r2-15a222f4c25ef34fa753ff14eec8e32fcadaae79cbd68cdf33cba979e140143d.nix;
+        revNum = 2;
+        sha256 = "15a222f4c25ef34fa753ff14eec8e32fcadaae79cbd68cdf33cba979e140143d";
+        };
+      default = "r2";
       };
     };
   "0.1.7" = {
@@ -93,7 +113,12 @@
         revNum = 0;
         sha256 = "d35b1a99f79142872cee337732c9188a60ad51179154fa9a93df85b9b590030b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/appar-0.1.7-r1-31e24d462ba0f8371ab8f8fc490410645e8614844c4688aaf002b969b3936732.nix;
+        revNum = 1;
+        sha256 = "31e24d462ba0f8371ab8f8fc490410645e8614844c4688aaf002b969b3936732";
+        };
+      default = "r1";
       };
     };
   "0.1.8" = {

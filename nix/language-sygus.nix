@@ -83,4 +83,15 @@
       default = "r3";
       };
     };
+  "0.1.1.3" = {
+    sha256 = "8fbbe120c61f6236df456547612a39b4408699350f876cc5b39049acd953bd97";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/language-sygus-0.1.1.3-r0-bd2f1866e226b1b67d1920f5e8a82ef4af2dcb5d6149a449c10b76a57cad9f24.nix;
+        revNum = 0;
+        sha256 = "bd2f1866e226b1b67d1920f5e8a82ef4af2dcb5d6149a449c10b76a57cad9f24";
+        };
+      default = "r0";
+      };
+    };
   }
