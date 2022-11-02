@@ -66,7 +66,12 @@
         revNum = 0;
         sha256 = "f69200f46492847ed681869434c6db9712b3900f49bff3fbc19a5ab2ae4d485b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Spock-core-0.14.0.1-r1-0a11ece2a8f0fbd6bf741b2e0337f33032af3881a3a3cb72b22f50fae222b1cf.nix;
+        revNum = 1;
+        sha256 = "0a11ece2a8f0fbd6bf741b2e0337f33032af3881a3a3cb72b22f50fae222b1cf";
+        };
+      default = "r1";
       };
     };
   }
