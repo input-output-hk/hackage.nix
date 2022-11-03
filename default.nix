@@ -14157,6 +14157,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "stackage-upload" = import ./nix/stackage-upload.nix;
   "stackage2nix" = import ./nix/stackage2nix.nix;
   "stackcollapse-ghc" = import ./nix/stackcollapse-ghc.nix;
+  "stackctl" = import ./nix/stackctl.nix;
   "stacked-dag" = import ./nix/stacked-dag.nix;
   "staf" = import ./nix/staf.nix;
   "staged-gg" = import ./nix/staged-gg.nix;

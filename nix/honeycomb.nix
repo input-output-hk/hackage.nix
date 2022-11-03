@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.0.0" = {
+    sha256 = "ac527e090efb9d4ce213b57b764afb0d4a8daee42a4f8c546f31fb7dfc2fdb11";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/honeycomb-0.1.0.0-r0-46f69c25b77ece1e8c9bac130707431f47f88627a5075c1f023a75623ab9d69b.nix;
+        revNum = 0;
+        sha256 = "46f69c25b77ece1e8c9bac130707431f47f88627a5075c1f023a75623ab9d69b";
+        };
+      default = "r0";
+      };
+    };
   }
