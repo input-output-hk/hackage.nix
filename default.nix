@@ -4851,6 +4851,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "email-validator" = import ./nix/email-validator.nix;
   "emailaddress" = import ./nix/emailaddress.nix;
   "emailparse" = import ./nix/emailparse.nix;
+  "emanote" = import ./nix/emanote.nix;
   "embed-config" = import ./nix/embed-config.nix;
   "embeddock" = import ./nix/embeddock.nix;
   "embeddock-example" = import ./nix/embeddock-example.nix;
@@ -14821,6 +14822,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "termbox-bindings" = import ./nix/termbox-bindings.nix;
   "termbox-bindings-c" = import ./nix/termbox-bindings-c.nix;
   "termbox-bindings-hs" = import ./nix/termbox-bindings-hs.nix;
+  "termbox-tea" = import ./nix/termbox-tea.nix;
   "termcolor" = import ./nix/termcolor.nix;
   "terminal" = import ./nix/terminal.nix;
   "terminal-progress-bar" = import ./nix/terminal-progress-bar.nix;

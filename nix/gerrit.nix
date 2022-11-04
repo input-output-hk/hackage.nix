@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.1.6.0" = {
+    sha256 = "778a39a00eb0f864c0bd7e42d32e6f8eea22e39df042054ef0d96ea350dcabbb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gerrit-0.1.6.0-r0-7024f0b40859f02a54cf1398d6926e9ccf73e56056c65f9a856b878527073e38.nix;
+        revNum = 0;
+        sha256 = "7024f0b40859f02a54cf1398d6926e9ccf73e56056c65f9a856b878527073e38";
+        };
+      default = "r0";
+      };
+    };
   }

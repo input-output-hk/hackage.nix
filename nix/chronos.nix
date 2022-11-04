@@ -278,4 +278,15 @@
       default = "r2";
       };
     };
+  "1.1.5" = {
+    sha256 = "113f1106aa186fde3d69ea9c4634869f68447c30eed10fe498b16ac87f8a0161";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chronos-1.1.5-r0-116b63db6e79574e7ac50bf12a6303af5dae4048b222c0f78380d24f481abb5a.nix;
+        revNum = 0;
+        sha256 = "116b63db6e79574e7ac50bf12a6303af5dae4048b222c0f78380d24f481abb5a";
+        };
+      default = "r0";
+      };
+    };
   }
