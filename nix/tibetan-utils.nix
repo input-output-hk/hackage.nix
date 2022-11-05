@@ -238,4 +238,15 @@
       default = "r0";
       };
     };
+  "0.1.2.1" = {
+    sha256 = "f2de546356303b85a4b45696380d97d2a65344927ff41456cf57d2e41b483ab3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tibetan-utils-0.1.2.1-r0-24319e461191efec509646f80602022411d278673c9de797361d256f6f29ef83.nix;
+        revNum = 0;
+        sha256 = "24319e461191efec509646f80602022411d278673c9de797361d256f6f29ef83";
+        };
+      default = "r0";
+      };
+    };
   }
