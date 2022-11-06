@@ -147,4 +147,15 @@
       default = "r1";
       };
     };
+  "2.2.0" = {
+    sha256 = "67b170953c973ecd40151331d5c90695e52c2b6007a12fe5306dead669061189";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/evdev-2.2.0-r0-7d78507e6394ac1a19aa8394c72460015d6f3b59f6ba1b19d2a907e8d72648ea.nix;
+        revNum = 0;
+        sha256 = "7d78507e6394ac1a19aa8394c72460015d6f3b59f6ba1b19d2a907e8d72648ea";
+        };
+      default = "r0";
+      };
+    };
   }

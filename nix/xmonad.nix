@@ -151,7 +151,17 @@
         revNum = 1;
         sha256 = "8da7cffd1d1f837f4559d9f69e86db58f022231b4996ef3fc894c28bb149107b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/xmonad-0.15-r2-439e1cd650049e4c3f4da1157a56795cb7a97ebc720bfe8699c05efc3bbf323e.nix;
+        revNum = 2;
+        sha256 = "439e1cd650049e4c3f4da1157a56795cb7a97ebc720bfe8699c05efc3bbf323e";
+        };
+      r3 = {
+        nix = import ../hackage/xmonad-0.15-r3-1d2d9932440de8d6c95f4bea5258ac566454575d86ff5d3f578c1e1afd175571.nix;
+        revNum = 3;
+        sha256 = "1d2d9932440de8d6c95f4bea5258ac566454575d86ff5d3f578c1e1afd175571";
+        };
+      default = "r3";
       };
     };
   "0.17.0" = {
@@ -162,7 +172,17 @@
         revNum = 0;
         sha256 = "fc90c8fa647390c68c902912a5a7417f04025dfe72f7de51b248217f7ca0d484";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/xmonad-0.17.0-r1-1735934596279c619a3a8dff31ee7ef4db6d0d6a544e2192ccc57c46186c82cb.nix;
+        revNum = 1;
+        sha256 = "1735934596279c619a3a8dff31ee7ef4db6d0d6a544e2192ccc57c46186c82cb";
+        };
+      r2 = {
+        nix = import ../hackage/xmonad-0.17.0-r2-659869f38a7def075c6f3b120268af2e00fee11221a55d4f930268a97b4cbe0a.nix;
+        revNum = 2;
+        sha256 = "659869f38a7def075c6f3b120268af2e00fee11221a55d4f930268a97b4cbe0a";
+        };
+      default = "r2";
       };
     };
   "0.17.1" = {
@@ -173,7 +193,17 @@
         revNum = 0;
         sha256 = "570207c8cae53eec6131b4e50c6ddaed1f2aefb02b4fd15eb4576a3516babaa8";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/xmonad-0.17.1-r1-dc277b2479b6de95f708d27cb79c39f9a5968ecd3810fe991ab019b102203474.nix;
+        revNum = 1;
+        sha256 = "dc277b2479b6de95f708d27cb79c39f9a5968ecd3810fe991ab019b102203474";
+        };
+      r2 = {
+        nix = import ../hackage/xmonad-0.17.1-r2-63a52cf808ddd8f4320084bc3577c167c0e6add013555c05fd32ceb3bccdfce5.nix;
+        revNum = 2;
+        sha256 = "63a52cf808ddd8f4320084bc3577c167c0e6add013555c05fd32ceb3bccdfce5";
+        };
+      default = "r2";
       };
     };
   "0.2" = {

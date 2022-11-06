@@ -31,4 +31,15 @@
       default = "r0";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "03ec126fa22058cac7a29fb239d3dfd9e6d5ed9108a645a9f31b2dd0644e1477";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rio-prettyprint-0.1.2.0-r0-c32767eff57be76a8e96740f4092f4b3a60f438eddfc2d63b1c4ee4c24070958.nix;
+        revNum = 0;
+        sha256 = "c32767eff57be76a8e96740f4092f4b3a60f438eddfc2d63b1c4ee4c24070958";
+        };
+      default = "r0";
+      };
+    };
   }

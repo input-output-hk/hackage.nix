@@ -640,4 +640,15 @@
       default = "r2";
       };
     };
+  "0.6" = {
+    sha256 = "c9388630895c3e68035ab804004de852b63a95d083aa140dc0e1481c854ed044";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/MonadRandom-0.6-r0-972d28e2a954139277064db49ab2de9822123d37cbd4d5a18d3567038907049e.nix;
+        revNum = 0;
+        sha256 = "972d28e2a954139277064db49ab2de9822123d37cbd4d5a18d3567038907049e";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -3425,6 +3425,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "commonmark-extensions" = import ./nix/commonmark-extensions.nix;
   "commonmark-pandoc" = import ./nix/commonmark-pandoc.nix;
   "commonmark-simple" = import ./nix/commonmark-simple.nix;
+  "commonmark-wikilink" = import ./nix/commonmark-wikilink.nix;
   "commsec" = import ./nix/commsec.nix;
   "commsec-keyexchange" = import ./nix/commsec-keyexchange.nix;
   "commutative" = import ./nix/commutative.nix;

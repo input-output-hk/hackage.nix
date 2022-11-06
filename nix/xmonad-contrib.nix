@@ -187,7 +187,12 @@
         revNum = 1;
         sha256 = "2180158db559b2a0507c2246b129ee0918b5143be6eff5fb7fdae027fc9a356e";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/xmonad-contrib-0.16-r2-d831b49bf51884f563c5ce262a30ce03e8c9a4755b4c72ac2fb8f9809dc0244e.nix;
+        revNum = 2;
+        sha256 = "d831b49bf51884f563c5ce262a30ce03e8c9a4755b4c72ac2fb8f9809dc0244e";
+        };
+      default = "r2";
       };
     };
   "0.17.0" = {
@@ -198,7 +203,12 @@
         revNum = 0;
         sha256 = "defd04a9ca0e031eb7280b734ccd6d6b73f757babfe4a561a7ff718e75211749";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/xmonad-contrib-0.17.0-r1-71f4890e2ef35edea41057af5e4ce371e02570000d8b93efc07eae3427102e6f.nix;
+        revNum = 1;
+        sha256 = "71f4890e2ef35edea41057af5e4ce371e02570000d8b93efc07eae3427102e6f";
+        };
+      default = "r1";
       };
     };
   "0.17.1" = {
@@ -209,7 +219,12 @@
         revNum = 0;
         sha256 = "ba8a48a04648db62017afca053fccebfb7fc2bab3545348050571cd32b897f79";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/xmonad-contrib-0.17.1-r1-df50cc15569c0bb4bc79cd031f7283f20760ae453887785f4689ab09ecb28935.nix;
+        revNum = 1;
+        sha256 = "df50cc15569c0bb4bc79cd031f7283f20760ae453887785f4689ab09ecb28935";
+        };
+      default = "r1";
       };
     };
   "0.5" = {

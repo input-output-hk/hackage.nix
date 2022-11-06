@@ -55,7 +55,34 @@
         revNum = 2;
         sha256 = "d5c716435596eaa749a9d6c170ce7c350c969f0224a311d1288825c7ea9acc4d";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/timer-wheel-0.3.0-r3-bbf118220797cc8ee82ff557a4dd47b521d19082bd0902e244263d510eddead1.nix;
+        revNum = 3;
+        sha256 = "bbf118220797cc8ee82ff557a4dd47b521d19082bd0902e244263d510eddead1";
+        };
+      default = "r3";
+      };
+    };
+  "0.4.0" = {
+    sha256 = "7e467c57461c5def00c3aada162d253cefa19a0f2fd5cbaa2f20ac9ef71c916b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/timer-wheel-0.4.0-r0-e69ff648d6362852b4ea804d04828ffd4f345692f7455a49c6fb49dfc79f8f30.nix;
+        revNum = 0;
+        sha256 = "e69ff648d6362852b4ea804d04828ffd4f345692f7455a49c6fb49dfc79f8f30";
+        };
+      default = "r0";
+      };
+    };
+  "0.4.0.1" = {
+    sha256 = "bf10b2f49b00ae7e746d772b8aa7d76dab9a6eb0a273feb69e95c1735f4d0f41";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/timer-wheel-0.4.0.1-r0-2b5a0570967ffb0175ec7fb4f5536ff6a9dd461b3ddfa1729e2e3cf34bff64c6.nix;
+        revNum = 0;
+        sha256 = "2b5a0570967ffb0175ec7fb4f5536ff6a9dd461b3ddfa1729e2e3cf34bff64c6";
+        };
+      default = "r0";
       };
     };
   }

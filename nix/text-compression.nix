@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.0.6" = {
+    sha256 = "1ae63ad802131572e21a3a82f44722168d57bfc8db6b32b35fd56d7e1ccd756d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/text-compression-0.1.0.6-r0-8403132fe313ef2cb4de99884b228c7c70a664e1057f114382c0ee504e671b3a.nix;
+        revNum = 0;
+        sha256 = "8403132fe313ef2cb4de99884b228c7c70a664e1057f114382c0ee504e671b3a";
+        };
+      default = "r0";
+      };
+    };
   }

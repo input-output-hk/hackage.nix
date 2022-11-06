@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "5f93919d1faeea6721636d47ec569ca2f1f085f313dc42b99443e461b16e4a48";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/data-elevator-0.1.0.1-r0-aed46cb3b753271a7c293c3da9c48bca1e4476078771fb72274aa907fdfe5ddc.nix;
+        revNum = 0;
+        sha256 = "aed46cb3b753271a7c293c3da9c48bca1e4476078771fb72274aa907fdfe5ddc";
+        };
+      default = "r0";
+      };
+    };
   }
