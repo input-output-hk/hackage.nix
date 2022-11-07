@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "1.1.0" = {
+    sha256 = "f02194e6ec53820bc97f2d5ed80052346a87440a3ee9865ec311412ea2aaef7e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-bayes-1.1.0-r0-8929887b2883e553b928dcc9b1326171c87b6aa26f11800dc8c55b119a9e9649.nix;
+        revNum = 0;
+        sha256 = "8929887b2883e553b928dcc9b1326171c87b6aa26f11800dc8c55b119a9e9649";
+        };
+      default = "r0";
+      };
+    };
   }
