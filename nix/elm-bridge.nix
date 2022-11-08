@@ -207,4 +207,15 @@
       default = "r0";
       };
     };
+  "0.8.1" = {
+    sha256 = "e70abeccbe7084e8f41e494d1cddc9723e2fa1c91ff69f07c94fe855e5931d62";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/elm-bridge-0.8.1-r0-7f95858821d5d332f79f8dbf5ea00efbb94302e06ba377c356639488914b9c6a.nix;
+        revNum = 0;
+        sha256 = "7f95858821d5d332f79f8dbf5ea00efbb94302e06ba377c356639488914b9c6a";
+        };
+      default = "r0";
+      };
+    };
   }
