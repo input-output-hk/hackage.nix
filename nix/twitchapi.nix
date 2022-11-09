@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.0.3" = {
+    sha256 = "7fd134dcb5f04f5e0a7e115a00720340657b4008e234f36b79efcfca488f73f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/twitchapi-0.0.3-r0-4d41a2a4c8958fcea72e4360c8711240a399b3bc86700d4b448dd1df2dd909ce.nix;
+        revNum = 0;
+        sha256 = "4d41a2a4c8958fcea72e4360c8711240a399b3bc86700d4b448dd1df2dd909ce";
+        };
+      default = "r0";
+      };
+    };
   }

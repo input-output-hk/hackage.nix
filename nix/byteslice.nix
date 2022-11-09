@@ -211,7 +211,12 @@
         revNum = 0;
         sha256 = "b5aa80e6efa143b532d20603fb643767386771ec059adedd87cf72cceaf96420";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/byteslice-0.2.7.0-r1-c8fb65f507badda00bbb260433a9ccc439a5f694eedeaeed750b531a3b38a6bc.nix;
+        revNum = 1;
+        sha256 = "c8fb65f507badda00bbb260433a9ccc439a5f694eedeaeed750b531a3b38a6bc";
+        };
+      default = "r1";
       };
     };
   }

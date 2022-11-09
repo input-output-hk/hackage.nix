@@ -3718,6 +3718,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "copilot-interpreter" = import ./nix/copilot-interpreter.nix;
   "copilot-language" = import ./nix/copilot-language.nix;
   "copilot-libraries" = import ./nix/copilot-libraries.nix;
+  "copilot-prettyprinter" = import ./nix/copilot-prettyprinter.nix;
   "copilot-sbv" = import ./nix/copilot-sbv.nix;
   "copilot-theorem" = import ./nix/copilot-theorem.nix;
   "copr" = import ./nix/copr.nix;
@@ -5180,6 +5181,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fastcdc" = import ./nix/fastcdc.nix;
   "fastcgi" = import ./nix/fastcgi.nix;
   "fastedit" = import ./nix/fastedit.nix;
+  "faster-megaparsec" = import ./nix/faster-megaparsec.nix;
   "fastirc" = import ./nix/fastirc.nix;
   "fastly" = import ./nix/fastly.nix;
   "fastmemo" = import ./nix/fastmemo.nix;
@@ -14471,6 +14473,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "supervisor" = import ./nix/supervisor.nix;
   "supervisors" = import ./nix/supervisors.nix;
   "supplemented" = import ./nix/supplemented.nix;
+  "supply-chain-core" = import ./nix/supply-chain-core.nix;
   "surjective" = import ./nix/surjective.nix;
   "suspend" = import ./nix/suspend.nix;
   "sv" = import ./nix/sv.nix;

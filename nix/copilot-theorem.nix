@@ -65,6 +65,17 @@
       default = "r0";
       };
     };
+  "3.12" = {
+    sha256 = "7fd0dee30ffd418a17f36af2be33071e8bca7275c9a5047c9c176f49944319e0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/copilot-theorem-3.12-r0-904181d22313ad419f41fea212707c3877d34ab3932ed1855aadc014d29aedab.nix;
+        revNum = 0;
+        sha256 = "904181d22313ad419f41fea212707c3877d34ab3932ed1855aadc014d29aedab";
+        };
+      default = "r0";
+      };
+    };
   "3.2" = {
     sha256 = "fbbc752b0c3bee6a341b90ee72a15ed0513c4a475acb6d87c07d3f9f69af1bd0";
     revisions = {
