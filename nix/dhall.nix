@@ -857,7 +857,12 @@
         revNum = 2;
         sha256 = "696a55bb3da66a004481824e800be6deb3f8b5d80ab15760a48fdbf8050b50a2";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/dhall-1.41.2-r3-21ba5384d9806b936f3eaa3baf0bb61f4447cae5a9295a200d6fff2ecd8310c9.nix;
+        revNum = 3;
+        sha256 = "21ba5384d9806b936f3eaa3baf0bb61f4447cae5a9295a200d6fff2ecd8310c9";
+        };
+      default = "r3";
       };
     };
   "1.5.0" = {

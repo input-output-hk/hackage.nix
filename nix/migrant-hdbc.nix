@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "0fb876ea6d3bb13cd6c2da38ab2e65f52e977cee37ffcc88612346dee50936a0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/migrant-hdbc-0.1.0.3-r0-b2c9d8bd6c01cd9cee41828468dcdba86c426c26a40dca2561547d2f4d0c044c.nix;
+        revNum = 0;
+        sha256 = "b2c9d8bd6c01cd9cee41828468dcdba86c426c26a40dca2561547d2f4d0c044c";
+        };
+      default = "r0";
+      };
+    };
   }

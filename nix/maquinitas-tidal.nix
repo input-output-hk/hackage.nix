@@ -43,6 +43,17 @@
       default = "r0";
       };
     };
+  "0.2.11" = {
+    sha256 = "7b55015961352ac55043c7fb8e1580e5ce36d73aee9f9e4959b37f89cc57e0ad";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/maquinitas-tidal-0.2.11-r0-0b3adc376309c32bf047f74a55965cea32c122ec51dc18ac3711770ef1e9ceb2.nix;
+        revNum = 0;
+        sha256 = "0b3adc376309c32bf047f74a55965cea32c122ec51dc18ac3711770ef1e9ceb2";
+        };
+      default = "r0";
+      };
+    };
   "0.2.2" = {
     sha256 = "1a4156b3d9214223d15261cb4dd86db44984f2e5b87ea461d89522941a891b2b";
     revisions = {

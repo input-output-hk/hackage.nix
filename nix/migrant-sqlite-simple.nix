@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "fd35696cbebba93064bf5b932d9dfa3b7327469c7d91f3e639b6d956e788923d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/migrant-sqlite-simple-0.1.0.3-r0-c1ccb9dbed594a278f423b364b8238dd43cb7234e3440aa7c969f3b3349893da.nix;
+        revNum = 0;
+        sha256 = "c1ccb9dbed594a278f423b364b8238dd43cb7234e3440aa7c969f3b3349893da";
+        };
+      default = "r0";
+      };
+    };
   }

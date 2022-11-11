@@ -155,4 +155,15 @@
       default = "r0";
       };
     };
+  "2.0.0.1" = {
+    sha256 = "32acc3718d3f02bd0e5f92175d57897e7fed24d3ee3265042a4c9cbdd32cf865";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-sugar-2.0.0.1-r0-90e93b4885437b38aa317e251d438aa41df50b208141db58457a4808d9c9dccd.nix;
+        revNum = 0;
+        sha256 = "90e93b4885437b38aa317e251d438aa41df50b208141db58457a4808d9c9dccd";
+        };
+      default = "r0";
+      };
+    };
   }

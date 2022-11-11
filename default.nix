@@ -2307,6 +2307,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bencodex" = import ./nix/bencodex.nix;
   "bencoding" = import ./nix/bencoding.nix;
   "bencoding-lens" = import ./nix/bencoding-lens.nix;
+  "benri-hspec" = import ./nix/benri-hspec.nix;
   "bento" = import ./nix/bento.nix;
   "berkeleydb" = import ./nix/berkeleydb.nix;
   "berp" = import ./nix/berp.nix;
@@ -14089,6 +14090,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sqlcli" = import ./nix/sqlcli.nix;
   "sqlcli-odbc" = import ./nix/sqlcli-odbc.nix;
   "sqlite" = import ./nix/sqlite.nix;
+  "sqlite-easy" = import ./nix/sqlite-easy.nix;
   "sqlite-simple" = import ./nix/sqlite-simple.nix;
   "sqlite-simple-errors" = import ./nix/sqlite-simple-errors.nix;
   "sqlite-simple-interpolate" = import ./nix/sqlite-simple-interpolate.nix;
@@ -14473,6 +14475,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "supervisor" = import ./nix/supervisor.nix;
   "supervisors" = import ./nix/supervisors.nix;
   "supplemented" = import ./nix/supplemented.nix;
+  "supply-chain" = import ./nix/supply-chain.nix;
   "supply-chain-core" = import ./nix/supply-chain-core.nix;
   "surjective" = import ./nix/surjective.nix;
   "suspend" = import ./nix/suspend.nix;

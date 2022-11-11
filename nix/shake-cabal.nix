@@ -237,7 +237,12 @@
         revNum = 0;
         sha256 = "8858f2334c1bbe76f82cc033708456adef1c7cd54beffe6be51db82cb8f600e8";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/shake-cabal-0.2.2.2-r1-9d7703916ccb0f2b44545e1544c02422813359d3531748b81e278a0c1a004b64.nix;
+        revNum = 1;
+        sha256 = "9d7703916ccb0f2b44545e1544c02422813359d3531748b81e278a0c1a004b64";
+        };
+      default = "r1";
       };
     };
   }

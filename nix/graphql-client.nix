@@ -64,7 +64,23 @@
         revNum = 5;
         sha256 = "eda5c37d3a294d05e4483807fb3e43a1adda1562045417540e6cf97814d3774d";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/graphql-client-1.1.1-r6-eda1155e4e5182fedf1affc211e1253b254b1318cf846c299a963a9e41e52a26.nix;
+        revNum = 6;
+        sha256 = "eda1155e4e5182fedf1affc211e1253b254b1318cf846c299a963a9e41e52a26";
+        };
+      default = "r6";
+      };
+    };
+  "1.2.0" = {
+    sha256 = "d76eb6d591918acae4e6d6d9496efa4e4b06459e00ac5a2fa64db8f19d7ee094";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graphql-client-1.2.0-r0-da5201ce8713336b242feaa2512ff43da0e82a387cec0322a9b17d7eb19489fb.nix;
+        revNum = 0;
+        sha256 = "da5201ce8713336b242feaa2512ff43da0e82a387cec0322a9b17d7eb19489fb";
+        };
+      default = "r0";
       };
     };
   }
