@@ -2631,6 +2631,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "boring" = import ./nix/boring.nix;
   "boring-game" = import ./nix/boring-game.nix;
   "boring-window-switcher" = import ./nix/boring-window-switcher.nix;
+  "borsh" = import ./nix/borsh.nix;
   "bot" = import ./nix/bot.nix;
   "both" = import ./nix/both.nix;
   "botpp" = import ./nix/botpp.nix;
