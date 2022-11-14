@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.0.4" = {
+    sha256 = "68f9b5f9da142dbe59a2295f60f3681793c3378d940f09aa2f607c5d9c547a55";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/twitchapi-0.0.4-r0-a04bb0dbf6d04dfd19246a09cbae07991f8b44c9ee1e000d2dc603d279300a78.nix;
+        revNum = 0;
+        sha256 = "a04bb0dbf6d04dfd19246a09cbae07991f8b44c9ee1e000d2dc603d279300a78";
+        };
+      default = "r0";
+      };
+    };
   }

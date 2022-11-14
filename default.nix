@@ -6577,6 +6577,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "guid" = import ./nix/guid.nix;
   "gulcii" = import ./nix/gulcii.nix;
   "gutenberg-fibonaccis" = import ./nix/gutenberg-fibonaccis.nix;
+  "gvti" = import ./nix/gvti.nix;
   "gw" = import ./nix/gw.nix;
   "gyah-bin" = import ./nix/gyah-bin.nix;
   "gym-http-api" = import ./nix/gym-http-api.nix;

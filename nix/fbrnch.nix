@@ -130,4 +130,15 @@
       default = "r0";
       };
     };
+  "1.2" = {
+    sha256 = "a4ee8781d92ae8af44e1ae2ace53b29173a7bff62acbe780d1b63e55f52b0902";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fbrnch-1.2-r0-3ae460d8a3d4dcb0a742e1c0b317da8036037f175d6ef26295d33d7781860298.nix;
+        revNum = 0;
+        sha256 = "3ae460d8a3d4dcb0a742e1c0b317da8036037f175d6ef26295d33d7781860298";
+        };
+      default = "r0";
+      };
+    };
   }
