@@ -181,7 +181,12 @@
         revNum = 3;
         sha256 = "bfa44d75b77e24f2f4073d6c9527e1ec12f1661b0cb46d99d6c8b1c45d31121d";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/colonnade-1.2.0.2-r4-5ace17fac5a758a1a0f3a4b36f016ecb641a710dc13769608e94a278c8534510.nix;
+        revNum = 4;
+        sha256 = "5ace17fac5a758a1a0f3a4b36f016ecb641a710dc13769608e94a278c8534510";
+        };
+      default = "r4";
       };
     };
   }

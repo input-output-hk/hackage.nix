@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.5.0" = {
+    sha256 = "ed391a666c16d873757e48a860b63a97dc9abb13caa2553264d315ef77ecaeb8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hercules-ci-api-core-0.1.5.0-r0-603a1dbe0b2a43534521dabc5f076563ce571d960f87f821bfcdf7e5fba7094d.nix;
+        revNum = 0;
+        sha256 = "603a1dbe0b2a43534521dabc5f076563ce571d960f87f821bfcdf7e5fba7094d";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -9275,6 +9275,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lens-tutorial" = import ./nix/lens-tutorial.nix;
   "lens-typelevel" = import ./nix/lens-typelevel.nix;
   "lens-utils" = import ./nix/lens-utils.nix;
+  "lens-witherable" = import ./nix/lens-witherable.nix;
   "lens-xml" = import ./nix/lens-xml.nix;
   "lenses" = import ./nix/lenses.nix;
   "lensref" = import ./nix/lensref.nix;

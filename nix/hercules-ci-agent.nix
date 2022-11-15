@@ -230,4 +230,15 @@
       default = "r0";
       };
     };
+  "0.9.8" = {
+    sha256 = "ede5f1c926a5e6ea41d13b4460f00b0ae0eaa465ffedf34b8821874f42eeba0f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hercules-ci-agent-0.9.8-r0-3ef2853f2ef9f59e38b4f31f7c83d9d6f50b127b1a7da47ad7338a6cb01f6213.nix;
+        revNum = 0;
+        sha256 = "3ef2853f2ef9f59e38b4f31f7c83d9d6f50b127b1a7da47ad7338a6cb01f6213";
+        };
+      default = "r0";
+      };
+    };
   }

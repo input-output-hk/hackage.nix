@@ -219,4 +219,15 @@
       default = "r0";
       };
     };
+  "1.7.4" = {
+    sha256 = "7c802e8c09d8444c8b138f190fdc20cc4c6afe8b890e73f652f59e728d4036fa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/arduino-copilot-1.7.4-r0-a3b05213db10f87de72b2bb322211c7d72f2df7806f2e2691bc63555b4ab97ef.nix;
+        revNum = 0;
+        sha256 = "a3b05213db10f87de72b2bb322211c7d72f2df7806f2e2691bc63555b4ab97ef";
+        };
+      default = "r0";
+      };
+    };
   }
