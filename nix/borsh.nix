@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2.0" = {
+    sha256 = "43ca881b87443a9b5512dfbb4264e3675a88736b037666397149a1c7cf967e4b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/borsh-0.2.0-r0-f961039a5061d3ba428e6c086062fe741b39d6467fdf9c2124312d98c577849c.nix;
+        revNum = 0;
+        sha256 = "f961039a5061d3ba428e6c086062fe741b39d6467fdf9c2124312d98c577849c";
+        };
+      default = "r0";
+      };
+    };
   }
