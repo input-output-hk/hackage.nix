@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "6d9ee28ebb1a73de8562902764fff474bdbf6b80a14ac5677e8efdd49cb40058";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lens-witherable-0.1.0.2-r0-04a937fa9559cfcbe735948b7b99a332f8517d21c707ad78e63981189c0bfe9a.nix;
+        revNum = 0;
+        sha256 = "04a937fa9559cfcbe735948b7b99a332f8517d21c707ad78e63981189c0bfe9a";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.0.0.0" = {
+    sha256 = "ea62cee820e4e3ce1abf98827abb1be885863358273a6bbcbc289e54dd241a71";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/icepeak-1.0.0.0-r0-3f0791943cb15a0ae6e47852b11110e7e0a03b1fc044969fb9fb36ae81ed131e.nix;
+        revNum = 0;
+        sha256 = "3f0791943cb15a0ae6e47852b11110e7e0a03b1fc044969fb9fb36ae81ed131e";
+        };
+      default = "r0";
+      };
+    };
   }
