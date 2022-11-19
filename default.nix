@@ -7585,6 +7585,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ho-rewriting" = import ./nix/ho-rewriting.nix;
   "hoauth" = import ./nix/hoauth.nix;
   "hoauth2" = import ./nix/hoauth2.nix;
+  "hoauth2-demo" = import ./nix/hoauth2-demo.nix;
   "hoauth2-providers" = import ./nix/hoauth2-providers.nix;
   "hoauth2-providers-tutorial" = import ./nix/hoauth2-providers-tutorial.nix;
   "hoauth2-tutorial" = import ./nix/hoauth2-tutorial.nix;
@@ -14350,6 +14351,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "strict-data" = import ./nix/strict-data.nix;
   "strict-ghc-plugin" = import ./nix/strict-ghc-plugin.nix;
   "strict-identity" = import ./nix/strict-identity.nix;
+  "strict-impl-params" = import ./nix/strict-impl-params.nix;
   "strict-io" = import ./nix/strict-io.nix;
   "strict-lens" = import ./nix/strict-lens.nix;
   "strict-list" = import ./nix/strict-list.nix;
