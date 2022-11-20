@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "a4bbb684c6d2995134c4e005199cd51f44071049a5949f92bcbf444178e6fae8";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/http-api-data-qq-0.1.0.0-r2-16b4605a0a5e6e2c89176883c511cd92d51d3d5a93d3bf5080964dd06c97fc0d.nix;
+        revNum = 2;
+        sha256 = "16b4605a0a5e6e2c89176883c511cd92d51d3d5a93d3bf5080964dd06c97fc0d";
+        };
+      default = "r2";
       };
     };
   }

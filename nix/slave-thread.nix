@@ -230,4 +230,15 @@
       default = "r0";
       };
     };
+  "1.1.0.2" = {
+    sha256 = "c8967c21af592cf70fb875afda027e52e5549a22abac928856e5a4c66b766edd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/slave-thread-1.1.0.2-r0-fd0fce89ae2e003ec3adb72c802019689bd32e75ea0f5e16a198e81622112db4.nix;
+        revNum = 0;
+        sha256 = "fd0fce89ae2e003ec3adb72c802019689bd32e75ea0f5e16a198e81622112db4";
+        };
+      default = "r0";
+      };
+    };
   }

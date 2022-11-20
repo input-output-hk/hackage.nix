@@ -54,7 +54,12 @@
         revNum = 0;
         sha256 = "0746522289889fde7bd13730187dd501455ef52913fba753a3924bf403292b93";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hpc-lcov-1.1.0-r1-083d2bc530249dfb53a13d09f5912b77dd208866799351099d2128ed50ea3f68.nix;
+        revNum = 1;
+        sha256 = "083d2bc530249dfb53a13d09f5912b77dd208866799351099d2128ed50ea3f68";
+        };
+      default = "r1";
       };
     };
   }

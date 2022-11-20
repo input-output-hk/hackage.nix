@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.2.3.0" = {
+    sha256 = "9db5d80c003596bb7dbfa80cfc20fab87d4f0a634488d19a63d9410711fa1c5b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/betris-0.2.3.0-r0-470b47e012dd101ab9205d4025242081111250005a508e78dcfef947e00b0ced.nix;
+        revNum = 0;
+        sha256 = "470b47e012dd101ab9205d4025242081111250005a508e78dcfef947e00b0ced";
+        };
+      default = "r0";
+      };
+    };
   }

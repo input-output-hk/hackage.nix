@@ -7656,6 +7656,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hoq" = import ./nix/hoq.nix;
   "hora" = import ./nix/hora.nix;
   "horizon" = import ./nix/horizon.nix;
+  "horizon-gen-nix" = import ./nix/horizon-gen-nix.nix;
   "horizon-spec" = import ./nix/horizon-spec.nix;
   "horizontal-rule" = import ./nix/horizontal-rule.nix;
   "horname" = import ./nix/horname.nix;
