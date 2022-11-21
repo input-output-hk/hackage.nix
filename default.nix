@@ -4845,6 +4845,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "elynx-tools" = import ./nix/elynx-tools.nix;
   "elynx-tree" = import ./nix/elynx-tree.nix;
   "ema" = import ./nix/ema.nix;
+  "ema-extra" = import ./nix/ema-extra.nix;
+  "ema-generics" = import ./nix/ema-generics.nix;
   "emacs-keys" = import ./nix/emacs-keys.nix;
   "emacs-module" = import ./nix/emacs-module.nix;
   "email" = import ./nix/email.nix;
@@ -6895,6 +6897,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-debug-adapter" = import ./nix/haskell-debug-adapter.nix;
   "haskell-disque" = import ./nix/haskell-disque.nix;
   "haskell-docs" = import ./nix/haskell-docs.nix;
+  "haskell-docs-cli" = import ./nix/haskell-docs-cli.nix;
   "haskell-eigen-util" = import ./nix/haskell-eigen-util.nix;
   "haskell-exp-parser" = import ./nix/haskell-exp-parser.nix;
   "haskell-fake-user-agent" = import ./nix/haskell-fake-user-agent.nix;
@@ -10947,6 +10950,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "om-kubernetes" = import ./nix/om-kubernetes.nix;
   "om-legion" = import ./nix/om-legion.nix;
   "om-logging" = import ./nix/om-logging.nix;
+  "om-plugin-imports" = import ./nix/om-plugin-imports.nix;
   "om-show" = import ./nix/om-show.nix;
   "om-socket" = import ./nix/om-socket.nix;
   "om-time" = import ./nix/om-time.nix;
@@ -12580,6 +12584,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "reddit-scrape" = import ./nix/reddit-scrape.nix;
   "redesigned-carnival" = import ./nix/redesigned-carnival.nix;
   "redis" = import ./nix/redis.nix;
+  "redis-glob" = import ./nix/redis-glob.nix;
   "redis-hs" = import ./nix/redis-hs.nix;
   "redis-io" = import ./nix/redis-io.nix;
   "redis-job-queue" = import ./nix/redis-job-queue.nix;

@@ -423,7 +423,12 @@
         revNum = 0;
         sha256 = "6db77f81cfcf81cf7faf8a4dc4b2110c1603dbb94249d49d069a17b4897e9d69";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jose-jwt-0.9.4-r1-6cb863760068a57ebf6dcc6efc6463162e71f932fe1134a69c9c0baa5d6d13f6.nix;
+        revNum = 1;
+        sha256 = "6cb863760068a57ebf6dcc6efc6463162e71f932fe1134a69c9c0baa5d6d13f6";
+        };
+      default = "r1";
       };
     };
   }

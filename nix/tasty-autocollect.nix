@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.3.2.0" = {
+    sha256 = "7d276da88da9504d0621526f2b9d4552ace670c8411da3fb9ee85bca3e025fb8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-autocollect-0.3.2.0-r0-89f825fd44142118424f5c6e5d67a8c9c0967392b411b1d19410122725dbcfd3.nix;
+        revNum = 0;
+        sha256 = "89f825fd44142118424f5c6e5d67a8c9c0967392b411b1d19410122725dbcfd3";
+        };
+      default = "r0";
+      };
+    };
   }

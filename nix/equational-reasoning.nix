@@ -313,7 +313,12 @@
         revNum = 1;
         sha256 = "6a7a8398641f4771d05d719317fa93be6c6ec0215c59f3b10c7ab18255ed252e";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/equational-reasoning-0.7.0.1-r2-1bbd5f30e134106e935727441b7a472ad60e6512fbd37d25ae77d2df34e4243e.nix;
+        revNum = 2;
+        sha256 = "1bbd5f30e134106e935727441b7a472ad60e6512fbd37d25ae77d2df34e4243e";
+        };
+      default = "r2";
       };
     };
   }

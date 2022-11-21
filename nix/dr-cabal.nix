@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "65487d6e88fb92e2aff8339f8de9d3ec9d5c40f4d390b39096d08ec7ba09c018";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dr-cabal-0.2.0.0-r0-07077a6749444311132c75e7be05300b18dab788dda8f9b4907167fd432da882.nix;
+        revNum = 0;
+        sha256 = "07077a6749444311132c75e7be05300b18dab788dda8f9b4907167fd432da882";
+        };
+      default = "r0";
+      };
+    };
   }
