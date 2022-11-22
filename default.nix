@@ -10930,6 +10930,15 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "oeis2" = import ./nix/oeis2.nix;
   "off-simple" = import ./nix/off-simple.nix;
   "ofx" = import ./nix/ofx.nix;
+  "ogma-cli" = import ./nix/ogma-cli.nix;
+  "ogma-core" = import ./nix/ogma-core.nix;
+  "ogma-extra" = import ./nix/ogma-extra.nix;
+  "ogma-language-c" = import ./nix/ogma-language-c.nix;
+  "ogma-language-cocospec" = import ./nix/ogma-language-cocospec.nix;
+  "ogma-language-copilot" = import ./nix/ogma-language-copilot.nix;
+  "ogma-language-fret-cs" = import ./nix/ogma-language-fret-cs.nix;
+  "ogma-language-fret-reqs" = import ./nix/ogma-language-fret-reqs.nix;
+  "ogma-language-smv" = import ./nix/ogma-language-smv.nix;
   "ogmarkup" = import ./nix/ogmarkup.nix;
   "ohloh-hs" = import ./nix/ohloh-hs.nix;
   "oi" = import ./nix/oi.nix;

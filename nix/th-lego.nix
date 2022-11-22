@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.3.0.2" = {
+    sha256 = "1f3da9d2386b34d6e9c60bb813d44cce7b7e677096fa2bb1f24358a7c133fff0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/th-lego-0.3.0.2-r0-c7fb392a67119253428d5fecf8ba7f94cdfd8134d1fab99f992c1f9a3e827ac0.nix;
+        revNum = 0;
+        sha256 = "c7fb392a67119253428d5fecf8ba7f94cdfd8134d1fab99f992c1f9a3e827ac0";
+        };
+      default = "r0";
+      };
+    };
   }

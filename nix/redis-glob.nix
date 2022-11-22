@@ -10,4 +10,26 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "1a425b76a215fd68436c520c30a396628e22410b620a3d564ba91448097190d5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/redis-glob-0.1.0.1-r0-bf6edfc1d4e29a994b09eb73cbf9781f4e5e9c7fe2a92e7f17819373c1056193.nix;
+        revNum = 0;
+        sha256 = "bf6edfc1d4e29a994b09eb73cbf9781f4e5e9c7fe2a92e7f17819373c1056193";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.0.2" = {
+    sha256 = "9c1287db65118f4e3de5983c5fe9fb204869a89c18c05607ed7b0953a85da052";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/redis-glob-0.1.0.2-r0-e02711e237e38e605b9c12b9b268fd72fd57b3e5cdc3812e5840fa2630bc54c1.nix;
+        revNum = 0;
+        sha256 = "e02711e237e38e605b9c12b9b268fd72fd57b3e5cdc3812e5840fa2630bc54c1";
+        };
+      default = "r0";
+      };
+    };
   }

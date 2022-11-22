@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "6e2621b5cd666e4d2696a61136ae44d79e32bd5e20dea8ecbd50806afb1e16d6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lio-fs-0.0.0.1-r1-2b146494256abe2f74d651cf23476a2076fcbaeef983f66bc7d7d765dd261db4.nix;
+        revNum = 1;
+        sha256 = "2b146494256abe2f74d651cf23476a2076fcbaeef983f66bc7d7d765dd261db4";
+        };
+      default = "r1";
       };
     };
   "0.0.1.0" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "c6c86f326e027036b6d7d850459cefd88a6ce8523ed3da33cdd8e15a190ac5eb";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lio-fs-0.0.1.0-r1-a9324545ad47cbec6072150564802aa075f982929f179dcbc9c4aa5e30c4258c.nix;
+        revNum = 1;
+        sha256 = "a9324545ad47cbec6072150564802aa075f982929f179dcbc9c4aa5e30c4258c";
+        };
+      default = "r1";
       };
     };
   "0.0.1.2" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "73cd0452bd16781b037f26be615ef362c4c9b4df288c2fde810eacbb00e34180";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lio-fs-0.0.1.2-r1-22e7eebcae379b56d3071d6477fc2e1c310f0cc50b59ed40a0009eb97ed48def.nix;
+        revNum = 1;
+        sha256 = "22e7eebcae379b56d3071d6477fc2e1c310f0cc50b59ed40a0009eb97ed48def";
+        };
+      default = "r1";
       };
     };
   }

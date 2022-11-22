@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.1.1" = {
+    sha256 = "837b4f6f538702c5a0df90f03436d50d651bb06973e9fe2165a706db9d3f4e8d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xml-parser-0.1.1.1-r0-6384828568db9ed741d00c3136e5499356fe78864a324a4a2a1db20ba52f24df.nix;
+        revNum = 0;
+        sha256 = "6384828568db9ed741d00c3136e5499356fe78864a324a4a2a1db20ba52f24df";
+        };
+      default = "r0";
+      };
+    };
   }
