@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "4df5cec8df23c4bd654a58d6ff31b81451426c323feb8b54033085148522042e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nri-http-0.2.0.0-r0-1e2fb84b3883d433646dc470cc0b3e28acd08ed63a0b11a13c8e6050ca272599.nix;
+        revNum = 0;
+        sha256 = "1e2fb84b3883d433646dc470cc0b3e28acd08ed63a0b11a13c8e6050ca272599";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "1.1.1.0" = {
+    sha256 = "f3ae83d4bd3e02b28db53fb3f813e6f9247ced228c25f3dcd54287f56fc4a071";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stackctl-1.1.1.0-r0-44c538a104288551c21bdf45c813a8f94ce91a7d13f16d6ba4f9f8e03dc74b19.nix;
+        revNum = 0;
+        sha256 = "44c538a104288551c21bdf45c813a8f94ce91a7d13f16d6ba4f9f8e03dc74b19";
+        };
+      default = "r0";
+      };
+    };
   }

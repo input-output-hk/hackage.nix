@@ -5055,6 +5055,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "exceptional" = import ./nix/exceptional.nix;
   "exceptionfree-readfile" = import ./nix/exceptionfree-readfile.nix;
   "exceptions" = import ./nix/exceptions.nix;
+  "exceptiot" = import ./nix/exceptiot.nix;
   "exchangerates" = import ./nix/exchangerates.nix;
   "execs" = import ./nix/execs.nix;
   "executable-hash" = import ./nix/executable-hash.nix;
