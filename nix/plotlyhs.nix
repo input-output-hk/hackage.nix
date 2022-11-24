@@ -32,4 +32,26 @@
       default = "r0";
       };
     };
+  "0.2.2" = {
+    sha256 = "ba0f24e494fbe10699127ac571fa133bee7229f93f38d5ce72070e266523c8fe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/plotlyhs-0.2.2-r0-7ae3e9613bcbe0b621d6da68c9e31e5a89a506bdee065f4feeebe512d9a16b3a.nix;
+        revNum = 0;
+        sha256 = "7ae3e9613bcbe0b621d6da68c9e31e5a89a506bdee065f4feeebe512d9a16b3a";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.3" = {
+    sha256 = "f510904bd286ab77c4aa1f1e71a065dee9c567b4d4695a6d5aef50c940d2f6c8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/plotlyhs-0.2.3-r0-6caa312ff3eabb0e68f0d2ac6289e5084a9590142a7702764308e345b557d4b8.nix;
+        revNum = 0;
+        sha256 = "6caa312ff3eabb0e68f0d2ac6289e5084a9590142a7702764308e345b557d4b8";
+        };
+      default = "r0";
+      };
+    };
   }

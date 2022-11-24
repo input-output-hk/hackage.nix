@@ -11711,6 +11711,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ploton" = import ./nix/ploton.nix;
   "plots" = import ./nix/plots.nix;
   "plotserver-api" = import ./nix/plotserver-api.nix;
+  "plow-log" = import ./nix/plow-log.nix;
   "plucky" = import ./nix/plucky.nix;
   "plugins" = import ./nix/plugins.nix;
   "plugins-auto" = import ./nix/plugins-auto.nix;

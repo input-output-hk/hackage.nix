@@ -457,6 +457,17 @@
       default = "r0";
       };
     };
+  "2.26.0" = {
+    sha256 = "835ac8b00763ccb5caa90664fb7ca258408d9b665382da06c3f293bfee19174b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haddock-2.26.0-r0-5510c67be662328d2384177727de724f7e95146cea1fdd472bd5af7ab1c7061b.nix;
+        revNum = 0;
+        sha256 = "5510c67be662328d2384177727de724f7e95146cea1fdd472bd5af7ab1c7061b";
+        };
+      default = "r0";
+      };
+    };
   "2.27.0" = {
     sha256 = "d6d31180960b2a6f833d196cea79573c4dff5db4f6aff2ad3d7ca705d9018224";
     revisions = {

@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "0.2.4.2" = {
+    sha256 = "9f105341356e1596433a22018ad42bb41d31b6facbbaa0f592af5268429095c5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/elminator-0.2.4.2-r0-46a877d302b53e1b3088f26d08cfaa40761d2387aa8f7e36764a50fe2c9b3ca0.nix;
+        revNum = 0;
+        sha256 = "46a877d302b53e1b3088f26d08cfaa40761d2387aa8f7e36764a50fe2c9b3ca0";
+        };
+      default = "r0";
+      };
+    };
   }

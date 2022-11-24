@@ -21,6 +21,50 @@
       default = "r0";
       };
     };
+  "0.1.0.12" = {
+    sha256 = "8df3102e96fad18863cab5c6eb8c5ba578f1f07b03b020d8e3c3b5d552a23870";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/text-compression-0.1.0.12-r0-5b6724adcdb5d6c75a9291e369f2bd59c3ac726150191bfc0d75ad66b213afb3.nix;
+        revNum = 0;
+        sha256 = "5b6724adcdb5d6c75a9291e369f2bd59c3ac726150191bfc0d75ad66b213afb3";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.0.13" = {
+    sha256 = "3e7d42fa7620f32c6144a3887df347c1fe4160fbfc0fd266709277b4aabced03";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/text-compression-0.1.0.13-r0-bd3b6b740b0dd8fbf34e72e25275f1d185f4bf7016e7c5ad7d3eea763f09fea0.nix;
+        revNum = 0;
+        sha256 = "bd3b6b740b0dd8fbf34e72e25275f1d185f4bf7016e7c5ad7d3eea763f09fea0";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.0.14" = {
+    sha256 = "99a0fe9b86f193f6a9a9d38735ea25a9e644e5616d01d373dd368aaf5ed73382";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/text-compression-0.1.0.14-r0-e7005754a9f661462f333d3e5bf9169b5fa5e460139d4a7f9f43f29f864079e8.nix;
+        revNum = 0;
+        sha256 = "e7005754a9f661462f333d3e5bf9169b5fa5e460139d4a7f9f43f29f864079e8";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.0.15" = {
+    sha256 = "f6b1399530261f590691f0560ebe16f991ca6b0276a89caed0876f63211fe0cc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/text-compression-0.1.0.15-r0-d76eabcbef1e96a961a6975a77da19149d55c639d9d6e1ab58ff21b6ff1cebe0.nix;
+        revNum = 0;
+        sha256 = "d76eabcbef1e96a961a6975a77da19149d55c639d9d6e1ab58ff21b6ff1cebe0";
+        };
+      default = "r0";
+      };
+    };
   "0.1.0.3" = {
     sha256 = "64e26632791c9bb0d612583ba56ad92b303ea0360594ea6140c1bb0227416457";
     revisions = {
