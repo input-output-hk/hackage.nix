@@ -42,4 +42,15 @@
       default = "r0";
       };
     };
+  "0.1.1.1" = {
+    sha256 = "10d81032a69175a9c0c6f97358962ac8e5663b1b9a798fc96c7ec227aad7370d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lift-type-0.1.1.1-r0-f7f5e5922f202364b2392e8c1282ca203f17fcc3e7d222b474109d12017941fb.nix;
+        revNum = 0;
+        sha256 = "f7f5e5922f202364b2392e8c1282ca203f17fcc3e7d222b474109d12017941fb";
+        };
+      default = "r0";
+      };
+    };
   }

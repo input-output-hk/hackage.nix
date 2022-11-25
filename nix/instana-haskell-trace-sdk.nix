@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.9.0.0" = {
+    sha256 = "774ced30d80fbbdc12f012fca4d2a276c315697b95760e075f5830a12ed28723";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/instana-haskell-trace-sdk-0.9.0.0-r0-230f830578a4ab4ae4430ca22fcafc89c20055aba9645d7eb14d8cdbdc46ed3f.nix;
+        revNum = 0;
+        sha256 = "230f830578a4ab4ae4430ca22fcafc89c20055aba9645d7eb14d8cdbdc46ed3f";
+        };
+      default = "r0";
+      };
+    };
   }
