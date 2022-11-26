@@ -15489,6 +15489,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "type-level-integers" = import ./nix/type-level-integers.nix;
   "type-level-kv-list" = import ./nix/type-level-kv-list.nix;
   "type-level-kv-list-esqueleto" = import ./nix/type-level-kv-list-esqueleto.nix;
+  "type-level-kv-list-persistent" = import ./nix/type-level-kv-list-persistent.nix;
   "type-level-natural-number" = import ./nix/type-level-natural-number.nix;
   "type-level-natural-number-induction" = import ./nix/type-level-natural-number-induction.nix;
   "type-level-natural-number-operations" = import ./nix/type-level-natural-number-operations.nix;

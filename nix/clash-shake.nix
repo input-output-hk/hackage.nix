@@ -103,4 +103,15 @@
       default = "r0";
       };
     };
+  "0.3.2" = {
+    sha256 = "5dae81ba080f462a3257241f71d4dcc8c733ae00d9517c35873ed41e70a0f62d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/clash-shake-0.3.2-r0-e986dee89d713a2152c4fee83d4901ffd26e4c3b043bf66d84109ae4ddc43be2.nix;
+        revNum = 0;
+        sha256 = "e986dee89d713a2152c4fee83d4901ffd26e4c3b043bf66d84109ae4ddc43be2";
+        };
+      default = "r0";
+      };
+    };
   }

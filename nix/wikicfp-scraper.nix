@@ -54,6 +54,17 @@
       default = "r0";
       };
     };
+  "0.1.0.13" = {
+    sha256 = "c41c8811802468779488628c6889f7710e18f623f9aa55ca71ff8bfe11e9fa9d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wikicfp-scraper-0.1.0.13-r0-d15a6f9c87909518b05ae91471314d903a6a43fdc7e2f72ec9c1adf0eb52bd6b.nix;
+        revNum = 0;
+        sha256 = "d15a6f9c87909518b05ae91471314d903a6a43fdc7e2f72ec9c1adf0eb52bd6b";
+        };
+      default = "r0";
+      };
+    };
   "0.1.0.2" = {
     sha256 = "c466a93e68665fb57e38e2f184cc44725511cc4d2ffdbd8f61ba73d612a12fb7";
     revisions = {
