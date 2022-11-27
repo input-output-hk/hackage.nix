@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "38e743e310181f63cbb7e8747e333d4a42174e0afcaf56fde66f0d6e8631a1a0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tuple-append-0.2.0.0-r0-c94d832f1a6d0a2f8ffc9f76bbf61f86b4e7fd1ec1696a24ac9851c53094528e.nix;
+        revNum = 0;
+        sha256 = "c94d832f1a6d0a2f8ffc9f76bbf61f86b4e7fd1ec1696a24ac9851c53094528e";
+        };
+      default = "r0";
+      };
+    };
   }

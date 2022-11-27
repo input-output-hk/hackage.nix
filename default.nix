@@ -16237,6 +16237,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "webshow" = import ./nix/webshow.nix;
   "websnap" = import ./nix/websnap.nix;
   "websockets" = import ./nix/websockets.nix;
+  "websockets-json" = import ./nix/websockets-json.nix;
   "websockets-rpc" = import ./nix/websockets-rpc.nix;
   "websockets-simple" = import ./nix/websockets-simple.nix;
   "websockets-simple-extra" = import ./nix/websockets-simple-extra.nix;
