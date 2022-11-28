@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.1" = {
+    sha256 = "48f03907de4f33fb43131c4e7b93894164f8785118d87fdbe3dd1697bcadbbed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xmlbf-xeno-0.2.1-r0-52df7b865a37087f763a9f0253c525fbf48be689b37eaad4c5d6acdf8c81d33d.nix;
+        revNum = 0;
+        sha256 = "52df7b865a37087f763a9f0253c525fbf48be689b37eaad4c5d6acdf8c81d33d";
+        };
+      default = "r0";
+      };
+    };
   }

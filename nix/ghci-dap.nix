@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.0.20.0" = {
+    sha256 = "6b17f7e66d8a10f80d09e15380fd58ee800396cae3cf2cee41773b44f6a65f86";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghci-dap-0.0.20.0-r0-ef142cbb9c463ed7f8dd1cfa0b7ebd9c046ae6947399466c479fa087286d83b7.nix;
+        revNum = 0;
+        sha256 = "ef142cbb9c463ed7f8dd1cfa0b7ebd9c046ae6947399466c479fa087286d83b7";
+        };
+      default = "r0";
+      };
+    };
   }

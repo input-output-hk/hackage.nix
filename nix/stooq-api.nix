@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.4.1.0" = {
+    sha256 = "38b6b8156eb8addfa27049a7ab92fe086509b8cf8757a4186d2b65c73163534e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stooq-api-0.4.1.0-r0-d3e284eb4a5a4ce5264185d8ff2e72c7ec241dbe7fe444bb78e33af6e7ba9364.nix;
+        revNum = 0;
+        sha256 = "d3e284eb4a5a4ce5264185d8ff2e72c7ec241dbe7fe444bb78e33af6e7ba9364";
+        };
+      default = "r0";
+      };
+    };
   }

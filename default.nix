@@ -4313,6 +4313,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dhall-nixpkgs" = import ./nix/dhall-nixpkgs.nix;
   "dhall-openapi" = import ./nix/dhall-openapi.nix;
   "dhall-recursive-adt" = import ./nix/dhall-recursive-adt.nix;
+  "dhall-secret" = import ./nix/dhall-secret.nix;
   "dhall-text" = import ./nix/dhall-text.nix;
   "dhall-text-shell" = import ./nix/dhall-text-shell.nix;
   "dhall-to-cabal" = import ./nix/dhall-to-cabal.nix;

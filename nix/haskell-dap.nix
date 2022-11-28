@@ -102,6 +102,17 @@
       default = "r0";
       };
     };
+  "0.0.16.0" = {
+    sha256 = "268bd8668e391c18050f5198f7d03522c6b59e11dce6a7952e0a45c69af03224";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskell-dap-0.0.16.0-r0-5ee4fba7ce1b8220f486a5251a941e6cd739ab2330e8f25efc5af553a4e1c61d.nix;
+        revNum = 0;
+        sha256 = "5ee4fba7ce1b8220f486a5251a941e6cd739ab2330e8f25efc5af553a4e1c61d";
+        };
+      default = "r0";
+      };
+    };
   "0.0.2.0" = {
     sha256 = "9fc74fbc61fe0831be44612bea18cda6108911951d271f79f77d29a09e6fb1f3";
     revisions = {
