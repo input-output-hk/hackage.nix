@@ -75,4 +75,15 @@
       default = "r0";
       };
     };
+  "0.1.5.0" = {
+    sha256 = "e10bf998700663904b479cdf2985b174e98e9983f78537f819ce326b5c86c21b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/s-cargot-0.1.5.0-r0-32ff8a291c65d3d8b88d54909cfc20ae8586b5e60269aa862cf1569cdb65f5e1.nix;
+        revNum = 0;
+        sha256 = "32ff8a291c65d3d8b88d54909cfc20ae8586b5e60269aa862cf1569cdb65f5e1";
+        };
+      default = "r0";
+      };
+    };
   }

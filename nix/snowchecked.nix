@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.0.1.3" = {
+    sha256 = "832b518749ba252f4140453abadb129e75a2ff57334f5488e92fded99ccd861c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/snowchecked-0.0.1.3-r0-f6016ca53c0f35889b4ba90c3bde588135d6a8a5eda6ae0be0e1b68d79df0155.nix;
+        revNum = 0;
+        sha256 = "f6016ca53c0f35889b4ba90c3bde588135d6a8a5eda6ae0be0e1b68d79df0155";
+        };
+      default = "r0";
+      };
+    };
   }

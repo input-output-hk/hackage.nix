@@ -8963,6 +8963,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "keycloak-hs" = import ./nix/keycloak-hs.nix;
   "keycode" = import ./nix/keycode.nix;
   "keyed" = import ./nix/keyed.nix;
+  "keyed-vals" = import ./nix/keyed-vals.nix;
+  "keyed-vals-hspec-tests" = import ./nix/keyed-vals-hspec-tests.nix;
+  "keyed-vals-mem" = import ./nix/keyed-vals-mem.nix;
+  "keyed-vals-redis" = import ./nix/keyed-vals-redis.nix;
   "keylayouts" = import ./nix/keylayouts.nix;
   "keyring" = import ./nix/keyring.nix;
   "keys" = import ./nix/keys.nix;
@@ -11713,6 +11717,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "plots" = import ./nix/plots.nix;
   "plotserver-api" = import ./nix/plotserver-api.nix;
   "plow-log" = import ./nix/plow-log.nix;
+  "plow-log-async" = import ./nix/plow-log-async.nix;
   "plucky" = import ./nix/plucky.nix;
   "plugins" = import ./nix/plugins.nix;
   "plugins-auto" = import ./nix/plugins-auto.nix;
@@ -13484,6 +13489,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-swagger-ui-redoc" = import ./nix/servant-swagger-ui-redoc.nix;
   "servant-to-elm" = import ./nix/servant-to-elm.nix;
   "servant-tracing" = import ./nix/servant-tracing.nix;
+  "servant-typed-error" = import ./nix/servant-typed-error.nix;
   "servant-typescript" = import ./nix/servant-typescript.nix;
   "servant-util" = import ./nix/servant-util.nix;
   "servant-util-beam-pg" = import ./nix/servant-util-beam-pg.nix;
