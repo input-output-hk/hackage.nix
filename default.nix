@@ -3184,6 +3184,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cipher-rc5" = import ./nix/cipher-rc5.nix;
   "ciphersaber2" = import ./nix/ciphersaber2.nix;
   "circ" = import ./nix/circ.nix;
+  "circle" = import ./nix/circle.nix;
   "circle-packing" = import ./nix/circle-packing.nix;
   "circlehs" = import ./nix/circlehs.nix;
   "circuit-breaker" = import ./nix/circuit-breaker.nix;
@@ -8472,6 +8473,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "infer-license" = import ./nix/infer-license.nix;
   "infer-upstream" = import ./nix/infer-upstream.nix;
   "infernal" = import ./nix/infernal.nix;
+  "inferno-core" = import ./nix/inferno-core.nix;
+  "inferno-lsp" = import ./nix/inferno-lsp.nix;
+  "inferno-types" = import ./nix/inferno-types.nix;
+  "inferno-vc" = import ./nix/inferno-vc.nix;
   "infernu" = import ./nix/infernu.nix;
   "infinite-search" = import ./nix/infinite-search.nix;
   "infinity" = import ./nix/infinity.nix;
@@ -8526,6 +8531,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "integer-pure" = import ./nix/integer-pure.nix;
   "integer-roots" = import ./nix/integer-roots.nix;
   "integer-simple" = import ./nix/integer-simple.nix;
+  "integer-types" = import ./nix/integer-types.nix;
   "integration" = import ./nix/integration.nix;
   "integreat" = import ./nix/integreat.nix;
   "intel-aes" = import ./nix/intel-aes.nix;

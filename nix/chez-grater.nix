@@ -80,4 +80,15 @@
       default = "r0";
       };
     };
+  "0.1.2" = {
+    sha256 = "c755f0d4214c119f49ccb27cf719e2e76b85737706f12c6ef04ab7039f760445";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chez-grater-0.1.2-r0-02f188e81ca451218f848bfe6ec0e9ff93eb039cdf3452a908c45271b1af2a24.nix;
+        revNum = 0;
+        sha256 = "02f188e81ca451218f848bfe6ec0e9ff93eb039cdf3452a908c45271b1af2a24";
+        };
+      default = "r0";
+      };
+    };
   }

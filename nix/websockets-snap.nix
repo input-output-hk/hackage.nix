@@ -117,7 +117,12 @@
         revNum = 0;
         sha256 = "89582b7db916e67b6c8192f489e4eafe7488d9f813e349836a2e74fa4388623d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/websockets-snap-0.10.3.1-r1-1e52d1b67eaa54e4c5e66e84fc22e9a2ca41bf9930ea2c94b8ec11e4080d3f23.nix;
+        revNum = 1;
+        sha256 = "1e52d1b67eaa54e4c5e66e84fc22e9a2ca41bf9930ea2c94b8ec11e4080d3f23";
+        };
+      default = "r1";
       };
     };
   "0.5.0.0" = {
