@@ -111,7 +111,12 @@
         revNum = 0;
         sha256 = "cd31d48c15b5d57e3d61e7c49f1c59cd90c4866b87afd42b9a80dfe87d069e1f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lambdabot-irc-plugins-5.3.1-r1-b212de114fcd7d294db789b730f69795ba2a5c5f574f1f8fe713af259405a4fd.nix;
+        revNum = 1;
+        sha256 = "b212de114fcd7d294db789b730f69795ba2a5c5f574f1f8fe713af259405a4fd";
+        };
+      default = "r1";
       };
     };
   }

@@ -105,7 +105,12 @@
         revNum = 0;
         sha256 = "b2e873e477cc66faf49a875a311b892a321c4bd605dd62d1bd41f476678d429d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lambdabot-social-plugins-5.3.1-r1-f77bee04d2389586bbb593f4cdffaad9a5674325ee786f569d3f3113df54b173.nix;
+        revNum = 1;
+        sha256 = "f77bee04d2389586bbb593f4cdffaad9a5674325ee786f569d3f3113df54b173";
+        };
+      default = "r1";
       };
     };
   }

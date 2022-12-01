@@ -263,4 +263,15 @@
       default = "r0";
       };
     };
+  "0.8.2.0" = {
+    sha256 = "83ca12391dbf57be691f81b39c06dba9b22ecc4675297a246c5e63a425d39e4d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/composite-ekg-0.8.2.0-r0-f6d15101e68bcd2cd7d3161f51aaa61046c99df84d86f8b58689799cce12c4d5.nix;
+        revNum = 0;
+        sha256 = "f6d15101e68bcd2cd7d3161f51aaa61046c99df84d86f8b58689799cce12c4d5";
+        };
+      default = "r0";
+      };
+    };
   }

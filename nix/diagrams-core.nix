@@ -492,7 +492,12 @@
         revNum = 0;
         sha256 = "1ae7c35c61da6acc4f0cba6ac9457da9b507ae95456512e76a7cc109003cb0c0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/diagrams-core-1.5.0.1-r1-d5e7b6c7d164bbb8bca0e9818fae23041de865498fe05bd925d97700b65f50bd.nix;
+        revNum = 1;
+        sha256 = "d5e7b6c7d164bbb8bca0e9818fae23041de865498fe05bd925d97700b65f50bd";
+        };
+      default = "r1";
       };
     };
   }

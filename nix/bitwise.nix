@@ -113,7 +113,12 @@
         revNum = 5;
         sha256 = "04c0e0c65a9228d9e004b5c4b08633b2f0e915afe8f3affc9bd16f75f92ccf61";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/bitwise-1.0.0.1-r6-6ee22ada4e0b605fa433bec6a340703033e3cfe15edcf8f9feef7d446be49a54.nix;
+        revNum = 6;
+        sha256 = "6ee22ada4e0b605fa433bec6a340703033e3cfe15edcf8f9feef7d446be49a54";
+        };
+      default = "r6";
       };
     };
   }
