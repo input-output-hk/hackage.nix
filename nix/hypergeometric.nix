@@ -32,4 +32,26 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "ccf327b068131ee91ec942d9a87c82e6575074e25397d35951b246d6e0441972";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hypergeometric-0.1.3.0-r0-e0e2eb9d46a6f18d2b21586fd57e4faf640bba324dd0a00203ec613c418bd2c7.nix;
+        revNum = 0;
+        sha256 = "e0e2eb9d46a6f18d2b21586fd57e4faf640bba324dd0a00203ec613c418bd2c7";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.4.0" = {
+    sha256 = "39311f189bc4c83a92a082505f49f9cf299b37677c7965da7ff5e18768457294";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hypergeometric-0.1.4.0-r0-8170a9d44cb34131357ff79e3ac903b2559367dbb07f53f0e00f5139f33a747b.nix;
+        revNum = 0;
+        sha256 = "8170a9d44cb34131357ff79e3ac903b2559367dbb07f53f0e00f5139f33a747b";
+        };
+      default = "r0";
+      };
+    };
   }

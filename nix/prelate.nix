@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "908f7fb7dfaba023311bad4898cf44c68f9b81fe224d28e1bcaf9659c098198f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prelate-0.3.0.0-r0-812ca0699d83c8b1834fa506da7dcad56bd0a4fac372b191888bffcb0baf010f.nix;
+        revNum = 0;
+        sha256 = "812ca0699d83c8b1834fa506da7dcad56bd0a4fac372b191888bffcb0baf010f";
+        };
+      default = "r0";
+      };
+    };
   }

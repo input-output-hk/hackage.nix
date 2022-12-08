@@ -298,4 +298,15 @@
       default = "r0";
       };
     };
+  "0.2.20221129.0" = {
+    sha256 = "8c3d75dbbd337ae5c18c4b59a58529c222417ecf365ac5b66f8fa57af3cd94b9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tzdata-0.2.20221129.0-r0-37f1a359ea7abcb158559e458fd707b5f4f9d49852ef9fd79199eb95d3a5ad7f.nix;
+        revNum = 0;
+        sha256 = "37f1a359ea7abcb158559e458fd707b5f4f9d49852ef9fd79199eb95d3a5ad7f";
+        };
+      default = "r0";
+      };
+    };
   }

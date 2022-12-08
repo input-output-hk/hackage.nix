@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "f7e234a3b8809219d45cf5613de2a1153484c27aaed6d65560de06976ca0d79f";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/RabbitMQ-0.1.0.0-r2-d4c848a50f92fe7e4d5aea9a67c92601dff59a5d82886c37c8e22933147cd7d4.nix;
+        revNum = 2;
+        sha256 = "d4c848a50f92fe7e4d5aea9a67c92601dff59a5d82886c37c8e22933147cd7d4";
+        };
+      default = "r2";
       };
     };
   }

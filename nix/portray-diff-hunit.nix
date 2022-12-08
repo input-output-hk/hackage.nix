@@ -22,7 +22,17 @@
         revNum = 3;
         sha256 = "b88be51e57a76d70c21a721bf10fd6726d87edd936ce2957cce5c6092263c517";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/portray-diff-hunit-0.1.0.0-r4-a101d2d8055341ebd5cadaa9e6df7624737113cb4d707cf2083b65158f404d70.nix;
+        revNum = 4;
+        sha256 = "a101d2d8055341ebd5cadaa9e6df7624737113cb4d707cf2083b65158f404d70";
+        };
+      r5 = {
+        nix = import ../hackage/portray-diff-hunit-0.1.0.0-r5-ea5e3167602e142dd34fd56252aae02d50fe0eeb4f2e92cc8265d9acbb93e97b.nix;
+        revNum = 5;
+        sha256 = "ea5e3167602e142dd34fd56252aae02d50fe0eeb4f2e92cc8265d9acbb93e97b";
+        };
+      default = "r5";
       };
     };
   }

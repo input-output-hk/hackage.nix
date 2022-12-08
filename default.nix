@@ -4339,6 +4339,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "diagrams-canvas" = import ./nix/diagrams-canvas.nix;
   "diagrams-contrib" = import ./nix/diagrams-contrib.nix;
   "diagrams-core" = import ./nix/diagrams-core.nix;
+  "diagrams-gi-cairo" = import ./nix/diagrams-gi-cairo.nix;
   "diagrams-graphviz" = import ./nix/diagrams-graphviz.nix;
   "diagrams-gtk" = import ./nix/diagrams-gtk.nix;
   "diagrams-haddock" = import ./nix/diagrams-haddock.nix;
@@ -7578,6 +7579,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hmp3-ng" = import ./nix/hmp3-ng.nix;
   "hmpfr" = import ./nix/hmpfr.nix;
   "hmt" = import ./nix/hmt.nix;
+  "hmt-base" = import ./nix/hmt-base.nix;
   "hmt-diagrams" = import ./nix/hmt-diagrams.nix;
   "hmumps" = import ./nix/hmumps.nix;
   "hnetcdf" = import ./nix/hnetcdf.nix;
@@ -8277,6 +8279,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hyakko" = import ./nix/hyakko.nix;
   "hybrid" = import ./nix/hybrid.nix;
   "hybrid-vectors" = import ./nix/hybrid-vectors.nix;
+  "hydra" = import ./nix/hydra.nix;
   "hydra-hs" = import ./nix/hydra-hs.nix;
   "hydra-print" = import ./nix/hydra-print.nix;
   "hydrogen" = import ./nix/hydrogen.nix;

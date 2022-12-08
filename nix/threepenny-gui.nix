@@ -468,4 +468,15 @@
       default = "r7";
       };
     };
+  "0.9.2.0" = {
+    sha256 = "d361583a5c4590788bfd571962de82f01f57509e33d6ce7a243e210eedd6d112";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/threepenny-gui-0.9.2.0-r0-c961b3e15b96a120dc9e808edd08573895214ced16317314c216ac3956c6b914.nix;
+        revNum = 0;
+        sha256 = "c961b3e15b96a120dc9e808edd08573895214ced16317314c216ac3956c6b914";
+        };
+      default = "r0";
+      };
+    };
   }

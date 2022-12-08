@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.4.0" = {
+    sha256 = "47b5a1d5e65708fd7710f87a77594d53169e8a73d696ea6170c7c6e83a4eb6e3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/horizon-spec-0.4.0-r0-a21beddf0039d986f62184a4960437238943446254b7c580d3b7b57bb5725b00.nix;
+        revNum = 0;
+        sha256 = "a21beddf0039d986f62184a4960437238943446254b7c580d3b7b57bb5725b00";
+        };
+      default = "r0";
+      };
+    };
   }
