@@ -18,8 +18,8 @@ jobs:
             substituters = https://cache.iog.io https://cache.zw3rk.com https://cache.nixos.org/
       - name: "Update hackage.nix and stackage.nix"
         run: |
-          nix run github:input-output-hk/haskell.nix#haskell-nix.cabal-install.ghc925 -- v2-update
-          nix run github:input-output-hk/haskell.nix#haskell-nix.nix-tools.ghc925.project.hsPkgs.nix-tools.components.exes.hackage-to-nix
+          nix run github:input-output-hk/haskell.nix#haskell-nix.cabal-install.ghc8107 -- v2-update
+          nix run github:input-output-hk/haskell.nix#haskell-nix.nix-tools.ghc8107.project.hsPkgs.nix-tools.components.exes.hackage-to-nix
       - name: Commit and push changes
         run: |
           git config --local user.email "devops+nix-tools@iohk.io"
