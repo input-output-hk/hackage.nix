@@ -362,4 +362,15 @@
       default = "r1";
       };
     };
+  "0.6.2" = {
+    sha256 = "711a995f027fd47823e8c5e6719eefe867f8c49e5d62ec58b7ecab2c475477a2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/deriving-compat-0.6.2-r0-d36924a93ed9c53753a7b9d4b89c04375d649bb0b81742c2547da38067816d7b.nix;
+        revNum = 0;
+        sha256 = "d36924a93ed9c53753a7b9d4b89c04375d649bb0b81742c2547da38067816d7b";
+        };
+      default = "r0";
+      };
+    };
   }

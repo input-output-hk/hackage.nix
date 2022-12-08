@@ -22,7 +22,12 @@
         revNum = 3;
         sha256 = "cc29b5a404ab392cd5c2ebf015146f87c96a18c076f619b331739289e869d430";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/portray-diff-quickcheck-0.1.0.0-r4-197346bf16f3cdb509c2d6c30f0149ab07aa94c679ae747213125eb4e3c6c6cb.nix;
+        revNum = 4;
+        sha256 = "197346bf16f3cdb509c2d6c30f0149ab07aa94c679ae747213125eb4e3c6c6cb";
+        };
+      default = "r4";
       };
     };
   }

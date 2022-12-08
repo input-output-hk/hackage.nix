@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "1.1.0.1" = {
+    sha256 = "6878ad59f7f615d7516f31fc3bdbece3951fa6188b05fde10faf50db9694f50a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hypergeomatrix-1.1.0.1-r0-42026e956eab49036b7e176ff50de3a8512a196749896fb466fdc2d50ce79295.nix;
+        revNum = 0;
+        sha256 = "42026e956eab49036b7e176ff50de3a8512a196749896fb466fdc2d50ce79295";
+        };
+      default = "r0";
+      };
+    };
   }

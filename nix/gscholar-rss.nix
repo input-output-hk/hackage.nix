@@ -109,4 +109,26 @@
       default = "r0";
       };
     };
+  "0.3.0.1" = {
+    sha256 = "bb4578615eff7c7c60dabb5f909772a608dd499c0822be65a89feee50b2073ae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gscholar-rss-0.3.0.1-r0-4fce19b050211d9e7f71522d75a8dbfa5dcd25f57d9b81fe86ccf5aec2ab8efe.nix;
+        revNum = 0;
+        sha256 = "4fce19b050211d9e7f71522d75a8dbfa5dcd25f57d9b81fe86ccf5aec2ab8efe";
+        };
+      default = "r0";
+      };
+    };
+  "0.3.0.2" = {
+    sha256 = "39e3d550f9d6b5cf4ffbb44e41727dbc41550df732fd532bcd4ec69563b1b35b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gscholar-rss-0.3.0.2-r0-1009ac9f9f1621df396b4e18057d8f388cf357dcfffa985ae1d2b3fcd0668afb.nix;
+        revNum = 0;
+        sha256 = "1009ac9f9f1621df396b4e18057d8f388cf357dcfffa985ae1d2b3fcd0668afb";
+        };
+      default = "r0";
+      };
+    };
   }

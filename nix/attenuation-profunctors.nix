@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "7a7bbdd4921197ccad3520317fe8cb1dc26a6f296beb83c4c98c9a1cf87171f8";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/attenuation-profunctors-0.1.0-r2-c61be772dde1294065ca9e0edb68bd9525641600e8ebb0b119191dc2c6db8aef.nix;
+        revNum = 2;
+        sha256 = "c61be772dde1294065ca9e0edb68bd9525641600e8ebb0b119191dc2c6db8aef";
+        };
+      default = "r2";
       };
     };
   }

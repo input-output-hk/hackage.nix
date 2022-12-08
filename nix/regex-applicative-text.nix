@@ -53,7 +53,12 @@
         revNum = 6;
         sha256 = "b0082f1fd39516b741e4f39dc28a163f9fb8cad787dda3f792eb3f821a6a4299";
         };
-      default = "r6";
+      r7 = {
+        nix = import ../hackage/regex-applicative-text-0.1.0.1-r7-0845f438f7acc751270f15304b1e76914335d3f3aa13cb7c8c6f2986372c936c.nix;
+        revNum = 7;
+        sha256 = "0845f438f7acc751270f15304b1e76914335d3f3aa13cb7c8c6f2986372c936c";
+        };
+      default = "r7";
       };
     };
   }

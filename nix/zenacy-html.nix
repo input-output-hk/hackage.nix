@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "2.0.7" = {
+    sha256 = "70f2308ae797d0500d45576995d4c817a00eb620d3b1e27233d0d627b182c890";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zenacy-html-2.0.7-r0-7cc5faae67972b805d2998cba8892d45b6c4c24ed26ef225f85a525ed193c3ac.nix;
+        revNum = 0;
+        sha256 = "7cc5faae67972b805d2998cba8892d45b6c4c24ed26ef225f85a525ed193c3ac";
+        };
+      default = "r0";
+      };
+    };
   }

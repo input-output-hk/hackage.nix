@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "1.0.0.1" = {
+    sha256 = "b7ed2e5393b1cefaa939e4c232a95c08948bade3ceaa5693b1a2a4c1c4000513";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/scubature-1.0.0.1-r0-372445ed513bd6ef228a957a354255ee67cb5c48b17054c41b7a8c7b58005a2c.nix;
+        revNum = 0;
+        sha256 = "372445ed513bd6ef228a957a354255ee67cb5c48b17054c41b7a8c7b58005a2c";
+        };
+      default = "r0";
+      };
+    };
   }

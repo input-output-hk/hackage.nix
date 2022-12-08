@@ -169,4 +169,15 @@
       default = "r1";
       };
     };
+  "0.7.2.1" = {
+    sha256 = "899deb0300505e6798a7e370e24b127337237b1319ac2408f09c2d3b96378e0d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jack-0.7.2.1-r0-0afb119579e101adf8039d3060a0a0a7dfeab8b76ffe66395a4d1076db6b89f9.nix;
+        revNum = 0;
+        sha256 = "0afb119579e101adf8039d3060a0a0a7dfeab8b76ffe66395a4d1076db6b89f9";
+        };
+      default = "r0";
+      };
+    };
   }

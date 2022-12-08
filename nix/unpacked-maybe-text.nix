@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "a52868df49e5a238b9c40705c5efd14ef4187a9dd0bb16189ebbbdc3d04539cf";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/unpacked-maybe-text-0.1.0.0-r1-3c93aeaca0038b96f3981c468400afbb77922c4e181d0fe69f5b773f8460443c.nix;
+        revNum = 1;
+        sha256 = "3c93aeaca0038b96f3981c468400afbb77922c4e181d0fe69f5b773f8460443c";
+        };
+      default = "r1";
       };
     };
   }

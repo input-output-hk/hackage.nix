@@ -344,4 +344,15 @@
       default = "r2";
       };
     };
+  "0.4.1.3" = {
+    sha256 = "cc71849af6785fea182b1e74ccfd3273a8be59cf2558fd3192e0aa94eab7e832";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hw-balancedparens-0.4.1.3-r0-16fa2049f82650feba97f1f8e26342f27512dbd860414edd11d7e9045607d9ec.nix;
+        revNum = 0;
+        sha256 = "16fa2049f82650feba97f1f8e26342f27512dbd860414edd11d7e9045607d9ec";
+        };
+      default = "r0";
+      };
+    };
   }

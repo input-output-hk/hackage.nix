@@ -290,4 +290,15 @@
       default = "r0";
       };
     };
+  "1.8.0.1" = {
+    sha256 = "e5332be126f951eb6d8c70d1e853a9595f4bfb45383ba8cd01cddd3525472cba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ansi-terminal-game-1.8.0.1-r0-3c75a8c2753edc240320febe244435199126367b59279473f76dfd80f9fb9e8c.nix;
+        revNum = 0;
+        sha256 = "3c75a8c2753edc240320febe244435199126367b59279473f76dfd80f9fb9e8c";
+        };
+      default = "r0";
+      };
+    };
   }

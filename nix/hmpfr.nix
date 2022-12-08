@@ -252,4 +252,15 @@
       default = "r0";
       };
     };
+  "0.4.5" = {
+    sha256 = "b40afb2e633ef596ceff570991327e15fd37873069a6dac6548611c694725ed4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hmpfr-0.4.5-r0-7df683df63a2893f1f3033edf0d9f389e49cac0322e7cc721aa3e5d54e4523bc.nix;
+        revNum = 0;
+        sha256 = "7df683df63a2893f1f3033edf0d9f389e49cac0322e7cc721aa3e5d54e4523bc";
+        };
+      default = "r0";
+      };
+    };
   }
