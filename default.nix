@@ -4806,6 +4806,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ekg-rrd" = import ./nix/ekg-rrd.nix;
   "ekg-statsd" = import ./nix/ekg-statsd.nix;
   "ekg-wai" = import ./nix/ekg-wai.nix;
+  "elasticsearch-interchange" = import ./nix/elasticsearch-interchange.nix;
   "elbow" = import ./nix/elbow.nix;
   "electrs-client" = import ./nix/electrs-client.nix;
   "electrum-mnemonic" = import ./nix/electrum-mnemonic.nix;

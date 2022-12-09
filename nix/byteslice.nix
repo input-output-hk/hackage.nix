@@ -235,4 +235,15 @@
       default = "r1";
       };
     };
+  "0.2.9.0" = {
+    sha256 = "beecde086ad077473e71421839dabebce5260cb067222f4915943b6f19be1467";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/byteslice-0.2.9.0-r0-b9d781040018345533a07d9f7768a648fa190d5b2a3ea6135446e5680f6d8b29.nix;
+        revNum = 0;
+        sha256 = "b9d781040018345533a07d9f7768a648fa190d5b2a3ea6135446e5680f6d8b29";
+        };
+      default = "r0";
+      };
+    };
   }
