@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "0ad761893dd9a172c067e6726aa43385116738ec865285b3c183e4f4d0cf0bef";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vessel-0.3.0.0-r0-2b35d43d01343ffcbebacd6a10ac06e7f693a49339237b1bbe0aefbe39acc490.nix;
+        revNum = 0;
+        sha256 = "2b35d43d01343ffcbebacd6a10ac06e7f693a49339237b1bbe0aefbe39acc490";
+        };
+      default = "r0";
+      };
+    };
   }
