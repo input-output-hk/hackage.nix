@@ -1428,6 +1428,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "adblock2privoxy" = import ./nix/adblock2privoxy.nix;
   "addLicenseInfo" = import ./nix/add_License_Info.nix;
   "addy" = import ./nix/addy.nix;
+  "adhoc-fixtures" = import ./nix/adhoc-fixtures.nix;
+  "adhoc-fixtures-hspec" = import ./nix/adhoc-fixtures-hspec.nix;
   "adhoc-network" = import ./nix/adhoc-network.nix;
   "adict" = import ./nix/adict.nix;
   "adjunction" = import ./nix/adjunction.nix;
@@ -4373,6 +4375,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "diet" = import ./nix/diet.nix;
   "diff" = import ./nix/diff.nix;
   "diff-gestalt" = import ./nix/diff-gestalt.nix;
+  "diff-loc" = import ./nix/diff-loc.nix;
   "diff-parse" = import ./nix/diff-parse.nix;
   "diff3" = import ./nix/diff3.nix;
   "diffarray" = import ./nix/diffarray.nix;
@@ -12152,6 +12155,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "promises" = import ./nix/promises.nix;
   "prompt" = import ./nix/prompt.nix;
   "pronounce" = import ./nix/pronounce.nix;
+  "proof-assistant-bot" = import ./nix/proof-assistant-bot.nix;
   "proof-combinators" = import ./nix/proof-combinators.nix;
   "prop-unit" = import ./nix/prop-unit.nix;
   "propane" = import ./nix/propane.nix;
