@@ -157,4 +157,15 @@
       default = "r0";
       };
     };
+  "0.3.0.6" = {
+    sha256 = "14799ba3aa23d1bcb14aacdbe3503b3b0eb369f6c05c79a872afc15fc96b9228";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/doctest-driver-gen-0.3.0.6-r0-4d866d540a5ad0017c712e2d997144734fd9173e51768a1831b2be2e3f382b1d.nix;
+        revNum = 0;
+        sha256 = "4d866d540a5ad0017c712e2d997144734fd9173e51768a1831b2be2e3f382b1d";
+        };
+      default = "r0";
+      };
+    };
   }

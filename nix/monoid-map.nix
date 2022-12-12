@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "542847f21a597d6111981ca8a2243048c3b285deca77a5ef986d3a0fe829bf56";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monoid-map-0.2.0.0-r0-9e4428ba939ae1f154c83f975937165fae4dc62fe351fe02897274d37ccaf0be.nix;
+        revNum = 0;
+        sha256 = "9e4428ba939ae1f154c83f975937165fae4dc62fe351fe02897274d37ccaf0be";
+        };
+      default = "r0";
+      };
+    };
   }

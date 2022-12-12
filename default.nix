@@ -8000,6 +8000,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hspecVariant" = import ./nix/hspec_Variant.nix;
   "hspkcs11" = import ./nix/hspkcs11.nix;
   "hspr-sh" = import ./nix/hspr-sh.nix;
+  "hspray" = import ./nix/hspray.nix;
   "hspread" = import ./nix/hspread.nix;
   "hspresent" = import ./nix/hspresent.nix;
   "hspretty" = import ./nix/hspretty.nix;

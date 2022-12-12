@@ -479,4 +479,26 @@
       default = "r0";
       };
     };
+  "0.9.3.0" = {
+    sha256 = "5c6cfeab42cd08808a022543af306dc301c352f3cf105d953d6108ca7510ab15";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/threepenny-gui-0.9.3.0-r0-a3451d6f4db0080733c820cf4223dd7c08d7458d60b5a9e36475b82d42832207.nix;
+        revNum = 0;
+        sha256 = "a3451d6f4db0080733c820cf4223dd7c08d7458d60b5a9e36475b82d42832207";
+        };
+      default = "r0";
+      };
+    };
+  "0.9.4.0" = {
+    sha256 = "8eb00d4d2dc7a609591bd5bf65cedf1328100f329675c0220063997b03505822";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/threepenny-gui-0.9.4.0-r0-ad4b4cb57238d097e8b53054d61615bf9c25ab54ad156135db721f795350ba26.nix;
+        revNum = 0;
+        sha256 = "ad4b4cb57238d097e8b53054d61615bf9c25ab54ad156135db721f795350ba26";
+        };
+      default = "r0";
+      };
+    };
   }

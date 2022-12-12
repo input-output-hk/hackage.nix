@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "8cda4e023561c8ecb181e8566bff240fff073e10ec10ca754c089f1860afd816";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mpolynomials-0.1.1.0-r0-d3f4ef5ab76568d0954c500eeabceab138dd024690b66adbf98f1d1e7d4d21bb.nix;
+        revNum = 0;
+        sha256 = "d3f4ef5ab76568d0954c500eeabceab138dd024690b66adbf98f1d1e7d4d21bb";
+        };
+      default = "r0";
+      };
+    };
   }
