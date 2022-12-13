@@ -32,6 +32,17 @@
       default = "r0";
       };
     };
+  "0.2.11" = {
+    sha256 = "2e596fcf3dd2fde6b3c3135e5d2c8e06269a2153293a4e4071e43b88325c8a1f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/update-nix-fetchgit-0.2.11-r0-5ea11ca79bdbe598f9f67a40c98d16548196f15eb40246c374757a82867425c4.nix;
+        revNum = 0;
+        sha256 = "5ea11ca79bdbe598f9f67a40c98d16548196f15eb40246c374757a82867425c4";
+        };
+      default = "r0";
+      };
+    };
   "0.2.2" = {
     sha256 = "83165d246b5fea8d8b6b710ad85717cf439a732681be7d949bd534299aa79035";
     revisions = {
