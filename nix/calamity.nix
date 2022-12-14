@@ -928,4 +928,15 @@
       default = "r0";
       };
     };
+  "0.7.1.0" = {
+    sha256 = "eee0410df300c7a4ca0bee72dfeb943238e767bed5a5cb7abba98d13dbd85f9e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/calamity-0.7.1.0-r0-bcdb04c2a5a2eaac6c3f9d8a27878cd9702c1376ab24ac7073250a6a3ca78b6c.nix;
+        revNum = 0;
+        sha256 = "bcdb04c2a5a2eaac6c3f9d8a27878cd9702c1376ab24ac7073250a6a3ca78b6c";
+        };
+      default = "r0";
+      };
+    };
   }

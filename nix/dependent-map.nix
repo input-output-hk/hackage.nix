@@ -169,7 +169,12 @@
         revNum = 0;
         sha256 = "ca2b131046f4340a1c35d138c5a003fe4a5be96b14efc26291ed35fd08c62221";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dependent-map-0.4.0.0-r1-428be65dbb33ff63ea144b5f8b9f234dc0b0ab519d4f1b81b13a74ba334b1798.nix;
+        revNum = 1;
+        sha256 = "428be65dbb33ff63ea144b5f8b9f234dc0b0ab519d4f1b81b13a74ba334b1798";
+        };
+      default = "r1";
       };
     };
   }
