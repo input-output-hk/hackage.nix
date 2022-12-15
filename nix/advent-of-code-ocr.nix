@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.2.1" = {
+    sha256 = "a84a6711b7e4ce3dc5ee36a7441d520d9853b1438d984a977603c131c39ea836";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/advent-of-code-ocr-0.1.2.1-r0-07d9e29e28a6da49f23733e40980a0aaf33590832fccdb164a3feaef5053f70f.nix;
+        revNum = 0;
+        sha256 = "07d9e29e28a6da49f23733e40980a0aaf33590832fccdb164a3feaef5053f70f";
+        };
+      default = "r0";
+      };
+    };
   }
