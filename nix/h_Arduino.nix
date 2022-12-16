@@ -120,4 +120,20 @@
       default = "r0";
       };
     };
+  "1.2" = {
+    sha256 = "90e3f7d43cd6614f1cb75702fdb9d7b24987a07766bd9cb101dfe4abcb351398";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hArduino-1.2-r0-7c18934d56b3815a6eacdd47b4aa59bbd8b739d81b5692113f7741f12a40b5d2.nix;
+        revNum = 0;
+        sha256 = "7c18934d56b3815a6eacdd47b4aa59bbd8b739d81b5692113f7741f12a40b5d2";
+        };
+      r1 = {
+        nix = import ../hackage/hArduino-1.2-r1-b5e3bc508469b869cb0a8c4a75fbd5b1acba972eda8ad68b4c584fc844ce5d1a.nix;
+        revNum = 1;
+        sha256 = "b5e3bc508469b869cb0a8c4a75fbd5b1acba972eda8ad68b4c584fc844ce5d1a";
+        };
+      default = "r1";
+      };
+    };
   }

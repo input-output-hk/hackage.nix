@@ -5762,6 +5762,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gender" = import ./nix/gender.nix;
   "genders" = import ./nix/genders.nix;
   "gendocs" = import ./nix/gendocs.nix;
+  "general-allocate" = import ./nix/general-allocate.nix;
   "general-games" = import ./nix/general-games.nix;
   "general-prelude" = import ./nix/general-prelude.nix;
   "generator" = import ./nix/generator.nix;
