@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.2.0.3" = {
+    sha256 = "e9776f6932e6b203d128b044bc18e7de8c8a6027c4be15655648b1fc1ed596c6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/todo-0.2.0.3-r0-87db5ccfc8294a44190398ad760c277cb7a3d666f7be34b407f879eba14eb803.nix;
+        revNum = 0;
+        sha256 = "87db5ccfc8294a44190398ad760c277cb7a3d666f7be34b407f879eba14eb803";
+        };
+      default = "r0";
+      };
+    };
   }

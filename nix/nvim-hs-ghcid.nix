@@ -40,6 +40,22 @@
         revNum = 0;
         sha256 = "2e270fe93981a500e050ca552012ca08ac6976ef2f835079fda20f6f8308e32b";
         };
+      r1 = {
+        nix = import ../hackage/nvim-hs-ghcid-2.0.0.0-r1-99408a43e94218e4e4e13f1e288649397300ffa5b08d3b7fc0373779caa64659.nix;
+        revNum = 1;
+        sha256 = "99408a43e94218e4e4e13f1e288649397300ffa5b08d3b7fc0373779caa64659";
+        };
+      default = "r1";
+      };
+    };
+  "2.0.1.0" = {
+    sha256 = "31c4f2b7553efc1e4049232f7e28048414b4c8e9ea545cc0f0fd77d38b84a16f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nvim-hs-ghcid-2.0.1.0-r0-ceeefcd257d2491ee61786a39dda2cd59d1c9757e43c16546a4354e2bef5c4c0.nix;
+        revNum = 0;
+        sha256 = "ceeefcd257d2491ee61786a39dda2cd59d1c9757e43c16546a4354e2bef5c4c0";
+        };
       default = "r0";
       };
     };

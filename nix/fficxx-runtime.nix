@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.7.0.0" = {
+    sha256 = "73fe4d9d87ba7581e1e63dbfcdc39ce5afb03f51581567f1d483b6baa684ecc5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fficxx-runtime-0.7.0.0-r0-f1acd0de4f8a8b56d14b31ced57eae1dad913a7e5dd581da5e5194724ee76749.nix;
+        revNum = 0;
+        sha256 = "f1acd0de4f8a8b56d14b31ced57eae1dad913a7e5dd581da5e5194724ee76749";
+        };
+      default = "r0";
+      };
+    };
   }

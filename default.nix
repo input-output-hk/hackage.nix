@@ -13889,6 +13889,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "smt-lib" = import ./nix/smt-lib.nix;
   "smt2-parser" = import ./nix/smt2-parser.nix;
   "smtLib" = import ./nix/smt_Lib.nix;
+  "smtlib-backends" = import ./nix/smtlib-backends.nix;
+  "smtlib-backends-process" = import ./nix/smtlib-backends-process.nix;
+  "smtlib-backends-tests" = import ./nix/smtlib-backends-tests.nix;
+  "smtlib-backends-z3" = import ./nix/smtlib-backends-z3.nix;
   "smtlib2" = import ./nix/smtlib2.nix;
   "smtlib2-debug" = import ./nix/smtlib2-debug.nix;
   "smtlib2-pipe" = import ./nix/smtlib2-pipe.nix;
