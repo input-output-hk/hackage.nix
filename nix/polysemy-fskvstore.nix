@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "37fb4c5f47273ee1569bbdddc8378c38a1548632d6887cfb0c40e53a4b91b498";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polysemy-fskvstore-0.1.2.0-r0-87fb393a61549802b20df7daff8651bb6f5a1c7f300288324b9c1e871ea125d1.nix;
+        revNum = 0;
+        sha256 = "87fb393a61549802b20df7daff8651bb6f5a1c7f300288324b9c1e871ea125d1";
+        };
+      default = "r0";
+      };
+    };
   }

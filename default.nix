@@ -14267,6 +14267,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "stc-lang" = import ./nix/stc-lang.nix;
   "std" = import ./nix/std.nix;
   "stdata" = import ./nix/stdata.nix;
+  "stdcxx" = import ./nix/stdcxx.nix;
   "stdf" = import ./nix/stdf.nix;
   "stdio" = import ./nix/stdio.nix;
   "steambrowser" = import ./nix/steambrowser.nix;
