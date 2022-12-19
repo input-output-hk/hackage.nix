@@ -13823,6 +13823,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "skylighting-extensions" = import ./nix/skylighting-extensions.nix;
   "skylighting-format-ansi" = import ./nix/skylighting-format-ansi.nix;
   "skylighting-format-blaze-html" = import ./nix/skylighting-format-blaze-html.nix;
+  "skylighting-format-context" = import ./nix/skylighting-format-context.nix;
   "skylighting-format-latex" = import ./nix/skylighting-format-latex.nix;
   "skylighting-lucid" = import ./nix/skylighting-lucid.nix;
   "skylighting-modding" = import ./nix/skylighting-modding.nix;
@@ -14160,6 +14161,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "srt-attoparsec" = import ./nix/srt-attoparsec.nix;
   "srt-dhall" = import ./nix/srt-dhall.nix;
   "srt-formatting" = import ./nix/srt-formatting.nix;
+  "srv" = import ./nix/srv.nix;
   "sscan" = import ./nix/sscan.nix;
   "sscgi" = import ./nix/sscgi.nix;
   "sscript" = import ./nix/sscript.nix;
