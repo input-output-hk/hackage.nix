@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.2.7" = {
+    sha256 = "842ecbf94f92798ef93da0a7111ef2d842719f65c17d87b5477937955107e1ed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/essence-of-live-coding-0.2.7-r0-e9efb673d43b246fb5fe07191b17e8244191804d4d97e24e034c58b76e4086e4.nix;
+        revNum = 0;
+        sha256 = "e9efb673d43b246fb5fe07191b17e8244191804d4d97e24e034c58b76e4086e4";
+        };
+      default = "r0";
+      };
+    };
   }

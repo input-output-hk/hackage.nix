@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.2.7" = {
+    sha256 = "0af7f606553d5e7ea335f5db8a39a8fcc85c380139351333c93d98197179d3ff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/essence-of-live-coding-warp-0.2.7-r0-9d7e5f9026ce9c14f370d1b48c8cccfc34af74efcd2c68ec550f7ae9dab07048.nix;
+        revNum = 0;
+        sha256 = "9d7e5f9026ce9c14f370d1b48c8cccfc34af74efcd2c68ec550f7ae9dab07048";
+        };
+      default = "r0";
+      };
+    };
   }

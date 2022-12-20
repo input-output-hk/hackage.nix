@@ -340,6 +340,17 @@
       default = "r0";
       };
     };
+  "1.19.0" = {
+    sha256 = "cf05524c0c569b2605b8d19c022875881fa0779227d00ffa5cc7cf1566d0378b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/morley-1.19.0-r0-42e84f6950c03943f0d7664e9b0bcb5ac9c176cf3316a4efa77a0e24b2a08bc9.nix;
+        revNum = 0;
+        sha256 = "42e84f6950c03943f0d7664e9b0bcb5ac9c176cf3316a4efa77a0e24b2a08bc9";
+        };
+      default = "r0";
+      };
+    };
   "1.2.0" = {
     sha256 = "22946650f0b6cc477e1de1ad703669020e384837d3e6f3ca58e9161020d6a9c5";
     revisions = {

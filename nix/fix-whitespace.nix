@@ -10,6 +10,17 @@
       default = "r0";
       };
     };
+  "0.0.11" = {
+    sha256 = "023fa417dab65804cf70ec48100a803125714a79e4194421093d4c7747de6660";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fix-whitespace-0.0.11-r0-1c7d98f328b9807e7c76f32dd5220fa816c89e94f0d518c78667ca170e0f551d.nix;
+        revNum = 0;
+        sha256 = "1c7d98f328b9807e7c76f32dd5220fa816c89e94f0d518c78667ca170e0f551d";
+        };
+      default = "r0";
+      };
+    };
   "0.0.5" = {
     sha256 = "c7c33394122ceff27d41ffd9aed5516182def30f9d1d829b5e332bdc5080e49c";
     revisions = {

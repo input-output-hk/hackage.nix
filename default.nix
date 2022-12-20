@@ -12919,6 +12919,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rhbzquery" = import ./nix/rhbzquery.nix;
   "rhine" = import ./nix/rhine.nix;
   "rhine-gloss" = import ./nix/rhine-gloss.nix;
+  "rhine-terminal" = import ./nix/rhine-terminal.nix;
   "rhythm-game-tutorial" = import ./nix/rhythm-game-tutorial.nix;
   "riak" = import ./nix/riak.nix;
   "riak-protobuf" = import ./nix/riak-protobuf.nix;

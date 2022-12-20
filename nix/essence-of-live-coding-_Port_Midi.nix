@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2.7" = {
+    sha256 = "1e8370d20c43ac6ee0d5e2f663569b7046b931ee2d27887e50787b841ae51ae3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/essence-of-live-coding-PortMidi-0.2.7-r0-785499b7a3f520c643121f0456ed55f52bd89d44e1b1c84e760ed3335a32165e.nix;
+        revNum = 0;
+        sha256 = "785499b7a3f520c643121f0456ed55f52bd89d44e1b1c84e760ed3335a32165e";
+        };
+      default = "r0";
+      };
+    };
   }
