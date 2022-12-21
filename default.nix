@@ -16851,6 +16851,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "zio" = import ./nix/zio.nix;
   "zip" = import ./nix/zip.nix;
   "zip-archive" = import ./nix/zip-archive.nix;
+  "zip-cmd" = import ./nix/zip-cmd.nix;
   "zip-conduit" = import ./nix/zip-conduit.nix;
   "zip-stream" = import ./nix/zip-stream.nix;
   "zipedit" = import ./nix/zipedit.nix;

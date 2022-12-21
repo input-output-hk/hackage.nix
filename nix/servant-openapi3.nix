@@ -107,7 +107,12 @@
         revNum = 2;
         sha256 = "db7ed10a3aa4549a5add3dfc5950df2051ef6f196e0e7441627e82513ad68e21";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/servant-openapi3-2.0.1.3-r3-e9aa04ffdaea429ad823e3e9be23d5fcb12f11b0ad70f08c8fe50c8e27e31ea5.nix;
+        revNum = 3;
+        sha256 = "e9aa04ffdaea429ad823e3e9be23d5fcb12f11b0ad70f08c8fe50c8e27e31ea5";
+        };
+      default = "r3";
       };
     };
   "2.0.1.4" = {
@@ -128,7 +133,12 @@
         revNum = 2;
         sha256 = "07b4f58c5045f63b170cbab7c04179902016ffbc3fec59ec52b7e515caf30bbd";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/servant-openapi3-2.0.1.4-r3-e44226f1cda1bf339dbdd50bc1cdf87b65412788cf8c3840bc5d5ab06f765c58.nix;
+        revNum = 3;
+        sha256 = "e44226f1cda1bf339dbdd50bc1cdf87b65412788cf8c3840bc5d5ab06f765c58";
+        };
+      default = "r3";
       };
     };
   "2.0.1.5" = {
@@ -144,7 +154,28 @@
         revNum = 1;
         sha256 = "2bb0dc85119e7e1f7239acaadbd76bf677d65c9fa464c9fc71a0fdc057b74c2f";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/servant-openapi3-2.0.1.5-r2-1c2db3490fe3fb21b5dcf0acb93915b9eab11a3f0cf7810a9baa8bea2185750b.nix;
+        revNum = 2;
+        sha256 = "1c2db3490fe3fb21b5dcf0acb93915b9eab11a3f0cf7810a9baa8bea2185750b";
+        };
+      r3 = {
+        nix = import ../hackage/servant-openapi3-2.0.1.5-r3-b10ee24ee05571183c03b3a740d4affd9c12a583726ffbe38f623cfd932a7a77.nix;
+        revNum = 3;
+        sha256 = "b10ee24ee05571183c03b3a740d4affd9c12a583726ffbe38f623cfd932a7a77";
+        };
+      default = "r3";
+      };
+    };
+  "2.0.1.6" = {
+    sha256 = "322a2181fb2becb20b80ad8319dd3ce1874d89cd344a8d8a4e17d1428d1dbfc3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-openapi3-2.0.1.6-r0-3ffc63ba59813a56e9cf9acb5f35911238af0148281ccb538ba03f6b71c8da3b.nix;
+        revNum = 0;
+        sha256 = "3ffc63ba59813a56e9cf9acb5f35911238af0148281ccb538ba03f6b71c8da3b";
+        };
+      default = "r0";
       };
     };
   }

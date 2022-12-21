@@ -17,7 +17,17 @@
         revNum = 2;
         sha256 = "0e982177ff51b52f0dcd845c27161578359e900974d3509a470d2833470821cf";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/tasty-grading-system-0.1.0.0-r3-b02068b2d929bc5f3f99029bfe6a57ae1c3fb7b710315017e6f49a29cb573670.nix;
+        revNum = 3;
+        sha256 = "b02068b2d929bc5f3f99029bfe6a57ae1c3fb7b710315017e6f49a29cb573670";
+        };
+      r4 = {
+        nix = import ../hackage/tasty-grading-system-0.1.0.0-r4-188631965621aadefa089461992283cc0767bf79be0f80e81bc38d7085bb00c1.nix;
+        revNum = 4;
+        sha256 = "188631965621aadefa089461992283cc0767bf79be0f80e81bc38d7085bb00c1";
+        };
+      default = "r4";
       };
     };
   }
