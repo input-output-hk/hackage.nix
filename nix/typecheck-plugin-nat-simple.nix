@@ -92,4 +92,15 @@
       default = "r0";
       };
     };
+  "0.1.0.8" = {
+    sha256 = "d563bc30b2a0ba06bf7215cac0ffcab0d4b249db2c0f7f3ac09d02657862ed13";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typecheck-plugin-nat-simple-0.1.0.8-r0-8a367e63144d28837631f1762c6fc0a9c4ab56194ebf5d9e4093a28b1e2cbedd.nix;
+        revNum = 0;
+        sha256 = "8a367e63144d28837631f1762c6fc0a9c4ab56194ebf5d9e4093a28b1e2cbedd";
+        };
+      default = "r0";
+      };
+    };
   }

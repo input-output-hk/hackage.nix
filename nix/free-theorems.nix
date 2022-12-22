@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.3.2.1" = {
+    sha256 = "080afb4cf0ba13d119a47d1c8d33f689fea6004d3f55c941497931964073716a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/free-theorems-0.3.2.1-r0-51ce511528a49155081535393633491860541927c0dd07a89c1b9d7467c04bf0.nix;
+        revNum = 0;
+        sha256 = "51ce511528a49155081535393633491860541927c0dd07a89c1b9d7467c04bf0";
+        };
+      default = "r0";
+      };
+    };
   }

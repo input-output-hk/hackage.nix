@@ -5475,6 +5475,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "foma" = import ./nix/foma.nix;
   "font-awesome-type" = import ./nix/font-awesome-type.nix;
   "font-opengl-basic4x6" = import ./nix/font-opengl-basic4x6.nix;
+  "fontconfig-pure" = import ./nix/fontconfig-pure.nix;
   "foo" = import ./nix/foo.nix;
   "foobar" = import ./nix/foobar.nix;
   "for-free" = import ./nix/for-free.nix;
@@ -10553,6 +10554,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "named-servant-client" = import ./nix/named-servant-client.nix;
   "named-servant-server" = import ./nix/named-servant-server.nix;
   "named-sop" = import ./nix/named-sop.nix;
+  "named-text" = import ./nix/named-text.nix;
   "namelist" = import ./nix/namelist.nix;
   "names" = import ./nix/names.nix;
   "names-th" = import ./nix/names-th.nix;
@@ -12188,6 +12190,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "proto3-suite" = import ./nix/proto3-suite.nix;
   "proto3-wire" = import ./nix/proto3-wire.nix;
   "protobuf" = import ./nix/protobuf.nix;
+  "protobuf-builder" = import ./nix/protobuf-builder.nix;
   "protobuf-native" = import ./nix/protobuf-native.nix;
   "protobuf-simple" = import ./nix/protobuf-simple.nix;
   "protocol" = import ./nix/protocol.nix;
@@ -13176,6 +13179,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sax" = import ./nix/sax.nix;
   "say" = import ./nix/say.nix;
   "say-my-name" = import ./nix/say-my-name.nix;
+  "sayable" = import ./nix/sayable.nix;
   "sbp" = import ./nix/sbp.nix;
   "sbp2udp" = import ./nix/sbp2udp.nix;
   "sbv" = import ./nix/sbv.nix;
