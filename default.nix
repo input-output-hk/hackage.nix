@@ -3047,6 +3047,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cctools-workqueue" = import ./nix/cctools-workqueue.nix;
   "cdar-mBound" = import ./nix/cdar-m_Bound.nix;
   "cdeps" = import ./nix/cdeps.nix;
+  "cdp" = import ./nix/cdp.nix;
   "cedict" = import ./nix/cedict.nix;
   "cef" = import ./nix/cef.nix;
   "cef3-raw" = import ./nix/cef3-raw.nix;
@@ -4276,6 +4277,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "deriveJsonNoPrefix" = import ./nix/derive_Json_No_Prefix.nix;
   "deriving-aeson" = import ./nix/deriving-aeson.nix;
   "deriving-compat" = import ./nix/deriving-compat.nix;
+  "deriving-openapi3" = import ./nix/deriving-openapi3.nix;
   "deriving-show-simple" = import ./nix/deriving-show-simple.nix;
   "deriving-trans" = import ./nix/deriving-trans.nix;
   "derivingvia-extras" = import ./nix/derivingvia-extras.nix;
@@ -13163,6 +13165,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sandwich-slack" = import ./nix/sandwich-slack.nix;
   "sandwich-webdriver" = import ./nix/sandwich-webdriver.nix;
   "sarasvati" = import ./nix/sarasvati.nix;
+  "sarif" = import ./nix/sarif.nix;
   "sarsi" = import ./nix/sarsi.nix;
   "sasl" = import ./nix/sasl.nix;
   "sat" = import ./nix/sat.nix;

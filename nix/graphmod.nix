@@ -219,4 +219,15 @@
       default = "r0";
       };
     };
+  "1.4.5.1" = {
+    sha256 = "d72b70dd47ba85756e963681307d8dcf341e9d1f0c3b50bd34c33a4e429436cc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graphmod-1.4.5.1-r0-3d68051640c6db1fee70867e22ad7d87b633cf254dce0f375daf963d6995dd10.nix;
+        revNum = 0;
+        sha256 = "3d68051640c6db1fee70867e22ad7d87b633cf254dce0f375daf963d6995dd10";
+        };
+      default = "r0";
+      };
+    };
   }

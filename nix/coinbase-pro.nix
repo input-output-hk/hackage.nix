@@ -120,4 +120,15 @@
       default = "r0";
       };
     };
+  "0.9.3.1" = {
+    sha256 = "0911f3e38c9d6b305c60dc4e2e629a9916b0c88299502a855877d155e3a5c148";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/coinbase-pro-0.9.3.1-r0-f18d8b85a87a465514ca45eaac24241db942151e68e8388f72a5c8d832eade41.nix;
+        revNum = 0;
+        sha256 = "f18d8b85a87a465514ca45eaac24241db942151e68e8388f72a5c8d832eade41";
+        };
+      default = "r0";
+      };
+    };
   }
