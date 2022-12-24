@@ -149,7 +149,12 @@
         revNum = 2;
         sha256 = "8b4f8c49c79d7a14f4387ed7c2615d8524e4b41194217b0f85ac9137cb49f848";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/conferer-1.1.0.0-r3-8cc7ffc21af1ec12eb6f4ecbf1925332972519f4625cbb4dc744a618364bfa95.nix;
+        revNum = 3;
+        sha256 = "8cc7ffc21af1ec12eb6f4ecbf1925332972519f4625cbb4dc744a618364bfa95";
+        };
+      default = "r3";
       };
     };
   }

@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "3c29d7e08ee1297eb0f421fea3a07fa954953457a9b81d203aa2883aa5664561";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventuo11y-dsl-0.2.0.0-r0-8956f8635126d2ef3864d3a4854aa7826972e2dccd6b6dda49b26bdd206c3379.nix;
+        revNum = 0;
+        sha256 = "8956f8635126d2ef3864d3a4854aa7826972e2dccd6b6dda49b26bdd206c3379";
+        };
+      default = "r0";
+      };
+    };
   }

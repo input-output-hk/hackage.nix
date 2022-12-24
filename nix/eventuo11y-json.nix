@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "e5fd0f219c7ef96a4029d00afdf0e999b0fc929d4e57354090b4dc70f59e4d8c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventuo11y-json-0.2.0.0-r0-9a3c1a87c106e2af3773b76e832ba8c202a730c0a089396a5c1457b043dd268f.nix;
+        revNum = 0;
+        sha256 = "9a3c1a87c106e2af3773b76e832ba8c202a730c0a089396a5c1457b043dd268f";
+        };
+      default = "r0";
+      };
+    };
   }

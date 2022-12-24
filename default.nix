@@ -8490,6 +8490,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "inferno-types" = import ./nix/inferno-types.nix;
   "inferno-vc" = import ./nix/inferno-vc.nix;
   "infernu" = import ./nix/infernu.nix;
+  "infinite-list" = import ./nix/infinite-list.nix;
   "infinite-search" = import ./nix/infinite-search.nix;
   "infinity" = import ./nix/infinity.nix;
   "infix" = import ./nix/infix.nix;
@@ -12523,6 +12524,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rawfilepath" = import ./nix/rawfilepath.nix;
   "rawr" = import ./nix/rawr.nix;
   "rawstring-qm" = import ./nix/rawstring-qm.nix;
+  "raylib-imgui" = import ./nix/raylib-imgui.nix;
   "raz" = import ./nix/raz.nix;
   "razom-text-util" = import ./nix/razom-text-util.nix;
   "rbpcp-api" = import ./nix/rbpcp-api.nix;
