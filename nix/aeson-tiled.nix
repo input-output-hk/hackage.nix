@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.0.2.2" = {
+    sha256 = "2efa1d79e40f8c44fd495af1070c290ad92fd5d04bc876a2d58d655a5f0a5cdc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-tiled-0.0.2.2-r0-e91cfd408710cdf123c5a0c875e928203d00cce6d557d53b03a2a5e282dd4ba1.nix;
+        revNum = 0;
+        sha256 = "e91cfd408710cdf123c5a0c875e928203d00cce6d557d53b03a2a5e282dd4ba1";
+        };
+      default = "r0";
+      };
+    };
   }

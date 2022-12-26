@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.0.2.0" = {
+    sha256 = "89cdf04e605a19412ac9feedbad30288006e57a3e828a1d3847c2bedeb3021de";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cdp-0.0.2.0-r0-6019c8eadd108a2c637bafb32f5ebcc515a7febe00748710015b647ab7354b65.nix;
+        revNum = 0;
+        sha256 = "6019c8eadd108a2c637bafb32f5ebcc515a7febe00748710015b647ab7354b65";
+        };
+      default = "r0";
+      };
+    };
   }

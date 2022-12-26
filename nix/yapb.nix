@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.2.7" = {
+    sha256 = "33b86402f29f5ec6b2f2d15544171964bc85b7ac099475304e77958785f3b5c1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yapb-0.2.7-r0-405ffe6e007aa0f9cbe218edd132139ce7da79f80d6ca79873517da6731cebdf.nix;
+        revNum = 0;
+        sha256 = "405ffe6e007aa0f9cbe218edd132139ce7da79f80d6ca79873517da6731cebdf";
+        };
+      default = "r0";
+      };
+    };
   }
