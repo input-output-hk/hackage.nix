@@ -7519,6 +7519,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hls" = import ./nix/hls.nix;
   "hls-alternate-number-format-plugin" = import ./nix/hls-alternate-number-format-plugin.nix;
   "hls-brittany-plugin" = import ./nix/hls-brittany-plugin.nix;
+  "hls-cabal-fmt-plugin" = import ./nix/hls-cabal-fmt-plugin.nix;
+  "hls-cabal-plugin" = import ./nix/hls-cabal-plugin.nix;
   "hls-call-hierarchy-plugin" = import ./nix/hls-call-hierarchy-plugin.nix;
   "hls-change-type-signature-plugin" = import ./nix/hls-change-type-signature-plugin.nix;
   "hls-class-plugin" = import ./nix/hls-class-plugin.nix;
@@ -7527,6 +7529,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hls-exactprint-utils" = import ./nix/hls-exactprint-utils.nix;
   "hls-explicit-fixity-plugin" = import ./nix/hls-explicit-fixity-plugin.nix;
   "hls-explicit-imports-plugin" = import ./nix/hls-explicit-imports-plugin.nix;
+  "hls-explicit-record-fields-plugin" = import ./nix/hls-explicit-record-fields-plugin.nix;
   "hls-floskell-plugin" = import ./nix/hls-floskell-plugin.nix;
   "hls-fourmolu-plugin" = import ./nix/hls-fourmolu-plugin.nix;
   "hls-gadt-plugin" = import ./nix/hls-gadt-plugin.nix;
