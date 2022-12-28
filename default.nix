@@ -1952,6 +1952,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ascii" = import ./nix/ascii.nix;
   "ascii-art-to-unicode" = import ./nix/ascii-art-to-unicode.nix;
   "ascii-case" = import ./nix/ascii-case.nix;
+  "ascii-caseless" = import ./nix/ascii-caseless.nix;
   "ascii-char" = import ./nix/ascii-char.nix;
   "ascii-cows" = import ./nix/ascii-cows.nix;
   "ascii-flatten" = import ./nix/ascii-flatten.nix;

@@ -293,7 +293,12 @@
         revNum = 0;
         sha256 = "e67f88ee485c91c50ece5accaf1c935f71791e2ed6606ee791807c8856916f35";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/sparse-linear-algebra-0.3-r1-70d53ad710bc1bf95a13dcf35e4eb59216a2813cd385e4f27d1ba966a5527efd.nix;
+        revNum = 1;
+        sha256 = "70d53ad710bc1bf95a13dcf35e4eb59216a2813cd385e4f27d1ba966a5527efd";
+        };
+      default = "r1";
       };
     };
   "0.3.1" = {
@@ -304,7 +309,12 @@
         revNum = 0;
         sha256 = "02db47fe57b424d3dc0178612d05ef8c6c99ec3064c4522b8a7521fb6bfcca7f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/sparse-linear-algebra-0.3.1-r1-aad7be41ca5222248710d6840d34f7f3b939755af48b2700d338d7ff2907283a.nix;
+        revNum = 1;
+        sha256 = "aad7be41ca5222248710d6840d34f7f3b939755af48b2700d338d7ff2907283a";
+        };
+      default = "r1";
       };
     };
   }

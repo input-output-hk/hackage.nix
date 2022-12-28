@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "1.0.4.1" = {
+    sha256 = "f35e8a12f23d4ab076049ae5e9e9354df3fc36d2e6082dcafe655414240b4850";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-checklist-1.0.4.1-r0-60c4c82320074009ac329eaa861e09093c1c6a39fbed0c9b9a4ba530626006e1.nix;
+        revNum = 0;
+        sha256 = "60c4c82320074009ac329eaa861e09093c1c6a39fbed0c9b9a4ba530626006e1";
+        };
+      default = "r0";
+      };
+    };
   }

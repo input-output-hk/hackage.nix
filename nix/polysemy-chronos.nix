@@ -202,4 +202,15 @@
       default = "r0";
       };
     };
+  "0.6.0.0" = {
+    sha256 = "f7f1a88abeaace5e760aac1ff678994619b7859d3cba69d17feb3707e245b8fe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polysemy-chronos-0.6.0.0-r0-4b42b597e6b44ab9c1e0798e28cee51ab1668cf353c76b95fd381b5cd29e96d5.nix;
+        revNum = 0;
+        sha256 = "4b42b597e6b44ab9c1e0798e28cee51ab1668cf353c76b95fd381b5cd29e96d5";
+        };
+      default = "r0";
+      };
+    };
   }
