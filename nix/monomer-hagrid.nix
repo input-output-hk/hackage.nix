@@ -10,4 +10,26 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "c770b416000eb8b0a7b7fda1dbe9f93a002640dd899c82faa2b0e78c99220d98";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monomer-hagrid-0.2.0.0-r0-abd9bac05c3a18fe49c0ab506ce8aa55b193f328b62efde6d6ea8e4123042cd7.nix;
+        revNum = 0;
+        sha256 = "abd9bac05c3a18fe49c0ab506ce8aa55b193f328b62efde6d6ea8e4123042cd7";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.0.1" = {
+    sha256 = "55786846f3eafac886baad9c24ca373bd73be9467e0cf742a51ca0fc47002c6e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monomer-hagrid-0.2.0.1-r0-d57eef32fa38a98fbe873c10de6fc6d3f64f87ea67ee2fba6ea62e16efdebc05.nix;
+        revNum = 0;
+        sha256 = "d57eef32fa38a98fbe873c10de6fc6d3f64f87ea67ee2fba6ea62e16efdebc05";
+        };
+      default = "r0";
+      };
+    };
   }

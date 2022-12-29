@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "aa3c7bb485d690c2b16d1d4b4a85da724a61670c4cf9ef6b74d43e2d610288b1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-vimhl-0.2.0.0-r0-9d07af77287a51d3156652945c50006a8c8522eccebe9486869b081290c397f9.nix;
+        revNum = 0;
+        sha256 = "9d07af77287a51d3156652945c50006a8c8522eccebe9486869b081290c397f9";
+        };
+      default = "r0";
+      };
+    };
   }

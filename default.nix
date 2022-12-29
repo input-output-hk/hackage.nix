@@ -857,6 +857,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "Numbers" = import ./nix/_Numbers.nix;
   "Nussinov78" = import ./nix/_Nussinov78.nix;
   "Nutri" = import ./nix/_Nutri.nix;
+  "OGDF" = import ./nix/_O_G_D_F.nix;
   "OGL" = import ./nix/_O_G_L.nix;
   "ONC-RPC" = import ./nix/_O_N_C-_R_P_C.nix;
   "OSM" = import ./nix/_O_S_M.nix;
@@ -3254,6 +3255,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "clean-unions" = import ./nix/clean-unions.nix;
   "cleff" = import ./nix/cleff.nix;
   "cleff-plugin" = import ./nix/cleff-plugin.nix;
+  "clerk" = import ./nix/clerk.nix;
   "cless" = import ./nix/cless.nix;
   "cleveland" = import ./nix/cleveland.nix;
   "clevercss" = import ./nix/clevercss.nix;
@@ -11403,6 +11405,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "patterns" = import ./nix/patterns.nix;
   "pava" = import ./nix/pava.nix;
   "paymill" = import ./nix/paymill.nix;
+  "paynow-zw" = import ./nix/paynow-zw.nix;
   "paypal-adaptive-hoops" = import ./nix/paypal-adaptive-hoops.nix;
   "paypal-api" = import ./nix/paypal-api.nix;
   "paypal-rest-client" = import ./nix/paypal-rest-client.nix;

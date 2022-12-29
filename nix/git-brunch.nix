@@ -197,4 +197,15 @@
       default = "r0";
       };
     };
+  "1.6.0.0" = {
+    sha256 = "b34d5c4ebe3e111b8504367c6c5cac5cedd0583db176663403d45d8acc6637b3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/git-brunch-1.6.0.0-r0-f47ca00c23cbc66b65fec3a428fee1d8a428cca24e873dfec962de1a5e96dd81.nix;
+        revNum = 0;
+        sha256 = "f47ca00c23cbc66b65fec3a428fee1d8a428cca24e873dfec962de1a5e96dd81";
+        };
+      default = "r0";
+      };
+    };
   }
