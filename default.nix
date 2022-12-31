@@ -527,6 +527,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "HROOT-hist" = import ./nix/_H_R_O_O_T-hist.nix;
   "HROOT-io" = import ./nix/_H_R_O_O_T-io.nix;
   "HROOT-math" = import ./nix/_H_R_O_O_T-math.nix;
+  "HROOT-net" = import ./nix/_H_R_O_O_T-net.nix;
   "HROOT-tree" = import ./nix/_H_R_O_O_T-tree.nix;
   "HRay" = import ./nix/_H_Ray.nix;
   "HSFFIG" = import ./nix/_H_S_F_F_I_G.nix;
@@ -2033,6 +2034,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "atom-basic" = import ./nix/atom-basic.nix;
   "atom-conduit" = import ./nix/atom-conduit.nix;
   "atom-msp430" = import ./nix/atom-msp430.nix;
+  "atomic-counter" = import ./nix/atomic-counter.nix;
   "atomic-file-ops" = import ./nix/atomic-file-ops.nix;
   "atomic-modify" = import ./nix/atomic-modify.nix;
   "atomic-primops" = import ./nix/atomic-primops.nix;
@@ -10442,6 +10444,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "multiaddr" = import ./nix/multiaddr.nix;
   "multiarg" = import ./nix/multiarg.nix;
   "multibase" = import ./nix/multibase.nix;
+  "multicurryable" = import ./nix/multicurryable.nix;
   "multifile" = import ./nix/multifile.nix;
   "multifocal" = import ./nix/multifocal.nix;
   "multihash" = import ./nix/multihash.nix;
@@ -12373,6 +12376,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quickcheck-instances" = import ./nix/quickcheck-instances.nix;
   "quickcheck-io" = import ./nix/quickcheck-io.nix;
   "quickcheck-lockstep" = import ./nix/quickcheck-lockstep.nix;
+  "quickcheck-monoid-subclasses" = import ./nix/quickcheck-monoid-subclasses.nix;
   "quickcheck-poly" = import ./nix/quickcheck-poly.nix;
   "quickcheck-properties" = import ./nix/quickcheck-properties.nix;
   "quickcheck-property-comb" = import ./nix/quickcheck-property-comb.nix;

@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.3.1.0" = {
+    sha256 = "da4eacacc7c6efc11cb523216ad5497ae40256514af61e23f7a76f2790e9ba21";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polysemy-mocks-0.3.1.0-r0-39662ab2b08ea8479a328d3bd575a9a834f9298271c7df301be4d96964144b87.nix;
+        revNum = 0;
+        sha256 = "39662ab2b08ea8479a328d3bd575a9a834f9298271c7df301be4d96964144b87";
+        };
+      default = "r0";
+      };
+    };
   }

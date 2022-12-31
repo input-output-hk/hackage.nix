@@ -1,4 +1,26 @@
 {
+  "0.10.0.1" = {
+    sha256 = "791786a536b2304d8327f4a8189b2d4b46fb637bd61b4a0c50763869005b899a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HROOT-0.10.0.1-r0-81052e123490c9496d24c07e0e61df08f0dc5f54adf63f0e320c903e0cbb8948.nix;
+        revNum = 0;
+        sha256 = "81052e123490c9496d24c07e0e61df08f0dc5f54adf63f0e320c903e0cbb8948";
+        };
+      default = "r0";
+      };
+    };
+  "0.10.0.2" = {
+    sha256 = "abaed6f4520704c4a07c85c2ac34d49607fb60a41c45896978f04ad8c80325ea";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HROOT-0.10.0.2-r0-723d8355e8753fcb25845801166840a0c36bd7e8b90ca8990c7af0e122ce15a8.nix;
+        revNum = 0;
+        sha256 = "723d8355e8753fcb25845801166840a0c36bd7e8b90ca8990c7af0e122ce15a8";
+        };
+      default = "r0";
+      };
+    };
   "0.5.0.0" = {
     sha256 = "63b576521a575ae7f9aeb84527168956e7e0d7d95d3a8a8d3d4c755e2e9fb8f3";
     revisions = {

@@ -58,4 +58,15 @@
       default = "r0";
       };
     };
+  "0.3.3.0" = {
+    sha256 = "fd524e2505f75a5b0c90274f763f05cd2e4cdbe0e054fa5c70e43fdade45c3b3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chimera-0.3.3.0-r0-9af4c950f5bdb71b8db3884acc775b3f56094d2bd19c0f96f0b42ffc30aff339.nix;
+        revNum = 0;
+        sha256 = "9af4c950f5bdb71b8db3884acc775b3f56094d2bd19c0f96f0b42ffc30aff339";
+        };
+      default = "r0";
+      };
+    };
   }

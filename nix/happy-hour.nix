@@ -37,4 +37,15 @@
       default = "r0";
       };
     };
+  "0.0.0.4" = {
+    sha256 = "7be90deef9fb1293a0f3ea6ada933298ccca26becb167e136f56250c43b9981d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/happy-hour-0.0.0.4-r0-0b09b826bfffd6fa61f7c548e882e8023bea70f95e3663b7676a4c8320f1ca00.nix;
+        revNum = 0;
+        sha256 = "0b09b826bfffd6fa61f7c548e882e8023bea70f95e3663b7676a4c8320f1ca00";
+        };
+      default = "r0";
+      };
+    };
   }

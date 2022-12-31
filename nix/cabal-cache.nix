@@ -387,4 +387,15 @@
       default = "r0";
       };
     };
+  "1.0.5.5" = {
+    sha256 = "d4e110910e00d249a838d81970112d7604df3391b86bbbc6c33372c119fae410";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-cache-1.0.5.5-r0-e5481dadef645868bbc98d464a69be7d28fae139f77b28e9e5e37a5984cb03a9.nix;
+        revNum = 0;
+        sha256 = "e5481dadef645868bbc98d464a69be7d28fae139f77b28e9e5e37a5984cb03a9";
+        };
+      default = "r0";
+      };
+    };
   }

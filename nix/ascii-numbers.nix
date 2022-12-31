@@ -31,4 +31,15 @@
       default = "r2";
       };
     };
+  "1.1.0.1" = {
+    sha256 = "3e4229a4393c44304d0aed40494d223c5825ae3035e11f878196dd0d563b63fd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ascii-numbers-1.1.0.1-r0-39c7114198c4044d747473601c70b9e53620cc2fc8dcaafabaa31682929e2f0f.nix;
+        revNum = 0;
+        sha256 = "39c7114198c4044d747473601c70b9e53620cc2fc8dcaafabaa31682929e2f0f";
+        };
+      default = "r0";
+      };
+    };
   }

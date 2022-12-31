@@ -114,4 +114,15 @@
       default = "r0";
       };
     };
+  "0.2.4.0" = {
+    sha256 = "cc7dab96240e08c7a172a04ae33910a9242cacea35bb36e6962033a758764548";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-stylefrommeta-0.2.4.0-r0-a3671294fe90f901a08bf50366f4ce100b29685b561b50d388472c75ea4649dc.nix;
+        revNum = 0;
+        sha256 = "a3671294fe90f901a08bf50366f4ce100b29685b561b50d388472c75ea4649dc";
+        };
+      default = "r0";
+      };
+    };
   }
