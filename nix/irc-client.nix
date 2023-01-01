@@ -384,4 +384,15 @@
       default = "r0";
       };
     };
+  "1.1.2.3" = {
+    sha256 = "8329f06b0570972434f91ae0c1d9be6c9ee3693755403f548350d5941bc03453";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/irc-client-1.1.2.3-r0-f2e8d2cd00fb9fe26862b72117ce2560f8e726864b7a61dd375937c9f9875f1c.nix;
+        revNum = 0;
+        sha256 = "f2e8d2cd00fb9fe26862b72117ce2560f8e726864b7a61dd375937c9f9875f1c";
+        };
+      default = "r0";
+      };
+    };
   }

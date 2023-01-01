@@ -363,7 +363,12 @@
         revNum = 2;
         sha256 = "c01bd11fd8d05540ec38924dedce167c354e34c0ecdf8c306348ba73df0fd008";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/TypeCompose-0.9.13-r3-2d37039355d6aa27c42382665ef4656d5accf848e9cc2505b7d6fc8ba38b3f09.nix;
+        revNum = 3;
+        sha256 = "2d37039355d6aa27c42382665ef4656d5accf848e9cc2505b7d6fc8ba38b3f09";
+        };
+      default = "r3";
       };
     };
   "0.9.14" = {
@@ -379,7 +384,12 @@
         revNum = 1;
         sha256 = "a49b68dfbd2b7affffaf929036a74b8d2bdca1dd7bb73ff4fe80ce5dbe32afdf";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/TypeCompose-0.9.14-r2-d0d23df29bdc56096affee2bd057f852a4a96b0df08d1415de414b570f911fbe.nix;
+        revNum = 2;
+        sha256 = "d0d23df29bdc56096affee2bd057f852a4a96b0df08d1415de414b570f911fbe";
+        };
+      default = "r2";
       };
     };
   "0.9.3" = {

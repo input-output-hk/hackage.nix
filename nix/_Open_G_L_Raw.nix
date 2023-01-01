@@ -494,7 +494,12 @@
         revNum = 0;
         sha256 = "b963cb9f6f18c4cad901fa128a4f77c2e7fe594f9d5baaf57d1368fdbf737a88";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGLRaw-3.3.4.1-r1-ec1bfd67dd6d0364ff41a55949a3c3eb5cc7d88f430c425aea1401d627de4b95.nix;
+        revNum = 1;
+        sha256 = "ec1bfd67dd6d0364ff41a55949a3c3eb5cc7d88f430c425aea1401d627de4b95";
+        };
+      default = "r1";
       };
     };
   }

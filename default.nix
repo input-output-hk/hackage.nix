@@ -5549,6 +5549,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "freddy" = import ./nix/freddy.nix;
   "free" = import ./nix/free.nix;
   "free-algebras" = import ./nix/free-algebras.nix;
+  "free-applicative-t" = import ./nix/free-applicative-t.nix;
   "free-categories" = import ./nix/free-categories.nix;
   "free-category" = import ./nix/free-category.nix;
   "free-concurrent" = import ./nix/free-concurrent.nix;
@@ -7359,6 +7360,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hg-buildpackage" = import ./nix/hg-buildpackage.nix;
   "hgal" = import ./nix/hgal.nix;
   "hgalib" = import ./nix/hgalib.nix;
+  "hgdal" = import ./nix/hgdal.nix;
   "hgdbmi" = import ./nix/hgdbmi.nix;
   "hgearman" = import ./nix/hgearman.nix;
   "hgen" = import ./nix/hgen.nix;

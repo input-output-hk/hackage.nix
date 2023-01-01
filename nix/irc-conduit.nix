@@ -235,4 +235,15 @@
       default = "r0";
       };
     };
+  "0.3.0.6" = {
+    sha256 = "82e01d3ad0250b6bdc470199ac29a1bbfbf11a5f7293d24d3def5c9898662353";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/irc-conduit-0.3.0.6-r0-d315a8f268062948ad089b45e043409868c5132bf400420875119d89b63ba7d5.nix;
+        revNum = 0;
+        sha256 = "d315a8f268062948ad089b45e043409868c5132bf400420875119d89b63ba7d5";
+        };
+      default = "r0";
+      };
+    };
   }
