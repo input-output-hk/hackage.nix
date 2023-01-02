@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "1.2.0" = {
+    sha256 = "053236cea04e97e1bfd51e7bc4cd4c5e11b744b08448bb21634a84b8041019eb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xdg-basedir-compliant-1.2.0-r0-09a9a24ebc97593f6af480e66b3e4659011b4cfb46251bb0f036431c3c6086c5.nix;
+        revNum = 0;
+        sha256 = "09a9a24ebc97593f6af480e66b3e4659011b4cfb46251bb0f036431c3c6086c5";
+        };
+      default = "r0";
+      };
+    };
   }

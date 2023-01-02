@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.9" = {
+    sha256 = "7f31043cf59877273e14ec69dbac15b61089d0c5ddccd96039ddf7f301ccf6a6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/exinst-cereal-0.9-r0-78ef675916f9b3b3fdbb316d9a14982af417ad1370da8e0c76ab89d97c5bb9ae.nix;
+        revNum = 0;
+        sha256 = "78ef675916f9b3b3fdbb316d9a14982af417ad1370da8e0c76ab89d97c5bb9ae";
+        };
+      default = "r0";
+      };
+    };
   }

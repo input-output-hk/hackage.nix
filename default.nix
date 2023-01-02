@@ -5084,6 +5084,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "exigo-schema" = import ./nix/exigo-schema.nix;
   "exinst" = import ./nix/exinst.nix;
   "exinst-aeson" = import ./nix/exinst-aeson.nix;
+  "exinst-base" = import ./nix/exinst-base.nix;
   "exinst-bytes" = import ./nix/exinst-bytes.nix;
   "exinst-cereal" = import ./nix/exinst-cereal.nix;
   "exinst-deepseq" = import ./nix/exinst-deepseq.nix;

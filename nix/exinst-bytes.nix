@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.9" = {
+    sha256 = "94ad657275ae69666b371e1f4b742cc78d7e456116e15d94e757d3c667288a5a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/exinst-bytes-0.9-r0-4ddf6b716ccb31768653d2dc841c9d38dbc79f1de6c70891f564a713c0e691b0.nix;
+        revNum = 0;
+        sha256 = "4ddf6b716ccb31768653d2dc841c9d38dbc79f1de6c70891f564a713c0e691b0";
+        };
+      default = "r0";
+      };
+    };
   }

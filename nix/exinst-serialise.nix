@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.9" = {
+    sha256 = "0d74b8da8b1ee5a5f08efcebf4d372cef1bb3df23cb5e6de787949e79d5bd030";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/exinst-serialise-0.9-r0-da053104b5e6a42236853038036b9431f1de958bb0de07b5780629b5e588aafa.nix;
+        revNum = 0;
+        sha256 = "da053104b5e6a42236853038036b9431f1de958bb0de07b5780629b5e588aafa";
+        };
+      default = "r0";
+      };
+    };
   }

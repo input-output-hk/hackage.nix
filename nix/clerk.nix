@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "ad724b2ee22b24a5b179ebeef3288b1125b8f8a4188a28175d9cec232f8a7459";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/clerk-0.1.0.2-r0-2fe8be10670071ae726c87b64866df12b45d0d39fa7f24033dd17e92fed7fdf9.nix;
+        revNum = 0;
+        sha256 = "2fe8be10670071ae726c87b64866df12b45d0d39fa7f24033dd17e92fed7fdf9";
+        };
+      default = "r0";
+      };
+    };
   }
