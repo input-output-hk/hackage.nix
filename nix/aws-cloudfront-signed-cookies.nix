@@ -170,6 +170,17 @@
       default = "r4";
       };
     };
+  "0.2.0.12" = {
+    sha256 = "1bf6c8b65762622ffe24b1a974680f6738b0e3640348082ffa34e488e0a8aabd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aws-cloudfront-signed-cookies-0.2.0.12-r0-84df169b6351580bd81ffa40fe98a09a87d412a1ed0195b11484f2b0b60d52ae.nix;
+        revNum = 0;
+        sha256 = "84df169b6351580bd81ffa40fe98a09a87d412a1ed0195b11484f2b0b60d52ae";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.2" = {
     sha256 = "a5b69fc6488afd25687e64aff4c08bbcbcb3e58a79df8b5d99908f1bd985bd28";
     revisions = {

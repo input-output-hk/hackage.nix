@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "a93a4bf1cfb20023c69b8bbf8c758822a23ae35783e3c8041727e555b3ed357c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/csound-sampler-0.0.10.1-r1-9fca031da8b97d61652a0aad2ed1ac56b1110b2008a563c156819dacc65aa227.nix;
+        revNum = 1;
+        sha256 = "9fca031da8b97d61652a0aad2ed1ac56b1110b2008a563c156819dacc65aa227";
+        };
+      default = "r1";
       };
     };
   "0.0.2" = {

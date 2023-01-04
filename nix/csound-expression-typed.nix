@@ -436,7 +436,12 @@
         revNum = 0;
         sha256 = "1f16a4af707e882f788f4b457fd6a68ae354c1869af9480a20d7281288a9c205";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/csound-expression-typed-0.2.7-r1-f8e33f965a2566ff07712ef4e99351b8fc432c636db3e8745777da2f59c06e17.nix;
+        revNum = 1;
+        sha256 = "f8e33f965a2566ff07712ef4e99351b8fc432c636db3e8745777da2f59c06e17";
+        };
+      default = "r1";
       };
     };
   }

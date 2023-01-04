@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.2.6" = {
+    sha256 = "a7d926508491a4b0c692458af8937424f49c58b9822c32956b9ceb5b5f44e983";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mason-0.2.6-r0-87e6233cf21222c2bb3392e453ad9ee4257a850c75bfb2537461f60574ce87e9.nix;
+        revNum = 0;
+        sha256 = "87e6233cf21222c2bb3392e453ad9ee4257a850c75bfb2537461f60574ce87e9";
+        };
+      default = "r0";
+      };
+    };
   }

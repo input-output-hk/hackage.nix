@@ -304,7 +304,17 @@
         revNum = 0;
         sha256 = "91d2ef10c5f73eac9343b9c8a442b0682815540dd7c5f047a029d21c3de38d4c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/csound-expression-dynamic-0.3.9-r1-5daf71c3ee48409a976de1117994fabfca1561d8bce769e018253df116ab2617.nix;
+        revNum = 1;
+        sha256 = "5daf71c3ee48409a976de1117994fabfca1561d8bce769e018253df116ab2617";
+        };
+      r2 = {
+        nix = import ../hackage/csound-expression-dynamic-0.3.9-r2-3be732d37fe95e37f349286c0ffbe08096032d5ee5b873a6b609c27a75013218.nix;
+        revNum = 2;
+        sha256 = "3be732d37fe95e37f349286c0ffbe08096032d5ee5b873a6b609c27a75013218";
+        };
+      default = "r2";
       };
     };
   }

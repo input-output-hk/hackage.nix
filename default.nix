@@ -3422,6 +3422,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "comfort-array" = import ./nix/comfort-array.nix;
   "comfort-array-shape" = import ./nix/comfort-array-shape.nix;
   "comfort-fftw" = import ./nix/comfort-fftw.nix;
+  "comfort-glpk" = import ./nix/comfort-glpk.nix;
   "comfort-graph" = import ./nix/comfort-graph.nix;
   "comic" = import ./nix/comic.nix;
   "comma" = import ./nix/comma.nix;
@@ -13837,6 +13838,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "skell" = import ./nix/skell.nix;
   "skemmtun" = import ./nix/skemmtun.nix;
   "sketch-frp-copilot" = import ./nix/sketch-frp-copilot.nix;
+  "skew-list" = import ./nix/skew-list.nix;
   "skews" = import ./nix/skews.nix;
   "skip-list" = import ./nix/skip-list.nix;
   "skip-var" = import ./nix/skip-var.nix;
@@ -15056,6 +15058,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "th-kinds" = import ./nix/th-kinds.nix;
   "th-kinds-fork" = import ./nix/th-kinds-fork.nix;
   "th-lego" = import ./nix/th-lego.nix;
+  "th-letrec" = import ./nix/th-letrec.nix;
   "th-lift" = import ./nix/th-lift.nix;
   "th-lift-instances" = import ./nix/th-lift-instances.nix;
   "th-nowq" = import ./nix/th-nowq.nix;

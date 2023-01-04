@@ -205,7 +205,12 @@
         revNum = 0;
         sha256 = "b9d7235a11607fcc3083ae582b4fd2dd66b6ad3f2d2a52c3a90ef04f77cae216";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/csound-catalog-0.7.6-r1-4c599c61d679ae8396bf2559acb078027fa715c632b569c6032d98b04bb5574a.nix;
+        revNum = 1;
+        sha256 = "4c599c61d679ae8396bf2559acb078027fa715c632b569c6032d98b04bb5574a";
+        };
+      default = "r1";
       };
     };
   }

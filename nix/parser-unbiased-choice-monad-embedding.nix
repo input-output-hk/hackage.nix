@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.0.0.4" = {
+    sha256 = "1fbaa49cfa9fd61fb2d259f611565640cf01029dfb4831aa9f67c80e0623e4be";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/parser-unbiased-choice-monad-embedding-0.0.0.4-r0-c1c0ab3b6edaea4e4aaacd1541f0aa82be347898bd8817de61689af8b27b3821.nix;
+        revNum = 0;
+        sha256 = "c1c0ab3b6edaea4e4aaacd1541f0aa82be347898bd8817de61689af8b27b3821";
+        };
+      default = "r0";
+      };
+    };
   }

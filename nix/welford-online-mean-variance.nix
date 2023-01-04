@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.0.4" = {
+    sha256 = "8af6135c3f935413e0862ea29d712be40917b87d6ac1227682692835f334f95b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/welford-online-mean-variance-0.1.0.4-r0-9cbd827aea7ab062d49a7c777be529fe9dc6c4a5d9d689612a3e3cee67589c70.nix;
+        revNum = 0;
+        sha256 = "9cbd827aea7ab062d49a7c777be529fe9dc6c4a5d9d689612a3e3cee67589c70";
+        };
+      default = "r0";
+      };
+    };
   }

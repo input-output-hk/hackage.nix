@@ -106,4 +106,15 @@
       default = "r0";
       };
     };
+  "1.4.3" = {
+    sha256 = "3df92663ef6499326e8f297452a0907b129b253a935ad7b69b253340e1d61376";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rate-limit-1.4.3-r0-ede2fd61c08dd6bc1849a5ca777baf5b68476f33e57cca40bc7c742603969f06.nix;
+        revNum = 0;
+        sha256 = "ede2fd61c08dd6bc1849a5ca777baf5b68476f33e57cca40bc7c742603969f06";
+        };
+      default = "r0";
+      };
+    };
   }

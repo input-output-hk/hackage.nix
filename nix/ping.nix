@@ -48,4 +48,15 @@
       default = "r0";
       };
     };
+  "0.1.0.4" = {
+    sha256 = "d5b9ba824873b1cabefa902efa6c10eea7b07cdd7246332b10bea7030c74424e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ping-0.1.0.4-r0-a0e535035f70331eaabfcb81be2a27dad8e6e8e98a51ab2ba10162b8cc750c5c.nix;
+        revNum = 0;
+        sha256 = "a0e535035f70331eaabfcb81be2a27dad8e6e8e98a51ab2ba10162b8cc750c5c";
+        };
+      default = "r0";
+      };
+    };
   }

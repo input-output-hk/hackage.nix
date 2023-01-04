@@ -355,6 +355,54 @@
         revNum = 0;
         sha256 = "bc61c2091a702c28ef5c14aa2d26818001b045b315c2c954925044f3456719a9";
         };
+      r1 = {
+        nix = import ../hackage/ascii-1.2.4.0-r1-d62674fa9becd9603ec39d675f6cb99f96a91fad185c044a43b5dc17b47ec7ba.nix;
+        revNum = 1;
+        sha256 = "d62674fa9becd9603ec39d675f6cb99f96a91fad185c044a43b5dc17b47ec7ba";
+        };
+      r2 = {
+        nix = import ../hackage/ascii-1.2.4.0-r2-94c3a6246e15102c84cde45fc01e236719727092bdc67d1356e6be97fa0dfc02.nix;
+        revNum = 2;
+        sha256 = "94c3a6246e15102c84cde45fc01e236719727092bdc67d1356e6be97fa0dfc02";
+        };
+      default = "r2";
+      };
+    };
+  "1.2.5.0" = {
+    sha256 = "937142a3802ad2c7c270dc96d5a96075b0592813dc78f0210da6eaee46bab61c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ascii-1.2.5.0-r0-e9ce4c32f235b3481242d12a916d8dbdb43fd568d4cde59950f1025e7df4b95c.nix;
+        revNum = 0;
+        sha256 = "e9ce4c32f235b3481242d12a916d8dbdb43fd568d4cde59950f1025e7df4b95c";
+        };
+      default = "r0";
+      };
+    };
+  "1.3.0.0" = {
+    sha256 = "35230edb35c4777dcfff6386dcaae344dd17d6db1a7098bf65e9706225bc3a3d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ascii-1.3.0.0-r0-4ade1923a0efe762bd40c5087407c5cda5faad7cbbdb3759f0609cb20f134d90.nix;
+        revNum = 0;
+        sha256 = "4ade1923a0efe762bd40c5087407c5cda5faad7cbbdb3759f0609cb20f134d90";
+        };
+      r1 = {
+        nix = import ../hackage/ascii-1.3.0.0-r1-4d6ae789aad4fd3fd08acfe9b7e88dad7b5e4292683ba9860a4a1343b0ad15d1.nix;
+        revNum = 1;
+        sha256 = "4d6ae789aad4fd3fd08acfe9b7e88dad7b5e4292683ba9860a4a1343b0ad15d1";
+        };
+      default = "r1";
+      };
+    };
+  "1.3.1.0" = {
+    sha256 = "0bdfb96a94a16e7d3758ae97bd742faabd5392a68d4fef0a03b03d21fcaee447";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ascii-1.3.1.0-r0-19640f826fd0e800f9509678d052492900b1b94f5825a94d205996533008197a.nix;
+        revNum = 0;
+        sha256 = "19640f826fd0e800f9509678d052492900b1b94f5825a94d205996533008197a";
+        };
       default = "r0";
       };
     };
