@@ -1,0 +1,24 @@
+{
+  "0.1" = {
+    sha256 = "26e3e4954a25182a9ab9761124833e51cb143bab575d9ef0ca17aa1d4aa94877";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-plan-bounds-0.1-r0-b38793d09cab07a09f19098f2424e116f7df14cdee9d8b362dfea44c5f813e9e.nix;
+        revNum = 0;
+        sha256 = "b38793d09cab07a09f19098f2424e116f7df14cdee9d8b362dfea44c5f813e9e";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.0.1" = {
+    sha256 = "04ec01d3663edf6b41b166c5c2e365a8af5285aa04f7a5ce3010c485ae9714e9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-plan-bounds-0.1.0.1-r0-393a3cba31076fe4c0d7dbe5656fd8b3563a0cccf7c6babd1a28421d664db50f.nix;
+        revNum = 0;
+        sha256 = "393a3cba31076fe4c0d7dbe5656fd8b3563a0cccf7c6babd1a28421d664db50f";
+        };
+      default = "r0";
+      };
+    };
+  }

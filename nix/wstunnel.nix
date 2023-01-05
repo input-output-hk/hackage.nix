@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.5.0.0" = {
+    sha256 = "77f219114ccef7e104f0acb0dd2fb50d33c736a779e5e263599ea69b00b0a662";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wstunnel-0.5.0.0-r0-08aa488cd30dc6a285c394b18cd2c2421aa3ab728b12c81e6ff964d1cdedd726.nix;
+        revNum = 0;
+        sha256 = "08aa488cd30dc6a285c394b18cd2c2421aa3ab728b12c81e6ff964d1cdedd726";
+        };
+      default = "r0";
+      };
+    };
   }

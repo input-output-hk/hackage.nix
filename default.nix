@@ -2870,6 +2870,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cabal-nirvana" = import ./nix/cabal-nirvana.nix;
   "cabal-pkg-config-version-hook" = import ./nix/cabal-pkg-config-version-hook.nix;
   "cabal-plan" = import ./nix/cabal-plan.nix;
+  "cabal-plan-bounds" = import ./nix/cabal-plan-bounds.nix;
   "cabal-progdeps" = import ./nix/cabal-progdeps.nix;
   "cabal-query" = import ./nix/cabal-query.nix;
   "cabal-rpm" = import ./nix/cabal-rpm.nix;
@@ -11023,6 +11024,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "onpartitions" = import ./nix/onpartitions.nix;
   "onu-course" = import ./nix/onu-course.nix;
   "oo-prototypes" = import ./nix/oo-prototypes.nix;
+  "oops" = import ./nix/oops.nix;
   "op" = import ./nix/op.nix;
   "opaleye" = import ./nix/opaleye.nix;
   "opaleye-classy" = import ./nix/opaleye-classy.nix;

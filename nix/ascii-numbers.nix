@@ -65,7 +65,12 @@
         revNum = 1;
         sha256 = "f9eab601c4a09cf4665395bcfac1b3bbad514b0f77dc961cfc4d3589da576abc";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/ascii-numbers-1.1.0.2-r2-a789133299c68ce90b7c024dcd5f5a0cd26a6cbe2ceee4a627f2ac1b02aca9a7.nix;
+        revNum = 2;
+        sha256 = "a789133299c68ce90b7c024dcd5f5a0cd26a6cbe2ceee4a627f2ac1b02aca9a7";
+        };
+      default = "r2";
       };
     };
   }
