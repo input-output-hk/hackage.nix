@@ -290,6 +290,22 @@
         revNum = 0;
         sha256 = "061c503b5295e961cbe809b37305556a185ef99bc163d648c92870e3e2facca9";
         };
+      r1 = {
+        nix = import ../hackage/HaskellNet-0.6.0.1-r1-6382322a5b52af91a485456da13234f2e82d374f07bc917bb409026acfedb130.nix;
+        revNum = 1;
+        sha256 = "6382322a5b52af91a485456da13234f2e82d374f07bc917bb409026acfedb130";
+        };
+      default = "r1";
+      };
+    };
+  "0.6.0.2" = {
+    sha256 = "f22a47152a02c3b54ed59c812d40ff703f2e94657b57071372d9716c20c30d53";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HaskellNet-0.6.0.2-r0-b214129cb897e130247287ac28c3f2f1d2d27590fb62fc540350b0b4622b1231.nix;
+        revNum = 0;
+        sha256 = "b214129cb897e130247287ac28c3f2f1d2d27590fb62fc540350b0b4622b1231";
+        };
       default = "r0";
       };
     };

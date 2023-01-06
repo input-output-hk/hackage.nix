@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.3.0" = {
+    sha256 = "0b12fce45f0e0c910fc223ebd4dd7ab8ae9c64564c65966fb522e82a05c1cf6c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/openweathermap-0.3.0-r0-0a4d1b2660d7970c6a78de98045924a26ee130bdcb6e2072e9c719169cc5ed45.nix;
+        revNum = 0;
+        sha256 = "0a4d1b2660d7970c6a78de98045924a26ee130bdcb6e2072e9c719169cc5ed45";
+        };
+      default = "r0";
+      };
+    };
   }

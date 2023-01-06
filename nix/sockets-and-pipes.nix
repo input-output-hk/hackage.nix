@@ -54,7 +54,12 @@
         revNum = 1;
         sha256 = "c965cb605b46b2ba33e3d187f63d09418032bea53f8f96cb7b4dd574c63c5796";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/sockets-and-pipes-0.3-r2-f4785b8420899e34d4259647b15778078d7fac591e19bb7c0647d48dd19e7c0b.nix;
+        revNum = 2;
+        sha256 = "f4785b8420899e34d4259647b15778078d7fac591e19bb7c0647d48dd19e7c0b";
+        };
+      default = "r2";
       };
     };
   }
