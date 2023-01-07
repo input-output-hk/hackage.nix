@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "5f3ddb1cf916bf188f319224824dbb47d96c66bad70fd5233c8b5af2427ea16a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/mu-persistent-0.3.1.0-r1-f19fe050f03e18a367aac9b61b4c757a23351f25e116b5285a4842abc7ddd097.nix;
+        revNum = 1;
+        sha256 = "f19fe050f03e18a367aac9b61b4c757a23351f25e116b5285a4842abc7ddd097";
+        };
+      default = "r1";
       };
     };
   }

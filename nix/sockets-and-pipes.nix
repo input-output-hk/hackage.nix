@@ -59,7 +59,17 @@
         revNum = 2;
         sha256 = "f4785b8420899e34d4259647b15778078d7fac591e19bb7c0647d48dd19e7c0b";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/sockets-and-pipes-0.3-r3-1b07ec9fc81d032cb08233d664ca48fbfa95211529c6ba02c8a51d94bc01296b.nix;
+        revNum = 3;
+        sha256 = "1b07ec9fc81d032cb08233d664ca48fbfa95211529c6ba02c8a51d94bc01296b";
+        };
+      r4 = {
+        nix = import ../hackage/sockets-and-pipes-0.3-r4-a2b5f3c69dcd913826cf3a1f104fe5048ac8065f52c127184dda6c9387b0fb2c.nix;
+        revNum = 4;
+        sha256 = "a2b5f3c69dcd913826cf3a1f104fe5048ac8065f52c127184dda6c9387b0fb2c";
+        };
+      default = "r4";
       };
     };
   }

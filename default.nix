@@ -3631,6 +3631,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "console-style" = import ./nix/console-style.nix;
   "const" = import ./nix/const.nix;
   "const-math-ghc-plugin" = import ./nix/const-math-ghc-plugin.nix;
+  "constable" = import ./nix/constable.nix;
   "constaparser" = import ./nix/constaparser.nix;
   "constr-eq" = import ./nix/constr-eq.nix;
   "constrained" = import ./nix/constrained.nix;
@@ -9008,6 +9009,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "keyword-args" = import ./nix/keyword-args.nix;
   "khph" = import ./nix/khph.nix;
   "ki" = import ./nix/ki.nix;
+  "ki-effectful" = import ./nix/ki-effectful.nix;
   "ki-unlifted" = import ./nix/ki-unlifted.nix;
   "kibro" = import ./nix/kibro.nix;
   "kicad-data" = import ./nix/kicad-data.nix;
@@ -9239,6 +9241,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lazy" = import ./nix/lazy.nix;
   "lazy-async" = import ./nix/lazy-async.nix;
   "lazy-bracket" = import ./nix/lazy-bracket.nix;
+  "lazy-cache" = import ./nix/lazy-cache.nix;
   "lazy-csv" = import ./nix/lazy-csv.nix;
   "lazy-hash" = import ./nix/lazy-hash.nix;
   "lazy-hash-cache" = import ./nix/lazy-hash-cache.nix;
@@ -9261,6 +9264,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ldap-scim-bridge" = import ./nix/ldap-scim-bridge.nix;
   "ldapply" = import ./nix/ldapply.nix;
   "ldif" = import ./nix/ldif.nix;
+  "ldtk-types" = import ./nix/ldtk-types.nix;
   "leaf" = import ./nix/leaf.nix;
   "leaky" = import ./nix/leaky.nix;
   "lean" = import ./nix/lean.nix;

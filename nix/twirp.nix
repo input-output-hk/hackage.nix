@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.2.0" = {
+    sha256 = "50fc2802f95209befc2bfeb03580f5b230502024297a91e4791170c66f70c9d8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/twirp-0.2.2.0-r0-b58cf577eca900f86a3062ce77b163e2e2e183804e2d8de6822697d8702710be.nix;
+        revNum = 0;
+        sha256 = "b58cf577eca900f86a3062ce77b163e2e2e183804e2d8de6822697d8702710be";
+        };
+      default = "r0";
+      };
+    };
   }
