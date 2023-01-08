@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.5.0" = {
+    sha256 = "058b1f9c2984997a35aeb21580e97c081f0da67c3c1ff10d2dd5284cbcc13ced";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/glpk-headers-0.5.0-r0-f2784ef7851c60c2ca46dbba1298b13bb97f273bd37373e2785bf7f29b3f1730.nix;
+        revNum = 0;
+        sha256 = "f2784ef7851c60c2ca46dbba1298b13bb97f273bd37373e2785bf7f29b3f1730";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -5719,6 +5719,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gact" = import ./nix/gact.nix;
   "galois-fft" = import ./nix/galois-fft.nix;
   "galois-field" = import ./nix/galois-field.nix;
+  "gambler" = import ./nix/gambler.nix;
   "game-of-life" = import ./nix/game-of-life.nix;
   "game-probability" = import ./nix/game-probability.nix;
   "game-tree" = import ./nix/game-tree.nix;
@@ -7238,6 +7239,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hedgehog-checkers-lens" = import ./nix/hedgehog-checkers-lens.nix;
   "hedgehog-classes" = import ./nix/hedgehog-classes.nix;
   "hedgehog-corpus" = import ./nix/hedgehog-corpus.nix;
+  "hedgehog-extras" = import ./nix/hedgehog-extras.nix;
   "hedgehog-fakedata" = import ./nix/hedgehog-fakedata.nix;
   "hedgehog-fn" = import ./nix/hedgehog-fn.nix;
   "hedgehog-gen" = import ./nix/hedgehog-gen.nix;

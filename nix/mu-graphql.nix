@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.5.0.4" = {
+    sha256 = "648c042c0c2ae774511b292c23b2888e6e3f5502f7c94ad431d2f86ee8755f75";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mu-graphql-0.5.0.4-r0-5c440ea1d40ea33a9c51a7680177b75f47b3d1a2f883b9c3e63e6666377ff24c.nix;
+        revNum = 0;
+        sha256 = "5c440ea1d40ea33a9c51a7680177b75f47b3d1a2f883b9c3e63e6666377ff24c";
+        };
+      default = "r0";
+      };
+    };
   }
