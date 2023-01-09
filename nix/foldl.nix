@@ -491,7 +491,12 @@
         revNum = 1;
         sha256 = "5c34bc56e9f77d5711c6e16e545919540607899f36c57a255afd2285eae1a365";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/foldl-1.4.10-r2-7d31562ac1e2b8651ea586595a34ca8402179c005982809ae0c2d62b43ccc18a.nix;
+        revNum = 2;
+        sha256 = "7d31562ac1e2b8651ea586595a34ca8402179c005982809ae0c2d62b43ccc18a";
+        };
+      default = "r2";
       };
     };
   "1.4.11" = {
@@ -502,7 +507,12 @@
         revNum = 0;
         sha256 = "c3ab1924bb6ed8e49eed632515d965b884b896a3951209566baac60927e35d53";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/foldl-1.4.11-r1-cfdc04be8d99035581c10af7a807257d7629d3bb31fcb024db8d16e6626edd33.nix;
+        revNum = 1;
+        sha256 = "cfdc04be8d99035581c10af7a807257d7629d3bb31fcb024db8d16e6626edd33";
+        };
+      default = "r1";
       };
     };
   "1.4.12" = {
@@ -538,7 +548,12 @@
         revNum = 5;
         sha256 = "64cbfdfeb1dd734ae9222e385fac74500144368d22c5e7453f2dfafc0b9a27ad";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/foldl-1.4.12-r6-ca510602f4c9d48dba80346f88c4fdda9d503a69d7394892c0570414510091e6.nix;
+        revNum = 6;
+        sha256 = "ca510602f4c9d48dba80346f88c4fdda9d503a69d7394892c0570414510091e6";
+        };
+      default = "r6";
       };
     };
   "1.4.13" = {
@@ -549,7 +564,12 @@
         revNum = 0;
         sha256 = "d73f951d8a8314cfd5b660d89a292aff9204c6d35445b267836bfb6a34f66abd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/foldl-1.4.13-r1-d104a02fe50c60ff73be6225d7cf59209aebd044b3280ed39e097be9656f7272.nix;
+        revNum = 1;
+        sha256 = "d104a02fe50c60ff73be6225d7cf59209aebd044b3280ed39e097be9656f7272";
+        };
+      default = "r1";
       };
     };
   "1.4.2" = {
@@ -628,7 +648,12 @@
         revNum = 4;
         sha256 = "e01506ad0839d71965753a0aee51dfa41f6f3d9da0dc716c2bdfcbf815ad198b";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/foldl-1.4.5-r5-cc8b5d066244a6df75406d701bc72923d9f2c0064dd1a14c61780432bf0637d7.nix;
+        revNum = 5;
+        sha256 = "cc8b5d066244a6df75406d701bc72923d9f2c0064dd1a14c61780432bf0637d7";
+        };
+      default = "r5";
       };
     };
   "1.4.6" = {
@@ -639,7 +664,12 @@
         revNum = 0;
         sha256 = "15a601fc5fd012bb139db64f7276d3681a0a2c48cddecdf97fe7e9f0cd549f7e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/foldl-1.4.6-r1-ea554b5682f0a168263315af9b180ccfb207eac1352115dce672b7900b03e742.nix;
+        revNum = 1;
+        sha256 = "ea554b5682f0a168263315af9b180ccfb207eac1352115dce672b7900b03e742";
+        };
+      default = "r1";
       };
     };
   "1.4.7" = {
@@ -650,7 +680,12 @@
         revNum = 0;
         sha256 = "2078aa52a71b229236eb2c07db3aa103824f78e7a9ba8cdbba41ae4e6fc6dc62";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/foldl-1.4.7-r1-aa78d5bd8c82279aedafb9e60bca5bbce215d4576238a578066e7b9c079dbda1.nix;
+        revNum = 1;
+        sha256 = "aa78d5bd8c82279aedafb9e60bca5bbce215d4576238a578066e7b9c079dbda1";
+        };
+      default = "r1";
       };
     };
   "1.4.8" = {
@@ -666,7 +701,12 @@
         revNum = 1;
         sha256 = "2f6611b3a2ce92d2279c93a60cd8ef3bed98c17bd814e5b943ede53578005f26";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/foldl-1.4.8-r2-206e84f61df68771e676ee5a23b6e75a77166db6f93c64ef3873d5d20422f9e5.nix;
+        revNum = 2;
+        sha256 = "206e84f61df68771e676ee5a23b6e75a77166db6f93c64ef3873d5d20422f9e5";
+        };
+      default = "r2";
       };
     };
   "1.4.9" = {
@@ -682,7 +722,12 @@
         revNum = 1;
         sha256 = "b5e20de4c0a9ca585b3b67f6f670a2a3130d311f4a5970ca651f0813aa77e5ba";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/foldl-1.4.9-r2-9ddd54b4cf231efc61c78cb5c5258e3a953ae9f188b46aa8f7f1d18cddb4c627.nix;
+        revNum = 2;
+        sha256 = "9ddd54b4cf231efc61c78cb5c5258e3a953ae9f188b46aa8f7f1d18cddb4c627";
+        };
+      default = "r2";
       };
     };
   }

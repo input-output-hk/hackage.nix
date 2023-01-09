@@ -262,7 +262,12 @@
         revNum = 1;
         sha256 = "4b5a800fe9edf168fc7ae48c7a3fc2aab6b418ac15be2f1dad43c0f48a494a3b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/mtl-2.2.1-r2-0f7c5e9e2bfa8c1102d38cd57b258b2cf519f3aae65451c8f3fccb472cb8e3c1.nix;
+        revNum = 2;
+        sha256 = "0f7c5e9e2bfa8c1102d38cd57b258b2cf519f3aae65451c8f3fccb472cb8e3c1";
+        };
+      default = "r2";
       };
     };
   "2.2.2" = {

@@ -331,6 +331,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "FTPLine" = import ./nix/_F_T_P_Line.nix;
   "Facebook-Password-Hacker-Online-Latest-Version" = import ./nix/_Facebook-_Password-_Hacker-_Online-_Latest-_Version.nix;
   "Facts" = import ./nix/_Facts.nix;
+  "FailT" = import ./nix/_Fail_T.nix;
   "FailureT" = import ./nix/_Failure_T.nix;
   "FastPush" = import ./nix/_Fast_Push.nix;
   "FastxPipe" = import ./nix/_Fastx_Pipe.nix;
@@ -10274,6 +10275,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monadcryptorandom" = import ./nix/monadcryptorandom.nix;
   "monadfibre" = import ./nix/monadfibre.nix;
   "monadic-arrays" = import ./nix/monadic-arrays.nix;
+  "monadic-bang" = import ./nix/monadic-bang.nix;
   "monadic-recursion-schemes" = import ./nix/monadic-recursion-schemes.nix;
   "monadiccp" = import ./nix/monadiccp.nix;
   "monadiccp-gecode" = import ./nix/monadiccp-gecode.nix;

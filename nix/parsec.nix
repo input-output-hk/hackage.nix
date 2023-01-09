@@ -249,6 +249,28 @@
       default = "r0";
       };
     };
+  "3.1.16.0" = {
+    sha256 = "0b513d5aa0209bdacc8d3569ee411d2c204641a94ad584d91230a9e373442a3e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/parsec-3.1.16.0-r0-32aecd6f34ae08c1be99d9186a3b17a37e0aa52b9a431b3951422e6dddee0d4a.nix;
+        revNum = 0;
+        sha256 = "32aecd6f34ae08c1be99d9186a3b17a37e0aa52b9a431b3951422e6dddee0d4a";
+        };
+      default = "r0";
+      };
+    };
+  "3.1.16.1" = {
+    sha256 = "a41962e5d76ea68658876735b8d5b755e0eff336b079d0a2f439c364755d1246";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/parsec-3.1.16.1-r0-5769242043b01bf759b07b7efedcb19607837ee79015fcddde34645664136aed.nix;
+        revNum = 0;
+        sha256 = "5769242043b01bf759b07b7efedcb19607837ee79015fcddde34645664136aed";
+        };
+      default = "r0";
+      };
+    };
   "3.1.2" = {
     sha256 = "90f124b91f5e4ff04ddd4dc7f43aeda1273b8caec6a58ec13b90ca22854c1652";
     revisions = {
