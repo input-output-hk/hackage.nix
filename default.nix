@@ -2071,6 +2071,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "attoparsec-iteratee" = import ./nix/attoparsec-iteratee.nix;
   "attoparsec-parsec" = import ./nix/attoparsec-parsec.nix;
   "attoparsec-path" = import ./nix/attoparsec-path.nix;
+  "attoparsec-run" = import ./nix/attoparsec-run.nix;
   "attoparsec-text" = import ./nix/attoparsec-text.nix;
   "attoparsec-text-enumerator" = import ./nix/attoparsec-text-enumerator.nix;
   "attoparsec-time" = import ./nix/attoparsec-time.nix;
@@ -5278,6 +5279,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fences" = import ./nix/fences.nix;
   "fenfire" = import ./nix/fenfire.nix;
   "fernet" = import ./nix/fernet.nix;
+  "festival" = import ./nix/festival.nix;
   "festung" = import ./nix/festung.nix;
   "fez-conf" = import ./nix/fez-conf.nix;
   "ffeed" = import ./nix/ffeed.nix;

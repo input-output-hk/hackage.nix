@@ -622,6 +622,22 @@
         revNum = 0;
         sha256 = "4f14f820ebff417bb1af27cfb2191f21568312b7820026f59ce6113e9682cef0";
         };
+      r1 = {
+        nix = import ../hackage/transformers-0.6.0.5-r1-997c7f2b7ef2c76ee5b8853b4509101ca7d194e467aa55ad7129c1c1c2919ceb.nix;
+        revNum = 1;
+        sha256 = "997c7f2b7ef2c76ee5b8853b4509101ca7d194e467aa55ad7129c1c1c2919ceb";
+        };
+      default = "r1";
+      };
+    };
+  "0.6.0.6" = {
+    sha256 = "7c6022d7d561f86132a6aec0d798d7c13613d9f90f6c773aa3204a28f3715be9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/transformers-0.6.0.6-r0-f5f737c9a6a0a3616dd2860b85808b4d0474672a1de42cfc0051648f136f5d07.nix;
+        revNum = 0;
+        sha256 = "f5f737c9a6a0a3616dd2860b85808b4d0474672a1de42cfc0051648f136f5d07";
+        };
       default = "r0";
       };
     };
