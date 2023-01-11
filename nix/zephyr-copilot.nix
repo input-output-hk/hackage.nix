@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "1.0.6" = {
+    sha256 = "eae5316f57ca9c4dec524fae76a110309537d8970796966946bbb53c84555351";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zephyr-copilot-1.0.6-r0-f70d53afafcbcbbda36d654839c379f5db12d7fd258695457709eb1e3099abf1.nix;
+        revNum = 0;
+        sha256 = "f70d53afafcbcbbda36d654839c379f5db12d7fd258695457709eb1e3099abf1";
+        };
+      default = "r0";
+      };
+    };
   }

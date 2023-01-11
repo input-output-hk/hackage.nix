@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "f4c3574dc10894af73119b2c96be753234a4113ee358a28746d63ad5defbda58";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/general-allocate-0.2.0.1-r0-8e71b69ba6a9407fc00c7b14f7da03fbd041a2a304a2288c5893f9a0b0b4bf84.nix;
+        revNum = 0;
+        sha256 = "8e71b69ba6a9407fc00c7b14f7da03fbd041a2a304a2288c5893f9a0b0b4bf84";
+        };
+      default = "r0";
+      };
+    };
   }

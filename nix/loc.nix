@@ -234,4 +234,15 @@
       default = "r1";
       };
     };
+  "0.1.4.1" = {
+    sha256 = "3c46d775772e0884adfd4d0dd1e347e60cca068c118d0f35730d0104a85c7a89";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/loc-0.1.4.1-r0-478b70815ccfdee4190cfe586c8ca78b2caf95657a7f77ccc9168fc88943d005.nix;
+        revNum = 0;
+        sha256 = "478b70815ccfdee4190cfe586c8ca78b2caf95657a7f77ccc9168fc88943d005";
+        };
+      default = "r0";
+      };
+    };
   }
