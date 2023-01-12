@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "b95467b03141f3daf645fd2e3b00b15df99e695197e2fe40b37f327cf204f39e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/binrep-0.3.1-r1-2a5cc71e0bd5c249922d4048ee75d79785720cf48a074b4237b7f176b7e8859e.nix;
+        revNum = 1;
+        sha256 = "2a5cc71e0bd5c249922d4048ee75d79785720cf48a074b4237b7f176b7e8859e";
+        };
+      default = "r1";
       };
     };
   }

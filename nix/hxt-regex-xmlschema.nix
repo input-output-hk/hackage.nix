@@ -114,7 +114,12 @@
         revNum = 1;
         sha256 = "48c50321a00139120359c96fbdf5a47a7103a3db9e6ccebf5135e02a9ddde96d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hxt-regex-xmlschema-9.2.0.3-r2-96814990300a8b0b8f05adbe271b58bf9566f82b841a6069b6b327d202875eec.nix;
+        revNum = 2;
+        sha256 = "96814990300a8b0b8f05adbe271b58bf9566f82b841a6069b6b327d202875eec";
+        };
+      default = "r2";
       };
     };
   "9.2.0.7" = {

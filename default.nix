@@ -1976,6 +1976,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "asif" = import ./nix/asif.nix;
   "asil" = import ./nix/asil.nix;
   "asn" = import ./nix/asn.nix;
+  "asn1-ber-syntax" = import ./nix/asn1-ber-syntax.nix;
   "asn1-codec" = import ./nix/asn1-codec.nix;
   "asn1-data" = import ./nix/asn1-data.nix;
   "asn1-encoding" = import ./nix/asn1-encoding.nix;
@@ -9638,6 +9639,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "logging-facade-syslog" = import ./nix/logging-facade-syslog.nix;
   "logic-TPTP" = import ./nix/logic-_T_P_T_P.nix;
   "logic-classes" = import ./nix/logic-classes.nix;
+  "logical-constraints" = import ./nix/logical-constraints.nix;
   "logicst" = import ./nix/logicst.nix;
   "logict" = import ./nix/logict.nix;
   "logict-sequence" = import ./nix/logict-sequence.nix;
@@ -12095,6 +12097,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "primitive-offset" = import ./nix/primitive-offset.nix;
   "primitive-primvar" = import ./nix/primitive-primvar.nix;
   "primitive-simd" = import ./nix/primitive-simd.nix;
+  "primitive-slice" = import ./nix/primitive-slice.nix;
   "primitive-sort" = import ./nix/primitive-sort.nix;
   "primitive-stablename" = import ./nix/primitive-stablename.nix;
   "primitive-unaligned" = import ./nix/primitive-unaligned.nix;

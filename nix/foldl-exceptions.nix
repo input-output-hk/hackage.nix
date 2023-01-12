@@ -31,4 +31,15 @@
       default = "r0";
       };
     };
+  "1.0.0.2" = {
+    sha256 = "37533356d65a4d4ab463046f20aa7c4aa8ed1761db35bff9c21018e8d6f2038c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/foldl-exceptions-1.0.0.2-r0-dfc037f548808e1adbdb9cf1cfb11d0a5c797509ef1627f52dc44cecaaa45e09.nix;
+        revNum = 0;
+        sha256 = "dfc037f548808e1adbdb9cf1cfb11d0a5c797509ef1627f52dc44cecaaa45e09";
+        };
+      default = "r0";
+      };
+    };
   }

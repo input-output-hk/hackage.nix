@@ -59,4 +59,15 @@
       default = "r0";
       };
     };
+  "0.1.0.5" = {
+    sha256 = "0ec6e5bed9476c2fd551527b4d0452d16b72ac8931e7fbae23bcfcd5c9aecf82";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/one-line-aeson-text-0.1.0.5-r0-0c2273319c715e862742f2bcf00ea58f50c8bd20648b8414aff622d315619ed9.nix;
+        revNum = 0;
+        sha256 = "0c2273319c715e862742f2bcf00ea58f50c8bd20648b8414aff622d315619ed9";
+        };
+      default = "r0";
+      };
+    };
   }

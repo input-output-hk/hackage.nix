@@ -462,4 +462,15 @@
       default = "r2";
       };
     };
+  "0.2.1" = {
+    sha256 = "4db43835a4cdfd79b9e18238fdd86c0de7e656813f8b8083c3ba8630d322cd90";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hjsmin-0.2.1-r0-e1639a9b612735030ac4365204da4b37efbab48da4311b655f60a90ce109fb06.nix;
+        revNum = 0;
+        sha256 = "e1639a9b612735030ac4365204da4b37efbab48da4311b655f60a90ce109fb06";
+        };
+      default = "r0";
+      };
+    };
   }

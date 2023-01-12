@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.0.0.1" = {
+    sha256 = "ffcbd5cbfa1741734f7bdf774173bec8f2d97a57f1913d19c9ca6fa6b078a9a3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/supply-chain-core-0.0.0.1-r0-4056987b04edc8c32ab66946adf2f41052e4c659ed63622382e3e8ea1e2cac45.nix;
+        revNum = 0;
+        sha256 = "4056987b04edc8c32ab66946adf2f41052e4c659ed63622382e3e8ea1e2cac45";
+        };
+      default = "r0";
+      };
+    };
   }

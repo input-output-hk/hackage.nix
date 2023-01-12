@@ -62,4 +62,15 @@
       default = "r3";
       };
     };
+  "1.0.0.3" = {
+    sha256 = "c4dbebd294ebf538fbbf88b550f4f63991c4273ec1b16273a57309b06fb27321";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/invert-1.0.0.3-r0-ff806adb8ba8289a921e29976df85950606fe29170291ee17a9f2f8ba5026981.nix;
+        revNum = 0;
+        sha256 = "ff806adb8ba8289a921e29976df85950606fe29170291ee17a9f2f8ba5026981";
+        };
+      default = "r0";
+      };
+    };
   }

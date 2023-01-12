@@ -188,7 +188,12 @@
         revNum = 1;
         sha256 = "a6367228c6ecf3abc4a43225058ed9e86dc291849e943ce1f1ef5527c1ecba07";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/RSA-2.1.0-r2-8758d868af748556542d78985cf5be9c27087bc072a4cfef8aabbc05d71c9e63.nix;
+        revNum = 2;
+        sha256 = "8758d868af748556542d78985cf5be9c27087bc072a4cfef8aabbc05d71c9e63";
+        };
+      default = "r2";
       };
     };
   "2.1.0.1" = {
@@ -199,7 +204,12 @@
         revNum = 0;
         sha256 = "d4ef5f8f2ea5faa7016b6f61b98118512fddef214d541eb4d096bfdb1d858e1a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/RSA-2.1.0.1-r1-293da226560b227367bb5f251dbec6b7246f604c99a56d6fd651a6d36d770e2f.nix;
+        revNum = 1;
+        sha256 = "293da226560b227367bb5f251dbec6b7246f604c99a56d6fd651a6d36d770e2f";
+        };
+      default = "r1";
       };
     };
   "2.1.0.2" = {
@@ -210,7 +220,12 @@
         revNum = 0;
         sha256 = "3f491738b1323e12e235f06f373918dbd38a12d35a1058a298d8321065b83a9a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/RSA-2.1.0.2-r1-9dd4501a79c39b2fbc0af5beaf90617ca156c5a033f2e48fe0bab0f0959457f7.nix;
+        revNum = 1;
+        sha256 = "9dd4501a79c39b2fbc0af5beaf90617ca156c5a033f2e48fe0bab0f0959457f7";
+        };
+      default = "r1";
       };
     };
   "2.1.0.3" = {
@@ -221,7 +236,12 @@
         revNum = 0;
         sha256 = "e1cc55e0f678d2c3f453a1b5cffa99d504e83d806d0310a19112a4cbfa8cb8ba";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/RSA-2.1.0.3-r1-9e107ba02b96d1d136a9a5d54e5907a17a9b078cd260f7828417e0dce2f0c0ec.nix;
+        revNum = 1;
+        sha256 = "9e107ba02b96d1d136a9a5d54e5907a17a9b078cd260f7828417e0dce2f0c0ec";
+        };
+      default = "r1";
       };
     };
   "2.2.0" = {
@@ -232,7 +252,12 @@
         revNum = 0;
         sha256 = "f89b585bc0dfb6b44cba3cb520cd2390f4e5086ee4d227948280ddf47510e719";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/RSA-2.2.0-r1-913b13362d3157dc019a09df4101332ecf78e6e81b67649971f8e3b7f550c35f.nix;
+        revNum = 1;
+        sha256 = "913b13362d3157dc019a09df4101332ecf78e6e81b67649971f8e3b7f550c35f";
+        };
+      default = "r1";
       };
     };
   "2.3.0" = {
@@ -243,7 +268,12 @@
         revNum = 0;
         sha256 = "e2f8bc09c869bcd78a02974c40d1b1a5792f866b71e7ad18edde027e124acc4f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/RSA-2.3.0-r1-f60b6d37208882c94e44747b441cd8950df829494ab86addacd9f87275fb0a8e.nix;
+        revNum = 1;
+        sha256 = "f60b6d37208882c94e44747b441cd8950df829494ab86addacd9f87275fb0a8e";
+        };
+      default = "r1";
       };
     };
   "2.3.1" = {
@@ -254,7 +284,12 @@
         revNum = 0;
         sha256 = "08d12882ee93735e41afb981a4c73b4209ce92b11f730622cf76785db26fdb93";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/RSA-2.3.1-r1-54d9b0e02a43ad9d8432e77b6dc2796e2b2d7a64a8087b726dfa1e896233aac5.nix;
+        revNum = 1;
+        sha256 = "54d9b0e02a43ad9d8432e77b6dc2796e2b2d7a64a8087b726dfa1e896233aac5";
+        };
+      default = "r1";
       };
     };
   "2.4.1" = {
