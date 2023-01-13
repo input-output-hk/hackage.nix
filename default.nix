@@ -352,6 +352,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "FiniteCategories" = import ./nix/_Finite_Categories.nix;
   "FiniteMap" = import ./nix/_Finite_Map.nix;
   "FirstOrderTheory" = import ./nix/_First_Order_Theory.nix;
+  "FirstPrelude" = import ./nix/_First_Prelude.nix;
   "FixedPoint-simple" = import ./nix/_Fixed_Point-simple.nix;
   "Flippi" = import ./nix/_Flippi.nix;
   "FloatingHex" = import ./nix/_Floating_Hex.nix;
@@ -2095,6 +2096,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "authinfo-hs" = import ./nix/authinfo-hs.nix;
   "authoring" = import ./nix/authoring.nix;
   "auto" = import ./nix/auto.nix;
+  "auto-lift-classes" = import ./nix/auto-lift-classes.nix;
   "auto-update" = import ./nix/auto-update.nix;
   "autoapply" = import ./nix/autoapply.nix;
   "autodocodec" = import ./nix/autodocodec.nix;
@@ -3957,6 +3959,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "curves" = import ./nix/curves.nix;
   "cusolver" = import ./nix/cusolver.nix;
   "cusparse" = import ./nix/cusparse.nix;
+  "custom-interpolation" = import ./nix/custom-interpolation.nix;
   "custom-prelude" = import ./nix/custom-prelude.nix;
   "cut-the-crap" = import ./nix/cut-the-crap.nix;
   "cutter" = import ./nix/cutter.nix;
@@ -13218,6 +13221,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sbp" = import ./nix/sbp.nix;
   "sbp2udp" = import ./nix/sbp2udp.nix;
   "sbv" = import ./nix/sbv.nix;
+  "sbv-program" = import ./nix/sbv-program.nix;
   "sbvPlugin" = import ./nix/sbv_Plugin.nix;
   "sc2-lowlevel" = import ./nix/sc2-lowlevel.nix;
   "sc2-proto" = import ./nix/sc2-proto.nix;
@@ -14202,6 +14206,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "srt-attoparsec" = import ./nix/srt-attoparsec.nix;
   "srt-dhall" = import ./nix/srt-dhall.nix;
   "srt-formatting" = import ./nix/srt-formatting.nix;
+  "srtree" = import ./nix/srtree.nix;
   "srv" = import ./nix/srv.nix;
   "sscan" = import ./nix/sscan.nix;
   "sscgi" = import ./nix/sscgi.nix;

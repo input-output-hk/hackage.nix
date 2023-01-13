@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.9.3" = {
+    sha256 = "57f99c2ca828fd820c618936f970cc70d9457de48ba4ed097531085494b0ee84";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/proteaaudio-sdl-0.9.3-r0-dea9638e2048a54dd8483be89e06449b211d88f7e3098dc4a5d405f52394993a.nix;
+        revNum = 0;
+        sha256 = "dea9638e2048a54dd8483be89e06449b211d88f7e3098dc4a5d405f52394993a";
+        };
+      default = "r0";
+      };
+    };
   }

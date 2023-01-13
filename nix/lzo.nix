@@ -85,4 +85,15 @@
       default = "r0";
       };
     };
+  "0.1.1.5" = {
+    sha256 = "802792b6353243eed8e95f7ddf9af76f5b7546aed688dfb4af343e56f53c3bbe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lzo-0.1.1.5-r0-5705715e336249b80a87d55a820fa43944366b0e9f5bf4c4ed4dc1a5df9b9fec.nix;
+        revNum = 0;
+        sha256 = "5705715e336249b80a87d55a820fa43944366b0e9f5bf4c4ed4dc1a5df9b9fec";
+        };
+      default = "r0";
+      };
+    };
   }
