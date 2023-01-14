@@ -5055,6 +5055,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "eventuo11y-batteries" = import ./nix/eventuo11y-batteries.nix;
   "eventuo11y-dsl" = import ./nix/eventuo11y-dsl.nix;
   "eventuo11y-json" = import ./nix/eventuo11y-json.nix;
+  "eventuo11y-otel" = import ./nix/eventuo11y-otel.nix;
   "every" = import ./nix/every.nix;
   "every-bit-counts" = import ./nix/every-bit-counts.nix;
   "evm-opcodes" = import ./nix/evm-opcodes.nix;
@@ -8557,6 +8558,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "instinct" = import ./nix/instinct.nix;
   "instrument" = import ./nix/instrument.nix;
   "instrument-chord" = import ./nix/instrument-chord.nix;
+  "instrument-cloudwatch" = import ./nix/instrument-cloudwatch.nix;
   "int-cast" = import ./nix/int-cast.nix;
   "int-interval-map" = import ./nix/int-interval-map.nix;
   "int-like" = import ./nix/int-like.nix;
@@ -11263,6 +11265,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pandoc-pyplot" = import ./nix/pandoc-pyplot.nix;
   "pandoc-sidenote" = import ./nix/pandoc-sidenote.nix;
   "pandoc-stylefrommeta" = import ./nix/pandoc-stylefrommeta.nix;
+  "pandoc-symreg" = import ./nix/pandoc-symreg.nix;
   "pandoc-throw" = import ./nix/pandoc-throw.nix;
   "pandoc-types" = import ./nix/pandoc-types.nix;
   "pandoc-unlit" = import ./nix/pandoc-unlit.nix;

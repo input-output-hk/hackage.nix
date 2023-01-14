@@ -26,4 +26,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "caa1cdf1caeb04896f039e4a202c9963c85ef0fd1fa4427b7ec4a8288d42c6f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sqlite-simple-interpolate-0.2.0.0-r0-3861e1d0d2e56f0741efea062329fa00e2f22bbcfd68805db471fa47633e2b75.nix;
+        revNum = 0;
+        sha256 = "3861e1d0d2e56f0741efea062329fa00e2f22bbcfd68805db471fa47633e2b75";
+        };
+      default = "r0";
+      };
+    };
   }

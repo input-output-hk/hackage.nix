@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.5" = {
+    sha256 = "94c50841b1970e2b251c0ceece8a12d37f0e796d2e54dfed7aa89f620ff0572a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/signed-multiset-0.5-r0-c69b7ae59ef5dd2419228837571858844f45dec3f3211aad0c3ce06951b07aa2.nix;
+        revNum = 0;
+        sha256 = "c69b7ae59ef5dd2419228837571858844f45dec3f3211aad0c3ce06951b07aa2";
+        };
+      default = "r0";
+      };
+    };
   }

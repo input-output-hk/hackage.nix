@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "9840d2ee9459a51032e5fea75e6a89fc14ac82cd12d438bb8289a2381d3b2cd6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/fpe-0.1.1-r1-8e464c9d3566c39f52891820fbf5f8f77b3d7dc99cd56823d2e6bc38a0c6c061.nix;
+        revNum = 1;
+        sha256 = "8e464c9d3566c39f52891820fbf5f8f77b3d7dc99cd56823d2e6bc38a0c6c061";
+        };
+      default = "r1";
       };
     };
   }

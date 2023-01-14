@@ -1,0 +1,34 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.12";
+      identifier = { name = "signed-multiset"; version = "0.5"; };
+      license = "BSD-3-Clause";
+      copyright = "(c) 2012-2023 Stefan Holdermans";
+      maintainer = "stefan@holdermans.nl";
+      author = "Stefan Holdermans, Johannes Riecken";
+      homepage = "";
+      url = "";
+      synopsis = "Multisets with negative membership.";
+      description = "Multisets (or bags) are sets in which elements may occur more than once.\nThe number of times an element occurs in a multiset is called its\n/multiplicity/.\n\nThis package provides an efficient implementation of so-called\n/signed multisets/ (also known as hybrid sets or shadow sets), which\ngeneralise multisets by allowing for /negative membership/.\nThat is, elements in a signed multiset can have negative multiplicities.\n\nSee also: Wayne D. Blizard. Negative membership.\n/Notre Dame Journal of Formal Logic/, 31(3):346--368, 1990.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          ];
+        buildable = true;
+        };
+      };
+    }

@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2" = {
+    sha256 = "089cb6d5b0dd1191d79d14a9f38aec52e01d723db5efdb50629e52f793d45d95";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/regression-simple-0.2-r0-49da32a7e3b13f65f63548fd6c81ce0d7d7e6af3036406a9eee837e79ec02351.nix;
+        revNum = 0;
+        sha256 = "49da32a7e3b13f65f63548fd6c81ce0d7d7e6af3036406a9eee837e79ec02351";
+        };
+      default = "r0";
+      };
+    };
   }
