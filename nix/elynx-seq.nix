@@ -219,4 +219,15 @@
       default = "r0";
       };
     };
+  "0.7.1.0" = {
+    sha256 = "af226fe0061a4a69835225bf139c8e72c93a9a2b303af73b3012d0fffa8c8c23";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/elynx-seq-0.7.1.0-r0-6cd5b4c970023c485476da07bd857e29b6ef9ef4dedc6f7215c84c882111f7f7.nix;
+        revNum = 0;
+        sha256 = "6cd5b4c970023c485476da07bd857e29b6ef9ef4dedc6f7215c84c882111f7f7";
+        };
+      default = "r0";
+      };
+    };
   }

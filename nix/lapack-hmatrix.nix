@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.0.0.2" = {
+    sha256 = "6dcd4c37e69f2eee94a1a81d73256de98298857b62b6fa01ada39e161ccf879b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lapack-hmatrix-0.0.0.2-r0-d735a7df05b641972519bf706baa36eec9fc0d4841404a09959bdfa38d527582.nix;
+        revNum = 0;
+        sha256 = "d735a7df05b641972519bf706baa36eec9fc0d4841404a09959bdfa38d527582";
+        };
+      default = "r0";
+      };
+    };
   }

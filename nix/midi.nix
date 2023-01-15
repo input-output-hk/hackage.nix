@@ -312,4 +312,15 @@
       default = "r0";
       };
     };
+  "0.2.2.4" = {
+    sha256 = "a874ea74333757130cded599fe8a55f092f92d998e8335daae589649612cbb91";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/midi-0.2.2.4-r0-f2c30bdedb0a731f35a28744c6f8c5f3d909868e8a17b27a8357019632fb6fde.nix;
+        revNum = 0;
+        sha256 = "f2c30bdedb0a731f35a28744c6f8c5f3d909868e8a17b27a8357019632fb6fde";
+        };
+      default = "r0";
+      };
+    };
   }

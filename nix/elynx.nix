@@ -197,4 +197,15 @@
       default = "r0";
       };
     };
+  "0.7.1.0" = {
+    sha256 = "72ea14afbb9de57f2475585497be53f3f8625b9c61d8c039cb2e53ccbaeed0cc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/elynx-0.7.1.0-r0-21d9b72adabccc8b42258bf5d666dd4761dabf8c4dd1804f36b6afd3b984e266.nix;
+        revNum = 0;
+        sha256 = "21d9b72adabccc8b42258bf5d666dd4761dabf8c4dd1804f36b6afd3b984e266";
+        };
+      default = "r0";
+      };
+    };
   }

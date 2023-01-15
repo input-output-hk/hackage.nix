@@ -22,7 +22,12 @@
         revNum = 3;
         sha256 = "87b4d9032732f7b528779f49348ac96a2c3c31fe7134d8ba2c47512cbc7f4f64";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/unescaping-print-0.1-r4-12774feb474d20ac3041d577b6307730c7376127f59bc79612d599a56d5009d8.nix;
+        revNum = 4;
+        sha256 = "12774feb474d20ac3041d577b6307730c7376127f59bc79612d599a56d5009d8";
+        };
+      default = "r4";
       };
     };
   }

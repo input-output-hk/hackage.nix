@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "1.2.3" = {
+    sha256 = "5d08f8b59133f907038a97175b6c4d9745849a22378aae07e0f4ea06142a6af7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ldtk-types-1.2.3-r0-17e2e422042da6b6870f4559b29e81434f67373ac5eefe56e0ce65d5a28746ff.nix;
+        revNum = 0;
+        sha256 = "17e2e422042da6b6870f4559b29e81434f67373ac5eefe56e0ce65d5a28746ff";
+        };
+      default = "r0";
+      };
+    };
   }

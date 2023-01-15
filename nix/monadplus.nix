@@ -109,7 +109,12 @@
         revNum = 0;
         sha256 = "407069d13ed1ca84b2adacf22c2b7e3f77c2bd97bd569c5abae29647d5d3defc";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/monadplus-1.4.3-r1-af44a5abdce229908e4ce92b27266a09551603c31048fd3b67a3d00f513bff9c.nix;
+        revNum = 1;
+        sha256 = "af44a5abdce229908e4ce92b27266a09551603c31048fd3b67a3d00f513bff9c";
+        };
+      default = "r1";
       };
     };
   }

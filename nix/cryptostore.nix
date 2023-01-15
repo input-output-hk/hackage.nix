@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "90df42c8d775bf1c51c5ebe34d2044b00538849ec1850570c7588adbe43dd968";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cryptostore-0.3.0.0-r0-3a63b66effc7af0a21cab487e9252553603f8a89eec63b8bffad60b76e466095.nix;
+        revNum = 0;
+        sha256 = "3a63b66effc7af0a21cab487e9252553603f8a89eec63b8bffad60b76e466095";
+        };
+      default = "r0";
+      };
+    };
   }

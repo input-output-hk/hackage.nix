@@ -97,4 +97,15 @@
       default = "r1";
       };
     };
+  "0.1.3.1" = {
+    sha256 = "ca9b1bb6e897deb78bba2e6a8c90baf8b4f49a865ccac1c2d9f1cdbe180fc4d5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lapack-ffi-tools-0.1.3.1-r0-dd57a8466990cd7d59c1ec6319c2bbfa3209b82f4636ce144d6ea3cbcf09147a.nix;
+        revNum = 0;
+        sha256 = "dd57a8466990cd7d59c1ec6319c2bbfa3209b82f4636ce144d6ea3cbcf09147a";
+        };
+      default = "r0";
+      };
+    };
   }

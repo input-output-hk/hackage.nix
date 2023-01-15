@@ -444,7 +444,12 @@
         revNum = 0;
         sha256 = "072ce6e3624f109024bda29d2f635564434ee3daf3b5eee79dd30e0c50825494";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hasbolt-0.1.6.2-r1-47b341af37c9a375c9df0cbca58e957ea6e66b74cf4ea844d7ff62865de13a09.nix;
+        revNum = 1;
+        sha256 = "47b341af37c9a375c9df0cbca58e957ea6e66b74cf4ea844d7ff62865de13a09";
+        };
+      default = "r1";
       };
     };
   }
