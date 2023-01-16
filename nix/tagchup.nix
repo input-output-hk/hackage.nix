@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "0.4.1.2" = {
+    sha256 = "221d8c9328f8dbf34b358901c75e69205f1da0a4c2c4614287b01907166d997e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tagchup-0.4.1.2-r0-fc0bfddd0f0f62ed259dc9120068ced1fd80560873e1473c31fa6e7e5fb99d13.nix;
+        revNum = 0;
+        sha256 = "fc0bfddd0f0f62ed259dc9120068ced1fd80560873e1473c31fa6e7e5fb99d13";
+        };
+      default = "r0";
+      };
+    };
   }

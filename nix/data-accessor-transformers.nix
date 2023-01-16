@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.2.1.8" = {
+    sha256 = "03f9944ba12a6d2646410be7a7ed9fb8f02697842fd6d0643c94c4d6605b28d4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/data-accessor-transformers-0.2.1.8-r0-4f870b66e3909b25f968d33987054b1b5b7c18ebc1d5868afb208572a42f521b.nix;
+        revNum = 0;
+        sha256 = "4f870b66e3909b25f968d33987054b1b5b7c18ebc1d5868afb208572a42f521b";
+        };
+      default = "r0";
+      };
+    };
   }

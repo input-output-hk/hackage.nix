@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.0.4" = {
+    sha256 = "b63857b02db9985271891545c3268401dd82bbec601dc2277ce2cf637a058ea7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/internetmarke-0.0.4-r0-b670b8577dd4643c77b2a94b80394d63b88d5bfd36f8426e0f8359e30b9735cc.nix;
+        revNum = 0;
+        sha256 = "b670b8577dd4643c77b2a94b80394d63b88d5bfd36f8426e0f8359e30b9735cc";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.0.1.1" = {
+    sha256 = "4f1323ec5c9cab2facd2fbc4e349377662d4ae0716a8de1645212ec0ad576a75";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/car-pool-0.0.1.1-r0-72f9d5f241832a3e1897e011a1a2fb3ac31d35e992e0d1e7fecc82973807b203.nix;
+        revNum = 0;
+        sha256 = "72f9d5f241832a3e1897e011a1a2fb3ac31d35e992e0d1e7fecc82973807b203";
+        };
+      default = "r0";
+      };
+    };
   }

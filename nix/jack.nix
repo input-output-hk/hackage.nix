@@ -188,7 +188,12 @@
         revNum = 0;
         sha256 = "d96caf1130b36e8346555a12df4ab311f02ead4d7b81cc489d51e9e7efaf6b15";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jack-0.7.2.2-r1-2bb593fbd40b09ebf4c76a9de8bc5770c816a3c262d21de534fbf68e7d94c923.nix;
+        revNum = 1;
+        sha256 = "2bb593fbd40b09ebf4c76a9de8bc5770c816a3c262d21de534fbf68e7d94c923";
+        };
+      default = "r1";
       };
     };
   }

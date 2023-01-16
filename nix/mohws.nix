@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.2.1.9" = {
+    sha256 = "ee96ac5c91c3e5229741d73208851fc9a3c5eb9661aeeb6fcfaa3e6bad545028";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mohws-0.2.1.9-r0-aca79f7209c102074dd7b0c7158aaf96aa24135b443fa296eff129b182e9023f.nix;
+        revNum = 0;
+        sha256 = "aca79f7209c102074dd7b0c7158aaf96aa24135b443fa296eff129b182e9023f";
+        };
+      default = "r0";
+      };
+    };
   }

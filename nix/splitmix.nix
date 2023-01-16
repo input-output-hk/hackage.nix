@@ -142,7 +142,12 @@
         revNum = 1;
         sha256 = "804e2574bc7e32d08cbab91e47ee6287b4df7d50851d73f9e778f94a9a7814c7";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/splitmix-0.1.0.4-r2-db25c2e17967aa6b6046ab8b1b96ba3f344ca59a62b60fb6113d51ea305a3d8e.nix;
+        revNum = 2;
+        sha256 = "db25c2e17967aa6b6046ab8b1b96ba3f344ca59a62b60fb6113d51ea305a3d8e";
+        };
+      default = "r2";
       };
     };
   }

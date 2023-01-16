@@ -12360,6 +12360,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "qtah-examples" = import ./nix/qtah-examples.nix;
   "qtah-generator" = import ./nix/qtah-generator.nix;
   "qtah-qt5" = import ./nix/qtah-qt5.nix;
+  "quaalude" = import ./nix/quaalude.nix;
   "quack" = import ./nix/quack.nix;
   "quadratic-irrational" = import ./nix/quadratic-irrational.nix;
   "qualified-imports-plugin" = import ./nix/qualified-imports-plugin.nix;

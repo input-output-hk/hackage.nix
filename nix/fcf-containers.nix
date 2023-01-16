@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.7.2" = {
+    sha256 = "4942089739e5e75132196fa0729fb163bd49ad5a545c587bff7b56324bfd8753";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fcf-containers-0.7.2-r0-f6e178650b3470ab75a2068382b9034da1463d6400b02620ecf2eb657a9b8e6e.nix;
+        revNum = 0;
+        sha256 = "f6e178650b3470ab75a2068382b9034da1463d6400b02620ecf2eb657a9b8e6e";
+        };
+      default = "r0";
+      };
+    };
   }

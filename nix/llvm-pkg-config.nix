@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "d26172bb20205dbda70e5aa69c0185335b6fbfd5311c3d870c979a617f82bc53";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/llvm-pkg-config-0.0.2-r1-937eff5b330ad39a1f9f71a2b20e5d2cb4e1ce95838b5be7d48610add8dea371.nix;
+        revNum = 1;
+        sha256 = "937eff5b330ad39a1f9f71a2b20e5d2cb4e1ce95838b5be7d48610add8dea371";
+        };
+      default = "r1";
       };
     };
   }
