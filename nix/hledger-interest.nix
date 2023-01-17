@@ -289,4 +289,15 @@
       default = "r1";
       };
     };
+  "1.6.5" = {
+    sha256 = "a15e921238fd8a5dc5814e47143db2c1dbe95828a6f4e16b8d243357e3f5d97e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hledger-interest-1.6.5-r0-a02ae69e7c9cc4abe60aec366876a1d72560a3b8b4e650bdfe966f8d85bdec0b.nix;
+        revNum = 0;
+        sha256 = "a02ae69e7c9cc4abe60aec366876a1d72560a3b8b4e650bdfe966f8d85bdec0b";
+        };
+      default = "r0";
+      };
+    };
   }

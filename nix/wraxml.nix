@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.4.4.3" = {
+    sha256 = "5fc4569200c502a80dd0a7b0879458f93a3c4e4dbca2d757a9f4097965466485";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wraxml-0.4.4.3-r0-1287f162c784d15b36e955cb62ae6a19a9f4b4a157366d335ea251ae5a0d2e59.nix;
+        revNum = 0;
+        sha256 = "1287f162c784d15b36e955cb62ae6a19a9f4b4a157366d335ea251ae5a0d2e59";
+        };
+      default = "r0";
+      };
+    };
   }

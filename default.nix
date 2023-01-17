@@ -14580,6 +14580,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "supplemented" = import ./nix/supplemented.nix;
   "supply-chain" = import ./nix/supply-chain.nix;
   "supply-chain-core" = import ./nix/supply-chain-core.nix;
+  "supply-next" = import ./nix/supply-next.nix;
   "surjective" = import ./nix/surjective.nix;
   "suspend" = import ./nix/suspend.nix;
   "sv" = import ./nix/sv.nix;

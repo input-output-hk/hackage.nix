@@ -185,4 +185,15 @@
       default = "r1";
       };
     };
+  "2.2.5" = {
+    sha256 = "750f9861124b024d3464e05f9527b423f41f24460127a360786d6d441dc103bf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hopenssl-2.2.5-r0-5ed7614d5a1fdfc1a96e399a6dbfb5da307bfd061030e0201e56fc259b3eec71.nix;
+        revNum = 0;
+        sha256 = "5ed7614d5a1fdfc1a96e399a6dbfb5da307bfd061030e0201e56fc259b3eec71";
+        };
+      default = "r0";
+      };
+    };
   }
