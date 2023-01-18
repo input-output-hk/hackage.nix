@@ -95,7 +95,12 @@
         revNum = 0;
         sha256 = "e0b53f6bea2f73c29aacb712f058c96b845aede66793cb59231a3b518f8b39b6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/persistent-mtl-0.5.0.1-r1-44e14fdf2906676e8d40262ab1a4da6d22f766d4b6140be7321f662c05fb0ae2.nix;
+        revNum = 1;
+        sha256 = "44e14fdf2906676e8d40262ab1a4da6d22f766d4b6140be7321f662c05fb0ae2";
+        };
+      default = "r1";
       };
     };
   }

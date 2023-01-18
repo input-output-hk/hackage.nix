@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "3a986186e2b5dcdaa62cc9c4de181428b606bd3c78ae051005041fbd55b63ed7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/unicode-data-scripts-0.2.0.1-r1-556fa6bbb06da46b080f4a5b69cd8b7b8016154e426bf9d74160a7cda7f9d3b8.nix;
+        revNum = 1;
+        sha256 = "556fa6bbb06da46b080f4a5b69cd8b7b8016154e426bf9d74160a7cda7f9d3b8";
+        };
+      default = "r1";
       };
     };
   }

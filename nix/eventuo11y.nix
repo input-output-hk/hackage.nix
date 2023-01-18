@@ -131,4 +131,26 @@
       default = "r0";
       };
     };
+  "0.8.0.0" = {
+    sha256 = "e77d60d37d229adac7307d49b889d9cbc92e01188e8d76ed12d07f5cd2e64d97";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventuo11y-0.8.0.0-r0-ce705f49d7080af4622a730acb1076c88947095496039961d76ae1498a428a55.nix;
+        revNum = 0;
+        sha256 = "ce705f49d7080af4622a730acb1076c88947095496039961d76ae1498a428a55";
+        };
+      default = "r0";
+      };
+    };
+  "0.9.0.0" = {
+    sha256 = "11056c9b21efa312176010a6a8a14206ca3645c1e979932b857377f1d399df2b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventuo11y-0.9.0.0-r0-ac7fd990486be676f0cd446007cf95dcf4cb7b65a158189c88ab9f17ef722a26.nix;
+        revNum = 0;
+        sha256 = "ac7fd990486be676f0cd446007cf95dcf4cb7b65a158189c88ab9f17ef722a26";
+        };
+      default = "r0";
+      };
+    };
   }

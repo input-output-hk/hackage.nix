@@ -109,4 +109,37 @@
       default = "r0";
       };
     };
+  "0.3.0.2" = {
+    sha256 = "f5ff82149bad7220fe6dd458592368b17e93a6af9443cfe8a5638f8a683f8ab4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventuo11y-batteries-0.3.0.2-r0-a62175e885df8b0b979946bddf9524131b44e8cb89ccf251f5ee669da6857e07.nix;
+        revNum = 0;
+        sha256 = "a62175e885df8b0b979946bddf9524131b44e8cb89ccf251f5ee669da6857e07";
+        };
+      default = "r0";
+      };
+    };
+  "0.3.0.3" = {
+    sha256 = "678cfd9d6279169ca688a9310288c538797366c5fbc16288fd8e71f80a796ae9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventuo11y-batteries-0.3.0.3-r0-558c9c77e370ef7db4c1831fe84995c9e3a2525d9aa308c00df8e023b8782280.nix;
+        revNum = 0;
+        sha256 = "558c9c77e370ef7db4c1831fe84995c9e3a2525d9aa308c00df8e023b8782280";
+        };
+      default = "r0";
+      };
+    };
+  "0.4.0.0" = {
+    sha256 = "150883efaa5e071958efd3d2a4b28b29c3a04aa0cbd1939114bbecde5ecc6111";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventuo11y-batteries-0.4.0.0-r0-b1425218df9787ca9aacc8736995b32a7b11cbaef11ef3ac26d07123d658e46e.nix;
+        revNum = 0;
+        sha256 = "b1425218df9787ca9aacc8736995b32a7b11cbaef11ef3ac26d07123d658e46e";
+        };
+      default = "r0";
+      };
+    };
   }

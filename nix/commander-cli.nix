@@ -87,6 +87,17 @@
       default = "r0";
       };
     };
+  "0.11.0.0" = {
+    sha256 = "436bf0b69952cca745746dcba4955a9aa7a2cfece1428eb95c787f4c32328905";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/commander-cli-0.11.0.0-r0-5f6dd79a1b58c82e053227f513add7ce6a36d54361e5f282600c394895454fad.nix;
+        revNum = 0;
+        sha256 = "5f6dd79a1b58c82e053227f513add7ce6a36d54361e5f282600c394895454fad";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "85ce4605082d668ed53ae270f09c35447a5ca9d3203764acf70aa3cb34aeb668";
     revisions = {

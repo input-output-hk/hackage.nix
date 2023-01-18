@@ -182,4 +182,15 @@
       default = "r0";
       };
     };
+  "0.2.4.2" = {
+    sha256 = "23401b06a08fcbe4f0bd5cc8d18cb7778559869230986ffd4659d6a6d9e6174c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hyraxAbif-0.2.4.2-r0-61cfc6f02f925a108730a71d77b4fb231f17d0bced99de2478e296f2a60e0cfb.nix;
+        revNum = 0;
+        sha256 = "61cfc6f02f925a108730a71d77b4fb231f17d0bced99de2478e296f2a60e0cfb";
+        };
+      default = "r0";
+      };
+    };
   }
