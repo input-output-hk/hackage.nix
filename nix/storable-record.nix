@@ -139,7 +139,12 @@
         revNum = 0;
         sha256 = "90174659c1f74a9582efc71fe9aa64963b1f07bac085fc1223cb3bad2a7b6e80";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/storable-record-0.0.6-r1-4d35ee44f49ff42836ae7133d6cfdc54ecf998563d461f4be6eedb944161be3e.nix;
+        revNum = 1;
+        sha256 = "4d35ee44f49ff42836ae7133d6cfdc54ecf998563d461f4be6eedb944161be3e";
+        };
+      default = "r1";
       };
     };
   }

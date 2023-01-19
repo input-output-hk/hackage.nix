@@ -708,6 +708,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "LC3" = import ./nix/_L_C3.nix;
   "LDAP" = import ./nix/_L_D_A_P.nix;
   "LDAPv3" = import ./nix/_L_D_A_Pv3.nix;
+  "LPFP" = import ./nix/_L_P_F_P.nix;
   "LPPaver" = import ./nix/_L_P_Paver.nix;
   "LParse" = import ./nix/_L_Parse.nix;
   "LRU" = import ./nix/_L_R_U.nix;
@@ -11245,6 +11246,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pandoc" = import ./nix/pandoc.nix;
   "pandoc-citeproc" = import ./nix/pandoc-citeproc.nix;
   "pandoc-citeproc-preamble" = import ./nix/pandoc-citeproc-preamble.nix;
+  "pandoc-cli" = import ./nix/pandoc-cli.nix;
   "pandoc-crossref" = import ./nix/pandoc-crossref.nix;
   "pandoc-csv2table" = import ./nix/pandoc-csv2table.nix;
   "pandoc-dhall-decoder" = import ./nix/pandoc-dhall-decoder.nix;
@@ -11257,12 +11259,14 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pandoc-japanese-filters" = import ./nix/pandoc-japanese-filters.nix;
   "pandoc-lens" = import ./nix/pandoc-lens.nix;
   "pandoc-link-context" = import ./nix/pandoc-link-context.nix;
+  "pandoc-lua-engine" = import ./nix/pandoc-lua-engine.nix;
   "pandoc-lua-marshal" = import ./nix/pandoc-lua-marshal.nix;
   "pandoc-markdown-ghci-filter" = import ./nix/pandoc-markdown-ghci-filter.nix;
   "pandoc-placetable" = import ./nix/pandoc-placetable.nix;
   "pandoc-plantuml-diagrams" = import ./nix/pandoc-plantuml-diagrams.nix;
   "pandoc-plot" = import ./nix/pandoc-plot.nix;
   "pandoc-pyplot" = import ./nix/pandoc-pyplot.nix;
+  "pandoc-server" = import ./nix/pandoc-server.nix;
   "pandoc-sidenote" = import ./nix/pandoc-sidenote.nix;
   "pandoc-stylefrommeta" = import ./nix/pandoc-stylefrommeta.nix;
   "pandoc-symreg" = import ./nix/pandoc-symreg.nix;
@@ -11524,6 +11528,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "persistent-discover" = import ./nix/persistent-discover.nix;
   "persistent-documentation" = import ./nix/persistent-documentation.nix;
   "persistent-equivalence" = import ./nix/persistent-equivalence.nix;
+  "persistent-event-source" = import ./nix/persistent-event-source.nix;
   "persistent-generic" = import ./nix/persistent-generic.nix;
   "persistent-hssqlppp" = import ./nix/persistent-hssqlppp.nix;
   "persistent-instances-iproute" = import ./nix/persistent-instances-iproute.nix;

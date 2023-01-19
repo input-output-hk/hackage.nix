@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.3.1.1" = {
+    sha256 = "5c525cb914de0efc649e99ef57c12b3d3e3676803aa648f68b29cedc8f43a1a4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/can-i-haz-0.3.1.1-r0-e858325fa488ebd2d8c180f00009311ef6bb3741ebf2df624c9fba539ddccda1.nix;
+        revNum = 0;
+        sha256 = "e858325fa488ebd2d8c180f00009311ef6bb3741ebf2df624c9fba539ddccda1";
+        };
+      default = "r0";
+      };
+    };
   }
