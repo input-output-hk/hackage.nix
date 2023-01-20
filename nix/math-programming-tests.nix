@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.5.0" = {
+    sha256 = "abd471f02b2e5fbf4e93a18f690292ad89d0db8987739e9b7f18d5860bd44039";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/math-programming-tests-0.5.0-r0-bf2f9649699299668f14c6f9d1cd4a6628dbeea7edbff874b6ede5f1a205a313.nix;
+        revNum = 0;
+        sha256 = "bf2f9649699299668f14c6f9d1cd4a6628dbeea7edbff874b6ede5f1a205a313";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -5153,6 +5153,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "extensioneer" = import ./nix/extensioneer.nix;
   "extensions" = import ./nix/extensions.nix;
   "external-sort" = import ./nix/external-sort.nix;
+  "extism" = import ./nix/extism.nix;
+  "extism-manifest" = import ./nix/extism-manifest.nix;
   "extra" = import ./nix/extra.nix;
   "extract-dependencies" = import ./nix/extract-dependencies.nix;
   "extractable-singleton" = import ./nix/extractable-singleton.nix;
