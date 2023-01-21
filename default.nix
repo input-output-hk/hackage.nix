@@ -2503,6 +2503,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bitcoin-types" = import ./nix/bitcoin-types.nix;
   "bitcoind-regtest" = import ./nix/bitcoind-regtest.nix;
   "bitcoind-rpc" = import ./nix/bitcoind-rpc.nix;
+  "bitfield" = import ./nix/bitfield.nix;
   "bitly-cli" = import ./nix/bitly-cli.nix;
   "bitmap" = import ./nix/bitmap.nix;
   "bitmap-opengl" = import ./nix/bitmap-opengl.nix;
@@ -6536,6 +6537,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gridland" = import ./nix/gridland.nix;
   "grids" = import ./nix/grids.nix;
   "gridtables" = import ./nix/gridtables.nix;
+  "grisette" = import ./nix/grisette.nix;
   "grm" = import ./nix/grm.nix;
   "groom" = import ./nix/groom.nix;
   "groot" = import ./nix/groot.nix;
@@ -11531,6 +11533,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "persistent-documentation" = import ./nix/persistent-documentation.nix;
   "persistent-equivalence" = import ./nix/persistent-equivalence.nix;
   "persistent-event-source" = import ./nix/persistent-event-source.nix;
+  "persistent-eventsource" = import ./nix/persistent-eventsource.nix;
   "persistent-generic" = import ./nix/persistent-generic.nix;
   "persistent-hssqlppp" = import ./nix/persistent-hssqlppp.nix;
   "persistent-instances-iproute" = import ./nix/persistent-instances-iproute.nix;

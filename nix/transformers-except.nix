@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.3" = {
+    sha256 = "484babf024bd82e87cc8305bd38ae04d40a7c24fa81c487cc603c3c9fd230c0d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/transformers-except-0.1.3-r0-9df092f14ffa0c2df085372e344c5d391adb5748106bd2a53eceff16be7dd5aa.nix;
+        revNum = 0;
+        sha256 = "9df092f14ffa0c2df085372e344c5d391adb5748106bd2a53eceff16be7dd5aa";
+        };
+      default = "r0";
+      };
+    };
   }

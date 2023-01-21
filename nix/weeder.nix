@@ -444,4 +444,15 @@
       default = "r0";
       };
     };
+  "2.5.0" = {
+    sha256 = "341ecbbc1680c0c5832dd467ccb7c061b0eb07ff258fa65e600e385c67ad289e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/weeder-2.5.0-r0-3f674e17046f0a3915df83871b78845bdaf587098ef3daebf0da89b63a4fdb2f.nix;
+        revNum = 0;
+        sha256 = "3f674e17046f0a3915df83871b78845bdaf587098ef3daebf0da89b63a4fdb2f";
+        };
+      default = "r0";
+      };
+    };
   }
