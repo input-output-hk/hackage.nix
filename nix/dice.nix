@@ -39,7 +39,12 @@
         revNum = 0;
         sha256 = "4d844962a12997df1f87bb51eee802b0244f86ed784ff0da8acd941521da3968";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dice-0.1.1-r1-be2750b5865ff6615666eb54147a7c7dce56b0303f2b81cdb96ed8c6955d0680.nix;
+        revNum = 1;
+        sha256 = "be2750b5865ff6615666eb54147a7c7dce56b0303f2b81cdb96ed8c6955d0680";
+        };
+      default = "r1";
       };
     };
   }

@@ -13095,6 +13095,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rpm" = import ./nix/rpm.nix;
   "rpm-nvr" = import ./nix/rpm-nvr.nix;
   "rpmbuild-order" = import ./nix/rpmbuild-order.nix;
+  "rpmostree-update" = import ./nix/rpmostree-update.nix;
   "rrb-vector" = import ./nix/rrb-vector.nix;
   "rrule" = import ./nix/rrule.nix;
   "rsagl" = import ./nix/rsagl.nix;

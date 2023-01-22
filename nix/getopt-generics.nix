@@ -153,6 +153,17 @@
       default = "r0";
       };
     };
+  "0.13.1.0" = {
+    sha256 = "ed8ca8474deffd1db555d9bd7147526e02d2753cbdcdebc45238119fa2e7ba03";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/getopt-generics-0.13.1.0-r0-ca896691be868f00516cebfceda43dda31154561ab170b866c2403566f824a0c.nix;
+        revNum = 0;
+        sha256 = "ca896691be868f00516cebfceda43dda31154561ab170b866c2403566f824a0c";
+        };
+      default = "r0";
+      };
+    };
   "0.2" = {
     sha256 = "ef98bf28c99111f899fbc377d051043489ae8d0720e8866801504fdbe76af18b";
     revisions = {
