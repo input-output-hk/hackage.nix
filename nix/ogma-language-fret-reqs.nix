@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "1.0.7" = {
+    sha256 = "034f580ce2593c5b4b5c7754c840931c244eabaec931d6cfbc02403f87a28960";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ogma-language-fret-reqs-1.0.7-r0-60c87e5a2105b830e6f357a2360b35f0fadbad45534041e15842693e9d17820b.nix;
+        revNum = 0;
+        sha256 = "60c87e5a2105b830e6f357a2360b35f0fadbad45534041e15842693e9d17820b";
+        };
+      default = "r0";
+      };
+    };
   }

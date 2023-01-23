@@ -42,6 +42,17 @@
       default = "r0";
       };
     };
+  "0.12.0.0" = {
+    sha256 = "cc1fa24dd2cc02591217363eb0c3852ff215a124a3d28ee9d46cd7f29fdf9477";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/apply-refact-0.12.0.0-r0-74b9e69e1a1545e7f509cb43bd8e5e424e9549e4523e12de88763413a09c00c4.nix;
+        revNum = 0;
+        sha256 = "74b9e69e1a1545e7f509cb43bd8e5e424e9549e4523e12de88763413a09c00c4";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "f74abeae9f6ad6e3ab5b00b108e99c4351ff26f691f5a0c1d3662b2b18648d5c";
     revisions = {
