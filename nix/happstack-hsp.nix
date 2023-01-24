@@ -417,4 +417,15 @@
       default = "r0";
       };
     };
+  "7.3.7.7" = {
+    sha256 = "1b4e6110b5c95df1a8176659b0d676ce2c7a78e110a5b557b567e5a5cff1f2ad";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/happstack-hsp-7.3.7.7-r0-2686336c9ed7a64c08f221fdd0a236214dbe313eb588ba9aa9cfb4b46eedf25b.nix;
+        revNum = 0;
+        sha256 = "2686336c9ed7a64c08f221fdd0a236214dbe313eb588ba9aa9cfb4b46eedf25b";
+        };
+      default = "r0";
+      };
+    };
   }

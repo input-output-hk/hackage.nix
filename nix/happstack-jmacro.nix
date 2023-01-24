@@ -142,6 +142,17 @@
       default = "r0";
       };
     };
+  "7.0.12.5" = {
+    sha256 = "0c9c60435f427275547d7714d8d0f01d42ed17f9eab4db2cffd05385c93160ee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/happstack-jmacro-7.0.12.5-r0-db5fcc5e935eddb1bf3b5c7deb08d76609b425aba13c63807f3e53e8812e8276.nix;
+        revNum = 0;
+        sha256 = "db5fcc5e935eddb1bf3b5c7deb08d76609b425aba13c63807f3e53e8812e8276";
+        };
+      default = "r0";
+      };
+    };
   "7.0.2" = {
     sha256 = "c6475ff57a674ab45d57fd5b24935808ff4e320dc086ad2e4cc04a3d0907b34e";
     revisions = {

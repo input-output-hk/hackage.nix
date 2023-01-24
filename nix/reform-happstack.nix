@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.2.5.6" = {
+    sha256 = "3eae72e627ac4769c814d4d208009a54382647d0b29ecc841c3c820584f9e6ec";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reform-happstack-0.2.5.6-r0-ceda579839567825be741ddc78306ff226b67964b3f4772fb4df07a6aadafe2f.nix;
+        revNum = 0;
+        sha256 = "ceda579839567825be741ddc78306ff226b67964b3f4772fb4df07a6aadafe2f";
+        };
+      default = "r0";
+      };
+    };
   }

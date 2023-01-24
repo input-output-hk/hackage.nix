@@ -119,4 +119,15 @@
       default = "r0";
       };
     };
+  "0.4.3.6" = {
+    sha256 = "0ed487568432f1b554c3bcc762c5b333f398ad1a7d2ad61d1f5ca3aac7af89a4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/harp-0.4.3.6-r0-01af0d8c126fb54da7e37d6d3d928123c916d8e30222fdf4b0303f4cca8ff740.nix;
+        revNum = 0;
+        sha256 = "01af0d8c126fb54da7e37d6d3d928123c916d8e30222fdf4b0303f4cca8ff740";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -131,6 +131,17 @@
       default = "r0";
       };
     };
+  "0.23.12.3" = {
+    sha256 = "a67bbe73a104ea92de1bd93cee74e5fb84e7a400ea47d516d045ab340b566be2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/web-routes-happstack-0.23.12.3-r0-c979b158209fbd55d0ed1a24838cad9129cf90037edcc6629e817ba9b67abdda.nix;
+        revNum = 0;
+        sha256 = "c979b158209fbd55d0ed1a24838cad9129cf90037edcc6629e817ba9b67abdda";
+        };
+      default = "r0";
+      };
+    };
   "0.23.3" = {
     sha256 = "dae3757c30264da3ed42d2920a29629b914954bb0ee18bcb334e4f55c4b44426";
     revisions = {

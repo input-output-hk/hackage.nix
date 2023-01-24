@@ -130,4 +130,15 @@
       default = "r0";
       };
     };
+  "0.7.9" = {
+    sha256 = "5de7ab05ec563d85b5f4c2141fa00605a2dc2d2838c6ac7b60f0341b82aa7f36";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/geniplate-mirror-0.7.9-r0-05941552ba8ce9325f7401e0ca64e556f2447962ea213e775358f9d03c08e0ab.nix;
+        revNum = 0;
+        sha256 = "05941552ba8ce9325f7401e0ca64e556f2447962ea213e775358f9d03c08e0ab";
+        };
+      default = "r0";
+      };
+    };
   }

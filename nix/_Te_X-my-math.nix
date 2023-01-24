@@ -83,7 +83,12 @@
         revNum = 0;
         sha256 = "6c80648ca53b6dadefbb45a4fd5da4b8f898605675c7437ecf79a8bc82b714a3";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/TeX-my-math-0.202.2.0-r1-1bf02ff9299636ef9285a123369dc1553678da1eb54b5b899b33387ee8f20cb2.nix;
+        revNum = 1;
+        sha256 = "1bf02ff9299636ef9285a123369dc1553678da1eb54b5b899b33387ee8f20cb2";
+        };
+      default = "r1";
       };
     };
   }

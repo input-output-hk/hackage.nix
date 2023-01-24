@@ -4743,6 +4743,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "easytensor-vulkan" = import ./nix/easytensor-vulkan.nix;
   "easytest" = import ./nix/easytest.nix;
   "ebeats" = import ./nix/ebeats.nix;
+  "ebml" = import ./nix/ebml.nix;
   "ebnf-bff" = import ./nix/ebnf-bff.nix;
   "ec2-signature" = import ./nix/ec2-signature.nix;
   "ec2-unikernel" = import ./nix/ec2-unikernel.nix;
@@ -5243,8 +5244,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fca" = import ./nix/fca.nix;
   "fcache" = import ./nix/fcache.nix;
   "fcd" = import ./nix/fcd.nix;
+  "fcf-base" = import ./nix/fcf-base.nix;
   "fcf-composite" = import ./nix/fcf-composite.nix;
   "fcf-containers" = import ./nix/fcf-containers.nix;
+  "fcf-family" = import ./nix/fcf-family.nix;
   "fcf-graphs" = import ./nix/fcf-graphs.nix;
   "fcf-vinyl" = import ./nix/fcf-vinyl.nix;
   "fcg" = import ./nix/fcg.nix;
@@ -7115,6 +7118,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hasql-generic" = import ./nix/hasql-generic.nix;
   "hasql-implicits" = import ./nix/hasql-implicits.nix;
   "hasql-interpolate" = import ./nix/hasql-interpolate.nix;
+  "hasql-listen-notify" = import ./nix/hasql-listen-notify.nix;
   "hasql-migration" = import ./nix/hasql-migration.nix;
   "hasql-notifications" = import ./nix/hasql-notifications.nix;
   "hasql-optparse-applicative" = import ./nix/hasql-optparse-applicative.nix;
@@ -14842,6 +14846,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tasty-lens" = import ./nix/tasty-lens.nix;
   "tasty-lua" = import ./nix/tasty-lua.nix;
   "tasty-mgolden" = import ./nix/tasty-mgolden.nix;
+  "tasty-papi" = import ./nix/tasty-papi.nix;
   "tasty-prelude" = import ./nix/tasty-prelude.nix;
   "tasty-program" = import ./nix/tasty-program.nix;
   "tasty-quickcheck" = import ./nix/tasty-quickcheck.nix;

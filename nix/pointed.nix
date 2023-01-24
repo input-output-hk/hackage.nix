@@ -319,7 +319,12 @@
         revNum = 1;
         sha256 = "a010e9b64479afde868054a806cf81242aee5e507bd01c39ac5d9e37bdfa84f7";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/pointed-4.2.0.1-r2-5f7ea6e53b26506022a1086a77ab036fb42506f68f2cebffdb26d45c49d7816e.nix;
+        revNum = 2;
+        sha256 = "5f7ea6e53b26506022a1086a77ab036fb42506f68f2cebffdb26d45c49d7816e";
+        };
+      default = "r2";
       };
     };
   "4.2.0.2" = {
@@ -335,7 +340,12 @@
         revNum = 1;
         sha256 = "4c23f2537d55b92ce1f273caceaaf90bf61d9a1e21f034ea4b5414100445a44e";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/pointed-4.2.0.2-r2-e5a1b2f8882cf53c97ed30bdd42ccefc5a320d065a97bcfb5949f12c81455035.nix;
+        revNum = 2;
+        sha256 = "e5a1b2f8882cf53c97ed30bdd42ccefc5a320d065a97bcfb5949f12c81455035";
+        };
+      default = "r2";
       };
     };
   "5" = {
@@ -356,7 +366,12 @@
         revNum = 2;
         sha256 = "efc08bc3f0feefa5c77e0164c283bb7eb1b8316580c3133af34327512b211d74";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/pointed-5-r3-8552b4d5191ae60babfafdace35348eb31449c292302c67241ce58a2a6ea912d.nix;
+        revNum = 3;
+        sha256 = "8552b4d5191ae60babfafdace35348eb31449c292302c67241ce58a2a6ea912d";
+        };
+      default = "r3";
       };
     };
   "5.0.1" = {
@@ -377,7 +392,12 @@
         revNum = 2;
         sha256 = "1ca03c4ceb74d0b8bca7bd454129b169a696b379f7cb21c55178a8feb271a402";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/pointed-5.0.1-r3-88a0bca3489733c926f81154769fdc3279b6fb4310b222da4596085cc1ffbe9d.nix;
+        revNum = 3;
+        sha256 = "88a0bca3489733c926f81154769fdc3279b6fb4310b222da4596085cc1ffbe9d";
+        };
+      default = "r3";
       };
     };
   "5.0.2" = {
@@ -388,7 +408,12 @@
         revNum = 0;
         sha256 = "5b41f5c4fef2938b18dfcb59cec779c9bad6f690f3713e4d74495f438bf1e1bd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pointed-5.0.2-r1-3f5ffde2b94994a7681406cc18cbae4676824b851439b229ccfbe3fc619978bd.nix;
+        revNum = 1;
+        sha256 = "3f5ffde2b94994a7681406cc18cbae4676824b851439b229ccfbe3fc619978bd";
+        };
+      default = "r1";
       };
     };
   "5.0.3" = {
