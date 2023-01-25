@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.0.1.0" = {
+    sha256 = "d8b508223b2a2bcf66bd26d21325281638db6ab99d22966e9f29bb5a794b86ac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/type-level-kv-list-2.0.1.0-r0-a306e04bd4218eab7331707e16605bcc8f80b06ce4a01261d77ecea6a85dadc1.nix;
+        revNum = 0;
+        sha256 = "a306e04bd4218eab7331707e16605bcc8f80b06ce4a01261d77ecea6a85dadc1";
+        };
+      default = "r0";
+      };
+    };
   }

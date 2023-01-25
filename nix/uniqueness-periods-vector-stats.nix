@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "0f1aa17f9d0be4a35e6ffd26e5707037d7339ebca185342216dfbf6a6000e446";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uniqueness-periods-vector-stats-0.4.0.0-r0-da62c6978712327d24a327ad271479fa0a5955df0e24bdcf5956ad46cd8a4c6c.nix;
+        revNum = 0;
+        sha256 = "da62c6978712327d24a327ad271479fa0a5955df0e24bdcf5956ad46cd8a4c6c";
+        };
+      default = "r0";
+      };
+    };
   }

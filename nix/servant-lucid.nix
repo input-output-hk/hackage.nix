@@ -324,4 +324,15 @@
       default = "r0";
       };
     };
+  "0.9.0.6" = {
+    sha256 = "a03973035722f9aee7a67fcbb6f44a2d515284e21b0bbf236fda3207132709fd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-lucid-0.9.0.6-r0-4a557ab3c535f9e267b0f614375aa2d9db070997ac566d5ffde8d8cb47a51376.nix;
+        revNum = 0;
+        sha256 = "4a557ab3c535f9e267b0f614375aa2d9db070997ac566d5ffde8d8cb47a51376";
+        };
+      default = "r0";
+      };
+    };
   }

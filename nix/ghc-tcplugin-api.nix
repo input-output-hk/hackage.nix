@@ -229,4 +229,15 @@
       default = "r0";
       };
     };
+  "0.9.0.0" = {
+    sha256 = "0316fe645f155fec1a23c9a9f3e6622454067ad6025b3c945b81354845f824fc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-tcplugin-api-0.9.0.0-r0-36301d3175153aa1fa9c3dab5f70692293f09f1f26ef907f42d0f54ef9d3ce6a.nix;
+        revNum = 0;
+        sha256 = "36301d3175153aa1fa9c3dab5f70692293f09f1f26ef907f42d0f54ef9d3ce6a";
+        };
+      default = "r0";
+      };
+    };
   }
