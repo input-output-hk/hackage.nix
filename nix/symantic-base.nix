@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.5.0.20221211" = {
+    sha256 = "adb5120f82208b6e1e24f308b7ae72199b6282f012558394170f79e7f9de9303";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/symantic-base-0.5.0.20221211-r0-fdb5b47170cc3da9aadfb55a1fb6d5f451d35e3fe2fae42c933b6390fa513178.nix;
+        revNum = 0;
+        sha256 = "fdb5b47170cc3da9aadfb55a1fb6d5f451d35e3fe2fae42c933b6390fa513178";
+        };
+      default = "r0";
+      };
+    };
   }

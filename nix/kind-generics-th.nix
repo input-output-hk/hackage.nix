@@ -92,4 +92,15 @@
       default = "r1";
       };
     };
+  "0.2.3.0" = {
+    sha256 = "658d78c5ecee97aa49ac8c76f34def22d92283596abfdaca049852eeb6c6388b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kind-generics-th-0.2.3.0-r0-2f62dde94951e2c9d94f7bd25cfda522ddd8dc3f98793d9a113c8d6fe31262ff.nix;
+        revNum = 0;
+        sha256 = "2f62dde94951e2c9d94f7bd25cfda522ddd8dc3f98793d9a113c8d6fe31262ff";
+        };
+      default = "r0";
+      };
+    };
   }

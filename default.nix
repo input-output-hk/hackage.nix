@@ -9038,6 +9038,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kif-parser" = import ./nix/kif-parser.nix;
   "kind-apply" = import ./nix/kind-apply.nix;
   "kind-generics" = import ./nix/kind-generics.nix;
+  "kind-generics-deriving" = import ./nix/kind-generics-deriving.nix;
   "kind-generics-th" = import ./nix/kind-generics-th.nix;
   "kinds" = import ./nix/kinds.nix;
   "kit" = import ./nix/kit.nix;
