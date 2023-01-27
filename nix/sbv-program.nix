@@ -15,4 +15,15 @@
       default = "r1";
       };
     };
+  "1.1.0.0" = {
+    sha256 = "4fac591b48491facdd1e3beeff54fc9a5dcc05b2a148a488ff47b8712c6dad2d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sbv-program-1.1.0.0-r0-dc7f1c6c27a27e2e52bd2829c1020016859e17675b8def3bc8b4caff2a803af9.nix;
+        revNum = 0;
+        sha256 = "dc7f1c6c27a27e2e52bd2829c1020016859e17675b8def3bc8b4caff2a803af9";
+        };
+      default = "r0";
+      };
+    };
   }

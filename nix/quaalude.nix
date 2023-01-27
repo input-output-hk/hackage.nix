@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.0.0.1" = {
+    sha256 = "86d131bdffeb6032fe2ae1f04692f3ae732f2ddc9840ee0813fa1d2deacd9a73";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/quaalude-0.0.0.1-r0-f711f0807e49ffc7f59813641c8377bfdeeb6713ffad72f39eb57092bd003d70.nix;
+        revNum = 0;
+        sha256 = "f711f0807e49ffc7f59813641c8377bfdeeb6713ffad72f39eb57092bd003d70";
+        };
+      default = "r0";
+      };
+    };
   }

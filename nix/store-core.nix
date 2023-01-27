@@ -133,7 +133,12 @@
         revNum = 0;
         sha256 = "b326104b9ac20ab8c8f1cf2a32ce35c7913e882e92ec6a7414814fa7d5969264";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/store-core-0.4.3-r1-05655cea1b2e076aef586a528d6ce1dedf792b9e29c5926d47cdf22757939ed7.nix;
+        revNum = 1;
+        sha256 = "05655cea1b2e076aef586a528d6ce1dedf792b9e29c5926d47cdf22757939ed7";
+        };
+      default = "r1";
       };
     };
   "0.4.4" = {
@@ -144,7 +149,12 @@
         revNum = 0;
         sha256 = "2c5ca2ff9cb495d3104af1c15804f2c31a50714d98b66f0b24997b85b32f184e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/store-core-0.4.4-r1-df19eb7628f4024a1c6d5054b9eae703066f38d0b2198c937349582a72f3c398.nix;
+        revNum = 1;
+        sha256 = "df19eb7628f4024a1c6d5054b9eae703066f38d0b2198c937349582a72f3c398";
+        };
+      default = "r1";
       };
     };
   "0.4.4.1" = {
@@ -155,7 +165,12 @@
         revNum = 0;
         sha256 = "6115150356175fc74e13809daf52fce83aa9c63978d26582d38e54f99f51df8a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/store-core-0.4.4.1-r1-514acd71d17740810808e589682c93539e5f38191dd48df7341c7de4bfaa049d.nix;
+        revNum = 1;
+        sha256 = "514acd71d17740810808e589682c93539e5f38191dd48df7341c7de4bfaa049d";
+        };
+      default = "r1";
       };
     };
   "0.4.4.2" = {
@@ -166,7 +181,12 @@
         revNum = 0;
         sha256 = "11403cad88cf4f3675d49baf76cb5dd56363e786c7e25ef00fa57296af29a7b2";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/store-core-0.4.4.2-r1-87a2649b3edf9a5ef1810de914dc7a315d798625c57256d949c013061e4b193c.nix;
+        revNum = 1;
+        sha256 = "87a2649b3edf9a5ef1810de914dc7a315d798625c57256d949c013061e4b193c";
+        };
+      default = "r1";
       };
     };
   "0.4.4.3" = {
@@ -177,7 +197,12 @@
         revNum = 0;
         sha256 = "50b3ef13ab5f82cccf665bd29edf37f69ef1e94c22802c2c94d0f74ce8808f09";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/store-core-0.4.4.3-r1-b1cab78992124be8c2450f33449f723108b023ecd1161f2d8d32d4cfaa7d2461.nix;
+        revNum = 1;
+        sha256 = "b1cab78992124be8c2450f33449f723108b023ecd1161f2d8d32d4cfaa7d2461";
+        };
+      default = "r1";
       };
     };
   "0.4.4.4" = {

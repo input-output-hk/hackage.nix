@@ -10756,6 +10756,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "network-transport-tests" = import ./nix/network-transport-tests.nix;
   "network-transport-zeromq" = import ./nix/network-transport-zeromq.nix;
   "network-types-icmp" = import ./nix/network-types-icmp.nix;
+  "network-udp" = import ./nix/network-udp.nix;
   "network-uri" = import ./nix/network-uri.nix;
   "network-uri-flag" = import ./nix/network-uri-flag.nix;
   "network-uri-json" = import ./nix/network-uri-json.nix;

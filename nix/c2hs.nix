@@ -407,7 +407,12 @@
         revNum = 1;
         sha256 = "826ec8a8278031a56c664d58761b5faa451c496e16f7c24e30f511b0920c7b41";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/c2hs-0.28.8-r2-c399132e2273e70770be403fba4795d7d8c60d7bd147f0ef174342bebbd44392.nix;
+        revNum = 2;
+        sha256 = "c399132e2273e70770be403fba4795d7d8c60d7bd147f0ef174342bebbd44392";
+        };
+      default = "r2";
       };
     };
   }

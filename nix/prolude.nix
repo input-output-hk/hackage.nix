@@ -252,6 +252,17 @@
       default = "r0";
       };
     };
+  "0.0.0.30" = {
+    sha256 = "12efc620f6a6d8ec18b2095ee4bb2cb9cdc9abff7a14ed36c86ce6c2abc98ec9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prolude-0.0.0.30-r0-be613dab85ec5d083bdf2e53863c54dbe062d99c4729999b5c8b2bb00a48060e.nix;
+        revNum = 0;
+        sha256 = "be613dab85ec5d083bdf2e53863c54dbe062d99c4729999b5c8b2bb00a48060e";
+        };
+      default = "r0";
+      };
+    };
   "0.0.0.4" = {
     sha256 = "5105f6b61130088477ae8baec71e45bff58bb63a52af4d16cb84753904b1f390";
     revisions = {
