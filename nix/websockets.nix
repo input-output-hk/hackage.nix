@@ -352,7 +352,12 @@
         revNum = 0;
         sha256 = "5a6a3e40ee0c4e6b2cdc573a332ba4a06bb115b97b58147ed3fb005e3ede5ede";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/websockets-0.12.7.2-r1-a45888620e00284043dc01a52ae668a3265f0904ee0f21e09cc5b29bf9110537.nix;
+        revNum = 1;
+        sha256 = "a45888620e00284043dc01a52ae668a3265f0904ee0f21e09cc5b29bf9110537";
+        };
+      default = "r1";
       };
     };
   "0.12.7.3" = {
@@ -368,7 +373,12 @@
         revNum = 1;
         sha256 = "b8516e067415642867dfa83710e04463f4ef5d977b100f80f09b1c2a8d3fa9fb";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/websockets-0.12.7.3-r2-3ecf458d4e1ffa64b61bce3c127ab5fff9be61fa2a246774e6e36c0ea1d4ad10.nix;
+        revNum = 2;
+        sha256 = "3ecf458d4e1ffa64b61bce3c127ab5fff9be61fa2a246774e6e36c0ea1d4ad10";
+        };
+      default = "r2";
       };
     };
   "0.2.0.1" = {

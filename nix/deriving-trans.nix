@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.6.1.0" = {
+    sha256 = "a71962f3bc26979b6ad5aee35eb750ae98756a949c117f467d461fec6720747e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/deriving-trans-0.6.1.0-r0-28af52c29c6cdf1635203a51829e2d58616abfc4cd86e0533902bbe7dc23749d.nix;
+        revNum = 0;
+        sha256 = "28af52c29c6cdf1635203a51829e2d58616abfc4cd86e0533902bbe7dc23749d";
+        };
+      default = "r0";
+      };
+    };
   }

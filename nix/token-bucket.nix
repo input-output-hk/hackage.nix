@@ -48,7 +48,12 @@
         revNum = 6;
         sha256 = "db106f1b585bf591ee6c621ed2f7d81f8219c1af1300fc262a987c78998fe496";
         };
-      default = "r6";
+      r7 = {
+        nix = import ../hackage/token-bucket-0.1.0.1-r7-c16ec3c8a70f69455bb00fa678d9e9490eb851861a38d774af9652027964c6d9.nix;
+        revNum = 7;
+        sha256 = "c16ec3c8a70f69455bb00fa678d9e9490eb851861a38d774af9652027964c6d9";
+        };
+      default = "r7";
       };
     };
   }
