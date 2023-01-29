@@ -32,4 +32,20 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "ffe695518d46736d6725d0c39a35ff2b80cf356c35a03513e7b016d56074ac58";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/foldable-ix-0.3.0.0-r0-ab1092de076ab7a379777baa73924897bf9aeb88b8ef073048c9b016af07207f.nix;
+        revNum = 0;
+        sha256 = "ab1092de076ab7a379777baa73924897bf9aeb88b8ef073048c9b016af07207f";
+        };
+      r1 = {
+        nix = import ../hackage/foldable-ix-0.3.0.0-r1-20397c837c4d8f27b6e1a7dbc1d30af9e62d69d8f9fdafc62d356536c0a1ed71.nix;
+        revNum = 1;
+        sha256 = "20397c837c4d8f27b6e1a7dbc1d30af9e62d69d8f9fdafc62d356536c0a1ed71";
+        };
+      default = "r1";
+      };
+    };
   }

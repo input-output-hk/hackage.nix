@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.5.1" = {
+    sha256 = "583b027ec7e658c1b7b1d120478beb7e57d27942815cea569fa7b0176840f92c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/math-programming-glpk-0.5.1-r0-f3bab11b95ed3630d066d72645541825c67a002bcdd6bfa414b538307d7066b7.nix;
+        revNum = 0;
+        sha256 = "f3bab11b95ed3630d066d72645541825c67a002bcdd6bfa414b538307d7066b7";
+        };
+      default = "r0";
+      };
+    };
   }

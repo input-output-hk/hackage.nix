@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.5.1" = {
+    sha256 = "a9598e46e1594ad3bf7a5e3a93dc73ad5c3687acdb3ad35cc4d66fcfb2bb3317";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/glpk-headers-0.5.1-r0-aee8ee64f5fa4fb42e528a3f2fb6c68643c6f6da38449277ccfbe0b4964c2b58.nix;
+        revNum = 0;
+        sha256 = "aee8ee64f5fa4fb42e528a3f2fb6c68643c6f6da38449277ccfbe0b4964c2b58";
+        };
+      default = "r0";
+      };
+    };
   }

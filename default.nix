@@ -6878,6 +6878,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hascat-setup" = import ./nix/hascat-setup.nix;
   "hascat-system" = import ./nix/hascat-system.nix;
   "hash" = import ./nix/hash.nix;
+  "hash-addressed" = import ./nix/hash-addressed.nix;
+  "hash-addressed-cli" = import ./nix/hash-addressed-cli.nix;
   "hash-store" = import ./nix/hash-store.nix;
   "hash-tree" = import ./nix/hash-tree.nix;
   "hashable" = import ./nix/hashable.nix;
@@ -13550,6 +13552,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-scotty" = import ./nix/servant-scotty.nix;
   "servant-seo" = import ./nix/servant-seo.nix;
   "servant-serf" = import ./nix/servant-serf.nix;
+  "servant-serialization" = import ./nix/servant-serialization.nix;
   "servant-server" = import ./nix/servant-server.nix;
   "servant-server-namedargs" = import ./nix/servant-server-namedargs.nix;
   "servant-smsc-ru" = import ./nix/servant-smsc-ru.nix;

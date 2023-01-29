@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.0.4" = {
+    sha256 = "6868db669d7e1526b2a1f988125261512e5ea3df71966944d9b39bdabc4f1012";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mvar-lock-0.1.0.4-r0-6dbdb0cfdd2c2efa19bcceddf2702f4add2aabee52d0f40fef502a902bc57b2a.nix;
+        revNum = 0;
+        sha256 = "6dbdb0cfdd2c2efa19bcceddf2702f4add2aabee52d0f40fef502a902bc57b2a";
+        };
+      default = "r0";
+      };
+    };
   }

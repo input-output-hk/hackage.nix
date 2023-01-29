@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.5.1" = {
+    sha256 = "4229e3f94673b4f98ad2d9a8a670f4b7aa5bcf17ccbecbdacb375a6bf436dd55";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/math-programming-tests-0.5.1-r0-d390035ec05dd14910895aa71e0280dccb56ba418edc86b7b357d85b3147e29e.nix;
+        revNum = 0;
+        sha256 = "d390035ec05dd14910895aa71e0280dccb56ba418edc86b7b357d85b3147e29e";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -103,7 +103,12 @@
         revNum = 2;
         sha256 = "3711654a9996dcf13a562141b89151d668fbf758a0fccfef43014dee8cc5f12c";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/cprng-aes-0.2.5-r3-ba9c0e2c217c886d3bbd5389c2c457ae3ffe5c0d47e720fbd1764761d3729b3b.nix;
+        revNum = 3;
+        sha256 = "ba9c0e2c217c886d3bbd5389c2c457ae3ffe5c0d47e720fbd1764761d3729b3b";
+        };
+      default = "r3";
       };
     };
   "0.3.0" = {
@@ -224,7 +229,12 @@
         revNum = 0;
         sha256 = "3731beda61530e18b2eac0bd3df8424399a28a16c70b6431c4ff77eb74771cb5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cprng-aes-0.4.0-r1-5c2c39963f7d8f3cc6328ba2a1c4ed30c854a54b3b0b88705a6c5383bc2addf7.nix;
+        revNum = 1;
+        sha256 = "5c2c39963f7d8f3cc6328ba2a1c4ed30c854a54b3b0b88705a6c5383bc2addf7";
+        };
+      default = "r1";
       };
     };
   "0.5.0" = {
@@ -235,7 +245,12 @@
         revNum = 0;
         sha256 = "67683e2ed047c6e357d42f3ef27117e84429828a3d176eb2f14938677dc7fc96";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cprng-aes-0.5.0-r1-d16d08396456433bbf804badf78e74fd451c9e6fb950fab38246c778d3f50117.nix;
+        revNum = 1;
+        sha256 = "d16d08396456433bbf804badf78e74fd451c9e6fb950fab38246c778d3f50117";
+        };
+      default = "r1";
       };
     };
   "0.5.1" = {
@@ -246,7 +261,12 @@
         revNum = 0;
         sha256 = "9c4e18fccb220ce6740c1e7cafa172cdd85646ce53e1ecf0ad35ac5c9f23501f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cprng-aes-0.5.1-r1-7c04e34835587b8eaeca62aaf8601dff2f2c027f45898bb1a9d4ebdb2b1e91ba.nix;
+        revNum = 1;
+        sha256 = "7c04e34835587b8eaeca62aaf8601dff2f2c027f45898bb1a9d4ebdb2b1e91ba";
+        };
+      default = "r1";
       };
     };
   "0.5.2" = {
@@ -257,7 +277,12 @@
         revNum = 0;
         sha256 = "cc8ce9106252fed8b1464815de0a1ceab72d8e9c32ec83fb4266a3b66d7f66a7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cprng-aes-0.5.2-r1-5e48071a9ec1e0eb6e4f349e63f5748816690f6995628dff58939784c247df33.nix;
+        revNum = 1;
+        sha256 = "5e48071a9ec1e0eb6e4f349e63f5748816690f6995628dff58939784c247df33";
+        };
+      default = "r1";
       };
     };
   "0.6.0" = {

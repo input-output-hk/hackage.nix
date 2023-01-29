@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.2.3.1" = {
+    sha256 = "441f5d16b171923cf13f641825e9012c374723572231b45168d6ce8c196a14bb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eccrypto-0.2.3.1-r0-86eda687ea88e8a9793b3ac1f41f96f68a52d6d4c4e7db4bdeeb75fc7be43fe9.nix;
+        revNum = 0;
+        sha256 = "86eda687ea88e8a9793b3ac1f41f96f68a52d6d4c4e7db4bdeeb75fc7be43fe9";
+        };
+      default = "r0";
+      };
+    };
   }

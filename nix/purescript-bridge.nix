@@ -109,6 +109,17 @@
       default = "r0";
       };
     };
+  "0.15.0.0" = {
+    sha256 = "e0270c14832b401acce6dacd909e5dc0d8045578a3efac9fcd57ef8179a57225";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/purescript-bridge-0.15.0.0-r0-a102e9d3c034d14cf0fc1a34a0a70e686003ca84dad2fbb0b04df0a9062b1fb9.nix;
+        revNum = 0;
+        sha256 = "a102e9d3c034d14cf0fc1a34a0a70e686003ca84dad2fbb0b04df0a9062b1fb9";
+        };
+      default = "r0";
+      };
+    };
   "0.3.0.0" = {
     sha256 = "e00e74016f4058b31f68d3e67ba6c51aff49eb2a1e40b2ce5f8d29a0d6290c06";
     revisions = {
