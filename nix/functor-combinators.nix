@@ -201,4 +201,15 @@
       default = "r0";
       };
     };
+  "0.4.1.1" = {
+    sha256 = "3eb08289adc72beb4396106b8a73d864de4b2de364dee2c55734d2371a617f38";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/functor-combinators-0.4.1.1-r0-ff393d1a205893e958e089d7723811fa0dd9d4ee2a4386974c7768eac1f5655e.nix;
+        revNum = 0;
+        sha256 = "ff393d1a205893e958e089d7723811fa0dd9d4ee2a4386974c7768eac1f5655e";
+        };
+      default = "r0";
+      };
+    };
   }

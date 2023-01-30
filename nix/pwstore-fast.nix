@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "ffd631ea10d884dfb32e77f1678615d73b60d2f77efbbb18e655018c54e706fb";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pwstore-fast-2.2-r1-af12a393c24d14c6b0cfbf88eed6b5a8265da0e415982ab34396179c1089c8b0.nix;
+        revNum = 1;
+        sha256 = "af12a393c24d14c6b0cfbf88eed6b5a8265da0e415982ab34396179c1089c8b0";
+        };
+      default = "r1";
       };
     };
   "2.3" = {

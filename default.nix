@@ -2345,6 +2345,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bidispec" = import ./nix/bidispec.nix;
   "bidispec-extras" = import ./nix/bidispec-extras.nix;
   "bifunctor" = import ./nix/bifunctor.nix;
+  "bifunctor-classes-compat" = import ./nix/bifunctor-classes-compat.nix;
   "bifunctors" = import ./nix/bifunctors.nix;
   "bighugethesaurus" = import ./nix/bighugethesaurus.nix;
   "billboard-parser" = import ./nix/billboard-parser.nix;

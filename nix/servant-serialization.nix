@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.1" = {
+    sha256 = "62b4a7ad4414ccffb5889dfb98cc3767c2f05fb4f61934e2183155cb785bb90b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-serialization-0.2.1-r0-680407782155d2142dde0eae3d49b0fef8cc35eaf30e3b30ce4ff4e835262eac.nix;
+        revNum = 0;
+        sha256 = "680407782155d2142dde0eae3d49b0fef8cc35eaf30e3b30ce4ff4e835262eac";
+        };
+      default = "r0";
+      };
+    };
   }
