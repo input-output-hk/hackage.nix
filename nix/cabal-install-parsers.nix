@@ -140,4 +140,15 @@
       default = "r0";
       };
     };
+  "0.6" = {
+    sha256 = "488c912c13c3a43c494e1f3bd52e4c56761ca947db15404bca79d8d75fe00f00";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-install-parsers-0.6-r0-71ac9d554ae98e42aef9ef8146ba240c6381ad340a8535ff6e48f245bcd9afec.nix;
+        revNum = 0;
+        sha256 = "71ac9d554ae98e42aef9ef8146ba240c6381ad340a8535ff6e48f245bcd9afec";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "043e13e06bc82b4f0125172106083d5617b78ce04df8263a56c56be7dd02c89f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/harfbuzz-pure-1.0.1.0-r1-86a2eb23789d338e744360b6587d803dd8093db3101bae1e8b46bd69b859402d.nix;
+        revNum = 1;
+        sha256 = "86a2eb23789d338e744360b6587d803dd8093db3101bae1e8b46bd69b859402d";
+        };
+      default = "r1";
       };
     };
   }

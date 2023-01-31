@@ -10106,6 +10106,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "minesweeper" = import ./nix/minesweeper.nix;
   "mini-egison" = import ./nix/mini-egison.nix;
   "miniball" = import ./nix/miniball.nix;
+  "minicurl" = import ./nix/minicurl.nix;
   "miniforth" = import ./nix/miniforth.nix;
   "minilens" = import ./nix/minilens.nix;
   "minilight" = import ./nix/minilight.nix;
