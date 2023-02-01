@@ -208,6 +208,17 @@
       default = "r0";
       };
     };
+  "0.4.11.0" = {
+    sha256 = "8acd59ce73078ec6fb39f7555c4bb6cf1e49c256859c30aa8a4fda6d029bf7d0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/th-expand-syns-0.4.11.0-r0-c3cade1045c94ed091d9060427e9a69a6ef6b5da4ecc424416022545b0c2637a.nix;
+        revNum = 0;
+        sha256 = "c3cade1045c94ed091d9060427e9a69a6ef6b5da4ecc424416022545b0c2637a";
+        };
+      default = "r0";
+      };
+    };
   "0.4.2.0" = {
     sha256 = "66fed79828e9a13375f0f801f5ecc3763186667228ad91e19919219ff1654db9";
     revisions = {

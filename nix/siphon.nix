@@ -120,7 +120,12 @@
         revNum = 0;
         sha256 = "336467b97ef6dfc81bae372aa07d25590e2af4cccfc041617c9a61814da54826";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/siphon-0.8.2.0-r1-9921f956bb3ee25321100731d76633e5ff8d1ad3067dc3db0301ee9512ccdbc1.nix;
+        revNum = 1;
+        sha256 = "9921f956bb3ee25321100731d76633e5ff8d1ad3067dc3db0301ee9512ccdbc1";
+        };
+      default = "r1";
       };
     };
   }

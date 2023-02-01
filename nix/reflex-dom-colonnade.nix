@@ -95,7 +95,12 @@
         revNum = 0;
         sha256 = "5dd04aa9b18741895b25f3b2e2fb351c1d93ba30292e8a4a715b33ca052f41e0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/reflex-dom-colonnade-0.4.6-r1-7747dc505c06d3d85dfa56acf51bb9424317938435cf3204903a17e2b00e6bbd.nix;
+        revNum = 1;
+        sha256 = "7747dc505c06d3d85dfa56acf51bb9424317938435cf3204903a17e2b00e6bbd";
+        };
+      default = "r1";
       };
     };
   }

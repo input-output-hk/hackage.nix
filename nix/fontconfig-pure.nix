@@ -21,4 +21,26 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "2912b699d55db7291b2404f9f2d3836d2fabaddec2191ff3cca8b676c80b4dc9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fontconfig-pure-0.1.1.0-r0-d2a98e61d8c33712b6e52208fee10c78f9f27997f2c7107c91eb0c9250a82cc0.nix;
+        revNum = 0;
+        sha256 = "d2a98e61d8c33712b6e52208fee10c78f9f27997f2c7107c91eb0c9250a82cc0";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.1.1" = {
+    sha256 = "c45647b241dfb1b06bff86771cd85b1a6b35edd5839e911c7ea8b50bd12347ba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fontconfig-pure-0.1.1.1-r0-bc62c31aaaa0aba18ce02eda48cbbd2dff4a053cc7f00ce1856724f0ed6a99c7.nix;
+        revNum = 0;
+        sha256 = "bc62c31aaaa0aba18ce02eda48cbbd2dff4a053cc7f00ce1856724f0ed6a99c7";
+        };
+      default = "r0";
+      };
+    };
   }

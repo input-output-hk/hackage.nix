@@ -88,7 +88,12 @@
         revNum = 2;
         sha256 = "441e55d425755fb1b8fd9c8808ae0481cdaf748d8c31bdd657a1caa5bb637f7c";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/yesod-colonnade-1.3.0.1-r3-be7e6704a1f7621ab84cf78bc7521fb839ec31a4070f0c4864a584f0991e1910.nix;
+        revNum = 3;
+        sha256 = "be7e6704a1f7621ab84cf78bc7521fb839ec31a4070f0c4864a584f0991e1910";
+        };
+      default = "r3";
       };
     };
   }

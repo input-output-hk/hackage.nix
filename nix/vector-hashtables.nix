@@ -48,4 +48,15 @@
       default = "r1";
       };
     };
+  "0.1.1.2" = {
+    sha256 = "a2f9f9a2e34d20e1e1fcab2f29d59912dd8abd26beff90f878a5868793df3243";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vector-hashtables-0.1.1.2-r0-db5354c0589cae0a4a52478fc866cdf92ea731a25f1b6ae4387dc9d79a694ec6.nix;
+        revNum = 0;
+        sha256 = "db5354c0589cae0a4a52478fc866cdf92ea731a25f1b6ae4387dc9d79a694ec6";
+        };
+      default = "r0";
+      };
+    };
   }

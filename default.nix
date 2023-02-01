@@ -9459,6 +9459,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lighttpd-conf" = import ./nix/lighttpd-conf.nix;
   "lighttpd-conf-qq" = import ./nix/lighttpd-conf-qq.nix;
   "lilypond" = import ./nix/lilypond.nix;
+  "lima" = import ./nix/lima.nix;
   "limp" = import ./nix/limp.nix;
   "limp-cbc" = import ./nix/limp-cbc.nix;
   "lin-alg" = import ./nix/lin-alg.nix;
