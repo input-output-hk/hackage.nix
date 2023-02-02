@@ -9251,6 +9251,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "launchdarkly-server-sdk" = import ./nix/launchdarkly-server-sdk.nix;
   "launchpad-control" = import ./nix/launchpad-control.nix;
   "lawful" = import ./nix/lawful.nix;
+  "lawful-classes-hedgehog" = import ./nix/lawful-classes-hedgehog.nix;
+  "lawful-classes-quickcheck" = import ./nix/lawful-classes-quickcheck.nix;
+  "lawful-classes-types" = import ./nix/lawful-classes-types.nix;
   "lawless-concurrent-machines" = import ./nix/lawless-concurrent-machines.nix;
   "lawz" = import ./nix/lawz.nix;
   "lax" = import ./nix/lax.nix;

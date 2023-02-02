@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "b15f8a1673f95acc7efae50d9c289df8593675f5e157f94e3a34849593efbcba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mmsyn3-0.2.0.0-r0-ffd272024d0fa02767762d830614a0b9394420060b4784850d608d85bae9e64d.nix;
+        revNum = 0;
+        sha256 = "ffd272024d0fa02767762d830614a0b9394420060b4784850d608d85bae9e64d";
+        };
+      default = "r0";
+      };
+    };
   }

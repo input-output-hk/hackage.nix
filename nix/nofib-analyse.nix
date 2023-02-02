@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "9.4.4" = {
+    sha256 = "ebb7cd25f4f9e6b19c7db6314c4318cbde2e5ce8c9791c9254b4eadb9431aa00";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nofib-analyse-9.4.4-r0-7b26fa491c49cb702dbeb6576d38ec13e60984e171a61d044338a4f4711d6363.nix;
+        revNum = 0;
+        sha256 = "7b26fa491c49cb702dbeb6576d38ec13e60984e171a61d044338a4f4711d6363";
+        };
+      default = "r0";
+      };
+    };
   }
