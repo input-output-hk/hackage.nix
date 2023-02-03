@@ -70,4 +70,20 @@
       default = "r0";
       };
     };
+  "1.0.2.0" = {
+    sha256 = "7b49fec043609edd005abc4a7478b680f6008f3fb970a930fc7fcde8fd252e35";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/harfbuzz-pure-1.0.2.0-r0-b88d688692f5aac73af0804958afe9fac6a062346c3e049ed8d748effdfaaf96.nix;
+        revNum = 0;
+        sha256 = "b88d688692f5aac73af0804958afe9fac6a062346c3e049ed8d748effdfaaf96";
+        };
+      r1 = {
+        nix = import ../hackage/harfbuzz-pure-1.0.2.0-r1-36f1bd2d0b96c2de709b73be8655a338f690348b39f7e9b2a67d0ae598a7816d.nix;
+        revNum = 1;
+        sha256 = "36f1bd2d0b96c2de709b73be8655a338f690348b39f7e9b2a67d0ae598a7816d";
+        };
+      default = "r1";
+      };
+    };
   }

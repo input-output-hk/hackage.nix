@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "31674802b5ae56a5ce4c701a194a1f748ac0804f129ebd40b9609282333eea37";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lawful-classes-types-0.1.0.2-r0-7bca4b7844fdfdcc1fbee1c673308693b0f0b85fa847b46a3bd95da6a70dae60.nix;
+        revNum = 0;
+        sha256 = "7bca4b7844fdfdcc1fbee1c673308693b0f0b85fa847b46a3bd95da6a70dae60";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -32,4 +32,26 @@
       default = "r0";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "e503377a924b9becad7915e3dee9ba680ecca235d24aadf40bee824c4f047340";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lawful-classes-hedgehog-0.1.2.0-r0-6ebc84634a482a6c8ca2af74265482eabdc4e7d357189cb8162b405d78b3dbe6.nix;
+        revNum = 0;
+        sha256 = "6ebc84634a482a6c8ca2af74265482eabdc4e7d357189cb8162b405d78b3dbe6";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.2.1" = {
+    sha256 = "1823951b1ff3730ef1b138e81cfb54174fb0e2116458a3c2438a260cafee40f4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lawful-classes-hedgehog-0.1.2.1-r0-7e2335d539fdaf0217edff2626349908a0ee6926d68c58a40994291a8604b0a9.nix;
+        revNum = 0;
+        sha256 = "7e2335d539fdaf0217edff2626349908a0ee6926d68c58a40994291a8604b0a9";
+        };
+      default = "r0";
+      };
+    };
   }

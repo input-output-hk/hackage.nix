@@ -4595,6 +4595,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "domain-cereal" = import ./nix/domain-cereal.nix;
   "domain-core" = import ./nix/domain-core.nix;
   "domain-optics" = import ./nix/domain-optics.nix;
+  "domaindriven" = import ./nix/domaindriven.nix;
+  "domaindriven-core" = import ./nix/domaindriven-core.nix;
   "dominion" = import ./nix/dominion.nix;
   "domplate" = import ./nix/domplate.nix;
   "dormouse-client" = import ./nix/dormouse-client.nix;

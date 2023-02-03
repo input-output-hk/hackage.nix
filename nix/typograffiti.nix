@@ -43,4 +43,20 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "9c6f4eaf60b3a94b94b91de200e38b99ba2acc99c03d94be6c1023b3dc4afa74";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typograffiti-0.2.0.0-r0-788e042416331e065ce493fb96b3069947adaa19429aabe66d34a3506eac6623.nix;
+        revNum = 0;
+        sha256 = "788e042416331e065ce493fb96b3069947adaa19429aabe66d34a3506eac6623";
+        };
+      r1 = {
+        nix = import ../hackage/typograffiti-0.2.0.0-r1-1c14f7d32cebf131ab8ba1309493f93ead7857e690d66abf2e6765a8698c0e8b.nix;
+        revNum = 1;
+        sha256 = "1c14f7d32cebf131ab8ba1309493f93ead7857e690d66abf2e6765a8698c0e8b";
+        };
+      default = "r1";
+      };
+    };
   }
