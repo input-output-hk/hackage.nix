@@ -33,7 +33,12 @@
         revNum = 3;
         sha256 = "923af4a4baa5ebe2043f9f5dba2cd248b147284c1e785d070f59e00b58f91921";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/ghc-byteorder-4.11.0.0.10-r4-6b2449afd60a81db2c86fa94a59b07c81343f29dd8cf767b6ba625a223698449.nix;
+        revNum = 4;
+        sha256 = "6b2449afd60a81db2c86fa94a59b07c81343f29dd8cf767b6ba625a223698449";
+        };
+      default = "r4";
       };
     };
   }

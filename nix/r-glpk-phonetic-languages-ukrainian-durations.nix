@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.5.0.0" = {
+    sha256 = "61a7a12f971017417592d4a46a9ff99146d05f765e012ecfc282e498a76920e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/r-glpk-phonetic-languages-ukrainian-durations-0.5.0.0-r0-ee3b72350b5bcadb9617291848a37e8ed43663469c328b224799e7466931a9aa.nix;
+        revNum = 0;
+        sha256 = "ee3b72350b5bcadb9617291848a37e8ed43663469c328b224799e7466931a9aa";
+        };
+      default = "r0";
+      };
+    };
   }

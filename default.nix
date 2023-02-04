@@ -6544,6 +6544,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "grids" = import ./nix/grids.nix;
   "gridtables" = import ./nix/gridtables.nix;
   "grisette" = import ./nix/grisette.nix;
+  "grisette-monad-coroutine" = import ./nix/grisette-monad-coroutine.nix;
   "grm" = import ./nix/grm.nix;
   "groom" = import ./nix/groom.nix;
   "groot" = import ./nix/groot.nix;

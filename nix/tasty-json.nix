@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "b975931bf5ab7b54ee856382b52a03acae68c8328f03c4beb565104a1a3d624a";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-json-0.1.0.0-r2-ae4d4d833e1fb3a5f123561d2b5c6f5bbe57845c904937dcd8bb0ea20308691c.nix;
+        revNum = 2;
+        sha256 = "ae4d4d833e1fb3a5f123561d2b5c6f5bbe57845c904937dcd8bb0ea20308691c";
+        };
+      default = "r2";
       };
     };
   }

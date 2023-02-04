@@ -139,6 +139,17 @@
       default = "r0";
       };
     };
+  "0.17.0.0" = {
+    sha256 = "9ca9907e1be1240053656ad6b330020b936cb37f39ca1025c5c5a8692b094963";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/capnp-0.17.0.0-r0-bfe67dd250636183f3355357e43b036dd6cc5e73a63bcc454129781c7ab6e5de.nix;
+        revNum = 0;
+        sha256 = "bfe67dd250636183f3355357e43b036dd6cc5e73a63bcc454129781c7ab6e5de";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "ed34b361bf3dbefba3b03c35ee7d55bebee6a44df71ee0f55c9d09dac273d919";
     revisions = {

@@ -153,4 +153,15 @@
       default = "r1";
       };
     };
+  "0.7.0" = {
+    sha256 = "1c8ea49b76fda8aea96a73949c7f103161666b16bc12cf686e4279f646b25b0c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sensei-0.7.0-r0-587796859b7714048f2da458e7e8b73825a14bc6cb0675b53a1464c00d8441dd.nix;
+        revNum = 0;
+        sha256 = "587796859b7714048f2da458e7e8b73825a14bc6cb0675b53a1464c00d8441dd";
+        };
+      default = "r0";
+      };
+    };
   }
