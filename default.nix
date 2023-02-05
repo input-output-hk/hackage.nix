@@ -3749,6 +3749,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "core" = import ./nix/core.nix;
   "core-compiler" = import ./nix/core-compiler.nix;
   "core-data" = import ./nix/core-data.nix;
+  "core-effect-effectful" = import ./nix/core-effect-effectful.nix;
   "core-haskell" = import ./nix/core-haskell.nix;
   "core-program" = import ./nix/core-program.nix;
   "core-telemetry" = import ./nix/core-telemetry.nix;

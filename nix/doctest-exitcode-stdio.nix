@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "a34619492781c17817f3af9f4f409335c7d0f8751b5ac4aaa1f01bc816d2c580";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/doctest-exitcode-stdio-0.0-r2-abccaae9529f751dfeebb2afbbc32d1d2d65142bf4617b4903d58850d7ecd63d.nix;
+        revNum = 2;
+        sha256 = "abccaae9529f751dfeebb2afbbc32d1d2d65142bf4617b4903d58850d7ecd63d";
+        };
+      default = "r2";
       };
     };
   }

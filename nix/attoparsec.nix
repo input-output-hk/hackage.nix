@@ -1284,7 +1284,12 @@
         revNum = 2;
         sha256 = "8545bf2cedcd3112adb8e364e3fa3e3307d10a491eef0faa76f85f20648a3d7d";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/attoparsec-0.8.5.0-r3-f3bdbd861b4a192a145d77d0aa1eca72af855329822cdc912f830685f99a354b.nix;
+        revNum = 3;
+        sha256 = "f3bdbd861b4a192a145d77d0aa1eca72af855329822cdc912f830685f99a354b";
+        };
+      default = "r3";
       };
     };
   "0.8.5.1" = {
@@ -1305,7 +1310,12 @@
         revNum = 2;
         sha256 = "860f1be50fa6f947a547a95be7fab3b2d01d0e792acf1255d52775c9b1e80bb8";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/attoparsec-0.8.5.1-r3-d915ddc78671ec6a44120a282c28882db6c86da19a38a95593d3c7fb77fd13ec.nix;
+        revNum = 3;
+        sha256 = "d915ddc78671ec6a44120a282c28882db6c86da19a38a95593d3c7fb77fd13ec";
+        };
+      default = "r3";
       };
     };
   "0.8.5.2" = {
@@ -1326,7 +1336,12 @@
         revNum = 2;
         sha256 = "a19d14d2fac711d1a0de26b7d75654bd1d9c30966617f5b5a40ef0ba07d20c5d";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/attoparsec-0.8.5.2-r3-1e16f901b11fc1f94fd8cf6e4c16ebf44a65decd41fe4a59a4b0a6f857c5c948.nix;
+        revNum = 3;
+        sha256 = "1e16f901b11fc1f94fd8cf6e4c16ebf44a65decd41fe4a59a4b0a6f857c5c948";
+        };
+      default = "r3";
       };
     };
   "0.8.5.3" = {
@@ -1347,7 +1362,12 @@
         revNum = 2;
         sha256 = "acd095218e16972048968d6bf6cda0636cd30c231cd98b5a6badfbb1cf5a295f";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/attoparsec-0.8.5.3-r3-1c390a8ab9bf79c7ad42b34bff016da1198c1451ffe143a7c28eef590a4a2a83.nix;
+        revNum = 3;
+        sha256 = "1c390a8ab9bf79c7ad42b34bff016da1198c1451ffe143a7c28eef590a4a2a83";
+        };
+      default = "r3";
       };
     };
   "0.8.6.0" = {
@@ -1368,7 +1388,12 @@
         revNum = 2;
         sha256 = "f2b4e6af2edf4824eca1e6580d6eb8cfa48335f88832a6c77e27fbeccc521828";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/attoparsec-0.8.6.0-r3-9171ab13de0760347777645fbea9fe5e2960e8deffefc875e8e9ed8097715dae.nix;
+        revNum = 3;
+        sha256 = "9171ab13de0760347777645fbea9fe5e2960e8deffefc875e8e9ed8097715dae";
+        };
+      default = "r3";
       };
     };
   "0.8.6.1" = {
@@ -1389,7 +1414,12 @@
         revNum = 2;
         sha256 = "7ebbef489bcb6ce3f6a2f3446814c884989aa0af65d6b164e097eb9b22666abe";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/attoparsec-0.8.6.1-r3-63898ee041fdac39ad52097a50581cb4e479ea6bba417445a69e7250af6afbd0.nix;
+        revNum = 3;
+        sha256 = "63898ee041fdac39ad52097a50581cb4e479ea6bba417445a69e7250af6afbd0";
+        };
+      default = "r3";
       };
     };
   "0.9.0.0" = {
@@ -1410,7 +1440,12 @@
         revNum = 2;
         sha256 = "8631d585379113e7072e9bb9e1ed640b6b94111d05d712be05ebdae236182f52";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/attoparsec-0.9.0.0-r3-797e422b24f932e401f7146291ff18c41ac757c504858500b33106d801345fb9.nix;
+        revNum = 3;
+        sha256 = "797e422b24f932e401f7146291ff18c41ac757c504858500b33106d801345fb9";
+        };
+      default = "r3";
       };
     };
   "0.9.1.1" = {
@@ -1431,7 +1466,12 @@
         revNum = 2;
         sha256 = "fe41dedbcd6cfce2638938652c42660dccfd6231bacef0e12bcb5e86aa25921e";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/attoparsec-0.9.1.1-r3-2eee6b34a6afaea8d3257f6fce38218646c73a866aca94ba714ad389ab3fac97.nix;
+        revNum = 3;
+        sha256 = "2eee6b34a6afaea8d3257f6fce38218646c73a866aca94ba714ad389ab3fac97";
+        };
+      default = "r3";
       };
     };
   "0.9.1.2" = {
@@ -1452,7 +1492,12 @@
         revNum = 2;
         sha256 = "b914ee958ddffa214fd26ad6609de86b3262568915bb7ff254d1c5bb05cd66ca";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/attoparsec-0.9.1.2-r3-f4aaf9b7d0c7626564e0525aded7a364f467c74ab0ab625f37969d0c33f738d4.nix;
+        revNum = 3;
+        sha256 = "f4aaf9b7d0c7626564e0525aded7a364f467c74ab0ab625f37969d0c33f738d4";
+        };
+      default = "r3";
       };
     };
   }

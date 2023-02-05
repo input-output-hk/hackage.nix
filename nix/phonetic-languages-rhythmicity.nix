@@ -43,6 +43,17 @@
       default = "r0";
       };
     };
+  "0.10.0.0" = {
+    sha256 = "185951fe73db71f14b260ee495482f21026f75832876b17b0f0aca65408d99a3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-rhythmicity-0.10.0.0-r0-9964d71e475d11e1fc0d3be056d08ea2268f36131e235bf359e8a19614d7f869.nix;
+        revNum = 0;
+        sha256 = "9964d71e475d11e1fc0d3be056d08ea2268f36131e235bf359e8a19614d7f869";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "961a39ca220ec108f79397dec3a2c473919a32a2a48c6e23f9de16dd00157633";
     revisions = {

@@ -154,7 +154,12 @@
         revNum = 0;
         sha256 = "134779f40086a366279f678e670b610d7a7618b28dd43f65894078fd20e04629";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/llvm-hs-pure-9.0.0-r1-10f655a15791a28cc53412ff9c7ce8245903da065d1dd3b981b33cfebd277693.nix;
+        revNum = 1;
+        sha256 = "10f655a15791a28cc53412ff9c7ce8245903da065d1dd3b981b33cfebd277693";
+        };
+      default = "r1";
       };
     };
   }

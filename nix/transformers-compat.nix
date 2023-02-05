@@ -410,7 +410,12 @@
         revNum = 0;
         sha256 = "510709db2b12d1510d70de824ee544ca0a9e6f27aa7e299218cbacc0750b4a5e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/transformers-compat-0.6.6-r1-e2686c31df27a39ff058371acb46e78639ea47c8f35adee926db7e6aa70a6a19.nix;
+        revNum = 1;
+        sha256 = "e2686c31df27a39ff058371acb46e78639ea47c8f35adee926db7e6aa70a6a19";
+        };
+      default = "r1";
       };
     };
   "0.7" = {
@@ -421,7 +426,12 @@
         revNum = 0;
         sha256 = "c4cc2d01c4e490ba680e9a0b607a1a790137856a6b3af12f8bdc7788a567bcf5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/transformers-compat-0.7-r1-44cbf7e38f84e7890c9dc92a30ea90f46ec15414d4488c83a2d779967bd21733.nix;
+        revNum = 1;
+        sha256 = "44cbf7e38f84e7890c9dc92a30ea90f46ec15414d4488c83a2d779967bd21733";
+        };
+      default = "r1";
       };
     };
   "0.7.1" = {
@@ -437,7 +447,12 @@
         revNum = 1;
         sha256 = "873ef500790cae136d14b2e890da1fe4df963e372f21b1671fa3c6cdfb23b10f";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/transformers-compat-0.7.1-r2-43a2414d566667eeea5495cc35f94596f39212e09ebcb1c4f8f79906eeb1b408.nix;
+        revNum = 2;
+        sha256 = "43a2414d566667eeea5495cc35f94596f39212e09ebcb1c4f8f79906eeb1b408";
+        };
+      default = "r2";
       };
     };
   "0.7.2" = {
