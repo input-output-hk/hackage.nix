@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.0.7.0" = {
+    sha256 = "432178f733e090359748724a0c270eb5d72165d1be973d5885aff74ad481c7ed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stack-hpc-coveralls-0.0.7.0-r0-eb9ec655697d5a672d40e1261f6fd0eea7479e1813f457f03bb4e499f12e92ac.nix;
+        revNum = 0;
+        sha256 = "eb9ec655697d5a672d40e1261f6fd0eea7479e1813f457f03bb4e499f12e92ac";
+        };
+      default = "r0";
+      };
+    };
   }

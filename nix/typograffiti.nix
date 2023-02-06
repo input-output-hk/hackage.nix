@@ -56,7 +56,12 @@
         revNum = 1;
         sha256 = "1c14f7d32cebf131ab8ba1309493f93ead7857e690d66abf2e6765a8698c0e8b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/typograffiti-0.2.0.0-r2-186bdda5834b64b9b8ed95a78e56e8c178aa7c9d635215b963eac11b80826183.nix;
+        revNum = 2;
+        sha256 = "186bdda5834b64b9b8ed95a78e56e8c178aa7c9d635215b963eac11b80826183";
+        };
+      default = "r2";
       };
     };
   }

@@ -12426,6 +12426,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quickcheck-combinators" = import ./nix/quickcheck-combinators.nix;
   "quickcheck-dynamic" = import ./nix/quickcheck-dynamic.nix;
   "quickcheck-enum-instances" = import ./nix/quickcheck-enum-instances.nix;
+  "quickcheck-groups" = import ./nix/quickcheck-groups.nix;
   "quickcheck-higherorder" = import ./nix/quickcheck-higherorder.nix;
   "quickcheck-instances" = import ./nix/quickcheck-instances.nix;
   "quickcheck-io" = import ./nix/quickcheck-io.nix;

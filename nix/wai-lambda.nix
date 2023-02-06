@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "ec4b8e81f8b5415269091ccf166dfb9e2797248b9eed42fc0b8ce62aee4ba6e3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wai-lambda-0.1.1.0-r0-7ef58b069ccd55dc42e0d9204b81292a1a7af469404a6db4874c96aaa9189c75.nix;
+        revNum = 0;
+        sha256 = "7ef58b069ccd55dc42e0d9204b81292a1a7af469404a6db4874c96aaa9189c75";
+        };
+      default = "r0";
+      };
+    };
   }
