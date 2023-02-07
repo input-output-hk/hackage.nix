@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.28.4.4" = {
+    sha256 = "37338ba7f1e290e0be8cddaa318977055a14f1a9b23c45c36b7cc14add487c69";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/web-routes-boomerang-0.28.4.4-r0-d1c84bf2fc910c5f3cd4725a7e45786e071f9793ed93c59c11a54ecd16a717f9.nix;
+        revNum = 0;
+        sha256 = "d1c84bf2fc910c5f3cd4725a7e45786e071f9793ed93c59c11a54ecd16a717f9";
+        };
+      default = "r0";
+      };
+    };
   }

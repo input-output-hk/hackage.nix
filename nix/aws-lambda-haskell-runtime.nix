@@ -263,4 +263,15 @@
       default = "r0";
       };
     };
+  "4.1.2" = {
+    sha256 = "f5c536bccade76e6baa37f0a129e27ac4eba327336721d1a2cff65366b4db5b0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aws-lambda-haskell-runtime-4.1.2-r0-688e6a5e41ca82af446526cd7c00f8e68d7b54f8f8dcae20832faf8f7b318871.nix;
+        revNum = 0;
+        sha256 = "688e6a5e41ca82af446526cd7c00f8e68d7b54f8f8dcae20832faf8f7b318871";
+        };
+      default = "r0";
+      };
+    };
   }

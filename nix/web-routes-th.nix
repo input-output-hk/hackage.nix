@@ -197,4 +197,15 @@
       default = "r0";
       };
     };
+  "0.22.8.1" = {
+    sha256 = "05ce63a4836f31c38158afebac5856850e0c625a772b885376f483a38ff2686b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/web-routes-th-0.22.8.1-r0-bfe339ac8d96737a5ce7457a6a6685d391f185860e23a85a723b0467a35ca8b5.nix;
+        revNum = 0;
+        sha256 = "bfe339ac8d96737a5ce7457a6a6685d391f185860e23a85a723b0467a35ca8b5";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -15,4 +15,15 @@
       default = "r1";
       };
     };
+  "0.3" = {
+    sha256 = "cf315878de74e98f3d0488360b65b0f7112732da4832a4c0467c943e5c758749";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/smtlib-backends-process-0.3-r0-d4d7d02859383e0a43db2d8ce7ef01deffe1bcd356b2ff8626925c3a1c8db922.nix;
+        revNum = 0;
+        sha256 = "d4d7d02859383e0a43db2d8ce7ef01deffe1bcd356b2ff8626925c3a1c8db922";
+        };
+      default = "r0";
+      };
+    };
   }
