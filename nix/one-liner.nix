@@ -318,7 +318,12 @@
         revNum = 0;
         sha256 = "a9e11fc6e4fcee67eaa8215a3b10d580396758b3bdd745049aaa0487e9ed7805";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/one-liner-2.1-r1-16b3e04c178aad63dcac00951cc1e4db8625dff36573131d8938a40e3439cdd8.nix;
+        revNum = 1;
+        sha256 = "16b3e04c178aad63dcac00951cc1e4db8625dff36573131d8938a40e3439cdd8";
+        };
+      default = "r1";
       };
     };
   }

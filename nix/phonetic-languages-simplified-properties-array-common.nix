@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "85a47a0b283e0698f445a0b06d5f2bd7fb4fab804f291ce5b62b588bd773523b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-simplified-properties-array-common-0.4.0.0-r0-f6cfa7232b2bb8fe5fc448a514b908cd46403e15c9efe1e5b0c89b9e36ce886d.nix;
+        revNum = 0;
+        sha256 = "f6cfa7232b2bb8fe5fc448a514b908cd46403e15c9efe1e5b0c89b9e36ce886d";
+        };
+      default = "r0";
+      };
+    };
   }

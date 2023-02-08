@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2.1" = {
+    sha256 = "e7adff70bd57e32c81c39f7ba516997718a75081df9086b2d87153d0fd787313";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/proof-assistant-bot-0.2.1-r0-227fafa9d772d1ff03df8e0b71be059adf8b6620f35d112f1ce8f87de035dee0.nix;
+        revNum = 0;
+        sha256 = "227fafa9d772d1ff03df8e0b71be059adf8b6620f35d112f1ce8f87de035dee0";
+        };
+      default = "r0";
+      };
+    };
   }

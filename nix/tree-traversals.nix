@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "8dcb9afd72edc668b91571d2388926066595b671fb4087cbd8f39ddd06a161d0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tree-traversals-0.1.2.0-r0-123f9714c42f1fc21ee80b3a6c5cdf4a573e77cb0e94fbfc9b445c829e1efaa7.nix;
+        revNum = 0;
+        sha256 = "123f9714c42f1fc21ee80b3a6c5cdf4a573e77cb0e94fbfc9b445c829e1efaa7";
+        };
+      default = "r0";
+      };
+    };
   }

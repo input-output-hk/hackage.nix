@@ -102,4 +102,15 @@
       default = "r2";
       };
     };
+  "0.4.2" = {
+    sha256 = "ef741c72f717a577d617c400f87890b783aa153a9f5a98cd05c91d86ad3ac5dd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/powerdns-0.4.2-r0-7c438940990fc14785e6705e439119b949958bf8a67f7adacb2c903ee0ea4bca.nix;
+        revNum = 0;
+        sha256 = "7c438940990fc14785e6705e439119b949958bf8a67f7adacb2c903ee0ea4bca";
+        };
+      default = "r0";
+      };
+    };
   }

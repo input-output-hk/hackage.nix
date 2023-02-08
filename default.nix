@@ -5987,6 +5987,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-syntax-highlighter" = import ./nix/ghc-syntax-highlighter.nix;
   "ghc-tags" = import ./nix/ghc-tags.nix;
   "ghc-tags-core" = import ./nix/ghc-tags-core.nix;
+  "ghc-tags-pipes" = import ./nix/ghc-tags-pipes.nix;
   "ghc-tags-plugin" = import ./nix/ghc-tags-plugin.nix;
   "ghc-tcplugin-api" = import ./nix/ghc-tcplugin-api.nix;
   "ghc-tcplugins-extra" = import ./nix/ghc-tcplugins-extra.nix;
