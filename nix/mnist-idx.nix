@@ -102,4 +102,15 @@
       default = "r0";
       };
     };
+  "0.1.3.2" = {
+    sha256 = "43b3f612d969c2817a9cdba44781b8c14df1ed6faf9f1df6e3085a65714bca2a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mnist-idx-0.1.3.2-r0-818650cf64018d3a8496f2174ca60cf40416a0bad684b036ff8d5764c91fa0fa.nix;
+        revNum = 0;
+        sha256 = "818650cf64018d3a8496f2174ca60cf40416a0bad684b036ff8d5764c91fa0fa";
+        };
+      default = "r0";
+      };
+    };
   }

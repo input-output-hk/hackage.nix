@@ -150,4 +150,15 @@
       default = "r1";
       };
     };
+  "0.6.0" = {
+    sha256 = "fc285077b820015178573284c56112af7829c92dc576d0e7a639242e5cd39269";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/JuicyPixels-extra-0.6.0-r0-66328cc4e464cd1209a3fe274a8068014b67bcecf274dc594dae66fd8a40143a.nix;
+        revNum = 0;
+        sha256 = "66328cc4e464cd1209a3fe274a8068014b67bcecf274dc594dae66fd8a40143a";
+        };
+      default = "r0";
+      };
+    };
   }

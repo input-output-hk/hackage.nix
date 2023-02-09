@@ -342,6 +342,17 @@
       default = "r0";
       };
     };
+  "0.13.2.1" = {
+    sha256 = "a480809ced173d6572b349a1874a16ff74b42501e4486e4180b41e27024f65c5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/skylighting-core-0.13.2.1-r0-cef2590df86491123fb796b5aaced67d983e994efd877df5aee98bde3f9fecad.nix;
+        revNum = 0;
+        sha256 = "cef2590df86491123fb796b5aaced67d983e994efd877df5aee98bde3f9fecad";
+        };
+      default = "r0";
+      };
+    };
   "0.7" = {
     sha256 = "6f1e00df9c20b9ae5f8a7e744007d132b21844f240c98c521a30716089740887";
     revisions = {

@@ -92,7 +92,12 @@
         revNum = 0;
         sha256 = "15078273bdf8408d6e0e95c14de768df6595b8bcf480d835e6c9825224832e71";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/unliftio-core-0.2.1.0-r1-9fc3506770b16cdc73114307f854d56ddb96c7b930e7a5ed9b48cd0a8f33fca6.nix;
+        revNum = 1;
+        sha256 = "9fc3506770b16cdc73114307f854d56ddb96c7b930e7a5ed9b48cd0a8f33fca6";
+        };
+      default = "r1";
       };
     };
   }
