@@ -197,4 +197,15 @@
       default = "r0";
       };
     };
+  "0.6.1" = {
+    sha256 = "82988013de2d608cc1cd3460f33b2397e2e2e0d56b270ae84e63850e12b0dc86";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cassava-conduit-0.6.1-r0-424383191d5738edbb5f4ed09e0087a3a82a7f7e4e23c2829580bfa2b08a02c4.nix;
+        revNum = 0;
+        sha256 = "424383191d5738edbb5f4ed09e0087a3a82a7f7e4e23c2829580bfa2b08a02c4";
+        };
+      default = "r0";
+      };
+    };
   }

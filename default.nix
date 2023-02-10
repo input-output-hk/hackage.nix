@@ -5828,6 +5828,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "generic-optics-lite" = import ./nix/generic-optics-lite.nix;
   "generic-override" = import ./nix/generic-override.nix;
   "generic-override-aeson" = import ./nix/generic-override-aeson.nix;
+  "generic-persistence" = import ./nix/generic-persistence.nix;
   "generic-pretty" = import ./nix/generic-pretty.nix;
   "generic-pretty-instances" = import ./nix/generic-pretty-instances.nix;
   "generic-random" = import ./nix/generic-random.nix;
