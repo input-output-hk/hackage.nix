@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "6c0c27323fd1cb3478dc7a890752f053b97e09331c00c85157b61c91c5829313";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/numbered-semigroups-0.1.0.0-r3-6af26b524c8d9bdca132c44855d27b765f9ca5979d2be7ac3ab43c1b7d6328e2.nix;
+        revNum = 3;
+        sha256 = "6af26b524c8d9bdca132c44855d27b765f9ca5979d2be7ac3ab43c1b7d6328e2";
+        };
+      default = "r3";
       };
     };
   }

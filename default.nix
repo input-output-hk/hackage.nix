@@ -2684,6 +2684,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "brick-filetree" = import ./nix/brick-filetree.nix;
   "brick-panes" = import ./nix/brick-panes.nix;
   "brick-skylighting" = import ./nix/brick-skylighting.nix;
+  "brick-tabular-list" = import ./nix/brick-tabular-list.nix;
   "bricks" = import ./nix/bricks.nix;
   "bricks-internal" = import ./nix/bricks-internal.nix;
   "bricks-internal-test" = import ./nix/bricks-internal-test.nix;

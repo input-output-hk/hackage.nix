@@ -48,4 +48,15 @@
       default = "r0";
       };
     };
+  "0.2.2" = {
+    sha256 = "0cf6a105f1d4e0557cafb8caa9a3edcf55f301fa6176a9277770ff3f25c0eee9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/knob-0.2.2-r0-1c5d2894dc1ae11ac33effd2d95b1784c14905c2589bdca9c57de0ff602a8c5c.nix;
+        revNum = 0;
+        sha256 = "1c5d2894dc1ae11ac33effd2d95b1784c14905c2589bdca9c57de0ff602a8c5c";
+        };
+      default = "r0";
+      };
+    };
   }

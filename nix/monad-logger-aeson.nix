@@ -136,4 +136,15 @@
       default = "r0";
       };
     };
+  "0.4.0.3" = {
+    sha256 = "3841d07526105ee2283409b724b13c98d0550caab61f359ae23b2baadcb9b4c4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-logger-aeson-0.4.0.3-r0-1fc0f9f1f2dc8598c8f6f24625023b892a477cee3abaa67a4cc0e81b0dcdf6c6.nix;
+        revNum = 0;
+        sha256 = "1fc0f9f1f2dc8598c8f6f24625023b892a477cee3abaa67a4cc0e81b0dcdf6c6";
+        };
+      default = "r0";
+      };
+    };
   }
