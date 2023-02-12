@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "7fb889ea841769df1a83d62cd583313fd80c994afe220a5d5b33c1382a4877e1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/grow-vector-0.1.5.0-r1-febd5bb28cbfad1de68407824753fd855fcb598feb238ca4abc26554d9337d67.nix;
+        revNum = 1;
+        sha256 = "febd5bb28cbfad1de68407824753fd855fcb598feb238ca4abc26554d9337d67";
+        };
+      default = "r1";
       };
     };
   }

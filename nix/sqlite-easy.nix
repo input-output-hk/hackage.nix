@@ -34,6 +34,22 @@
         revNum = 0;
         sha256 = "cd80a4f42c10c0cb21a32a6cbd8800d698cbadd6df3f086b36e412b8f9257ef8";
         };
+      r1 = {
+        nix = import ../hackage/sqlite-easy-0.2.0.1-r1-70bd90c03444188be7e5843e6e06564236804958ccdf971e721a57e4307a8937.nix;
+        revNum = 1;
+        sha256 = "70bd90c03444188be7e5843e6e06564236804958ccdf971e721a57e4307a8937";
+        };
+      default = "r1";
+      };
+    };
+  "1.0.0.0" = {
+    sha256 = "02b0035576c99fca68083965b0f19195734807d52c63b89a6af77246ba6b1571";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sqlite-easy-1.0.0.0-r0-e26df83250eeea26efc82c6c5b1fdfbf43ad82f4115e0858aed87101838c014b.nix;
+        revNum = 0;
+        sha256 = "e26df83250eeea26efc82c6c5b1fdfbf43ad82f4115e0858aed87101838c014b";
+        };
       default = "r0";
       };
     };

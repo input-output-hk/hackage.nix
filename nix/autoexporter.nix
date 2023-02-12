@@ -332,4 +332,59 @@
       default = "r0";
       };
     };
+  "2.0.0.3" = {
+    sha256 = "8c0b1deda8a9c5dd6be24e95c0097050730783c57a5c094cae3d43b78bcf0f74";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/autoexporter-2.0.0.3-r0-4b3beade1c0a340fedfeb5eb6d59a96338d55d5f88dbeba5cb3ca6cc02bd21e5.nix;
+        revNum = 0;
+        sha256 = "4b3beade1c0a340fedfeb5eb6d59a96338d55d5f88dbeba5cb3ca6cc02bd21e5";
+        };
+      default = "r0";
+      };
+    };
+  "2.0.0.4" = {
+    sha256 = "50cdc903afab0a36c732e664d781ca443d1941cc0ff37aba48dcafacd70cbea1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/autoexporter-2.0.0.4-r0-52f79cd529da7177163a7986566cc33a464da39c13ce2c7291e1e2ea0f4c8ca0.nix;
+        revNum = 0;
+        sha256 = "52f79cd529da7177163a7986566cc33a464da39c13ce2c7291e1e2ea0f4c8ca0";
+        };
+      default = "r0";
+      };
+    };
+  "2.0.0.5" = {
+    sha256 = "c325f577c51b4ca8907581ed8d0d6104ad206cd26af482c9cf7b6055e84ba63c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/autoexporter-2.0.0.5-r0-2c52b70cf8a1785e9480b8e3687edc88e577e1ab2a573c2f20dfa212559a7375.nix;
+        revNum = 0;
+        sha256 = "2c52b70cf8a1785e9480b8e3687edc88e577e1ab2a573c2f20dfa212559a7375";
+        };
+      default = "r0";
+      };
+    };
+  "2.0.0.6" = {
+    sha256 = "2dd8592da93bcb044ac9a15b719003347d154394cfb70316b1fece66ee830c52";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/autoexporter-2.0.0.6-r0-e4c4a0c8f1e31fc920d2610a39b12cb64b25b182a59b61ac39fa4d9b96fd7349.nix;
+        revNum = 0;
+        sha256 = "e4c4a0c8f1e31fc920d2610a39b12cb64b25b182a59b61ac39fa4d9b96fd7349";
+        };
+      default = "r0";
+      };
+    };
+  "2.0.0.7" = {
+    sha256 = "ee0d8df17280f85994718e21173db4e7f17431dbd3e1a43e5de31a90c78904a6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/autoexporter-2.0.0.7-r0-14ce0cf608dd6fd1abf416172bc0b9a5bb6c7a2ac1f6767b2ac3cf6ccdc49d7a.nix;
+        revNum = 0;
+        sha256 = "14ce0cf608dd6fd1abf416172bc0b9a5bb6c7a2ac1f6767b2ac3cf6ccdc49d7a";
+        };
+      default = "r0";
+      };
+    };
   }
