@@ -406,4 +406,15 @@
       default = "r0";
       };
     };
+  "1.1.6.1" = {
+    sha256 = "5e158aef942c77ff6f4a4af1df2d850251affc736df8f9e45dc3ec32df6493d8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/witch-1.1.6.1-r0-e6e81d5068c1efd81faf213960bff08e9de4c7f2d59aa3e3cd3f6a5d2a43b55c.nix;
+        revNum = 0;
+        sha256 = "e6e81d5068c1efd81faf213960bff08e9de4c7f2d59aa3e3cd3f6a5d2a43b55c";
+        };
+      default = "r0";
+      };
+    };
   }

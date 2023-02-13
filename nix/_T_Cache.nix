@@ -230,6 +230,17 @@
       default = "r0";
       };
     };
+  "0.13.3" = {
+    sha256 = "b868176ddc81f0157cf69de70c0d81476742650c049a3485cd546e57c9e53434";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/TCache-0.13.3-r0-7096ee74f668d3db7dc0d795041c9709929c05953857805df8e69c6732870a89.nix;
+        revNum = 0;
+        sha256 = "7096ee74f668d3db7dc0d795041c9709929c05953857805df8e69c6732870a89";
+        };
+      default = "r0";
+      };
+    };
   "0.5" = {
     sha256 = "c7528acd6b0b16fcdbeffbb7a73ffb23677959e073f92e4c703417cddf9eae15";
     revisions = {

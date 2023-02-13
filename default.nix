@@ -14912,6 +14912,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "telegram" = import ./nix/telegram.nix;
   "telegram-api" = import ./nix/telegram-api.nix;
   "telegram-bot" = import ./nix/telegram-bot.nix;
+  "telegram-bot-api" = import ./nix/telegram-bot-api.nix;
   "telegram-bot-simple" = import ./nix/telegram-bot-simple.nix;
   "telegram-raw-api" = import ./nix/telegram-raw-api.nix;
   "telegram-types" = import ./nix/telegram-types.nix;
