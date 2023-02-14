@@ -6622,6 +6622,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gtksourceview3" = import ./nix/gtksourceview3.nix;
   "guarded-allocation" = import ./nix/guarded-allocation.nix;
   "guarded-rewriting" = import ./nix/guarded-rewriting.nix;
+  "guardian" = import ./nix/guardian.nix;
   "guess-combinator" = import ./nix/guess-combinator.nix;
   "guid" = import ./nix/guid.nix;
   "gulcii" = import ./nix/gulcii.nix;

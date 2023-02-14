@@ -179,4 +179,15 @@
       default = "r0";
       };
     };
+  "1.4" = {
+    sha256 = "4c76b5493098b83348f0fd98436cbbe18768da30bcc0ff7dcba0c250c73e9429";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jailbreak-cabal-1.4-r0-2569f60140c69e43f713cadbf41dc148b59d817572e6c1b7aa402c4f1b649117.nix;
+        revNum = 0;
+        sha256 = "2569f60140c69e43f713cadbf41dc148b59d817572e6c1b7aa402c4f1b649117";
+        };
+      default = "r0";
+      };
+    };
   }

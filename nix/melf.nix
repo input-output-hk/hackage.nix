@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.2.0" = {
+    sha256 = "f95398074cda2d2dc244986fd018be87e8e5020a0f5f81db55de36b5667d1dfe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/melf-1.2.0-r0-f0075e4ab0f7f04d47a5aea040ed9ce7c1624f5f1a609ab2ff86532d0e5de907.nix;
+        revNum = 0;
+        sha256 = "f0075e4ab0f7f04d47a5aea040ed9ce7c1624f5f1a609ab2ff86532d0e5de907";
+        };
+      default = "r0";
+      };
+    };
   }
