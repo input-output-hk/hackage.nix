@@ -194,7 +194,12 @@
         revNum = 0;
         sha256 = "12797f333f1785c4ba44a803e63ee2eabe56f1c7c6df9a6542d83c1389bf5d5a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/event-list-0.1.2-r1-f0f35aceae52b317c25594f9ca7eb5c11288b6fe492ca1f59d953cfcbfd5c1a6.nix;
+        revNum = 1;
+        sha256 = "f0f35aceae52b317c25594f9ca7eb5c11288b6fe492ca1f59d953cfcbfd5c1a6";
+        };
+      default = "r1";
       };
     };
   }

@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "d81fa5dadf88de069b56cceb5f7d1fb2cb4555ecf555686e1664ce87af85b229";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/netlib-ffi-0.1.1-r1-cf33fffefa4318bef066352e2ce0e75d9d3afac1b5eb94be373482f8c0d5b760.nix;
+        revNum = 1;
+        sha256 = "cf33fffefa4318bef066352e2ce0e75d9d3afac1b5eb94be373482f8c0d5b760";
+        };
+      default = "r1";
       };
     };
   }
