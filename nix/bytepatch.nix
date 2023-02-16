@@ -59,4 +59,15 @@
       default = "r1";
       };
     };
+  "0.4.1" = {
+    sha256 = "ef047c98b4d3f75b956481c17b51d077f474f4c84ef1f3e1d436f1300383708a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bytepatch-0.4.1-r0-c529d8927b496b06021f06642588d6a26cebb72f98975afaf6cc155e6a636fd0.nix;
+        revNum = 0;
+        sha256 = "c529d8927b496b06021f06642588d6a26cebb72f98975afaf6cc155e6a636fd0";
+        };
+      default = "r0";
+      };
+    };
   }

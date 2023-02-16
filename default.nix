@@ -4846,6 +4846,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "eliminators" = import ./nix/eliminators.nix;
   "elision" = import ./nix/elision.nix;
   "elliptic-curve" = import ./nix/elliptic-curve.nix;
+  "elliptic-integrals" = import ./nix/elliptic-integrals.nix;
   "elm-bridge" = import ./nix/elm-bridge.nix;
   "elm-build-lib" = import ./nix/elm-build-lib.nix;
   "elm-compiler" = import ./nix/elm-compiler.nix;

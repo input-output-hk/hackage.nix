@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.0.2.3" = {
+    sha256 = "ac9e3d78bca5e554ebf1a8ac5f8d601616e6573f982d88751092c67b29774f7b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pooled-io-0.0.2.3-r0-266a03a6d623305ae23680bf58322f9fc35acd1f8bc5404c73f383f2738fb313.nix;
+        revNum = 0;
+        sha256 = "266a03a6d623305ae23680bf58322f9fc35acd1f8bc5404c73f383f2738fb313";
+        };
+      default = "r0";
+      };
+    };
   }

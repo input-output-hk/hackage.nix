@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "4.5.1.1" = {
+    sha256 = "c941d3fdfaed45bfcd2e3226602354b18007a16990102f779b0ff6277525363c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/h-raylib-4.5.1.1-r0-4b51b55b3653c5b94ac7af0416f1378af620d06689511fa58a5d048d5d57aa4f.nix;
+        revNum = 0;
+        sha256 = "4b51b55b3653c5b94ac7af0416f1378af620d06689511fa58a5d048d5d57aa4f";
+        };
+      default = "r0";
+      };
+    };
   }

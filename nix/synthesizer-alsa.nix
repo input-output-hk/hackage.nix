@@ -144,7 +144,12 @@
         revNum = 0;
         sha256 = "2cc9618a0c5d2e8df9fc4c8e98dc5ac64d2c2ddcbbeb60fa0bdd227136e22115";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/synthesizer-alsa-0.5.0.6-r1-6eba7765b8f60e4217bc9355b38c353cf18547d685838b9a3a19f8db23679753.nix;
+        revNum = 1;
+        sha256 = "6eba7765b8f60e4217bc9355b38c353cf18547d685838b9a3a19f8db23679753";
+        };
+      default = "r1";
       };
     };
   }
