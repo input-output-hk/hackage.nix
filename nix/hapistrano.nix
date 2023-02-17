@@ -626,4 +626,15 @@
       default = "r0";
       };
     };
+  "0.4.8.0" = {
+    sha256 = "c277de297c8ef22cbabc2c73d1a7753f0fbe72bfaf5eeb69c225f484b4fd073d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hapistrano-0.4.8.0-r0-268a92c85b05b28cd9a752c57b5fdeefb35cdbb62cd323f1acdbbfbca3a8dc67.nix;
+        revNum = 0;
+        sha256 = "268a92c85b05b28cd9a752c57b5fdeefb35cdbb62cd323f1acdbbfbca3a8dc67";
+        };
+      default = "r0";
+      };
+    };
   }

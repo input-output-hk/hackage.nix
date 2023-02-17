@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "cce5ff36fce3a8815f48519c0d36b71790f4de050e240754b75698dc5af63267";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lapack-comfort-array-0.0.1-r1-9afd7cfd53011711d1026d47fb6052c45bca397fc38a5d7b5e6e5d37acbd007d.nix;
+        revNum = 1;
+        sha256 = "9afd7cfd53011711d1026d47fb6052c45bca397fc38a5d7b5e6e5d37acbd007d";
+        };
+      default = "r1";
       };
     };
   }

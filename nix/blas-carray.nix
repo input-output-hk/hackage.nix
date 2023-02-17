@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "52c05e3f2be224daa7480495472ac87dcb5e44d57b54cb883085d0ae15dda690";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/blas-carray-0.1.0.2-r0-3f431f03eb02af2cf8f53e5fc86270b9aed311f23ef7968721567ea0017bc577.nix;
+        revNum = 0;
+        sha256 = "3f431f03eb02af2cf8f53e5fc86270b9aed311f23ef7968721567ea0017bc577";
+        };
+      default = "r0";
+      };
+    };
   }

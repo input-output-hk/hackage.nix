@@ -83,7 +83,12 @@
         revNum = 0;
         sha256 = "69609e3dda1fbe220cf164098f5878290f5522e1fa5d7b6cf7f22d59ffacb175";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/markov-chain-0.0.3.4-r1-8fd3ff1c40ba5463efe4f74608f5989d12a724e7bdaf3c3b1487cb696fc31783.nix;
+        revNum = 1;
+        sha256 = "8fd3ff1c40ba5463efe4f74608f5989d12a724e7bdaf3c3b1487cb696fc31783";
+        };
+      default = "r1";
       };
     };
   }

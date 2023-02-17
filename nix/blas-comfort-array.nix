@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "8b9574b9e1e731bd0c8106a4044c5e2610b7087c486daaaa97eecc5d3b0e7d9d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/blas-comfort-array-0.0.0.3-r1-ed3e9d1c6e0db638a5787e107c6fa7b8b38044fe872acef080e01abd4147b4c9.nix;
+        revNum = 1;
+        sha256 = "ed3e9d1c6e0db638a5787e107c6fa7b8b38044fe872acef080e01abd4147b4c9";
+        };
+      default = "r1";
       };
     };
   }

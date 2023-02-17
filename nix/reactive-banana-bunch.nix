@@ -18,7 +18,17 @@
         revNum = 0;
         sha256 = "2c8b1a49a334b23b1b5bc29daaa0fac4b4cd14d21679783e9f79e6784c42d951";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/reactive-banana-bunch-1.0.0.1-r1-0757345d4f176355d16079a31b8b26526675003047bec36082c411002c662afd.nix;
+        revNum = 1;
+        sha256 = "0757345d4f176355d16079a31b8b26526675003047bec36082c411002c662afd";
+        };
+      r2 = {
+        nix = import ../hackage/reactive-banana-bunch-1.0.0.1-r2-a23c92cb8bab7db79ea4808a04c5a6fd06d27b7ab4a36eb22558a7ce0f3cfaa5.nix;
+        revNum = 2;
+        sha256 = "a23c92cb8bab7db79ea4808a04c5a6fd06d27b7ab4a36eb22558a7ce0f3cfaa5";
+        };
+      default = "r2";
       };
     };
   }

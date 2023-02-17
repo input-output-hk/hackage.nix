@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "fc4972bada5f1317b4f989a47497ad6da53d387c4e6d24eb075548a1e60ebb6f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/netlib-comfort-array-0.0.0.2-r1-29a2cea319dc7db18f3cfb87340ce1b39698a2d226bb59742c8fb8978beb886a.nix;
+        revNum = 1;
+        sha256 = "29a2cea319dc7db18f3cfb87340ce1b39698a2d226bb59742c8fb8978beb886a";
+        };
+      default = "r1";
       };
     };
   }

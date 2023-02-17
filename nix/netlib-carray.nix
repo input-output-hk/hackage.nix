@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "720a7c074171c28f3563f228c2766b965e0fc79aecd6987823ddcaedbd070e36";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/netlib-carray-0.1-r1-24bca2423fd1a40c76daa2c58d34ba2ca7e80d371af66d5e313431130c8ed6a2.nix;
+        revNum = 1;
+        sha256 = "24bca2423fd1a40c76daa2c58d34ba2ca7e80d371af66d5e313431130c8ed6a2";
+        };
+      default = "r1";
       };
     };
   }

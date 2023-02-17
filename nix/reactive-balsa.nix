@@ -84,7 +84,12 @@
         revNum = 0;
         sha256 = "31f171fc8b4f8b006865bc10d2561b6e709542a8f151b3ad9226702fdae0fd8a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/reactive-balsa-0.4.0.1-r1-8a9308be1e30c1d478f9c51f4c4ea27e5102d8cf5b918920f32b10fc1c41d8d1.nix;
+        revNum = 1;
+        sha256 = "8a9308be1e30c1d478f9c51f4c4ea27e5102d8cf5b918920f32b10fc1c41d8d1";
+        };
+      default = "r1";
       };
     };
   }

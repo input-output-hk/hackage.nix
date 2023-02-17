@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "3d9b35d6f0da34f6ec091418008485feb274840d2f9926d468a0e4245a61f8dd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lapack-carray-0.0.3-r1-2b608b192c79baa9e65b79946ca714ea09bd6365d475f77f497f97ff559597ab.nix;
+        revNum = 1;
+        sha256 = "2b608b192c79baa9e65b79946ca714ea09bd6365d475f77f497f97ff559597ab";
+        };
+      default = "r1";
       };
     };
   }

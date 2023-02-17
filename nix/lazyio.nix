@@ -117,7 +117,12 @@
         revNum = 0;
         sha256 = "bc1b39d7f206f592278a0f14016a0d665a29f7a608ed7fac9e88570755af0031";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lazyio-0.1.0.4-r1-a7a7552257632e159d52b917cb8a1a40b02a22b84e0b664389ccd8017f5b7bcd.nix;
+        revNum = 1;
+        sha256 = "a7a7552257632e159d52b917cb8a1a40b02a22b84e0b664389ccd8017f5b7bcd";
+        };
+      default = "r1";
       };
     };
   }

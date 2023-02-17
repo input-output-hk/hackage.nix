@@ -73,7 +73,12 @@
         revNum = 0;
         sha256 = "2110b178d60bd3b495f20d63f98620f5a836581534563fca5d50af176a9563f9";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/reactive-midyim-0.4.1.1-r1-1c9802c0f28344cf5ef741eceb1ee294c6e4dab128f46cbc227dda8421f5ca2d.nix;
+        revNum = 1;
+        sha256 = "1c9802c0f28344cf5ef741eceb1ee294c6e4dab128f46cbc227dda8421f5ca2d";
+        };
+      default = "r1";
       };
     };
   }
