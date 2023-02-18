@@ -8777,6 +8777,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "jackminimix" = import ./nix/jackminimix.nix;
   "jackpolynomials" = import ./nix/jackpolynomials.nix;
   "jacobi-roots" = import ./nix/jacobi-roots.nix;
+  "jacobi-theta" = import ./nix/jacobi-theta.nix;
   "jaeger-flamegraph" = import ./nix/jaeger-flamegraph.nix;
   "jail" = import ./nix/jail.nix;
   "jailbreak-cabal" = import ./nix/jailbreak-cabal.nix;
@@ -9753,6 +9754,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lucid-xstatic" = import ./nix/lucid-xstatic.nix;
   "lucid2" = import ./nix/lucid2.nix;
   "lucid2-htmx" = import ./nix/lucid2-htmx.nix;
+  "lucid2-xstatic" = import ./nix/lucid2-xstatic.nix;
   "lucienne" = import ./nix/lucienne.nix;
   "luhn" = import ./nix/luhn.nix;
   "lui" = import ./nix/lui.nix;
@@ -12996,6 +12998,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rgb-color-model" = import ./nix/rgb-color-model.nix;
   "rhbzquery" = import ./nix/rhbzquery.nix;
   "rhine" = import ./nix/rhine.nix;
+  "rhine-bayes" = import ./nix/rhine-bayes.nix;
   "rhine-gloss" = import ./nix/rhine-gloss.nix;
   "rhine-terminal" = import ./nix/rhine-terminal.nix;
   "rhythm-game-tutorial" = import ./nix/rhythm-game-tutorial.nix;

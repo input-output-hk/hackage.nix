@@ -164,4 +164,15 @@
       default = "r0";
       };
     };
+  "0.2.3.0" = {
+    sha256 = "1152af02303283e02dd2cfbd5260f983ee29b476cce5e8f99cf2926e1fca3a43";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zoovisitor-0.2.3.0-r0-66142faf518a3b232bdaee8367d645218233a4a52ff3bc2fb56e1e8322142fec.nix;
+        revNum = 0;
+        sha256 = "66142faf518a3b232bdaee8367d645218233a4a52ff3bc2fb56e1e8322142fec";
+        };
+      default = "r0";
+      };
+    };
   }

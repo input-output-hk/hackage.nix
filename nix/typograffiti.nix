@@ -64,4 +64,15 @@
       default = "r2";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "3d1361726560e1c594c09b474627530f7ae28ab417dc258f1bf4502d83b37bab";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typograffiti-0.2.0.1-r0-e670bf1f40e340fdbe412517619dadd53e8d187ec980e441f94795deb7c8045e.nix;
+        revNum = 0;
+        sha256 = "e670bf1f40e340fdbe412517619dadd53e8d187ec980e441f94795deb7c8045e";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -156,4 +156,15 @@
       default = "r0";
       };
     };
+  "3.0.2.1" = {
+    sha256 = "e935fcab166fae63e1fc02155d12e61881d1daac8edfca9f125ea7f44aa2d60d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/password-3.0.2.1-r0-c27f1815fa3e8eab34c4589e96702ca0d8ac1add95dbeb6cd473620a627a4269.nix;
+        revNum = 0;
+        sha256 = "c27f1815fa3e8eab34c4589e96702ca0d8ac1add95dbeb6cd473620a627a4269";
+        };
+      default = "r0";
+      };
+    };
   }

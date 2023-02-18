@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.0" = {
+    sha256 = "ae3857f3a4d2354968f131b62676af65b2019d7541c475e620a3f778b1c460c5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/openid-connect-0.2.0-r0-81e75b05b4eb6a90daf9bf9f5abee10992d8a3afcafb6040caeeaea3d6ab7177.nix;
+        revNum = 0;
+        sha256 = "81e75b05b4eb6a90daf9bf9f5abee10992d8a3afcafb6040caeeaea3d6ab7177";
+        };
+      default = "r0";
+      };
+    };
   }
