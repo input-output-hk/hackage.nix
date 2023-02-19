@@ -21,6 +21,28 @@
       default = "r0";
       };
     };
+  "0.10.0.1" = {
+    sha256 = "c9fc7b1cf9b41394a82b225f346490548be290f839c078e26a1b2f00b070a920";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-phonetics-basics-0.10.0.1-r0-1d6766789979d2bf8bd68a74f8d4f3700b39a10f44e3edd00ccddbd50b6b5edb.nix;
+        revNum = 0;
+        sha256 = "1d6766789979d2bf8bd68a74f8d4f3700b39a10f44e3edd00ccddbd50b6b5edb";
+        };
+      default = "r0";
+      };
+    };
+  "0.10.0.2" = {
+    sha256 = "031e5026de10ade5a877eb2337ac3465afe7d0a64631a59d85722c3ad49e31b3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-phonetics-basics-0.10.0.2-r0-b1120649801b4cf7798000b7c13141cb1d238bb04ab71f4c708f3c6c5f966bb8.nix;
+        revNum = 0;
+        sha256 = "b1120649801b4cf7798000b7c13141cb1d238bb04ab71f4c708f3c6c5f966bb8";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "14afd8939f930ffafa554af1e1e1423c220dabb7297652b28bf554a15b5c1b9e";
     revisions = {

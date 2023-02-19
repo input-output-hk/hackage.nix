@@ -87,6 +87,39 @@
       default = "r0";
       };
     };
+  "0.1.2.10" = {
+    sha256 = "ddb9a8743b89346e6a536dd9525698aa10611505fad6602a75544b8ab2e47af8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ptr-poker-0.1.2.10-r0-70c673c3bccd87e932a42d0fc45dd53f23220b7af1f8fbe192982efd4fbff083.nix;
+        revNum = 0;
+        sha256 = "70c673c3bccd87e932a42d0fc45dd53f23220b7af1f8fbe192982efd4fbff083";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.2.11" = {
+    sha256 = "4fdaa298afde8a9dddc45aca99d166020de2dcdb7244ae5ab4b5f8afada43fc4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ptr-poker-0.1.2.11-r0-a4491d925be2a5137202895f6a3f140cc74473659d9ce18f1e47834ffeebdacf.nix;
+        revNum = 0;
+        sha256 = "a4491d925be2a5137202895f6a3f140cc74473659d9ce18f1e47834ffeebdacf";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.2.12" = {
+    sha256 = "1ed86495ee6e637ae51a181c397c4d210d16c86264d7bfceebbe8bdcd1d3b01e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ptr-poker-0.1.2.12-r0-355f562ef183947cdd9a97568f74adee8b7a3d716f6c7e0a83bf5040b295e37f.nix;
+        revNum = 0;
+        sha256 = "355f562ef183947cdd9a97568f74adee8b7a3d716f6c7e0a83bf5040b295e37f";
+        };
+      default = "r0";
+      };
+    };
   "0.1.2.2" = {
     sha256 = "709b2ffa7b9c44243457244d70113277c1a6e8f396fe5ecd6e5fa313e180d997";
     revisions = {
@@ -160,6 +193,17 @@
         nix = import ../hackage/ptr-poker-0.1.2.8-r0-c8bab0aaccf2db4eaf3cc91f774a47eea593a8cebaf749d97a73617b50e8368c.nix;
         revNum = 0;
         sha256 = "c8bab0aaccf2db4eaf3cc91f774a47eea593a8cebaf749d97a73617b50e8368c";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.2.9" = {
+    sha256 = "5a97addb6001c39e8a26456d040518a7293cd22b5d8f4abc359849cff5cce935";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ptr-poker-0.1.2.9-r0-1d0bd9d3302a0b76044f4d0ce2af5e16ece4ad4110417a658a71e16964e2fed0.nix;
+        revNum = 0;
+        sha256 = "1d0bd9d3302a0b76044f4d0ce2af5e16ece4ad4110417a658a71e16964e2fed0";
         };
       default = "r0";
       };

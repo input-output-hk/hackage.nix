@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.1.0.8" = {
+    sha256 = "29d3d35a4cd286237b78b1a38e775559f00eb290c087e41293052047875ce3fb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/isomorphism-class-0.1.0.8-r0-e935e9ca06906a8b68009b684904b94ed11aee03295a5d55329e7744b4b1efec.nix;
+        revNum = 0;
+        sha256 = "e935e9ca06906a8b68009b684904b94ed11aee03295a5d55329e7744b4b1efec";
+        };
+      default = "r0";
+      };
+    };
   }
