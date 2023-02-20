@@ -141,7 +141,12 @@
         revNum = 2;
         sha256 = "21823c6227a483b4faf210d7a55d435563ff69ddf94b48b8af1bba878196c820";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/cabal-doctest-1.0.9-r3-6dea0dbd1457f43d96ce1cfb1bab8b9f55d4fb82940e2bfa5aad78e6e2260656.nix;
+        revNum = 3;
+        sha256 = "6dea0dbd1457f43d96ce1cfb1bab8b9f55d4fb82940e2bfa5aad78e6e2260656";
+        };
+      default = "r3";
       };
     };
   }

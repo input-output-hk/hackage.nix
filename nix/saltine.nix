@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.2.1.0" = {
+    sha256 = "aa8b3d7af6ccf7930e403388782413111b6246206ad772dd982d83551f963cd9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/saltine-0.2.1.0-r0-8d06951dc677f45e25bc1f96b559ee7860e7c355c892bce4db2fbc46f2f7d84d.nix;
+        revNum = 0;
+        sha256 = "8d06951dc677f45e25bc1f96b559ee7860e7c355c892bce4db2fbc46f2f7d84d";
+        };
+      default = "r0";
+      };
+    };
   }
