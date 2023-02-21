@@ -2682,6 +2682,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "brick" = import ./nix/brick.nix;
   "brick-dropdownmenu" = import ./nix/brick-dropdownmenu.nix;
   "brick-filetree" = import ./nix/brick-filetree.nix;
+  "brick-list-search" = import ./nix/brick-list-search.nix;
   "brick-panes" = import ./nix/brick-panes.nix;
   "brick-skylighting" = import ./nix/brick-skylighting.nix;
   "brick-tabular-list" = import ./nix/brick-tabular-list.nix;
@@ -9878,6 +9879,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mappy" = import ./nix/mappy.nix;
   "mapquest-api" = import ./nix/mapquest-api.nix;
   "maquinitas-tidal" = import ./nix/maquinitas-tidal.nix;
+  "marching-cubes" = import ./nix/marching-cubes.nix;
   "marihana" = import ./nix/marihana.nix;
   "marionetta" = import ./nix/marionetta.nix;
   "markdown" = import ./nix/markdown.nix;

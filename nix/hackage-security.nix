@@ -339,7 +339,12 @@
         revNum = 0;
         sha256 = "64fc60f3f4d02047c54956b6976c0e4fc72722891c6875ab10d95359bc00355a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hackage-security-0.6.2.3-r1-d169ee940cdb4bdad3c7cde4f9aca0f27db250b41f576e16034691e75670258a.nix;
+        revNum = 1;
+        sha256 = "d169ee940cdb4bdad3c7cde4f9aca0f27db250b41f576e16034691e75670258a";
+        };
+      default = "r1";
       };
     };
   }
