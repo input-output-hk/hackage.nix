@@ -1152,4 +1152,15 @@
       default = "r0";
       };
     };
+  "6.0.0" = {
+    sha256 = "7fa9eb4ad8f767fe9608f1e01c0ba7a90a999c8efc0f6ed7d8dfe24f965cf39e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hindent-6.0.0-r0-39de37e98d7e157ded253bb4230be98eaf48142b09a19c811372339dd113f0f1.nix;
+        revNum = 0;
+        sha256 = "39de37e98d7e157ded253bb4230be98eaf48142b09a19c811372339dd113f0f1";
+        };
+      default = "r0";
+      };
+    };
   }

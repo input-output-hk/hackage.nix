@@ -104,7 +104,12 @@
         revNum = 2;
         sha256 = "14173900db9f7c3e899ffbafebdb45994fb8bfa0dee84135dd1cdb9a9e24d940";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/retrie-1.2.0.1-r3-9879f7665ee212d9a2ef61cfccef5cdaa50ed090723e003f6e1b3c7219b5a891.nix;
+        revNum = 3;
+        sha256 = "9879f7665ee212d9a2ef61cfccef5cdaa50ed090723e003f6e1b3c7219b5a891";
+        };
+      default = "r3";
       };
     };
   "1.2.1" = {
@@ -120,7 +125,12 @@
         revNum = 1;
         sha256 = "b24961582781576f45cf9eb357390a8858de85a98204dd5df94d73b0b1b86049";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/retrie-1.2.1-r2-53e68d014d8cada8dbd2b6d138e5423391a374330aa2d10cd6b8cc3a8bbc3332.nix;
+        revNum = 2;
+        sha256 = "53e68d014d8cada8dbd2b6d138e5423391a374330aa2d10cd6b8cc3a8bbc3332";
+        };
+      default = "r2";
       };
     };
   "1.2.1.1" = {
@@ -131,7 +141,12 @@
         revNum = 0;
         sha256 = "ce25b4a3352072b86fa3cc33d163705b0e1d84ed469aa17f8c9dba3409e81352";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/retrie-1.2.1.1-r1-d86148cd2e14e0614e53221be1c721df2422cce21433c6cc8c7661d6bebbb7c8.nix;
+        revNum = 1;
+        sha256 = "d86148cd2e14e0614e53221be1c721df2422cce21433c6cc8c7661d6bebbb7c8";
+        };
+      default = "r1";
       };
     };
   }

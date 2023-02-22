@@ -26,4 +26,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "1d781d20e792ffb6062c332475242f35ee1506fefde81507e1d7fadfd271959e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rrb-vector-0.2.0.0-r0-8ba01a45ccde13b7679633141b05b552cdacdaef2c6e34c3aae3f91e06ac3a59.nix;
+        revNum = 0;
+        sha256 = "8ba01a45ccde13b7679633141b05b552cdacdaef2c6e34c3aae3f91e06ac3a59";
+        };
+      default = "r0";
+      };
+    };
   }

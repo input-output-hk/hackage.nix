@@ -286,7 +286,17 @@
         revNum = 0;
         sha256 = "116b63db6e79574e7ac50bf12a6303af5dae4048b222c0f78380d24f481abb5a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/chronos-1.1.5-r1-59c7b8a3a116ed3f0f0f68ca954b3bf3c02895edec94884109017863b8831974.nix;
+        revNum = 1;
+        sha256 = "59c7b8a3a116ed3f0f0f68ca954b3bf3c02895edec94884109017863b8831974";
+        };
+      r2 = {
+        nix = import ../hackage/chronos-1.1.5-r2-ca35be5fdbbb384414226b4467c6d1c8b44defe59a9c8a3af32c1c5fb250c781.nix;
+        revNum = 2;
+        sha256 = "ca35be5fdbbb384414226b4467c6d1c8b44defe59a9c8a3af32c1c5fb250c781";
+        };
+      default = "r2";
       };
     };
   }

@@ -8777,6 +8777,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "jack-bindings" = import ./nix/jack-bindings.nix;
   "jackminimix" = import ./nix/jackminimix.nix;
   "jackpolynomials" = import ./nix/jackpolynomials.nix;
+  "jacobi-elliptic" = import ./nix/jacobi-elliptic.nix;
   "jacobi-roots" = import ./nix/jacobi-roots.nix;
   "jacobi-theta" = import ./nix/jacobi-theta.nix;
   "jaeger-flamegraph" = import ./nix/jaeger-flamegraph.nix;

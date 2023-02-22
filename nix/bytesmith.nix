@@ -180,7 +180,12 @@
         revNum = 0;
         sha256 = "ec061575cd322cb08eded2c64b37ed27f9c62fafb339fefdb5ab39b2e3ff9a62";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bytesmith-0.3.9.1-r1-e256efd34c625eb0ae16ab305dfe578d23ea2ab55a1a6d0da7c34c8a8ffaf586.nix;
+        revNum = 1;
+        sha256 = "e256efd34c625eb0ae16ab305dfe578d23ea2ab55a1a6d0da7c34c8a8ffaf586";
+        };
+      default = "r1";
       };
     };
   }
