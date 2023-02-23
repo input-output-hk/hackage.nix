@@ -134,4 +134,15 @@
       default = "r0";
       };
     };
+  "0.5.3.0" = {
+    sha256 = "5a37c8e3963a26a4d185e0a037ba2d02727f0043e9525dc19751b88134a8b778";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/beam-postgres-0.5.3.0-r0-48dacc958650146a693b3800801ebfc2ecb74db9fd73d5bd4550a01dd37e74b9.nix;
+        revNum = 0;
+        sha256 = "48dacc958650146a693b3800801ebfc2ecb74db9fd73d5bd4550a01dd37e74b9";
+        };
+      default = "r0";
+      };
+    };
   }

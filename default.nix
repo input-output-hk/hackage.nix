@@ -3310,6 +3310,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cloudfront-signer" = import ./nix/cloudfront-signer.nix;
   "cloudi" = import ./nix/cloudi.nix;
   "cloudyfs" = import ./nix/cloudyfs.nix;
+  "clplug" = import ./nix/clplug.nix;
   "clr-bindings" = import ./nix/clr-bindings.nix;
   "clr-host" = import ./nix/clr-host.nix;
   "clr-inline" = import ./nix/clr-inline.nix;
@@ -9261,6 +9262,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "latex-svg-pandoc" = import ./nix/latex-svg-pandoc.nix;
   "lattices" = import ./nix/lattices.nix;
   "launchdarkly-server-sdk" = import ./nix/launchdarkly-server-sdk.nix;
+  "launchdarkly-server-sdk-redis-hedis" = import ./nix/launchdarkly-server-sdk-redis-hedis.nix;
   "launchpad-control" = import ./nix/launchpad-control.nix;
   "lawful" = import ./nix/lawful.nix;
   "lawful-classes-hedgehog" = import ./nix/lawful-classes-hedgehog.nix;
@@ -16374,6 +16376,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wedged" = import ./nix/wedged.nix;
   "weeder" = import ./nix/weeder.nix;
   "weekdaze" = import ./nix/weekdaze.nix;
+  "weierstrass-functions" = import ./nix/weierstrass-functions.nix;
   "weigh" = import ./nix/weigh.nix;
   "weighted" = import ./nix/weighted.nix;
   "weighted-regexp" = import ./nix/weighted-regexp.nix;

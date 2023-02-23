@@ -688,7 +688,12 @@
         revNum = 2;
         sha256 = "beae56845262e572bc18b9f0919d15757461bf9a60b66394d0060d925dbe6e5e";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/MonadRandom-0.6-r3-df56fcf43422728ad6032afdb7ad665a843a11b743ffbb585ad4d9f73285c16c.nix;
+        revNum = 3;
+        sha256 = "df56fcf43422728ad6032afdb7ad665a843a11b743ffbb585ad4d9f73285c16c";
+        };
+      default = "r3";
       };
     };
   }

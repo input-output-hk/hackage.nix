@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.1.0" = {
+    sha256 = "8b72878582ee068c0001056c42e0530de4ac6947b4a78d6e633ad464992ce1ad";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/landlock-0.2.1.0-r0-0249f85dbdab4a6f1d45c8c40e990b36862745a49eb9e7793f5127799124abb2.nix;
+        revNum = 0;
+        sha256 = "0249f85dbdab4a6f1d45c8c40e990b36862745a49eb9e7793f5127799124abb2";
+        };
+      default = "r0";
+      };
+    };
   }

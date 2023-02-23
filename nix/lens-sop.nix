@@ -81,4 +81,15 @@
       default = "r0";
       };
     };
+  "0.3.0" = {
+    sha256 = "213a673308d935bcc3ba45b8b7500b10854f5cf1526b09bd2b61faae27bdbe90";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lens-sop-0.3.0-r0-f6352b52e1729cc6991f3212df64dd0f99963eab09e62a728a7cb8f7512453fa.nix;
+        revNum = 0;
+        sha256 = "f6352b52e1729cc6991f3212df64dd0f99963eab09e62a728a7cb8f7512453fa";
+        };
+      default = "r0";
+      };
+    };
   }

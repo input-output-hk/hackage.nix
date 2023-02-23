@@ -417,4 +417,15 @@
       default = "r1";
       };
     };
+  "0.4.1.6" = {
+    sha256 = "63d54abe02fe07723e8a12f39d668478ea56ad78c9ef69613064420ba3c0a04f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/terminfo-0.4.1.6-r0-fb0e7f56eb6ab259c03057b18eeb373d7f9acad45b2167f4c1eb4e80f10459a0.nix;
+        revNum = 0;
+        sha256 = "fb0e7f56eb6ab259c03057b18eeb373d7f9acad45b2167f4c1eb4e80f10459a0";
+        };
+      default = "r0";
+      };
+    };
   }
