@@ -65,4 +65,26 @@
       default = "r0";
       };
     };
+  "0.6.1" = {
+    sha256 = "97840918baa16cc175560645d1cd3bf762f7b6133d9c44f1c4da152431f65ada";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/horizon-spec-0.6.1-r0-d32e12b5c88595eefaa3e43197dde28729a4a0a4088e103553321090ed2f7a6f.nix;
+        revNum = 0;
+        sha256 = "d32e12b5c88595eefaa3e43197dde28729a4a0a4088e103553321090ed2f7a6f";
+        };
+      default = "r0";
+      };
+    };
+  "0.6.3" = {
+    sha256 = "ec6b261b6193ff520b2dddd840d68c8a3b0abc1c4cd459c0a3e0a82565485a01";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/horizon-spec-0.6.3-r0-8a30511a35576d72fa13e0203de2ffd4ded48196a40a219a93034f661a322c2b.nix;
+        revNum = 0;
+        sha256 = "8a30511a35576d72fa13e0203de2ffd4ded48196a40a219a93034f661a322c2b";
+        };
+      default = "r0";
+      };
+    };
   }

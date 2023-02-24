@@ -45,7 +45,12 @@
         revNum = 1;
         sha256 = "ad870491a92d9c70f49c4e991ee2daa80b43ccaf0858991b14bae2d9d0551d5c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/supply-next-0.0.1.2-r2-0dd3e61bb713b04a57580d571d880126e60a4af31ce45c3f300239ea8e41bcaa.nix;
+        revNum = 2;
+        sha256 = "0dd3e61bb713b04a57580d571d880126e60a4af31ce45c3f300239ea8e41bcaa";
+        };
+      default = "r2";
       };
     };
   }

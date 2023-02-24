@@ -7721,6 +7721,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "horizon" = import ./nix/horizon.nix;
   "horizon-gen-nix" = import ./nix/horizon-gen-nix.nix;
   "horizon-spec" = import ./nix/horizon-spec.nix;
+  "horizon-spec-lens" = import ./nix/horizon-spec-lens.nix;
   "horizontal-rule" = import ./nix/horizontal-rule.nix;
   "horname" = import ./nix/horname.nix;
   "hosc" = import ./nix/hosc.nix;
@@ -9883,6 +9884,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mapquest-api" = import ./nix/mapquest-api.nix;
   "maquinitas-tidal" = import ./nix/maquinitas-tidal.nix;
   "marching-cubes" = import ./nix/marching-cubes.nix;
+  "marching-cubes2" = import ./nix/marching-cubes2.nix;
   "marihana" = import ./nix/marihana.nix;
   "marionetta" = import ./nix/marionetta.nix;
   "markdown" = import ./nix/markdown.nix;
@@ -10799,6 +10801,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "neuron" = import ./nix/neuron.nix;
   "newbase60" = import ./nix/newbase60.nix;
   "newhope" = import ./nix/newhope.nix;
+  "newline" = import ./nix/newline.nix;
   "newports" = import ./nix/newports.nix;
   "newsletter" = import ./nix/newsletter.nix;
   "newsletter-mailgun" = import ./nix/newsletter-mailgun.nix;

@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "56a1a979a7ef9522b344fc5fd3417b823e093c9ca1f7256de5e2ed08406ee78f";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/yaml-streamly-0.12.0-r2-44451ae682b41574694edf53f3fc17460e0ebbb64c0b13753d4cc6d51365e7b7.nix;
+        revNum = 2;
+        sha256 = "44451ae682b41574694edf53f3fc17460e0ebbb64c0b13753d4cc6d51365e7b7";
+        };
+      default = "r2";
       };
     };
   "0.12.1" = {
@@ -28,7 +33,23 @@
         revNum = 1;
         sha256 = "4c688c7b9480ab159ba0a500f793cc234217df4c102cd7b4af0bd9040d0cfba1";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/yaml-streamly-0.12.1-r2-3a42cf95d612d1a4f5532c7a29cc62cb81fc8e0fad3e6f232a77779ddcbdbff2.nix;
+        revNum = 2;
+        sha256 = "3a42cf95d612d1a4f5532c7a29cc62cb81fc8e0fad3e6f232a77779ddcbdbff2";
+        };
+      default = "r2";
+      };
+    };
+  "0.12.2" = {
+    sha256 = "9d09c12cafba6adbd7ee544e88d6fd98573923867936d421eb04a1b78c7c4a2e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yaml-streamly-0.12.2-r0-9979fe3106826e145fcb820f42820efca4b3c7a067cf5101def391429eefeb9c.nix;
+        revNum = 0;
+        sha256 = "9979fe3106826e145fcb820f42820efca4b3c7a067cf5101def391429eefeb9c";
+        };
+      default = "r0";
       };
     };
   }
