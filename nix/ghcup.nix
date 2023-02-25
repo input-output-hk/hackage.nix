@@ -162,4 +162,15 @@
       default = "r0";
       };
     };
+  "0.1.19.2" = {
+    sha256 = "b25a15adaaca30a227ed12560d1d89924d9d3ae17fc5798f20f2f00484866088";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghcup-0.1.19.2-r0-877b5c1f2c4ee9235c00b573371a93ebd0c0a8c90313d9237eb35581e2319d96.nix;
+        revNum = 0;
+        sha256 = "877b5c1f2c4ee9235c00b573371a93ebd0c0a8c90313d9237eb35581e2319d96";
+        };
+      default = "r0";
+      };
+    };
   }

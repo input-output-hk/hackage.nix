@@ -99,7 +99,12 @@
         revNum = 3;
         sha256 = "d4ba0df1912a47424525f29cda2bd941d9ea01c349145bab5e56691bc9b804e5";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/alex-meta-0.3.0.13-r4-efd18a8200a72b45f3b846eba493f59ed43f2cc734727f0b9a5528dbec13372d.nix;
+        revNum = 4;
+        sha256 = "efd18a8200a72b45f3b846eba493f59ed43f2cc734727f0b9a5528dbec13372d";
+        };
+      default = "r4";
       };
     };
   "0.3.0.2" = {

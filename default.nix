@@ -5494,6 +5494,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fold-debounce-conduit" = import ./nix/fold-debounce-conduit.nix;
   "foldable-ix" = import ./nix/foldable-ix.nix;
   "foldable1" = import ./nix/foldable1.nix;
+  "foldable1-classes-compat" = import ./nix/foldable1-classes-compat.nix;
   "foldl" = import ./nix/foldl.nix;
   "foldl-exceptions" = import ./nix/foldl-exceptions.nix;
   "foldl-incremental" = import ./nix/foldl-incremental.nix;
@@ -7722,6 +7723,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "horizon-gen-nix" = import ./nix/horizon-gen-nix.nix;
   "horizon-spec" = import ./nix/horizon-spec.nix;
   "horizon-spec-lens" = import ./nix/horizon-spec-lens.nix;
+  "horizon-spec-pretty" = import ./nix/horizon-spec-pretty.nix;
   "horizontal-rule" = import ./nix/horizontal-rule.nix;
   "horname" = import ./nix/horname.nix;
   "hosc" = import ./nix/hosc.nix;
@@ -8990,6 +8992,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kdesrc-build-profiles" = import ./nix/kdesrc-build-profiles.nix;
   "kdt" = import ./nix/kdt.nix;
   "keccak" = import ./nix/keccak.nix;
+  "keelung" = import ./nix/keelung.nix;
   "keenser" = import ./nix/keenser.nix;
   "keep-alive" = import ./nix/keep-alive.nix;
   "keera-callbacks" = import ./nix/keera-callbacks.nix;

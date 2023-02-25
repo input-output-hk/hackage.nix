@@ -258,7 +258,12 @@
         revNum = 4;
         sha256 = "1a8cbb72fdecd4214334b0af08b8c1c469d24177c33761ef3756effb7f9d59fa";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/BNFC-meta-0.6.1-r5-82c670b322b7722edd6d5e58f4a02d28539ca1b9368f7b9c93288333882817b4.nix;
+        revNum = 5;
+        sha256 = "82c670b322b7722edd6d5e58f4a02d28539ca1b9368f7b9c93288333882817b4";
+        };
+      default = "r5";
       };
     };
   }

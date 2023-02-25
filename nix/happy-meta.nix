@@ -167,4 +167,15 @@
       default = "r1";
       };
     };
+  "0.2.1.0" = {
+    sha256 = "94b3924d64b93bf7412ec90399ca15107ef1f47e85b994363123123ddf1a9184";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/happy-meta-0.2.1.0-r0-b4d7d2026afd2951378b3b7562866c680a061e0bae5fed4262d2e5daf7c8b8ea.nix;
+        revNum = 0;
+        sha256 = "b4d7d2026afd2951378b3b7562866c680a061e0bae5fed4262d2e5daf7c8b8ea";
+        };
+      default = "r0";
+      };
+    };
   }
