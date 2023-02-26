@@ -37,4 +37,15 @@
       default = "r0";
       };
     };
+  "1.1.0.0" = {
+    sha256 = "7e913a05dfae7a4198c23b51c4083eedbdfa40ef3b28267958e4c7b1ccc3289a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/systemd-socket-activation-1.1.0.0-r0-4c3c9e089e02f9081f3490cc8d365ccf8e63488b162f8f9df630860e58514797.nix;
+        revNum = 0;
+        sha256 = "4c3c9e089e02f9081f3490cc8d365ccf8e63488b162f8f9df630860e58514797";
+        };
+      default = "r0";
+      };
+    };
   }

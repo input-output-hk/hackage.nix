@@ -4458,6 +4458,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "directory-tree" = import ./nix/directory-tree.nix;
   "direm" = import ./nix/direm.nix;
   "dirfiles" = import ./nix/dirfiles.nix;
+  "dirforest" = import ./nix/dirforest.nix;
   "dirichlet" = import ./nix/dirichlet.nix;
   "dirstream" = import ./nix/dirstream.nix;
   "dirtree" = import ./nix/dirtree.nix;
@@ -5870,6 +5871,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "genvalidity-case-insensitive" = import ./nix/genvalidity-case-insensitive.nix;
   "genvalidity-containers" = import ./nix/genvalidity-containers.nix;
   "genvalidity-criterion" = import ./nix/genvalidity-criterion.nix;
+  "genvalidity-dirforest" = import ./nix/genvalidity-dirforest.nix;
   "genvalidity-hspec" = import ./nix/genvalidity-hspec.nix;
   "genvalidity-hspec-aeson" = import ./nix/genvalidity-hspec-aeson.nix;
   "genvalidity-hspec-binary" = import ./nix/genvalidity-hspec-binary.nix;

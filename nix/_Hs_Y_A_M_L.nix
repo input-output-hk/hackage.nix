@@ -150,7 +150,12 @@
         revNum = 1;
         sha256 = "bbde5ec41f2903fdca2ec1a743dc40bfedf8ca12fb7f3351cb7431ee657eab4a";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/HsYAML-0.2.1.1-r2-a681b3b73c88207d24216017ced2a564e735c029f13021b7f08e56684d825e64.nix;
+        revNum = 2;
+        sha256 = "a681b3b73c88207d24216017ced2a564e735c029f13021b7f08e56684d825e64";
+        };
+      default = "r2";
       };
     };
   }
