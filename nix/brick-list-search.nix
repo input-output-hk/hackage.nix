@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.2.1" = {
+    sha256 = "636d94f5dcd5a650b7a39450d29d13fe58d7ff0cfe3a9b857945210c2d8ac5ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brick-list-search-0.1.2.1-r0-0de3663977c4a3fb5f06fd88e88a317fdeda63a7524c64399b47c9ec9a57de3f.nix;
+        revNum = 0;
+        sha256 = "0de3663977c4a3fb5f06fd88e88a317fdeda63a7524c64399b47c9ec9a57de3f";
+        };
+      default = "r0";
+      };
+    };
   }

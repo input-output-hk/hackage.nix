@@ -8946,6 +8946,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "jvm-parser" = import ./nix/jvm-parser.nix;
   "jvm-streaming" = import ./nix/jvm-streaming.nix;
   "jwt" = import ./nix/jwt.nix;
+  "k8s-wrapper" = import ./nix/k8s-wrapper.nix;
   "kademlia" = import ./nix/kademlia.nix;
   "kafka" = import ./nix/kafka.nix;
   "kafka-client" = import ./nix/kafka-client.nix;
@@ -10004,6 +10005,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "megalisp" = import ./nix/megalisp.nix;
   "megaparsec" = import ./nix/megaparsec.nix;
   "megaparsec-tests" = import ./nix/megaparsec-tests.nix;
+  "megastore" = import ./nix/megastore.nix;
   "meldable-heap" = import ./nix/meldable-heap.nix;
   "melf" = import ./nix/melf.nix;
   "mellon-core" = import ./nix/mellon-core.nix;
