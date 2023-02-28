@@ -611,4 +611,15 @@
       default = "r0";
       };
     };
+  "5.2.2.4" = {
+    sha256 = "0c151bc90a9a28bab2beced0e450103e102f754ddfebb8f924fc8a3b11c4db43";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/recursion-schemes-5.2.2.4-r0-ffac95306c5b297f6f79998721fabb2ebd2ba9b02e7b4d93c9f31d7b0f03a67e.nix;
+        revNum = 0;
+        sha256 = "ffac95306c5b297f6f79998721fabb2ebd2ba9b02e7b4d93c9f31d7b0f03a67e";
+        };
+      default = "r0";
+      };
+    };
   }

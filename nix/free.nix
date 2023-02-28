@@ -746,7 +746,12 @@
         revNum = 0;
         sha256 = "b88705deb7b5fefce0bc8186ccab6c1ef58858c759fb27171e4c4443efef5973";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/free-5.1.10-r1-bc2d9eefabf4699eaff20d80b207f90b35c9f1d37c581a6b092c090add3eeb4e.nix;
+        revNum = 1;
+        sha256 = "bc2d9eefabf4699eaff20d80b207f90b35c9f1d37c581a6b092c090add3eeb4e";
+        };
+      default = "r1";
       };
     };
   "5.1.2" = {

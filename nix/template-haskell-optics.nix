@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "716380daa3ad28a102b4ce9faec2d94a6c4b5f4c5a99e4fdbea9a824871cba80";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/template-haskell-optics-0.2-r1-261bc287575bceaa2575c226e8092c0d249765732c42709897fb613eb3bd58ab.nix;
+        revNum = 1;
+        sha256 = "261bc287575bceaa2575c226e8092c0d249765732c42709897fb613eb3bd58ab";
+        };
+      default = "r1";
       };
     };
   }

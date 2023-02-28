@@ -33,7 +33,12 @@
         revNum = 0;
         sha256 = "799859abfa75269f3b8496935690aa0a94871c2f4f48a365bddc11616f0ddf49";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/effectful-th-1.0.0.1-r1-24cd9fea7b70758a73c0c0b3c09f794cae22f6d2c53a367af3b109563f37446e.nix;
+        revNum = 1;
+        sha256 = "24cd9fea7b70758a73c0c0b3c09f794cae22f6d2c53a367af3b109563f37446e";
+        };
+      default = "r1";
       };
     };
   }

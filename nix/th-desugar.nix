@@ -140,7 +140,17 @@
         revNum = 0;
         sha256 = "cd074b935106798ed3cf0238ed855a6c53dbaf71cc6c28c39460c752b6269eec";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/th-desugar-1.14-r1-538db9f7c4ec5051da287ed99f6467927d631e3fb191eb3f5c77a3034513b3ec.nix;
+        revNum = 1;
+        sha256 = "538db9f7c4ec5051da287ed99f6467927d631e3fb191eb3f5c77a3034513b3ec";
+        };
+      r2 = {
+        nix = import ../hackage/th-desugar-1.14-r2-841cbdedc2252c7c2fe52a2f83bbff2d146b97bba545f9fb84b01a2438e9269a.nix;
+        revNum = 2;
+        sha256 = "841cbdedc2252c7c2fe52a2f83bbff2d146b97bba545f9fb84b01a2438e9269a";
+        };
+      default = "r2";
       };
     };
   "1.2.0" = {

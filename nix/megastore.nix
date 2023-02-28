@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.1.1" = {
+    sha256 = "d2b7ac0dd4bccd3152f4e1076631c3e68e403c8e07227f2dc3da957d14956444";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/megastore-0.1.1.1-r0-f538fcc755c422acd817921db9edd12cf906c770c4031ee7cf8a83f6081d9633.nix;
+        revNum = 0;
+        sha256 = "f538fcc755c422acd817921db9edd12cf906c770c4031ee7cf8a83f6081d9633";
+        };
+      default = "r0";
+      };
+    };
   }

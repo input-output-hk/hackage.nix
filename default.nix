@@ -5068,6 +5068,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "eventuo11y-dsl" = import ./nix/eventuo11y-dsl.nix;
   "eventuo11y-json" = import ./nix/eventuo11y-json.nix;
   "eventuo11y-otel" = import ./nix/eventuo11y-otel.nix;
+  "eventuo11y-prometheus" = import ./nix/eventuo11y-prometheus.nix;
   "every" = import ./nix/every.nix;
   "every-bit-counts" = import ./nix/every-bit-counts.nix;
   "evm-opcodes" = import ./nix/evm-opcodes.nix;
@@ -13018,6 +13019,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rhine-gloss" = import ./nix/rhine-gloss.nix;
   "rhine-terminal" = import ./nix/rhine-terminal.nix;
   "rhythm-game-tutorial" = import ./nix/rhythm-game-tutorial.nix;
+  "rhythmic-sequences" = import ./nix/rhythmic-sequences.nix;
   "riak" = import ./nix/riak.nix;
   "riak-protobuf" = import ./nix/riak-protobuf.nix;
   "riak-protobuf-lens" = import ./nix/riak-protobuf-lens.nix;
@@ -13260,6 +13262,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sarasvati" = import ./nix/sarasvati.nix;
   "sarif" = import ./nix/sarif.nix;
   "sarsi" = import ./nix/sarsi.nix;
+  "sasha" = import ./nix/sasha.nix;
   "sasl" = import ./nix/sasl.nix;
   "sat" = import ./nix/sat.nix;
   "sat-micro-hs" = import ./nix/sat-micro-hs.nix;

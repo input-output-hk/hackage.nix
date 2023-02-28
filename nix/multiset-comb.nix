@@ -86,4 +86,15 @@
       default = "r1";
       };
     };
+  "0.2.4.2" = {
+    sha256 = "2d938c428771d7b99e5dbc93dd0c7e028adf8bd878a84af31615866d1654fc6d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/multiset-comb-0.2.4.2-r0-aa047f8abd0a0cca0e434bcd73bed78f0c52d493800ef329d0bbd8b0a4e7f653.nix;
+        revNum = 0;
+        sha256 = "aa047f8abd0a0cca0e434bcd73bed78f0c52d493800ef329d0bbd8b0a4e7f653";
+        };
+      default = "r0";
+      };
+    };
   }

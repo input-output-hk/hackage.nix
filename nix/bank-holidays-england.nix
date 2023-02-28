@@ -175,4 +175,15 @@
       default = "r0";
       };
     };
+  "0.2.0.9" = {
+    sha256 = "fd0f1f5ae84f64e0c34e7fe6e940b5a30955342db19a1abf8e363657cdb9dec7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bank-holidays-england-0.2.0.9-r0-2b17659900175e593b1090fd4270b4589e7c6267f939930b9644aa2eb30486b4.nix;
+        revNum = 0;
+        sha256 = "2b17659900175e593b1090fd4270b4589e7c6267f939930b9644aa2eb30486b4";
+        };
+      default = "r0";
+      };
+    };
   }
