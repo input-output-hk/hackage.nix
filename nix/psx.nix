@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.1.1" = {
+    sha256 = "3ff4f378321fab16fe7ec7f408c16f57b02d0230ccc6fbca0189c83495f4863c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/psx-0.1.1.1-r0-ccf0cc473a90c02b0f0f92e4bc924454496304a1767065e744fdb64ad8541167.nix;
+        revNum = 0;
+        sha256 = "ccf0cc473a90c02b0f0f92e4bc924454496304a1767065e744fdb64ad8541167";
+        };
+      default = "r0";
+      };
+    };
   }

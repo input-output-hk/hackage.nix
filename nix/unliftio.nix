@@ -261,6 +261,17 @@
       default = "r0";
       };
     };
+  "0.2.24.0" = {
+    sha256 = "fd8ab9b84cec794570faa53e88cf83af2bf7f5566baebf6b664892178d50229b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unliftio-0.2.24.0-r0-ff0e9f20b7fdda83b5da8da5d50e0f2634b90f8b6688169ef1296e3af51d4f8c.nix;
+        revNum = 0;
+        sha256 = "ff0e9f20b7fdda83b5da8da5d50e0f2634b90f8b6688169ef1296e3af51d4f8c";
+        };
+      default = "r0";
+      };
+    };
   "0.2.4.0" = {
     sha256 = "3ff5fe8b0627dcfeac17ca769a819f08d7fe1a26da3a1cff32eb17ac7865f66e";
     revisions = {
