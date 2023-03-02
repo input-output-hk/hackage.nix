@@ -2069,6 +2069,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "attoparsec-data" = import ./nix/attoparsec-data.nix;
   "attoparsec-enumerator" = import ./nix/attoparsec-enumerator.nix;
   "attoparsec-expr" = import ./nix/attoparsec-expr.nix;
+  "attoparsec-framer" = import ./nix/attoparsec-framer.nix;
   "attoparsec-ip" = import ./nix/attoparsec-ip.nix;
   "attoparsec-iso8601" = import ./nix/attoparsec-iso8601.nix;
   "attoparsec-iteratee" = import ./nix/attoparsec-iteratee.nix;
@@ -7835,6 +7836,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-nombre-generator" = import ./nix/hs-nombre-generator.nix;
   "hs-openmoji-data" = import ./nix/hs-openmoji-data.nix;
   "hs-opentelemetry-api" = import ./nix/hs-opentelemetry-api.nix;
+  "hs-opentelemetry-awsxray" = import ./nix/hs-opentelemetry-awsxray.nix;
   "hs-opentelemetry-exporter-in-memory" = import ./nix/hs-opentelemetry-exporter-in-memory.nix;
   "hs-opentelemetry-exporter-otlp" = import ./nix/hs-opentelemetry-exporter-otlp.nix;
   "hs-opentelemetry-instrumentation-cloudflare" = import ./nix/hs-opentelemetry-instrumentation-cloudflare.nix;
@@ -11881,6 +11883,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "polyparse" = import ./nix/polyparse.nix;
   "polysemy" = import ./nix/polysemy.nix;
   "polysemy-RandomFu" = import ./nix/polysemy-_Random_Fu.nix;
+  "polysemy-account" = import ./nix/polysemy-account.nix;
+  "polysemy-account-api" = import ./nix/polysemy-account-api.nix;
   "polysemy-check" = import ./nix/polysemy-check.nix;
   "polysemy-chronos" = import ./nix/polysemy-chronos.nix;
   "polysemy-conc" = import ./nix/polysemy-conc.nix;
@@ -14140,6 +14144,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sorted-list" = import ./nix/sorted-list.nix;
   "sortee" = import ./nix/sortee.nix;
   "sorting" = import ./nix/sorting.nix;
+  "sorting-network" = import ./nix/sorting-network.nix;
   "sorty" = import ./nix/sorty.nix;
   "souffle-dsl" = import ./nix/souffle-dsl.nix;
   "souffle-haskell" = import ./nix/souffle-haskell.nix;
@@ -16949,6 +16954,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "zeromq4-simple" = import ./nix/zeromq4-simple.nix;
   "zeroth" = import ./nix/zeroth.nix;
   "zettelkast" = import ./nix/zettelkast.nix;
+  "zeugma" = import ./nix/zeugma.nix;
   "zifter" = import ./nix/zifter.nix;
   "zifter-cabal" = import ./nix/zifter-cabal.nix;
   "zifter-git" = import ./nix/zifter-git.nix;

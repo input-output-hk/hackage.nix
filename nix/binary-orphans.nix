@@ -345,4 +345,15 @@
       default = "r0";
       };
     };
+  "1.0.4.1" = {
+    sha256 = "5f5b789bc86d25bbd054b86b2d9a6a03f4ac0dd480f283564b6d6465cfa2f0d2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/binary-orphans-1.0.4.1-r0-016c5a865732ed8452cc78ea710ee87f072b161ef76c3f8992cbe676bec4c116.nix;
+        revNum = 0;
+        sha256 = "016c5a865732ed8452cc78ea710ee87f072b161ef76c3f8992cbe676bec4c116";
+        };
+      default = "r0";
+      };
+    };
   }

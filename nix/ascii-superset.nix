@@ -284,4 +284,15 @@
       default = "r0";
       };
     };
+  "1.3.0.0" = {
+    sha256 = "6338923c26fe6ee010741b2936d871efd3ecd6273a1f619366a26355de944e33";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ascii-superset-1.3.0.0-r0-42ecb096d88a7d3eb240bebb52de5b2a9c05a64633fcf8ebf98960bab4f90772.nix;
+        revNum = 0;
+        sha256 = "42ecb096d88a7d3eb240bebb52de5b2a9c05a64633fcf8ebf98960bab4f90772";
+        };
+      default = "r0";
+      };
+    };
   }

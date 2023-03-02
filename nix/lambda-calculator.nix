@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "3.1.1.0" = {
+    sha256 = "80e1b9c96903c8fa4241c62686e7da347f3b6522e9b0f01208a1b38779629733";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lambda-calculator-3.1.1.0-r0-b2dbebe6e47b35b0510aff75f54a33357b2545ef8abca1b8a5a056f24c381a58.nix;
+        revNum = 0;
+        sha256 = "b2dbebe6e47b35b0510aff75f54a33357b2545ef8abca1b8a5a056f24c381a58";
+        };
+      default = "r0";
+      };
+    };
   }

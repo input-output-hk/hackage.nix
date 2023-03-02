@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.9.0.1" = {
+    sha256 = "b1faac1f116c4d1005490ff9b510bcea592fd55eb8bc3dd4f9da726791441f46";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventuo11y-0.9.0.1-r0-dd1e82ad280e28fe97b3757a30fcf7b62d866891863c8a2dfff1da8b1a0093fc.nix;
+        revNum = 0;
+        sha256 = "dd1e82ad280e28fe97b3757a30fcf7b62d866891863c8a2dfff1da8b1a0093fc";
+        };
+      default = "r0";
+      };
+    };
   }

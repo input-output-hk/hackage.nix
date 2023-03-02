@@ -21,4 +21,26 @@
       default = "r0";
       };
     };
+  "0.1.1.1" = {
+    sha256 = "349082e4a9663d946c9879b440b351bdc023335a4679cde06aaa929fb6edd5b3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jacobi-theta-0.1.1.1-r0-d1c3a5029257b1d47d57e03998a59096bb6c22cf22d1c2ed18ce163d09b10158.nix;
+        revNum = 0;
+        sha256 = "d1c3a5029257b1d47d57e03998a59096bb6c22cf22d1c2ed18ce163d09b10158";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.2.0" = {
+    sha256 = "ce861d07cddcd3a87fb71fb0f7379fe7e12b170e416df6e21270af1dcc3281f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jacobi-theta-0.1.2.0-r0-b868599c1e17bafb8720265fd49f4251061e8c433f900b19bd521015d91851d7.nix;
+        revNum = 0;
+        sha256 = "b868599c1e17bafb8720265fd49f4251061e8c433f900b19bd521015d91851d7";
+        };
+      default = "r0";
+      };
+    };
   }

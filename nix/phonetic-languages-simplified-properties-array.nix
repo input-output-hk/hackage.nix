@@ -142,6 +142,28 @@
       default = "r0";
       };
     };
+  "0.17.0.0" = {
+    sha256 = "a5ac777573e58767ff1f3229d80e7bfbb9e42463e1b8bd58a31c197dfaf6eefb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-simplified-properties-array-0.17.0.0-r0-6637b6b63d326045da427060cca40d679d377d9025f2719e02e8e0f8dc7cf2bd.nix;
+        revNum = 0;
+        sha256 = "6637b6b63d326045da427060cca40d679d377d9025f2719e02e8e0f8dc7cf2bd";
+        };
+      default = "r0";
+      };
+    };
+  "0.17.1.0" = {
+    sha256 = "a2a1058434ea83275c4462fff916edeba3fbb8fc6e6e404d4b1b3a1e025ad9e2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-simplified-properties-array-0.17.1.0-r0-c895b8710ec622d1843d7a70b81b33f06c13478e6731d897eba57f7bd5b808dd.nix;
+        revNum = 0;
+        sha256 = "c895b8710ec622d1843d7a70b81b33f06c13478e6731d897eba57f7bd5b808dd";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "f91bd572dc3124b640e977707eb3f22b293393df9291b28620091fc0509cecf8";
     revisions = {

@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.9.2" = {
+    sha256 = "bd4a6a62bc18f80c78ed48b1372a07a112b89bac7e5b669d3757ee8a0eb54ec1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keelung-0.9.2-r0-5f034ccdd02e1eb54998a5dea0fdc0a45986e4f01f4e19ef87d1190db0e38650.nix;
+        revNum = 0;
+        sha256 = "5f034ccdd02e1eb54998a5dea0fdc0a45986e4f01f4e19ef87d1190db0e38650";
+        };
+      default = "r0";
+      };
+    };
   }

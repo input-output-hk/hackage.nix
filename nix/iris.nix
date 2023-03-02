@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.0" = {
+    sha256 = "8482d3ddbdc7bf812ed3eaecaf39d5d37b85d56232b6e16f3ca988a3e6addaa2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/iris-0.1.0.0-r0-dd6d664b87dc78b9a2f3b7316dedb5aacdaebb84083f97c50625c5d445edf288.nix;
+        revNum = 0;
+        sha256 = "dd6d664b87dc78b9a2f3b7316dedb5aacdaebb84083f97c50625c5d445edf288";
+        };
+      default = "r0";
+      };
+    };
   }
