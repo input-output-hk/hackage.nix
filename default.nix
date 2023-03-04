@@ -11888,9 +11888,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "polysemy-check" = import ./nix/polysemy-check.nix;
   "polysemy-chronos" = import ./nix/polysemy-chronos.nix;
   "polysemy-conc" = import ./nix/polysemy-conc.nix;
+  "polysemy-db" = import ./nix/polysemy-db.nix;
   "polysemy-extra" = import ./nix/polysemy-extra.nix;
   "polysemy-fs" = import ./nix/polysemy-fs.nix;
   "polysemy-fskvstore" = import ./nix/polysemy-fskvstore.nix;
+  "polysemy-hasql" = import ./nix/polysemy-hasql.nix;
+  "polysemy-hasql-test" = import ./nix/polysemy-hasql-test.nix;
   "polysemy-http" = import ./nix/polysemy-http.nix;
   "polysemy-keyed-state" = import ./nix/polysemy-keyed-state.nix;
   "polysemy-kvstore" = import ./nix/polysemy-kvstore.nix;
@@ -14242,6 +14245,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sproxy2" = import ./nix/sproxy2.nix;
   "spsa" = import ./nix/spsa.nix;
   "spy" = import ./nix/spy.nix;
+  "sqel" = import ./nix/sqel.nix;
   "sql-simple" = import ./nix/sql-simple.nix;
   "sql-simple-mysql" = import ./nix/sql-simple-mysql.nix;
   "sql-simple-pool" = import ./nix/sql-simple-pool.nix;

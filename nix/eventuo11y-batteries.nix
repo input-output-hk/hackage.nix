@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "0.4.0.1" = {
+    sha256 = "ce0d147a5b580b786c490b7a844a5dce1072c4b64c9304685c5e62e10b002694";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventuo11y-batteries-0.4.0.1-r0-f65ed98e894835e8bec06f5d69e238f4d28d0960d9f7711de36137ca67304b1e.nix;
+        revNum = 0;
+        sha256 = "f65ed98e894835e8bec06f5d69e238f4d28d0960d9f7711de36137ca67304b1e";
+        };
+      default = "r0";
+      };
+    };
   }

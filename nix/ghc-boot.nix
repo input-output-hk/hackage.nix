@@ -196,4 +196,15 @@
       default = "r0";
       };
     };
+  "9.6.0.20230302" = {
+    sha256 = "676329e98ce88d5e910aec13569ad4e1a912dc607f37f2dd68c6f3b8d500bcd8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-boot-9.6.0.20230302-r0-319f509de889674f7370a1d72b918a902f9aa2579d5a0ccbca3e645bfdbd8b00.nix;
+        revNum = 0;
+        sha256 = "319f509de889674f7370a1d72b918a902f9aa2579d5a0ccbca3e645bfdbd8b00";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -193,6 +193,17 @@
       default = "r0";
       };
     };
+  "0.2.16" = {
+    sha256 = "2c067163a6308a61e65f88e168558ac5062e41b86cad9346898bdd77e72b1a80";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/record-dot-preprocessor-0.2.16-r0-43dc13b89ed682e7b85cc1d2dc4dbf64e10817e008fba2c375a331ac7c573d82.nix;
+        revNum = 0;
+        sha256 = "43dc13b89ed682e7b85cc1d2dc4dbf64e10817e008fba2c375a331ac7c573d82";
+        };
+      default = "r0";
+      };
+    };
   "0.2.2" = {
     sha256 = "9cdfab5b9fb4e8c1b2053e7a56274d14c79a2a2deef3cc69ee493d007f43aae7";
     revisions = {
