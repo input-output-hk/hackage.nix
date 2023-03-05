@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "0ca85308ca406a29d860d57c674bf1bed2e204616a943df280dbade53db90ce3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/downhill-0.4.0.0-r0-c6630757d5c8f5e6987d6339d4cf5e1f99068db3d9c07e16233fc5b9c9283eee.nix;
+        revNum = 0;
+        sha256 = "c6630757d5c8f5e6987d6339d4cf5e1f99068db3d9c07e16233fc5b9c9283eee";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -10037,6 +10037,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "memory-hexstring" = import ./nix/memory-hexstring.nix;
   "memorypool" = import ./nix/memorypool.nix;
   "memscript" = import ./nix/memscript.nix;
+  "memzero" = import ./nix/memzero.nix;
   "menoh" = import ./nix/menoh.nix;
   "menshen" = import ./nix/menshen.nix;
   "mercury-api" = import ./nix/mercury-api.nix;
@@ -11940,6 +11941,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pony" = import ./nix/pony.nix;
   "pool" = import ./nix/pool.nix;
   "pool-conduit" = import ./nix/pool-conduit.nix;
+  "poolboy" = import ./nix/poolboy.nix;
   "pooled-io" = import ./nix/pooled-io.nix;
   "pop3-client" = import ./nix/pop3-client.nix;
   "popenhs" = import ./nix/popenhs.nix;

@@ -208,7 +208,12 @@
         revNum = 0;
         sha256 = "dae2c8d3c23fe880dd1e50584ce92f7cbb2da884dfd40bf95d6bb5ac370efb76";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/th-orphans-0.13.14-r1-5e2bbb363f8f7cfc90080cab338e788fbe97ae34d2ff2e11adc6ff27467c63d1.nix;
+        revNum = 1;
+        sha256 = "5e2bbb363f8f7cfc90080cab338e788fbe97ae34d2ff2e11adc6ff27467c63d1";
+        };
+      default = "r1";
       };
     };
   "0.13.2" = {
