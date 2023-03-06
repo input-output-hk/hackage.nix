@@ -372,4 +372,37 @@
       default = "r0";
       };
     };
+  "0.8.8" = {
+    sha256 = "80c809f3f68ec52ffc68ad84076184665a48abf692a099cf6a239e10dd93aa20";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/base-orphans-0.8.8-r0-8b860d2bba57fbfa58dad2f9cc5805b682657a80a9c9dcb5cb5c448cd90e10c0.nix;
+        revNum = 0;
+        sha256 = "8b860d2bba57fbfa58dad2f9cc5805b682657a80a9c9dcb5cb5c448cd90e10c0";
+        };
+      default = "r0";
+      };
+    };
+  "0.8.8.1" = {
+    sha256 = "c20d41df8fea450e7e4872c08f30149ca3fcd9536cfdac2413c48cf2418c64c6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/base-orphans-0.8.8.1-r0-1ad7956b35b85ed262edf373d037c59c3e53e091cd5af30e9db95b83b4675036.nix;
+        revNum = 0;
+        sha256 = "1ad7956b35b85ed262edf373d037c59c3e53e091cd5af30e9db95b83b4675036";
+        };
+      default = "r0";
+      };
+    };
+  "0.9.0" = {
+    sha256 = "613ed4d8241ed5a648a59ae6569a6962990bb545711d020d49fb83fa12d16e62";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/base-orphans-0.9.0-r0-0bdd3486d3a1bcbed0513b46af4a13ca74b395313fa5b6e0068d6b7413b76a04.nix;
+        revNum = 0;
+        sha256 = "0bdd3486d3a1bcbed0513b46af4a13ca74b395313fa5b6e0068d6b7413b76a04";
+        };
+      default = "r0";
+      };
+    };
   }

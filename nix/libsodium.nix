@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "1.0.18.3" = {
+    sha256 = "da90c7c7908d949186688cbc5069c087b0a77bbde3f0b14bdb1bb1103d78854d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libsodium-1.0.18.3-r0-b3cb12d2b37dabbd4870f76a58da17c7b0e5f5e3db6b3a158fefec2836c86b0f.nix;
+        revNum = 0;
+        sha256 = "b3cb12d2b37dabbd4870f76a58da17c7b0e5f5e3db6b3a158fefec2836c86b0f";
+        };
+      default = "r0";
+      };
+    };
   }

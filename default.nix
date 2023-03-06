@@ -8009,6 +8009,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hsparql" = import ./nix/hsparql.nix;
   "hspear" = import ./nix/hspear.nix;
   "hspec" = import ./nix/hspec.nix;
+  "hspec-api" = import ./nix/hspec-api.nix;
   "hspec-attoparsec" = import ./nix/hspec-attoparsec.nix;
   "hspec-bracket" = import ./nix/hspec-bracket.nix;
   "hspec-checkers" = import ./nix/hspec-checkers.nix;
@@ -10360,6 +10361,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mono-traversable-instances" = import ./nix/mono-traversable-instances.nix;
   "mono-traversable-keys" = import ./nix/mono-traversable-keys.nix;
   "mono-traversable-wrapper" = import ./nix/mono-traversable-wrapper.nix;
+  "monocypher" = import ./nix/monocypher.nix;
   "monoid" = import ./nix/monoid.nix;
   "monoid-absorbing" = import ./nix/monoid-absorbing.nix;
   "monoid-extras" = import ./nix/monoid-extras.nix;

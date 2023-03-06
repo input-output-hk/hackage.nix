@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.3" = {
+    sha256 = "208f1fd76983231ff46719ed7ad8ef66cb65af331c2d45a19c7d9695a7bd2f0e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typelet-0.1.3-r0-4ead3df606c2f2fb20be522d7c010651d6025e37c3ce917359fefa0765ea40ed.nix;
+        revNum = 0;
+        sha256 = "4ead3df606c2f2fb20be522d7c010651d6025e37c3ce917359fefa0765ea40ed";
+        };
+      default = "r0";
+      };
+    };
   }

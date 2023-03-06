@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.5.1" = {
+    sha256 = "9168984690dc9a4eceb3d8262759b88b2485625069c4230fcb315c5b34b9483a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uniform-error-0.1.5.1-r0-1c41499c1b89d6bc34e986df2001065dd4db430106469eb1e94da4f872aad819.nix;
+        revNum = 0;
+        sha256 = "1c41499c1b89d6bc34e986df2001065dd4db430106469eb1e94da4f872aad819";
+        };
+      default = "r0";
+      };
+    };
   }
