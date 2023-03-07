@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.5.4.0" = {
+    sha256 = "afb3bc3c1ecab79fb413dfd22c469663b6502386d5a508b481ca15309134900b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-resource-pool-0.5.4.0-r0-3ae3e059fb466ad7d9dccbb26c733f94285a7b504dbcc7b020f42da0b4acb589.nix;
+        revNum = 0;
+        sha256 = "3ae3e059fb466ad7d9dccbb26c733f94285a7b504dbcc7b020f42da0b4acb589";
+        };
+      default = "r0";
+      };
+    };
   }
