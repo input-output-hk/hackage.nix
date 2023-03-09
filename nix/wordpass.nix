@@ -98,6 +98,17 @@
       default = "r0";
       };
     };
+  "1.0.0.11" = {
+    sha256 = "74888b729e3b4335d7e036411db7bdddad8cf3d40affc9cf3f17c11dee3d476c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wordpass-1.0.0.11-r0-87e8168a5c288bc9286f5fe5d691b5c8c09851301429850390c6ec751f30738b.nix;
+        revNum = 0;
+        sha256 = "87e8168a5c288bc9286f5fe5d691b5c8c09851301429850390c6ec751f30738b";
+        };
+      default = "r0";
+      };
+    };
   "1.0.0.2" = {
     sha256 = "25e027f9fb04a679796010fcea45e82135785e54319bb2d7c6dbcec3464730e4";
     revisions = {

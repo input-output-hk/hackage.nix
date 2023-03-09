@@ -59,4 +59,26 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "6eddec83ca07a98780f6ba68ac058e669db230755da3e54fa8f2b78d4cea36f9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gambler-0.3.0.0-r0-ad4fbf7aa1b8f0c59b341e5143591764e20803dd17bbc21e609c6da5626be9df.nix;
+        revNum = 0;
+        sha256 = "ad4fbf7aa1b8f0c59b341e5143591764e20803dd17bbc21e609c6da5626be9df";
+        };
+      default = "r0";
+      };
+    };
+  "0.4.0.0" = {
+    sha256 = "044b237c8736cfbd8300da3bf5c8ea1bc0e7c9f5e19a1eb49043f3ad596f8b06";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gambler-0.4.0.0-r0-0badb497f1b7bf2c044a299e14a549632082ba4b1d05fab706d052a26f4d3aa3.nix;
+        revNum = 0;
+        sha256 = "0badb497f1b7bf2c044a299e14a549632082ba4b1d05fab706d052a26f4d3aa3";
+        };
+      default = "r0";
+      };
+    };
   }

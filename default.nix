@@ -6787,6 +6787,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "half" = import ./nix/half.nix;
   "half-space" = import ./nix/half-space.nix;
   "halfs" = import ./nix/halfs.nix;
+  "halide-haskell" = import ./nix/halide-haskell.nix;
   "halipeto" = import ./nix/halipeto.nix;
   "halive" = import ./nix/halive.nix;
   "hall-symbols" = import ./nix/hall-symbols.nix;
