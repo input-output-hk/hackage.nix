@@ -2738,6 +2738,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bugzilla" = import ./nix/bugzilla.nix;
   "bugzilla-redhat" = import ./nix/bugzilla-redhat.nix;
   "build" = import ./nix/build.nix;
+  "build-env" = import ./nix/build-env.nix;
   "buildable" = import ./nix/buildable.nix;
   "buildbox" = import ./nix/buildbox.nix;
   "buildbox-tools" = import ./nix/buildbox-tools.nix;
