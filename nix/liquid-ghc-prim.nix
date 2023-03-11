@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.7.0.1" = {
+    sha256 = "e26559fe5e17503f73de0bb4b16e9d056a4ed219292cc32b13638999671033a9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquid-ghc-prim-0.7.0.1-r0-ae880bce42ba80f322db21912f42fe55315409f055edbf18df3682826f664c80.nix;
+        revNum = 0;
+        sha256 = "ae880bce42ba80f322db21912f42fe55315409f055edbf18df3682826f664c80";
+        };
+      default = "r0";
+      };
+    };
   }

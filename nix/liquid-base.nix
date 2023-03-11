@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "4.15.1.0" = {
+    sha256 = "ec827c78763b6b9f426d8d92e8c2db04666d1ce59324ff31e39b93c2033dfb57";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquid-base-4.15.1.0-r0-cf7a0032946db50ff2683775dbe821543200d95f75c235c95ea277f74d08cb10.nix;
+        revNum = 0;
+        sha256 = "cf7a0032946db50ff2683775dbe821543200d95f75c235c95ea277f74d08cb10";
+        };
+      default = "r0";
+      };
+    };
   }

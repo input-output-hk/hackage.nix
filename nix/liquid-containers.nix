@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.6.4.1" = {
+    sha256 = "ca78dae714c2a7d7d5ffe15cbe186689aa34d77c3bddb04df386df5877c74914";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquid-containers-0.6.4.1-r0-c7e5f64adb134b98d61c57b7f801a6e7e1b52c8391d21ebf024740a56dee9a9a.nix;
+        revNum = 0;
+        sha256 = "c7e5f64adb134b98d61c57b7f801a6e7e1b52c8391d21ebf024740a56dee9a9a";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -54,4 +54,26 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "f0c757ce9a305b60d8151b0e798214b8343dd40fcbf9fce70d0da782b0617b17";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rhythmic-sequences-0.2.0.0-r0-f05b507d89b2e31b2deb31b9a9794186b014fb0367e38a208ec1d94cc9faa09e.nix;
+        revNum = 0;
+        sha256 = "f05b507d89b2e31b2deb31b9a9794186b014fb0367e38a208ec1d94cc9faa09e";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.0.1" = {
+    sha256 = "e4f78371e5694ca51d5b81a4e1ed112516daf7f2a61618b4769a384b6f402d3e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rhythmic-sequences-0.2.0.1-r0-728480fe1c1ad6077d82b1dc0bae305a2193233d3f9327b0b26cfebcbd5c4523.nix;
+        revNum = 0;
+        sha256 = "728480fe1c1ad6077d82b1dc0bae305a2193233d3f9327b0b26cfebcbd5c4523";
+        };
+      default = "r0";
+      };
+    };
   }

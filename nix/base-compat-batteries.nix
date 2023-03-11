@@ -156,4 +156,15 @@
       default = "r0";
       };
     };
+  "0.13.0" = {
+    sha256 = "3768af40d1d64f9b0845a8ddb18e63ba3a4c765d0d96db9dc28b5b66d1232f98";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/base-compat-batteries-0.13.0-r0-bc348124f46ed073989389d3c91e21d4d595db76a1fa975665c84229a7332e28.nix;
+        revNum = 0;
+        sha256 = "bc348124f46ed073989389d3c91e21d4d595db76a1fa975665c84229a7332e28";
+        };
+      default = "r0";
+      };
+    };
   }

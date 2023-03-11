@@ -2041,6 +2041,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "atomic-counter" = import ./nix/atomic-counter.nix;
   "atomic-file-ops" = import ./nix/atomic-file-ops.nix;
   "atomic-modify" = import ./nix/atomic-modify.nix;
+  "atomic-modify-general" = import ./nix/atomic-modify-general.nix;
   "atomic-primops" = import ./nix/atomic-primops.nix;
   "atomic-primops-foreign" = import ./nix/atomic-primops-foreign.nix;
   "atomic-primops-vector" = import ./nix/atomic-primops-vector.nix;
@@ -9065,6 +9066,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kickass-torrents-dump-parser" = import ./nix/kickass-torrents-dump-parser.nix;
   "kickchan" = import ./nix/kickchan.nix;
   "kif-parser" = import ./nix/kif-parser.nix;
+  "kill-bool" = import ./nix/kill-bool.nix;
   "kind-apply" = import ./nix/kind-apply.nix;
   "kind-generics" = import ./nix/kind-generics.nix;
   "kind-generics-deriving" = import ./nix/kind-generics-deriving.nix;
@@ -11641,6 +11643,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "phash" = import ./nix/phash.nix;
   "phatsort" = import ./nix/phatsort.nix;
   "phizzle" = import ./nix/phizzle.nix;
+  "phladiprelio-general-shared" = import ./nix/phladiprelio-general-shared.nix;
   "phoityne" = import ./nix/phoityne.nix;
   "phoityne-vscode" = import ./nix/phoityne-vscode.nix;
   "phone-metadata" = import ./nix/phone-metadata.nix;

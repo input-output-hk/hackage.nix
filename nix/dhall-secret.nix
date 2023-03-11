@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.5.53" = {
+    sha256 = "84e8bfbd77c564b201627114e24ee1df1e1a6bca117806fec172cef85a1f1856";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhall-secret-0.5.53-r0-d1a7db18203abdaf716a9beb69346ebc4475649008f4dbf7ce4abf3cda8b59b6.nix;
+        revNum = 0;
+        sha256 = "d1a7db18203abdaf716a9beb69346ebc4475649008f4dbf7ce4abf3cda8b59b6";
+        };
+      default = "r0";
+      };
+    };
   }

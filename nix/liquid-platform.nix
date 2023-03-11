@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.9.0.2" = {
+    sha256 = "8a6d8bba9b3bd1df602258fb49aaaed60ea9f8cf92feca6333e84c00b4e45bf8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquid-platform-0.9.0.2-r0-03b6982a66c87d898ee43f8604e4c9bb91ca733f8588c59aa05b3f98ef7b048e.nix;
+        revNum = 0;
+        sha256 = "03b6982a66c87d898ee43f8604e4c9bb91ca733f8588c59aa05b3f98ef7b048e";
+        };
+      default = "r0";
+      };
+    };
   }

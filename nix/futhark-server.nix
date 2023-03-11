@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "1.2.2.0" = {
+    sha256 = "ad6a1f90be0a76694fe22c41f43cef7fdf8f3330aadc9f72d449ba64d6ab01ad";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/futhark-server-1.2.2.0-r0-1b7dd6cc0bb4b3c95aa227f808ea688a0a01ac839ae3bc1bb7cae19b52e2f3bf.nix;
+        revNum = 0;
+        sha256 = "1b7dd6cc0bb4b3c95aa227f808ea688a0a01ac839ae3bc1bb7cae19b52e2f3bf";
+        };
+      default = "r0";
+      };
+    };
   }
