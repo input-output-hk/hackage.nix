@@ -11644,6 +11644,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "phatsort" = import ./nix/phatsort.nix;
   "phizzle" = import ./nix/phizzle.nix;
   "phladiprelio-general-shared" = import ./nix/phladiprelio-general-shared.nix;
+  "phladiprelio-ukrainian-shared" = import ./nix/phladiprelio-ukrainian-shared.nix;
   "phoityne" = import ./nix/phoityne.nix;
   "phoityne-vscode" = import ./nix/phoityne-vscode.nix;
   "phone-metadata" = import ./nix/phone-metadata.nix;

@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.2.1.0" = {
+    sha256 = "9affc5d4829b387c9bdecebd6447218fe845350ba75bfc70337bf50093f9f649";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rhythmic-sequences-0.2.1.0-r0-205ca8c92a91ea6c0f69b0a339405ffbf0c72950eb7b60236a9c090251a991ca.nix;
+        revNum = 0;
+        sha256 = "205ca8c92a91ea6c0f69b0a339405ffbf0c72950eb7b60236a9c090251a991ca";
+        };
+      default = "r0";
+      };
+    };
   }
