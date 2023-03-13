@@ -155,7 +155,12 @@
         revNum = 0;
         sha256 = "3370fa865b963392975f9943b4783e19c26975686be885204b633fe15c14bdad";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/zippers-0.3.2-r1-cc3e6184b5b19d5ff27806a0f8a94dd1792dd69ece39673048d99e6f8a32f5de.nix;
+        revNum = 1;
+        sha256 = "cc3e6184b5b19d5ff27806a0f8a94dd1792dd69ece39673048d99e6f8a32f5de";
+        };
+      default = "r1";
       };
     };
   }

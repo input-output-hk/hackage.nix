@@ -142,6 +142,17 @@
       default = "r0";
       };
     };
+  "0.10.4.0" = {
+    sha256 = "bc7df14b1cd4df93593ae25331ca7f4a59ed13da0ad3772d7f58bf4f4fd0bd5c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/swish-0.10.4.0-r0-a02e591a55246dee7fcd5396c4b3b12a4811d8a5d84a85eb2a14973a43282cc6.nix;
+        revNum = 0;
+        sha256 = "a02e591a55246dee7fcd5396c4b3b12a4811d8a5d84a85eb2a14973a43282cc6";
+        };
+      default = "r0";
+      };
+    };
   "0.2.1" = {
     sha256 = "6924329dd7ce64f674f099379f74a36b416bc753036f4240f7501b693193e723";
     revisions = {

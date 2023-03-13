@@ -32,7 +32,12 @@
         revNum = 5;
         sha256 = "ea5e3167602e142dd34fd56252aae02d50fe0eeb4f2e92cc8265d9acbb93e97b";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/portray-diff-hunit-0.1.0.0-r6-2c9d4b5f742ad7a75d0adea1e3856ff2cd9d128cf4684172ade79f7a3c8b06b2.nix;
+        revNum = 6;
+        sha256 = "2c9d4b5f742ad7a75d0adea1e3856ff2cd9d128cf4684172ade79f7a3c8b06b2";
+        };
+      default = "r6";
       };
     };
   }

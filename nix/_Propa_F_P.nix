@@ -26,4 +26,15 @@
       default = "r1";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "696c92bcec9781b0e79b0662cd593268b2d39e078d9b472dfe0a33e80f6fe5d6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/PropaFP-0.1.2.0-r0-a2f56414916164a6a48e8f2f13949ea9edf6d28c91c90224a8a3fead0addbdaa.nix;
+        revNum = 0;
+        sha256 = "a2f56414916164a6a48e8f2f13949ea9edf6d28c91c90224a8a3fead0addbdaa";
+        };
+      default = "r0";
+      };
+    };
   }

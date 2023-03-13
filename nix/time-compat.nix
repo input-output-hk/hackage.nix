@@ -173,7 +173,12 @@
         revNum = 4;
         sha256 = "5cf5fa19d32742816fa1423085cbfd626aef433101c0b97bf0e8f720a6f369d8";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/time-compat-1.9.6.1-r5-dd4de1fa0d6b7108982efc7ac41938569e4c9b06230bb87d34aae007c52ddb67.nix;
+        revNum = 5;
+        sha256 = "dd4de1fa0d6b7108982efc7ac41938569e4c9b06230bb87d34aae007c52ddb67";
+        };
+      default = "r5";
       };
     };
   }

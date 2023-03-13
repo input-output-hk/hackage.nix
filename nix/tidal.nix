@@ -2274,4 +2274,15 @@
       default = "r1";
       };
     };
+  "1.9.4" = {
+    sha256 = "61dbc51935327c79d2714ab334a7abb1e81c1b3a0363d8de0018618a6901d788";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tidal-1.9.4-r0-2bd4fe9ddea3befd3845a23f7a9f18bc35f7512c506287acad027aaadd06e8f0.nix;
+        revNum = 0;
+        sha256 = "2bd4fe9ddea3befd3845a23f7a9f18bc35f7512c506287acad027aaadd06e8f0";
+        };
+      default = "r0";
+      };
+    };
   }

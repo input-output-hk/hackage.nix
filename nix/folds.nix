@@ -193,7 +193,12 @@
         revNum = 1;
         sha256 = "36c7b9a8da9845c37c2b26f3be55b3dbeecec5b0acb8a642734a049e0c41abbf";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/folds-0.7.8-r2-9d259a317efa92e28719d37e8e5253cd2e5087a4b8e5fa289b442fde1e674f8d.nix;
+        revNum = 2;
+        sha256 = "9d259a317efa92e28719d37e8e5253cd2e5087a4b8e5fa289b442fde1e674f8d";
+        };
+      default = "r2";
       };
     };
   }

@@ -732,7 +732,12 @@
         revNum = 0;
         sha256 = "4c6fb647f522c46c0af513f705dab1d890860e536e0405c78389d425296ac0b4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/adjunctions-4.4.2-r1-f77a007099851b948f6c98acc49753f4ec19ec234471acfce50386ec50402846.nix;
+        revNum = 1;
+        sha256 = "f77a007099851b948f6c98acc49753f4ec19ec234471acfce50386ec50402846";
+        };
+      default = "r1";
       };
     };
   }

@@ -53,7 +53,12 @@
         revNum = 4;
         sha256 = "1e3638ac5d1ff92e5200e23aecce151e59beba0ba6a1e34762637f144926e1b2";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/attenuation-0.2.0-r5-da4d924e17ef31136d6ce9f13e036de7e0dc18d92e8c868d621ba840dfe9c908.nix;
+        revNum = 5;
+        sha256 = "da4d924e17ef31136d6ce9f13e036de7e0dc18d92e8c868d621ba840dfe9c908";
+        };
+      default = "r5";
       };
     };
   }

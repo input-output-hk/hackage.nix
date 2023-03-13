@@ -299,7 +299,12 @@
         revNum = 2;
         sha256 = "374c63fbbbbc0322b4fab431e051b85fe42d530a6458e0fcdbeaa255aa0b285b";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/compensated-0.8.3-r3-80683758f1e6f5356010a12d281d66decdb5e9cb127443ef98811f80cb928c39.nix;
+        revNum = 3;
+        sha256 = "80683758f1e6f5356010a12d281d66decdb5e9cb127443ef98811f80cb928c39";
+        };
+      default = "r3";
       };
     };
   }
