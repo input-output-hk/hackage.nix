@@ -102,4 +102,15 @@
       default = "r0";
       };
     };
+  "0.5.1" = {
+    sha256 = "e4407885ea3880befc0c70f931a47a9d2d7abf40806d9df66b69255d8a6245ae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Rattus-0.5.1-r0-f86f332d0add2209d40ddc4feabe49c22e5e3a0cb9e4470011c5999dc0579d33.nix;
+        revNum = 0;
+        sha256 = "f86f332d0add2209d40ddc4feabe49c22e5e3a0cb9e4470011c5999dc0579d33";
+        };
+      default = "r0";
+      };
+    };
   }

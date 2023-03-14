@@ -23,7 +23,12 @@
         revNum = 0;
         sha256 = "391bb9a237830e18ff05e090f92d88fd1a652b1251736642cae291fc5a3bce05";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pixiv-0.1.1-r1-5e11bb7085bf5cb05d1217837a1ff1d8e283a59f7c235633835f11b8b15fd27d.nix;
+        revNum = 1;
+        sha256 = "5e11bb7085bf5cb05d1217837a1ff1d8e283a59f7c235633835f11b8b15fd27d";
+        };
+      default = "r1";
       };
     };
   }

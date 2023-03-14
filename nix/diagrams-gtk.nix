@@ -137,7 +137,12 @@
         revNum = 4;
         sha256 = "388152bc7aa33edf88a23a7d3c9168c9dbc1f47736b77cfcb70a56a7f3f4ddf0";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/diagrams-gtk-1.4-r5-d3aab01c77f2cc6d0ceec0ed58d68ee3d4e98e583c012fc934de490fd33a504b.nix;
+        revNum = 5;
+        sha256 = "d3aab01c77f2cc6d0ceec0ed58d68ee3d4e98e583c012fc934de490fd33a504b";
+        };
+      default = "r5";
       };
     };
   }

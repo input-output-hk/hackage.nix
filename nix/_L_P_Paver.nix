@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.0.5.0" = {
+    sha256 = "5e7dc7b7255d09f79d7034d74b2992dfac7ed0bbc620386e727c1aa022194f8e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/LPPaver-0.0.5.0-r0-039f46986412370732e8f037909a4f3828e7f52c30d7f3cd35c365f5b391381e.nix;
+        revNum = 0;
+        sha256 = "039f46986412370732e8f037909a4f3828e7f52c30d7f3cd35c365f5b391381e";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -356,6 +356,17 @@
       default = "r0";
       };
     };
+  "1.0.2.0" = {
+    sha256 = "96cd583c6a89ab5d80c5e9b479bf1860526171da4fcb9e029768a52b3d5b7677";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Z-IO-1.0.2.0-r0-16d8bf2502a5bc054ab3daeaae176d5664f26432e585a4ceaffc7efe42687a77.nix;
+        revNum = 0;
+        sha256 = "16d8bf2502a5bc054ab3daeaae176d5664f26432e585a4ceaffc7efe42687a77";
+        };
+      default = "r0";
+      };
+    };
   "2.0.0.0" = {
     sha256 = "0581fd043c1b50444bf521c33011cfea0138e083637569ef341b01a3f30ac2d8";
     revisions = {

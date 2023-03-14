@@ -1,4 +1,15 @@
 {
+  "3.10.1.0" = {
+    sha256 = "2c0d9edd4ccd746e9bf8ab4f92b1ecffe2f56eae29395c67ef5ca091a6f49f37";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-install-solver-3.10.1.0-r0-0aab4a5f8e0de52b1670f1116b4bb63c7958a8fa6740353480aa70144a232ebf.nix;
+        revNum = 0;
+        sha256 = "0aab4a5f8e0de52b1670f1116b4bb63c7958a8fa6740353480aa70144a232ebf";
+        };
+      default = "r0";
+      };
+    };
   "3.8.1.0" = {
     sha256 = "df2369f6c37517a3b2625bc19057d9e206bbb40386bcb607f17dc7d2e588ffe7";
     revisions = {

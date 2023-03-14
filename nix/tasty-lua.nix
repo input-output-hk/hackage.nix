@@ -141,4 +141,15 @@
       default = "r0";
       };
     };
+  "1.1.0" = {
+    sha256 = "33434b2a41080120886be023d43d1b52b18367fecc8693f4e5d06d28c855c7ae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-lua-1.1.0-r0-3f7a531a7ba33f50b24f2a7ff291457be2e270ec22425b0cf84bd894cfa2ca0e.nix;
+        revNum = 0;
+        sha256 = "3f7a531a7ba33f50b24f2a7ff291457be2e270ec22425b0cf84bd894cfa2ca0e";
+        };
+      default = "r0";
+      };
+    };
   }

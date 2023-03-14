@@ -59,4 +59,15 @@
       default = "r0";
       };
     };
+  "2.3.0" = {
+    sha256 = "ec01063ae07421325bc0c4427d58d4ffd272d1d38dbcfebae2c3005eaf176510";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hslua-marshalling-2.3.0-r0-b3156568f905d0857da35b4cd5c3fc64791e9fc9c1e2678c28a9fec80a077f51.nix;
+        revNum = 0;
+        sha256 = "b3156568f905d0857da35b4cd5c3fc64791e9fc9c1e2678c28a9fec80a077f51";
+        };
+      default = "r0";
+      };
+    };
   }

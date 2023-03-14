@@ -213,7 +213,12 @@
         revNum = 0;
         sha256 = "dee4649e151eef462d035f74fb626313d195f032c1e06eed2a40634aa182c821";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cmdargs-0.10.18-r1-5829b4a8f42efe7d5b10b275be237166f8229b23e9332aee5b044e86c5670af8.nix;
+        revNum = 1;
+        sha256 = "5829b4a8f42efe7d5b10b275be237166f8229b23e9332aee5b044e86c5670af8";
+        };
+      default = "r1";
       };
     };
   "0.10.19" = {
@@ -224,7 +229,12 @@
         revNum = 0;
         sha256 = "1659272cfefe1b8b0933bafd1c0813949480d585755e6d07d95c72d7f612ac2b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cmdargs-0.10.19-r1-68a721ae153493c627bd2ec21bfec97658592d5eddd2841ee58f534910306aed.nix;
+        revNum = 1;
+        sha256 = "68a721ae153493c627bd2ec21bfec97658592d5eddd2841ee58f534910306aed";
+        };
+      default = "r1";
       };
     };
   "0.10.2" = {
@@ -251,7 +261,12 @@
         revNum = 0;
         sha256 = "76cf238367e669833929dd264b4fc2278145ddf5b743624f2d5558cca16a08a9";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cmdargs-0.10.20-r1-a01823870d53ddd0b17e200452c497621c7de75e166eaf42962ab8282d086247.nix;
+        revNum = 1;
+        sha256 = "a01823870d53ddd0b17e200452c497621c7de75e166eaf42962ab8282d086247";
+        };
+      default = "r1";
       };
     };
   "0.10.21" = {
@@ -261,6 +276,22 @@
         nix = import ../hackage/cmdargs-0.10.21-r0-a347cf8a16af30b9d8378209de0d1b7ac2b7b39e3af5d384383d8ef82315b37f.nix;
         revNum = 0;
         sha256 = "a347cf8a16af30b9d8378209de0d1b7ac2b7b39e3af5d384383d8ef82315b37f";
+        };
+      r1 = {
+        nix = import ../hackage/cmdargs-0.10.21-r1-02450c339a99674f8b389f3cd9053f52d0f878042dec42c2c783d4685d7ebb4d.nix;
+        revNum = 1;
+        sha256 = "02450c339a99674f8b389f3cd9053f52d0f878042dec42c2c783d4685d7ebb4d";
+        };
+      default = "r1";
+      };
+    };
+  "0.10.22" = {
+    sha256 = "b8b12e7f8795cf13037bb062d453b86c788eae62558586f59e9419aabe6e9bef";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cmdargs-0.10.22-r0-0d1a33c3978fbcdda4f2543e62ac3ed8ad36152e141cdeebeece7e08d6529d63.nix;
+        revNum = 0;
+        sha256 = "0d1a33c3978fbcdda4f2543e62ac3ed8ad36152e141cdeebeece7e08d6529d63";
         };
       default = "r0";
       };

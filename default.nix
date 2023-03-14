@@ -2198,6 +2198,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bacteria" = import ./nix/bacteria.nix;
   "bag" = import ./nix/bag.nix;
   "bake" = import ./nix/bake.nix;
+  "balkon" = import ./nix/balkon.nix;
   "ballast" = import ./nix/ballast.nix;
   "bamboo" = import ./nix/bamboo.nix;
   "bamboo-launcher" = import ./nix/bamboo-launcher.nix;
@@ -7991,6 +7992,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hslua-module-zip" = import ./nix/hslua-module-zip.nix;
   "hslua-objectorientation" = import ./nix/hslua-objectorientation.nix;
   "hslua-packaging" = import ./nix/hslua-packaging.nix;
+  "hslua-typing" = import ./nix/hslua-typing.nix;
   "hsluv-haskell" = import ./nix/hsluv-haskell.nix;
   "hsmagick" = import ./nix/hsmagick.nix;
   "hsmisc" = import ./nix/hsmisc.nix;
@@ -11645,6 +11647,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "phizzle" = import ./nix/phizzle.nix;
   "phladiprelio-general-shared" = import ./nix/phladiprelio-general-shared.nix;
   "phladiprelio-general-simple" = import ./nix/phladiprelio-general-simple.nix;
+  "phladiprelio-rhythmicity-shared" = import ./nix/phladiprelio-rhythmicity-shared.nix;
   "phladiprelio-ukrainian-shared" = import ./nix/phladiprelio-ukrainian-shared.nix;
   "phladiprelio-ukrainian-simple" = import ./nix/phladiprelio-ukrainian-simple.nix;
   "phoityne" = import ./nix/phoityne.nix;
@@ -13450,6 +13453,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "selinux" = import ./nix/selinux.nix;
   "semantic" = import ./nix/semantic.nix;
   "semantic-source" = import ./nix/semantic-source.nix;
+  "semaphore-compat" = import ./nix/semaphore-compat.nix;
   "semaphore-plus" = import ./nix/semaphore-plus.nix;
   "semdoc" = import ./nix/semdoc.nix;
   "semi-iso" = import ./nix/semi-iso.nix;
@@ -14505,6 +14509,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "streamly-binary" = import ./nix/streamly-binary.nix;
   "streamly-bytestring" = import ./nix/streamly-bytestring.nix;
   "streamly-cassava" = import ./nix/streamly-cassava.nix;
+  "streamly-core" = import ./nix/streamly-core.nix;
   "streamly-examples" = import ./nix/streamly-examples.nix;
   "streamly-fsnotify" = import ./nix/streamly-fsnotify.nix;
   "streamly-lmdb" = import ./nix/streamly-lmdb.nix;

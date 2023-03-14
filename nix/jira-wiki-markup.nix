@@ -202,4 +202,15 @@
       default = "r0";
       };
     };
+  "1.5.1" = {
+    sha256 = "9ca23d369c3ccf1b3ffb209dda8e6288a5f5901fb8235113825fa48d3ae8e520";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jira-wiki-markup-1.5.1-r0-67607e71ce89e216f9cef40659dd1c4e3b3d1a1616e87bf5b6256469b1a59f5c.nix;
+        revNum = 0;
+        sha256 = "67607e71ce89e216f9cef40659dd1c4e3b3d1a1616e87bf5b6256469b1a59f5c";
+        };
+      default = "r0";
+      };
+    };
   }

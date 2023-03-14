@@ -132,7 +132,12 @@
         revNum = 0;
         sha256 = "88e6639cf3d1d56fdb8ac542e38000e07576aac61861511cdca7ada4c19f36cd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ghc-syntax-highlighter-0.0.9.0-r1-aa1bdd6e099374c8b8c406282481caa9a1b603d5aa8a0d1230ffc6a7c260533d.nix;
+        revNum = 1;
+        sha256 = "aa1bdd6e099374c8b8c406282481caa9a1b603d5aa8a0d1230ffc6a7c260533d";
+        };
+      default = "r1";
       };
     };
   }

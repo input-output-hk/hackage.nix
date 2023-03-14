@@ -544,7 +544,12 @@
         revNum = 0;
         sha256 = "765589cf3f792dc8498bd400d253e990f0d03f2e761445f7f036651fb8d391ff";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/checkers-0.6.0-r1-11dc640e98d3f0b3cf65e2777e99be89b22b212f48c88dc23f289ef64f717b72.nix;
+        revNum = 1;
+        sha256 = "11dc640e98d3f0b3cf65e2777e99be89b22b212f48c88dc23f289ef64f717b72";
+        };
+      default = "r1";
       };
     };
   }

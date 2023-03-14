@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "2.3.0" = {
+    sha256 = "cb9aeba6a6ea1ba66df104e50ee5b01fe6c123109164e2c23606be8b50efe986";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hslua-core-2.3.0-r0-10c2d7efed2cbb67291b2af71e61af70d5b226163b7daafcc1af5d35b453112c.nix;
+        revNum = 0;
+        sha256 = "10c2d7efed2cbb67291b2af71e61af70d5b226163b7daafcc1af5d35b453112c";
+        };
+      default = "r0";
+      };
+    };
   }
