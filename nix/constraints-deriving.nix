@@ -84,7 +84,12 @@
         revNum = 0;
         sha256 = "48c341ff00d9b9820d23f3877982a56de8be842a3295b22aa1af848bd39960db";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/constraints-deriving-1.1.0.0-r1-0404d2b631f8df0735d7c47ea387e39757a258c702de0f3ebaf681f7143b53d1.nix;
+        revNum = 1;
+        sha256 = "0404d2b631f8df0735d7c47ea387e39757a258c702de0f3ebaf681f7143b53d1";
+        };
+      default = "r1";
       };
     };
   "1.1.1.0" = {

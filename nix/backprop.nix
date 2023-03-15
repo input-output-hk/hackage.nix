@@ -208,7 +208,12 @@
         revNum = 0;
         sha256 = "67a72b7b74478e47c996e70b2a89053dec0680332b68e2f7701185ef3c464385";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/backprop-0.2.5.0-r1-cae2f0efd5ccd24b6bf8dc0596aca78c6b3ae3fad80ad48c079c2070012e5532.nix;
+        revNum = 1;
+        sha256 = "cae2f0efd5ccd24b6bf8dc0596aca78c6b3ae3fad80ad48c079c2070012e5532";
+        };
+      default = "r1";
       };
     };
   "0.2.6.0" = {
@@ -224,7 +229,12 @@
         revNum = 1;
         sha256 = "6fdf3992d544ef47284ede74427b9da4261d4428d82ada7ce56abc0932f625ec";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/backprop-0.2.6.0-r2-eb3390317d925d512110d4d00ecf1d782c4c3444226cbf8798f365aded05eba4.nix;
+        revNum = 2;
+        sha256 = "eb3390317d925d512110d4d00ecf1d782c4c3444226cbf8798f365aded05eba4";
+        };
+      default = "r2";
       };
     };
   "0.2.6.1" = {
@@ -235,7 +245,12 @@
         revNum = 0;
         sha256 = "9c3b2d20b08e51569af4bd50f2ae6e47ad89e23223cac77c22de96da596cff8c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/backprop-0.2.6.1-r1-7fce1ef8eeea21ed2564941d3b6096133dd9fc8e4aa81cf932f87d9af36ab493.nix;
+        revNum = 1;
+        sha256 = "7fce1ef8eeea21ed2564941d3b6096133dd9fc8e4aa81cf932f87d9af36ab493";
+        };
+      default = "r1";
       };
     };
   "0.2.6.2" = {
@@ -246,7 +261,12 @@
         revNum = 0;
         sha256 = "84730149e6d6ce43ed4d08b13c91aeb1b0b79de120ecbf474e9f7ca67c7b03b3";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/backprop-0.2.6.2-r1-db9bc6436ce8724c562845f291c69467679400375c180ea1dadcaf4a5686e311.nix;
+        revNum = 1;
+        sha256 = "db9bc6436ce8724c562845f291c69467679400375c180ea1dadcaf4a5686e311";
+        };
+      default = "r1";
       };
     };
   "0.2.6.3" = {
@@ -257,7 +277,12 @@
         revNum = 0;
         sha256 = "a38430a6b4539cebd3c41d4fad9c48c2654fad6f6455d3b119882e7bf4804cfc";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/backprop-0.2.6.3-r1-3dc8650f0e11bbd091d57d87cc68788c15d371e3caabe0d1d2914ba144534596.nix;
+        revNum = 1;
+        sha256 = "3dc8650f0e11bbd091d57d87cc68788c15d371e3caabe0d1d2914ba144534596";
+        };
+      default = "r1";
       };
     };
   "0.2.6.4" = {
@@ -268,7 +293,12 @@
         revNum = 0;
         sha256 = "9c08b0bace225b9a1ac08ce8201bad5ae140bcb501f70704a57db7ee99334618";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/backprop-0.2.6.4-r1-46e7b976f968b2ae67f821e09d56b0b38a368d188b949324a6e2f4b5eab18d0d.nix;
+        revNum = 1;
+        sha256 = "46e7b976f968b2ae67f821e09d56b0b38a368d188b949324a6e2f4b5eab18d0d";
+        };
+      default = "r1";
       };
     };
   }

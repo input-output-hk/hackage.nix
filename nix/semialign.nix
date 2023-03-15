@@ -89,4 +89,15 @@
       default = "r3";
       };
     };
+  "1.3" = {
+    sha256 = "628e43319f584a8dd46c124ee0685cac586e0f6f877c5ceff37c3dbb2e3cc56c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/semialign-1.3-r0-3aba5784d0c6b0c0cf5e31477e6f9054dc2257b441a5000002e89be3d8cc8548.nix;
+        revNum = 0;
+        sha256 = "3aba5784d0c6b0c0cf5e31477e6f9054dc2257b441a5000002e89be3d8cc8548";
+        };
+      default = "r0";
+      };
+    };
   }

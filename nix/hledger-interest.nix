@@ -297,7 +297,12 @@
         revNum = 0;
         sha256 = "a02ae69e7c9cc4abe60aec366876a1d72560a3b8b4e650bdfe966f8d85bdec0b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hledger-interest-1.6.5-r1-88162cfd2d2d90f59dcd28f0d3e2a9ed3858c342d30abe1fcfb26882de691f6a.nix;
+        revNum = 1;
+        sha256 = "88162cfd2d2d90f59dcd28f0d3e2a9ed3858c342d30abe1fcfb26882de691f6a";
+        };
+      default = "r1";
       };
     };
   }

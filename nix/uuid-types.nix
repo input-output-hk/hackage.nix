@@ -97,7 +97,12 @@
         revNum = 3;
         sha256 = "9ca76986e3950af5e908502be2373e2292d6dc57ec10f5aeb41d7dc3a1961782";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/uuid-types-1.0.5-r4-e4662609522f093b86c5ae86aa9781afc69338cf102d42e5b5c196c320d95621.nix;
+        revNum = 4;
+        sha256 = "e4662609522f093b86c5ae86aa9781afc69338cf102d42e5b5c196c320d95621";
+        };
+      default = "r4";
       };
     };
   }

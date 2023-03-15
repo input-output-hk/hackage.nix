@@ -40,7 +40,22 @@
         revNum = 0;
         sha256 = "bc62c31aaaa0aba18ce02eda48cbbd2dff4a053cc7f00ce1856724f0ed6a99c7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/fontconfig-pure-0.1.1.1-r1-5a08f0a2d60c315f3962b85f7a474c7bf616244ab21e7d43589ea8685d793648.nix;
+        revNum = 1;
+        sha256 = "5a08f0a2d60c315f3962b85f7a474c7bf616244ab21e7d43589ea8685d793648";
+        };
+      r2 = {
+        nix = import ../hackage/fontconfig-pure-0.1.1.1-r2-abba20e09f39359228428e76f935503fba31db6528ef0ab7bb147a88ae36fce6.nix;
+        revNum = 2;
+        sha256 = "abba20e09f39359228428e76f935503fba31db6528ef0ab7bb147a88ae36fce6";
+        };
+      r3 = {
+        nix = import ../hackage/fontconfig-pure-0.1.1.1-r3-8cc55f371eee860e5be3d58ae5d3be962bbf25229f262bd6079b9f08e1e64e3d.nix;
+        revNum = 3;
+        sha256 = "8cc55f371eee860e5be3d58ae5d3be962bbf25229f262bd6079b9f08e1e64e3d";
+        };
+      default = "r3";
       };
     };
   }

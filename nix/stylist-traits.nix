@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "7212cfc4a9fff9f58a14e7495d4391d3c3624203987e05d5aad0bf99793338ef";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/stylist-traits-0.1.1.0-r1-b4f44b41e5985896189a026e15143083e0fb4f5fc84f6c86653e45aad5bf7cc4.nix;
+        revNum = 1;
+        sha256 = "b4f44b41e5985896189a026e15143083e0fb4f5fc84f6c86653e45aad5bf7cc4";
+        };
+      default = "r1";
       };
     };
   }

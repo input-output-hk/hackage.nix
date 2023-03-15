@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.1.3.4" = {
+    sha256 = "450c639c16975fe313bd5234f7af9ed23eebb7208ebe3800fbe56f16d85fa9a7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/invertible-grammar-0.1.3.4-r0-8e979f5f39a18720f43b956a6d91788ea8dbd88a49cb3e352495f6a7f4c831af.nix;
+        revNum = 0;
+        sha256 = "8e979f5f39a18720f43b956a6d91788ea8dbd88a49cb3e352495f6a7f4c831af";
+        };
+      default = "r0";
+      };
+    };
   }

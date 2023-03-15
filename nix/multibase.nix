@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "ab01bd98c993f6fcfdfdd369d74db475121761ce1b89071d19105297d1e07ecf";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/multibase-0.1.2-r1-8a36b3a522b866a3081fa4866fe9469a4c770a39ebebee581ec39e96978cb01e.nix;
+        revNum = 1;
+        sha256 = "8a36b3a522b866a3081fa4866fe9469a4c770a39ebebee581ec39e96978cb01e";
+        };
+      default = "r1";
       };
     };
   }
