@@ -339,7 +339,12 @@
         revNum = 0;
         sha256 = "4ad8166b9b923b2132f65175dfeedb288306de9a1080946595530dfac7491a4d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/manifolds-0.5.1.0-r1-045ad7db5b8b79a57f8c091a7fea8db0585dfa685c43fe7d98b56873abebb44d.nix;
+        revNum = 1;
+        sha256 = "045ad7db5b8b79a57f8c091a7fea8db0585dfa685c43fe7d98b56873abebb44d";
+        };
+      default = "r1";
       };
     };
   "0.6.0.0" = {

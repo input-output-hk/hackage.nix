@@ -87,6 +87,28 @@
       default = "r0";
       };
     };
+  "0.11.0.1" = {
+    sha256 = "dac8c9c6fe3b7a8b78936e9eaf2096cfed2a05cf1d9903cb23c647c2eb239589";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-rhythmicity-0.11.0.1-r0-7ad6d06f7e20bc41df21cfb62d849881013db3adf639886a024b6c14da83d812.nix;
+        revNum = 0;
+        sha256 = "7ad6d06f7e20bc41df21cfb62d849881013db3adf639886a024b6c14da83d812";
+        };
+      default = "r0";
+      };
+    };
+  "0.11.0.2" = {
+    sha256 = "f605e27f3d15b311cc2f2c91bbf01ba9253828f40353ac3a9ee77a5497cfd361";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-rhythmicity-0.11.0.2-r0-c03235f4e0248c13c0a60fd43cc78aee35e96f6e466784b8ab2f240f1814388b.nix;
+        revNum = 0;
+        sha256 = "c03235f4e0248c13c0a60fd43cc78aee35e96f6e466784b8ab2f240f1814388b";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "961a39ca220ec108f79397dec3a2c473919a32a2a48c6e23f9de16dd00157633";
     revisions = {

@@ -15817,10 +15817,17 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "uniform-algebras" = import ./nix/uniform-algebras.nix;
   "uniform-error" = import ./nix/uniform-error.nix;
   "uniform-fileio" = import ./nix/uniform-fileio.nix;
+  "uniform-http" = import ./nix/uniform-http.nix;
   "uniform-io" = import ./nix/uniform-io.nix;
+  "uniform-json" = import ./nix/uniform-json.nix;
+  "uniform-latex2pdf" = import ./nix/uniform-latex2pdf.nix;
   "uniform-pair" = import ./nix/uniform-pair.nix;
+  "uniform-pandoc" = import ./nix/uniform-pandoc.nix;
+  "uniform-shake" = import ./nix/uniform-shake.nix;
   "uniform-strings" = import ./nix/uniform-strings.nix;
   "uniform-time" = import ./nix/uniform-time.nix;
+  "uniform-watch" = import ./nix/uniform-watch.nix;
+  "uniform-webserver" = import ./nix/uniform-webserver.nix;
   "uniformBase" = import ./nix/uniform_Base.nix;
   "union" = import ./nix/union.nix;
   "union-angle" = import ./nix/union-angle.nix;

@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.2.1" = {
+    sha256 = "059ac45a5d9e650d61db8167062636f0029ac6ff3c27b1fa3faccc5c195b43ae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/breakpoint-0.1.2.1-r0-1d1d8aba94ee8e0b421d04ab50f62c24611ec44a64b18514ea5c780b95602f5b.nix;
+        revNum = 0;
+        sha256 = "1d1d8aba94ee8e0b421d04ab50f62c24611ec44a64b18514ea5c780b95602f5b";
+        };
+      default = "r0";
+      };
+    };
   }

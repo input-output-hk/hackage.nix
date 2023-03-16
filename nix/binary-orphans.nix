@@ -353,7 +353,17 @@
         revNum = 0;
         sha256 = "016c5a865732ed8452cc78ea710ee87f072b161ef76c3f8992cbe676bec4c116";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/binary-orphans-1.0.4.1-r1-9222054144c5da6d3d87f832026da55f2cff2b9120e166336c7b0b17b37c318a.nix;
+        revNum = 1;
+        sha256 = "9222054144c5da6d3d87f832026da55f2cff2b9120e166336c7b0b17b37c318a";
+        };
+      r2 = {
+        nix = import ../hackage/binary-orphans-1.0.4.1-r2-14959d902b173a9c19491ff6777c7d06292b8bff31d55cd1749c4417885d2ee1.nix;
+        revNum = 2;
+        sha256 = "14959d902b173a9c19491ff6777c7d06292b8bff31d55cd1749c4417885d2ee1";
+        };
+      default = "r2";
       };
     };
   }

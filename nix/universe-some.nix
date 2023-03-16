@@ -48,7 +48,12 @@
         revNum = 4;
         sha256 = "73d7082e6516d9c22f7d069750e4a4be7e7e5068e7e1bdc0461ce1c955305ed9";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/universe-some-1.2.1-r5-a728be1be0dfdca97bfdf9841433d8547801682018134a54556aa705a5d31d34.nix;
+        revNum = 5;
+        sha256 = "a728be1be0dfdca97bfdf9841433d8547801682018134a54556aa705a5d31d34";
+        };
+      default = "r5";
       };
     };
   }

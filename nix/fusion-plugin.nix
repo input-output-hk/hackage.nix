@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.2.6" = {
+    sha256 = "a3f053e902222c292cefc5cf1768920ba08cfdd61cd255235411c1de17b6ac36";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fusion-plugin-0.2.6-r0-0d2f01b31cd40fd030e408f82da5755cfde662ad43dc3b988bf67303e77a6b01.nix;
+        revNum = 0;
+        sha256 = "0d2f01b31cd40fd030e408f82da5755cfde662ad43dc3b988bf67303e77a6b01";
+        };
+      default = "r0";
+      };
+    };
   }

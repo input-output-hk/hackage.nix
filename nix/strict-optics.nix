@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "0edc7116d02bfcaf5e281ee93daa53a27bcfa85d7b22e4ebff87b33831d593e6";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/strict-optics-0.4.0.1-r2-84fbc35106644f56eb5a422e5beee5d85bb774b5c12541fa9cc4b805fe4b0904.nix;
+        revNum = 2;
+        sha256 = "84fbc35106644f56eb5a422e5beee5d85bb774b5c12541fa9cc4b805fe4b0904";
+        };
+      default = "r2";
       };
     };
   }

@@ -261,7 +261,12 @@
         revNum = 5;
         sha256 = "6edd5a06938cea3d28b406d5231683f89737e854af144a8800aa69e1eee785e0";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/parallel-3.2.2.0-r6-c652c3c6e927ba461f40ee374f80e2e1ecfe833e950654d4303a3b15597624b8.nix;
+        revNum = 6;
+        sha256 = "c652c3c6e927ba461f40ee374f80e2e1ecfe833e950654d4303a3b15597624b8";
+        };
+      default = "r6";
       };
     };
   }
