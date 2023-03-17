@@ -317,7 +317,12 @@
         revNum = 2;
         sha256 = "3d19ff16305d3a5bf26c8fa60f9f8306d471212557b5ce9346f73a89d579e650";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/manifolds-0.5.0.3-r3-fa7c768c8948c13f94e6fa20a69fa12b17d3cc76b4d2c149237fe04920fad48c.nix;
+        revNum = 3;
+        sha256 = "fa7c768c8948c13f94e6fa20a69fa12b17d3cc76b4d2c149237fe04920fad48c";
+        };
+      default = "r3";
       };
     };
   "0.5.0.4" = {
@@ -328,7 +333,12 @@
         revNum = 0;
         sha256 = "ad679a7a381e3f27aebfbd5dfdb613225106046b38fedfc5499cbb6c3e95a247";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/manifolds-0.5.0.4-r1-f6c950af89ddafdd548d460f3c4299b928fb4b34cfd04669d129478a73ef797c.nix;
+        revNum = 1;
+        sha256 = "f6c950af89ddafdd548d460f3c4299b928fb4b34cfd04669d129478a73ef797c";
+        };
+      default = "r1";
       };
     };
   "0.5.1.0" = {
@@ -344,7 +354,12 @@
         revNum = 1;
         sha256 = "045ad7db5b8b79a57f8c091a7fea8db0585dfa685c43fe7d98b56873abebb44d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/manifolds-0.5.1.0-r2-adbdc89b81ad8734f17ccc193f57603227f01bd292277339b4c71d5eb8533bef.nix;
+        revNum = 2;
+        sha256 = "adbdc89b81ad8734f17ccc193f57603227f01bd292277339b4c71d5eb8533bef";
+        };
+      default = "r2";
       };
     };
   "0.6.0.0" = {

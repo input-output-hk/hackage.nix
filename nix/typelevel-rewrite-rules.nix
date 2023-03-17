@@ -26,4 +26,15 @@
       default = "r0";
       };
     };
+  "1.0.0.1" = {
+    sha256 = "7cad56deddcd462a487608f7c9825d80ed6f1422abe70fe4e0c4d9ddd2d6fddb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typelevel-rewrite-rules-1.0.0.1-r0-53938983be09bc550c96321f72229db238aa75fe1585e60bce030d4ab34dacec.nix;
+        revNum = 0;
+        sha256 = "53938983be09bc550c96321f72229db238aa75fe1585e60bce030d4ab34dacec";
+        };
+      default = "r0";
+      };
+    };
   }

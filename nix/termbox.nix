@@ -83,7 +83,12 @@
         revNum = 0;
         sha256 = "61a501bb4de80dafa69ef1fe66d01a1590fd77208e58b392b664a295f7f92e9b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/termbox-1.1.0.1-r1-82ac7f2b78dcf18d5cbd7f11ee9587485594925adc084cab42acbb9b91f431cc.nix;
+        revNum = 1;
+        sha256 = "82ac7f2b78dcf18d5cbd7f11ee9587485594925adc084cab42acbb9b91f431cc";
+        };
+      default = "r1";
       };
     };
   }

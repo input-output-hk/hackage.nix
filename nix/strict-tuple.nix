@@ -94,7 +94,12 @@
         revNum = 0;
         sha256 = "9c80d27ccbbe7906c3011cb958e38e937df65febbdc30f9c846b7ae02c35ed27";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/strict-tuple-0.1.5.2-r1-406a869312489010cb72119c74da82f7950da938deddeb921eb7866609846b88.nix;
+        revNum = 1;
+        sha256 = "406a869312489010cb72119c74da82f7950da938deddeb921eb7866609846b88";
+        };
+      default = "r1";
       };
     };
   }

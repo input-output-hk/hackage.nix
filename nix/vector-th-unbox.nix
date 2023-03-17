@@ -293,7 +293,12 @@
         revNum = 3;
         sha256 = "ca32d92683d27f316b9bda2e813120dceef66511d49aa1bd9b17e11ef518214e";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/vector-th-unbox-0.2.2-r4-32ff9a5c9d4d15a989bfe22436853348f66c0a48177fc64b58502c663c5ffb22.nix;
+        revNum = 4;
+        sha256 = "32ff9a5c9d4d15a989bfe22436853348f66c0a48177fc64b58502c663c5ffb22";
+        };
+      default = "r4";
       };
     };
   }

@@ -273,4 +273,15 @@
       default = "r0";
       };
     };
+  "0.2.4.2" = {
+    sha256 = "481e1de85538eddc9c60bb374604ba0a773c83c0741174ff77a47a090f5df055";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/staversion-0.2.4.2-r0-459c9717ae007ebb32d900de10e536aeaf8362658f4efd32b8f1401761e89d31.nix;
+        revNum = 0;
+        sha256 = "459c9717ae007ebb32d900de10e536aeaf8362658f4efd32b8f1401761e89d31";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -7992,6 +7992,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hslua-module-zip" = import ./nix/hslua-module-zip.nix;
   "hslua-objectorientation" = import ./nix/hslua-objectorientation.nix;
   "hslua-packaging" = import ./nix/hslua-packaging.nix;
+  "hslua-repl" = import ./nix/hslua-repl.nix;
   "hslua-typing" = import ./nix/hslua-typing.nix;
   "hsluv-haskell" = import ./nix/hsluv-haskell.nix;
   "hsmagick" = import ./nix/hsmagick.nix;
@@ -14936,6 +14937,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tateti-tateti" = import ./nix/tateti-tateti.nix;
   "tau" = import ./nix/tau.nix;
   "tax" = import ./nix/tax.nix;
+  "tax-ato" = import ./nix/tax-ato.nix;
   "tbox" = import ./nix/tbox.nix;
   "tcache-AWS" = import ./nix/tcache-_A_W_S.nix;
   "tccli" = import ./nix/tccli.nix;
