@@ -175,4 +175,15 @@
       default = "r0";
       };
     };
+  "1.1.2" = {
+    sha256 = "82b9bc7c91690e87896bf0196cb16bb88a4e0f34e3007e65ff91f8d60bb714c4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cyclotomic-1.1.2-r0-ee2cb8693eb634faa67b36983be0acbdafbcdc12638ce335a32966ed2adb8fb0.nix;
+        revNum = 0;
+        sha256 = "ee2cb8693eb634faa67b36983be0acbdafbcdc12638ce335a32966ed2adb8fb0";
+        };
+      default = "r0";
+      };
+    };
   }

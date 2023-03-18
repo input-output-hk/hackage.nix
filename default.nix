@@ -1793,6 +1793,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ansi-pretty" = import ./nix/ansi-pretty.nix;
   "ansi-terminal" = import ./nix/ansi-terminal.nix;
   "ansi-terminal-game" = import ./nix/ansi-terminal-game.nix;
+  "ansi-terminal-types" = import ./nix/ansi-terminal-types.nix;
   "ansi-wl-pprint" = import ./nix/ansi-wl-pprint.nix;
   "ansigraph" = import ./nix/ansigraph.nix;
   "antagonist" = import ./nix/antagonist.nix;
@@ -3833,6 +3834,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "credential-store" = import ./nix/credential-store.nix;
   "credentials" = import ./nix/credentials.nix;
   "credentials-cli" = import ./nix/credentials-cli.nix;
+  "crem" = import ./nix/crem.nix;
   "crf-chain1" = import ./nix/crf-chain1.nix;
   "crf-chain1-constrained" = import ./nix/crf-chain1-constrained.nix;
   "crf-chain2-generic" = import ./nix/crf-chain2-generic.nix;
@@ -9075,6 +9077,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kind-generics-deriving" = import ./nix/kind-generics-deriving.nix;
   "kind-generics-th" = import ./nix/kind-generics-th.nix;
   "kind-integer" = import ./nix/kind-integer.nix;
+  "kind-rational" = import ./nix/kind-rational.nix;
   "kinds" = import ./nix/kinds.nix;
   "kit" = import ./nix/kit.nix;
   "kleene" = import ./nix/kleene.nix;
@@ -11306,6 +11309,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pandoc-citeproc" = import ./nix/pandoc-citeproc.nix;
   "pandoc-citeproc-preamble" = import ./nix/pandoc-citeproc-preamble.nix;
   "pandoc-cli" = import ./nix/pandoc-cli.nix;
+  "pandoc-columns" = import ./nix/pandoc-columns.nix;
   "pandoc-crossref" = import ./nix/pandoc-crossref.nix;
   "pandoc-csv2table" = import ./nix/pandoc-csv2table.nix;
   "pandoc-dhall-decoder" = import ./nix/pandoc-dhall-decoder.nix;
@@ -11315,9 +11319,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pandoc-highlighting-extensions" = import ./nix/pandoc-highlighting-extensions.nix;
   "pandoc-include" = import ./nix/pandoc-include.nix;
   "pandoc-include-code" = import ./nix/pandoc-include-code.nix;
+  "pandoc-include-plus" = import ./nix/pandoc-include-plus.nix;
   "pandoc-japanese-filters" = import ./nix/pandoc-japanese-filters.nix;
   "pandoc-lens" = import ./nix/pandoc-lens.nix;
+  "pandoc-linear-table" = import ./nix/pandoc-linear-table.nix;
   "pandoc-link-context" = import ./nix/pandoc-link-context.nix;
+  "pandoc-logic-proof" = import ./nix/pandoc-logic-proof.nix;
   "pandoc-lua-engine" = import ./nix/pandoc-lua-engine.nix;
   "pandoc-lua-marshal" = import ./nix/pandoc-lua-marshal.nix;
   "pandoc-markdown-ghci-filter" = import ./nix/pandoc-markdown-ghci-filter.nix;
@@ -11325,6 +11332,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pandoc-plantuml-diagrams" = import ./nix/pandoc-plantuml-diagrams.nix;
   "pandoc-plot" = import ./nix/pandoc-plot.nix;
   "pandoc-pyplot" = import ./nix/pandoc-pyplot.nix;
+  "pandoc-select-code" = import ./nix/pandoc-select-code.nix;
   "pandoc-server" = import ./nix/pandoc-server.nix;
   "pandoc-sidenote" = import ./nix/pandoc-sidenote.nix;
   "pandoc-stylefrommeta" = import ./nix/pandoc-stylefrommeta.nix;
@@ -15294,6 +15302,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "timelike" = import ./nix/timelike.nix;
   "timelike-clock" = import ./nix/timelike-clock.nix;
   "timelike-time" = import ./nix/timelike-time.nix;
+  "timeline" = import ./nix/timeline.nix;
   "timemap" = import ./nix/timemap.nix;
   "timeout" = import ./nix/timeout.nix;
   "timeout-control" = import ./nix/timeout-control.nix;

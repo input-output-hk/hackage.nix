@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.1.1" = {
+    sha256 = "da79964425d250a81f07e4f63796ca755eebb9a7462181274a8413e65ee5d41a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graph-trace-viz-0.1.1.1-r0-5ed76ebc1e874090e0f3d4eacc3dd70f46a0026c720b9921fbab6cd3c21564a3.nix;
+        revNum = 0;
+        sha256 = "5ed76ebc1e874090e0f3d4eacc3dd70f46a0026c720b9921fbab6cd3c21564a3";
+        };
+      default = "r0";
+      };
+    };
   }

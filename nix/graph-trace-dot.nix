@@ -48,4 +48,15 @@
       default = "r0";
       };
     };
+  "0.1.1.3" = {
+    sha256 = "327231b4211a6fc71ff056835a52362817798b5bc9706632676debb3afd5718b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graph-trace-dot-0.1.1.3-r0-77422e8627db15b1e0b793a86882e5f755c8f9fbe95ccc505631b42f6249033b.nix;
+        revNum = 0;
+        sha256 = "77422e8627db15b1e0b793a86882e5f755c8f9fbe95ccc505631b42f6249033b";
+        };
+      default = "r0";
+      };
+    };
   }
