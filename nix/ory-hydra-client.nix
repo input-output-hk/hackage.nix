@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0.3" = {
+    sha256 = "1b05b94638f75b8062399248fde34ea20b5641c469a851e4dad39995daebde0f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ory-hydra-client-2.0.3-r0-f61cd583c71986891ab19a1f178c6b4a63384159ce7aada6591011f7dcdfe77b.nix;
+        revNum = 0;
+        sha256 = "f61cd583c71986891ab19a1f178c6b4a63384159ce7aada6591011f7dcdfe77b";
+        };
+      default = "r0";
+      };
+    };
   }

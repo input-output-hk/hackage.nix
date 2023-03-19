@@ -269,7 +269,12 @@
         revNum = 0;
         sha256 = "05c13210f52e0a8ed903ad6f3fd057a5e3fcfa4055f5de2d48b99f9c0c848850";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bencoding-0.4.5.4-r1-7869f87bc01fa8fc84e973de6496aec4343b1c33efb09c8cb798baea104248ec.nix;
+        revNum = 1;
+        sha256 = "7869f87bc01fa8fc84e973de6496aec4343b1c33efb09c8cb798baea104248ec";
+        };
+      default = "r1";
       };
     };
   }

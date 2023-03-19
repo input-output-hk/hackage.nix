@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "81a9597ce2a46d24c06bd8ee9ef10a2fda1568126d6b793b2d06ccc20ba84813";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shared-memory-0.2.0.1-r0-b8c29d2a016728a5b596f37518cca10b6aec84f1b4bff3f6f3d4299db63ca21a.nix;
+        revNum = 0;
+        sha256 = "b8c29d2a016728a5b596f37518cca10b6aec84f1b4bff3f6f3d4299db63ca21a";
+        };
+      default = "r0";
+      };
+    };
   }

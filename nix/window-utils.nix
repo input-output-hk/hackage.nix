@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "bfce3bca90ee1064ca2e650c23a987dd1ee7ce8eea0614275dc26560de87883d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/window-utils-0.2.0.0-r1-d74b5f737ff16c6fdff46f803139a917dfd9e901c8f50eb4234446aa5dc60748.nix;
+        revNum = 1;
+        sha256 = "d74b5f737ff16c6fdff46f803139a917dfd9e901c8f50eb4234446aa5dc60748";
+        };
+      default = "r1";
       };
     };
   }

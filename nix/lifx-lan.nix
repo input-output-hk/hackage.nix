@@ -215,7 +215,12 @@
         revNum = 0;
         sha256 = "cadb34ee941c90e95eb5fd094e8c28102f24782a97c40523c98477ddd423e92e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lifx-lan-0.8.0-r1-fcb126d678c74d152df2e94219bce506735d620982acbac919eaf7f583345099.nix;
+        revNum = 1;
+        sha256 = "fcb126d678c74d152df2e94219bce506735d620982acbac919eaf7f583345099";
+        };
+      default = "r1";
       };
     };
   }

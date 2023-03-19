@@ -197,4 +197,26 @@
       default = "r0";
       };
     };
+  "2.0.1.4" = {
+    sha256 = "372cb635cef8b578156b7e9796a4b2047ffb1bc53808834fc41099c288645f5c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/burrito-2.0.1.4-r0-c83df10a0e6e2173b0554f5b89869c2c134118ff47f89aad253ee6de5b697e44.nix;
+        revNum = 0;
+        sha256 = "c83df10a0e6e2173b0554f5b89869c2c134118ff47f89aad253ee6de5b697e44";
+        };
+      default = "r0";
+      };
+    };
+  "2.0.1.5" = {
+    sha256 = "0a1b3712dacbf2f05f20361b36996050e537fe87dbc84ec974fe08f3574c7bd2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/burrito-2.0.1.5-r0-9a1fe88cb0b6991c2b68944ce72a185c96fe031226e500024a027d520ef26a53.nix;
+        revNum = 0;
+        sha256 = "9a1fe88cb0b6991c2b68944ce72a185c96fe031226e500024a027d520ef26a53";
+        };
+      default = "r0";
+      };
+    };
   }
