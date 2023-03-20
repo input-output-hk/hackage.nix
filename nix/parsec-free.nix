@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "3.1.11.7" = {
+    sha256 = "fa73390bed7ac6f5ad85432c560154e45af89f0b90b7f29ba23f2fd5c3f55200";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/parsec-free-3.1.11.7-r0-f222eabef60929903b6929d616f1a93a568f69a62bcc82fb86fe5d3233adbd20.nix;
+        revNum = 0;
+        sha256 = "f222eabef60929903b6929d616f1a93a568f69a62bcc82fb86fe5d3233adbd20";
+        };
+      default = "r0";
+      };
+    };
   }

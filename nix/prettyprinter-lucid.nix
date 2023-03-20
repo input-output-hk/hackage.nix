@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "09b900bf57baf4211e9ee6092e93a8cdd172bc9508d0277e7049de20d3e1780b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/prettyprinter-lucid-0.1.0.1-r2-fa50fd96295fb88f5e8db3c0439abedceb9c6b97a0316b257f3fb193c851f0da.nix;
+        revNum = 2;
+        sha256 = "fa50fd96295fb88f5e8db3c0439abedceb9c6b97a0316b257f3fb193c851f0da";
+        };
+      default = "r2";
       };
     };
   }

@@ -103,4 +103,15 @@
       default = "r5";
       };
     };
+  "0.2" = {
+    sha256 = "e93957b0e1afa597737d2fc5c516cab9cab1e3b67f629ec4f54de6b2da61101a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/time-parsers-0.2-r0-393d52ebb968035129a90c9dfd56ea3de8e81900e8c26b33dce1b22571a040f2.nix;
+        revNum = 0;
+        sha256 = "393d52ebb968035129a90c9dfd56ea3de8e81900e8c26b33dce1b22571a040f2";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.4.0.2" = {
+    sha256 = "3d90e672ec64d10b56d5bb30222fe70d8cb27595ca4c2ae1884bb2f64d3bf9d5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/line-drawing-0.4.0.2-r0-b68313e9bfedaa15da787360672b6b63d6e0e02a6b27af80c7f0968166cd928e.nix;
+        revNum = 0;
+        sha256 = "b68313e9bfedaa15da787360672b6b63d6e0e02a6b27af80c7f0968166cd928e";
+        };
+      default = "r0";
+      };
+    };
   }

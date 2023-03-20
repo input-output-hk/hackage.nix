@@ -215,4 +215,15 @@
       default = "r0";
       };
     };
+  "3.0.0.9" = {
+    sha256 = "7a060df537cb93c98380a770f88d4a1ff08b79fe07203c859be7bc815dc1325d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stm-chans-3.0.0.9-r0-b2d4b54b2859da7a002819165fae0b051582036af7c313c23e9e0d28562e1938.nix;
+        revNum = 0;
+        sha256 = "b2d4b54b2859da7a002819165fae0b051582036af7c313c23e9e0d28562e1938";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -108,4 +108,26 @@
       default = "r0";
       };
     };
+  "1.1.1.1" = {
+    sha256 = "14e110ec621db81e0d569fa6441be31d50b6e5bcc6f1eff3cbbf58c5afab42e2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/venzone-1.1.1.1-r0-e79617bd40e8a31dfbc3847f55772517347ebab770faa4565ba15f5f80661f2a.nix;
+        revNum = 0;
+        sha256 = "e79617bd40e8a31dfbc3847f55772517347ebab770faa4565ba15f5f80661f2a";
+        };
+      default = "r0";
+      };
+    };
+  "1.1.1.2" = {
+    sha256 = "dd6216b442661430b6beba06687a0eb846d67de4eb833aa2acd9446fb2e14aaa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/venzone-1.1.1.2-r0-219384c03f6c585fc87c8d9d8824763666f3f8d6ad841a11f2b1fad32c8be2cc.nix;
+        revNum = 0;
+        sha256 = "219384c03f6c585fc87c8d9d8824763666f3f8d6ad841a11f2b1fad32c8be2cc";
+        };
+      default = "r0";
+      };
+    };
   }

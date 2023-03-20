@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.3.0.3" = {
+    sha256 = "b4b9c62d80a0efbb7b6517121a71ed4e555e3c3e8773c0e0b6b8fe0eb72c8c80";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gscholar-rss-0.3.0.3-r0-10e228de4808694a0344d3d1a0a4a35da7bf1d977efb9f13573ca213ccbf7034.nix;
+        revNum = 0;
+        sha256 = "10e228de4808694a0344d3d1a0a4a35da7bf1d977efb9f13573ca213ccbf7034";
+        };
+      default = "r0";
+      };
+    };
   }

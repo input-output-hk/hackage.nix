@@ -103,4 +103,15 @@
       default = "r0";
       };
     };
+  "1.1.0.3" = {
+    sha256 = "932193d66f90f660c9829bbd2f94cd1192e07835c8c40181a5a1a0c9579d9bcc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/linebreak-1.1.0.3-r0-163ccf6eb8d683023152c559600dcf580bea7ed930fb934ce1506a0d2c3bbf23.nix;
+        revNum = 0;
+        sha256 = "163ccf6eb8d683023152c559600dcf580bea7ed930fb934ce1506a0d2c3bbf23";
+        };
+      default = "r0";
+      };
+    };
   }

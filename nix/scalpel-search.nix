@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "aa47de89e221c13158d4b34adeec63bb8d9f8de84601c700ff5a5e367f0bd93d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/scalpel-search-0.1.0.2-r0-21e32636522c44472bad75ca1ee841642f374805b430a0f356ec31715e1088e8.nix;
+        revNum = 0;
+        sha256 = "21e32636522c44472bad75ca1ee841642f374805b430a0f356ec31715e1088e8";
+        };
+      default = "r0";
+      };
+    };
   }
