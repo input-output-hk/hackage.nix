@@ -286,4 +286,15 @@
       default = "r0";
       };
     };
+  "1.1.4.0" = {
+    sha256 = "68f0b1e01604ca8bdeaef47b3621faec456d6f76d6820a321eccd4d3749454a8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bitvec-1.1.4.0-r0-8991eec6409f181bd6ccb20e24ac759659940170cd00ca530ec7dd5ffa4f30fc.nix;
+        revNum = 0;
+        sha256 = "8991eec6409f181bd6ccb20e24ac759659940170cd00ca530ec7dd5ffa4f30fc";
+        };
+      default = "r0";
+      };
+    };
   }

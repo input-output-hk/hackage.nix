@@ -248,4 +248,15 @@
       default = "r0";
       };
     };
+  "0.7.2.0" = {
+    sha256 = "b0e56d03df302d7d3af991c81e3572903d3fca6e127805901db1239c11f74952";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-typelits-presburger-0.7.2.0-r0-2d908bb91328dd8a91ea25cdaced2ba88f1413f7e8fc3a951efaf0555da9b5c8.nix;
+        revNum = 0;
+        sha256 = "2d908bb91328dd8a91ea25cdaced2ba88f1413f7e8fc3a951efaf0555da9b5c8";
+        };
+      default = "r0";
+      };
+    };
   }

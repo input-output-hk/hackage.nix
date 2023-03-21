@@ -1520,6 +1520,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "agda-unused" = import ./nix/agda-unused.nix;
   "agda2lagda" = import ./nix/agda2lagda.nix;
   "agentx" = import ./nix/agentx.nix;
+  "agreeing" = import ./nix/agreeing.nix;
   "agum" = import ./nix/agum.nix;
   "aig" = import ./nix/aig.nix;
   "aip" = import ./nix/aip.nix;
@@ -7901,6 +7902,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hsbencher" = import ./nix/hsbencher.nix;
   "hsbencher-codespeed" = import ./nix/hsbencher-codespeed.nix;
   "hsbencher-fusion" = import ./nix/hsbencher-fusion.nix;
+  "hsblst" = import ./nix/hsblst.nix;
   "hsc2hs" = import ./nix/hsc2hs.nix;
   "hsc3" = import ./nix/hsc3.nix;
   "hsc3-auditor" = import ./nix/hsc3-auditor.nix;
