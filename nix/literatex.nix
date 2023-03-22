@@ -75,4 +75,15 @@
       default = "r2";
       };
     };
+  "0.2.1.0" = {
+    sha256 = "3d76d0babd98dd014f4714e9e426f2ca98b3dd1d30122be9956812cccf74136b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/literatex-0.2.1.0-r0-24c19cfea179dcd8b96d354843276f31fda6674b7ea2442168a96e7c73d7975a.nix;
+        revNum = 0;
+        sha256 = "24c19cfea179dcd8b96d354843276f31fda6674b7ea2442168a96e7c73d7975a";
+        };
+      default = "r0";
+      };
+    };
   }

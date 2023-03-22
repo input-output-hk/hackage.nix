@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.3.2.0" = {
+    sha256 = "c59a0622be494f41517c772a591cb51145acdc6b60309d60b2047e30ea23a647";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/clplug-0.3.2.0-r0-4163db7d9ead3e0567397c8b0d646258452902038b2d38572fe4b031007b7a71.nix;
+        revNum = 0;
+        sha256 = "4163db7d9ead3e0567397c8b0d646258452902038b2d38572fe4b031007b7a71";
+        };
+      default = "r0";
+      };
+    };
   }

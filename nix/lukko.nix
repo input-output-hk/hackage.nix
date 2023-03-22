@@ -66,7 +66,12 @@
         revNum = 3;
         sha256 = "efd4c08c4df1ac3f423858a834c0e3b5b4909febda66a901d12a8e1d57bddaa8";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/lukko-0.1.1.3-r4-9ab54ee4f80bbd8a3fddd639ea142b7039ee2deb27f7df031a93de1819e34146.nix;
+        revNum = 4;
+        sha256 = "9ab54ee4f80bbd8a3fddd639ea142b7039ee2deb27f7df031a93de1819e34146";
+        };
+      default = "r4";
       };
     };
   }
