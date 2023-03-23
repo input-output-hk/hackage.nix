@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "df12efb901544afead5ae78b2398e08b84dd4d440c9671a8f4fd73694a210e0b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/array-builder-0.1.2.0-r1-d0d3f708deb38f0da9578b812660c2bcd30efff4076d9e7ce1d00b2d3d2e3043.nix;
+        revNum = 1;
+        sha256 = "d0d3f708deb38f0da9578b812660c2bcd30efff4076d9e7ce1d00b2d3d2e3043";
+        };
+      default = "r1";
       };
     };
   }

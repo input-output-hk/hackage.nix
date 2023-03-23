@@ -515,6 +515,17 @@
       default = "r0";
       };
     };
+  "0.6.18" = {
+    sha256 = "e3dcadb77a4dee52edc27eda1fdb0f11c57d7e50056ee5bc1d2a462a47203adc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jmacro-0.6.18-r0-f5a3c0fec4930a6e8f4adf26a22b41f6ca6a06daa06de24f00e2dd24641f4b86.nix;
+        revNum = 0;
+        sha256 = "f5a3c0fec4930a6e8f4adf26a22b41f6ca6a06daa06de24f00e2dd24641f4b86";
+        };
+      default = "r0";
+      };
+    };
   "0.6.2" = {
     sha256 = "6a8a4016a123d583695fa9ecb7357e3f7205314c2f00eb689252e3eec7b7dccf";
     revisions = {

@@ -48,6 +48,17 @@
       default = "r0";
       };
     };
+  "10000.1.3" = {
+    sha256 = "debe8ff7d7777e48b93277d04571a392dbbf6c7dee134e3ddd689fa8aec3e9de";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/torrent-10000.1.3-r0-12b9ac1415fc9865a271b3e36877b152803ab7ca47f4acbc8c6631b0e04a32c5.nix;
+        revNum = 0;
+        sha256 = "12b9ac1415fc9865a271b3e36877b152803ab7ca47f4acbc8c6631b0e04a32c5";
+        };
+      default = "r0";
+      };
+    };
   "2007.10.27" = {
     sha256 = "3ea65529347117a6ffa49f3de0b17447249d00b21a7867dbd6f33b65889d182c";
     revisions = {

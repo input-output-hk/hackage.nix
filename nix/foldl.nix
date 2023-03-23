@@ -585,7 +585,12 @@
         revNum = 1;
         sha256 = "6ca3b5a312fb7ddfad4df5079da585dd22099dcf4f540af651bd707d242b056c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/foldl-1.4.14-r2-f6e2b79665fd30edbe47cbfee4a762e143cac65f1f679c7abbf913dd904cefa8.nix;
+        revNum = 2;
+        sha256 = "f6e2b79665fd30edbe47cbfee4a762e143cac65f1f679c7abbf913dd904cefa8";
+        };
+      default = "r2";
       };
     };
   "1.4.2" = {

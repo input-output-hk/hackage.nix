@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.1.0.7" = {
+    sha256 = "d1bda0b82accba82a2062a00c678f879c87b8781784a7410979996010aca45f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wordlist-0.1.0.7-r0-64d58fb77f1e651a07c80c15e21860343827a466a860268c1789a8f2f9310e51.nix;
+        revNum = 0;
+        sha256 = "64d58fb77f1e651a07c80c15e21860343827a466a860268c1789a8f2f9310e51";
+        };
+      default = "r0";
+      };
+    };
   }

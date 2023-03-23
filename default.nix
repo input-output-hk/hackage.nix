@@ -8397,6 +8397,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hzenity" = import ./nix/hzenity.nix;
   "hzk" = import ./nix/hzk.nix;
   "hzulip" = import ./nix/hzulip.nix;
+  "i" = import ./nix/i.nix;
   "i18n" = import ./nix/i18n.nix;
   "i3blocks-hs-contrib" = import ./nix/i3blocks-hs-contrib.nix;
   "i3ipc" = import ./nix/i3ipc.nix;
@@ -9446,6 +9447,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "liboath-hs" = import ./nix/liboath-hs.nix;
   "liboleg" = import ./nix/liboleg.nix;
   "libpafe" = import ./nix/libpafe.nix;
+  "libphonenumber" = import ./nix/libphonenumber.nix;
   "libpq" = import ./nix/libpq.nix;
   "libraft" = import ./nix/libraft.nix;
   "librandomorg" = import ./nix/librandomorg.nix;

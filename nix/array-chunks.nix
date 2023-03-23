@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "2d2b30f68905d18f3baa48904def3f575783c1737e5fc3579bfd78bce9a6fab5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/array-chunks-0.1.3.0-r1-72e82f713a6923b0db1aad514509910c803706a992266aa347042b42aca665ef.nix;
+        revNum = 1;
+        sha256 = "72e82f713a6923b0db1aad514509910c803706a992266aa347042b42aca665ef";
+        };
+      default = "r1";
       };
     };
   }
