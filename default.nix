@@ -15584,6 +15584,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tuple" = import ./nix/tuple.nix;
   "tuple-append" = import ./nix/tuple-append.nix;
   "tuple-append-instances" = import ./nix/tuple-append-instances.nix;
+  "tuple-fields" = import ./nix/tuple-fields.nix;
   "tuple-gen" = import ./nix/tuple-gen.nix;
   "tuple-generic" = import ./nix/tuple-generic.nix;
   "tuple-hlist" = import ./nix/tuple-hlist.nix;

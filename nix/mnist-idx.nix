@@ -110,7 +110,12 @@
         revNum = 0;
         sha256 = "818650cf64018d3a8496f2174ca60cf40416a0bad684b036ff8d5764c91fa0fa";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/mnist-idx-0.1.3.2-r1-717feb88889bc99f812a644cdb7fce8ca9d6b1debe1178a6b91f209c66393ec5.nix;
+        revNum = 1;
+        sha256 = "717feb88889bc99f812a644cdb7fce8ca9d6b1debe1178a6b91f209c66393ec5";
+        };
+      default = "r1";
       };
     };
   }

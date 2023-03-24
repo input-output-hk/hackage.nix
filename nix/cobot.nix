@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.1.1.8" = {
+    sha256 = "8709b62907a926f6d7ea653b72c3bf266cd3b5b4a947d4b32e4a01ea1f75a27d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cobot-0.1.1.8-r0-5493ed78b72e061f84c28afdbc1859b516751836475b6a8596d355152dcbf24f.nix;
+        revNum = 0;
+        sha256 = "5493ed78b72e061f84c28afdbc1859b516751836475b6a8596d355152dcbf24f";
+        };
+      default = "r0";
+      };
+    };
   }
