@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.0.1.3" = {
+    sha256 = "ddd2d92707bbd0b878bed29181c17e5edb28a41f749c6f1549bddf422ff97051";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/memfd-1.0.1.3-r0-2b9c2e16448ba19690c805de93f19b1b0183ddf37f94608c97299974e1e35e3e.nix;
+        revNum = 0;
+        sha256 = "2b9c2e16448ba19690c805de93f19b1b0183ddf37f94608c97299974e1e35e3e";
+        };
+      default = "r0";
+      };
+    };
   }
