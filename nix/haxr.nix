@@ -443,7 +443,12 @@
         revNum = 0;
         sha256 = "62866c0f027a7fb55f4cd86f0e73553d26717b7dd4096b173b5a217335ba6887";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/haxr-3000.11.5-r1-66cb99636a60b3b0d5f6abd3b3250b7082f1a8e64c159f0f956df97ab2e25a07.nix;
+        revNum = 1;
+        sha256 = "66cb99636a60b3b0d5f6abd3b3250b7082f1a8e64c159f0f956df97ab2e25a07";
+        };
+      default = "r1";
       };
     };
   "3000.2.0" = {

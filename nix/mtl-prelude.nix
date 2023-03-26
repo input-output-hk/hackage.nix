@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "2.0.3.2" = {
+    sha256 = "40e83a8b08d1d95a1d15430f2d2923bbafe587b9491880ccb93feefe4215a0e9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mtl-prelude-2.0.3.2-r0-542287e13813c90344abff40f585ca47e25044084708e2d994b1add7a7b08625.nix;
+        revNum = 0;
+        sha256 = "542287e13813c90344abff40f585ca47e25044084708e2d994b1add7a7b08625";
+        };
+      default = "r0";
+      };
+    };
   }
