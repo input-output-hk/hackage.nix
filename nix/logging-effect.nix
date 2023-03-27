@@ -296,4 +296,15 @@
       default = "r0";
       };
     };
+  "1.4.0" = {
+    sha256 = "1860ca8fc1e12877e506558fd77200f04ab5b5c8b6a0175b7fc45e001049c739";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/logging-effect-1.4.0-r0-4195038e1ded923469e3dd7a826a63a3b284ea6a64f613fd6adf445e7549a5f1.nix;
+        revNum = 0;
+        sha256 = "4195038e1ded923469e3dd7a826a63a3b284ea6a64f613fd6adf445e7549a5f1";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.4.1" = {
+    sha256 = "e579cf8c60e7d7ad1a812b1bdfc1252f6c9a41baa16e90f8229a2c2c706dd182";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-simple-tls-0.4.1-r0-d03c6a573201045a6733296bd796515f8fd423a3c2044193d7f6651c20823c6d.nix;
+        revNum = 0;
+        sha256 = "d03c6a573201045a6733296bd796515f8fd423a3c2044193d7f6651c20823c6d";
+        };
+      default = "r0";
+      };
+    };
   }

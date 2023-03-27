@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2" = {
+    sha256 = "20705d6180e9c1a9c7906d54801b8db25f4e5ae9d822123c888fec05cda2e873";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-simple-ws-0.2-r0-d67557a348b70ec6527abb29c3439e459cc8656d62d9165b5bae353f8abbddcb.nix;
+        revNum = 0;
+        sha256 = "d67557a348b70ec6527abb29c3439e459cc8656d62d9165b5bae353f8abbddcb";
+        };
+      default = "r0";
+      };
+    };
   }

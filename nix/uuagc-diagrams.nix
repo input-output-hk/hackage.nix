@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "cc651c628e29def266a234bc2f328029d7d65b9669b82eae3d52630d2ae2efb6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uuagc-diagrams-0.1.3.0-r0-a0823cb3f240a89577a06781913eb712d7b7392a1cc878d7d856b9460bb012b4.nix;
+        revNum = 0;
+        sha256 = "a0823cb3f240a89577a06781913eb712d7b7392a1cc878d7d856b9460bb012b4";
+        };
+      default = "r0";
+      };
+    };
   }

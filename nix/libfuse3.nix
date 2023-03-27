@@ -90,4 +90,15 @@
       default = "r1";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "36806c1a8c7e5b0bd30723cf8ecdc86f0125bce160277c60173a4ea9e0b12bb5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libfuse3-0.2.0.1-r0-d2a3c8f65b918132db3ecd0835c1c1ad11990b2c0bb1bb2f89c214b91595cc05.nix;
+        revNum = 0;
+        sha256 = "d2a3c8f65b918132db3ecd0835c1c1ad11990b2c0bb1bb2f89c214b91595cc05";
+        };
+      default = "r0";
+      };
+    };
   }

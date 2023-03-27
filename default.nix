@@ -563,6 +563,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "HaTeX-meta" = import ./nix/_Ha_Te_X-meta.nix;
   "HaTeX-qq" = import ./nix/_Ha_Te_X-qq.nix;
   "HaVSA" = import ./nix/_Ha_V_S_A.nix;
+  "HaXPath" = import ./nix/_Ha_X_Path.nix;
   "HaXml" = import ./nix/_Ha_Xml.nix;
   "Hach" = import ./nix/_Hach.nix;
   "HackMail" = import ./nix/_Hack_Mail.nix;
