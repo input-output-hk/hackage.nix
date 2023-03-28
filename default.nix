@@ -12814,6 +12814,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "reflex-localize-dom" = import ./nix/reflex-localize-dom.nix;
   "reflex-monad-auth" = import ./nix/reflex-monad-auth.nix;
   "reflex-orphans" = import ./nix/reflex-orphans.nix;
+  "reflex-potatoes" = import ./nix/reflex-potatoes.nix;
   "reflex-process" = import ./nix/reflex-process.nix;
   "reflex-sdl2" = import ./nix/reflex-sdl2.nix;
   "reflex-test-host" = import ./nix/reflex-test-host.nix;
@@ -15343,6 +15344,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tinyid" = import ./nix/tinyid.nix;
   "tinylog" = import ./nix/tinylog.nix;
   "tinytemplate" = import ./nix/tinytemplate.nix;
+  "tinytools" = import ./nix/tinytools.nix;
   "tip-haskell-frontend" = import ./nix/tip-haskell-frontend.nix;
   "tip-lib" = import ./nix/tip-lib.nix;
   "tiphys" = import ./nix/tiphys.nix;

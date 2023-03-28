@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "09ac684ad1f982e6c5f9b0633da60f127b4b1c58aa7b691de880de36ff16ba40";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discrete-space-map-0.0.5-r1-e3fa09e71388c0489310c04f502f6332a9d9a6c96c25057c197b53d7c21a1112.nix;
+        revNum = 1;
+        sha256 = "e3fa09e71388c0489310c04f502f6332a9d9a6c96c25057c197b53d7c21a1112";
+        };
+      default = "r1";
       };
     };
   }
