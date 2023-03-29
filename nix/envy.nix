@@ -238,4 +238,15 @@
       default = "r0";
       };
     };
+  "2.1.2.0" = {
+    sha256 = "24cf25804032bb683c6ee6a67086621fd6f28a510d6ad8d4a6cb29067b5d4ad7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/envy-2.1.2.0-r0-831a8dc0db2b9dca9671dc757af0d75d81579d4bc7edc9f4d275ffd67df750bb.nix;
+        revNum = 0;
+        sha256 = "831a8dc0db2b9dca9671dc757af0d75d81579d4bc7edc9f4d275ffd67df750bb";
+        };
+      default = "r0";
+      };
+    };
   }
