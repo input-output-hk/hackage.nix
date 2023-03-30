@@ -488,7 +488,17 @@
         revNum = 0;
         sha256 = "e0f6fe526fff9c9ab19f4964da40cbea5112450f1eff1347b735211723d93503";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pandoc-plot-1.6.1-r1-43846a508f76d1928e594715506ecbcdf616877aba39de6563932487b9605411.nix;
+        revNum = 1;
+        sha256 = "43846a508f76d1928e594715506ecbcdf616877aba39de6563932487b9605411";
+        };
+      r2 = {
+        nix = import ../hackage/pandoc-plot-1.6.1-r2-bd9c6bf503247f9fc40ad2d6332a7d941127d195e63ed004a6a811e491037de5.nix;
+        revNum = 2;
+        sha256 = "bd9c6bf503247f9fc40ad2d6332a7d941127d195e63ed004a6a811e491037de5";
+        };
+      default = "r2";
       };
     };
   }

@@ -59,4 +59,15 @@
       default = "r0";
       };
     };
+  "0.2.2.0" = {
+    sha256 = "e1bc95b4d0cd8f84d32c8c369679ba892aec7f0d197864796d14256bcfd43752";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phladiprelio-general-simple-0.2.2.0-r0-b15fbc43e1c4dae3d4f7e7faa4a69c4f8a3329c68f8d3561083d181c34b3c09c.nix;
+        revNum = 0;
+        sha256 = "b15fbc43e1c4dae3d4f7e7faa4a69c4f8a3329c68f8d3561083d181c34b3c09c";
+        };
+      default = "r0";
+      };
+    };
   }

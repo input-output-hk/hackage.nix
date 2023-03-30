@@ -2522,6 +2522,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bits-conduit" = import ./nix/bits-conduit.nix;
   "bits-extra" = import ./nix/bits-extra.nix;
   "bits-extras" = import ./nix/bits-extras.nix;
+  "bits-show" = import ./nix/bits-show.nix;
   "bitset" = import ./nix/bitset.nix;
   "bitset-word8" = import ./nix/bitset-word8.nix;
   "bitspeak" = import ./nix/bitspeak.nix;
