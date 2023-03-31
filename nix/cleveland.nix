@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.3.1" = {
+    sha256 = "eb8e320d3a2d7accf0ff33af8982ab9bafeb874b6c7f51325d3c456685dd38df";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cleveland-0.3.1-r0-0f3798520511952b6f5a78502e3517c76286f4e152619f358a1e9a7b411339e6.nix;
+        revNum = 0;
+        sha256 = "0f3798520511952b6f5a78502e3517c76286f4e152619f358a1e9a7b411339e6";
+        };
+      default = "r0";
+      };
+    };
   }

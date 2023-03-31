@@ -10617,6 +10617,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "myTestlll" = import ./nix/my_Testlll.nix;
   "myanimelist-export" = import ./nix/myanimelist-export.nix;
   "mybitcoin-sci" = import ./nix/mybitcoin-sci.nix;
+  "myers-diff" = import ./nix/myers-diff.nix;
   "myo" = import ./nix/myo.nix;
   "mysnapsession" = import ./nix/mysnapsession.nix;
   "mysnapsession-example" = import ./nix/mysnapsession-example.nix;
@@ -12155,6 +12156,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pretty-types" = import ./nix/pretty-types.nix;
   "prettyFunctionComposing" = import ./nix/pretty_Function_Composing.nix;
   "prettyclass" = import ./nix/prettyclass.nix;
+  "prettyprint-avh4" = import ./nix/prettyprint-avh4.nix;
   "prettyprinter" = import ./nix/prettyprinter.nix;
   "prettyprinter-ansi-terminal" = import ./nix/prettyprinter-ansi-terminal.nix;
   "prettyprinter-combinators" = import ./nix/prettyprinter-combinators.nix;
