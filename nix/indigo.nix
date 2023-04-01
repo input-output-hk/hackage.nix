@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.6.0" = {
+    sha256 = "c8685e4d1fbd09d2c38c01f7c7346735d2c6f79ec85450454c6c7eee7dcd321c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/indigo-0.6.0-r0-71b5f6512fd36a0b9b58cdea6ff852cac637ba418eac7e948efdd3589209d1ba.nix;
+        revNum = 0;
+        sha256 = "71b5f6512fd36a0b9b58cdea6ff852cac637ba418eac7e948efdd3589209d1ba";
+        };
+      default = "r0";
+      };
+    };
   }

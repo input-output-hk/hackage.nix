@@ -32,7 +32,12 @@
         revNum = 5;
         sha256 = "4f00109ee3a68a6051395f18639cce2080598582504eda66bc9f82e771362702";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/trie-simple-0.4.1.1-r6-84e29432cf54bfdfae6628f036c66aaf0054afd895e9b1d45ea287632e6dfb4f.nix;
+        revNum = 6;
+        sha256 = "84e29432cf54bfdfae6628f036c66aaf0054afd895e9b1d45ea287632e6dfb4f";
+        };
+      default = "r6";
       };
     };
   }

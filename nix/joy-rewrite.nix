@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "0be81f12b4d1f6586e0b0cd8a7a5ca6e4eea432f9de1ea9a487960bc73cc8c65";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/joy-rewrite-0.2.0-r1-15811b78f0b0f73e9818a30691192ae7f8de502053448a3b2c6677efec55b725.nix;
+        revNum = 1;
+        sha256 = "15811b78f0b0f73e9818a30691192ae7f8de502053448a3b2c6677efec55b725";
+        };
+      default = "r1";
       };
     };
   }

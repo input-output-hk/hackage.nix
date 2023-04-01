@@ -1,4 +1,15 @@
 {
+  "2022.0.0.0" = {
+    sha256 = "5670269457b63503cbcc1df488763d08baad0908f1d40181ad66917d138f7b26";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/posit-2022.0.0.0-r0-3cea08af428873e1efffa1cad131e82b6aefebe731e435bd2c0e1c91b76dd2b5.nix;
+        revNum = 0;
+        sha256 = "3cea08af428873e1efffa1cad131e82b6aefebe731e435bd2c0e1c91b76dd2b5";
+        };
+      default = "r0";
+      };
+    };
   "3.2.0.0" = {
     sha256 = "a1f7da463c631e91ec95c4248d59de0e085ae6cf93be56d82be303c946206ee1";
     revisions = {
