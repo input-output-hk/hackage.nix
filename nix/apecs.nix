@@ -706,4 +706,15 @@
       default = "r1";
       };
     };
+  "0.9.5" = {
+    sha256 = "3fdc0547f257ea6ec9abe972148188e673fa1859f53695989761bad7fd9a01d8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/apecs-0.9.5-r0-a9b29e103e68050fea4fd33860b8f82c9c0122d850a2beda993d2923ee77495e.nix;
+        revNum = 0;
+        sha256 = "a9b29e103e68050fea4fd33860b8f82c9c0122d850a2beda993d2923ee77495e";
+        };
+      default = "r0";
+      };
+    };
   }

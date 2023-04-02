@@ -428,4 +428,15 @@
       default = "r0";
       };
     };
+  "0.3.7.2" = {
+    sha256 = "1bbb7f5be1f4590124c76458fb798bfd9bf8114dce338d5881ad89188a9dc946";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xss-sanitize-0.3.7.2-r0-ed942085d62b2d91d85ff9fc0507e36a0757e67a1d8226b4e2ef561b3a0477f2.nix;
+        revNum = 0;
+        sha256 = "ed942085d62b2d91d85ff9fc0507e36a0757e67a1d8226b4e2ef561b3a0477f2";
+        };
+      default = "r0";
+      };
+    };
   }
