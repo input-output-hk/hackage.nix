@@ -361,6 +361,17 @@
       default = "r0";
       };
     };
+  "2.0.29" = {
+    sha256 = "e0fedbe660b74df1a7e177c21764d45ebeb48e983259d28898d2c9103d739d80";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-glib-2.0.29-r0-5857f4b4bbd589e494c17b185e9510f4079a7878d4fe7fbbac0437a4396ab952.nix;
+        revNum = 0;
+        sha256 = "5857f4b4bbd589e494c17b185e9510f4079a7878d4fe7fbbac0437a4396ab952";
+        };
+      default = "r0";
+      };
+    };
   "2.0.3" = {
     sha256 = "2a961091547deaf8509ef3213353ec7b6ea458a584a81eef7d2685f8312b1170";
     revisions = {

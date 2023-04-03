@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0.5" = {
+    sha256 = "122bdefb6516fd08a7d4cc22cc49b314b3bcaa5c3b2287c3624859177ea495f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-rsvg-2.0.5-r0-ae42b44ceeafcdf0f30200cdce8fc1517c5806c969a304b103ea874289e3b5a8.nix;
+        revNum = 0;
+        sha256 = "ae42b44ceeafcdf0f30200cdce8fc1517c5806c969a304b103ea874289e3b5a8";
+        };
+      default = "r0";
+      };
+    };
   }

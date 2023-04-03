@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "1.0.27" = {
+    sha256 = "64cd2a708880d0744a8604b5728a8363137cee5cc92354d7c8954416f098bf26";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-gsttag-1.0.27-r0-c3859d9f37c102a46c6c261d0da8a464f95ff9e81b9b7d08c9321f5fd4c0cd2a.nix;
+        revNum = 0;
+        sha256 = "c3859d9f37c102a46c6c261d0da8a464f95ff9e81b9b7d08c9321f5fd4c0cd2a";
+        };
+      default = "r0";
+      };
+    };
   }

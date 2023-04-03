@@ -66,7 +66,12 @@
         revNum = 3;
         sha256 = "b7963a66230edbd2f9a380f60596da130cb747f7e3b38a82af014b941ba46cfa";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/argon2-1.3.0.1-r4-8c71c8f28da42e6c85f1a4c4f196a03688b00a1bf18f18c9cf41015416c35649.nix;
+        revNum = 4;
+        sha256 = "8c71c8f28da42e6c85f1a4c4f196a03688b00a1bf18f18c9cf41015416c35649";
+        };
+      default = "r4";
       };
     };
   }

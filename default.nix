@@ -6112,6 +6112,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gi-webkit" = import ./nix/gi-webkit.nix;
   "gi-webkit2" = import ./nix/gi-webkit2.nix;
   "gi-webkit2webextension" = import ./nix/gi-webkit2webextension.nix;
+  "gi-webkitwebprocessextension" = import ./nix/gi-webkitwebprocessextension.nix;
   "gi-wnck" = import ./nix/gi-wnck.nix;
   "gi-xlib" = import ./nix/gi-xlib.nix;
   "giak" = import ./nix/giak.nix;
@@ -13880,6 +13881,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "simple-pascal" = import ./nix/simple-pascal.nix;
   "simple-pipe" = import ./nix/simple-pipe.nix;
   "simple-postgresql-orm" = import ./nix/simple-postgresql-orm.nix;
+  "simple-prompt" = import ./nix/simple-prompt.nix;
   "simple-reflect" = import ./nix/simple-reflect.nix;
   "simple-rope" = import ./nix/simple-rope.nix;
   "simple-sendfile" = import ./nix/simple-sendfile.nix;

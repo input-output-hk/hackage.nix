@@ -1,0 +1,35 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "filelock"; version = "0.1.0.0"; };
+      license = "LicenseRef-PublicDomain";
+      copyright = "";
+      maintainer = "aljee@hyper.cx";
+      author = "Takano Akio";
+      homepage = "http://github.com/takano-akio/filelock";
+      url = "";
+      synopsis = "Portable interface to file locking (flock / LockFileEx)";
+      description = "";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          ] ++ (if system.isWindows
+          then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
+          else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
+        buildable = true;
+        };
+      };
+    }

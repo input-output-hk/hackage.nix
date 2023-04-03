@@ -306,6 +306,17 @@
       default = "r0";
       };
     };
+  "1.0.29" = {
+    sha256 = "a5112d5cfd2a8971f9a27ae5c733a97ca673794023b557840293e9f2283d8a88";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-cairo-1.0.29-r0-7a7aafc74c5d86203cf74640ed4739cb75b739d1a6477a3e0287e413da2eb657.nix;
+        revNum = 0;
+        sha256 = "7a7aafc74c5d86203cf74640ed4739cb75b739d1a6477a3e0287e413da2eb657";
+        };
+      default = "r0";
+      };
+    };
   "1.0.3" = {
     sha256 = "0b54aff46b1998285a79a7356c5a74699112d6b09f1952bb30622ee6b53afe8b";
     revisions = {

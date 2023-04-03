@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0.4" = {
+    sha256 = "3b07f702769eec0e972317a4c87669a0fd6c49b1c56af08f87492d55d0ce370b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-freetype2-2.0.4-r0-2a220b925d0f6e349a85ebf6b22f698f7f8fc6dde0967f875b0fb4d332ee7f64.nix;
+        revNum = 0;
+        sha256 = "2a220b925d0f6e349a85ebf6b22f698f7f8fc6dde0967f875b0fb4d332ee7f64";
+        };
+      default = "r0";
+      };
+    };
   }
