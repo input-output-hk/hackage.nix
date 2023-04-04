@@ -126,7 +126,12 @@
         revNum = 0;
         sha256 = "ad28af9c7cf1c6e8b54559480d9e5fd634b289fb611fe5cd59b89f9758846614";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hls-haddock-comments-plugin-1.1.1.0-r1-be718be2ed380db8ebe30fa5e4e23e1a376b4d6d0d21787b8c0e15fb810d97ac.nix;
+        revNum = 1;
+        sha256 = "be718be2ed380db8ebe30fa5e4e23e1a376b4d6d0d21787b8c0e15fb810d97ac";
+        };
+      default = "r1";
       };
     };
   }

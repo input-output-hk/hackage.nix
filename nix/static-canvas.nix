@@ -56,7 +56,12 @@
         revNum = 1;
         sha256 = "876ae56659dd863acd9c59a8cdebe639a7e12aa3bebbd26eacbd83547e8975fc";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/static-canvas-0.2.0.3-r2-3ad170c6efbd26b981fe66f4c4a85e515c200c675e3f2c6603da7d64e84bc8f5.nix;
+        revNum = 2;
+        sha256 = "3ad170c6efbd26b981fe66f4c4a85e515c200c675e3f2c6603da7d64e84bc8f5";
+        };
+      default = "r2";
       };
     };
   }

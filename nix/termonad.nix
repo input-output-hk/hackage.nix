@@ -268,4 +268,15 @@
       default = "r0";
       };
     };
+  "4.5.0.0" = {
+    sha256 = "d6d7dc572f9d1ac822b719178d6065909d0171d57760586957724a7e0a5cb873";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/termonad-4.5.0.0-r0-1030e44614d1942e692c5b77cfdda72c179fe2da6d9b838913b5ee9293030b09.nix;
+        revNum = 0;
+        sha256 = "1030e44614d1942e692c5b77cfdda72c179fe2da6d9b838913b5ee9293030b09";
+        };
+      default = "r0";
+      };
+    };
   }

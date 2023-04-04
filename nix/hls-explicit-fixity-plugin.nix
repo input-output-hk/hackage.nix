@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "e0e9001ec0ab29b245f8673d4d12de588733adea97f251fd915b3e1ed34408a5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hls-explicit-fixity-plugin-1.1.0.0-r1-34729908ea72f6c530b1e15966eccac02e16c66a636af011550b926a45a80155.nix;
+        revNum = 1;
+        sha256 = "34729908ea72f6c530b1e15966eccac02e16c66a636af011550b926a45a80155";
+        };
+      default = "r1";
       };
     };
   }

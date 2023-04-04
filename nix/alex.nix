@@ -480,4 +480,15 @@
       default = "r0";
       };
     };
+  "3.2.7.2" = {
+    sha256 = "bede87b8ca5bbe940fa50b5e4bf9ff32c62c9ec37dc85963e08a1b6c63c2ce13";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/alex-3.2.7.2-r0-3ee298bf4be625a257b4e18d05a328b94c093a84cb1ab098aaeef2165af52d0c.nix;
+        revNum = 0;
+        sha256 = "3ee298bf4be625a257b4e18d05a328b94c093a84cb1ab098aaeef2165af52d0c";
+        };
+      default = "r0";
+      };
+    };
   }

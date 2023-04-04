@@ -110,7 +110,12 @@
         revNum = 1;
         sha256 = "85f37af5047c524fb87d6388fdd55efc87a94bc65a19cb56e1d9ed4c4293c56c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hls-fourmolu-plugin-1.1.1.0-r2-2d9371ad1427c7d8c4e3fc129a9d1e870249a7fde7b16203bff2216bd8426df0.nix;
+        revNum = 2;
+        sha256 = "2d9371ad1427c7d8c4e3fc129a9d1e870249a7fde7b16203bff2216bd8426df0";
+        };
+      default = "r2";
       };
     };
   }

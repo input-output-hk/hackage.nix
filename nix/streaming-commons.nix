@@ -1040,4 +1040,15 @@
       default = "r0";
       };
     };
+  "0.2.2.6" = {
+    sha256 = "0180958a882eb0f6262b812fe886c2b1b8285474b5b958f814ae4f05409fbf79";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/streaming-commons-0.2.2.6-r0-f3a6db1e6c12760c00a38393693d473b8b4f9211eed036388eca89996ba50d66.nix;
+        revNum = 0;
+        sha256 = "f3a6db1e6c12760c00a38393693d473b8b4f9211eed036388eca89996ba50d66";
+        };
+      default = "r0";
+      };
+    };
   }

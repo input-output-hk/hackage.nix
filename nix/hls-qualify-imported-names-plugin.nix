@@ -28,7 +28,12 @@
         revNum = 0;
         sha256 = "900c003ba904136ea81075d5347d2caf31c224b4c1487506ef63b4ec2ef5b1b6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hls-qualify-imported-names-plugin-1.0.2.0-r1-375547e20c34884adc8020376bb9daab62bbb84ed8fff5bb4fd53777e977fe3c.nix;
+        revNum = 1;
+        sha256 = "375547e20c34884adc8020376bb9daab62bbb84ed8fff5bb4fd53777e977fe3c";
+        };
+      default = "r1";
       };
     };
   }

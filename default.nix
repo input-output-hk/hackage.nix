@@ -2964,6 +2964,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "camh" = import ./nix/camh.nix;
   "campfire" = import ./nix/campfire.nix;
   "can-i-haz" = import ./nix/can-i-haz.nix;
+  "canadian-income-tax" = import ./nix/canadian-income-tax.nix;
   "candid" = import ./nix/candid.nix;
   "canon" = import ./nix/canon.nix;
   "canonical-filepath" = import ./nix/canonical-filepath.nix;
@@ -5549,6 +5550,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "forml" = import ./nix/forml.nix;
   "formlets" = import ./nix/formlets.nix;
   "formlets-hsp" = import ./nix/formlets-hsp.nix;
+  "forms-data-format" = import ./nix/forms-data-format.nix;
   "formura" = import ./nix/formura.nix;
   "forsyde-deep" = import ./nix/forsyde-deep.nix;
   "forsyde-shallow" = import ./nix/forsyde-shallow.nix;
@@ -15350,6 +15352,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tinylog" = import ./nix/tinylog.nix;
   "tinytemplate" = import ./nix/tinytemplate.nix;
   "tinytools" = import ./nix/tinytools.nix;
+  "tinytools-vty" = import ./nix/tinytools-vty.nix;
   "tip-haskell-frontend" = import ./nix/tip-haskell-frontend.nix;
   "tip-lib" = import ./nix/tip-lib.nix;
   "tiphys" = import ./nix/tiphys.nix;
