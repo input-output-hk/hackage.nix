@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "1.0.1.0" = {
+    sha256 = "dacb88ff19fbdb30a9c2ed544bf36b99cea5d9a258cd4584bf93fa8ea57cf792";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/asana-1.0.1.0-r0-d44581e617894efba902efcda8ef451caad356a2e15afc1d6ce8740d90c287e1.nix;
+        revNum = 0;
+        sha256 = "d44581e617894efba902efcda8ef451caad356a2e15afc1d6ce8740d90c287e1";
+        };
+      default = "r0";
+      };
+    };
   }

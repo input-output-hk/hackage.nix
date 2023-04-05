@@ -292,4 +292,26 @@
       default = "r0";
       };
     };
+  "0.6.0.0" = {
+    sha256 = "5530aec3652cf866420e417c5a35a4347316d9811cfe688c56e574232a6fcf75";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ormolu-0.6.0.0-r0-3e3e8ec6a6e2d982a2262ac5baeba4169327fc4cdf4bd2ae94463a148942a226.nix;
+        revNum = 0;
+        sha256 = "3e3e8ec6a6e2d982a2262ac5baeba4169327fc4cdf4bd2ae94463a148942a226";
+        };
+      default = "r0";
+      };
+    };
+  "0.6.0.1" = {
+    sha256 = "f4ceb6439d77ea38e1c7ad88f92f1635e2b6bae5f50ea79797f9425efcc4b5c5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ormolu-0.6.0.1-r0-3d66314db72f3f8021ff8f259908421c5face5875b8f8801f9d82670f333d3b8.nix;
+        revNum = 0;
+        sha256 = "3d66314db72f3f8021ff8f259908421c5face5875b8f8801f9d82670f333d3b8";
+        };
+      default = "r0";
+      };
+    };
   }

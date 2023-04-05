@@ -113,7 +113,12 @@
         revNum = 0;
         sha256 = "894e6ec1d20760aba467bb337193c626b1e4bbe45d02b06fcd97924193bd78c9";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/plots-0.1.1.3-r1-0dfb0997240a2a436e8ded7685ef5d2ddbf4db72084f9c3e54f90c44977e0c4e.nix;
+        revNum = 1;
+        sha256 = "0dfb0997240a2a436e8ded7685ef5d2ddbf4db72084f9c3e54f90c44977e0c4e";
+        };
+      default = "r1";
       };
     };
   }

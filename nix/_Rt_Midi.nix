@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.5.0.3" = {
+    sha256 = "664ed033b9a66641a0796ca3bc962d368e4a5c95b59459f936ba86506ba63894";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/RtMidi-0.5.0.3-r0-12b158bc11101b7f0a6fed4b4991cc9d15388301292337b6a369177812c759ad.nix;
+        revNum = 0;
+        sha256 = "12b158bc11101b7f0a6fed4b4991cc9d15388301292337b6a369177812c759ad";
+        };
+      default = "r0";
+      };
+    };
   }
