@@ -5215,6 +5215,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fallible" = import ./nix/fallible.nix;
   "falling-turnip" = import ./nix/falling-turnip.nix;
   "fallingblocks" = import ./nix/fallingblocks.nix;
+  "falsify" = import ./nix/falsify.nix;
   "familiar-reflection" = import ./nix/familiar-reflection.nix;
   "family-tree" = import ./nix/family-tree.nix;
   "farmhash" = import ./nix/farmhash.nix;
@@ -7526,6 +7527,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hit" = import ./nix/hit.nix;
   "hit-graph" = import ./nix/hit-graph.nix;
   "hit-on" = import ./nix/hit-on.nix;
+  "hix" = import ./nix/hix.nix;
   "hjcase" = import ./nix/hjcase.nix;
   "hjpath" = import ./nix/hjpath.nix;
   "hjs" = import ./nix/hjs.nix;
@@ -12303,6 +12305,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "property-list" = import ./nix/property-list.nix;
   "proplang" = import ./nix/proplang.nix;
   "props" = import ./nix/props.nix;
+  "proquint" = import ./nix/proquint.nix;
   "prosidy" = import ./nix/prosidy.nix;
   "prosidyc" = import ./nix/prosidyc.nix;
   "prospect" = import ./nix/prospect.nix;

@@ -300,4 +300,15 @@
       default = "r0";
       };
     };
+  "0.6.4" = {
+    sha256 = "fd6ced7642d104b0f988b24dfef3061a978baa598746eb81689af0a1509a78a5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-heap-view-0.6.4-r0-8ab26e8aaac499236fb62c6f923e98f4ed49bf75dceb1d31cbc3c844edc20ce4.nix;
+        revNum = 0;
+        sha256 = "8ab26e8aaac499236fb62c6f923e98f4ed49bf75dceb1d31cbc3c844edc20ce4";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -26,4 +26,15 @@
       default = "r1";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "32f1af06e1cc6915550c33b75a1510d50e2f9ce5d94a172298deeac059903bc3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/parsers-megaparsec-0.1.0.2-r0-8aff82b79c0021965a46a98f7a6a9eaaf9896a54fefedae45d693686e674db4d.nix;
+        revNum = 0;
+        sha256 = "8aff82b79c0021965a46a98f7a6a9eaaf9896a54fefedae45d693686e674db4d";
+        };
+      default = "r0";
+      };
+    };
   }

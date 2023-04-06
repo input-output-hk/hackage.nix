@@ -219,4 +219,15 @@
       default = "r0";
       };
     };
+  "1.4.1" = {
+    sha256 = "1853f1731c0ca16fda0b3861c83db0dcc8e9537cf196f37aa5c18002f8c2b547";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ipfs-1.4.1-r0-87054e05376dedb5168a9bbbcd2f6a2a6ef3b6d88c7286dcd5d85c488cf71b04.nix;
+        revNum = 0;
+        sha256 = "87054e05376dedb5168a9bbbcd2f6a2a6ef3b6d88c7286dcd5d85c488cf71b04";
+        };
+      default = "r0";
+      };
+    };
   }
