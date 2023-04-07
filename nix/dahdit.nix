@@ -32,4 +32,26 @@
       default = "r0";
       };
     };
+  "0.1.3" = {
+    sha256 = "9403c97746d12a635489db3d4140805d06d667269e3a8843b2f9447e213c5ade";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dahdit-0.1.3-r0-c6620f6ee8560ecb886564233f400234ff8eebd8c49938645c630af8dfacefd2.nix;
+        revNum = 0;
+        sha256 = "c6620f6ee8560ecb886564233f400234ff8eebd8c49938645c630af8dfacefd2";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.4" = {
+    sha256 = "f43fd770a3aeb0b58ea4fa0fae8e7d4874ae038217945ff34f40d34273813d06";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dahdit-0.1.4-r0-f230baab42bd53cd41de1423d45e2e7e2cf60d7ac446cdb310ca70e4f7972d18.nix;
+        revNum = 0;
+        sha256 = "f230baab42bd53cd41de1423d45e2e7e2cf60d7ac446cdb310ca70e4f7972d18";
+        };
+      default = "r0";
+      };
+    };
   }

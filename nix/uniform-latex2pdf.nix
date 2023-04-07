@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.5.2" = {
+    sha256 = "37730f8f0ecf91d37665060c856ae3b531457619e4c7cdd7adff44db885d894c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uniform-latex2pdf-0.1.5.2-r0-dd0ee79ba01e6f58d6bba837d8e952e0fb46ce535a530e3761319de993d4a7e4.nix;
+        revNum = 0;
+        sha256 = "dd0ee79ba01e6f58d6bba837d8e952e0fb46ce535a530e3761319de993d4a7e4";
+        };
+      default = "r0";
+      };
+    };
   }

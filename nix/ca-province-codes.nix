@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "f484ddf8582d3417644042a339a3e8c99743b85dd5ba867430c7f4b510ff0214";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/ca-province-codes-1.0.0.0-r2-48c799cdf29794736286ab8ff097f91ee61270368ba062dabe3c8501e1f72062.nix;
+        revNum = 2;
+        sha256 = "48c799cdf29794736286ab8ff097f91ee61270368ba062dabe3c8501e1f72062";
+        };
+      default = "r2";
       };
     };
   }

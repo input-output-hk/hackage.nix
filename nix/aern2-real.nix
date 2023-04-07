@@ -109,6 +109,28 @@
       default = "r0";
       };
     };
+  "0.2.12.0" = {
+    sha256 = "1856b12f2cedccfaa817eeb6f2612f429c3c1c6923a21cdecaf4de1382fd1586";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aern2-real-0.2.12.0-r0-405210be6e143c0707fb717ec1a4c47678170a9a1df2bd2a4300efc316e68d8c.nix;
+        revNum = 0;
+        sha256 = "405210be6e143c0707fb717ec1a4c47678170a9a1df2bd2a4300efc316e68d8c";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.13.0" = {
+    sha256 = "077ef201cb38462b0cd9db9cb499c7479f63ac043373091930e5fa2fc2b2608e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aern2-real-0.2.13.0-r0-8172db5341b2d328720bba303bddaca5ec544aaef56197ca72c94bce6b9cbd39.nix;
+        revNum = 0;
+        sha256 = "8172db5341b2d328720bba303bddaca5ec544aaef56197ca72c94bce6b9cbd39";
+        };
+      default = "r0";
+      };
+    };
   "0.2.4.0" = {
     sha256 = "0007180a3da1cb3d3b14d0237bedb5ca42b51f56bc6fb8a3ac1159d9dc4e1dae";
     revisions = {

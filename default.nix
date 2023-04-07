@@ -1006,6 +1006,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "RefSerialize" = import ./nix/_Ref_Serialize.nix;
   "Referees" = import ./nix/_Referees.nix;
   "RepLib" = import ./nix/_Rep_Lib.nix;
+  "ReplaceUmlaut" = import ./nix/_Replace_Umlaut.nix;
   "ReplicateEffects" = import ./nix/_Replicate_Effects.nix;
   "ReviewBoard" = import ./nix/_Review_Board.nix;
   "RichConditional" = import ./nix/_Rich_Conditional.nix;
@@ -3994,6 +3995,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "daemons" = import ./nix/daemons.nix;
   "dag" = import ./nix/dag.nix;
   "dahdit" = import ./nix/dahdit.nix;
+  "daino" = import ./nix/daino.nix;
   "damnpacket" = import ./nix/damnpacket.nix;
   "danibot" = import ./nix/danibot.nix;
   "dao" = import ./nix/dao.nix;
@@ -12160,6 +12162,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pretty-tree" = import ./nix/pretty-tree.nix;
   "pretty-types" = import ./nix/pretty-types.nix;
   "prettyFunctionComposing" = import ./nix/pretty_Function_Composing.nix;
+  "prettychart" = import ./nix/prettychart.nix;
   "prettyclass" = import ./nix/prettyclass.nix;
   "prettyprint-avh4" = import ./nix/prettyprint-avh4.nix;
   "prettyprinter" = import ./nix/prettyprinter.nix;
@@ -15845,6 +15848,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "unidecode" = import ./nix/unidecode.nix;
   "unification-fd" = import ./nix/unification-fd.nix;
   "uniform-algebras" = import ./nix/uniform-algebras.nix;
+  "uniform-cmdLineArgs" = import ./nix/uniform-cmd_Line_Args.nix;
   "uniform-error" = import ./nix/uniform-error.nix;
   "uniform-fileio" = import ./nix/uniform-fileio.nix;
   "uniform-http" = import ./nix/uniform-http.nix;
