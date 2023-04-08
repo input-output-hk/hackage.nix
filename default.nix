@@ -1520,6 +1520,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "agda-snippets" = import ./nix/agda-snippets.nix;
   "agda-snippets-hakyll" = import ./nix/agda-snippets-hakyll.nix;
   "agda-unused" = import ./nix/agda-unused.nix;
+  "agda2hs" = import ./nix/agda2hs.nix;
   "agda2lagda" = import ./nix/agda2lagda.nix;
   "agentx" = import ./nix/agentx.nix;
   "agreeing" = import ./nix/agreeing.nix;
@@ -16347,6 +16348,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wai-test" = import ./nix/wai-test.nix;
   "wai-thrift" = import ./nix/wai-thrift.nix;
   "wai-throttler" = import ./nix/wai-throttler.nix;
+  "wai-token-bucket-ratelimiter" = import ./nix/wai-token-bucket-ratelimiter.nix;
   "wai-transformers" = import ./nix/wai-transformers.nix;
   "wai-util" = import ./nix/wai-util.nix;
   "wai-websockets" = import ./nix/wai-websockets.nix;

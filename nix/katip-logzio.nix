@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "514e0d75746ff77874238b1c1271933597187040cf4a9a35e1b28ed3b0133007";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/katip-logzio-0.1.2.0-r0-0dd92aed6bfee259eade0da3e396eab7e39e89f45cac1c6cf02ecb121005a046.nix;
+        revNum = 0;
+        sha256 = "0dd92aed6bfee259eade0da3e396eab7e39e89f45cac1c6cf02ecb121005a046";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -116,7 +116,12 @@
         revNum = 0;
         sha256 = "6c7b6f213826f3259109e05fae95d361c0f4f9bc1897b0e6d9b28c984a7e29b0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/doctest-parallel-0.3.0.1-r1-1c0b14a5462eb65d423705ab0c62baedd179de4c4cd3bea1ae68f535f1725358.nix;
+        revNum = 1;
+        sha256 = "1c0b14a5462eb65d423705ab0c62baedd179de4c4cd3bea1ae68f535f1725358";
+        };
+      default = "r1";
       };
     };
   }
