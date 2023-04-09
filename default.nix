@@ -5438,6 +5438,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "flac" = import ./nix/flac.nix;
   "flac-picture" = import ./nix/flac-picture.nix;
   "flaccuraterip" = import ./nix/flaccuraterip.nix;
+  "flag" = import ./nix/flag.nix;
+  "flag-dhall-instance" = import ./nix/flag-dhall-instance.nix;
   "flags-applicative" = import ./nix/flags-applicative.nix;
   "flamethrower" = import ./nix/flamethrower.nix;
   "flamingra" = import ./nix/flamingra.nix;

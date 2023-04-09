@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.1.6" = {
+    sha256 = "ec116437babe8ca70677833680bb4239cf881cea08b5ea2443f0238b51cd745b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskanoid-0.1.6-r0-795f60f24680ba57851bf568b4afa24b599d9b053c85dc58c09796a27bc298d8.nix;
+        revNum = 0;
+        sha256 = "795f60f24680ba57851bf568b4afa24b599d9b053c85dc58c09796a27bc298d8";
+        };
+      default = "r0";
+      };
+    };
   }

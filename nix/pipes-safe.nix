@@ -287,7 +287,12 @@
         revNum = 4;
         sha256 = "a8378d51ae97e679483bdad0099354f402dad0cb965d9ed9ce05ac08dec3a5dc";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/pipes-safe-2.3.4-r5-1e4be771d7998251be7890536a3d3d31e5c93118737bed1d8a19505ec6130256.nix;
+        revNum = 5;
+        sha256 = "1e4be771d7998251be7890536a3d3d31e5c93118737bed1d8a19505ec6130256";
+        };
+      default = "r5";
       };
     };
   }

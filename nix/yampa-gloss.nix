@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.1" = {
+    sha256 = "750b44962e3f8ce3a45b33e31b06cb4133a211445024419bc5f6bbe484cac929";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yampa-gloss-0.2.1-r0-2b64563b4c6b24fa14c3baed339eba5ce30f69e699df34c47b69c633081ed8f5.nix;
+        revNum = 0;
+        sha256 = "2b64563b4c6b24fa14c3baed339eba5ce30f69e699df34c47b69c633081ed8f5";
+        };
+      default = "r0";
+      };
+    };
   }

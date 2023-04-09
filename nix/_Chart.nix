@@ -585,7 +585,12 @@
         revNum = 0;
         sha256 = "b0eca785d494e1df20ab8bce143f99d140ca7492c819881b708629616e9abe6d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Chart-1.9.4-r1-197f1507a1bfe84f9b3a5b664564b3b2ff9ccdef8fef1ce883b2e04fd6cf3151.nix;
+        revNum = 1;
+        sha256 = "197f1507a1bfe84f9b3a5b664564b3b2ff9ccdef8fef1ce883b2e04fd6cf3151";
+        };
+      default = "r1";
       };
     };
   }
