@@ -16186,6 +16186,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "verilog" = import ./nix/verilog.nix;
   "verismith" = import ./nix/verismith.nix;
   "verset" = import ./nix/verset.nix;
+  "version-natural" = import ./nix/version-natural.nix;
   "versioning" = import ./nix/versioning.nix;
   "versioning-servant" = import ./nix/versioning-servant.nix;
   "versions" = import ./nix/versions.nix;

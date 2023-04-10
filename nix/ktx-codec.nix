@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.0.2.1" = {
+    sha256 = "f95fed568dd6bf08abaaf5c105d43d48ea9eca884c0b9222f05784fef69d2f32";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ktx-codec-0.0.2.1-r0-9e9a41930b825837fe09d63cdf7178c38773b5454d3be655da2f147d2cd54c54.nix;
+        revNum = 0;
+        sha256 = "9e9a41930b825837fe09d63cdf7178c38773b5454d3be655da2f147d2cd54c54";
+        };
+      default = "r0";
+      };
+    };
   }
