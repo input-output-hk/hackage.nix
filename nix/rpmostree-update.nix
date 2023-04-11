@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.2" = {
+    sha256 = "87aeba59a46cd4135dddf36dd14bb9f9baae7e748110eb54f14bc88542da8d99";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rpmostree-update-0.1.2-r0-7c53c50f3c61cc979fc3a008afb31a46cba975e2197a03fb25226694115e227a.nix;
+        revNum = 0;
+        sha256 = "7c53c50f3c61cc979fc3a008afb31a46cba975e2197a03fb25226694115e227a";
+        };
+      default = "r0";
+      };
+    };
   }

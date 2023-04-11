@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.1.2.0" = {
+    sha256 = "202f234734700c833a52009e3719d555d0c1eb70d37e1c767daa85639eb87fc2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/twain-2.1.2.0-r0-e5b009a9ce7ef25ab9da5821b98349f6559575dc8500b81bf71437244e4f3060.nix;
+        revNum = 0;
+        sha256 = "e5b009a9ce7ef25ab9da5821b98349f6559575dc8500b81bf71437244e4f3060";
+        };
+      default = "r0";
+      };
+    };
   }

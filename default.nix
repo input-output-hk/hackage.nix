@@ -11122,6 +11122,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "onu-course" = import ./nix/onu-course.nix;
   "oo-prototypes" = import ./nix/oo-prototypes.nix;
   "oops" = import ./nix/oops.nix;
+  "oops-examples" = import ./nix/oops-examples.nix;
   "op" = import ./nix/op.nix;
   "opaleye" = import ./nix/opaleye.nix;
   "opaleye-classy" = import ./nix/opaleye-classy.nix;
@@ -16187,6 +16188,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "verismith" = import ./nix/verismith.nix;
   "verset" = import ./nix/verset.nix;
   "version-natural" = import ./nix/version-natural.nix;
+  "version-natural-dhall-instance" = import ./nix/version-natural-dhall-instance.nix;
   "versioning" = import ./nix/versioning.nix;
   "versioning-servant" = import ./nix/versioning-servant.nix;
   "versions" = import ./nix/versions.nix;

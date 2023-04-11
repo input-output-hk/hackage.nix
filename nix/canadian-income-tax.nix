@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2022.2.0.1" = {
+    sha256 = "e4b993fb701bb738310a8d4f42aa5c7fe6f41992432d1bd4fac0cbd03510c86d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/canadian-income-tax-2022.2.0.1-r0-c899f9a84036c35829f9e1d1a2a502576c0078dd2728b1e5bf05ceec25b26280.nix;
+        revNum = 0;
+        sha256 = "c899f9a84036c35829f9e1d1a2a502576c0078dd2728b1e5bf05ceec25b26280";
+        };
+      default = "r0";
+      };
+    };
   }
