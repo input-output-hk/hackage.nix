@@ -4081,6 +4081,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "data-flags" = import ./nix/data-flags.nix;
   "data-flagset" = import ./nix/data-flagset.nix;
   "data-foldapp" = import ./nix/data-foldapp.nix;
+  "data-forced" = import ./nix/data-forced.nix;
   "data-forest" = import ./nix/data-forest.nix;
   "data-fresh" = import ./nix/data-fresh.nix;
   "data-function-meld" = import ./nix/data-function-meld.nix;
