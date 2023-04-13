@@ -2692,6 +2692,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "brick-dropdownmenu" = import ./nix/brick-dropdownmenu.nix;
   "brick-filetree" = import ./nix/brick-filetree.nix;
   "brick-list-search" = import ./nix/brick-list-search.nix;
+  "brick-list-skip" = import ./nix/brick-list-skip.nix;
   "brick-panes" = import ./nix/brick-panes.nix;
   "brick-skylighting" = import ./nix/brick-skylighting.nix;
   "brick-tabular-list" = import ./nix/brick-tabular-list.nix;
@@ -3056,6 +3057,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "category-printf" = import ./nix/category-printf.nix;
   "category-traced" = import ./nix/category-traced.nix;
   "catnplus" = import ./nix/catnplus.nix;
+  "cattrap" = import ./nix/cattrap.nix;
   "cautious" = import ./nix/cautious.nix;
   "cautious-file" = import ./nix/cautious-file.nix;
   "cautious-gen" = import ./nix/cautious-gen.nix;
@@ -11668,6 +11670,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pgp-wordlist" = import ./nix/pgp-wordlist.nix;
   "pgsql-simple" = import ./nix/pgsql-simple.nix;
   "pgstream" = import ./nix/pgstream.nix;
+  "pgvector" = import ./nix/pgvector.nix;
   "phantom-state" = import ./nix/phantom-state.nix;
   "phasechange" = import ./nix/phasechange.nix;
   "phaser" = import ./nix/phaser.nix;
