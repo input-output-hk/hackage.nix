@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.1" = {
+    sha256 = "495f9442ff0bb77922c732e2ec0ec171fef22b60202d6f8e8aa8eef547a4d78d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bitcoin-compact-filters-0.1.1-r0-bc03dd7adce3ed2f05a98135a3f22224076fd72c8b76f94b858804b97f7a21bd.nix;
+        revNum = 0;
+        sha256 = "bc03dd7adce3ed2f05a98135a3f22224076fd72c8b76f94b858804b97f7a21bd";
+        };
+      default = "r0";
+      };
+    };
   }

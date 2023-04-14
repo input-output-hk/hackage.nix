@@ -112,7 +112,12 @@
         revNum = 3;
         sha256 = "5f0bc6b34b85c5c6a239707de790b2865abc3d4107d91aafa14c7dfeda6a147d";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/broadcast-chan-tests-0.2.1.2-r4-92e69b43f8d98bd4eb03bc88285bcc4671d9bf1e48f1ce2f0c9dde15d3ea38f8.nix;
+        revNum = 4;
+        sha256 = "92e69b43f8d98bd4eb03bc88285bcc4671d9bf1e48f1ce2f0c9dde15d3ea38f8";
+        };
+      default = "r4";
       };
     };
   }

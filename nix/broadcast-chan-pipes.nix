@@ -66,7 +66,12 @@
         revNum = 1;
         sha256 = "25a9ad7f4b08702878dbf62127fd7996c2bce5f65fd752c2dc7acb8137d72fb2";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/broadcast-chan-pipes-0.2.1.1-r2-e032a1bc8689cefc3ca553752d278c962996520e6ae0f07e54074ce2a194ee6f.nix;
+        revNum = 2;
+        sha256 = "e032a1bc8689cefc3ca553752d278c962996520e6ae0f07e54074ce2a194ee6f";
+        };
+      default = "r2";
       };
     };
   }

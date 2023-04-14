@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "30bc6301688b66ee4f124e67392cfb46c898a2bc2d89ece36e5b69a49237c171";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sandwich-hedgehog-0.1.3.0-r0-a92b62b2fa3a8c95ac88909b61ee0ccb4cc8bacba24b29608e2397ebec1cc8c9.nix;
+        revNum = 0;
+        sha256 = "a92b62b2fa3a8c95ac88909b61ee0ccb4cc8bacba24b29608e2397ebec1cc8c9";
+        };
+      default = "r0";
+      };
+    };
   }

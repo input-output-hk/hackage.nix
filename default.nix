@@ -13575,6 +13575,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-client-core" = import ./nix/servant-client-core.nix;
   "servant-client-js" = import ./nix/servant-client-js.nix;
   "servant-client-namedargs" = import ./nix/servant-client-namedargs.nix;
+  "servant-combinators" = import ./nix/servant-combinators.nix;
   "servant-conduit" = import ./nix/servant-conduit.nix;
   "servant-csharp" = import ./nix/servant-csharp.nix;
   "servant-db" = import ./nix/servant-db.nix;
