@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.6.0.1" = {
+    sha256 = "de9cf79be771b5f868773456048f500cdf9b5ad0b3f1e5c5e893265e479317a4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/webauthn-0.6.0.1-r0-6d80e08144d2590dc56fa60b685e2eb6680f9b8d9130982e6b4a2e8ba272d425.nix;
+        revNum = 0;
+        sha256 = "6d80e08144d2590dc56fa60b685e2eb6680f9b8d9130982e6b4a2e8ba272d425";
+        };
+      default = "r0";
+      };
+    };
   }

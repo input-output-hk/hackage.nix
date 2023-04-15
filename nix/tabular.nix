@@ -149,7 +149,12 @@
         revNum = 0;
         sha256 = "f2481e33604cec6d254b133d93716718f2573ff001ed9891fd9df70608451fc5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tabular-0.2.2.8-r1-39809f48fe715825f05276aa37ed157ba834208dc78336f34bab6da641308bd2.nix;
+        revNum = 1;
+        sha256 = "39809f48fe715825f05276aa37ed157ba834208dc78336f34bab6da641308bd2";
+        };
+      default = "r1";
       };
     };
   }

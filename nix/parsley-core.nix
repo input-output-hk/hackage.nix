@@ -240,7 +240,12 @@
         revNum = 0;
         sha256 = "8907fcac8c8f1fd546ba59320d88f6a9a2604ebf024000cf4655d53c112eb81e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/parsley-core-2.2.0.0-r1-b84684082aeb7687a88b28d0986205448624a0d66f7824b7a995a31340bfc023.nix;
+        revNum = 1;
+        sha256 = "b84684082aeb7687a88b28d0986205448624a0d66f7824b7a995a31340bfc023";
+        };
+      default = "r1";
       };
     };
   }

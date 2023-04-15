@@ -5069,6 +5069,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "eventful-sql-common" = import ./nix/eventful-sql-common.nix;
   "eventful-sqlite" = import ./nix/eventful-sqlite.nix;
   "eventful-test-helpers" = import ./nix/eventful-test-helpers.nix;
+  "eventlog-socket" = import ./nix/eventlog-socket.nix;
   "eventlog2html" = import ./nix/eventlog2html.nix;
   "eventloop" = import ./nix/eventloop.nix;
   "eventsource-api" = import ./nix/eventsource-api.nix;
