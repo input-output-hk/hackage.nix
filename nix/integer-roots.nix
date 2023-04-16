@@ -50,7 +50,12 @@
         revNum = 0;
         sha256 = "b56ae45f447d744aad863a655039f0ba7eda551eed402c5b0d263f73140100fa";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/integer-roots-1.0.2.0-r1-67a8b36c783337cb9f51a83adfc657eb8d7724a12c7b3ba186ba70ff7ce2c3b9.nix;
+        revNum = 1;
+        sha256 = "67a8b36c783337cb9f51a83adfc657eb8d7724a12c7b3ba186ba70ff7ce2c3b9";
+        };
+      default = "r1";
       };
     };
   }

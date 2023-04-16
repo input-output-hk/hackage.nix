@@ -16165,6 +16165,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "vector-instances" = import ./nix/vector-instances.nix;
   "vector-instances-collections" = import ./nix/vector-instances-collections.nix;
   "vector-mmap" = import ./nix/vector-mmap.nix;
+  "vector-quicksort" = import ./nix/vector-quicksort.nix;
   "vector-random" = import ./nix/vector-random.nix;
   "vector-read-instances" = import ./nix/vector-read-instances.nix;
   "vector-rotcev" = import ./nix/vector-rotcev.nix;
@@ -16682,6 +16683,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "xml-catalog" = import ./nix/xml-catalog.nix;
   "xml-conduit" = import ./nix/xml-conduit.nix;
   "xml-conduit-decode" = import ./nix/xml-conduit-decode.nix;
+  "xml-conduit-microlens" = import ./nix/xml-conduit-microlens.nix;
   "xml-conduit-parse" = import ./nix/xml-conduit-parse.nix;
   "xml-conduit-selectors" = import ./nix/xml-conduit-selectors.nix;
   "xml-conduit-stylist" = import ./nix/xml-conduit-stylist.nix;

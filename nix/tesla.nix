@@ -153,4 +153,48 @@
       default = "r0";
       };
     };
+  "0.6.0.0" = {
+    sha256 = "947f06e0f4478c2afa82eef1480366cb33f4b4991e4c883b0e214693e4d9477e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tesla-0.6.0.0-r0-2119ccf59b6c9e0b3ee3f53d1400efd96727726d8393b1ec76e26480c2a2de76.nix;
+        revNum = 0;
+        sha256 = "2119ccf59b6c9e0b3ee3f53d1400efd96727726d8393b1ec76e26480c2a2de76";
+        };
+      default = "r0";
+      };
+    };
+  "0.7.0.0" = {
+    sha256 = "79ff1385cc6ac05dec7289536f1b25784a4309eff877db7c2112649114eba200";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tesla-0.7.0.0-r0-a9708972706b11a5b1d96038655b4a1e111dec0bba03d710ef82b2be0e9f9a78.nix;
+        revNum = 0;
+        sha256 = "a9708972706b11a5b1d96038655b4a1e111dec0bba03d710ef82b2be0e9f9a78";
+        };
+      default = "r0";
+      };
+    };
+  "0.7.1.0" = {
+    sha256 = "a17321adf5cce021ad672afdeb0358a44568d4f7941960de4577699e9da939a0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tesla-0.7.1.0-r0-712f6f14e01d86f76fbc73745209cc736e2a0986047b347795f6fa0fe7082a34.nix;
+        revNum = 0;
+        sha256 = "712f6f14e01d86f76fbc73745209cc736e2a0986047b347795f6fa0fe7082a34";
+        };
+      default = "r0";
+      };
+    };
+  "0.7.2.0" = {
+    sha256 = "aa78c28cf3a1976bda08d9623ea942e6291afce344b35c7e92ff648e01e7aec7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tesla-0.7.2.0-r0-befc55063c143e1fb391148c3248afad94ef2c2ae0ba08057a0f678da2b8ee54.nix;
+        revNum = 0;
+        sha256 = "befc55063c143e1fb391148c3248afad94ef2c2ae0ba08057a0f678da2b8ee54";
+        };
+      default = "r0";
+      };
+    };
   }
