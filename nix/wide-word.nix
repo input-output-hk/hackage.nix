@@ -222,7 +222,12 @@
         revNum = 1;
         sha256 = "9bded71a71fcb4c4200b7a7e1fcb84753a63de897480f69b27ca1d9024845950";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/wide-word-0.1.5.0-r2-5d02e6be3fccb48b602193b13a52c59a4c332c360ada99acedec0b04df2707ff.nix;
+        revNum = 2;
+        sha256 = "5d02e6be3fccb48b602193b13a52c59a4c332c360ada99acedec0b04df2707ff";
+        };
+      default = "r2";
       };
     };
   }

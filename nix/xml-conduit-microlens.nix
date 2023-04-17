@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "e69a517f7bdf922abd812dcc1754f531ca468d491f00d0c2ed9686fdcaac147b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xml-conduit-microlens-0.3.0.0-r0-9c693d2776e842643ff8eaf2eed0686402085c14456cbdce6c797083d5a57776.nix;
+        revNum = 0;
+        sha256 = "9c693d2776e842643ff8eaf2eed0686402085c14456cbdce6c797083d5a57776";
+        };
+      default = "r0";
+      };
+    };
   }
