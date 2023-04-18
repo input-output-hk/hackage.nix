@@ -533,7 +533,12 @@
         revNum = 0;
         sha256 = "c6893e159dc20eea6d0b805bfd8d9b73e6a6ba3fe72cc396acdc24fdcd33cc38";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/simple-sendfile-0.2.30-r1-9ee2c84199bb96bad7a445e15aa0476264bea1c7e5651c2b02f11bcaa8b12e3c.nix;
+        revNum = 1;
+        sha256 = "9ee2c84199bb96bad7a445e15aa0476264bea1c7e5651c2b02f11bcaa8b12e3c";
+        };
+      default = "r1";
       };
     };
   "0.2.4" = {

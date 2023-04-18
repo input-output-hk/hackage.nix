@@ -12611,6 +12611,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "random-access-list" = import ./nix/random-access-list.nix;
   "random-bytestring" = import ./nix/random-bytestring.nix;
   "random-class" = import ./nix/random-class.nix;
+  "random-cycle" = import ./nix/random-cycle.nix;
   "random-derive" = import ./nix/random-derive.nix;
   "random-eff" = import ./nix/random-eff.nix;
   "random-effin" = import ./nix/random-effin.nix;

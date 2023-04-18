@@ -73,4 +73,15 @@
       default = "r3";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "0732d53b25fea4822ed8aefdc0aa5586db9a78f67db8cc796adabd614677aaae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/commutative-semigroups-0.1.0.1-r0-1d08a56dee1822cbeb3b0d670acd89da83d3ebdb0c15a8d3a45af8c599de3f2f.nix;
+        revNum = 0;
+        sha256 = "1d08a56dee1822cbeb3b0d670acd89da83d3ebdb0c15a8d3a45af8c599de3f2f";
+        };
+      default = "r0";
+      };
+    };
   }

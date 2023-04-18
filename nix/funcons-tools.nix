@@ -69,6 +69,17 @@
       default = "r0";
       };
     };
+  "0.2.0.15" = {
+    sha256 = "4474b4a349f4e985bba51ad47a4b04c54c7a4a63b1ab82bbf7c873785e3ed479";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/funcons-tools-0.2.0.15-r0-a27c9ce37cd767d63850e4f6a37abf5c3630c39d774e527ad7c944012617d592.nix;
+        revNum = 0;
+        sha256 = "a27c9ce37cd767d63850e4f6a37abf5c3630c39d774e527ad7c944012617d592";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.3" = {
     sha256 = "0933b0193f2a0c2aa099eb06bf865f61ad744e2b10115c00108a4980cc37dc9a";
     revisions = {
