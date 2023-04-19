@@ -955,7 +955,12 @@
         revNum = 2;
         sha256 = "7cd4b6c7983f40eee10263e7b4e48d3adb6b3b4557737a44f46923f9f0e07fec";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/massiv-1.0.0.0-r3-30000a081b798ccf75c0757146721560d105c98b0c0ecdd12582542d0fee7292.nix;
+        revNum = 3;
+        sha256 = "30000a081b798ccf75c0757146721560d105c98b0c0ecdd12582542d0fee7292";
+        };
+      default = "r3";
       };
     };
   "1.0.1.0" = {
@@ -976,7 +981,12 @@
         revNum = 2;
         sha256 = "89d8d52f7edd59aa0a9d35ad7180eca15692df607c7f1a9b3f73e4b7df267fd5";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/massiv-1.0.1.0-r3-529e38646e8e889e250074c5f06e1cfca278512bf9e8f8a4fd9a9d778753af2d.nix;
+        revNum = 3;
+        sha256 = "529e38646e8e889e250074c5f06e1cfca278512bf9e8f8a4fd9a9d778753af2d";
+        };
+      default = "r3";
       };
     };
   "1.0.1.1" = {
@@ -992,7 +1002,12 @@
         revNum = 1;
         sha256 = "41e8eb9c78f3c52163b95e0ea4de7d4a9698be2d5c1b0126cf1413a7476392e5";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/massiv-1.0.1.1-r2-00d2c61a311dc453f43b687c1df70c5ae84c5829e398d13e79da67355fbad82a.nix;
+        revNum = 2;
+        sha256 = "00d2c61a311dc453f43b687c1df70c5ae84c5829e398d13e79da67355fbad82a";
+        };
+      default = "r2";
       };
     };
   "1.0.2.0" = {
@@ -1003,7 +1018,12 @@
         revNum = 0;
         sha256 = "dd9241411d0b7ae04e4b11620d514feca0868a7cd75cb4e75514be3ebca8c615";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/massiv-1.0.2.0-r1-1f47ef429555ad8a3784aefa3bcea56c556feb7c1d61ee4f8625cbaa5c9cb2cb.nix;
+        revNum = 1;
+        sha256 = "1f47ef429555ad8a3784aefa3bcea56c556feb7c1d61ee4f8625cbaa5c9cb2cb";
+        };
+      default = "r1";
       };
     };
   "1.0.3.0" = {
@@ -1014,7 +1034,12 @@
         revNum = 0;
         sha256 = "8748318128c8a6f992870b022743031133e013f1745c88a3cf2b3cbd25d47791";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/massiv-1.0.3.0-r1-69be0304c22fe2a28b2e0bbf13f94c6498716de3c492a5428837d64bcfb02bcb.nix;
+        revNum = 1;
+        sha256 = "69be0304c22fe2a28b2e0bbf13f94c6498716de3c492a5428837d64bcfb02bcb";
+        };
+      default = "r1";
       };
     };
   }

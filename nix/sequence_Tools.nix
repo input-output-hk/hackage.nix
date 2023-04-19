@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "1.5.3.1" = {
+    sha256 = "cec4cc2366071efda73591facbfc552c72a9bcf297964e0d910368ecae724bc0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sequenceTools-1.5.3.1-r0-0b4790812e40a2c61032f80432bb10f0a84c6086390bf87d27044ff4282f4a15.nix;
+        revNum = 0;
+        sha256 = "0b4790812e40a2c61032f80432bb10f0a84c6086390bf87d27044ff4282f4a15";
+        };
+      default = "r0";
+      };
+    };
   }

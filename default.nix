@@ -8682,11 +8682,14 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "involutive-semigroups" = import ./nix/involutive-semigroups.nix;
   "io-capture" = import ./nix/io-capture.nix;
   "io-choice" = import ./nix/io-choice.nix;
+  "io-classes" = import ./nix/io-classes.nix;
+  "io-classes-mtl" = import ./nix/io-classes-mtl.nix;
   "io-machine" = import ./nix/io-machine.nix;
   "io-manager" = import ./nix/io-manager.nix;
   "io-memoize" = import ./nix/io-memoize.nix;
   "io-reactive" = import ./nix/io-reactive.nix;
   "io-region" = import ./nix/io-region.nix;
+  "io-sim" = import ./nix/io-sim.nix;
   "io-storage" = import ./nix/io-storage.nix;
   "io-streams" = import ./nix/io-streams.nix;
   "io-streams-haproxy" = import ./nix/io-streams-haproxy.nix;
@@ -13263,6 +13266,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "safe-failure-cme" = import ./nix/safe-failure-cme.nix;
   "safe-foldable" = import ./nix/safe-foldable.nix;
   "safe-freeze" = import ./nix/safe-freeze.nix;
+  "safe-gen" = import ./nix/safe-gen.nix;
   "safe-globals" = import ./nix/safe-globals.nix;
   "safe-json" = import ./nix/safe-json.nix;
   "safe-lazy-io" = import ./nix/safe-lazy-io.nix;
@@ -13839,6 +13843,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "shunyalib" = import ./nix/shunyalib.nix;
   "shwifty" = import ./nix/shwifty.nix;
   "si-clock" = import ./nix/si-clock.nix;
+  "si-timers" = import ./nix/si-timers.nix;
   "sibe" = import ./nix/sibe.nix;
   "sieve" = import ./nix/sieve.nix;
   "sifflet" = import ./nix/sifflet.nix;
@@ -14556,6 +14561,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "streamly-lz4" = import ./nix/streamly-lz4.nix;
   "streamly-posix" = import ./nix/streamly-posix.nix;
   "streamly-process" = import ./nix/streamly-process.nix;
+  "streamly-statistics" = import ./nix/streamly-statistics.nix;
   "streamproc" = import ./nix/streamproc.nix;
   "streams" = import ./nix/streams.nix;
   "streamt" = import ./nix/streamt.nix;
@@ -14576,7 +14582,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "strict-io" = import ./nix/strict-io.nix;
   "strict-lens" = import ./nix/strict-lens.nix;
   "strict-list" = import ./nix/strict-list.nix;
+  "strict-mvar" = import ./nix/strict-mvar.nix;
   "strict-optics" = import ./nix/strict-optics.nix;
+  "strict-stm" = import ./nix/strict-stm.nix;
   "strict-tuple" = import ./nix/strict-tuple.nix;
   "strict-tuple-lens" = import ./nix/strict-tuple-lens.nix;
   "strict-types" = import ./nix/strict-types.nix;
