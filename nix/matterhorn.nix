@@ -339,6 +339,17 @@
       default = "r0";
       };
     };
+  "50200.18.0" = {
+    sha256 = "9fc77f768077d904a8a9e8eeacfa6904ee3f279eba77780173dce024e578b119";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/matterhorn-50200.18.0-r0-c36600605293dae91170f06e8137cbcd9700e25e3459319c673c99302dd8be48.nix;
+        revNum = 0;
+        sha256 = "c36600605293dae91170f06e8137cbcd9700e25e3459319c673c99302dd8be48";
+        };
+      default = "r0";
+      };
+    };
   "50200.2.0" = {
     sha256 = "7726a207d9e4c9d73ec70006f059c9958bbd3e2dee8520e6d600a1cd5012dc12";
     revisions = {

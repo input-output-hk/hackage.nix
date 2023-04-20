@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "1.7.0" = {
+    sha256 = "1e1bba532b25c6e0a31d2d64285330a737151092a491fd10648f9fd969023a57";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/org-mode-lucid-1.7.0-r0-c35423565c67e7f2c2c64f66c5e57b55b13c632bc54ec0a1dc0b59c538987ab5.nix;
+        revNum = 0;
+        sha256 = "c35423565c67e7f2c2c64f66c5e57b55b13c632bc54ec0a1dc0b59c538987ab5";
+        };
+      default = "r0";
+      };
+    };
   }

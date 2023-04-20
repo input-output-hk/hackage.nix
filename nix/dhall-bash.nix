@@ -429,6 +429,17 @@
       default = "r1";
       };
     };
+  "1.0.41" = {
+    sha256 = "2aeb9316c22ddbc0c9c53ca0b347c49087351f326cba7a1cb95f4265691a5f26";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhall-bash-1.0.41-r0-fcecb1d78169ca6c5c57daa80051b988f71657a70423c9ecf687adb20233a5c3.nix;
+        revNum = 0;
+        sha256 = "fcecb1d78169ca6c5c57daa80051b988f71657a70423c9ecf687adb20233a5c3";
+        };
+      default = "r0";
+      };
+    };
   "1.0.5" = {
     sha256 = "db67c345ae2e78ad10df2aa9e8aa4126ccc556d47d79498ce6c9a4af51a02cb2";
     revisions = {

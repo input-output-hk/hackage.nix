@@ -5589,6 +5589,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fractal" = import ./nix/fractal.nix;
   "fractals" = import ./nix/fractals.nix;
   "fraction" = import ./nix/fraction.nix;
+  "fractionizer" = import ./nix/fractionizer.nix;
   "frag" = import ./nix/frag.nix;
   "frame" = import ./nix/frame.nix;
   "frame-markdown" = import ./nix/frame-markdown.nix;
@@ -13245,6 +13246,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rwlock" = import ./nix/rwlock.nix;
   "rws" = import ./nix/rws.nix;
   "rz-pipe" = import ./nix/rz-pipe.nix;
+  "rzk" = import ./nix/rzk.nix;
   "s-cargot" = import ./nix/s-cargot.nix;
   "s-cargot-letbind" = import ./nix/s-cargot-letbind.nix;
   "s-expression" = import ./nix/s-expression.nix;

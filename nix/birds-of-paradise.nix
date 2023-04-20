@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.2.1.2" = {
+    sha256 = "912aab2d0e27f989d6257559e282e142c3400883d609ccb9a6fdb4f63424a0f3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/birds-of-paradise-0.2.1.2-r0-b0d89d5232e925347b0ef3d24d8649afb47a02dd2849b99fc1c6b9099a6fb41c.nix;
+        revNum = 0;
+        sha256 = "b0d89d5232e925347b0ef3d24d8649afb47a02dd2849b99fc1c6b9099a6fb41c";
+        };
+      default = "r0";
+      };
+    };
   }

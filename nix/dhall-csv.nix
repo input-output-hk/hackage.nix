@@ -63,4 +63,15 @@
       default = "r1";
       };
     };
+  "1.0.4" = {
+    sha256 = "8bf83d43248ece4ea3014c82ad083fd5e55f041b0877c1a0c081962c989cb9ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhall-csv-1.0.4-r0-d980841cc887264d5499c9ecb0ce428340c7d60c28ded879e1916e30a9743c37.nix;
+        revNum = 0;
+        sha256 = "d980841cc887264d5499c9ecb0ce428340c7d60c28ded879e1916e30a9743c37";
+        };
+      default = "r0";
+      };
+    };
   }

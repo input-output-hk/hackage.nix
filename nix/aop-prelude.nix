@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.4.1.2" = {
+    sha256 = "de049622c0edb1c38d03d7b9c0d10b8a0decf689e5ef4051dd4933eea242583a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aop-prelude-0.4.1.2-r0-101ef6d23e3486616948e966621fa56c5ea05a35e8d6994a1ced84cca611a6b6.nix;
+        revNum = 0;
+        sha256 = "101ef6d23e3486616948e966621fa56c5ea05a35e8d6994a1ced84cca611a6b6";
+        };
+      default = "r0";
+      };
+    };
   }
