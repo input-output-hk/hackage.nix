@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.6.0" = {
+    sha256 = "ab51abc737e8480a4bc055a0bd744e80d6851ac57f3cb125dedbbf1d64d91c92";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/streamly-lmdb-0.6.0-r0-aeeb4cf4c4724e61da39e280f076f419d9aad6d924b6b7f8b65d2242933ac2e9.nix;
+        revNum = 0;
+        sha256 = "aeeb4cf4c4724e61da39e280f076f419d9aad6d924b6b7f8b65d2242933ac2e9";
+        };
+      default = "r0";
+      };
+    };
   }

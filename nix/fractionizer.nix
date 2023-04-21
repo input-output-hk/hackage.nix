@@ -21,4 +21,37 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "9d3b2e401d75f942e926b85546ef37347ed585d853ed09f144588b3582ca1ae3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fractionizer-0.2.0.0-r0-7e53cb81fd6b18e97e0acd336dd64be45a53a884ccd2fe5054c98b3ba82a6be8.nix;
+        revNum = 0;
+        sha256 = "7e53cb81fd6b18e97e0acd336dd64be45a53a884ccd2fe5054c98b3ba82a6be8";
+        };
+      default = "r0";
+      };
+    };
+  "0.3.0.0" = {
+    sha256 = "a9435aed815a6f9b192b83fecf89298ddc71cbcfdef1dffa829682b34c715ca6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fractionizer-0.3.0.0-r0-4c8112a3d62521492fc7e89e0b129777d7fc8dbc20645092467040897611588a.nix;
+        revNum = 0;
+        sha256 = "4c8112a3d62521492fc7e89e0b129777d7fc8dbc20645092467040897611588a";
+        };
+      default = "r0";
+      };
+    };
+  "0.4.0.0" = {
+    sha256 = "8001dc0a9c665752d88baa7d47a4ca77e5ade723776e111ca16dcfe470386ac2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fractionizer-0.4.0.0-r0-554bebfa0d633e7b7e55817738ae2796ae9f599405bc15eb4fb973a2daca8e3c.nix;
+        revNum = 0;
+        sha256 = "554bebfa0d633e7b7e55817738ae2796ae9f599405bc15eb4fb973a2daca8e3c";
+        };
+      default = "r0";
+      };
+    };
   }

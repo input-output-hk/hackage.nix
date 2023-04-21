@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "1.0.0.1" = {
+    sha256 = "f62768a58eb891f7832dad3015a316d4fc457d0502468863a9ea4d74c2605984";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/si-timers-1.0.0.1-r0-30b3022ee380c69a1c94035690fac4a8feec881264a72fbcca1f5e77bcb2b799.nix;
+        revNum = 0;
+        sha256 = "30b3022ee380c69a1c94035690fac4a8feec881264a72fbcca1f5e77bcb2b799";
+        };
+      default = "r0";
+      };
+    };
   }
