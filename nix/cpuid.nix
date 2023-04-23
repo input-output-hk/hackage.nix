@@ -92,4 +92,15 @@
       default = "r1";
       };
     };
+  "0.2.3.1" = {
+    sha256 = "640e258a81d4da3544281b61c22cc3670527932832a1ecc117b46148dde7e359";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cpuid-0.2.3.1-r0-cac5a1ad82e7557c78637a4e5054eb3ccf7e488bcfe4e58076cb1441e06c2ca6.nix;
+        revNum = 0;
+        sha256 = "cac5a1ad82e7557c78637a4e5054eb3ccf7e488bcfe4e58076cb1441e06c2ca6";
+        };
+      default = "r0";
+      };
+    };
   }

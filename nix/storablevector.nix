@@ -144,7 +144,12 @@
         revNum = 1;
         sha256 = "91786d7fd80091ad818cf22323ca683ad4d75e050f41814bae1c765766feea83";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/storablevector-0.2.13.1-r2-1d87fadf748805a013c929738f61d4c4c46ced3c153f51a187704a54ab3be916.nix;
+        revNum = 2;
+        sha256 = "1d87fadf748805a013c929738f61d4c4c46ced3c153f51a187704a54ab3be916";
+        };
+      default = "r2";
       };
     };
   "0.2.2" = {

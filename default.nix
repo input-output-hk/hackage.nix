@@ -3712,6 +3712,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "contravariant" = import ./nix/contravariant.nix;
   "contravariant-extras" = import ./nix/contravariant-extras.nix;
   "control" = import ./nix/control.nix;
+  "control-block" = import ./nix/control-block.nix;
   "control-bool" = import ./nix/control-bool.nix;
   "control-dotdotdot" = import ./nix/control-dotdotdot.nix;
   "control-dsl" = import ./nix/control-dsl.nix;
@@ -4326,6 +4327,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "descript-lang" = import ./nix/descript-lang.nix;
   "descriptive" = import ./nix/descriptive.nix;
   "desert" = import ./nix/desert.nix;
+  "desktop-portal" = import ./nix/desktop-portal.nix;
   "despair" = import ./nix/despair.nix;
   "deterministic-game-engine" = import ./nix/deterministic-game-engine.nix;
   "detour-via-sci" = import ./nix/detour-via-sci.nix;
@@ -15666,6 +15668,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "twill" = import ./nix/twill.nix;
   "twiml" = import ./nix/twiml.nix;
   "twine" = import ./nix/twine.nix;
+  "twirl" = import ./nix/twirl.nix;
   "twirp" = import ./nix/twirp.nix;
   "twisty" = import ./nix/twisty.nix;
   "twitch" = import ./nix/twitch.nix;
