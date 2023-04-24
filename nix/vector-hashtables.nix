@@ -56,7 +56,12 @@
         revNum = 0;
         sha256 = "db5354c0589cae0a4a52478fc866cdf92ea731a25f1b6ae4387dc9d79a694ec6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/vector-hashtables-0.1.1.2-r1-432cbba9679cab942f112053a6738490609493062671a7396bcc326cab68a7c6.nix;
+        revNum = 1;
+        sha256 = "432cbba9679cab942f112053a6738490609493062671a7396bcc326cab68a7c6";
+        };
+      default = "r1";
       };
     };
   }

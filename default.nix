@@ -7383,6 +7383,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "heterogeneous-list-literals" = import ./nix/heterogeneous-list-literals.nix;
   "heterolist" = import ./nix/heterolist.nix;
   "hetris" = import ./nix/hetris.nix;
+  "hetzner" = import ./nix/hetzner.nix;
   "heukarya" = import ./nix/heukarya.nix;
   "hevm" = import ./nix/hevm.nix;
   "hevolisa" = import ./nix/hevolisa.nix;

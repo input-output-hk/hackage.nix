@@ -153,6 +153,17 @@
       default = "r0";
       };
     };
+  "1.1.1.10" = {
+    sha256 = "42d3d26dd501525e5df4b3f83bb4004f468b21d26b0bf6c6879863d895550593";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pointfree-1.1.1.10-r0-571dba849b6d4b0c4b6aea22dc0beb2d0726a05fe6f59a533135d73ffa305e42.nix;
+        revNum = 0;
+        sha256 = "571dba849b6d4b0c4b6aea22dc0beb2d0726a05fe6f59a533135d73ffa305e42";
+        };
+      default = "r0";
+      };
+    };
   "1.1.1.2" = {
     sha256 = "5d398b4769b47918df05ef5693c182fb5d070f75414e65e7110b98f1328ba92b";
     revisions = {

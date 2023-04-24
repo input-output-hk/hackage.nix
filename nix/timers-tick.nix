@@ -169,4 +169,15 @@
       default = "r0";
       };
     };
+  "0.5.0.4" = {
+    sha256 = "b6a69b333ff677a7e0a9f828e00810df207198bad81c71b7c776c6d996b42060";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/timers-tick-0.5.0.4-r0-b8def97226d770575c761fd90d9375862d6f04b0b983989e1d124e0d02aa163a.nix;
+        revNum = 0;
+        sha256 = "b8def97226d770575c761fd90d9375862d6f04b0b983989e1d124e0d02aa163a";
+        };
+      default = "r0";
+      };
+    };
   }
