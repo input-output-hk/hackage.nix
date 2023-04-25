@@ -22,7 +22,12 @@
         revNum = 3;
         sha256 = "f91e6e7922f02a064dd8c9cb8c35eef2574823d4296f6055c3252dfd5395cd44";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/password-types-1.0.0.0-r4-67c60556adc1c2d93bff589b3cfb6524c46b5aa669275990895654d52d088d4d.nix;
+        revNum = 4;
+        sha256 = "67c60556adc1c2d93bff589b3cfb6524c46b5aa669275990895654d52d088d4d";
+        };
+      default = "r4";
       };
     };
   }

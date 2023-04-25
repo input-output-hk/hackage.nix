@@ -335,4 +335,15 @@
       default = "r0";
       };
     };
+  "0.8.1.0" = {
+    sha256 = "d3dc47581c8484220e57c8f827e0d44f8c04f054aba9ba1797ee15b897e3b813";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/logict-0.8.1.0-r0-6c7e89252b7f1963bd472f1345154d9d32eb72bd85c9b6e24f3c6eb9c4401426.nix;
+        revNum = 0;
+        sha256 = "6c7e89252b7f1963bd472f1345154d9d32eb72bd85c9b6e24f3c6eb9c4401426";
+        };
+      default = "r0";
+      };
+    };
   }
