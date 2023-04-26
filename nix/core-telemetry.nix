@@ -284,4 +284,26 @@
       default = "r0";
       };
     };
+  "0.2.9.0" = {
+    sha256 = "fa399b6a867de7bc59ed98e744b8c777ae8bd4d4571315010de5c5e602946105";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/core-telemetry-0.2.9.0-r0-91e2f4b76f9b4ce67f94bfd3558ac65fce6cfd3ede24656b3eb088045b620db2.nix;
+        revNum = 0;
+        sha256 = "91e2f4b76f9b4ce67f94bfd3558ac65fce6cfd3ede24656b3eb088045b620db2";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.9.1" = {
+    sha256 = "7417d39a5cca2230fe2a85e05d038fb9b51b6a7615c363302dad4f45eae76674";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/core-telemetry-0.2.9.1-r0-f28508ca365648ba55d5ae8501732c50ad1d489060782429a6f7f4f821c0877c.nix;
+        revNum = 0;
+        sha256 = "f28508ca365648ba55d5ae8501732c50ad1d489060782429a6f7f4f821c0877c";
+        };
+      default = "r0";
+      };
+    };
   }

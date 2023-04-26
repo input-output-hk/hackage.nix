@@ -132,7 +132,12 @@
         revNum = 3;
         sha256 = "b6fe8daf2a9402fc38162f871d3f1f590804bdb7eb014472418e49d0563f305d";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/generics-sop-lens-0.2.0.1-r4-bbe9026bb3eb562de9a4ba53b49c0450555d56718eea54842a772bf511b77e58.nix;
+        revNum = 4;
+        sha256 = "bbe9026bb3eb562de9a4ba53b49c0450555d56718eea54842a772bf511b77e58";
+        };
+      default = "r4";
       };
     };
   }

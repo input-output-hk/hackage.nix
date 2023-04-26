@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.5.3" = {
+    sha256 = "df390fe7792ed2a3875c74afe713d6f707ef38bbe4fb425d27d8ab490cd20eb2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zephyr-0.5.3-r0-a86931d6860c5f7a6c9a742314b964b7ba147c4eeeb111b04559cc356bfb2256.nix;
+        revNum = 0;
+        sha256 = "a86931d6860c5f7a6c9a742314b964b7ba147c4eeeb111b04559cc356bfb2256";
+        };
+      default = "r0";
+      };
+    };
   }

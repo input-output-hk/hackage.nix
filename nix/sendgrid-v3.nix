@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "1.0.0.1" = {
+    sha256 = "376662499e34c2865e20eddfe61a951f717991e1cd0020ebe118ec601199da12";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sendgrid-v3-1.0.0.1-r0-ed33200f276a613bdef22b51d4fbe0ec9b4f89c047bad7643786a76982d00d9d.nix;
+        revNum = 0;
+        sha256 = "ed33200f276a613bdef22b51d4fbe0ec9b4f89c047bad7643786a76982d00d9d";
+        };
+      default = "r0";
+      };
+    };
   }

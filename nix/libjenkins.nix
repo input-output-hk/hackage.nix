@@ -164,4 +164,15 @@
       default = "r0";
       };
     };
+  "0.9.0" = {
+    sha256 = "342a38acfc5076bde3c2e152055a18dfc92e5bdbf59f366bd0d0eb5e42c7069a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libjenkins-0.9.0-r0-ac7465255d0605bc6d7318128530c5e119fdf716d6fd84834342d9cec69b6671.nix;
+        revNum = 0;
+        sha256 = "ac7465255d0605bc6d7318128530c5e119fdf716d6fd84834342d9cec69b6671";
+        };
+      default = "r0";
+      };
+    };
   }

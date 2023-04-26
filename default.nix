@@ -9350,6 +9350,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ld-intervals" = import ./nix/ld-intervals.nix;
   "lda" = import ./nix/lda.nix;
   "ldap-client" = import ./nix/ldap-client.nix;
+  "ldap-client-og" = import ./nix/ldap-client-og.nix;
   "ldap-scim-bridge" = import ./nix/ldap-scim-bridge.nix;
   "ldapply" = import ./nix/ldapply.nix;
   "ldif" = import ./nix/ldif.nix;
