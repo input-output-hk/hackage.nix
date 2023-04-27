@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "7680ba19418199a19780f2dc80f21e4935b11a22dd98493604c62ba9db135551";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/th-letrec-0.1-r1-c877bc092a80658fda470bccc92f160c611b8d45e57bd26877286633c174dcb8.nix;
+        revNum = 1;
+        sha256 = "c877bc092a80658fda470bccc92f160c611b8d45e57bd26877286633c174dcb8";
+        };
+      default = "r1";
       };
     };
   }

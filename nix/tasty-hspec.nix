@@ -389,4 +389,15 @@
       default = "r1";
       };
     };
+  "1.2.0.4" = {
+    sha256 = "d1a273cbe653c23422c14e99672f7cd64e07f85bb019f95fef095db8e5b461c2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-hspec-1.2.0.4-r0-4c9204f3c62e2bc4d9ca342a27584fffe430e2330b11f56f2e43c1d9c06512b5.nix;
+        revNum = 0;
+        sha256 = "4c9204f3c62e2bc4d9ca342a27584fffe430e2330b11f56f2e43c1d9c06512b5";
+        };
+      default = "r0";
+      };
+    };
   }

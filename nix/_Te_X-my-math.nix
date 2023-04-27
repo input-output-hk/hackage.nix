@@ -91,4 +91,15 @@
       default = "r1";
       };
     };
+  "0.203.0.0" = {
+    sha256 = "1efaf840bb7499953f03a336f2df2c2958cb5dc6e195a2ac9639a9528f5d880d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/TeX-my-math-0.203.0.0-r0-a73cde15789e29feae9897b9b2fb4ab0aa34f5065c20b53b42038e4dfdd7d4cc.nix;
+        revNum = 0;
+        sha256 = "a73cde15789e29feae9897b9b2fb4ab0aa34f5065c20b53b42038e4dfdd7d4cc";
+        };
+      default = "r0";
+      };
+    };
   }

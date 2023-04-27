@@ -43,7 +43,12 @@
         revNum = 5;
         sha256 = "6a181f5bfa024fbe27336c0cda70d57dcae32817a24c5a4ff09c5d6c405d6ebe";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/zinza-0.2-r6-0e7320c51febc6656ed4d4f893af4ae4b800a7eb2477c6eee5c10f3f2966a36b.nix;
+        revNum = 6;
+        sha256 = "0e7320c51febc6656ed4d4f893af4ae4b800a7eb2477c6eee5c10f3f2966a36b";
+        };
+      default = "r6";
       };
     };
   }
