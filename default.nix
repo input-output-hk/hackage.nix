@@ -16352,6 +16352,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wai-middleware-validation" = import ./nix/wai-middleware-validation.nix;
   "wai-middleware-verbs" = import ./nix/wai-middleware-verbs.nix;
   "wai-predicates" = import ./nix/wai-predicates.nix;
+  "wai-problem-details" = import ./nix/wai-problem-details.nix;
   "wai-rate-limit" = import ./nix/wai-rate-limit.nix;
   "wai-rate-limit-postgres" = import ./nix/wai-rate-limit-postgres.nix;
   "wai-rate-limit-redis" = import ./nix/wai-rate-limit-redis.nix;

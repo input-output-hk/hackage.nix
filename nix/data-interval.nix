@@ -288,7 +288,12 @@
         revNum = 1;
         sha256 = "ed76abd0758afe5c79ba9cb4b58ada54f09f5388830c35959048b22ebea4fc2c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/data-interval-2.1.1-r2-bc4a1f8e06d757673a4ecd1ec1fdae11cb7399bdf0cea131c76664bd80475af1.nix;
+        revNum = 2;
+        sha256 = "bc4a1f8e06d757673a4ecd1ec1fdae11cb7399bdf0cea131c76664bd80475af1";
+        };
+      default = "r2";
       };
     };
   }

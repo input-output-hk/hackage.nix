@@ -271,4 +271,15 @@
       default = "r1";
       };
     };
+  "0.4.3" = {
+    sha256 = "2472487ea6c5b3cddf60a8e08c0370081aaf57baf2d216d6160b5c6d1477aa1a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unbound-generics-0.4.3-r0-12209c0049000d0dd8c3eb6013d0278a8b269a2421d9758083aab9f58c4b6b4c.nix;
+        revNum = 0;
+        sha256 = "12209c0049000d0dd8c3eb6013d0278a8b269a2421d9758083aab9f58c4b6b4c";
+        };
+      default = "r0";
+      };
+    };
   }

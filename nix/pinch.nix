@@ -234,4 +234,15 @@
       default = "r0";
       };
     };
+  "0.4.3.0" = {
+    sha256 = "e1ace5d58ca0aafeda6a43aefb0d08e076f162a3535f42567c3d0fae32ab37d5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pinch-0.4.3.0-r0-2b0768f65df4bf2bad55a7040392faeefbab49607bc398e9dda8adb21581e146.nix;
+        revNum = 0;
+        sha256 = "2b0768f65df4bf2bad55a7040392faeefbab49607bc398e9dda8adb21581e146";
+        };
+      default = "r0";
+      };
+    };
   }
