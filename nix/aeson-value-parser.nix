@@ -384,6 +384,17 @@
       default = "r0";
       };
     };
+  "0.19.7.1" = {
+    sha256 = "918cf5b36595ee9479c2d6e06bc055d268dc9e4ba417e26062cdc1f042a4c2f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-value-parser-0.19.7.1-r0-c6ce92198a97ac957322afb754977b6e47a4f2123a2f58de2caec5a56e000359.nix;
+        revNum = 0;
+        sha256 = "c6ce92198a97ac957322afb754977b6e47a4f2123a2f58de2caec5a56e000359";
+        };
+      default = "r0";
+      };
+    };
   "0.9.0" = {
     sha256 = "f53c0bd8a4fedb71ed74a2019b2d601ca3d315ae0db332e4f49d88f2ea68de8f";
     revisions = {
