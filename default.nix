@@ -4473,6 +4473,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "directory-contents" = import ./nix/directory-contents.nix;
   "directory-layout" = import ./nix/directory-layout.nix;
   "directory-listing-webpage-parser" = import ./nix/directory-listing-webpage-parser.nix;
+  "directory-ospath-streaming" = import ./nix/directory-ospath-streaming.nix;
   "directory-tree" = import ./nix/directory-tree.nix;
   "direm" = import ./nix/direm.nix;
   "dirfiles" = import ./nix/dirfiles.nix;

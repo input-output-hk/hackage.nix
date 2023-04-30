@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.0.0.3" = {
+    sha256 = "425b40285c5272de852aee5202a0c19350d9ddad8a6e62e7680aea14355d14e0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sydtest-discover-0.0.0.3-r0-21f41a9497816e66129ca3033ddb66d255f2892e015ef96b0c1c3d5552f0fdcc.nix;
+        revNum = 0;
+        sha256 = "21f41a9497816e66129ca3033ddb66d255f2892e015ef96b0c1c3d5552f0fdcc";
+        };
+      default = "r0";
+      };
+    };
   }
