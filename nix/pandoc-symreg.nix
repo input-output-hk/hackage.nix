@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "bc12f788c414ac235537a460113a06a33721e1b3f8ba49fcdeb0a01f51059345";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-symreg-0.2.0.0-r0-ba441b9f5b4eedfac5c393446ef614a54133b3fb50e39060ab37e4204ba5f8b9.nix;
+        revNum = 0;
+        sha256 = "ba441b9f5b4eedfac5c393446ef614a54133b3fb50e39060ab37e4204ba5f8b9";
+        };
+      default = "r0";
+      };
+    };
   }

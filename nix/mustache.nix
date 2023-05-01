@@ -472,4 +472,15 @@
       default = "r0";
       };
     };
+  "2.4.2" = {
+    sha256 = "2286c035fe455e50b0f4b55c0fdec7c1ca802ee2077c87752cba9ef37c760f92";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mustache-2.4.2-r0-15ca37e1763bb648f185e94d84acf0e21bbeb1af085d20f0143688cb1c1f865f.nix;
+        revNum = 0;
+        sha256 = "15ca37e1763bb648f185e94d84acf0e21bbeb1af085d20f0143688cb1c1f865f";
+        };
+      default = "r0";
+      };
+    };
   }
