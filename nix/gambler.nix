@@ -89,7 +89,12 @@
         revNum = 0;
         sha256 = "13be127baf1f719f59ea0995296ed9386db8f478e770adc63fe76df8c090a090";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/gambler-0.4.1.0-r1-e13dae0c65f8d1671501f717c702aa3efe16d903f2c805c617d0723f85941b16.nix;
+        revNum = 1;
+        sha256 = "e13dae0c65f8d1671501f717c702aa3efe16d903f2c805c617d0723f85941b16";
+        };
+      default = "r1";
       };
     };
   }

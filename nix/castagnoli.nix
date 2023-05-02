@@ -15,4 +15,15 @@
       default = "r1";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "df623d39ccd2180b1698685ea842a110d01b56cf8ef51dc7a93a1fac40a6f6cc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/castagnoli-0.2.0.0-r0-349d4e0b1213330c55a13cd7d2ce5d5309a0e710e5ac58ba6180a0423ba9e0d9.nix;
+        revNum = 0;
+        sha256 = "349d4e0b1213330c55a13cd7d2ce5d5309a0e710e5ac58ba6180a0423ba9e0d9";
+        };
+      default = "r0";
+      };
+    };
   }

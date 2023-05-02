@@ -71,7 +71,17 @@
         revNum = 4;
         sha256 = "65e70cff724f0c292d39b164c35f1159f257acfcff844ca00d853cab83917167";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/hash-addressed-0.2.0.1-r5-364351e2fc6b07935751fb039e0574f764b2c92f2e030e90016c1be23651d3df.nix;
+        revNum = 5;
+        sha256 = "364351e2fc6b07935751fb039e0574f764b2c92f2e030e90016c1be23651d3df";
+        };
+      r6 = {
+        nix = import ../hackage/hash-addressed-0.2.0.1-r6-bcf262f0d40ea66b6a21aad81cc8e4c495509b58870e88c5a3ee7ad737548321.nix;
+        revNum = 6;
+        sha256 = "bcf262f0d40ea66b6a21aad81cc8e4c495509b58870e88c5a3ee7ad737548321";
+        };
+      default = "r6";
       };
     };
   }

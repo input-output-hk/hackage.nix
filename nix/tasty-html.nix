@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.4.2.0" = {
+    sha256 = "c192af529af4206303aed0f55d6399d22ba8b10bf085a3780b99295d3a575378";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-html-0.4.2.0-r0-6ca8d2e5f1f9ba231c3a7b06b169a6502e2999aedd325e0cd451bbdf386e0e06.nix;
+        revNum = 0;
+        sha256 = "6ca8d2e5f1f9ba231c3a7b06b169a6502e2999aedd325e0cd451bbdf386e0e06";
+        };
+      default = "r0";
+      };
+    };
   }

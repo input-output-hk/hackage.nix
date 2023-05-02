@@ -70,4 +70,15 @@
       default = "r0";
       };
     };
+  "0.1.4" = {
+    sha256 = "77c414191e67741b2e973c0cb77d3cb4355e5c0291a7e03f813e9ab948db30fd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jsonl-conduit-0.1.4-r0-0dd257a29a490049dc70e3047cd6f42f888903777d57fd152072b371021703ed.nix;
+        revNum = 0;
+        sha256 = "0dd257a29a490049dc70e3047cd6f42f888903777d57fd152072b371021703ed";
+        };
+      default = "r0";
+      };
+    };
   }

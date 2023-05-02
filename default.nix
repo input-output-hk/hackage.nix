@@ -14943,6 +14943,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tasty-autocollect" = import ./nix/tasty-autocollect.nix;
   "tasty-bdd" = import ./nix/tasty-bdd.nix;
   "tasty-bench" = import ./nix/tasty-bench.nix;
+  "tasty-bench-fit" = import ./nix/tasty-bench-fit.nix;
   "tasty-checklist" = import ./nix/tasty-checklist.nix;
   "tasty-dejafu" = import ./nix/tasty-dejafu.nix;
   "tasty-discover" = import ./nix/tasty-discover.nix;

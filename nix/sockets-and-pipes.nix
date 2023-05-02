@@ -72,4 +72,15 @@
       default = "r4";
       };
     };
+  "1.0.0.0" = {
+    sha256 = "99b7d28fad3434351462ed3d15e35a9676354b035c4510d9cf40e56816588400";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sockets-and-pipes-1.0.0.0-r0-0e45da3787c0954aaa2fc7aae4462a1ffcb2f551b188cc8124ca1b9a85452054.nix;
+        revNum = 0;
+        sha256 = "0e45da3787c0954aaa2fc7aae4462a1ffcb2f551b188cc8124ca1b9a85452054";
+        };
+      default = "r0";
+      };
+    };
   }

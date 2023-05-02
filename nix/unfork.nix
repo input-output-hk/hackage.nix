@@ -23,7 +23,12 @@
         revNum = 0;
         sha256 = "d04b7bf9d33a7fceadbf8113fce4c848385f2c06387ec85de0f357048e5b725e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/unfork-1.0.0.1-r1-b6a21112fcd269c965ee39112e8ed11242870d323f760983674292bfe83378d0.nix;
+        revNum = 1;
+        sha256 = "b6a21112fcd269c965ee39112e8ed11242870d323f760983674292bfe83378d0";
+        };
+      default = "r1";
       };
     };
   }
