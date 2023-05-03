@@ -252,4 +252,15 @@
       default = "r0";
       };
     };
+  "0.6.0.0" = {
+    sha256 = "91b48e14b3027b0901580ae3e3bbde1d01fe144ec26aa40c83f519c6f6622947";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-tags-plugin-0.6.0.0-r0-f95cda18d368b72d462cc778a52402a7df8be20641c2d8243197be96723a6357.nix;
+        revNum = 0;
+        sha256 = "f95cda18d368b72d462cc778a52402a7df8be20641c2d8243197be96723a6357";
+        };
+      default = "r0";
+      };
+    };
   }

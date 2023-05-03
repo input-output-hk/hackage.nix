@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.1.2" = {
+    sha256 = "23814c7373875921cf7db2af4117e414fe8c4150e8568a7262858f985e2be853";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/map-reduce-folds-0.1.2-r0-6b45e0c65e62e472b5c8d9e0277c7437c401e3e0b7395ca04f6a682e43eb0a41.nix;
+        revNum = 0;
+        sha256 = "6b45e0c65e62e472b5c8d9e0277c7437c401e3e0b7395ca04f6a682e43eb0a41";
+        };
+      default = "r0";
+      };
+    };
   }

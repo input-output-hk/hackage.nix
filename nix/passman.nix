@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.3.1.1" = {
+    sha256 = "0cb09bb55d2f5daf445518c677a9f573e2fee81c56d369677683dc0a613801ff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/passman-0.3.1.1-r0-01e168b6057f784120d92ee6634641e49a734f48540c852987b2434d06e88a16.nix;
+        revNum = 0;
+        sha256 = "01e168b6057f784120d92ee6634641e49a734f48540c852987b2434d06e88a16";
+        };
+      default = "r0";
+      };
+    };
   }

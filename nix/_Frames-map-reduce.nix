@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.4.1.2" = {
+    sha256 = "9d3e29c8a09bfdc91b9badf793dbf9e247c6da9120071bcd133812d0ae1ef5cd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Frames-map-reduce-0.4.1.2-r0-2a56b5597175df4f88a98eafc90e8a078d66fbba5b7671cf8a4db70589ff0b99.nix;
+        revNum = 0;
+        sha256 = "2a56b5597175df4f88a98eafc90e8a078d66fbba5b7671cf8a4db70589ff0b99";
+        };
+      default = "r0";
+      };
+    };
   }
