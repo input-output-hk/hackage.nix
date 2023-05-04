@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.0.7.0" = {
+    sha256 = "dad001810a33270bfb4b39b57b30775792744e405fd396ea6b2c84049666ca1b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monomer-flatpak-example-0.0.7.0-r0-643adc00ad1d2e5aa7c3a359e5c003b5ccdf10bb7ba3260957bbe42b8e1cd537.nix;
+        revNum = 0;
+        sha256 = "643adc00ad1d2e5aa7c3a359e5c003b5ccdf10bb7ba3260957bbe42b8e1cd537";
+        };
+      default = "r0";
+      };
+    };
   }
