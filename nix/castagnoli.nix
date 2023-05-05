@@ -23,7 +23,12 @@
         revNum = 0;
         sha256 = "349d4e0b1213330c55a13cd7d2ce5d5309a0e710e5ac58ba6180a0423ba9e0d9";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/castagnoli-0.2.0.0-r1-8b8de67d24b3d5a898c3e37a50bad4ab301fdb208cdf4ade0ec1a51c9f24d75c.nix;
+        revNum = 1;
+        sha256 = "8b8de67d24b3d5a898c3e37a50bad4ab301fdb208cdf4ade0ec1a51c9f24d75c";
+        };
+      default = "r1";
       };
     };
   }

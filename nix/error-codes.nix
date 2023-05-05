@@ -23,7 +23,12 @@
         revNum = 0;
         sha256 = "3a36d70c6c306a206eb04a5ee24f2f9d0e81ad08f44965985785e7383deb6bc1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/error-codes-0.1.0.1-r1-b4226665c58211562d87fda0ad27e2acf64fe7da7bd1547cca7db66dbec5466c.nix;
+        revNum = 1;
+        sha256 = "b4226665c58211562d87fda0ad27e2acf64fe7da7bd1547cca7db66dbec5466c";
+        };
+      default = "r1";
       };
     };
   }

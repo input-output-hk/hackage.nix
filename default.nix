@@ -8883,6 +8883,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "jose" = import ./nix/jose.nix;
   "jose-jwt" = import ./nix/jose-jwt.nix;
   "jot" = import ./nix/jot.nix;
+  "journalctl-stream" = import ./nix/journalctl-stream.nix;
   "joy-rewrite" = import ./nix/joy-rewrite.nix;
   "jpeg" = import ./nix/jpeg.nix;
   "jpl-horizons-api" = import ./nix/jpl-horizons-api.nix;

@@ -59,4 +59,15 @@
       default = "r0";
       };
     };
+  "1.0.5" = {
+    sha256 = "4c182fbdcc3d1ff56a971ecf11a7d01b27654c676e1d725a8103cb747729ded0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/webgear-core-1.0.5-r0-162a3fd37e1ffdf37b52f12b577fd75fbcf8ea08f14442b06bbf7448026a088d.nix;
+        revNum = 0;
+        sha256 = "162a3fd37e1ffdf37b52f12b577fd75fbcf8ea08f14442b06bbf7448026a088d";
+        };
+      default = "r0";
+      };
+    };
   }
