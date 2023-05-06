@@ -7876,9 +7876,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-opentelemetry-instrumentation-wai" = import ./nix/hs-opentelemetry-instrumentation-wai.nix;
   "hs-opentelemetry-instrumentation-yesod" = import ./nix/hs-opentelemetry-instrumentation-yesod.nix;
   "hs-opentelemetry-otlp" = import ./nix/hs-opentelemetry-otlp.nix;
+  "hs-opentelemetry-propagator-b3" = import ./nix/hs-opentelemetry-propagator-b3.nix;
   "hs-opentelemetry-propagator-w3c" = import ./nix/hs-opentelemetry-propagator-w3c.nix;
   "hs-opentelemetry-sdk" = import ./nix/hs-opentelemetry-sdk.nix;
   "hs-opentelemetry-utils-exceptions" = import ./nix/hs-opentelemetry-utils-exceptions.nix;
+  "hs-opentelemetry-vendor-honeycomb" = import ./nix/hs-opentelemetry-vendor-honeycomb.nix;
   "hs-pattrans" = import ./nix/hs-pattrans.nix;
   "hs-pgms" = import ./nix/hs-pgms.nix;
   "hs-php-session" = import ./nix/hs-php-session.nix;

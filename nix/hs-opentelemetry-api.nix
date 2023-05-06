@@ -98,4 +98,26 @@
       default = "r0";
       };
     };
+  "0.0.3.7" = {
+    sha256 = "923cb7b4c19b4dc8b50d25435eafd09bf77faec099b4e07069c7af8dbded8ce3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-opentelemetry-api-0.0.3.7-r0-dcccae588a361c7d3f2427245943342a53967baaa34ee3219210ccd53ac429af.nix;
+        revNum = 0;
+        sha256 = "dcccae588a361c7d3f2427245943342a53967baaa34ee3219210ccd53ac429af";
+        };
+      default = "r0";
+      };
+    };
+  "0.0.3.8" = {
+    sha256 = "1e41723cae9b24538222fb89777db2c4fad3670dfebde4dcc8bd28ab37fa66dc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-opentelemetry-api-0.0.3.8-r0-ac02b4e6873962eb0eab665666197013291e3435fb10280f8c7c8f1e66bbae47.nix;
+        revNum = 0;
+        sha256 = "ac02b4e6873962eb0eab665666197013291e3435fb10280f8c7c8f1e66bbae47";
+        };
+      default = "r0";
+      };
+    };
   }

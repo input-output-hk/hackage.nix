@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.3.0" = {
+    sha256 = "7009b22e006aa1220497e21cec849aaa718abb292c086e961e6f61a383b60b83";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mono-traversable-keys-0.3.0-r0-a99e260cde507ff509cf4cee885402e127ed814e07804d9cb48ca0b58a6dcf7c.nix;
+        revNum = 0;
+        sha256 = "a99e260cde507ff509cf4cee885402e127ed814e07804d9cb48ca0b58a6dcf7c";
+        };
+      default = "r0";
+      };
+    };
   }
