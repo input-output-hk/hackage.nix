@@ -327,7 +327,12 @@
         revNum = 0;
         sha256 = "c04a6f1005aac1d5cdbba9d835cac302e9de4033314c2253a4c4f3b69c5afb4b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Chart-diagrams-1.9.4-r1-ff9ffba2e500f76df25a546c9e942ad563bebf134c54b2c195b3e6eb48870387.nix;
+        revNum = 1;
+        sha256 = "ff9ffba2e500f76df25a546c9e942ad563bebf134c54b2c195b3e6eb48870387";
+        };
+      default = "r1";
       };
     };
   }

@@ -7579,6 +7579,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hledger-ui" = import ./nix/hledger-ui.nix;
   "hledger-vty" = import ./nix/hledger-vty.nix;
   "hledger-web" = import ./nix/hledger-web.nix;
+  "hlex" = import ./nix/hlex.nix;
   "hlibBladeRF" = import ./nix/hlib_Blade_R_F.nix;
   "hlibcpuid" = import ./nix/hlibcpuid.nix;
   "hlibev" = import ./nix/hlibev.nix;
