@@ -43,4 +43,48 @@
       default = "r0";
       };
     };
+  "0.5.0.0" = {
+    sha256 = "060857744eb065ecd11c2ec360d7dbe8df91aa084bc616b013a825ae9f892b4e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/journalctl-stream-0.5.0.0-r0-0dfb7b8c6b2b4f3e3fc49e66353d10ea4551db68fde68fd94834652688670fcc.nix;
+        revNum = 0;
+        sha256 = "0dfb7b8c6b2b4f3e3fc49e66353d10ea4551db68fde68fd94834652688670fcc";
+        };
+      default = "r0";
+      };
+    };
+  "0.6.0.0" = {
+    sha256 = "9295ded95117dbccd983dd9d78a1845808a301cea49efa5aea59e1b07e80f9c2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/journalctl-stream-0.6.0.0-r0-e537b6a8e61b09208b49506bb3c83c2cd3d6e9a075b5e9d99213c28672c6f747.nix;
+        revNum = 0;
+        sha256 = "e537b6a8e61b09208b49506bb3c83c2cd3d6e9a075b5e9d99213c28672c6f747";
+        };
+      default = "r0";
+      };
+    };
+  "0.6.0.1" = {
+    sha256 = "9b3473ca515e390e8e78ce952074d2f654369edb3cc2b51bdd3e4752cac3a3bf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/journalctl-stream-0.6.0.1-r0-9f810f5fbd9b2f59b18ca58ceff78a84823f211173ed5360850e9a8c1edb0d6c.nix;
+        revNum = 0;
+        sha256 = "9f810f5fbd9b2f59b18ca58ceff78a84823f211173ed5360850e9a8c1edb0d6c";
+        };
+      default = "r0";
+      };
+    };
+  "0.6.0.2" = {
+    sha256 = "739e44a3330897da549115228a3dc59ac5dc7bf9e7f985c7c8657c1c47b282fb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/journalctl-stream-0.6.0.2-r0-f973ca0118de5ce7552e1fe5b98e3b3b94bb6f50ffda0dd35a1b4882da980c35.nix;
+        revNum = 0;
+        sha256 = "f973ca0118de5ce7552e1fe5b98e3b3b94bb6f50ffda0dd35a1b4882da980c35";
+        };
+      default = "r0";
+      };
+    };
   }

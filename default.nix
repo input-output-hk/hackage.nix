@@ -5298,6 +5298,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fedora-haskell-tools" = import ./nix/fedora-haskell-tools.nix;
   "fedora-img-dl" = import ./nix/fedora-img-dl.nix;
   "fedora-packages" = import ./nix/fedora-packages.nix;
+  "fedora-repoquery" = import ./nix/fedora-repoquery.nix;
   "fee-estimate" = import ./nix/fee-estimate.nix;
   "feed" = import ./nix/feed.nix;
   "feed-cli" = import ./nix/feed-cli.nix;

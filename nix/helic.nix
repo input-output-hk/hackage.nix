@@ -114,4 +114,15 @@
       default = "r0";
       };
     };
+  "0.5.3.0" = {
+    sha256 = "478af147a170ab677a43df90b8fc5128a853b4a3728093bd5fe9b4115e52dadd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/helic-0.5.3.0-r0-7b8cea447586ec27054687965440d8491708fae94d119d162eab339f8c150325.nix;
+        revNum = 0;
+        sha256 = "7b8cea447586ec27054687965440d8491708fae94d119d162eab339f8c150325";
+        };
+      default = "r0";
+      };
+    };
   }

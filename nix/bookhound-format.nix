@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "616d357d4359e8a284fcd2d2d5ccd4c321c8edc9d8e35e078b9c7da9c1c18ca1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bookhound-format-0.1.1.0-r0-6d625b46500d8e2b056dd4d20cb5c85156dcc19ef7d530f494141b273b09a6aa.nix;
+        revNum = 0;
+        sha256 = "6d625b46500d8e2b056dd4d20cb5c85156dcc19ef7d530f494141b273b09a6aa";
+        };
+      default = "r0";
+      };
+    };
   }

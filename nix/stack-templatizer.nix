@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "c3fc2fe1277ca3a33260205f27ada3f1ca5f55cd3d2d9f6fd9eedba842ee1555";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stack-templatizer-0.1.1.0-r0-d54542b966e1a3342cb94c3de74d67e5902c7b995e3beafa43c83d4846339214.nix;
+        revNum = 0;
+        sha256 = "d54542b966e1a3342cb94c3de74d67e5902c7b995e3beafa43c83d4846339214";
+        };
+      default = "r0";
+      };
+    };
   }
