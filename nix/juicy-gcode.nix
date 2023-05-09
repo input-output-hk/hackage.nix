@@ -183,7 +183,12 @@
         revNum = 0;
         sha256 = "cba24981029a47a1b5aa1baf68a75ea26dd94ce439c3f9318d5f99615309b9f8";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/juicy-gcode-0.3.0.0-r1-9eb9d091457e78fb6d3438bae8d02307fc789e00e0e38551fd7f3c15f5b2f0d8.nix;
+        revNum = 1;
+        sha256 = "9eb9d091457e78fb6d3438bae8d02307fc789e00e0e38551fd7f3c15f5b2f0d8";
+        };
+      default = "r1";
       };
     };
   }

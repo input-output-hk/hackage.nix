@@ -92,7 +92,12 @@
         revNum = 2;
         sha256 = "c5557ee925da03ed8892e6d5e296767869a47eb5cfc0822d6660ae7dc7b7337a";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/tensors-0.1.5-r3-bc0bb08df2fe2bb87ba0cfefebfdc32896e4e5592100332b1c2406524c46c627.nix;
+        revNum = 3;
+        sha256 = "bc0bb08df2fe2bb87ba0cfefebfdc32896e4e5592100332b1c2406524c46c627";
+        };
+      default = "r3";
       };
     };
   }

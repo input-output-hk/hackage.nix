@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "41f3718e93b273ca65fd3072fd02ca59dec1c978a56dc891c62b53821c332326";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/gltf-codec-0.1.0.4-r1-a2221740fb9bb3b9e826e310fdca63f3078fa750d0e21112c68b467a7c319469.nix;
+        revNum = 1;
+        sha256 = "a2221740fb9bb3b9e826e310fdca63f3078fa750d0e21112c68b467a7c319469";
+        };
+      default = "r1";
       };
     };
   }

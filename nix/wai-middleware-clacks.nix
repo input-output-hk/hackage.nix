@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "0e8218a03816012a5e6acb9bee9b014fbb8d87b9113faac851e3c553f3814d50";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/wai-middleware-clacks-0.1.0.1-r1-f9d86a8be3bb2dcc58ff8e31fdfa45d2c04482ec0a0952561420f85f47b446e0.nix;
+        revNum = 1;
+        sha256 = "f9d86a8be3bb2dcc58ff8e31fdfa45d2c04482ec0a0952561420f85f47b446e0";
+        };
+      default = "r1";
       };
     };
   }

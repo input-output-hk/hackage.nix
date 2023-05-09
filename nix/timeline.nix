@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "3764e3b0c468627445e16342ce81b08f03b4afc72f48679277cfaa36f13af8a5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/timeline-0.1.0.0-r1-61ddf28370b340b45202bbccb5d1d19aeb306bf27ad1bf0cf69f0122025edb58.nix;
+        revNum = 1;
+        sha256 = "61ddf28370b340b45202bbccb5d1d19aeb306bf27ad1bf0cf69f0122025edb58";
+        };
+      default = "r1";
       };
     };
   }

@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "aaa68294a8f72247b35090a9d3c2ffc744df66d85e5698d0cd5e8f2de9515b2f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/wordpress-auth-1.0.0.1-r1-96747f027db23e43162ec42832a050702e960e8d10f4e28b382115a2192821db.nix;
+        revNum = 1;
+        sha256 = "96747f027db23e43162ec42832a050702e960e8d10f4e28b382115a2192821db";
+        };
+      default = "r1";
       };
     };
   }
