@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "1.1.1" = {
+    sha256 = "513c4e5b6993206fd388d7e4514c7f5fc37f36d23e63cf38706d287eea90e8fd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/linear-smc-1.1.1-r0-7aa4a76261fff607315cd9acfdcab86d2edc56e1a386f555445e38d293638215.nix;
+        revNum = 0;
+        sha256 = "7aa4a76261fff607315cd9acfdcab86d2edc56e1a386f555445e38d293638215";
+        };
+      default = "r0";
+      };
+    };
   }

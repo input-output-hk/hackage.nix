@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "d0a7b41a3964d3fd723e92e06d5b2c43c12524c5848d0502302ac3fc9ccf1a25";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lifted-stm-0.2.0.1-r0-e46d450caef9599836b58d24e4ee9c88033711b205fb7b7869c85fc4744692d2.nix;
+        revNum = 0;
+        sha256 = "e46d450caef9599836b58d24e4ee9c88033711b205fb7b7869c85fc4744692d2";
+        };
+      default = "r0";
+      };
+    };
   }

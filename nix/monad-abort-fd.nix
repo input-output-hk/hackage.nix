@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.7.0.1" = {
+    sha256 = "10b4bc1723d3beef5b25d0f49bab905d88fbcabcac2ca678fd9c742753839dc7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-abort-fd-0.7.0.1-r0-a13c744a6c1f85e72adeac6348c6e1044c7a19123f65fafa41336a98923db521.nix;
+        revNum = 0;
+        sha256 = "a13c744a6c1f85e72adeac6348c6e1044c7a19123f65fafa41336a98923db521";
+        };
+      default = "r0";
+      };
+    };
   }
