@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "2023.1" = {
+    sha256 = "03ae62cb7d371670539e33609b795571f33aed0e0aebde443a85d224f8210562";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tax-ato-2023.1-r0-cfc068229ea0a76faaa2b52485f891dc879dbcd02d042085de93d56f3b26f243.nix;
+        revNum = 0;
+        sha256 = "cfc068229ea0a76faaa2b52485f891dc879dbcd02d042085de93d56f3b26f243";
+        };
+      default = "r0";
+      };
+    };
   }

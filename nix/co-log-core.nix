@@ -100,7 +100,12 @@
         revNum = 0;
         sha256 = "9b2699adecee2f072b6c713089e675b592ef23f00a2ff3740bdaf4d87de8d456";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/co-log-core-0.3.2.0-r1-cef26597d94b12e6ffce8225dcccec12c8f2eb0dcea317f1ab02a754d54d5952.nix;
+        revNum = 1;
+        sha256 = "cef26597d94b12e6ffce8225dcccec12c8f2eb0dcea317f1ab02a754d54d5952";
+        };
+      default = "r1";
       };
     };
   }

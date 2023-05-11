@@ -280,7 +280,12 @@
         revNum = 0;
         sha256 = "79d4896c169f3cd3cec6cfc9950c7eb955707393c41538f29fb034c0b2b70e9d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dependent-sum-0.7.2.0-r1-16215db5d1f62897ace34167726f7a9b51a91ce5be12e4de456ffb673a9acb63.nix;
+        revNum = 1;
+        sha256 = "16215db5d1f62897ace34167726f7a9b51a91ce5be12e4de456ffb673a9acb63";
+        };
+      default = "r1";
       };
     };
   }

@@ -12815,6 +12815,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "refined" = import ./nix/refined.nix;
   "refined-http-api-data" = import ./nix/refined-http-api-data.nix;
   "refined-with" = import ./nix/refined-with.nix;
+  "refined1" = import ./nix/refined1.nix;
   "refinery" = import ./nix/refinery.nix;
   "reflection" = import ./nix/reflection.nix;
   "reflection-extras" = import ./nix/reflection-extras.nix;

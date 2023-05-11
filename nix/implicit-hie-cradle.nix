@@ -144,7 +144,12 @@
         revNum = 0;
         sha256 = "702cc2f547c6aec6437df25f21b5f23cc9fdff8a55d7abe8e9b3f73afb60be63";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/implicit-hie-cradle-0.5.0.1-r1-dbc9414d4279ae7b7e169a0f5d0709c9c20ff91654a67856529c88c32f5c159c.nix;
+        revNum = 1;
+        sha256 = "dbc9414d4279ae7b7e169a0f5d0709c9c20ff91654a67856529c88c32f5c159c";
+        };
+      default = "r1";
       };
     };
   }

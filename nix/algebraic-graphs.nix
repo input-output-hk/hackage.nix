@@ -155,7 +155,12 @@
         revNum = 0;
         sha256 = "528bddb6a58e175c0b37446d4621b5ffd2dadc9d53910b61ddafb0e81088f4bc";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/algebraic-graphs-0.6.1-r1-b0b0a916a74f9cba3e678cde25e27f045d7b026a8d0f1a55a05e86f2877fdfd2.nix;
+        revNum = 1;
+        sha256 = "b0b0a916a74f9cba3e678cde25e27f045d7b026a8d0f1a55a05e86f2877fdfd2";
+        };
+      default = "r1";
       };
     };
   "0.7" = {
@@ -166,7 +171,12 @@
         revNum = 0;
         sha256 = "d7703fb764ec14bbf7e2ee6296045d8bc1ddb9c1acdcd1841c6299cc6b5955fb";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/algebraic-graphs-0.7-r1-ae59cdfe6b9ae7df4453a2158346071c7962fe91bb7ab9c3a579ec988fa63dfd.nix;
+        revNum = 1;
+        sha256 = "ae59cdfe6b9ae7df4453a2158346071c7962fe91bb7ab9c3a579ec988fa63dfd";
+        };
+      default = "r1";
       };
     };
   }
