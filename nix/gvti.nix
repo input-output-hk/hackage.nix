@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "ecd09bd5442353621c4404c79588700e45213ae455c1dbb8d3ac9e0928de4f82";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gvti-0.4.0.0-r0-734ad435fd20369d1722cf44cd50435f764a4523ba725f6d3b073120a149f954.nix;
+        revNum = 0;
+        sha256 = "734ad435fd20369d1722cf44cd50435f764a4523ba725f6d3b073120a149f954";
+        };
+      default = "r0";
+      };
+    };
   }

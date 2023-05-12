@@ -296,4 +296,15 @@
       default = "r0";
       };
     };
+  "0.5.7.0" = {
+    sha256 = "1d25da5e5e52cd2cb410f38c435ae944709a22197eb8204a643efcf4283fe08d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mandrill-0.5.7.0-r0-33e4584a1d7c22210dec3d421324feee31cf638b6b8c0f4e183d9a72995a1d21.nix;
+        revNum = 0;
+        sha256 = "33e4584a1d7c22210dec3d421324feee31cf638b6b8c0f4e183d9a72995a1d21";
+        };
+      default = "r0";
+      };
+    };
   }

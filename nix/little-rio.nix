@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "2.0.0" = {
+    sha256 = "343ea76c0c5b64d69f86452e3fb8d20f9f3585df20f063d1154f6f9a84dbe1c1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/little-rio-2.0.0-r0-73bf58bb2a56b08fd7a968d969bae09861bb6bb5ae9efa781a3253d95586dc61.nix;
+        revNum = 0;
+        sha256 = "73bf58bb2a56b08fd7a968d969bae09861bb6bb5ae9efa781a3253d95586dc61";
+        };
+      default = "r0";
+      };
+    };
   }

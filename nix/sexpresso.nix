@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "1.2.3.0" = {
+    sha256 = "f7142db48e32d6219962836016066ba90f662b41168367b514edb1fec1f67c59";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sexpresso-1.2.3.0-r0-b78a541302fe87f2976af344527a400049ae66fdfd7c78ba1fc08f1ffc8df250.nix;
+        revNum = 0;
+        sha256 = "b78a541302fe87f2976af344527a400049ae66fdfd7c78ba1fc08f1ffc8df250";
+        };
+      default = "r0";
+      };
+    };
   }

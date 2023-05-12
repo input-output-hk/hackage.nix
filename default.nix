@@ -3161,6 +3161,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cherry-core-alpha" = import ./nix/cherry-core-alpha.nix;
   "chessIO" = import ./nix/chess_I_O.nix;
   "chesshs" = import ./nix/chesshs.nix;
+  "chessica" = import ./nix/chessica.nix;
   "chevalier-common" = import ./nix/chevalier-common.nix;
   "chez-grater" = import ./nix/chez-grater.nix;
   "chiasma" = import ./nix/chiasma.nix;
@@ -3401,6 +3402,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "coinbase-exchange" = import ./nix/coinbase-exchange.nix;
   "coinbase-pro" = import ./nix/coinbase-pro.nix;
   "coincident-root-loci" = import ./nix/coincident-root-loci.nix;
+  "coinor-clp" = import ./nix/coinor-clp.nix;
   "cointracking-imports" = import ./nix/cointracking-imports.nix;
   "colada" = import ./nix/colada.nix;
   "colchis" = import ./nix/colchis.nix;
@@ -9555,6 +9557,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "linear-grammar" = import ./nix/linear-grammar.nix;
   "linear-maps" = import ./nix/linear-maps.nix;
   "linear-opengl" = import ./nix/linear-opengl.nix;
+  "linear-programming" = import ./nix/linear-programming.nix;
   "linear-smc" = import ./nix/linear-smc.nix;
   "linear-socket" = import ./nix/linear-socket.nix;
   "linear-tests" = import ./nix/linear-tests.nix;
