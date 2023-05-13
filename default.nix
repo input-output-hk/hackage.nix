@@ -1831,6 +1831,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "apache-md5" = import ./nix/apache-md5.nix;
   "apart" = import ./nix/apart.nix;
   "apecs" = import ./nix/apecs.nix;
+  "apecs-effectful" = import ./nix/apecs-effectful.nix;
   "apecs-gloss" = import ./nix/apecs-gloss.nix;
   "apecs-physics" = import ./nix/apecs-physics.nix;
   "apecs-physics-gloss" = import ./nix/apecs-physics-gloss.nix;
@@ -13027,6 +13028,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "resolve" = import ./nix/resolve.nix;
   "resolve-trivial-conflicts" = import ./nix/resolve-trivial-conflicts.nix;
   "resource-effect" = import ./nix/resource-effect.nix;
+  "resource-effectful" = import ./nix/resource-effectful.nix;
   "resource-embed" = import ./nix/resource-embed.nix;
   "resource-pool" = import ./nix/resource-pool.nix;
   "resource-pool-catchio" = import ./nix/resource-pool-catchio.nix;
