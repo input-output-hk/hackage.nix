@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "55ddfc3218377b877c32b2625ebb166ef80cc7b7f963eb2b7977a65eb16929b8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/streaming-conduit-0.1.3.0-r0-e2e961c523da94f3820813240bb00a557e55547c4f2e8cc5fcd11cd70673ff14.nix;
+        revNum = 0;
+        sha256 = "e2e961c523da94f3820813240bb00a557e55547c4f2e8cc5fcd11cd70673ff14";
+        };
+      default = "r0";
+      };
+    };
   }

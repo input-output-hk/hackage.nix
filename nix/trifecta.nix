@@ -1297,7 +1297,12 @@
         revNum = 1;
         sha256 = "490e32d6c93dd665d91366ed5e543624ab5ed38ab75632445d7f7002da72ec28";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/trifecta-2.1.2-r2-02c85edcac42f1e3c64f80a8d365c1fb64bf7199c20f5f16d666f6b6bfdf2d28.nix;
+        revNum = 2;
+        sha256 = "02c85edcac42f1e3c64f80a8d365c1fb64bf7199c20f5f16d666f6b6bfdf2d28";
+        };
+      default = "r2";
       };
     };
   }

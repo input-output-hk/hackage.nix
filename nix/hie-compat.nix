@@ -70,4 +70,15 @@
       default = "r1";
       };
     };
+  "0.3.1.1" = {
+    sha256 = "5b1a16d4b9171b06868767669eed4c58605466acbbcbc5d16f69efe7354f4737";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hie-compat-0.3.1.1-r0-1d3244698adbe72dbb91b18782ee48948681e4f2d2f60876f0c579d70efba41f.nix;
+        revNum = 0;
+        sha256 = "1d3244698adbe72dbb91b18782ee48948681e4f2d2f60876f0c579d70efba41f";
+        };
+      default = "r0";
+      };
+    };
   }

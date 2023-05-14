@@ -8576,6 +8576,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "indices" = import ./nix/indices.nix;
   "indieweb-algorithms" = import ./nix/indieweb-algorithms.nix;
   "indigo" = import ./nix/indigo.nix;
+  "inf-backprop" = import ./nix/inf-backprop.nix;
   "inf-interval" = import ./nix/inf-interval.nix;
   "infer-license" = import ./nix/infer-license.nix;
   "infer-upstream" = import ./nix/infer-upstream.nix;
@@ -9994,6 +9995,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mathgenealogy" = import ./nix/mathgenealogy.nix;
   "mathista" = import ./nix/mathista.nix;
   "mathlink" = import ./nix/mathlink.nix;
+  "mathlist" = import ./nix/mathlist.nix;
   "matlab" = import ./nix/matlab.nix;
   "matplotlib" = import ./nix/matplotlib.nix;
   "matrices" = import ./nix/matrices.nix;
@@ -13901,6 +13903,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "simple-effects" = import ./nix/simple-effects.nix;
   "simple-enumeration" = import ./nix/simple-enumeration.nix;
   "simple-eval" = import ./nix/simple-eval.nix;
+  "simple-expr" = import ./nix/simple-expr.nix;
   "simple-firewire" = import ./nix/simple-firewire.nix;
   "simple-form" = import ./nix/simple-form.nix;
   "simple-genetic-algorithm" = import ./nix/simple-genetic-algorithm.nix;
