@@ -345,4 +345,26 @@
       default = "r0";
       };
     };
+  "1.9.1.2" = {
+    sha256 = "08358c131165f4063924a172b918f525c4bdf8977857176b3b829cbeaf0cd04a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ansi-terminal-game-1.9.1.2-r0-4a717fb2aeb288e862e544ddb32f25f6f2d0771a75ce5e5eb72144b758d652f5.nix;
+        revNum = 0;
+        sha256 = "4a717fb2aeb288e862e544ddb32f25f6f2d0771a75ce5e5eb72144b758d652f5";
+        };
+      default = "r0";
+      };
+    };
+  "1.9.1.3" = {
+    sha256 = "fccc6d77ce7a3bcaa7af75721058b094e91bc4b9a70260b637db9e875267c652";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ansi-terminal-game-1.9.1.3-r0-0f264220c17bf6d67dc9ded12984c398766fe14eda966f1fbbb71625da38f7d0.nix;
+        revNum = 0;
+        sha256 = "0f264220c17bf6d67dc9ded12984c398766fe14eda966f1fbbb71625da38f7d0";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.14.4.5" = {
+    sha256 = "e92a51557d60b632c750a62f3042ce5a1e0e1a0cc162029f6edc4c1be48f7a17";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/webkit2gtk3-javascriptcore-0.14.4.5-r0-96aef535695985f4f78d270a0956e8a8958aa4ed807964b672ace28d32b75a44.nix;
+        revNum = 0;
+        sha256 = "96aef535695985f4f78d270a0956e8a8958aa4ed807964b672ace28d32b75a44";
+        };
+      default = "r0";
+      };
+    };
   }
