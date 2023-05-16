@@ -39,7 +39,12 @@
         revNum = 0;
         sha256 = "f63ff8f8ae73192df5fff27374b0c4813b92c65a097b66d4a5158b4d5b0c180a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bnb-staking-csvs-0.2.1.0-r1-da477d228d363e220051c84192360db84858f3fe3f25f69bcceee0f61532b1c5.nix;
+        revNum = 1;
+        sha256 = "da477d228d363e220051c84192360db84858f3fe3f25f69bcceee0f61532b1c5";
+        };
+      default = "r1";
       };
     };
   }

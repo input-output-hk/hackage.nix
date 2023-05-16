@@ -377,7 +377,12 @@
         revNum = 0;
         sha256 = "8e2f645d695b9f6dceccbb744fb03967dd4b862dca4865b991e486b09c7bf71d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hexpat-0.20.13-r1-4095dff5df17f08396261d65a5f1ee6a123cddcd345c8a2fd0eee228a053c0f0.nix;
+        revNum = 1;
+        sha256 = "4095dff5df17f08396261d65a5f1ee6a123cddcd345c8a2fd0eee228a053c0f0";
+        };
+      default = "r1";
       };
     };
   "0.20.2" = {

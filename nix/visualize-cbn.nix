@@ -34,7 +34,12 @@
         revNum = 1;
         sha256 = "83652b49fc89ab41b8472a8eadffdd18cd690a1506723a7ac4e60d54814c8b11";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/visualize-cbn-0.1.0.2-r2-363563446c39460e4d09355e095c917040f1c58c7a97d3e1c9d0634984a9a0b0.nix;
+        revNum = 2;
+        sha256 = "363563446c39460e4d09355e095c917040f1c58c7a97d3e1c9d0634984a9a0b0";
+        };
+      default = "r2";
       };
     };
   }

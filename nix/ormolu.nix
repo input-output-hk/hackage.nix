@@ -289,7 +289,12 @@
         revNum = 0;
         sha256 = "9cc37d9344f05902ef8d62bf37adef4f001696bc9d615c67482854c47f16ee19";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ormolu-0.5.3.0-r1-645dd6c0579a2c0252f2ad0d179946561a8ca66923fd647559135900344ec78f.nix;
+        revNum = 1;
+        sha256 = "645dd6c0579a2c0252f2ad0d179946561a8ca66923fd647559135900344ec78f";
+        };
+      default = "r1";
       };
     };
   "0.6.0.0" = {
@@ -311,7 +316,12 @@
         revNum = 0;
         sha256 = "3d66314db72f3f8021ff8f259908421c5face5875b8f8801f9d82670f333d3b8";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ormolu-0.6.0.1-r1-4289f91699ff91a2b057d4ac6258d1a393e1417eddd252cb8888df660f430785.nix;
+        revNum = 1;
+        sha256 = "4289f91699ff91a2b057d4ac6258d1a393e1417eddd252cb8888df660f430785";
+        };
+      default = "r1";
       };
     };
   }

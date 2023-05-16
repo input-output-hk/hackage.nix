@@ -44,7 +44,12 @@
         revNum = 0;
         sha256 = "4ea18432a6c1e9d1b6e8ed87aed6f4787114876d7f71d6366ca898d6997811c8";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/solana-staking-csvs-0.1.2.0-r1-ff138177a57a127ee34adaf775ed4c82fd1ede38e3ecdfa8172f794dda219c2e.nix;
+        revNum = 1;
+        sha256 = "ff138177a57a127ee34adaf775ed4c82fd1ede38e3ecdfa8172f794dda219c2e";
+        };
+      default = "r1";
       };
     };
   }

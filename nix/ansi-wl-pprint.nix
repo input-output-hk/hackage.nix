@@ -341,7 +341,12 @@
         revNum = 3;
         sha256 = "212144ea0623b1170807a4162db05d87f26cf10b334aeadd0edb377aba06a1ce";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/ansi-wl-pprint-0.6.9-r4-fb737bc96e2aef34ad595d54ced7a73f648c521ebcb00fe0679aff45ccd49212.nix;
+        revNum = 4;
+        sha256 = "fb737bc96e2aef34ad595d54ced7a73f648c521ebcb00fe0679aff45ccd49212";
+        };
+      default = "r4";
       };
     };
   }
