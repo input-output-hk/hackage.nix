@@ -21,4 +21,26 @@
       default = "r0";
       };
     };
+  "0.2.1.0" = {
+    sha256 = "bf4cc5cb744e9d08bbd05a4b7348f5fe202bba147bbcf11db23e9d15bb940305";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-transaction-io-0.2.1.0-r0-7dab224ff1f491032cd627eff5c16db9621989f2fa739a7b839c830a0d816e5c.nix;
+        revNum = 0;
+        sha256 = "7dab224ff1f491032cd627eff5c16db9621989f2fa739a7b839c830a0d816e5c";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.2.0" = {
+    sha256 = "81e0a15e70cb2a443785ba69cf9078dd14452e8c9b3898eba7819237e7be2ce7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-transaction-io-0.2.2.0-r0-4f45ca76d4a7aec2c5166e84e8ad7cdb0dca4213edb51f825613472c41ba4ead.nix;
+        revNum = 0;
+        sha256 = "4f45ca76d4a7aec2c5166e84e8ad7cdb0dca4213edb51f825613472c41ba4ead";
+        };
+      default = "r0";
+      };
+    };
   }
