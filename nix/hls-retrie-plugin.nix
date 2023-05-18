@@ -182,7 +182,12 @@
         revNum = 0;
         sha256 = "973d85a6d492033bc58b1290b581758a3eb82dcd51db2cfbd09791189fdc8f53";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hls-retrie-plugin-1.0.4.0-r1-9e744c29c2c87a98ed1ba5c2184f76e956b34b8d86de014ba7f53ccb7ab5b560.nix;
+        revNum = 1;
+        sha256 = "9e744c29c2c87a98ed1ba5c2184f76e956b34b8d86de014ba7f53ccb7ab5b560";
+        };
+      default = "r1";
       };
     };
   }

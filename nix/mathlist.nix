@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "c971408f3acfb9c679ea16b984b3dc2238761b3101deef21c081072030e1a01c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mathlist-0.1.0.2-r0-f649a19e8841bc618543b4b23bd44bb733be8c4edf5510fbdda192647e5f1cb6.nix;
+        revNum = 0;
+        sha256 = "f649a19e8841bc618543b4b23bd44bb733be8c4edf5510fbdda192647e5f1cb6";
+        };
+      default = "r0";
+      };
+    };
   }

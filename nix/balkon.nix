@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "1.0.0.1" = {
+    sha256 = "e926d1ac9dd1fbf1f7b50a88bfc624aeaa5eb8696cb9171ea7c3c542aa2e2771";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/balkon-1.0.0.1-r0-626bf62ebb7ee15d26f0c6b1c0f52ca08318bc9ad3a4a861b983810d9de52b04.nix;
+        revNum = 0;
+        sha256 = "626bf62ebb7ee15d26f0c6b1c0f52ca08318bc9ad3a4a861b983810d9de52b04";
+        };
+      default = "r0";
+      };
+    };
   }

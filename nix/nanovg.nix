@@ -159,7 +159,12 @@
         revNum = 0;
         sha256 = "9131db15822c6593aa73946b56593eb0a14a0d044395bcdfd4fe2d3e6edb6759";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/nanovg-0.8.1.0-r1-bfcbe0dc0020aaa80db895966c9cf1b8aa4f13ac5253e713d728165fea7e9fc1.nix;
+        revNum = 1;
+        sha256 = "bfcbe0dc0020aaa80db895966c9cf1b8aa4f13ac5253e713d728165fea7e9fc1";
+        };
+      default = "r1";
       };
     };
   }

@@ -33,7 +33,12 @@
         revNum = 1;
         sha256 = "375547e20c34884adc8020376bb9daab62bbb84ed8fff5bb4fd53777e977fe3c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hls-qualify-imported-names-plugin-1.0.2.0-r2-fbc33ac7076f3ec7cb2050bb48ec3fb1f225dd771a8769b35864a1763e286ada.nix;
+        revNum = 2;
+        sha256 = "fbc33ac7076f3ec7cb2050bb48ec3fb1f225dd771a8769b35864a1763e286ada";
+        };
+      default = "r2";
       };
     };
   }

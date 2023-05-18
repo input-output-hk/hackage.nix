@@ -209,7 +209,12 @@
         revNum = 0;
         sha256 = "00564901a23501dd7518c5a1f7eb1ecc428fa5a298c9b28a65ec170d8e884ed4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hls-eval-plugin-1.5.0.0-r1-23fd4536c12efdf42d132e51881e2779983cc87df7d1889697d6561d4d0ac9db.nix;
+        revNum = 1;
+        sha256 = "23fd4536c12efdf42d132e51881e2779983cc87df7d1889697d6561d4d0ac9db";
+        };
+      default = "r1";
       };
     };
   }

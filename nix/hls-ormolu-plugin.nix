@@ -121,7 +121,12 @@
         revNum = 0;
         sha256 = "2b18fc0180e570996941b971e86f166da8c392a0de9e4ace9cbf468c8403c414";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hls-ormolu-plugin-1.0.4.0-r1-341d32f8407c8aad8ba86d3064f4bc08f01fc252d14b369e0d34c62ff929aa53.nix;
+        revNum = 1;
+        sha256 = "341d32f8407c8aad8ba86d3064f4bc08f01fc252d14b369e0d34c62ff929aa53";
+        };
+      default = "r1";
       };
     };
   }

@@ -56,7 +56,12 @@
         revNum = 0;
         sha256 = "5011d76d03d6c88025be5812a830b2d6f4455b183490bc0fde9fa97a177a6ccb";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hls-alternate-number-format-plugin-1.3.0.1-r1-1ed88c1f314cc30d3ad87f52ed121eb34023901140d490f10ff4f4648c987d1a.nix;
+        revNum = 1;
+        sha256 = "1ed88c1f314cc30d3ad87f52ed121eb34023901140d490f10ff4f4648c987d1a";
+        };
+      default = "r1";
       };
     };
   }

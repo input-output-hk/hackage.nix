@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "274a00ee584828d28c6f005cc22b64c745723dd3dbfba424e07aeaa51f015d86";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hls-cabal-plugin-0.1.0.0-r2-140ec73ed508743db7aa132c46f5d2c5e93eb3e9e639ed0ec39c7bbce52afc8f.nix;
+        revNum = 2;
+        sha256 = "140ec73ed508743db7aa132c46f5d2c5e93eb3e9e639ed0ec39c7bbce52afc8f";
+        };
+      default = "r2";
       };
     };
   }

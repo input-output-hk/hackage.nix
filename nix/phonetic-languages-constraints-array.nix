@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.5.0.0" = {
+    sha256 = "adb07b9fdc8714b054b89040badc72540276a51037ebb57435ffab5a4c1fa834";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-constraints-array-0.5.0.0-r0-4576946bac8d651eb71f2b1a71164d7d25d1a9c075a04feaceb95e5f23024db8.nix;
+        revNum = 0;
+        sha256 = "4576946bac8d651eb71f2b1a71164d7d25d1a9c075a04feaceb95e5f23024db8";
+        };
+      default = "r0";
+      };
+    };
   }

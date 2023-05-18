@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.6.0.1" = {
+    sha256 = "120c713cd81c112c8caa9bc549e79a2633a0a4d76b80d43044fa7afdfa6abf3d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/purebred-email-0.6.0.1-r0-0be32b4d489e14c60fd1b29ae5255594b68e3b7559866a15629cc1445e01ad12.nix;
+        revNum = 0;
+        sha256 = "0be32b4d489e14c60fd1b29ae5255594b68e3b7559866a15629cc1445e01ad12";
+        };
+      default = "r0";
+      };
+    };
   }
