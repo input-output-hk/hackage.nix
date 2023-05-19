@@ -243,4 +243,15 @@
       default = "r1";
       };
     };
+  "0.4.7" = {
+    sha256 = "adc49c9cc36d5a47d15cb8063924d9ed7be5a8e2081a4dd7cfa6ffc5117103f5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/STMonadTrans-0.4.7-r0-1a04743b9a92a6da5f63674cac008270ad4e7fa973d4b9aab59ae63cf134d81a.nix;
+        revNum = 0;
+        sha256 = "1a04743b9a92a6da5f63674cac008270ad4e7fa973d4b9aab59ae63cf134d81a";
+        };
+      default = "r0";
+      };
+    };
   }

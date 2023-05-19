@@ -252,4 +252,15 @@
       default = "r0";
       };
     };
+  "0.9.2" = {
+    sha256 = "240ed15475725e5aa63b86ba55196dd1cbc37b4e6cd07a978b9fe80e54e90f9c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dyre-0.9.2-r0-5033d491b86c4916b51f655c4da4ce3f74e22d1fca964934b3c3c7c073162b7d.nix;
+        revNum = 0;
+        sha256 = "5033d491b86c4916b51f655c4da4ce3f74e22d1fca964934b3c3c7c073162b7d";
+        };
+      default = "r0";
+      };
+    };
   }

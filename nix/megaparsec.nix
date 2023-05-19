@@ -642,4 +642,15 @@
       default = "r0";
       };
     };
+  "9.3.1" = {
+    sha256 = "e3f0689b5c103f5b54c3f399d09ccabf2762259ef0fea5014f522cad753ab701";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/megaparsec-9.3.1-r0-2441128551a0e61f783228bd9a24ed1842e872abd53ceaa6d8b5e67c50da373f.nix;
+        revNum = 0;
+        sha256 = "2441128551a0e61f783228bd9a24ed1842e872abd53ceaa6d8b5e67c50da373f";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -180,4 +180,15 @@
       default = "r0";
       };
     };
+  "0.4.2.0" = {
+    sha256 = "1e8d63aced5d182ee051a4fbf9c29a2b9d687f77b80db38c86d6cb7bcb2abac3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/constrained-categories-0.4.2.0-r0-b25f8a7d23e847dcaff2cba5c03bbe868f17485ef17acc82796a90bd5cadf406.nix;
+        revNum = 0;
+        sha256 = "b25f8a7d23e847dcaff2cba5c03bbe868f17485ef17acc82796a90bd5cadf406";
+        };
+      default = "r0";
+      };
+    };
   }

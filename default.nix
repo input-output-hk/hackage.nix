@@ -9729,9 +9729,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "logger-thread" = import ./nix/logger-thread.nix;
   "logging" = import ./nix/logging.nix;
   "logging-effect" = import ./nix/logging-effect.nix;
+  "logging-effect-colors" = import ./nix/logging-effect-colors.nix;
   "logging-effect-extra" = import ./nix/logging-effect-extra.nix;
   "logging-effect-extra-file" = import ./nix/logging-effect-extra-file.nix;
   "logging-effect-extra-handler" = import ./nix/logging-effect-extra-handler.nix;
+  "logging-effect-syslog" = import ./nix/logging-effect-syslog.nix;
   "logging-facade" = import ./nix/logging-facade.nix;
   "logging-facade-journald" = import ./nix/logging-facade-journald.nix;
   "logging-facade-syslog" = import ./nix/logging-facade-syslog.nix;

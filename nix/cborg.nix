@@ -225,4 +225,15 @@
       default = "r3";
       };
     };
+  "0.2.9.0" = {
+    sha256 = "dcb48d1723f06c0340ddad0cf0140dd6da528601605db3faaa8322e0c16afcaa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cborg-0.2.9.0-r0-2ff53fbfb463dcb285cbcf6624f78bbe986850dab2816a99aa6112ec135912cd.nix;
+        revNum = 0;
+        sha256 = "2ff53fbfb463dcb285cbcf6624f78bbe986850dab2816a99aa6112ec135912cd";
+        };
+      default = "r0";
+      };
+    };
   }
