@@ -97,4 +97,15 @@
       default = "r0";
       };
     };
+  "2.0.0.0" = {
+    sha256 = "c74e8f407c2890d64b61f75848a5fc40977bb6551e92943df1a482d0acbc2d8e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-floskell-plugin-2.0.0.0-r0-d398e69a64f06f2b96ddad5fedcb58848c60ca627dc312d67ac0e468fbbe80d9.nix;
+        revNum = 0;
+        sha256 = "d398e69a64f06f2b96ddad5fedcb58848c60ca627dc312d67ac0e468fbbe80d9";
+        };
+      default = "r0";
+      };
+    };
   }

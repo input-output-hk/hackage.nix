@@ -11313,6 +11313,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "overloaded-records" = import ./nix/overloaded-records.nix;
   "overture" = import ./nix/overture.nix;
   "owoify-hs" = import ./nix/owoify-hs.nix;
+  "pa-error-tree" = import ./nix/pa-error-tree.nix;
+  "pa-field-parser" = import ./nix/pa-field-parser.nix;
+  "pa-label" = import ./nix/pa-label.nix;
+  "pa-prelude" = import ./nix/pa-prelude.nix;
   "pack" = import ./nix/pack.nix;
   "package-description-remote" = import ./nix/package-description-remote.nix;
   "package-o-tron" = import ./nix/package-o-tron.nix;

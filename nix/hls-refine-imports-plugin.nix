@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "2.0.0.0" = {
+    sha256 = "80e4f5383af36e889606aef85b1a5ca932a07ad1ee81f41b8663ae5a00f0584b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-refine-imports-plugin-2.0.0.0-r0-7b48358b64ff7d8f57ae7403428b6fb66ae6348f7852ca1d7adc94039a6db294.nix;
+        revNum = 0;
+        sha256 = "7b48358b64ff7d8f57ae7403428b6fb66ae6348f7852ca1d7adc94039a6db294";
+        };
+      default = "r0";
+      };
+    };
   }
