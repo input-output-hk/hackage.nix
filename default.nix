@@ -8607,6 +8607,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "inline-asm" = import ./nix/inline-asm.nix;
   "inline-c" = import ./nix/inline-c.nix;
   "inline-c-cpp" = import ./nix/inline-c-cpp.nix;
+  "inline-c-objc" = import ./nix/inline-c-objc.nix;
   "inline-c-win32" = import ./nix/inline-c-win32.nix;
   "inline-java" = import ./nix/inline-java.nix;
   "inline-r" = import ./nix/inline-r.nix;
