@@ -217,7 +217,12 @@
         revNum = 0;
         sha256 = "3df1566bf3fb253a76868173d140b4f7cbac4a3606cb9ae5bbfc7868b8805658";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/linearmap-category-0.6.0.1-r1-9f914cdafbdb0260dc28ff6a9c4441d3203fe6d490dd5f48de664c603b304862.nix;
+        revNum = 1;
+        sha256 = "9f914cdafbdb0260dc28ff6a9c4441d3203fe6d490dd5f48de664c603b304862";
+        };
+      default = "r1";
       };
     };
   }
