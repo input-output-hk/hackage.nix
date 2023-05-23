@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.0.4" = {
+    sha256 = "28686d7d2203126b0f654ac46c75697eba9f30093af713fdafb80317dcd63882";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghcflags-1.0.4-r0-634cfa7b31ad8b2c66a107648faa83ec11759552a8cb63934b2f418b03508c0f.nix;
+        revNum = 0;
+        sha256 = "634cfa7b31ad8b2c66a107648faa83ec11759552a8cb63934b2f418b03508c0f";
+        };
+      default = "r0";
+      };
+    };
   }

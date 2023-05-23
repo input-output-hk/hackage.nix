@@ -31,4 +31,15 @@
       default = "r1";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "64faa79db5c52b305b2fb256ba0a459166e4026bfd8f815fcf0b32695dfe516c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/multicurryable-0.1.1.0-r0-5633f812c259ac6e78f98ef04827bf96ae41d116580c729823978760c640648e.nix;
+        revNum = 0;
+        sha256 = "5633f812c259ac6e78f98ef04827bf96ae41d116580c729823978760c640648e";
+        };
+      default = "r0";
+      };
+    };
   }

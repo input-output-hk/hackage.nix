@@ -213,4 +213,15 @@
       default = "r0";
       };
     };
+  "1.7.0" = {
+    sha256 = "8fc744198bbd9dc0794b608c0d904fe251cd8c5886013b2f6cf1f784f8159694";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/minio-hs-1.7.0-r0-b2721568f2cb8d3cb8ff14eb6ee25af15c164f049493c65664bb2a2d1dd9a071.nix;
+        revNum = 0;
+        sha256 = "b2721568f2cb8d3cb8ff14eb6ee25af15c164f049493c65664bb2a2d1dd9a071";
+        };
+      default = "r0";
+      };
+    };
   }
