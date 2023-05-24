@@ -1081,7 +1081,12 @@
         revNum = 0;
         sha256 = "8341718de830c2cba02e0ef23d0a472af42a711fa2a9707aa2f6909fa89c2475";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tweet-hs-1.0.2.3-r1-e15a50b2fc5de06cae2b4485dbb157b8942114dd9f9e483a0b6cb0216b8ce91b.nix;
+        revNum = 1;
+        sha256 = "e15a50b2fc5de06cae2b4485dbb157b8942114dd9f9e483a0b6cb0216b8ce91b";
+        };
+      default = "r1";
       };
     };
   }

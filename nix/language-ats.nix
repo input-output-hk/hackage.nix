@@ -1123,7 +1123,12 @@
         revNum = 0;
         sha256 = "1dec508c6eac56b690430788d1d8fb1cc3126d3ffc821e18f7a278cd321acc0f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/language-ats-1.7.10.3-r1-7ee80dc2fe53e3f5b0929aa4eb35f882cbc4fcf14954119f40aa1ad3dc3ba56c.nix;
+        revNum = 1;
+        sha256 = "7ee80dc2fe53e3f5b0929aa4eb35f882cbc4fcf14954119f40aa1ad3dc3ba56c";
+        };
+      default = "r1";
       };
     };
   "1.7.2.0" = {

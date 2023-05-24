@@ -225,7 +225,12 @@
         revNum = 1;
         sha256 = "0c5425305e0c14f793f98a1fed464e08e97aa57b9f5169649be876fafeb384dc";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hgis-1.0.0.3-r2-dce239fa1dcc69e080968aff33b2562569a69b90faf60fe743afdebfb2f80f3e.nix;
+        revNum = 2;
+        sha256 = "dce239fa1dcc69e080968aff33b2562569a69b90faf60fe743afdebfb2f80f3e";
+        };
+      default = "r2";
       };
     };
   }

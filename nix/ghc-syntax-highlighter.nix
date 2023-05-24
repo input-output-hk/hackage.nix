@@ -10,6 +10,17 @@
       default = "r0";
       };
     };
+  "0.0.10.0" = {
+    sha256 = "e2785c6250ff5e2876f9afe638fea362a79c910029625f5599c234acb297bd90";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-syntax-highlighter-0.0.10.0-r0-7859e5beba2aabfecf97997625b31919c7579825c9829dccf80cc7f6e4cd03e1.nix;
+        revNum = 0;
+        sha256 = "7859e5beba2aabfecf97997625b31919c7579825c9829dccf80cc7f6e4cd03e1";
+        };
+      default = "r0";
+      };
+    };
   "0.0.2.0" = {
     sha256 = "cf335c2d5c789dd6dac948edba4cef89b3b8595b5150c21ee735c82b97868dbd";
     revisions = {
@@ -137,7 +148,12 @@
         revNum = 1;
         sha256 = "aa1bdd6e099374c8b8c406282481caa9a1b603d5aa8a0d1230ffc6a7c260533d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/ghc-syntax-highlighter-0.0.9.0-r2-35974f375f4aa02315fd33d5d99e6ec07f70aa8b36e28eca4814584dac443cd0.nix;
+        revNum = 2;
+        sha256 = "35974f375f4aa02315fd33d5d99e6ec07f70aa8b36e28eca4814584dac443cd0";
+        };
+      default = "r2";
       };
     };
   }

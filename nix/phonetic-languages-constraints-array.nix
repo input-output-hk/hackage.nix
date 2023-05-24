@@ -98,4 +98,26 @@
       default = "r0";
       };
     };
+  "0.6.1.0" = {
+    sha256 = "befbba56becdbfc059f0d9e5bd19fbae2669422f25a0daaa58c30e876303a4b1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-constraints-array-0.6.1.0-r0-7938702fc0841473af13236417e7c09f2c643d8c6efe78e82d3e264a47334ec1.nix;
+        revNum = 0;
+        sha256 = "7938702fc0841473af13236417e7c09f2c643d8c6efe78e82d3e264a47334ec1";
+        };
+      default = "r0";
+      };
+    };
+  "0.6.1.1" = {
+    sha256 = "625bfda8184b56f41e3fcb4b14248099b596627e8f450b7a20d3f69697d4dd36";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-constraints-array-0.6.1.1-r0-e836f923fa37bd6d186a7ca01e472c0d0501d5c126835131b663b9d10af4c506.nix;
+        revNum = 0;
+        sha256 = "e836f923fa37bd6d186a7ca01e472c0d0501d5c126835131b663b9d10af4c506";
+        };
+      default = "r0";
+      };
+    };
   }

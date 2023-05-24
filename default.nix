@@ -11318,6 +11318,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "owoify-hs" = import ./nix/owoify-hs.nix;
   "pa-error-tree" = import ./nix/pa-error-tree.nix;
   "pa-field-parser" = import ./nix/pa-field-parser.nix;
+  "pa-json" = import ./nix/pa-json.nix;
   "pa-label" = import ./nix/pa-label.nix;
   "pa-prelude" = import ./nix/pa-prelude.nix;
   "pack" = import ./nix/pack.nix;
@@ -13672,6 +13673,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-purescript" = import ./nix/servant-purescript.nix;
   "servant-pushbullet-client" = import ./nix/servant-pushbullet-client.nix;
   "servant-py" = import ./nix/servant-py.nix;
+  "servant-queryparam-client" = import ./nix/servant-queryparam-client.nix;
+  "servant-queryparam-core" = import ./nix/servant-queryparam-core.nix;
+  "servant-queryparam-openapi3" = import ./nix/servant-queryparam-openapi3.nix;
+  "servant-queryparam-server" = import ./nix/servant-queryparam-server.nix;
   "servant-quickcheck" = import ./nix/servant-quickcheck.nix;
   "servant-rate-limit" = import ./nix/servant-rate-limit.nix;
   "servant-rawm" = import ./nix/servant-rawm.nix;
