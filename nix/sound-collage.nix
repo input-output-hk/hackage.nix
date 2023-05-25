@@ -67,7 +67,12 @@
         revNum = 1;
         sha256 = "5d7327bfca935f862e62110f399bb1349a4760a506a35596b648d3f88848fa1f";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/sound-collage-0.2.1-r2-85221b8cf87eda8d3c810a48cc55d871151f951d444f9641727eebdd52325933.nix;
+        revNum = 2;
+        sha256 = "85221b8cf87eda8d3c810a48cc55d871151f951d444f9641727eebdd52325933";
+        };
+      default = "r2";
       };
     };
   }

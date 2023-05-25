@@ -494,7 +494,12 @@
         revNum = 2;
         sha256 = "277a4d71f3612a72f314275c7ff3c872637de2b0e2ac7c9eca5bd83ee7aeea2f";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/stache-2.3.3-r3-c3344f103383da9eb1b8e050055312f9980738649d23441dcf998d1755fd913a.nix;
+        revNum = 3;
+        sha256 = "c3344f103383da9eb1b8e050055312f9980738649d23441dcf998d1755fd913a";
+        };
+      default = "r3";
       };
     };
   }

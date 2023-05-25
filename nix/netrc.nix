@@ -63,7 +63,12 @@
         revNum = 9;
         sha256 = "e7fe0fafb982394de714b0ddb73a7b3b57922d0f666ef4be4938cfff1feb2f6b";
         };
-      default = "r9";
+      r10 = {
+        nix = import ../hackage/netrc-0.2.0.0-r10-f6b9f5f76e732cdb7f65365d562d733e69e52bf8a47ce9c43bb000180a02dbd9.nix;
+        revNum = 10;
+        sha256 = "f6b9f5f76e732cdb7f65365d562d733e69e52bf8a47ce9c43bb000180a02dbd9";
+        };
+      default = "r10";
       };
     };
   }

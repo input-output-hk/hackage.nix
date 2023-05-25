@@ -22,7 +22,12 @@
         revNum = 3;
         sha256 = "462615212e8026518eecb5095b50e5a1b3931acadd4ee4ec3e572ef54a6ebebe";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/doctest-extract-0.1-r4-1bb41d7c27f946c66efb49c816a1ce5b1d9b19b45a0ba0b6d66215f9113b3a08.nix;
+        revNum = 4;
+        sha256 = "1bb41d7c27f946c66efb49c816a1ce5b1d9b19b45a0ba0b6d66215f9113b3a08";
+        };
+      default = "r4";
       };
     };
   }

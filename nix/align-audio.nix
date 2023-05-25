@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "d660b701835ffffe1b77decbfb1418d8272fcc3c0456fe3ec03653e5ecda2995";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/align-audio-0.0-r2-1a046b8a5ab493124aaf3b2ab595029776d6c916eb6cb7dcf77439be36d24588.nix;
+        revNum = 2;
+        sha256 = "1a046b8a5ab493124aaf3b2ab595029776d6c916eb6cb7dcf77439be36d24588";
+        };
+      default = "r2";
       };
     };
   }
