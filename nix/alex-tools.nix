@@ -158,7 +158,12 @@
         revNum = 0;
         sha256 = "2122d69b6b8e1a4a3d08607598843d76d2c0837b6a050b76d72b8b43cba65912";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/alex-tools-0.6.1-r1-d3cb4c1bd3b2b606119d3c0179177a35c90a0b1b8cb3296de774cf1251604f68.nix;
+        revNum = 1;
+        sha256 = "d3cb4c1bd3b2b606119d3c0179177a35c90a0b1b8cb3296de774cf1251604f68";
+        };
+      default = "r1";
       };
     };
   }

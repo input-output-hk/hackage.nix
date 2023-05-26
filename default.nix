@@ -11953,6 +11953,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "polyToMonoid" = import ./nix/poly_To_Monoid.nix;
   "polydata" = import ./nix/polydata.nix;
   "polydata-core" = import ./nix/polydata-core.nix;
+  "polyglot" = import ./nix/polyglot.nix;
   "polymap" = import ./nix/polymap.nix;
   "polynom" = import ./nix/polynom.nix;
   "polynomial" = import ./nix/polynomial.nix;
@@ -16607,6 +16608,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "word24" = import ./nix/word24.nix;
   "word2vec-model" = import ./nix/word2vec-model.nix;
   "word8" = import ./nix/word8.nix;
+  "word8set" = import ./nix/word8set.nix;
   "wordchoice" = import ./nix/wordchoice.nix;
   "wordcloud" = import ./nix/wordcloud.nix;
   "wordexp" = import ./nix/wordexp.nix;

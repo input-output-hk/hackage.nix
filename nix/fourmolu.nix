@@ -61,7 +61,12 @@
         revNum = 1;
         sha256 = "e780715b018a511d99e589aec4af3c8172d0d7c4ad8d94f6eaa50402899b27d2";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/fourmolu-0.11.0.0-r2-e1f51cda7b0ae7700e6bd089d89526cc8195deff1d19f2163aa18150196f55be.nix;
+        revNum = 2;
+        sha256 = "e1f51cda7b0ae7700e6bd089d89526cc8195deff1d19f2163aa18150196f55be";
+        };
+      default = "r2";
       };
     };
   "0.12.0.0" = {
@@ -77,7 +82,12 @@
         revNum = 1;
         sha256 = "39eea0689cef35a30fea9f5cc100af83259a7325cb58eeda7e42b96a73e03558";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/fourmolu-0.12.0.0-r2-e327041d6221449b171795af5d9d58a1705eb7f462a91dfd217f1d8b6cd78e77.nix;
+        revNum = 2;
+        sha256 = "e327041d6221449b171795af5d9d58a1705eb7f462a91dfd217f1d8b6cd78e77";
+        };
+      default = "r2";
       };
     };
   "0.2.0.0" = {

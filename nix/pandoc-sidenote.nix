@@ -32,4 +32,37 @@
       default = "r0";
       };
     };
+  "0.22.2.0" = {
+    sha256 = "909f52dfab861712d54d100c2a04c37e0ebb39acbc2068b1782a89b7be4063e0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-sidenote-0.22.2.0-r0-d2bfb99332d50b372d20f6c3793943b39a3e071815cb2ec87c9efa5705456aca.nix;
+        revNum = 0;
+        sha256 = "d2bfb99332d50b372d20f6c3793943b39a3e071815cb2ec87c9efa5705456aca";
+        };
+      default = "r0";
+      };
+    };
+  "0.22.3.0" = {
+    sha256 = "4a9294148ab727c40dca4dca7337b59babbe87e700f69a8a21af6dd14288eb22";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-sidenote-0.22.3.0-r0-9cb0f79064e994853d2bf8e348530426cafa97d7735716ff4ae1b6b2dc7e752f.nix;
+        revNum = 0;
+        sha256 = "9cb0f79064e994853d2bf8e348530426cafa97d7735716ff4ae1b6b2dc7e752f";
+        };
+      default = "r0";
+      };
+    };
+  "0.23.0.0" = {
+    sha256 = "2722ca9cf7bed62658f669a3ec2026de0e0e80941b499a25e660adcf977eec2d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-sidenote-0.23.0.0-r0-11b3a4d28fb3d40e38fbd671589aa65da7493c0dfec52fd32f2dd34eed82e021.nix;
+        revNum = 0;
+        sha256 = "11b3a4d28fb3d40e38fbd671589aa65da7493c0dfec52fd32f2dd34eed82e021";
+        };
+      default = "r0";
+      };
+    };
   }
