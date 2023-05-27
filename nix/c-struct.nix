@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "0add4aabe0a3ea0399be2a9e47058137bb5447916d0609e637ce67a97f38c302";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/c-struct-0.1.3.0-r0-92b587b98a8fe00fd2cf293bfaf6ebac21d01c5e4f254507b34c1885241a4b59.nix;
+        revNum = 0;
+        sha256 = "92b587b98a8fe00fd2cf293bfaf6ebac21d01c5e4f254507b34c1885241a4b59";
+        };
+      default = "r0";
+      };
+    };
   }

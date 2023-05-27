@@ -89,7 +89,17 @@
         revNum = 0;
         sha256 = "91293754ee65b9b660005982cb6ce1f5c78452797a2d42c3f9d965ed57159dd4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/reflex-process-0.3.1.2-r1-83b5a809fb88ec72f654385527210423989d4211a629c934cb85af21ab95cf29.nix;
+        revNum = 1;
+        sha256 = "83b5a809fb88ec72f654385527210423989d4211a629c934cb85af21ab95cf29";
+        };
+      r2 = {
+        nix = import ../hackage/reflex-process-0.3.1.2-r2-6790d7bd7972590bba3b37e103766a4b4a6844fa13f3a66737fe5de54dbc6dee.nix;
+        revNum = 2;
+        sha256 = "6790d7bd7972590bba3b37e103766a4b4a6844fa13f3a66737fe5de54dbc6dee";
+        };
+      default = "r2";
       };
     };
   }

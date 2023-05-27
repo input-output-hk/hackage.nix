@@ -157,7 +157,12 @@
         revNum = 1;
         sha256 = "37d33c69b07b8c899bc01ea22cd7b8fb3868106c014e377135bfada851802c3d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/reflex-dom-0.6.1.1-r2-9774b9781345953ad29ac39dc12c6ba45c9d0eb88a583a0b1a9f871d6ba19a49.nix;
+        revNum = 2;
+        sha256 = "9774b9781345953ad29ac39dc12c6ba45c9d0eb88a583a0b1a9f871d6ba19a49";
+        };
+      default = "r2";
       };
     };
   }

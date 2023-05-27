@@ -14460,6 +14460,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "static-canvas" = import ./nix/static-canvas.nix;
   "static-closure" = import ./nix/static-closure.nix;
   "static-hash" = import ./nix/static-hash.nix;
+  "static-ls" = import ./nix/static-ls.nix;
   "static-resources" = import ./nix/static-resources.nix;
   "static-tensor" = import ./nix/static-tensor.nix;
   "static-text" = import ./nix/static-text.nix;
