@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.6.0.0" = {
+    sha256 = "5d009d95a46544ae6cc1542c14f1d994285ffaec8b2f165f700c3e653f2a300f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/horizontal-rule-0.6.0.0-r0-9126d837413c4941c7147575200b15fb0bd62b5b09fdabf1ec87ba5f20108ff4.nix;
+        revNum = 0;
+        sha256 = "9126d837413c4941c7147575200b15fb0bd62b5b09fdabf1ec87ba5f20108ff4";
+        };
+      default = "r0";
+      };
+    };
   }

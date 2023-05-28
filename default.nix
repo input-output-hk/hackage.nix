@@ -3431,6 +3431,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "colour" = import ./nix/colour.nix;
   "colour-accelerate" = import ./nix/colour-accelerate.nix;
   "colour-space" = import ./nix/colour-space.nix;
+  "colour-text" = import ./nix/colour-text.nix;
   "colourista" = import ./nix/colourista.nix;
   "coltrane" = import ./nix/coltrane.nix;
   "columbia" = import ./nix/columbia.nix;
