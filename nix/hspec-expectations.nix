@@ -254,4 +254,15 @@
       default = "r0";
       };
     };
+  "0.8.3" = {
+    sha256 = "71bf0a0ae521fbb25bc105d0b9e1c72e825881a468f0c051f28a66e717d02172";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hspec-expectations-0.8.3-r0-7b3b3b299cacd7cfc2cd184b78af64d66c1dcacc412b0ff47a80d2ac2e56377b.nix;
+        revNum = 0;
+        sha256 = "7b3b3b299cacd7cfc2cd184b78af64d66c1dcacc412b0ff47a80d2ac2e56377b";
+        };
+      default = "r0";
+      };
+    };
   }

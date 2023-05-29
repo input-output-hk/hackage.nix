@@ -15,4 +15,15 @@
       default = "r1";
       };
     };
+  "0.5.0.0" = {
+    sha256 = "289daa440797dd6735ac2d48ab89c39e5ae933f90161ee5a64ebea14e9743639";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/redact-0.5.0.0-r0-83d221e522f4b38b00a559c54442f0156a253c983fd3de0d2321627cf0abf22c.nix;
+        revNum = 0;
+        sha256 = "83d221e522f4b38b00a559c54442f0156a253c983fd3de0d2321627cf0abf22c";
+        };
+      default = "r0";
+      };
+    };
   }

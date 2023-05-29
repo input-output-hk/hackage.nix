@@ -25,4 +25,15 @@
       default = "r3";
       };
     };
+  "0.6.0.0" = {
+    sha256 = "f40aa7b20da5d1b7379910b379a111cde28338fd5d9670d274038da4685555b2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phatsort-0.6.0.0-r0-fdfca1a4a8fcd19e6bd0d5f5ea35ee6a06e7b9e0412e61b3ca4b8f7217bacd84.nix;
+        revNum = 0;
+        sha256 = "fdfca1a4a8fcd19e6bd0d5f5ea35ee6a06e7b9e0412e61b3ca4b8f7217bacd84";
+        };
+      default = "r0";
+      };
+    };
   }
