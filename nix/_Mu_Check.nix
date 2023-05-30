@@ -131,7 +131,12 @@
         revNum = 0;
         sha256 = "b82388c541bd1541c96917dec38b59252380ed417601e826b0effbdf9929251a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/MuCheck-0.3.0.4-r1-3b3b1643b1ff05b24f900a5577dc4f174232ce921aa25e701c6f22bf75950122.nix;
+        revNum = 1;
+        sha256 = "3b3b1643b1ff05b24f900a5577dc4f174232ce921aa25e701c6f22bf75950122";
+        };
+      default = "r1";
       };
     };
   }

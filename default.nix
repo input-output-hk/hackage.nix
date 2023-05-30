@@ -8261,6 +8261,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "https-everywhere-rules" = import ./nix/https-everywhere-rules.nix;
   "https-everywhere-rules-raw" = import ./nix/https-everywhere-rules-raw.nix;
   "httpspec" = import ./nix/httpspec.nix;
+  "httpstan" = import ./nix/httpstan.nix;
   "htune" = import ./nix/htune.nix;
   "htvm" = import ./nix/htvm.nix;
   "htzaar" = import ./nix/htzaar.nix;

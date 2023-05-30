@@ -223,7 +223,12 @@
         revNum = 0;
         sha256 = "376bb81c162b5242a3171f04074dfad44647d0a0179332c4fae478a80b4ebd40";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hspec-dirstream-1.0.0.4-r1-2d54ab2692a8b613473c31a0f07311bd887aff361929d815a25c827f128feeb7.nix;
+        revNum = 1;
+        sha256 = "2d54ab2692a8b613473c31a0f07311bd887aff361929d815a25c827f128feeb7";
+        };
+      default = "r1";
       };
     };
   }

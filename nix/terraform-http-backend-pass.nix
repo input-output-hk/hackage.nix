@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "322a93c4f9860c6c918d1b38683daa5483ac8db471802b00018a2fb386b9af4b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/terraform-http-backend-pass-0.1.0.1-r0-5f1be4c7057550aeb3b081853b587bd1bae05b2c944aab075d3c53e9f67415d8.nix;
+        revNum = 0;
+        sha256 = "5f1be4c7057550aeb3b081853b587bd1bae05b2c944aab075d3c53e9f67415d8";
+        };
+      default = "r0";
+      };
+    };
   }
