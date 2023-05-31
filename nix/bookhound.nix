@@ -197,6 +197,17 @@
       default = "r0";
       };
     };
+  "0.1.25.0" = {
+    sha256 = "acc49587f2c85f128480e5c71fddaefd3b6735ab073a4dd697c9591e03c8ba4d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bookhound-0.1.25.0-r0-8d0cd3573bdb760153bc9b46e8ba5b35e83af7162534768d79f5c65e60159b8e.nix;
+        revNum = 0;
+        sha256 = "8d0cd3573bdb760153bc9b46e8ba5b35e83af7162534768d79f5c65e60159b8e";
+        };
+      default = "r0";
+      };
+    };
   "0.1.3.0" = {
     sha256 = "9f734ad28e43007462fca01b9b8de464ff8d7e1cfb4b6c0385f0ab1cb580b6c9";
     revisions = {

@@ -330,4 +330,15 @@
       default = "r2";
       };
     };
+  "1.4.2.3" = {
+    sha256 = "b46030b4464e7f5cd1448a31b273d8c819a8f2b4e3176833b41569b93cd38658";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/diagrams-rasterific-1.4.2.3-r0-4f2f710e90912fe4652379e3760097352f6ea549fee948830870c3c420b64427.nix;
+        revNum = 0;
+        sha256 = "4f2f710e90912fe4652379e3760097352f6ea549fee948830870c3c420b64427";
+        };
+      default = "r0";
+      };
+    };
   }

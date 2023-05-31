@@ -10043,6 +10043,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mcmc-synthesis" = import ./nix/mcmc-synthesis.nix;
   "mcmc-types" = import ./nix/mcmc-types.nix;
   "mcpi" = import ./nix/mcpi.nix;
+  "md5" = import ./nix/md5.nix;
   "mdapi" = import ./nix/mdapi.nix;
   "mdcat" = import ./nix/mdcat.nix;
   "mdo" = import ./nix/mdo.nix;
