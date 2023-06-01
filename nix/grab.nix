@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "3985a8d7d4392e452424e9c57d4f2536f8bfdb0a57c63b1916c60358411f4cd4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/grab-0.0.0.8-r1-1abfd92ea1309ba9d766b0703585bd3db1a5af6f0d43fcaff94c9f2f6342cde3.nix;
+        revNum = 1;
+        sha256 = "1abfd92ea1309ba9d766b0703585bd3db1a5af6f0d43fcaff94c9f2f6342cde3";
+        };
+      default = "r1";
       };
     };
   }

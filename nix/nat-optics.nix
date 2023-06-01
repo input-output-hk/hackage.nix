@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "67ef163d2c5b02dec521ab189322b5dfb4b91708e5b798318899929e8ffd670e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/nat-optics-1.0.1.0-r1-0c432a8fa7c54974ea0a454b6392086a7a76c3c25b730cafb30fd65958975440.nix;
+        revNum = 1;
+        sha256 = "0c432a8fa7c54974ea0a454b6392086a7a76c3c25b730cafb30fd65958975440";
+        };
+      default = "r1";
       };
     };
   }

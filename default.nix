@@ -3223,6 +3223,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "circlehs" = import ./nix/circlehs.nix;
   "circuit-breaker" = import ./nix/circuit-breaker.nix;
   "circular" = import ./nix/circular.nix;
+  "circular-enum" = import ./nix/circular-enum.nix;
   "circus" = import ./nix/circus.nix;
   "cirru-parser" = import ./nix/cirru-parser.nix;
   "cisco-spark-api" = import ./nix/cisco-spark-api.nix;
@@ -6204,6 +6205,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gjk" = import ./nix/gjk.nix;
   "gjk2d" = import ./nix/gjk2d.nix;
   "gl" = import ./nix/gl.nix;
+  "gl-block" = import ./nix/gl-block.nix;
   "gl-capture" = import ./nix/gl-capture.nix;
   "gl3w" = import ./nix/gl3w.nix;
   "glabrous" = import ./nix/glabrous.nix;
@@ -6249,6 +6251,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "glsl" = import ./nix/glsl.nix;
   "gltf-codec" = import ./nix/gltf-codec.nix;
   "gltf-loader" = import ./nix/gltf-loader.nix;
+  "glualint" = import ./nix/glualint.nix;
   "glue" = import ./nix/glue.nix;
   "glue-common" = import ./nix/glue-common.nix;
   "glue-core" = import ./nix/glue-core.nix;
@@ -15990,6 +15993,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "unlambda" = import ./nix/unlambda.nix;
   "unlift" = import ./nix/unlift.nix;
   "unlift-stm" = import ./nix/unlift-stm.nix;
+  "unlifted" = import ./nix/unlifted.nix;
   "unlifted-list" = import ./nix/unlifted-list.nix;
   "unliftio" = import ./nix/unliftio.nix;
   "unliftio-core" = import ./nix/unliftio-core.nix;

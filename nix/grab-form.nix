@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "369bf4ac655e827d103715a2534db855ddca608aee89bb9ef50d8561bc5174d2";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/grab-form-0.0.0.8-r1-dca533df272c94370f38dbdf5d85b317adafc4e1c0e49d061a3bbb14e835ae42.nix;
+        revNum = 1;
+        sha256 = "dca533df272c94370f38dbdf5d85b317adafc4e1c0e49d061a3bbb14e835ae42";
+        };
+      default = "r1";
       };
     };
   }

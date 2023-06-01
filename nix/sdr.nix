@@ -65,6 +65,17 @@
       default = "r0";
       };
     };
+  "0.1.0.14" = {
+    sha256 = "dd3f5cdc30e773104476d1f33ed7bb86180b322730ee7dac99245455a887bc5b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sdr-0.1.0.14-r0-dde2a2ab9c309f01dfa465e4bcc5206613c253da037bdf7280291e1038b8c18b.nix;
+        revNum = 0;
+        sha256 = "dde2a2ab9c309f01dfa465e4bcc5206613c253da037bdf7280291e1038b8c18b";
+        };
+      default = "r0";
+      };
+    };
   "0.1.0.2" = {
     sha256 = "1288f1d0c8dc102a155dc42489c02fb3d624e037a150ee13150ab5779333219e";
     revisions = {

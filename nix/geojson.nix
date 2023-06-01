@@ -352,4 +352,15 @@
       default = "r0";
       };
     };
+  "4.1.1" = {
+    sha256 = "5483f049e5ae84c4715fc2454d1822178dd0dc1b991b0b84897d6845ecae6599";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/geojson-4.1.1-r0-f450e81d4fe1993f97c7cdb2b9743d54d2621c37b67d8a89536e5e09d33fd737.nix;
+        revNum = 0;
+        sha256 = "f450e81d4fe1993f97c7cdb2b9743d54d2621c37b67d8a89536e5e09d33fd737";
+        };
+      default = "r0";
+      };
+    };
   }
