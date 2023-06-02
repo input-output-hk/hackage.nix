@@ -2171,6 +2171,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aws-sdk" = import ./nix/aws-sdk.nix;
   "aws-sdk-text-converter" = import ./nix/aws-sdk-text-converter.nix;
   "aws-sdk-xml-unordered" = import ./nix/aws-sdk-xml-unordered.nix;
+  "aws-secrets" = import ./nix/aws-secrets.nix;
   "aws-ses-easy" = import ./nix/aws-ses-easy.nix;
   "aws-sign4" = import ./nix/aws-sign4.nix;
   "aws-simple" = import ./nix/aws-simple.nix;

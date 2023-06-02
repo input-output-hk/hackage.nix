@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "57c9613af64efb6441a49c7128cccadbc6d29cec2f94ec5810dd2c87fcb2a5aa";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/leanpub-concepts-1.1.0.2-r1-c21718933a173687d36b2949e15d7db2d69698182b65d9bd676135654d17ba53.nix;
+        revNum = 1;
+        sha256 = "c21718933a173687d36b2949e15d7db2d69698182b65d9bd676135654d17ba53";
+        };
+      default = "r1";
       };
     };
   }

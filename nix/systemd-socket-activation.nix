@@ -56,7 +56,12 @@
         revNum = 0;
         sha256 = "a19f62e6818d00dd00ddb9f136464973ba14d69f114018a34a01627ca27dc646";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/systemd-socket-activation-1.1.0.1-r1-2bd40f38f5b627f63c2ea32d7b7ffb0bbb97220719d21e234dccfb4264cf0f4d.nix;
+        revNum = 1;
+        sha256 = "2bd40f38f5b627f63c2ea32d7b7ffb0bbb97220719d21e234dccfb4264cf0f4d";
+        };
+      default = "r1";
       };
     };
   }

@@ -72,7 +72,12 @@
         revNum = 0;
         sha256 = "4836515382b9fc999b683c9af925461cfdd409203094d014bbcfe9dc1973174c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/leanpub-wreq-1.1.0.4-r1-20e45a78cb005dbb7f07dc5a0d35fe0ba2a4dd5fb6a2a1b3e5ba4ab078571893.nix;
+        revNum = 1;
+        sha256 = "20e45a78cb005dbb7f07dc5a0d35fe0ba2a4dd5fb6a2a1b3e5ba4ab078571893";
+        };
+      default = "r1";
       };
     };
   }
