@@ -3453,6 +3453,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "combobuffer" = import ./nix/combobuffer.nix;
   "comfort-array" = import ./nix/comfort-array.nix;
   "comfort-array-shape" = import ./nix/comfort-array-shape.nix;
+  "comfort-blas" = import ./nix/comfort-blas.nix;
   "comfort-fftw" = import ./nix/comfort-fftw.nix;
   "comfort-glpk" = import ./nix/comfort-glpk.nix;
   "comfort-graph" = import ./nix/comfort-graph.nix;

@@ -217,4 +217,15 @@
       default = "r0";
       };
     };
+  "0.5.1" = {
+    sha256 = "13156798e96715bb66bedb6936fcea56b4dd308f3e22c6ccedf805dba0dc7652";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lapack-0.5.1-r0-26f71569a13435f9700cfc6498a3841d1505f152382e0d722c3ee110a472f2ed.nix;
+        revNum = 0;
+        sha256 = "26f71569a13435f9700cfc6498a3841d1505f152382e0d722c3ee110a472f2ed";
+        };
+      default = "r0";
+      };
+    };
   }

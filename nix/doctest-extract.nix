@@ -30,4 +30,15 @@
       default = "r4";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "87756d828c0624b3279e3331ad7782a06573d4b5bc41d1d87b45591a0c5918c5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/doctest-extract-0.1.0.1-r0-413f8eeaea54cda3d88897275d6fe2bc64221726537aa36fb42991f6c4be4886.nix;
+        revNum = 0;
+        sha256 = "413f8eeaea54cda3d88897275d6fe2bc64221726537aa36fb42991f6c4be4886";
+        };
+      default = "r0";
+      };
+    };
   }
