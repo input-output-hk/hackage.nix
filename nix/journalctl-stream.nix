@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.6.0.3" = {
+    sha256 = "b91523923c9553384aabb2c4981fa6f46192be05587fbfa14935a84cd1fd0512";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/journalctl-stream-0.6.0.3-r0-4d6dc2af05368f26861801b84aef5e7bce7711a450da1968354d92e8635121c2.nix;
+        revNum = 0;
+        sha256 = "4d6dc2af05368f26861801b84aef5e7bce7711a450da1968354d92e8635121c2";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -11039,6 +11039,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "numeric-limits" = import ./nix/numeric-limits.nix;
   "numeric-logarithms" = import ./nix/numeric-logarithms.nix;
   "numeric-ode" = import ./nix/numeric-ode.nix;
+  "numeric-optimization" = import ./nix/numeric-optimization.nix;
+  "numeric-optimization-ad" = import ./nix/numeric-optimization-ad.nix;
+  "numeric-optimization-backprop" = import ./nix/numeric-optimization-backprop.nix;
   "numeric-prelude" = import ./nix/numeric-prelude.nix;
   "numeric-qq" = import ./nix/numeric-qq.nix;
   "numeric-quest" = import ./nix/numeric-quest.nix;

@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.7.0.2" = {
+    sha256 = "a185b5ff85e6328b4e0268bb5e0636fb7317fa500ab84b3e2b8b40aeb7f1ac15";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/google-static-maps-0.7.0.2-r0-03e66dd0c26fac3baf50c38b41a050e8cba73ea26f08898c1263699b45758ada.nix;
+        revNum = 0;
+        sha256 = "03e66dd0c26fac3baf50c38b41a050e8cba73ea26f08898c1263699b45758ada";
+        };
+      default = "r0";
+      };
+    };
   }
