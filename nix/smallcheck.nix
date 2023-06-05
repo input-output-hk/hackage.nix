@@ -422,4 +422,15 @@
       default = "r1";
       };
     };
+  "1.2.1.1" = {
+    sha256 = "e043225004071840d1a13f3a2d6fba537144188e7995a978ab82086ce158fe1f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/smallcheck-1.2.1.1-r0-b976cf0bbab4ba29f61933df10740cc19cd17548b5a3d1f8e0205840a1a89738.nix;
+        revNum = 0;
+        sha256 = "b976cf0bbab4ba29f61933df10740cc19cd17548b5a3d1f8e0205840a1a89738";
+        };
+      default = "r0";
+      };
+    };
   }

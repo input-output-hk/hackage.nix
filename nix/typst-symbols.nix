@@ -1,0 +1,29 @@
+{
+  "0.1.0.0" = {
+    sha256 = "c5f87b78146a8849d4bc7fa51ed754a9d6dae044acd670874bb2c9f06ac8a14a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typst-symbols-0.1.0.0-r0-c385fd9419ea2507a01641eb320524f4e09606df3baa8a25af1d48d5ebdca6e1.nix;
+        revNum = 0;
+        sha256 = "c385fd9419ea2507a01641eb320524f4e09606df3baa8a25af1d48d5ebdca6e1";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.0.1" = {
+    sha256 = "f0e2b5fbadd2def9538c658fdab858761182523f33a42f9ce2eee222c7d58d4f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typst-symbols-0.1.0.1-r0-41a7d83b3f0e56084004f6f4ed97d525c8262d9fbb611534b3635a16b823716d.nix;
+        revNum = 0;
+        sha256 = "41a7d83b3f0e56084004f6f4ed97d525c8262d9fbb611534b3635a16b823716d";
+        };
+      r1 = {
+        nix = import ../hackage/typst-symbols-0.1.0.1-r1-794be641b6985332345be04e259c8bb49f155951f4b29f6ab1532b33af178efc.nix;
+        revNum = 1;
+        sha256 = "794be641b6985332345be04e259c8bb49f155951f4b29f6ab1532b33af178efc";
+        };
+      default = "r1";
+      };
+    };
+  }

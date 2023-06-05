@@ -180,4 +180,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "00a5ea1323ab28861494dcea822333a7a0413249d0ae08010f9987aff796c09b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/free-algebras-0.1.1.0-r0-0fc65b4c1e013c8defbcc093e7910c9f824997d4d88da28f6948c163b6c0a16d.nix;
+        revNum = 0;
+        sha256 = "0fc65b4c1e013c8defbcc093e7910c9f824997d4d88da28f6948c163b6c0a16d";
+        };
+      default = "r0";
+      };
+    };
   }

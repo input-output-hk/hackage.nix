@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.5.3" = {
+    sha256 = "d6f45b7ff101886b64a05fdf0b7add8847b913baf90de92a01533d3535fbe417";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hprox-0.5.3-r0-8a00db5456f9e9010a05e474a963e5a8219751c35c32659bcc70a44d409e6371.nix;
+        revNum = 0;
+        sha256 = "8a00db5456f9e9010a05e474a963e5a8219751c35c32659bcc70a44d409e6371";
+        };
+      default = "r0";
+      };
+    };
   }

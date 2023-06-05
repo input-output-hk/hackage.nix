@@ -10438,6 +10438,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monoid-transformer" = import ./nix/monoid-transformer.nix;
   "monoidal-containers" = import ./nix/monoidal-containers.nix;
   "monoidal-functors" = import ./nix/monoidal-functors.nix;
+  "monoidmap" = import ./nix/monoidmap.nix;
   "monoidplus" = import ./nix/monoidplus.nix;
   "monoids" = import ./nix/monoids.nix;
   "monomer" = import ./nix/monomer.nix;
@@ -10760,6 +10761,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "neko-obfs" = import ./nix/neko-obfs.nix;
   "nemesis" = import ./nix/nemesis.nix;
   "nemesis-titan" = import ./nix/nemesis-titan.nix;
+  "neolua" = import ./nix/neolua.nix;
   "neptune-backend" = import ./nix/neptune-backend.nix;
   "nerf" = import ./nix/nerf.nix;
   "nero" = import ./nix/nero.nix;
@@ -15828,6 +15830,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typson-core" = import ./nix/typson-core.nix;
   "typson-esqueleto" = import ./nix/typson-esqueleto.nix;
   "typson-selda" = import ./nix/typson-selda.nix;
+  "typst-symbols" = import ./nix/typst-symbols.nix;
   "tyro" = import ./nix/tyro.nix;
   "tz" = import ./nix/tz.nix;
   "tzdata" = import ./nix/tzdata.nix;
