@@ -898,6 +898,17 @@
       default = "r0";
       };
     };
+  "0.3.40" = {
+    sha256 = "cbed8667cff6dede6ceac5127bc713b30b700c480fd1405028bd0493f424cea9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-logger-0.3.40-r0-8337b8396d2e1bc414771e68d987f54d6e371bfaad14aa43ed7a41400e44c5ca.nix;
+        revNum = 0;
+        sha256 = "8337b8396d2e1bc414771e68d987f54d6e371bfaad14aa43ed7a41400e44c5ca";
+        };
+      default = "r0";
+      };
+    };
   "0.3.5" = {
     sha256 = "0c93c59db3f563f0de95b58c0224394db7d80aa5e98c682294ab7cff6a43137d";
     revisions = {

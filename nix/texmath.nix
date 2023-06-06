@@ -490,6 +490,17 @@
       default = "r0";
       };
     };
+  "0.12.8" = {
+    sha256 = "034ff00671d9b8ac4c983df59ccfb4f39fc7d8c2d19f1f39cc00ac5d3f8625c4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/texmath-0.12.8-r0-a533ee7a787f5f6b9c062a6307e4245574e48599b4d391a2783479fba5b5d9c7.nix;
+        revNum = 0;
+        sha256 = "a533ee7a787f5f6b9c062a6307e4245574e48599b4d391a2783479fba5b5d9c7";
+        };
+      default = "r0";
+      };
+    };
   "0.2" = {
     sha256 = "7a7e561631481f1f9edfd839f51198e751a4c2b8a7daf97f825546be2d04f47a";
     revisions = {
