@@ -118,7 +118,17 @@
         revNum = 6;
         sha256 = "6ee22ada4e0b605fa433bec6a340703033e3cfe15edcf8f9feef7d446be49a54";
         };
-      default = "r6";
+      r7 = {
+        nix = import ../hackage/bitwise-1.0.0.1-r7-c52bc841b7a9cebfa4a5545d1e58b0bbd3ccd42ead2a4e78a138a6ede510c7aa.nix;
+        revNum = 7;
+        sha256 = "c52bc841b7a9cebfa4a5545d1e58b0bbd3ccd42ead2a4e78a138a6ede510c7aa";
+        };
+      r8 = {
+        nix = import ../hackage/bitwise-1.0.0.1-r8-36efc93d2dc8af501a1c1d06916452ca8caec770969385c4787d33241ce8b14a.nix;
+        revNum = 8;
+        sha256 = "36efc93d2dc8af501a1c1d06916452ca8caec770969385c4787d33241ce8b14a";
+        };
+      default = "r8";
       };
     };
   }

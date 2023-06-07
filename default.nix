@@ -3912,6 +3912,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cryptoids-class" = import ./nix/cryptoids-class.nix;
   "cryptoids-types" = import ./nix/cryptoids-types.nix;
   "cryptol" = import ./nix/cryptol.nix;
+  "crypton" = import ./nix/crypton.nix;
+  "crypton-connection" = import ./nix/crypton-connection.nix;
+  "crypton-x509" = import ./nix/crypton-x509.nix;
+  "crypton-x509-store" = import ./nix/crypton-x509-store.nix;
+  "crypton-x509-system" = import ./nix/crypton-x509-system.nix;
+  "crypton-x509-validation" = import ./nix/crypton-x509-validation.nix;
   "cryptonite" = import ./nix/cryptonite.nix;
   "cryptonite-cd" = import ./nix/cryptonite-cd.nix;
   "cryptonite-conduit" = import ./nix/cryptonite-conduit.nix;
@@ -11334,6 +11340,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pa-json" = import ./nix/pa-json.nix;
   "pa-label" = import ./nix/pa-label.nix;
   "pa-prelude" = import ./nix/pa-prelude.nix;
+  "pa-pretty" = import ./nix/pa-pretty.nix;
   "pack" = import ./nix/pack.nix;
   "package-description-remote" = import ./nix/package-description-remote.nix;
   "package-o-tron" = import ./nix/package-o-tron.nix;

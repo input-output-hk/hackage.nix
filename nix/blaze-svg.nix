@@ -147,4 +147,15 @@
       default = "r1";
       };
     };
+  "0.3.7" = {
+    sha256 = "4c7c61e67381eeefa30b563004ae639679651aaac499a37ca457d49d7fe8165f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/blaze-svg-0.3.7-r0-03143914266bc60a6deeba0ef9c4f6402e5c20f48d670beaa69135cf9ee13ca6.nix;
+        revNum = 0;
+        sha256 = "03143914266bc60a6deeba0ef9c4f6402e5c20f48d670beaa69135cf9ee13ca6";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -285,4 +285,15 @@
       default = "r0";
       };
     };
+  "0.6.2.1" = {
+    sha256 = "c50881ee8adf9d4241c8b929ea3867ca1d0171df1d6dd84bceff8e6a77c0699f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/IntervalMap-0.6.2.1-r0-fe04131a9cc7e41e3bfe55cb0e339fc128149e1a54dde63e4100f09e53f4334c.nix;
+        revNum = 0;
+        sha256 = "fe04131a9cc7e41e3bfe55cb0e339fc128149e1a54dde63e4100f09e53f4334c";
+        };
+      default = "r0";
+      };
+    };
   }
