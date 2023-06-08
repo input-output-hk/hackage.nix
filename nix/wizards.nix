@@ -61,7 +61,12 @@
         revNum = 1;
         sha256 = "353e6d2d8a55ff17c6a7766babf7a62f415d94fb7e515d37ab18b6fc4f68b824";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/wizards-1.0.3-r2-54c68b3ba10e8cdf5c33f448e0a8516d89d0d88e755208234a198e4ab5f9d82e.nix;
+        revNum = 2;
+        sha256 = "54c68b3ba10e8cdf5c33f448e0a8516d89d0d88e755208234a198e4ab5f9d82e";
+        };
+      default = "r2";
       };
     };
   }

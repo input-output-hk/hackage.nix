@@ -5959,6 +5959,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "getopt-generics" = import ./nix/getopt-generics.nix;
   "getopt-simple" = import ./nix/getopt-simple.nix;
   "gettext-th" = import ./nix/gettext-th.nix;
+  "gev-lib" = import ./nix/gev-lib.nix;
   "gf" = import ./nix/gf.nix;
   "ggtsTC" = import ./nix/ggts_T_C.nix;
   "gh-labeler" = import ./nix/gh-labeler.nix;
@@ -15837,6 +15838,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typson-core" = import ./nix/typson-core.nix;
   "typson-esqueleto" = import ./nix/typson-esqueleto.nix;
   "typson-selda" = import ./nix/typson-selda.nix;
+  "typst" = import ./nix/typst.nix;
   "typst-symbols" = import ./nix/typst-symbols.nix;
   "tyro" = import ./nix/tyro.nix;
   "tz" = import ./nix/tz.nix;

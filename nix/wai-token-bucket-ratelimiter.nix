@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "904102a0fc89a68aaaad7a87f620b7c1f532962432e3b13012d2fbe8e802b4e8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wai-token-bucket-ratelimiter-0.1.0.1-r0-4e06d632554e4aed1832e28043b16965dbb8e65b30e18bfcaad35ddba9b1dc7a.nix;
+        revNum = 0;
+        sha256 = "4e06d632554e4aed1832e28043b16965dbb8e65b30e18bfcaad35ddba9b1dc7a";
+        };
+      default = "r0";
+      };
+    };
   }
