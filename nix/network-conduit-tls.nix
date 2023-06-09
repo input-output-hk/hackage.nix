@@ -490,4 +490,15 @@
       default = "r0";
       };
     };
+  "1.4.0" = {
+    sha256 = "c5157a743239d959b38bb478df9db3bf2cc5a6b3460d7a95967eebe7a26c4d99";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-conduit-tls-1.4.0-r0-20d993b284abb0a0ce67b8737d47e5015f11790f955cfacd4601feaf23390851.nix;
+        revNum = 0;
+        sha256 = "20d993b284abb0a0ce67b8737d47e5015f11790f955cfacd4601feaf23390851";
+        };
+      default = "r0";
+      };
+    };
   }

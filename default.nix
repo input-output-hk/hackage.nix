@@ -4190,6 +4190,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dawdle" = import ./nix/dawdle.nix;
   "dawg" = import ./nix/dawg.nix;
   "dawg-ord" = import ./nix/dawg-ord.nix;
+  "daytripper" = import ./nix/daytripper.nix;
   "dbcleaner" = import ./nix/dbcleaner.nix;
   "dbf" = import ./nix/dbf.nix;
   "dbjava" = import ./nix/dbjava.nix;
@@ -8654,6 +8655,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "int-like" = import ./nix/int-like.nix;
   "int-multimap" = import ./nix/int-multimap.nix;
   "intcode" = import ./nix/intcode.nix;
+  "integer-conversion" = import ./nix/integer-conversion.nix;
   "integer-gmp" = import ./nix/integer-gmp.nix;
   "integer-logarithms" = import ./nix/integer-logarithms.nix;
   "integer-pure" = import ./nix/integer-pure.nix;
@@ -9781,6 +9783,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "long-double" = import ./nix/long-double.nix;
   "longboi" = import ./nix/longboi.nix;
   "longshot" = import ./nix/longshot.nix;
+  "looksee" = import ./nix/looksee.nix;
   "lookup-tables" = import ./nix/lookup-tables.nix;
   "loop" = import ./nix/loop.nix;
   "loop-dsl" = import ./nix/loop-dsl.nix;

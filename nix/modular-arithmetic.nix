@@ -169,4 +169,15 @@
       default = "r1";
       };
     };
+  "2.0.0.3" = {
+    sha256 = "87c5860f511a23f15231f8bf651972a1252d25174fcb04bbdfb54e4131ebe368";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/modular-arithmetic-2.0.0.3-r0-2fa424db61ef94cb9f0ae28665c6dbd76b0c910cc34d8bb0d6971bfbca80b956.nix;
+        revNum = 0;
+        sha256 = "2fa424db61ef94cb9f0ae28665c6dbd76b0c910cc34d8bb0d6971bfbca80b956";
+        };
+      default = "r0";
+      };
+    };
   }

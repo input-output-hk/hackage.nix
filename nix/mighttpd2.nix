@@ -865,7 +865,12 @@
         revNum = 0;
         sha256 = "3f3b3c5783142c75291662e5d604876e7b917da7699d8ef9eb9bb141c076d3f1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/mighttpd2-4.0.2-r1-892bd4c0d6838764cf3cca1298bc50f3dc44c9c6cca833cb411eae456eb37dc7.nix;
+        revNum = 1;
+        sha256 = "892bd4c0d6838764cf3cca1298bc50f3dc44c9c6cca833cb411eae456eb37dc7";
+        };
+      default = "r1";
       };
     };
   }

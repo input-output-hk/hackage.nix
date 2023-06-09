@@ -197,6 +197,28 @@
       default = "r0";
       };
     };
+  "2.12.0" = {
+    sha256 = "b6cfa3db0ba8cad9cd125d080232466f1fb1233a51cdbef10b657988fa731a87";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/svg-icons-2.12.0-r0-2bb2ba29506e378874ecde6b7a101a72c6cc60ab9bc3b25d7be2b64baa90836b.nix;
+        revNum = 0;
+        sha256 = "2bb2ba29506e378874ecde6b7a101a72c6cc60ab9bc3b25d7be2b64baa90836b";
+        };
+      default = "r0";
+      };
+    };
+  "2.12.1" = {
+    sha256 = "be07dcbe71229fd6c13b3b9ac1e53476eed0177fe4c3b278ffc2e4e67e16b44f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/svg-icons-2.12.1-r0-2494434ae359c2fc43229e4f913429f588ba26a8dc463339587274c15c7b67a0.nix;
+        revNum = 0;
+        sha256 = "2494434ae359c2fc43229e4f913429f588ba26a8dc463339587274c15c7b67a0";
+        };
+      default = "r0";
+      };
+    };
   "2.2.0.0" = {
     sha256 = "30833a558aa17b653010da5584bd087572f340306a2e044a85b7f199d2be58dd";
     revisions = {
