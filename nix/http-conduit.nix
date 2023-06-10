@@ -2375,4 +2375,15 @@
       default = "r0";
       };
     };
+  "2.3.8.2" = {
+    sha256 = "ed457713884ced61a905b48db29f73f710ae894cb8060a07d3736ac20aa23a05";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http-conduit-2.3.8.2-r0-bfdfe2c24011345d42516d8c64894502c50a197ddeda85fd50f7bba700b934c2.nix;
+        revNum = 0;
+        sha256 = "bfdfe2c24011345d42516d8c64894502c50a197ddeda85fd50f7bba700b934c2";
+        };
+      default = "r0";
+      };
+    };
   }

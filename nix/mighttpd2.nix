@@ -873,4 +873,15 @@
       default = "r1";
       };
     };
+  "4.0.3" = {
+    sha256 = "1a43390e921ab1b1b473d5bf65b2dcf27d0a8466e3243c2dab5d0c3de32bf9e1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mighttpd2-4.0.3-r0-f86eb254f9244c4c39cb7cfc980898f6dacbee7472690683c004926ebc80924c.nix;
+        revNum = 0;
+        sha256 = "f86eb254f9244c4c39cb7cfc980898f6dacbee7472690683c004926ebc80924c";
+        };
+      default = "r0";
+      };
+    };
   }

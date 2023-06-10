@@ -26,4 +26,15 @@
       default = "r0";
       };
     };
+  "0.2.0" = {
+    sha256 = "80366fec1ddd5bb69aae8458d2f13b74ea015c040eb5071e08d375f1807a996c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/merkle-log-0.2.0-r0-aca9b06b87928eccc1da4e4c53449548903b92e6ed742f5f7a5825a26f14a62d.nix;
+        revNum = 0;
+        sha256 = "aca9b06b87928eccc1da4e4c53449548903b92e6ed742f5f7a5825a26f14a62d";
+        };
+      default = "r0";
+      };
+    };
   }
