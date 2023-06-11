@@ -555,6 +555,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "HUnit-approx" = import ./nix/_H_Unit-approx.nix;
   "HXMPP" = import ./nix/_H_X_M_P_P.nix;
   "HXQ" = import ./nix/_H_X_Q.nix;
+  "HaGL" = import ./nix/_Ha_G_L.nix;
   "HaLeX" = import ./nix/_Ha_Le_X.nix;
   "HaMinitel" = import ./nix/_Ha_Minitel.nix;
   "HaPy" = import ./nix/_Ha_Py.nix;

@@ -182,4 +182,15 @@
       default = "r0";
       };
     };
+  "0.4.2" = {
+    sha256 = "fec9da4998c97b3e39b82b80427da7cd72bcc768b6b5535eae07d745b9e02052";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/terminal-progress-bar-0.4.2-r0-26e89ae1396e298e799035d916836f40769450a23d2b0deffe7a30f1ccdf46c0.nix;
+        revNum = 0;
+        sha256 = "26e89ae1396e298e799035d916836f40769450a23d2b0deffe7a30f1ccdf46c0";
+        };
+      default = "r0";
+      };
+    };
   }
