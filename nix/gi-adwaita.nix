@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.0.6" = {
+    sha256 = "029be2ebb993ebfaea2fdc3da076dca5ecc576eccf45397d0514a2bc3ad7b834";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-adwaita-1.0.6-r0-f92b823091e2e24d66d6705955e89814a8b25708320e4daa03eedf7aff1b3a83.nix;
+        revNum = 0;
+        sha256 = "f92b823091e2e24d66d6705955e89814a8b25708320e4daa03eedf7aff1b3a83";
+        };
+      default = "r0";
+      };
+    };
   }

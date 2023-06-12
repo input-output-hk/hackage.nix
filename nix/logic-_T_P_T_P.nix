@@ -28,7 +28,12 @@
         revNum = 1;
         sha256 = "ff2e47ecd78a9e29c1bc095111c769328861727c69da8330b56af8b3f8056e61";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.2.0-r2-1c6ecb0c348ae8d4e599d595fcb05672ac8e5b0c76c6fafeea606bb439225e62.nix;
+        revNum = 2;
+        sha256 = "1c6ecb0c348ae8d4e599d595fcb05672ac8e5b0c76c6fafeea606bb439225e62";
+        };
+      default = "r2";
       };
     };
   "0.2.0.1" = {
@@ -44,7 +49,12 @@
         revNum = 1;
         sha256 = "5c824ec361f14d8547670662e6404b4ca67fcebdcf06c812eaa018217c253b82";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.2.0.1-r2-daf578c64a913a9f1b645f326531b96a5b552712e894a879bfd85abbe7dd1bf4.nix;
+        revNum = 2;
+        sha256 = "daf578c64a913a9f1b645f326531b96a5b552712e894a879bfd85abbe7dd1bf4";
+        };
+      default = "r2";
       };
     };
   "0.2.0.3" = {
@@ -60,7 +70,12 @@
         revNum = 1;
         sha256 = "5092db0bdc5879266f04f30e8f0cd3b60de2d80dc3c535422f3cda9ca09d1302";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.2.0.3-r2-f3c289c32ebcb63f087c7c8c2675bb945a0cf62003d7ec141d499d478541355a.nix;
+        revNum = 2;
+        sha256 = "f3c289c32ebcb63f087c7c8c2675bb945a0cf62003d7ec141d499d478541355a";
+        };
+      default = "r2";
       };
     };
   "0.2.0.4" = {
@@ -76,7 +91,12 @@
         revNum = 1;
         sha256 = "906aca54de980b6de3c3af9db675eca930f0c81e27c56ff8faea0be0a612af5d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.2.0.4-r2-8178cc651b2d9d8bba503a95d931628e0b481b77a0fbbf130c8542b6f8559b43.nix;
+        revNum = 2;
+        sha256 = "8178cc651b2d9d8bba503a95d931628e0b481b77a0fbbf130c8542b6f8559b43";
+        };
+      default = "r2";
       };
     };
   "0.2.0.6" = {
@@ -92,7 +112,12 @@
         revNum = 1;
         sha256 = "5bd9b6adee981bdaf551e2dea3a8269d6cc056e3bc7ff925684f44d67f59ad83";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.2.0.6-r2-635ead2ddae5523caf25ecf442873b45bdf9f8f35d48c46478c1fabfe8bccd17.nix;
+        revNum = 2;
+        sha256 = "635ead2ddae5523caf25ecf442873b45bdf9f8f35d48c46478c1fabfe8bccd17";
+        };
+      default = "r2";
       };
     };
   "0.2.0.7" = {
@@ -108,7 +133,12 @@
         revNum = 1;
         sha256 = "28dfb99b764de89a4e07e8353462dc070aafb78ce8cf582863186b01e7f3b483";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.2.0.7-r2-3ac0290460e47f2434c74cb165513953883064272d88f402934ea30672c0add9.nix;
+        revNum = 2;
+        sha256 = "3ac0290460e47f2434c74cb165513953883064272d88f402934ea30672c0add9";
+        };
+      default = "r2";
       };
     };
   "0.3.0.0" = {
@@ -124,7 +154,12 @@
         revNum = 1;
         sha256 = "fac82e01c743d6a7ce21306df12a495ce99b07b1b46295597177693d5534890b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.3.0.0-r2-8bd6981cf2c74c1ce91ca840ddf640bba9d85e2f876280365e6159a8da125654.nix;
+        revNum = 2;
+        sha256 = "8bd6981cf2c74c1ce91ca840ddf640bba9d85e2f876280365e6159a8da125654";
+        };
+      default = "r2";
       };
     };
   "0.3.0.1" = {
@@ -140,7 +175,12 @@
         revNum = 1;
         sha256 = "240de07ba9e7ddebe51ff2f554c3cfa5c78212c96acb150636a405553cb9d8f5";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.3.0.1-r2-30c35de8d11a1256de9cc35c9f048ba6e0dc0753ab641e9811a007f7ee96e8a6.nix;
+        revNum = 2;
+        sha256 = "30c35de8d11a1256de9cc35c9f048ba6e0dc0753ab641e9811a007f7ee96e8a6";
+        };
+      default = "r2";
       };
     };
   "0.3.0.2" = {
@@ -156,7 +196,12 @@
         revNum = 1;
         sha256 = "8a8fcd64280bcd4babcc8771ef1057a5fa67c6ad825abee6464a7f7312364bb3";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.3.0.2-r2-e5e9dfdc75181f28dc2bd78dd9ccdd41cbb4ee6808e38a12850462e7f69e55e2.nix;
+        revNum = 2;
+        sha256 = "e5e9dfdc75181f28dc2bd78dd9ccdd41cbb4ee6808e38a12850462e7f69e55e2";
+        };
+      default = "r2";
       };
     };
   "0.4.0.0" = {
@@ -172,7 +217,12 @@
         revNum = 1;
         sha256 = "4e592707d39dcdcdd8be05b674723f71aaf89e33f6cf395f9f6e7dcc3cb6fc9e";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.4.0.0-r2-1a673ac2ff931ec6b7212e84a1990fa85b2effcb83dd43d50099e0aceb434d56.nix;
+        revNum = 2;
+        sha256 = "1a673ac2ff931ec6b7212e84a1990fa85b2effcb83dd43d50099e0aceb434d56";
+        };
+      default = "r2";
       };
     };
   "0.4.1.0" = {
@@ -188,7 +238,12 @@
         revNum = 1;
         sha256 = "187dc151f68a542a109e887e3d0b095978943f3714ddbf7832f28750163d8ae2";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.4.1.0-r2-59b4224eb5f13861173c667063044680a513322394be97d23180b6c7b50ab9dd.nix;
+        revNum = 2;
+        sha256 = "59b4224eb5f13861173c667063044680a513322394be97d23180b6c7b50ab9dd";
+        };
+      default = "r2";
       };
     };
   "0.4.2.0" = {
@@ -204,7 +259,12 @@
         revNum = 1;
         sha256 = "4da9152133a90ba6f9474937749679321527a3addd9e528897c65b720037d1a4";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.4.2.0-r2-e571ace7524219900fe3aa78c49689236ff03c04daa9cadbadcda0ad187ef344.nix;
+        revNum = 2;
+        sha256 = "e571ace7524219900fe3aa78c49689236ff03c04daa9cadbadcda0ad187ef344";
+        };
+      default = "r2";
       };
     };
   "0.4.3.0" = {
@@ -220,7 +280,12 @@
         revNum = 1;
         sha256 = "5575313d6357c83cec4d31f95e78595a3eb50606cbf6fc785757cc6d395a690a";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.4.3.0-r2-61935ab61aff90648bc40de1efd7f153c27f0b812d62a159b1bb50edf4f335ad.nix;
+        revNum = 2;
+        sha256 = "61935ab61aff90648bc40de1efd7f153c27f0b812d62a159b1bb50edf4f335ad";
+        };
+      default = "r2";
       };
     };
   "0.4.4.0" = {
@@ -236,7 +301,12 @@
         revNum = 1;
         sha256 = "89ca9e3c450b1b4ccdf0ce11799bf2e3f6429a1dd92ad0e4fc6e1c14ae64511b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.4.4.0-r2-805d23937f7ea3b8fc29434c2bbaff879f22b25b95ddb6d1892131a6792dd51f.nix;
+        revNum = 2;
+        sha256 = "805d23937f7ea3b8fc29434c2bbaff879f22b25b95ddb6d1892131a6792dd51f";
+        };
+      default = "r2";
       };
     };
   "0.4.5.0" = {
@@ -252,7 +322,12 @@
         revNum = 1;
         sha256 = "5d598ff8a558a648ff6337e43bc7fe06a9327bd4f2cea77488e90179c9466dab";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.4.5.0-r2-47da5e2aaccf4187b76ce22bd23f6e0a99a3071dc3411f8bc5bc53a8e06608c0.nix;
+        revNum = 2;
+        sha256 = "47da5e2aaccf4187b76ce22bd23f6e0a99a3071dc3411f8bc5bc53a8e06608c0";
+        };
+      default = "r2";
       };
     };
   "0.4.6.0" = {
@@ -268,7 +343,12 @@
         revNum = 1;
         sha256 = "1851c999b164b0c71afb8d11f824c90d963f973021ebc28022154a508f46bd59";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.4.6.0-r2-ffd0628f7251a8d2c67719348b9528de405366d7f3de23edeebdd5338b775bd2.nix;
+        revNum = 2;
+        sha256 = "ffd0628f7251a8d2c67719348b9528de405366d7f3de23edeebdd5338b775bd2";
+        };
+      default = "r2";
       };
     };
   "0.4.7.0" = {
@@ -284,7 +364,12 @@
         revNum = 1;
         sha256 = "fc822c60070a317780b97016da4bf81080bceea346f4bc03e25e2a702b2595a7";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/logic-TPTP-0.4.7.0-r2-fd9b6bf05205ba5236635674b348672c3c7ad3840516059e2720cbc907c2b160.nix;
+        revNum = 2;
+        sha256 = "fd9b6bf05205ba5236635674b348672c3c7ad3840516059e2720cbc907c2b160";
+        };
+      default = "r2";
       };
     };
   "0.5.0.0" = {
@@ -310,7 +395,12 @@
         revNum = 3;
         sha256 = "4e1512bb452e498189eba3b0599e356ebb6c15560838dc269592335d13db2592";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/logic-TPTP-0.5.0.0-r4-cb5b4b9f1cb1d38738b7c5915a22bf8de590310f2196a900cdb82f9da3c24a04.nix;
+        revNum = 4;
+        sha256 = "cb5b4b9f1cb1d38738b7c5915a22bf8de590310f2196a900cdb82f9da3c24a04";
+        };
+      default = "r4";
       };
     };
   }
