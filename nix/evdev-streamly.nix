@@ -23,7 +23,12 @@
         revNum = 0;
         sha256 = "93ce95eb4b33a0543b83e48a1948bec8a3c724e54bd061ca49cba216cd8cac4f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/evdev-streamly-0.0.2.0-r1-159380c9b8681b2f2dbfb53feed86388d6417831046dc8ded8c936406b188887.nix;
+        revNum = 1;
+        sha256 = "159380c9b8681b2f2dbfb53feed86388d6417831046dc8ded8c936406b188887";
+        };
+      default = "r1";
       };
     };
   }

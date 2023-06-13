@@ -1039,4 +1039,15 @@
       default = "r0";
       };
     };
+  "4.1.1" = {
+    sha256 = "a9b2b300ea3c70432c610a0ca63449e60fe9deac99cf7de9a0bfe1040a073138";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dns-4.1.1-r0-0d2dac25fba509ff2e29a188a9a9b8397ed13055f24c6213eb5ef9764d57b554.nix;
+        revNum = 0;
+        sha256 = "0d2dac25fba509ff2e29a188a9a9b8397ed13055f24c6213eb5ef9764d57b554";
+        };
+      default = "r0";
+      };
+    };
   }
