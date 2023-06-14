@@ -8666,6 +8666,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "integration" = import ./nix/integration.nix;
   "integreat" = import ./nix/integreat.nix;
   "intel-aes" = import ./nix/intel-aes.nix;
+  "intel-powermon" = import ./nix/intel-powermon.nix;
   "intensional-datatys" = import ./nix/intensional-datatys.nix;
   "interact" = import ./nix/interact.nix;
   "interactive-plot" = import ./nix/interactive-plot.nix;

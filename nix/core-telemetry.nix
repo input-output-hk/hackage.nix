@@ -306,4 +306,15 @@
       default = "r0";
       };
     };
+  "0.2.9.3" = {
+    sha256 = "a6b2eff0aadcddd34881af0b96a58946351c2d828fe4b3c336ee5649b5cb0517";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/core-telemetry-0.2.9.3-r0-518a79489ecef5a08bed2340adcd3b015e221a89a52d46f601d603120686f976.nix;
+        revNum = 0;
+        sha256 = "518a79489ecef5a08bed2340adcd3b015e221a89a52d46f601d603120686f976";
+        };
+      default = "r0";
+      };
+    };
   }

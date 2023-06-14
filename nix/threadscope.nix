@@ -139,7 +139,12 @@
         revNum = 0;
         sha256 = "5518d632b043960a973a99baf2372f9d8e318cb52823ce7166397bed8c03991d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/threadscope-0.2.14.1-r1-cce1899066066a1b4109971a79652e20256be2e14e3cb145b7042116f5e61787.nix;
+        revNum = 1;
+        sha256 = "cce1899066066a1b4109971a79652e20256be2e14e3cb145b7042116f5e61787";
+        };
+      default = "r1";
       };
     };
   "0.2.2" = {
