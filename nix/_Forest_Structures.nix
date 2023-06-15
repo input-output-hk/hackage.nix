@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.0.1.1" = {
+    sha256 = "63b0cc9d056d94df78c54dc970aedeac614de5257c9d5b7ed2d19c38ea261cbb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ForestStructures-0.0.1.1-r0-f655f48246bf8f9afb8e053214203e7b59e5145d495fe28fd5ca8e6871bf370f.nix;
+        revNum = 0;
+        sha256 = "f655f48246bf8f9afb8e053214203e7b59e5145d495fe28fd5ca8e6871bf370f";
+        };
+      default = "r0";
+      };
+    };
   }
