@@ -342,7 +342,12 @@
         revNum = 2;
         sha256 = "940c3b273cf2de412534d71146b2f6498d7e3bd8b3c9ae6380a7e5b66ec18a3d";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/sexp-grammar-2.3.3.1-r3-9b9dab38062aaf308d4764ff67aac39eaf0277c099d4ca29303d94bde3fa8c37.nix;
+        revNum = 3;
+        sha256 = "9b9dab38062aaf308d4764ff67aac39eaf0277c099d4ca29303d94bde3fa8c37";
+        };
+      default = "r3";
       };
     };
   "2.3.4.0" = {

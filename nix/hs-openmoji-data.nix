@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "14.0.0" = {
+    sha256 = "309095093c74fa51e2d51665066c8412164b431d6c48f44262b90a51a1528aea";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-openmoji-data-14.0.0-r0-324cd3a27609cf822bd05e3824c659ab291ec75e9420740fa63adb8d3bee4ca7.nix;
+        revNum = 0;
+        sha256 = "324cd3a27609cf822bd05e3824c659ab291ec75e9420740fa63adb8d3bee4ca7";
+        };
+      default = "r0";
+      };
+    };
   }

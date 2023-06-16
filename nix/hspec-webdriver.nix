@@ -169,4 +169,15 @@
       default = "r0";
       };
     };
+  "1.2.2" = {
+    sha256 = "8a07d65efa72d730e5646449b18ed482cd4549b94d62acccea65f973766cbd81";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hspec-webdriver-1.2.2-r0-ff57cb1fc684f9f460fd777a6cf96f7df102c800fdc0fef9fadae938ef2b3d51.nix;
+        revNum = 0;
+        sha256 = "ff57cb1fc684f9f460fd777a6cf96f7df102c800fdc0fef9fadae938ef2b3d51";
+        };
+      default = "r0";
+      };
+    };
   }

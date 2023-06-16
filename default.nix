@@ -6832,6 +6832,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "half" = import ./nix/half.nix;
   "half-space" = import ./nix/half-space.nix;
   "halfs" = import ./nix/halfs.nix;
+  "halfsplit" = import ./nix/halfsplit.nix;
   "halide-JuicyPixels" = import ./nix/halide-_Juicy_Pixels.nix;
   "halide-arrayfire" = import ./nix/halide-arrayfire.nix;
   "halide-haskell" = import ./nix/halide-haskell.nix;

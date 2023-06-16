@@ -43,4 +43,26 @@
       default = "r0";
       };
     };
+  "2.1.2" = {
+    sha256 = "ca8f30f41e3360f04e421737376a1e60b886afb3db9ce422675c982c5139a37b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ory-hydra-client-2.1.2-r0-62a5084d56511da93184ce9b393639d1f918dd965b832a9050251254c1c75743.nix;
+        revNum = 0;
+        sha256 = "62a5084d56511da93184ce9b393639d1f918dd965b832a9050251254c1c75743";
+        };
+      default = "r0";
+      };
+    };
+  "2.1.2.1" = {
+    sha256 = "e536b8226a31f81d92b95938fc6c14b7f87ae763c167c863e80eb1ab286e53f4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ory-hydra-client-2.1.2.1-r0-8c61fa14ff8c76df9ce5f3e17f9b5c429a04f69ce8aa336d5d1b3a74ca82fdf2.nix;
+        revNum = 0;
+        sha256 = "8c61fa14ff8c76df9ce5f3e17f9b5c429a04f69ce8aa336d5d1b3a74ca82fdf2";
+        };
+      default = "r0";
+      };
+    };
   }
