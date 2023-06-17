@@ -39,7 +39,12 @@
         revNum = 2;
         sha256 = "606ecf2fc9b522de69df3ca23db51c3f93cf8ce16af9aa2e475e1d910003b0d1";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/co-log-concurrent-0.5.1.0-r3-1a4c36bb62a208af1da23b70c895259d401e3c58582ca3f88202a1e0e99bf59e.nix;
+        revNum = 3;
+        sha256 = "1a4c36bb62a208af1da23b70c895259d401e3c58582ca3f88202a1e0e99bf59e";
+        };
+      default = "r3";
       };
     };
   }

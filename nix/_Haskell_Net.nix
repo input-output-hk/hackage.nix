@@ -317,7 +317,12 @@
         revNum = 0;
         sha256 = "22c947c462780b2531cf55a8e5b3e7102937e7b1895b38badf030f7636e2fcc6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HaskellNet-0.6.1.2-r1-a880046501c8b035002ac2dbf597e6d416552bd04b499719997a67407602afc8.nix;
+        revNum = 1;
+        sha256 = "a880046501c8b035002ac2dbf597e6d416552bd04b499719997a67407602afc8";
+        };
+      default = "r1";
       };
     };
   }

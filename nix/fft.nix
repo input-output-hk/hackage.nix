@@ -216,7 +216,12 @@
         revNum = 0;
         sha256 = "5ca9e32f8b06ef884d9e56b3090a5e6f339657d8e88b927aac25592cef160442";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/fft-0.1.8.7-r1-9f2654c4c9844b0121c214bf4e7fcea7079559fd5d6fc8ef96e8b0470bc8ec8b.nix;
+        revNum = 1;
+        sha256 = "9f2654c4c9844b0121c214bf4e7fcea7079559fd5d6fc8ef96e8b0470bc8ec8b";
+        };
+      default = "r1";
       };
     };
   }
