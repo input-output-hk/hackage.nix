@@ -43,7 +43,12 @@
         revNum = 2;
         sha256 = "d0d596a85e75252626ade6443473037d34329ccde88d3d947b96965bd098e342";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/decision-diagrams-0.2.0.0-r3-9f82d39f7331f6836784fa89354986e436a4d62d810b8fb2b44dd10c6a0beb85.nix;
+        revNum = 3;
+        sha256 = "9f82d39f7331f6836784fa89354986e436a4d62d810b8fb2b44dd10c6a0beb85";
+        };
+      default = "r3";
       };
     };
   }

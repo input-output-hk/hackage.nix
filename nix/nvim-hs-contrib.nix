@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "2.0.0.2" = {
+    sha256 = "4601c37a1846455e9a4cc2350036f01e26f85adcea299ce6ab6cb2a85dd85e0f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nvim-hs-contrib-2.0.0.2-r0-31338a9f8fe0beac912b5737976851f5adf0e8d6613d429f49027fbde83e305c.nix;
+        revNum = 0;
+        sha256 = "31338a9f8fe0beac912b5737976851f5adf0e8d6613d429f49027fbde83e305c";
+        };
+      default = "r0";
+      };
+    };
   }

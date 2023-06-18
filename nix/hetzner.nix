@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.2.1.1" = {
+    sha256 = "fa318d3221d3dec49396f28ac09fc0ace4d615054130b526be2a2cdb338f02c0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hetzner-0.2.1.1-r0-cc2ec0f359e2b0cdf9662ae568e090d9e63eb0c446dde99325e986d96ae3a801.nix;
+        revNum = 0;
+        sha256 = "cc2ec0f359e2b0cdf9662ae568e090d9e63eb0c446dde99325e986d96ae3a801";
+        };
+      default = "r0";
+      };
+    };
   }

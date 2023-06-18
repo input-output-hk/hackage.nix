@@ -167,4 +167,15 @@
       default = "r0";
       };
     };
+  "0.4.0" = {
+    sha256 = "04134870189112b928f66e5050e10685b8268aff79724e9831fd85b71cbb344a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stateWriter-0.4.0-r0-2b7fa83ada4a50cae9c49e672ecca74ba37a32473dd2be93f73e834d2e7a7142.nix;
+        revNum = 0;
+        sha256 = "2b7fa83ada4a50cae9c49e672ecca74ba37a32473dd2be93f73e834d2e7a7142";
+        };
+      default = "r0";
+      };
+    };
   }

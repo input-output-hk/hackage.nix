@@ -2321,6 +2321,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bed-and-breakfast" = import ./nix/bed-and-breakfast.nix;
   "beeminder-api" = import ./nix/beeminder-api.nix;
   "bein" = import ./nix/bein.nix;
+  "belgian-structured-communication" = import ./nix/belgian-structured-communication.nix;
   "belka" = import ./nix/belka.nix;
   "bench" = import ./nix/bench.nix;
   "bench-graph" = import ./nix/bench-graph.nix;
@@ -10534,6 +10535,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mrifk" = import ./nix/mrifk.nix;
   "mrm" = import ./nix/mrm.nix;
   "ms" = import ./nix/ms.nix;
+  "ms-graph-api" = import ./nix/ms-graph-api.nix;
   "ms-tds" = import ./nix/ms-tds.nix;
   "msgpack" = import ./nix/msgpack.nix;
   "msgpack-aeson" = import ./nix/msgpack-aeson.nix;
