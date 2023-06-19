@@ -16167,6 +16167,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "validated-literals" = import ./nix/validated-literals.nix;
   "validated-types" = import ./nix/validated-types.nix;
   "validation" = import ./nix/validation.nix;
+  "validation-micro" = import ./nix/validation-micro.nix;
   "validation-selective" = import ./nix/validation-selective.nix;
   "validations" = import ./nix/validations.nix;
   "validationt" = import ./nix/validationt.nix;
