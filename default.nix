@@ -10394,6 +10394,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monad-task" = import ./nix/monad-task.nix;
   "monad-throw-exit" = import ./nix/monad-throw-exit.nix;
   "monad-time" = import ./nix/monad-time.nix;
+  "monad-time-effectful" = import ./nix/monad-time-effectful.nix;
   "monad-timing" = import ./nix/monad-timing.nix;
   "monad-tree" = import ./nix/monad-tree.nix;
   "monad-tx" = import ./nix/monad-tx.nix;
@@ -10535,6 +10536,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mrifk" = import ./nix/mrifk.nix;
   "mrm" = import ./nix/mrm.nix;
   "ms" = import ./nix/ms.nix;
+  "ms-auth" = import ./nix/ms-auth.nix;
   "ms-graph-api" = import ./nix/ms-graph-api.nix;
   "ms-tds" = import ./nix/ms-tds.nix;
   "msgpack" = import ./nix/msgpack.nix;
@@ -11350,6 +11352,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pa-label" = import ./nix/pa-label.nix;
   "pa-prelude" = import ./nix/pa-prelude.nix;
   "pa-pretty" = import ./nix/pa-pretty.nix;
+  "pa-run-command" = import ./nix/pa-run-command.nix;
   "pack" = import ./nix/pack.nix;
   "package-description-remote" = import ./nix/package-description-remote.nix;
   "package-o-tron" = import ./nix/package-o-tron.nix;

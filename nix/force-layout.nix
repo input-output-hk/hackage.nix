@@ -310,7 +310,12 @@
         revNum = 10;
         sha256 = "8acf028bafd1e04e5d950a7e40d24bc4d2d3177b00733492ff740e155a289ad5";
         };
-      default = "r10";
+      r11 = {
+        nix = import ../hackage/force-layout-0.4.0.6-r11-9270e4333ac3bac705d1ed742523b31849dfa7df48a3721f98e2ac05bc07dbd0.nix;
+        revNum = 11;
+        sha256 = "9270e4333ac3bac705d1ed742523b31849dfa7df48a3721f98e2ac05bc07dbd0";
+        };
+      default = "r11";
       };
     };
   }
