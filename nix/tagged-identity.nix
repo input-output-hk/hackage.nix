@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "ed9c75f1f12c525b5e12638eaa8d312d79c1e930762f853895e81521fbf1ebcc";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tagged-identity-0.1.3-r1-f962129e5b0e59ed29daf8f06ce11d2cbf14565a4322a41c4747679da02173fa.nix;
+        revNum = 1;
+        sha256 = "f962129e5b0e59ed29daf8f06ce11d2cbf14565a4322a41c4747679da02173fa";
+        };
+      default = "r1";
       };
     };
   }

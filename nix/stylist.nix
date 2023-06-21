@@ -163,4 +163,15 @@
       default = "r0";
       };
     };
+  "2.7.0.1" = {
+    sha256 = "d0f8a77a16f896ed8ee6dc50e3853f464df489614c2bc4cb30ee5c98872be7ea";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stylist-2.7.0.1-r0-a3f85feadaab04cc628344ea58106f761e8dbd78a0d190a68ba9aa6b9a0a820d.nix;
+        revNum = 0;
+        sha256 = "a3f85feadaab04cc628344ea58106f761e8dbd78a0d190a68ba9aa6b9a0a820d";
+        };
+      default = "r0";
+      };
+    };
   }

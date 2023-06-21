@@ -75,7 +75,12 @@
         revNum = 0;
         sha256 = "4a3e59ce92317667394be82088dd9bd0e06241fb3ab38efe29f11c8e0def879d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lame-0.2.1-r1-c048dc7fa2b4d282e7eda40f79f956c6c59684b50631800ea0ef73c9f2484e96.nix;
+        revNum = 1;
+        sha256 = "c048dc7fa2b4d282e7eda40f79f956c6c59684b50631800ea0ef73c9f2484e96";
+        };
+      default = "r1";
       };
     };
   }

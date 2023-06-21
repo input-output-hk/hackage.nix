@@ -10537,6 +10537,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mrm" = import ./nix/mrm.nix;
   "ms" = import ./nix/ms.nix;
   "ms-auth" = import ./nix/ms-auth.nix;
+  "ms-azure-api" = import ./nix/ms-azure-api.nix;
   "ms-graph-api" = import ./nix/ms-graph-api.nix;
   "ms-tds" = import ./nix/ms-tds.nix;
   "msgpack" = import ./nix/msgpack.nix;
