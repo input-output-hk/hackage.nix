@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.1.2" = {
+    sha256 = "2497270d509921baa6e6146f4993614e8dcc11d9de5b71a14abb54ec56699db0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/streaming-pcap-1.1.2-r0-125650b864c1458f0e3aedf67be1c77b9df0da50434e0bb306e8392ee97abdf1.nix;
+        revNum = 0;
+        sha256 = "125650b864c1458f0e3aedf67be1c77b9df0da50434e0bb306e8392ee97abdf1";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -9817,6 +9817,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lscabal" = import ./nix/lscabal.nix;
   "lsfrom" = import ./nix/lsfrom.nix;
   "lsp" = import ./nix/lsp.nix;
+  "lsp-client" = import ./nix/lsp-client.nix;
   "lsp-test" = import ./nix/lsp-test.nix;
   "lsp-types" = import ./nix/lsp-types.nix;
   "lss" = import ./nix/lss.nix;

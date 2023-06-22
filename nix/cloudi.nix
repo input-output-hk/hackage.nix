@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "2.0.6" = {
+    sha256 = "e5a3dbcef3fcdd5324a15c2757bdaba4927a9a1a9712e33d6db33ebfb90f431c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cloudi-2.0.6-r0-0f178aa56c49f8b15642f3b4d0790f05df7615426b881275c2c16cbeffce01bc.nix;
+        revNum = 0;
+        sha256 = "0f178aa56c49f8b15642f3b4d0790f05df7615426b881275c2c16cbeffce01bc";
+        };
+      default = "r0";
+      };
+    };
   }

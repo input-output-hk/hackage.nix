@@ -45,7 +45,12 @@
         revNum = 0;
         sha256 = "c101df84b140b78af51250a11049c73f88f5830bf824d05eaf8e470261f0e57c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/integer-types-0.1.1.0-r1-f2d07ad0b53199f1568f78049cd5e9a1f1b5d82097623b6fb4113d7cdd04fb22.nix;
+        revNum = 1;
+        sha256 = "f2d07ad0b53199f1568f78049cd5e9a1f1b5d82097623b6fb4113d7cdd04fb22";
+        };
+      default = "r1";
       };
     };
   }

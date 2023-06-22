@@ -219,4 +219,26 @@
       default = "r0";
       };
     };
+  "0.6.3" = {
+    sha256 = "c551d12dbd6de6baa670d3f4210f3fa009a0dd445aa3b729fa03b039189ef617";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cassava-conduit-0.6.3-r0-ad5fbb4323a27b046772bac1005ddf78b8cc23ac68232111c0421ac4961beb07.nix;
+        revNum = 0;
+        sha256 = "ad5fbb4323a27b046772bac1005ddf78b8cc23ac68232111c0421ac4961beb07";
+        };
+      default = "r0";
+      };
+    };
+  "0.6.4" = {
+    sha256 = "a98248bc9099c346e2bec1d40c87481bee68b1f51a21df712c495dc507f28765";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cassava-conduit-0.6.4-r0-ffc2cc74758db9885dffb4d4af371465f8254ce27fb67ef5611b9cd7e8b4ae44.nix;
+        revNum = 0;
+        sha256 = "ffc2cc74758db9885dffb4d4af371465f8254ce27fb67ef5611b9cd7e8b4ae44";
+        };
+      default = "r0";
+      };
+    };
   }

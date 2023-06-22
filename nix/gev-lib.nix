@@ -42,4 +42,15 @@
       default = "r0";
       };
     };
+  "0.2.0.2" = {
+    sha256 = "958bcecbb435454c77b83e141d634b4d055471c886d6e7594421a8a075be6ff8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gev-lib-0.2.0.2-r0-4bf3d460cc4e6119eb8f99c2b7783cd3fcec0a08366e95fff7ac080e08a8d029.nix;
+        revNum = 0;
+        sha256 = "4bf3d460cc4e6119eb8f99c2b7783cd3fcec0a08366e95fff7ac080e08a8d029";
+        };
+      default = "r0";
+      };
+    };
   }

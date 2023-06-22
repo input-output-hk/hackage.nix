@@ -96,4 +96,15 @@
       default = "r0";
       };
     };
+  "0.5.0" = {
+    sha256 = "38990498a7e87e734444c83e64d39dc0a55a03a435ae1675a6fece9a7e01b3bf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/primitive-containers-0.5.0-r0-de23e3db421356b21d135de6919bf6c0950ba178aab36e1ea4b6dcfb61b6b56c.nix;
+        revNum = 0;
+        sha256 = "de23e3db421356b21d135de6919bf6c0950ba178aab36e1ea4b6dcfb61b6b56c";
+        };
+      default = "r0";
+      };
+    };
   }
