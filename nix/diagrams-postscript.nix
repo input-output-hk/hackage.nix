@@ -431,7 +431,12 @@
         revNum = 0;
         sha256 = "6a43ca7d56a2e79cd3676b4de3cd4427ebeeb477cf81a931557419ce5d75cbc6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/diagrams-postscript-1.5.1.1-r1-a81b3a0a9e01add3dd25b9b4624bd5ab8f66eaf026998cb1bce8b3ceec9fdc40.nix;
+        revNum = 1;
+        sha256 = "a81b3a0a9e01add3dd25b9b4624bd5ab8f66eaf026998cb1bce8b3ceec9fdc40";
+        };
+      default = "r1";
       };
     };
   }

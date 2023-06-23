@@ -3757,6 +3757,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "convertible-text" = import ./nix/convertible-text.nix;
   "cookbook" = import ./nix/cookbook.nix;
   "cookie" = import ./nix/cookie.nix;
+  "cookie-tray" = import ./nix/cookie-tray.nix;
   "cookies" = import ./nix/cookies.nix;
   "coordinate" = import ./nix/coordinate.nix;
   "copilot" = import ./nix/copilot.nix;
@@ -13115,6 +13116,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "retry" = import ./nix/retry.nix;
   "retry-effectful" = import ./nix/retry-effectful.nix;
   "retryer" = import ./nix/retryer.nix;
+  "rev-scientific" = import ./nix/rev-scientific.nix;
   "rev-state" = import ./nix/rev-state.nix;
   "revdectime" = import ./nix/revdectime.nix;
   "reverse-apply" = import ./nix/reverse-apply.nix;
@@ -14368,6 +14370,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "spoon" = import ./nix/spoon.nix;
   "spoonutil" = import ./nix/spoonutil.nix;
   "spork" = import ./nix/spork.nix;
+  "spotify" = import ./nix/spotify.nix;
   "spoty" = import ./nix/spoty.nix;
   "spreadsheet" = import ./nix/spreadsheet.nix;
   "sprinkles" = import ./nix/sprinkles.nix;

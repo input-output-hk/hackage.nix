@@ -122,7 +122,12 @@
         revNum = 0;
         sha256 = "eeb5fc6614164901eee2b0121416720177f9a80e6dcdcfc5f07ace8889a0197e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/diagrams-html5-1.4.2-r1-f2cdbb77001c62e0a48e5f1997d02b3ec38b491346a322f796e5d385a31cac74.nix;
+        revNum = 1;
+        sha256 = "f2cdbb77001c62e0a48e5f1997d02b3ec38b491346a322f796e5d385a31cac74";
+        };
+      default = "r1";
       };
     };
   }

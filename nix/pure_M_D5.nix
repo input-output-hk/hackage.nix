@@ -276,7 +276,12 @@
         revNum = 0;
         sha256 = "21bb936ad3af061dfac3ab21a585989190f2e4bde309fc7a7b72550dcb294e24";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pureMD5-2.1.2.1-r1-d495b24bf2dabde50436544c56c3dcf1d215ac71f52269456f38a62858ae6518.nix;
+        revNum = 1;
+        sha256 = "d495b24bf2dabde50436544c56c3dcf1d215ac71f52269456f38a62858ae6518";
+        };
+      default = "r1";
       };
     };
   "2.1.3" = {

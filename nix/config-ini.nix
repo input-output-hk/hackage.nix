@@ -161,4 +161,15 @@
       default = "r1";
       };
     };
+  "0.2.6.0" = {
+    sha256 = "2a288135df7496119811fd02a509ed5aa46ba8d58ef079e21dfec0ad07dd7a5f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/config-ini-0.2.6.0-r0-65a350445cc663fdae886a485f7066a7ceb048ea01d926afa68999a48c7313a6.nix;
+        revNum = 0;
+        sha256 = "65a350445cc663fdae886a485f7066a7ceb048ea01d926afa68999a48c7313a6";
+        };
+      default = "r0";
+      };
+    };
   }

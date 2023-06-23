@@ -353,7 +353,12 @@
         revNum = 0;
         sha256 = "c28a8742408a7f81793e525f9bf8e2783ad3e475e77e7d5018dc55407ab607ea";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/fgl-5.8.0.0-r1-d75e8fddb17ecde4e474d9a8f99684ef544a9e2d09d249902fb86e226c97263d.nix;
+        revNum = 1;
+        sha256 = "d75e8fddb17ecde4e474d9a8f99684ef544a9e2d09d249902fb86e226c97263d";
+        };
+      default = "r1";
       };
     };
   "5.8.1.0" = {
