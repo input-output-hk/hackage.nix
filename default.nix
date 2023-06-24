@@ -4244,6 +4244,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "debug-me" = import ./nix/debug-me.nix;
   "debug-pp" = import ./nix/debug-pp.nix;
   "debug-time" = import ./nix/debug-time.nix;
+  "debug-trace-file" = import ./nix/debug-trace-file.nix;
   "debug-trace-var" = import ./nix/debug-trace-var.nix;
   "debug-tracy" = import ./nix/debug-tracy.nix;
   "debugger-hs" = import ./nix/debugger-hs.nix;
@@ -5858,6 +5859,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "generic-church" = import ./nix/generic-church.nix;
   "generic-constraints" = import ./nix/generic-constraints.nix;
   "generic-data" = import ./nix/generic-data.nix;
+  "generic-data-functions" = import ./nix/generic-data-functions.nix;
   "generic-data-surgery" = import ./nix/generic-data-surgery.nix;
   "generic-deepseq" = import ./nix/generic-deepseq.nix;
   "generic-deriving" = import ./nix/generic-deriving.nix;

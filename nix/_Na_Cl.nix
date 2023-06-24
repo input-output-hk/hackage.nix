@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "626d6e41ab736143f7ef7c5ccc9a2c7c85d166e3bdc466734404facf089fc79d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/NaCl-0.0.5.0-r1-eb6eb88bb39206111cffd8862ff042222ec4ce8683e4faa9749ca2425c5ee302.nix;
+        revNum = 1;
+        sha256 = "eb6eb88bb39206111cffd8862ff042222ec4ce8683e4faa9749ca2425c5ee302";
+        };
+      default = "r1";
       };
     };
   }

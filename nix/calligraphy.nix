@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.1.5" = {
+    sha256 = "751acacf20661ed6910722d4c0b3057574c97d315fed87f382d08fd06f19c117";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/calligraphy-0.1.5-r0-7d5b30d403625f4b7dd5294de1445e3c33a7a68b48bfbae23a920341fde29266.nix;
+        revNum = 0;
+        sha256 = "7d5b30d403625f4b7dd5294de1445e3c33a7a68b48bfbae23a920341fde29266";
+        };
+      default = "r0";
+      };
+    };
   }

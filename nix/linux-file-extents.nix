@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "53d7e78c1a62f1a60662a517d06217632b46c3c13e4065500de464a90fb91f31";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/linux-file-extents-0.2.0.1-r0-2b7041e458735cb1c5a2af26b02720c1de0968a7c3cfd1548e8670cc5710fb0e.nix;
+        revNum = 0;
+        sha256 = "2b7041e458735cb1c5a2af26b02720c1de0968a7c3cfd1548e8670cc5710fb0e";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -118,4 +118,15 @@
       default = "r0";
       };
     };
+  "0.2.1.0" = {
+    sha256 = "f81e2893092497dbd74e3671ede543300e136e1e9f206217b35f232a8a13869b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/btrfs-0.2.1.0-r0-05206e8912ca8e180300da1df0a4bc858776af1fa3513d246089fd21dc9070f7.nix;
+        revNum = 0;
+        sha256 = "05206e8912ca8e180300da1df0a4bc858776af1fa3513d246089fd21dc9070f7";
+        };
+      default = "r0";
+      };
+    };
   }

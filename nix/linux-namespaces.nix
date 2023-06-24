@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.1.3.1" = {
+    sha256 = "2ad1ec43890a7cc4953ba8f0fbdc0d2f0a33a528640b765699e5c68765c80ac0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/linux-namespaces-0.1.3.1-r0-2c7ce7f0a9e995551265b72b3dc064ffa08ba5b0b887d80bb0d90c0bc197c7af.nix;
+        revNum = 0;
+        sha256 = "2c7ce7f0a9e995551265b72b3dc064ffa08ba5b0b887d80bb0d90c0bc197c7af";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -51,7 +51,17 @@
         revNum = 0;
         sha256 = "05a6cc03c407d62a999bace5fef6ed925395cb11265675052e8f39ce6f95a6ef";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crypto-sodium-0.0.5.0-r1-b8024c48c1d9eb5303805d6a7ca5d6609b47322867ab913ed29937e429570e7d.nix;
+        revNum = 1;
+        sha256 = "b8024c48c1d9eb5303805d6a7ca5d6609b47322867ab913ed29937e429570e7d";
+        };
+      r2 = {
+        nix = import ../hackage/crypto-sodium-0.0.5.0-r2-de65a48534608ecaad0209cbf88b5fc627bc74add83d16cc1e253175047d42a3.nix;
+        revNum = 2;
+        sha256 = "de65a48534608ecaad0209cbf88b5fc627bc74add83d16cc1e253175047d42a3";
+        };
+      default = "r2";
       };
     };
   }

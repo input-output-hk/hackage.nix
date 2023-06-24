@@ -502,4 +502,15 @@
       default = "r3";
       };
     };
+  "2.3.4" = {
+    sha256 = "a1a8272776a922ef8c0387763dada1f0f801c2ac7fe2fc1146394ea179f7f14d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stache-2.3.4-r0-8d5ccca8d57c2268bba9f43f9c426aa896ebb92c33629fd000f65861c8ccee74.nix;
+        revNum = 0;
+        sha256 = "8d5ccca8d57c2268bba9f43f9c426aa896ebb92c33629fd000f65861c8ccee74";
+        };
+      default = "r0";
+      };
+    };
   }

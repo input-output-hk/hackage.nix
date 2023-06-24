@@ -252,4 +252,15 @@
       default = "r0";
       };
     };
+  "0.7.2.2" = {
+    sha256 = "6705a221cfc4d1b7428e00781cda3033b688d0a811375299032fa69d46f88441";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tlynx-0.7.2.2-r0-4aa3e4070e6b00b81f11cb74e9eceeaf05b49fcbf24ae948b7772a906dd0f5f9.nix;
+        revNum = 0;
+        sha256 = "4aa3e4070e6b00b81f11cb74e9eceeaf05b49fcbf24ae948b7772a906dd0f5f9";
+        };
+      default = "r0";
+      };
+    };
   }

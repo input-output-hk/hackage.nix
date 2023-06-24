@@ -37,4 +37,15 @@
       default = "r0";
       };
     };
+  "1.1.0.0" = {
+    sha256 = "8a28767b1f84d5d8c3b4087fc1a38109ef38c5be3fcbe7afa06de5e19b4c5616";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lazy-async-1.1.0.0-r0-0c0fe12463d65703896ee3ed89694fad484bb53e246dfb51acf464e22868a6a4.nix;
+        revNum = 0;
+        sha256 = "0c0fe12463d65703896ee3ed89694fad484bb53e246dfb51acf464e22868a6a4";
+        };
+      default = "r0";
+      };
+    };
   }

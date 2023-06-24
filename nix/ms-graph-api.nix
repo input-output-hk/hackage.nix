@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.7.0.0" = {
+    sha256 = "10466fae6f4b33390bbc68ee92f429772364f3a894d940a001db9306e185431e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ms-graph-api-0.7.0.0-r0-52e6b26aadf1d409e9747b872320191e0c955a968b56a780a7aa50ffab27c46a.nix;
+        revNum = 0;
+        sha256 = "52e6b26aadf1d409e9747b872320191e0c955a968b56a780a7aa50ffab27c46a";
+        };
+      default = "r0";
+      };
+    };
   }
