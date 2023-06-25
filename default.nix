@@ -11275,6 +11275,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "optics" = import ./nix/optics.nix;
   "optics-core" = import ./nix/optics-core.nix;
   "optics-extra" = import ./nix/optics-extra.nix;
+  "optics-operators" = import ./nix/optics-operators.nix;
   "optics-th" = import ./nix/optics-th.nix;
   "optics-vl" = import ./nix/optics-vl.nix;
   "optima" = import ./nix/optima.nix;

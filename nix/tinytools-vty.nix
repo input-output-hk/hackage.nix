@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "7af58b4404412d8457381b0c1acb6e7cae290383e4dd34925fcd2be7dca18c55";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tinytools-vty-0.1.0.3-r1-08b2dee9a9158e48b408f74fa3ff5fe4fd83061205cbcb08461719462361ded5.nix;
+        revNum = 1;
+        sha256 = "08b2dee9a9158e48b408f74fa3ff5fe4fd83061205cbcb08461719462361ded5";
+        };
+      default = "r1";
       };
     };
   }

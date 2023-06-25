@@ -46,4 +46,15 @@
       default = "r1";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "312ed2ce41cec5702c5f659acc92e7fbe2132f118941b7fc0f2fdcf02767e7be";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/binance-exports-0.1.2.0-r0-ebead6120ac3a7f1131e73b487256c3b98a976d693991172694bfcaa62ad3328.nix;
+        revNum = 0;
+        sha256 = "ebead6120ac3a7f1131e73b487256c3b98a976d693991172694bfcaa62ad3328";
+        };
+      default = "r0";
+      };
+    };
   }

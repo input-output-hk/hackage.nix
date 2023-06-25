@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.3.0.3" = {
+    sha256 = "4b25fe770df8a7113fa5f1b4e444b2dba3755982aad1cad318b26e2d017691bb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/om-time-0.3.0.3-r0-98201f489a50fa64134d279b37655df91d093b44f8a297db954ac12b3dfe7972.nix;
+        revNum = 0;
+        sha256 = "98201f489a50fa64134d279b37655df91d093b44f8a297db954ac12b3dfe7972";
+        };
+      default = "r0";
+      };
+    };
   }
