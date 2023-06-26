@@ -289,4 +289,15 @@
       default = "r0";
       };
     };
+  "1.5.2" = {
+    sha256 = "1b2d523aeac55b809951536dd236510118f4589842aca1312a6fe0f865340be2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rank2classes-1.5.2-r0-1f9a0b693e7fa3e06206c116c57bcc7be011f4d3b8e1cdc14fcda890513a47b6.nix;
+        revNum = 0;
+        sha256 = "1f9a0b693e7fa3e06206c116c57bcc7be011f4d3b8e1cdc14fcda890513a47b6";
+        };
+      default = "r0";
+      };
+    };
   }

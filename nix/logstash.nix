@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.0.4" = {
+    sha256 = "2fa18645d6f71dc932f03c6ea6dbdaaa4ca0dfd4580b64c9ca6ba38cd837e3f4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/logstash-0.1.0.4-r0-f3b49b9a186ea845fef41fe36d29acf8c083ccde7e0cc78a5fd10df09614790e.nix;
+        revNum = 0;
+        sha256 = "f3b49b9a186ea845fef41fe36d29acf8c083ccde7e0cc78a5fd10df09614790e";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -37,4 +37,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "2a10b72fd1181cf14311942a04a5d904ea09feeff10f95fb24b0706fe7efc313";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ms-azure-api-0.3.0.0-r0-59cc54a1f5e8618f3763140a14a1dc4bf9a48f90cbaf76c05291ecf1faefa142.nix;
+        revNum = 0;
+        sha256 = "59cc54a1f5e8618f3763140a14a1dc4bf9a48f90cbaf76c05291ecf1faefa142";
+        };
+      default = "r0";
+      };
+    };
   }

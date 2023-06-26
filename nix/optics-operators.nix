@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "47064e1ebac91b247ec4e2c6694f60841e1fdedf8678b08275032933ed43a124";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/optics-operators-0.1.0.1-r0-d635c8b7b2b840ed0bf719796ec3671717a56827a4ee9a40cb04f91719126ebb.nix;
+        revNum = 0;
+        sha256 = "d635c8b7b2b840ed0bf719796ec3671717a56827a4ee9a40cb04f91719126ebb";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -207,4 +207,15 @@
       default = "r0";
       };
     };
+  "0.7.1" = {
+    sha256 = "9d24e9f4556ccf1020d65a599c17733dd405a34b3adcc4fde3b0c732d61b9ec0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/grammatical-parsers-0.7.1-r0-952540b9c79709dbe11481cb07d211eccc0d43125faab69c2d0dd5797dc80300.nix;
+        revNum = 0;
+        sha256 = "952540b9c79709dbe11481cb07d211eccc0d43125faab69c2d0dd5797dc80300";
+        };
+      default = "r0";
+      };
+    };
   }

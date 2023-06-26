@@ -81,6 +81,17 @@
       default = "r9";
       };
     };
+  "0.2.10.2" = {
+    sha256 = "8f574b5c6c361f5aa67899b1395d95662b57d542276120bd6514614d3bb09a38";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-auth-swagger-0.2.10.2-r0-f822a9354e5ee844acf3c15876b3a29129a4571b37cc8182e884e59552ff3184.nix;
+        revNum = 0;
+        sha256 = "f822a9354e5ee844acf3c15876b3a29129a4571b37cc8182e884e59552ff3184";
+        };
+      default = "r0";
+      };
+    };
   "0.2.6.0" = {
     sha256 = "39677be1986fa0a331ec1d6544f12f11c2402e3873981a98fd8842d8c3814e2d";
     revisions = {

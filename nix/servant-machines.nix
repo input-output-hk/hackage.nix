@@ -51,4 +51,15 @@
       default = "r2";
       };
     };
+  "0.16" = {
+    sha256 = "6214a2f0b7906fbdfa86e005a70f7caa9fe14bf1779388c2c87fd1544dfa4c30";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-machines-0.16-r0-a79a02e596d94eeff73bfe33971ec49c7b361eb9c01a668d4681b3951ceb9447.nix;
+        revNum = 0;
+        sha256 = "a79a02e596d94eeff73bfe33971ec49c7b361eb9c01a668d4681b3951ceb9447";
+        };
+      default = "r0";
+      };
+    };
   }
