@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.2.2.0" = {
+    sha256 = "eb713becf7ff87238ddf85fa2ff4703e58f9bf8060ffd9423e2728ce5f2c81c1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monoidal-functors-0.2.2.0-r0-09a53693843fca866cc137b1c18b41cc1609c43f7bcd2309c3e6d4c657e43c55.nix;
+        revNum = 0;
+        sha256 = "09a53693843fca866cc137b1c18b41cc1609c43f7bcd2309c3e6d4c657e43c55";
+        };
+      default = "r0";
+      };
+    };
   }

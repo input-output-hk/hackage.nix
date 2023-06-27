@@ -119,4 +119,15 @@
       default = "r0";
       };
     };
+  "1.1.0.4" = {
+    sha256 = "ae01c2bc76f8c9a25c90554d144e97ff8d8085aa6ba59e4042ef4951ddcb4413";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stripe-scotty-1.1.0.4-r0-786befa858f0fdf3c89491e96de936a18c57f773a24c9f807a372a086863a2f9.nix;
+        revNum = 0;
+        sha256 = "786befa858f0fdf3c89491e96de936a18c57f773a24c9f807a372a086863a2f9";
+        };
+      default = "r0";
+      };
+    };
   }

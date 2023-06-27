@@ -65,6 +65,17 @@
       default = "r0";
       };
     };
+  "1.0.0.16" = {
+    sha256 = "a6a48df5791c277fa15c5b5c0cc88c08d2f45ed6fd879a7364271325217bb619";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stripe-signature-1.0.0.16-r0-06470a77b5b6bcfb940280a6a1632f0fefb473be2a12f07dfff049de6a4c63b8.nix;
+        revNum = 0;
+        sha256 = "06470a77b5b6bcfb940280a6a1632f0fefb473be2a12f07dfff049de6a4c63b8";
+        };
+      default = "r0";
+      };
+    };
   "1.0.0.2" = {
     sha256 = "06766fa6e2f1d10ddb91a73efccf366712ebb56d1637fe6f1b290931ed2756ca";
     revisions = {

@@ -527,4 +527,15 @@
       default = "r0";
       };
     };
+  "3.5.0" = {
+    sha256 = "4857622da34e31f7044be889b81e78461c4a15b0feb856939655844376310445";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/svg-icons-3.5.0-r0-a563a747747f58d304a500eb52b5c49a924baa4de4cffaabbf82a77a28406b40.nix;
+        revNum = 0;
+        sha256 = "a563a747747f58d304a500eb52b5c49a924baa4de4cffaabbf82a77a28406b40";
+        };
+      default = "r0";
+      };
+    };
   }

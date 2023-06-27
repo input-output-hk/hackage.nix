@@ -75,6 +75,17 @@
       default = "r0";
       };
     };
+  "1.0.1.16" = {
+    sha256 = "75cafaf745f82da66728451a56a84fb5ac4906f7fd99989ca8d1967b1d811c54";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stripe-wreq-1.0.1.16-r0-c424572a55ad75a21167049704c4758aefe35ad3d23c17fb0ec594bd91d19d83.nix;
+        revNum = 0;
+        sha256 = "c424572a55ad75a21167049704c4758aefe35ad3d23c17fb0ec594bd91d19d83";
+        };
+      default = "r0";
+      };
+    };
   "1.0.1.2" = {
     sha256 = "e1cb8e595e06cf5ebc032024538b6cd93317ab4b81d52c98354a3cda414b5342";
     revisions = {

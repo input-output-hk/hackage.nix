@@ -3028,4 +3028,15 @@
       default = "r0";
       };
     };
+  "3.6" = {
+    sha256 = "d16ea7a3130ebfd8a94d06a28c87c106c2a59a3c0ae8ab6c2a830498c99e4138";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hlint-3.6-r0-3419176a1654a8027ee4c48b4531c71b952424123e967ec55facdad6e3f5cb9f.nix;
+        revNum = 0;
+        sha256 = "3419176a1654a8027ee4c48b4531c71b952424123e967ec55facdad6e3f5cb9f";
+        };
+      default = "r0";
+      };
+    };
   }

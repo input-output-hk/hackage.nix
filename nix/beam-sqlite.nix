@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.5.3.0" = {
+    sha256 = "a49a443524b202576da6a81297e05ae3dd69d5d4bfc494084bd28464bac41614";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/beam-sqlite-0.5.3.0-r0-7f2259583370e7cd81d822f6dba09807e95928c624eb95fa022fe83e17dec774.nix;
+        revNum = 0;
+        sha256 = "7f2259583370e7cd81d822f6dba09807e95928c624eb95fa022fe83e17dec774";
+        };
+      default = "r0";
+      };
+    };
   }

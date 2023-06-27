@@ -292,6 +292,22 @@
         revNum = 0;
         sha256 = "42ecb096d88a7d3eb240bebb52de5b2a9c05a64633fcf8ebf98960bab4f90772";
         };
+      r1 = {
+        nix = import ../hackage/ascii-superset-1.3.0.0-r1-e0d3f0513c1aa65805030c492f04201e496c9f1d92141bcf2a2f6e1fd6d59d29.nix;
+        revNum = 1;
+        sha256 = "e0d3f0513c1aa65805030c492f04201e496c9f1d92141bcf2a2f6e1fd6d59d29";
+        };
+      default = "r1";
+      };
+    };
+  "1.3.0.1" = {
+    sha256 = "d441ff82b6158a798bd6478e969e7c656c0895590e4f71a64c720aa3bd5b8e4d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ascii-superset-1.3.0.1-r0-8a52adf98202e6ef40e677a07aed32fc00dbfb2ead8af893380c62799d3d36b2.nix;
+        revNum = 0;
+        sha256 = "8a52adf98202e6ef40e677a07aed32fc00dbfb2ead8af893380c62799d3d36b2";
+        };
       default = "r0";
       };
     };

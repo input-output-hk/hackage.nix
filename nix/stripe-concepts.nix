@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "1.0.3.3" = {
+    sha256 = "309667004ca4fce52bd41e3248998b4e880e80b4193b733c8c44a5a17e90af7b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stripe-concepts-1.0.3.3-r0-cf86f9e0e7b7403f3304beba3393586fb772585a6a99e9b4adc209a6d89d9bda.nix;
+        revNum = 0;
+        sha256 = "cf86f9e0e7b7403f3304beba3393586fb772585a6a99e9b4adc209a6d89d9bda";
+        };
+      default = "r0";
+      };
+    };
   }

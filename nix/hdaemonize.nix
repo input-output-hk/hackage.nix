@@ -208,4 +208,15 @@
       default = "r0";
       };
     };
+  "0.5.7" = {
+    sha256 = "748823288eec23252335c00576384fc322e4f91c8e86f456530ba5d7c727f01b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hdaemonize-0.5.7-r0-b75b877f0704bcea84bf641c23d5f16e1e220a6147ed4ecabe0b916c128b9cfd.nix;
+        revNum = 0;
+        sha256 = "b75b877f0704bcea84bf641c23d5f16e1e220a6147ed4ecabe0b916c128b9cfd";
+        };
+      default = "r0";
+      };
+    };
   }
