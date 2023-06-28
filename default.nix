@@ -2070,6 +2070,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "atto-lisp" = import ./nix/atto-lisp.nix;
   "attomail" = import ./nix/attomail.nix;
   "attoparsec" = import ./nix/attoparsec.nix;
+  "attoparsec-aeson" = import ./nix/attoparsec-aeson.nix;
   "attoparsec-arff" = import ./nix/attoparsec-arff.nix;
   "attoparsec-base64" = import ./nix/attoparsec-base64.nix;
   "attoparsec-binary" = import ./nix/attoparsec-binary.nix;
@@ -8870,6 +8871,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "japanese-holidays" = import ./nix/japanese-holidays.nix;
   "jarfind" = import ./nix/jarfind.nix;
   "jarify" = import ./nix/jarify.nix;
+  "jaskell" = import ./nix/jaskell.nix;
   "jason" = import ./nix/jason.nix;
   "java-adt" = import ./nix/java-adt.nix;
   "java-bridge" = import ./nix/java-bridge.nix;
@@ -8971,6 +8973,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "json-rpc-server" = import ./nix/json-rpc-server.nix;
   "json-schema" = import ./nix/json-schema.nix;
   "json-sop" = import ./nix/json-sop.nix;
+  "json-spec" = import ./nix/json-spec.nix;
   "json-state" = import ./nix/json-state.nix;
   "json-stream" = import ./nix/json-stream.nix;
   "json-syntax" = import ./nix/json-syntax.nix;
@@ -9703,6 +9706,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "llvm-hs-pretty" = import ./nix/llvm-hs-pretty.nix;
   "llvm-hs-pure" = import ./nix/llvm-hs-pure.nix;
   "llvm-ht" = import ./nix/llvm-ht.nix;
+  "llvm-party" = import ./nix/llvm-party.nix;
   "llvm-pkg-config" = import ./nix/llvm-pkg-config.nix;
   "llvm-pretty" = import ./nix/llvm-pretty.nix;
   "llvm-pretty-bc-parser" = import ./nix/llvm-pretty-bc-parser.nix;
@@ -15228,6 +15232,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "text-icu" = import ./nix/text-icu.nix;
   "text-icu-normalized" = import ./nix/text-icu-normalized.nix;
   "text-icu-translit" = import ./nix/text-icu-translit.nix;
+  "text-iso8601" = import ./nix/text-iso8601.nix;
   "text-json-qq" = import ./nix/text-json-qq.nix;
   "text-latin1" = import ./nix/text-latin1.nix;
   "text-ldap" = import ./nix/text-ldap.nix;

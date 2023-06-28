@@ -80,4 +80,15 @@
       default = "r0";
       };
     };
+  "2.0.0.0" = {
+    sha256 = "49b81de0a9307360c92fc5c5f8c982d5b1148c91e718503d8ef4da3e4323f879";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/primitive-unlifted-2.0.0.0-r0-d61071e480bc32cb1cb54dbcb45aa54d3c37079c99131ca78dbab92699728836.nix;
+        revNum = 0;
+        sha256 = "d61071e480bc32cb1cb54dbcb45aa54d3c37079c99131ca78dbab92699728836";
+        };
+      default = "r0";
+      };
+    };
   }

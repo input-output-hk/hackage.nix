@@ -70,4 +70,15 @@
       default = "r0";
       };
     };
+  "0.0.4.3" = {
+    sha256 = "63ff6433eac2abfa835d7c8d07e222bce48e7a86fa44de2642494a816b51b609";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pg-entity-0.0.4.3-r0-589a73355234510803843be005417ce887352205270e2cc95704a9e7ae8e2711.nix;
+        revNum = 0;
+        sha256 = "589a73355234510803843be005417ce887352205270e2cc95704a9e7ae8e2711";
+        };
+      default = "r0";
+      };
+    };
   }

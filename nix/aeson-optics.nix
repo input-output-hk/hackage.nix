@@ -104,4 +104,15 @@
       default = "r1";
       };
     };
+  "1.2.1" = {
+    sha256 = "4a9a2042c214b8deb9044e51d70f5c394ad2a7dd079544fee45ccaa36d297d69";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-optics-1.2.1-r0-8f3caca8ff809c14ebbec791bd6cc1ca2767232c3ddcb57923d7ce0dec73f5bc.nix;
+        revNum = 0;
+        sha256 = "8f3caca8ff809c14ebbec791bd6cc1ca2767232c3ddcb57923d7ce0dec73f5bc";
+        };
+      default = "r0";
+      };
+    };
   }

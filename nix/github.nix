@@ -446,7 +446,12 @@
         revNum = 0;
         sha256 = "13ee9ea3340859eeb2896c4023683278e96a462bf8425320b99acc5a3d50496b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/github-0.29-r1-9115f8dc2342a34ba01c049d52c6fa989a9f535647ec22bea55d62ce48878c78.nix;
+        revNum = 1;
+        sha256 = "9115f8dc2342a34ba01c049d52c6fa989a9f535647ec22bea55d62ce48878c78";
+        };
+      default = "r1";
       };
     };
   "0.3.0" = {

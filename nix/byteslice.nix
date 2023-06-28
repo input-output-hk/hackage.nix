@@ -99,7 +99,12 @@
         revNum = 0;
         sha256 = "9796c715b1be0e9c6f96768622218b20ff4b8492222982fac7b26299b7d11160";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/byteslice-0.2.10.0-r1-9a02d1d5cdf3e5aa4dff2ed66739d5c4c354190c62cfc9f042c420ff6fbec15e.nix;
+        revNum = 1;
+        sha256 = "9a02d1d5cdf3e5aa4dff2ed66739d5c4c354190c62cfc9f042c420ff6fbec15e";
+        };
+      default = "r1";
       };
     };
   "0.2.2.0" = {

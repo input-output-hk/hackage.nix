@@ -318,4 +318,15 @@
       default = "r0";
       };
     };
+  "1.2.3" = {
+    sha256 = "7bbc6affe248c84dfda13576636ecb52e575ee0e796d8c29a76a28c3ad424c01";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lens-aeson-1.2.3-r0-5a810fc7b8b59a71a001951c314576a1986cd087649ff836aa8ae7a90607d1c9.nix;
+        revNum = 0;
+        sha256 = "5a810fc7b8b59a71a001951c314576a1986cd087649ff836aa8ae7a90607d1c9";
+        };
+      default = "r0";
+      };
+    };
   }
