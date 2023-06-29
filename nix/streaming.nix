@@ -525,7 +525,12 @@
         revNum = 0;
         sha256 = "26638a19039b2f447fdbeb430de1f7084c68b6ccd21eff288f5e45cf83670e47";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/streaming-0.2.3.0-r1-1a3f4c725bfff602d158956e90b852c9674bd9eb45767be9b45aa05bb2b9ef75.nix;
+        revNum = 1;
+        sha256 = "1a3f4c725bfff602d158956e90b852c9674bd9eb45767be9b45aa05bb2b9ef75";
+        };
+      default = "r1";
       };
     };
   "0.2.3.1" = {
@@ -536,7 +541,12 @@
         revNum = 0;
         sha256 = "9dd39bfa8befa6956372722187b225d489b50b633ab56d7f411bf302b79e46cd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/streaming-0.2.3.1-r1-1f8866432934fe00d317576ddff3bba70a671b16073339c8f5e37fce42827518.nix;
+        revNum = 1;
+        sha256 = "1f8866432934fe00d317576ddff3bba70a671b16073339c8f5e37fce42827518";
+        };
+      default = "r1";
       };
     };
   }

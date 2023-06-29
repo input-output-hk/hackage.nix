@@ -7644,6 +7644,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hls-hlint-plugin" = import ./nix/hls-hlint-plugin.nix;
   "hls-module-name-plugin" = import ./nix/hls-module-name-plugin.nix;
   "hls-ormolu-plugin" = import ./nix/hls-ormolu-plugin.nix;
+  "hls-overloaded-record-dot-plugin" = import ./nix/hls-overloaded-record-dot-plugin.nix;
   "hls-plugin-api" = import ./nix/hls-plugin-api.nix;
   "hls-pragmas-plugin" = import ./nix/hls-pragmas-plugin.nix;
   "hls-qualify-imported-names-plugin" = import ./nix/hls-qualify-imported-names-plugin.nix;
@@ -8974,6 +8975,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "json-schema" = import ./nix/json-schema.nix;
   "json-sop" = import ./nix/json-sop.nix;
   "json-spec" = import ./nix/json-spec.nix;
+  "json-spec-openapi" = import ./nix/json-spec-openapi.nix;
   "json-state" = import ./nix/json-state.nix;
   "json-stream" = import ./nix/json-stream.nix;
   "json-syntax" = import ./nix/json-syntax.nix;

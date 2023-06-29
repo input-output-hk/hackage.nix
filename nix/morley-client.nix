@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.3.2" = {
+    sha256 = "c3da7fbdb2e37586af9c95ae1ce296105e0265ecee7c2c7ec235499fc7a35471";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/morley-client-0.3.2-r0-cd169a949a4c4fa6ce333bb5d04a1fd3347a68e27637a579f3e3ac3b15da835a.nix;
+        revNum = 0;
+        sha256 = "cd169a949a4c4fa6ce333bb5d04a1fd3347a68e27637a579f3e3ac3b15da835a";
+        };
+      default = "r0";
+      };
+    };
   }

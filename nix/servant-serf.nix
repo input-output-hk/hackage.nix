@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "0.3.1.4" = {
+    sha256 = "f778a3b54d8c8f30b26605e1108f3a2e2d00d6d2e9b43b7658197d90915e886e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-serf-0.3.1.4-r0-5c5854911783ef75522b8304edd1135b93f91152467f0a1c706ef83ade391e90.nix;
+        revNum = 0;
+        sha256 = "5c5854911783ef75522b8304edd1135b93f91152467f0a1c706ef83ade391e90";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -230,4 +230,15 @@
       default = "r0";
       };
     };
+  "0.7.0" = {
+    sha256 = "9bb7a623eb50bf19710872296e1685564bad6b3c68b2d517eea9d2a3ea67060b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/secp256k1-haskell-0.7.0-r0-1585601c67d7c62c698402ffe8462de216a499608521a8136d0aa15f0a03a23f.nix;
+        revNum = 0;
+        sha256 = "1585601c67d7c62c698402ffe8462de216a499608521a8136d0aa15f0a03a23f";
+        };
+      default = "r0";
+      };
+    };
   }
