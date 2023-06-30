@@ -109,6 +109,17 @@
       default = "r0";
       };
     };
+  "0.12.0.4" = {
+    sha256 = "3d2cd84cb9b76b579176cc580707b3c65fc4f84ddf41d881ed5b5d272eb2b672";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hvega-0.12.0.4-r0-4573749fd274a0361e17116bc329c20bfa2a3beb3823ecb9624c1f7fe193a215.nix;
+        revNum = 0;
+        sha256 = "4573749fd274a0361e17116bc329c20bfa2a3beb3823ecb9624c1f7fe193a215";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "3349bf9ec03c584bad7c873d1d0932fc8adacdac6c7e9d3d27e3673545d5d61f";
     revisions = {

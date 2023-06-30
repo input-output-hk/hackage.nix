@@ -26,4 +26,15 @@
       default = "r1";
       };
     };
+  "0.1.1" = {
+    sha256 = "91552a35df5b7248b93f8ea34401584ce52d956f2c9db59003f72f3db0faecd6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typst-symbols-0.1.1-r0-f2751674970b8b5587185ca1e2fa037e15816dc7c98e8aecd13db320776e1626.nix;
+        revNum = 0;
+        sha256 = "f2751674970b8b5587185ca1e2fa037e15816dc7c98e8aecd13db320776e1626";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "8ca5936f6c72043a51980140813047ac471e525c3fcae50781ffead918bf2c2c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/spotify-0.1.0.1-r0-9fab97eaedfe0f15730044f9ea0a58ebf1ce85d8c7fe9dec1d4343c47ecd6f6d.nix;
+        revNum = 0;
+        sha256 = "9fab97eaedfe0f15730044f9ea0a58ebf1ce85d8c7fe9dec1d4343c47ecd6f6d";
+        };
+      default = "r0";
+      };
+    };
   }

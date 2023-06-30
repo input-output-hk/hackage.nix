@@ -144,7 +144,12 @@
         revNum = 1;
         sha256 = "222f508a83a7b9d46d54c924a9cfdf1404379afa225787141a1ab4eb361c684c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/persistent-redis-2.13.0.1-r2-35b982bc397a6efcf50755efd48feabc9f7201048cd20feed563bd03e6009235.nix;
+        revNum = 2;
+        sha256 = "35b982bc397a6efcf50755efd48feabc9f7201048cd20feed563bd03e6009235";
+        };
+      default = "r2";
       };
     };
   "2.5.0" = {

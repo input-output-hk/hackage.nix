@@ -28,7 +28,12 @@
         revNum = 2;
         sha256 = "76b620bd2d503b737ab0fdf547a7961f42f8ac22c34f4d7e5c6d2e379de131de";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/ban-instance-0.1.0.1-r3-69e030ab6bc510935a1f2da1e12c22b85411f168cdc92a1bc60f2abc61d91f52.nix;
+        revNum = 3;
+        sha256 = "69e030ab6bc510935a1f2da1e12c22b85411f168cdc92a1bc60f2abc61d91f52";
+        };
+      default = "r3";
       };
     };
   }
