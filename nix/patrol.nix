@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "1.0.0.5" = {
+    sha256 = "45acfe42261012628ce2dde01a2f12488db4a718c3a112b0f126b7983f8976da";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/patrol-1.0.0.5-r0-dbc9653d6f461d49dee453282d15bb71affaa641b72c23043af18f7016b0003d.nix;
+        revNum = 0;
+        sha256 = "dbc9653d6f461d49dee453282d15bb71affaa641b72c23043af18f7016b0003d";
+        };
+      default = "r0";
+      };
+    };
   }

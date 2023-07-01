@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "1.1.2.1" = {
+    sha256 = "1e7daf2bfce2093ad213bf6dc0a556de73b42222568ca78adc35ffad317de148";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Blammo-1.1.2.1-r0-b74d553fb3557bb10381b806bd34b8bad0b800883f02dfd1cc847f58db40958c.nix;
+        revNum = 0;
+        sha256 = "b74d553fb3557bb10381b806bd34b8bad0b800883f02dfd1cc847f58db40958c";
+        };
+      default = "r0";
+      };
+    };
   }

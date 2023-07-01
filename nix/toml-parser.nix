@@ -25,4 +25,20 @@
       default = "r3";
       };
     };
+  "1.0.0.0" = {
+    sha256 = "145955b5f3f68040688f9deded8c3c8f3bcfdba3c84fd7b7372172f39a32faa7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/toml-parser-1.0.0.0-r0-660e7cbd64c6dd116a4fd91b808b3ade8dac3ccda2055ab33a36c47c8db554ba.nix;
+        revNum = 0;
+        sha256 = "660e7cbd64c6dd116a4fd91b808b3ade8dac3ccda2055ab33a36c47c8db554ba";
+        };
+      r1 = {
+        nix = import ../hackage/toml-parser-1.0.0.0-r1-6156768c9512ae56461f9e7f65b0d7444bbd89a7a34d3d4db490c2e4202245f2.nix;
+        revNum = 1;
+        sha256 = "6156768c9512ae56461f9e7f65b0d7444bbd89a7a34d3d4db490c2e4202245f2";
+        };
+      default = "r1";
+      };
+    };
   }
