@@ -106,7 +106,12 @@
         revNum = 0;
         sha256 = "015585dfdddb85a8475a4c6b7be67e71e02a25260c50ffc4c36f688b27c456a1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/self-extract-0.4.1-r1-e264084693fe198798bc96a30fe7a3189630d60e34e7fc6869420163e61459c3.nix;
+        revNum = 1;
+        sha256 = "e264084693fe198798bc96a30fe7a3189630d60e34e7fc6869420163e61459c3";
+        };
+      default = "r1";
       };
     };
   }
