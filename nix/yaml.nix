@@ -297,7 +297,12 @@
         revNum = 1;
         sha256 = "2f1a578626cfadb42a901ade26a5b8676f9655d31321266133080bd25c11eea9";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/yaml-0.11.10.0-r2-f0863c69764fb9fa25a805baeb8ee9080abad22a42d207adf5483c9861827dec.nix;
+        revNum = 2;
+        sha256 = "f0863c69764fb9fa25a805baeb8ee9080abad22a42d207adf5483c9861827dec";
+        };
+      default = "r2";
       };
     };
   "0.11.11.0" = {
@@ -313,7 +318,12 @@
         revNum = 1;
         sha256 = "32e200a78bef9d91ca4b10b69763c60c570eab7f4e59dbf92b5b900ea14db568";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/yaml-0.11.11.0-r2-d50741e4db50642fd8b59249bd87b156b4632d9de5b65f0be3abb8fa697e7ac9.nix;
+        revNum = 2;
+        sha256 = "d50741e4db50642fd8b59249bd87b156b4632d9de5b65f0be3abb8fa697e7ac9";
+        };
+      default = "r2";
       };
     };
   "0.11.11.1" = {
@@ -324,7 +334,12 @@
         revNum = 0;
         sha256 = "2628967301a5e466fb399482c79675a40fb853d17d6528cc73cf9e284102636f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yaml-0.11.11.1-r1-c586f2202ef626578301097296bc15731cc3f673811ab722e9523226fac111df.nix;
+        revNum = 1;
+        sha256 = "c586f2202ef626578301097296bc15731cc3f673811ab722e9523226fac111df";
+        };
+      default = "r1";
       };
     };
   "0.11.11.2" = {
@@ -436,7 +451,12 @@
         revNum = 1;
         sha256 = "b9f77fbc4d0b2f570f2c31b09bba93da80b12e985c77681ba66e77beb76561d2";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/yaml-0.11.7.0-r2-4a8b61a15835e098c43512d2ecabbe231eda916f57fe90f4638e731aa4f3e45f.nix;
+        revNum = 2;
+        sha256 = "4a8b61a15835e098c43512d2ecabbe231eda916f57fe90f4638e731aa4f3e45f";
+        };
+      default = "r2";
       };
     };
   "0.11.8.0" = {
@@ -462,7 +482,12 @@
         revNum = 3;
         sha256 = "ac022f78c6fab4b8a7ce270cb09023f49517579fced60b40eb196e351dec080d";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/yaml-0.11.8.0-r4-a4cb6137d26e1ab483aa82047027d96aa4938d0f0cac45a8169d6c4d027b7e63.nix;
+        revNum = 4;
+        sha256 = "a4cb6137d26e1ab483aa82047027d96aa4938d0f0cac45a8169d6c4d027b7e63";
+        };
+      default = "r4";
       };
     };
   "0.11.9.0" = {
@@ -478,7 +503,12 @@
         revNum = 1;
         sha256 = "51b5753ee27e0593806e1cf8b26779f256e539bff19d4bbd508e26b1f44f071c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/yaml-0.11.9.0-r2-7ae22c9db0f0af98caac416f01b097065b2dfa9d4a026fe52c0ca55c54eb78a1.nix;
+        revNum = 2;
+        sha256 = "7ae22c9db0f0af98caac416f01b097065b2dfa9d4a026fe52c0ca55c54eb78a1";
+        };
+      default = "r2";
       };
     };
   "0.2.0" = {

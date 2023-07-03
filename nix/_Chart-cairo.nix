@@ -285,7 +285,12 @@
         revNum = 3;
         sha256 = "893d9da563b54350da20f258fe75e894f71ba5297dacc6b531407e0abc8988b4";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/Chart-cairo-1.9.3-r4-5d6f005b5d3d74453a979eb2c6a1777c92ce02eae9e019abbe03a0e008cb8aea.nix;
+        revNum = 4;
+        sha256 = "5d6f005b5d3d74453a979eb2c6a1777c92ce02eae9e019abbe03a0e008cb8aea";
+        };
+      default = "r4";
       };
     };
   }

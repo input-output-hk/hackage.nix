@@ -10,6 +10,17 @@
       default = "r0";
       };
     };
+  "0.10.0.0" = {
+    sha256 = "9091324e74fa9511a084254ccb4197f841ee71214f3602cd5382f405e7bd309f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ms-graph-api-0.10.0.0-r0-46120f30134320e8a888edb4c2ea2647848655fc6ae00143dc9f3fc2e891909c.nix;
+        revNum = 0;
+        sha256 = "46120f30134320e8a888edb4c2ea2647848655fc6ae00143dc9f3fc2e891909c";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "cb9414512b45ec997c92a4ff80a261694a48db8fa9082cf75f46a65a3454c7a3";
     revisions = {
@@ -83,6 +94,17 @@
         nix = import ../hackage/ms-graph-api-0.8.0.0-r0-aae0536235cd4b69f56907897f35f231bcc74e6c03c9d8407265689ad0e0304c.nix;
         revNum = 0;
         sha256 = "aae0536235cd4b69f56907897f35f231bcc74e6c03c9d8407265689ad0e0304c";
+        };
+      default = "r0";
+      };
+    };
+  "0.9.0.0" = {
+    sha256 = "7537b5a8540e2c619474db140645232b03fc69002cd460c9cb4260ff41d79789";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ms-graph-api-0.9.0.0-r0-a39f9dd2c87589160832a71d1922229da16810674bac2e73ae87ce8d1054caa9.nix;
+        revNum = 0;
+        sha256 = "a39f9dd2c87589160832a71d1922229da16810674bac2e73ae87ce8d1054caa9";
         };
       default = "r0";
       };
