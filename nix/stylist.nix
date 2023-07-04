@@ -171,7 +171,12 @@
         revNum = 0;
         sha256 = "a3f85feadaab04cc628344ea58106f761e8dbd78a0d190a68ba9aa6b9a0a820d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/stylist-2.7.0.1-r1-42fa7e59c05e64253c243776d126c0d04110198e0921ab63d6f8e8e5eab9a3cd.nix;
+        revNum = 1;
+        sha256 = "42fa7e59c05e64253c243776d126c0d04110198e0921ab63d6f8e8e5eab9a3cd";
+        };
+      default = "r1";
       };
     };
   }

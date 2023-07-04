@@ -182,7 +182,12 @@
         revNum = 1;
         sha256 = "27281de89f2d440339a255b7e632b194c2ad5b2858152221a4117396f8d52992";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/dear-imgui-2.1.3-r2-5dfe2ee7b91cd0f74650e84c56923bc610e2002942b93f63128312c163715123.nix;
+        revNum = 2;
+        sha256 = "5dfe2ee7b91cd0f74650e84c56923bc610e2002942b93f63128312c163715123";
+        };
+      default = "r2";
       };
     };
   }

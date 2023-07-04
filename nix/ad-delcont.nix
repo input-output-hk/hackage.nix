@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.5.0.0" = {
+    sha256 = "3b0f1acbefc3ec03e641982918549ebd7165f2822c56982c3d3c84623a3c5ea7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ad-delcont-0.5.0.0-r0-15aa556eb3406b7727c67b13a6720c3b965674406eba7274026450796f1276b0.nix;
+        revNum = 0;
+        sha256 = "15aa556eb3406b7727c67b13a6720c3b965674406eba7274026450796f1276b0";
+        };
+      default = "r0";
+      };
+    };
   }
