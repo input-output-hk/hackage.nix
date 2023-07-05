@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "741781f5f0126feca37c6787d95eae8d5a15b51fa58e309cbe1c43c901ba8320";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-lambda-0.0.0-r1-76c18a87b4216f644431074071fa38e599f3e23e26a999298a0fe565d0c78071.nix;
+        revNum = 1;
+        sha256 = "76c18a87b4216f644431074071fa38e599f3e23e26a999298a0fe565d0c78071";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

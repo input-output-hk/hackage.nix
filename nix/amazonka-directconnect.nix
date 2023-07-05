@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "7317aaff0da03cf6439a842c0a23b0c7375ad1d6131182c50c821d6f07262cf0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-directconnect-0.0.0-r1-9d03178e77a5192bfec630fb5b6f3946e3dd8733757cadfb10df70e5e8e54755.nix;
+        revNum = 1;
+        sha256 = "9d03178e77a5192bfec630fb5b6f3946e3dd8733757cadfb10df70e5e8e54755";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

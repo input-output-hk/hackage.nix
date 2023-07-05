@@ -950,4 +950,15 @@
       default = "r0";
       };
     };
+  "0.9.0.0" = {
+    sha256 = "f2f76dc0a94d9a119e152cbdea0fa876d934281b763a92499f20223649a626e4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/calamity-0.9.0.0-r0-285f90be45f9a7fbde3fb242dd9004143a6a47ed0b2c6431521f52090681381e.nix;
+        revNum = 0;
+        sha256 = "285f90be45f9a7fbde3fb242dd9004143a6a47ed0b2c6431521f52090681381e";
+        };
+      default = "r0";
+      };
+    };
   }

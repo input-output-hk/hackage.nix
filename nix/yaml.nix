@@ -350,7 +350,17 @@
         revNum = 0;
         sha256 = "84710601a662ab97ad39fd8ffa23612f33a6d8182ea0f704be9660d4bf1696d4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yaml-0.11.11.2-r1-05294e7662ab7e51c2906c31b5749dda0028a3c43592fbd9d900a6ef9769d140.nix;
+        revNum = 1;
+        sha256 = "05294e7662ab7e51c2906c31b5749dda0028a3c43592fbd9d900a6ef9769d140";
+        };
+      r2 = {
+        nix = import ../hackage/yaml-0.11.11.2-r2-6f0a1859e0fb3068e50dbc7fe9bf9a26847741bc24344e35e16a03711a18f88d.nix;
+        revNum = 2;
+        sha256 = "6f0a1859e0fb3068e50dbc7fe9bf9a26847741bc24344e35e16a03711a18f88d";
+        };
+      default = "r2";
       };
     };
   "0.11.2.0" = {

@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "66cffcfa0d77d3efaa56a7faaa25ae9f727b1986d2f3466d925fe3e67d465504";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cloudsearch-domains-0.0.0-r1-1e61d2ad421e2636cbf56d6ec839b111f2289000aa4fc92e653c26c81e492eb0.nix;
+        revNum = 1;
+        sha256 = "1e61d2ad421e2636cbf56d6ec839b111f2289000aa4fc92e653c26c81e492eb0";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

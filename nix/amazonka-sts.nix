@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "f1af3bf193df7b2dafe75471fd055d44aebd6b0f7b4eed929fd1d5b0a3b11a48";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-sts-0.0.0-r1-1e9536d898f6113d354bda36f53320f22fed4a800a77569d1a07a53fa40f5c6c.nix;
+        revNum = 1;
+        sha256 = "1e9536d898f6113d354bda36f53320f22fed4a800a77569d1a07a53fa40f5c6c";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

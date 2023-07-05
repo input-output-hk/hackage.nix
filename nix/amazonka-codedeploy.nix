@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "ca8a3b4374d43528cedd82ef812bd196614cceac2fbedaaf394d912d75600604";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-codedeploy-0.0.0-r1-555c4a89e64e9f93a78a7ea7e1abce3e92f14157fec32ca1a6585c29ed0b6e17.nix;
+        revNum = 1;
+        sha256 = "555c4a89e64e9f93a78a7ea7e1abce3e92f14157fec32ca1a6585c29ed0b6e17";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

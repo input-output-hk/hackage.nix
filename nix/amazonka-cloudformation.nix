@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "c128de5cf6370414f8fea37277543fefa3b36d37727e4c1e5691ff6c4435eabc";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cloudformation-0.0.0-r1-9a8ecc91705d6d3909a20c6bb098fd2e5826b6ca0eba2f38dc04c2011aeae1ff.nix;
+        revNum = 1;
+        sha256 = "9a8ecc91705d6d3909a20c6bb098fd2e5826b6ca0eba2f38dc04c2011aeae1ff";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

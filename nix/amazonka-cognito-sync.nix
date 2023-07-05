@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "5e3696fe6b6f2dcbb11275ef0aa23214e3024b7814b0d46f359fe0a15c68a3de";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cognito-sync-0.0.0-r1-2b8b895b25cc27e4b1d59038fe66bd08c9c75753ba1f763d08e4163441f6bd7a.nix;
+        revNum = 1;
+        sha256 = "2b8b895b25cc27e4b1d59038fe66bd08c9c75753ba1f763d08e4163441f6bd7a";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

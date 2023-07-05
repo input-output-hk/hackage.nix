@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "cbdca974d99d19dfae0138db221dbb73daf650a790e7e6d3fa05ee6e3ac845d7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cloudtrail-0.0.0-r1-7f782ebef37ac1eaa60edb5842505920c7e76a9c50ba7a31eebfc20c0298d5cd.nix;
+        revNum = 1;
+        sha256 = "7f782ebef37ac1eaa60edb5842505920c7e76a9c50ba7a31eebfc20c0298d5cd";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

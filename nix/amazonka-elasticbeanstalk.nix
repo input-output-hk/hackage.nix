@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "bb20f2bc1ee7ffbde096402987a7e653b6dc786a76886d638e947ccb9c7cde02";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-elasticbeanstalk-0.0.0-r1-030ad69c00546efa3f8d3631686e74fa2fa8f0d49c91b3f0767fb8e97b5b2dec.nix;
+        revNum = 1;
+        sha256 = "030ad69c00546efa3f8d3631686e74fa2fa8f0d49c91b3f0767fb8e97b5b2dec";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

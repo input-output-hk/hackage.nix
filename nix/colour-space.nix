@@ -122,4 +122,15 @@
       default = "r0";
       };
     };
+  "0.2.1.0" = {
+    sha256 = "7ddfa895a25591d1fb8575e76eb1d9c1e29e5cb7da619689d05e004f1e771d7b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/colour-space-0.2.1.0-r0-44d58fcf6de930efdb7fc936c149028c393a8784b9afd8a5f6ed60ab299cd5e5.nix;
+        revNum = 0;
+        sha256 = "44d58fcf6de930efdb7fc936c149028c393a8784b9afd8a5f6ed60ab299cd5e5";
+        };
+      default = "r0";
+      };
+    };
   }

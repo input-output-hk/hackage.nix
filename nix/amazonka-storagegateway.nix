@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "bf3da7132086a328f53f38ceab70ea6618066e39f932f247e47e66c42f0faa52";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-storagegateway-0.0.0-r1-26ab2097399ec2d5e1f6eade9556bed357fdd282e62371d6a8fe2c41f1a5d092.nix;
+        revNum = 1;
+        sha256 = "26ab2097399ec2d5e1f6eade9556bed357fdd282e62371d6a8fe2c41f1a5d092";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

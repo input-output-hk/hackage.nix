@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "74f9bdd5fea4479b51c3df0c8413d6877b42f690fbedc5736c87d3e6a7d9f1c0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cloudwatch-logs-0.0.0-r1-e088fec3b48bf062b95afdd88a44c0180e886daca553a5e3edda83351d077d73.nix;
+        revNum = 1;
+        sha256 = "e088fec3b48bf062b95afdd88a44c0180e886daca553a5e3edda83351d077d73";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

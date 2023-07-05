@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "57a6d1631ec36b3cf3969f67f111b32edfbbaa82694c465921fa535ceff07d27";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cognito-identity-0.0.0-r1-f9fd6fb16a0004d466f708bf09a39e394a5225ae7a4a89493a03b04bbe524aa0.nix;
+        revNum = 1;
+        sha256 = "f9fd6fb16a0004d466f708bf09a39e394a5225ae7a4a89493a03b04bbe524aa0";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

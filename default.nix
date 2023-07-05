@@ -6961,6 +6961,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hashable-time" = import ./nix/hashable-time.nix;
   "hashabler" = import ./nix/hashabler.nix;
   "hashed-storage" = import ./nix/hashed-storage.nix;
+  "hasherize" = import ./nix/hasherize.nix;
   "hashes" = import ./nix/hashes.nix;
   "hashflare" = import ./nix/hashflare.nix;
   "hashids" = import ./nix/hashids.nix;
@@ -17040,6 +17041,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yesod-static" = import ./nix/yesod-static.nix;
   "yesod-static-angular" = import ./nix/yesod-static-angular.nix;
   "yesod-static-remote" = import ./nix/yesod-static-remote.nix;
+  "yesod-static-streamly" = import ./nix/yesod-static-streamly.nix;
   "yesod-table" = import ./nix/yesod-table.nix;
   "yesod-tableview" = import ./nix/yesod-tableview.nix;
   "yesod-test" = import ./nix/yesod-test.nix;

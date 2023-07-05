@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "de15b36fabf94be6a9ed183c56c3c3858123cd70ef600cbd32770904bc5a7b90";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-dynamodb-0.0.0-r1-b8e6058810c41b1d526e9f0b74792816ad19a050eee7116174b2913830233884.nix;
+        revNum = 1;
+        sha256 = "b8e6058810c41b1d526e9f0b74792816ad19a050eee7116174b2913830233884";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "85d88ccd7f753f0538ae059743e0f20b2b9cf35a88ef9416c30c94a07b357e33";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cloudfront-0.0.0-r1-495b0283eb3bd97f33e54fdd8189af41f9b6d9b9c73509e07da1691ef1b908f2.nix;
+        revNum = 1;
+        sha256 = "495b0283eb3bd97f33e54fdd8189af41f9b6d9b9c73509e07da1691ef1b908f2";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

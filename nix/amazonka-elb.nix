@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "e596cb1c1818a4857b7434198aa37de937e0b3462523df8a2718392f6dd7d9ed";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-elb-0.0.0-r1-dc44495fdf89e3397da09913a783c60a2823edbc4c3428f85939f266606a8b95.nix;
+        revNum = 1;
+        sha256 = "dc44495fdf89e3397da09913a783c60a2823edbc4c3428f85939f266606a8b95";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {

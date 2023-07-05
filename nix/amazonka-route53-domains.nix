@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "7a47959d1d32e29f769cb545a416599ecc28c71b141149c84c77bd1922efb17f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-route53-domains-0.0.0-r1-ba0ab619fc7419c9a2ba56d770090639501195666636922a0f4b355e26b070b0.nix;
+        revNum = 1;
+        sha256 = "ba0ab619fc7419c9a2ba56d770090639501195666636922a0f4b355e26b070b0";
+        };
+      default = "r1";
       };
     };
   "0.0.1" = {
