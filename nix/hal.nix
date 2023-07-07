@@ -239,7 +239,12 @@
         revNum = 1;
         sha256 = "e7b9bbb4b2dbe8a0615171253df94d52c686a500ec62c728bb7f068be0c3b906";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hal-0.4.10-r2-35ad7151de1779b95bb639bc3079a71b6b89c0de36e0a5d82326cf3fb541f33e.nix;
+        revNum = 2;
+        sha256 = "35ad7151de1779b95bb639bc3079a71b6b89c0de36e0a5d82326cf3fb541f33e";
+        };
+      default = "r2";
       };
     };
   "0.4.10.1" = {
@@ -260,7 +265,12 @@
         revNum = 2;
         sha256 = "e8d1538fe6218c0fbf1bd0b58fecbc39e66361f1f0ab1ddc18234f6d6e097f90";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/hal-0.4.10.1-r3-3c129029af0214469969923f17a22a345d3106285f30a8a2f314e3f5ab64ec7b.nix;
+        revNum = 3;
+        sha256 = "3c129029af0214469969923f17a22a345d3106285f30a8a2f314e3f5ab64ec7b";
+        };
+      default = "r3";
       };
     };
   "0.4.2" = {
@@ -393,7 +403,12 @@
         revNum = 1;
         sha256 = "8306110413171fd3712abc318670083145d60f5ac009860b2195c0a62df1b639";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hal-0.4.9-r2-8ea4b88744bbd1efa952d6d98b823e7570c02fdfe796d48a068b7896869a1e2f.nix;
+        revNum = 2;
+        sha256 = "8ea4b88744bbd1efa952d6d98b823e7570c02fdfe796d48a068b7896869a1e2f";
+        };
+      default = "r2";
       };
     };
   "1.0.0" = {
@@ -414,7 +429,12 @@
         revNum = 2;
         sha256 = "8c6ab149fb928de700ff7405ed74d5570d1c4a2386a27664c0a12ddd165a8241";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/hal-1.0.0-r3-e496875cdd180f562e2c0e443e61455b41d5e6174e4d37d66ee4b83246cfc1f7.nix;
+        revNum = 3;
+        sha256 = "e496875cdd180f562e2c0e443e61455b41d5e6174e4d37d66ee4b83246cfc1f7";
+        };
+      default = "r3";
       };
     };
   "1.0.0.1" = {
@@ -425,7 +445,12 @@
         revNum = 0;
         sha256 = "35d639fbabffe123c1ef1d3af4629e922435c5d6e60af96498f2ab8f311e969a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hal-1.0.0.1-r1-0d7706c8c9341aeca7b50dc60d66ebb32f28259d8afc3f555a7dc3a651f08f3d.nix;
+        revNum = 1;
+        sha256 = "0d7706c8c9341aeca7b50dc60d66ebb32f28259d8afc3f555a7dc3a651f08f3d";
+        };
+      default = "r1";
       };
     };
   }

@@ -20,4 +20,15 @@
       default = "r2";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "a1f605211efbd3919a00ff32be260be61176d47ab3073a26c282ecb26fc05721";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bytehash-0.1.1.0-r0-3dad9e81d76c53c384dcc19956a6b42f76fb938fbd9c58f0cfe3e4b2e5462f48.nix;
+        revNum = 0;
+        sha256 = "3dad9e81d76c53c384dcc19956a6b42f76fb938fbd9c58f0cfe3e4b2e5462f48";
+        };
+      default = "r0";
+      };
+    };
   }
