@@ -94,7 +94,12 @@
         revNum = 0;
         sha256 = "7695118aef84deab8350654c6e13b2696234a425259b3ac6b00a6b4021fe41d6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/literatex-0.3.0.0-r1-773e9fba6d79167bc3d985ab1de69183ac69460dd376910785630442adaac5da.nix;
+        revNum = 1;
+        sha256 = "773e9fba6d79167bc3d985ab1de69183ac69460dd376910785630442adaac5da";
+        };
+      default = "r1";
       };
     };
   }

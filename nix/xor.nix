@@ -28,7 +28,12 @@
         revNum = 2;
         sha256 = "38c1bd2311b86da869498769134301b5ed6fecff3b525aef4d6d33950f2ac20b";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/xor-0.0.1.1-r3-4a1f25cce1b5ca0f900c7254418cfd7d6e9c1d1a5bcb62ca9e7889dc692c549d.nix;
+        revNum = 3;
+        sha256 = "4a1f25cce1b5ca0f900c7254418cfd7d6e9c1d1a5bcb62ca9e7889dc692c549d";
+        };
+      default = "r3";
       };
     };
   }

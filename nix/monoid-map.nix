@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "9e4428ba939ae1f154c83f975937165fae4dc62fe351fe02897274d37ccaf0be";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/monoid-map-0.2.0.0-r1-092d32676a6a6c96b771f2431916c562842fb13a90c60f543fc9522e2c8b1cf2.nix;
+        revNum = 1;
+        sha256 = "092d32676a6a6c96b771f2431916c562842fb13a90c60f543fc9522e2c8b1cf2";
+        };
+      default = "r1";
       };
     };
   }

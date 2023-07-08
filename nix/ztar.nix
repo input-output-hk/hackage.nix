@@ -117,7 +117,12 @@
         revNum = 0;
         sha256 = "82ece5bc5d7a64729d18651f7c135fc2b883135badb3cc22b3c3b35b48e1fbad";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ztar-1.0.2-r1-9b206e042b536326049cee20711fa50fc019a68d8f9d2ad00ece4affac61430e.nix;
+        revNum = 1;
+        sha256 = "9b206e042b536326049cee20711fa50fc019a68d8f9d2ad00ece4affac61430e";
+        };
+      default = "r1";
       };
     };
   }

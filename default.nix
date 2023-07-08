@@ -3496,6 +3496,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "compact-word-vectors" = import ./nix/compact-word-vectors.nix;
   "compactable" = import ./nix/compactable.nix;
   "compactmap" = import ./nix/compactmap.nix;
+  "companion" = import ./nix/companion.nix;
   "compare-type" = import ./nix/compare-type.nix;
   "comparse" = import ./nix/comparse.nix;
   "compdata" = import ./nix/compdata.nix;
@@ -13074,6 +13075,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "request" = import ./nix/request.nix;
   "request-monad" = import ./nix/request-monad.nix;
   "require" = import ./nix/require.nix;
+  "require-callstack" = import ./nix/require-callstack.nix;
   "requirements" = import ./nix/requirements.nix;
   "rere" = import ./nix/rere.nix;
   "rerebase" = import ./nix/rerebase.nix;
@@ -14504,6 +14506,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "statethread" = import ./nix/statethread.nix;
   "statgrab" = import ./nix/statgrab.nix;
   "static" = import ./nix/static.nix;
+  "static-bytes" = import ./nix/static-bytes.nix;
   "static-canvas" = import ./nix/static-canvas.nix;
   "static-closure" = import ./nix/static-closure.nix;
   "static-hash" = import ./nix/static-hash.nix;

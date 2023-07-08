@@ -219,7 +219,12 @@
         revNum = 1;
         sha256 = "4ff4425c710cddf440dfbac6cd52310bb6b23e17902390ff71c9fc7eaafc4fcc";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/regex-base-0.94.0.2-r2-3a76c313f9f75e8e0b3c103c1bff5bbaf754da30cbddedc1d5b7061d001030e0.nix;
+        revNum = 2;
+        sha256 = "3a76c313f9f75e8e0b3c103c1bff5bbaf754da30cbddedc1d5b7061d001030e0";
+        };
+      default = "r2";
       };
     };
   }
