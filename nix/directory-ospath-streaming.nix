@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "f3ec650aba95093dc747bd7e5a3b3cf189f1e328d0894801812156896e9b0148";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/directory-ospath-streaming-0.1.0.1-r0-2c996f808748b76c6a030125e4aba54435c9674c274bc1658240ac0711b527c1.nix;
+        revNum = 0;
+        sha256 = "2c996f808748b76c6a030125e4aba54435c9674c274bc1658240ac0711b527c1";
+        };
+      default = "r0";
+      };
+    };
   }

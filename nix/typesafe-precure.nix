@@ -10,6 +10,17 @@
       default = "r0";
       };
     };
+  "0.10.0.1" = {
+    sha256 = "29326d01c87f2d1d325b4783b08b41685f06a4d977c806a69217f3e273afd57a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typesafe-precure-0.10.0.1-r0-3eaecd687ae32caf9f54e0b81c69b36cb486002691a33a4018e95ea3698bf9fc.nix;
+        revNum = 0;
+        sha256 = "3eaecd687ae32caf9f54e0b81c69b36cb486002691a33a4018e95ea3698bf9fc";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "f024a0c5a135b2ffbaf4ae97d9614d6f0d09652327061ba134f1c4b38e4b130e";
     revisions = {

@@ -1507,6 +1507,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aeson-utils" = import ./nix/aeson-utils.nix;
   "aeson-value-parser" = import ./nix/aeson-value-parser.nix;
   "aeson-via" = import ./nix/aeson-via.nix;
+  "aeson-warning-parser" = import ./nix/aeson-warning-parser.nix;
   "aeson-with" = import ./nix/aeson-with.nix;
   "aeson-yak" = import ./nix/aeson-yak.nix;
   "aeson-yaml" = import ./nix/aeson-yaml.nix;
@@ -9439,6 +9440,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lens-family-core" = import ./nix/lens-family-core.nix;
   "lens-family-th" = import ./nix/lens-family-th.nix;
   "lens-filesystem" = import ./nix/lens-filesystem.nix;
+  "lens-indexed-plated" = import ./nix/lens-indexed-plated.nix;
   "lens-labels" = import ./nix/lens-labels.nix;
   "lens-misc" = import ./nix/lens-misc.nix;
   "lens-named" = import ./nix/lens-named.nix;

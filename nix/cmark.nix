@@ -322,4 +322,15 @@
       default = "r0";
       };
     };
+  "0.6.1" = {
+    sha256 = "091d6d67cd246b6549d6e29108b709d1cd1d714fd01c078820f894fd95585c2a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cmark-0.6.1-r0-79b1d093fafcbd65a2d3c7f0a74b8384dca3c983552042157ff82f432d27a7d6.nix;
+        revNum = 0;
+        sha256 = "79b1d093fafcbd65a2d3c7f0a74b8384dca3c983552042157ff82f432d27a7d6";
+        };
+      default = "r0";
+      };
+    };
   }
