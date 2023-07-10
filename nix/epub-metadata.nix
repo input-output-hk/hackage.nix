@@ -186,4 +186,26 @@
       default = "r0";
       };
     };
+  "5.0" = {
+    sha256 = "b6deba171e86fb696e951b6da8ee049a0e259ff267b7b8fc6804bdb55f051564";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/epub-metadata-5.0-r0-a0086ca400c8f98e39ccf6345b3d67afb715fb0782f3940c59c0b825fc559c9d.nix;
+        revNum = 0;
+        sha256 = "a0086ca400c8f98e39ccf6345b3d67afb715fb0782f3940c59c0b825fc559c9d";
+        };
+      default = "r0";
+      };
+    };
+  "5.1" = {
+    sha256 = "f2b31fc897c0d697fd865d0fce69ce92b78a34b476730a74f5fe517e39e1b476";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/epub-metadata-5.1-r0-c04142a99c9c437bcef9b4ac7ad681bdbddd0a555583a68ef2cbf83bd49babe1.nix;
+        revNum = 0;
+        sha256 = "c04142a99c9c437bcef9b4ac7ad681bdbddd0a555583a68ef2cbf83bd49babe1";
+        };
+      default = "r0";
+      };
+    };
   }

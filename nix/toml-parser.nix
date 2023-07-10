@@ -74,4 +74,15 @@
       default = "r0";
       };
     };
+  "1.2.0.0" = {
+    sha256 = "21048bae4d49288fe9f0837aade643e7440fc09671dc533a10599f628b36d95f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/toml-parser-1.2.0.0-r0-617260fd34bf5d4dceaa2290027cbc440809ab7ec629dcd3ee7e39182a772c4d.nix;
+        revNum = 0;
+        sha256 = "617260fd34bf5d4dceaa2290027cbc440809ab7ec629dcd3ee7e39182a772c4d";
+        };
+      default = "r0";
+      };
+    };
   }

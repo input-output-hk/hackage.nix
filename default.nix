@@ -14395,6 +14395,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "spsa" = import ./nix/spsa.nix;
   "spy" = import ./nix/spy.nix;
   "sqel" = import ./nix/sqel.nix;
+  "sqids" = import ./nix/sqids.nix;
   "sql-simple" = import ./nix/sql-simple.nix;
   "sql-simple-mysql" = import ./nix/sql-simple-mysql.nix;
   "sql-simple-pool" = import ./nix/sql-simple-pool.nix;

@@ -59,4 +59,15 @@
       default = "r0";
       };
     };
+  "0.3.2" = {
+    sha256 = "11edf96e059b98b426c96fff3c35dacabca4e9e96f401aeaffc8ff147182d571";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/watchdog-0.3.2-r0-debe850533275988c2c5fa67292043ebcc28a3cfbbc81d7da8931a8f8752ec96.nix;
+        revNum = 0;
+        sha256 = "debe850533275988c2c5fa67292043ebcc28a3cfbbc81d7da8931a8f8752ec96";
+        };
+      default = "r0";
+      };
+    };
   }
