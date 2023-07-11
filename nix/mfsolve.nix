@@ -106,4 +106,15 @@
       default = "r1";
       };
     };
+  "0.3.2.2" = {
+    sha256 = "093fe312090e7e59355c8d23efb54cfe9bd0f81a2fbfec6c138d34f03a188f81";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mfsolve-0.3.2.2-r0-8ede632bd01cb6fa09a69cc32c3fcf943786e9efacee6e35af67427c582db0a3.nix;
+        revNum = 0;
+        sha256 = "8ede632bd01cb6fa09a69cc32c3fcf943786e9efacee6e35af67427c582db0a3";
+        };
+      default = "r0";
+      };
+    };
   }

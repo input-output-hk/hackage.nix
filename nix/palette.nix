@@ -128,4 +128,15 @@
       default = "r5";
       };
     };
+  "0.3.0.3" = {
+    sha256 = "5f89b4f2a307875d22da6f71ebb98c5b349a2374492c9141831620234300a385";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/palette-0.3.0.3-r0-3987048c9966952ca904145c98914f2ac892eedcbb59c561ba080add11d90744.nix;
+        revNum = 0;
+        sha256 = "3987048c9966952ca904145c98914f2ac892eedcbb59c561ba080add11d90744";
+        };
+      default = "r0";
+      };
+    };
   }

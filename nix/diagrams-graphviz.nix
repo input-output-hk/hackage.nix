@@ -82,7 +82,12 @@
         revNum = 3;
         sha256 = "0721b4d1782a5ceae811ccf766a0bfc0f447914512f3ae3308e836b06fcfe3e6";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/diagrams-graphviz-1.4.1.1-r4-c4450ef96895831aa24f5c0a98afa7fdad18184ec8a109af82c07ab8070d723e.nix;
+        revNum = 4;
+        sha256 = "c4450ef96895831aa24f5c0a98afa7fdad18184ec8a109af82c07ab8070d723e";
+        };
+      default = "r4";
       };
     };
   }

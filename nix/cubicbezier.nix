@@ -257,4 +257,15 @@
       default = "r1";
       };
     };
+  "0.6.0.7" = {
+    sha256 = "e2e85e0cc78c2b65858bcd969d58bf36f1cd8e59531d361b6d710073939846e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cubicbezier-0.6.0.7-r0-ded06a45d1ffa8b5ae39dbe525c7a09676ecad543da3bed12e5f0e79a0426f90.nix;
+        revNum = 0;
+        sha256 = "ded06a45d1ffa8b5ae39dbe525c7a09676ecad543da3bed12e5f0e79a0426f90";
+        };
+      default = "r0";
+      };
+    };
   }

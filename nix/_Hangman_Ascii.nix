@@ -32,4 +32,26 @@
       default = "r0";
       };
     };
+  "0.1.1.2" = {
+    sha256 = "31ab8c4843478c0aadeb4de01438a0ca57fc7c7a037c7e182f5389ae5168eb6e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HangmanAscii-0.1.1.2-r0-3fef6f80cced4d32e4fa25148b0ae5e6ccc8dc2e748e4ef195f518a112237ff5.nix;
+        revNum = 0;
+        sha256 = "3fef6f80cced4d32e4fa25148b0ae5e6ccc8dc2e748e4ef195f518a112237ff5";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.1.3" = {
+    sha256 = "6fb5dd2c318aa7c12096fc72306404a7d046fcb22d04b689e7793040f9706cbb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HangmanAscii-0.1.1.3-r0-bea38ef24d638b2831fefc118c42a3984fa245071be589a0f79ad7d4e58594e2.nix;
+        revNum = 0;
+        sha256 = "bea38ef24d638b2831fefc118c42a3984fa245071be589a0f79ad7d4e58594e2";
+        };
+      default = "r0";
+      };
+    };
   }

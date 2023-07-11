@@ -304,7 +304,12 @@
         revNum = 2;
         sha256 = "f9ca9644f00ac9f53c4df1927d99a7ab49f9e70be2a00f37dfe859e8601d892a";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/hyperloglog-0.4.6-r3-adb2dc20ca5034f3eba65c49686b3986fb75a2240ccf9321b019f1dbcb1ef889.nix;
+        revNum = 3;
+        sha256 = "adb2dc20ca5034f3eba65c49686b3986fb75a2240ccf9321b019f1dbcb1ef889";
+        };
+      default = "r3";
       };
     };
   }

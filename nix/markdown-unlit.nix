@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.6.0" = {
+    sha256 = "d38b18581fe4da33bcfcc5d368c48a88f27e9801035e4ace59776e14c7787b5a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/markdown-unlit-0.6.0-r0-8a26dabe29b98f7ca3cf76afcf52b082431511c03563dc1128be23c91d357994.nix;
+        revNum = 0;
+        sha256 = "8a26dabe29b98f7ca3cf76afcf52b082431511c03563dc1128be23c91d357994";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "7908b7a4f791677a81030517e683b3522939cc1c2a57985606833b5380f0e72a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/opaleye-0.10.0.0-r1-265979b79276cadbc87541a1aa1b4faf650df953706599c98db515542bfc59a8.nix;
+        revNum = 1;
+        sha256 = "265979b79276cadbc87541a1aa1b4faf650df953706599c98db515542bfc59a8";
+        };
+      default = "r1";
       };
     };
   "0.2" = {
@@ -869,7 +874,12 @@
         revNum = 0;
         sha256 = "2fd9ec40607825a932d9304efec51bb1f715efb2cde6112db17b6790df9cca35";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/opaleye-0.9.7.0-r1-137cd4cab5bc1eb86a89568bb19a77ba5aacd6339cba2d8aac3f6cf2862fcd83.nix;
+        revNum = 1;
+        sha256 = "137cd4cab5bc1eb86a89568bb19a77ba5aacd6339cba2d8aac3f6cf2862fcd83";
+        };
+      default = "r1";
       };
     };
   }
