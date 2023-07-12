@@ -520,4 +520,15 @@
       default = "r1";
       };
     };
+  "0.4.1.2" = {
+    sha256 = "32a378aee9ba130cad6c6463e4671da98092bb7e696fabbf4ce5afb1420ce101";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/diagrams-haddock-0.4.1.2-r0-df85fadeaf243bbdef999be504ac759fe3a271a43eedd34228189598f3639b1b.nix;
+        revNum = 0;
+        sha256 = "df85fadeaf243bbdef999be504ac759fe3a271a43eedd34228189598f3639b1b";
+        };
+      default = "r0";
+      };
+    };
   }

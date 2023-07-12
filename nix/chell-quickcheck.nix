@@ -120,4 +120,15 @@
       default = "r0";
       };
     };
+  "0.2.5.4" = {
+    sha256 = "91543124f73b32f314ba67c7f39f7cb70563097f021dc394ce36e9629cd1cc10";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chell-quickcheck-0.2.5.4-r0-84143be15b9f6d054a45548dc0505ae65a730ec3f4a53d3641fb4614ef65bf3e.nix;
+        revNum = 0;
+        sha256 = "84143be15b9f6d054a45548dc0505ae65a730ec3f4a53d3641fb4614ef65bf3e";
+        };
+      default = "r0";
+      };
+    };
   }

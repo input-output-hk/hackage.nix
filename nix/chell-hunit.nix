@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.3.0.2" = {
+    sha256 = "2d69eb21487a9c82c0a5fb3e635a97ebc986060a49896ae3e05a11dab56f47d7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chell-hunit-0.3.0.2-r0-38d76fa879a61c2bcb8505c2e83c5843ed2d8f36e65db1ac1c5bc0f7cf42b0e5.nix;
+        revNum = 0;
+        sha256 = "38d76fa879a61c2bcb8505c2e83c5843ed2d8f36e65db1ac1c5bc0f7cf42b0e5";
+        };
+      default = "r0";
+      };
+    };
   }

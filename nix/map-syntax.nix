@@ -116,7 +116,12 @@
         revNum = 7;
         sha256 = "f7082df82d8fc3333ef671ab299db890f598c8418a205d6180ce53768dd009ef";
         };
-      default = "r7";
+      r8 = {
+        nix = import ../hackage/map-syntax-0.3-r8-a5736453bf80743fd18ed374321617a2c56f949a02856fe36d413edfd8901733.nix;
+        revNum = 8;
+        sha256 = "a5736453bf80743fd18ed374321617a2c56f949a02856fe36d413edfd8901733";
+        };
+      default = "r8";
       };
     };
   }
