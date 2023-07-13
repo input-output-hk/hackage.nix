@@ -128,7 +128,12 @@
         revNum = 0;
         sha256 = "33acdfc3096a72deef621e8cd080eeab9cb13b07bb95dc30c120042cd767f5c6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hgeometry-0.14-r1-9a2328827b29199acbb18d27f22698b6d1a9ee6187d8519d1a6ed9c4a4315d3d.nix;
+        revNum = 1;
+        sha256 = "9a2328827b29199acbb18d27f22698b6d1a9ee6187d8519d1a6ed9c4a4315d3d";
+        };
+      default = "r1";
       };
     };
   "0.4.0.0" = {

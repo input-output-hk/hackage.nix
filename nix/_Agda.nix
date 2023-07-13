@@ -544,7 +544,12 @@
         revNum = 2;
         sha256 = "7979e244ee659b9663305b5c545cff090f2309ed08d3e4ea3e7120579b8f047e";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/Agda-2.6.3-r3-4d3bdd3244aafa7e937ca6e6caef9cbaedfd2af76f6dc778a3a06a140a8c1cb6.nix;
+        revNum = 3;
+        sha256 = "4d3bdd3244aafa7e937ca6e6caef9cbaedfd2af76f6dc778a3a06a140a8c1cb6";
+        };
+      default = "r3";
       };
     };
   }

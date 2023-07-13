@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.5.1.4" = {
+    sha256 = "a9af42b25ecac1242053492659172ea23732248fdf04731558bd57a8d6136147";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tmp-proc-rabbitmq-0.5.1.4-r0-6606416ab608d2c60d19199187536c4c04675601ac8ff6dc8c26a3f81290a535.nix;
+        revNum = 0;
+        sha256 = "6606416ab608d2c60d19199187536c4c04675601ac8ff6dc8c26a3f81290a535";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.5.1.4" = {
+    sha256 = "7f2e41293f00babe676bc11dad86980c9b0ce9c7e5f32d05f360e8c40e74425f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tmp-proc-0.5.1.4-r0-8c175118c1acc971c5c7c676919e45d6a1342bea44bfd14c610f85d37680f350.nix;
+        revNum = 0;
+        sha256 = "8c175118c1acc971c5c7c676919e45d6a1342bea44bfd14c610f85d37680f350";
+        };
+      default = "r0";
+      };
+    };
   }

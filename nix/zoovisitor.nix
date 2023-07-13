@@ -186,4 +186,26 @@
       default = "r0";
       };
     };
+  "0.2.5.0" = {
+    sha256 = "8518032a2dd9bed330884306a1325ce0a0270f5a11e4dc405dac0f11df3dd04f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zoovisitor-0.2.5.0-r0-bfb9a9445193f72c72033c6a99e00b0215694141944cd35630f22b6bfe8f55a1.nix;
+        revNum = 0;
+        sha256 = "bfb9a9445193f72c72033c6a99e00b0215694141944cd35630f22b6bfe8f55a1";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.5.1" = {
+    sha256 = "45b1c573b40fa03a9169b78785f871b0c49e30fa8d8b6eda5d2d242cca0f8c47";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zoovisitor-0.2.5.1-r0-12380cc992e532a42c76f9dd2eae4fba08499bccea6eec537b5b4521d21834ce.nix;
+        revNum = 0;
+        sha256 = "12380cc992e532a42c76f9dd2eae4fba08499bccea6eec537b5b4521d21834ce";
+        };
+      default = "r0";
+      };
+    };
   }

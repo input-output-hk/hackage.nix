@@ -58,7 +58,12 @@
         revNum = 4;
         sha256 = "5723eff572c7f6d91f1ffb1d9444c8b9bc8c19c12c5c601cec849b34aa2c7846";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/microaeson-0.1.0.1-r5-06e7b4d2b777e6166ff5e32ec979941cd4b7f65e6eef5a37b23dbc1155852466.nix;
+        revNum = 5;
+        sha256 = "06e7b4d2b777e6166ff5e32ec979941cd4b7f65e6eef5a37b23dbc1155852466";
+        };
+      default = "r5";
       };
     };
   }

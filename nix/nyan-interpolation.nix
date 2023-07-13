@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.9.2" = {
+    sha256 = "78c78db89f369ab48b114aa6a46e04a28994dcb580bb2204eaed62aa8c848cc4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nyan-interpolation-0.9.2-r0-fb0b07ef6a9f8ca4d2e1db2f2df841c649556d9f6cff894ebf6b9ffbb7c25003.nix;
+        revNum = 0;
+        sha256 = "fb0b07ef6a9f8ca4d2e1db2f2df841c649556d9f6cff894ebf6b9ffbb7c25003";
+        };
+      default = "r0";
+      };
+    };
   }

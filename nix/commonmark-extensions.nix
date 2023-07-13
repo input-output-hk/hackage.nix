@@ -190,4 +190,15 @@
       default = "r0";
       };
     };
+  "0.2.3.5" = {
+    sha256 = "078847f996df468c3736fee50b469ad1903befb17a193247ad068e690c5bb70e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/commonmark-extensions-0.2.3.5-r0-29eee6dc53af6f1c1471039328561c14fdee4a0a7936c0357550c030c181c28b.nix;
+        revNum = 0;
+        sha256 = "29eee6dc53af6f1c1471039328561c14fdee4a0a7936c0357550c030c181c28b";
+        };
+      default = "r0";
+      };
+    };
   }
