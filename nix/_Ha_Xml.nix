@@ -461,7 +461,23 @@
         revNum = 1;
         sha256 = "2c177182cc169858bc8561ab2237633b6c96787e2789e2eecd409a27077fa5af";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/HaXml-1.25.12-r2-09a1a57f290cea76a5696ae97a02627987ac93570b5b8ef6f7785be4b009fa92.nix;
+        revNum = 2;
+        sha256 = "09a1a57f290cea76a5696ae97a02627987ac93570b5b8ef6f7785be4b009fa92";
+        };
+      default = "r2";
+      };
+    };
+  "1.25.13" = {
+    sha256 = "5d855449bddef93703d2759626558c3202fbedb4a6deaa7f9659da6557bab373";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HaXml-1.25.13-r0-dbb1419b92f67b23702fd63792ecb337c468af204941c2f33bf640586725066d.nix;
+        revNum = 0;
+        sha256 = "dbb1419b92f67b23702fd63792ecb337c468af204941c2f33bf640586725066d";
+        };
+      default = "r0";
       };
     };
   "1.25.2" = {

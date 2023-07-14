@@ -124,4 +124,37 @@
       default = "r2";
       };
     };
+  "0.5.0.0" = {
+    sha256 = "b493e83a8a12878dd6e2476daede542a5c2079ac2aed91251b882081d2d2db03";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/posix-api-0.5.0.0-r0-98d547edae7ecc1d125e07818b09ef536381470198af7717d3d5094cd35b2fe9.nix;
+        revNum = 0;
+        sha256 = "98d547edae7ecc1d125e07818b09ef536381470198af7717d3d5094cd35b2fe9";
+        };
+      default = "r0";
+      };
+    };
+  "0.6.0.0" = {
+    sha256 = "795722aa53ee93dfaa117aa27698f65e290ac533497a724f106d29c061a40af7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/posix-api-0.6.0.0-r0-915e28bf22b4af2c7a6b5a9f113adaadb4ed78ff6b8457121f5bd5777f3b6091.nix;
+        revNum = 0;
+        sha256 = "915e28bf22b4af2c7a6b5a9f113adaadb4ed78ff6b8457121f5bd5777f3b6091";
+        };
+      default = "r0";
+      };
+    };
+  "0.6.0.1" = {
+    sha256 = "5775e0c3489c8517a324a7c585a122b6831813c89a22fb522554d768177c6930";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/posix-api-0.6.0.1-r0-e06ec74dc99873eb96774eb2c379aa1e5ab8775b4f65fb65771edbb415fd8c48.nix;
+        revNum = 0;
+        sha256 = "e06ec74dc99873eb96774eb2c379aa1e5ab8775b4f65fb65771edbb415fd8c48";
+        };
+      default = "r0";
+      };
+    };
   }

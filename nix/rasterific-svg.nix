@@ -251,7 +251,12 @@
         revNum = 2;
         sha256 = "1b09110c3fcb27a7f2821462a5a1999eac74e7ca7f9133fbf5277a50d3d568a4";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/rasterific-svg-0.3.3.2-r3-ac8d9dc4772b5009ad55e9d8d0c758f37104af951257cfe30567f0770fc000a2.nix;
+        revNum = 3;
+        sha256 = "ac8d9dc4772b5009ad55e9d8d0c758f37104af951257cfe30567f0770fc000a2";
+        };
+      default = "r3";
       };
     };
   }

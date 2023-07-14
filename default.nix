@@ -8280,6 +8280,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "http2-grpc-proto-lens" = import ./nix/http2-grpc-proto-lens.nix;
   "http2-grpc-proto3-wire" = import ./nix/http2-grpc-proto3-wire.nix;
   "http2-grpc-types" = import ./nix/http2-grpc-types.nix;
+  "http2-tls" = import ./nix/http2-tls.nix;
   "http3" = import ./nix/http3.nix;
   "httpd-shed" = import ./nix/httpd-shed.nix;
   "https-everywhere-rules" = import ./nix/https-everywhere-rules.nix;
@@ -14943,6 +14944,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "system-util" = import ./nix/system-util.nix;
   "system-uuid" = import ./nix/system-uuid.nix;
   "systemd" = import ./nix/systemd.nix;
+  "systemd-api" = import ./nix/systemd-api.nix;
   "systemd-socket-activation" = import ./nix/systemd-socket-activation.nix;
   "systemstats" = import ./nix/systemstats.nix;
   "syz" = import ./nix/syz.nix;
