@@ -16087,6 +16087,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "update-monad" = import ./nix/update-monad.nix;
   "update-nix-fetchgit" = import ./nix/update-nix-fetchgit.nix;
   "update-repos" = import ./nix/update-repos.nix;
+  "updo" = import ./nix/updo.nix;
   "uploadcare" = import ./nix/uploadcare.nix;
   "uploadtest" = import ./nix/uploadtest.nix;
   "upskirt" = import ./nix/upskirt.nix;

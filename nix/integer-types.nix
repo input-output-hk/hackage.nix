@@ -64,4 +64,15 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "524adf75e7134b189f4558e17499b98c1ffa0e41d56d9bfb5210c3de3a84e33d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/integer-types-0.1.3.0-r0-bf72642c71d1415f28c436168d2e0b6b062723b5f040327c8448ef02dee7ee17.nix;
+        revNum = 0;
+        sha256 = "bf72642c71d1415f28c436168d2e0b6b062723b5f040327c8448ef02dee7ee17";
+        };
+      default = "r0";
+      };
+    };
   }

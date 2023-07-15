@@ -84,7 +84,12 @@
         revNum = 0;
         sha256 = "0d27e37968327faba577558a2ee4465ebfd3b6929b09cf4881dfa62a6873c85a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/raven-haskell-0.1.4.1-r1-9187272adc064197528645b5ad9b89163b668f386f34016d97fa646d5c790784.nix;
+        revNum = 1;
+        sha256 = "9187272adc064197528645b5ad9b89163b668f386f34016d97fa646d5c790784";
+        };
+      default = "r1";
       };
     };
   }
