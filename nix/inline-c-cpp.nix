@@ -186,4 +186,15 @@
       default = "r0";
       };
     };
+  "0.5.0.1" = {
+    sha256 = "06102c2cbe104fb9e9d6b73ac863bb62112005419e9be5af47fc1bfd662a8e9b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/inline-c-cpp-0.5.0.1-r0-3693af2c27e6ecbdbe84bd8346586d6e20d0872010f356dbde286f8b33ede175.nix;
+        revNum = 0;
+        sha256 = "3693af2c27e6ecbdbe84bd8346586d6e20d0872010f356dbde286f8b33ede175";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -302,6 +302,17 @@
       default = "r0";
       };
     };
+  "0.6.11" = {
+    sha256 = "f7a6abf136eac1c6b370678e14e9519ed88c0c2adf75f06d6855b464db0c2420";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/MemoTrie-0.6.11-r0-edda47de940a047237c395a85ac3216db6d25888002293853d7eebd01beb5da6.nix;
+        revNum = 0;
+        sha256 = "edda47de940a047237c395a85ac3216db6d25888002293853d7eebd01beb5da6";
+        };
+      default = "r0";
+      };
+    };
   "0.6.2" = {
     sha256 = "9ddc11172db26a54681f14dd8ce881c87a3b0e72dcc7a15b74132f30b4408bbc";
     revisions = {
