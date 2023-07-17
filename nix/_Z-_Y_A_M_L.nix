@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.3.5.0" = {
+    sha256 = "38140d3d2c1b584b882a196f10e56e1ca37c2029085f0ae66c76bb3398765a34";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Z-YAML-0.3.5.0-r0-3621e29d8f2ffd6baa363332240f26bdee7f10d62305b59e2ab2c17248faa546.nix;
+        revNum = 0;
+        sha256 = "3621e29d8f2ffd6baa363332240f26bdee7f10d62305b59e2ab2c17248faa546";
+        };
+      default = "r0";
+      };
+    };
   }

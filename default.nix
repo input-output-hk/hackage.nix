@@ -809,6 +809,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "Monaris" = import ./nix/_Monaris.nix;
   "Monatron" = import ./nix/_Monatron.nix;
   "Monatron-IO" = import ./nix/_Monatron-_I_O.nix;
+  "Mondrian" = import ./nix/_Mondrian.nix;
   "Monocle" = import ./nix/_Monocle.nix;
   "MorseCode" = import ./nix/_Morse_Code.nix;
   "MuCheck" = import ./nix/_Mu_Check.nix;
@@ -4651,6 +4652,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dot-linker" = import ./nix/dot-linker.nix;
   "dot2graphml" = import ./nix/dot2graphml.nix;
   "dotenv" = import ./nix/dotenv.nix;
+  "dotenv-micro" = import ./nix/dotenv-micro.nix;
   "dotfs" = import ./nix/dotfs.nix;
   "dotgen" = import ./nix/dotgen.nix;
   "dotnet-timespan" = import ./nix/dotnet-timespan.nix;
@@ -13420,6 +13422,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "satchmo-funsat" = import ./nix/satchmo-funsat.nix;
   "satchmo-minisat" = import ./nix/satchmo-minisat.nix;
   "satchmo-toysat" = import ./nix/satchmo-toysat.nix;
+  "saturn" = import ./nix/saturn.nix;
   "satyros" = import ./nix/satyros.nix;
   "sauron" = import ./nix/sauron.nix;
   "savage" = import ./nix/savage.nix;
