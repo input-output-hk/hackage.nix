@@ -177,7 +177,12 @@
         revNum = 1;
         sha256 = "328e95b72df16fb08cc004d978082073497e4861c7c926adc572c938c83e8b97";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/synthesizer-dimensional-0.8.1.1-r2-04c1a6477ccedb7b30a2f17f78867ecb3eb4943213167bd387d05e8a19c47c3d.nix;
+        revNum = 2;
+        sha256 = "04c1a6477ccedb7b30a2f17f78867ecb3eb4943213167bd387d05e8a19c47c3d";
+        };
+      default = "r2";
       };
     };
   }

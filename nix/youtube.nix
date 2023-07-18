@@ -56,7 +56,12 @@
         revNum = 1;
         sha256 = "6b2bbb2d22a25e232cb6d803f1f1575e387cb97093a32b645dcb0980c8efad4f";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/youtube-0.2.1.1-r2-973f532ee66d43720f4a472a2796d65f36adf5ba492dc16d0b95e8df65a1fbe0.nix;
+        revNum = 2;
+        sha256 = "973f532ee66d43720f4a472a2796d65f36adf5ba492dc16d0b95e8df65a1fbe0";
+        };
+      default = "r2";
       };
     };
   }

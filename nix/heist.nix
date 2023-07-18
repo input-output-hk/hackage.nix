@@ -816,7 +816,12 @@
         revNum = 1;
         sha256 = "25ba1091365e275a97522f3e2ee1a99d8ec34a7b3dd8c4d7de38e97ac6498275";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/heist-1.1.1.1-r2-d4c9ff3d86a8dfdc38f0ea1a32b29007c9b3cc9d1ef5ba83fe7a71f1af7ef175.nix;
+        revNum = 2;
+        sha256 = "d4c9ff3d86a8dfdc38f0ea1a32b29007c9b3cc9d1ef5ba83fe7a71f1af7ef175";
+        };
+      default = "r2";
       };
     };
   }

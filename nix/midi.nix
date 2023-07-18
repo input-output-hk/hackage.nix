@@ -320,7 +320,12 @@
         revNum = 0;
         sha256 = "f2c30bdedb0a731f35a28744c6f8c5f3d909868e8a17b27a8357019632fb6fde";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/midi-0.2.2.4-r1-4012431bf1d8a77e70a9bed7844bff5a12ae6ee1de3dcb71b77ca9f1b284ce20.nix;
+        revNum = 1;
+        sha256 = "4012431bf1d8a77e70a9bed7844bff5a12ae6ee1de3dcb71b77ca9f1b284ce20";
+        };
+      default = "r1";
       };
     };
   }

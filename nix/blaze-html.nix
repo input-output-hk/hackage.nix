@@ -775,7 +775,12 @@
         revNum = 2;
         sha256 = "74b89ffa665891f528f571ce9e3c2dce24f698563f14b6f5e9e0512eccdf5dc2";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/blaze-html-0.9.1.2-r3-5b8540794ae3217a953fb8c693dba4d0820f908d2b41b258396216a86e0543e5.nix;
+        revNum = 3;
+        sha256 = "5b8540794ae3217a953fb8c693dba4d0820f908d2b41b258396216a86e0543e5";
+        };
+      default = "r3";
       };
     };
   }

@@ -268,7 +268,12 @@
         revNum = 1;
         sha256 = "f241c126f75708f6d8a1d3f05d3ea12de796810bfb768e5d995942417fec8411";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/carray-0.1.6.8-r2-9f71a6f156ae5228cbd358850fedb214f9906b9d1a5b405ea83eea51840287bf.nix;
+        revNum = 2;
+        sha256 = "9f71a6f156ae5228cbd358850fedb214f9906b9d1a5b405ea83eea51840287bf";
+        };
+      default = "r2";
       };
     };
   }

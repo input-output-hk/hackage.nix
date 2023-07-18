@@ -103,4 +103,15 @@
       default = "r0";
       };
     };
+  "0.6.6" = {
+    sha256 = "7aebbb9277100a6cdf20d484122cdc1319c931d2491ee96fac899ccbf6654ef2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libBF-0.6.6-r0-20a853e57afcf4dd8e04bd1e3b1199e0a7e0285484aa2e0c56c97c2fe8c488b9.nix;
+        revNum = 0;
+        sha256 = "20a853e57afcf4dd8e04bd1e3b1199e0a7e0285484aa2e0c56c97c2fe8c488b9";
+        };
+      default = "r0";
+      };
+    };
   }

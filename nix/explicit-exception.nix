@@ -227,7 +227,12 @@
         revNum = 0;
         sha256 = "8099495f4915acccf90fbe91b16af3eca97a001eec96bcaffc6513f043f80417";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/explicit-exception-0.2-r1-206c0346082616457f577e0e3145d9c5afda2ef7b6b7688d805e19b8594a224c.nix;
+        revNum = 1;
+        sha256 = "206c0346082616457f577e0e3145d9c5afda2ef7b6b7688d805e19b8594a224c";
+        };
+      default = "r1";
       };
     };
   }

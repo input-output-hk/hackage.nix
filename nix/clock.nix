@@ -316,4 +316,15 @@
       default = "r0";
       };
     };
+  "0.8.4" = {
+    sha256 = "6ae9898afe788a5e334cd5fad5d18a3c2e8e59fa09aaf7b957dbb38a4767df2e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/clock-0.8.4-r0-b938655b00cf204ce69abfff946021bed111d2609a9f7a9c22e28a1a202e9115.nix;
+        revNum = 0;
+        sha256 = "b938655b00cf204ce69abfff946021bed111d2609a9f7a9c22e28a1a202e9115";
+        };
+      default = "r0";
+      };
+    };
   }

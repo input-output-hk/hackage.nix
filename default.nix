@@ -10649,6 +10649,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "multistate" = import ./nix/multistate.nix;
   "multivariant" = import ./nix/multivariant.nix;
   "multivector" = import ./nix/multivector.nix;
+  "multiwalk" = import ./nix/multiwalk.nix;
   "muon" = import ./nix/muon.nix;
   "murder" = import ./nix/murder.nix;
   "murmur" = import ./nix/murmur.nix;

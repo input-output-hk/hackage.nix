@@ -139,7 +139,12 @@
         revNum = 0;
         sha256 = "3ce2181b6840115c42fab2eb17175c76d304af63222bd525d9058ff33f12fd80";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bibtex-0.1.0.6-r1-306efbfaf4b27fcde8e5989477fc11283508a1f12a816a8e7de1869801a11209.nix;
+        revNum = 1;
+        sha256 = "306efbfaf4b27fcde8e5989477fc11283508a1f12a816a8e7de1869801a11209";
+        };
+      default = "r1";
       };
     };
   }
