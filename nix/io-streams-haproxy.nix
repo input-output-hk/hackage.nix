@@ -110,7 +110,12 @@
         revNum = 7;
         sha256 = "7cb590e1212ebe3b18fee70735fd6e07a70d409b37e87459eed1ba687e152b72";
         };
-      default = "r7";
+      r8 = {
+        nix = import ../hackage/io-streams-haproxy-1.0.1.0-r8-460343688e4ba110d6ffea589a4a65142013802826973244b75b8a07cfa7ff0d.nix;
+        revNum = 8;
+        sha256 = "460343688e4ba110d6ffea589a4a65142013802826973244b75b8a07cfa7ff0d";
+        };
+      default = "r8";
       };
     };
   }

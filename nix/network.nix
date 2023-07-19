@@ -1275,7 +1275,12 @@
         revNum = 0;
         sha256 = "d50e055f45bd09a8238200ec64ffa0f17492c32cdb5807487894388ce1c2f839";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/network-3.1.4.0-r1-e152cdb03243afb52bbc740cfbe96905ca298a6f6342f0c47b3f2e227ff19def.nix;
+        revNum = 1;
+        sha256 = "e152cdb03243afb52bbc740cfbe96905ca298a6f6342f0c47b3f2e227ff19def";
+        };
+      default = "r1";
       };
     };
   }

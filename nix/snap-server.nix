@@ -1230,7 +1230,12 @@
         revNum = 1;
         sha256 = "d541b8cc3cd2c64d25295fb1c252d825bfa1b049529b53cd85536c8a6ab89226";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/snap-server-1.1.2.1-r2-1472326ecc890c3af6cb88355d4fbfa2e64c6dce4c5a9c36b80af4ca8e36dc1a.nix;
+        revNum = 2;
+        sha256 = "1472326ecc890c3af6cb88355d4fbfa2e64c6dce4c5a9c36b80af4ca8e36dc1a";
+        };
+      default = "r2";
       };
     };
   }

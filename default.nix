@@ -11334,6 +11334,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "oref" = import ./nix/oref.nix;
   "org-mode" = import ./nix/org-mode.nix;
   "org-mode-lucid" = import ./nix/org-mode-lucid.nix;
+  "org-parser" = import ./nix/org-parser.nix;
   "org2anki" = import ./nix/org2anki.nix;
   "organize-imports" = import ./nix/organize-imports.nix;
   "orgmode" = import ./nix/orgmode.nix;
