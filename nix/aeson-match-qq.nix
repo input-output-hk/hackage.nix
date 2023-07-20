@@ -197,4 +197,15 @@
       default = "r0";
       };
     };
+  "1.7.0" = {
+    sha256 = "c0783283a428d8eb717700a4777f969ff9c95d5d2f04a16b8a57e517cdc49585";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-match-qq-1.7.0-r0-2b599c865b9b6cab140c2f968be1a82cab963365bdbad9eefe922ffae94c3bcc.nix;
+        revNum = 0;
+        sha256 = "2b599c865b9b6cab140c2f968be1a82cab963365bdbad9eefe922ffae94c3bcc";
+        };
+      default = "r0";
+      };
+    };
   }

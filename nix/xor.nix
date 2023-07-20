@@ -36,4 +36,15 @@
       default = "r3";
       };
     };
+  "0.0.1.2" = {
+    sha256 = "ace7ca7302bb39c54bff510fd5e104c80070b1a1c11bfe6893e3f209de0f0a30";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xor-0.0.1.2-r0-435180d0bcf9bdfcbf0c32e03e7237a6d899253364b632411cef9c6f25600325.nix;
+        revNum = 0;
+        sha256 = "435180d0bcf9bdfcbf0c32e03e7237a6d899253364b632411cef9c6f25600325";
+        };
+      default = "r0";
+      };
+    };
   }

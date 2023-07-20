@@ -12297,6 +12297,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "primitive-maybe" = import ./nix/primitive-maybe.nix;
   "primitive-offset" = import ./nix/primitive-offset.nix;
   "primitive-primvar" = import ./nix/primitive-primvar.nix;
+  "primitive-serial" = import ./nix/primitive-serial.nix;
   "primitive-simd" = import ./nix/primitive-simd.nix;
   "primitive-slice" = import ./nix/primitive-slice.nix;
   "primitive-sort" = import ./nix/primitive-sort.nix;
