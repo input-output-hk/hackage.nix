@@ -56,7 +56,12 @@
         revNum = 0;
         sha256 = "a6e614b6335a32e24759c19e3868c6e8de5cdd6b5eef37bd47adb532ffa81ef8";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/stylist-traits-0.1.3.1-r1-5cbe49e18e1e7c80fa6fd5cf0166b29ae85fc5e80d4a4c1258f3e508b696067a.nix;
+        revNum = 1;
+        sha256 = "5cbe49e18e1e7c80fa6fd5cf0166b29ae85fc5e80d4a4c1258f3e508b696067a";
+        };
+      default = "r1";
       };
     };
   }

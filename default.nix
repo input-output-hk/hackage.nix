@@ -5664,6 +5664,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "freesound" = import ./nix/freesound.nix;
   "freetype-simple" = import ./nix/freetype-simple.nix;
   "freetype2" = import ./nix/freetype2.nix;
+  "fregel" = import ./nix/fregel.nix;
   "french-cards" = import ./nix/french-cards.nix;
   "freq" = import ./nix/freq.nix;
   "fresco-binding" = import ./nix/fresco-binding.nix;

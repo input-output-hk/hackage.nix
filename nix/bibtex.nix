@@ -147,4 +147,15 @@
       default = "r1";
       };
     };
+  "0.1.0.7" = {
+    sha256 = "31499081013acb7395ccf2e6bacd7794a4d50c651530161eb3de45c46a6b798d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bibtex-0.1.0.7-r0-ff2dc6aa34c9598ebbfe76e070842841d90b99bcd272bbf8148b7a77c4ed6a53.nix;
+        revNum = 0;
+        sha256 = "ff2dc6aa34c9598ebbfe76e070842841d90b99bcd272bbf8148b7a77c4ed6a53";
+        };
+      default = "r0";
+      };
+    };
   }

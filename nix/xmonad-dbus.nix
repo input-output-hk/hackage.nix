@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "f6850f2443d49beb28f778e5cdd26b2e4aecc2c306b9c092f3561b6feb044f76";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xmonad-dbus-0.1.0.2-r0-dd6fcbb05527c01291f99917bbcf99a072f0f61e3cd34bcfaa1e2db66aff1e65.nix;
+        revNum = 0;
+        sha256 = "dd6fcbb05527c01291f99917bbcf99a072f0f61e3cd34bcfaa1e2db66aff1e65";
+        };
+      default = "r0";
+      };
+    };
   }

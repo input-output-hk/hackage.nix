@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.0.4" = {
+    sha256 = "32ae8431eadba5b39243873603cc4fd691005eac0e9f4fec5ed0dc8c53961a4f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/postmark-streams-0.1.0.4-r0-77853377cf7ace150468145662ed529d56ac6b2ed6b3ef47c55f668a1a455a0e.nix;
+        revNum = 0;
+        sha256 = "77853377cf7ace150468145662ed529d56ac6b2ed6b3ef47c55f668a1a455a0e";
+        };
+      default = "r0";
+      };
+    };
   }
