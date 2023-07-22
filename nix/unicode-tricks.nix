@@ -87,6 +87,17 @@
       default = "r0";
       };
     };
+  "0.14.0.0" = {
+    sha256 = "6265c60140af81c12969ca782683d492d3373633fc7d212c10600baca615c1dc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unicode-tricks-0.14.0.0-r0-220b777853ae4c70295855a1f17714a8608c633c17befcff1bb17731791fefcc.nix;
+        revNum = 0;
+        sha256 = "220b777853ae4c70295855a1f17714a8608c633c17befcff1bb17731791fefcc";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "c3ca529753b1dd840d505cd7d387c27466eac691564bbe41bf70b1ba77db5665";
     revisions = {

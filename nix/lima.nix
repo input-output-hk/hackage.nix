@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "5b96a09005249108931aa5599450c460e3762571436447e15ec641adc5e91216";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lima-0.3.0.0-r0-2991ed50f454edb5ce101f2977549cd3ddb117f4d1c5ec0f6168f1ed1e7ee799.nix;
+        revNum = 0;
+        sha256 = "2991ed50f454edb5ce101f2977549cd3ddb117f4d1c5ec0f6168f1ed1e7ee799";
+        };
+      default = "r0";
+      };
+    };
   }
