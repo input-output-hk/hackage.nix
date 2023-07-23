@@ -503,7 +503,12 @@
         revNum = 1;
         sha256 = "3d9989a2bbcfbe3872861540817c90eb7aebb75cb7e600e72d0b530fc2231ed2";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/threepenny-gui-0.9.4.0-r2-662faddeb81b45b809e0fcb41755692ac0ef8f1ae45b8b3a9b9e651fa51d71c9.nix;
+        revNum = 2;
+        sha256 = "662faddeb81b45b809e0fcb41755692ac0ef8f1ae45b8b3a9b9e651fa51d71c9";
+        };
+      default = "r2";
       };
     };
   }

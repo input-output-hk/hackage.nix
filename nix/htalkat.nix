@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.2.3" = {
+    sha256 = "46c4352506ec25944f5e00945a531ba6da07b2e4efb3c045931932cbd46c55fc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/htalkat-0.1.2.3-r0-5cff4accc7aaff8cc8360e41c8a550a06b770e9143e50265d6c842433b65f624.nix;
+        revNum = 0;
+        sha256 = "5cff4accc7aaff8cc8360e41c8a550a06b770e9143e50265d6c842433b65f624";
+        };
+      default = "r0";
+      };
+    };
   }

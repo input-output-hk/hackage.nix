@@ -285,4 +285,15 @@
       default = "r0";
       };
     };
+  "0.8.2" = {
+    sha256 = "a8af8ddf98bb7dcb28757a3970460990bf30a6c93440b0aabbcda304774f814c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/intricacy-0.8.2-r0-60af2735f876b4f0e8712e3bdca45ca3fd6472eeb82ee552335daee6fcde7ca0.nix;
+        revNum = 0;
+        sha256 = "60af2735f876b4f0e8712e3bdca45ca3fd6472eeb82ee552335daee6fcde7ca0";
+        };
+      default = "r0";
+      };
+    };
   }
