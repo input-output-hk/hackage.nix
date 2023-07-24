@@ -301,4 +301,15 @@
       default = "r1";
       };
     };
+  "0.2.6.5" = {
+    sha256 = "029135012241f2cedd69b366fd2921469f2f260e664f04d54e54ab0f9c6e8665";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/backprop-0.2.6.5-r0-b7edc0db9f9dffa38b718e6ebc205eb4d91cb38d51e26f3272dca8ee92eb6bca.nix;
+        revNum = 0;
+        sha256 = "b7edc0db9f9dffa38b718e6ebc205eb4d91cb38d51e26f3272dca8ee92eb6bca";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -9587,6 +9587,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "line-bot-sdk" = import ./nix/line-bot-sdk.nix;
   "line-break" = import ./nix/line-break.nix;
   "line-drawing" = import ./nix/line-drawing.nix;
+  "line-indexed-cursor" = import ./nix/line-indexed-cursor.nix;
   "line-size" = import ./nix/line-size.nix;
   "line2pdf" = import ./nix/line2pdf.nix;
   "linear" = import ./nix/linear.nix;
@@ -13894,6 +13895,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "shell-monad" = import ./nix/shell-monad.nix;
   "shell-pipe" = import ./nix/shell-pipe.nix;
   "shell-utility" = import ./nix/shell-utility.nix;
+  "shellify" = import ./nix/shellify.nix;
   "shellish" = import ./nix/shellish.nix;
   "shellmate" = import ./nix/shellmate.nix;
   "shellmate-extras" = import ./nix/shellmate-extras.nix;
