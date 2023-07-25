@@ -39,7 +39,12 @@
         revNum = 0;
         sha256 = "f408dc0f30879ec4efb141cd20f4f2dc201b66ae73898021429ac0e48b679e88";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/gemini-server-0.3.0.0-r1-8663ffadb428f8d283610471830018febce9eb630a9ed57749ac286d4a832f94.nix;
+        revNum = 1;
+        sha256 = "8663ffadb428f8d283610471830018febce9eb630a9ed57749ac286d4a832f94";
+        };
+      default = "r1";
       };
     };
   }

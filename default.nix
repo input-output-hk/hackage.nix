@@ -13947,6 +13947,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sifflet-lib" = import ./nix/sifflet-lib.nix;
   "siggy-chardust" = import ./nix/siggy-chardust.nix;
   "sigma-ij" = import ./nix/sigma-ij.nix;
+  "sigmacord" = import ./nix/sigmacord.nix;
   "sign" = import ./nix/sign.nix;
   "signable" = import ./nix/signable.nix;
   "signable-haskell-protoc" = import ./nix/signable-haskell-protoc.nix;

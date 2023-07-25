@@ -713,7 +713,12 @@
         revNum = 0;
         sha256 = "c9a3ad3aacf02989a70895e992592136e36725df743021f5c237a9ac6d568118";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/warp-tls-3.2.10-r1-9b788a36b8cdce6ad25c7404f5bc9186fd66bd15faba04f5988448091f969018.nix;
+        revNum = 1;
+        sha256 = "9b788a36b8cdce6ad25c7404f5bc9186fd66bd15faba04f5988448091f969018";
+        };
+      default = "r1";
       };
     };
   "3.2.11" = {
@@ -724,7 +729,12 @@
         revNum = 0;
         sha256 = "407b9b8a8d231efa13b8b8ca5f0840ea0efc61c211ef380d51f28d99843ef7a8";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/warp-tls-3.2.11-r1-105de75338e558d3f2c6846a2337d6e6fbe93275dab65f3420c4719f774d95f1.nix;
+        revNum = 1;
+        sha256 = "105de75338e558d3f2c6846a2337d6e6fbe93275dab65f3420c4719f774d95f1";
+        };
+      default = "r1";
       };
     };
   "3.2.12" = {
@@ -735,7 +745,12 @@
         revNum = 0;
         sha256 = "ed523e686d6a8522493eeebdd5f2e0cfc452aa55576ba094fd8d0880efd3b0d1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/warp-tls-3.2.12-r1-98836eab7de541b6a79e9de4484f83cc01c298b5a4fdd833dd3efe8e3670959a.nix;
+        revNum = 1;
+        sha256 = "98836eab7de541b6a79e9de4484f83cc01c298b5a4fdd833dd3efe8e3670959a";
+        };
+      default = "r1";
       };
     };
   "3.2.2" = {
@@ -861,7 +876,12 @@
         revNum = 0;
         sha256 = "92008969de350a381ed0cec414a7875e125ab5ac454e98a26eb19990fa395db6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/warp-tls-3.3.0-r1-da3cf37447f16cb3e504c5297de2341df8be149f4bb4f4bf3cfd78a83d2bcf39.nix;
+        revNum = 1;
+        sha256 = "da3cf37447f16cb3e504c5297de2341df8be149f4bb4f4bf3cfd78a83d2bcf39";
+        };
+      default = "r1";
       };
     };
   "3.3.1" = {
@@ -872,7 +892,12 @@
         revNum = 0;
         sha256 = "4dcdb804d298414968229bc674a26efd05efe1ec111bcf60bcc9009a92a24c13";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/warp-tls-3.3.1-r1-69b0bdb1b44c768cddd14bd241365ff2132c955b78b1d74b6922112eb22c572e.nix;
+        revNum = 1;
+        sha256 = "69b0bdb1b44c768cddd14bd241365ff2132c955b78b1d74b6922112eb22c572e";
+        };
+      default = "r1";
       };
     };
   "3.3.2" = {
@@ -888,7 +913,12 @@
         revNum = 1;
         sha256 = "7401eae865dc7825e0561293d6e79962a16940c310dd6acee9397d3689048f64";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/warp-tls-3.3.2-r2-00dcb95e135d2786c90cd736a619b8116edb5df315529ed067e43728633ee7de.nix;
+        revNum = 2;
+        sha256 = "00dcb95e135d2786c90cd736a619b8116edb5df315529ed067e43728633ee7de";
+        };
+      default = "r2";
       };
     };
   "3.3.3" = {
@@ -899,7 +929,12 @@
         revNum = 0;
         sha256 = "7a4a0e3c0f7daae30b3d8de1075e0055ee64ace3acc974e4947f23a9a5214c70";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/warp-tls-3.3.3-r1-288620263f9ddd94d694f8ab6739a8ab89bf381fb59030f0e530fa614ce1d0fa.nix;
+        revNum = 1;
+        sha256 = "288620263f9ddd94d694f8ab6739a8ab89bf381fb59030f0e530fa614ce1d0fa";
+        };
+      default = "r1";
       };
     };
   "3.3.4" = {
@@ -910,7 +945,12 @@
         revNum = 0;
         sha256 = "711cfe739af87f0e45c8e4435f2ac2647ddbd6f622138110dde4f8f9d1140119";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/warp-tls-3.3.4-r1-74fca7f29df60f1f9072712ecae136e04e52bd1d23b915e55a2673c5b185f314.nix;
+        revNum = 1;
+        sha256 = "74fca7f29df60f1f9072712ecae136e04e52bd1d23b915e55a2673c5b185f314";
+        };
+      default = "r1";
       };
     };
   "3.3.5" = {
@@ -921,7 +961,12 @@
         revNum = 0;
         sha256 = "490f720ecf48660bdf4828fc0db881f2673b8bd2076da2e387b6efc5ae23eda4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/warp-tls-3.3.5-r1-0de007f54ac739c29e49369eff1fc3694ad85ee41ddee1eb443a932dba152b2f.nix;
+        revNum = 1;
+        sha256 = "0de007f54ac739c29e49369eff1fc3694ad85ee41ddee1eb443a932dba152b2f";
+        };
+      default = "r1";
       };
     };
   "3.3.6" = {
@@ -932,7 +977,12 @@
         revNum = 0;
         sha256 = "807c9878ba35ea6b5e063d4862a3de64308cad361f8a84384c8e671f2c17fb27";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/warp-tls-3.3.6-r1-ad44d0286a3b395e95a4466250fabcfd833a2986542f6613ed8a813230d28f1f.nix;
+        revNum = 1;
+        sha256 = "ad44d0286a3b395e95a4466250fabcfd833a2986542f6613ed8a813230d28f1f";
+        };
+      default = "r1";
       };
     };
   "3.3.7" = {
