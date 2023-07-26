@@ -1826,6 +1826,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "antisplice" = import ./nix/antisplice.nix;
   "antlr-haskell" = import ./nix/antlr-haskell.nix;
   "antlrc" = import ./nix/antlrc.nix;
+  "any-pat" = import ./nix/any-pat.nix;
   "anydbm" = import ./nix/anydbm.nix;
   "aop-prelude" = import ./nix/aop-prelude.nix;
   "aos-signature" = import ./nix/aos-signature.nix;
@@ -6265,6 +6266,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gloss-juicy" = import ./nix/gloss-juicy.nix;
   "gloss-raster" = import ./nix/gloss-raster.nix;
   "gloss-raster-accelerate" = import ./nix/gloss-raster-accelerate.nix;
+  "gloss-raster-massiv" = import ./nix/gloss-raster-massiv.nix;
   "gloss-rendering" = import ./nix/gloss-rendering.nix;
   "gloss-sodium" = import ./nix/gloss-sodium.nix;
   "glpk-headers" = import ./nix/glpk-headers.nix;
@@ -8250,6 +8252,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "http-encodings" = import ./nix/http-encodings.nix;
   "http-enumerator" = import ./nix/http-enumerator.nix;
   "http-grammar" = import ./nix/http-grammar.nix;
+  "http-interchange" = import ./nix/http-interchange.nix;
   "http-io-streams" = import ./nix/http-io-streams.nix;
   "http-kinder" = import ./nix/http-kinder.nix;
   "http-kit" = import ./nix/http-kit.nix;
@@ -10904,6 +10907,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "network-transport-zeromq" = import ./nix/network-transport-zeromq.nix;
   "network-types-icmp" = import ./nix/network-types-icmp.nix;
   "network-udp" = import ./nix/network-udp.nix;
+  "network-unexceptional" = import ./nix/network-unexceptional.nix;
   "network-uri" = import ./nix/network-uri.nix;
   "network-uri-flag" = import ./nix/network-uri-flag.nix;
   "network-uri-json" = import ./nix/network-uri-json.nix;

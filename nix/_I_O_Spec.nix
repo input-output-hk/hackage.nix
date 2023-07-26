@@ -128,6 +128,22 @@
         revNum = 0;
         sha256 = "7458ea286386d76af1cd6e5b364914914783cdc7363a4381c795d053be129824";
         };
+      r1 = {
+        nix = import ../hackage/IOSpec-0.3.1.1-r1-80bb5ed2c9195aa68658a389c12bb05697da2acc2b304deb1ddda6ccd6a68bc3.nix;
+        revNum = 1;
+        sha256 = "80bb5ed2c9195aa68658a389c12bb05697da2acc2b304deb1ddda6ccd6a68bc3";
+        };
+      default = "r1";
+      };
+    };
+  "0.3.1.2" = {
+    sha256 = "202ee00e07f95cb754077a76dd43f6ad89ef76dfccbbbbd66bd67acf723be545";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/IOSpec-0.3.1.2-r0-8a5c61b1f0f6bb5b28700e15cbfdba9d90728c96852fc395757e1751962e2084.nix;
+        revNum = 0;
+        sha256 = "8a5c61b1f0f6bb5b28700e15cbfdba9d90728c96852fc395757e1751962e2084";
+        };
       default = "r0";
       };
     };

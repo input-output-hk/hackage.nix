@@ -119,4 +119,15 @@
       default = "r0";
       };
     };
+  "1.0.9" = {
+    sha256 = "299aa76f10bb94c62f0f3b68902ed09a6151e5f6feaef01efd07e164e1692aad";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/git-mediate-1.0.9-r0-960a829f5c62b0d31962ed0bb92045e5320411f3a56bd9dc242679795745417a.nix;
+        revNum = 0;
+        sha256 = "960a829f5c62b0d31962ed0bb92045e5320411f3a56bd9dc242679795745417a";
+        };
+      default = "r0";
+      };
+    };
   }
