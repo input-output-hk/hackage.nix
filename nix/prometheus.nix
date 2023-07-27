@@ -358,4 +358,15 @@
       default = "r0";
       };
     };
+  "2.2.4" = {
+    sha256 = "f71794c6fd0cbfad062be082db406a731c407d765986d1538c84ef80e39dd397";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prometheus-2.2.4-r0-a6691f50b6bd1b2e95138ca2fbd7c31c888da8b2c3157de1583eb99746f9d737.nix;
+        revNum = 0;
+        sha256 = "a6691f50b6bd1b2e95138ca2fbd7c31c888da8b2c3157de1583eb99746f9d737";
+        };
+      default = "r0";
+      };
+    };
   }

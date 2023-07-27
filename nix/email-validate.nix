@@ -468,6 +468,17 @@
       default = "r0";
       };
     };
+  "2.3.2.19" = {
+    sha256 = "c864ac949b3f2cb72ad6f1309c1315e4c85c6eb455fcadc297281d54ea2fa360";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/email-validate-2.3.2.19-r0-206a835fe99a79f2360c576e3594d8add82d2f1e001d58b49a60f60233da2bf5.nix;
+        revNum = 0;
+        sha256 = "206a835fe99a79f2360c576e3594d8add82d2f1e001d58b49a60f60233da2bf5";
+        };
+      default = "r0";
+      };
+    };
   "2.3.2.2" = {
     sha256 = "aac50c03884c5cd085221f560bacf3af2cf9e51ad9956ce655950067d9498adb";
     revisions = {

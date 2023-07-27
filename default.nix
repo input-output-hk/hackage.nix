@@ -3110,6 +3110,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "certificate" = import ./nix/certificate.nix;
   "cf" = import ./nix/cf.nix;
   "cfenv" = import ./nix/cfenv.nix;
+  "cfg" = import ./nix/cfg.nix;
   "cfipu" = import ./nix/cfipu.nix;
   "cflp" = import ./nix/cflp.nix;
   "cfn-flip" = import ./nix/cfn-flip.nix;
@@ -10801,6 +10802,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "neither-data" = import ./nix/neither-data.nix;
   "neko-lib" = import ./nix/neko-lib.nix;
   "neko-obfs" = import ./nix/neko-obfs.nix;
+  "nekos-best" = import ./nix/nekos-best.nix;
   "nemesis" = import ./nix/nemesis.nix;
   "nemesis-titan" = import ./nix/nemesis-titan.nix;
   "neolua" = import ./nix/neolua.nix;

@@ -37,4 +37,15 @@
       default = "r0";
       };
     };
+  "0.0.0.3" = {
+    sha256 = "bebef638c603c4c392dd44eabcc221e601f9cd8ad2c2a44d319a8252aa1adcd0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aws-sns-verify-0.0.0.3-r0-f9b5b485710158e6f97f41f3ed06ee16ab3c48bd540292091462b54dce4c2f90.nix;
+        revNum = 0;
+        sha256 = "f9b5b485710158e6f97f41f3ed06ee16ab3c48bd540292091462b54dce4c2f90";
+        };
+      default = "r0";
+      };
+    };
   }

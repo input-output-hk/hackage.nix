@@ -186,7 +186,12 @@
         revNum = 0;
         sha256 = "b7305b5abd8ce42e420d051bda6b68cdcdb2ed6e9f36b8e8f19dffd36ff779d1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hpc-0.6.2.0-r1-6aeaff51eba6254619c869b2449cab32a25a2d4895e36ef272866519d6af26be.nix;
+        revNum = 1;
+        sha256 = "6aeaff51eba6254619c869b2449cab32a25a2d4895e36ef272866519d6af26be";
+        };
+      default = "r1";
       };
     };
   }
