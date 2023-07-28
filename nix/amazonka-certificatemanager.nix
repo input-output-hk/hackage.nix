@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "f61b9f77021a66f76ae1316f33e09b3e8b064fc96d85df0ffcacf82edf081877";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-certificatemanager-2.0-r0-9a203a46ec1eaae2c59aa891efa480f84411783d02ba973820d67e95cc67756c.nix;
+        revNum = 0;
+        sha256 = "9a203a46ec1eaae2c59aa891efa480f84411783d02ba973820d67e95cc67756c";
+        };
+      default = "r0";
+      };
+    };
   }

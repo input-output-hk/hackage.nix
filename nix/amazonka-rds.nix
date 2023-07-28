@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "e9572d09ae74930b925efafc1c31a1d0683a09db5d1c97c07dac1b081e0e7c09";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-rds-2.0-r0-678688f00aacf45a5d637f8053c067c489214e8cf1862ef228904d643fe3a298.nix;
+        revNum = 0;
+        sha256 = "678688f00aacf45a5d637f8053c067c489214e8cf1862ef228904d643fe3a298";
+        };
+      default = "r0";
+      };
+    };
   }

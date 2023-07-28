@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "161b59ef5bd121f772c6c81088e2c0cd64036149a2f76a23dadbe0fcfc3fc661";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-greengrass-2.0-r0-6113f49ae462dd467c81cdd01f86bf2168840ea14b5955f550aa581879a8fa04.nix;
+        revNum = 0;
+        sha256 = "6113f49ae462dd467c81cdd01f86bf2168840ea14b5955f550aa581879a8fa04";
+        };
+      default = "r0";
+      };
+    };
   }

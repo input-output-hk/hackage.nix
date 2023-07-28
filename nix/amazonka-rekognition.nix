@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "90913ae627d1ec3798105dd0031c1730c67ba56ca07e4102f48e747f4db2037d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-rekognition-2.0-r0-e049de825b29cd0cb8e77c4d2a7561e9ce53cf4aa27f1016258410cd3a76a425.nix;
+        revNum = 0;
+        sha256 = "e049de825b29cd0cb8e77c4d2a7561e9ce53cf4aa27f1016258410cd3a76a425";
+        };
+      default = "r0";
+      };
+    };
   }

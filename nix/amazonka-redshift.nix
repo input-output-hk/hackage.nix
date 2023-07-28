@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "46c8e023618ccdc6fe4a73e3fdb51dee5dc4f181239f6b0956fbd371600538df";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-redshift-2.0-r0-8983582980caaf6088f905943910133b2b4ead98db99179ef5ab9b14cc3d275b.nix;
+        revNum = 0;
+        sha256 = "8983582980caaf6088f905943910133b2b4ead98db99179ef5ab9b14cc3d275b";
+        };
+      default = "r0";
+      };
+    };
   }

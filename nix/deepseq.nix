@@ -281,4 +281,15 @@
       default = "r0";
       };
     };
+  "1.5.0.0" = {
+    sha256 = "a0f19a8e48b28d1c9fa151825e6864bafb01ddd03786aeef29c7be69a9fb868b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/deepseq-1.5.0.0-r0-5385b345570a579e7ee5c8abfe180b7c21e608b30fbaa38274c9608e61a833ac.nix;
+        revNum = 0;
+        sha256 = "5385b345570a579e7ee5c8abfe180b7c21e608b30fbaa38274c9608e61a833ac";
+        };
+      default = "r0";
+      };
+    };
   }

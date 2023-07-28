@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "37dcab39ee371297d30213ee6f156a2a3fc22834308e23b21af6c43e3a71cd31";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-glue-2.0-r0-5512b026a30061561471ab0e31282b5b16713c5a62876cfbf8b3c788d047b1af.nix;
+        revNum = 0;
+        sha256 = "5512b026a30061561471ab0e31282b5b16713c5a62876cfbf8b3c788d047b1af";
+        };
+      default = "r0";
+      };
+    };
   }

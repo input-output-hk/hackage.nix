@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "f0795a8fe667f9e5c581165038576e2a41ca3c97d39d03041e1c07344959cdf2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-secretsmanager-2.0-r0-de4b8b2e1d5d0743dda1eb85c8be96897ab6ccf5aa62494d2d6318d869a49d42.nix;
+        revNum = 0;
+        sha256 = "de4b8b2e1d5d0743dda1eb85c8be96897ab6ccf5aa62494d2d6318d869a49d42";
+        };
+      default = "r0";
+      };
+    };
   }

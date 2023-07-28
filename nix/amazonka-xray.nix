@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "04c3debc0ced20635e2f6953048037d77a59aa778b7e4f5518d8febdce769db5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-xray-2.0-r0-b6f039b460ef9cf9c0690c410694e1a6b4e5d2c0f5b5065d60ee824040316c46.nix;
+        revNum = 0;
+        sha256 = "b6f039b460ef9cf9c0690c410694e1a6b4e5d2c0f5b5065d60ee824040316c46";
+        };
+      default = "r0";
+      };
+    };
   }

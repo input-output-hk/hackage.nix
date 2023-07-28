@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "3c71bcd691cf2da984177f2da590c32a710850db2010b35800fe086bdbaa7443";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-iot-dataplane-2.0-r0-ee657a670961b001463a8ccdfe94ae705c31d5e581fca1a695fd9b7593ec7711.nix;
+        revNum = 0;
+        sha256 = "ee657a670961b001463a8ccdfe94ae705c31d5e581fca1a695fd9b7593ec7711";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -164,4 +164,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "1fff2a27d1c435e06ce3ef21ae59bb1afe4d4f1cad96dfcc0768c8435151bfd4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-kinesis-firehose-2.0-r0-5c243e445170b4deef89214a9571f363bed7173d15f809012a9831fe86345080.nix;
+        revNum = 0;
+        sha256 = "5c243e445170b4deef89214a9571f363bed7173d15f809012a9831fe86345080";
+        };
+      default = "r0";
+      };
+    };
   }

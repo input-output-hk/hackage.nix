@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "14e72bc3b45729bcc1449c12107876498f385fce0e59ab6d447e25b5b8046102";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-directconnect-2.0-r0-fc432f563b500cfdfbe4f5400fb45e03a57718598679c2f749552468a77b54be.nix;
+        revNum = 0;
+        sha256 = "fc432f563b500cfdfbe4f5400fb45e03a57718598679c2f749552468a77b54be";
+        };
+      default = "r0";
+      };
+    };
   }

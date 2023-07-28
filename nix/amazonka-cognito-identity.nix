@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "9a7a104e119904021b77a5530197ce64c5d2cd93795d8ee9d358661587b28bf3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-cognito-identity-2.0-r0-4474efa5e0a49e9367c211f17ede31709346df25891a64b1dbfefdf77e3afdad.nix;
+        revNum = 0;
+        sha256 = "4474efa5e0a49e9367c211f17ede31709346df25891a64b1dbfefdf77e3afdad";
+        };
+      default = "r0";
+      };
+    };
   }

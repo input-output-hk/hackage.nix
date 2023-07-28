@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "43a8db6a0e1ba1228993da496e8ca6e53b480c4871714c3f28e9d2f92086d57d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-lex-runtime-2.0-r0-69d248fee4e4a298c4077a6c97fd780922b87dfdc2d8c0a2c56e52ee38b56a58.nix;
+        revNum = 0;
+        sha256 = "69d248fee4e4a298c4077a6c97fd780922b87dfdc2d8c0a2c56e52ee38b56a58";
+        };
+      default = "r0";
+      };
+    };
   }

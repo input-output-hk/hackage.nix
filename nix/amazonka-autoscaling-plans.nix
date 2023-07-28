@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "419e1cd0f2ecaa48d34274a0c8d58c850956751f6ceae079cb16b78c60537c81";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-autoscaling-plans-2.0-r0-e4e85915c3e9b48c06d4d11a675a316a6a98aa0cca05762fbe85b0371cef8862.nix;
+        revNum = 0;
+        sha256 = "e4e85915c3e9b48c06d4d11a675a316a6a98aa0cca05762fbe85b0371cef8862";
+        };
+      default = "r0";
+      };
+    };
   }

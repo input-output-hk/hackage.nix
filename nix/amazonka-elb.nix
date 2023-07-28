@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "fc6f4c5d2a6e5b79748043a9a3b3cb492982208ffe4ec7ffd1a28762fe655fed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-elb-2.0-r0-acd17a396886f57b65dce70a7bb04676bb0851eb6027a5b47e40ab5318180bba.nix;
+        revNum = 0;
+        sha256 = "acd17a396886f57b65dce70a7bb04676bb0851eb6027a5b47e40ab5318180bba";
+        };
+      default = "r0";
+      };
+    };
   }

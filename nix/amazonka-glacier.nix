@@ -340,4 +340,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "e612980e0984ba3fd2d63a4bb2ff84e47ab1a69e0d144cddd0d4dc1c0eb7db72";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-glacier-2.0-r0-475f4cd3dc8d930b92aed0989accf40522a23a034f80d7955ba5c553a11a046f.nix;
+        revNum = 0;
+        sha256 = "475f4cd3dc8d930b92aed0989accf40522a23a034f80d7955ba5c553a11a046f";
+        };
+      default = "r0";
+      };
+    };
   }

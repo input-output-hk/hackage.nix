@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "d5e5433a66f43202c7c994ea2f35dafbbb5d17b625c816b83fc8f67259401ee0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-organizations-2.0-r0-49a5e433d822e2596ab2651fc0b7f9962fa7968d5f7435680fb9a8f07a2ec546.nix;
+        revNum = 0;
+        sha256 = "49a5e433d822e2596ab2651fc0b7f9962fa7968d5f7435680fb9a8f07a2ec546";
+        };
+      default = "r0";
+      };
+    };
   }

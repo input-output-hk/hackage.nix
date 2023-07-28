@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "22c3d46addcaab51ccbdfb3f3a33b0ca116869f08bcba32897365b9df5c394f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-elasticbeanstalk-2.0-r0-ead447ca319309d3ba3fd31df777bc238a309285640506b746cc739a00d9060f.nix;
+        revNum = 0;
+        sha256 = "ead447ca319309d3ba3fd31df777bc238a309285640506b746cc739a00d9060f";
+        };
+      default = "r0";
+      };
+    };
   }

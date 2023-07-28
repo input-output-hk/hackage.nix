@@ -206,4 +206,15 @@
       default = "r0";
       };
     };
+  "0.4.1.1" = {
+    sha256 = "2333d161b5b32224235c14136982bf7983e42ca5691311bb76e3187c4f400ba5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chart-svg-0.4.1.1-r0-37f9e4f3a624c82dbd44fe1653f32bb0dd704a300486cffdc6b8be0061ea588a.nix;
+        revNum = 0;
+        sha256 = "37f9e4f3a624c82dbd44fe1653f32bb0dd704a300486cffdc6b8be0061ea588a";
+        };
+      default = "r0";
+      };
+    };
   }

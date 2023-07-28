@@ -554,4 +554,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "df79633b11289090b6c47837155b3925bff5f3c0c3a68544447981dd1dcf0412";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-route53-2.0-r0-060713a811a5eadc3cf05029a45a7482eb6f700f488623b3917d92eef784165f.nix;
+        revNum = 0;
+        sha256 = "060713a811a5eadc3cf05029a45a7482eb6f700f488623b3917d92eef784165f";
+        };
+      default = "r0";
+      };
+    };
   }

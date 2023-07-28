@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "850f7b4d46a5ca835fcb911e52e1673f9de770f32a27de33d3f2085ad56c7b59";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-appstream-2.0-r0-66e473723a34c45c67fd8ab7881a8c1ca21fd76585f0c8332a7f1a4ede72575d.nix;
+        revNum = 0;
+        sha256 = "66e473723a34c45c67fd8ab7881a8c1ca21fd76585f0c8332a7f1a4ede72575d";
+        };
+      default = "r0";
+      };
+    };
   }

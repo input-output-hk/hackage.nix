@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "f998bac3da955691ed7a51a818bbe66e9415dfb095da1345baded1c885f7c422";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-appsync-2.0-r0-cb3408044f413ebf5b4aceb6f3340d833a709997a0e8186e956e117520d7bd3b.nix;
+        revNum = 0;
+        sha256 = "cb3408044f413ebf5b4aceb6f3340d833a709997a0e8186e956e117520d7bd3b";
+        };
+      default = "r0";
+      };
+    };
   }

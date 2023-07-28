@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "a792c3398b8bd7f2ba6ec4227b4faac7bbd5b0e82151a240fb3e712e03a7d863";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-mediapackage-2.0-r0-870039f15921c2c15b198fb137249ffa07827f9cdea7a7e301d89fbdfbf61ab9.nix;
+        revNum = 0;
+        sha256 = "870039f15921c2c15b198fb137249ffa07827f9cdea7a7e301d89fbdfbf61ab9";
+        };
+      default = "r0";
+      };
+    };
   }

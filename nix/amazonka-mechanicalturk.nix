@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "2a308b58c7b1342632edf7c746ef2d04296b626a2ffc77ed6f0b2356b0bfab0a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-mechanicalturk-2.0-r0-0ce548810a7650d77f7ebc945f720d2753df9813f2619bf0e565424b730d8b2d.nix;
+        revNum = 0;
+        sha256 = "0ce548810a7650d77f7ebc945f720d2753df9813f2619bf0e565424b730d8b2d";
+        };
+      default = "r0";
+      };
+    };
   }

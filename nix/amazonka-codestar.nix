@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "f8421db2a2f54c654ad3195e6b310ef39f238a8202499efaf52ea846a058f2ea";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-codestar-2.0-r0-d7e2da673de1a8043d3ee457055dadcb2531d15417a2509017819cd60c578c9b.nix;
+        revNum = 0;
+        sha256 = "d7e2da673de1a8043d3ee457055dadcb2531d15417a2509017819cd60c578c9b";
+        };
+      default = "r0";
+      };
+    };
   }

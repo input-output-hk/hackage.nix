@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "bcb1185866272efcdf5badd1862b3aeb5e4f754737275385cffad0da85f1f51e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-guardduty-2.0-r0-9ce720c50582717256a4752c40df0f24e49d7eaa32869ba08ee2f7c7ccffb5e9.nix;
+        revNum = 0;
+        sha256 = "9ce720c50582717256a4752c40df0f24e49d7eaa32869ba08ee2f7c7ccffb5e9";
+        };
+      default = "r0";
+      };
+    };
   }

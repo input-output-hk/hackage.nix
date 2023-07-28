@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "f64ed624909ed699b00f54dbe7d450b7df99845f6d89ff6623ec6675b749685b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-kinesis-analytics-2.0-r0-319aeb2ea4c234e6ca4fef41c4ceadd88639f32393a3479bd53f292d2262cd9b.nix;
+        revNum = 0;
+        sha256 = "319aeb2ea4c234e6ca4fef41c4ceadd88639f32393a3479bd53f292d2262cd9b";
+        };
+      default = "r0";
+      };
+    };
   }

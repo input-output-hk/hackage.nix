@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "6725f268cd5cf342c8344adcaab705177224483d99421858a4677948daa997a0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-storagegateway-2.0-r0-40319f7ae60499beaeaf979579190e6cf5d250424ca7823345658941aeecd7fa.nix;
+        revNum = 0;
+        sha256 = "40319f7ae60499beaeaf979579190e6cf5d250424ca7823345658941aeecd7fa";
+        };
+      default = "r0";
+      };
+    };
   }

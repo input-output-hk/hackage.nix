@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "8e363d80ebcc85b0520c93192b06e1e6f30ec381c444a552416eefc6cf02a39e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-apigateway-2.0-r0-b0b689c0f18c4b072504e88629a153d3f2234caa15a38119f42a81891a341a04.nix;
+        revNum = 0;
+        sha256 = "b0b689c0f18c4b072504e88629a153d3f2234caa15a38119f42a81891a341a04";
+        };
+      default = "r0";
+      };
+    };
   }

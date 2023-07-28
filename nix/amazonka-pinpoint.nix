@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "1cace2d50612bf9f5c39486531017f219b395ab0af77d9cad81290c5137d3c26";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-pinpoint-2.0-r0-e926510afa0417e5121eff7fcd448a05d0e4b9568e7f97113b55165b48a85202.nix;
+        revNum = 0;
+        sha256 = "e926510afa0417e5121eff7fcd448a05d0e4b9568e7f97113b55165b48a85202";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "876c9620535abcc9fde062c8a4108599a9ed852f20d2de4e4954517677e399ba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-fms-2.0-r0-6659307f3cc0a838cb3e36da2908b514e1fd39a1a4e25063c1b26929f4c5995d.nix;
+        revNum = 0;
+        sha256 = "6659307f3cc0a838cb3e36da2908b514e1fd39a1a4e25063c1b26929f4c5995d";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -263,4 +263,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "e1f6381c379a54f5f49789869c35aaa35f49d263aa07ccfaa3d6b0c38d236ddd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-codepipeline-2.0-r0-20493092c6d88bf2516d60f73dc42583c082387fa03d9d103192a45ac41e451e.nix;
+        revNum = 0;
+        sha256 = "20493092c6d88bf2516d60f73dc42583c082387fa03d9d103192a45ac41e451e";
+        };
+      default = "r0";
+      };
+    };
   }

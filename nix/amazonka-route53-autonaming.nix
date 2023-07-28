@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "b4361896844de51bbcf66a54ff63507f4d67c581b262b2b166fa46c247ecec73";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-route53-autonaming-2.0-r0-a0d04b36a1e1b503b0043bafa104fdc37358e5e6087ab30e2c9696f32f31308b.nix;
+        revNum = 0;
+        sha256 = "a0d04b36a1e1b503b0043bafa104fdc37358e5e6087ab30e2c9696f32f31308b";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "13b2963d0b84b3d6e07783a42d083924921cc185a39caf65bed8442302ec1457";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-budgets-2.0-r0-634c4505cadfba573d371373177a94b967a252d5f3099ff418555ee9988d9ff0.nix;
+        revNum = 0;
+        sha256 = "634c4505cadfba573d371373177a94b967a252d5f3099ff418555ee9988d9ff0";
+        };
+      default = "r0";
+      };
+    };
   }

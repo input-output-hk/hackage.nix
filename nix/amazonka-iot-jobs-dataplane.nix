@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "7a74558ff27f49a6a17fb20beb34389929b5ca5bd16ea123a8026edf42879b18";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-iot-jobs-dataplane-2.0-r0-16a75ff39f95cc064dd2e96a844f158cffd7ae3b2f36ce553c7d41894e36611c.nix;
+        revNum = 0;
+        sha256 = "16a75ff39f95cc064dd2e96a844f158cffd7ae3b2f36ce553c7d41894e36611c";
+        };
+      default = "r0";
+      };
+    };
   }

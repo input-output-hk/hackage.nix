@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "e0de6a26c21aabc606bd8a44eed3345d3164860f19b9f0f35809d2c12fce4b0f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-cloudhsmv2-2.0-r0-52d775bf87f21a156e26f5d5a925ed94539acec5f2f2825e6aca7b84070f4868.nix;
+        revNum = 0;
+        sha256 = "52d775bf87f21a156e26f5d5a925ed94539acec5f2f2825e6aca7b84070f4868";
+        };
+      default = "r0";
+      };
+    };
   }

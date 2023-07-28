@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "036ea4683967e7005e199a36f58089fbb2e2cfe52c0d5cd70b374e2776ea41dc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-workdocs-2.0-r0-1a5ad505598184e0463d691ad10f4c7deebfd1c62570238e445b42e9816c568e.nix;
+        revNum = 0;
+        sha256 = "1a5ad505598184e0463d691ad10f4c7deebfd1c62570238e445b42e9816c568e";
+        };
+      default = "r0";
+      };
+    };
   }

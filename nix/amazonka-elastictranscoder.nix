@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "83d4f69eb8b4ff03f486866cdb42856e537a75258ae4b36c1da3065b0d0ffdf7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-elastictranscoder-2.0-r0-20495faf499202adcb70e9060a2c6eedf95aa48e816d86f2eec215f7b546e3ee.nix;
+        revNum = 0;
+        sha256 = "20495faf499202adcb70e9060a2c6eedf95aa48e816d86f2eec215f7b546e3ee";
+        };
+      default = "r0";
+      };
+    };
   }

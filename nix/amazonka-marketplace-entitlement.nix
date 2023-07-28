@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "7a4824de28ce9c318455945200848683d24ebb2d7084991aeb8f3806e04b1176";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-marketplace-entitlement-2.0-r0-822bac98658b992fd36a4cc80b3648f712ea634cd88e4f48f7ffa03d8d81f39b.nix;
+        revNum = 0;
+        sha256 = "822bac98658b992fd36a4cc80b3648f712ea634cd88e4f48f7ffa03d8d81f39b";
+        };
+      default = "r0";
+      };
+    };
   }

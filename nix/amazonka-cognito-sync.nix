@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "3f600505cdaa4eb0423c44a9caa194ebea265c5ce526aa954823a4fbcfa51a96";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-cognito-sync-2.0-r0-1f5801f60acc9d9362be97fd70ec7fa80034a8f6fd4719d15017de55098d806a.nix;
+        revNum = 0;
+        sha256 = "1f5801f60acc9d9362be97fd70ec7fa80034a8f6fd4719d15017de55098d806a";
+        };
+      default = "r0";
+      };
+    };
   }

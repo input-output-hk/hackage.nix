@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "e45071430cfddd44bbcba1529f08a1bfd34b0b59c8790e13170fe121f025ce04";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-lex-models-2.0-r0-104ea39a56ef99c0c23d50b34fbef87fd0a944abc48ee3c9238a07d856e673c2.nix;
+        revNum = 0;
+        sha256 = "104ea39a56ef99c0c23d50b34fbef87fd0a944abc48ee3c9238a07d856e673c2";
+        };
+      default = "r0";
+      };
+    };
   }

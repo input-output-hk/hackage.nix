@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "6f6977c8c1c973c1b96062b6d3b027aa8a4b3d550f152e62f2b89627c8876c65";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-waf-regional-2.0-r0-07f0c6c10cfcf8dae71376824c639b0ce860ad5723dbe9e8e4d5ad221ded0935.nix;
+        revNum = 0;
+        sha256 = "07f0c6c10cfcf8dae71376824c639b0ce860ad5723dbe9e8e4d5ad221ded0935";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -263,4 +263,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "a99d63c5004ce5850e6433c703b552afbe694c3ef5178bd973491c22a08ae7f7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-ds-2.0-r0-a153fcce78e5d1119c2f5e60a865d6022c19f186ad3d4cab7444533aad4c8418.nix;
+        revNum = 0;
+        sha256 = "a153fcce78e5d1119c2f5e60a865d6022c19f186ad3d4cab7444533aad4c8418";
+        };
+      default = "r0";
+      };
+    };
   }

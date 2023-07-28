@@ -263,4 +263,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "294c5e948aa135db83522311d31d2a2009d9a1e3532e8376e12382f7f5d932b9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-efs-2.0-r0-1e4bff37e3282c5b0d79467a93c07710c127f740b0bde58c3e139e6e8c07c652.nix;
+        revNum = 0;
+        sha256 = "1e4bff37e3282c5b0d79467a93c07710c127f740b0bde58c3e139e6e8c07c652";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "a04ead98a9a5d4c3827d80102cd25a8b2439fbb862cce143c0a7842453c044fd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-application-autoscaling-2.0-r0-44c957498befae808bcb19d7f94fd5ddb4363343810c35de93a46d253080a732.nix;
+        revNum = 0;
+        sha256 = "44c957498befae808bcb19d7f94fd5ddb4363343810c35de93a46d253080a732";
+        };
+      default = "r0";
+      };
+    };
   }

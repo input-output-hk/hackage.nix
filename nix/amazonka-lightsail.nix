@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "0490e05dbacff409365000a2a444d36ea7385c88f2d40d41b9e641f26a0ba453";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-lightsail-2.0-r0-b3afad79e6d130b42aea7e42d0987bb0b9206069eb89f5de5ac9670a6605a6d7.nix;
+        revNum = 0;
+        sha256 = "b3afad79e6d130b42aea7e42d0987bb0b9206069eb89f5de5ac9670a6605a6d7";
+        };
+      default = "r0";
+      };
+    };
   }

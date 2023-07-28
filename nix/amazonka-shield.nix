@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "596aeb5e6785cb5a41306f6485b5b6cbf4a356c822b52622899c87936d04fd6e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-shield-2.0-r0-8f540ab70a58e1dea11ecec72ce0f067f011a6be2b3cc0524b601bb5b64dfc6d.nix;
+        revNum = 0;
+        sha256 = "8f540ab70a58e1dea11ecec72ce0f067f011a6be2b3cc0524b601bb5b64dfc6d";
+        };
+      default = "r0";
+      };
+    };
   }

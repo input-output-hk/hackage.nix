@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "52476298708654e204ad41e0df2043f314b86db71b32624ae2ef47a586666e39";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-resourcegroups-2.0-r0-aa5062779f9819d3f020f95eafc9a05998a4c4a30db67a71df163de7a2f5284a.nix;
+        revNum = 0;
+        sha256 = "aa5062779f9819d3f020f95eafc9a05998a4c4a30db67a71df163de7a2f5284a";
+        };
+      default = "r0";
+      };
+    };
   }

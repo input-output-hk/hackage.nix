@@ -164,4 +164,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "5993c1c18614f9b91f6200275172df0348542a15d76b61cbbb8be8999b189028";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-iot-2.0-r0-8a3c4f728ea2bb8ecfb7fca70d97ea33285a64b17e96fd6cdd26e1c336d8482f.nix;
+        revNum = 0;
+        sha256 = "8a3c4f728ea2bb8ecfb7fca70d97ea33285a64b17e96fd6cdd26e1c336d8482f";
+        };
+      default = "r0";
+      };
+    };
   }

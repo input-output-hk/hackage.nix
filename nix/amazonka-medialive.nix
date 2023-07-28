@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "7cb18b76a4f58326aceec866747b40aab369628312736d535a8169b64289e928";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-medialive-2.0-r0-05404f3f089378a6dc7231312f35506aef73931e22a66e270c8a6baf53a9ba9e.nix;
+        revNum = 0;
+        sha256 = "05404f3f089378a6dc7231312f35506aef73931e22a66e270c8a6baf53a9ba9e";
+        };
+      default = "r0";
+      };
+    };
   }

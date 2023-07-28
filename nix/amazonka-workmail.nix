@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "55d2e296fec3b31e7f15020220a6d9e9e9047c512ad6c172ed655e6a3419ac59";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-workmail-2.0-r0-3f3c4446933086610a0498fd0bc213b0d7cfd4d810966b6533fda5b54091ced5.nix;
+        revNum = 0;
+        sha256 = "3f3c4446933086610a0498fd0bc213b0d7cfd4d810966b6533fda5b54091ced5";
+        };
+      default = "r0";
+      };
+    };
   }

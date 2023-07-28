@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "f7356b45b808deec9bd0503bca966dda1b63030b98a7896bb30b2ebdc6b675df";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-sms-2.0-r0-bd4328040f225dd1a3499cad7faf437697aee52e2a3e62d523214a4ca224b44a.nix;
+        revNum = 0;
+        sha256 = "bd4328040f225dd1a3499cad7faf437697aee52e2a3e62d523214a4ca224b44a";
+        };
+      default = "r0";
+      };
+    };
   }

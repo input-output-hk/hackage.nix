@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "500ba5f443d08205515b443f04a7563b3de2fd861fa95563d0de24906be29c41";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-athena-2.0-r0-d5c74d35e044e84f9555d0a0eed6a7a8ee346976d1033f40807f036141c94a58.nix;
+        revNum = 0;
+        sha256 = "d5c74d35e044e84f9555d0a0eed6a7a8ee346976d1033f40807f036141c94a58";
+        };
+      default = "r0";
+      };
+    };
   }

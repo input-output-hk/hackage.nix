@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "5c9453d2abdda0ba1bb5d43a60dd39efb6b555fa8be2683bf6f5c130fe449f52";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-gamelift-2.0-r0-2fa58e57869352f0e3271ace6086aa5700717e6385a4d7227fa3623c181ea36d.nix;
+        revNum = 0;
+        sha256 = "2fa58e57869352f0e3271ace6086aa5700717e6385a4d7227fa3623c181ea36d";
+        };
+      default = "r0";
+      };
+    };
   }

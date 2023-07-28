@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "d0ded5aae781071bf7408b46aa8b018c87239f7bfa2323b6045532142afed018";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-polly-2.0-r0-001c884c9dfe64c8008218720cc4655bc59af72e202cdcf5c1d787c0e8752815.nix;
+        revNum = 0;
+        sha256 = "001c884c9dfe64c8008218720cc4655bc59af72e202cdcf5c1d787c0e8752815";
+        };
+      default = "r0";
+      };
+    };
   }

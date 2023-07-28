@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "d01e8b1b9ead08698818eabd3d99cac7bdc4c8b53507226be8fe67b8045bb1b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-lambda-2.0-r0-aa74299380318b04429980eb76b7f0499a8241ff01de859042b0ff09bd7ef420.nix;
+        revNum = 0;
+        sha256 = "aa74299380318b04429980eb76b7f0499a8241ff01de859042b0ff09bd7ef420";
+        };
+      default = "r0";
+      };
+    };
   }

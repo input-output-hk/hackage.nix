@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "5fe96a35af4acc430f39aeb6255681dc5d837800b99501ad2939329aa407f439";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/md5-0.1.0.0-r1-f063856886525e28ff255999ddf0b97f8301e7b58677a1ad62d22702ac7ce2e7.nix;
+        revNum = 1;
+        sha256 = "f063856886525e28ff255999ddf0b97f8301e7b58677a1ad62d22702ac7ce2e7";
+        };
+      default = "r1";
       };
     };
   }

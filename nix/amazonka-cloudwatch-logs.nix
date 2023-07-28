@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "02adef581e424ced696bd72f2f51c7354bd2eb2e73ed8f844520353ed1dffc3e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-cloudwatch-logs-2.0-r0-9093d11b5c0d99feebadf828d3aeb3dd03e41b832e7cca600b5867865cfc90cc.nix;
+        revNum = 0;
+        sha256 = "9093d11b5c0d99feebadf828d3aeb3dd03e41b832e7cca600b5867865cfc90cc";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -164,4 +164,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "5318baef9dd3ac4a84ecfe2c14fbc5a0e6edb5d0e8b72214b6231183cb4e8324";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-waf-2.0-r0-bc0405a15a8c10da75b7d01ec54e0066d21dee0dd5876f679c754ddb3324d343.nix;
+        revNum = 0;
+        sha256 = "bc0405a15a8c10da75b7d01ec54e0066d21dee0dd5876f679c754ddb3324d343";
+        };
+      default = "r0";
+      };
+    };
   }

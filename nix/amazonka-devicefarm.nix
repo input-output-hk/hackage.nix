@@ -263,4 +263,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "ef561b49bf679f49815fd54b8750b84c07abb879ebdc25bafa6ad5709fdfd7c1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-devicefarm-2.0-r0-05e63c0706ebaaf9209e57940caaff465034c3b30eb38a741b9cbf7439f6bb0f.nix;
+        revNum = 0;
+        sha256 = "05e63c0706ebaaf9209e57940caaff465034c3b30eb38a741b9cbf7439f6bb0f";
+        };
+      default = "r0";
+      };
+    };
   }

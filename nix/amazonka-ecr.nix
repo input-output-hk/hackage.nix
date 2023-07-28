@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "035c5a4573ff6c96686bcd85acb88f408b07bc2a402d3ca7266df0ab1b50c8eb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-ecr-2.0-r0-88ec5dffb3c07f9e49eb4d9672ac62c175b6cf2c3e044ec0e4c705cd6bff3487.nix;
+        revNum = 0;
+        sha256 = "88ec5dffb3c07f9e49eb4d9672ac62c175b6cf2c3e044ec0e4c705cd6bff3487";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "699df4f7b2ecd7d20c2cc65c0be906f0f4e252457f1a22d218068b445f9137b6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-cloudwatch-events-2.0-r0-5fa1e271ead7fc78e417bfc2f2ea8a86d9759fbf8ed4b6b3af9b0a1925351447.nix;
+        revNum = 0;
+        sha256 = "5fa1e271ead7fc78e417bfc2f2ea8a86d9759fbf8ed4b6b3af9b0a1925351447";
+        };
+      default = "r0";
+      };
+    };
   }

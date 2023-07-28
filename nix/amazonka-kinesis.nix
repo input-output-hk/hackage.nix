@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "4182955a76d9c81d7d50f894d0961fcec4f4ea5f70c017833b2660051d2d31d4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-kinesis-2.0-r0-bd669fb35bc22da589a787a391e64a4b095f8725566e3b96ce38600adf76d933.nix;
+        revNum = 0;
+        sha256 = "bd669fb35bc22da589a787a391e64a4b095f8725566e3b96ce38600adf76d933";
+        };
+      default = "r0";
+      };
+    };
   }

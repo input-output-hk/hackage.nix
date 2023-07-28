@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "42f5f8c80ea63b1df8614209542ca5a3fe54079f2c995182ae3550a6e4cc7d94";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/smith-0.1.1.0-r1-3c20ba65a592f39867a6b1bf1356ba17dcf1ac79f304eb6d533b41f3d5708802.nix;
+        revNum = 1;
+        sha256 = "3c20ba65a592f39867a6b1bf1356ba17dcf1ac79f304eb6d533b41f3d5708802";
+        };
+      default = "r1";
       };
     };
   }

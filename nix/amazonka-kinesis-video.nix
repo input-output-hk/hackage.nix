@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "541ae7fea66e336bea60713a9448998eddcd49fcc7fe20f0822c3316de0e5d32";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-kinesis-video-2.0-r0-b326295c304f662c9edd78597987b78d492c70ea64d235b80f456c854ab93002.nix;
+        revNum = 0;
+        sha256 = "b326295c304f662c9edd78597987b78d492c70ea64d235b80f456c854ab93002";
+        };
+      default = "r0";
+      };
+    };
   }

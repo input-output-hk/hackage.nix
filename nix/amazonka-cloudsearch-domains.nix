@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "a3dcca19149c66c88398529c99ba7a34d306b448003925edc0e16cc0ff414547";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-cloudsearch-domains-2.0-r0-0f1bcc3bb52552d051cf565e423e06b5d8c3d26cddb2cda23fda77cbdf43331d.nix;
+        revNum = 0;
+        sha256 = "0f1bcc3bb52552d051cf565e423e06b5d8c3d26cddb2cda23fda77cbdf43331d";
+        };
+      default = "r0";
+      };
+    };
   }

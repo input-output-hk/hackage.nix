@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "9d4cf6d00badc9684f103e8a9ac970bbb9f6e3c97c9323cad42f4314994f9423";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nekos-best-0.2.0.0-r0-44acb454a63949cc818f0a1f67ff4cecddd49bf7bac59c153ecffe26e7c111b4.nix;
+        revNum = 0;
+        sha256 = "44acb454a63949cc818f0a1f67ff4cecddd49bf7bac59c153ecffe26e7c111b4";
+        };
+      default = "r0";
+      };
+    };
   }

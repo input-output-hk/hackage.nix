@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "71059530489b6a3198c054d2ee6fb03e0ded633ec9363b0a93413447d588bc54";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-resourcegroupstagging-2.0-r0-a59e6e8575f2d5e1f485f6bbf084ceb29cf5b260ef19e0fd2aa78d08e58042ae.nix;
+        revNum = 0;
+        sha256 = "a59e6e8575f2d5e1f485f6bbf084ceb29cf5b260ef19e0fd2aa78d08e58042ae";
+        };
+      default = "r0";
+      };
+    };
   }

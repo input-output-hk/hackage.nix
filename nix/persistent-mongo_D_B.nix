@@ -856,7 +856,12 @@
         revNum = 3;
         sha256 = "4de5d11f735469d6b1ebb7d2b594c994986f84f20563519237e95aee0c2e6c98";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/persistent-mongoDB-2.13.0.1-r4-e8ffd42e1d178596b29ec6da7072d58ce80f3a5261cb5807d3c5642fd1e5ee07.nix;
+        revNum = 4;
+        sha256 = "e8ffd42e1d178596b29ec6da7072d58ce80f3a5261cb5807d3c5642fd1e5ee07";
+        };
+      default = "r4";
       };
     };
   "2.5" = {

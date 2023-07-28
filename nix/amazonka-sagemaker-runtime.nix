@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "deebac150bec4ef5365407a9f4f10925f9ff3bad8f46c55a41c7afae8ba0b060";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-sagemaker-runtime-2.0-r0-a7a3cb3a5ae51eb3439b4ffd416e513afbcbb553e3260f02620fec204450a584.nix;
+        revNum = 0;
+        sha256 = "a7a3cb3a5ae51eb3439b4ffd416e513afbcbb553e3260f02620fec204450a584";
+        };
+      default = "r0";
+      };
+    };
   }

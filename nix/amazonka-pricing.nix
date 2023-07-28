@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "91f4c8e249aa352412faf13937c9730d5b055ee8c0681b30b530cb042afa4269";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-pricing-2.0-r0-96b70cebae9ba73f774f1d6989c24fa5e1ba3c895bbba19864828bc5901100db.nix;
+        revNum = 0;
+        sha256 = "96b70cebae9ba73f774f1d6989c24fa5e1ba3c895bbba19864828bc5901100db";
+        };
+      default = "r0";
+      };
+    };
   }

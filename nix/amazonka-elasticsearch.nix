@@ -164,4 +164,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "19fe5163a75affbbce308844dc5e404399c5efde8bcc89a69476a00fc5f59707";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-elasticsearch-2.0-r0-bfa00f30727fd3ac0f061257e7f5ea8152c2a57387888380af3a377ae2141f01.nix;
+        revNum = 0;
+        sha256 = "bfa00f30727fd3ac0f061257e7f5ea8152c2a57387888380af3a377ae2141f01";
+        };
+      default = "r0";
+      };
+    };
   }

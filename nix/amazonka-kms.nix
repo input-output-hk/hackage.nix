@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "9f38ab88461859ff4c6af7c001f4725757f9c096e5fb25465e58021dfb997476";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-kms-2.0-r0-65cc1292e483fddd3cd260ff6174df200000bb783e384ccf6a12da6e0949c936.nix;
+        revNum = 0;
+        sha256 = "65cc1292e483fddd3cd260ff6174df200000bb783e384ccf6a12da6e0949c936";
+        };
+      default = "r0";
+      };
+    };
   }

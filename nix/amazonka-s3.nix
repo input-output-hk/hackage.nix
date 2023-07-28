@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "5ad679758a2ea3cc581571400fecde8ea6121f8bfbe152aef8637a240b5cd9c7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-s3-2.0-r0-e3143e11ab9e57ee0dfd9d1dd95a44c5b4a7d34af78c8f5b2e6c00afad118a02.nix;
+        revNum = 0;
+        sha256 = "e3143e11ab9e57ee0dfd9d1dd95a44c5b4a7d34af78c8f5b2e6c00afad118a02";
+        };
+      default = "r0";
+      };
+    };
   }

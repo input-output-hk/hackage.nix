@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "b2bc0d62a9ff3bf12d5705232e26c2a9ec27091de5ef612d4426d0f9379f4e0e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-alexa-business-2.0-r0-53afa56b646329971cfdeacc47c15bf33b65e57832ea7cce7c3de61b23fafc42.nix;
+        revNum = 0;
+        sha256 = "53afa56b646329971cfdeacc47c15bf33b65e57832ea7cce7c3de61b23fafc42";
+        };
+      default = "r0";
+      };
+    };
   }

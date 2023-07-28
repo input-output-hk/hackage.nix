@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "514926f98875fa5f21bebb72ae0f2040ac5f223dec9cdacc9f5cbaaebb4f1f8b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-datapipeline-2.0-r0-f460300e3c87101a1d8822a646eec9740a1db578428bc8e4203668a30969f2f7.nix;
+        revNum = 0;
+        sha256 = "f460300e3c87101a1d8822a646eec9740a1db578428bc8e4203668a30969f2f7";
+        };
+      default = "r0";
+      };
+    };
   }

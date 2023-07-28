@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "9227c00c606a249d16508c907002124b6779b03c3703681f56fce82635dcaa85";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-dynamodb-dax-2.0-r0-c222ec1321ca1824a67a98d5b8bcb46fcfb7f623120449b8c702547557b46c73.nix;
+        revNum = 0;
+        sha256 = "c222ec1321ca1824a67a98d5b8bcb46fcfb7f623120449b8c702547557b46c73";
+        };
+      default = "r0";
+      };
+    };
   }

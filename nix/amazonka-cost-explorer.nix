@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "6183dc45f2df682b75c5cf40c85d532d5872255b5f8c0a02240762018aee8376";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-cost-explorer-2.0-r0-10084f4d230551699b93abf70326c2ac2ef1f01e4f5b4dd207a321bfaa1126e4.nix;
+        revNum = 0;
+        sha256 = "10084f4d230551699b93abf70326c2ac2ef1f01e4f5b4dd207a321bfaa1126e4";
+        };
+      default = "r0";
+      };
+    };
   }

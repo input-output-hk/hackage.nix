@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "5ce35d16fe91d7da8d69cb241b8e6cbbcf7625578f7a34f74be830b8b60256ff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-cloudfront-2.0-r0-3d3ff82461dd60ad4a157904a1c28695b5a5d140c2d5e56f5be4dcbdd749ed12.nix;
+        revNum = 0;
+        sha256 = "3d3ff82461dd60ad4a157904a1c28695b5a5d140c2d5e56f5be4dcbdd749ed12";
+        };
+      default = "r0";
+      };
+    };
   }

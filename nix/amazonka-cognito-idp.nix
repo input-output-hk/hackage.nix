@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "6b1ec037bed08a52088b1b94df40692a4095f0c17221c11bcdc8d47d5de0295d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-cognito-idp-2.0-r0-fd498f733a6e5bdf32e072fa7cc6737be9a7adf9dd1ae62d3f8a2271b6dca397.nix;
+        revNum = 0;
+        sha256 = "fd498f733a6e5bdf32e072fa7cc6737be9a7adf9dd1ae62d3f8a2271b6dca397";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "1cbb9a276b30ddf1fb34eda58ed2d34df5b7dab1fc06d968fda8dcde8b6c4cc1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-support-2.0-r0-db56efa1588dcc78785da929e3a787e85e8d017dbd6855c0449127941afbd608.nix;
+        revNum = 0;
+        sha256 = "db56efa1588dcc78785da929e3a787e85e8d017dbd6855c0449127941afbd608";
+        };
+      default = "r0";
+      };
+    };
   }

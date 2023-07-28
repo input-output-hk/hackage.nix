@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "da2de4c07a68e34497ad3d21f1710e8fbea13a0d00fa8cea1b1d1fa9251e520e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-connect-2.0-r0-98e476f9e560d66a00e276ba07f629d7ebdb7150a96fa0b9ea05057bf72b7a50.nix;
+        revNum = 0;
+        sha256 = "98e476f9e560d66a00e276ba07f629d7ebdb7150a96fa0b9ea05057bf72b7a50";
+        };
+      default = "r0";
+      };
+    };
   }

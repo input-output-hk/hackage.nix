@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "4fdec993da19b817836dd9c33b983ed867e21e0327a23df01c746f66eb465f61";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-sagemaker-2.0-r0-158c6234fa4b4ee19db99f5608c10f57e0658078f9e6d74160e12f42ddd9ef05.nix;
+        revNum = 0;
+        sha256 = "158c6234fa4b4ee19db99f5608c10f57e0658078f9e6d74160e12f42ddd9ef05";
+        };
+      default = "r0";
+      };
+    };
   }

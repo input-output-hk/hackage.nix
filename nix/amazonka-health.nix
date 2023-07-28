@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "59af492e3c1c5a9db649166380c8079daacf7fba52dd893f2479b41e2b9d2105";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-health-2.0-r0-db8fbb7ad96c3f697f485d384c5916f999bde5e3dbcd7978d702cc32ac5a201f.nix;
+        revNum = 0;
+        sha256 = "db8fbb7ad96c3f697f485d384c5916f999bde5e3dbcd7978d702cc32ac5a201f";
+        };
+      default = "r0";
+      };
+    };
   }

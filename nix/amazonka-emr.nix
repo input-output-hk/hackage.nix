@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "93359de2479ef63b641fb0bf20840d07e51f66b453c4413b5af7f5b87b9654d6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-emr-2.0-r0-d8cffdbd04a45cdc4bc3f4826263ae3519c5b510268ec13580d79f17a1eec703.nix;
+        revNum = 0;
+        sha256 = "d8cffdbd04a45cdc4bc3f4826263ae3519c5b510268ec13580d79f17a1eec703";
+        };
+      default = "r0";
+      };
+    };
   }

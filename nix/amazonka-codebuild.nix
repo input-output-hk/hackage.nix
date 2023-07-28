@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "d78bd7162ea9d91943694006df68c928aac16577db3eaed4438e84094d11dd8f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-codebuild-2.0-r0-0d673c8dae07a49bd385310f01df68d0720875a14091ed5271bdd31d062b75c6.nix;
+        revNum = 0;
+        sha256 = "0d673c8dae07a49bd385310f01df68d0720875a14091ed5271bdd31d062b75c6";
+        };
+      default = "r0";
+      };
+    };
   }

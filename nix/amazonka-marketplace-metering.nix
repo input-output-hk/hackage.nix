@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "32418d3f0f32f762edb366a0de81bead2acf646f5f84ebb2a1c70a75a77756cb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-marketplace-metering-2.0-r0-942beaa926e6022786579a398420fcc1b3be557d77dee31e26c69f5c119ca304.nix;
+        revNum = 0;
+        sha256 = "942beaa926e6022786579a398420fcc1b3be557d77dee31e26c69f5c119ca304";
+        };
+      default = "r0";
+      };
+    };
   }

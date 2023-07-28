@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "2b40d3b56c1ad34b96080b4855e76441a3de311c54dad7563c681deed020fc05";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-cloudformation-2.0-r0-7a9618bf697cdaf0a51c2d7be557ad47820b926416d79f5138ff3befdbfcbafb.nix;
+        revNum = 0;
+        sha256 = "7a9618bf697cdaf0a51c2d7be557ad47820b926416d79f5138ff3befdbfcbafb";
+        };
+      default = "r0";
+      };
+    };
   }

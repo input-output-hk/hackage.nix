@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "2dc729f2bdb9ba17db92cd213a8270a0a2f6a37873b17d7badacd09c69a74d7f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-mobile-2.0-r0-4c0c031dafa46ad20765054221440869bbcd72434cb9a29a66e61ccb1fe83887.nix;
+        revNum = 0;
+        sha256 = "4c0c031dafa46ad20765054221440869bbcd72434cb9a29a66e61ccb1fe83887";
+        };
+      default = "r0";
+      };
+    };
   }

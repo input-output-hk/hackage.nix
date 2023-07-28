@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "07ded3204655608331732fb2b17fa24c2c22f9f88859bef9705d38bfa1ff50f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-migrationhub-2.0-r0-c78e19f6d7555e8dcf3ab904458da48a8bc8831f54065e3410d55a86864b8884.nix;
+        revNum = 0;
+        sha256 = "c78e19f6d7555e8dcf3ab904458da48a8bc8831f54065e3410d55a86864b8884";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "ccc0e84517f4dd926d5d6403eca86b964ffe9cfc90525e47555e36ed6797a120";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-snowball-2.0-r0-b6de485c710bd7b4298616b3d9d068f614cc842dc20033f7c9d36f6292d4ca96.nix;
+        revNum = 0;
+        sha256 = "b6de485c710bd7b4298616b3d9d068f614cc842dc20033f7c9d36f6292d4ca96";
+        };
+      default = "r0";
+      };
+    };
   }

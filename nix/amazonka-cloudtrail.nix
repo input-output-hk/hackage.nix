@@ -543,4 +543,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "765554e13dc2b242c376e6748f01bce0f33c5ab8a3b787b46940a3376432950d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-cloudtrail-2.0-r0-89f6cee2a4d7f8841af42f7b1c7f57a9d9646508f5f97117a676171947286101.nix;
+        revNum = 0;
+        sha256 = "89f6cee2a4d7f8841af42f7b1c7f57a9d9646508f5f97117a676171947286101";
+        };
+      default = "r0";
+      };
+    };
   }

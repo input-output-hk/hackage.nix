@@ -164,4 +164,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "b0511b2c83a266e7ab167a46d23c834418ea67bc486f15141c5546b8e0220ea1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-marketplace-analytics-2.0-r0-7a7eaabc722de61c68e56b9edcfdc0cea08a500b60d4dc3205e7f79919d3004c.nix;
+        revNum = 0;
+        sha256 = "7a7eaabc722de61c68e56b9edcfdc0cea08a500b60d4dc3205e7f79919d3004c";
+        };
+      default = "r0";
+      };
+    };
   }

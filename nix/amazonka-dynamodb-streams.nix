@@ -263,4 +263,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "54ec5fe5bddfa23949841fc9d60dc9d38e8f23ccbd86f6deac1c817b5a27b966";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-dynamodb-streams-2.0-r0-03e6120d64a925403a3e0d2119a01720b9918296ce77b73e8317434c687085d6.nix;
+        revNum = 0;
+        sha256 = "03e6120d64a925403a3e0d2119a01720b9918296ce77b73e8317434c687085d6";
+        };
+      default = "r0";
+      };
+    };
   }

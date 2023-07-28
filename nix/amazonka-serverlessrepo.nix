@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "3263e7a006e6e3f2b403c8aa2c13d9ed48717abb225348407ee9d74e16f1ceb6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-serverlessrepo-2.0-r0-fb49197d5eb729debc69e6e56aca54bf0c7c967ba37f311222aeab61ebb811b4.nix;
+        revNum = 0;
+        sha256 = "fb49197d5eb729debc69e6e56aca54bf0c7c967ba37f311222aeab61ebb811b4";
+        };
+      default = "r0";
+      };
+    };
   }

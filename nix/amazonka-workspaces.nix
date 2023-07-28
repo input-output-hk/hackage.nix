@@ -296,4 +296,15 @@
       default = "r0";
       };
     };
+  "2.0" = {
+    sha256 = "6af04720d472d028d053939b621c7f30a9f39bc85a5327e80c0ac5f0a4d14c91";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-workspaces-2.0-r0-71674bdb0817e7437d7691ae0e17823100f3fcc36d5aaf39d512a2747e4c86d6.nix;
+        revNum = 0;
+        sha256 = "71674bdb0817e7437d7691ae0e17823100f3fcc36d5aaf39d512a2747e4c86d6";
+        };
+      default = "r0";
+      };
+    };
   }
