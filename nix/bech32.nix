@@ -86,4 +86,15 @@
       default = "r0";
       };
     };
+  "1.1.4" = {
+    sha256 = "48553d2c017d7dec3450cca628ed09018e345bdb8b368661c0afc05658139a38";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bech32-1.1.4-r0-520e115d585fcb7b336edf7806acf709cafea1f72730e3770edc60ce9b0ef5f7.nix;
+        revNum = 0;
+        sha256 = "520e115d585fcb7b336edf7806acf709cafea1f72730e3770edc60ce9b0ef5f7";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "1.0.3.0" = {
+    sha256 = "18458e37aeca5f2e294c0341662bc58dafe447e40e580f5666889043d87e4415";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lumberjack-1.0.3.0-r0-1c9d47a4a271d16a842ca0d1b17e5dfd44f7fbae6301debaeab104f3275e145e.nix;
+        revNum = 0;
+        sha256 = "1c9d47a4a271d16a842ca0d1b17e5dfd44f7fbae6301debaeab104f3275e145e";
+        };
+      default = "r0";
+      };
+    };
   }

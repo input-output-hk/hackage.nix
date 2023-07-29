@@ -3200,4 +3200,15 @@
       default = "r0";
       };
     };
+  "1.0.0" = {
+    sha256 = "f1328bde9ea116c5ca734a911b03a7d5f45301b54eb3c42ba141392007f92061";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskoin-store-1.0.0-r0-129ef19eec779d4cfb69abfbf3017d5e35b4051da103617b02f86435212178f0.nix;
+        revNum = 0;
+        sha256 = "129ef19eec779d4cfb69abfbf3017d5e35b4051da103617b02f86435212178f0";
+        };
+      default = "r0";
+      };
+    };
   }

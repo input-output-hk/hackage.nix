@@ -263,6 +263,28 @@
       default = "r0";
       };
     };
+  "0.10.5.0" = {
+    sha256 = "ee95b81d33ebfb1816c44393a61e75fa658717667b90596142605d6345836e43";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ginger-0.10.5.0-r0-60089cba017ba9f4ec3d1880b0d0d0a0915d4faf6d2dab6eaf09f5144886ff81.nix;
+        revNum = 0;
+        sha256 = "60089cba017ba9f4ec3d1880b0d0d0a0915d4faf6d2dab6eaf09f5144886ff81";
+        };
+      default = "r0";
+      };
+    };
+  "0.10.5.1" = {
+    sha256 = "f6878e6c6350f0a09e8b7c6d4482a44f7b154cd1fee438955ab707d7a0a103a6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ginger-0.10.5.1-r0-b251386d72ab0f93f6664f01a00538d54c10aeebbef94037326034cc8c8b1952.nix;
+        revNum = 0;
+        sha256 = "b251386d72ab0f93f6664f01a00538d54c10aeebbef94037326034cc8c8b1952";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "e88221b67e7d262da943bd3b16f5de061130201425e889ca949422bb7e301ff3";
     revisions = {
