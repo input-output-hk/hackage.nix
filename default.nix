@@ -9570,6 +9570,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lawless-concurrent-machines" = import ./nix/lawless-concurrent-machines.nix;
   "lawz" = import ./nix/lawz.nix;
   "lax" = import ./nix/lax.nix;
+  "layered-graph-drawing" = import ./nix/layered-graph-drawing.nix;
   "layered-state" = import ./nix/layered-state.nix;
   "layers" = import ./nix/layers.nix;
   "layers-game" = import ./nix/layers-game.nix;

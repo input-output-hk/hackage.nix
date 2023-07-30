@@ -874,4 +874,15 @@
       default = "r1";
       };
     };
+  "1.4.3.0" = {
+    sha256 = "32efb16c2891786209b7cbe5c39df9b3a9ae51e836f1a54f646bc4602b7ab0f5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hashable-1.4.3.0-r0-a52a511968a4b7a73bb54d78a8d999d6fe71f433cbe1788bbfae71b5fe02150c.nix;
+        revNum = 0;
+        sha256 = "a52a511968a4b7a73bb54d78a8d999d6fe71f433cbe1788bbfae71b5fe02150c";
+        };
+      default = "r0";
+      };
+    };
   }

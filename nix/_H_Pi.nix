@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.8.0" = {
+    sha256 = "355b358eaa542662c308ad27ec66e55d7b9bf72bbbcad4ca0783ea563ae6aeff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HPi-0.8.0-r0-1931f29f065c2ed9a6d568fe1a9c12c1fa2efd5461a9acd1ebb6a48d2cfc82ca.nix;
+        revNum = 0;
+        sha256 = "1931f29f065c2ed9a6d568fe1a9c12c1fa2efd5461a9acd1ebb6a48d2cfc82ca";
+        };
+      default = "r0";
+      };
+    };
   }

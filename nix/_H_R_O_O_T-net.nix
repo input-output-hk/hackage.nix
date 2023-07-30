@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.10.0.3" = {
+    sha256 = "b2ed308464d86d84f6d2dd395f9bddab8534dbb1b89b46576966837d12fd8a34";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HROOT-net-0.10.0.3-r0-a946e1c9b28068aabe2017c58a459ad048f215b90ef70e6b6135592d6ce355ad.nix;
+        revNum = 0;
+        sha256 = "a946e1c9b28068aabe2017c58a459ad048f215b90ef70e6b6135592d6ce355ad";
+        };
+      default = "r0";
+      };
+    };
   }
