@@ -4120,6 +4120,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cryptoids-types" = import ./nix/cryptoids-types.nix;
   "cryptol" = import ./nix/cryptol.nix;
   "crypton" = import ./nix/crypton.nix;
+  "crypton-conduit" = import ./nix/crypton-conduit.nix;
   "crypton-connection" = import ./nix/crypton-connection.nix;
   "crypton-x509" = import ./nix/crypton-x509.nix;
   "crypton-x509-store" = import ./nix/crypton-x509-store.nix;
@@ -4994,6 +4995,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "easytensor-vulkan" = import ./nix/easytensor-vulkan.nix;
   "easytest" = import ./nix/easytest.nix;
   "ebeats" = import ./nix/ebeats.nix;
+  "ebird-api" = import ./nix/ebird-api.nix;
+  "ebird-cli" = import ./nix/ebird-cli.nix;
+  "ebird-client" = import ./nix/ebird-client.nix;
   "ebml" = import ./nix/ebml.nix;
   "ebnf-bff" = import ./nix/ebnf-bff.nix;
   "ec2-signature" = import ./nix/ec2-signature.nix;
@@ -5878,6 +5882,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "friendly" = import ./nix/friendly.nix;
   "friendly-time" = import ./nix/friendly-time.nix;
   "frisby" = import ./nix/frisby.nix;
+  "from-env" = import ./nix/from-env.nix;
   "from-sum" = import ./nix/from-sum.nix;
   "fromhtml" = import ./nix/fromhtml.nix;
   "front" = import ./nix/front.nix;

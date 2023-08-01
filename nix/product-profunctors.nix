@@ -114,7 +114,12 @@
         revNum = 1;
         sha256 = "c4ca509b5c7bca13b1f628662b34d8983c13e083f9997242dd484c9349950f8b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/product-profunctors-0.11.1.1-r2-dc15516ecbc7a6e45ef2d9dc05e9df098608d2f5bf3ee8bb4d6853b1502ba96c.nix;
+        revNum = 2;
+        sha256 = "dc15516ecbc7a6e45ef2d9dc05e9df098608d2f5bf3ee8bb4d6853b1502ba96c";
+        };
+      default = "r2";
       };
     };
   "0.5" = {

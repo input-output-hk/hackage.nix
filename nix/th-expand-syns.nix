@@ -221,7 +221,12 @@
         revNum = 1;
         sha256 = "e8654156d8a75343e3f4e7170ebf12993b649f003004e910a2bcfc75f267844d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/th-expand-syns-0.4.11.0-r2-d1c1d48d5a27e0c52c68ab0d783c649046723b566600e1440f26027eca45e221.nix;
+        revNum = 2;
+        sha256 = "d1c1d48d5a27e0c52c68ab0d783c649046723b566600e1440f26027eca45e221";
+        };
+      default = "r2";
       };
     };
   "0.4.2.0" = {

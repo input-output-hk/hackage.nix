@@ -221,6 +221,17 @@
       default = "r0";
       };
     };
+  "0.12.0.2" = {
+    sha256 = "46ebd0c7d71e0a0f6d17d8f6d45338977f5343bcd331e1c68eb8cb14575a5208";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/arbtt-0.12.0.2-r0-25ca7adcb9a0933a70ed3ecd207091e6a2920b55bef554e780322efe121ac268.nix;
+        revNum = 0;
+        sha256 = "25ca7adcb9a0933a70ed3ecd207091e6a2920b55bef554e780322efe121ac268";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0" = {
     sha256 = "ed5d9fbd7f3726bae1bd499c288765c1a56981cd46f089ba92bb793757aa829f";
     revisions = {

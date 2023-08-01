@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.6.0" = {
+    sha256 = "28b500ea9c72b94a48e65857e3413a268ae27ff3574e0341c4b71b82c56855a8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/morley-prelude-0.6.0-r0-e807b426fb1ad63d4c683a8070999a6f3c29853462f3213ba1024352739b1e8c.nix;
+        revNum = 0;
+        sha256 = "e807b426fb1ad63d4c683a8070999a6f3c29853462f3213ba1024352739b1e8c";
+        };
+      default = "r0";
+      };
+    };
   }
