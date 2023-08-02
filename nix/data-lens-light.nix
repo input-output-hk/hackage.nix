@@ -119,7 +119,12 @@
         revNum = 0;
         sha256 = "9d677e15594bd420554ae6d9b04b1bd23be00a6f1393a19b356c789c908ebea8";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/data-lens-light-0.1.2.3-r1-44aa407d379dc3fcfd653964ef3b1a0db3a5025992ffbe128de5591b34418001.nix;
+        revNum = 1;
+        sha256 = "44aa407d379dc3fcfd653964ef3b1a0db3a5025992ffbe128de5591b34418001";
+        };
+      default = "r1";
       };
     };
   }

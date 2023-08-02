@@ -1384,4 +1384,15 @@
       default = "r0";
       };
     };
+  "1.5.0.3" = {
+    sha256 = "b3a1306703396720edbe264069395c4927f35f3f356e397cb2e56631874ecfb2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/classy-prelude-1.5.0.3-r0-63b6e90643e54b694d2209fab7db9398b9d7d46d7624b3ff57b5f9fccce401c7.nix;
+        revNum = 0;
+        sha256 = "63b6e90643e54b694d2209fab7db9398b9d7d46d7624b3ff57b5f9fccce401c7";
+        };
+      default = "r0";
+      };
+    };
   }

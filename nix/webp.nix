@@ -42,4 +42,15 @@
       default = "r0";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "0950ec8acac7894ccfbc4aabce54b2f2829e617305890f9cf324607eb32ae506";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/webp-0.1.0.3-r0-1b7f37649e0f0df94127bbd11b26dcf0ad8b8a34c20f4bac96986198c66ddc01.nix;
+        revNum = 0;
+        sha256 = "1b7f37649e0f0df94127bbd11b26dcf0ad8b8a34c20f4bac96986198c66ddc01";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -2339,6 +2339,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aviation-navigation" = import ./nix/aviation-navigation.nix;
   "aviation-units" = import ./nix/aviation-units.nix;
   "aviation-weight-balance" = import ./nix/aviation-weight-balance.nix;
+  "avif" = import ./nix/avif.nix;
   "avl-static" = import ./nix/avl-static.nix;
   "avr-shake" = import ./nix/avr-shake.nix;
   "avro" = import ./nix/avro.nix;

@@ -270,4 +270,15 @@
       default = "r0";
       };
     };
+  "0.1.4.6" = {
+    sha256 = "68c1f0d85a5b9be8c46039390d3a794de07bf2cf9d89c897be102e8e39257755";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/perceptual-hash-0.1.4.6-r0-2566ebc95709e3b9135fd145b503d2f43b7bd92748c74aff71fd0eb8a61182e3.nix;
+        revNum = 0;
+        sha256 = "2566ebc95709e3b9135fd145b503d2f43b7bd92748c74aff71fd0eb8a61182e3";
+        };
+      default = "r0";
+      };
+    };
   }
