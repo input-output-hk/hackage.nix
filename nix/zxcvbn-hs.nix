@@ -64,4 +64,15 @@
       default = "r0";
       };
     };
+  "0.3.3" = {
+    sha256 = "69ba8ee366c06aed3a7c15909f2bfb15d472800ed3fd32ab7434394349e02056";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zxcvbn-hs-0.3.3-r0-0dc2158561e2a0f24c642628b1d45369dbee66b13d04a6249c664c4e5967ede2.nix;
+        revNum = 0;
+        sha256 = "0dc2158561e2a0f24c642628b1d45369dbee66b13d04a6249c664c4e5967ede2";
+        };
+      default = "r0";
+      };
+    };
   }

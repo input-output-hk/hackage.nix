@@ -128,7 +128,12 @@
         revNum = 0;
         sha256 = "ab8c2af4c13bc04c7f0f71433ca396664a4c01873f68180983718c8286d8ee05";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ALUT-2.4.0.3-r1-265bae75257444b940ef0de6177dd04e49c2b7b60b3fe1ced40a6dfe4c91a8c6.nix;
+        revNum = 1;
+        sha256 = "265bae75257444b940ef0de6177dd04e49c2b7b60b3fe1ced40a6dfe4c91a8c6";
+        };
+      default = "r1";
       };
     };
   }

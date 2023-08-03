@@ -152,4 +152,15 @@
       default = "r0";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "d77d3d1d60650d590a02f97f5f0d09827fd6665ec06d62c7fb8f369c915ab45d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reflex-ghci-0.2.0.1-r0-6ffbde9436c7782a9035fa12e06dcd16eb7cf9767c58de4bfb80540291c25c10.nix;
+        revNum = 0;
+        sha256 = "6ffbde9436c7782a9035fa12e06dcd16eb7cf9767c58de4bfb80540291c25c10";
+        };
+      default = "r0";
+      };
+    };
   }

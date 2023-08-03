@@ -532,4 +532,15 @@
       default = "r0";
       };
     };
+  "2.0.0.2" = {
+    sha256 = "c349bdfafff3941e22d15f7750722877b13927743caa38e0e32109b4605ba3c7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Z-Data-2.0.0.2-r0-bc9c9c783ed065330bb6fa0929ca75576b22ab6c9281c51f0bd3376d53423447.nix;
+        revNum = 0;
+        sha256 = "bc9c9c783ed065330bb6fa0929ca75576b22ab6c9281c51f0bd3376d53423447";
+        };
+      default = "r0";
+      };
+    };
   }

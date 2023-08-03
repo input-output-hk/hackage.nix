@@ -187,7 +187,12 @@
         revNum = 0;
         sha256 = "0d70fbd23508656e16f5b6496d64e151d8fa530f23a48cb4b3212327e1ae268a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenAL-1.7.0.5-r1-cbc2a089b66705adc34d72eb3fb2c4bc757abb46d166e02ca27d7191aab3becc.nix;
+        revNum = 1;
+        sha256 = "cbc2a089b66705adc34d72eb3fb2c4bc757abb46d166e02ca27d7191aab3becc";
+        };
+      default = "r1";
       };
     };
   }

@@ -5250,6 +5250,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "esqueleto" = import ./nix/esqueleto.nix;
   "esqueleto-pgcrypto" = import ./nix/esqueleto-pgcrypto.nix;
   "esqueleto-streaming" = import ./nix/esqueleto-streaming.nix;
+  "esqueleto-textsearch" = import ./nix/esqueleto-textsearch.nix;
   "ess" = import ./nix/ess.nix;
   "essence-of-live-coding" = import ./nix/essence-of-live-coding.nix;
   "essence-of-live-coding-PortMidi" = import ./nix/essence-of-live-coding-_Port_Midi.nix;
@@ -10043,6 +10044,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ls-usb" = import ./nix/ls-usb.nix;
   "lscabal" = import ./nix/lscabal.nix;
   "lsfrom" = import ./nix/lsfrom.nix;
+  "lsh" = import ./nix/lsh.nix;
   "lsp" = import ./nix/lsp.nix;
   "lsp-client" = import ./nix/lsp-client.nix;
   "lsp-test" = import ./nix/lsp-test.nix;

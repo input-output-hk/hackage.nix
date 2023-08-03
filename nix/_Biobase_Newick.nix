@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "4006ede0492b50cf0ab8ec49166e0ca3553891e61a86841feabc35c914cc2bb5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/BiobaseNewick-0.0.0.2-r1-b024b37bdc07873831f32a14eea3622f9391dd12a6f956efa0361ab3b82fb960.nix;
+        revNum = 1;
+        sha256 = "b024b37bdc07873831f32a14eea3622f9391dd12a6f956efa0361ab3b82fb960";
+        };
+      default = "r1";
       };
     };
   }
