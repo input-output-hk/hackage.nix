@@ -95,7 +95,12 @@
         revNum = 0;
         sha256 = "71b5f6512fd36a0b9b58cdea6ff852cac637ba418eac7e948efdd3589209d1ba";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/indigo-0.6.0-r1-4e61f7c856cb308c996d20a37c4936f22130dc58b4a041dcd9cbe2518bfcb028.nix;
+        revNum = 1;
+        sha256 = "4e61f7c856cb308c996d20a37c4936f22130dc58b4a041dcd9cbe2518bfcb028";
+        };
+      default = "r1";
       };
     };
   }

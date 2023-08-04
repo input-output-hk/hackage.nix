@@ -127,4 +127,15 @@
       default = "r1";
       };
     };
+  "0.1.2.4" = {
+    sha256 = "dd6b878ff9871a5b12df3dddbbf0dda7ad0e2ecd02c70323d9058a79388af41d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/data-lens-light-0.1.2.4-r0-8948efb870a02dbc77c9fa20d09c849cf67cb327e91d80a7f5c9896606007623.nix;
+        revNum = 0;
+        sha256 = "8948efb870a02dbc77c9fa20d09c849cf67cb327e91d80a7f5c9896606007623";
+        };
+      default = "r0";
+      };
+    };
   }

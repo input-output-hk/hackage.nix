@@ -63,4 +63,15 @@
       default = "r1";
       };
     };
+  "0.3.0.1" = {
+    sha256 = "5d93387b44329ae6531e37e9377c1510840a59160c04fb1935930af6a83451d6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/coercible-subtypes-0.3.0.1-r0-e8056ebb3fe89f36b51dfd7bf92b03bb6e5b549c1311f0a4a4e71c5df9c53bb4.nix;
+        revNum = 0;
+        sha256 = "e8056ebb3fe89f36b51dfd7bf92b03bb6e5b549c1311f0a4a4e71c5df9c53bb4";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -172,7 +172,12 @@
         revNum = 0;
         sha256 = "df1a0bf486761d7057357eff250bc18d470644a503191d9b4bbe7b5990378621";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lorentz-0.16.0-r1-264a3ae1ff6a31bd2eb083c2504bf1919ba644dc849d6a1488616f4e9ed7ac06.nix;
+        revNum = 1;
+        sha256 = "264a3ae1ff6a31bd2eb083c2504bf1919ba644dc849d6a1488616f4e9ed7ac06";
+        };
+      default = "r1";
       };
     };
   "0.2.0" = {

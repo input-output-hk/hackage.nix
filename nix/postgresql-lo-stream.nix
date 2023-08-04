@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "f12366dc7dc79936145696bd7fb6e0ba7defe634a5d3c54bd21a017216840a2b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/postgresql-lo-stream-0.1.1.1-r1-0cc69b603258e530a9184fa0553166677849b5fb02329850350d88bebd5a3d7c.nix;
+        revNum = 1;
+        sha256 = "0cc69b603258e530a9184fa0553166677849b5fb02329850350d88bebd5a3d7c";
+        };
+      default = "r1";
       };
     };
   }
