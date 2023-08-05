@@ -168,7 +168,12 @@
         revNum = 0;
         sha256 = "e47f363d57e5551542cc567b68f375001f850732ebe9c226351c26e7af56f797";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/relude-1.2.0.0-r1-f99bcd6dfd240ad0a13a0307464a6c20a229e8456da7a028377b4f0995c575ed.nix;
+        revNum = 1;
+        sha256 = "f99bcd6dfd240ad0a13a0307464a6c20a229e8456da7a028377b4f0995c575ed";
+        };
+      default = "r1";
       };
     };
   }

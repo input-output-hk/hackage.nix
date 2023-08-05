@@ -54,4 +54,26 @@
       default = "r0";
       };
     };
+  "0.1.1.4" = {
+    sha256 = "542c94dfa30e0275535dc285103285549945c2831ae0c429bb9a430188446a96";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gloss-raster-massiv-0.1.1.4-r0-7a1eccc45c5189af391daa46c5a968b6005ed72cd0e69643f85d0029d5064666.nix;
+        revNum = 0;
+        sha256 = "7a1eccc45c5189af391daa46c5a968b6005ed72cd0e69643f85d0029d5064666";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.1.5" = {
+    sha256 = "7835ffc4e82392cd5df6f2daf18f47336da7472452fd14ea4861601e966355a7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gloss-raster-massiv-0.1.1.5-r0-beb83234e5f39bacb62fd27f517e5af7acc9437a0d27c08b5787a0575efbbca3.nix;
+        revNum = 0;
+        sha256 = "beb83234e5f39bacb62fd27f517e5af7acc9437a0d27c08b5787a0575efbbca3";
+        };
+      default = "r0";
+      };
+    };
   }
