@@ -309,7 +309,12 @@
         revNum = 3;
         sha256 = "adb2dc20ca5034f3eba65c49686b3986fb75a2240ccf9321b019f1dbcb1ef889";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/hyperloglog-0.4.6-r4-8911d8a108354400d3a5fafefa8367d749f8c578cff258f5afda1e3c895c872f.nix;
+        revNum = 4;
+        sha256 = "8911d8a108354400d3a5fafefa8367d749f8c578cff258f5afda1e3c895c872f";
+        };
+      default = "r4";
       };
     };
   }

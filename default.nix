@@ -2850,6 +2850,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "boombox" = import ./nix/boombox.nix;
   "boomerang" = import ./nix/boomerang.nix;
   "boomslang" = import ./nix/boomslang.nix;
+  "boomwhacker" = import ./nix/boomwhacker.nix;
   "boop" = import ./nix/boop.nix;
   "boopadoop" = import ./nix/boopadoop.nix;
   "boots" = import ./nix/boots.nix;
@@ -10425,6 +10426,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "midi-utils" = import ./nix/midi-utils.nix;
   "midimory" = import ./nix/midimory.nix;
   "midisurface" = import ./nix/midisurface.nix;
+  "mig" = import ./nix/mig.nix;
   "mighttpd" = import ./nix/mighttpd.nix;
   "mighttpd2" = import ./nix/mighttpd2.nix;
   "mighty-metropolis" = import ./nix/mighty-metropolis.nix;

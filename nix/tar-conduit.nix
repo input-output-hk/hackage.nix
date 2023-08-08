@@ -157,4 +157,15 @@
       default = "r0";
       };
     };
+  "0.4.0" = {
+    sha256 = "d2652a11cacc5662c7db9a3ee80df977bb3c7133c5a35a2e105e9e82c3331f40";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tar-conduit-0.4.0-r0-f333649770f5ec42a83a93b0d424cf6bb895d80dfbee05a54340395f81d036ae.nix;
+        revNum = 0;
+        sha256 = "f333649770f5ec42a83a93b0d424cf6bb895d80dfbee05a54340395f81d036ae";
+        };
+      default = "r0";
+      };
+    };
   }

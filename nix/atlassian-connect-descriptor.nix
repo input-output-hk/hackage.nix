@@ -153,6 +153,28 @@
       default = "r0";
       };
     };
+  "0.4.14.0" = {
+    sha256 = "ada676dd1cc37791829e593fce63f506c855c33fb63f9e329840bfbf7958d510";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/atlassian-connect-descriptor-0.4.14.0-r0-08c27faf46b825d4e5e093184d6ea8b6c6f5f995597ded291c4126204ea47dfd.nix;
+        revNum = 0;
+        sha256 = "08c27faf46b825d4e5e093184d6ea8b6c6f5f995597ded291c4126204ea47dfd";
+        };
+      default = "r0";
+      };
+    };
+  "0.4.15.0" = {
+    sha256 = "2fc2fa2dcf75ee7692156a1383ea4c184af4cd0b45273be9c5783ae3aed8cfd6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/atlassian-connect-descriptor-0.4.15.0-r0-da30c9f5d1f325409e69bcedba916d62adcca2878bb4dc82b01241968f3ccc77.nix;
+        revNum = 0;
+        sha256 = "da30c9f5d1f325409e69bcedba916d62adcca2878bb4dc82b01241968f3ccc77";
+        };
+      default = "r0";
+      };
+    };
   "0.4.2.0" = {
     sha256 = "d9cda09ed9404a504c8a772cfbbb1aebb5de98f0dc735eb096077dc527b6ee0f";
     revisions = {

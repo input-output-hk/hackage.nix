@@ -65,7 +65,12 @@
         revNum = 3;
         sha256 = "ba26ed951a5bc85ca22eb2ad0b5525944b0a46fa7bc0e51a63e0a41265b55398";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/conferer-aeson-1.1.0.2-r4-8a7e03fabbd8d676be6493897c901954f22738721cca2d2e138af8470b9dab3c.nix;
+        revNum = 4;
+        sha256 = "8a7e03fabbd8d676be6493897c901954f22738721cca2d2e138af8470b9dab3c";
+        };
+      default = "r4";
       };
     };
   }

@@ -84,7 +84,12 @@
         revNum = 0;
         sha256 = "02fd2c64f367e584f04be4c6a63cd993f14e44a699fe030d58c9b6c5766a31c0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/conferer-hspec-1.1.0.0-r1-901af5f0f1c22dc87523fd9e2094b4cca71aca8b33b2ad779bb5706a326e0364.nix;
+        revNum = 1;
+        sha256 = "901af5f0f1c22dc87523fd9e2094b4cca71aca8b33b2ad779bb5706a326e0364";
+        };
+      default = "r1";
       };
     };
   }

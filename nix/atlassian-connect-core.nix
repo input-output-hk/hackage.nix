@@ -43,6 +43,17 @@
       default = "r0";
       };
     };
+  "0.10.1.0" = {
+    sha256 = "aa733206f5cc8e93c6e96d5546132e71105d30b6029d914d58f87b069adc3e96";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/atlassian-connect-core-0.10.1.0-r0-9826a4500b9dfb3d39ce367525c805d8d0970d8393e99086963675d3660184a2.nix;
+        revNum = 0;
+        sha256 = "9826a4500b9dfb3d39ce367525c805d8d0970d8393e99086963675d3660184a2";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "3452df810b4d5ea6fa06873bd81a878671028a124377cc018fa7e03a1bf2231e";
     revisions = {

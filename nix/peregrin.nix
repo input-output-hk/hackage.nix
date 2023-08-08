@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.4.2" = {
+    sha256 = "8bc3b67870473f1266c32d7055fe9126715fc5253a9f7f5951f75d3ecd9edff6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/peregrin-0.4.2-r0-9e31de740efbf237f5909c0043345e20d7d45ebdf88a1d168c01d6eccc01ab02.nix;
+        revNum = 0;
+        sha256 = "9e31de740efbf237f5909c0043345e20d7d45ebdf88a1d168c01d6eccc01ab02";
+        };
+      default = "r0";
+      };
+    };
   }

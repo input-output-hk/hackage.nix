@@ -103,7 +103,12 @@
         revNum = 0;
         sha256 = "4f0b2f09bb8c33199e3c3fdfcd35e576d17cbf5188b18f404ffdfa68a8ccc40e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/iconv-0.4.1.3-r1-4ed36bee4af30bc2948aa3dde8da5025f1c4a3bb878dea4c03553eab643b3700.nix;
+        revNum = 1;
+        sha256 = "4ed36bee4af30bc2948aa3dde8da5025f1c4a3bb878dea4c03553eab643b3700";
+        };
+      default = "r1";
       };
     };
   }

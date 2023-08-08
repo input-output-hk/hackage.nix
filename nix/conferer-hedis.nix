@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "045e3be4c03bd681526e04374f5fa8bfcebf513b6c9aa04bee46658135ad8d25";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/conferer-hedis-1.1.0.0-r1-88532b06f381df69428b2498cdb77fad0225ab4b97866d8eba9d39544a7fb9c5.nix;
+        revNum = 1;
+        sha256 = "88532b06f381df69428b2498cdb77fad0225ab4b97866d8eba9d39544a7fb9c5";
+        };
+      default = "r1";
       };
     };
   }

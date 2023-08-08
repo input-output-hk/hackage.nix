@@ -304,7 +304,12 @@
         revNum = 0;
         sha256 = "cdcc65f9467a64ac21fa7e11241d9b2bfc5304e1ab7f0228e62cb7db66272048";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/composite-base-0.8.2.1-r1-37aa208bf834dfacdeeae2c801b524f5d20bbc89ddb8ece6b97ba0f28f3b9cbb.nix;
+        revNum = 1;
+        sha256 = "37aa208bf834dfacdeeae2c801b524f5d20bbc89ddb8ece6b97ba0f28f3b9cbb";
+        };
+      default = "r1";
       };
     };
   }

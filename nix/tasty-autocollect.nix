@@ -73,7 +73,12 @@
         revNum = 0;
         sha256 = "a688ff5b18db47ad963c0d449ae19d678ad0cda6979cecfc1a5906b4f61cd312";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tasty-autocollect-0.4.1-r1-011ec88673459f4b313dcb1a0930aa4599ff4b9abd20303d79bf4f8139c9236f.nix;
+        revNum = 1;
+        sha256 = "011ec88673459f4b313dcb1a0930aa4599ff4b9abd20303d79bf4f8139c9236f";
+        };
+      default = "r1";
       };
     };
   }

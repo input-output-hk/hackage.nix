@@ -406,4 +406,15 @@
       default = "r0";
       };
     };
+  "5.3.0" = {
+    sha256 = "2425ed40efc4c9c54f7e6ea01b0e4c6f5deba73e9662d14599086e17eebe4733";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hw-kafka-client-5.3.0-r0-35cdd66248db75b0acf8661553b4945eb99c38147255a0d810607a3190a3cd6e.nix;
+        revNum = 0;
+        sha256 = "35cdd66248db75b0acf8661553b4945eb99c38147255a0d810607a3190a3cd6e";
+        };
+      default = "r0";
+      };
+    };
   }

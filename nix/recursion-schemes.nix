@@ -629,7 +629,12 @@
         revNum = 2;
         sha256 = "06abe2b6925d3e40591ef65b000d7d2ca3e0d607e33b498a83c29176ce972798";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/recursion-schemes-5.2.2.4-r3-b4f3bfbd1385e598c46ecaa683042cadec37da3a0381ed5f3197bd0075766e19.nix;
+        revNum = 3;
+        sha256 = "b4f3bfbd1385e598c46ecaa683042cadec37da3a0381ed5f3197bd0075766e19";
+        };
+      default = "r3";
       };
     };
   }

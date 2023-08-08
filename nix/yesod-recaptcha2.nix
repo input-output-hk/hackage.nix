@@ -120,4 +120,15 @@
       default = "r0";
       };
     };
+  "1.0.2.1" = {
+    sha256 = "c26efaf0a2de1e002a5a7ebe14e90f2ac47a2aef4b3008308ed10d69308b696a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yesod-recaptcha2-1.0.2.1-r0-46cc644d210d59e54b631a661b397c77101d242632c7fe90abca65f268cf11ec.nix;
+        revNum = 0;
+        sha256 = "46cc644d210d59e54b631a661b397c77101d242632c7fe90abca65f268cf11ec";
+        };
+      default = "r0";
+      };
+    };
   }
