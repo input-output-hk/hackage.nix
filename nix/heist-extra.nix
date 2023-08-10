@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "1500ca14e4bbec4f0ea7a8790b51cfb586e72004580b6a3b892cd749f2e6fa85";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/heist-extra-0.3.0.0-r0-3ab3d0e4b7f1c91c9ab967201e119ded3106d62c2c5ec65cbcc4b41593bc0261.nix;
+        revNum = 0;
+        sha256 = "3ab3d0e4b7f1c91c9ab967201e119ded3106d62c2c5ec65cbcc4b41593bc0261";
+        };
+      default = "r0";
+      };
+    };
   }

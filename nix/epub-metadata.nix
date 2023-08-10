@@ -208,4 +208,15 @@
       default = "r0";
       };
     };
+  "5.2" = {
+    sha256 = "f0a53da22a864336f4079dd1684032fd317d90e6e076c6b2e5597978e7c4e83f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/epub-metadata-5.2-r0-eca8341f1079f0b02b6c486c2ac02c8653990f1682c23220d211ad741dbcee67.nix;
+        revNum = 0;
+        sha256 = "eca8341f1079f0b02b6c486c2ac02c8653990f1682c23220d211ad741dbcee67";
+        };
+      default = "r0";
+      };
+    };
   }

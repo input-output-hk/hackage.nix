@@ -87,6 +87,17 @@
       default = "r0";
       };
     };
+  "0.1.14.3" = {
+    sha256 = "aa4f7abc121ad5abcb8a122b8a8f9466671a45ad786e123b4a5c6acf04488c41";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/diohsc-0.1.14.3-r0-90f73b372b14dd32955104344b54d3e1ff2c47646a9090e873bf27e0d5a32ddb.nix;
+        revNum = 0;
+        sha256 = "90f73b372b14dd32955104344b54d3e1ff2c47646a9090e873bf27e0d5a32ddb";
+        };
+      default = "r0";
+      };
+    };
   "0.1.2" = {
     sha256 = "0481c582b2f9272d2b775206dba275e902ba9e26df63a5fc70815fcd8fe54a4f";
     revisions = {

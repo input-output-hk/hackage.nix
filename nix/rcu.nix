@@ -133,4 +133,15 @@
       default = "r0";
       };
     };
+  "0.2.7" = {
+    sha256 = "890d2c0061442250494b7b3578e693bac4b501393ace6cc5554621c8a4e08147";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rcu-0.2.7-r0-43b6c36536e356c514e1d6c93ada49bca76ba355c742038aa9627ac4e27851b7.nix;
+        revNum = 0;
+        sha256 = "43b6c36536e356c514e1d6c93ada49bca76ba355c742038aa9627ac4e27851b7";
+        };
+      default = "r0";
+      };
+    };
   }

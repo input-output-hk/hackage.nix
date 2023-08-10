@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.6.0" = {
+    sha256 = "cbcf33bb07840c2e0271a10643651b6f945549889e53b5b20f9088178bf6674d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kind-integer-0.6.0-r0-a39ebbe2e82977fa39237239f96df56330e659dae2117710d64df6362d064bec.nix;
+        revNum = 0;
+        sha256 = "a39ebbe2e82977fa39237239f96df56330e659dae2117710d64df6362d064bec";
+        };
+      default = "r0";
+      };
+    };
   }
