@@ -65,4 +65,26 @@
       default = "r0";
       };
     };
+  "0.1.5.0" = {
+    sha256 = "8d01cb53766ad21e94453da81d0135f7c92ffd70c323f74823129751d91bdcd0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/orthotope-0.1.5.0-r0-dbe5eddfef6464e2d9d9c3656f4a818f8c97f86c38fd87e83175047c06928b93.nix;
+        revNum = 0;
+        sha256 = "dbe5eddfef6464e2d9d9c3656f4a818f8c97f86c38fd87e83175047c06928b93";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.6.0" = {
+    sha256 = "73d02f0ad9869a038024aadc1638d76369c82b3009b55834b727f3bbb15d8461";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/orthotope-0.1.6.0-r0-9613cbcb6ff90f326cf47270d466b1c75332a131fa3b66a3b1be9b1eff0e3131.nix;
+        revNum = 0;
+        sha256 = "9613cbcb6ff90f326cf47270d466b1c75332a131fa3b66a3b1be9b1eff0e3131";
+        };
+      default = "r0";
+      };
+    };
   }

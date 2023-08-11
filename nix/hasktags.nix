@@ -296,4 +296,20 @@
       default = "r3";
       };
     };
+  "0.73.0" = {
+    sha256 = "d002d50b16077e26d7901bf21ea841187d36f88fabf186f9eb77d6f61e280f70";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasktags-0.73.0-r0-0c84d5134d8ac0e334c14ec69520626c90a97678933c56990c6fa2ed4797ae37.nix;
+        revNum = 0;
+        sha256 = "0c84d5134d8ac0e334c14ec69520626c90a97678933c56990c6fa2ed4797ae37";
+        };
+      r1 = {
+        nix = import ../hackage/hasktags-0.73.0-r1-c5636ad3843fc8d214a07babcafa59a8c2b58e4b18a3a9818b65cfc572b6aeff.nix;
+        revNum = 1;
+        sha256 = "c5636ad3843fc8d214a07babcafa59a8c2b58e4b18a3a9818b65cfc572b6aeff";
+        };
+      default = "r1";
+      };
+    };
   }

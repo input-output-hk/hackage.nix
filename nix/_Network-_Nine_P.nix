@@ -164,4 +164,15 @@
       default = "r0";
       };
     };
+  "0.4.7.3" = {
+    sha256 = "418238212037484ad68d83f060fc32a5a71c5df49c323a0a56c329424c79b5b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Network-NineP-0.4.7.3-r0-41dd146a00b979021d2dc29b395ca86eec2c6e3cdcf9c57c5adc61fb9cb02387.nix;
+        revNum = 0;
+        sha256 = "41dd146a00b979021d2dc29b395ca86eec2c6e3cdcf9c57c5adc61fb9cb02387";
+        };
+      default = "r0";
+      };
+    };
   }

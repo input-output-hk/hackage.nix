@@ -75,4 +75,15 @@
       default = "r0";
       };
     };
+  "0.3" = {
+    sha256 = "7eed7d4f80a4f19576aa7b4b75aceee557fdf5666c17ceb078c9eb79af7860ee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-peel-0.3-r0-b5e49e2e5df5d1e20cb74b210f72d129315ed495cb1454020b82eb2ad69238d8.nix;
+        revNum = 0;
+        sha256 = "b5e49e2e5df5d1e20cb74b210f72d129315ed495cb1454020b82eb2ad69238d8";
+        };
+      default = "r0";
+      };
+    };
   }
