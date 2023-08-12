@@ -82,7 +82,12 @@
         revNum = 0;
         sha256 = "b10270a3b26a473b2198d24cba595c09dab2be22f4d532e53facd65d75879f08";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ralist-0.4.0.0-r1-b62050f8bdba251b31be72721130cf993cac333313bc812928f593dbd1052482.nix;
+        revNum = 1;
+        sha256 = "b62050f8bdba251b31be72721130cf993cac333313bc812928f593dbd1052482";
+        };
+      default = "r1";
       };
     };
   }

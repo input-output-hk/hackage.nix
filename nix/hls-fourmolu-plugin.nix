@@ -145,4 +145,15 @@
       default = "r0";
       };
     };
+  "2.1.0.0" = {
+    sha256 = "ce9ba4ed12d0986a20f78bfa56b4a76cb4eff16177a8c27570f4e26b83333553";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-fourmolu-plugin-2.1.0.0-r0-98aefaa582d062e70f78e1e6c0d355686c9f95ba83ede220cfa02b737a8d3976.nix;
+        revNum = 0;
+        sha256 = "98aefaa582d062e70f78e1e6c0d355686c9f95ba83ede220cfa02b737a8d3976";
+        };
+      default = "r0";
+      };
+    };
   }

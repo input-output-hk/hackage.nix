@@ -9328,6 +9328,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kerry" = import ./nix/kerry.nix;
   "kesha" = import ./nix/kesha.nix;
   "keter" = import ./nix/keter.nix;
+  "keuringsdienst" = import ./nix/keuringsdienst.nix;
   "kevin" = import ./nix/kevin.nix;
   "kewar" = import ./nix/kewar.nix;
   "key" = import ./nix/key.nix;
@@ -14305,6 +14306,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "skews" = import ./nix/skews.nix;
   "skip-list" = import ./nix/skip-list.nix;
   "skip-var" = import ./nix/skip-var.nix;
+  "skopedate" = import ./nix/skopedate.nix;
   "skulk" = import ./nix/skulk.nix;
   "skylark-client" = import ./nix/skylark-client.nix;
   "skylighting" = import ./nix/skylighting.nix;

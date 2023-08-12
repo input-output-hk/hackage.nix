@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "4c16ecdec12c585ca5b9ad9abf1479048d311941b9f8a3225f9dd0cf978163a7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hegg-0.1.0.0-r1-68e9791f3766ea43ca3aaf35540dc1cc7b9393c49ec7345b3da3406e105ddb3a.nix;
+        revNum = 1;
+        sha256 = "68e9791f3766ea43ca3aaf35540dc1cc7b9393c49ec7345b3da3406e105ddb3a";
+        };
+      default = "r1";
       };
     };
   "0.2.0.0" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "ec0c111e3b40286b5c747e69bb0504de7283fae1fa7bd1bf1dfabc9acbff733d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hegg-0.2.0.0-r1-26a15bd0997bdb037639ad4c89c414ff3d11c036169204b92a049ac5bcf616d7.nix;
+        revNum = 1;
+        sha256 = "26a15bd0997bdb037639ad4c89c414ff3d11c036169204b92a049ac5bcf616d7";
+        };
+      default = "r1";
       };
     };
   "0.3.0.0" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "913a91c7326a767626d6bc949ea38af857cc6dee22b3e49270f7342e2b2bf762";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hegg-0.3.0.0-r1-d2f62ed67f7ad16cd4e42d2b86a6bddc7058ca438fc65cecf017d5d71ea1ed95.nix;
+        revNum = 1;
+        sha256 = "d2f62ed67f7ad16cd4e42d2b86a6bddc7058ca438fc65cecf017d5d71ea1ed95";
+        };
+      default = "r1";
       };
     };
   "0.4.0.0" = {
@@ -40,7 +55,12 @@
         revNum = 0;
         sha256 = "1ee10d13183fc68cb0588af08c75c40ebbd0465d23f99498a6f354d8609e9a63";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hegg-0.4.0.0-r1-e51b27b23267d8081cf4f802d31e8a5fa9c891ff732d30255f22536282a68685.nix;
+        revNum = 1;
+        sha256 = "e51b27b23267d8081cf4f802d31e8a5fa9c891ff732d30255f22536282a68685";
+        };
+      default = "r1";
       };
     };
   }

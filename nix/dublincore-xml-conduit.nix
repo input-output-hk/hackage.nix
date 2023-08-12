@@ -37,4 +37,15 @@
       default = "r1";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "400df10a3fe3f5f81e299ed4d7c85c41131f0c9008114c0374c7f529268d26b6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dublincore-xml-conduit-0.1.0.3-r0-77e7ff62fc0e97e9886416a78f1e642e93cc00086841c8244e38144176c7229f.nix;
+        revNum = 0;
+        sha256 = "77e7ff62fc0e97e9886416a78f1e642e93cc00086841c8244e38144176c7229f";
+        };
+      default = "r0";
+      };
+    };
   }

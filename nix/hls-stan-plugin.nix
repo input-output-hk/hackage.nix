@@ -48,4 +48,15 @@
       default = "r0";
       };
     };
+  "2.1.0.0" = {
+    sha256 = "7a88ca8878ff1d9f08f31fee85d05aa844d9bc7ad3f15bf890baae588bddf42b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-stan-plugin-2.1.0.0-r0-807ba77f328cb7b1c3eab4b4cc99c8159992e07e89a4949c17273e2fd09e1310.nix;
+        revNum = 0;
+        sha256 = "807ba77f328cb7b1c3eab4b4cc99c8159992e07e89a4949c17273e2fd09e1310";
+        };
+      default = "r0";
+      };
+    };
   }

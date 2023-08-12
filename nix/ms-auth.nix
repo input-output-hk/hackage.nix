@@ -37,4 +37,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "40239cdad8c052a775d28547b0a075d4ccb115cea22a1c2367330d00dfa18080";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ms-auth-0.4.0.0-r0-66de8f8ab014e27b2af13a4b0cfb2eeab85ecc83a0b7fcb536790ff645c827a8.nix;
+        revNum = 0;
+        sha256 = "66de8f8ab014e27b2af13a4b0cfb2eeab85ecc83a0b7fcb536790ff645c827a8";
+        };
+      default = "r0";
+      };
+    };
   }

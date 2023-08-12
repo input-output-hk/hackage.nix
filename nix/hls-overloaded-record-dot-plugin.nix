@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "2.1.0.0" = {
+    sha256 = "31a414237682630be17c516d8e2ae54d12542be266469ca385cf7a8a5b2fa7f4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-overloaded-record-dot-plugin-2.1.0.0-r0-bce2886c1f0b3f5c86286edb2bd5b127c8a30b0d5b05d9af1e67312df0aa19ad.nix;
+        revNum = 0;
+        sha256 = "bce2886c1f0b3f5c86286edb2bd5b127c8a30b0d5b05d9af1e67312df0aa19ad";
+        };
+      default = "r0";
+      };
+    };
   }

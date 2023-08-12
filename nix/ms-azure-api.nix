@@ -81,4 +81,26 @@
       default = "r0";
       };
     };
+  "0.6.0.0" = {
+    sha256 = "cda6244b1f667364e1c2dc8ca7f9c3cf5e5d8bde6fd6a571e192f28ef5b037f6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ms-azure-api-0.6.0.0-r0-39cbc872199d6f1f7f25678134359d9930e58e8fc06c89523e3d33ab00d2ffcf.nix;
+        revNum = 0;
+        sha256 = "39cbc872199d6f1f7f25678134359d9930e58e8fc06c89523e3d33ab00d2ffcf";
+        };
+      default = "r0";
+      };
+    };
+  "0.6.0.1" = {
+    sha256 = "f76d6e536ae1ff1d9b7a477357d6e7309dcbceda1ba2b9d07da3b2362d06546b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ms-azure-api-0.6.0.1-r0-135282033e7477bece194122f259db4fdefad0919485c7a94b2ef60845e907d1.nix;
+        revNum = 0;
+        sha256 = "135282033e7477bece194122f259db4fdefad0919485c7a94b2ef60845e907d1";
+        };
+      default = "r0";
+      };
+    };
   }
