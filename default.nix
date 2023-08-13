@@ -5469,6 +5469,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fast-logger" = import ./nix/fast-logger.nix;
   "fast-math" = import ./nix/fast-math.nix;
   "fast-mult" = import ./nix/fast-mult.nix;
+  "fast-myers-diff" = import ./nix/fast-myers-diff.nix;
   "fast-nats" = import ./nix/fast-nats.nix;
   "fast-tags" = import ./nix/fast-tags.nix;
   "fast-tagsoup" = import ./nix/fast-tagsoup.nix;

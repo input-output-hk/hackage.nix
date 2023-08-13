@@ -84,4 +84,15 @@
       default = "r0";
       };
     };
+  "0.1.1.4" = {
+    sha256 = "545558f4db31d8d1d0dcd2ce80c5c5e77267408a33683dc8cceed01b917c46e6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-dijkstra-0.1.1.4-r0-2de7b9ba7c6cc6666a7846ec3e66d151dcf8bb5035a93a59e4c4b22c57300420.nix;
+        revNum = 0;
+        sha256 = "2de7b9ba7c6cc6666a7846ec3e66d151dcf8bb5035a93a59e4c4b22c57300420";
+        };
+      default = "r0";
+      };
+    };
   }

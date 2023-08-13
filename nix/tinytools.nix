@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.4" = {
+    sha256 = "0a340234403c653f123ed6c4429208d4a7a57c0dfd4c0c113f0fbd269fdffc7b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tinytools-0.1.0.4-r0-bee4f3d01cfdbbad3cd5b93dfc03bf0a9a99d09176538d66d27b04f961105292.nix;
+        revNum = 0;
+        sha256 = "bee4f3d01cfdbbad3cd5b93dfc03bf0a9a99d09176538d66d27b04f961105292";
+        };
+      default = "r0";
+      };
+    };
   }
