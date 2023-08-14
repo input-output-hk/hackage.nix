@@ -75,4 +75,15 @@
       default = "r0";
       };
     };
+  "0.3.4" = {
+    sha256 = "8c9c967da715d89412fffefe9d67e221475b1a057b89e2f78740a5b17c1d4d52";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zxcvbn-hs-0.3.4-r0-80c4dc3a5093d9bd7e32296e12e7b6669c532d5547e15cd3ea9f913df5f66bfe.nix;
+        revNum = 0;
+        sha256 = "80c4dc3a5093d9bd7e32296e12e7b6669c532d5547e15cd3ea9f913df5f66bfe";
+        };
+      default = "r0";
+      };
+    };
   }

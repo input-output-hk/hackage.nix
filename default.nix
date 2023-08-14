@@ -10929,6 +10929,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mysql-haskell" = import ./nix/mysql-haskell.nix;
   "mysql-haskell-nem" = import ./nix/mysql-haskell-nem.nix;
   "mysql-haskell-openssl" = import ./nix/mysql-haskell-openssl.nix;
+  "mysql-pure" = import ./nix/mysql-pure.nix;
   "mysql-simple" = import ./nix/mysql-simple.nix;
   "mysql-simple-quasi" = import ./nix/mysql-simple-quasi.nix;
   "mysql-simple-typed" = import ./nix/mysql-simple-typed.nix;
@@ -11934,6 +11935,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "persistent-mtl" = import ./nix/persistent-mtl.nix;
   "persistent-mysql" = import ./nix/persistent-mysql.nix;
   "persistent-mysql-haskell" = import ./nix/persistent-mysql-haskell.nix;
+  "persistent-mysql-pure" = import ./nix/persistent-mysql-pure.nix;
   "persistent-odbc" = import ./nix/persistent-odbc.nix;
   "persistent-pagination" = import ./nix/persistent-pagination.nix;
   "persistent-parser" = import ./nix/persistent-parser.nix;
