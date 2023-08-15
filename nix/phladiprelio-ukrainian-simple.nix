@@ -59,6 +59,17 @@
       default = "r0";
       };
     };
+  "0.10.0.0" = {
+    sha256 = "b106d0300e484fd1d56286fc529fa7b3c5b5f9dac3fa2f20d08933c71cccbd07";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phladiprelio-ukrainian-simple-0.10.0.0-r0-d5217836fa0faa553e2d83c88f1ee7b932a479130c650eea787bbe95e45cca9c.nix;
+        revNum = 0;
+        sha256 = "d5217836fa0faa553e2d83c88f1ee7b932a479130c650eea787bbe95e45cca9c";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "233853516d65420239cc40cca24a1f4d680385831ac77ea4053e6a9757b7d803";
     revisions = {

@@ -11987,6 +11987,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "phladiprelio-general-shared" = import ./nix/phladiprelio-general-shared.nix;
   "phladiprelio-general-simple" = import ./nix/phladiprelio-general-simple.nix;
   "phladiprelio-rhythmicity-shared" = import ./nix/phladiprelio-rhythmicity-shared.nix;
+  "phladiprelio-tests" = import ./nix/phladiprelio-tests.nix;
   "phladiprelio-ukrainian-shared" = import ./nix/phladiprelio-ukrainian-shared.nix;
   "phladiprelio-ukrainian-simple" = import ./nix/phladiprelio-ukrainian-simple.nix;
   "phoityne" = import ./nix/phoityne.nix;
