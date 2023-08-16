@@ -307,4 +307,15 @@
       default = "r0";
       };
     };
+  "0.5.4.2" = {
+    sha256 = "901b28b04ad186be48b1b91fd2172053fac3c91bfdb70dc79fb65b80642cd504";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wreq-0.5.4.2-r0-3ea86a808b971bf01d6d6803c4776d697e0a13968427af6dd2901ebe34b6832c.nix;
+        revNum = 0;
+        sha256 = "3ea86a808b971bf01d6d6803c4776d697e0a13968427af6dd2901ebe34b6832c";
+        };
+      default = "r0";
+      };
+    };
   }

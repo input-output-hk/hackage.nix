@@ -6843,6 +6843,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "groups" = import ./nix/groups.nix;
   "groups-generic" = import ./nix/groups-generic.nix;
   "grow-vector" = import ./nix/grow-vector.nix;
+  "growable-vector" = import ./nix/growable-vector.nix;
   "growler" = import ./nix/growler.nix;
   "grpc-api-etcd" = import ./nix/grpc-api-etcd.nix;
   "grpc-etcd-client" = import ./nix/grpc-etcd-client.nix;
@@ -15224,6 +15225,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tagstew" = import ./nix/tagstew.nix;
   "tagstream-conduit" = import ./nix/tagstream-conduit.nix;
   "tagtree" = import ./nix/tagtree.nix;
+  "tahoe-capabilities" = import ./nix/tahoe-capabilities.nix;
+  "tahoe-chk" = import ./nix/tahoe-chk.nix;
   "tai" = import ./nix/tai.nix;
   "tai64" = import ./nix/tai64.nix;
   "tailfile-hinotify" = import ./nix/tailfile-hinotify.nix;
