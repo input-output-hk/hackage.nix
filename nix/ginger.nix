@@ -285,6 +285,17 @@
       default = "r0";
       };
     };
+  "0.10.5.2" = {
+    sha256 = "4ea7a37943b5fdb46c1a53483de74f699803e043f2a50a07de76c8eed6bd8c5b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ginger-0.10.5.2-r0-a6657c23ca63d3d84587bb93bf7cc3e35fac1d1cb3fe8df4576dc58c0a18b3c9.nix;
+        revNum = 0;
+        sha256 = "a6657c23ca63d3d84587bb93bf7cc3e35fac1d1cb3fe8df4576dc58c0a18b3c9";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "e88221b67e7d262da943bd3b16f5de061130201425e889ca949422bb7e301ff3";
     revisions = {

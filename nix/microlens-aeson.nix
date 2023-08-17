@@ -242,4 +242,15 @@
       default = "r0";
       };
     };
+  "2.5.1" = {
+    sha256 = "f7755c46d8cd54ed2d3031c34ac075a6715d40fc19c8edf681c6e6d3c2c4e50a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/microlens-aeson-2.5.1-r0-cebefa1914183777a598399ab783da83ac24a50667398bf6552d62074c969f7f.nix;
+        revNum = 0;
+        sha256 = "cebefa1914183777a598399ab783da83ac24a50667398bf6552d62074c969f7f";
+        };
+      default = "r0";
+      };
+    };
   }

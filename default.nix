@@ -15227,6 +15227,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tagtree" = import ./nix/tagtree.nix;
   "tahoe-capabilities" = import ./nix/tahoe-capabilities.nix;
   "tahoe-chk" = import ./nix/tahoe-chk.nix;
+  "tahoe-great-black-swamp" = import ./nix/tahoe-great-black-swamp.nix;
+  "tahoe-ssk" = import ./nix/tahoe-ssk.nix;
   "tai" = import ./nix/tai.nix;
   "tai64" = import ./nix/tai64.nix;
   "tailfile-hinotify" = import ./nix/tailfile-hinotify.nix;

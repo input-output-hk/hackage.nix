@@ -507,7 +507,12 @@
         revNum = 0;
         sha256 = "2066129964dc970830e3eb65d5716ab240c2cc17848744a7e8480e9513b43c78";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/diagrams-cairo-1.4.2.1-r1-1062b00a27ddaa95fd2a30b2fb4def8a8412abe5047ebcdc3ed73ec091f14085.nix;
+        revNum = 1;
+        sha256 = "1062b00a27ddaa95fd2a30b2fb4def8a8412abe5047ebcdc3ed73ec091f14085";
+        };
+      default = "r1";
       };
     };
   }

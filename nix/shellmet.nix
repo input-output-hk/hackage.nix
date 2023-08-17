@@ -78,7 +78,12 @@
         revNum = 0;
         sha256 = "6d1dd3ce296b00a589e439d20a4466515cdf3e6156a0a147156804ee544ee9d1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/shellmet-0.0.4.1-r1-5128ecb0d7cd227056d52f420803ad0fb1a9205dcdd494aa9218dd95ed5077c7.nix;
+        revNum = 1;
+        sha256 = "5128ecb0d7cd227056d52f420803ad0fb1a9205dcdd494aa9218dd95ed5077c7";
+        };
+      default = "r1";
       };
     };
   }
