@@ -69,4 +69,15 @@
       default = "r1";
       };
     };
+  "0.2.1.0" = {
+    sha256 = "853d16715d42a5ef071cc14a703527dbe261fa64c1fef6d001826bb6c6dd89de";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/homotuple-0.2.1.0-r0-d8db4dfcf449b2d7003c17fe72e2e9f7569a5eb4a60dee61cec3cebb79a21003.nix;
+        revNum = 0;
+        sha256 = "d8db4dfcf449b2d7003c17fe72e2e9f7569a5eb4a60dee61cec3cebb79a21003";
+        };
+      default = "r0";
+      };
+    };
   }

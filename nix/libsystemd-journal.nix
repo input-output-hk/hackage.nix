@@ -144,7 +144,17 @@
         revNum = 0;
         sha256 = "dc68296f5d874b48ba187dbd0af4de8182ba57cb6ebaa46c05ac61c1b3c6c396";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/libsystemd-journal-1.4.5-r1-6af19f5dcbb650f795ebb1a34d822f5b3680eb0491c0105c03a69a2107c345e5.nix;
+        revNum = 1;
+        sha256 = "6af19f5dcbb650f795ebb1a34d822f5b3680eb0491c0105c03a69a2107c345e5";
+        };
+      r2 = {
+        nix = import ../hackage/libsystemd-journal-1.4.5-r2-e3c51155c638f03cd943cb4055d0dc1f11a27bafffb1aa0005a690d034607b21.nix;
+        revNum = 2;
+        sha256 = "e3c51155c638f03cd943cb4055d0dc1f11a27bafffb1aa0005a690d034607b21";
+        };
+      default = "r2";
       };
     };
   "1.4.5.1" = {

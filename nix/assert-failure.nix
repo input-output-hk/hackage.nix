@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "cef9d741c3793f1ee32181074be57ecb41c68a77a009e75308380bf694107d51";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/assert-failure-0.1.3.0-r0-3088fa010952bbf5fcda2dfabdeec0a312a4c5a9c4a25bbfca88ae2ae64c8939.nix;
+        revNum = 0;
+        sha256 = "3088fa010952bbf5fcda2dfabdeec0a312a4c5a9c4a25bbfca88ae2ae64c8939";
+        };
+      default = "r0";
+      };
+    };
   }

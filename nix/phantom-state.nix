@@ -81,4 +81,15 @@
       default = "r0";
       };
     };
+  "0.2.1.3" = {
+    sha256 = "1da9b9f4e4bedb176d61f3d26e31418da03e29600c5b6d3e9118caaee1931273";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phantom-state-0.2.1.3-r0-b937e03d42e80ebf2b74aadc0f05edc0eb6d86d64420018182c3ecd298bba922.nix;
+        revNum = 0;
+        sha256 = "b937e03d42e80ebf2b74aadc0f05edc0eb6d86d64420018182c3ecd298bba922";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "7161d123ebc77be05a7eec6abb5eead869021b0fa484672fe0e597d6e61210a7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/topaz-0.7.0-r1-2f3a543883a3022be7772d992bd696a25b82fd043b808a72efeb302cfcb3ec32.nix;
+        revNum = 1;
+        sha256 = "2f3a543883a3022be7772d992bd696a25b82fd043b808a72efeb302cfcb3ec32";
+        };
+      default = "r1";
       };
     };
   }

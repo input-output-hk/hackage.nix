@@ -6025,6 +6025,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gasp" = import ./nix/gasp.nix;
   "gather" = import ./nix/gather.nix;
   "gauge" = import ./nix/gauge.nix;
+  "gbs-downloader" = import ./nix/gbs-downloader.nix;
   "gbu" = import ./nix/gbu.nix;
   "gc" = import ./nix/gc.nix;
   "gc-monitoring-wai" = import ./nix/gc-monitoring-wai.nix;
@@ -8460,6 +8461,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "http-download" = import ./nix/http-download.nix;
   "http-encodings" = import ./nix/http-encodings.nix;
   "http-enumerator" = import ./nix/http-enumerator.nix;
+  "http-exchange" = import ./nix/http-exchange.nix;
   "http-grammar" = import ./nix/http-grammar.nix;
   "http-interchange" = import ./nix/http-interchange.nix;
   "http-io-streams" = import ./nix/http-io-streams.nix;
@@ -10220,6 +10222,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "markov-processes" = import ./nix/markov-processes.nix;
   "markov-realization" = import ./nix/markov-realization.nix;
   "markup" = import ./nix/markup.nix;
+  "markup-parse" = import ./nix/markup-parse.nix;
   "markup-preview" = import ./nix/markup-preview.nix;
   "marmalade-upload" = import ./nix/marmalade-upload.nix;
   "marquise" = import ./nix/marquise.nix;
@@ -15227,6 +15230,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tagtree" = import ./nix/tagtree.nix;
   "tahoe-capabilities" = import ./nix/tahoe-capabilities.nix;
   "tahoe-chk" = import ./nix/tahoe-chk.nix;
+  "tahoe-directory" = import ./nix/tahoe-directory.nix;
   "tahoe-great-black-swamp" = import ./nix/tahoe-great-black-swamp.nix;
   "tahoe-ssk" = import ./nix/tahoe-ssk.nix;
   "tai" = import ./nix/tai.nix;
