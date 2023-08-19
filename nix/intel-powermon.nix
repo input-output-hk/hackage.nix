@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.0.1" = {
+    sha256 = "b64dd1efece7abe9b46ce528f4364da0f2b0d37233303676406d9cbaabcba151";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/intel-powermon-0.0.1-r0-da7492416987ce32cb148ba072c75be56a0ca3361b9297dfcd6a578bbfa9d758.nix;
+        revNum = 0;
+        sha256 = "da7492416987ce32cb148ba072c75be56a0ca3361b9297dfcd6a578bbfa9d758";
+        };
+      default = "r0";
+      };
+    };
   }

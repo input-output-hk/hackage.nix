@@ -8462,6 +8462,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "http-encodings" = import ./nix/http-encodings.nix;
   "http-enumerator" = import ./nix/http-enumerator.nix;
   "http-exchange" = import ./nix/http-exchange.nix;
+  "http-exchange-instantiations" = import ./nix/http-exchange-instantiations.nix;
   "http-grammar" = import ./nix/http-grammar.nix;
   "http-interchange" = import ./nix/http-interchange.nix;
   "http-io-streams" = import ./nix/http-io-streams.nix;

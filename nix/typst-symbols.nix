@@ -48,4 +48,26 @@
       default = "r0";
       };
     };
+  "0.1.3" = {
+    sha256 = "5f8e2ac416c303ab04057fb3ad4236b981cb722dbb32d606c912277d319178e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typst-symbols-0.1.3-r0-e96de2f289ea24ab3c97dcaeefae075d39ca4b0241b5271b58ce2f695bd92264.nix;
+        revNum = 0;
+        sha256 = "e96de2f289ea24ab3c97dcaeefae075d39ca4b0241b5271b58ce2f695bd92264";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.3.1" = {
+    sha256 = "e70a61b9f417b2cdfb22aa9bcd07f9bef83afc3a4d2a1939eed2eef1a545469b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typst-symbols-0.1.3.1-r0-cf94cdef77013228295604712fd9b597c7097052156f374811e5a46f696ac6d8.nix;
+        revNum = 0;
+        sha256 = "cf94cdef77013228295604712fd9b597c7097052156f374811e5a46f696ac6d8";
+        };
+      default = "r0";
+      };
+    };
   }

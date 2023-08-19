@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "0.1.3.1" = {
+    sha256 = "7f6af528e1a4a69b35e5b86a02cdd17f3eaa302f285f4ba83f3d1d724b80996d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsendxmpp-0.1.3.1-r0-afa216d448d0ab9f71342f9884d2e26141e76aae319f38e8255f8c86d15f0774.nix;
+        revNum = 0;
+        sha256 = "afa216d448d0ab9f71342f9884d2e26141e76aae319f38e8255f8c86d15f0774";
+        };
+      default = "r0";
+      };
+    };
   }
