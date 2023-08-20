@@ -384,4 +384,15 @@
       default = "r0";
       };
     };
+  "1.5.0" = {
+    sha256 = "5bab4ff8ba4aac83ff92bc3dfd3b96d1a831158fe7c5ed7b387a3ac9415f8a06";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xcffib-1.5.0-r0-e457442697b47620721386f43eabb1e4c0afb925ba219356626900d3bd431294.nix;
+        revNum = 0;
+        sha256 = "e457442697b47620721386f43eabb1e4c0afb925ba219356626900d3bd431294";
+        };
+      default = "r0";
+      };
+    };
   }

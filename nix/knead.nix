@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "1.0" = {
+    sha256 = "826c7bb4fdfb989bd6e6fb39eda6fa2f012561fe72345482cddc37cc89089d90";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/knead-1.0-r0-7503f282f48fcbadcf0f58d79061bc8f4715153bd3ac2a69fb80bd116101a399.nix;
+        revNum = 0;
+        sha256 = "7503f282f48fcbadcf0f58d79061bc8f4715153bd3ac2a69fb80bd116101a399";
+        };
+      default = "r0";
+      };
+    };
   }

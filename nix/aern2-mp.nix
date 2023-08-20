@@ -158,6 +158,17 @@
       default = "r0";
       };
     };
+  "0.2.15.1" = {
+    sha256 = "bbc28ea37029e2ff1f8310b779c14d2f63efd49724898b396ea9670790b43fe8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aern2-mp-0.2.15.1-r0-85afae0614191e6c9210dd090131989d5ebab3a9856bf7d4ba555cca505811e2.nix;
+        revNum = 0;
+        sha256 = "85afae0614191e6c9210dd090131989d5ebab3a9856bf7d4ba555cca505811e2";
+        };
+      default = "r0";
+      };
+    };
   "0.2.2.0" = {
     sha256 = "e455f660cb0eaccb41d051872da2125b5095834feef84f8a5cc2c71f5efc3fe2";
     revisions = {

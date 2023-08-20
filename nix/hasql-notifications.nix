@@ -81,4 +81,15 @@
       default = "r0";
       };
     };
+  "0.2.0.6" = {
+    sha256 = "12c1f77e3e6c46db0c5d8b933cf3b1e9373b55b83d33549651a48f0d5ddd7c7a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-notifications-0.2.0.6-r0-16d783f5cd1660fad924fd3769380889de5804e057f09b304dcdc3a3ff11eb3c.nix;
+        revNum = 0;
+        sha256 = "16d783f5cd1660fad924fd3769380889de5804e057f09b304dcdc3a3ff11eb3c";
+        };
+      default = "r0";
+      };
+    };
   }
