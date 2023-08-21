@@ -158,4 +158,15 @@
       default = "r3";
       };
     };
+  "2.0.0.1" = {
+    sha256 = "dfeae6494a46ef29ef603d9824ba189cd8097527b8ab9b8bd7bf5e0cae609f65";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/parsley-2.0.0.1-r0-90b359dd7c3ee704b1dd10513f6a2a30ba63f7e1c709feba5f60642bd5235dc6.nix;
+        revNum = 0;
+        sha256 = "90b359dd7c3ee704b1dd10513f6a2a30ba63f7e1c709feba5f60642bd5235dc6";
+        };
+      default = "r0";
+      };
+    };
   }
