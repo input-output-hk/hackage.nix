@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.3" = {
+    sha256 = "1292ae28c4036ecdc1bed4ca2bebdd405aae167ce390eedf18607187b830d432";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haggle-0.3-r0-f902d52f69e38496c04eae141ca081c6a90a1b474ca8c11d3b3241989a8ed27d.nix;
+        revNum = 0;
+        sha256 = "f902d52f69e38496c04eae141ca081c6a90a1b474ca8c11d3b3241989a8ed27d";
+        };
+      default = "r0";
+      };
+    };
   }

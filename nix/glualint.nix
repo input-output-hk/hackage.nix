@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "1.26.0" = {
+    sha256 = "e59551c004684bb2ab80b6b8e526aa914234d2644b3843e47f91cc5bbf739bfb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/glualint-1.26.0-r0-787acfe0d43827fea19aa132c4829bb77ce58607f046eab1f66bed307aa959a8.nix;
+        revNum = 0;
+        sha256 = "787acfe0d43827fea19aa132c4829bb77ce58607f046eab1f66bed307aa959a8";
+        };
+      default = "r0";
+      };
+    };
   }

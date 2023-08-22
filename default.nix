@@ -13002,6 +13002,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rdtsc" = import ./nix/rdtsc.nix;
   "rdtsc-enolan" = import ./nix/rdtsc-enolan.nix;
   "re2" = import ./nix/re2.nix;
+  "react" = import ./nix/react.nix;
   "react-flux" = import ./nix/react-flux.nix;
   "react-flux-servant" = import ./nix/react-flux-servant.nix;
   "react-haskell" = import ./nix/react-haskell.nix;
@@ -15273,6 +15274,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tasty-bench" = import ./nix/tasty-bench.nix;
   "tasty-bench-fit" = import ./nix/tasty-bench-fit.nix;
   "tasty-checklist" = import ./nix/tasty-checklist.nix;
+  "tasty-coverage" = import ./nix/tasty-coverage.nix;
   "tasty-dejafu" = import ./nix/tasty-dejafu.nix;
   "tasty-discover" = import ./nix/tasty-discover.nix;
   "tasty-expected-failure" = import ./nix/tasty-expected-failure.nix;
