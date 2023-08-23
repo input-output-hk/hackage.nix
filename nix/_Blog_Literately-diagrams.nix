@@ -279,4 +279,15 @@
       default = "r0";
       };
     };
+  "0.3.1" = {
+    sha256 = "525a20c406c1a06809358510df7fb5bad3d6eb9fb4b5531c42077cfc26a74d7a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/BlogLiterately-diagrams-0.3.1-r0-bb605ed996b69a6756ec699241b8a3317d77c04935497a20a68686d2195aa1ce.nix;
+        revNum = 0;
+        sha256 = "bb605ed996b69a6756ec699241b8a3317d77c04935497a20a68686d2195aa1ce";
+        };
+      default = "r0";
+      };
+    };
   }

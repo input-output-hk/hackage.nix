@@ -2615,4 +2615,15 @@
       default = "r0";
       };
     };
+  "3.1.6.2" = {
+    sha256 = "40b82b8198bdc8a4b699baae92f8e8f016bc99c6c93a92fef7051507089e5bcb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-3.1.6.2-r0-3ef26749be3dbd7db32b3be48293fe22b83679c8b252322b4f10955c3b585580.nix;
+        revNum = 0;
+        sha256 = "3ef26749be3dbd7db32b3be48293fe22b83679c8b252322b4f10955c3b585580";
+        };
+      default = "r0";
+      };
+    };
   }

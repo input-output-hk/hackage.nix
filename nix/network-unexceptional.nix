@@ -26,4 +26,15 @@
       default = "r1";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "254e62845b3114dc213c6ea84d6457a648818f59d0f7357abba07720f9f98737";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-unexceptional-0.1.2.0-r0-b9c99a7cac357e9f92454becb6d828dbd75380565282285ff692b83c5e138bf2.nix;
+        revNum = 0;
+        sha256 = "b9c99a7cac357e9f92454becb6d828dbd75380565282285ff692b83c5e138bf2";
+        };
+      default = "r0";
+      };
+    };
   }
