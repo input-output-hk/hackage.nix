@@ -16086,6 +16086,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typed-encoding" = import ./nix/typed-encoding.nix;
   "typed-encoding-encoding" = import ./nix/typed-encoding-encoding.nix;
   "typed-process" = import ./nix/typed-process.nix;
+  "typed-process-effectful" = import ./nix/typed-process-effectful.nix;
   "typed-spreadsheet" = import ./nix/typed-spreadsheet.nix;
   "typed-streams" = import ./nix/typed-streams.nix;
   "typed-time" = import ./nix/typed-time.nix;
