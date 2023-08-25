@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "63c980b110768c4c2b9d02f141fb49a5951a45e60e7097f4a1715d4172928ed0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/keid-resource-gltf-0.1.0.1-r1-dad604799200507a006e9022aa94af93ad192612dca1655c0335fee29d56ec38.nix;
+        revNum = 1;
+        sha256 = "dad604799200507a006e9022aa94af93ad192612dca1655c0335fee29d56ec38";
+        };
+      default = "r1";
       };
     };
   }

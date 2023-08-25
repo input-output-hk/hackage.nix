@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "fa334992f7dc3768f29bdf0e25eb98bab94a9b12d5dcd6ebf2e4f952ebf66c84";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/primecount-0.1.0.1-r0-86ddcfaa1d4e6c7e3eb907eb826ad6921a5acae20f8fca6f3741b822ab68e894.nix;
+        revNum = 0;
+        sha256 = "86ddcfaa1d4e6c7e3eb907eb826ad6921a5acae20f8fca6f3741b822ab68e894";
+        };
+      default = "r0";
+      };
+    };
   }

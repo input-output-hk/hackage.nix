@@ -14734,6 +14734,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "starling" = import ./nix/starling.nix;
   "starrover2" = import ./nix/starrover2.nix;
   "starter" = import ./nix/starter.nix;
+  "starter-snake-haskell" = import ./nix/starter-snake-haskell.nix;
   "stash" = import ./nix/stash.nix;
   "state" = import ./nix/state.nix;
   "state-bag" = import ./nix/state-bag.nix;
@@ -15182,6 +15183,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "system-uuid" = import ./nix/system-uuid.nix;
   "systemd" = import ./nix/systemd.nix;
   "systemd-api" = import ./nix/systemd-api.nix;
+  "systemd-ntfy" = import ./nix/systemd-ntfy.nix;
   "systemd-socket-activation" = import ./nix/systemd-socket-activation.nix;
   "systemstats" = import ./nix/systemstats.nix;
   "syz" = import ./nix/syz.nix;
