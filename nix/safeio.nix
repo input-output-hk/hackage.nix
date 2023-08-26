@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.0.6.0" = {
+    sha256 = "23ec63aa2b7d5c7fcf7b880149bf0ade6bdd9ca57b35b10aa191a9a3a2997335";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/safeio-0.0.6.0-r0-f7137847277aae567219bcc5e14d5c77d703d08641412932e98a85dd56c0c80c.nix;
+        revNum = 0;
+        sha256 = "f7137847277aae567219bcc5e14d5c77d703d08641412932e98a85dd56c0c80c";
+        };
+      default = "r0";
+      };
+    };
   }

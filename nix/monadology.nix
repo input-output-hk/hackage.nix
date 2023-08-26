@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.3" = {
+    sha256 = "c1ef2a773d5ff68627c8387f69ffbd32afc280dbd48edd4ee6b8c66d284cddd9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monadology-0.3-r0-91cfc11801f633800fb352f3dc89c9f878885e627e3d8b2e9ef7eeb9e3b26dc5.nix;
+        revNum = 0;
+        sha256 = "91cfc11801f633800fb352f3dc89c9f878885e627e3d8b2e9ef7eeb9e3b26dc5";
+        };
+      default = "r0";
+      };
+    };
   }
