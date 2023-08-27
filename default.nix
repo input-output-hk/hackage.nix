@@ -14408,6 +14408,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "smuggler" = import ./nix/smuggler.nix;
   "smuggler2" = import ./nix/smuggler2.nix;
   "snack" = import ./nix/snack.nix;
+  "snail" = import ./nix/snail.nix;
   "snake" = import ./nix/snake.nix;
   "snake-game" = import ./nix/snake-game.nix;
   "snap" = import ./nix/snap.nix;

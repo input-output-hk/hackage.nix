@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "2.0.0" = {
+    sha256 = "014ba0c4cb277b0669c9043aa55b0bf190f0e9bd2906b68072ca877a017d037b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fortytwo-2.0.0-r0-230310f5b8cdcd3b9f2a65b7d0d7bf38a14a2c98e9d88efd56068da60bcc70c7.nix;
+        revNum = 0;
+        sha256 = "230310f5b8cdcd3b9f2a65b7d0d7bf38a14a2c98e9d88efd56068da60bcc70c7";
+        };
+      default = "r0";
+      };
+    };
   }

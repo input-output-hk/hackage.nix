@@ -1131,6 +1131,17 @@
       default = "r0";
       };
     };
+  "9.4.7.20230826" = {
+    sha256 = "f481e06171152ee151600e0503017cbbcbcec2d03c473854ab0701d72c55d742";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-lib-parser-9.4.7.20230826-r0-5e87cc9552ff2832e389a6747895cf91e5c47ce2c83b4e220f1004709596f5ea.nix;
+        revNum = 0;
+        sha256 = "5e87cc9552ff2832e389a6747895cf91e5c47ce2c83b4e220f1004709596f5ea";
+        };
+      default = "r0";
+      };
+    };
   "9.6.1.20230312" = {
     sha256 = "709d193ad3dba1a2c5ce393b98d4f35a6ff7fa0e242770dfb9f115bea4765f28";
     revisions = {
