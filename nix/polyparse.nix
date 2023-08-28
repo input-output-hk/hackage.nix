@@ -143,7 +143,12 @@
         revNum = 8;
         sha256 = "aadd71030d34a31b34cdf243425679beba82e860df48adfbda0566435c63653d";
         };
-      default = "r8";
+      r9 = {
+        nix = import ../hackage/polyparse-1.13-r9-4960fad39d3edcc3827ca93546dbf42eb59c1a022ec06a8d756e6a0558c47f29.nix;
+        revNum = 9;
+        sha256 = "4960fad39d3edcc3827ca93546dbf42eb59c1a022ec06a8d756e6a0558c47f29";
+        };
+      default = "r9";
       };
     };
   "1.2" = {

@@ -629,7 +629,12 @@
         revNum = 4;
         sha256 = "72cd4eecd4ba0a93d19423a0cf0e3350feb82c2d2689dd83b20bd97aa6a49d8f";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/reducers-3.12.4-r5-b6d3609c5b7f7fba8fa873f35a8ff1a56941bfc760b54e791a47c8ff4ade67a1.nix;
+        revNum = 5;
+        sha256 = "b6d3609c5b7f7fba8fa873f35a8ff1a56941bfc760b54e791a47c8ff4ade67a1";
+        };
+      default = "r5";
       };
     };
   }

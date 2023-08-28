@@ -418,7 +418,12 @@
         revNum = 15;
         sha256 = "54dcad51a51c18468c1a8ba7d3f43e1496fb734c5eddc311445b496c215353af";
         };
-      default = "r15";
+      r16 = {
+        nix = import ../hackage/blank-canvas-0.7.3-r16-729f1edaf6611b3446db57d052c5e0e21834afe42690282f941d4c9d50356cce.nix;
+        revNum = 16;
+        sha256 = "729f1edaf6611b3446db57d052c5e0e21834afe42690282f941d4c9d50356cce";
+        };
+      default = "r16";
       };
     };
   }
