@@ -209,4 +209,15 @@
       default = "r0";
       };
     };
+  "2.0.0.0" = {
+    sha256 = "25915ee71ef1f84b56087cf3d7d2a339b3a447555dd7669868a2a207a0d7decd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amazonka-s3-streaming-2.0.0.0-r0-7ab2ce919a0ace84aa0b9727a5e5aea17893831fcf7e82b77677fb0390b8ae2d.nix;
+        revNum = 0;
+        sha256 = "7ab2ce919a0ace84aa0b9727a5e5aea17893831fcf7e82b77677fb0390b8ae2d";
+        };
+      default = "r0";
+      };
+    };
   }
