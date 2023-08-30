@@ -2480,6 +2480,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "basic-lens" = import ./nix/basic-lens.nix;
   "basic-prelude" = import ./nix/basic-prelude.nix;
   "basic-sop" = import ./nix/basic-sop.nix;
+  "basics" = import ./nix/basics.nix;
   "baskell" = import ./nix/baskell.nix;
   "batch" = import ./nix/batch.nix;
   "batch-rename" = import ./nix/batch-rename.nix;

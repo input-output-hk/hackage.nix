@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "46d0fccd77751efd77e2c5a6fa00b04da1cd18dd65dcb49aae3550f08a0d9779";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tonalude-0.2.0.0-r0-39f93347691b527f7954d98b07fccd8518d4cc5ee60adc836f1e78e1ef550d33.nix;
+        revNum = 0;
+        sha256 = "39f93347691b527f7954d98b07fccd8518d4cc5ee60adc836f1e78e1ef550d33";
+        };
+      default = "r0";
+      };
+    };
   }

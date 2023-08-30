@@ -211,4 +211,15 @@
       default = "r0";
       };
     };
+  "2.2.0.0" = {
+    sha256 = "cf6ec3855d04c4c79f463660a95da4cf5dcc1fa35cab4284a5f18d7ce7552f17";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-tactics-plugin-2.2.0.0-r0-369e8a433678a1543121865f896b609ceb2bf938d185bb758cb36dd5c2f05d6d.nix;
+        revNum = 0;
+        sha256 = "369e8a433678a1543121865f896b609ceb2bf938d185bb758cb36dd5c2f05d6d";
+        };
+      default = "r0";
+      };
+    };
   }

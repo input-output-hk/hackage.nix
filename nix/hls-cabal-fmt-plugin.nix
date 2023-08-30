@@ -53,4 +53,15 @@
       default = "r0";
       };
     };
+  "2.2.0.0" = {
+    sha256 = "460ff24f2408b6c557b557191bdb58a641122c20169cc67763944d132d0baed2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-cabal-fmt-plugin-2.2.0.0-r0-de82b49333fc0a0c3f33c1ebd5dcb1a3ee5edaf5ebb7492451d9d50855bdeae4.nix;
+        revNum = 0;
+        sha256 = "de82b49333fc0a0c3f33c1ebd5dcb1a3ee5edaf5ebb7492451d9d50855bdeae4";
+        };
+      default = "r0";
+      };
+    };
   }

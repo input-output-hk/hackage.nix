@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "555344e6abfde228d1a4ba03141813f5af3d6ef540474b7aacdc6cf428de1673";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tonatona-persistent-postgresql-0.2.0.0-r0-db3ce62d8b605b4acaad021953ad150756fc29119af657f2fac358dc8d4400ba.nix;
+        revNum = 0;
+        sha256 = "db3ce62d8b605b4acaad021953ad150756fc29119af657f2fac358dc8d4400ba";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "d3c586d0af1a6d1c06e04167f3f5a62800fe5ba012d9c9e929e0e27dac3a0039";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tonatona-persistent-sqlite-0.2.0.0-r0-ec1d3853005d38ed85fcf52813a5b1e007d55ec9ba50410697d87f052d31b447.nix;
+        revNum = 0;
+        sha256 = "ec1d3853005d38ed85fcf52813a5b1e007d55ec9ba50410697d87f052d31b447";
+        };
+      default = "r0";
+      };
+    };
   }

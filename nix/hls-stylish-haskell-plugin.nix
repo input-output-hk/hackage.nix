@@ -151,4 +151,15 @@
       default = "r0";
       };
     };
+  "2.2.0.0" = {
+    sha256 = "b3073153a11707c2f1773d2f4687d55745db090a3bc9bdbba0df72e62699f365";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-stylish-haskell-plugin-2.2.0.0-r0-8aada185e6557338fa18d376c170a36c832af8ef43aa80b129f2e6089ad1d7e2.nix;
+        revNum = 0;
+        sha256 = "8aada185e6557338fa18d376c170a36c832af8ef43aa80b129f2e6089ad1d7e2";
+        };
+      default = "r0";
+      };
+    };
   }

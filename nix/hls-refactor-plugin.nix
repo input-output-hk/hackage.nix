@@ -70,4 +70,15 @@
       default = "r0";
       };
     };
+  "2.2.0.0" = {
+    sha256 = "70f14a176ca5ff9ec8a981f29401a486ce98007921afe689debd46d22700eb30";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-refactor-plugin-2.2.0.0-r0-ad74de79a30f43a79a0e0b167d26f75f9b89d1c16e5ab759d890f9b189c74d5a.nix;
+        revNum = 0;
+        sha256 = "ad74de79a30f43a79a0e0b167d26f75f9b89d1c16e5ab759d890f9b189c74d5a";
+        };
+      default = "r0";
+      };
+    };
   }

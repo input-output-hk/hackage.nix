@@ -172,4 +172,15 @@
       default = "r0";
       };
     };
+  "2.2.0.0" = {
+    sha256 = "1d65b3d419eaa2483ffc85658e5eda7f7891be18432b266bf983500ecb84e872";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-haddock-comments-plugin-2.2.0.0-r0-693535e1647eed41ad23a20a80a97d2f62d2a5f594824a09f24b0a3a6d156055.nix;
+        revNum = 0;
+        sha256 = "693535e1647eed41ad23a20a80a97d2f62d2a5f594824a09f24b0a3a6d156055";
+        };
+      default = "r0";
+      };
+    };
   }

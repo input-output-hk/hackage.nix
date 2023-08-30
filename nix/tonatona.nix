@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "881f887483e81545f8c1dee616da0f8ad40a6287cc4d4f16e30502b68fc57a91";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tonatona-0.2.0.0-r0-2ff05a83aef27608a8d0cf9af61e255c79412aa5802f65461afd5480b50d1038.nix;
+        revNum = 0;
+        sha256 = "2ff05a83aef27608a8d0cf9af61e255c79412aa5802f65461afd5480b50d1038";
+        };
+      default = "r0";
+      };
+    };
   }

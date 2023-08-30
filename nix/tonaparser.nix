@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "8035db7a39b992cdde3e3049bd04d7a0f3ab14635e4c5c59f3e05de7559dbc77";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tonaparser-0.2.0.0-r0-bbd53119ad4e31ecc75b78f9da0b09b7176a2d8aab86e8b4485c13c9265dda25.nix;
+        revNum = 0;
+        sha256 = "bbd53119ad4e31ecc75b78f9da0b09b7176a2d8aab86e8b4485c13c9265dda25";
+        };
+      default = "r0";
+      };
+    };
   }
