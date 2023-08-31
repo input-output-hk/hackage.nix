@@ -168,4 +168,15 @@
       default = "r0";
       };
     };
+  "0.7.0.0" = {
+    sha256 = "a0e0d120a808db097f3af689cb8d356a496a10c93570a00861650befa83beaf3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/posix-api-0.7.0.0-r0-a9e4e78adfa6ceae4371b9fab330ae48bc341e5730575554124b44ae9dcbb01b.nix;
+        revNum = 0;
+        sha256 = "a9e4e78adfa6ceae4371b9fab330ae48bc341e5730575554124b44ae9dcbb01b";
+        };
+      default = "r0";
+      };
+    };
   }

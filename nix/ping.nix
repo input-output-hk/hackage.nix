@@ -77,7 +77,12 @@
         revNum = 2;
         sha256 = "b1e40ec02aaabeb1cbe37750e024c2ef363c38ab6dd92bcd13aff35b7ff98d5a";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/ping-0.1.0.5-r3-150a65654a738944014a062fe524bd5ecb5790d41895e4fe44df3dc4d63d2faa.nix;
+        revNum = 3;
+        sha256 = "150a65654a738944014a062fe524bd5ecb5790d41895e4fe44df3dc4d63d2faa";
+        };
+      default = "r3";
       };
     };
   }

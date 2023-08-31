@@ -16159,6 +16159,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ukrainian-phonetics-common" = import ./nix/ukrainian-phonetics-common.nix;
   "ulid" = import ./nix/ulid.nix;
   "una" = import ./nix/una.nix;
+  "unac-bindings" = import ./nix/unac-bindings.nix;
   "unagi-bloomfilter" = import ./nix/unagi-bloomfilter.nix;
   "unagi-chan" = import ./nix/unagi-chan.nix;
   "unagi-streams" = import ./nix/unagi-streams.nix;

@@ -65,7 +65,12 @@
         revNum = 3;
         sha256 = "73372331f5b8185da99bd7ee749a67f6e27a84a153ad4a178de3305ee54f90c5";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/setlocale-1.0.0.10-r4-9690b5b6b111833c44c102ffd06feb2724f7fe7baf97c604062f2261331df952.nix;
+        revNum = 4;
+        sha256 = "9690b5b6b111833c44c102ffd06feb2724f7fe7baf97c604062f2261331df952";
+        };
+      default = "r4";
       };
     };
   "1.0.0.2" = {
