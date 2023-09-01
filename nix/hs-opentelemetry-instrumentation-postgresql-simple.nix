@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.0" = {
+    sha256 = "9df897b158458d255e8ad757cef9189ff3f501fec503e536cb3357fc401d2f04";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-opentelemetry-instrumentation-postgresql-simple-0.1.0.0-r0-20192b47a6958d5d95149b4a1d25dbaeb6bf9969ee5df7aa4e8b7cc6d209a673.nix;
+        revNum = 0;
+        sha256 = "20192b47a6958d5d95149b4a1d25dbaeb6bf9969ee5df7aa4e8b7cc6d209a673";
+        };
+      default = "r0";
+      };
+    };
   }

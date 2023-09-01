@@ -28,7 +28,12 @@
         revNum = 0;
         sha256 = "89f1e2271e9951ff423e01e441dde22234a71746c2ea4693603b92d1fb043963";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-exchange-instantiations-0.1.1.0-r1-9be5d74829620755dbde2bc286e83ec4e340db7b0eec13522332ec4eb9f3c4e6.nix;
+        revNum = 1;
+        sha256 = "9be5d74829620755dbde2bc286e83ec4e340db7b0eec13522332ec4eb9f3c4e6";
+        };
+      default = "r1";
       };
     };
   }

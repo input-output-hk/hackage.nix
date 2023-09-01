@@ -2432,6 +2432,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "barcodes-code128" = import ./nix/barcodes-code128.nix;
   "barecheck" = import ./nix/barecheck.nix;
   "barley" = import ./nix/barley.nix;
+  "barlow-lens" = import ./nix/barlow-lens.nix;
   "barrie" = import ./nix/barrie.nix;
   "barrier" = import ./nix/barrier.nix;
   "barrier-monad" = import ./nix/barrier-monad.nix;
@@ -4938,6 +4939,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dunai" = import ./nix/dunai.nix;
   "dunai-core" = import ./nix/dunai-core.nix;
   "dunai-test" = import ./nix/dunai-test.nix;
+  "dupIO" = import ./nix/dup_I_O.nix;
   "duplo" = import ./nix/duplo.nix;
   "dura" = import ./nix/dura.nix;
   "duration" = import ./nix/duration.nix;
@@ -8114,6 +8116,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-openmoji-data" = import ./nix/hs-openmoji-data.nix;
   "hs-opentelemetry-api" = import ./nix/hs-opentelemetry-api.nix;
   "hs-opentelemetry-awsxray" = import ./nix/hs-opentelemetry-awsxray.nix;
+  "hs-opentelemetry-exporter-handle" = import ./nix/hs-opentelemetry-exporter-handle.nix;
   "hs-opentelemetry-exporter-in-memory" = import ./nix/hs-opentelemetry-exporter-in-memory.nix;
   "hs-opentelemetry-exporter-otlp" = import ./nix/hs-opentelemetry-exporter-otlp.nix;
   "hs-opentelemetry-instrumentation-cloudflare" = import ./nix/hs-opentelemetry-instrumentation-cloudflare.nix;
@@ -11313,6 +11316,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "numeric-ranges" = import ./nix/numeric-ranges.nix;
   "numeric-tools" = import ./nix/numeric-tools.nix;
   "numerical" = import ./nix/numerical.nix;
+  "numerical-integration" = import ./nix/numerical-integration.nix;
   "numericpeano" = import ./nix/numericpeano.nix;
   "numhask" = import ./nix/numhask.nix;
   "numhask-array" = import ./nix/numhask-array.nix;

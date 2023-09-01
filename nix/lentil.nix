@@ -994,7 +994,12 @@
         revNum = 1;
         sha256 = "a89b1512f84d696acdf8be06018e80da8f74a404d7b095cd774a35a864f0f10d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/lentil-1.5.6.0-r2-8b66aa82ce6b06f923cc0fb340f8f78eaddd5511c0cc8d2f000caade0db8e580.nix;
+        revNum = 2;
+        sha256 = "8b66aa82ce6b06f923cc0fb340f8f78eaddd5511c0cc8d2f000caade0db8e580";
+        };
+      default = "r2";
       };
     };
   }

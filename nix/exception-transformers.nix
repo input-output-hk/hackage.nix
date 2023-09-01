@@ -119,6 +119,17 @@
       default = "r0";
       };
     };
+  "0.4.0.12" = {
+    sha256 = "9374d590cfea7d27cf6e06f2d80c0520496e0a53da002abade315c0ad1c91487";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/exception-transformers-0.4.0.12-r0-4a3d3b8ccce5d8dc539e051ea25d221a417379f59e186f80081c962f552eab09.nix;
+        revNum = 0;
+        sha256 = "4a3d3b8ccce5d8dc539e051ea25d221a417379f59e186f80081c962f552eab09";
+        };
+      default = "r0";
+      };
+    };
   "0.4.0.2" = {
     sha256 = "d24ba7d2d96688f867cce18bb58d073515c679d083f7c900dcdef02333000452";
     revisions = {

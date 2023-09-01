@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "4e34a1dd5452b17e95870d2e9bd52e99c8b6915fe2f1c26ca5886107a9ed939b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/drawille-0.1.3.0-r0-606f0ec1520bac145fb9f8086d067b4099257d80140a002ce468bb796fb5d1e6.nix;
+        revNum = 0;
+        sha256 = "606f0ec1520bac145fb9f8086d067b4099257d80140a002ce468bb796fb5d1e6";
+        };
+      default = "r0";
+      };
+    };
   }
