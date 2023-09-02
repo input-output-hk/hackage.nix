@@ -8143,6 +8143,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-re" = import ./nix/hs-re.nix;
   "hs-rqlite" = import ./nix/hs-rqlite.nix;
   "hs-rs-notify" = import ./nix/hs-rs-notify.nix;
+  "hs-samtools" = import ./nix/hs-samtools.nix;
   "hs-scrape" = import ./nix/hs-scrape.nix;
   "hs-sdl-term-emulator" = import ./nix/hs-sdl-term-emulator.nix;
   "hs-server-starter" = import ./nix/hs-server-starter.nix;

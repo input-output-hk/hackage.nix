@@ -404,7 +404,17 @@
         revNum = 0;
         sha256 = "5d978e60cb5febe3e780876ec33454cf61ca4710d24cb5a2d8fe02bcdb27aeb6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hledger-iadd-1.3.18-r1-6e8c77f1f6c463e69eb772dfd2f817a847ff2e7f32663df5a78bc01bfcb17d7f.nix;
+        revNum = 1;
+        sha256 = "6e8c77f1f6c463e69eb772dfd2f817a847ff2e7f32663df5a78bc01bfcb17d7f";
+        };
+      r2 = {
+        nix = import ../hackage/hledger-iadd-1.3.18-r2-395d3fe30bbf82ce1be8743658b3dac06f96775c39524de1c89a30aec05b6320.nix;
+        revNum = 2;
+        sha256 = "395d3fe30bbf82ce1be8743658b3dac06f96775c39524de1c89a30aec05b6320";
+        };
+      default = "r2";
       };
     };
   "1.3.2" = {

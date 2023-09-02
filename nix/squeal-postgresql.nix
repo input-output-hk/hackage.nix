@@ -285,4 +285,37 @@
       default = "r0";
       };
     };
+  "0.9.1.1" = {
+    sha256 = "2ded31ada50e45778606732822d1f801881043279cc90ee6940b142e1cd28950";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/squeal-postgresql-0.9.1.1-r0-5c12d2e91ea79752f089b88e85d3f442e1fbbabf4939929138184419a9438248.nix;
+        revNum = 0;
+        sha256 = "5c12d2e91ea79752f089b88e85d3f442e1fbbabf4939929138184419a9438248";
+        };
+      default = "r0";
+      };
+    };
+  "0.9.1.2" = {
+    sha256 = "6f75579f7c5b86f5bb5c533b4968188ec4994179c0d44df71ecd2d95f165bae4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/squeal-postgresql-0.9.1.2-r0-32817e3fe939b52d7902eca5709753fb838c14f6b86f5ca8132af56a455d304c.nix;
+        revNum = 0;
+        sha256 = "32817e3fe939b52d7902eca5709753fb838c14f6b86f5ca8132af56a455d304c";
+        };
+      default = "r0";
+      };
+    };
+  "0.9.1.3" = {
+    sha256 = "de8f71e272322ac7cca60659c5072cfbb36e8f820c867a55cfecfa76ddba46e6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/squeal-postgresql-0.9.1.3-r0-c5b4fe4a7d339983f43070ed70750bfdf91a9f0953d9f6f3d85c59b53df33cd2.nix;
+        revNum = 0;
+        sha256 = "c5b4fe4a7d339983f43070ed70750bfdf91a9f0953d9f6f3d85c59b53df33cd2";
+        };
+      default = "r0";
+      };
+    };
   }

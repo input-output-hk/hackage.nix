@@ -213,4 +213,15 @@
       default = "r2";
       };
     };
+  "1.2" = {
+    sha256 = "02e97091622c51d0bc4b636acb5d008b5bf9041e4f35ddac262a03b44ccf2543";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/FunGEn-1.2-r0-bae05df97f826769eb2eb085a1ef498fbdeaea9da695ad1a84e9fcd13e624d73.nix;
+        revNum = 0;
+        sha256 = "bae05df97f826769eb2eb085a1ef498fbdeaea9da695ad1a84e9fcd13e624d73";
+        };
+      default = "r0";
+      };
+    };
   }
