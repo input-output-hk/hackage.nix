@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "84204fd77c3e4d598d270eb069d82f41d9e775a3021407b285bca9f0d3262b87";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/var-monad-0.2.0.1-r1-83893b114fe76e46aea36805afb7346e3eac12d8f648cdcfbb464fd9474e0cf7.nix;
+        revNum = 1;
+        sha256 = "83893b114fe76e46aea36805afb7346e3eac12d8f648cdcfbb464fd9474e0cf7";
+        };
+      default = "r1";
       };
     };
   }

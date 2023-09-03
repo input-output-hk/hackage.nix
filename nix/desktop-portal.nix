@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "5b8cd4c4d536b84b4823c7b62a2466f1545edc9df7f6253ec430bd341b1e2670";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/desktop-portal-0.3.0.0-r0-e1ad5231f64ed73507f0d660425181b56d9204d27b928c0893875d7506b89f4d.nix;
+        revNum = 0;
+        sha256 = "e1ad5231f64ed73507f0d660425181b56d9204d27b928c0893875d7506b89f4d";
+        };
+      default = "r0";
+      };
+    };
   }

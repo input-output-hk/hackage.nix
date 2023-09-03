@@ -9202,6 +9202,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "json-schema" = import ./nix/json-schema.nix;
   "json-sop" = import ./nix/json-sop.nix;
   "json-spec" = import ./nix/json-spec.nix;
+  "json-spec-elm" = import ./nix/json-spec-elm.nix;
+  "json-spec-elm-servant" = import ./nix/json-spec-elm-servant.nix;
   "json-spec-openapi" = import ./nix/json-spec-openapi.nix;
   "json-state" = import ./nix/json-state.nix;
   "json-stream" = import ./nix/json-stream.nix;
@@ -14775,6 +14777,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "statsd" = import ./nix/statsd.nix;
   "statsd-client" = import ./nix/statsd-client.nix;
   "statsd-datadog" = import ./nix/statsd-datadog.nix;
+  "statsd-rupp" = import ./nix/statsd-rupp.nix;
   "statsdi" = import ./nix/statsdi.nix;
   "status-notifier-item" = import ./nix/status-notifier-item.nix;
   "statvfs" = import ./nix/statvfs.nix;

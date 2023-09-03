@@ -1331,7 +1331,12 @@
         revNum = 2;
         sha256 = "37af8cf2e52888e3a0d543bdb6e9e3018858e264e95d7b57eb50e91b1df72683";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/hledger-1.30.1-r3-db355c85a23a459adffd258d35336dd043989aa5f375bbc457a236baba325ee3.nix;
+        revNum = 3;
+        sha256 = "db355c85a23a459adffd258d35336dd043989aa5f375bbc457a236baba325ee3";
+        };
+      default = "r3";
       };
     };
   "1.4" = {
