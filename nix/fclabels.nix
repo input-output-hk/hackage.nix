@@ -666,7 +666,12 @@
         revNum = 1;
         sha256 = "d35b1b28914dc3131611be2cf2e7eeb88ce413f1e7c57deffaa45aed760dae0d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/fclabels-2.0.5.1-r2-0ec200ff51561ed6ee60fa52d47427cd4bbbb3ace618884465ce2b27840cc1d7.nix;
+        revNum = 2;
+        sha256 = "0ec200ff51561ed6ee60fa52d47427cd4bbbb3ace618884465ce2b27840cc1d7";
+        };
+      default = "r2";
       };
     };
   }

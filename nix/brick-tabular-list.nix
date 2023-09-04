@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "2.2.0.3" = {
+    sha256 = "11714a58fe02f213f335365d76cf12804efc0d194899927908e15ca4b54b49b8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brick-tabular-list-2.2.0.3-r0-ae93a93abb7678e9723074cbc16683d42439b0d3b4bcfa8b7005a1496483c615.nix;
+        revNum = 0;
+        sha256 = "ae93a93abb7678e9723074cbc16683d42439b0d3b4bcfa8b7005a1496483c615";
+        };
+      default = "r0";
+      };
+    };
   }

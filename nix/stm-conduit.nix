@@ -429,7 +429,12 @@
         revNum = 0;
         sha256 = "71f477c617400fb5bee74557416d7dac17dccea0663ec29bf9ca67b52703637d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/stm-conduit-4.0.1-r1-662cb5d9b39d7c03a431a0a2bceffbb3e6925610ee2d4f819503fb3b1d17d3c7.nix;
+        revNum = 1;
+        sha256 = "662cb5d9b39d7c03a431a0a2bceffbb3e6925610ee2d4f819503fb3b1d17d3c7";
+        };
+      default = "r1";
       };
     };
   }
