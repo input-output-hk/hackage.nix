@@ -13964,6 +13964,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-polysemy" = import ./nix/servant-polysemy.nix;
   "servant-pool" = import ./nix/servant-pool.nix;
   "servant-postgresql" = import ./nix/servant-postgresql.nix;
+  "servant-prometheus" = import ./nix/servant-prometheus.nix;
   "servant-proto-lens" = import ./nix/servant-proto-lens.nix;
   "servant-purescript" = import ./nix/servant-purescript.nix;
   "servant-pushbullet-client" = import ./nix/servant-pushbullet-client.nix;

@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "05620a598e191d4825757c2a1dbfdfb6020bd5a73056c791b59c43a540b4d5a9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/statsd-rupp-0.4.0.0-r0-49677a8ac0997c3cc5b0da76e6906d46c496f793bf912a8829080e2990577986.nix;
+        revNum = 0;
+        sha256 = "49677a8ac0997c3cc5b0da76e6906d46c496f793bf912a8829080e2990577986";
+        };
+      default = "r0";
+      };
+    };
   }

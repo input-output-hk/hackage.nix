@@ -310,4 +310,20 @@
       default = "r2";
       };
     };
+  "1.6.6" = {
+    sha256 = "a891f3786f0bb63818786bddffd1d67c1a265176f3fc97e76619bea7d3bb7442";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hledger-interest-1.6.6-r0-0ebb35742c841045d95a66369636e1f215676a4e50fda92eee12d6cbff072e79.nix;
+        revNum = 0;
+        sha256 = "0ebb35742c841045d95a66369636e1f215676a4e50fda92eee12d6cbff072e79";
+        };
+      r1 = {
+        nix = import ../hackage/hledger-interest-1.6.6-r1-fa29636170cfc79ec61b6ebe95b117b36e4214aece78344f46a9e8f4f8d4869e.nix;
+        revNum = 1;
+        sha256 = "fa29636170cfc79ec61b6ebe95b117b36e4214aece78344f46a9e8f4f8d4869e";
+        };
+      default = "r1";
+      };
+    };
   }
