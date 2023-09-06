@@ -293,7 +293,12 @@
         revNum = 0;
         sha256 = "665fc6909fa6b8196ec5f40e40e0d9a4375890b169e7f44ff1e708e9e27aa3f3";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/optparse-applicative-0.17.1.0-r1-cb5f5f0dc9749846fc0e3df0041a8efee6368cc1cff07336acd4c3b02a951ed6.nix;
+        revNum = 1;
+        sha256 = "cb5f5f0dc9749846fc0e3df0041a8efee6368cc1cff07336acd4c3b02a951ed6";
+        };
+      default = "r1";
       };
     };
   "0.18.0.0" = {

@@ -1,0 +1,13 @@
+{
+  "1.0.0" = {
+    sha256 = "48aaf279bf530da8ffc40f63f1d83e34197b63c69a58bee9505df124ec54631c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hlint-plugin-1.0.0-r0-4e43ba11d8a13f8dfa2cb1fad8081cbdd623116f3b630df99356d63ac7e3ab64.nix;
+        revNum = 0;
+        sha256 = "4e43ba11d8a13f8dfa2cb1fad8081cbdd623116f3b630df99356d63ac7e3ab64";
+        };
+      default = "r0";
+      };
+    };
+  }

@@ -7836,6 +7836,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hlibgit2" = import ./nix/hlibgit2.nix;
   "hlibsass" = import ./nix/hlibsass.nix;
   "hlint" = import ./nix/hlint.nix;
+  "hlint-plugin" = import ./nix/hlint-plugin.nix;
   "hlint-test" = import ./nix/hlint-test.nix;
   "hlist" = import ./nix/hlist.nix;
   "hlivy" = import ./nix/hlivy.nix;
