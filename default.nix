@@ -1587,6 +1587,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aligned-foreignptr" = import ./nix/aligned-foreignptr.nix;
   "alignment" = import ./nix/alignment.nix;
   "alist" = import ./nix/alist.nix;
+  "allen" = import ./nix/allen.nix;
   "allocated-processor" = import ./nix/allocated-processor.nix;
   "alloy" = import ./nix/alloy.nix;
   "alloy-proxy-fd" = import ./nix/alloy-proxy-fd.nix;

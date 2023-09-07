@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.1.0.7" = {
+    sha256 = "663322b7176a2f8e7eb107647a678b5127cd37a6bfedd9e436cf2418133cc91d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wai-secure-cookies-0.1.0.7-r0-2fe4072f171e79ff21f74893ca568afd297a4d898c61a1c540e7501554240706.nix;
+        revNum = 0;
+        sha256 = "2fe4072f171e79ff21f74893ca568afd297a4d898c61a1c540e7501554240706";
+        };
+      default = "r0";
+      };
+    };
   }

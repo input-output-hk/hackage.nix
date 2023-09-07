@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "1.3.2" = {
+    sha256 = "b06af69d9746ec714fb09d3cddae53d392f0ee69e81d2f772aba64f126211ac9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/di-monad-1.3.2-r0-2e1a347d06540e944e7011412d1a051399243f038581a5774d33fc7cbeece7fb.nix;
+        revNum = 0;
+        sha256 = "2e1a347d06540e944e7011412d1a051399243f038581a5774d33fc7cbeece7fb";
+        };
+      default = "r0";
+      };
+    };
   }

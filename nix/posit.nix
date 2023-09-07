@@ -76,6 +76,17 @@
       default = "r0";
       };
     };
+  "2022.1.0.0" = {
+    sha256 = "92fbad9a6f3b3dc676f31464a71ce467e86e3a48e2c84b6a1b740a0b08e450a5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/posit-2022.1.0.0-r0-5a4330d80c345548b46c657ff4ff99162250929709f8ec0ad02aa27c74c63c65.nix;
+        revNum = 0;
+        sha256 = "5a4330d80c345548b46c657ff4ff99162250929709f8ec0ad02aa27c74c63c65";
+        };
+      default = "r0";
+      };
+    };
   "3.2.0.0" = {
     sha256 = "a1f7da463c631e91ec95c4248d59de0e085ae6cf93be56d82be303c946206ee1";
     revisions = {
