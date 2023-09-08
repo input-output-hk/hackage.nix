@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.1.0.7" = {
+    sha256 = "5cb0ebdd456784fd0ece43e0f2f62db13544a29227f6fb601fe8d974cb15b599";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lucid-htmx-0.1.0.7-r0-05d0bec34cd3c3d99d69a02c5c5f87385a9e53de8fa2e57a0c7c477dd3e5a6af.nix;
+        revNum = 0;
+        sha256 = "05d0bec34cd3c3d99d69a02c5c5f87385a9e53de8fa2e57a0c7c477dd3e5a6af";
+        };
+      default = "r0";
+      };
+    };
   }

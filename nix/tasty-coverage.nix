@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "82b4580c326fbd224b4487d409c71e6bd0a74ea9a9fafe82b4ebcc2da859d4f9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-coverage-0.1.1.0-r0-97faacfd573137b4dd3e05894af6bf54bc9a36294728158995bba4f8b4df6ee7.nix;
+        revNum = 0;
+        sha256 = "97faacfd573137b4dd3e05894af6bf54bc9a36294728158995bba4f8b4df6ee7";
+        };
+      default = "r0";
+      };
+    };
   }
