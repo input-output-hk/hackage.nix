@@ -114,4 +114,15 @@
       default = "r0";
       };
     };
+  "0.4.3.0" = {
+    sha256 = "fc72e42e1de67da5bf1a8ef5492986c79568248ae532f5801c7885cedbe4b5b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uusi-0.4.3.0-r0-5b36770f7a8263c01dae3e7e56ab2fe86ade1aa68963fae6daa6c5cdc060bf68.nix;
+        revNum = 0;
+        sha256 = "5b36770f7a8263c01dae3e7e56ab2fe86ade1aa68963fae6daa6c5cdc060bf68";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -224,7 +224,12 @@
         revNum = 0;
         sha256 = "22e38b85c9f9f2c722e6acd2ed98e7bf17c7a5e927cb86788f95d476f158874c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/network-transport-0.5.6-r1-c88a57b2aabbe19f53336e2d576af629a4aff50b3cc6c7b1ff53e1a4bcbbb4ba.nix;
+        revNum = 1;
+        sha256 = "c88a57b2aabbe19f53336e2d576af629a4aff50b3cc6c7b1ff53e1a4bcbbb4ba";
+        };
+      default = "r1";
       };
     };
   }
