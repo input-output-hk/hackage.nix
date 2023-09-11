@@ -30,4 +30,15 @@
       default = "r4";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "d46deffe2afdcc47ad408e297ede99a3aa00ae2cbe6e668c8649c8334c4d4f79";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-grading-system-0.2.0.0-r0-e2fff903191ec67f514b0d059e4fda3f36c35dbc57a47dd1df533e6ded7f6779.nix;
+        revNum = 0;
+        sha256 = "e2fff903191ec67f514b0d059e4fda3f36c35dbc57a47dd1df533e6ded7f6779";
+        };
+      default = "r0";
+      };
+    };
   }

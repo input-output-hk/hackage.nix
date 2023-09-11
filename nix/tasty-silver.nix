@@ -92,7 +92,12 @@
         revNum = 1;
         sha256 = "7077cc8291799c2a8f73276b43b61e7b2536ef6b683b6b58736d3162eec5c2f2";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.0.2.2-r2-db63ed975b5d9532e23ead3d76980a901c69a1046c234acbc659734bdc1ec1d2.nix;
+        revNum = 2;
+        sha256 = "db63ed975b5d9532e23ead3d76980a901c69a1046c234acbc659734bdc1ec1d2";
+        };
+      default = "r2";
       };
     };
   "3.1" = {
@@ -108,7 +113,12 @@
         revNum = 1;
         sha256 = "ed314c53ed98036b5f392e065551b3afcb12c815b48e02e976f4134caafc7845";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.1-r2-85e6ca8473f56373b10ed7505095d8e9a3ad9423f00c7caa98573c262729117f.nix;
+        revNum = 2;
+        sha256 = "85e6ca8473f56373b10ed7505095d8e9a3ad9423f00c7caa98573c262729117f";
+        };
+      default = "r2";
       };
     };
   "3.1.1" = {
@@ -124,7 +134,12 @@
         revNum = 1;
         sha256 = "726542831542f361d92fe0d2b835ba34b207b22bddcec4750c8b1b66e758058a";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.1.1-r2-65c6143e494ce1a59252dfc8ae7ba15378d7ec384bf62d8ad5867c71525142f4.nix;
+        revNum = 2;
+        sha256 = "65c6143e494ce1a59252dfc8ae7ba15378d7ec384bf62d8ad5867c71525142f4";
+        };
+      default = "r2";
       };
     };
   "3.1.10" = {
@@ -241,7 +256,12 @@
         revNum = 1;
         sha256 = "2c3b97455413bcf1215cdec0a42c2570482541c1858a5f668824c60f207aa623";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.1.2-r2-b4d497cc89a0cc8e120757a984c538d6c7d69054c22a6d00a8bbb31447a339a7.nix;
+        revNum = 2;
+        sha256 = "b4d497cc89a0cc8e120757a984c538d6c7d69054c22a6d00a8bbb31447a339a7";
+        };
+      default = "r2";
       };
     };
   "3.1.3" = {
@@ -257,7 +277,12 @@
         revNum = 1;
         sha256 = "0829b5c9830c40056591445b037cf94ff1bf35965041fbdbe6081c2d3f845e4f";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.1.3-r2-c93adb0a8a1627ec4aca2d439ce1bbab651b28ae7c966c36f968b9220780211a.nix;
+        revNum = 2;
+        sha256 = "c93adb0a8a1627ec4aca2d439ce1bbab651b28ae7c966c36f968b9220780211a";
+        };
+      default = "r2";
       };
     };
   "3.1.4" = {
@@ -273,7 +298,12 @@
         revNum = 1;
         sha256 = "51d89b8ae898b3efe6f6a92792689756734adf1b5d9a380422a1b957d39b4f98";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.1.4-r2-9a8fc27c43e6f137f025b4fa55258046fec5ad3dd05ec4177747199ad4731120.nix;
+        revNum = 2;
+        sha256 = "9a8fc27c43e6f137f025b4fa55258046fec5ad3dd05ec4177747199ad4731120";
+        };
+      default = "r2";
       };
     };
   "3.1.5" = {
@@ -289,7 +319,12 @@
         revNum = 1;
         sha256 = "9a3db06d7fd82f8b860f5c4e9e676a939efe4bbaacf2c2e22adaca51c26086fc";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.1.5-r2-f302e10274df76ebaf2eb6a68fee1da9002c0aca1f06b3faa09bcdf986f53f82.nix;
+        revNum = 2;
+        sha256 = "f302e10274df76ebaf2eb6a68fee1da9002c0aca1f06b3faa09bcdf986f53f82";
+        };
+      default = "r2";
       };
     };
   "3.1.6" = {
@@ -305,7 +340,12 @@
         revNum = 1;
         sha256 = "27434ca8e67bc828185272a1f8bf2b149846005723c8a9fe90d398ed9899d88b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.1.6-r2-1bc64edef6aed9af14cbf1703a89e15fc9536f97d19deb571e1f1eaa71ceb2e1.nix;
+        revNum = 2;
+        sha256 = "1bc64edef6aed9af14cbf1703a89e15fc9536f97d19deb571e1f1eaa71ceb2e1";
+        };
+      default = "r2";
       };
     };
   "3.1.7" = {
@@ -321,7 +361,12 @@
         revNum = 1;
         sha256 = "78b73d3eb7f8f75816f6e4d38d7b171d8813842accaaf53b03e42b2cc10137d8";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.1.7-r2-8d9d01e013db71dcd4099941d31828905394711637c5cde84dba02d9c40e3e1e.nix;
+        revNum = 2;
+        sha256 = "8d9d01e013db71dcd4099941d31828905394711637c5cde84dba02d9c40e3e1e";
+        };
+      default = "r2";
       };
     };
   "3.1.8" = {
@@ -353,7 +398,12 @@
         revNum = 1;
         sha256 = "151c566723e3419310683f418ea76d7760f6423bf3de0d2190fc1fee1b89377b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.1.8.1-r2-407f247f1c47df9e15b9676ca47d20809898b58ee9eb7d8d94255ea4cbab98b9.nix;
+        revNum = 2;
+        sha256 = "407f247f1c47df9e15b9676ca47d20809898b58ee9eb7d8d94255ea4cbab98b9";
+        };
+      default = "r2";
       };
     };
   "3.1.9" = {
@@ -390,7 +440,12 @@
         revNum = 2;
         sha256 = "49da83a42a6da3139eeaf98232dbf762a35db15892d0517c440545cb4aa5e119";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/tasty-silver-3.2-r3-d4e1daec4cec7e3ca4347a3c1208a924e8c0a6943adc4d83b440ab5200e2e939.nix;
+        revNum = 3;
+        sha256 = "d4e1daec4cec7e3ca4347a3c1208a924e8c0a6943adc4d83b440ab5200e2e939";
+        };
+      default = "r3";
       };
     };
   "3.2.1" = {
@@ -411,7 +466,12 @@
         revNum = 2;
         sha256 = "7eab34025e8a1f1962d7ee5bd9b03d2514918dc35343a7441ac5165fd2444624";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/tasty-silver-3.2.1-r3-8a4e4873338b87c10bb6b408a8d89cb18ed92dafc7802808c13fa900ac3a66de.nix;
+        revNum = 3;
+        sha256 = "8a4e4873338b87c10bb6b408a8d89cb18ed92dafc7802808c13fa900ac3a66de";
+        };
+      default = "r3";
       };
     };
   "3.2.2" = {
@@ -432,7 +492,12 @@
         revNum = 2;
         sha256 = "12b71f005d301a11d7b0ac372842daecb3353ba1fb386cb9ddd1735100754485";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/tasty-silver-3.2.2-r3-8e20c5a6cbd3c6e27c6b17604aacb63c2d54165d9864c66638ef562f8f4c1162.nix;
+        revNum = 3;
+        sha256 = "8e20c5a6cbd3c6e27c6b17604aacb63c2d54165d9864c66638ef562f8f4c1162";
+        };
+      default = "r3";
       };
     };
   "3.2.3" = {
@@ -448,7 +513,12 @@
         revNum = 1;
         sha256 = "ea5052ad8a6023ff727f2313e60afc33976832677e9254c6637a25af4762a4d2";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.2.3-r2-06aca4399e24b4cb3153f31440f50dacbe3be4b264f021e041c4d167c3e4238a.nix;
+        revNum = 2;
+        sha256 = "06aca4399e24b4cb3153f31440f50dacbe3be4b264f021e041c4d167c3e4238a";
+        };
+      default = "r2";
       };
     };
   "3.3" = {
@@ -464,7 +534,12 @@
         revNum = 1;
         sha256 = "2130c9dfc8f0780010a003717cdd4923b7b4c92f91b82d16784905dccfe11bb9";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.3-r2-cd1dc0a903c3dd00ed22d1d200520f278554dea3614a6084bbb0f1eba15a03bc.nix;
+        revNum = 2;
+        sha256 = "cd1dc0a903c3dd00ed22d1d200520f278554dea3614a6084bbb0f1eba15a03bc";
+        };
+      default = "r2";
       };
     };
   "3.3.1" = {
@@ -480,7 +555,12 @@
         revNum = 1;
         sha256 = "d966a9cab2a997b95436146f9867d7928d5c09a933627da6a629d2e4dfd552bf";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-silver-3.3.1-r2-5490ef0d49eaa4ff5c1825541c7e3888506d8794ba7933faace646b4232158e6.nix;
+        revNum = 2;
+        sha256 = "5490ef0d49eaa4ff5c1825541c7e3888506d8794ba7933faace646b4232158e6";
+        };
+      default = "r2";
       };
     };
   "3.3.1.1" = {
@@ -490,6 +570,22 @@
         nix = import ../hackage/tasty-silver-3.3.1.1-r0-a572f15f00ef97d0f05cfdbd610adfe393197dfd395aa62f2729b7e6e3b18071.nix;
         revNum = 0;
         sha256 = "a572f15f00ef97d0f05cfdbd610adfe393197dfd395aa62f2729b7e6e3b18071";
+        };
+      r1 = {
+        nix = import ../hackage/tasty-silver-3.3.1.1-r1-581d4ae0c141e77a51064e986aaea8a75868570a963debab970b974febf3d72e.nix;
+        revNum = 1;
+        sha256 = "581d4ae0c141e77a51064e986aaea8a75868570a963debab970b974febf3d72e";
+        };
+      default = "r1";
+      };
+    };
+  "3.3.1.2" = {
+    sha256 = "2474f71cae3df41c0abfa47f5bca95079ea00d643409313ba984a3cce7f05587";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-silver-3.3.1.2-r0-f1ac84b9aa430818c67c0301a744a8eea69b2de53319947d0213c99546cb077c.nix;
+        revNum = 0;
+        sha256 = "f1ac84b9aa430818c67c0301a744a8eea69b2de53319947d0213c99546cb077c";
         };
       default = "r0";
       };

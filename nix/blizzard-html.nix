@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.5.0.0" = {
+    sha256 = "64af82f1756318699d3fb561d876a205140fdc963a4f1fc39245dc542f5fb644";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/blizzard-html-0.5.0.0-r0-f379c830085c3fe5fdc642e6a7bf4c424faf471bc474e35789c86d582e032655.nix;
+        revNum = 0;
+        sha256 = "f379c830085c3fe5fdc642e6a7bf4c424faf471bc474e35789c86d582e032655";
+        };
+      default = "r0";
+      };
+    };
   }

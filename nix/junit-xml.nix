@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "b944191f9728204305b603554ddb399f18afbcceb62f2fa7c1e2aa6541478ac7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/junit-xml-0.1.0.3-r0-61fe7d92b294344f26e9adcd739b589f2c93c38d9696a370486bf593839864bd.nix;
+        revNum = 0;
+        sha256 = "61fe7d92b294344f26e9adcd739b589f2c93c38d9696a370486bf593839864bd";
+        };
+      default = "r0";
+      };
+    };
   }

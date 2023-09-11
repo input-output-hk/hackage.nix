@@ -197,7 +197,12 @@
         revNum = 2;
         sha256 = "ee7146cffebed60c6aed13bc797cff0848c06466314031cf4a38bddc76ab3b50";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/ttc-1.2.1.0-r3-79fa39061112752630639ec331b899492c4bbec10ebe902c1a32cb0467894c06.nix;
+        revNum = 3;
+        sha256 = "79fa39061112752630639ec331b899492c4bbec10ebe902c1a32cb0467894c06";
+        };
+      default = "r3";
       };
     };
   }

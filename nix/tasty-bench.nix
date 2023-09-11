@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "19172fa8dc3439971f79fc326488e8008ac4099cbab8aa6b9838592a62350456";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tasty-bench-0.1-r1-4daa6b26ab7219f3af8d497838ecc7b9be6aa2add0c1d51521a25701004d7fc2.nix;
+        revNum = 1;
+        sha256 = "4daa6b26ab7219f3af8d497838ecc7b9be6aa2add0c1d51521a25701004d7fc2";
+        };
+      default = "r1";
       };
     };
   "0.2" = {
@@ -67,7 +72,12 @@
         revNum = 1;
         sha256 = "138146e5c461a4c2286c11e0e7aaaf5057d156be770bc673433dce3f9ceda477";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-bench-0.2.4-r2-69e322e7ac27a00efa69348a83b0e6cb6d4ee62e8f99e3d15b0e6739a2927c95.nix;
+        revNum = 2;
+        sha256 = "69e322e7ac27a00efa69348a83b0e6cb6d4ee62e8f99e3d15b0e6739a2927c95";
+        };
+      default = "r2";
       };
     };
   "0.2.5" = {
@@ -83,7 +93,12 @@
         revNum = 1;
         sha256 = "4f00fdafc3aba6e48366a3684c427618d98c0b1b130cd9cab35c9498796c9a65";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-bench-0.2.5-r2-b145079c791fba521fc5f08b178e256417b39f3a4fa1e0cf8d1e6564fc7cd6c3.nix;
+        revNum = 2;
+        sha256 = "b145079c791fba521fc5f08b178e256417b39f3a4fa1e0cf8d1e6564fc7cd6c3";
+        };
+      default = "r2";
       };
     };
   "0.3" = {
@@ -94,7 +109,12 @@
         revNum = 0;
         sha256 = "f747a2dc8f7235d978a5ec71dbf347a2d4289617884e569e638590ab15ea6a68";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tasty-bench-0.3-r1-3947c7f6e512e4001fa4d236c7e39987d7bbfe040ca097178f5fe04c81ad2dd1.nix;
+        revNum = 1;
+        sha256 = "3947c7f6e512e4001fa4d236c7e39987d7bbfe040ca097178f5fe04c81ad2dd1";
+        };
+      default = "r1";
       };
     };
   "0.3.1" = {
@@ -105,7 +125,12 @@
         revNum = 0;
         sha256 = "650137bb48babb9edb3bb083a8475927cabd888821b642d638ae15a3fd2a837d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tasty-bench-0.3.1-r1-3d53fa886c8fbbdd2156a2e1861b9364cb496e1ef66611fe5fead9c55e061762.nix;
+        revNum = 1;
+        sha256 = "3d53fa886c8fbbdd2156a2e1861b9364cb496e1ef66611fe5fead9c55e061762";
+        };
+      default = "r1";
       };
     };
   "0.3.2" = {
@@ -116,7 +141,12 @@
         revNum = 0;
         sha256 = "e7678a19114e1ff5effbe9b96a4688fa085cee39a50003d1170ec271f83e0792";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tasty-bench-0.3.2-r1-577eda41206deefffb38fb462d52248fee9b2465376594775dd1237519787a1b.nix;
+        revNum = 1;
+        sha256 = "577eda41206deefffb38fb462d52248fee9b2465376594775dd1237519787a1b";
+        };
+      default = "r1";
       };
     };
   "0.3.3" = {
@@ -127,7 +157,12 @@
         revNum = 0;
         sha256 = "efeb9e1fcb98fdab3271227432762ad723b020768a335d2c336a3ad7c28be26d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tasty-bench-0.3.3-r1-66d7ba3f748a937a3f9da92ba5fa431193629251e5297c54bd0a4864f1839f72.nix;
+        revNum = 1;
+        sha256 = "66d7ba3f748a937a3f9da92ba5fa431193629251e5297c54bd0a4864f1839f72";
+        };
+      default = "r1";
       };
     };
   "0.3.4" = {
@@ -139,6 +174,22 @@
         sha256 = "adbc60cf89f9a7aeab46891790f20ea3d34f9a68f0932c922e029d9c4486f4a8";
         };
       default = "r0";
+      };
+    };
+  "0.3.5" = {
+    sha256 = "dcc1001da4beea5041717fa89df0052b59c4ca892f819b33ab26284eaa958df6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-bench-0.3.5-r0-c5e0220555fdfcac794fdd2ede5931bb69c9b9cec1faaa4a95ace53dd8ea64e5.nix;
+        revNum = 0;
+        sha256 = "c5e0220555fdfcac794fdd2ede5931bb69c9b9cec1faaa4a95ace53dd8ea64e5";
+        };
+      r1 = {
+        nix = import ../hackage/tasty-bench-0.3.5-r1-8659087a47cbdf58b66351cad6a764b883d14ce4bde680ac2f677154e9e81ee1.nix;
+        revNum = 1;
+        sha256 = "8659087a47cbdf58b66351cad6a764b883d14ce4bde680ac2f677154e9e81ee1";
+        };
+      default = "r1";
       };
     };
   }

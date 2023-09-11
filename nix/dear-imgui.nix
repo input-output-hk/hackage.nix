@@ -190,4 +190,20 @@
       default = "r2";
       };
     };
+  "2.2.0" = {
+    sha256 = "9d9a6d17cefa1a913941778f18c84717b8a4ce606dc4802ec2b779d135bf1d14";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dear-imgui-2.2.0-r0-2927006166a10779a1760e72a394649d096c1ab85b9090a91ba1b43a935a4277.nix;
+        revNum = 0;
+        sha256 = "2927006166a10779a1760e72a394649d096c1ab85b9090a91ba1b43a935a4277";
+        };
+      r1 = {
+        nix = import ../hackage/dear-imgui-2.2.0-r1-dfbd48824ce36de196d7a9c76c58d1ed014b9721794836bd46148f9b80c2a2f4.nix;
+        revNum = 1;
+        sha256 = "dfbd48824ce36de196d7a9c76c58d1ed014b9721794836bd46148f9b80c2a2f4";
+        };
+      default = "r1";
+      };
+    };
   }

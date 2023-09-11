@@ -2500,6 +2500,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bayes-stack" = import ./nix/bayes-stack.nix;
   "bazel-coverage-report-renderer" = import ./nix/bazel-coverage-report-renderer.nix;
   "bazel-runfiles" = import ./nix/bazel-runfiles.nix;
+  "bbcode" = import ./nix/bbcode.nix;
   "bbdb" = import ./nix/bbdb.nix;
   "bbi" = import ./nix/bbi.nix;
   "bcp47" = import ./nix/bcp47.nix;
@@ -6178,6 +6179,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "geolite-csv" = import ./nix/geolite-csv.nix;
   "geom2d" = import ./nix/geom2d.nix;
   "geomancy" = import ./nix/geomancy.nix;
+  "geomancy-layout" = import ./nix/geomancy-layout.nix;
   "geos" = import ./nix/geos.nix;
   "gerrit" = import ./nix/gerrit.nix;
   "getemx" = import ./nix/getemx.nix;
