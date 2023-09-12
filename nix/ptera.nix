@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "d7b0fbd9f850f11cf9a7dfaf8580787fff9f42595bc573bea650b936323fc7c9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ptera-0.4.0.0-r0-f2caca318cd7a6f1b3f824df3e2a39b8612de700e308b5a9098e79265367e4db.nix;
+        revNum = 0;
+        sha256 = "f2caca318cd7a6f1b3f824df3e2a39b8612de700e308b5a9098e79265367e4db";
+        };
+      default = "r0";
+      };
+    };
   }

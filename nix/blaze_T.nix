@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.0.6" = {
+    sha256 = "cbb108703c2c1ee61249d2073e54a3e6aab86a3b4c36b2dda53c9796c593febd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/blazeT-0.0.6-r0-ec58f39b205084106580d2ff09f2a27a268268252813a87b2e4e6782eede2101.nix;
+        revNum = 0;
+        sha256 = "ec58f39b205084106580d2ff09f2a27a268268252813a87b2e4e6782eede2101";
+        };
+      default = "r0";
+      };
+    };
   }
