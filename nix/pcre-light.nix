@@ -166,4 +166,15 @@
       default = "r0";
       };
     };
+  "0.4.1.2" = {
+    sha256 = "e4924a471df7b1f66ee982c050d0cb7f89f54b7a0ca11323dbd2bbb36758ad3a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pcre-light-0.4.1.2-r0-2b986c84324d693110e6ed016811a1dbd99407c4d6807f7cbe3762127e3e141a.nix;
+        revNum = 0;
+        sha256 = "2b986c84324d693110e6ed016811a1dbd99407c4d6807f7cbe3762127e3e141a";
+        };
+      default = "r0";
+      };
+    };
   }

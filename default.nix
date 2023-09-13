@@ -8020,6 +8020,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hostname" = import ./nix/hostname.nix;
   "hostname-validate" = import ./nix/hostname-validate.nix;
   "hosts-server" = import ./nix/hosts-server.nix;
+  "hotel-california" = import ./nix/hotel-california.nix;
   "hothasktags" = import ./nix/hothasktags.nix;
   "hotswap" = import ./nix/hotswap.nix;
   "hourglass" = import ./nix/hourglass.nix;
@@ -9482,6 +9483,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lambdacube-gl" = import ./nix/lambdacube-gl.nix;
   "lambdacube-ir" = import ./nix/lambdacube-ir.nix;
   "lambdacube-samples" = import ./nix/lambdacube-samples.nix;
+  "lambdasound" = import ./nix/lambdasound.nix;
   "lambdatex" = import ./nix/lambdatex.nix;
   "lambdatwit" = import ./nix/lambdatwit.nix;
   "lambdaya-bus" = import ./nix/lambdaya-bus.nix;

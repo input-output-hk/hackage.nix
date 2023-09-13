@@ -81,7 +81,12 @@
         revNum = 1;
         sha256 = "10ecc7080d2521202bd635673ccea9b4ee10dbd4c784a1e186879e805f0ce636";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/diagrams-solve-0.1.3-r2-8be790bb713651fb6c2d77150244a5501d2d14492f461a65f637d3504ec18622.nix;
+        revNum = 2;
+        sha256 = "8be790bb713651fb6c2d77150244a5501d2d14492f461a65f637d3504ec18622";
+        };
+      default = "r2";
       };
     };
   }

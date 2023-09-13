@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "a8568b96947c1c66e705ac771ea1a61459a3898fd1fa058b6b64cb771493d5ae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bbcode-0.1.0.2-r0-7d63089790e866e809311d35e0ae2df3c96450a5f9ebdbdbec458539bebbd2fe.nix;
+        revNum = 0;
+        sha256 = "7d63089790e866e809311d35e0ae2df3c96450a5f9ebdbdbec458539bebbd2fe";
+        };
+      default = "r0";
+      };
+    };
   }
