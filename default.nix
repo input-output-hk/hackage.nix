@@ -1433,6 +1433,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ad" = import ./nix/ad.nix;
   "ad-delcont" = import ./nix/ad-delcont.nix;
   "adaptive-containers" = import ./nix/adaptive-containers.nix;
+  "adaptive-cubature" = import ./nix/adaptive-cubature.nix;
   "adaptive-tuple" = import ./nix/adaptive-tuple.nix;
   "adb" = import ./nix/adb.nix;
   "adblock2privoxy" = import ./nix/adblock2privoxy.nix;
@@ -1841,6 +1842,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "amazonka-ml" = import ./nix/amazonka-ml.nix;
   "amazonka-mobile" = import ./nix/amazonka-mobile.nix;
   "amazonka-mq" = import ./nix/amazonka-mq.nix;
+  "amazonka-mtl" = import ./nix/amazonka-mtl.nix;
   "amazonka-mwaa" = import ./nix/amazonka-mwaa.nix;
   "amazonka-neptune" = import ./nix/amazonka-neptune.nix;
   "amazonka-network-firewall" = import ./nix/amazonka-network-firewall.nix;
@@ -4231,6 +4233,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "damnpacket" = import ./nix/damnpacket.nix;
   "danibot" = import ./nix/danibot.nix;
   "dao" = import ./nix/dao.nix;
+  "dap" = import ./nix/dap.nix;
   "dapi" = import ./nix/dapi.nix;
   "darcs" = import ./nix/darcs.nix;
   "darcs-benchmark" = import ./nix/darcs-benchmark.nix;
@@ -7055,6 +7058,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hakyll-shortcode" = import ./nix/hakyll-shortcode.nix;
   "hakyll-shortcut-links" = import ./nix/hakyll-shortcut-links.nix;
   "hakyll-typescript" = import ./nix/hakyll-typescript.nix;
+  "hakyllbars" = import ./nix/hakyllbars.nix;
   "hal" = import ./nix/hal.nix;
   "halberd" = import ./nix/halberd.nix;
   "half" = import ./nix/half.nix;
@@ -10487,6 +10491,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "minisat" = import ./nix/minisat.nix;
   "minisat-solver" = import ./nix/minisat-solver.nix;
   "ministg" = import ./nix/ministg.nix;
+  "miniterion" = import ./nix/miniterion.nix;
   "minitypeset-opengl" = import ./nix/minitypeset-opengl.nix;
   "miniutter" = import ./nix/miniutter.nix;
   "minizinc-process" = import ./nix/minizinc-process.nix;
@@ -15391,6 +15396,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "templateify" = import ./nix/templateify.nix;
   "templatepg" = import ./nix/templatepg.nix;
   "templater" = import ./nix/templater.nix;
+  "templatise" = import ./nix/templatise.nix;
   "tempo" = import ./nix/tempo.nix;
   "tempodb" = import ./nix/tempodb.nix;
   "temporal-csound" = import ./nix/temporal-csound.nix;
@@ -16308,6 +16314,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "unix-time" = import ./nix/unix-time.nix;
   "unjson" = import ./nix/unjson.nix;
   "unlambda" = import ./nix/unlambda.nix;
+  "unleash-client-haskell-core" = import ./nix/unleash-client-haskell-core.nix;
   "unlift" = import ./nix/unlift.nix;
   "unlift-stm" = import ./nix/unlift-stm.nix;
   "unlifted" = import ./nix/unlifted.nix;
