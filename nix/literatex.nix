@@ -109,7 +109,12 @@
         revNum = 3;
         sha256 = "a751cff79519b4d12fea03660d7c2394fcbffecaea00a914b1e967dad64d2b4c";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/literatex-0.3.0.0-r4-a7005de4476f3930477c499977b0a6d83087c5c05da859ed9a85db2fb76ef812.nix;
+        revNum = 4;
+        sha256 = "a7005de4476f3930477c499977b0a6d83087c5c05da859ed9a85db2fb76ef812";
+        };
+      default = "r4";
       };
     };
   }

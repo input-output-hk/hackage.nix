@@ -1120,6 +1120,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "Southpaw" = import ./nix/_Southpaw.nix;
   "SpaceInvaders" = import ./nix/_Space_Invaders.nix;
   "SpacePrivateers" = import ./nix/_Space_Privateers.nix;
+  "SpatialMath" = import ./nix/_Spatial_Math.nix;
   "SpinCounter" = import ./nix/_Spin_Counter.nix;
   "Spintax" = import ./nix/_Spintax.nix;
   "Spock" = import ./nix/_Spock.nix;
@@ -1235,6 +1236,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ViennaRNA-extras" = import ./nix/_Vienna_R_N_A-extras.nix;
   "ViennaRNAParser" = import ./nix/_Vienna_R_N_A_Parser.nix;
   "Villefort" = import ./nix/_Villefort.nix;
+  "Vis" = import ./nix/_Vis.nix;
   "Vulkan" = import ./nix/_Vulkan.nix;
   "VulkanMemoryAllocator" = import ./nix/_Vulkan_Memory_Allocator.nix;
   "WAVE" = import ./nix/_W_A_V_E.nix;
@@ -6317,6 +6319,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghcup" = import ./nix/ghcup.nix;
   "ghczdecode" = import ./nix/ghczdecode.nix;
   "ghost-buster" = import ./nix/ghost-buster.nix;
+  "ghostscript-parallel" = import ./nix/ghostscript-parallel.nix;
   "ght" = import ./nix/ght.nix;
   "gi-adwaita" = import ./nix/gi-adwaita.nix;
   "gi-atk" = import ./nix/gi-atk.nix;
@@ -11387,6 +11390,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "odd-jobs" = import ./nix/odd-jobs.nix;
   "oden-go-packages" = import ./nix/oden-go-packages.nix;
   "odpic-raw" = import ./nix/odpic-raw.nix;
+  "ods2csv" = import ./nix/ods2csv.nix;
   "oeis" = import ./nix/oeis.nix;
   "oeis2" = import ./nix/oeis2.nix;
   "off-simple" = import ./nix/off-simple.nix;
