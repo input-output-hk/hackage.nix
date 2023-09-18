@@ -711,6 +711,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "LDAP" = import ./nix/_L_D_A_P.nix;
   "LDAPv3" = import ./nix/_L_D_A_Pv3.nix;
   "LPFP" = import ./nix/_L_P_F_P.nix;
+  "LPFP-core" = import ./nix/_L_P_F_P-core.nix;
   "LPPaver" = import ./nix/_L_P_Paver.nix;
   "LParse" = import ./nix/_L_Parse.nix;
   "LRU" = import ./nix/_L_R_U.nix;
@@ -2881,6 +2882,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bound-gen" = import ./nix/bound-gen.nix;
   "bound-simple" = import ./nix/bound-simple.nix;
   "bounded-array" = import ./nix/bounded-array.nix;
+  "bounded-qsem" = import ./nix/bounded-qsem.nix;
   "bounded-queue" = import ./nix/bounded-queue.nix;
   "bounded-tchan" = import ./nix/bounded-tchan.nix;
   "boundingboxes" = import ./nix/boundingboxes.nix;

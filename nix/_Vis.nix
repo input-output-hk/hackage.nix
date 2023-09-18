@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "03054deb5d6d658f80b03d7671561fc5c3179df808fe0b2a04fed43ba7d6bb05";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Vis-0.7.7.0-r1-677e4bf8410eaa5cf467c2db9f4e57c3c41533d6f212eceaa6cafd65cb790cdd.nix;
+        revNum = 1;
+        sha256 = "677e4bf8410eaa5cf467c2db9f4e57c3c41533d6f212eceaa6cafd65cb790cdd";
+        };
+      default = "r1";
       };
     };
   }

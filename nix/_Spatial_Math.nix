@@ -23,7 +23,12 @@
         revNum = 0;
         sha256 = "c1d7cd7e319db76ab3656375a2633a9721a88311b83cf97106fa82bff655d7fb";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/SpatialMath-0.2.7.1-r1-06174bf22c01107c0508d393825b897f5391cfc28849712294b000509c1383c9.nix;
+        revNum = 1;
+        sha256 = "06174bf22c01107c0508d393825b897f5391cfc28849712294b000509c1383c9";
+        };
+      default = "r1";
       };
     };
   }
