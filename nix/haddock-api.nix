@@ -317,4 +317,26 @@
       default = "r0";
       };
     };
+  "2.28.0" = {
+    sha256 = "df7e641b1b2046f988b21cdf861ccf9a20a776efc086469dc01f2ab166c24a19";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haddock-api-2.28.0-r0-76a70e9360929d3aa7c90a65446e8462db09a9f557fd9c1ff9618606e2e9f4db.nix;
+        revNum = 0;
+        sha256 = "76a70e9360929d3aa7c90a65446e8462db09a9f557fd9c1ff9618606e2e9f4db";
+        };
+      default = "r0";
+      };
+    };
+  "2.29.0" = {
+    sha256 = "a9b3da1a345e9ad61d5bbc89c73d423facbad4b46348ce9f239f44d25f2bf2d6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haddock-api-2.29.0-r0-864e3f51ff4511b8df5f791ac0d988ba837feaa2c9686a6ad71fb91a910c75f6.nix;
+        revNum = 0;
+        sha256 = "864e3f51ff4511b8df5f791ac0d988ba837feaa2c9686a6ad71fb91a910c75f6";
+        };
+      default = "r0";
+      };
+    };
   }

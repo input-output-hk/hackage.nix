@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "3f8982677003b6bb2ac73bf74e15126b240c99c8fb548ba998439e28a8e0d724";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/numerical-integration-0.1.1.0-r0-89be8c2a9efaa29ff01169715594005cc5cbc8beeb209a4c6b47deb41e075490.nix;
+        revNum = 0;
+        sha256 = "89be8c2a9efaa29ff01169715594005cc5cbc8beeb209a4c6b47deb41e075490";
+        };
+      default = "r0";
+      };
+    };
   }

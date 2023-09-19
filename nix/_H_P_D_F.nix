@@ -326,4 +326,15 @@
       default = "r0";
       };
     };
+  "1.6.2" = {
+    sha256 = "7bd0a52a90212565900c92a538289353ca017b70121db1dca0882b00cd734828";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HPDF-1.6.2-r0-7c3b91091cf9e0b7b09aef992dfbe58d0b40c0aed7780b774e3219a6095a017b.nix;
+        revNum = 0;
+        sha256 = "7c3b91091cf9e0b7b09aef992dfbe58d0b40c0aed7780b774e3219a6095a017b";
+        };
+      default = "r0";
+      };
+    };
   }

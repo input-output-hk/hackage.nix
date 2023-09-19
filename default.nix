@@ -3478,6 +3478,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "clashilator" = import ./nix/clashilator.nix;
   "classify" = import ./nix/classify.nix;
   "classify-frog" = import ./nix/classify-frog.nix;
+  "classy-effects" = import ./nix/classy-effects.nix;
+  "classy-effects-base" = import ./nix/classy-effects-base.nix;
+  "classy-effects-th" = import ./nix/classy-effects-th.nix;
   "classy-influxdb-simple" = import ./nix/classy-influxdb-simple.nix;
   "classy-miso" = import ./nix/classy-miso.nix;
   "classy-parallel" = import ./nix/classy-parallel.nix;
@@ -7584,6 +7587,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hedn" = import ./nix/hedn.nix;
   "hedn-functor" = import ./nix/hedn-functor.nix;
   "hedra" = import ./nix/hedra.nix;
+  "heftia" = import ./nix/heftia.nix;
+  "heftia-effects" = import ./nix/heftia-effects.nix;
   "hegg" = import ./nix/hegg.nix;
   "heidi" = import ./nix/heidi.nix;
   "hein" = import ./nix/hein.nix;
@@ -11842,6 +11847,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "path-io" = import ./nix/path-io.nix;
   "path-like" = import ./nix/path-like.nix;
   "path-pieces" = import ./nix/path-pieces.nix;
+  "path-sing" = import ./nix/path-sing.nix;
   "path-text-utf8" = import ./nix/path-text-utf8.nix;
   "path-tree" = import ./nix/path-tree.nix;
   "path-utils" = import ./nix/path-utils.nix;

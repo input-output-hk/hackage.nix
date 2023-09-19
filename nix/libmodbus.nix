@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.1.3" = {
+    sha256 = "93613692510e394806f429d85b2ccc086edc0c5adb61a0492f71901580baedd2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libmodbus-1.1.3-r0-69fe3028cad83c481dfab478dc4ca492244fa396a7b543c28183743c811ceeda.nix;
+        revNum = 0;
+        sha256 = "69fe3028cad83c481dfab478dc4ca492244fa396a7b543c28183743c811ceeda";
+        };
+      default = "r0";
+      };
+    };
   }
