@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.5.0.1" = {
+    sha256 = "791a7006559ac109da91f4881d89ef118d1430e3d8247c15860d3ea750594f78";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mmzk-typeid-0.5.0.1-r0-25b19fc6ebb476c6b604d41ebcca1a4b8bed3a4f65a005cb320a90aae4c9714a.nix;
+        revNum = 0;
+        sha256 = "25b19fc6ebb476c6b604d41ebcca1a4b8bed3a4f65a005cb320a90aae4c9714a";
+        };
+      default = "r0";
+      };
+    };
   }

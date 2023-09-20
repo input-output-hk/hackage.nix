@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "677e4bf8410eaa5cf467c2db9f4e57c3c41533d6f212eceaa6cafd65cb790cdd";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/Vis-0.7.7.0-r2-b52217fc1e7ab330aba80d124f90f6ba7781561437e6a982982c7f2d3006f946.nix;
+        revNum = 2;
+        sha256 = "b52217fc1e7ab330aba80d124f90f6ba7781561437e6a982982c7f2d3006f946";
+        };
+      default = "r2";
       };
     };
   }
