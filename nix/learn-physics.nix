@@ -185,4 +185,15 @@
       default = "r0";
       };
     };
+  "0.6.6" = {
+    sha256 = "27b521a6767d58fa7cb6613f4fe9334bedfb13a1f8a4f2c7d5c86d69635bba9c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/learn-physics-0.6.6-r0-a3b73b5a6938ad8ab8f0ee452044fd83c8b965ee78c7ba7e2e8dc748ca972d88.nix;
+        revNum = 0;
+        sha256 = "a3b73b5a6938ad8ab8f0ee452044fd83c8b965ee78c7ba7e2e8dc748ca972d88";
+        };
+      default = "r0";
+      };
+    };
   }

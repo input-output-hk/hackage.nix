@@ -46,73 +46,73 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "ForkProcess01" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "Signals002" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "Signals004" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "Posix004" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "Posix009" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "Posix014" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "T8108" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "ResourceLimit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "Terminal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "PutEnv001" = {
           depends = [
@@ -120,29 +120,29 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "Semaphore001" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "Semaphore002" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "SemaphoreInterrupt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (system.isJavascript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
-          buildable = if system.isJavascript then false else true;
+            ] ++ (pkgs.lib).optional (system.isJavaScript) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          buildable = if system.isJavaScript then false else true;
           };
         "T13660" = {
           depends = [
