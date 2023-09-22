@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.0.2" = {
+    sha256 = "22d84b1ab3144122396e92ddff17a856dcdaccbafc8a51bcf161edc2524eb91a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/context-http-client-0.2.0.2-r0-8ef814ca24248bc105e69ae7e7f7c3869202c8a4921d8dee9aa5dc1b2c578f28.nix;
+        revNum = 0;
+        sha256 = "8ef814ca24248bc105e69ae7e7f7c3869202c8a4921d8dee9aa5dc1b2c578f28";
+        };
+      default = "r0";
+      };
+    };
   }

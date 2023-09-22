@@ -724,4 +724,15 @@
       default = "r0";
       };
     };
+  "4.0.5" = {
+    sha256 = "e49acbf104c9ab0208ac5e7bd632baa41d3191dedeca08ea8b53b585818d17e8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/debian-4.0.5-r0-4c047539d6bcb424f6c4789a2708064a45a0c024d2ba3818ab8ce5fbf90f07ae.nix;
+        revNum = 0;
+        sha256 = "4c047539d6bcb424f6c4789a2708064a45a0c024d2ba3818ab8ce5fbf90f07ae";
+        };
+      default = "r0";
+      };
+    };
   }

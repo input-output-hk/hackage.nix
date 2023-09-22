@@ -91,6 +91,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "BerkeleyDB" = import ./nix/_Berkeley_D_B.nix;
   "BerkeleyDBXML" = import ./nix/_Berkeley_D_B_X_M_L.nix;
   "BerlekampAlgorithm" = import ./nix/_Berlekamp_Algorithm.nix;
+  "BesselJ" = import ./nix/_Bessel_J.nix;
   "BiGUL" = import ./nix/_Bi_G_U_L.nix;
   "BigPixel" = import ./nix/_Big_Pixel.nix;
   "BinderAnn" = import ./nix/_Binder_Ann.nix;
