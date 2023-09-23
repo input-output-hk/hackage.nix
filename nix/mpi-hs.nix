@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.7.3.0" = {
+    sha256 = "281df9e475199a2409261c639117ab1f7093ff7e2f16ad7ee2574b54f558d2e0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mpi-hs-0.7.3.0-r0-2080c2c8df3210ee2ef9fe15f4f7bbe67625d87927724ec46d4cf88e2fb90f65.nix;
+        revNum = 0;
+        sha256 = "2080c2c8df3210ee2ef9fe15f4f7bbe67625d87927724ec46d4cf88e2fb90f65";
+        };
+      default = "r0";
+      };
+    };
   }

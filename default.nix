@@ -12021,6 +12021,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "phash" = import ./nix/phash.nix;
   "phatsort" = import ./nix/phatsort.nix;
   "phizzle" = import ./nix/phizzle.nix;
+  "phladiprelio-general-datatype" = import ./nix/phladiprelio-general-datatype.nix;
   "phladiprelio-general-shared" = import ./nix/phladiprelio-general-shared.nix;
   "phladiprelio-general-simple" = import ./nix/phladiprelio-general-simple.nix;
   "phladiprelio-rhythmicity-shared" = import ./nix/phladiprelio-rhythmicity-shared.nix;

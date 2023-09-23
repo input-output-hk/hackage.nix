@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "c41917c85914c86c59357303aed2b5f0fd7585672e760d0c633408047dd2a827";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/LDAPv3-0.1.2.0-r0-caafcb3ae46ef56aa0c6c922e8a9063512f2647c9e381bd0287e72d978278213.nix;
+        revNum = 0;
+        sha256 = "caafcb3ae46ef56aa0c6c922e8a9063512f2647c9e381bd0287e72d978278213";
+        };
+      default = "r0";
+      };
+    };
   }

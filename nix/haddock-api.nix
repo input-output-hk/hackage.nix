@@ -344,4 +344,15 @@
       default = "r1";
       };
     };
+  "2.29.1" = {
+    sha256 = "d2cf8eee226190d1a1a4957cdbf81295a9ae8f0c110b587b7ad028419abfdf44";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haddock-api-2.29.1-r0-b8f3236dee8845ee1bb3819aee28d4610ccd2cd3e3730a4e2a38f40ea46cc006.nix;
+        revNum = 0;
+        sha256 = "b8f3236dee8845ee1bb3819aee28d4610ccd2cd3e3730a4e2a38f40ea46cc006";
+        };
+      default = "r0";
+      };
+    };
   }

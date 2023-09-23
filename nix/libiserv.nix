@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "9.6.3" = {
+    sha256 = "45fc00656f7f075bdb23788af7e7b5ff302da534d911e0aa1e8470a8ee7d05bf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libiserv-9.6.3-r0-93e93ffa301c81c9fadfd8e94805ccd36ec9ea8631ec4b090b9b5caa9d6cd5f3.nix;
+        revNum = 0;
+        sha256 = "93e93ffa301c81c9fadfd8e94805ccd36ec9ea8631ec4b090b9b5caa9d6cd5f3";
+        };
+      default = "r0";
+      };
+    };
   }
