@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.9.0.1" = {
+    sha256 = "f3abaf1296ca44fdad15fd21b18ec7c88b43884a057be39c3b897746a38db1c5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zeugma-0.9.0.1-r0-5317cf323adeff821975575505cadbe3a737976489b201e323118b51a560456b.nix;
+        revNum = 0;
+        sha256 = "5317cf323adeff821975575505cadbe3a737976489b201e323118b51a560456b";
+        };
+      default = "r0";
+      };
+    };
   }

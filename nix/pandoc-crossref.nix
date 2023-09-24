@@ -686,7 +686,12 @@
         revNum = 0;
         sha256 = "36c2c71896d0bffccaf2d7e126d546ea68f3a09614d9c98c26d3139c24625dd9";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pandoc-crossref-0.3.15.2-r1-26191d0f9f55736f82809fdc2389cd719156407f2fbbade418b192019363a0a7.nix;
+        revNum = 1;
+        sha256 = "26191d0f9f55736f82809fdc2389cd719156407f2fbbade418b192019363a0a7";
+        };
+      default = "r1";
       };
     };
   "0.3.16.0" = {
@@ -696,6 +701,22 @@
         nix = import ../hackage/pandoc-crossref-0.3.16.0-r0-279aa8d4624f2009cfdf98a7e36452071c94698c3db80e2f76a8fb60a4ceac21.nix;
         revNum = 0;
         sha256 = "279aa8d4624f2009cfdf98a7e36452071c94698c3db80e2f76a8fb60a4ceac21";
+        };
+      r1 = {
+        nix = import ../hackage/pandoc-crossref-0.3.16.0-r1-e40522c46cc6bc5d2832d9670339fdb77c037cc0054157d8dd246cbe6a53f001.nix;
+        revNum = 1;
+        sha256 = "e40522c46cc6bc5d2832d9670339fdb77c037cc0054157d8dd246cbe6a53f001";
+        };
+      default = "r1";
+      };
+    };
+  "0.3.17.0" = {
+    sha256 = "8eb1fab686654cbbb7d2aa651d08b194a9634c3645df1d8d081a7e463db76f9a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-crossref-0.3.17.0-r0-607f87af5446e3f16b2cb0547c2b543ab6e54fe0b5af657bed29b12447bf3e67.nix;
+        revNum = 0;
+        sha256 = "607f87af5446e3f16b2cb0547c2b543ab6e54fe0b5af657bed29b12447bf3e67";
         };
       default = "r0";
       };
