@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "0350caf09f25099beba76390e5f2bead76a00f7995b3736ab8b2f19e5397be45";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/llvm-tf-12.1-r1-a7e1fe11ea189c0a1f4cc9794ab73f0b6400ed96a1da39d8248583f25600ab44.nix;
+        revNum = 1;
+        sha256 = "a7e1fe11ea189c0a1f4cc9794ab73f0b6400ed96a1da39d8248583f25600ab44";
+        };
+      default = "r1";
       };
     };
   "3.0.0.0" = {
