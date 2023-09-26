@@ -506,4 +506,15 @@
       default = "r5";
       };
     };
+  "0.8.3.0" = {
+    sha256 = "8606ac8b4a1f7f8f1bbc0770b2752e9b6f88ccc9fbdcbb33aa20577d0e5930e8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/blaze-markup-0.8.3.0-r0-8d48aaedfc5f36181ffeb2c050649cd6263a6a414a6d599d1ec8b5be68a8ed62.nix;
+        revNum = 0;
+        sha256 = "8d48aaedfc5f36181ffeb2c050649cd6263a6a414a6d599d1ec8b5be68a8ed62";
+        };
+      default = "r0";
+      };
+    };
   }

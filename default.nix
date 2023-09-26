@@ -13444,6 +13444,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ribosome-host-test" = import ./nix/ribosome-host-test.nix;
   "ribosome-root" = import ./nix/ribosome-root.nix;
   "ribosome-test" = import ./nix/ribosome-test.nix;
+  "richenv" = import ./nix/richenv.nix;
   "richreports" = import ./nix/richreports.nix;
   "ridley" = import ./nix/ridley.nix;
   "ridley-extras" = import ./nix/ridley-extras.nix;

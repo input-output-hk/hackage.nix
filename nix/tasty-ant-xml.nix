@@ -315,4 +315,15 @@
       default = "r0";
       };
     };
+  "1.1.9" = {
+    sha256 = "54a436d5184ed272ec255fa925c345ed64097740c783964cd68a3b294dd3ef03";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-ant-xml-1.1.9-r0-0d5594c9a449aee2942b18b95b9b6bafb169da4b51c98afebe53f9d29f98080e.nix;
+        revNum = 0;
+        sha256 = "0d5594c9a449aee2942b18b95b9b6bafb169da4b51c98afebe53f9d29f98080e";
+        };
+      default = "r0";
+      };
+    };
   }
