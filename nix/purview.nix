@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "baadddf9d63f34faffdb0c6d959a839d5838fd4f016418a4a221d54314b5601e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/purview-0.2.0.1-r0-fa99e13fdc49bfe790aacd88d7e5613669b449a2324a567d4a6bc7e89b8c586a.nix;
+        revNum = 0;
+        sha256 = "fa99e13fdc49bfe790aacd88d7e5613669b449a2324a567d4a6bc7e89b8c586a";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.4" = {
+    sha256 = "3361ca9e66c7abe4a3e259fd1385c3ae9bb90da7c186d08c94d7af0c9e88381b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/language-Modula2-0.1.4-r0-5e2f00ff1af64fc325fd20699cf3908611b84df6d2fb7ab7d0787800ccc81f76.nix;
+        revNum = 0;
+        sha256 = "5e2f00ff1af64fc325fd20699cf3908611b84df6d2fb7ab7d0787800ccc81f76";
+        };
+      default = "r0";
+      };
+    };
   }

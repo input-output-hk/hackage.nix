@@ -4547,6 +4547,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "derive-IG" = import ./nix/derive-_I_G.nix;
   "derive-enumerable" = import ./nix/derive-enumerable.nix;
   "derive-gadt" = import ./nix/derive-gadt.nix;
+  "derive-has-field" = import ./nix/derive-has-field.nix;
   "derive-lifted-instances" = import ./nix/derive-lifted-instances.nix;
   "derive-monoid" = import ./nix/derive-monoid.nix;
   "derive-storable" = import ./nix/derive-storable.nix;

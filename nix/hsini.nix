@@ -193,4 +193,15 @@
       default = "r0";
       };
     };
+  "0.5.2.2" = {
+    sha256 = "4c60f5c0b9771db476e6aff6cb13c10eaf03b6c591d6cdb0f048126b0fccdfe2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsini-0.5.2.2-r0-e09d412a3bf0cd98d50bc79b1891561f2e38f3b35af8e68a91303413823cd747.nix;
+        revNum = 0;
+        sha256 = "e09d412a3bf0cd98d50bc79b1891561f2e38f3b35af8e68a91303413823cd747";
+        };
+      default = "r0";
+      };
+    };
   }

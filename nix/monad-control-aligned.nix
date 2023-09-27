@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.0.2" = {
+    sha256 = "3019f66c56072e3db6272144800b04d66d6a4581dd709dbdbcfa0d53314a8b73";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-control-aligned-0.0.2-r0-463cb1b6225fb0add887fd16d42be3e7857ab46b8d6e50d4e018335127759d4c.nix;
+        revNum = 0;
+        sha256 = "463cb1b6225fb0add887fd16d42be3e7857ab46b8d6e50d4e018335127759d4c";
+        };
+      default = "r0";
+      };
+    };
   }

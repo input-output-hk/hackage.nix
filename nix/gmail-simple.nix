@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.0.5" = {
+    sha256 = "dfeb8b03c07bdf60ac6e81581e9930b339e135a706b6921fbdc4e109534b0382";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gmail-simple-0.1.0.5-r0-3801ce85f8c57a31b636b7e4302742f8d8c5601e17849fc58c092d84d0f377fe.nix;
+        revNum = 0;
+        sha256 = "3801ce85f8c57a31b636b7e4302742f8d8c5601e17849fc58c092d84d0f377fe";
+        };
+      default = "r0";
+      };
+    };
   }
