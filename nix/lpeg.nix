@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "1.1.0" = {
+    sha256 = "411509eb9b9142299e76a022d1fcf56ce8e255d5e0a0d1d8b46fcddc3d195b79";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lpeg-1.1.0-r0-895961adee9fa1bae2e124582427d7f1f45e9032a9671b9a7b38379dcf3116ef.nix;
+        revNum = 0;
+        sha256 = "895961adee9fa1bae2e124582427d7f1f45e9032a9671b9a7b38379dcf3116ef";
+        };
+      default = "r0";
+      };
+    };
   }

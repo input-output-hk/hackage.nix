@@ -142,7 +142,12 @@
         revNum = 0;
         sha256 = "9f35c5bcb5e4b2bffcc49afd487be6dc246b10b3e5384461911a07065c3c101a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/arithmoi-0.13.0.0-r1-4afe554917232e3ca80ca9bad60691a774a9d6a759b1ad16b2d7aacf2d6ef46e.nix;
+        revNum = 1;
+        sha256 = "4afe554917232e3ca80ca9bad60691a774a9d6a759b1ad16b2d7aacf2d6ef46e";
+        };
+      default = "r1";
       };
     };
   "0.2.0.0" = {
