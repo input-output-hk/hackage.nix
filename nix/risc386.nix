@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.0.20230928" = {
+    sha256 = "7c1a6e4a5151198d366c811a0cef4618521e358b3c4f3c6dbae0d1b476eb2c8d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/risc386-0.0.20230928-r0-a605d08e58a0e97ddaca2455e1c8661d1e3b1ef9332dd54d7d37987c5524efc6.nix;
+        revNum = 0;
+        sha256 = "a605d08e58a0e97ddaca2455e1c8661d1e3b1ef9332dd54d7d37987c5524efc6";
+        };
+      default = "r0";
+      };
+    };
   }

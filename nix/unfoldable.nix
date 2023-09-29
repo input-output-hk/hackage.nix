@@ -333,7 +333,12 @@
         revNum = 0;
         sha256 = "d6d22522601e22c9b8cdef77117133f66d07cb00a2a9982fe168316899c4b15f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/unfoldable-1.0.1-r1-15a9e48e6612bd317e4755deb69f5c649bd426df6748b9e43949b116d91b86c2.nix;
+        revNum = 1;
+        sha256 = "15a9e48e6612bd317e4755deb69f5c649bd426df6748b9e43949b116d91b86c2";
+        };
+      default = "r1";
       };
     };
   }

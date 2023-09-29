@@ -202,7 +202,12 @@
         revNum = 5;
         sha256 = "358a93772ffc2ce3a8bdf25c37f4c3829b2b392618e0557a7808779ec7408941";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/regex-pcre-0.95.0.0-r6-2d4a22e9caaacea2961fec3027090cd78ac07fc278282d9a7a8b55e38d4197e6.nix;
+        revNum = 6;
+        sha256 = "2d4a22e9caaacea2961fec3027090cd78ac07fc278282d9a7a8b55e38d4197e6";
+        };
+      default = "r6";
       };
     };
   }

@@ -553,7 +553,12 @@
         revNum = 1;
         sha256 = "68b2e1e0eb2c2b4266a4e67c018c047ffd7572b59cab12ed86fa6b0e8c8654cd";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/ListLike-4.7.8.1-r2-b0d7e7cda086ca3b90f55c6969ab6cfb7178e0fb4ad5261bccf377c94105b22d.nix;
+        revNum = 2;
+        sha256 = "b0d7e7cda086ca3b90f55c6969ab6cfb7178e0fb4ad5261bccf377c94105b22d";
+        };
+      default = "r2";
       };
     };
   }

@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.3.0" = {
+    sha256 = "47193a3941e8ccb5d288d77d17a7e531c5c327cd4b81e497f5851aaf4a5850f2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/opentracing-http-client-0.3.0-r0-5e3492988083c59880e49dcf4c53cd37ab6ec5e83f4ab16e4e45dec36ecc9e90.nix;
+        revNum = 0;
+        sha256 = "5e3492988083c59880e49dcf4c53cd37ab6ec5e83f4ab16e4e45dec36ecc9e90";
+        };
+      default = "r0";
+      };
+    };
   }

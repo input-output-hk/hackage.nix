@@ -405,7 +405,12 @@
         revNum = 2;
         sha256 = "d479ca2cc6274c15801169f83dae883c9b62b78af3c7b30ed3fbd4b4612156b8";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/regex-posix-0.96.0.1-r3-816d6acc560cb86672f347a7bef8129578dde26ed760f9e79b4976ed9bd7b9fd.nix;
+        revNum = 3;
+        sha256 = "816d6acc560cb86672f347a7bef8129578dde26ed760f9e79b4976ed9bd7b9fd";
+        };
+      default = "r3";
       };
     };
   }

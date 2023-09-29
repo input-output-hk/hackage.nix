@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.3.0" = {
+    sha256 = "b39011c9210447c713284e0e7ef2016a6319948834f86e26ecd479e375552bc9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/opentracing-wai-0.3.0-r0-370fa3ada355923256961e518c74497805a2338e7a3638bb027ed51e96d5a7b4.nix;
+        revNum = 0;
+        sha256 = "370fa3ada355923256961e518c74497805a2338e7a3638bb027ed51e96d5a7b4";
+        };
+      default = "r0";
+      };
+    };
   }

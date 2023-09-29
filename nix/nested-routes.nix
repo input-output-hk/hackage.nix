@@ -208,6 +208,17 @@
       default = "r0";
       };
     };
+  "10.0.0" = {
+    sha256 = "ce441b62916c94a01230883248b61e492224b8d1e3165a0652b5ca269511a99a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nested-routes-10.0.0-r0-5e79f0903798a182c05955f8dab84aa1baa99415caf64de628c1f51b2f60389b.nix;
+        revNum = 0;
+        sha256 = "5e79f0903798a182c05955f8dab84aa1baa99415caf64de628c1f51b2f60389b";
+        };
+      default = "r0";
+      };
+    };
   "2.0.0" = {
     sha256 = "dc9e7ba4399ded06029166e2279f6298b5e4fd466b2cf8ccb3725ba6b6faf5c3";
     revisions = {
