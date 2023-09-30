@@ -75,4 +75,15 @@
       default = "r0";
       };
     };
+  "2.3.0.0" = {
+    sha256 = "2b94ed45ff21e6bff94ef26f45154b062746e795269a8924dc059bcd2b2158de";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-code-range-plugin-2.3.0.0-r0-ae0bad73c44c832e5fe8a415dbdfa30193ed088a7eb4c56688a24f67676c0183.nix;
+        revNum = 0;
+        sha256 = "ae0bad73c44c832e5fe8a415dbdfa30193ed088a7eb4c56688a24f67676c0183";
+        };
+      default = "r0";
+      };
+    };
   }

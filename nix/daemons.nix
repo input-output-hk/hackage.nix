@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.4.0" = {
+    sha256 = "1f1a2497c9bacc290bfc7dc6ca54020b39570b3516dbf938ad20e144ceeccc81";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/daemons-0.4.0-r0-dad6c76620566d6e687daa7c85e86279a38a2ab72142c61e04b6c4485d120564.nix;
+        revNum = 0;
+        sha256 = "dad6c76620566d6e687daa7c85e86279a38a2ab72142c61e04b6c4485d120564";
+        };
+      default = "r0";
+      };
+    };
   }

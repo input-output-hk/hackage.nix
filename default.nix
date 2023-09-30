@@ -351,6 +351,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "Finance-Treasury" = import ./nix/_Finance-_Treasury.nix;
   "FindBin" = import ./nix/_Find_Bin.nix;
   "FiniteCategories" = import ./nix/_Finite_Categories.nix;
+  "FiniteCategoriesGraphViz" = import ./nix/_Finite_Categories_Graph_Viz.nix;
   "FiniteMap" = import ./nix/_Finite_Map.nix;
   "FirstOrderTheory" = import ./nix/_First_Order_Theory.nix;
   "FirstPrelude" = import ./nix/_First_Prelude.nix;
@@ -5435,6 +5436,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "external-sort" = import ./nix/external-sort.nix;
   "extism" = import ./nix/extism.nix;
   "extism-manifest" = import ./nix/extism-manifest.nix;
+  "extism-pdk" = import ./nix/extism-pdk.nix;
   "extra" = import ./nix/extra.nix;
   "extract-dependencies" = import ./nix/extract-dependencies.nix;
   "extractable-singleton" = import ./nix/extractable-singleton.nix;
@@ -8880,6 +8882,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "inline-asm" = import ./nix/inline-asm.nix;
   "inline-c" = import ./nix/inline-c.nix;
   "inline-c-cpp" = import ./nix/inline-c-cpp.nix;
+  "inline-c-cuda" = import ./nix/inline-c-cuda.nix;
   "inline-c-objc" = import ./nix/inline-c-objc.nix;
   "inline-c-win32" = import ./nix/inline-c-win32.nix;
   "inline-java" = import ./nix/inline-java.nix;
@@ -15830,6 +15833,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tonatona-servant" = import ./nix/tonatona-servant.nix;
   "too-many-cells" = import ./nix/too-many-cells.nix;
   "toodles" = import ./nix/toodles.nix;
+  "toolbox" = import ./nix/toolbox.nix;
   "toolshed" = import ./nix/toolshed.nix;
   "top" = import ./nix/top.nix;
   "topaz" = import ./nix/topaz.nix;

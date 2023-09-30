@@ -129,4 +129,15 @@
       default = "r0";
       };
     };
+  "2.3.0.0" = {
+    sha256 = "8328938618a2f58e816b54e18c43ec04d6ca0f28dcb1072b0b979e907f458f30";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-rename-plugin-2.3.0.0-r0-f590b11e78841f92edd89c5acaa239866749b5ea6e5670690a82694c499c54b3.nix;
+        revNum = 0;
+        sha256 = "f590b11e78841f92edd89c5acaa239866749b5ea6e5670690a82694c499c54b3";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -85,4 +85,15 @@
       default = "r0";
       };
     };
+  "2.3.0.0" = {
+    sha256 = "e9dddb8e7a12c8c8dd673fef16cf4c6e5df84d4946f7483f156238aff94fad57";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-qualify-imported-names-plugin-2.3.0.0-r0-fd9adbd34aca28b18820c2166b80d1e2009291587f785933505962aeffe33a79.nix;
+        revNum = 0;
+        sha256 = "fd9adbd34aca28b18820c2166b80d1e2009291587f785933505962aeffe33a79";
+        };
+      default = "r0";
+      };
+    };
   }

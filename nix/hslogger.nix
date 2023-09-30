@@ -539,7 +539,12 @@
         revNum = 8;
         sha256 = "c77b409c8ab6727fdf1d2734311aa42e585a23b7de928d76325bbbf0f6be9882";
         };
-      default = "r8";
+      r9 = {
+        nix = import ../hackage/hslogger-1.3.1.0-r9-2fc8ab7021e0a5b35714539280358a8a3edacdc1b96163387708d90414fa59c7.nix;
+        revNum = 9;
+        sha256 = "2fc8ab7021e0a5b35714539280358a8a3edacdc1b96163387708d90414fa59c7";
+        };
+      default = "r9";
       };
     };
   }

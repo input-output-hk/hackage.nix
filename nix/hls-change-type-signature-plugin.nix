@@ -97,4 +97,15 @@
       default = "r0";
       };
     };
+  "2.3.0.0" = {
+    sha256 = "5b0924f8fe2416dded9bc6ec70891d7f943fb6a1357c3867235f749889a6eaa3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-change-type-signature-plugin-2.3.0.0-r0-788c55effd828a701651d820eaf6e384883410bc48ca760ed683076e3a2aad17.nix;
+        revNum = 0;
+        sha256 = "788c55effd828a701651d820eaf6e384883410bc48ca760ed683076e3a2aad17";
+        };
+      default = "r0";
+      };
+    };
   }
