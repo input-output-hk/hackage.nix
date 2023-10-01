@@ -109,4 +109,26 @@
       default = "r0";
       };
     };
+  "0.4.4.4" = {
+    sha256 = "8e3f1638e57ec97e28656ce16f60d812a5de02e495f38f0bd722c07eef4371e0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wraxml-0.4.4.4-r0-bc21be4d87350c2dba3fe7fdc2eaee592a7aaebd7511ed07faeda9fd92304d6b.nix;
+        revNum = 0;
+        sha256 = "bc21be4d87350c2dba3fe7fdc2eaee592a7aaebd7511ed07faeda9fd92304d6b";
+        };
+      default = "r0";
+      };
+    };
+  "0.5" = {
+    sha256 = "10bc0f1722e5932a3f2d4c8545026708386c1b771ea87a0715ef43f299a7faff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wraxml-0.5-r0-7c9ca1e54458912b2d0979ef882b8f18f0ed3c80917e97d8e731621b3beffd2c.nix;
+        revNum = 0;
+        sha256 = "7c9ca1e54458912b2d0979ef882b8f18f0ed3c80917e97d8e731621b3beffd2c";
+        };
+      default = "r0";
+      };
+    };
   }

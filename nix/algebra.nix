@@ -425,7 +425,12 @@
         revNum = 2;
         sha256 = "323cf20c508e0b71422b767ff3a89e4188f68aa59b2df9d0fe6e9f9bae7938fb";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/algebra-4.3.1-r3-5bb7e0db14ee455e54005a6948fb9dd4440a1e5dc766480c2ac46cda01a6d2b1.nix;
+        revNum = 3;
+        sha256 = "5bb7e0db14ee455e54005a6948fb9dd4440a1e5dc766480c2ac46cda01a6d2b1";
+        };
+      default = "r3";
       };
     };
   }

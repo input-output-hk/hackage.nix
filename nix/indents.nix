@@ -122,7 +122,12 @@
         revNum = 1;
         sha256 = "2fcb095ff5f3509b8d0cbfccc04ce3c5a71251c8155c090d706e184b2a726c7d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/indents-0.5.0.1-r2-5e371428d0ce0321d25a0bad4f646ca05cdf5b7b4d7784a0166bfad2102fb265.nix;
+        revNum = 2;
+        sha256 = "5e371428d0ce0321d25a0bad4f646ca05cdf5b7b4d7784a0166bfad2102fb265";
+        };
+      default = "r2";
       };
     };
   }

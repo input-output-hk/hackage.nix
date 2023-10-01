@@ -388,7 +388,12 @@
         revNum = 3;
         sha256 = "c9f5ae94e543ac2025bd6ba437f7a46e100ea79b9451b2ea6938a063f344b614";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/wai-middleware-static-0.9.2-r4-045361d192667966dafa26584734a07298397990aa9b6e2bad855581310abe4e.nix;
+        revNum = 4;
+        sha256 = "045361d192667966dafa26584734a07298397990aa9b6e2bad855581310abe4e";
+        };
+      default = "r4";
       };
     };
   }

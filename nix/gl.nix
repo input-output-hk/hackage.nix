@@ -411,7 +411,12 @@
         revNum = 2;
         sha256 = "666ee86539506091e2f1aa00bb68d068be6be39f9e81db2bc1f868b2e09898d1";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/gl-0.9-r3-071ed87c63010fdc24fb54783a04e10492f7dcd919e4863ad241d346255f76a7.nix;
+        revNum = 3;
+        sha256 = "071ed87c63010fdc24fb54783a04e10492f7dcd919e4863ad241d346255f76a7";
+        };
+      default = "r3";
       };
     };
   }

@@ -400,7 +400,12 @@
         revNum = 2;
         sha256 = "51b7f830880c10a7d024e8dc5983005c743ed8efcea2fce0c3f926ca902aab50";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/hyphenation-0.8.2-r3-9f01bf8f62e8f97cd7a3caf60dec34cab3aed93e103e103ab5d70c5068fc730c.nix;
+        revNum = 3;
+        sha256 = "9f01bf8f62e8f97cd7a3caf60dec34cab3aed93e103e103ab5d70c5068fc730c";
+        };
+      default = "r3";
       };
     };
   }

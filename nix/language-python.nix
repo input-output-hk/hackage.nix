@@ -211,7 +211,12 @@
         revNum = 1;
         sha256 = "c96a6b22e57acbf04c9955a108f6332fe84affd00fd3fe994fa4c5b344238c8e";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/language-python-0.5.8-r2-4fa7b1d963d30e06f8173c264629cd7bf5cae968e16d5c9b25bcd7378ab18e08.nix;
+        revNum = 2;
+        sha256 = "4fa7b1d963d30e06f8173c264629cd7bf5cae968e16d5c9b25bcd7378ab18e08";
+        };
+      default = "r2";
       };
     };
   }

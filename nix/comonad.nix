@@ -923,7 +923,12 @@
         revNum = 1;
         sha256 = "1f1aabd73ec7f80f20cf078a748a60cd48d8e57277802fdf6a9ab3601a9b8f7e";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/comonad-5.0.8-r2-4a4dbfbd03fb4963987710fca994e8b5624bd05a33e5f95b7581b26f8229c5e3.nix;
+        revNum = 2;
+        sha256 = "4a4dbfbd03fb4963987710fca994e8b5624bd05a33e5f95b7581b26f8229c5e3";
+        };
+      default = "r2";
       };
     };
   }

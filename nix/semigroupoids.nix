@@ -1097,7 +1097,12 @@
         revNum = 0;
         sha256 = "3ca506912c2e1fe97930d1565a2eebb608de6bc7f49736119609d6a78058dc13";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/semigroupoids-6.0.0.1-r1-47a23b451c114e65361e713e8fe36828fca3a84285325e8f444254b2ab0c43c5.nix;
+        revNum = 1;
+        sha256 = "47a23b451c114e65361e713e8fe36828fca3a84285325e8f444254b2ab0c43c5";
+        };
+      default = "r1";
       };
     };
   }

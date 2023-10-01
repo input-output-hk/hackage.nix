@@ -739,7 +739,12 @@
         revNum = 1;
         sha256 = "22e283da87daaafd3caa5de9cf0661f01971cebcb35d93c4d8241c3edfae6ce5";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/kan-extensions-5.2.5-r2-fbdba767565f40faf515b044a774cc3b371eb6ce8a082d9f659411cea88698cf.nix;
+        revNum = 2;
+        sha256 = "fbdba767565f40faf515b044a774cc3b371eb6ce8a082d9f659411cea88698cf";
+        };
+      default = "r2";
       };
     };
   }

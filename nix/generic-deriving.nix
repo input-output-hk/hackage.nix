@@ -367,7 +367,12 @@
         revNum = 0;
         sha256 = "55efd19f1902e14d79dd3042ae557a78f498358f8e55c79e042499fbff018026";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/generic-deriving-1.14.5-r1-8069afb7fa52c2fdae001c43d3b4d98cb68dffa0dc07ebe1ebba72e08c7762bb.nix;
+        revNum = 1;
+        sha256 = "8069afb7fa52c2fdae001c43d3b4d98cb68dffa0dc07ebe1ebba72e08c7762bb";
+        };
+      default = "r1";
       };
     };
   "1.2.1" = {

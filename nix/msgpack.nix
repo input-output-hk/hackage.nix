@@ -344,7 +344,12 @@
         revNum = 1;
         sha256 = "a87b663fc28d661b41552331d22e10b34028cad8a592ae758ac47e363933b6bd";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/msgpack-1.0.1.0-r2-3735af94673618210c51bb2f827a4c91b3eb35dfe1aff35e3317dcee78eea81e.nix;
+        revNum = 2;
+        sha256 = "3735af94673618210c51bb2f827a4c91b3eb35dfe1aff35e3317dcee78eea81e";
+        };
+      default = "r2";
       };
     };
   }
