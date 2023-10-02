@@ -398,4 +398,15 @@
       default = "r0";
       };
     };
+  "0.8.0.3" = {
+    sha256 = "0c6f2b9423f697da5d9f8546d133b016c6d356cc5dcf5e05ccd917c372bf6857";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/text-icu-0.8.0.3-r0-2d47db2b3c14ccac59251593ae29b499f342279518d2c9dfbd892d263f57af4c.nix;
+        revNum = 0;
+        sha256 = "2d47db2b3c14ccac59251593ae29b499f342279518d2c9dfbd892d263f57af4c";
+        };
+      default = "r0";
+      };
+    };
   }

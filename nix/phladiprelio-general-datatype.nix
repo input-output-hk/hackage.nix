@@ -54,4 +54,37 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "ab4307093f4c3ae0b70f38961dac6847f9081653e42c431ed2727aa79eab3009";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phladiprelio-general-datatype-0.3.0.0-r0-be3c0251b86a26b153bcadbec80a7bef73b8a6db4bfc3b8736a287259f4646a8.nix;
+        revNum = 0;
+        sha256 = "be3c0251b86a26b153bcadbec80a7bef73b8a6db4bfc3b8736a287259f4646a8";
+        };
+      default = "r0";
+      };
+    };
+  "0.3.0.1" = {
+    sha256 = "f0a284e55bb01dd1f9bb4b113d46be29e01cb6c6411b44fbc382bffadf77e50f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phladiprelio-general-datatype-0.3.0.1-r0-cc15c4f6e6d59081c442635d8bc79ea41c596928cbc7d7e08ccdb579475c2891.nix;
+        revNum = 0;
+        sha256 = "cc15c4f6e6d59081c442635d8bc79ea41c596928cbc7d7e08ccdb579475c2891";
+        };
+      default = "r0";
+      };
+    };
+  "0.3.1.0" = {
+    sha256 = "e11ce224bddd7eecbd566987639b00cefcaa14434075f314d448ac1b1a346ddd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phladiprelio-general-datatype-0.3.1.0-r0-2f64894e42c83fcc65928a5ad39d043755b5b9a403bc13eb2cc0dc1700cf8e38.nix;
+        revNum = 0;
+        sha256 = "2f64894e42c83fcc65928a5ad39d043755b5b9a403bc13eb2cc0dc1700cf8e38";
+        };
+      default = "r0";
+      };
+    };
   }

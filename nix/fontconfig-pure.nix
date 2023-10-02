@@ -80,4 +80,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "a140583394371bd9c603317ffb90f2e321fc4905bf903be05ce80041396a33a9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fontconfig-pure-0.3.0.0-r0-794624766b0fb93b5a2b6b1ea2cdd8aa1595b4b4dfb5babb64aa5dfa97c8958d.nix;
+        revNum = 0;
+        sha256 = "794624766b0fb93b5a2b6b1ea2cdd8aa1595b4b4dfb5babb64aa5dfa97c8958d";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "1.0.0.2" = {
+    sha256 = "e081341898cde4d770e51a83e8d64671ed01e707a0350e937fd4fd4fcc95817f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hakyllbars-1.0.0.2-r0-a447dd514d5d57262e6a6d45634bee9c8e2ab5d8150d0681a4a1f0d421281802.nix;
+        revNum = 0;
+        sha256 = "a447dd514d5d57262e6a6d45634bee9c8e2ab5d8150d0681a4a1f0d421281802";
+        };
+      default = "r0";
+      };
+    };
   }

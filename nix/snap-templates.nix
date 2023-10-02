@@ -44,7 +44,12 @@
         revNum = 1;
         sha256 = "81f447bd9f4e3540992bbda41bf6e365ff34d3a7d062773e0a9171d4089e5b5c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/snap-templates-1.0.0.2-r2-3adaee48a0d20d7dd6fbc2aeef95fd4e4cf32fd5ec5a8d9d1141a347ea81e747.nix;
+        revNum = 2;
+        sha256 = "3adaee48a0d20d7dd6fbc2aeef95fd4e4cf32fd5ec5a8d9d1141a347ea81e747";
+        };
+      default = "r2";
       };
     };
   }
