@@ -105,4 +105,15 @@
       default = "r2";
       };
     };
+  "1.0.1.1" = {
+    sha256 = "79df31cfc46a934796489eddd2b8ad332b4fad9f54e1a18fb7bc46fc0a6c434d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bugzilla-redhat-1.0.1.1-r0-9de92e837ec614f21687ac6e6fcdc2fd76e0df714326990c409ca3e63b44cfe2.nix;
+        revNum = 0;
+        sha256 = "9de92e837ec614f21687ac6e6fcdc2fd76e0df714326990c409ca3e63b44cfe2";
+        };
+      default = "r0";
+      };
+    };
   }

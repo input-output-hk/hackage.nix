@@ -293,6 +293,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "DysFRP-Craftwerk" = import ./nix/_Dys_F_R_P-_Craftwerk.nix;
   "EEConfig" = import ./nix/_E_E_Config.nix;
   "ENIG" = import ./nix/_E_N_I_G.nix;
+  "EVP" = import ./nix/_E_V_P.nix;
   "Earley" = import ./nix/_Earley.nix;
   "Ebnf2ps" = import ./nix/_Ebnf2ps.nix;
   "EdisonAPI" = import ./nix/_Edison_A_P_I.nix;

@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "1.1.0" = {
+    sha256 = "78f592ad406530913670a420007577d2a9db0249efbd3689632ccf5b56e2d36b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-prometheus-1.1.0-r0-a3a586956a14b511ab56d27ef78ea9daa51a6cbd9545382b18da833e5b89a2f8.nix;
+        revNum = 0;
+        sha256 = "a3a586956a14b511ab56d27ef78ea9daa51a6cbd9545382b18da833e5b89a2f8";
+        };
+      default = "r0";
+      };
+    };
   }
