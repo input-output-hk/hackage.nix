@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "1.3.2" = {
+    sha256 = "585a4ba236f9903ad350737d60e20ba57bd4ff6eb60dacb438bc89e2b0c6af55";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bv-little-1.3.2-r0-a1bd7f3dbb8dae48f2a1e8bf5e7c98eaa8fced338cbb72b2ec3f74b1100eb3df.nix;
+        revNum = 0;
+        sha256 = "a1bd7f3dbb8dae48f2a1e8bf5e7c98eaa8fced338cbb72b2ec3f74b1100eb3df";
+        };
+      default = "r0";
+      };
+    };
   }

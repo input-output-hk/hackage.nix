@@ -72,6 +72,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ArrayRef" = import ./nix/_Array_Ref.nix;
   "ArrowVHDL" = import ./nix/_Arrow_V_H_D_L.nix;
   "AspectAG" = import ./nix/_Aspect_A_G.nix;
+  "AsyncRattus" = import ./nix/_Async_Rattus.nix;
   "AttoBencode" = import ./nix/_Atto_Bencode.nix;
   "AttoJson" = import ./nix/_Atto_Json.nix;
   "Attrac" = import ./nix/_Attrac.nix;
@@ -8153,6 +8154,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-opentelemetry-instrumentation-yesod" = import ./nix/hs-opentelemetry-instrumentation-yesod.nix;
   "hs-opentelemetry-otlp" = import ./nix/hs-opentelemetry-otlp.nix;
   "hs-opentelemetry-propagator-b3" = import ./nix/hs-opentelemetry-propagator-b3.nix;
+  "hs-opentelemetry-propagator-datadog" = import ./nix/hs-opentelemetry-propagator-datadog.nix;
   "hs-opentelemetry-propagator-w3c" = import ./nix/hs-opentelemetry-propagator-w3c.nix;
   "hs-opentelemetry-sdk" = import ./nix/hs-opentelemetry-sdk.nix;
   "hs-opentelemetry-utils-exceptions" = import ./nix/hs-opentelemetry-utils-exceptions.nix;
@@ -11516,6 +11518,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "opentelemetry-extra" = import ./nix/opentelemetry-extra.nix;
   "opentelemetry-http-client" = import ./nix/opentelemetry-http-client.nix;
   "opentelemetry-lightstep" = import ./nix/opentelemetry-lightstep.nix;
+  "opentelemetry-plugin" = import ./nix/opentelemetry-plugin.nix;
   "opentelemetry-wai" = import ./nix/opentelemetry-wai.nix;
   "opentheory" = import ./nix/opentheory.nix;
   "opentheory-bits" = import ./nix/opentheory-bits.nix;

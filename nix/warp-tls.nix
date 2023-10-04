@@ -1029,4 +1029,15 @@
       default = "r0";
       };
     };
+  "3.4.3" = {
+    sha256 = "4d82c2f8b63428d7dca252d912ae42e58330b9a39979890fdd218b7e5a638dba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/warp-tls-3.4.3-r0-6e39e5c0906652792fc5d02187d7fa85acaf66d770587a0fd304d61112490899.nix;
+        revNum = 0;
+        sha256 = "6e39e5c0906652792fc5d02187d7fa85acaf66d770587a0fd304d61112490899";
+        };
+      default = "r0";
+      };
+    };
   }

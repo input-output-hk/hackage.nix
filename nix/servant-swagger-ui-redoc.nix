@@ -116,7 +116,12 @@
         revNum = 5;
         sha256 = "e27f9a3e848c1e367fd6c65c08aa8b9bdeaca4310ec228de2356245448f4bacb";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/servant-swagger-ui-redoc-0.3.4.1.22.3-r6-fa177b48b150c90603067c6b103639183d4650e5bfd0b39ea2ed9baaab4140dc.nix;
+        revNum = 6;
+        sha256 = "fa177b48b150c90603067c6b103639183d4650e5bfd0b39ea2ed9baaab4140dc";
+        };
+      default = "r6";
       };
     };
   }
