@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "20ac70cf1cb65458bba2c562c209a8930e45bdb89886182d644d0a457fc46f39";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/integer-conversion-0.1.0.1-r0-2de660070568d7c3bd053a8908eee0b4242aefd58864b471bebdd00a0e6d8adf.nix;
+        revNum = 0;
+        sha256 = "2de660070568d7c3bd053a8908eee0b4242aefd58864b471bebdd00a0e6d8adf";
+        };
+      default = "r0";
+      };
+    };
   }

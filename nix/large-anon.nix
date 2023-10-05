@@ -56,7 +56,12 @@
         revNum = 0;
         sha256 = "54ffafb2b405dcd2d066bbc041cad0995786914d1b4f48af1d0312f910fc10e0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/large-anon-0.3.0-r1-e10de7892fa2b8922703d4564afa882a8e0a91c928ca4d5e2614e8c722cdde4b.nix;
+        revNum = 1;
+        sha256 = "e10de7892fa2b8922703d4564afa882a8e0a91c928ca4d5e2614e8c722cdde4b";
+        };
+      default = "r1";
       };
     };
   }

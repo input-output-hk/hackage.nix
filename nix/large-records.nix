@@ -66,7 +66,12 @@
         revNum = 0;
         sha256 = "bbc93411f08294913beed13b3a16202b0d16c6b4870168878d872d53cb423bee";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/large-records-0.4-r1-8bc3253575efdd8e5430667a0b244d007766318e5e33d605866c56716d4e9c71.nix;
+        revNum = 1;
+        sha256 = "8bc3253575efdd8e5430667a0b244d007766318e5e33d605866c56716d4e9c71";
+        };
+      default = "r1";
       };
     };
   }

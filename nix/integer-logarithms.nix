@@ -138,7 +138,12 @@
         revNum = 4;
         sha256 = "336fb40c3af19a59dbeb4e5b7bffe4b4c7fa04ab06006a8d4b70b1febc1bb4ca";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/integer-logarithms-1.0.3.1-r5-4d0dfc334e64ff57bb1a08717afa4a4a7f28e4cdc46615dd287be31ef63ec00d.nix;
+        revNum = 5;
+        sha256 = "4d0dfc334e64ff57bb1a08717afa4a4a7f28e4cdc46615dd287be31ef63ec00d";
+        };
+      default = "r5";
       };
     };
   }

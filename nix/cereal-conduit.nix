@@ -270,7 +270,12 @@
         revNum = 1;
         sha256 = "ec62bcd3f5485dd7af4162483de165da9104fb29284b350d5b28da25dea0bec6";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/cereal-conduit-0.8.0-r2-068b29ad8ef00162e59fdccca2a9487acdadc92be5dfa4eec2291979c95746f0.nix;
+        revNum = 2;
+        sha256 = "068b29ad8ef00162e59fdccca2a9487acdadc92be5dfa4eec2291979c95746f0";
+        };
+      default = "r2";
       };
     };
   }

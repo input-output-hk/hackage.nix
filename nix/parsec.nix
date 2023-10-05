@@ -271,6 +271,17 @@
       default = "r0";
       };
     };
+  "3.1.17.0" = {
+    sha256 = "58c500bec1ec3c849c8243ddfd675a5983b17a8e5da55acea6adade5ae179d36";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/parsec-3.1.17.0-r0-6cf18e59d9f1c5b40385457b82ab679dc18d3c5bd3c2c67b2f94e1e8732e6624.nix;
+        revNum = 0;
+        sha256 = "6cf18e59d9f1c5b40385457b82ab679dc18d3c5bd3c2c67b2f94e1e8732e6624";
+        };
+      default = "r0";
+      };
+    };
   "3.1.2" = {
     sha256 = "90f124b91f5e4ff04ddd4dc7f43aeda1273b8caec6a58ec13b90ca22854c1652";
     revisions = {

@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "1.0.0.1" = {
+    sha256 = "950b972142580e09be35455228e3ad141004942f5fecc2e057b685cea704261e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/genvalidity-hspec-hashable-1.0.0.1-r0-d847f9094857841c1992b43a434e89c1b906753b4fd429fd0fa5e335e3b9348f.nix;
+        revNum = 0;
+        sha256 = "d847f9094857841c1992b43a434e89c1b906753b4fd429fd0fa5e335e3b9348f";
+        };
+      default = "r0";
+      };
+    };
   }

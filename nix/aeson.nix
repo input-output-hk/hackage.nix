@@ -2179,4 +2179,15 @@
       default = "r0";
       };
     };
+  "2.2.1.0" = {
+    sha256 = "914eefd0e80d12db5c721daa2cbab427acee39795f125c5460c1fe48cf9a5d7f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-2.2.1.0-r0-5b8409e2df062088a83a1777263c7d5b5b5870bc4b40d218e1ecc7b560f28485.nix;
+        revNum = 0;
+        sha256 = "5b8409e2df062088a83a1777263c7d5b5b5870bc4b40d218e1ecc7b560f28485";
+        };
+      default = "r0";
+      };
+    };
   }

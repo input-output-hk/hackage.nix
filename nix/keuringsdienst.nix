@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "94b02007056a5b78e7d880e53d277020eaf14acb0d850ab247ca1256eae5935b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keuringsdienst-0.1.1.0-r0-1676fd44614c2f57ab836470ad26140bfabbe79ff692a02ce59f6ae15cf2bab6.nix;
+        revNum = 0;
+        sha256 = "1676fd44614c2f57ab836470ad26140bfabbe79ff692a02ce59f6ae15cf2bab6";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -106,4 +106,15 @@
       default = "r0";
       };
     };
+  "0.1.0.7" = {
+    sha256 = "6a31bc3d322fdcfa633d7a6c7b8cb87d39b54c4a7fa322cdce2fed81f4ad3552";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/persistent-discover-0.1.0.7-r0-9a872b4be4fb5b965cb3b0f7a4f376f130d2bc14aa4aae5961824381226885ba.nix;
+        revNum = 0;
+        sha256 = "9a872b4be4fb5b965cb3b0f7a4f376f130d2bc14aa4aae5961824381226885ba";
+        };
+      default = "r0";
+      };
+    };
   }

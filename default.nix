@@ -2623,6 +2623,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "binarydefer" = import ./nix/binarydefer.nix;
   "binaryen" = import ./nix/binaryen.nix;
   "bind-marshal" = import ./nix/bind-marshal.nix;
+  "binder" = import ./nix/binder.nix;
   "binding-core" = import ./nix/binding-core.nix;
   "binding-gtk" = import ./nix/binding-gtk.nix;
   "binding-wx" = import ./nix/binding-wx.nix;
