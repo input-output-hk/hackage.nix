@@ -72,7 +72,12 @@
         revNum = 2;
         sha256 = "46bcf6259fcaa9ef1a7fc7deacd8488f02a170ef5e6b19c47d3faa9405a543d4";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/pointfree-fancy-1.1.1.15-r3-2d57bee37943523bbce008378b2917c99e30fddabd7561b9b27baf706e8a876f.nix;
+        revNum = 3;
+        sha256 = "2d57bee37943523bbce008378b2917c99e30fddabd7561b9b27baf706e8a876f";
+        };
+      default = "r3";
       };
     };
   "1.1.1.3" = {

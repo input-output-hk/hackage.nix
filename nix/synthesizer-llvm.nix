@@ -218,4 +218,15 @@
       default = "r0";
       };
     };
+  "1.1.0.1" = {
+    sha256 = "d99383567f06d6341a94d9c82bd1261121f25e669cb15e8143a492075428c598";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/synthesizer-llvm-1.1.0.1-r0-27f370adb1813c81531bcdeab840f9334034c27d786d72061add69a958bc2d99.nix;
+        revNum = 0;
+        sha256 = "27f370adb1813c81531bcdeab840f9334034c27d786d72061add69a958bc2d99";
+        };
+      default = "r0";
+      };
+    };
   }

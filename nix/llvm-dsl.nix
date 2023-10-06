@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "c14ef0060074e65812a85987ffffe66ca4f35249341ec36ed1be20787db5478a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/llvm-dsl-0.1.1-r1-8ca6cddc8c126e09a9ffbb68a8e35ed0852219bc56c9682f7a9f9e673ed80647.nix;
+        revNum = 1;
+        sha256 = "8ca6cddc8c126e09a9ffbb68a8e35ed0852219bc56c9682f7a9f9e673ed80647";
+        };
+      default = "r1";
       };
     };
   }

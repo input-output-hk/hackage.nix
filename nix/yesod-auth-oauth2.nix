@@ -639,7 +639,12 @@
         revNum = 0;
         sha256 = "da999e119e5ad44789afec4d08067bf17a7d2d74b362c977423ef64962d5fc5f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yesod-auth-oauth2-0.7.0.3-r1-0f599ef2f3e55a92158556ca7f8c19c05b13797e9a3db295a80e46a5b6eebf1a.nix;
+        revNum = 1;
+        sha256 = "0f599ef2f3e55a92158556ca7f8c19c05b13797e9a3db295a80e46a5b6eebf1a";
+        };
+      default = "r1";
       };
     };
   "0.7.1.0" = {
@@ -650,7 +655,12 @@
         revNum = 0;
         sha256 = "108e10dd8e3dcdb1310a6cf752e7b3c794cda9266e8d19e7ad287d67757a6e0b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yesod-auth-oauth2-0.7.1.0-r1-07a16668fe6a0b264622f5086edd622e68892bd3f5f0688792d8dbf4e0bb37f9.nix;
+        revNum = 1;
+        sha256 = "07a16668fe6a0b264622f5086edd622e68892bd3f5f0688792d8dbf4e0bb37f9";
+        };
+      default = "r1";
       };
     };
   "0.7.1.1" = {
@@ -661,7 +671,12 @@
         revNum = 0;
         sha256 = "4dfda1039bc4cdb1e1c364ccce4cd4053e2a249ccea4a37b8b22344b626c447d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yesod-auth-oauth2-0.7.1.1-r1-c3d1825e6fc38210175964ff1ccbcd52a73d93d8009d920a3229f7164799a682.nix;
+        revNum = 1;
+        sha256 = "c3d1825e6fc38210175964ff1ccbcd52a73d93d8009d920a3229f7164799a682";
+        };
+      default = "r1";
       };
     };
   }

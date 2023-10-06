@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "8737882d818d74b29d3b1791a4df4dc89995870312374989c47c29352ea503ec";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cfn-flip-0.1.0.3-r1-40f33714827c35a9fd3cebde06002f54448c3efa34252efbe5e48445065f2620.nix;
+        revNum = 1;
+        sha256 = "40f33714827c35a9fd3cebde06002f54448c3efa34252efbe5e48445065f2620";
+        };
+      default = "r1";
       };
     };
   }

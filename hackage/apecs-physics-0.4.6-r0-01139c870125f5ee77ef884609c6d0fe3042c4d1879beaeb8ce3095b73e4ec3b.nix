@@ -1,0 +1,39 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = { release = false; };
+    package = {
+      specVersion = "2.0";
+      identifier = { name = "apecs-physics"; version = "0.4.6"; };
+      license = "BSD-3-Clause";
+      copyright = "MIT";
+      maintainer = "jonascarpay@gmail.com";
+      author = "Jonas Carpay";
+      homepage = "https://github.com/jonascarpay/apecs#readme";
+      url = "";
+      synopsis = "2D physics for apecs";
+      description = "2D physics for apecs. Uses Chipmunk physics library under the hood.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."apecs" or (errorHandler.buildDepError "apecs"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
+          (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          ];
+        buildable = true;
+        };
+      };
+    }

@@ -73,7 +73,12 @@
         revNum = 0;
         sha256 = "a1a43291768a1f116fcd15cb2e2f480d778635ce86a94809ca1dc008afc93753";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Blammo-1.0.3.0-r1-6ae0f94d2a0e4b8c438890465d3ede0b1278e87a8617d61076ec65eac68d64f1.nix;
+        revNum = 1;
+        sha256 = "6ae0f94d2a0e4b8c438890465d3ede0b1278e87a8617d61076ec65eac68d64f1";
+        };
+      default = "r1";
       };
     };
   "1.1.0.0" = {
@@ -84,7 +89,12 @@
         revNum = 0;
         sha256 = "6195c1e290c78ba2c454966b95ba486583592392e46e09f4da806c5fb97c4919";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Blammo-1.1.0.0-r1-4c36deb08cf811270769c4e5ebff7c74397d365bb9e5d6941edd167fe55cf564.nix;
+        revNum = 1;
+        sha256 = "4c36deb08cf811270769c4e5ebff7c74397d365bb9e5d6941edd167fe55cf564";
+        };
+      default = "r1";
       };
     };
   "1.1.1.0" = {
@@ -95,7 +105,12 @@
         revNum = 0;
         sha256 = "60d5fce5abe561b27389da1df6a17fefef36e91e956790f10626b5cf1a19cde3";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Blammo-1.1.1.0-r1-7b06fc2e311a53a8c37761cdf339b3d14a033639702d0d036ed7cef1789ba6e9.nix;
+        revNum = 1;
+        sha256 = "7b06fc2e311a53a8c37761cdf339b3d14a033639702d0d036ed7cef1789ba6e9";
+        };
+      default = "r1";
       };
     };
   "1.1.1.1" = {
@@ -106,7 +121,12 @@
         revNum = 0;
         sha256 = "2a40212b058e49f0449cd81a786a216a97ec1e4139870e571560312b50532430";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Blammo-1.1.1.1-r1-0a43d6b01879373f4b3f6a0dd8795f9289a04a1615c648971fbb5d43c42ec49f.nix;
+        revNum = 1;
+        sha256 = "0a43d6b01879373f4b3f6a0dd8795f9289a04a1615c648971fbb5d43c42ec49f";
+        };
+      default = "r1";
       };
     };
   "1.1.1.2" = {
@@ -117,7 +137,12 @@
         revNum = 0;
         sha256 = "b57541dc740c756fec0d170c9b4bb14bc27e0b210b2ed3cb82cfa313e3b8b927";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Blammo-1.1.1.2-r1-7fd0013605c2a46d0872702ccc679fdc6bd2d3fbb1eb3a033f0b95a21819da81.nix;
+        revNum = 1;
+        sha256 = "7fd0013605c2a46d0872702ccc679fdc6bd2d3fbb1eb3a033f0b95a21819da81";
+        };
+      default = "r1";
       };
     };
   "1.1.2.0" = {
@@ -128,7 +153,12 @@
         revNum = 0;
         sha256 = "64b0114d67aacda2a77ed64cf1a1af030090907a4b1457a0f49ddf5a3be59303";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Blammo-1.1.2.0-r1-487ebdaf78ddfe2eec685b94aede099f015565485a479ae794077cfa61bf1fa5.nix;
+        revNum = 1;
+        sha256 = "487ebdaf78ddfe2eec685b94aede099f015565485a479ae794077cfa61bf1fa5";
+        };
+      default = "r1";
       };
     };
   "1.1.2.1" = {
@@ -139,7 +169,12 @@
         revNum = 0;
         sha256 = "b74d553fb3557bb10381b806bd34b8bad0b800883f02dfd1cc847f58db40958c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Blammo-1.1.2.1-r1-d27e58bedabb513e4beb4ae36b1938c4b43e16878da34db841a3a1c3f6dc6e8a.nix;
+        revNum = 1;
+        sha256 = "d27e58bedabb513e4beb4ae36b1938c4b43e16878da34db841a3a1c3f6dc6e8a";
+        };
+      default = "r1";
       };
     };
   }

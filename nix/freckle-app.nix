@@ -221,7 +221,12 @@
         revNum = 0;
         sha256 = "697699bfbe10666971a1591ccb5cc0d8318ac0df1ecadbc224ffe0db781161f9";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.10.0.0-r1-9e4b611f7b6adee761f567253e0ccbd3499ef97e2dee3195687b6ccee2eb4895.nix;
+        revNum = 1;
+        sha256 = "9e4b611f7b6adee761f567253e0ccbd3499ef97e2dee3195687b6ccee2eb4895";
+        };
+      default = "r1";
       };
     };
   "1.10.1.0" = {
@@ -232,7 +237,12 @@
         revNum = 0;
         sha256 = "1c3bb32194ba13577cd6ba2fe21a369c890356582a631b79f108957609f7eba1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.10.1.0-r1-d5eba2a351156bf3b4cd0d65dd3900d1a483c53a374014ba02e8b7002e81cd0a.nix;
+        revNum = 1;
+        sha256 = "d5eba2a351156bf3b4cd0d65dd3900d1a483c53a374014ba02e8b7002e81cd0a";
+        };
+      default = "r1";
       };
     };
   "1.2.0.0" = {
@@ -396,7 +406,12 @@
         revNum = 0;
         sha256 = "fe3d85d81fe8e6a4fa97249d8797f8bed99fac51fa2e9cf8cc46be5d5a2fe14f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.7.1.0-r1-b0145aa02fac097314f9e5d4308b62564b87c2ee54109ea952b16e4d9feba8f7.nix;
+        revNum = 1;
+        sha256 = "b0145aa02fac097314f9e5d4308b62564b87c2ee54109ea952b16e4d9feba8f7";
+        };
+      default = "r1";
       };
     };
   "1.8.0.0" = {
@@ -407,7 +422,12 @@
         revNum = 0;
         sha256 = "734fcb0558896fd63f94f7536fec61bee1af0edab297b458b6cd22ac3710c3ca";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.8.0.0-r1-50cc7af698cdd6d0f60f8442247145d939b4c2ecb89ec3070d5a7c6d4b2026d2.nix;
+        revNum = 1;
+        sha256 = "50cc7af698cdd6d0f60f8442247145d939b4c2ecb89ec3070d5a7c6d4b2026d2";
+        };
+      default = "r1";
       };
     };
   "1.8.1.0" = {
@@ -418,7 +438,12 @@
         revNum = 0;
         sha256 = "180f4867406549e913e3e9df2f916631d85bfbab6764561b11663ae7143534bb";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.8.1.0-r1-81a091ab13e0c61ecccfc6edf76b690bbf7ba051b8facf10366f9df2ee6f64a8.nix;
+        revNum = 1;
+        sha256 = "81a091ab13e0c61ecccfc6edf76b690bbf7ba051b8facf10366f9df2ee6f64a8";
+        };
+      default = "r1";
       };
     };
   "1.9.0.0" = {
@@ -429,7 +454,12 @@
         revNum = 0;
         sha256 = "b8c9ec851f32741df15bfc455b4b02e4ce48954ba4071aa15bcdc562f7f711ec";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.9.0.0-r1-c094b38966b9dab3791040a2b129781fda3b5128eac5cd8a79bd2663680a68f3.nix;
+        revNum = 1;
+        sha256 = "c094b38966b9dab3791040a2b129781fda3b5128eac5cd8a79bd2663680a68f3";
+        };
+      default = "r1";
       };
     };
   "1.9.0.1" = {
@@ -440,7 +470,12 @@
         revNum = 0;
         sha256 = "e16d6a0edbcac20ab4bfaec558f473dbeb951472bbbdbd96089dc4b3ddfc8d3c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.9.0.1-r1-f08629162de821ec8437fc15cfb8c3928650c0e3da683610760084e44dcfb31c.nix;
+        revNum = 1;
+        sha256 = "f08629162de821ec8437fc15cfb8c3928650c0e3da683610760084e44dcfb31c";
+        };
+      default = "r1";
       };
     };
   "1.9.0.2" = {
@@ -451,7 +486,12 @@
         revNum = 0;
         sha256 = "6719e07a5d45f90a014e5e19f9ac9199d6eb31f572c536175bbbd064119eb69d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.9.0.2-r1-099eed0f94055a0d380a704519e1c10761de3e6bde39ccd737e7711da03a708c.nix;
+        revNum = 1;
+        sha256 = "099eed0f94055a0d380a704519e1c10761de3e6bde39ccd737e7711da03a708c";
+        };
+      default = "r1";
       };
     };
   "1.9.0.3" = {
@@ -462,7 +502,12 @@
         revNum = 0;
         sha256 = "a5cf28b5bb46e28036f76c38b54710a3e2ead36aa844032c9be61b969d3e3adc";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.9.0.3-r1-7141087744870075292448c0fdd105eea7d48d4b20d0fcb3a3a1903353605e38.nix;
+        revNum = 1;
+        sha256 = "7141087744870075292448c0fdd105eea7d48d4b20d0fcb3a3a1903353605e38";
+        };
+      default = "r1";
       };
     };
   "1.9.1.0" = {
@@ -473,7 +518,12 @@
         revNum = 0;
         sha256 = "d419e5d44cd219343cf9ad8c81f5e46f79051a73db5f78662039b9bfa5b881fa";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.9.1.0-r1-e65c8ddfa59333a822c2fd49994b65ffbe5f56ec1b7fb817d2d240d7b30d0a50.nix;
+        revNum = 1;
+        sha256 = "e65c8ddfa59333a822c2fd49994b65ffbe5f56ec1b7fb817d2d240d7b30d0a50";
+        };
+      default = "r1";
       };
     };
   "1.9.1.1" = {
@@ -484,7 +534,12 @@
         revNum = 0;
         sha256 = "80028c3678ba5b05094e6f8337fd3ed3790ef737b9537d78599b3eb490ed57b4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.9.1.1-r1-8db723aa962aedf2292da79e938a02d017f5a49f5903f1c0a9545d1c17776f18.nix;
+        revNum = 1;
+        sha256 = "8db723aa962aedf2292da79e938a02d017f5a49f5903f1c0a9545d1c17776f18";
+        };
+      default = "r1";
       };
     };
   "1.9.2.0" = {
@@ -495,7 +550,12 @@
         revNum = 0;
         sha256 = "4342f41b6592a12ec9aa2e365eb5b98e133dfe767cc8aa0e2d549b3278341736";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.9.2.0-r1-c1c690a4f565182ec336b335a390ad0a42e8859bf15738e29c858a5eebd1e7eb.nix;
+        revNum = 1;
+        sha256 = "c1c690a4f565182ec336b335a390ad0a42e8859bf15738e29c858a5eebd1e7eb";
+        };
+      default = "r1";
       };
     };
   "1.9.2.1" = {
@@ -506,7 +566,12 @@
         revNum = 0;
         sha256 = "f05cbaa3d04b11958b4fc7ff37efe41b147e2b54fe2e8c7be80ab646606b00e0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.9.2.1-r1-9f2d989a5d13d97ba17c8a82fac59b463502a2b7f4974e7b1374d6f03ca7936b.nix;
+        revNum = 1;
+        sha256 = "9f2d989a5d13d97ba17c8a82fac59b463502a2b7f4974e7b1374d6f03ca7936b";
+        };
+      default = "r1";
       };
     };
   "1.9.3.0" = {
@@ -517,7 +582,12 @@
         revNum = 0;
         sha256 = "dcdab1256e7b1d909a83cb0a5b6d0f8c88293a97e7b17910139f8b8cb2d250c0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.9.3.0-r1-2d0b470ab4c24bd2d9cd57b1e634484f63c777cc21589bf44d4d4d494332263c.nix;
+        revNum = 1;
+        sha256 = "2d0b470ab4c24bd2d9cd57b1e634484f63c777cc21589bf44d4d4d494332263c";
+        };
+      default = "r1";
       };
     };
   "1.9.4.0" = {
@@ -528,7 +598,12 @@
         revNum = 0;
         sha256 = "a208e7bdb72726b32b13b8e680956f04679c244e6b8a368235170c493712bf93";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.9.4.0-r1-22a18e81caeed146bba40ff9de127e46d3523be0e47825fbafae23df1e462dc8.nix;
+        revNum = 1;
+        sha256 = "22a18e81caeed146bba40ff9de127e46d3523be0e47825fbafae23df1e462dc8";
+        };
+      default = "r1";
       };
     };
   "1.9.5.0" = {
@@ -539,7 +614,12 @@
         revNum = 0;
         sha256 = "d6e88fadcedbf3abfad3873b39c29ccaf1e4bd22ff659dce9a80fff980570781";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.9.5.0-r1-b8e42ab281784c2d710ccc5051353fff2d59f244dd001201925f7716f9c5a4f9.nix;
+        revNum = 1;
+        sha256 = "b8e42ab281784c2d710ccc5051353fff2d59f244dd001201925f7716f9c5a4f9";
+        };
+      default = "r1";
       };
     };
   "1.9.5.1" = {
@@ -550,7 +630,12 @@
         revNum = 0;
         sha256 = "a0099773b5c425e7e2178ff10d98a0f5f271fd94ae3bbe206f037f4bc31a4cd5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freckle-app-1.9.5.1-r1-5913a5c10c9f5994fe8b3750fca0566ad835aa3f5d465f2b99cb0f3246fb1eb5.nix;
+        revNum = 1;
+        sha256 = "5913a5c10c9f5994fe8b3750fca0566ad835aa3f5d465f2b99cb0f3246fb1eb5";
+        };
+      default = "r1";
       };
     };
   }

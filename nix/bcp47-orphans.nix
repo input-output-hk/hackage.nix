@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "8c451ff43362ec1a0ad3ff7352fa0a8922037e0512be818141d2e1d2b915be84";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bcp47-orphans-0.1.0.6-r1-8e6e5a5140fb806887b893132b2182e389b9efacd58d9baf4c5c998c31bdc455.nix;
+        revNum = 1;
+        sha256 = "8e6e5a5140fb806887b893132b2182e389b9efacd58d9baf4c5c998c31bdc455";
+        };
+      default = "r1";
       };
     };
   }

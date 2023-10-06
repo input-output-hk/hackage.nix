@@ -95,7 +95,17 @@
         revNum = 0;
         sha256 = "82d760118e38a45aa507c1c1fcf25113e3118ddd5ac134473c5680c170dfdbce";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/graphula-2.0.2.2-r1-6a30d542528161b1a2b9f1826a2f1d43e6a44c2926300f1ed27ef441be7ad7de.nix;
+        revNum = 1;
+        sha256 = "6a30d542528161b1a2b9f1826a2f1d43e6a44c2926300f1ed27ef441be7ad7de";
+        };
+      r2 = {
+        nix = import ../hackage/graphula-2.0.2.2-r2-1f6936bd552911035c787780f61ee992b70004cd5c790d04dc85fb382b7adbf1.nix;
+        revNum = 2;
+        sha256 = "1f6936bd552911035c787780f61ee992b70004cd5c790d04dc85fb382b7adbf1";
+        };
+      default = "r2";
       };
     };
   }
