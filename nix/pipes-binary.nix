@@ -158,4 +158,15 @@
       default = "r0";
       };
     };
+  "0.4.4" = {
+    sha256 = "6b848dbe2145edcbbc2dbcff5ce9288d50bad4a341a038294f0ac72832a33ebf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pipes-binary-0.4.4-r0-2f4dfa2c070809461138ac3b05dfa748688174a0a92250db5fc52a4ace5b7fad.nix;
+        revNum = 0;
+        sha256 = "2f4dfa2c070809461138ac3b05dfa748688174a0a92250db5fc52a4ace5b7fad";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -386,7 +386,12 @@
         revNum = 5;
         sha256 = "9681284445596d5bbcc6b59928aeb1961d495319ea25038d36734f45228f4c53";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/regex-pcre-builtin-0.95.2.3.8.44-r6-12017f86802a3364b6eb58da277f9ba3aedb9e08d3af7a4e682b63ec1331c3e6.nix;
+        revNum = 6;
+        sha256 = "12017f86802a3364b6eb58da277f9ba3aedb9e08d3af7a4e682b63ec1331c3e6";
+        };
+      default = "r6";
       };
     };
   }
