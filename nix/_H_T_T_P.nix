@@ -933,7 +933,12 @@
         revNum = 2;
         sha256 = "d9220cc1b8c1f287248d650910710b96e62e54530772e3bcd19dbdec6547f8ae";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/HTTP-4000.4.1-r3-0e37572590743e49d7a610f472e1618a594dc861410846f64d9f2347923c4f5b.nix;
+        revNum = 3;
+        sha256 = "0e37572590743e49d7a610f472e1618a594dc861410846f64d9f2347923c4f5b";
+        };
+      default = "r3";
       };
     };
   }

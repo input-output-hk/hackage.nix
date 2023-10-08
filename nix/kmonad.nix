@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.4.2" = {
+    sha256 = "4245ae9bb47d2d01cf6eda90603d00c28fdf9f017fb960e49db3679d960934b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kmonad-0.4.2-r0-62a6837f9fa624f67668d04750e76604a25c184dc08c711e686482d20b19948a.nix;
+        revNum = 0;
+        sha256 = "62a6837f9fa624f67668d04750e76604a25c184dc08c711e686482d20b19948a";
+        };
+      default = "r0";
+      };
+    };
   }

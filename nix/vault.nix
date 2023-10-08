@@ -245,7 +245,12 @@
         revNum = 3;
         sha256 = "313d6d61435619ec25b492f8775729d8f0ab9496030898d30a4ba34a24ec742b";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/vault-0.3.1.5-r4-701112f6898bce2e0a6c80fbbdc2efcfb9d053a4c72f346c4043eb591223be5a.nix;
+        revNum = 4;
+        sha256 = "701112f6898bce2e0a6c80fbbdc2efcfb9d053a4c72f346c4043eb591223be5a";
+        };
+      default = "r4";
       };
     };
   }

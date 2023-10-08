@@ -133,7 +133,12 @@
         revNum = 0;
         sha256 = "d857bc33d33cda9d7083d07e1cc614a51a0840afbbf4409775c0ddfba184f06f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/comfort-graph-0.0.4-r1-3cf712f73687c73afcb768d9d6e733272a559578490cef36da0d7454ca2d7352.nix;
+        revNum = 1;
+        sha256 = "3cf712f73687c73afcb768d9d6e733272a559578490cef36da0d7454ca2d7352";
+        };
+      default = "r1";
       };
     };
   }

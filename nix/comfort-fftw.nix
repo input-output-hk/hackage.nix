@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "c29087ea6e503dc2fcd448a75e04a2ba030b91a5c2a25bdb8853461ab0d64ece";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/comfort-fftw-0.0.0.1-r1-99e7f917fe6d35b1d9ea58301f92031acaf9cee2623457780b677f5cac2492ee.nix;
+        revNum = 1;
+        sha256 = "99e7f917fe6d35b1d9ea58301f92031acaf9cee2623457780b677f5cac2492ee";
+        };
+      default = "r1";
       };
     };
   }
