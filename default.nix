@@ -1513,6 +1513,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aeson-tiled" = import ./nix/aeson-tiled.nix;
   "aeson-toolkit" = import ./nix/aeson-toolkit.nix;
   "aeson-typescript" = import ./nix/aeson-typescript.nix;
+  "aeson-unqualified-ast" = import ./nix/aeson-unqualified-ast.nix;
   "aeson-utils" = import ./nix/aeson-utils.nix;
   "aeson-value-parser" = import ./nix/aeson-value-parser.nix;
   "aeson-via" = import ./nix/aeson-via.nix;
