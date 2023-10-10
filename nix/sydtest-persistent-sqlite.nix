@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.2.0.3" = {
+    sha256 = "dcdb5c8af5a574e9a47086fabf2a32cd21548bf6448d06d2629b4b2addd384f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sydtest-persistent-sqlite-0.2.0.3-r0-7d5fc3f860de63be7d9cc65546e9a190d591a86e75a381aef5002ab978bfc73b.nix;
+        revNum = 0;
+        sha256 = "7d5fc3f860de63be7d9cc65546e9a190d591a86e75a381aef5002ab978bfc73b";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.3" = {
+    sha256 = "88316961a26af4bf4737d531e916b90418b956db620edba974619801072d946b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/binder-0.3-r0-a3d681464254fd2b2ecf09cb81f5be2ea7a27673ec2b1b6b4f618cb9350ddda4.nix;
+        revNum = 0;
+        sha256 = "a3d681464254fd2b2ecf09cb81f5be2ea7a27673ec2b1b6b4f618cb9350ddda4";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -2282,7 +2282,12 @@
         revNum = 0;
         sha256 = "2bd4fe9ddea3befd3845a23f7a9f18bc35f7512c506287acad027aaadd06e8f0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tidal-1.9.4-r1-5cddb8528dc093d2d159f38fdf38a8f215c1c1e691b03e6fa723ac6307ca1050.nix;
+        revNum = 1;
+        sha256 = "5cddb8528dc093d2d159f38fdf38a8f215c1c1e691b03e6fa723ac6307ca1050";
+        };
+      default = "r1";
       };
     };
   }

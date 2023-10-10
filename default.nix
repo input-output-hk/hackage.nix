@@ -11831,6 +11831,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "partial-semigroup-hedgehog" = import ./nix/partial-semigroup-hedgehog.nix;
   "partial-semigroup-test" = import ./nix/partial-semigroup-test.nix;
   "partial-uri" = import ./nix/partial-uri.nix;
+  "partialord" = import ./nix/partialord.nix;
   "partly" = import ./nix/partly.nix;
   "passage" = import ./nix/passage.nix;
   "passman" = import ./nix/passman.nix;

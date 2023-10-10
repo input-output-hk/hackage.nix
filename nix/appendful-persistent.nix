@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "6e4486b2544cfaccf7fa493c9e50a056b43b8c6e03add0480c1808e6b144870a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/appendful-persistent-0.1.0.1-r0-cc68a9de2580943395ee86d3c2ec3d480202e66bed6e1734b4a8a79e492d5692.nix;
+        revNum = 0;
+        sha256 = "cc68a9de2580943395ee86d3c2ec3d480202e66bed6e1734b4a8a79e492d5692";
+        };
+      default = "r0";
+      };
+    };
   }
