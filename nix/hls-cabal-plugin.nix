@@ -75,4 +75,15 @@
       default = "r0";
       };
     };
+  "2.4.0.0" = {
+    sha256 = "2337bf878ccf6e5e40b285e60dfa364b6f91b8785451b3f74320eaa75b71b59e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-cabal-plugin-2.4.0.0-r0-bfa8e4ccbe1b971cebd7625bcdc8acd80f894ce83a0e6a25b282dd32a24db99e.nix;
+        revNum = 0;
+        sha256 = "bfa8e4ccbe1b971cebd7625bcdc8acd80f894ce83a0e6a25b282dd32a24db99e";
+        };
+      default = "r0";
+      };
+    };
   }

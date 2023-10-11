@@ -272,7 +272,12 @@
         revNum = 3;
         sha256 = "46367dc0c8326dcbeb7b93f200b567491c2f6029bccf822b8bb26ee660397e08";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/async-2.2.4-r4-9b8ceefce014e490f9e1335fa5f511161309926c55d01cec795016f4363b5d2d.nix;
+        revNum = 4;
+        sha256 = "9b8ceefce014e490f9e1335fa5f511161309926c55d01cec795016f4363b5d2d";
+        };
+      default = "r4";
       };
     };
   }

@@ -88,7 +88,12 @@
         revNum = 2;
         sha256 = "f255fed3d51f87016d2ca65cbc8c31d0af7618b3f48dccc50faf3e53e2daf50e";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/uri-encode-1.5.0.7-r3-1b432e4fe43da8059feaeb6b4e973c2c4481ee86829d528f2be78a0e3645ec00.nix;
+        revNum = 3;
+        sha256 = "1b432e4fe43da8059feaeb6b4e973c2c4481ee86829d528f2be78a0e3645ec00";
+        };
+      default = "r3";
       };
     };
   }

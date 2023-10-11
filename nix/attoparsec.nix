@@ -989,7 +989,12 @@
         revNum = 4;
         sha256 = "6a193f133311af59ce5a0c2fc4bd9574c222794f5d772bc4cf4ffa6e73d2581f";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/attoparsec-0.14.4-r5-ec709539b881d6431620bd7c40fbfa680aaf4a98c6f35b51536d8f455682b1ae.nix;
+        revNum = 5;
+        sha256 = "ec709539b881d6431620bd7c40fbfa680aaf4a98c6f35b51536d8f455682b1ae";
+        };
+      default = "r5";
       };
     };
   "0.4" = {

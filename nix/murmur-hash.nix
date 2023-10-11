@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "37d96ba3ca41b818ce30c59e53bd31ec6ca65fbc758498666929c954d629e818";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/murmur-hash-0.1.0.10-r1-036a54f21ac180681e3799e6288ca32765fa3af8ada41fd4dd73a8a5e1e894a3.nix;
+        revNum = 1;
+        sha256 = "036a54f21ac180681e3799e6288ca32765fa3af8ada41fd4dd73a8a5e1e894a3";
+        };
+      default = "r1";
       };
     };
   "0.1.0.2" = {

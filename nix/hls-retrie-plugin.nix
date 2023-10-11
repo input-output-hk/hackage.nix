@@ -245,4 +245,15 @@
       default = "r0";
       };
     };
+  "2.4.0.0" = {
+    sha256 = "314317515eaccdfbaff89ab23da0dfe73774276272a16cb5c95b314d50819496";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-retrie-plugin-2.4.0.0-r0-407810987746953d057809ea38135e6753482d2888ddeeb44162897a2a1605a8.nix;
+        revNum = 0;
+        sha256 = "407810987746953d057809ea38135e6753482d2888ddeeb44162897a2a1605a8";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -55,7 +55,12 @@
         revNum = 2;
         sha256 = "d17edb66a7161bfe066b2fcd08e6f992e6d25b69228af666f297d29c6581eeb3";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/quotet-0.0.1.1-r3-c0cdc135682923766dd938674c77a42b4a40398904f6669d6239fa30ed81b4cc.nix;
+        revNum = 3;
+        sha256 = "c0cdc135682923766dd938674c77a42b4a40398904f6669d6239fa30ed81b4cc";
+        };
+      default = "r3";
       };
     };
   }

@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "2.4.0.0" = {
+    sha256 = "cc8ba53e0cc7fd5648f49d266f25bd978e8d507f149dd8915d75d98cc795973e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghcide-bench-2.4.0.0-r0-4b15f6183b685f7cd5683b10134b3db06a03233dfa77ef2249a2c614590c8113.nix;
+        revNum = 0;
+        sha256 = "4b15f6183b685f7cd5683b10134b3db06a03233dfa77ef2249a2c614590c8113";
+        };
+      default = "r0";
+      };
+    };
   }

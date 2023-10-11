@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "0.7.2" = {
+    sha256 = "23955f5a0e2f48fb7e0301ca5ad07cb3f16fd60260e05a8072ee13c39c3f9bb3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/interval-patterns-0.7.2-r0-f0eae1719b4a67fd70d24ba0689a77ed99f71acf5da105b653df538e6f053f58.nix;
+        revNum = 0;
+        sha256 = "f0eae1719b4a67fd70d24ba0689a77ed99f71acf5da105b653df538e6f053f58";
+        };
+      default = "r0";
+      };
+    };
   }
