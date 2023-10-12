@@ -598,7 +598,12 @@
         revNum = 0;
         sha256 = "134c16cf356bb2a832c04d38b632f6cf8a9a2c2eb79d141a84a8137a2ffb7bbd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ip-1.7.7-r1-1e3010c09a3e04165acf428bab2e8ecc1c61092b1b1e08fd4ed36d1cee4f689d.nix;
+        revNum = 1;
+        sha256 = "1e3010c09a3e04165acf428bab2e8ecc1c61092b1b1e08fd4ed36d1cee4f689d";
+        };
+      default = "r1";
       };
     };
   }

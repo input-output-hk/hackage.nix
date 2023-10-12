@@ -341,7 +341,12 @@
         revNum = 1;
         sha256 = "4be0a7c301ac62fac3fed2c060c3c63b70daabfcd79b1967cf90d02819a6c1e4";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/lifted-async-0.10.2.4-r2-7e3e1446a9f4c3f2f809ff1fe7a48312f3d1f6c59b85387ffc642b6a5ec5e22d.nix;
+        revNum = 2;
+        sha256 = "7e3e1446a9f4c3f2f809ff1fe7a48312f3d1f6c59b85387ffc642b6a5ec5e22d";
+        };
+      default = "r2";
       };
     };
   "0.2.0" = {

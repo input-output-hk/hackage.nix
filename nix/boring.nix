@@ -123,7 +123,12 @@
         revNum = 0;
         sha256 = "8c79a8aaaef562f2d20ada462e1498ed962a7a76072acd2a06ddb61d23229ee4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/boring-0.2.1-r1-9e2566d93e8db00ea7c428bf6a4052f8479ef6b6a86294d65c6086d45a842e4b.nix;
+        revNum = 1;
+        sha256 = "9e2566d93e8db00ea7c428bf6a4052f8479ef6b6a86294d65c6086d45a842e4b";
+        };
+      default = "r1";
       };
     };
   }

@@ -1163,7 +1163,12 @@
         revNum = 0;
         sha256 = "f3a6db1e6c12760c00a38393693d473b8b4f9211eed036388eca89996ba50d66";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/streaming-commons-0.2.2.6-r1-d5c6fb99efd4e71bdb0351d55f2d87e16c11880f42998e39363eb63f057ae24b.nix;
+        revNum = 1;
+        sha256 = "d5c6fb99efd4e71bdb0351d55f2d87e16c11880f42998e39363eb63f057ae24b";
+        };
+      default = "r1";
       };
     };
   }

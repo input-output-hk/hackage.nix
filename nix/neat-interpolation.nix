@@ -263,4 +263,15 @@
       default = "r0";
       };
     };
+  "0.5.1.4" = {
+    sha256 = "8eb733e3b1d90d87e0cff8b648f4b8145e38afd558f2c8343029770c9f023ab7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/neat-interpolation-0.5.1.4-r0-6ca5e3a763c841861b0449abecf0bca4a80e5dc0ed397f2272cfe70ed145970c.nix;
+        revNum = 0;
+        sha256 = "6ca5e3a763c841861b0449abecf0bca4a80e5dc0ed397f2272cfe70ed145970c";
+        };
+      default = "r0";
+      };
+    };
   }

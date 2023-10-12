@@ -39,7 +39,12 @@
         revNum = 0;
         sha256 = "dcf4c24feb30e226263c9d263057a05647c13c5451bea693171e3b74c9c92c04";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/arch-web-0.2-r1-77f89cebaf03ac66cbb8e07aad4d46fdef733ee6d157955fbc5e893a38ea55d7.nix;
+        revNum = 1;
+        sha256 = "77f89cebaf03ac66cbb8e07aad4d46fdef733ee6d157955fbc5e893a38ea55d7";
+        };
+      default = "r1";
       };
     };
   }

@@ -386,7 +386,12 @@
         revNum = 0;
         sha256 = "8ef4c8d5b9e0948489aa0b0b6a90c3d0c52e768e4e1f0e3f87697f6abd5d88fd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/microlens-platform-0.4.3.3-r1-0e87a4f8e5fae2dab3f1af2952ba711e95e655f7707b3267df554719d8875c26.nix;
+        revNum = 1;
+        sha256 = "0e87a4f8e5fae2dab3f1af2952ba711e95e655f7707b3267df554719d8875c26";
+        };
+      default = "r1";
       };
     };
   }

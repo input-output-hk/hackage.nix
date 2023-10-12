@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "b524e9865415380ee4c3cf02d1d09c8521fd62ff1f49c09bddd50150def7541b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/microlens-contra-0.1.0.3-r1-fb7ecf9e4cf3fbd67a787472f5b53d3bc0ada11432b1eec2aedf00c38635df20.nix;
+        revNum = 1;
+        sha256 = "fb7ecf9e4cf3fbd67a787472f5b53d3bc0ada11432b1eec2aedf00c38635df20";
+        };
+      default = "r1";
       };
     };
   }

@@ -66,7 +66,12 @@
         revNum = 3;
         sha256 = "71f410046180dbc3a6ef79ce284226c142d6137f5029ef5714dbf3287a165992";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/streamly-fsnotify-1.1.1.0-r4-e453befb5c15bacaac0a66b4fffe7c55ef964438b141f81cee5775b1bf96fe2c.nix;
+        revNum = 4;
+        sha256 = "e453befb5c15bacaac0a66b4fffe7c55ef964438b141f81cee5775b1bf96fe2c";
+        };
+      default = "r4";
       };
     };
   }

@@ -99,7 +99,12 @@
         revNum = 2;
         sha256 = "45ce1a1d76d7b8550b1ff8a15017472317c5415106f461aaadd4af317361c39f";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/arch-hs-0.11.1.0-r3-981470c0275c41f94df2a938866ac02ac62a2d3a215ed6ef69b18f335e6644a4.nix;
+        revNum = 3;
+        sha256 = "981470c0275c41f94df2a938866ac02ac62a2d3a215ed6ef69b18f335e6644a4";
+        };
+      default = "r3";
       };
     };
   "0.2.0.0" = {
