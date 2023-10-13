@@ -34,7 +34,12 @@
         revNum = 1;
         sha256 = "4ef8f050bce614b326de884f62a36be91f010188ea66f82346a2a41bffe7ea92";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/primitive-addr-0.1.0.2-r2-f6e102445287c5406f256da95f8bdb6ff58290144b348e64a3062453bb5928e8.nix;
+        revNum = 2;
+        sha256 = "f6e102445287c5406f256da95f8bdb6ff58290144b348e64a3062453bb5928e8";
+        };
+      default = "r2";
       };
     };
   }

@@ -93,7 +93,12 @@
         revNum = 2;
         sha256 = "f625023834dd8ffbe3dd394f2b66fc77b850d9be0af65104bc24f0cb046a83a6";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/wl-pprint-annotated-0.1.0.1-r3-79d12e6d7302c8bea0986cb713fcbfc33225cca3ee158ac741cf1a468f5ed8bc.nix;
+        revNum = 3;
+        sha256 = "79d12e6d7302c8bea0986cb713fcbfc33225cca3ee158ac741cf1a468f5ed8bc";
+        };
+      default = "r3";
       };
     };
   }

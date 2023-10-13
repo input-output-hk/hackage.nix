@@ -159,4 +159,15 @@
       default = "r1";
       };
     };
+  "0.1.7" = {
+    sha256 = "480ce0ad7f67364ec8d4ce8d815f463d9e4074e3789be22a5722cfdebed08679";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-byte-order-0.1.7-r0-3b6e875fe2f363817b157ecc9c45411ac84544bfa4a30364943e49e817db7fdf.nix;
+        revNum = 0;
+        sha256 = "3b6e875fe2f363817b157ecc9c45411ac84544bfa4a30364943e49e817db7fdf";
+        };
+      default = "r0";
+      };
+    };
   }

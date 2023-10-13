@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "5248eb556dbd0e69c5009572ef4a332a594037e6b13883ffba071128af15da1a";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tuples-0.1.0.0-r2-0b3f3fe4f65b976e6e449eea77686e9407033f69bba1418a09c6babe3571a821.nix;
+        revNum = 2;
+        sha256 = "0b3f3fe4f65b976e6e449eea77686e9407033f69bba1418a09c6babe3571a821";
+        };
+      default = "r2";
       };
     };
   }

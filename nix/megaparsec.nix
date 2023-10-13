@@ -683,7 +683,12 @@
         revNum = 0;
         sha256 = "e1e8f7b0f3b1abb120df5e61b71130a8ea3d7df3a9b4ad773025730eaa6970cd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/megaparsec-9.5.0-r1-7bf7c6891b9472bd1759752aefe41bc204828f043da04933a615ed5331048d16.nix;
+        revNum = 1;
+        sha256 = "7bf7c6891b9472bd1759752aefe41bc204828f043da04933a615ed5331048d16";
+        };
+      default = "r1";
       };
     };
   }

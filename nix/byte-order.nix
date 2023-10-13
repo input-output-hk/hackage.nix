@@ -45,7 +45,12 @@
         revNum = 1;
         sha256 = "a1873001ab3132e734c5b571620b06c5730299be6e70e5519ae935ad6e21773e";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/byte-order-0.1.3.0-r2-1033a7067c57412a0d96bef3bc4f965fa3d754cd894d569adfe47607cf6edf8c.nix;
+        revNum = 2;
+        sha256 = "1033a7067c57412a0d96bef3bc4f965fa3d754cd894d569adfe47607cf6edf8c";
+        };
+      default = "r2";
       };
     };
   }

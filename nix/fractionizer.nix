@@ -32,6 +32,61 @@
       default = "r0";
       };
     };
+  "0.11.0.0" = {
+    sha256 = "dd69778c2001071c855722dfeecd79c816a2c86828acfec1927f369d22dad254";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fractionizer-0.11.0.0-r0-a689d86d0f2fe12f6f2155ea27d7615bd9c3745f7657a2e509151696f69b4ad8.nix;
+        revNum = 0;
+        sha256 = "a689d86d0f2fe12f6f2155ea27d7615bd9c3745f7657a2e509151696f69b4ad8";
+        };
+      default = "r0";
+      };
+    };
+  "0.12.0.0" = {
+    sha256 = "ea3860cf28d5a01a95c1f4b6a382e9d9b6ffdcffb22277727728c039f67414c1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fractionizer-0.12.0.0-r0-a5c97e0be462a54ad87bd3d11797555099ca60ed2ea9e6962f00f5eda7adfcf3.nix;
+        revNum = 0;
+        sha256 = "a5c97e0be462a54ad87bd3d11797555099ca60ed2ea9e6962f00f5eda7adfcf3";
+        };
+      default = "r0";
+      };
+    };
+  "0.13.0.0" = {
+    sha256 = "4d38f11df073638757b3aff2518b5f391729d4835ca4d45e05da41e903ba2263";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fractionizer-0.13.0.0-r0-0bf96e0d14e0aa153d9c3d8bbd1b702e4968eaba23fc809e82e0a9ef01e65c15.nix;
+        revNum = 0;
+        sha256 = "0bf96e0d14e0aa153d9c3d8bbd1b702e4968eaba23fc809e82e0a9ef01e65c15";
+        };
+      default = "r0";
+      };
+    };
+  "0.14.0.0" = {
+    sha256 = "8465a6cdc291cfc0aede8e987ba4841608dac0000bfc180ae50847c0724422e8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fractionizer-0.14.0.0-r0-f031390cec7310f2054893f5dbc525db783d01397d3eb3be4f8b5e9d73904db8.nix;
+        revNum = 0;
+        sha256 = "f031390cec7310f2054893f5dbc525db783d01397d3eb3be4f8b5e9d73904db8";
+        };
+      default = "r0";
+      };
+    };
+  "0.14.1.0" = {
+    sha256 = "3f8985ccdc247a7994716a6eed096b1bcfbb0acc52f4bc7adc393f3a55ea0cc1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fractionizer-0.14.1.0-r0-e28a23c6d0ab5d827d7dba5d5290c5aff52127b506f15d25c23587c9a4582f38.nix;
+        revNum = 0;
+        sha256 = "e28a23c6d0ab5d827d7dba5d5290c5aff52127b506f15d25c23587c9a4582f38";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "9d3b2e401d75f942e926b85546ef37347ed585d853ed09f144588b3582ca1ae3";
     revisions = {

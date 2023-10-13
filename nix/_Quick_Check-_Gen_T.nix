@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.2.2.1" = {
+    sha256 = "10dbc5b0aee6b670f87f64163ef20b5ec777912282c9478819fd1e88123d769a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/QuickCheck-GenT-0.2.2.1-r0-d47077fe5225143892f66a8e6e3b8518ac03893edb05f26c03abea1f7ea60966.nix;
+        revNum = 0;
+        sha256 = "d47077fe5225143892f66a8e6e3b8518ac03893edb05f26c03abea1f7ea60966";
+        };
+      default = "r0";
+      };
+    };
   }
