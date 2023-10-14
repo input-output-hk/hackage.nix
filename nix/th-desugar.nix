@@ -169,6 +169,17 @@
       default = "r1";
       };
     };
+  "1.16" = {
+    sha256 = "4ecb87e0d361278c40a62410cdb5580029ecd630cfd2c619ce41812518868210";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/th-desugar-1.16-r0-1cd14a03f6ff0b0193578a78fa1afbf825e186c1446ea722f1289db159baf982.nix;
+        revNum = 0;
+        sha256 = "1cd14a03f6ff0b0193578a78fa1afbf825e186c1446ea722f1289db159baf982";
+        };
+      default = "r0";
+      };
+    };
   "1.2.0" = {
     sha256 = "292517d7d7b6d89fc4210b641fb2019c2358aabebdd4e2102b30597a211e2b42";
     revisions = {

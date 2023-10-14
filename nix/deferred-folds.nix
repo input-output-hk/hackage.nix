@@ -681,6 +681,17 @@
       default = "r0";
       };
     };
+  "0.9.18.5" = {
+    sha256 = "c44e569d79349715cbb32a2958f603084ffec7c099a179313beb206be7fb2ce6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/deferred-folds-0.9.18.5-r0-50c33e008c6bed8c48ab375f690775406a8ed8c0536e51ca5a74c73984716833.nix;
+        revNum = 0;
+        sha256 = "50c33e008c6bed8c48ab375f690775406a8ed8c0536e51ca5a74c73984716833";
+        };
+      default = "r0";
+      };
+    };
   "0.9.2" = {
     sha256 = "318166a5d44c1560a3e9e66fd6cc897f4bfd6dc1f247b0811be3efec47db9411";
     revisions = {

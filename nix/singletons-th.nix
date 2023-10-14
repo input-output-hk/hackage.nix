@@ -58,4 +58,15 @@
       default = "r0";
       };
     };
+  "3.3" = {
+    sha256 = "1b0b456b9ff08638500ea90ad02e5fbeb3b0fca4a192deb1eabc0ed2dd333b8c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/singletons-th-3.3-r0-5c064361b26ed0f4f02ff8c6f903672542a8fb7e6817a401e167fdb6dbb9e6bc.nix;
+        revNum = 0;
+        sha256 = "5c064361b26ed0f4f02ff8c6f903672542a8fb7e6817a401e167fdb6dbb9e6bc";
+        };
+      default = "r0";
+      };
+    };
   }

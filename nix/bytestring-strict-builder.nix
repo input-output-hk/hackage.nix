@@ -133,4 +133,15 @@
       default = "r0";
       };
     };
+  "0.4.5.7" = {
+    sha256 = "d7a6b1727cb916b4a9ca85a354ae2ce886b73d01ba7b1a488571ab64b4f774f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bytestring-strict-builder-0.4.5.7-r0-7f7f0393ed9098e47aa090ae8b64a9664d1956eada03dbf98211004ed18f003a.nix;
+        revNum = 0;
+        sha256 = "7f7f0393ed9098e47aa090ae8b64a9664d1956eada03dbf98211004ed18f003a";
+        };
+      default = "r0";
+      };
+    };
   }

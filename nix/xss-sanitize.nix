@@ -436,7 +436,12 @@
         revNum = 0;
         sha256 = "ed942085d62b2d91d85ff9fc0507e36a0757e67a1d8226b4e2ef561b3a0477f2";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/xss-sanitize-0.3.7.2-r1-a0193094b2f3acdc0ce1427ad079fc86682687b87b54aeba8f422525ad281ed1.nix;
+        revNum = 1;
+        sha256 = "a0193094b2f3acdc0ce1427ad079fc86682687b87b54aeba8f422525ad281ed1";
+        };
+      default = "r1";
       };
     };
   }

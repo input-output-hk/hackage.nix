@@ -2214,7 +2214,12 @@
         revNum = 0;
         sha256 = "2edc8d7ffbc1fc8182db17cc1f71b641cb2bdee4b9c3c8c7bfa3c4590e234fda";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-client-0.7.14-r1-610aa8c15a58e6124bb6c7791c9b061d187964ec8ee574f68a3c669485a32bf0.nix;
+        revNum = 1;
+        sha256 = "610aa8c15a58e6124bb6c7791c9b061d187964ec8ee574f68a3c669485a32bf0";
+        };
+      default = "r1";
       };
     };
   "0.7.2" = {

@@ -363,7 +363,12 @@
         revNum = 2;
         sha256 = "14959d902b173a9c19491ff6777c7d06292b8bff31d55cd1749c4417885d2ee1";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/binary-orphans-1.0.4.1-r3-9d2bdc3fdbe43fad20d659e562fed229222c8c4caaca74c8f27b5b813aa7ae20.nix;
+        revNum = 3;
+        sha256 = "9d2bdc3fdbe43fad20d659e562fed229222c8c4caaca74c8f27b5b813aa7ae20";
+        };
+      default = "r3";
       };
     };
   }
