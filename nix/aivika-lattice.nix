@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.7" = {
+    sha256 = "590401681f927fb158e0cb3a83674a3fcce648080489f3444de7e81c11fdf5a7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aivika-lattice-0.7-r0-d56bd1533235e868dec0a418a92ee2902b6528011056c11742ac47a4567a9532.nix;
+        revNum = 0;
+        sha256 = "d56bd1533235e868dec0a418a92ee2902b6528011056c11742ac47a4567a9532";
+        };
+      default = "r0";
+      };
+    };
   }

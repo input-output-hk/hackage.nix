@@ -140,4 +140,15 @@
       default = "r0";
       };
     };
+  "0.3.5.4" = {
+    sha256 = "2f3a16d38cb6778704db7f142e54be169db4362e033b2d568c172d0c6e64298e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/contravariant-extras-0.3.5.4-r0-8c6d1c20c7944441a6337ebce2fd2901ea8fb6246bb2df9332303e89121fb7c3.nix;
+        revNum = 0;
+        sha256 = "8c6d1c20c7944441a6337ebce2fd2901ea8fb6246bb2df9332303e89121fb7c3";
+        };
+      default = "r0";
+      };
+    };
   }

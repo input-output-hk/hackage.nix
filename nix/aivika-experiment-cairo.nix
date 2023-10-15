@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "5.4.1" = {
+    sha256 = "7505f66ffc5978797888faef2d2050bffed16083cff43f89055c5ac2c862e6c9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aivika-experiment-cairo-5.4.1-r0-3486396dc2c26dcbe0d8f30b79cb86b68b4967158370f7dd8d37dfb1708573ad.nix;
+        revNum = 0;
+        sha256 = "3486396dc2c26dcbe0d8f30b79cb86b68b4967158370f7dd8d37dfb1708573ad";
+        };
+      default = "r0";
+      };
+    };
   }

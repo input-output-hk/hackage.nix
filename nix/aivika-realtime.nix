@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.4" = {
+    sha256 = "a682cfddcc353196a5556c1b3dc94ed60b0d3195df2283d71f3c1c71597502ec";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aivika-realtime-0.4-r0-b04964daf0e608a19b4bcd2eb084d4ee5c1cc6c481be62103f5ca5146d2ef2c2.nix;
+        revNum = 0;
+        sha256 = "b04964daf0e608a19b4bcd2eb084d4ee5c1cc6c481be62103f5ca5146d2ef2c2";
+        };
+      default = "r0";
+      };
+    };
   }

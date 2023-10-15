@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.0.4" = {
+    sha256 = "e5537e014bc3a21371e92a966b96cc0bc0750c7c19e030e410cf1047abadad89";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/AhoCorasick-0.0.4-r0-3f1cee1384a09c373a3be5dc4ea7c9227ff87fc9be7e976d4fc7efc47f1999f1.nix;
+        revNum = 0;
+        sha256 = "3f1cee1384a09c373a3be5dc4ea7c9227ff87fc9be7e976d4fc7efc47f1999f1";
+        };
+      default = "r0";
+      };
+    };
   }

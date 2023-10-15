@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "5.4.1" = {
+    sha256 = "7d47c4c02a6e1ef7f91ba2d20b9327dddc39383b3af83ff08bef2ec03ce1fdbc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aivika-experiment-diagrams-5.4.1-r0-efa025f4699be2b9300a1c0a7825b02a8f27f9d4836a4bf665403e42feb8ca72.nix;
+        revNum = 0;
+        sha256 = "efa025f4699be2b9300a1c0a7825b02a8f27f9d4836a4bf665403e42feb8ca72";
+        };
+      default = "r0";
+      };
+    };
   }

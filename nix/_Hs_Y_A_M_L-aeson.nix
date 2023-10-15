@@ -94,7 +94,12 @@
         revNum = 9;
         sha256 = "e8f562d3ba853b752163227635de435c71bef357d754cd902ec3c05d4e90cae5";
         };
-      default = "r9";
+      r10 = {
+        nix = import ../hackage/HsYAML-aeson-0.2.0.1-r10-79f482b0bfed15de4aebdb3e32a562cfa95659b2d84c4cc12dea0cd02eb629f5.nix;
+        revNum = 10;
+        sha256 = "79f482b0bfed15de4aebdb3e32a562cfa95659b2d84c4cc12dea0cd02eb629f5";
+        };
+      default = "r10";
       };
     };
   }

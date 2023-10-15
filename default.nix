@@ -14586,6 +14586,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sorty" = import ./nix/sorty.nix;
   "souffle-dsl" = import ./nix/souffle-dsl.nix;
   "souffle-haskell" = import ./nix/souffle-haskell.nix;
+  "sound-change" = import ./nix/sound-change.nix;
   "sound-collage" = import ./nix/sound-collage.nix;
   "sounddelay" = import ./nix/sounddelay.nix;
   "soundgen" = import ./nix/soundgen.nix;
@@ -16342,6 +16343,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "unix-time" = import ./nix/unix-time.nix;
   "unjson" = import ./nix/unjson.nix;
   "unlambda" = import ./nix/unlambda.nix;
+  "unleash-client-haskell" = import ./nix/unleash-client-haskell.nix;
   "unleash-client-haskell-core" = import ./nix/unleash-client-haskell-core.nix;
   "unlift" = import ./nix/unlift.nix;
   "unlift-stm" = import ./nix/unlift-stm.nix;

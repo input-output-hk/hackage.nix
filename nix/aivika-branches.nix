@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.4" = {
+    sha256 = "7f76c97e2473a2366bef8cc9cebc0e34ac0f4684293a0088b063e7a00a7a3b32";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aivika-branches-0.4-r0-aed0da085f76e5888658f22f81c264ce21d42643466f175eb34fda3933255f55.nix;
+        revNum = 0;
+        sha256 = "aed0da085f76e5888658f22f81c264ce21d42643466f175eb34fda3933255f55";
+        };
+      default = "r0";
+      };
+    };
   }

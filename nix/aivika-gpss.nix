@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.7.1" = {
+    sha256 = "f852a8668c5247123d063e2becdb838f49d607025619ab64593ec31d41481b90";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aivika-gpss-0.7.1-r0-b220f75139df68453638975e2f0c2674b41e3075c2ad70ea59af6c19fed87fbb.nix;
+        revNum = 0;
+        sha256 = "b220f75139df68453638975e2f0c2674b41e3075c2ad70ea59af6c19fed87fbb";
+        };
+      default = "r0";
+      };
+    };
   }
