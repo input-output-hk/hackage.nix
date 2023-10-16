@@ -130,7 +130,12 @@
         revNum = 0;
         sha256 = "08b05c1f80313d759aef546c3999e371c7b7d63a0733dd49e84b8c454f78c56b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/poly-0.5.1.0-r1-8c574f017913982fd70567545bec423823ff5bdf236c19d1443f3af47e0218ba.nix;
+        revNum = 1;
+        sha256 = "8c574f017913982fd70567545bec423823ff5bdf236c19d1443f3af47e0218ba";
+        };
+      default = "r1";
       };
     };
   }

@@ -107,7 +107,12 @@
         revNum = 1;
         sha256 = "2f9730b7041a3212b3d62b5dd6b8c5f97c4109a1f8a90325a1c2265c80b51a1f";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/extended-reals-0.2.4.0-r2-2e5ca34f8e5f57b4ba95af8ace4aa638ecb024b9936b5978a3572d635c669bec.nix;
+        revNum = 2;
+        sha256 = "2e5ca34f8e5f57b4ba95af8ace4aa638ecb024b9936b5978a3572d635c669bec";
+        };
+      default = "r2";
       };
     };
   }

@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.1.0" = {
+    sha256 = "46de42b6d014c2f1afedd25376e6b30f55c80006e539c89ef12908c5b56a31cf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monadic-bang-0.2.1.0-r0-53f713af7fb59c9d9ba702935c34b2e0e661c86eb3f57ca89698f26cb52481d2.nix;
+        revNum = 0;
+        sha256 = "53f713af7fb59c9d9ba702935c34b2e0e661c86eb3f57ca89698f26cb52481d2";
+        };
+      default = "r0";
+      };
+    };
   }

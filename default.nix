@@ -4421,6 +4421,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dawdle" = import ./nix/dawdle.nix;
   "dawg" = import ./nix/dawg.nix;
   "dawg-ord" = import ./nix/dawg-ord.nix;
+  "day-comonoid" = import ./nix/day-comonoid.nix;
   "daytripper" = import ./nix/daytripper.nix;
   "dbcleaner" = import ./nix/dbcleaner.nix;
   "dbf" = import ./nix/dbf.nix;

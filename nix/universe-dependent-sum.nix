@@ -76,7 +76,12 @@
         revNum = 3;
         sha256 = "fe81f2dbf3001d84d53ed78244262f6f7e6e08c1981066495eaeebfcd30f966c";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/universe-dependent-sum-1.3-r4-6f7f34eff2e26ae62668cb1fb6494a79bf0dde2e0ae0900d880fe9681c2ea549.nix;
+        revNum = 4;
+        sha256 = "6f7f34eff2e26ae62668cb1fb6494a79bf0dde2e0ae0900d880fe9681c2ea549";
+        };
+      default = "r4";
       };
     };
   }

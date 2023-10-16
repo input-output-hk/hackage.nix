@@ -130,7 +130,12 @@
         revNum = 0;
         sha256 = "db04d9c1f6db75e5f88434733fb9f63018781741aabd9fe347703357c3ba4259";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/universe-base-1.1.3.1-r1-e4c98a8f1f8d56781eb204152ec88042b70ed951f3efbb7cf70a3eaca180b28a.nix;
+        revNum = 1;
+        sha256 = "e4c98a8f1f8d56781eb204152ec88042b70ed951f3efbb7cf70a3eaca180b28a";
+        };
+      default = "r1";
       };
     };
   }

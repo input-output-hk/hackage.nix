@@ -185,7 +185,12 @@
         revNum = 1;
         sha256 = "792e776cf006eab5a954c5b870689b693835e0172ac15a162ab3b5ec2dcf26e2";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-rerun-1.1.19-r2-b19d906ab81259c6c22896db2c5ec9112aac057a2939f2afeba2af90b48ef405.nix;
+        revNum = 2;
+        sha256 = "b19d906ab81259c6c22896db2c5ec9112aac057a2939f2afeba2af90b48ef405";
+        };
+      default = "r2";
       };
     };
   "1.1.2" = {
