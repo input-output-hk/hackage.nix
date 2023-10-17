@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "ad0f0f07450989d5c82c61842cbaf6c8f251c67776884401fc6b94877f52e24b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jacobi-theta-0.2.0.0-r0-5305ffe794a48f2dd31dcc3217b6eafbf1eb06e6da5ffdb52757ea3b4521466b.nix;
+        revNum = 0;
+        sha256 = "5305ffe794a48f2dd31dcc3217b6eafbf1eb06e6da5ffdb52757ea3b4521466b";
+        };
+      default = "r0";
+      };
+    };
   }

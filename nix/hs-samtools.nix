@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.7.0.0" = {
+    sha256 = "af5421dea475a89b8d6ed35b0e5fd2511ead65ab942c0ed19b1160f496c07b3a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-samtools-0.7.0.0-r0-bdbd9e4429fb779d203df074740a4d7cdd2e6fe7a6df8ba31578ee281a9a245b.nix;
+        revNum = 0;
+        sha256 = "bdbd9e4429fb779d203df074740a4d7cdd2e6fe7a6df8ba31578ee281a9a245b";
+        };
+      default = "r0";
+      };
+    };
   }

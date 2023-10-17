@@ -15,4 +15,15 @@
       default = "r1";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "8d2b356d5e9daf2c59a9757f0f4514b020a0848512a9c4ee0d968a52b5c78c8b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/termbox-tea-0.1.0.1-r0-c44f926e74d154cca1e9a18f983f3e2de4e707a4692f5d7b4a30e8ef64a6ee5e.nix;
+        revNum = 0;
+        sha256 = "c44f926e74d154cca1e9a18f983f3e2de4e707a4692f5d7b4a30e8ef64a6ee5e";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "cd6c8612f25c4f921aae2e0941781ed34f60959084dde8cc6a6683d92875c2a6";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/termbox-bindings-hs-0.1.0-r2-65255cd6891f1869d389cc049e18b1526e8fcd9732317d17b3ee85fb732bff2e.nix;
+        revNum = 2;
+        sha256 = "65255cd6891f1869d389cc049e18b1526e8fcd9732317d17b3ee85fb732bff2e";
+        };
+      default = "r2";
       };
     };
   }
