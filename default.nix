@@ -1536,6 +1536,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "agda-unused" = import ./nix/agda-unused.nix;
   "agda2hs" = import ./nix/agda2hs.nix;
   "agda2lagda" = import ./nix/agda2lagda.nix;
+  "agda2train" = import ./nix/agda2train.nix;
   "agentx" = import ./nix/agentx.nix;
   "agreeing" = import ./nix/agreeing.nix;
   "agum" = import ./nix/agum.nix;
@@ -6398,6 +6399,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gi-xlib" = import ./nix/gi-xlib.nix;
   "giak" = import ./nix/giak.nix;
   "gibbon" = import ./nix/gibbon.nix;
+  "gigaparsec" = import ./nix/gigaparsec.nix;
   "gimlh" = import ./nix/gimlh.nix;
   "ginger" = import ./nix/ginger.nix;
   "gingersnap" = import ./nix/gingersnap.nix;
@@ -13694,6 +13696,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sasl" = import ./nix/sasl.nix;
   "sat" = import ./nix/sat.nix;
   "sat-micro-hs" = import ./nix/sat-micro-hs.nix;
+  "sat-simple" = import ./nix/sat-simple.nix;
   "satchmo" = import ./nix/satchmo.nix;
   "satchmo-backends" = import ./nix/satchmo-backends.nix;
   "satchmo-examples" = import ./nix/satchmo-examples.nix;

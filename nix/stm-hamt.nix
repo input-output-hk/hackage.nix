@@ -131,6 +131,17 @@
       default = "r0";
       };
     };
+  "1.2.0.14" = {
+    sha256 = "ad4b4badc608cb8a4befdf0b5304932b4eb9a1fe27640488ed03f7e17db31866";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stm-hamt-1.2.0.14-r0-6736e5fd9dabfa8152b6d6f2000dd82e81cfa42c2ffb30758df5a344a53de3b7.nix;
+        revNum = 0;
+        sha256 = "6736e5fd9dabfa8152b6d6f2000dd82e81cfa42c2ffb30758df5a344a53de3b7";
+        };
+      default = "r0";
+      };
+    };
   "1.2.0.2" = {
     sha256 = "3c916010a441153bb275ac2aa83693c0860c861c5914faa87893b2be01d9dc9f";
     revisions = {
