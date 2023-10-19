@@ -65,7 +65,12 @@
         revNum = 2;
         sha256 = "2f6ac799b1b4438db1ead14a39d7586cfaf00c3cbab0c219184c67ae61376335";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/sop-core-0.5.0.2-r3-9d857199f5eab3e2467be69336568d147fa24116a0999000100e4f0739719966.nix;
+        revNum = 3;
+        sha256 = "9d857199f5eab3e2467be69336568d147fa24116a0999000100e4f0739719966";
+        };
+      default = "r3";
       };
     };
   }

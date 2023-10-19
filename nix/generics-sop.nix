@@ -318,4 +318,15 @@
       default = "r0";
       };
     };
+  "0.5.1.4" = {
+    sha256 = "616a1c2176097469f9514e76d979fffdbc12d569f44fd01deb14377c7888797e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/generics-sop-0.5.1.4-r0-db1929b3c61a6ed4cb5fe99c5a6a1baf0c4e36846d5a3dbb5052f39cc042fcb2.nix;
+        revNum = 0;
+        sha256 = "db1929b3c61a6ed4cb5fe99c5a6a1baf0c4e36846d5a3dbb5052f39cc042fcb2";
+        };
+      default = "r0";
+      };
+    };
   }

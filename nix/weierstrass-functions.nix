@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.1.5.0" = {
+    sha256 = "7fa1db540d6653a9a214b601c45a4583170029bd4da4fd2a58e531c97de005a0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/weierstrass-functions-0.1.5.0-r0-7111de52594214bf077e5e59fbebf81f223e465c358c0e295e23fed8418e73be.nix;
+        revNum = 0;
+        sha256 = "7111de52594214bf077e5e59fbebf81f223e465c358c0e295e23fed8418e73be";
+        };
+      default = "r0";
+      };
+    };
   }

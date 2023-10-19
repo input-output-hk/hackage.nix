@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "af49402b25fa21aab9bd307e8d5ef35ac379af14bdb4d602a28b38f67572368e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jacobi-elliptic-0.1.3.0-r0-183252453bdc2ed4cc4e4fa9bdb5ccdb0c0b97d0e08be0e8f1ac963e9cf26a4c.nix;
+        revNum = 0;
+        sha256 = "183252453bdc2ed4cc4e4fa9bdb5ccdb0c0b97d0e08be0e8f1ac963e9cf26a4c";
+        };
+      default = "r0";
+      };
+    };
   }

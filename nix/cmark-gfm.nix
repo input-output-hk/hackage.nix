@@ -177,7 +177,12 @@
         revNum = 0;
         sha256 = "962ccd7bce9a3bdd9badeb45c2f4827b7566dc691288a4b80c38a35059078434";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cmark-gfm-0.2.6-r1-8672b9388f5ddfa8ece691e59b4272fa807a2ddf0698970cd73af9bebb98058d.nix;
+        revNum = 1;
+        sha256 = "8672b9388f5ddfa8ece691e59b4272fa807a2ddf0698970cd73af9bebb98058d";
+        };
+      default = "r1";
       };
     };
   }

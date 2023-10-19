@@ -303,4 +303,15 @@
       default = "r0";
       };
     };
+  "0.3.4.3" = {
+    sha256 = "4d86d5b5e87ecca61fe6a64bc91662ddb18209933a1492e4429868b692db2966";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/math-functions-0.3.4.3-r0-acfae1b294286a08fde1820f0d606cdd4c2957a6e07df8808924bb49ec835c3f.nix;
+        revNum = 0;
+        sha256 = "acfae1b294286a08fde1820f0d606cdd4c2957a6e07df8808924bb49ec835c3f";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.12.3.1.2" = {
+    sha256 = "2a16e723d3c25c991a74c33630095e9f78ad776e73f4b3f59947201eb22e80dd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquid-vector-0.12.3.1.2-r0-940268dec6a7902408b85377c3abca72831d119ad89d1e3f870374db0ab0eb4a.nix;
+        revNum = 0;
+        sha256 = "940268dec6a7902408b85377c3abca72831d119ad89d1e3f870374db0ab0eb4a";
+        };
+      default = "r0";
+      };
+    };
   }

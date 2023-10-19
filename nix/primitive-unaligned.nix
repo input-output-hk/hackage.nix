@@ -54,7 +54,12 @@
         revNum = 3;
         sha256 = "2a87c22e40ec3609457dc606dee646d788b6659ab25aa9d6cc76ff01ce6d8d9d";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/primitive-unaligned-0.1.1.2-r4-ae321521fd2522d312fb029e38f590cc664b86be10c2b1e0c8aee82f7c2f4879.nix;
+        revNum = 4;
+        sha256 = "ae321521fd2522d312fb029e38f590cc664b86be10c2b1e0c8aee82f7c2f4879";
+        };
+      default = "r4";
       };
     };
   }

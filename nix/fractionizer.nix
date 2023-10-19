@@ -98,6 +98,17 @@
       default = "r0";
       };
     };
+  "0.16.0.0" = {
+    sha256 = "286882727d510515ca9bfac34591b37d4c225e111cb5bc5870172e00d027ca77";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fractionizer-0.16.0.0-r0-67bb35b8b546350b506a92e182d8f6ce3ba8a66e2d8dbc06ce93e6eef10376b7.nix;
+        revNum = 0;
+        sha256 = "67bb35b8b546350b506a92e182d8f6ce3ba8a66e2d8dbc06ce93e6eef10376b7";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "9d3b2e401d75f942e926b85546ef37347ed585d853ed09f144588b3582ca1ae3";
     revisions = {

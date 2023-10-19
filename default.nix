@@ -9915,6 +9915,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "liquid-prelude" = import ./nix/liquid-prelude.nix;
   "liquid-vector" = import ./nix/liquid-vector.nix;
   "liquidhaskell" = import ./nix/liquidhaskell.nix;
+  "liquidhaskell-boot" = import ./nix/liquidhaskell-boot.nix;
   "liquidhaskell-cabal" = import ./nix/liquidhaskell-cabal.nix;
   "liquidhaskell-cabal-demo" = import ./nix/liquidhaskell-cabal-demo.nix;
   "lispparser" = import ./nix/lispparser.nix;
@@ -10976,6 +10977,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mysql-haskell" = import ./nix/mysql-haskell.nix;
   "mysql-haskell-nem" = import ./nix/mysql-haskell-nem.nix;
   "mysql-haskell-openssl" = import ./nix/mysql-haskell-openssl.nix;
+  "mysql-json-table" = import ./nix/mysql-json-table.nix;
   "mysql-pure" = import ./nix/mysql-pure.nix;
   "mysql-simple" = import ./nix/mysql-simple.nix;
   "mysql-simple-quasi" = import ./nix/mysql-simple-quasi.nix;
