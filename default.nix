@@ -15636,6 +15636,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "thank-you-stars" = import ./nix/thank-you-stars.nix;
   "the-snip" = import ./nix/the-snip.nix;
   "theatre" = import ./nix/theatre.nix;
+  "theatre-dev" = import ./nix/theatre-dev.nix;
   "themoviedb" = import ./nix/themoviedb.nix;
   "themplate" = import ./nix/themplate.nix;
   "thentos-cookie-session" = import ./nix/thentos-cookie-session.nix;
@@ -16214,6 +16215,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ukrainian-phonetics-basic-array-bytestring" = import ./nix/ukrainian-phonetics-basic-array-bytestring.nix;
   "ukrainian-phonetics-common" = import ./nix/ukrainian-phonetics-common.nix;
   "ulid" = import ./nix/ulid.nix;
+  "ulid-tight" = import ./nix/ulid-tight.nix;
   "una" = import ./nix/una.nix;
   "unac-bindings" = import ./nix/unac-bindings.nix;
   "unagi-bloomfilter" = import ./nix/unagi-bloomfilter.nix;
