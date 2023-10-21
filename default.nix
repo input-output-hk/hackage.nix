@@ -5274,6 +5274,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "esotericbot" = import ./nix/esotericbot.nix;
   "espial" = import ./nix/espial.nix;
   "esqueleto" = import ./nix/esqueleto.nix;
+  "esqueleto-compat" = import ./nix/esqueleto-compat.nix;
   "esqueleto-pgcrypto" = import ./nix/esqueleto-pgcrypto.nix;
   "esqueleto-streaming" = import ./nix/esqueleto-streaming.nix;
   "esqueleto-textsearch" = import ./nix/esqueleto-textsearch.nix;
