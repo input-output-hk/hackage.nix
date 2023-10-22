@@ -11387,6 +11387,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nymphaea" = import ./nix/nymphaea.nix;
   "nyx-game" = import ./nix/nyx-game.nix;
   "o-clock" = import ./nix/o-clock.nix;
+  "oalg-base" = import ./nix/oalg-base.nix;
   "oanda-rest-api" = import ./nix/oanda-rest-api.nix;
   "oasis-xrd" = import ./nix/oasis-xrd.nix;
   "oath" = import ./nix/oath.nix;

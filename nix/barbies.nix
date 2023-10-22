@@ -197,4 +197,15 @@
       default = "r0";
       };
     };
+  "2.0.5.0" = {
+    sha256 = "d522ca55fb46587efcda07e0b5293be9120fbcb788594c084f71a71e66210cc9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/barbies-2.0.5.0-r0-2a6c67af6b12b7771ca8c4503819055800bd47c03cb7cab095d45f129bdaa310.nix;
+        revNum = 0;
+        sha256 = "2a6c67af6b12b7771ca8c4503819055800bd47c03cb7cab095d45f129bdaa310";
+        };
+      default = "r0";
+      };
+    };
   }

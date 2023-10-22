@@ -692,6 +692,17 @@
       default = "r0";
       };
     };
+  "3.26.1" = {
+    sha256 = "aa51eb611e39f8aa0f501aae9a5b8405fa425abecf19043834c5adafdf1fde31";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vulkan-3.26.1-r0-74209384b562b5b1483b25243e82999f9d55de23b0c574df08495768c3a7ea12.nix;
+        revNum = 0;
+        sha256 = "74209384b562b5b1483b25243e82999f9d55de23b0c574df08495768c3a7ea12";
+        };
+      default = "r0";
+      };
+    };
   "3.3" = {
     sha256 = "33c0ff3485e8e269cfa4b9514ab64b5edc55c7f3c7a0deb7b3d376a25d82aca3";
     revisions = {
