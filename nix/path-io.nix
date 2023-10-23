@@ -357,7 +357,12 @@
         revNum = 0;
         sha256 = "4827b6f11ee5372cee2e77b005aaf10acd9931f89fa465c440c301cff173de7b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/path-io-1.8.1-r1-5f75cbea84d9d0c0cef5e65b70bea412af9708e7f851b1af2a5038335d724f24.nix;
+        revNum = 1;
+        sha256 = "5f75cbea84d9d0c0cef5e65b70bea412af9708e7f851b1af2a5038335d724f24";
+        };
+      default = "r1";
       };
     };
   }

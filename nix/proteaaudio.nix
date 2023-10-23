@@ -1,4 +1,26 @@
 {
+  "0.10.0" = {
+    sha256 = "4caf193e638fa8ec66732373c99123414b57c94603b5c0e27d162f4dc30487b3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/proteaaudio-0.10.0-r0-26db41e293c947b912e0b2219b918cf407281b9b7971ce704bea8b5c499c3c43.nix;
+        revNum = 0;
+        sha256 = "26db41e293c947b912e0b2219b918cf407281b9b7971ce704bea8b5c499c3c43";
+        };
+      default = "r0";
+      };
+    };
+  "0.10.1" = {
+    sha256 = "0cfe5e8ad7e599f9c7f6cd86cae2cb67c13b9e4e1f539a33fee4add4e1e0424a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/proteaaudio-0.10.1-r0-1de76a1fc5ff15773c41f85689965455e8be770c8a88542e8ac1159c81b77868.nix;
+        revNum = 0;
+        sha256 = "1de76a1fc5ff15773c41f85689965455e8be770c8a88542e8ac1159c81b77868";
+        };
+      default = "r0";
+      };
+    };
   "0.6.2" = {
     sha256 = "96d690393cd95ed803b79399996355f54e9480e38f8440d1744eee932f785e81";
     revisions = {

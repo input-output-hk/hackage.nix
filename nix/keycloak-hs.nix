@@ -219,4 +219,15 @@
       default = "r0";
       };
     };
+  "3.0.2" = {
+    sha256 = "2294ee24cd584b7de08830129d67c4a4b960d0579400cd4ba4773aa75daeef1c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keycloak-hs-3.0.2-r0-6b0acfb8b1b502475cf186868a7d95e0371d6901200b3d1fc72db6ea7dd1175f.nix;
+        revNum = 0;
+        sha256 = "6b0acfb8b1b502475cf186868a7d95e0371d6901200b3d1fc72db6ea7dd1175f";
+        };
+      default = "r0";
+      };
+    };
   }

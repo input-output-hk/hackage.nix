@@ -20,4 +20,15 @@
       default = "r2";
       };
     };
+  "1.9.4" = {
+    sha256 = "d71156ed92cf2f6fc0b7cb1c789ccac5df82f27c17e477a52aa2f24a680bc3eb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Chart-tests-1.9.4-r0-349c072e3c95c2a26190e0c79d0a086fb8d85d72e6fb5999bec082485789ea78.nix;
+        revNum = 0;
+        sha256 = "349c072e3c95c2a26190e0c79d0a086fb8d85d72e6fb5999bec082485789ea78";
+        };
+      default = "r0";
+      };
+    };
   }

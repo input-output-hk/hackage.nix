@@ -3355,6 +3355,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "char-decode" = import ./nix/char-decode.nix;
   "char-qq" = import ./nix/char-qq.nix;
   "character-cases" = import ./nix/character-cases.nix;
+  "character-ps" = import ./nix/character-ps.nix;
   "charade" = import ./nix/charade.nix;
   "charset" = import ./nix/charset.nix;
   "charsetdetect" = import ./nix/charsetdetect.nix;
@@ -4953,6 +4954,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dual-tree" = import ./nix/dual-tree.nix;
   "dualizer" = import ./nix/dualizer.nix;
   "dublincore-xml-conduit" = import ./nix/dublincore-xml-conduit.nix;
+  "duckdb-haskell" = import ./nix/duckdb-haskell.nix;
   "duckling" = import ./nix/duckling.nix;
   "duet" = import ./nix/duet.nix;
   "dumb-cas" = import ./nix/dumb-cas.nix;
