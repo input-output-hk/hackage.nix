@@ -102,7 +102,12 @@
         revNum = 4;
         sha256 = "a3c4640c14033a21c9eb29fcc02f54ca3e6fbd64c8c38e3189e746a19dcb4e0e";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/goldplate-0.2.1.1-r5-3640ebec677888158370f748ab8b7602b4d7426715107950502cafc147a4a5d9.nix;
+        revNum = 5;
+        sha256 = "3640ebec677888158370f748ab8b7602b4d7426715107950502cafc147a4a5d9";
+        };
+      default = "r5";
       };
     };
   }

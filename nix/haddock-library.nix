@@ -102,7 +102,12 @@
         revNum = 2;
         sha256 = "debbb2e62f4af08a116e6f95497a478bc3034c50ddd9e9c32f47a22e70991b12";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/haddock-library-1.11.0-r3-17af50285f4aa50b1dcf67ecf25ffc84cb62790340120099ddeb86ad5abc0d27.nix;
+        revNum = 3;
+        sha256 = "17af50285f4aa50b1dcf67ecf25ffc84cb62790340120099ddeb86ad5abc0d27";
+        };
+      default = "r3";
       };
     };
   "1.2.0" = {

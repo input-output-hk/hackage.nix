@@ -301,6 +301,22 @@
         revNum = 0;
         sha256 = "5080ace77b4e531cfdbde8aaf9586f9eaed4242921f886350b346fb14d52be7e";
         };
+      r1 = {
+        nix = import ../hackage/Chart-cairo-1.9.4-r1-3c4ad206a1233a539a114c4dd015f45f8b156bbc7434fa0f9bff5b3b3f056fe9.nix;
+        revNum = 1;
+        sha256 = "3c4ad206a1233a539a114c4dd015f45f8b156bbc7434fa0f9bff5b3b3f056fe9";
+        };
+      default = "r1";
+      };
+    };
+  "1.9.4.1" = {
+    sha256 = "27cbc2f1237b739eb60c6c470a9324b7ab63974f33116411ea4c2f347ca22074";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Chart-cairo-1.9.4.1-r0-e2aa77a0dd3a1b62260c0c045865ff20aa986135d41f32e9e784d49b96cb33be.nix;
+        revNum = 0;
+        sha256 = "e2aa77a0dd3a1b62260c0c045865ff20aa986135d41f32e9e784d49b96cb33be";
+        };
       default = "r0";
       };
     };

@@ -4523,6 +4523,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "delta" = import ./nix/delta.nix;
   "delta-h" = import ./nix/delta-h.nix;
   "delude" = import ./nix/delude.nix;
+  "demangler" = import ./nix/demangler.nix;
   "demarcate" = import ./nix/demarcate.nix;
   "denominate" = import ./nix/denominate.nix;
   "dense" = import ./nix/dense.nix;

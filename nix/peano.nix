@@ -46,4 +46,15 @@
       default = "r3";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "8a8fe8718dba5b1a6133e1d9eae5ba69ca76028f59d088985a8489446ac74261";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/peano-0.1.0.2-r0-f77fc15315b9ee670fbee101af154fbe799a3a6b172862c202309a0a79268121.nix;
+        revNum = 0;
+        sha256 = "f77fc15315b9ee670fbee101af154fbe799a3a6b172862c202309a0a79268121";
+        };
+      default = "r0";
+      };
+    };
   }
