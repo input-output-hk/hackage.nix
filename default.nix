@@ -14246,6 +14246,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "silkscreen" = import ./nix/silkscreen.nix;
   "silvi" = import ./nix/silvi.nix;
   "simd" = import ./nix/simd.nix;
+  "simdutf" = import ./nix/simdutf.nix;
   "simfin" = import ./nix/simfin.nix;
   "simgi" = import ./nix/simgi.nix;
   "simple" = import ./nix/simple.nix;

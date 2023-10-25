@@ -503,4 +503,15 @@
       default = "r1";
       };
     };
+  "2.1.0.5" = {
+    sha256 = "65e96c8e18c660ec5a869cd002ead9f1f194e0a9de198d3409a4bc653f5d7cbc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/htoml-megaparsec-2.1.0.5-r0-9a984d6247a4622db43318a21a9748dd4ceff09e15662c7871afc67aacc065d7.nix;
+        revNum = 0;
+        sha256 = "9a984d6247a4622db43318a21a9748dd4ceff09e15662c7871afc67aacc065d7";
+        };
+      default = "r0";
+      };
+    };
   }

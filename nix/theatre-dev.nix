@@ -32,4 +32,26 @@
       default = "r0";
       };
     };
+  "0.1.1.1" = {
+    sha256 = "b5be34ee8c3b3fee4247e3b51ce8601f668a6347d4805b55dc794562a2b8e9de";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/theatre-dev-0.1.1.1-r0-abcc37c4a00aa8ff0332c516cb5a0337a42747a7d15627f50a5d24ec5eb4c08c.nix;
+        revNum = 0;
+        sha256 = "abcc37c4a00aa8ff0332c516cb5a0337a42747a7d15627f50a5d24ec5eb4c08c";
+        };
+      default = "r0";
+      };
+    };
+  "0.2" = {
+    sha256 = "95577d67a71d4b2aa337ee30039fe80c6c8d78ad7bc12ad39daa6c838acd81a3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/theatre-dev-0.2-r0-725b9dfc1b2483ef9ff82d2eea7374ce7f6421b9cf624d52249fcc7e0639449a.nix;
+        revNum = 0;
+        sha256 = "725b9dfc1b2483ef9ff82d2eea7374ce7f6421b9cf624d52249fcc7e0639449a";
+        };
+      default = "r0";
+      };
+    };
   }

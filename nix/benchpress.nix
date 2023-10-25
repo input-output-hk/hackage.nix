@@ -208,6 +208,17 @@
       default = "r0";
       };
     };
+  "0.2.2.23" = {
+    sha256 = "6ccaf68b72665c81b0dd44020eafd2d7349050e6b3bffe88830491002c01da3b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/benchpress-0.2.2.23-r0-50fc4a9b13412b749492ffd3e4a1c3345b88d45a5f618459f1eeeb60c9f766b8.nix;
+        revNum = 0;
+        sha256 = "50fc4a9b13412b749492ffd3e4a1c3345b88d45a5f618459f1eeeb60c9f766b8";
+        };
+      default = "r0";
+      };
+    };
   "0.2.2.3" = {
     sha256 = "6ced3af7649a7c4fea64e2f1237a0339c7f96d764ef96602547de961370dd644";
     revisions = {

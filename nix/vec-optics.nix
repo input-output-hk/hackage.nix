@@ -38,7 +38,12 @@
         revNum = 3;
         sha256 = "fce0e6332db7f9cf4959bf5fed41130847c4ce9c5e6262bd372fe39b52ff1ffc";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/vec-optics-0.4-r4-00cc4d31f446b54582c94c37610be5d22d7f715ccea0babf7c51588be1dcef6b.nix;
+        revNum = 4;
+        sha256 = "00cc4d31f446b54582c94c37610be5d22d7f715ccea0babf7c51588be1dcef6b";
+        };
+      default = "r4";
       };
     };
   }

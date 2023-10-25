@@ -98,4 +98,15 @@
       default = "r4";
       };
     };
+  "0.2.1" = {
+    sha256 = "2d6dfa51a7930bf5eb454d3b43b3abfa320f9723ae156969b6a907413d0d4431";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flac-0.2.1-r0-66067b72832913a93c0e6cf954c534699f8507534a3c8ea96f1ab8d79d27a095.nix;
+        revNum = 0;
+        sha256 = "66067b72832913a93c0e6cf954c534699f8507534a3c8ea96f1ab8d79d27a095";
+        };
+      default = "r0";
+      };
+    };
   }
