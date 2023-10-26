@@ -235,7 +235,12 @@
         revNum = 0;
         sha256 = "5a8df46bc74b45bde6a0364bef7977069c2bb1bc66382921a53626fbed5ac02b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pqueue-1.5.0.0-r1-efe134ff4ba2e8101cdbea34772b72b8af9351667349d9cc0a8ce2e7ecf52fd9.nix;
+        revNum = 1;
+        sha256 = "efe134ff4ba2e8101cdbea34772b72b8af9351667349d9cc0a8ce2e7ecf52fd9";
+        };
+      default = "r1";
       };
     };
   }

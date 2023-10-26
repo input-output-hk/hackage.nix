@@ -523,4 +523,15 @@
       default = "r0";
       };
     };
+  "1.8.0" = {
+    sha256 = "bdcb2c424e4f031ef8520943e5b61679cae01f51ca35887c28fd92eb17f8e241";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-plot-1.8.0-r0-d9b8d0e761c2383892e816fc6c8766cd6f0e4874f197819eafb5412d3b0ca9ba.nix;
+        revNum = 0;
+        sha256 = "d9b8d0e761c2383892e816fc6c8766cd6f0e4874f197819eafb5412d3b0ca9ba";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -9932,6 +9932,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "list-predicate" = import ./nix/list-predicate.nix;
   "list-prompt" = import ./nix/list-prompt.nix;
   "list-remote-forwards" = import ./nix/list-remote-forwards.nix;
+  "list-shuffle" = import ./nix/list-shuffle.nix;
   "list-singleton" = import ./nix/list-singleton.nix;
   "list-t" = import ./nix/list-t.nix;
   "list-t-attoparsec" = import ./nix/list-t-attoparsec.nix;
@@ -10798,6 +10799,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "moving-averages" = import ./nix/moving-averages.nix;
   "mp" = import ./nix/mp.nix;
   "mp3decoder" = import ./nix/mp3decoder.nix;
+  "mpd-current-json" = import ./nix/mpd-current-json.nix;
   "mpdmate" = import ./nix/mpdmate.nix;
   "mpeff" = import ./nix/mpeff.nix;
   "mpg123-bindings" = import ./nix/mpg123-bindings.nix;
