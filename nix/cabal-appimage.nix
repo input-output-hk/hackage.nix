@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.4.0.2" = {
+    sha256 = "1612e1e4479d63ae0cf0b1129f97fa86d216eced72ead87de416bc16d72fee41";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-appimage-0.4.0.2-r0-807d043a31ac591f66be958852fb20772dd2e8ec0d84a816f3d09b99eaa6523c.nix;
+        revNum = 0;
+        sha256 = "807d043a31ac591f66be958852fb20772dd2e8ec0d84a816f3d09b99eaa6523c";
+        };
+      default = "r0";
+      };
+    };
   }

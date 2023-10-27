@@ -43,7 +43,12 @@
         revNum = 5;
         sha256 = "e260776fe3fa589863206e24b530aacf48da7ec578cbcbf1f86807bdc6f9e69c";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/html-entity-map-0.1.0.0-r6-9f43a144ded88d9602c86ec04e9d2f72b5373bf52a4b257e33b4dc5ecb679f76.nix;
+        revNum = 6;
+        sha256 = "9f43a144ded88d9602c86ec04e9d2f72b5373bf52a4b257e33b4dc5ecb679f76";
+        };
+      default = "r6";
       };
     };
   }

@@ -5657,6 +5657,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "finite" = import ./nix/finite.nix;
   "finite-field" = import ./nix/finite-field.nix;
   "finite-fields" = import ./nix/finite-fields.nix;
+  "finite-semigroups" = import ./nix/finite-semigroups.nix;
   "finite-table" = import ./nix/finite-table.nix;
   "finite-typelits" = import ./nix/finite-typelits.nix;
   "finito" = import ./nix/finito.nix;
@@ -13584,6 +13585,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rsagl-frp" = import ./nix/rsagl-frp.nix;
   "rsagl-math" = import ./nix/rsagl-math.nix;
   "rset" = import ./nix/rset.nix;
+  "rsi-break" = import ./nix/rsi-break.nix;
   "rspp" = import ./nix/rspp.nix;
   "rss" = import ./nix/rss.nix;
   "rss-conduit" = import ./nix/rss-conduit.nix;
