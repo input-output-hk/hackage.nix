@@ -15427,6 +15427,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tell" = import ./nix/tell.nix;
   "tellbot" = import ./nix/tellbot.nix;
   "tempered" = import ./nix/tempered.nix;
+  "tempgres-client" = import ./nix/tempgres-client.nix;
   "tempi" = import ./nix/tempi.nix;
   "template" = import ./nix/template.nix;
   "template-default" = import ./nix/template-default.nix;

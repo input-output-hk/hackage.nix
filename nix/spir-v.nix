@@ -34,7 +34,12 @@
         revNum = 0;
         sha256 = "abdc223cd4a183e48cd0a47c22c9334f53056fdf69f25419a51df7060583fa69";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/spir-v-0.0.1.0-r1-e123a9b98ac5461ebbfa037d6b8eca12ccd3a3466a674ddfc5f11e8eff8ec09f.nix;
+        revNum = 1;
+        sha256 = "e123a9b98ac5461ebbfa037d6b8eca12ccd3a3466a674ddfc5f11e8eff8ec09f";
+        };
+      default = "r1";
       };
     };
   }
