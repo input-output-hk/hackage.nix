@@ -549,4 +549,15 @@
       default = "r0";
       };
     };
+  "6.1" = {
+    sha256 = "665ef233cb9a9a780d21ad29916c8641ea89b4ab792c3685f1674dd7c5ddc499";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aivika-6.1-r0-c6423f9c98f83350cdfc0393b186365865eddf93ef03105ae7c2dc7b6d8bc224.nix;
+        revNum = 0;
+        sha256 = "c6423f9c98f83350cdfc0393b186365865eddf93ef03105ae7c2dc7b6d8bc224";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.4.0" = {
+    sha256 = "6d3d0431537cfde8a09c626bb3b2ff2345b9cdf758c4061b044f89a6426e0ebf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fswatcher-0.4.0-r0-825ca1622868aacb5214c179d3a1eaaa05aee5e1dbe1952edbda0490f634e476.nix;
+        revNum = 0;
+        sha256 = "825ca1622868aacb5214c179d3a1eaaa05aee5e1dbe1952edbda0490f634e476";
+        };
+      default = "r0";
+      };
+    };
   }
