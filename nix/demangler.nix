@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "1.2.0.0" = {
+    sha256 = "b49afb7e6296d6eb6a3705e913928d108d6469abc2218376d6b3c2622bc464df";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/demangler-1.2.0.0-r0-6d77ac4a7d2e8fc537725243fe1f53fcf6363f797d06110b1e9c9bd8026a75da.nix;
+        revNum = 0;
+        sha256 = "6d77ac4a7d2e8fc537725243fe1f53fcf6363f797d06110b1e9c9bd8026a75da";
+        };
+      default = "r0";
+      };
+    };
   }

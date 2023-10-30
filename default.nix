@@ -10207,6 +10207,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mailchimp" = import ./nix/mailchimp.nix;
   "mailchimp-subscribe" = import ./nix/mailchimp-subscribe.nix;
   "mailgun" = import ./nix/mailgun.nix;
+  "mailtrap" = import ./nix/mailtrap.nix;
   "main-tester" = import ./nix/main-tester.nix;
   "mainland-pretty" = import ./nix/mainland-pretty.nix;
   "majordomo" = import ./nix/majordomo.nix;
@@ -12490,6 +12491,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "precursor" = import ./nix/precursor.nix;
   "pred-set" = import ./nix/pred-set.nix;
   "pred-trie" = import ./nix/pred-trie.nix;
+  "predicate" = import ./nix/predicate.nix;
   "predicate-class" = import ./nix/predicate-class.nix;
   "predicate-transformers" = import ./nix/predicate-transformers.nix;
   "predicate-typed" = import ./nix/predicate-typed.nix;
