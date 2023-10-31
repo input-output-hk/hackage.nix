@@ -87,6 +87,17 @@
       default = "r0";
       };
     };
+  "0.11.0.1" = {
+    sha256 = "758111db44143d30f36ebaf8927b09a4e3f92beec63b8c2fe66e339cca67b2e2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/LambdaHack-0.11.0.1-r0-545c794298b71ee50791481afdbe35a9f4af8fece25a7827ca48727770d67793.nix;
+        revNum = 0;
+        sha256 = "545c794298b71ee50791481afdbe35a9f4af8fece25a7827ca48727770d67793";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0" = {
     sha256 = "8ce0dfe971f092905e20f11ace50b304bcb99d52650e7cd2b149709af95d8f26";
     revisions = {

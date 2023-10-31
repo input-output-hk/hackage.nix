@@ -11637,6 +11637,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "osm-conduit" = import ./nix/osm-conduit.nix;
   "osm-download" = import ./nix/osm-download.nix;
   "oso2pdf" = import ./nix/oso2pdf.nix;
+  "ostree-pin" = import ./nix/ostree-pin.nix;
   "osx-ar" = import ./nix/osx-ar.nix;
   "ot" = import ./nix/ot.nix;
   "otp-authenticator" = import ./nix/otp-authenticator.nix;
@@ -16687,10 +16688,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "vte" = import ./nix/vte.nix;
   "vtegtk3" = import ./nix/vtegtk3.nix;
   "vty" = import ./nix/vty.nix;
+  "vty-crossplatform" = import ./nix/vty-crossplatform.nix;
   "vty-examples" = import ./nix/vty-examples.nix;
   "vty-menu" = import ./nix/vty-menu.nix;
   "vty-ui" = import ./nix/vty-ui.nix;
   "vty-ui-extras" = import ./nix/vty-ui-extras.nix;
+  "vty-unix" = import ./nix/vty-unix.nix;
   "vulkan" = import ./nix/vulkan.nix;
   "vulkan-api" = import ./nix/vulkan-api.nix;
   "vulkan-utils" = import ./nix/vulkan-utils.nix;

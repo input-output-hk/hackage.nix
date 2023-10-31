@@ -679,4 +679,15 @@
       default = "r1";
       };
     };
+  "0.7.1.2" = {
+    sha256 = "19a88c32f801b803340af77ba21a43c3a27ff4e6a218ad189e9c402ab56259ec";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yesod-auth-oauth2-0.7.1.2-r0-722a68454f657849e44b65191b1c9733fc9c87ce8ccfb7984a36e3aefdf2c84f.nix;
+        revNum = 0;
+        sha256 = "722a68454f657849e44b65191b1c9733fc9c87ce8ccfb7984a36e3aefdf2c84f";
+        };
+      default = "r0";
+      };
+    };
   }
