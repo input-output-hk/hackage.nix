@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.1.5.1" = {
+    sha256 = "2a0047a9c7736995d6595bd79bac7b34c4377251675de5a95dc4c15461996085";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-plan-bounds-0.1.5.1-r0-888e9231e26da6bd51c4f05282dc49178232abaf1c4e5fa4e8a21cad54f781bf.nix;
+        revNum = 0;
+        sha256 = "888e9231e26da6bd51c4f05282dc49178232abaf1c4e5fa4e8a21cad54f781bf";
+        };
+      default = "r0";
+      };
+    };
   }

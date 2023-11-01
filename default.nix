@@ -11627,6 +11627,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ormolu" = import ./nix/ormolu.nix;
   "orthotope" = import ./nix/orthotope.nix;
   "orthotope-hmatrix" = import ./nix/orthotope-hmatrix.nix;
+  "orville-postgresql" = import ./nix/orville-postgresql.nix;
   "ory-hydra-client" = import ./nix/ory-hydra-client.nix;
   "ory-kratos" = import ./nix/ory-kratos.nix;
   "os-release" = import ./nix/os-release.nix;
@@ -16694,6 +16695,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "vty-ui" = import ./nix/vty-ui.nix;
   "vty-ui-extras" = import ./nix/vty-ui-extras.nix;
   "vty-unix" = import ./nix/vty-unix.nix;
+  "vty-windows" = import ./nix/vty-windows.nix;
   "vulkan" = import ./nix/vulkan.nix;
   "vulkan-api" = import ./nix/vulkan-api.nix;
   "vulkan-utils" = import ./nix/vulkan-utils.nix;

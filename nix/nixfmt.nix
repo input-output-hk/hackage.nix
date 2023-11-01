@@ -37,4 +37,15 @@
       default = "r0";
       };
     };
+  "0.6.0" = {
+    sha256 = "5f02760351f3838a739e55a1c66d61782be29c981f042e5909371a2c2e43ef49";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nixfmt-0.6.0-r0-b26eea9c8a175ea98f965a8da7c45355b99ed467bcdb643324b0296ad66f2c27.nix;
+        revNum = 0;
+        sha256 = "b26eea9c8a175ea98f965a8da7c45355b99ed467bcdb643324b0296ad66f2c27";
+        };
+      default = "r0";
+      };
+    };
   }
