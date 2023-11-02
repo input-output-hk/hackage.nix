@@ -342,7 +342,12 @@
         revNum = 1;
         sha256 = "1be542eaf091e04c561a2a589f37330b0a65d6d3d5a44609c197a74e8385c64b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/Workflow-0.8.3-r2-47824f069850bc24a3436138736f3d6b722a6b40229fc82f4dfc73babb2d5846.nix;
+        revNum = 2;
+        sha256 = "47824f069850bc24a3436138736f3d6b722a6b40229fc82f4dfc73babb2d5846";
+        };
+      default = "r2";
       };
     };
   }

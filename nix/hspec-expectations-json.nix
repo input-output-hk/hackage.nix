@@ -108,4 +108,15 @@
       default = "r2";
       };
     };
+  "1.0.2.1" = {
+    sha256 = "41be947e59c5c94728c24650940d4c7e3a820416361da92bbe20db060bf67d95";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hspec-expectations-json-1.0.2.1-r0-39054effab62cba6cc1fd526247cb2e8c24b573bf49239f3002378caabe876c9.nix;
+        revNum = 0;
+        sha256 = "39054effab62cba6cc1fd526247cb2e8c24b573bf49239f3002378caabe876c9";
+        };
+      default = "r0";
+      };
+    };
   }
