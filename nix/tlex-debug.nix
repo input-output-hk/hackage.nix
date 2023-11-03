@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.4.1.0" = {
+    sha256 = "c1b7695d919d75270091a06b347924a92e3fda8dbeb2e12ce5985667e8880760";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tlex-debug-0.4.1.0-r0-d12ee256d83596b31f78cdd6ce58c0dd05e0ef7911ba0cd35ebcecd8fe15cfda.nix;
+        revNum = 0;
+        sha256 = "d12ee256d83596b31f78cdd6ce58c0dd05e0ef7911ba0cd35ebcecd8fe15cfda";
+        };
+      default = "r0";
+      };
+    };
   }
