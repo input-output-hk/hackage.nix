@@ -230,4 +230,15 @@
       default = "r0";
       };
     };
+  "1.6.0.0" = {
+    sha256 = "74e80b1713174d3e69b9a1d172e21f33e198ed50de2e93c72adc8341d3c9c131";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/WeakSets-1.6.0.0-r0-a3195c5d6e058ab44d103c3b2b9a6ee9473705d2e174153944092d07bbadad8b.nix;
+        revNum = 0;
+        sha256 = "a3195c5d6e058ab44d103c3b2b9a6ee9473705d2e174153944092d07bbadad8b";
+        };
+      default = "r0";
+      };
+    };
   }

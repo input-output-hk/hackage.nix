@@ -11042,6 +11042,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nat" = import ./nix/nat.nix;
   "nat-optics" = import ./nix/nat-optics.nix;
   "nat-sized-numbers" = import ./nix/nat-sized-numbers.nix;
+  "national-australia-bank" = import ./nix/national-australia-bank.nix;
   "nationstates" = import ./nix/nationstates.nix;
   "native" = import ./nix/native.nix;
   "nats" = import ./nix/nats.nix;
@@ -11607,6 +11608,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "order-statistics" = import ./nix/order-statistics.nix;
   "ordered" = import ./nix/ordered.nix;
   "ordered-containers" = import ./nix/ordered-containers.nix;
+  "ordering-duplicates" = import ./nix/ordering-duplicates.nix;
   "ordering-util" = import ./nix/ordering-util.nix;
   "orderly-workers" = import ./nix/orderly-workers.nix;
   "orders" = import ./nix/orders.nix;
