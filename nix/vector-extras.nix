@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.2.8.1" = {
+    sha256 = "e2467e77669a6caf8e870e6c7419a3cdfd2611281110a68c8a6607001881d22e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vector-extras-0.2.8.1-r0-71135e6798ebdbb47bdd0d35b69dc9309d991990f531795a2830637c14f4009c.nix;
+        revNum = 0;
+        sha256 = "71135e6798ebdbb47bdd0d35b69dc9309d991990f531795a2830637c14f4009c";
+        };
+      default = "r0";
+      };
+    };
   }

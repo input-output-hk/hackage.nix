@@ -15,4 +15,15 @@
       default = "r1";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "34a82a999f46f35daa78cf1d88f98e7c71565193e5b70531f3a63f721b303113";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vty-crossplatform-0.2.0.0-r0-6dc6b72ba2fe63f0af582a501ab133a69f49fb75fef3ad7a870412472be077ec.nix;
+        revNum = 0;
+        sha256 = "6dc6b72ba2fe63f0af582a501ab133a69f49fb75fef3ad7a870412472be077ec";
+        };
+      default = "r0";
+      };
+    };
   }

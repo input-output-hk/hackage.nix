@@ -300,4 +300,20 @@
       default = "r6";
       };
     };
+  "2.3.5" = {
+    sha256 = "f0b2d191a8a86edd5efeadd2a3af785a0b889222720f27b2fbe69d54fc53d78e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pipes-safe-2.3.5-r0-58445b188229114c3f0525a9906a2c810ab3794ac84a1adc2cceb28d26d07a53.nix;
+        revNum = 0;
+        sha256 = "58445b188229114c3f0525a9906a2c810ab3794ac84a1adc2cceb28d26d07a53";
+        };
+      r1 = {
+        nix = import ../hackage/pipes-safe-2.3.5-r1-aca973a5a3ea85b33e6f6c7415a2c7c50f41a4edc6ca108b0512fc90689cbb35.nix;
+        revNum = 1;
+        sha256 = "aca973a5a3ea85b33e6f6c7415a2c7c50f41a4edc6ca108b0512fc90689cbb35";
+        };
+      default = "r1";
+      };
+    };
   }

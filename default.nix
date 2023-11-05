@@ -4035,6 +4035,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "covariance" = import ./nix/covariance.nix;
   "coverage" = import ./nix/coverage.nix;
   "coya" = import ./nix/coya.nix;
+  "cozo-hs" = import ./nix/cozo-hs.nix;
   "cparsing" = import ./nix/cparsing.nix;
   "cpio-conduit" = import ./nix/cpio-conduit.nix;
   "cpkg" = import ./nix/cpkg.nix;
@@ -10483,6 +10484,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "midimory" = import ./nix/midimory.nix;
   "midisurface" = import ./nix/midisurface.nix;
   "mig" = import ./nix/mig.nix;
+  "mig-client" = import ./nix/mig-client.nix;
+  "mig-extra" = import ./nix/mig-extra.nix;
+  "mig-server" = import ./nix/mig-server.nix;
+  "mig-swagger-ui" = import ./nix/mig-swagger-ui.nix;
+  "mig-wai" = import ./nix/mig-wai.nix;
   "mighttpd" = import ./nix/mighttpd.nix;
   "mighttpd2" = import ./nix/mighttpd2.nix;
   "mighty-metropolis" = import ./nix/mighty-metropolis.nix;

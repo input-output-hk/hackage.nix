@@ -549,4 +549,15 @@
       default = "r0";
       };
     };
+  "2.0.0.9" = {
+    sha256 = "5b1e75712f47949751fd0d8b2dab518d0f62cde6acda826ba05a9b2c45fa0a52";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/github-release-2.0.0.9-r0-0fb07ae7fdb7b337ba2b7382d62d28dad7edbd51552d5aab1d3f0d4130cf0eac.nix;
+        revNum = 0;
+        sha256 = "0fb07ae7fdb7b337ba2b7382d62d28dad7edbd51552d5aab1d3f0d4130cf0eac";
+        };
+      default = "r0";
+      };
+    };
   }

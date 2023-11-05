@@ -439,6 +439,17 @@
       default = "r0";
       };
     };
+  "12.1.2" = {
+    sha256 = "6c4cd8b2c1126b7168b1ec5eac8db5daddd8d5c590175be3479fc01cd7c9da53";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rattletrap-12.1.2-r0-8e3b9c33154a1c5f14e620f24c893815090f56f9441d023de70798e10b4082d0.nix;
+        revNum = 0;
+        sha256 = "8e3b9c33154a1c5f14e620f24c893815090f56f9441d023de70798e10b4082d0";
+        };
+      default = "r0";
+      };
+    };
   "2.0.0" = {
     sha256 = "a58e5c7b1c5e8318ab552ac204248075cf1d8adb6024555f0b06d99de6c750ba";
     revisions = {

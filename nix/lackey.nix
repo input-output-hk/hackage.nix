@@ -428,4 +428,15 @@
       default = "r0";
       };
     };
+  "2.0.0.7" = {
+    sha256 = "23b862d5cc2233d1acbd82d4125313ca3da84000cdcafb96333a3453c5832422";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lackey-2.0.0.7-r0-1f5ab281aeb7c5a79d7e15ad6c025136d94250f70b5b5dfdc3f7228091461eea.nix;
+        revNum = 0;
+        sha256 = "1f5ab281aeb7c5a79d7e15ad6c025136d94250f70b5b5dfdc3f7228091461eea";
+        };
+      default = "r0";
+      };
+    };
   }
