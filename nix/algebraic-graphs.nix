@@ -176,7 +176,12 @@
         revNum = 1;
         sha256 = "ae59cdfe6b9ae7df4453a2158346071c7962fe91bb7ab9c3a579ec988fa63dfd";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/algebraic-graphs-0.7-r2-75f8bbfffc8bc6c8a0a3c61f7f3ed2129fee35fd929822230b693786059f4fdf.nix;
+        revNum = 2;
+        sha256 = "75f8bbfffc8bc6c8a0a3c61f7f3ed2129fee35fd929822230b693786059f4fdf";
+        };
+      default = "r2";
       };
     };
   }

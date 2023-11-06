@@ -22,7 +22,12 @@
         revNum = 3;
         sha256 = "bc06254fedb933fa7d4fd382190e98eb21cfee2faf7325cdda6d477b1ff94f56";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/prettyprinter-combinators-0.1-r4-a0aa238143b7e1ce35cbf75fe2dc38f7375bbec32a76fb6f3c51fc81532e24e1.nix;
+        revNum = 4;
+        sha256 = "a0aa238143b7e1ce35cbf75fe2dc38f7375bbec32a76fb6f3c51fc81532e24e1";
+        };
+      default = "r4";
       };
     };
   "0.1.0.1" = {
@@ -48,7 +53,12 @@
         revNum = 3;
         sha256 = "3621266236a4b5cb589b1c06ce80a21d452a2ed3fa80fab9c4a3f1876cfbdcfc";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/prettyprinter-combinators-0.1.0.1-r4-8edd05457db2091b196238167e4837e8520d19d774a4ab40c70631c3b4ef8180.nix;
+        revNum = 4;
+        sha256 = "8edd05457db2091b196238167e4837e8520d19d774a4ab40c70631c3b4ef8180";
+        };
+      default = "r4";
       };
     };
   "0.1.1" = {
@@ -74,7 +84,12 @@
         revNum = 3;
         sha256 = "62b97c1e7b2159d5fbda315afa552fff2543de89c8d13135b1d528f186e16e4f";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/prettyprinter-combinators-0.1.1-r4-2ed85c099af783efeab05f9516299eb72a2c85e92db839a65fe811a1d96ea512.nix;
+        revNum = 4;
+        sha256 = "2ed85c099af783efeab05f9516299eb72a2c85e92db839a65fe811a1d96ea512";
+        };
+      default = "r4";
       };
     };
   "0.1.1.1" = {
@@ -84,6 +99,22 @@
         nix = import ../hackage/prettyprinter-combinators-0.1.1.1-r0-8ee291dfb0039d9fadfd192106cdc4962c0c5ebfa06972b45d20b9937bdf9d7e.nix;
         revNum = 0;
         sha256 = "8ee291dfb0039d9fadfd192106cdc4962c0c5ebfa06972b45d20b9937bdf9d7e";
+        };
+      r1 = {
+        nix = import ../hackage/prettyprinter-combinators-0.1.1.1-r1-e293cae8ef27a9beb3685471922efaf21ef8557ed44a1a17dff773eed30ee036.nix;
+        revNum = 1;
+        sha256 = "e293cae8ef27a9beb3685471922efaf21ef8557ed44a1a17dff773eed30ee036";
+        };
+      default = "r1";
+      };
+    };
+  "0.1.2" = {
+    sha256 = "b1f9be1af456fb85cb653b18fc7a1142cb45a7e21c66fa0e1675bcb43efbbbce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prettyprinter-combinators-0.1.2-r0-5b725a01c109472acabe8623159805db502a3248770848373706d311406feb50.nix;
+        revNum = 0;
+        sha256 = "5b725a01c109472acabe8623159805db502a3248770848373706d311406feb50";
         };
       default = "r0";
       };

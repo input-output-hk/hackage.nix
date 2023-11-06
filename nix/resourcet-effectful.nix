@@ -25,4 +25,15 @@
       default = "r3";
       };
     };
+  "1.0.1.0" = {
+    sha256 = "5b6a0ba94f8d53de3c92d9254c9f935240b7fe465136f27321058f06c6934514";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/resourcet-effectful-1.0.1.0-r0-13f94c9832d0d1573abbabcddc5c3aa3c341973d1d442445795593e355e7803e.nix;
+        revNum = 0;
+        sha256 = "13f94c9832d0d1573abbabcddc5c3aa3c341973d1d442445795593e355e7803e";
+        };
+      default = "r0";
+      };
+    };
   }

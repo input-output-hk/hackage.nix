@@ -10254,6 +10254,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "map-reduce-folds" = import ./nix/map-reduce-folds.nix;
   "map-syntax" = import ./nix/map-syntax.nix;
   "mapalgebra" = import ./nix/mapalgebra.nix;
+  "mappings" = import ./nix/mappings.nix;
   "mappy" = import ./nix/mappy.nix;
   "mapquest-api" = import ./nix/mapquest-api.nix;
   "maquinitas-tidal" = import ./nix/maquinitas-tidal.nix;
