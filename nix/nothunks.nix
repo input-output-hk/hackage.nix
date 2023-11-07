@@ -74,4 +74,15 @@
       default = "r1";
       };
     };
+  "0.1.5" = {
+    sha256 = "9c7c0a385211c5d1427db156896a56fc05b0374d575c429a1c7a09f3ca23bde8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nothunks-0.1.5-r0-ebe6c82d2533851f10fc9c7a045cedbfc2add3c61e7a03ef47aa07c8220de09a.nix;
+        revNum = 0;
+        sha256 = "ebe6c82d2533851f10fc9c7a045cedbfc2add3c61e7a03ef47aa07c8220de09a";
+        };
+      default = "r0";
+      };
+    };
   }

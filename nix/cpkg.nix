@@ -818,4 +818,15 @@
       default = "r0";
       };
     };
+  "0.2.5.8" = {
+    sha256 = "816713d89ee5a32ab6b7c91a6b2cc52fa227e0b220bd28428610584bd42b0cbe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cpkg-0.2.5.8-r0-07525c395ede4820795a2775a31360f6c8e20f9b833aa8ca07948949304bd6c5.nix;
+        revNum = 0;
+        sha256 = "07525c395ede4820795a2775a31360f6c8e20f9b833aa8ca07948949304bd6c5";
+        };
+      default = "r0";
+      };
+    };
   }

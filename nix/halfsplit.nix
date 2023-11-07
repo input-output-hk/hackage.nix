@@ -32,4 +32,26 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "3c1e538641dd9e4f1157e2409906511e8fd34785a9ab202ceb7d41d87eede731";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/halfsplit-0.4.0.0-r0-a6923c937f335f4308f30fb832acac0fec9fb061f1ab33dff1b0264299433f36.nix;
+        revNum = 0;
+        sha256 = "a6923c937f335f4308f30fb832acac0fec9fb061f1ab33dff1b0264299433f36";
+        };
+      default = "r0";
+      };
+    };
+  "0.4.1.0" = {
+    sha256 = "8903ac962ec3d56d23989d8a58ea3ef007ff6ed6971ab1beb38c903b8a325a55";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/halfsplit-0.4.1.0-r0-b89b60b6a1839706e7de80c53d0bc98d7c1fa160b923667e0bd5b66abb436103.nix;
+        revNum = 0;
+        sha256 = "b89b60b6a1839706e7de80c53d0bc98d7c1fa160b923667e0bd5b66abb436103";
+        };
+      default = "r0";
+      };
+    };
   }

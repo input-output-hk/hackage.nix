@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.4.0.1" = {
+    sha256 = "d442f69bb412fde21bd3414c8aee46e647c10be6491605a59cdf6db3252ad5b9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tahoe-great-black-swamp-0.4.0.1-r0-46e7490a5d9b1b92945e100057ea03972e3cf96bbe315c4c6fabe769fddf58cc.nix;
+        revNum = 0;
+        sha256 = "46e7490a5d9b1b92945e100057ea03972e3cf96bbe315c4c6fabe769fddf58cc";
+        };
+      default = "r0";
+      };
+    };
   }

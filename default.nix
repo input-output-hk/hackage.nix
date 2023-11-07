@@ -9524,6 +9524,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lambdiff" = import ./nix/lambdiff.nix;
   "lame" = import ./nix/lame.nix;
   "lame-tester" = import ./nix/lame-tester.nix;
+  "laminar" = import ./nix/laminar.nix;
   "landlock" = import ./nix/landlock.nix;
   "lang" = import ./nix/lang.nix;
   "language-Modula2" = import ./nix/language-_Modula2.nix;

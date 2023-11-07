@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "110cb50ce396113d11cf28e2c1da7508ecaaa9e838757747442bcba30a97e0b3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-papi-0.1.1.0-r0-d7455d4d7f0916b78d74a66c2f733320dcb6eb692432ba6062631a5e84aa1feb.nix;
+        revNum = 0;
+        sha256 = "d7455d4d7f0916b78d74a66c2f733320dcb6eb692432ba6062631a5e84aa1feb";
+        };
+      default = "r0";
+      };
+    };
   }

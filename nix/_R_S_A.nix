@@ -300,7 +300,17 @@
         revNum = 0;
         sha256 = "b52a764965cd10756646cc39eadcbc566e131181a75f2a13c621697f4b06d76b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/RSA-2.4.1-r1-54b35334993b30772532a4b72b906e414f9803b9449775e6bcbd0ff129d1af47.nix;
+        revNum = 1;
+        sha256 = "54b35334993b30772532a4b72b906e414f9803b9449775e6bcbd0ff129d1af47";
+        };
+      r2 = {
+        nix = import ../hackage/RSA-2.4.1-r2-d2e711da52c19e332d374b3c0202a77d3088b59a0ba64abe6107569752fd1e24.nix;
+        revNum = 2;
+        sha256 = "d2e711da52c19e332d374b3c0202a77d3088b59a0ba64abe6107569752fd1e24";
+        };
+      default = "r2";
       };
     };
   }
