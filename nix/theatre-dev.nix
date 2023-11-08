@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "0.5.0.1" = {
+    sha256 = "953e078ee270d57dee7c3fab7b74f416b557696bc714e2e0ace0d8d154763e8d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/theatre-dev-0.5.0.1-r0-27e3927d288bf8e999ba69b34502f23680892e7bd6e0a8b9b2fe5b64f136578e.nix;
+        revNum = 0;
+        sha256 = "27e3927d288bf8e999ba69b34502f23680892e7bd6e0a8b9b2fe5b64f136578e";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -66,7 +66,12 @@
         revNum = 3;
         sha256 = "add530e695ea3058bf4f7156a1ca85653ff3635b87ec6d1be8c4891645190f96";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/bsb-http-chunked-0.0.0.4-r4-1cce7371c31b1d3cfa3eb155e2aecffc0ec212d1d8a7e7c8a3b00ef76818a43b.nix;
+        revNum = 4;
+        sha256 = "1cce7371c31b1d3cfa3eb155e2aecffc0ec212d1d8a7e7c8a3b00ef76818a43b";
+        };
+      default = "r4";
       };
     };
   }

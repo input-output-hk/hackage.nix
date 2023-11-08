@@ -986,4 +986,15 @@
       default = "r0";
       };
     };
+  "1.5.1" = {
+    sha256 = "c5dac22828adc9e3e155fd8c7eeb98598f3f29aa8fd7b0ab56d104b5679ce22e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/language-puppet-1.5.1-r0-900672959ada289c9b5e68437d9c8c8798731caf178b92bcc51ee6f642931429.nix;
+        revNum = 0;
+        sha256 = "900672959ada289c9b5e68437d9c8c8798731caf178b92bcc51ee6f642931429";
+        };
+      default = "r0";
+      };
+    };
   }

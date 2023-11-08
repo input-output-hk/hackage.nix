@@ -417,4 +417,15 @@
       default = "r0";
       };
     };
+  "0.5.1.0" = {
+    sha256 = "0d8a34ffc6d1f02c7ad5228551016fcaa09ea78555209cdd75a8d615be0d7654";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hruby-0.5.1.0-r0-408680e3505a1fc06270c27a14b3ea487dbc677fa725002ad944ece2b4038b8f.nix;
+        revNum = 0;
+        sha256 = "408680e3505a1fc06270c27a14b3ea487dbc677fa725002ad944ece2b4038b8f";
+        };
+      default = "r0";
+      };
+    };
   }

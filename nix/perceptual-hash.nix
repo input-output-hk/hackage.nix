@@ -281,4 +281,15 @@
       default = "r0";
       };
     };
+  "0.1.4.7" = {
+    sha256 = "b3e6e1ec6abdf704e4dfada1d221d32c83873af82341b253d531210af12a3a94";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/perceptual-hash-0.1.4.7-r0-a2f7b1cace82db194e60ce13f99b40fb2a7eefc66821aec6c91e5296aed3ae26.nix;
+        revNum = 0;
+        sha256 = "a2f7b1cace82db194e60ce13f99b40fb2a7eefc66821aec6c91e5296aed3ae26";
+        };
+      default = "r0";
+      };
+    };
   }

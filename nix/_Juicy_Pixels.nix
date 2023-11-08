@@ -966,7 +966,12 @@
         revNum = 0;
         sha256 = "c50e7a610ec33e04f04256dc62da8ce667b014ede72c8c6730dd5039c681e70d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/JuicyPixels-3.3.8-r1-c9721541b4c9d9de57dd271ead1f433cf3e3acc6c16baf2dba91368c8aa675bd.nix;
+        revNum = 1;
+        sha256 = "c9721541b4c9d9de57dd271ead1f433cf3e3acc6c16baf2dba91368c8aa675bd";
+        };
+      default = "r1";
       };
     };
   }
