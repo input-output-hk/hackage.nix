@@ -81,6 +81,17 @@
       default = "r0";
       };
     };
+  "0.11.0.0" = {
+    sha256 = "b9651ffcef4891d85e297644ba2eef5c21753d84318219392ad79180964320a7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ipython-kernel-0.11.0.0-r0-4e1c174037c4088b0113663d17c443fb6612e0f7639d28152c1e237816972550.nix;
+        revNum = 0;
+        sha256 = "4e1c174037c4088b0113663d17c443fb6612e0f7639d28152c1e237816972550";
+        };
+      default = "r0";
+      };
+    };
   "0.3.0.0" = {
     sha256 = "521fc9d6e9a34fc8db6a44a7fff4e704f44c22b173bb3aa5ab554eda0276ac0c";
     revisions = {

@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "c2185268c25a79c73f54aeede6baaaa5a2375a5f39b110126a1b3f1ecd48a2e3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ihaskell-diagrams-0.4.0.0-r0-9069626f65dc64d92e28054c9ff52be9e4e7f16d60c8e772aa5f5b9f5e0819af.nix;
+        revNum = 0;
+        sha256 = "9069626f65dc64d92e28054c9ff52be9e4e7f16d60c8e772aa5f5b9f5e0819af";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -81,4 +81,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "84bb33033ea43a6da2b7e037e6573f765ac0531d5812dfac40f0a0e46019a372";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ihaskell-widgets-0.4.0.0-r0-0503d40baa4fa13e06d2c491306f44daa4b44c5048f1934be557b7e38eeb6cb6.nix;
+        revNum = 0;
+        sha256 = "0503d40baa4fa13e06d2c491306f44daa4b44c5048f1934be557b7e38eeb6cb6";
+        };
+      default = "r0";
+      };
+    };
   }

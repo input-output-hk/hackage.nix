@@ -3876,6 +3876,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "configurator-export" = import ./nix/configurator-export.nix;
   "configurator-ng" = import ./nix/configurator-ng.nix;
   "configurator-pg" = import ./nix/configurator-pg.nix;
+  "conformance" = import ./nix/conformance.nix;
+  "conformance-gen" = import ./nix/conformance-gen.nix;
   "confsolve" = import ./nix/confsolve.nix;
   "congruence-relation" = import ./nix/congruence-relation.nix;
   "conic-graphs" = import ./nix/conic-graphs.nix;

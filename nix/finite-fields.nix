@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "9e947cfe80ace71f190072b9a94d7950688349869315ffcff007f4ae1b60c566";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/finite-fields-0.2.0.1-r0-c2e30538951d6caad6c6f7ba59071c350ba6d951fe4e094df742e118c3669838.nix;
+        revNum = 0;
+        sha256 = "c2e30538951d6caad6c6f7ba59071c350ba6d951fe4e094df742e118c3669838";
+        };
+      default = "r0";
+      };
+    };
   }
