@@ -2542,6 +2542,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bein" = import ./nix/bein.nix;
   "belgian-structured-communication" = import ./nix/belgian-structured-communication.nix;
   "belka" = import ./nix/belka.nix;
+  "benc" = import ./nix/benc.nix;
   "bench" = import ./nix/bench.nix;
   "bench-graph" = import ./nix/bench-graph.nix;
   "bench-show" = import ./nix/bench-show.nix;
@@ -4248,6 +4249,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "daemons" = import ./nix/daemons.nix;
   "dag" = import ./nix/dag.nix;
   "dahdit" = import ./nix/dahdit.nix;
+  "dahdit-network" = import ./nix/dahdit-network.nix;
+  "dahdit-test" = import ./nix/dahdit-test.nix;
   "daino" = import ./nix/daino.nix;
   "damnpacket" = import ./nix/damnpacket.nix;
   "danibot" = import ./nix/danibot.nix;
@@ -13890,6 +13893,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "selinux" = import ./nix/selinux.nix;
   "semantic" = import ./nix/semantic.nix;
   "semantic-source" = import ./nix/semantic-source.nix;
+  "semantic-version" = import ./nix/semantic-version.nix;
   "semaphore-compat" = import ./nix/semaphore-compat.nix;
   "semaphore-plus" = import ./nix/semaphore-plus.nix;
   "semdoc" = import ./nix/semdoc.nix;
