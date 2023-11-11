@@ -204,4 +204,15 @@
       default = "r0";
       };
     };
+  "5.3.1.2" = {
+    sha256 = "e866176ee50747d4cc97cea7e6f48cae9c5c90488141eb8fddd811db19e4705d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lambdabot-haskell-plugins-5.3.1.2-r0-fdefb912c6932b6c595af4d8b54a9cf60dca08057abb5434f03134bc9f206c10.nix;
+        revNum = 0;
+        sha256 = "fdefb912c6932b6c595af4d8b54a9cf60dca08057abb5434f03134bc9f206c10";
+        };
+      default = "r0";
+      };
+    };
   }

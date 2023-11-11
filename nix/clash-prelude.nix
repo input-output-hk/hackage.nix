@@ -818,4 +818,15 @@
       default = "r0";
       };
     };
+  "1.8.0" = {
+    sha256 = "38d628f192a49db3ad8b7873b95f759c4e87ef7ee4820b0273f7d12444acfa06";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/clash-prelude-1.8.0-r0-a2adf5535767e435aba637fd6f6011200ca2406b4c02e806866c2e7ff40aa1c7.nix;
+        revNum = 0;
+        sha256 = "a2adf5535767e435aba637fd6f6011200ca2406b4c02e806866c2e7ff40aa1c7";
+        };
+      default = "r0";
+      };
+    };
   }

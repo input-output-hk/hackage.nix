@@ -316,4 +316,15 @@
       default = "r0";
       };
     };
+  "5.3.1.2" = {
+    sha256 = "17e4265c127c728201439c3094532a8ba3cc6787e168a4db32831bbbea3059b9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lambdabot-5.3.1.2-r0-89c33b190901ff7a84b85d75296ace744fabed9b25a888f0fd353b1a0b337a0a.nix;
+        revNum = 0;
+        sha256 = "89c33b190901ff7a84b85d75296ace744fabed9b25a888f0fd353b1a0b337a0a";
+        };
+      default = "r0";
+      };
+    };
   }
