@@ -44,7 +44,12 @@
         revNum = 0;
         sha256 = "06e007f23c47bdda52d2927da54160d73f1b6f51a977f3ca9087275698db8f0a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Spock-core-0.13.0.0-r1-efb56d0f5482f279e904e15f25964653de49a839c72034242b9bb6bebf83561a.nix;
+        revNum = 1;
+        sha256 = "efb56d0f5482f279e904e15f25964653de49a839c72034242b9bb6bebf83561a";
+        };
+      default = "r1";
       };
     };
   "0.14.0.0" = {
@@ -60,7 +65,12 @@
         revNum = 1;
         sha256 = "c8f0d5c0cf2e835fcc9148c4310c9b675c0354646bfa9b2088bb30d9e70012bd";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/Spock-core-0.14.0.0-r2-386d330115cf7f82984cfbfd5190a0009b7bf6b4759acbddf2a1c05e0ef57e77.nix;
+        revNum = 2;
+        sha256 = "386d330115cf7f82984cfbfd5190a0009b7bf6b4759acbddf2a1c05e0ef57e77";
+        };
+      default = "r2";
       };
     };
   "0.14.0.1" = {
@@ -76,7 +86,12 @@
         revNum = 1;
         sha256 = "0a11ece2a8f0fbd6bf741b2e0337f33032af3881a3a3cb72b22f50fae222b1cf";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/Spock-core-0.14.0.1-r2-4a001b992e1acc7f283c21f8964924436939c578a82dae71726002dee0eea927.nix;
+        revNum = 2;
+        sha256 = "4a001b992e1acc7f283c21f8964924436939c578a82dae71726002dee0eea927";
+        };
+      default = "r2";
       };
     };
   }
