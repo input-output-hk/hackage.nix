@@ -208,7 +208,12 @@
         revNum = 0;
         sha256 = "00de7c6c510c7f1916403ea95782fc76992fbfa68b3f40dd36d686c54d4044ba";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/focus-1.0.3.1-r1-00fddebaf7a680075b57e099dde727d2a76713b16af21f469eb5ee90e52583f8.nix;
+        revNum = 1;
+        sha256 = "00fddebaf7a680075b57e099dde727d2a76713b16af21f469eb5ee90e52583f8";
+        };
+      default = "r1";
       };
     };
   "1.0.3.2" = {

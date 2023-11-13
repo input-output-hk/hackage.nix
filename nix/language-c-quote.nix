@@ -444,7 +444,12 @@
         revNum = 0;
         sha256 = "bbefdb08217d0f0c69d92c2f99aff5878a1dc6c64ba075c9298a036fdf20b6bb";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/language-c-quote-0.13.0.1-r1-f2b7613339a4fe947c8db3fb5943b71fd07d0f8b05978156684db9dce4b7776a.nix;
+        revNum = 1;
+        sha256 = "f2b7613339a4fe947c8db3fb5943b71fd07d0f8b05978156684db9dce4b7776a";
+        };
+      default = "r1";
       };
     };
   "0.2" = {

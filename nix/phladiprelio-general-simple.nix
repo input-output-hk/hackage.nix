@@ -81,6 +81,28 @@
       default = "r0";
       };
     };
+  "0.12.1.0" = {
+    sha256 = "d70ad39e179be192da2cb3cefd4e7dd9ffd92180b1afe11751ce25f11277466d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phladiprelio-general-simple-0.12.1.0-r0-a8fa2866057a25ba52718876f3d9a2ae4db3a2b8680d8333cdee82f65d878ab2.nix;
+        revNum = 0;
+        sha256 = "a8fa2866057a25ba52718876f3d9a2ae4db3a2b8680d8333cdee82f65d878ab2";
+        };
+      default = "r0";
+      };
+    };
+  "0.12.2.0" = {
+    sha256 = "bb87a18a546a558e13fc7cf28de3812f00dc7093775c3660ffef1d21302baabd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phladiprelio-general-simple-0.12.2.0-r0-03beee8ebce1045523d7ff7252206c61d506c58af4123b164086423fd07317df.nix;
+        revNum = 0;
+        sha256 = "03beee8ebce1045523d7ff7252206c61d506c58af4123b164086423fd07317df";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "3a6caa9ff1eab6059fc69eba66fb7811a72ed8462faf9edfda9ff039f745c47e";
     revisions = {

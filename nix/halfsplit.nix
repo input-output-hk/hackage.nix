@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.4.2.0" = {
+    sha256 = "94015e3ad455d35fa0572385f8bdc5eeaff9cf82350f2fb7cb17e701595b42b9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/halfsplit-0.4.2.0-r0-dca92e69f6ff8efb6c41e4411d10dc7da2add459db5e79d1fa3d2ba85b98db73.nix;
+        revNum = 0;
+        sha256 = "dca92e69f6ff8efb6c41e4411d10dc7da2add459db5e79d1fa3d2ba85b98db73";
+        };
+      default = "r0";
+      };
+    };
   }

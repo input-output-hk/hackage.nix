@@ -11711,6 +11711,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pan-os-syslog" = import ./nix/pan-os-syslog.nix;
   "panda" = import ./nix/panda.nix;
   "pandoc" = import ./nix/pandoc.nix;
+  "pandoc-builder-monadic" = import ./nix/pandoc-builder-monadic.nix;
   "pandoc-citeproc" = import ./nix/pandoc-citeproc.nix;
   "pandoc-citeproc-preamble" = import ./nix/pandoc-citeproc-preamble.nix;
   "pandoc-cli" = import ./nix/pandoc-cli.nix;
