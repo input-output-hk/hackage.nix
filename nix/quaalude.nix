@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "57155f7de3b00fe3abe46df3b8305262f5d26d9b19ff6d879fe03fde54b70f57";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/quaalude-0.0.0.1-r2-6a33d6d00e61e08267225d1265e20067f5945dd10ab74e7af9f6a2b1ac9456b5.nix;
+        revNum = 2;
+        sha256 = "6a33d6d00e61e08267225d1265e20067f5945dd10ab74e7af9f6a2b1ac9456b5";
+        };
+      default = "r2";
       };
     };
   }

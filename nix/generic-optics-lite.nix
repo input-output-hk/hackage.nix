@@ -32,7 +32,12 @@
         revNum = 5;
         sha256 = "6f16d4863e54da452a6487d23d09c6a613df4a5a4ea17bc3f7e79d58f570dc8f";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/generic-optics-lite-0.1-r6-45b4c2d475eef13bc4c46c0366080b3223393d4a174b9911abe58d4a1bfbd89f.nix;
+        revNum = 6;
+        sha256 = "45b4c2d475eef13bc4c46c0366080b3223393d4a174b9911abe58d4a1bfbd89f";
+        };
+      default = "r6";
       };
     };
   }

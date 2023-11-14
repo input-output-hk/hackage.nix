@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "6d57670a90f8901511e59f260bc97f4d57baf96018bd3bc66a5bd73e1db53545";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tagtree-0.1.0.1-r0-f04ef23b862419e84ca5df2ade562e1743b61ee6e531eeec8c5dd2d2814fe743.nix;
+        revNum = 0;
+        sha256 = "f04ef23b862419e84ca5df2ade562e1743b61ee6e531eeec8c5dd2d2814fe743";
+        };
+      default = "r0";
+      };
+    };
   }

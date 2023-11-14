@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "1.2.3.1" = {
+    sha256 = "7a564cd0c11bebf1a760bf476c5e994914356754d6ae9da5506dd7b5579f9a70";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sayable-1.2.3.1-r0-f2723dac27f8586bdf69cbcdb437edb6afb0c0b38d8b691b1c55667194233c6c.nix;
+        revNum = 0;
+        sha256 = "f2723dac27f8586bdf69cbcdb437edb6afb0c0b38d8b691b1c55667194233c6c";
+        };
+      default = "r0";
+      };
+    };
   }

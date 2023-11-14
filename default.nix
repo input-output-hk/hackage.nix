@@ -583,6 +583,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "HarmTrace-Base" = import ./nix/_Harm_Trace-_Base.nix;
   "HasBigDecimal" = import ./nix/_Has_Big_Decimal.nix;
   "HasCacBDD" = import ./nix/_Has_Cac_B_D_D.nix;
+  "HasChor" = import ./nix/_Has_Chor.nix;
   "HasGP" = import ./nix/_Has_G_P.nix;
   "Haschoo" = import ./nix/_Haschoo.nix;
   "Hashell" = import ./nix/_Hashell.nix;

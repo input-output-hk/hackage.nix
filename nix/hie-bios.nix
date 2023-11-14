@@ -84,6 +84,17 @@
       default = "r1";
       };
     };
+  "0.12.1" = {
+    sha256 = "05b9a0357f64cea3c3d2aa1fe39e22e65bdffdf8231390dba0dc9ef7663d8947";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hie-bios-0.12.1-r0-809e1f9a2eaa8a89704837ed4e18dfd614056f3a7974f92e21f8a30143c103eb.nix;
+        revNum = 0;
+        sha256 = "809e1f9a2eaa8a89704837ed4e18dfd614056f3a7974f92e21f8a30143c103eb";
+        };
+      default = "r0";
+      };
+    };
   "0.13.0" = {
     sha256 = "6bd74443a089596e4c04d000628537722b02955101ceb39fedcc65facd8d623f";
     revisions = {
