@@ -43,7 +43,12 @@
         revNum = 4;
         sha256 = "699b8cdb3dff150a9dbf5a3d3e9d193624349efd6bb976f1fe3a2a087930a57a";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/dhall-recursive-adt-0.1.0.1-r5-9ae7de9d8404f2fae2507d8e5f444a82cef4f5a517b827cfe01f27c6fbe885ac.nix;
+        revNum = 5;
+        sha256 = "9ae7de9d8404f2fae2507d8e5f444a82cef4f5a517b827cfe01f27c6fbe885ac";
+        };
+      default = "r5";
       };
     };
   }

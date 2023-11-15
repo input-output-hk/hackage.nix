@@ -65,7 +65,12 @@
         revNum = 4;
         sha256 = "2602fe0e16f92a74cc8cee01b25836fcc6768bfcdb57b7105a41162f236d26f3";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/cbor-tool-0.2.2.0-r5-369957c33b444120b8ac5486cde19a8aea2890079bf38629c130d7c4d0f79d53.nix;
+        revNum = 5;
+        sha256 = "369957c33b444120b8ac5486cde19a8aea2890079bf38629c130d7c4d0f79d53";
+        };
+      default = "r5";
       };
     };
   }

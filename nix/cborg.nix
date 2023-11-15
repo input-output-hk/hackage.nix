@@ -62,6 +62,17 @@
       default = "r1";
       };
     };
+  "0.2.10.0" = {
+    sha256 = "17fe070c38fc498cab49bcb9d6215b7747d53bedf96502e9bcce9cad73b9c797";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cborg-0.2.10.0-r0-61655189275a1d3f74553e918c90ae87448bc4af6c5f41159c01849b22b1ee75.nix;
+        revNum = 0;
+        sha256 = "61655189275a1d3f74553e918c90ae87448bc4af6c5f41159c01849b22b1ee75";
+        };
+      default = "r0";
+      };
+    };
   "0.2.2.0" = {
     sha256 = "e12e90c31f22f677e38908ea92680a10ef5cbae236fb556704479fc081dfb6e5";
     revisions = {
@@ -233,7 +244,12 @@
         revNum = 0;
         sha256 = "2ff53fbfb463dcb285cbcf6624f78bbe986850dab2816a99aa6112ec135912cd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cborg-0.2.9.0-r1-9a3b441f8cf7e1696cad474ce5f98cbe2260ff0ab9564ea89151201572d53a3a.nix;
+        revNum = 1;
+        sha256 = "9a3b441f8cf7e1696cad474ce5f98cbe2260ff0ab9564ea89151201572d53a3a";
+        };
+      default = "r1";
       };
     };
   }
