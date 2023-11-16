@@ -4523,6 +4523,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "deka" = import ./nix/deka.nix;
   "deka-tests" = import ./nix/deka-tests.nix;
   "delaunay" = import ./nix/delaunay.nix;
+  "delaunayNd" = import ./nix/delaunay_Nd.nix;
   "delay" = import ./nix/delay.nix;
   "delicious" = import ./nix/delicious.nix;
   "delimited-text" = import ./nix/delimited-text.nix;

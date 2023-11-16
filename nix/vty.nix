@@ -1843,4 +1843,20 @@
       default = "r1";
       };
     };
+  "6.1" = {
+    sha256 = "2fc64b7d09f16bce9c6456e234e6aca3a86be9a40f360435499fc087b94f7bd6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vty-6.1-r0-260d91655163003e3e788d08af10b573644754ddeb8b01f530596aec2ab72e0b.nix;
+        revNum = 0;
+        sha256 = "260d91655163003e3e788d08af10b573644754ddeb8b01f530596aec2ab72e0b";
+        };
+      r1 = {
+        nix = import ../hackage/vty-6.1-r1-524d124223c02373260ebc409ddd622fbe97cacd1ea0ee98476b5992bddbc4f3.nix;
+        revNum = 1;
+        sha256 = "524d124223c02373260ebc409ddd622fbe97cacd1ea0ee98476b5992bddbc4f3";
+        };
+      default = "r1";
+      };
+    };
   }

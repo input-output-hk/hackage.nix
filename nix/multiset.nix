@@ -177,7 +177,12 @@
         revNum = 0;
         sha256 = "968192524bd38ffa29856e1e3f9f6f8a5704f98899d4b25f8ebd425001594f61";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/multiset-0.3.4.3-r1-453bc587df455517c723c1493302d2be18451961f2c02edf790797c3b6da7c72.nix;
+        revNum = 1;
+        sha256 = "453bc587df455517c723c1493302d2be18451961f2c02edf790797c3b6da7c72";
+        };
+      default = "r1";
       };
     };
   }

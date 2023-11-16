@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "1.1" = {
+    sha256 = "acf314db5ef790bcf8defd03e0656249c7cb829d67ef16bc1b7488dfeeda7ff9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rhine-bayes-1.1-r0-68ed95e9130915aacce91a2182cc7ccdaefb1513c485b918f3314444f629db38.nix;
+        revNum = 0;
+        sha256 = "68ed95e9130915aacce91a2182cc7ccdaefb1513c485b918f3314444f629db38";
+        };
+      default = "r0";
+      };
+    };
   }

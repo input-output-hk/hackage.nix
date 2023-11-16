@@ -48,4 +48,15 @@
       default = "r0";
       };
     };
+  "0.1.0.4" = {
+    sha256 = "d3e4a55f94995f85987bd25232bf9000c0ca27c86a9cd073304be62591f84f07";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brainfuck-0.1.0.4-r0-552f89497e6b6b2b46a99dfcf758606a68a5e43481161ad9d57b13e80dc1051d.nix;
+        revNum = 0;
+        sha256 = "552f89497e6b6b2b46a99dfcf758606a68a5e43481161ad9d57b13e80dc1051d";
+        };
+      default = "r0";
+      };
+    };
   }

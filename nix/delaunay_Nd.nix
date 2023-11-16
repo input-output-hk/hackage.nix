@@ -1,0 +1,24 @@
+{
+  "0.1.0.0" = {
+    sha256 = "a91c113c44b1f665d0814ad083b8853d85363868e8cde40459b5e47e1370e795";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/delaunayNd-0.1.0.0-r0-681ae25ada8509953bfe8941d84a738c30a502e661ba8cfaebbabe1412c3a10f.nix;
+        revNum = 0;
+        sha256 = "681ae25ada8509953bfe8941d84a738c30a502e661ba8cfaebbabe1412c3a10f";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.0.1" = {
+    sha256 = "e1d2e16d2d1519eb0fb899d54fad2bd512e09f59645e1d858c18960a97fbf88f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/delaunayNd-0.1.0.1-r0-f463f35fe18be8ab701a989773a431bd13daba831de51f32a428edaebc85ece4.nix;
+        revNum = 0;
+        sha256 = "f463f35fe18be8ab701a989773a431bd13daba831de51f32a428edaebc85ece4";
+        };
+      default = "r0";
+      };
+    };
+  }

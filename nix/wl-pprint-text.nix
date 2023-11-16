@@ -142,7 +142,12 @@
         revNum = 1;
         sha256 = "21da7b128d9173e2d11f3044704cb72106ce6f80f4b45fa2063e27dbdb98140c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/wl-pprint-text-1.2.0.2-r2-ad9e13dd8696f4c20186edc1eca425e13fab583674c2432c9e135171b424e6fe.nix;
+        revNum = 2;
+        sha256 = "ad9e13dd8696f4c20186edc1eca425e13fab583674c2432c9e135171b424e6fe";
+        };
+      default = "r2";
       };
     };
   }
