@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "dec12cda57aaa1207e69c0e84e78ece1a49db497ab7ccbb4f32edbc30e52b00d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vty-windows-0.2.0.0-r0-91a11bab7bb79f8ee0d4a8166824ed855251cbac101eed3fdf607ad519a13557.nix;
+        revNum = 0;
+        sha256 = "91a11bab7bb79f8ee0d4a8166824ed855251cbac101eed3fdf607ad519a13557";
+        };
+      default = "r0";
+      };
+    };
   }

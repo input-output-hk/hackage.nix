@@ -39,6 +39,22 @@
         revNum = 0;
         sha256 = "65e4e8f3fc3fb8449c96bc5dd9172829e54e62f5af58cbd5d91c0e2e1b69e6ce";
         };
+      r1 = {
+        nix = import ../hackage/vty-crossplatform-0.3.0.0-r1-61753a88342b482b9d52101b35aaca481f6b3aded4f90219194310912759b60a.nix;
+        revNum = 1;
+        sha256 = "61753a88342b482b9d52101b35aaca481f6b3aded4f90219194310912759b60a";
+        };
+      default = "r1";
+      };
+    };
+  "0.4.0.0" = {
+    sha256 = "35e5433512b883e83aa8bb8c3475221174445a87e51f162b2ce07f9cf1eb3c1a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vty-crossplatform-0.4.0.0-r0-50593f91ad16777d921138475a8d2784d538fd206addd30664c620278d6c8544.nix;
+        revNum = 0;
+        sha256 = "50593f91ad16777d921138475a8d2784d538fd206addd30664c620278d6c8544";
+        };
       default = "r0";
       };
     };

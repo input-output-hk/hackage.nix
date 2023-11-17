@@ -118,7 +118,12 @@
         revNum = 5;
         sha256 = "87de5f1c57c5403ec6bcece82206664e9b39bc16dbc5b319203bd540e90a3029";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/optics-th-0.4.1-r6-d306ba320a4235338dcac597042fc1174fbc7d3b095c6c1fa3f824fe0e36150f.nix;
+        revNum = 6;
+        sha256 = "d306ba320a4235338dcac597042fc1174fbc7d3b095c6c1fa3f824fe0e36150f";
+        };
+      default = "r6";
       };
     };
   }

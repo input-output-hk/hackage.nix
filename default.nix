@@ -359,6 +359,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "FirstPrelude" = import ./nix/_First_Prelude.nix;
   "FixedPoint-simple" = import ./nix/_Fixed_Point-simple.nix;
   "Flint2" = import ./nix/_Flint2.nix;
+  "Flint2-Examples" = import ./nix/_Flint2-_Examples.nix;
   "Flippi" = import ./nix/_Flippi.nix;
   "FloatingHex" = import ./nix/_Floating_Hex.nix;
   "Focus" = import ./nix/_Focus.nix;

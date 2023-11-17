@@ -32,6 +32,28 @@
       default = "r0";
       };
     };
+  "0.12.0.0" = {
+    sha256 = "1924241dc6d937d0d31956d4e6ecdf1fa9142b63d611a5f255f0ec123ba6234b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-ukrainian-array-0.12.0.0-r0-8cbbe387f60b501e94d58fc3374c78f90763622d956391ba7ced67d0c930f9f9.nix;
+        revNum = 0;
+        sha256 = "8cbbe387f60b501e94d58fc3374c78f90763622d956391ba7ced67d0c930f9f9";
+        };
+      default = "r0";
+      };
+    };
+  "0.12.1.0" = {
+    sha256 = "d50136cd938ab882338e2357ed8d09e17d0d2bb0d004107f00fd21ffb2ce032b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-ukrainian-array-0.12.1.0-r0-bc2840b5ce49e8d050fa8eea54c2876ffd0b2fb06b5397d5bbcd8d01577904a4.nix;
+        revNum = 0;
+        sha256 = "bc2840b5ce49e8d050fa8eea54c2876ffd0b2fb06b5397d5bbcd8d01577904a4";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "7e49c67adcd1788bf640d92b8c76cb712c4f3ee6365213734936f2b99c2e6338";
     revisions = {
