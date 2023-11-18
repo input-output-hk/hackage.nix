@@ -63,7 +63,12 @@
         revNum = 6;
         sha256 = "ee78ad962a2d2decb1148d164a406cbfdb4efebcd8aa2189f2dd89197a4117c2";
         };
-      default = "r6";
+      r7 = {
+        nix = import ../hackage/windns-0.1.0.1-r7-fc50e2faf0cc43159075b349c3f3e9b922985e2701d80834a670bd0183bf6f61.nix;
+        revNum = 7;
+        sha256 = "fc50e2faf0cc43159075b349c3f3e9b922985e2701d80834a670bd0183bf6f61";
+        };
+      default = "r7";
       };
     };
   }

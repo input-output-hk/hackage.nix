@@ -274,4 +274,15 @@
       default = "r1";
       };
     };
+  "0.3.2.1" = {
+    sha256 = "5fff0cbec5a37144add1cfc10a87e2ada389a518f604ed00a8801a2f1f775792";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flock-0.3.2.1-r0-621faa36646ccd1c33a654f7e4fcdf3843dcbf12fbf4b3aade3e9cf90441deb4.nix;
+        revNum = 0;
+        sha256 = "621faa36646ccd1c33a654f7e4fcdf3843dcbf12fbf4b3aade3e9cf90441deb4";
+        };
+      default = "r0";
+      };
+    };
   }

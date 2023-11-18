@@ -11152,6 +11152,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "network-conduit" = import ./nix/network-conduit.nix;
   "network-conduit-tls" = import ./nix/network-conduit-tls.nix;
   "network-connection" = import ./nix/network-connection.nix;
+  "network-control" = import ./nix/network-control.nix;
   "network-data" = import ./nix/network-data.nix;
   "network-dbus" = import ./nix/network-dbus.nix;
   "network-dns" = import ./nix/network-dns.nix;
@@ -11741,6 +11742,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pandoc-plantuml-diagrams" = import ./nix/pandoc-plantuml-diagrams.nix;
   "pandoc-plot" = import ./nix/pandoc-plot.nix;
   "pandoc-pyplot" = import ./nix/pandoc-pyplot.nix;
+  "pandoc-query" = import ./nix/pandoc-query.nix;
   "pandoc-select-code" = import ./nix/pandoc-select-code.nix;
   "pandoc-server" = import ./nix/pandoc-server.nix;
   "pandoc-sidenote" = import ./nix/pandoc-sidenote.nix;

@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.1.0.5" = {
+    sha256 = "bdd37956d9e6f8fb5ac58da005759d2a4761a746c52c24049d64413be7898d42";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Flint2-0.1.0.5-r0-bdbfd3b846b41d999a18c1ec97b7a6cd06af716007fe3247f6749cb7388dab0f.nix;
+        revNum = 0;
+        sha256 = "bdbfd3b846b41d999a18c1ec97b7a6cd06af716007fe3247f6749cb7388dab0f";
+        };
+      default = "r0";
+      };
+    };
   }

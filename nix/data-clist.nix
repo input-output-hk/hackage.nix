@@ -199,7 +199,12 @@
         revNum = 0;
         sha256 = "b764c5a8a7bc1bc9b7bcca7f34af911757397fbd58c0d2431dcaeb2fb88ab0d5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/data-clist-0.2-r1-47ad08ffa523b5fcdfd0e999ff57417a2e70b48e0ea79b84d7f8b9e6d1152225.nix;
+        revNum = 1;
+        sha256 = "47ad08ffa523b5fcdfd0e999ff57417a2e70b48e0ea79b84d7f8b9e6d1152225";
+        };
+      default = "r1";
       };
     };
   }
