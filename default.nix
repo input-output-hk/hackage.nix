@@ -16656,6 +16656,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "versioning" = import ./nix/versioning.nix;
   "versioning-servant" = import ./nix/versioning-servant.nix;
   "versions" = import ./nix/versions.nix;
+  "vertexenum" = import ./nix/vertexenum.nix;
   "vessel" = import ./nix/vessel.nix;
   "vflow-types" = import ./nix/vflow-types.nix;
   "vformat" = import ./nix/vformat.nix;
