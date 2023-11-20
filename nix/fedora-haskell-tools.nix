@@ -103,4 +103,15 @@
       default = "r0";
       };
     };
+  "1.1" = {
+    sha256 = "4e5db3876beddad59a112b5c6a2a4e7aabfd88efcb4b22047f1fce9d9f9a92a4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fedora-haskell-tools-1.1-r0-3b88c143b9daa2a56521fbece356e2fa8fa453d5f9f42554d0a27efabac839a2.nix;
+        revNum = 0;
+        sha256 = "3b88c143b9daa2a56521fbece356e2fa8fa453d5f9f42554d0a27efabac839a2";
+        };
+      default = "r0";
+      };
+    };
   }

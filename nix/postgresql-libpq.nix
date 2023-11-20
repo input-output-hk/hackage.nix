@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "c4367b5c2f35b5d9b7dae4d572010b7417e41238ffa72b7af8efe54c969cb667";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/postgresql-libpq-0.10.0.0-r1-5c1cafdc2e3e5c0036b6801b10b6f14ae95b98428d6c88bc8ae560bd700d0ef7.nix;
+        revNum = 1;
+        sha256 = "5c1cafdc2e3e5c0036b6801b10b6f14ae95b98428d6c88bc8ae560bd700d0ef7";
+        };
+      default = "r1";
       };
     };
   "0.5" = {
