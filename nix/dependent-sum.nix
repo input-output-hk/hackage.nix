@@ -295,7 +295,12 @@
         revNum = 1;
         sha256 = "16215db5d1f62897ace34167726f7a9b51a91ce5be12e4de456ffb673a9acb63";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/dependent-sum-0.7.2.0-r2-f1060345439b6949eae5a6b3cdb35c7189ff360f7b4d5fa617e4f1e0f847c424.nix;
+        revNum = 2;
+        sha256 = "f1060345439b6949eae5a6b3cdb35c7189ff360f7b4d5fa617e4f1e0f847c424";
+        };
+      default = "r2";
       };
     };
   }

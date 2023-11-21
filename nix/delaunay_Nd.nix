@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "1bf18d5f31b896fdb1d18ba377a5c7105cd6c182878089bb4420bab1649df207";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/delaunayNd-0.1.0.2-r0-c1eaaaf1b73274360fbeb2e2c5e9ee1607f2143a4d7bc4bcbc31911f987d21ec.nix;
+        revNum = 0;
+        sha256 = "c1eaaaf1b73274360fbeb2e2c5e9ee1607f2143a4d7bc4bcbc31911f987d21ec";
+        };
+      default = "r0";
+      };
+    };
   }
