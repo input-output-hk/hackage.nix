@@ -37,4 +37,37 @@
       default = "r1";
       };
     };
+  "0.2.2.6.2" = {
+    sha256 = "ead7ad52049de978efc6040b9ff3ca2240f4c19f5b1b4706b045c32ab81ef89a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/agda-language-server-0.2.2.6.2-r0-2083ae9c065a0c9119bbae8e03808255029af28569f99a5147b4e9af7f4586f4.nix;
+        revNum = 0;
+        sha256 = "2083ae9c065a0c9119bbae8e03808255029af28569f99a5147b4e9af7f4586f4";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.6.2.2" = {
+    sha256 = "5077ace791ba8271e7e8946379f41dc39e1ba04de2608c256189e0db6cf92e3e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/agda-language-server-0.2.6.2.2-r0-56c5028f319e023a739dcaccc358e75e22a30127478d04751281d31134be60a8.nix;
+        revNum = 0;
+        sha256 = "56c5028f319e023a739dcaccc358e75e22a30127478d04751281d31134be60a8";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.6.2.2.1" = {
+    sha256 = "7f35ea459b8f0c91f951fea3f58ab845f9df791aba850b7a9e4b16c6c4bf59fa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/agda-language-server-0.2.6.2.2.1-r0-4995ff361a866703ea14282f6856aa7327968c33e7839008d355f73e0d4f8686.nix;
+        revNum = 0;
+        sha256 = "4995ff361a866703ea14282f6856aa7327968c33e7839008d355f73e0d4f8686";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -62,7 +62,17 @@
         revNum = 0;
         sha256 = "f31c443ae691c35f839dc7b88f3191e036ae82e1ad353dfea877572e3bb8399c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/system-linux-proc-0.1.1.1-r1-b7f9ed0b86f5560c672b669089aa8f0fa95052b7b97fc98863addfa2870d1d60.nix;
+        revNum = 1;
+        sha256 = "b7f9ed0b86f5560c672b669089aa8f0fa95052b7b97fc98863addfa2870d1d60";
+        };
+      r2 = {
+        nix = import ../hackage/system-linux-proc-0.1.1.1-r2-1f7739c38f7c0042339c8e69096f7a7deeafb974679e222ce5068e2e7afec42d.nix;
+        revNum = 2;
+        sha256 = "1f7739c38f7c0042339c8e69096f7a7deeafb974679e222ce5068e2e7afec42d";
+        };
+      default = "r2";
       };
     };
   }

@@ -235,4 +235,15 @@
       default = "r0";
       };
     };
+  "2.0.0.0" = {
+    sha256 = "45c83373e553afb9056212df789fe1edd0b4bf43cbab9da34f37ed4dcdd37505";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-injector-2.0.0.0-r0-883f84f8b7bccc82a0bfc529c5178f39d0a326c15217bd14fdc85f05c073e99c.nix;
+        revNum = 0;
+        sha256 = "883f84f8b7bccc82a0bfc529c5178f39d0a326c15217bd14fdc85f05c073e99c";
+        };
+      default = "r0";
+      };
+    };
   }

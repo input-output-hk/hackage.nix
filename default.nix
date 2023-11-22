@@ -11941,6 +11941,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pcre-light-extra" = import ./nix/pcre-light-extra.nix;
   "pcre-utils" = import ./nix/pcre-utils.nix;
   "pcre2" = import ./nix/pcre2.nix;
+  "pcubature" = import ./nix/pcubature.nix;
   "pdc" = import ./nix/pdc.nix;
   "pdf-slave" = import ./nix/pdf-slave.nix;
   "pdf-slave-server" = import ./nix/pdf-slave-server.nix;
