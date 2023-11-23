@@ -792,6 +792,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "Metrics" = import ./nix/_Metrics.nix;
   "Mhailist" = import ./nix/_Mhailist.nix;
   "Michelangelo" = import ./nix/_Michelangelo.nix;
+  "MicroHs" = import ./nix/_Micro_Hs.nix;
   "MicrosoftTranslator" = import ./nix/_Microsoft_Translator.nix;
   "MiniAgda" = import ./nix/_Mini_Agda.nix;
   "MissingH" = import ./nix/_Missing_H.nix;
@@ -3988,6 +3989,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "convertible" = import ./nix/convertible.nix;
   "convertible-ascii" = import ./nix/convertible-ascii.nix;
   "convertible-text" = import ./nix/convertible-text.nix;
+  "convexHullNd" = import ./nix/convex_Hull_Nd.nix;
   "cookbook" = import ./nix/cookbook.nix;
   "cookie" = import ./nix/cookie.nix;
   "cookie-tray" = import ./nix/cookie-tray.nix;

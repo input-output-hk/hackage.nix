@@ -125,4 +125,15 @@
       default = "r0";
       };
     };
+  "2.1.0" = {
+    sha256 = "da97e7642115e154832128ed319b97211d79e513d318dd2942c0c8bb468ad462";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/composition-extra-2.1.0-r0-aa6048510f8f00818c6fc15a63268ce28da5facadf71aeea02a4c1069e87c797.nix;
+        revNum = 0;
+        sha256 = "aa6048510f8f00818c6fc15a63268ce28da5facadf71aeea02a4c1069e87c797";
+        };
+      default = "r0";
+      };
+    };
   }

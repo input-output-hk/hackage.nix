@@ -208,4 +208,15 @@
       default = "r0";
       };
     };
+  "0.7.1.5" = {
+    sha256 = "8aaedff39267c2f904ca3c86ecec152de94d7612cf1630287beea0ece685b24f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wavefront-0.7.1.5-r0-5c482d9f54f6bd18a81bf6cfa02269701bb41b6a73a9c7b61fdf82fce2d0d71f.nix;
+        revNum = 0;
+        sha256 = "5c482d9f54f6bd18a81bf6cfa02269701bb41b6a73a9c7b61fdf82fce2d0d71f";
+        };
+      default = "r0";
+      };
+    };
   }
