@@ -2081,6 +2081,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "apiary-redis" = import ./nix/apiary-redis.nix;
   "apiary-session" = import ./nix/apiary-session.nix;
   "apiary-websockets" = import ./nix/apiary-websockets.nix;
+  "apigen" = import ./nix/apigen.nix;
   "apioiaf-client" = import ./nix/apioiaf-client.nix;
   "apis" = import ./nix/apis.nix;
   "apns-http2" = import ./nix/apns-http2.nix;
@@ -14100,6 +14101,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-wasm" = import ./nix/servant-wasm.nix;
   "servant-websockets" = import ./nix/servant-websockets.nix;
   "servant-xml" = import ./nix/servant-xml.nix;
+  "servant-xml-conduit" = import ./nix/servant-xml-conduit.nix;
   "servant-xstatic" = import ./nix/servant-xstatic.nix;
   "servant-yaml" = import ./nix/servant-yaml.nix;
   "servant-zeppelin" = import ./nix/servant-zeppelin.nix;

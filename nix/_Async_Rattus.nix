@@ -31,4 +31,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "76665534a7fd3ba3a997862a67243c825d56340ddf0dd8a86bfda19ad28473ed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/AsyncRattus-0.1.0.2-r0-4d8bc0a12de01a3be9a53f712cf6cedb1085f281e8724b23aa7be3185da6cc96.nix;
+        revNum = 0;
+        sha256 = "4d8bc0a12de01a3be9a53f712cf6cedb1085f281e8724b23aa7be3185da6cc96";
+        };
+      default = "r0";
+      };
+    };
   }

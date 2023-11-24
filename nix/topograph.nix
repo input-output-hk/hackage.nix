@@ -64,7 +64,12 @@
         revNum = 1;
         sha256 = "1b42ec8d5a6d21244a2b1e5fb8da5fc9491c47ca18705b91ef02675b3e4cd3d7";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/topograph-1.0.0.2-r2-8697101dd2d3b4605320df4dec1781fd08ff631b0d1037d9b5c9073f73a028d1.nix;
+        revNum = 2;
+        sha256 = "8697101dd2d3b4605320df4dec1781fd08ff631b0d1037d9b5c9073f73a028d1";
+        };
+      default = "r2";
       };
     };
   }
