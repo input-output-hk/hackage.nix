@@ -958,4 +958,15 @@
       default = "r0";
       };
     };
+  "2.1.5" = {
+    sha256 = "55acbad9b30bddd0ee9f07e450d8cc38528701fbb4e09abf7665d50f05064dcf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-rpm-2.1.5-r0-bf08a6cd073314ed2617668253d6ca28f58808b2613c4899a5577932d60c036a.nix;
+        revNum = 0;
+        sha256 = "bf08a6cd073314ed2617668253d6ca28f58808b2613c4899a5577932d60c036a";
+        };
+      default = "r0";
+      };
+    };
   }

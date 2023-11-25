@@ -15227,6 +15227,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "symbiote" = import ./nix/symbiote.nix;
   "symbol" = import ./nix/symbol.nix;
   "symbolic-link" = import ./nix/symbolic-link.nix;
+  "symbolize" = import ./nix/symbolize.nix;
   "symbols" = import ./nix/symbols.nix;
   "symengine" = import ./nix/symengine.nix;
   "symengine-hs" = import ./nix/symengine-hs.nix;
@@ -16887,6 +16888,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "web-routes-transformers" = import ./nix/web-routes-transformers.nix;
   "web-routes-wai" = import ./nix/web-routes-wai.nix;
   "web-routing" = import ./nix/web-routing.nix;
+  "web-view" = import ./nix/web-view.nix;
   "web3" = import ./nix/web3.nix;
   "web3-bignum" = import ./nix/web3-bignum.nix;
   "web3-crypto" = import ./nix/web3-crypto.nix;
