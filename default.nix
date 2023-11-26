@@ -4871,6 +4871,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "docusign-example" = import ./nix/docusign-example.nix;
   "docvim" = import ./nix/docvim.nix;
   "doi" = import ./nix/doi.nix;
+  "dojang" = import ./nix/dojang.nix;
   "doldol" = import ./nix/doldol.nix;
   "dollaridoos" = import ./nix/dollaridoos.nix;
   "dom-events" = import ./nix/dom-events.nix;
@@ -11654,6 +11655,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ory-hydra-client" = import ./nix/ory-hydra-client.nix;
   "ory-kratos" = import ./nix/ory-kratos.nix;
   "os-release" = import ./nix/os-release.nix;
+  "os-string" = import ./nix/os-string.nix;
   "osc" = import ./nix/osc.nix;
   "oscpacking" = import ./nix/oscpacking.nix;
   "osdkeys" = import ./nix/osdkeys.nix;

@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.1.2.3" = {
+    sha256 = "6ec932a6e46648fca785d19408fd93282db69e7f363012c8420ac5938b59c43a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reflex-test-host-0.1.2.3-r0-9a61f6c26652388d19b4a219c904e729ce897ae5344abb0737c6e86931b67f09.nix;
+        revNum = 0;
+        sha256 = "9a61f6c26652388d19b4a219c904e729ce897ae5344abb0737c6e86931b67f09";
+        };
+      default = "r0";
+      };
+    };
   }
