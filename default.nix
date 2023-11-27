@@ -11097,6 +11097,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nemesis" = import ./nix/nemesis.nix;
   "nemesis-titan" = import ./nix/nemesis-titan.nix;
   "neolua" = import ./nix/neolua.nix;
+  "neononempty" = import ./nix/neononempty.nix;
   "neptune-backend" = import ./nix/neptune-backend.nix;
   "nerf" = import ./nix/nerf.nix;
   "nero" = import ./nix/nero.nix;

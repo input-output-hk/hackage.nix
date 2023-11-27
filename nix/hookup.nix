@@ -186,4 +186,15 @@
       default = "r1";
       };
     };
+  "0.8" = {
+    sha256 = "153b85383f8aea86340683ea5159145ad8a9d5b32ccf60cfa643af15ce9a15dd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hookup-0.8-r0-41a9ffea00f215ee445d4404d034aa132921e7fc8b6a7ecc6c4b56471ae6dc22.nix;
+        revNum = 0;
+        sha256 = "41a9ffea00f215ee445d4404d034aa132921e7fc8b6a7ecc6c4b56471ae6dc22";
+        };
+      default = "r0";
+      };
+    };
   }
